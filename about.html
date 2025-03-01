@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Zinvana</title>
+  <!-- (Optional) Minecraft-like Font for Toast Only -->
+  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
+  <!-- Roboto for the rest of the site -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- If you have a separate CSS file, link it here instead of using <style> -->
+  <style>
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f4f5f7;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.3s;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+
+    /* Top Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      padding: 15px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    nav .nav-left,
+    nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #2c3e50;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    nav img#brand-logo {
+      width: 10%;
+      min-width: 60px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 30px 10px 20px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      color: #2c3e50;
+      letter-spacing: 1px;
+    }
+    #tagline {
+      margin-top: 8px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    /* About Content */
+    #about-content h2 {
+      font-size: 1.6rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    #about-content p {
+      margin-bottom: 15px;
+      color: #555;
+      line-height: 1.6;
+      font-size: 1rem;
+      text-align: justify;
+    }
+    /* Example Team Section (optional) */
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .team-member {
+      background: #f9f9f9;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      flex: 1 1 calc(50% - 20px);
+      min-width: 250px;
+      padding: 20px;
+      text-align: center;
+    }
+    .team-member img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .team-member h3 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+    .team-member p {
+      font-size: 0.9rem;
+      color: #777;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      padding: 20px 10px;
+      text-align: center;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    footer .social-icons {
+      margin-top: 10px;
+    }
+    footer .social-icons img {
+      width: 3%;
+      margin: 0 8px;
+      transition: opacity 0.3s;
+      cursor: pointer;
+    }
+    footer .social-icons img:hover {
+      opacity: 0.7;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+      nav .nav-left a,
+      nav .nav-right a {
+        font-size: 0.85rem;
+      }
+      header h1 {
+        font-size: 2.5rem;
+      }
+      #tagline {
+        font-size: 0.95rem;
+      }
+      main {
+        padding: 30px;
+      }
+      #about-content h2 {
+        font-size: 1.4rem;
+      }
+      nav img#brand-logo {
+        width: 15%;
+      }
+      .team-member {
+        flex: 1 1 100%;
+      }
+      footer .social-icons img {
+        width: 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav>
+    <div class="nav-left">
+      <img src="logo.png" alt="Zinava Logo" id="brand-logo" />
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <a href="#">Contact</a>
+      <a href="#">Help</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Zinvana</h1>
+    <div id="tagline">Trusted Personality Insights</div>
+  </header>
+
+  <!-- Main Container -->
+  <main>
+    <section id="about-content">
+      <h2>About Zinvana</h2>
+      <p>
+        Zinvana was founded with one goal in mind: to help people better understand themselves 
+        and their potential. We believe that by exploring your personality, you gain the clarity 
+        needed to make informed decisions about your relationships, career, and personal growth.
+      </p>
+      <p>
+        Our team consists of psychologists, data scientists, and software engineers who are 
+        passionate about crafting an accessible and engaging personality test. Every question 
+        and result has been carefully developed to offer meaningful insights, while 
+        respecting your privacy and data.
+      </p>
+      <p>
+        As we continue to evolve, we remain committed to transparency, user empowerment, 
+        and scientific rigor. We’re excited to have you join us on this journey of 
+        self-discovery and look forward to helping you unlock your full potential.
+      </p>
+
+      <!-- Example Team Section (optional) -->
+      <div class="team-section">
+        <div class="team-member">
+          <img src="dr-sarah.jpg" alt="Team member photo">
+          <h3>Dr. Sarah Thompson</h3>
+          <p>Lead Psychologist, specializing in personality research and behavioral analysis.</p>
+        </div>
+        <div class="team-member">
+          <img src="dr-james.jpg" alt="Team member photo">
+          <h3>James Rodriguez</h3>
+          <p>Data Scientist, focusing on advanced analytics and machine learning.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Zinava. All rights reserved.</p>
+    <p>
+      This platform is for informational purposes only and does not replace professional advice.<br />
+      No personal data is stored or shared.
+    </p>
+    <div class="social-icons">
+      <!-- Placeholder social icons -->
+      <img src="insta.png" alt="instagram" />
+      <img src="x.png" alt="x" />
+      <img src="youtube.png" alt="youtube" />
+    </div>
+  </footer>
+</body>
+</html>
