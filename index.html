@@ -646,7 +646,7 @@ footer .social-icons img:hover {
     }, 3000);
   }
 
-  /********** Questions Array **********/
+  /********** Expanded Questions Array (15 questions) **********/
   const questions = [
     {
       question: "1. How do you prefer to spend your free time?",
@@ -718,6 +718,69 @@ footer .social-icons img:hover {
         { text: "I reflect on my actions and seek self-improvement", value: "introvert" },
         { text: "I learn from others and value constructive criticism", value: "supportive" },
         { text: "I explore new experiences and embrace change", value: "active" }
+      ]
+    },
+    {
+      question: "9. What energizes you the most?",
+      options: [
+        { text: "Quiet time to think and read", value: "introvert" },
+        { text: "Engaging conversations in a group", value: "extrovert" },
+        { text: "Switching between social and solo activities", value: "balanced" },
+        { text: "Diving headfirst into hands-on tasks", value: "active" }
+      ]
+    },
+    {
+      question: "10. How do you react to sudden changes in plans?",
+      options: [
+        { text: "I need a moment to gather my thoughts", value: "introvert" },
+        { text: "I adapt quickly and keep the energy high", value: "extrovert" },
+        { text: "I try to find a middle ground for everyone", value: "balanced" },
+        { text: "I see it as a chance for a new adventure", value: "active" }
+      ]
+    },
+    {
+      question: "11. In a brainstorming session, you usually...",
+      options: [
+        { text: "Listen quietly, then offer a thoughtful idea", value: "introvert" },
+        { text: "Share many ideas and feed off others' energy", value: "extrovert" },
+        { text: "Keep the team on track while adding balanced input", value: "balanced" },
+        { text: "Propose bold, out-of-the-box concepts", value: "creative" }
+      ]
+    },
+    {
+      question: "12. How do you manage stress?",
+      options: [
+        { text: "By retreating into a calm environment", value: "introvert" },
+        { text: "By talking it out with friends or teammates", value: "extrovert" },
+        { text: "By creating a step-by-step plan", value: "leader" },
+        { text: "By engaging in physical activity or exercise", value: "active" }
+      ]
+    },
+    {
+      question: "13. What motivates you to tackle difficult tasks?",
+      options: [
+        { text: "The promise of personal growth and reflection", value: "introvert" },
+        { text: "The social interaction and team spirit", value: "extrovert" },
+        { text: "Knowing everyone benefits from a balanced approach", value: "supportive" },
+        { text: "The chance to lead and innovate", value: "leader" }
+      ]
+    },
+    {
+      question: "14. Which statement resonates with you most?",
+      options: [
+        { text: "I feel more energized after alone time", value: "introvert" },
+        { text: "I thrive on being around others", value: "extrovert" },
+        { text: "I prefer variety and balance in my activities", value: "balanced" },
+        { text: "I love diving into new, active experiences", value: "active" }
+      ]
+    },
+    {
+      question: "15. When you're stuck, how do you find inspiration?",
+      options: [
+        { text: "By reflecting quietly on my own thoughts", value: "introvert" },
+        { text: "By brainstorming with a group", value: "extrovert" },
+        { text: "By reading or researching multiple perspectives", value: "balanced" },
+        { text: "By experimenting and trying hands-on solutions", value: "creative" }
       ]
     }
   ];
@@ -1056,9 +1119,9 @@ footer .social-icons img:hover {
     }
 
     // Compatibility from the primary trait
-    const compatibleTypes = primaryData.compatibility.map(
-      (key) => personalityData[key].title
-    ).join(", ") || "Everyone in their own way!";
+    const compatibleTypes = primaryData.compatibility
+      .map((key) => personalityData[key].title)
+      .join(", ") || "Everyone in their own way!";
 
     resultHTML += `
       <div class="result-section">
@@ -1133,6 +1196,7 @@ footer .social-icons img:hover {
   // Initialize the first question on page load
   displayQuestion();
 </script>
+
 
 
 
