@@ -2,387 +2,446 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Zinvana - Free personality test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zinvana - Free personality test</title>
   
-    <!-- Basic SEO -->
-    <meta name="description" content="Take a quick and free, research-backed personality test on Zinvana to discover your strengths, improvement areas, and recommended career paths." />
-    <meta name="keywords" content="Zinvana, personality test, self-discovery, career advice, psychology, introspection, personal growth" />
-    <meta name="author" content="Zinvana" />
-    <meta name="robots" content="index, follow" />
-  
-    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-    <meta property="og:title" content="Zinvana - Discover Your Personality" />
-    <meta property="og:description" content="Zinvana’s short, research-backed personality test reveals your strengths, areas for improvement, and recommended career paths." />
-    <meta property="og:image" content="cover.png" />
-    <meta property="og:url" content="https://zinvana.com" />
-    <meta property="og:type" content="website" />
-  
-  
+  <!-- Basic SEO -->
+  <meta name="description" content="Take a quick and free, research-backed personality test on Zinvana to discover your strengths, improvement areas, and recommended career paths." />
+  <meta name="keywords" content="Zinvana, personality test, self-discovery, career advice, psychology, introspection, personal growth" />
+  <meta name="author" content="Zinvana" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Zinvana - Discover Your Personality" />
+  <meta property="og:description" content="Zinvana’s short, research-backed personality test reveals your strengths, areas for improvement, and recommended career paths." />
+  <meta property="og:image" content="cover.png" />
+  <meta property="og:url" content="https://zinvana.com" />
+  <meta property="og:type" content="website" />
+
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
   <!-- (Optional) Minecraft-like Font for Toast Only -->
   <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
   <!-- Roboto for the rest of the site -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <!-- html2canvas for screenshots -->
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  
   <style>
-    /* Reset & Base Styles */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #f4f5f7;
-      color: #333;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: opacity 0.3s;
-    }
-    a:hover {
-      opacity: 0.8;
-    }
+    /* -------------------------------------
+   1) Modern CSS Reset
+------------------------------------- */
 
-    /* Top Navigation */
-    nav {
-      display: flex;
-      position: relative;
-  z-index: 9999; /* High enough so nav is on top */
-      justify-content: space-between;
-      align-items: center;
-      background: #ffffff;
-      padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    nav .nav-left,
-    nav .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    nav a {
-      color: #2c3e50;
-      font-weight: 500;
-      font-size: 1.3rem;
-    }
-    nav img#brand-logo {
-      width: 10%;
-      min-width: 60px;
-    }
+/* Remove default margins & padding */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
 
-    /* Header */
-    header {
-      text-align: center;
-      padding: 30px 10px 20px;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      color: #2c3e50;
-      letter-spacing: 1px;
-    }
-    #tagline {
-      margin-top: 8px;
-      font-size: 1rem;
-      color: #555;
-    }
+/* Make HTML5 elements display like block in older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
 
-    /* About Section */
-    #about {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    #about h2 {
-      font-size: 1.6rem;
-      color: #2c3e50;
-      margin-bottom: 12px;
-    }
-    #about p {
-      color: #555;
-      line-height: 1.6;
-      font-size: 1rem;
-      margin-bottom: 24px;
-    }
+/* Remove list styles */
+ol, ul {
+  list-style: none;
+}
 
-    /* Toast Notification */
-    #toast {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      display: flex;
-      align-items: center;
-      background: #222;
-      border: 2px solid #ffc107;
-      padding: 10px 14px;
-      border-radius: 4px;
-      font-family: 'Minecraftia', sans-serif; /* Only if you want the Minecraft style for toast */
-      text-shadow: 1px 1px #000;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      z-index: 1000;
-    }
-    #toast.show {
-      opacity: 1;
-    }
-    #toast .toast-icon {
-      margin-right: 8px;
-      display: flex;
-      align-items: center;
-    }
-    #toast .toast-icon img {
-      width: 28px;
-      image-rendering: pixelated;
-    }
-    #toast .toast-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    #toast .toast-title {
-      color: #ffc107;
-      font-size: 1rem;
-      margin-bottom: 2px;
-    }
-    #toast .toast-subtitle {
-      color: #fff;
-      font-size: 0.95rem;
-    }
+/* Set consistent box-sizing & smooth scrolling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    .hidden {
-      display: none;
-    }
+/* -------------------------------------
+   2) Base Styles
+------------------------------------- */
 
-    /* Main Container */
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-    }
+/* Body defaults */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f5f7;
+  color: #333;
+  line-height: 1.6;
+}
 
-    /* Question Section */
-    #test {
-      margin-bottom: 40px;
-    }
-    #progress-container {
-      margin-bottom: 15px;
-      text-align: right;
-      font-size: 0.95rem;
-      color: #666;
-    }
-    #question-container {
-      margin-bottom: 30px;
-    }
-    #question-title {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
-    #answer-options {
-      list-style: none;
-      padding: 0;
-    }
-    /* Each LI will hold a "square" style radio input + label */
-    #answer-options li {
-      background: #f2f2f2;
-      margin-bottom: 15px;
-      padding: 15px;
-      border-radius: 6px;
-      border: 2px solid transparent;
-      transition: background 0.3s, transform 0.2s, border 0.3s;
-    }
-    #answer-options li:hover {
-      background: #e8e8e8;
-      transform: translateX(5px);
-    }
+/* Anchor defaults */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+a:hover {
+  opacity: 0.8;
+}
 
-    /* The label for the input so the entire row is clickable */
-    #answer-options label {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      user-select: none;
-    }
+/* -------------------------------------
+   3) Navigation
+------------------------------------- */
+nav {
+  display: flex;
+  position: relative;
+  z-index: 9999;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+nav .nav-left,
+nav .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+nav a {
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+nav img#brand-logo {
+  width: 10%;
+  min-width: 60px;
+  pointer-events: none; /* Prevent logo from blocking clicks if it overlaps */
+}
 
-    /* The square radio input with a tick. */
-    #answer-options input[type="radio"] {
-      appearance: none;
-      -webkit-appearance: none;
-      background-color: #fff;
-      border: 2px solid #ccc;
-      width: 22px;
-      height: 22px;
-      margin-right: 10px;
-      outline: none;
-      cursor: pointer;
-      border-radius: 2px; /* square corners */
-      position: relative;
-      top: 1px; /* small alignment tweak */
-      transition: background-color 0.2s, border-color 0.2s;
-    }
-    #answer-options input[type="radio"]:checked::before {
-      content: "✔";
-      color: #2c3e50;
-      font-weight: bold;
-      position: absolute;
-      left: 1px;
-      top: -3px;
-      font-size: 1.3rem;
-    }
-    #answer-options input[type="radio"]:checked {
-      border-color: #4ca1af;
-    }
+/* -------------------------------------
+   4) Header
+------------------------------------- */
+header {
+  text-align: center;
+  padding: 30px 10px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #2c3e50;
+  letter-spacing: 1px;
+}
+#tagline {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #555;
+}
 
-    /* Buttons */
-    button {
-      display: inline-block;
-      background: #4ca1af;
-      color: #fff;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-      margin: 20px 5px 0 5px;
-    }
-    button:hover {
-      background: #3b8d99;
-    }
-    /* Camera button with icon */
-    #screenshot-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    #screenshot-btn img {
-      width: 20px;
-      height: 20px;
-    }
+/* -------------------------------------
+   5) About Section
+------------------------------------- */
+#about {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+#about h2 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+#about p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
 
-    /* Results Section */
-    #results {
-      background: #f9f9f9;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-      margin-top: 30px;
-      text-align: left;
-    }
-    #results h2 {
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-      text-align: center;
-      border-bottom: 2px solid #4ca1af;
-      padding-bottom: 10px;
-      color: #2c3e50;
-    }
-    /* Structured Results */
-    .result-section {
-      margin-bottom: 15px;
-    }
-    .result-section h3 {
-      margin-bottom: 5px;
-      color: #2c3e50;
-      font-size: 1.1rem;
-    }
-    .result-section p {
-      margin: 0;
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.4;
-    }
-    /* Character image styling */
-    .character-image {
-      max-width: 200px;
-      display: block;
-      margin: 10px auto;
-      border-radius: 8px;
-    }
+/* -------------------------------------
+   6) Toast Notification
+------------------------------------- */
+#toast {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  background: #222;
+  border: 2px solid #ffc107;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-family: 'Minecraftia', sans-serif; /* Only if you want the Minecraft style for toast */
+  text-shadow: 1px 1px #000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+}
+#toast.show {
+  opacity: 1;
+}
+#toast .toast-icon {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+#toast .toast-icon img {
+  width: 28px;
+  image-rendering: pixelated;
+}
+#toast .toast-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#toast .toast-title {
+  color: #ffc107;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+#toast .toast-subtitle {
+  color: #fff;
+  font-size: 0.95rem;
+}
 
-    /* Footer */
-    footer {
-      background: #fff;
-      padding: 20px 10px;
-      text-align: center;
-      border-top: 1px solid #ddd;
-      margin-top: 40px;
-    }
-    footer p {
-      margin: 5px 0;
-      font-size: 0.9rem;
-      color: #777;
-    }
-    footer .social-icons {
-      margin-top: 10px;
-    }
-    footer .social-icons img {
-      width: 3%;
-      margin: 0 8px;
-      transition: opacity 0.3s;
-      cursor: pointer;
-    }
-    footer .social-icons img:hover {
-      opacity: 0.7;
-    }
+/* Hide element helper */
+.hidden {
+  display: none;
+}
 
-    /* Responsive Styles */
-    @media (max-width: 970px) {
-      nav .nav-left a,
-      nav .nav-right a {
-        font-size: 1rem;
-      }
-      header h1 {
-        font-size: 3.5rem;
-      }
-      #tagline {
-        font-size: 0.95rem;
-      }
-      #about p{
-        font-size:0.9rem;
-      }
-      main {
-        padding: 30px;
-      }
-      #question-title {
-        font-size: 1.15rem;
-      }
-      nav img#brand-logo {
-        width: 15%;
-      }
-      footer .social-icons img {
-        width: 10%;
-      }
-      /* Make the toast smaller on phones */
-      #toast {
-        top: 10px;
-        left: 10px;
-        padding: 6px 10px;
-        font-size: 0.8rem;
-      }
-      #toast .toast-icon img {
-        width: 20px;
-      }
-      #toast .toast-title {
-        font-size: 0.85rem;
-      }
-      #toast .toast-subtitle {
-        font-size: 0.75rem;
-      }
-    }
+/* -------------------------------------
+   7) Main Container
+------------------------------------- */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* -------------------------------------
+   8) Personality Test Section
+------------------------------------- */
+#test {
+  margin-bottom: 40px;
+}
+#progress-container {
+  margin-bottom: 15px;
+  text-align: right;
+  font-size: 0.95rem;
+  color: #666;
+}
+#question-container {
+  margin-bottom: 30px;
+}
+#question-title {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+#answer-options {
+  list-style: none;
+  padding: 0;
+}
+#answer-options li {
+  background: #f2f2f2;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: background 0.3s, transform 0.2s, border 0.3s;
+}
+#answer-options li:hover {
+  background: #e8e8e8;
+  transform: translateX(5px);
+}
+#answer-options label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+#answer-options input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+  position: relative;
+  top: 1px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+#answer-options input[type="radio"]:checked::before {
+  content: "✔";
+  color: #2c3e50;
+  font-weight: bold;
+  position: absolute;
+  left: 1px;
+  top: -3px;
+  font-size: 1.3rem;
+}
+#answer-options input[type="radio"]:checked {
+  border-color: #4ca1af;
+}
+
+/* -------------------------------------
+   9) Buttons
+------------------------------------- */
+button {
+  display: inline-block;
+  background: #4ca1af;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 20px 5px 0 5px;
+}
+button:hover {
+  background: #3b8d99;
+}
+#screenshot-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+#screenshot-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* -------------------------------------
+   10) Results Section
+------------------------------------- */
+#results {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  margin-top: 30px;
+  text-align: left;
+}
+#results h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #4ca1af;
+  padding-bottom: 10px;
+  color: #2c3e50;
+}
+.result-section {
+  margin-bottom: 15px;
+}
+.result-section h3 {
+  margin-bottom: 5px;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+.result-section p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+.character-image {
+  max-width: 200px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+}
+
+/* -------------------------------------
+   11) Footer
+------------------------------------- */
+footer {
+  background: #fff;
+  padding: 20px 10px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+footer p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #777;
+}
+footer .social-icons {
+  margin-top: 10px;
+}
+footer .social-icons img {
+  width: 3%;
+  margin: 0 8px;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+footer .social-icons img:hover {
+  opacity: 0.7;
+}
+
+/* -------------------------------------
+   12) Responsive Styles
+------------------------------------- */
+@media (max-width: 970px) {
+  nav .nav-left a,
+  nav .nav-right a {
+    font-size: 1rem;
+  }
+  header h1 {
+    font-size: 3.5rem;
+  }
+  #tagline {
+    font-size: 0.95rem;
+  }
+  #about p {
+    font-size: 0.9rem;
+  }
+  main {
+    padding: 30px;
+  }
+  #question-title {
+    font-size: 1.15rem;
+  }
+  nav img#brand-logo {
+    width: 15%;
+  }
+  footer .social-icons img {
+    width: 10%;
+  }
+  /* Make the toast smaller on phones */
+  #toast {
+    top: 10px;
+    left: 10px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  #toast .toast-icon img {
+    width: 20px;
+  }
+  #toast .toast-title {
+    font-size: 0.85rem;
+  }
+  #toast .toast-subtitle {
+    font-size: 0.75rem;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -431,7 +490,8 @@
     <section id="test">
       <!-- Progress indicator -->
       <div id="progress-container">
-        <span id="progress-text">Question 1 of 8</span>
+        <!-- Will display something like "Question 1 of 15" -->
+        <span id="progress-text">Question 1 of 15</span>
       </div>
       <div id="question-container">
         <h2 id="question-title">Your question will appear here</h2>
@@ -448,7 +508,10 @@
       <div id="evaluation"></div>
       <div id="recommendations"></div>
       <div>
-        <button id="restart-btn">Restart Test</button>
+        <button id="restart-btn">
+          <img src="restart.png" alt="Restart icon" style="width:18px; height:18px; margin-right:6px;" />
+          Restart Test
+        </button>
         <button id="screenshot-btn">
           <img src="camera.png" alt="Camera icon" />
           Share/Download
@@ -481,512 +544,596 @@
 </footer>
 
   
-  <script>
-    /********** Toast Titles **********/
-    const toastTitles = [
-      "Nice Choice!",
-      "Looking Good...",
-      "Achievement!",
-      "Well Done!",
-      "Fantastic!"
-    ];
-  
-    /*
-      For each characteristic, we store multiple variant messages in an array.
-      We'll cycle through them in the order they appear.
-    */
-    const toastMessagesMultiple = {
-      introvert: [
-        "Calm and thoughtful - your ideas run deep.",
-        "Silent but brilliant - your reflection is key.",
-        "Reserved yet insightful - wisdom in solitude."
-      ],
-      extrovert: [
-        "A burst of energy - you thrive around people!",
-        "Outgoing and unstoppable - you light up every room!",
-        "Social butterfly - your vibe is contagious!"
-      ],
-      balanced: [
-        "Harmony is your superpower!",
-        "Adaptable and balanced - you’re the best of both worlds!",
-        "Flexibility is your forte - you find middle ground easily."
-      ],
-      active: [
-        "Always on the move - unstoppable energy!",
-        "Full of life - no challenge is too big for you!",
-        "Action-oriented - you turn ideas into reality!"
-      ],
-      leader: [
-        "Leadership material - you take charge!",
-        "Born to lead - your vision is inspiring!",
-        "Commanding presence - others look up to you!"
-      ],
-      supportive: [
-        "Compassionate and caring - a true helper!",
-        "Always there to lend a hand - empathy is your strength!",
-        "Supportive and kind - your warmth brightens the team!"
-      ],
-      creative: [
-        "No limits to your imagination!",
-        "Inventive mind - you see possibilities everywhere!",
-        "Visionary spirit - you bring new ideas to life!"
+<script>
+  /********** Toast Titles **********/
+  const toastTitles = [
+    "Nice Choice!",
+    "Looking Good...",
+    "Achievement!",
+    "Well Done!",
+    "Fantastic!"
+  ];
+
+  /*
+    For each characteristic, we store multiple variant messages in an array.
+    We'll cycle through them in the order they appear.
+  */
+  const toastMessagesMultiple = {
+    introvert: [
+      "Calm and thoughtful - your ideas run deep.",
+      "Silent but brilliant - your reflection is key.",
+      "Reserved yet insightful - wisdom in solitude."
+    ],
+    extrovert: [
+      "A burst of energy - you thrive around people!",
+      "Outgoing and unstoppable - you light up every room!",
+      "Social butterfly - your vibe is contagious!"
+    ],
+    balanced: [
+      "Harmony is your superpower!",
+      "Adaptable and balanced - you’re the best of both worlds!",
+      "Flexibility is your forte - you find middle ground easily."
+    ],
+    active: [
+      "Always on the move - unstoppable energy!",
+      "Full of life - no challenge is too big for you!",
+      "Action-oriented - you turn ideas into reality!"
+    ],
+    leader: [
+      "Leadership material - you take charge!",
+      "Born to lead - your vision is inspiring!",
+      "Commanding presence - others look up to you!"
+    ],
+    supportive: [
+      "Compassionate and caring - a true helper!",
+      "Always there to lend a hand - empathy is your strength!",
+      "Supportive and kind - your warmth brightens the team!"
+    ],
+    creative: [
+      "No limits to your imagination!",
+      "Inventive mind - you see possibilities everywhere!",
+      "Visionary spirit - you bring new ideas to life!"
+    ]
+  };
+
+  /*
+    We'll keep counters for each characteristic so we can pick the correct variant.
+  */
+  const toastMessageCounters = {
+    introvert: 0,
+    extrovert: 0,
+    balanced: 0,
+    active: 0,
+    leader: 0,
+    supportive: 0,
+    creative: 0
+  };
+
+  /********** Toast Notification Logic (3s duration) **********/
+  function showToastForCharacteristic(characteristic) {
+    const messages = toastMessagesMultiple[characteristic] || ["Great choice!"];
+    let index = toastMessageCounters[characteristic];
+    if (index >= messages.length) {
+      index = messages.length - 1;
+    }
+    const subtitleText = messages[index];
+    toastMessageCounters[characteristic]++;
+    showToast(subtitleText);
+  }
+
+  function showToast(subtitleText) {
+    const toastEl = document.getElementById("toast");
+    const toastTitleEl = document.getElementById("toast-title");
+    const subtitleEl = document.getElementById("toast-subtitle");
+
+    const randomIndex = Math.floor(Math.random() * toastTitles.length);
+    toastTitleEl.textContent = toastTitles[randomIndex];
+    subtitleEl.textContent = subtitleText;
+
+    toastEl.classList.remove("hidden");
+    void toastEl.offsetWidth; // Force reflow for transition
+    toastEl.classList.add("show");
+
+    // Visible for 3 seconds (3000ms)
+    setTimeout(() => {
+      toastEl.classList.remove("show");
+      setTimeout(() => {
+        toastEl.classList.add("hidden");
+      }, 500);
+    }, 3000);
+  }
+
+  /********** Questions Array **********/
+  const questions = [
+    {
+      question: "1. How do you prefer to spend your free time?",
+      options: [
+        { text: "Reading a book", value: "introvert" },
+        { text: "Attending a social event", value: "extrovert" },
+        { text: "Trying a new hobby", value: "balanced" },
+        { text: "Exercising outdoors", value: "active" }
       ]
-    };
-  
-    /*
-      We'll keep counters for each characteristic so we can pick the correct variant.
-    */
-    const toastMessageCounters = {
-      introvert: 0,
-      extrovert: 0,
-      balanced: 0,
-      active: 0,
-      leader: 0,
-      supportive: 0,
-      creative: 0
-    };
-  
-    /********** Toast Notification Logic **********/
-    function showToastForCharacteristic(characteristic) {
-      // Get the array of possible messages
-      const messages = toastMessagesMultiple[characteristic] || ["Great choice!"];
-  
-      // Determine which index to use
-      let index = toastMessageCounters[characteristic];
-      if (index >= messages.length) {
-        index = messages.length - 1;
-      }
-  
-      const subtitleText = messages[index];
-      toastMessageCounters[characteristic]++;
-  
-      showToast(subtitleText);
+    },
+    {
+      question: "2. In group projects, what role do you take on?",
+      options: [
+        { text: "Taking the lead", value: "leader" },
+        { text: "Supporting the team", value: "supportive" },
+        { text: "Generating creative ideas", value: "creative" },
+        { text: "Balancing ideas and action", value: "balanced" }
+      ]
+    },
+    {
+      question: "3. When facing a challenging problem, what is your approach?",
+      options: [
+        { text: "I analyze it thoroughly before acting", value: "introvert" },
+        { text: "I take charge and plan a solution", value: "leader" },
+        { text: "I seek input and collaborate", value: "supportive" },
+        { text: "I think outside the box for innovative solutions", value: "creative" }
+      ]
+    },
+    {
+      question: "4. How do you handle conflicts with others?",
+      options: [
+        { text: "I reflect privately to understand the conflict", value: "introvert" },
+        { text: "I confront the issue head-on with clear communication", value: "extrovert" },
+        { text: "I mediate by listening and empathizing", value: "supportive" },
+        { text: "I seek a balanced approach, weighing all perspectives", value: "balanced" }
+      ]
+    },
+    {
+      question: "5. What best describes your work style?",
+      options: [
+        { text: "I meticulously plan and organize tasks", value: "leader" },
+        { text: "I adapt quickly and work energetically under pressure", value: "active" },
+        { text: "I prefer a harmonious blend of teamwork and independence", value: "balanced" },
+        { text: "I rely on creative problem-solving to get things done", value: "creative" }
+      ]
+    },
+    {
+      question: "6. How do you prefer to receive feedback?",
+      options: [
+        { text: "In a thoughtful, one-on-one setting", value: "introvert" },
+        { text: "In an open discussion with the team", value: "extrovert" },
+        { text: "I appreciate constructive and actionable advice", value: "leader" },
+        { text: "I value supportive and empathetic insights", value: "supportive" }
+      ]
+    },
+    {
+      question: "7. Which team dynamic appeals to you most?",
+      options: [
+        { text: "A structured team with clear leadership", value: "leader" },
+        { text: "A collaborative team where everyone shares ideas", value: "balanced" },
+        { text: "A creative team that values innovation", value: "creative" },
+        { text: "A fast-paced team that thrives on energy", value: "active" }
+      ]
+    },
+    {
+      question: "8. How do you approach personal growth?",
+      options: [
+        { text: "I set clear goals and work methodically towards them", value: "leader" },
+        { text: "I reflect on my actions and seek self-improvement", value: "introvert" },
+        { text: "I learn from others and value constructive criticism", value: "supportive" },
+        { text: "I explore new experiences and embrace change", value: "active" }
+      ]
     }
-  
-    function showToast(subtitleText) {
-      const toastEl = document.getElementById("toast");
-      const toastTitleEl = document.getElementById("toast-title");
-      const subtitleEl = document.getElementById("toast-subtitle");
-  
-      // Pick a random main title from toastTitles
-      const randomIndex = Math.floor(Math.random() * toastTitles.length);
-      toastTitleEl.textContent = toastTitles[randomIndex];
-      subtitleEl.textContent = subtitleText;
-  
-      toastEl.classList.remove("hidden");
-      void toastEl.offsetWidth; // Force reflow for transition
-      toastEl.classList.add("show");
-  
-      setTimeout(() => {
-        toastEl.classList.remove("show");
-        setTimeout(() => {
-          toastEl.classList.add("hidden");
-        }, 500);
-      }, 3000);
-    }
-  
-    /********** Questions Array **********/
-    const questions = [
-      {
-        question: "1. How do you prefer to spend your free time?",
-        options: [
-          { text: "Reading a book", value: "introvert" },
-          { text: "Attending a social event", value: "extrovert" },
-          { text: "Trying a new hobby", value: "balanced" },
-          { text: "Exercising outdoors", value: "active" }
-        ]
-      },
-      {
-        question: "2. In group projects, what role do you take on?",
-        options: [
-          { text: "Taking the lead", value: "leader" },
-          { text: "Supporting the team", value: "supportive" },
-          { text: "Generating creative ideas", value: "creative" },
-          { text: "Balancing ideas and action", value: "balanced" }
-        ]
-      },
-      {
-        question: "3. When facing a challenging problem, what is your approach?",
-        options: [
-          { text: "I analyze it thoroughly before acting", value: "introvert" },
-          { text: "I take charge and plan a solution", value: "leader" },
-          { text: "I seek input and collaborate", value: "supportive" },
-          { text: "I think outside the box for innovative solutions", value: "creative" }
-        ]
-      },
-      {
-        question: "4. How do you handle conflicts with others?",
-        options: [
-          { text: "I reflect privately to understand the conflict", value: "introvert" },
-          { text: "I confront the issue head-on with clear communication", value: "extrovert" },
-          { text: "I mediate by listening and empathizing", value: "supportive" },
-          { text: "I seek a balanced approach, weighing all perspectives", value: "balanced" }
-        ]
-      },
-      {
-        question: "5. What best describes your work style?",
-        options: [
-          { text: "I meticulously plan and organize tasks", value: "leader" },
-          { text: "I adapt quickly and work energetically under pressure", value: "active" },
-          { text: "I prefer a harmonious blend of teamwork and independence", value: "balanced" },
-          { text: "I rely on creative problem-solving to get things done", value: "creative" }
-        ]
-      },
-      {
-        question: "6. How do you prefer to receive feedback?",
-        options: [
-          { text: "In a thoughtful, one-on-one setting", value: "introvert" },
-          { text: "In an open discussion with the team", value: "extrovert" },
-          { text: "I appreciate constructive and actionable advice", value: "leader" },
-          { text: "I value supportive and empathetic insights", value: "supportive" }
-        ]
-      },
-      {
-        question: "7. Which team dynamic appeals to you most?",
-        options: [
-          { text: "A structured team with clear leadership", value: "leader" },
-          { text: "A collaborative team where everyone shares ideas", value: "balanced" },
-          { text: "A creative team that values innovation", value: "creative" },
-          { text: "A fast-paced team that thrives on energy", value: "active" }
-        ]
-      },
-      {
-        question: "8. How do you approach personal growth?",
-        options: [
-          { text: "I set clear goals and work methodically towards them", value: "leader" },
-          { text: "I reflect on my actions and seek self-improvement", value: "introvert" },
-          { text: "I learn from others and value constructive criticism", value: "supportive" },
-          { text: "I explore new experiences and embrace change", value: "active" }
-        ]
-      }
-    ];
-  
-    let currentQuestionIndex = 0;
-    let personalityScores = {
-      introvert: 0,
-      extrovert: 0,
-      balanced: 0,
-      active: 0,
-      leader: 0,
-      supportive: 0,
-      creative: 0
-    };
-  
-    // DOM Elements
-    const progressTextEl = document.getElementById('progress-text');
-    const questionTitleEl = document.getElementById('question-title');
-    const answerOptionsEl = document.getElementById('answer-options');
-    const nextBtn = document.getElementById('next-btn');
-    const resultsSection = document.getElementById('results');
-    const testSection = document.getElementById('test');
-    const evaluationEl = document.getElementById('evaluation');
-    const recommendationsEl = document.getElementById('recommendations');
-    const restartBtn = document.getElementById('restart-btn');
-    const screenshotBtn = document.getElementById('screenshot-btn');
-  
-    /* 
-      Display the current question 
-    */
-    function displayQuestion() {
-      progressTextEl.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
-      answerOptionsEl.innerHTML = "";
-  
-      const currentQuestion = questions[currentQuestionIndex];
-      questionTitleEl.textContent = currentQuestion.question;
-      
-      currentQuestion.options.forEach((option, idx) => {
-        const li = document.createElement('li');
-        const inputId = `q${currentQuestionIndex}-option${idx}`;
-  
-        li.innerHTML = `
-          <label for="${inputId}">
-            <input type="radio" name="question${currentQuestionIndex}" id="${inputId}" value="${option.value}" />
-            ${option.text}
-          </label>
-        `;
-        answerOptionsEl.appendChild(li);
-      });
-    }
-  
-    /* 
-      Next button logic:
-      - Ensure an answer is selected
-      - Increment the relevant personality score
-      - Show the multi-variant toast
-      - Move to next question or evaluate
-    */
-    nextBtn.addEventListener('click', () => {
-      const checkedInput = answerOptionsEl.querySelector('input[type="radio"]:checked');
-      if (!checkedInput) {
-        alert("Please select an answer before proceeding.");
-        return;
-      }
-      const selectedValue = checkedInput.value;
-      if (personalityScores[selectedValue] !== undefined) {
-        personalityScores[selectedValue]++;
-      }
-  
-      // Show a variant toast for this characteristic
-      showToastForCharacteristic(selectedValue);
-      
-      currentQuestionIndex++;
-      // Delay to let the toast appear
-      setTimeout(() => {
-        if (currentQuestionIndex < questions.length) {
-          displayQuestion();
-        } else {
-          evaluateResults();
-        }
-      }, 600);
+  ];
+
+  let currentQuestionIndex = 0;
+  const personalityScores = {
+    introvert: 0,
+    extrovert: 0,
+    balanced: 0,
+    active: 0,
+    leader: 0,
+    supportive: 0,
+    creative: 0
+  };
+
+  // DOM Elements
+  const progressTextEl = document.getElementById("progress-text");
+  const questionTitleEl = document.getElementById("question-title");
+  const answerOptionsEl = document.getElementById("answer-options");
+  const nextBtn = document.getElementById("next-btn");
+  const resultsSection = document.getElementById("results");
+  const testSection = document.getElementById("test");
+  const evaluationEl = document.getElementById("evaluation");
+  const recommendationsEl = document.getElementById("recommendations");
+  const restartBtn = document.getElementById("restart-btn");
+  const screenshotBtn = document.getElementById("screenshot-btn");
+
+  /* 
+    Display the current question 
+  */
+  function displayQuestion() {
+    progressTextEl.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+    answerOptionsEl.innerHTML = "";
+
+    const currentQuestion = questions[currentQuestionIndex];
+    questionTitleEl.textContent = currentQuestion.question;
+
+    currentQuestion.options.forEach((option, idx) => {
+      const li = document.createElement("li");
+      const inputId = `q${currentQuestionIndex}-option${idx}`;
+
+      li.innerHTML = `
+        <label for="${inputId}">
+          <input type="radio" name="question${currentQuestionIndex}" id="${inputId}" value="${option.value}" />
+          ${option.text}
+        </label>
+      `;
+      answerOptionsEl.appendChild(li);
     });
-  
-    /* 
-      Restart the test 
-    */
-    restartBtn.innerHTML = `
+  }
+
+  /*
+    Next button logic:
+    - Ensure an answer is selected
+    - Increment the relevant personality score
+    - Show the multi-variant toast
+    - Move to next question or evaluate
+  */
+  nextBtn.addEventListener("click", () => {
+    const checkedInput = answerOptionsEl.querySelector('input[type="radio"]:checked');
+    if (!checkedInput) {
+      alert("Please select an answer before proceeding.");
+      return;
+    }
+    const selectedValue = checkedInput.value;
+    if (personalityScores[selectedValue] !== undefined) {
+      personalityScores[selectedValue]++;
+    }
+
+    // Show a variant toast for this characteristic
+    showToastForCharacteristic(selectedValue);
+
+    currentQuestionIndex++;
+    // Delay to let the toast appear
+    setTimeout(() => {
+      if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+      } else {
+        evaluateResults();
+      }
+    }, 600);
+  });
+
+  /*
+    Restart the test
+  */
+  restartBtn.innerHTML = `
     <img src="restart.png" alt="Restart icon" style="width:18px; height:18px; margin-right:6px;" />
     Restart Test
   `;
-  restartBtn.addEventListener('click', () => {
+  restartBtn.addEventListener("click", () => {
     currentQuestionIndex = 0;
     // Reset all personality scores
-    for (let key in personalityScores) {
+    for (const key in personalityScores) {
       personalityScores[key] = 0;
     }
     // Reset counters for the multi-variant messages
-    for (let key in toastMessageCounters) {
+    for (const key in toastMessageCounters) {
       toastMessageCounters[key] = 0;
     }
 
-    resultsSection.classList.add('hidden');
-    testSection.classList.remove('hidden');
+    resultsSection.classList.add("hidden");
+    testSection.classList.remove("hidden");
     displayQuestion();
   });
 
-    /* 
-      Screenshot + share results 
-    */
-    screenshotBtn.addEventListener('click', () => {
-      takeScreenshotAndShare();
-    });
-  
-    function takeScreenshotAndShare() {
-      html2canvas(document.getElementById('results')).then(canvas => {
-        canvas.toBlob(blob => {
-          const file = new File([blob], 'personality-results.png', { type: 'image/png' });
-          
-          if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
-            navigator.share({
-              title: 'My Personality Result',
-              text: 'Check out my personality result from Zinava!',
+  /*
+    Screenshot + share results
+  */
+  screenshotBtn.addEventListener("click", () => {
+    takeScreenshotAndShare();
+  });
+
+  function takeScreenshotAndShare() {
+    html2canvas(document.getElementById("results")).then((canvas) => {
+      canvas.toBlob((blob) => {
+        const file = new File([blob], "personality-results.png", { type: "image/png" });
+
+        if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+          navigator
+            .share({
+              title: "My Personality Result",
+              text: "Check out my personality result from Zinava!",
               files: [file],
             })
-            .then(() => console.log('Results shared successfully.'))
-            .catch(err => console.error('Share failed:', err));
-          } else {
-            const dataURL = canvas.toDataURL('image/png');
-            const link = document.createElement('a');
-            link.download = 'personality-results.png';
-            link.href = dataURL;
-            link.target = '_blank';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          }
-        });
+            .then(() => console.log("Results shared successfully."))
+            .catch((err) => console.error("Share failed:", err));
+        } else {
+          const dataURL = canvas.toDataURL("image/png");
+          const link = document.createElement("a");
+          link.download = "personality-results.png";
+          link.href = dataURL;
+          link.target = "_blank";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
       });
+    });
+  }
+
+  /*
+    Evaluate results: find the top 2 traits,
+    then display the final personality result
+  */
+  function evaluateResults() {
+    testSection.classList.add("hidden");
+    resultsSection.classList.remove("hidden");
+
+    // Convert personalityScores to an array like [ [key, score], ... ]
+    const scoresArray = Object.entries(personalityScores);
+    // Sort descending by score
+    scoresArray.sort((a, b) => b[1] - a[1]);
+
+    // Always get the top trait
+    const [primaryTrait, primaryScore] = scoresArray[0];
+
+    // We'll show a secondary trait only if it has a non-zero score
+    let secondaryTrait = null;
+    let secondaryScore = null;
+    let foundSecondary = false;
+
+    if (scoresArray.length > 1) {
+      const [possibleSecondTrait, possibleSecondScore] = scoresArray[1];
+      // If second place is > 0, we treat it as secondary
+      if (possibleSecondScore > 0) {
+        secondaryTrait = possibleSecondTrait;
+        secondaryScore = possibleSecondScore;
+        foundSecondary = true;
+      }
     }
-  
-    /*
-      Evaluate results: find the highest scoring type,
-      then display the final personality result 
-    */
-    function evaluateResults() {
-      testSection.classList.add('hidden');
-      resultsSection.classList.remove('hidden');
-      
-      let maxScore = 0;
-      let personalityType = '';
-      for (let type in personalityScores) {
-        if (personalityScores[type] > maxScore) {
-          maxScore = personalityScores[type];
-          personalityType = type;
+
+    // Personality data
+    const personalityData = {
+      introvert: {
+        title: "The Reflective Sage",
+        character: "Wise Owl",
+        image: "owl.png",
+        description: "You are introspective and value solitude, finding depth in quiet moments...",
+        strengths: "Thoughtful, insightful, and capable of deep connections.",
+        improvement: "Express your inner thoughts more openly.",
+        compatibility: ["balanced", "supportive", "creative"],
+        recommendations: "Consider careers in research, writing, or artistic endeavors...",
+        filmCharacter: {
+          name: "Batman",
+          image: "batman.png",
+          note: "A brooding, introspective vigilante from the DC Universe."
+        }
+      },
+      extrovert: {
+        title: "The Social Dynamo",
+        character: "Vibrant Lion",
+        image: "lion.png",
+        description: "You thrive in social settings and draw energy from interactions...",
+        strengths: "Outgoing, energetic, and a natural communicator.",
+        improvement: "Balance your social interactions with quiet moments.",
+        compatibility: ["balanced", "leader", "active"],
+        recommendations: "Explore careers in public relations, sales, or event management...",
+        filmCharacter: {
+          name: "Tony Stark",
+          image: "tony.png",
+          note: "From Marvel’s 'Iron Man', representing a bold and social personality."
+        }
+      },
+      balanced: {
+        title: "The Harmonizer",
+        character: "Adaptive Chameleon",
+        image: "chameleon.png",
+        description: "You strike a balance between introspection and sociability...",
+        strengths: "Adaptable, well-rounded, and open-minded.",
+        improvement: "Manage moments when you feel pulled in different directions.",
+        compatibility: ["introvert", "extrovert", "supportive", "leader"],
+        recommendations: "Your versatility can lead to success in project management, design, or teaching...",
+        filmCharacter: {
+          name: "Hermione Granger",
+          image: "hermione.png",
+          note: "Balances intelligence, teamwork, and independence in 'Harry Potter'."
+        }
+      },
+      active: {
+        title: "The Energetic Explorer",
+        character: "Free-Spirited Falcon",
+        image: "falcon.png",
+        description: "Your dynamic nature pushes you to seek new experiences...",
+        strengths: "Adventurous, enthusiastic, and highly energetic.",
+        improvement: "Plan ahead to balance your impulsiveness.",
+        compatibility: ["extrovert", "leader", "balanced"],
+        recommendations: "Consider careers in fitness, travel, or event coordination...",
+        filmCharacter: {
+          name: "Indiana Jones",
+          image: "indiana.png",
+          note: "An adventurous archaeologist from the 'Indiana Jones' series."
+        }
+      },
+      leader: {
+        title: "The Visionary Leader",
+        character: "Bold Eagle",
+        image: "eagle.png",
+        description: "You naturally take charge and inspire with a clear vision...",
+        strengths: "Decisive, ambitious, and motivational.",
+        improvement: "Balance assertiveness with collaboration.",
+        compatibility: ["extrovert", "active", "balanced"],
+        recommendations: "Roles in management, entrepreneurship, or politics could be ideal...",
+        filmCharacter: {
+          name: "Patrick Bateman",
+          image: "patrick.png",
+          note: "A controlling, intense personality from 'American Psycho'."
+        }
+      },
+      supportive: {
+        title: "The Nurturing Companion",
+        character: "Gentle Deer",
+        image: "deer.png",
+        description: "Your empathy makes you a trusted friend...",
+        strengths: "Compassionate, reliable, and an excellent listener.",
+        improvement: "Remember to care for yourself too.",
+        compatibility: ["introvert", "balanced", "creative"],
+        recommendations: "Explore careers in healthcare, counseling, or education...",
+        filmCharacter: {
+          name: "Samwise Gamgee",
+          image: "samwise.png",
+          note: "The loyal friend from 'The Lord of the Rings' series."
+        }
+      },
+      creative: {
+        title: "The Innovative Creator",
+        character: "Imaginative Fox",
+        image: "fox.png",
+        description: "Your originality is your greatest asset...",
+        strengths: "Imaginative, resourceful, and inventive.",
+        improvement: "Focus on practical details to realize your ideas.",
+        compatibility: ["supportive", "balanced", "introvert"],
+        recommendations: "Consider creative roles in design, advertising, or the arts...",
+        filmCharacter: {
+          name: "Edward Scissorhands",
+          image: "edward.png",
+          note: "A uniquely creative individual from Tim Burton’s film."
+        }
+      },
+      default: {
+        title: "A Unique Personality",
+        character: "Mysterious Unicorn",
+        image: "unicorn.png",
+        description: "Your personality is one-of-a-kind...",
+        strengths: "Diverse strengths that make you who you are.",
+        improvement: "Keep exploring your interests and capabilities.",
+        compatibility: [],
+        recommendations: "Continue exploring various fields and hobbies...",
+        filmCharacter: {
+          name: "N/A",
+          image: "default.png",
+          note: "No direct film character match, but your uniqueness shines!"
         }
       }
-  
-      // Updated personality data with image paths (update the image paths as needed)
-      const personalityData = {
-        introvert: {
-          title: "The Reflective Sage",
-          character: "Wise Owl",
-          image: "owl.png",
-          description: "You are introspective and value solitude, finding depth in quiet moments.",
-          strengths: "Thoughtful, insightful, and capable of deep connections.",
-          improvement: "Express your inner thoughts more openly.",
-          compatibility: ["balanced", "supportive", "creative"],
-          recommendations: "Consider careers such as research, writing, or artistic endeavors. Engage in solitary creative hobbies like painting, journaling, or reading.",
-          filmCharacter: {
-            name: "Batman",
-            image: "batman.png",
-            note: "Known for her introspective nature in the film 'Amélie'."
-          }
-        },
-        extrovert: {
-          title: "The Social Dynamo",
-          character: "Vibrant Lion",
-          image: "lion.png",
-          description: "You thrive in social settings and draw energy from interactions.",
-          strengths: "Outgoing, energetic, and a natural communicator.",
-          improvement: "Balance your social interactions with quiet moments.",
-          compatibility: ["balanced", "leader", "active"],
-          recommendations: "Explore careers in public relations, sales, or event management. Hobbies like team sports, networking, and group travel will fuel your dynamism.",
-          filmCharacter: {
-            name: "Tony Stark",
-            image: "tony.png",
-            note: "From Marvel’s 'Iron Man', representing the bold and social personality."
-          }
-        },
-        balanced: {
-          title: "The Harmonizer",
-          character: "Adaptive Chameleon",
-          image: "chameleon.png",
-          description: "You strike a balance between introspection and sociability.",
-          strengths: "Adaptable, well-rounded, and open-minded.",
-          improvement: "Manage moments when you feel pulled in different directions.",
-          compatibility: ["introvert", "extrovert", "supportive", "leader"],
-          recommendations: "Your versatility can lead to success in project management, design, or teaching. Engage in activities that mix social and solo time.",
-          filmCharacter: {
-            name: "Hermione Granger",
-            image: "hermione.png",
-            note: "Balances intelligence, teamwork, and independence in 'Harry Potter'."
-          }
-        },
-        active: {
-          title: "The Energetic Explorer",
-          character: "Free-Spirited Falcon",
-          image: "falcon.png",
-          description: "Your dynamic nature pushes you to seek new experiences.",
-          strengths: "Adventurous, enthusiastic, and highly energetic.",
-          improvement: "Plan ahead to balance your impulsiveness.",
-          compatibility: ["extrovert", "leader", "balanced"],
-          recommendations: "Consider careers in fitness, travel, or event coordination. Channel your energy into outdoor sports, dance classes, or adventure travel.",
-          filmCharacter: {
-            name: "Indiana Jones",
-            image: "indiana.png",
-            note: "Adventurous and daring, from the 'Tomb Raider' series."
-          }
-        },
-        leader: {
-          title: "The Visionary Leader",
-          character: "Bold Eagle",
-          image: "eagle.png",
-          description: "You naturally take charge and inspire with a clear vision.",
-          strengths: "Decisive, ambitious, and motivational.",
-          improvement: "Balance assertiveness with collaboration.",
-          compatibility: ["extrovert", "active", "balanced"],
-          recommendations: "Roles in management, entrepreneurship, or politics could be ideal. Enhance your skills through leadership workshops and networking groups.",
-          filmCharacter: {
-            name: "Patrick Bateman",
-            image: "patrick.png",
-            note: "A controlling, intense personality from 'American Psycho'."
-          }
-        },
-        supportive: {
-          title: "The Nurturing Companion",
-          character: "Gentle Deer",
-          image: "deer.png",
-          description: "Your empathy makes you a trusted friend.",
-          strengths: "Compassionate, reliable, and an excellent listener.",
-          improvement: "Remember to care for yourself too.",
-          compatibility: ["introvert", "balanced", "creative"],
-          recommendations: "Explore careers in healthcare, counseling, or education. Consider volunteering or mentoring to further nurture your strengths.",
-          filmCharacter: {
-            name: "Samwise Gamgee",
-            image: "samwise.png",
-            note: "The loyal friend from 'The Lord of the Rings' series."
-          }
-        },
-        creative: {
-          title: "The Innovative Creator",
-          character: "Imaginative Fox",
-          image: "fox.png",
-          description: "Your originality is your greatest asset.",
-          strengths: "Imaginative, resourceful, and inventive.",
-          improvement: "Focus on practical details to realize your ideas.",
-          compatibility: ["supportive", "balanced", "introvert"],
-          recommendations: "Consider creative roles in design, advertising, or the arts. Pursue hobbies like writing, painting, or digital creation.",
-          filmCharacter: {
-            name: "Edward Scissorhands",
-            image: "edward.png",
-            note: "A uniquely creative individual from Tim Burton’s film."
-          }
-        },
-        default: {
-          title: "A Unique Personality",
-          character: "Mysterious Unicorn",
-          image: "unicorn.png",
-          description: "Your personality is one-of-a-kind.",
-          strengths: "Diverse strengths that make you who you are.",
-          improvement: "Keep exploring your interests and capabilities.",
-          compatibility: [],
-          recommendations: "Continue exploring various fields and hobbies to discover what truly resonates with you.",
-          filmCharacter: {
-            name: "N/A",
-            image: "default.png",
-            note: "No direct film character match, but your uniqueness shines!"
-          }
-        }
-      };
-  
-      const result = personalityData[personalityType] || personalityData.default;
-      const compatibleTypes = result.compatibility.map(key => personalityData[key].title).join(", ");
-  
-      evaluationEl.innerHTML = `
+    };
+
+    // Get primary trait data
+    const primaryData = personalityData[primaryTrait] || personalityData.default;
+
+    // If we have a valid secondary trait (score > 0), gather that data
+    let secondData = null;
+    if (foundSecondary) {
+      secondData = personalityData[secondaryTrait] || personalityData.default;
+    }
+
+    // Build the result HTML
+    let resultHTML = `
+      <div class="result-section">
+        <h3>Primary Trait: ${primaryData.title}</h3>
+        <p>You are primarily <strong>${primaryData.character}</strong>!</p>
+        <img src="${primaryData.image}" alt="${primaryData.character}" class="character-image" />
+        <h4>Description</h4>
+        <p>${primaryData.description}</p>
+        <h4>Strengths</h4>
+        <p>${primaryData.strengths}</p>
+        <h4>Areas for Improvement</h4>
+        <p>${primaryData.improvement}</p>
+      </div>
+    `;
+
+    // Show secondary trait if valid
+    if (foundSecondary && secondData) {
+      resultHTML += `
         <div class="result-section">
-          <h3>Type: ${result.title}</h3>
-        </div>
-        <div class="result-section">
-          <h3>Character</h3>
-          <p>You are the <strong>${result.character}</strong>!</p>
-          <img src="${result.image}" alt="${result.character}" class="character-image" />
-        </div>
-        <div class="result-section">
-          <h3>Description</h3>
-          <p>${result.description}</p>
-        </div>
-        <div class="result-section">
-          <h3>Strengths</h3>
-          <p>${result.strengths}</p>
-        </div>
-        <div class="result-section">
-          <h3>Areas for Improvement</h3>
-          <p>${result.improvement}</p>
-        </div>
-        <div class="result-section">
-          <h3>Compatibility</h3>
-          <p>Compatible with: ${compatibleTypes || "Everyone in their own way!"}</p>
-        </div>
-  
-        <!-- Famous film character section -->
-        <div class="result-section film-character-section">
-          <h4>Famous Film Character Match</h4>
-          <p><strong>${result.filmCharacter.name}</strong></p>
-          <img src="${result.filmCharacter.image}" alt="${result.filmCharacter.name}" style="max-width:100px; border-radius:4px;" />
-          <p>${result.filmCharacter.note}</p>
-        </div>
-      `;
-      
-      recommendationsEl.innerHTML = `
-        <div class="result-section">
-          <h3>Recommended Career Roles</h3>
-          <p>${result.recommendations}</p>
+          <h3>Secondary Trait: ${secondData.title}</h3>
+          <p>You also show strong <strong>${secondData.character}</strong> tendencies!</p>
+          <img src="${secondData.image}" alt="${secondData.character}" class="character-image" />
+          <h4>Description</h4>
+          <p>${secondData.description}</p>
+          <h4>Strengths</h4>
+          <p>${secondData.strengths}</p>
+          <h4>Areas for Improvement</h4>
+          <p>${secondData.improvement}</p>
         </div>
       `;
     }
-  
-    // Initialize the first question on page load
-    displayQuestion();
-  </script>
-  
+
+    // Compatibility from the primary trait
+    const compatibleTypes = primaryData.compatibility.map(
+      (key) => personalityData[key].title
+    ).join(", ") || "Everyone in their own way!";
+
+    resultHTML += `
+      <div class="result-section">
+        <h3>Compatibility</h3>
+        <p>Compatible with: ${compatibleTypes}</p>
+      </div>
+      <div class="result-section film-character-section">
+        <h4>Famous Film Character Match</h4>
+        <p><strong>${primaryData.filmCharacter.name}</strong></p>
+        <img src="${primaryData.filmCharacter.image}" alt="${primaryData.filmCharacter.name}" style="max-width:100px; border-radius:4px;" />
+        <p>${primaryData.filmCharacter.note}</p>
+      </div>
+    `;
+
+    // Secondary film character if valid
+    if (foundSecondary && secondData) {
+      resultHTML += `
+        <div class="result-section film-character-section">
+          <h4>Secondary Film Character Match</h4>
+          <p><strong>${secondData.filmCharacter.name}</strong></p>
+          <img src="${secondData.filmCharacter.image}" alt="${secondData.filmCharacter.name}" style="max-width:100px; border-radius:4px;" />
+          <p>${secondData.filmCharacter.note}</p>
+        </div>
+      `;
+    }
+
+    // Recommendations from the primary trait
+    resultHTML += `
+      <div class="result-section">
+        <h3>Recommended Career Roles</h3>
+        <p>${primaryData.recommendations}</p>
+      </div>
+    `;
+
+    // Secondary recommendations if valid
+    if (foundSecondary && secondData) {
+      resultHTML += `
+        <div class="result-section">
+          <h3>Additional Career Suggestions (Secondary)</h3>
+          <p>${secondData.recommendations}</p>
+        </div>
+      `;
+    }
+
+    // "Learn More" link
+    let deepDiveURL = `deepdive.html?trait=${primaryTrait}`;
+    if (foundSecondary && secondaryTrait) {
+      deepDiveURL += `&secondary=${secondaryTrait}`;
+    }
+    resultHTML += `
+      <div class="result-section">
+        <h3>Want More Insights?</h3>
+        <p>We’ve prepared a detailed deep-dive into your traits, along with real-life examples and success stories.</p>
+        <a href="${deepDiveURL}" class="learn-more-btn" target="_blank" style="
+          display: inline-block;
+          background: #4ca1af;
+          color: #fff;
+          padding: 12px 25px;
+          border-radius: 6px;
+          text-decoration: none;
+          font-size: 1rem;
+          transition: background 0.3s;
+          margin-top: 10px;
+        ">Learn More</a>
+      </div>
+    `;
+
+    // Inject into the DOM
+    evaluationEl.innerHTML = resultHTML;
+  }
+
+  // Initialize the first question on page load
+  displayQuestion();
+</script>
+
+
+
+
+
 </body>
 </html>
