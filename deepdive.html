@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zinvana - Deep Dive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Example styling: you can reuse your main CSS or do a simpler style here -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f5f7;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #2c3e50;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    .trait-section {
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      background: #fafafa;
+    }
+    .trait-section h3 {
+      margin-top: 0;
+      color: #2c3e50;
+      font-size: 1.3rem;
+    }
+    .trait-section p {
+      line-height: 1.5;
+      margin: 10px 0;
+      color: #555;
+    }
+    a.button {
+      display: inline-block;
+      background: #4ca1af;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+    a.button:hover {
+      background: #3b8d99;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Zinvana Deep Dive</h1>
+  </header>
+
+  <main>
+    <h2>Your Extended Personality Insights</h2>
+    <div id="deepdive-content">
+      <!-- Trait details will be injected here -->
+    </div>
+    <a href="index.html" class="button">Back to Main Page</a>
+  </main>
+
+  <script>
+    // A dictionary containing extended deep-dive data for each trait.
+    const deepDiveData = {
+      introvert: {
+        title: "In-Depth: The Reflective Sage",
+        extendedDescription: `
+          As an introvert, you may recharge best in quieter environments, 
+          finding value in deep thought and reflection. In social settings, 
+          you often prefer smaller groups or meaningful one-on-one interactions.
+        `,
+        realWorldExamples: `
+          <ul>
+            <li><strong>Creative Work:</strong> Many writers and artists enjoy solitude for focusing on their craft.</li>
+            <li><strong>Quiet Leadership:</strong> Some leaders guide effectively with calm, thoughtful decision-making.</li>
+          </ul>
+        `,
+        tips: `
+          <ul>
+            <li>Schedule alone time after big social events to recharge.</li>
+            <li>Practice articulating your ideas so others can appreciate your depth.</li>
+          </ul>
+        `
+      },
+      extrovert: {
+        title: "In-Depth: The Social Dynamo",
+        extendedDescription: `
+          Extroverts thrive on social energy, often feeling recharged by gatherings, 
+          group activities, and teamwork. You might excel at networking, public speaking, 
+          or rallying others around an idea.
+        `,
+        realWorldExamples: `
+          <ul>
+            <li><strong>Team Inspiration:</strong> You may energize colleagues with your enthusiasm.</li>
+            <li><strong>Event Hosting:</strong> Your comfort in crowds makes you a natural host.</li>
+          </ul>
+        `,
+        tips: `
+          <ul>
+            <li>Balance social events with short periods of downtime to prevent burnout.</li>
+            <li>Use your communication skills to support more reserved teammates.</li>
+          </ul>
+        `
+      },
+      balanced: {
+        title: "In-Depth: The Harmonizer",
+        extendedDescription: `
+          As someone who’s balanced, you navigate seamlessly between social and reflective moments. 
+          You’re comfortable working both independently and in groups, adapting to what the situation demands.
+        `,
+        realWorldExamples: `
+          <ul>
+            <li><strong>Versatile Collaboration:</strong> You can mediate between extroverts and introverts.</li>
+            <li><strong>Project Management:</strong> Your adaptability is an asset in complex, changing environments.</li>
+          </ul>
+        `,
+        tips: `
+          <ul>
+            <li>Watch for moments when you feel stretched in multiple directions.</li>
+            <li>Use your flexible nature to unify diverse teams and viewpoints.</li>
+          </ul>
+        `
+      },
+      active: {
+        title: "In-Depth: The Energetic Explorer",
+        extendedDescription: `
+          You thrive in dynamic settings, seeking novel experiences and hands-on challenges. 
+          Your spontaneity can inspire others to break free from routine and embrace action.
+        `,
+        realWorldExamples: `
+          <ul>
+            <li><strong>Adrenaline Pursuits:</strong> Outdoor sports, travel, or any challenge that tests your limits.</li>
+            <li><strong>Quick Adaptation:</strong> You might handle crises or urgent tasks with agility.</li>
+          </ul>
+        `,
+        tips: `
+          <ul>
+            <li>Channel your energy into structured goals so you don't burn out.</li>
+            <li>Balance impulsiveness with occasional planning sessions.</li>
+          </ul>
+        `
+      },
+      leader: {
+        title: "In-Depth: The Visionary Leader",
+        extendedDescription: `
+          You excel at taking charge, setting clear goals, and motivating others to follow your vision. 
+          While your ambition can drive results, collaboration is key to sustainable leadership.
+        `,
+        realWorldExamples: `
+          <ul>
+            <li><strong>Startups & Entrepreneurship:</strong> Your decisive nature suits fast-paced innovation.</li>
+            <li><strong>Team Building:</strong> People often look to you for guidance and inspiration.</li>
+          </ul>
+        `,
+        tips: `
+          <ul>
+            <li>Foster open communication to gather feedback and new ideas.</li>
+            <li>Remember to delegate and trust your team.</li>
+          </ul>
+        `
+      },
+      supportive: {
+        title: "In-Depth: The Nurturing Companion",
+        extendedDescription: `
+          Compassionate and empathetic, you provide invaluable support to those around you. 
+          You’re often the “glue” that holds teams and relationships together.
+        `,
+        realWorldExamples: `
+          <ul>
+            <li><strong>Care-Focused Roles:</strong> Counseling, healthcare, or mentoring are common paths.</li>
+            <li><strong>Conflict Resolution:</strong> Your empathy can de-escalate tense situations.</li>
+          </ul>
+        `,
+        tips: `
+          <ul>
+            <li>Maintain healthy boundaries so you don’t take on everyone’s burdens.</li>
+            <li>Speak up about your own needs and goals, too.</li>
+          </ul>
+        `
+      },
+      creative: {
+        title: "In-Depth: The Innovative Creator",
+        extendedDescription: `
+          Original ideas flow naturally for you. You see possibilities where others see obstacles, 
+          often inventing unique solutions or artistic expressions.
+        `,
+        realWorldExamples: `
+          <ul>
+            <li><strong>Artistic Pursuits:</strong> Design, music, writing, and more can be fulfilling outlets.</li>
+            <li><strong>Brainstorming Star:</strong> Teams appreciate your outside-the-box thinking.</li>
+          </ul>
+        `,
+        tips: `
+          <ul>
+            <li>Partner with practical-minded individuals to bring your ideas to life.</li>
+            <li>Organize your creative thoughts so they don’t become overwhelming.</li>
+          </ul>
+        `
+      },
+      default: {
+        title: "In-Depth: A Unique Personality",
+        extendedDescription: `
+          You don't fit neatly into any single category, and that can be a powerful advantage. 
+          Embrace your unique blend of traits to find new paths.
+        `,
+        realWorldExamples: `
+          <ul>
+            <li><strong>Versatile Strengths:</strong> You may excel at multiple skill sets, from analytics to creativity.</li>
+            <li><strong>Adaptive Thinking:</strong> You can pivot quickly between various roles or tasks.</li>
+          </ul>
+        `,
+        tips: `
+          <ul>
+            <li>Explore different fields to discover hidden passions.</li>
+            <li>Embrace your individuality—it’s what makes you stand out.</li>
+          </ul>
+        `
+      }
+    };
+
+    // Parse the URL for trait and secondary
+    const params = new URLSearchParams(window.location.search);
+    const trait = params.get("trait") || "default";
+    const secondary = params.get("secondary");
+
+    // Container for the deepdive
+    const deepDiveContainer = document.getElementById("deepdive-content");
+
+    // Primary trait deep dive data
+    const primaryTraitData = deepDiveData[trait] || deepDiveData.default;
+    let deepDiveHTML = `
+      <div class="trait-section">
+        <h3>${primaryTraitData.title}</h3>
+        <p>${primaryTraitData.extendedDescription}</p>
+        <h4>Real-World Examples</h4>
+        <p>${primaryTraitData.realWorldExamples}</p>
+        <h4>Tips & Strategies</h4>
+        <p>${primaryTraitData.tips}</p>
+      </div>
+    `;
+
+    // If there's a secondary trait, show that too
+    if (secondary) {
+      const secondaryTraitData = deepDiveData[secondary] || deepDiveData.default;
+      deepDiveHTML += `
+        <div class="trait-section">
+          <h3>${secondaryTraitData.title} (Secondary)</h3>
+          <p>${secondaryTraitData.extendedDescription}</p>
+          <h4>Real-World Examples</h4>
+          <p>${secondaryTraitData.realWorldExamples}</p>
+          <h4>Tips & Strategies</h4>
+          <p>${secondaryTraitData.tips}</p>
+        </div>
+      `;
+    }
+
+    deepDiveContainer.innerHTML = deepDiveHTML;
+  </script>
+</body>
+</html>
