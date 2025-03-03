@@ -953,129 +953,131 @@ footer .social-icons img:hover {
       }
     }
 
-    // Personality data
-    const personalityData = {
-      introvert: {
-        title: "The Reflective Sage",
-        character: "Wise Owl",
-        image: "owl.png",
-        description: "You are introspective and value solitude, finding depth in quiet moments...",
-        strengths: "Thoughtful, insightful, and capable of deep connections.",
-        improvement: "Express your inner thoughts more openly.",
-        compatibility: ["balanced", "supportive", "creative"],
-        recommendations: "Consider careers in research, writing, or artistic endeavors...",
-        filmCharacter: {
-          name: "Batman",
-          image: "batman.png",
-          note: "A brooding, introspective vigilante from the DC Universe."
-        }
-      },
-      extrovert: {
-        title: "The Social Dynamo",
-        character: "Vibrant Lion",
-        image: "lion.png",
-        description: "You thrive in social settings and draw energy from interactions...",
-        strengths: "Outgoing, energetic, and a natural communicator.",
-        improvement: "Balance your social interactions with quiet moments.",
-        compatibility: ["balanced", "leader", "active"],
-        recommendations: "Explore careers in public relations, sales, or event management...",
-        filmCharacter: {
-          name: "Tony Stark",
-          image: "tony.png",
-          note: "From Marvel’s 'Iron Man', representing a bold and social personality."
-        }
-      },
-      balanced: {
-        title: "The Harmonizer",
-        character: "Adaptive Chameleon",
-        image: "chameleon.png",
-        description: "You strike a balance between introspection and sociability...",
-        strengths: "Adaptable, well-rounded, and open-minded.",
-        improvement: "Manage moments when you feel pulled in different directions.",
-        compatibility: ["introvert", "extrovert", "supportive", "leader"],
-        recommendations: "Your versatility can lead to success in project management, design, or teaching...",
-        filmCharacter: {
-          name: "Hermione Granger",
-          image: "hermione.png",
-          note: "Balances intelligence, teamwork, and independence in 'Harry Potter'."
-        }
-      },
-      active: {
-        title: "The Energetic Explorer",
-        character: "Free-Spirited Falcon",
-        image: "falcon.png",
-        description: "Your dynamic nature pushes you to seek new experiences...",
-        strengths: "Adventurous, enthusiastic, and highly energetic.",
-        improvement: "Plan ahead to balance your impulsiveness.",
-        compatibility: ["extrovert", "leader", "balanced"],
-        recommendations: "Consider careers in fitness, travel, or event coordination...",
-        filmCharacter: {
-          name: "Indiana Jones",
-          image: "indiana.png",
-          note: "An adventurous archaeologist from the 'Indiana Jones' series."
-        }
-      },
-      leader: {
-        title: "The Visionary Leader",
-        character: "Bold Eagle",
-        image: "eagle.png",
-        description: "You naturally take charge and inspire with a clear vision...",
-        strengths: "Decisive, ambitious, and motivational.",
-        improvement: "Balance assertiveness with collaboration.",
-        compatibility: ["extrovert", "active", "balanced"],
-        recommendations: "Roles in management, entrepreneurship, or politics could be ideal...",
-        filmCharacter: {
-          name: "Patrick Bateman",
-          image: "patrick.png",
-          note: "A controlling, intense personality from 'American Psycho'."
-        }
-      },
-      supportive: {
-        title: "The Nurturing Companion",
-        character: "Gentle Deer",
-        image: "deer.png",
-        description: "Your empathy makes you a trusted friend...",
-        strengths: "Compassionate, reliable, and an excellent listener.",
-        improvement: "Remember to care for yourself too.",
-        compatibility: ["introvert", "balanced", "creative"],
-        recommendations: "Explore careers in healthcare, counseling, or education...",
-        filmCharacter: {
-          name: "Samwise Gamgee",
-          image: "samwise.png",
-          note: "The loyal friend from 'The Lord of the Rings' series."
-        }
-      },
-      creative: {
-        title: "The Innovative Creator",
-        character: "Imaginative Fox",
-        image: "fox.png",
-        description: "Your originality is your greatest asset...",
-        strengths: "Imaginative, resourceful, and inventive.",
-        improvement: "Focus on practical details to realize your ideas.",
-        compatibility: ["supportive", "balanced", "introvert"],
-        recommendations: "Consider creative roles in design, advertising, or the arts...",
-        filmCharacter: {
-          name: "Edward Scissorhands",
-          image: "edward.png",
-          note: "A uniquely creative individual from Tim Burton’s film."
-        }
-      },
-      default: {
-        title: "A Unique Personality",
-        character: "Mysterious Unicorn",
-        image: "unicorn.png",
-        description: "Your personality is one-of-a-kind...",
-        strengths: "Diverse strengths that make you who you are.",
-        improvement: "Keep exploring your interests and capabilities.",
-        compatibility: [],
-        recommendations: "Continue exploring various fields and hobbies...",
-        filmCharacter: {
-          name: "N/A",
-          image: "default.png",
-          note: "No direct film character match, but your uniqueness shines!"
-        }
-      }
-    };
+    // Personality data with all-male, "cooler" film characters
+const personalityData = {
+  introvert: {
+    title: "The Reflective Sage",
+    character: "Wise Owl",
+    image: "owl.png",
+    description: "You are introspective and value solitude, finding depth in quiet moments...",
+    strengths: "Thoughtful, insightful, and capable of deep connections.",
+    improvement: "Express your inner thoughts more openly.",
+    compatibility: ["balanced", "supportive", "creative"],
+    recommendations: "Consider careers in research, writing, or artistic endeavors...",
+    filmCharacter: {
+      name: "Batman",
+      image: "batman.png",
+      note: "A brooding, introspective vigilante from the DC Universe."
+    }
+  },
+  extrovert: {
+    title: "The Social Dynamo",
+    character: "Vibrant Lion",
+    image: "lion.png",
+    description: "You thrive in social settings and draw energy from interactions...",
+    strengths: "Outgoing, energetic, and a natural communicator.",
+    improvement: "Balance your social interactions with quiet moments.",
+    compatibility: ["balanced", "leader", "active"],
+    recommendations: "Explore careers in public relations, sales, or event management...",
+    filmCharacter: {
+      name: "Tony Stark",
+      image: "tony.png",
+      note: "From Marvel’s 'Iron Man', representing a bold and social personality."
+    }
+  },
+  balanced: {
+    title: "The Harmonizer",
+    character: "Adaptive Chameleon",
+    image: "chameleon.png",
+    description: "You strike a balance between introspection and sociability...",
+    strengths: "Adaptable, well-rounded, and open-minded.",
+    improvement: "Manage moments when you feel pulled in different directions.",
+    compatibility: ["introvert", "extrovert", "supportive", "leader"],
+    recommendations: "Your versatility can lead to success in project management, design, or teaching...",
+    filmCharacter: {
+      name: "James Bond",
+      image: "james.png",
+      note: "A suave secret agent who balances calm strategy with social charm."
+    }
+  },
+  active: {
+    title: "The Energetic Explorer",
+    character: "Free-Spirited Falcon",
+    image: "falcon.png",
+    description: "Your dynamic nature pushes you to seek new experiences...",
+    strengths: "Adventurous, enthusiastic, and highly energetic.",
+    improvement: "Plan ahead to balance your impulsiveness.",
+    compatibility: ["extrovert", "leader", "balanced"],
+    recommendations: "Consider careers in fitness, travel, or event coordination...",
+    filmCharacter: {
+      name: "John Wick",
+      image: "john.png",
+      note: "Relentless, unstoppable, from the 'John Wick' series."
+    }
+  },
+  leader: {
+    title: "The Visionary Leader",
+    character: "Bold Eagle",
+    image: "eagle.png",
+    description: "You naturally take charge and inspire with a clear vision...",
+    strengths: "Decisive, ambitious, and motivational.",
+    improvement: "Balance assertiveness with collaboration.",
+    compatibility: ["extrovert", "active", "balanced"],
+    recommendations: "Roles in management, entrepreneurship, or politics could be ideal...",
+    filmCharacter: {
+      name: "Patrick Bateman",
+      image: "patrick.png",
+      note: "A controlling, intense personality from 'American Psycho'."
+    }
+  },
+  supportive: {
+    title: "The Nurturing Companion",
+    character: "Gentle Deer",
+    image: "deer.png",
+    description: "Your empathy makes you a trusted friend...",
+    strengths: "Compassionate, reliable, and an excellent listener.",
+    improvement: "Remember to care for yourself too.",
+    compatibility: ["introvert", "balanced", "creative"],
+    recommendations: "Explore careers in healthcare, counseling, or education...",
+    filmCharacter: {
+      name: "Alfred Pennyworth",
+      image: "alfred.png",
+      note: "Batman’s loyal butler and confidant—always supportive."
+    }
+  },
+  creative: {
+  title: "The Innovative Creator",
+  character: "Imaginative Fox",
+  image: "fox.png",
+  description: "Your originality is your greatest asset...",
+  strengths: "Imaginative, resourceful, and inventive.",
+  improvement: "Focus on practical details to realize your ideas.",
+  compatibility: ["supportive", "balanced", "introvert"],
+  recommendations: "Consider creative roles in design, advertising, or the arts...",
+  filmCharacter: {
+    name: "Jack Sparrow",
+    image: "jack.png",
+    note: "A witty, free-spirited pirate from the 'Pirates of the Caribbean' series."
+  }
+
+  },
+  default: {
+    title: "A Unique Personality",
+    character: "Mysterious Unicorn",
+    image: "unicorn.png",
+    description: "Your personality is one-of-a-kind...",
+    strengths: "Diverse strengths that make you who you are.",
+    improvement: "Keep exploring your interests and capabilities.",
+    compatibility: [],
+    recommendations: "Continue exploring various fields and hobbies...",
+    filmCharacter: {
+      name: "N/A",
+      image: "default.png",
+      note: "No direct film character match, but your uniqueness shines!"
+    }
+  }
+};
+
 
     // Get primary trait data
     const primaryData = personalityData[primaryTrait] || personalityData.default;
