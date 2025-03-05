@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zinvana - Free personality test</title>
+  
+  <!-- Basic SEO -->
+  <meta name="description" content="Take a quick and free, research-backed personality test on Zinvana to discover your strengths, improvement areas, and recommended career paths." />
+  <meta name="keywords" content="Zinvana, personality test, self-discovery, career advice, psychology, introspection, personal growth" />
+  <meta name="author" content="Zinvana" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Zinvana - Discover Your Personality" />
+  <meta property="og:description" content="Zinvana’s short, research-backed personality test reveals your strengths, areas for improvement, and recommended career paths." />
+  <meta property="og:image" content="cover.png" />
+  <meta property="og:url" content="https://zinvana.com" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- (Optional) Minecraft-like Font for Toast Only -->
+  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
+  <!-- Roboto for the rest of the site -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- html2canvas for screenshots -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  
+  <style>
+    /* -------------------------------------
+     1) Modern CSS Reset
+    ------------------------------------- */
+  
+    /* Remove default margins & padding */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, font, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      vertical-align: baseline;
+    }
+  
+    /* Make HTML5 elements display like block in older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+      display: block;
+    }
+  
+    /* Remove list styles */
+    ol, ul {
+      list-style: none;
+    }
+  
+    /* Set consistent box-sizing & smooth scrolling */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+  
+    /* -------------------------------------
+     2) Base Styles
+    ------------------------------------- */
+  
+    /* Body defaults */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f5f7;
+      color: #333;
+      line-height: 1.6;
+    }
+  
+    /* Anchor defaults */
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.3s;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+  
+    /* -------------------------------------
+     3) Navigation (Squid Game Theme)
+    ------------------------------------- */
+    nav {
+      display: flex;
+      position: relative;
+      z-index: 9999;
+      justify-content: space-between;
+      align-items: center;
+      background: #000; /* Dark background */
+      padding: 15px 20px;
+      box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2); /* Red-ish shadow */
+    }
+    nav .nav-left,
+    nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff; /* White text */
+      font-weight: 500;
+      font-size: 1.3rem;
+    }
+    nav a:hover {
+      color: #d32f2f; /* Red on hover */
+    }
+    nav img#brand-logo {
+      width: 10%;
+      min-width: 60px;
+      pointer-events: none;
+    }
+  
+    /* -------------------------------------
+     4) Header (Squid Game Theme)
+    ------------------------------------- */
+    header {
+      text-align: center;
+      padding: 30px 10px 20px;
+      background: linear-gradient(135deg, #000, #d32f2f);
+      border-bottom: 2px solid #d32f2f;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      color: #fff; /* White text */
+      letter-spacing: 1px;
+    }
+    #tagline {
+      margin-top: 8px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+  
+    /* -------------------------------------
+     5) About Section
+    ------------------------------------- */
+    #about {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    #about h2 {
+      font-size: 1.6rem;
+      color: #4e4e4e;
+      margin-bottom: 12px;
+    }
+    #about p {
+      color: #3d3d3d;
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+  
+    /* -------------------------------------
+     6) Toast Notification (Squid Game Theme)
+    ------------------------------------- */
+    #toast {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      background: #000;
+      border: 2px solid #d32f2f;
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-family: 'Minecraftia', sans-serif;
+      text-shadow: 1px 1px #000;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1000;
+    }
+    #toast.show {
+      opacity: 1;
+    }
+    #toast .toast-icon {
+      margin-right: 8px;
+      display: flex;
+      align-items: center;
+    }
+    #toast .toast-icon img {
+      width: 28px;
+      image-rendering: pixelated;
+    }
+    #toast .toast-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #toast .toast-title {
+      color: #d32f2f;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+    #toast .toast-subtitle {
+      color: #fff;
+      font-size: 0.95rem;
+    }
+  
+    /* Hide element helper */
+    .hidden {
+      display: none;
+    }
+  
+    /* -------------------------------------
+     7) Main Container (Squid Game Theme)
+    ------------------------------------- */
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    }
+  
+    /* -------------------------------------
+     8) Personality Test Section (Squid Game Theme)
+    ------------------------------------- */
+    #test {
+      margin-bottom: 40px;
+    }
+    #progress-container {
+      margin-bottom: 15px;
+      text-align: right;
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+    #question-container {
+      margin-bottom: 30px;
+    }
+    #question-title {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    #answer-options {
+      list-style: none;
+      padding: 0;
+    }
+    #answer-options li {
+      background: #2a2a2a;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      transition: background 0.3s, transform 0.2s, border 0.3s;
+    }
+    #answer-options li:hover {
+      background: #3a3a3a;
+      transform: translateX(5px);
+    }
+    #answer-options label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    #answer-options input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: #fff;
+      border: 2px solid #ccc;
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+      outline: none;
+      cursor: pointer;
+      border-radius: 2px;
+      position: relative;
+      top: 1px;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+    #answer-options input[type="radio"]:checked::before {
+      content: "✔";
+      color: #d32f2f;
+      font-weight: bold;
+      position: absolute;
+      left: 1px;
+      top: -3px;
+      font-size: 1.3rem;
+    }
+    #answer-options input[type="radio"]:checked {
+      border-color: #d32f2f;
+    }
+  
+    /* -------------------------------------
+     9) Buttons (Squid Game Theme)
+    ------------------------------------- */
+    button {
+      display: inline-block;
+      background: #d32f2f;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin: 20px 5px 0 5px;
+    }
+    button:hover {
+      background: #b71c1c;
+    }
+    #screenshot-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    #screenshot-btn img {
+      width: 20px;
+      height: 20px;
+    }
+  
+    /* -------------------------------------
+     10) Results Section (Squid Game Theme)
+    ------------------------------------- */
+    #results {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+      margin-top: 30px;
+      text-align: left;
+    }
+    #results h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 2px solid #d32f2f;
+      padding-bottom: 10px;
+      color: #fff;
+    }
+    .result-section {
+      margin-bottom: 15px;
+    }
+    .result-section h3 {
+      margin-bottom: 5px;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    .result-section p {
+      margin: 0;
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.4;
+    }
+    .character-image {
+      max-width: 200px;
+      display: block;
+      margin: 10px auto;
+      border-radius: 8px;
+    }
+  
+    /* -------------------------------------
+     11) Footer (Squid Game Theme)
+    ------------------------------------- */
+    footer {
+      background: #000;
+      padding: 20px 10px;
+      text-align: center;
+      border-top: 1px solid #d32f2f;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    footer .social-icons {
+      margin-top: 10px;
+    }
+    footer .social-icons img {
+      width: 3%;
+      margin: 0 8px;
+      transition: opacity 0.3s;
+      cursor: pointer;
+    }
+    footer .social-icons img:hover {
+      opacity: 0.7;
+    }
+  
+    /* -------------------------------------
+     12) Responsive Styles
+    ------------------------------------- */
+    @media (max-width: 970px) {
+      nav .nav-left a,
+      nav .nav-right a {
+        font-size: 1rem;
+      }
+      header h1 {
+        font-size: 3.5rem;
+      }
+      #tagline {
+        font-size: 0.95rem;
+      }
+      #about p {
+        font-size: 0.9rem;
+      }
+      main {
+        padding: 30px;
+      }
+      #question-title {
+        font-size: 1.15rem;
+      }
+      nav img#brand-logo {
+        width: 15%;
+      }
+      footer .social-icons img {
+        width: 10%;
+      }
+      /* Make the toast smaller on phones */
+      #toast {
+        top: 10px;
+        left: 10px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+      }
+      #toast .toast-icon img {
+        width: 20px;
+      }
+      #toast .toast-title {
+        font-size: 0.85rem;
+      }
+      #toast .toast-subtitle {
+        font-size: 0.75rem;
+      }
+      #results h2{
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+  
+
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav>
+    <div class="nav-left">
+      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
+      <a href="#test">Test</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho">Contact</a>
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Zinvana</h1>
+    <div id="tagline">Trusted Personality Insights</div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>Discover Who You Are</h2>
+    <p>
+      Zinvana’s personality test is designed by a team of psychologists and data scientists.
+      Through this short questionnaire, you'll gain insights into your strengths,
+      areas for improvement, and recommended career paths. We value your privacy and do not store personal data.
+    </p>
+  </section>
+
+  <!-- Toast Notification Element -->
+  <div id="toast" class="hidden">
+    <div class="toast-icon">
+      <img src="heart.png" alt="heart icon" id="heart" />
+    </div>
+    <div class="toast-text">
+      <div class="toast-title" id="toast-title">Achievement!</div>
+      <div class="toast-subtitle" id="toast-subtitle"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Personality Test Section -->
+    <section id="test">
+      <!-- Progress indicator -->
+      <div id="progress-container">
+        <!-- Will display something like "Question 1 of 15" -->
+        <span id="progress-text">Question 1 of 15</span>
+      </div>
+      <div id="question-container">
+        <h2 id="question-title">Your question will appear here</h2>
+        <ul id="answer-options">
+          <!-- Radio button answers will be dynamically generated here -->
+        </ul>
+      </div>
+      <button id="next-btn">Next</button>
+    </section>
+    
+    <!-- Results Section -->
+    <section id="results" class="hidden">
+      <h2>Your Personality Results</h2>
+      <div id="evaluation"></div>
+      <div id="recommendations"></div>
+      <div>
+        <button id="restart-btn">
+          <img src="restart.png" alt="Restart icon" style="width:18px; height:18px; margin-right:6px;" />
+          Restart Test
+        </button>
+        <button id="screenshot-btn">
+          <img src="camera.png" alt="Camera icon" />
+          Share/Download
+        </button>
+      </div>
+    </section>
+  </main>
+
+ <!-- Footer -->
+<footer>
+  <p>© 2025 Zinvana. All rights reserved.</p>
+  <p>
+    This test is for informational purposes only and does not replace professional advice.<br />
+    No personal data is stored or shared.
+  </p>
+  <div class="social-icons">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
+      <img src="whiteinsta.png" alt="instagram" />
+    </a>
+    <!-- X (Twitter) -->
+    <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
+        <img src="whitex.png" alt="x" />
+      </a>
+    <!-- YouTube -->
+    <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
+      <img src="youtube.png" alt="youtube" />
+    </a>
+  </div>
+</footer>
+
+  
+<script>
+  /********** Squid Game–Style Toast Titles **********/
+  const toastTitles = [
+    "Good Move!",
+    "Smart Play!",
+    "Well Played!",
+    "Next Level!",
+    "High Stakes!"
+  ];
+
+  /*
+    For each characteristic, we store multiple variant messages.
+    These messages now evoke the intensity of Squid Game.
+  */
+  const toastMessagesMultiple = {
+    introvert: [
+      "Quiet like the mastermind behind the scenes.",
+      "Your calm hides a reservoir of wisdom.",
+      "Subtle yet powerful – you play the long game."
+    ],
+    extrovert: [
+      "Bold and decisive – you make your move!",
+      "Your charisma commands attention in any arena.",
+      "High stakes and high energy – that's your style."
+    ],
+    balanced: [
+      "A survivor in every sense – balanced and resilient!",
+      "You know when to hold back and when to strike.",
+      "Your equilibrium makes you unpredictable."
+    ],
+    active: [
+      "Relentless energy – you charge forward without fear!",
+      "No challenge is too big when you’re on the move.",
+      "You’re the force that turns the game around."
+    ],
+    leader: [
+      "Born to lead – you set the pace for the game.",
+      "Your strategy and command are unmatched.",
+      "You take charge even under the highest pressure."
+    ],
+    supportive: [
+      "Loyal and caring – you’re the ally everyone needs.",
+      "You stand by your team no matter what the stakes.",
+      "Your support is as vital as any move in the game."
+    ],
+    creative: [
+      "Unpredictable and daring – you think outside the box.",
+      "Your unconventional moves keep everyone guessing.",
+      "Innovation is your secret weapon in the game."
+    ],
+    ruthless: [
+      "Cold and calculating – you never back down.",
+      "Your resolve is as unyielding as steel.",
+      "Merciless in pursuit, you make decisive moves."
+    ],
+    vigilant: [
+      "Ever-watchful – you notice every detail.",
+      "Your instincts keep you one step ahead.",
+      "Relentlessly curious, you seek the truth at all costs."
+    ],
+    vip: [
+      "Your cool detachment speaks volumes.",
+      "You observe with a discerning eye.",
+      "Your presence commands silent respect."
+    ],
+    organizer: [
+      "Every move is a calculated step.",
+      "You orchestrate chaos like a symphony.",
+      "Your plans always come to fruition."
+    ],
+    mercenary: [
+      "No obstacle stands in your way.",
+      "Your actions are swift and decisive.",
+      "You deliver results without mercy."
+    ]
+  };
+
+  /*
+    We'll keep counters for each characteristic so we can cycle through messages.
+  */
+  const toastMessageCounters = {
+    introvert: 0,
+    extrovert: 0,
+    balanced: 0,
+    active: 0,
+    leader: 0,
+    supportive: 0,
+    creative: 0,
+    ruthless: 0,
+    vigilant: 0,
+    vip: 0,
+    organizer: 0,
+    mercenary: 0
+  };
+
+  /********** Toast Notification Logic (3s duration) **********/
+  function showToastForCharacteristic(characteristic) {
+    const messages = toastMessagesMultiple[characteristic] || ["Solid move!"];
+    let index = toastMessageCounters[characteristic];
+    if (index >= messages.length) {
+      index = messages.length - 1;
+    }
+    const subtitleText = messages[index];
+    toastMessageCounters[characteristic]++;
+    showToast(subtitleText);
+  }
+
+  function showToast(subtitleText) {
+    const toastEl = document.getElementById("toast");
+    const toastTitleEl = document.getElementById("toast-title");
+    const subtitleEl = document.getElementById("toast-subtitle");
+
+    const randomIndex = Math.floor(Math.random() * toastTitles.length);
+    toastTitleEl.textContent = toastTitles[randomIndex];
+    subtitleEl.textContent = subtitleText;
+
+    toastEl.classList.remove("hidden");
+    void toastEl.offsetWidth; // Force reflow for transition
+    toastEl.classList.add("show");
+
+    // Visible for 3 seconds (3000ms)
+    setTimeout(() => {
+      toastEl.classList.remove("show");
+      setTimeout(() => {
+        toastEl.classList.add("hidden");
+      }, 500);
+    }, 3000);
+  }
+
+  /********** Expanded Questions Array (15 questions) **********/
+  const questions = [
+    {
+      question: "1. How do you prefer to spend your free time?",
+      options: [
+        { text: "Reflecting quietly – like planning your next move", value: "introvert" },
+        { text: "Rallying with friends – making bold connections", value: "extrovert" },
+        { text: "Experimenting with new tactics", value: "balanced" },
+        { text: "Engaging in physical challenges", value: "active" }
+      ]
+    },
+    {
+      question: "2. In group challenges, what role do you take on?",
+      options: [
+        { text: "Taking decisive charge", value: "leader" },
+        { text: "Supporting the team from the shadows", value: "supportive" },
+        { text: "Generating creative strategies", value: "creative" },
+        { text: "Striking a balance between action and thought", value: "balanced" }
+      ]
+    },
+    {
+      question: "3. When facing a high-pressure situation, what is your approach?",
+      options: [
+        { text: "Analyzing every risk before making a move", value: "introvert" },
+        { text: "Seizing control with confidence", value: "leader" },
+        { text: "Collaborating to find the best solution", value: "supportive" },
+        { text: "Innovating unexpected strategies", value: "creative" }
+      ]
+    },
+    {
+      question: "4. How do you handle conflicts?",
+      options: [
+        { text: "Retreat to strategize quietly", value: "introvert" },
+        { text: "Confront head-on with clear tactics", value: "extrovert" },
+        { text: "Mediate and listen to all sides", value: "supportive" },
+        { text: "Find a balanced resolution", value: "balanced" }
+      ]
+    },
+    {
+      question: "5. What best describes your approach under pressure?",
+      options: [
+        { text: "Meticulous planning like a seasoned player", value: "leader" },
+        { text: "Quick, dynamic moves", value: "active" },
+        { text: "A steady balance between risk and caution", value: "balanced" },
+        { text: "Creative solutions against all odds", value: "creative" }
+      ]
+    },
+    {
+      question: "6. How do you prefer to receive feedback?",
+      options: [
+        { text: "In private – refining your strategy", value: "introvert" },
+        { text: "Directly, to improve your play", value: "extrovert" },
+        { text: "Constructively, with clear insights", value: "leader" },
+        { text: "Supportively, to boost morale", value: "supportive" }
+      ]
+    },
+    {
+      question: "7. Which team dynamic suits you best?",
+      options: [
+        { text: "A structured squad with a clear leader", value: "leader" },
+        { text: "A team that collaborates seamlessly", value: "balanced" },
+        { text: "A group bursting with innovative ideas", value: "creative" },
+        { text: "A high-energy crew ready for any challenge", value: "active" }
+      ]
+    },
+    {
+      question: "8. How do you approach personal growth?",
+      options: [
+        { text: "Setting clear, calculated goals", value: "leader" },
+        { text: "Reflecting deeply to improve silently", value: "introvert" },
+        { text: "Learning from every encounter", value: "supportive" },
+        { text: "Diving into new experiences headfirst", value: "active" }
+      ]
+    },
+    {
+      question: "9. What fuels your drive?",
+      options: [
+        { text: "Solitude to strategize", value: "introvert" },
+        { text: "The buzz of high-stakes interactions", value: "extrovert" },
+        { text: "A balance of action and thought", value: "balanced" },
+        { text: "The adrenaline of direct challenges", value: "active" }
+      ]
+    },
+    {
+      question: "10. How do you react to sudden changes?",
+      options: [
+        { text: "Pause and reassess quietly", value: "introvert" },
+        { text: "Adapt instantly and keep the momentum", value: "extrovert" },
+        { text: "Seek a balanced, team-oriented solution", value: "balanced" },
+        { text: "Embrace the chaos and take swift action", value: "active" }
+      ]
+    },
+    {
+      question: "11. In a brainstorming session, you usually...",
+      options: [
+        { text: "Listen intently before speaking up", value: "introvert" },
+        { text: "Enthusiastically share every idea", value: "extrovert" },
+        { text: "Keep the discussion balanced", value: "balanced" },
+        { text: "Propose out-of-the-box strategies", value: "creative" }
+      ]
+    },
+    {
+      question: "12. How do you manage stress in the game?",
+      options: [
+        { text: "By retreating and planning in solitude", value: "introvert" },
+        { text: "By rallying with your allies", value: "extrovert" },
+        { text: "By taking charge with a clear plan", value: "leader" },
+        { text: "By engaging in active challenges", value: "active" }
+      ]
+    },
+    {
+      question: "13. What motivates you during tough rounds?",
+      options: [
+        { text: "The promise of quiet growth", value: "introvert" },
+        { text: "The thrill of high-stakes camaraderie", value: "extrovert" },
+        { text: "Knowing your team relies on you", value: "supportive" },
+        { text: "The drive to lead and win", value: "leader" }
+      ]
+    },
+    {
+      question: "14. Which statement resonates with your game plan?",
+      options: [
+        { text: "I find strength in solitude", value: "introvert" },
+        { text: "I thrive on dynamic interactions", value: "extrovert" },
+        { text: "I prefer a balanced approach", value: "balanced" },
+        { text: "I charge headfirst into new challenges", value: "active" }
+      ]
+    },
+    {
+      question: "15. When you’re stuck, how do you find your next move?",
+      options: [
+        { text: "By reflecting deeply on past rounds", value: "introvert" },
+        { text: "By collaborating with trusted allies", value: "extrovert" },
+        { text: "By researching every possibility", value: "balanced" },
+        { text: "By experimenting with bold strategies", value: "creative" }
+      ]
+    }
+  ];
+
+  let currentQuestionIndex = 0;
+  const personalityScores = {
+    introvert: 0,
+    extrovert: 0,
+    balanced: 0,
+    active: 0,
+    leader: 0,
+    supportive: 0,
+    creative: 0,
+    ruthless: 0,
+    vigilant: 0,
+    vip: 0,
+    organizer: 0,
+    mercenary: 0
+  };
+
+  // DOM Elements
+  const progressTextEl = document.getElementById("progress-text");
+  const questionTitleEl = document.getElementById("question-title");
+  const answerOptionsEl = document.getElementById("answer-options");
+  const nextBtn = document.getElementById("next-btn");
+  const resultsSection = document.getElementById("results");
+  const testSection = document.getElementById("test");
+  const evaluationEl = document.getElementById("evaluation");
+  const recommendationsEl = document.getElementById("recommendations");
+  const restartBtn = document.getElementById("restart-btn");
+  const screenshotBtn = document.getElementById("screenshot-btn");
+
+  /* 
+    Display the current question 
+  */
+  function displayQuestion() {
+    progressTextEl.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+    answerOptionsEl.innerHTML = "";
+
+    const currentQuestion = questions[currentQuestionIndex];
+    questionTitleEl.textContent = currentQuestion.question;
+
+    currentQuestion.options.forEach((option, idx) => {
+      const li = document.createElement("li");
+      const inputId = `q${currentQuestionIndex}-option${idx}`;
+
+      li.innerHTML = `
+        <label for="${inputId}">
+          <input type="radio" name="question${currentQuestionIndex}" id="${inputId}" value="${option.value}" />
+          ${option.text}
+        </label>
+      `;
+      answerOptionsEl.appendChild(li);
+    });
+  }
+
+  /*
+    Next button logic:
+    - Ensure an answer is selected
+    - Increment the relevant personality score
+    - Show the themed toast
+    - Move to next question or evaluate
+  */
+  nextBtn.addEventListener("click", () => {
+    const checkedInput = answerOptionsEl.querySelector('input[type="radio"]:checked');
+    if (!checkedInput) {
+      alert("Please select an answer before proceeding.");
+      return;
+    }
+    const selectedValue = checkedInput.value;
+    if (personalityScores[selectedValue] !== undefined) {
+      personalityScores[selectedValue]++;
+    }
+
+    // Show a themed toast for this characteristic
+    showToastForCharacteristic(selectedValue);
+
+    currentQuestionIndex++;
+    // Delay to let the toast appear
+    setTimeout(() => {
+      if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+      } else {
+        evaluateResults();
+      }
+    }, 600);
+  });
+
+  /*
+    Restart the test
+  */
+  restartBtn.innerHTML = `
+    <img src="restart.png" alt="Restart icon" style="width:18px; height:18px; margin-right:6px;" />
+    Restart Test
+  `;
+  restartBtn.addEventListener("click", () => {
+    currentQuestionIndex = 0;
+    // Reset all personality scores
+    for (const key in personalityScores) {
+      personalityScores[key] = 0;
+    }
+    // Reset counters for the themed messages
+    for (const key in toastMessageCounters) {
+      toastMessageCounters[key] = 0;
+    }
+
+    resultsSection.classList.add("hidden");
+    testSection.classList.remove("hidden");
+    displayQuestion();
+  });
+
+  /*
+    Screenshot + share results
+  */
+  screenshotBtn.addEventListener("click", () => {
+    takeScreenshotAndShare();
+  });
+
+  function takeScreenshotAndShare() {
+    html2canvas(document.getElementById("results")).then((canvas) => {
+      canvas.toBlob((blob) => {
+        const file = new File([blob], "personality-results.png", { type: "image/png" });
+
+        if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+          navigator
+            .share({
+              title: "My Squid Game Personality",
+              text: "Check out my Squid Game personality result!",
+              files: [file],
+            })
+            .then(() => console.log("Results shared successfully."))
+            .catch((err) => console.error("Share failed:", err));
+        } else {
+          const dataURL = canvas.toDataURL("image/png");
+          const link = document.createElement("a");
+          link.download = "personality-results.png";
+          link.href = dataURL;
+          link.target = "_blank";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      });
+    });
+  }
+
+  /*
+    Evaluate results: find the top 2 traits,
+    then display the final Squid Game–themed personality result.
+    (The Character Match sections have been removed.)
+  */
+  function evaluateResults() {
+    testSection.classList.add("hidden");
+    resultsSection.classList.remove("hidden");
+
+    // Convert personalityScores to an array like [ [key, score], ... ]
+    const scoresArray = Object.entries(personalityScores);
+    // Sort descending by score
+    scoresArray.sort((a, b) => b[1] - a[1]);
+
+    // Always get the top trait
+    const [primaryTrait, primaryScore] = scoresArray[0];
+
+    // We'll show a secondary trait only if it has a non-zero score
+    let secondaryTrait = null;
+    let foundSecondary = false;
+
+    if (scoresArray.length > 1) {
+      const [possibleSecondTrait, possibleSecondScore] = scoresArray[1];
+      if (possibleSecondScore > 0) {
+        secondaryTrait = possibleSecondTrait;
+        foundSecondary = true;
+      }
+    }
+
+    // Squid Game–themed personality data (using the filmCharacter images for those that work)
+    const personalityData = {
+      introvert: {
+        title: "The Enigmatic Elder",
+        character: "Oh Il-nam",
+        image: "oh.png",  
+        description: "Quiet, reflective, and full of unexpected wisdom. You observe the game with a thoughtful eye.",
+        strengths: "Wise, patient, and deep.",
+        improvement: "Share your insights more openly.",
+        recommendations: "Consider roles where experience and wisdom are valued."
+      },
+      extrovert: {
+        title: "The Calculated Charmer",
+        character: "Cho Sang-woo",
+        image: "cho.png",
+        description: "Confident and persuasive, you make bold moves in high-stakes situations.",
+        strengths: "Strategic, sociable, and decisive.",
+        improvement: "Balance ambition with empathy.",
+        recommendations: "Ideal for roles in strategy and high-level management."
+      },
+      balanced: {
+        title: "The Resilient Survivor",
+        character: "Seong Gi-hun",
+        image: "seong.png",
+        description: "You embody resilience and compassion, navigating challenges with a balanced approach.",
+        strengths: "Adaptable, empathetic, and persistent.",
+        improvement: "Trust your instincts and balance emotion with logic.",
+        recommendations: "Great for roles that require both heart and strategy."
+      },
+      active: {
+        title: "The Unyielding Force",
+        character: "Jang Deok-su",
+        image: "jang.png",
+        description: "Bold and fearless, you charge forward with relentless energy.",
+        strengths: "Decisive, resilient, and dynamic.",
+        improvement: "Channel your energy into constructive actions.",
+        recommendations: "Ideal for roles demanding physical stamina and quick thinking."
+      },
+      leader: {
+        title: "The Determined Trailblazer",
+        character: "Kang Sae-byeok",
+        image: "kang.png",
+        description: "Strong, resourceful, and visionary. You lead with grit and unwavering focus.",
+        strengths: "Decisive, resilient, and inspirational.",
+        improvement: "Balance your drive with collaboration.",
+        recommendations: "Perfect for leadership roles in challenging environments."
+      },
+      supportive: {
+        title: "The Compassionate Ally",
+        character: "Abdul Ali",
+        image: "ali.png",
+        description: "Empathetic and dependable, you’re the friend everyone counts on in the game.",
+        strengths: "Loyal, caring, and supportive.",
+        improvement: "Remember to care for yourself, too.",
+        recommendations: "Ideal for roles in teamwork, care, and mediation."
+      },
+      creative: {
+        title: "The Unpredictable Maverick",
+        character: "Han Mi-nyeo",
+        image: "han.png",
+        description: "Resourceful and daring, you think outside the box to stay ahead.",
+        strengths: "Innovative, bold, and fiercely independent.",
+        improvement: "Focus your creativity to build lasting success.",
+        recommendations: "Ideal for creative roles or unconventional ventures."
+      },
+      ruthless: {
+        title: "The Ruthless Enforcer",
+        character: "The Front Man",
+        image: "frontman.png",
+        description: "Cold, efficient, and merciless. You navigate the game with unwavering authority.",
+        strengths: "Decisiveness, command, and unyielding discipline.",
+        improvement: "Remember that empathy can be as powerful as discipline.",
+        recommendations: "Ideal for roles that demand leadership under pressure."
+      },
+      vigilant: {
+        title: "The Inquisitive Seeker",
+        character: "Hwang Jun-ho",
+        image: "junho.png",
+        description: "Driven by a relentless pursuit of truth, you never miss a detail.",
+        strengths: "Keen observation, determination, and resourcefulness.",
+        improvement: "Balance your quest for truth with trust in others.",
+        recommendations: "Great for investigative roles and positions requiring vigilance."
+      },
+      vip: {
+        title: "The Privileged Observer",
+        character: "VIP",
+        image: "vip.png",
+        description: "With an air of aloof authority, you watch the game unfold from a distance.",
+        strengths: "Detached, discerning, and influential.",
+        improvement: "Try engaging more with the players on the ground.",
+        recommendations: "Ideal for roles that require oversight and strategic distance."
+      },
+      organizer: {
+        title: "The Mastermind",
+        character: "Lee Myung-gi",
+        image: "lee.png",
+        description: "A strategic thinker who navigates complex situations with precision, much like Lee Myung-gi, the crypto star entangled in the deadly games.",
+        strengths: "Analytical, visionary, and resourceful.",
+        improvement: "Remember that even masterminds need trusted allies.",
+        recommendations: "Ideal for roles that require strategic planning and adaptability."
+      },
+
+      mercenary: {
+        title: "The Cold Enforcer",
+        character: "The Mercenary Kim",
+        image: "kim.png",
+        description: "Efficient and uncompromising, you execute your plans without remorse.",
+        strengths: "Decisive, relentless, and fearless.",
+        improvement: "Balance your efficiency with a touch of empathy.",
+        recommendations: "Ideal for roles that require tough, decisive action."
+      },
+      default: {
+        title: "A Unique Survivor",
+        character: "Mysterious Figure",
+        image: "default.png",
+        description: "Your style defies categorization, making you one-of-a-kind.",
+        strengths: "Diverse and unexpected.",
+        improvement: "Keep exploring your unique potential.",
+        recommendations: "Continue forging your own path."
+      }
+    };
+
+    const primaryData = personalityData[primaryTrait] || personalityData.default;
+    let secondData = null;
+    if (foundSecondary) {
+      secondData = personalityData[secondaryTrait] || personalityData.default;
+    }
+
+    let resultHTML = `
+      <div class="result-section">
+        <h3>Primary Trait: ${primaryData.title}</h3>
+        <p>You are primarily <strong>${primaryData.character}</strong>!</p>
+        <img src="${primaryData.image}" alt="${primaryData.character}" class="character-image" />
+        <h4>Description</h4>
+        <p>${primaryData.description}</p>
+        <h4>Strengths</h4>
+        <p>${primaryData.strengths}</p>
+        <h4>Areas for Improvement</h4>
+        <p>${primaryData.improvement}</p>
+      </div>
+    `;
+
+    if (foundSecondary && secondData) {
+      resultHTML += `
+        <div class="result-section">
+          <h3>Secondary Trait: ${secondData.title}</h3>
+          <p>You also show strong <strong>${secondData.character}</strong> tendencies!</p>
+          <img src="${secondData.image}" alt="${secondData.character}" class="character-image" />
+          <h4>Description</h4>
+          <p>${secondData.description}</p>
+          <h4>Strengths</h4>
+          <p>${secondData.strengths}</p>
+          <h4>Areas for Improvement</h4>
+          <p>${secondData.improvement}</p>
+        </div>
+      `;
+    }
+
+    resultHTML += `
+      <div class="result-section">
+        <h3>Recommended Roles</h3>
+        <p>${primaryData.recommendations}</p>
+      </div>
+    `;
+
+    evaluationEl.innerHTML = resultHTML;
+  }
+
+  // Initialize the first question on page load
+  displayQuestion();
+</script>
+
+
+
+</body>
+</html>
