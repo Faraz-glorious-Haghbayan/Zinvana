@@ -6,24 +6,17 @@
   <title>Zinvana - Free personality test</title>
   
   <!-- Basic SEO -->
-  <meta name="description" content="Take a quick and free personality test on Zinvana to discover your strengths, improvement areas, and recommended career paths." />
+  <meta name="description" content="Take a quick and free, research-backed personality test on Zinvana to discover your strengths, improvement areas, and recommended career paths." />
   <meta name="keywords" content="Zinvana, personality test, self-discovery, career advice, psychology, introspection, personal growth" />
   <meta name="author" content="Zinvana" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph (Facebook, LinkedIn, etc.) -->
   <meta property="og:title" content="Zinvana - Discover Your Personality" />
-  <meta property="og:description" content="Zinvana’s short, free personality test reveals your strengths, areas for improvement, and recommended career paths." />
+  <meta property="og:description" content="Zinvana’s short, research-backed personality test reveals your strengths, areas for improvement, and recommended career paths." />
   <meta property="og:image" content="cover.png" />
   <meta property="og:url" content="https://zinvana.com" />
   <meta property="og:type" content="website" />
-
-  <!-- Twitter Card Data -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Free Personality Quiz - Zinvana" />
-<meta name="twitter:description" content="Take a free personality test on Zinvana. Uncover your strengths, growth areas, and ideal career paths." />
-<meta name="twitter:image" content="https://zinvana.com/Logo.png" />
-
 
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
@@ -619,6 +612,82 @@ footer .social-icons img:hover {
       "No limits to your imagination!",
       "Inventive mind - you see possibilities everywhere!",
       "Visionary spirit - you bring new ideas to life!"
+    ],
+    // New personality toast messages
+    ruthless: [
+      "Merciless and focused - you never back down!",
+      "Cold efficiency is your secret weapon!",
+      "You command respect with every decisive move!"
+    ],
+    vigilant: [
+      "Keen and observant - nothing escapes your notice!",
+      "Your eyes see through every detail!",
+      "Always one step ahead of the game!"
+    ],
+    vip: [
+      "Detached yet discerning - you have a commanding presence.",
+      "Your influence is felt even from afar!",
+      "Quietly powerful and in control!"
+    ],
+    organizer: [
+      "Every detail is under control - your strategy is flawless.",
+      "You orchestrate chaos with precision!",
+      "Masterful planning is your trademark!"
+    ],
+    mercenary: [
+      "Results are what matter - you get things done!",
+      "Uncompromising efficiency defines you!",
+      "You execute with ruthless precision!"
+    ],
+    rebellious: [
+      "Boldly defiant - you break the rules!",
+      "Your spirit refuses to conform!",
+      "Rebellion fuels your drive!"
+    ],
+    enigmatic: [
+      "Mysteriously captivating - you keep everyone guessing!",
+      "Your aura is an irresistible mystery!",
+      "Intrigue follows you wherever you go!"
+    ],
+    protector: [
+      "Steadfast and reliable - you shield those you care about!",
+      "Your strength is a comforting presence!",
+      "Always protective and strong!"
+    ],
+    philosopher: [
+      "Deep and reflective - you ponder life's mysteries.",
+      "Wisdom flows from your thoughtful mind!",
+      "Your insights are profound and calming!"
+    ],
+    adventurer: [
+      "Fearless and curious - you're always ready for the next thrill!",
+      "Your spirit is adventurous and bold!",
+      "Every journey is an opportunity for discovery!"
+    ],
+    strategist: [
+      "Every move is calculated - your plans are flawless!",
+      "Tactical genius at work!",
+      "Your foresight gives you an edge in every challenge!"
+    ],
+    visionary: [
+      "You see what others cannot - your ideas light the way!",
+      "Innovative and forward-thinking!",
+      "Your vision shapes the future!"
+    ],
+    detective: [
+      "No mystery is too deep - you uncover the truth!",
+      "Your attention to detail is unmatched!",
+      "Investigative and perceptive!"
+    ],
+    iconoclast: [
+      "You shatter conventions - unafraid to be different!",
+      "Your originality is your superpower!",
+      "Challenge the norm and create your own path!"
+    ],
+    charismatic: [
+      "Magnetic and inspiring - people are drawn to you!",
+      "Your charm lights up the room!",
+      "You lead with passion and heart!"
     ]
   };
 
@@ -632,7 +701,22 @@ footer .social-icons img:hover {
     active: 0,
     leader: 0,
     supportive: 0,
-    creative: 0
+    creative: 0,
+    ruthless: 0,
+    vigilant: 0,
+    vip: 0,
+    organizer: 0,
+    mercenary: 0,
+    rebellious: 0,
+    enigmatic: 0,
+    protector: 0,
+    philosopher: 0,
+    adventurer: 0,
+    strategist: 0,
+    visionary: 0,
+    detective: 0,
+    iconoclast: 0,
+    charismatic: 0
   };
 
   /********** Toast Notification Logic (3s duration) **********/
@@ -669,144 +753,145 @@ footer .social-icons img:hover {
     }, 3000);
   }
 
-  /********** Expanded Questions Array (15 questions) **********/
+  /********** Expanded Questions Array (20 questions) **********/
   const questions = [
-    {
-      question: "1. How do you prefer to spend your free time?",
-      options: [
-        { text: "Reading a book", value: "introvert" },
-        { text: "Attending a social event", value: "extrovert" },
-        { text: "Trying a new hobby", value: "balanced" },
-        { text: "Exercising outdoors", value: "active" }
-      ]
-    },
-    {
-      question: "2. In group projects, what role do you take on?",
-      options: [
-        { text: "Taking the lead", value: "leader" },
-        { text: "Supporting the team", value: "supportive" },
-        { text: "Generating creative ideas", value: "creative" },
-        { text: "Balancing ideas and action", value: "balanced" }
-      ]
-    },
-    {
-      question: "3. When facing a challenging problem, what is your approach?",
-      options: [
-        { text: "I analyze it thoroughly before acting", value: "introvert" },
-        { text: "I take charge and plan a solution", value: "leader" },
-        { text: "I seek input and collaborate", value: "supportive" },
-        { text: "I think outside the box for innovative solutions", value: "creative" }
-      ]
-    },
-    {
-      question: "4. How do you handle conflicts with others?",
-      options: [
-        { text: "I reflect privately to understand the conflict", value: "introvert" },
-        { text: "I confront the issue head-on with clear communication", value: "extrovert" },
-        { text: "I mediate by listening and empathizing", value: "supportive" },
-        { text: "I seek a balanced approach, weighing all perspectives", value: "balanced" }
-      ]
-    },
-    {
-      question: "5. What best describes your work style?",
-      options: [
-        { text: "I meticulously plan and organize tasks", value: "leader" },
-        { text: "I adapt quickly and work energetically under pressure", value: "active" },
-        { text: "I prefer a harmonious blend of teamwork and independence", value: "balanced" },
-        { text: "I rely on creative problem-solving to get things done", value: "creative" }
-      ]
-    },
-    {
-      question: "6. How do you prefer to receive feedback?",
-      options: [
-        { text: "In a thoughtful, one-on-one setting", value: "introvert" },
-        { text: "In an open discussion with the team", value: "extrovert" },
-        { text: "I appreciate constructive and actionable advice", value: "leader" },
-        { text: "I value supportive and empathetic insights", value: "supportive" }
-      ]
-    },
-    {
-      question: "7. Which team dynamic appeals to you most?",
-      options: [
-        { text: "A structured team with clear leadership", value: "leader" },
-        { text: "A collaborative team where everyone shares ideas", value: "balanced" },
-        { text: "A creative team that values innovation", value: "creative" },
-        { text: "A fast-paced team that thrives on energy", value: "active" }
-      ]
-    },
-    {
-      question: "8. How do you approach personal growth?",
-      options: [
-        { text: "I set clear goals and work methodically towards them", value: "leader" },
-        { text: "I reflect on my actions and seek self-improvement", value: "introvert" },
-        { text: "I learn from others and value constructive criticism", value: "supportive" },
-        { text: "I explore new experiences and embrace change", value: "active" }
-      ]
-    },
-    {
-      question: "9. What energizes you the most?",
-      options: [
-        { text: "Quiet time to think and read", value: "introvert" },
-        { text: "Engaging conversations in a group", value: "extrovert" },
-        { text: "Switching between social and solo activities", value: "balanced" },
-        { text: "Diving headfirst into hands-on tasks", value: "active" }
-      ]
-    },
-    {
-      question: "10. How do you react to sudden changes in plans?",
-      options: [
-        { text: "I need a moment to gather my thoughts", value: "introvert" },
-        { text: "I adapt quickly and keep the energy high", value: "extrovert" },
-        { text: "I try to find a middle ground for everyone", value: "balanced" },
-        { text: "I see it as a chance for a new adventure", value: "active" }
-      ]
-    },
-    {
-      question: "11. In a brainstorming session, you usually...",
-      options: [
-        { text: "Listen quietly, then offer a thoughtful idea", value: "introvert" },
-        { text: "Share many ideas and feed off others' energy", value: "extrovert" },
-        { text: "Keep the team on track while adding balanced input", value: "balanced" },
-        { text: "Propose bold, out-of-the-box concepts", value: "creative" }
-      ]
-    },
-    {
-      question: "12. How do you manage stress?",
-      options: [
-        { text: "By retreating into a calm environment", value: "introvert" },
-        { text: "By talking it out with friends or teammates", value: "extrovert" },
-        { text: "By creating a step-by-step plan", value: "leader" },
-        { text: "By engaging in physical activity or exercise", value: "active" }
-      ]
-    },
-    {
-      question: "13. What motivates you to tackle difficult tasks?",
-      options: [
-        { text: "The promise of personal growth and reflection", value: "introvert" },
-        { text: "The social interaction and team spirit", value: "extrovert" },
-        { text: "Knowing everyone benefits from a balanced approach", value: "supportive" },
-        { text: "The chance to lead and innovate", value: "leader" }
-      ]
-    },
-    {
-      question: "14. Which statement resonates with you most?",
-      options: [
-        { text: "I feel more energized after alone time", value: "introvert" },
-        { text: "I thrive on being around others", value: "extrovert" },
-        { text: "I prefer variety and balance in my activities", value: "balanced" },
-        { text: "I love diving into new, active experiences", value: "active" }
-      ]
-    },
-    {
-      question: "15. When you're stuck, how do you find inspiration?",
-      options: [
-        { text: "By reflecting quietly on my own thoughts", value: "introvert" },
-        { text: "By brainstorming with a group", value: "extrovert" },
-        { text: "By reading or researching multiple perspectives", value: "balanced" },
-        { text: "By experimenting and trying hands-on solutions", value: "creative" }
-      ]
-    }
-  ];
+  {
+    question: "1. How do you prefer to spend your free time?",
+    options: [
+      { text: "Reading a book", value: "introvert" },
+      { text: "Attending a social event", value: "extrovert" },
+      { text: "Exploring a new place alone", value: "adventurer" },
+      { text: "Planning your next big goal", value: "strategist" }
+    ]
+  },
+  {
+    question: "2. In group projects, what role do you take on?",
+    options: [
+      { text: "Taking the lead", value: "leader" },
+      { text: "Supporting the team", value: "supportive" },
+      { text: "Thinking five steps ahead", value: "strategist" },
+      { text: "Challenging conventional ideas", value: "iconoclast" }
+    ]
+  },
+  {
+    question: "3. When facing a challenging problem, what is your approach?",
+    options: [
+      { text: "Analyze every angle before making a move", value: "detective" },
+      { text: "Decisively execute a solution", value: "ruthless" },
+      { text: "Find a creative workaround", value: "creative" },
+      { text: "Challenge the problem itself", value: "rebellious" }
+    ]
+  },
+  {
+    question: "4. How do you handle conflicts with others?",
+    options: [
+      { text: "Remain calm and find a logical solution", value: "strategist" },
+      { text: "Stand your ground and push through", value: "mercenary" },
+      { text: "Try to mediate and keep the peace", value: "supportive" },
+      { text: "Outmaneuver them using strategy", value: "detective" }
+    ]
+  },
+  {
+    question: "5. What best describes your work style?",
+    options: [
+      { text: "I meticulously plan every step", value: "strategist" },
+      { text: "I work best under high-pressure challenges", value: "mercenary" },
+      { text: "I enjoy pushing creative boundaries", value: "creative" },
+      { text: "I take risks and move fast", value: "adventurer" }
+    ]
+  },
+  {
+    question: "6. How do you prefer to receive feedback?",
+    options: [
+      { text: "Direct and unfiltered", value: "ruthless" },
+      { text: "Strategically phrased to be constructive", value: "visionary" },
+      { text: "I value deep, philosophical insights", value: "philosopher" },
+      { text: "Through trial and error", value: "adventurer" }
+    ]
+  },
+  {
+    question: "7. Which team dynamic appeals to you most?",
+    options: [
+      { text: "A structured team with clear leadership", value: "leader" },
+      { text: "A team that values deep thinking and wisdom", value: "philosopher" },
+      { text: "A creative, free-flowing environment", value: "iconoclast" },
+      { text: "A team that thrives under pressure", value: "mercenary" }
+    ]
+  },
+  {
+    question: "8. How do you approach personal growth?",
+    options: [
+      { text: "By setting clear goals and executing them", value: "leader" },
+      { text: "By constantly seeking new experiences", value: "adventurer" },
+      { text: "By challenging societal norms", value: "iconoclast" },
+      { text: "By analyzing and learning from past mistakes", value: "detective" }
+    ]
+  },
+  {
+    question: "9. What energizes you the most?",
+    options: [
+      { text: "The thrill of the unknown", value: "adventurer" },
+      { text: "A powerful debate or intellectual challenge", value: "philosopher" },
+      { text: "Pushing the limits of what's possible", value: "visionary" },
+      { text: "Dominating and winning", value: "ruthless" }
+    ]
+  },
+  {
+    question: "10. How do you react to sudden changes in plans?",
+    options: [
+      { text: "I quickly adapt and take control", value: "leader" },
+      { text: "I treat it as a puzzle to solve", value: "detective" },
+      { text: "I see it as an opportunity to innovate", value: "visionary" },
+      { text: "I refuse to conform and do my own thing", value: "rebellious" }
+    ]
+  },
+  {
+    question: "11. In a brainstorming session, you usually...",
+    options: [
+      { text: "Stay quiet but deliver a sharp insight", value: "detective" },
+      { text: "Challenge the norm and disrupt ideas", value: "iconoclast" },
+      { text: "Lead the discussion with energy", value: "charismatic" },
+      { text: "Analyze everyone’s input before deciding", value: "strategist" }
+    ]
+  },
+  {
+    question: "12. How do you manage stress?",
+    options: [
+      { text: "By taking action and solving the problem", value: "mercenary" },
+      { text: "By reflecting deeply and gaining wisdom", value: "philosopher" },
+      { text: "By pushing past limits to become stronger", value: "ruthless" },
+      { text: "By experimenting and trying new solutions", value: "creative" }
+    ]
+  },
+  {
+    question: "13. What motivates you to tackle difficult tasks?",
+    options: [
+      { text: "The thrill of proving others wrong", value: "rebellious" },
+      { text: "The challenge of outmaneuvering obstacles", value: "detective" },
+      { text: "The chance to innovate and break barriers", value: "visionary" },
+      { text: "Winning at all costs", value: "ruthless" }
+    ]
+  },
+  {
+    question: "14. Which statement resonates with you most?",
+    options: [
+      { text: "I live for high-risk, high-reward situations", value: "adventurer" },
+      { text: "I am relentless and unyielding in my goals", value: "mercenary" },
+      { text: "I seek to understand the deeper meaning of life", value: "philosopher" },
+      { text: "I enjoy shaking up the status quo", value: "iconoclast" }
+    ]
+  },
+  {
+    question: "15. When you're stuck, how do you find inspiration?",
+    options: [
+      { text: "By analyzing everything with a strategic mind", value: "strategist" },
+      { text: "By breaking the rules and thinking differently", value: "iconoclast" },
+      { text: "By pushing through with brute force", value: "mercenary" },
+      { text: "By trusting my instincts and taking risks", value: "charismatic" }
+    ]
+  }
+];
+
 
   let currentQuestionIndex = 0;
   const personalityScores = {
@@ -816,7 +901,22 @@ footer .social-icons img:hover {
     active: 0,
     leader: 0,
     supportive: 0,
-    creative: 0
+    creative: 0,
+    ruthless: 0,
+    vigilant: 0,
+    vip: 0,
+    organizer: 0,
+    mercenary: 0,
+    rebellious: 0,
+    enigmatic: 0,
+    protector: 0,
+    philosopher: 0,
+    adventurer: 0,
+    strategist: 0,
+    visionary: 0,
+    detective: 0,
+    iconoclast: 0,
+    charismatic: 0
   };
 
   // DOM Elements
@@ -947,7 +1047,7 @@ footer .social-icons img:hover {
 
   /*
     Evaluate results: find the top 2 traits,
-    then display the final personality result
+    then display the final personality result.
   */
   function evaluateResults() {
     testSection.classList.add("hidden");
@@ -963,20 +1063,16 @@ footer .social-icons img:hover {
 
     // We'll show a secondary trait only if it has a non-zero score
     let secondaryTrait = null;
-    let secondaryScore = null;
     let foundSecondary = false;
-
     if (scoresArray.length > 1) {
       const [possibleSecondTrait, possibleSecondScore] = scoresArray[1];
-      // If second place is > 0, we treat it as secondary
       if (possibleSecondScore > 0) {
         secondaryTrait = possibleSecondTrait;
-        secondaryScore = possibleSecondScore;
         foundSecondary = true;
       }
     }
 
-    // Personality data with all-male, "cooler" film characters
+   // Personality data with additional characters (21 total)
 const personalityData = {
   introvert: {
     title: "The Reflective Sage",
@@ -985,13 +1081,7 @@ const personalityData = {
     description: "You are introspective and value solitude, finding depth in quiet moments...",
     strengths: "Thoughtful, insightful, and capable of deep connections.",
     improvement: "Express your inner thoughts more openly.",
-    compatibility: ["balanced", "supportive", "creative"],
-    recommendations: "Consider careers in research, writing, or artistic endeavors...",
-    filmCharacter: {
-      name: "Batman",
-      image: "batman.png",
-      note: "A brooding, introspective vigilante from the DC Universe."
-    }
+    recommendations: "Consider careers in research, writing, or artistic endeavors..."
   },
   extrovert: {
     title: "The Social Dynamo",
@@ -1000,13 +1090,7 @@ const personalityData = {
     description: "You thrive in social settings and draw energy from interactions...",
     strengths: "Outgoing, energetic, and a natural communicator.",
     improvement: "Balance your social interactions with quiet moments.",
-    compatibility: ["balanced", "leader", "active"],
-    recommendations: "Explore careers in public relations, sales, or event management...",
-    filmCharacter: {
-      name: "Tony Stark",
-      image: "tony.png",
-      note: "From Marvel’s 'Iron Man', representing a bold and social personality."
-    }
+    recommendations: "Explore careers in public relations, sales, or event management..."
   },
   balanced: {
     title: "The Harmonizer",
@@ -1015,13 +1099,7 @@ const personalityData = {
     description: "You strike a balance between introspection and sociability...",
     strengths: "Adaptable, well-rounded, and open-minded.",
     improvement: "Manage moments when you feel pulled in different directions.",
-    compatibility: ["introvert", "extrovert", "supportive", "leader"],
-    recommendations: "Your versatility can lead to success in project management, design, or teaching...",
-    filmCharacter: {
-      name: "James Bond",
-      image: "james.png",
-      note: "A suave secret agent who balances calm strategy with social charm."
-    }
+    recommendations: "Your versatility can lead to success in project management, design, or teaching..."
   },
   active: {
     title: "The Energetic Explorer",
@@ -1030,13 +1108,7 @@ const personalityData = {
     description: "Your dynamic nature pushes you to seek new experiences...",
     strengths: "Adventurous, enthusiastic, and highly energetic.",
     improvement: "Plan ahead to balance your impulsiveness.",
-    compatibility: ["extrovert", "leader", "balanced"],
-    recommendations: "Consider careers in fitness, travel, or event coordination...",
-    filmCharacter: {
-      name: "John Wick",
-      image: "john.png",
-      note: "Relentless, unstoppable, from the 'John Wick' series."
-    }
+    recommendations: "Consider careers in fitness, travel, or event coordination..."
   },
   leader: {
     title: "The Visionary Leader",
@@ -1045,13 +1117,7 @@ const personalityData = {
     description: "You naturally take charge and inspire with a clear vision...",
     strengths: "Decisive, ambitious, and motivational.",
     improvement: "Balance assertiveness with collaboration.",
-    compatibility: ["extrovert", "active", "balanced"],
-    recommendations: "Roles in management, entrepreneurship, or politics could be ideal...",
-    filmCharacter: {
-      name: "Patrick Bateman",
-      image: "patrick.png",
-      note: "A controlling, intense personality from 'American Psycho'."
-    }
+    recommendations: "Roles in management, entrepreneurship, or politics could be ideal..."
   },
   supportive: {
     title: "The Nurturing Companion",
@@ -1060,29 +1126,133 @@ const personalityData = {
     description: "Your empathy makes you a trusted friend...",
     strengths: "Compassionate, reliable, and an excellent listener.",
     improvement: "Remember to care for yourself too.",
-    compatibility: ["introvert", "balanced", "creative"],
-    recommendations: "Explore careers in healthcare, counseling, or education...",
-    filmCharacter: {
-      name: "Alfred Pennyworth",
-      image: "alfred.png",
-      note: "Batman’s loyal butler and confidant—always supportive."
-    }
+    recommendations: "Explore careers in healthcare, counseling, or education..."
   },
   creative: {
-  title: "The Innovative Creator",
-  character: "Imaginative Fox",
-  image: "fox.png",
-  description: "Your originality is your greatest asset...",
-  strengths: "Imaginative, resourceful, and inventive.",
-  improvement: "Focus on practical details to realize your ideas.",
-  compatibility: ["supportive", "balanced", "introvert"],
-  recommendations: "Consider creative roles in design, advertising, or the arts...",
-  filmCharacter: {
-    name: "Jack Sparrow",
-    image: "jack.png",
-    note: "A witty, free-spirited pirate from the 'Pirates of the Caribbean' series."
-  }
-
+    title: "The Innovative Creator",
+    character: "Imaginative Fox",
+    image: "fox.png",
+    description: "Your originality is your greatest asset...",
+    strengths: "Imaginative, resourceful, and inventive.",
+    improvement: "Focus on practical details to realize your ideas.",
+    recommendations: "Consider creative roles in design, advertising, or the arts..."
+  },
+  ruthless: {
+    title: "The Ruthless Enforcer",
+    character: "Raging Bull",
+    image: "bull.jpg",
+    description: "Cold and efficient, you dominate your environment with brute force and precision.",
+    strengths: "Relentless, disciplined, and commanding.",
+    improvement: "Temper your aggression with calculated strategy.",
+    recommendations: "Ideal for roles that require assertiveness and unwavering determination."
+  },
+  vigilant: {
+    title: "The Inquisitive Detective",
+    character: "Alert Meerkat",
+    image: "Alertmeerkat.jpg",
+    description: "With keen senses, you observe every detail and remain ever alert.",
+    strengths: "Perceptive, attentive, and quick-witted.",
+    improvement: "Balance vigilance with collaboration.",
+    recommendations: "Great for roles that demand acute observation and rapid response."
+  },
+  mercenary: {
+    title: "The Uncompromising Operative",
+    character: "Uncompromising Rhino",
+    image: "rhino.jpg",
+    description: "Solid and unyielding, you power through obstacles with relentless force.",
+    strengths: "Resilient, decisive, and formidable.",
+    improvement: "Channel your strength with empathy.",
+    recommendations: "Ideal for roles that require robustness and a results-driven approach."
+  },
+  rebellious: {
+    title: "The Rebellious Renegade",
+    character: "Fierce Tiger",
+    image: "tiger2.jpg",
+    description: "You defy norms and blaze your own trail with fearless conviction.",
+    strengths: "Bold, daring, and unyielding.",
+    improvement: "Balance your defiance with thoughtful reflection.",
+    recommendations: "Ideal for roles that demand innovation and risk-taking."
+  },
+  enigmatic: {
+    title: "The Enigmatic Phantom",
+    character: "Mysterious Panther",
+    image: "jaguar1.jpg",
+    description: "Intriguing and elusive, your true self is a captivating mystery.",
+    strengths: "Mysterious, profound, and compelling.",
+    improvement: "Open up more to let others in on your wisdom.",
+    recommendations: "Great for roles that benefit from depth and allure."
+  },
+  protector: {
+    title: "The Protective Guardian",
+    character: "Valiant Bear",
+    image: "bear.jpg",
+    description: "Strong and reliable, you stand as a shield for those you care about.",
+    strengths: "Loyal, robust, and steadfast.",
+    improvement: "Remember to take care of yourself too.",
+    recommendations: "Ideal for roles that require reliability and defense."
+  },
+  philosopher: {
+    title: "The Philosophical Sage",
+    character: "Sage Turtle",
+    image: "turtle.jpg",
+    description: "Thoughtful and deliberate, you ponder life's mysteries with calm insight.",
+    strengths: "Wise, reflective, and measured.",
+    improvement: "Try to act decisively when needed.",
+    recommendations: "Suitable for roles in research, academia, or mentorship."
+  },
+  adventurer: {
+    title: "The Daring Explorer",
+    character: "Intrepid Wolf",
+    image: "wolf.jpg",
+    description: "Bold and courageous, you are always ready to explore uncharted territories.",
+    strengths: "Fearless, curious, and resourceful.",
+    improvement: "Plan ahead to avoid unnecessary risks.",
+    recommendations: "Ideal for roles that require exploration and innovation."
+  },
+  strategist: {
+    title: "The Calculated Strategist",
+    character: "Stealthy Panther",
+    image: "jaguar2.jpg",
+    description: "Every move is calculated and precise. You have a talent for foresight and planning.",
+    strengths: "Analytical, tactical, and visionary.",
+    improvement: "Don't overthink; sometimes the simplest solution is best.",
+    recommendations: "Great for roles that require meticulous planning and strategy."
+  },
+  visionary: {
+    title: "The Visionary Innovator",
+    character: "Futuristic Shark",
+    image: "shark.jpg",
+    description: "You see beyond the present, forging paths into the future with bold ideas.",
+    strengths: "Innovative, forward-thinking, and inspiring.",
+    improvement: "Ground your ideas with practical steps.",
+    recommendations: "Perfect for roles in innovation, design, and creative leadership."
+  },
+  detective: {
+    title: "The Sharp Sleuth",
+    character: "Clever Lynx",
+    image: "lynx.jpg",
+    description: "No detail escapes your keen observation. You uncover truths with precision.",
+    strengths: "Inquisitive, perceptive, and analytical.",
+    improvement: "Balance detail orientation with big-picture thinking.",
+    recommendations: "Ideal for investigative roles and research."
+  },
+  iconoclast: {
+    title: "The Iconoclastic Rebel",
+    character: "Unorthodox Fox",
+    image: "fox.jpg",
+    description: "You shatter conventions and forge your own path with originality.",
+    strengths: "Creative, bold, and non-conformist.",
+    improvement: "Sometimes collaboration can amplify your ideas.",
+    recommendations: "Great for roles that thrive on innovation and disruption."
+  },
+  charismatic: {
+    title: "The Charismatic Trailblazer",
+    character: "Radiant Tiger",
+    image: "tiger.jpg",
+    description: "Your magnetic charm and natural leadership inspire those around you.",
+    strengths: "Influential, passionate, and dynamic.",
+    improvement: "Ensure your charm is coupled with empathy.",
+    recommendations: "Perfect for roles that require vision and persuasive leadership."
   },
   default: {
     title: "A Unique Personality",
@@ -1091,27 +1261,17 @@ const personalityData = {
     description: "Your personality is one-of-a-kind...",
     strengths: "Diverse strengths that make you who you are.",
     improvement: "Keep exploring your interests and capabilities.",
-    compatibility: [],
-    recommendations: "Continue exploring various fields and hobbies...",
-    filmCharacter: {
-      name: "N/A",
-      image: "default.png",
-      note: "No direct film character match, but your uniqueness shines!"
-    }
+    recommendations: "Continue exploring various fields and hobbies..."
   }
 };
 
 
-    // Get primary trait data
     const primaryData = personalityData[primaryTrait] || personalityData.default;
-
-    // If we have a valid secondary trait (score > 0), gather that data
     let secondData = null;
     if (foundSecondary) {
       secondData = personalityData[secondaryTrait] || personalityData.default;
     }
 
-    // Build the result HTML
     let resultHTML = `
       <div class="result-section">
         <h3>Primary Trait: ${primaryData.title}</h3>
@@ -1126,7 +1286,6 @@ const personalityData = {
       </div>
     `;
 
-    // Show secondary trait if valid
     if (foundSecondary && secondData) {
       resultHTML += `
         <div class="result-section">
@@ -1143,37 +1302,6 @@ const personalityData = {
       `;
     }
 
-    // Compatibility from the primary trait
-    const compatibleTypes = primaryData.compatibility
-      .map((key) => personalityData[key].title)
-      .join(", ") || "Everyone in their own way!";
-
-    resultHTML += `
-      <div class="result-section">
-        <h3>Compatibility</h3>
-        <p>Compatible with: ${compatibleTypes}</p>
-      </div>
-      <div class="result-section film-character-section">
-        <h4>Famous Film Character Match</h4>
-        <p><strong>${primaryData.filmCharacter.name}</strong></p>
-        <img src="${primaryData.filmCharacter.image}" alt="${primaryData.filmCharacter.name}" style="max-width:100px; border-radius:4px;" />
-        <p>${primaryData.filmCharacter.note}</p>
-      </div>
-    `;
-
-    // Secondary film character if valid
-    if (foundSecondary && secondData) {
-      resultHTML += `
-        <div class="result-section film-character-section">
-          <h4>Secondary Film Character Match</h4>
-          <p><strong>${secondData.filmCharacter.name}</strong></p>
-          <img src="${secondData.filmCharacter.image}" alt="${secondData.filmCharacter.name}" style="max-width:100px; border-radius:4px;" />
-          <p>${secondData.filmCharacter.note}</p>
-        </div>
-      `;
-    }
-
-    // Recommendations from the primary trait
     resultHTML += `
       <div class="result-section">
         <h3>Recommended Career Roles</h3>
@@ -1181,40 +1309,6 @@ const personalityData = {
       </div>
     `;
 
-    // Secondary recommendations if valid
-    if (foundSecondary && secondData) {
-      resultHTML += `
-        <div class="result-section">
-          <h3>Additional Career Suggestions (Secondary)</h3>
-          <p>${secondData.recommendations}</p>
-        </div>
-      `;
-    }
-
-    // "Learn More" link
-    let deepDiveURL = `deepdive.html?trait=${primaryTrait}`;
-    if (foundSecondary && secondaryTrait) {
-      deepDiveURL += `&secondary=${secondaryTrait}`;
-    }
-    resultHTML += `
-      <div class="result-section">
-        <h3>Want More Insights?</h3>
-        <p>We’ve prepared a detailed deep-dive into your traits, along with real-life examples and success stories.</p>
-        <a href="${deepDiveURL}" class="learn-more-btn" target="_blank" style="
-          display: inline-block;
-          background: #4ca1af;
-          color: #fff;
-          padding: 12px 25px;
-          border-radius: 6px;
-          text-decoration: none;
-          font-size: 1rem;
-          transition: background 0.3s;
-          margin-top: 10px;
-        ">Learn More</a>
-      </div>
-    `;
-
-    // Inject into the DOM
     evaluationEl.innerHTML = resultHTML;
   }
 
