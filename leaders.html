@@ -187,20 +187,22 @@
 header {
   text-align: center;
   padding:200px 10px 100px ;
-  background: url('cyrusthegreat.jpg') no-repeat center/cover;
+  background: url('napoleon.jpg') no-repeat center/cover;
   border-bottom: 2px solid #1f1f1f;
 }
 
 header h1 {
   margin: 0;
   font-size: 3rem;
-  color: #f3f3f3;
+  color: #ffffff;
+  text-shadow: 2px 2px black;
   letter-spacing: 1px;
 }
     #tagline {
       margin-top: 8px;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #ccc;
+      text-shadow: 2px 2px black;
     }
   
     /* -------------------------------------
@@ -455,6 +457,41 @@ header h1 {
       opacity: 0.7;
     }
 
+    .test-explainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .test-title {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    color: #d32f2f;
+  }
+
+  strong{
+    color: #d32f2f;
+  }
+  .test-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .test-title {
+      font-size: 1.1rem !important;
+    }
+
+    .test-text {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+  }
+
     /* -------------------------------------
  13) Related Blog Articles Section
 ------------------------------------- */
@@ -481,46 +518,7 @@ header h1 {
   gap: 20px;
 }
 
-.test-explainer {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 0 24px;
-    text-align: center;
-    color: #1a1a1a;
-    background: #f9f9f9;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  }
 
-  .test-title {
-    font-size: 2rem;
-    color: #b71c1c;
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-  }
-
-  .test-text {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: #333;
-    margin-bottom: 20px;
-  }
-
-  .test-text strong {
-    color: #d32f2f;
-    font-weight: 600;
-  }
-
-  @media (max-width: 768px) {
-    .test-title {
-      font-size: 1.6rem;
-    }
-
-    .test-text {
-      font-size: 1rem;
-    }
-  }
 .blog-card {
   background: #2a2a2a;
   padding: 20px;
@@ -561,7 +559,8 @@ header h1 {
         font-size: 3.5rem;
       }
       #tagline {
-        font-size: 0.95rem;
+        font-size: 1.3rem;
+        font-weight: bold;
       }
       #about p {
         font-size: 0.9rem;
@@ -607,7 +606,7 @@ header h1 {
     <div class="nav-left">
       <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="#historical-leaders-personality-test">About</a>
     </div>
     <div class="nav-right">
       <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho">Contact</a>
@@ -620,16 +619,6 @@ header h1 {
     <h1>Zinvana</h1>
     <div id="tagline">Historical Leaders Personality Test</div>
   </header>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>Which Iconic Leader Reflects You?</h2>
-    <p>
-      Zinvana’s historical leaders personality test is designed by a team of psychologists and historians.
-      Through this engaging questionnaire, you'll discover which iconic political figure from history mirrors your leadership style,
-      decision-making approach, and personal values. No personal data is stored — your privacy is our priority.
-    </p>
-  </section>
 
   <!-- Toast Notification Element -->
   <div id="toast" class="hidden">
@@ -695,28 +684,28 @@ header h1 {
 <!-- What is the Historical Leaders Personality Test Section -->
 <section id="historical-leaders-personality-test" class="test-explainer">
   <h2 class="test-title">What is the Historical Leaders Personality Test?</h2>
+  
   <p class="test-text">
-    Ever wondered if your leadership style mirrors that of <strong>Winston Churchill</strong>, inspires like <strong>Nelson Mandela</strong>,
-    strategizes like <strong>Napoleon Bonaparte</strong>, or innovates like <strong>Theodore Roosevelt</strong>?
-    The <strong>Historical Leaders Personality Test</strong> is a fascinating self-discovery quiz designed to reveal your inner leadership style through the lens of world history.
+    Are you like <strong>Winston Churchill</strong>, bold like <strong>Napoleon</strong>, or visionary like <strong>Mandela</strong>?  
+    This quiz helps you uncover your leadership personality—through the lens of history.
   </p>
+  
   <p class="test-text">
-    Using psychological profiling, behavioral patterns, and decision-making styles, this personality test helps you discover which iconic figure from history best reflects your strengths.
-    Learn whether you're a bold visionary, a tactical mastermind, a diplomatic peacemaker, or a compassionate reformer.
+    Based on behavioral psychology and decision-making styles, the test reveals whether you’re a <strong>strategic mastermind</strong>,
+    a <strong>diplomatic peacemaker</strong>, a <strong>compassionate reformer</strong>, or a <strong>revolutionary force</strong>.
   </p>
+  
   <p class="test-text">
-    This leadership personality quiz blends <strong>personality psychology</strong> with the stories of history’s greatest minds.
-    Unlock insights into your leadership potential and find out your historical leadership twin. Take the test now and uncover your place in the legacy of great leaders.
+    Discover which iconic historical leader you resemble most—and what it says about your strengths.  
+    Find your leadership twin and unlock your inner potential.
   </p>
 </section>
+
 
 <!-- Footer -->
 <footer>
   <p>© 2025 Zinvana. All rights reserved.</p>
-  <p>
-    This test is for informational purposes only and does not replace professional advice.<br />
-    No personal data is stored or shared.
-  </p>
+ 
   <div class="social-icons">
     <!-- Instagram -->
     <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
