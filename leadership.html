@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Take the Revolutionary Leader Personality Quiz. Discover if you're more like Che Guevara, Mahatma Gandhi, or George Washington.">
-  <meta name="keywords" content="revolutionary leader test, historical revolution quiz, change the world quiz, leader personality quiz, political personality test, famous leaders personality quiz">
-  <meta property="og:title" content="Which Revolutionary Leader Matches Your Ideals?">
-  <meta property="og:description" content="Are you a radical visionary like Che Guevara, a peaceful reformer like Mahatma Gandhi, or a bold strategist like George Washington? Find your revolutionary spirit.">
-  <meta property="og:image" content="revolutionary-leader-banner.jpg">
+  <meta name="description" content="Take the Historical Leader Personality Quiz and discover which iconic leader from history matches your values, mindset, and legacy.">
+  <meta name="keywords" content="historical leader quiz, which historical leader are you, famous leaders test, leadership personality test">
+  <meta property="og:title" content="Which Historical Leader Would You Be?">
+  <meta property="og:description" content="Discover if your leadership style matches Napoleon, Gandhi, Cleopatra, or Churchill. Take the quiz now.">
+  <meta property="og:image" content="historical-leader-banner.jpg">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
-  <title>Which Revolutionary Leader Matches Your Ideals?</title>
+  <title>Which Historical Leader Would You Be?</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #fdfcfb;
+      background: #fcfcfc;
       color: #222;
     }
     .quiz-hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('leader.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('cyrusthegreat.jpg') center/cover no-repeat;
       padding: 80px 20px;
       text-align: center;
       color: #fff;
@@ -29,28 +29,29 @@
       margin-bottom: 15px;
     }
     .quiz-hero p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       max-width: 700px;
       margin: 0 auto;
     }
-    .quiz-intro, .quiz-details, .faq-section {
-      max-width: 900px;
-      margin: 50px auto;
+    .quiz-intro {
+      max-width: 850px;
+      margin: 60px auto;
       padding: 0 20px;
+      text-align: center;
     }
-    .quiz-intro h2, .quiz-details h2, .faq-section h2 {
+    .quiz-intro h2 {
       font-size: 2rem;
-      color: #c0392b;
+      color: #2c3e50;
       margin-bottom: 20px;
     }
-    .quiz-intro p, .quiz-details p, .faq-section p {
+    .quiz-intro p {
       font-size: 1.1rem;
-      line-height: 1.7;
+      line-height: 1.8;
       margin-bottom: 20px;
     }
     .cta-button {
       display: inline-block;
-      background-color: #c0392b;
+      background-color: red;
       color: #fff;
       padding: 14px 28px;
       text-decoration: none;
@@ -59,75 +60,132 @@
       transition: background 0.3s ease;
     }
     .cta-button:hover {
-      background-color: #922b21;
+      background-color: #1a242f;
     }
-    .faq-item {
-      margin-bottom: 30px;
+
+    .faq-section {
+      max-width: 850px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
-    .faq-item h3 {
-      font-size: 1.2rem;
-      color: #444;
+
+    .faq-section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
     }
-    .faq-item p {
-      font-size: 1rem;
-      color: #555;
+
+    .faq-section details {
+      margin-bottom: 15px;
+      background: #f6d9d9;
+      border: 2px solid black;
+      padding: 15px 20px;
+      border-radius: 6px;
     }
+
+    .faq-section summary {
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #000;
+      padding: 20px 10px;
+      text-align: center;
+      border-top: 1px solid #d32f2f;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    footer .social-icons {
+      margin-top: 10px;
+    }
+    footer .social-icons img {
+      width: 3%;
+      margin: 0 8px;
+      transition: opacity 0.3s;
+      cursor: pointer;
+    }
+    footer .social-icons img:hover {
+      opacity: 0.7;
+    }
+
     @media screen and (max-width: 600px) {
       .quiz-hero h1 { font-size: 2rem; }
-      .quiz-intro h2, .quiz-details h2, .faq-section h2 { font-size: 1.5rem; }
+      .quiz-hero p, .quiz-intro p { font-size: 1rem; }
+      .quiz-intro h2, .faq-section h3 { font-size: 1.4rem; }
+    }
+    @media (max-width: 970px) {
+      footer .social-icons img {
+        width: 10%;
+      }
+
     }
   </style>
 </head>
 <body>
 
   <section class="quiz-hero">
-    <h1>Which Revolutionary Leader Matches Your Ideals?</h1>
-    <p>🔥 Would You Change the World with Words or War?</p>
+    <h1>Which Historical Leader Would You Be?</h1>
+    <p>💼 Discover your leadership twin – from revolutionaries to reformers, monarchs to masterminds.</p>
   </section>
 
   <section class="quiz-intro">
-    <h2>Are You a Visionary, Reformer, or Strategist?</h2>
-    <p>Are you a radical visionary like <strong>Che Guevara</strong>, a peaceful reformer like <strong>Mahatma Gandhi</strong>, or a bold strategist like <strong>George Washington</strong>? Discover your revolutionary leadership spirit through this interactive personality test.</p>
-    <p>This revolutionary leader test blends <strong>psychology, history, and behavioral traits</strong> to find your match among the world’s greatest icons.</p>
-    <a href="leaders.html" class="cta-button">Take the Quiz Now</a>
-  </section>
-
-  <section class="quiz-details">
-    <h2>Why Take This Historical Revolution Quiz?</h2>
-    <p>If you've ever felt driven by a cause, inspired by change-makers, or curious about your leadership personality, this quiz is for you.</p>
-    <ul>
-      <li>✅ Identify your personal leadership archetype</li>
-      <li>✅ Learn how your ideals align with revolutionaries</li>
-      <li>✅ Get a fun, shareable result to spark conversations</li>
-    </ul>
-    <p>Whether you're a student, activist, educator or just exploring your potential — this quiz is a unique self-reflection journey.</p>
+    <h2>Are You a Visionary Like Cleopatra or a Strategist Like Churchill?</h2>
+    <p>Ever wondered who you’d be in history? Whether you lead with charisma, strategy, wisdom or courage — this personality quiz reveals the legendary leader who reflects your unique path.</p>
+    <p>Explore how your leadership style aligns with iconic figures like <strong>Napoleon Bonaparte</strong>, <strong>Gandhi</strong>, <strong>Julius Caesar</strong>, or <strong>Cyrus the great</strong>.</p>
+    <p>Take this test and unlock your inner historical identity!</p>
+    <a href="leaders.html" class="cta-button">Start the Quiz Now</a>
   </section>
 
   <section class="faq-section">
-    <h2>Frequently Asked Questions</h2>
+    <h3>Frequently Asked Questions</h3>
 
-    <div class="faq-item">
-      <h3>What is the Revolutionary Leader Personality Test?</h3>
-      <p>This quiz matches your personality with iconic revolutionaries like Che Guevara, Gandhi, or George Washington using psychological profiling and historical archetypes.</p>
-    </div>
+    <details>
+      <summary>What is the Historical Leader Personality Quiz?</summary>
+      <p>This quiz helps you discover which iconic historical leader matches your leadership style based on personality traits and decision-making behavior.</p>
+    </details>
 
-    <div class="faq-item">
-      <h3>Is this quiz accurate?</h3>
-      <p>While it's designed to be fun and insightful, the results are based on general personality patterns. It's a creative way to learn more about yourself.</p>
-    </div>
+    <details>
+      <summary>Is this quiz based on psychology?</summary>
+      <p>Yes, the quiz uses elements of personality psychology to map your leadership patterns to well-known historical figures.</p>
+    </details>
 
-    <div class="faq-item">
-      <h3>Can I share my result?</h3>
-      <p>Absolutely! Each result is designed to be shareable on social media with a call-to-action for others to try the quiz.</p>
-    </div>
+    <details>
+      <summary>Can I share my result on social media?</summary>
+      <p>Absolutely! Share your results and challenge your friends to find out who they’d be in history.</p>
+    </details>
 
-    <div class="faq-item">
-      <h3>Is this quiz free?</h3>
-      <p>Yes, it's completely free to take and enjoy!</p>
-    </div>
+    <details>
+      <summary>Is the quiz free?</summary>
+      <p>Yes, it’s 100% free to take and share.</p>
+    </details>
   </section>
 
-  <!-- Schema.org FAQ Rich Snippets -->
+  <!-- Footer -->
+<footer>
+    <p>© 2025 Zinvana. All rights reserved.</p>
+   
+    <div class="social-icons">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
+        <img src="whiteinsta.png" alt="instagram" />
+      </a>
+      <!-- X (Twitter) -->
+      <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
+          <img src="whitex.png" alt="x" />
+        </a>
+      <!-- YouTube -->
+      <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
+        <img src="youtube.png" alt="youtube" />
+      </a>
+    </div>
+  </footer>
+
+  <!-- JSON-LD FAQ SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -135,34 +193,34 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is the Revolutionary Leader Personality Test?",
+        "name": "What is the Historical Leader Personality Quiz?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "This quiz matches your personality with iconic revolutionaries like Che Guevara, Gandhi, or George Washington using psychological profiling and historical archetypes."
+          "text": "This quiz helps you discover which iconic historical leader matches your leadership style based on personality traits and decision-making behavior."
         }
       },
       {
         "@type": "Question",
-        "name": "Is this quiz accurate?",
+        "name": "Is this quiz based on psychology?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "While it's designed to be fun and insightful, the results are based on general personality patterns. It's a creative way to learn more about yourself."
+          "text": "Yes, the quiz uses elements of personality psychology to map your leadership patterns to well-known historical figures."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I share my result?",
+        "name": "Can I share my result on social media?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! Each result is designed to be shareable on social media with a call-to-action for others to try the quiz."
+          "text": "Absolutely! Share your results and challenge your friends to find out who they’d be in history."
         }
       },
       {
         "@type": "Question",
-        "name": "Is this quiz free?",
+        "name": "Is the quiz free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, it's completely free to take and enjoy!"
+          "text": "Yes, it’s 100% free to take and share."
         }
       }
     ]
