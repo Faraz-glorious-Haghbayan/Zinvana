@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Zinvana</title>
+  <title>Free and Fun Personality Quizzes | Zinvana</title>
+  <meta name="description" content="Discover your inner personality through fun and engaging quizzes at Zinvana. From Squid Game characters to Historical Leaders—uncover who you truly are." />
+  <meta name="keywords" content="personality quiz, leadership quiz, historical leader quiz, squid game quiz, psychology quiz, self-discovery, classic personality test, Zinvana" />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Discover a variety of fun and insightful personality quizzes on Zinvana. Whether you want to find out which Squid Game character you resemble or explore classic personality tests, our quizzes help you uncover your true self." />
-  <meta name="keywords" content="personality quiz, squid game quiz, online quiz, personality test, self-discovery, psychology, career advice, Squid Game character quiz, fun quiz, Zinvana" />
   <meta name="author" content="Zinvana" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://zinvana.com" />
@@ -26,16 +27,39 @@
 <meta property="og:description" content="Discover a variety of fun and insightful personality quizzes on Zinvana. Whether you want to find out which Squid Game character you resemble or explore classic personality tests, our quizzes help you uncover your true self." />
 <meta property="og:image" content="hero.png" />
 
-  <!-- Structured Data / Schema.org -->
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://zinvana.com",
-    "name": "Personality Quizzes | Zinvana",
-    "description": "Discover a variety of personality quizzes on Zinvana. Find out which Squid Game character or personality type best matches you."
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What types of personality quizzes do you offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer quizzes based on historical leaders, pop culture characters, classic MBTI types, and more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the quizzes free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! All quizzes on Zinvana are completely free to take and share."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I share my results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! You can download or share your result image with friends directly."
+        }
+      }
+    ]
   }
   </script>
+  
 
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
@@ -167,6 +191,7 @@ header.main-header h1 {
   margin-bottom: 0;
 }
 
+
 /* -------------------------------------
    6) Quiz Grid Section
 ------------------------------------- */
@@ -277,6 +302,29 @@ header.main-header h1 {
   margin-right: 20px;
   margin-bottom: 10px;
 }
+
+.faq {
+  background: #fff;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  border-top: 1px solid #ccc;
+}
+.faq h2 {
+  text-align: center;
+  color: #d32f2f;
+  margin-bottom: 20px;
+}
+.faq-item h4 {
+  margin-top: 15px;
+  color: #333;
+}
+.faq-item p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 
 /* -------------------------------------
    9) Related Blog Articles Section
@@ -419,7 +467,7 @@ footer .social-icons img:hover {
     <div class="nav-left">
       <img src="Logo.png" alt="Zinava Logo" id="brand-logo" />
       <a href="test.html">Test</a>
-      <a href="about.html">About</a>
+      <a href="leaders.html">Leader</a>
     </div>
     <div class="nav-right">
       <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho">Contact</a>
@@ -438,8 +486,8 @@ footer .social-icons img:hover {
     <h2>Explore Our Quizzes</h2>
     <p>Whether you're curious about which Squid Game character mirrors your personality or want to explore classic personality traits, we have a quiz for you.</p>
   </section>
-
- <section class="quiz-grid">
+  
+  <section class="quiz-grid">
     <!-- Squid Game Quiz Card -->
     <div class="quiz-card">
       <img src="squidgamemainwallpaper.jpg" alt="Squid Game Personality Quiz" />
@@ -447,7 +495,7 @@ footer .social-icons img:hover {
       <p>Are you a strategic mastermind like the Front Man, a survivor like Seong Gi-hun, loyal like Abdul Ali, or bold like Kang Sae-byeok? </p>
       <a href="squidgame-quiz.html" class="btn">Take Quiz</a>
     </div>
-
+  
     <!-- Historical Leaders Quiz Card -->
     <div class="quiz-card">
       <img src="leader.jpg" alt="Historical Leaders Personality Quiz" />
@@ -456,14 +504,33 @@ footer .social-icons img:hover {
       <a href="leaders.html" class="btn">Discover Your Leader</a>
     </div>
 
-   <!-- Classic Personality Quiz Card -->
+    <!-- Classic Personality Quiz Card -->
     <div class="quiz-card">
       <img src="personality.jpg" alt="Classic Personality Quiz" />
       <h3>🧠 Classic Personality Quiz</h3>
       <p>Discover your personality type with our research-backed quiz that explores your strengths and potential career paths.</p>
       <a href="personality-quiz.html" class="btn">Start Quiz</a>
     </div>
+  
   </section>
+  
+
+  <section class="faq">
+    <h2>📌 Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h4>What types of personality quizzes do you offer?</h4>
+      <p>We offer quizzes based on historical leaders, pop culture characters, classic MBTI types, and more.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Are the quizzes free?</h4>
+      <p>Yes! All quizzes on Zinvana are completely free to take and share.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I share my results?</h4>
+      <p>Absolutely! You can download or share your result image with friends directly.</p>
+    </div>
+  </section>
+  
 
   <!-- Related Blog Articles Section -->
   <section id="related-articles">
