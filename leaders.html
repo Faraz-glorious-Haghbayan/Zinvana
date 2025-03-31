@@ -6,7 +6,7 @@
   
     <title>Free Historical Leaders Personality Quiz | Zinvana</title>
   
-   <!-- SEO Meta Tags -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Discover which historical leader best matches your personality. Take the Zinvana Free Leadership Personality Quiz and explore your leadership style, strengths, and strategic mindset." />
     <meta name="keywords" content="leader personality quiz, natural leader personality type, what is leadership personality, how to have a leader personality, what is the leader personality type, leadership personality quiz, leadership personality quizzes, leader personality test, leader personality type test, leadership personality test animal, leadership personality types, leadership personality test free, a leader personality, am i a leader quiz, am i a leader test, best leadership personality test, best leader personality mbti, leader personality characteristics, leadership personality test disc, what type of leader are you quiz pdf, famous leader personality test, personality quiz for leadership, leader in me traits, leader qualities list, group leader quiz, good leader personality traits, personality leadership test, what leadership qualities do i have quiz, which personality type is a leader, leadership personality test online, leadership personality test pdf, personality leadership style quiz, leadership personality test questions, quiz to see what personality you have, famous personalities for quiz, leadership qualities quiz, qualities of a leader quizlet, leadership personality types test, team leader personality, which leader are you quiz, what type of leader are you printable quiz, what type of leader are you quiz free" />
     <meta name="author" content="Zinvana" />
@@ -429,16 +429,41 @@ header h1 {
     button:hover {
       background: #b71c1c;
     }
+   
+
     #screenshot-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    #screenshot-btn img {
-      width: 20px;
-      height: 20px;
-    }
+  background: linear-gradient(135deg, #ff9a00, #ff4f00);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(255, 79, 0, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: pulse 1.5s infinite;
+}
+
+#screenshot-btn img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+#screenshot-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(255, 79, 0, 0.7);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
   
     /* -------------------------------------
      10) Results Section (Squid Game Theme)
@@ -711,7 +736,7 @@ header h1 {
         </button>
         <button id="screenshot-btn">
           <img src="camera.png" alt="Camera icon" />
-          Share/Download
+          Share your result!
         </button>
       </div>
     </section>
