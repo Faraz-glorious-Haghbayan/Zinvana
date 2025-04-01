@@ -622,6 +622,102 @@ header h1 {
   line-height: 1.4;
 }
 
+
+/* Leader Breakdown Section */
+#leader-breakdown {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+}
+
+#leader-breakdown h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#leader-breakdown p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Leader Grid */
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Leader Cards */
+.leader-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.leader-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Leader Images */
+.leader-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Leader Titles */
+.leader-card h3 {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+/* Leader Descriptions */
+.leader-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* See More Leaders Button */
+.leader-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.see-more-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: #ff5733;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.see-more-btn:hover {
+  background: #e64a2e;
+  transform: scale(1.05);
+}
+
+#leader-intro{
+  color: rgb(31, 31, 31);
+  margin: 2% 5%;
+  border-radius: 50px;
+}
+
   
     /* -------------------------------------
      12) Responsive Styles
@@ -682,7 +778,7 @@ header h1 {
     <div class="nav-left">
       <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
       <a href="index.html">Home</a>
-      <a href="#faq">About</a>
+      <a href="#test">Test</a>
     </div>
     <div class="nav-right">
       <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho">Contact</a>
@@ -695,6 +791,72 @@ header h1 {
     <h1>Zinvana</h1>
     <div id="tagline">Historical Leaders Personality Test</div>
   </header>
+
+  <section id="leader-intro">
+    <h2>Discover Your Inner Leader: Take the Leadership Personality Quiz</h2>
+    <p>Throughout history, leaders have shaped the world through their vision, strategy, and charisma. But which historical leader best matches your personality? 
+    Our <strong>free personality quiz</strong> is designed to analyze your traits and align them with famous figures such as Napoleon Bonaparte, Abraham Lincoln, or even Lenin.</p>
+    
+    <p>Unlike other <strong>16 personality quizzes</strong> or <strong>career personality tests</strong>, this <strong>leadership quiz</strong> focuses on your decision-making skills, values, and leadership tendencies. 
+    Whether you're an ambitious strategist like Alexander the Great or a diplomatic unifier like Nelson Mandela, you’ll find out your true historical counterpart.</p>
+
+    <a href="#test">Take the quiz now</a>
+
+
+  </section>
+
+  <section id="leader-breakdown">
+    <h2>🔍 Leader Breakdown: Who Might You Be?</h2>
+    <p>Our test analyzes your traits and matches you with a historical leader based on your personality, leadership style, and decision-making approach.</p>
+  
+    <div class="leader-grid">
+      <!-- Napoleon -->
+      <div class="leader-card">
+        <img src="napoleon.jpg" alt="Napoleon Bonaparte" />
+        <h3>⚔️ Napoleon Bonaparte</h3>
+        <p>A strategic genius and bold reformer, Napoleon was known for his military prowess and visionary leadership.</p>
+      </div>
+  
+      <!-- Winston Churchill -->
+      <div class="leader-card">
+        <img src="churchill.jpg" alt="Winston Churchill" />
+        <h3>🗣️ Winston Churchill</h3>
+        <p>With his sharp rhetoric and unshakable determination, Churchill was a symbol of resilience during crisis.</p>
+      </div>
+  
+      <!-- Lenin -->
+      <div class="leader-card">
+        <img src="lenin.jpg" alt="Vladimir Lenin" />
+        <h3>🚩 Vladimir Lenin</h3>
+        <p>A revolutionary thinker and pragmatic leader, Lenin reshaped history with his strong ideological stance.</p>
+      </div>
+  
+      <!-- Atatürk -->
+      <div class="leader-card">
+        <img src="ataturk.jpg" alt="Mustafa Kemal Atatürk" />
+        <h3>🏛️ Mustafa Kemal Atatürk</h3>
+        <p>A reformist leader who modernized Turkey, Atatürk was a visionary dedicated to progress and change.</p>
+      </div>
+  
+      <!-- Ashoka -->
+      <div class="leader-card">
+        <img src="ashoka.jpg" alt="Ashoka the Great" />
+        <h3>☸️ Ashoka the Great</h3>
+        <p>Once a fierce warrior, Ashoka transformed into a compassionate ruler who championed peace and Buddhism.</p>
+      </div>
+  
+      <!-- Cyrus the Great -->
+      <div class="leader-card">
+        <img src="cyrus.jpg" alt="Cyrus the Great" />
+        <h3>👑 Cyrus the Great</h3>
+        <p>A ruler ahead of his time, Cyrus was known for his tolerance, leadership, and innovative governance.</p>
+      </div>
+    </div>
+    <div class="leader-button-container">
+      <a href="leaders-list.html" class="see-more-btn">📜 See More Leaders</a>
+    </div>    
+  </section>
+  
 
   <!-- Toast Notification Element -->
   <div id="toast" class="hidden">
@@ -796,6 +958,8 @@ header h1 {
     </a>
   </div>
 </footer>
+
+
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
