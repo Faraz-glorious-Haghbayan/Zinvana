@@ -70,27 +70,7 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   
   <style>
-    /* -------------------------------------
-   1) Modern CSS Reset
-------------------------------------- */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -147,7 +127,6 @@ nav a {
   font-size: 1.3rem;
 }
 #brand-logo {
-  min-width: 24%;
   width: 10%;
   pointer-events: none; /* Prevent logo from blocking clicks if it overlaps */
 }
@@ -410,13 +389,9 @@ footer .social-icons img:hover {
    11) Responsive Styles
 ------------------------------------- */
 @media (max-width: 970px) {
-  nav .nav-left a,
-  nav .nav-right a {
-    font-size: 1rem;
-  }
+  
   header h1 {
     font-size: 3.5rem;
-    color: red;
   }
   #tagline {
     font-size: 0.95rem;
@@ -427,8 +402,8 @@ footer .social-icons img:hover {
   main {
     padding: 30px;
   }
-  nav img#brand-logo {
-    width: 15%;
+  #brand-logo {
+    width: 25% !important;
   }
   footer .social-icons img {
     width: 10%;
@@ -439,6 +414,14 @@ footer .social-icons img:hover {
 @media (max-width: 600px) {
   h1{
     font-size: 2rem !important;
+  }
+  #brand-logo{
+    width: 50%;
+  }
+}
+@media (max-width: 1300px) {
+  #brand-logo{
+    width: 10%;
   }
 }
 
@@ -632,24 +615,31 @@ footer .social-icons img:hover {
   </section>
   
 
-  <!-- Related Blog Articles Section -->
-  <section id="related-articles">
-    <h2>Related Blog Articles</h2>
-    <div class="articles-container">
-      <article class="blog-card">
-        <h3><a href="squidgame-about.html">Everything about Squidgame and it's characters!</a></h3>
-        <p>Dive into the behavioral traits and psychological archetypes behind each iconic character.</p>
-      </article>
-      <article class="blog-card">
-        <h3><a href="leaders-list.html">List of all available leaders in our leaders quiz</a></h3>
-        <p>Find out everything about every available leader in our leaders quiz!</p>
-      </article>
-      <article class="blog-card">
-        <h3><a href="test.html">Personality Test</a></h3>
-        <p>Understand about your strenghts, areas for improvement and to which animal you are more similar.</p>
-      </article>
-    </div>
-  </section>
+<!-- Related Blog Articles Section -->
+<section id="related-articles">
+  <h2>Related Blog Articles</h2>
+  <div class="articles-container">
+    <article class="blog-card">
+      <h3><a href="squidgame-about.html">Everything about Squidgame and its characters!</a></h3>
+      <p>Dive into the behavioral traits and psychological archetypes behind each iconic character.</p>
+    </article>
+    <article class="blog-card">
+      <h3><a href="leaders-list.html">List of all available leaders in our leaders quiz</a></h3>
+      <p>Find out everything about every available leader in our leaders quiz!</p>
+    </article>
+    <article class="blog-card">
+      <h3><a href="test.html">Personality Test</a></h3>
+      <p>Understand your strengths, areas for improvement and which animal you are more similar to.</p>
+    </article>
+  </div>
+  <!-- Button to view all articles -->
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="all-articles.html" class="btn" style="padding: 10px 20px; background: #d32f2f; color: #fff; border-radius: 4px; transition: background 0.3s; text-decoration: none;">
+      View All Articles
+    </a>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer>
