@@ -118,12 +118,12 @@
     header.main-header {
       text-align: center;
       padding: 100px 10px 40px;
-      background: url('cyrusheader.png') no-repeat center center/cover;
+      background: url('header1.png') no-repeat center center/cover;
       border-bottom: 2px solid #d32f2f;
     }
     header.main-header h1 {
       font-size: 3rem;
-      color: #f3f3f3;
+      color: #ffffff;
       letter-spacing: 1px;
     }
     #tagline {
@@ -246,6 +246,21 @@
         width: 10%;
       }
     }
+
+
+    @media (max-width: 600px) {
+  h1{
+    font-size: 2rem !important;
+  }
+  #brand-logo{
+    width: 50%;
+  }
+}
+@media (max-width: 1300px) {
+  #brand-logo{
+    width: 10%;
+  }
+}
     @media (max-width: 630px) {
       .articles-grid {
         flex-wrap: nowrap;
@@ -293,7 +308,7 @@
 
   <!-- Header -->
   <header class="main-header">
-    <h1>All Articles</h1>
+    <h1>Zinvana</h1>
     <p id="tagline">Find out everything about your favorite historical leader and Squidgame Character!</p>
   </header>
 
