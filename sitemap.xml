@@ -1,135 +1,124 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
 <url>
-  <loc>https://zinvana.com/</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://zinvana.com/</loc>
+<lastmod>2025-04-06T12:08:46+00:00</lastmod>
+<priority>1.00</priority>
 </url>
 <url>
-  <loc>https://zinvana.com/test.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.70</priority>
+<loc>https://zinvana.com/help.html</loc>
+<lastmod>2025-04-06T12:08:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://zinvana.com/leaders.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.99</priority>
+<loc>https://zinvana.com/squidgame.html</loc>
+<lastmod>2025-04-06T12:08:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://zinvana.com/help.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://zinvana.com/leaders.html</loc>
+<lastmod>2025-04-06T12:08:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://zinvana.com/squidgame.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://zinvana.com/political.html</loc>
+<lastmod>2025-04-06T12:08:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://zinvana.com/squidgame-about.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://zinvana.com/test.html</loc>
+<lastmod>2025-04-06T12:08:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://zinvana.com/index.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.95</priority>
+<loc>https://zinvana.com/squidgame-about.html</loc>
+<lastmod>2025-04-06T12:08:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://zinvana.com/leadership.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.81</priority>
+<loc>https://zinvana.com/leaders-list.html</loc>
+<lastmod>2025-04-06T12:08:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://zinvana.com/political.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.85</priority>
+<loc>https://zinvana.com/all-articles.html</loc>
+<lastmod>2025-04-06T12:08:46+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://zinvana.com/squidgame-about.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.87</priority>
-</url>
-<url>
-  <loc>https://zinvana.com/leaders-list.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.90</priority>
+<loc>https://zinvana.com/index.html</loc>
+<lastmod>2025-04-06T12:08:46+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
   <loc>https://zinvana.com/churchill.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://zinvana.com/cyrus.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
+  <loc>https://zinvana.com/lenin.html</loc>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zinvana.com/lincoln.html</loc>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zinvana.com/fdr.html</loc>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zinvana.com/hitler.html</loc>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zinvana.com/ashoka.html</loc>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zinvana.com/gorbachev.html</loc>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zinvana.com/ghengiskhan.html</loc>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zinvana.com/aurelius.html</loc>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zinvana.com/suntzu.html</loc>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zinvana.com/ataturk.html</loc>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://zinvana.com/cheguevara.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-      <url>
+<url>
   <loc>https://zinvana.com/cyrus.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-      <url>
+<url>
   <loc>https://zinvana.com/gandhi.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
+  <lastmod>2025-04-06T12:08:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-      <url>
-  <loc>https://zinvana.com/ataturk.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-      <url>
-  <loc>https://zinvana.com/aurelius.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-      <url>
-  <loc>https://zinvana.com/suntzu.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-      <url>
-  <loc>https://zinvana.com/ghengiskhan.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-      <url>
-  <loc>https://zinvana.com/gorbachev.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-      <url>
-  <loc>https://zinvana.com/hitler.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-      <url>
-  <loc>https://zinvana.com/fdr.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-      <url>
-  <loc>https://zinvana.com/lincoln.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-      <url>
-  <loc>https://zinvana.com/lenin.html</loc>
-  <lastmod>2025-03-23T11:11:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+
 </urlset>
