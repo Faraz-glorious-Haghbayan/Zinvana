@@ -131,7 +131,7 @@ nav {
   z-index: 9999;
   justify-content: space-between;
   align-items: center;
-  background: #ffffff;
+  background: #000000;
   padding: 15px 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
@@ -142,13 +142,13 @@ nav .nav-right {
   gap: 20px;
 }
 nav a {
-  color: #2c3e50;
+  color: #dcdcdc;
   font-weight: 500;
   font-size: 1.3rem;
 }
-nav img#brand-logo {
+#brand-logo {
+  min-width: 24%;
   width: 10%;
-  min-width: 60px;
   pointer-events: none; /* Prevent logo from blocking clicks if it overlaps */
 }
 
@@ -303,14 +303,14 @@ header.main-header h1 {
   margin-bottom: 10px;
 }
 
-.faq {
+#faq {
   background: #fff;
   padding: 40px 20px;
   max-width: 900px;
   margin: 0 auto;
   border-top: 1px solid #ccc;
 }
-.faq h2 {
+#faq h2 {
   text-align: center;
   color: #d32f2f;
   margin-bottom: 20px;
@@ -458,6 +458,81 @@ footer .social-icons img:hover {
 
 
 
+/* Toast Container */
+.toast {
+  position: fixed;
+  left: 50%;
+  width: 70%;
+  transform: translateX(-50%);
+  background: #252525;
+  color: #eeeeee;
+  padding: 15px 10px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid red;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Fade in keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Content layout */
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Button styling */
+.toast-button {
+  background: #e60000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.toast-button:hover {
+  background: #f0f0f0;
+}
+
+/* Timer progress bar container */
+.toast-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.7);
+  margin-top: 10px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Timer progress bar animation */
+.toast-progress::before {
+  content: "";
+  display: block;
+  height: 100%;
+  background: #fff;
+  width: 100%;
+  animation: countdown 5s linear forwards;
+}
+
+/* Keyframes for the countdown animation */
+@keyframes countdown {
+  from { width: 100%; }
+  to { width: 0; }
+}
+
+
+
 </style>
 
 </head>
@@ -465,9 +540,8 @@ footer .social-icons img:hover {
    <!-- Top Navigation -->
    <nav>
     <div class="nav-left">
-      <img src="Logo.png" alt="Zinava Logo" id="brand-logo" />
-      <a href="test.html">Test</a>
-      <a href="leaders.html">Leader Quiz</a>
+      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
+      <a href="#faq">FAQ</a>
     </div>
     <div class="nav-right">
       <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho">Contact</a>
@@ -475,11 +549,25 @@ footer .social-icons img:hover {
     </div>
   </nav>
 
+
+
+  <div id="toast" class="toast" role="alert" aria-live="assertive">
+    <div class="toast-content">
+      <span class="toast-text">Take our Leader Quiz!</span>
+      <button class="toast-button" onclick="window.location.href='leaders.html'">Go Now</button>
+    </div>
+    <div class="toast-progress"></div>
+  </div>
+
+
+
+
   <!-- Header -->
   <header class="main-header">
     <h1>Zinvana</h1>
     <p id="tagline">Discover Your True Self Through Our Personality Quizzes</p>
   </header>
+
 
   <!-- Intro Section -->
   <section class="intro">
@@ -523,7 +611,7 @@ footer .social-icons img:hover {
 
   
 
-  <section class="faq">
+  <section id="faq">
     <h2>📌 Frequently Asked Questions</h2>
     <div class="faq-item">
       <h4>What types of personality quizzes do you offer?</h4>
@@ -553,6 +641,10 @@ footer .social-icons img:hover {
         <p>Dive into the behavioral traits and psychological archetypes behind each iconic character.</p>
       </article>
       <article class="blog-card">
+        <h3><a href="leaders-list.html">List of all available leaders in our leaders quiz</a></h3>
+        <p>Find out everything about every available leader in our leaders quiz!</p>
+      </article>
+      <article class="blog-card">
         <h3><a href="test.html">Personality Test</a></h3>
         <p>Understand about your strenghts, areas for improvement and to which animal you are more similar.</p>
       </article>
@@ -577,5 +669,24 @@ footer .social-icons img:hover {
       </div>
     </div>
   </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Customize duration in milliseconds (e.g., 5000ms = 5 seconds)
+      var toastDuration = 5000;
+      setTimeout(function() {
+        var toast = document.getElementById("toast");
+        if(toast) {
+          toast.style.transition = "opacity 0.5s ease-out";
+          toast.style.opacity = 0;
+          setTimeout(function() { toast.remove(); }, 500);
+        }
+      }, toastDuration);
+    });
+    </script>
+
+
+
 </body>
 </html>
