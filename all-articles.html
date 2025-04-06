@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Historical Leaders and Quizzes | Read Inspiring Stories | Zinvana</title>
+  <meta name="description" content="Discover all our blog articles on Zinvana. Stay updated with the latest insights, personality quizzes, and more!" />
+  <meta name="keywords" content="Zinvana, all articles, blog, personality quizzes, insights" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="Zinvana" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://zinvana.com/all-articles.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="All Articles | Zinvana" />
+  <meta property="og:description" content="Discover all our blog articles on Zinvana. Stay updated with the latest insights, personality quizzes, and more!" />
+  <meta property="og:image" content="hero.png" />
+  <meta property="og:url" content="https://zinvana.com/all-articles.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@Zinvana" />
+  <meta name="twitter:creator" content="@Zinvana" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- Fonts & html2canvas -->
+  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <style>
+    /* -------------------------------------
+       1) Modern CSS Reset
+    ------------------------------------- */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, font, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      vertical-align: baseline;
+    }
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+      display: block;
+    }
+    ol, ul {
+      list-style: none;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    /* -------------------------------------
+       2) Base Styles
+    ------------------------------------- */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f5f7;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.3s;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+
+    /* -------------------------------------
+       3) Navigation
+    ------------------------------------- */
+    nav {
+      display: flex;
+      position: relative;
+      z-index: 9999;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+      padding: 15px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    nav .nav-left,
+    nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #dcdcdc;
+      font-weight: 500;
+      font-size: 1.3rem;
+    }
+    #brand-logo {
+      min-width: 24%;
+      width: 10%;
+      pointer-events: none;
+    }
+
+    /* -------------------------------------
+       4) Header
+    ------------------------------------- */
+    header.main-header {
+      text-align: center;
+      padding: 100px 10px 40px;
+      background: url('cyrusheader.png') no-repeat center center/cover;
+      border-bottom: 2px solid #d32f2f;
+    }
+    header.main-header h1 {
+      font-size: 3rem;
+      color: #f3f3f3;
+      letter-spacing: 1px;
+    }
+    #tagline {
+      margin-top: 8px;
+      font-size: 1rem;
+      color: #ffffff;
+    }
+
+    /* -------------------------------------
+       5) Articles Section
+    ------------------------------------- */
+    .articles-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .articles-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #d32f2f;
+    }
+    .articles-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .article-card {
+      background: #1a1a1a;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 280px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+      transition: transform 0.3s ease;
+      text-align: center;
+      color: #e0e0e0;
+    }
+    .article-card:hover {
+      transform: scale(1.03);
+    }
+    .article-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .article-card h3 {
+      font-size: 1.4rem;
+      margin: 15px 0 10px;
+      color: #ffcccb;
+    }
+    .article-card p {
+      font-size: 1rem;
+      padding: 0 15px 15px;
+      color: #ccc;
+    }
+    .article-card .btn {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 10px 20px;
+      background: #d32f2f;
+      color: #fff;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .article-card .btn:hover {
+      background: #b71c1c;
+    }
+
+    /* -------------------------------------
+       6) Footer
+    ------------------------------------- */
+    footer {
+      background: #000;
+      padding: 20px 10px;
+      text-align: center;
+      border-top: 1px solid #d32f2f;
+      margin-top: 40px;
+    }
+    footer p {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin: 5px 0;
+    }
+    footer .social-icons {
+      margin-top: 10px;
+    }
+    footer .social-icons img {
+      width: 3%;
+      margin: 0 8px;
+      transition: opacity 0.3s;
+      cursor: pointer;
+    }
+    footer .social-icons img:hover {
+      opacity: 0.7;
+    }
+
+    /* -------------------------------------
+       7) Responsive Styles
+    ------------------------------------- */
+    @media (max-width: 970px) {
+      nav .nav-left a,
+      nav .nav-right a {
+        font-size: 1rem;
+      }
+      header h1 {
+        font-size: 3.5rem;
+        color: red;
+      }
+      #tagline {
+        font-size: 0.95rem;
+      }
+      .articles-section {
+        padding: 0 10px;
+      }
+      nav img#brand-logo {
+        width: 15%;
+      }
+      footer .social-icons img {
+        width: 10%;
+      }
+    }
+    @media (max-width: 630px) {
+      .articles-grid {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 20px;
+        padding-bottom: 20px;
+        justify-content: flex-start;
+      }
+      .article-card {
+        flex: 0 0 auto;
+      }
+    }
+  </style>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Zinvana Articles",
+      "url": "https://zinvana.com/all-articles.html",
+      "description": "Explore the lives and philosophies of great historical leaders.",
+      "author": {
+        "@type": "Organization",
+        "name": "Zinvana"
+      }
+    }
+    </script>
+    
+
+
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav>
+    <div class="nav-left">
+      <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+      <a href="index.html">Home</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho">Contact</a>
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="main-header">
+    <h1>All Articles</h1>
+    <p id="tagline">Find out everything about your favorite historical leader and Squidgame Character!</p>
+  </header>
+
+  <section class="articles-section">
+    <h2>All Articles</h2>
+    <div class="articles-grid">
+        <div class="article-card">
+            <img src="cyrusthegreatthumb.jpg" alt="Cyrus the Great wallpaper">
+            <h3>Cyrus the Great</h3>
+            <p>Learn about Cyrus the Great, founder of the Persian Empire, whose leadership and policies of tolerance set a lasting example in ancient history.</p>
+            <a href="cyrus.html" class="btn">Read More</a>         
+          </div>
+          
+          <div class="article-card">
+            <img src="churchillheader.jpg" alt="Winston Churchill">
+            <h3>Winston Churchill</h3>
+            <p>Explore the life of Winston Churchill, Britain’s steadfast wartime leader, whose words and willpower helped shape the outcome of World War II.</p>
+            <a href="churchill.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="lincolnheader.jpg" alt="Abraham Lincoln">
+            <h3>Abraham Lincoln</h3>
+            <p>Delve into the story of Abraham Lincoln, who led the United States through its Civil War and paved the path toward the abolition of slavery.</p>
+            <a href="lincoln.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="fdrheader.jpg" alt="Franklin D. Roosevelt">
+            <h3>Franklin D. Roosevelt</h3>
+            <p>Discover how FDR guided America through the Great Depression and WWII, reshaping the nation with bold reforms and resilient leadership.</p>
+            <a href="fdr.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="ashokaheader.jpg" alt="Ashoka the Great">
+            <h3>Ashoka the Great</h3>
+            <p>Learn about Ashoka, the Mauryan emperor who turned from conquest to compassion, promoting peace, welfare, and Buddhism across his realm.</p>
+            <a href="ashoka.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="hitlerheader.jpg" alt="Adolf Hitler">
+            <h3>austrian Painter</h3>
+            <p>Examine Hitler’s rise and the devastation of WWII, tracing how one man’s ideology led to one of the darkest chapters in modern history.</p>
+            <a href="hitler.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="leninheader.jpg" alt="Vladimir Lenin wallpaper">
+            <h3>Vladimir Lenin</h3>
+            <p>Explore Lenin’s revolutionary vision and the role he played in shaping the Soviet Union during a pivotal era of global political change.</p>
+            <a href="lenin.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="suntzuheader.jpg" alt="Sun Tzu">
+            <h3>Sun Tzu</h3>
+            <p>Uncover the philosophy of Sun Tzu, whose timeless military treatise, *The Art of War*, continues to influence leaders around the world.</p>
+            <a href="suntzu.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="aureliusheader.jpg" alt="Marcus Aurelius">
+            <h3>Marcus Aurelius</h3>
+            <p>Reflect on the wisdom of Marcus Aurelius, Rome’s philosopher-king, whose *Meditations* embody the stoic path of strength and virtue.</p>
+            <a href="aurelius.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="cheguevaraheader.jpg" alt="Che Guevara">
+            <h3>Che Guevara</h3>
+            <p>Explore the revolutionary life of Che Guevara, from his role in Cuba to his enduring legacy as a symbol of rebellion and radical change.</p>
+            <a href="cheguevara.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="gandhiheader.jpg" alt="Mahatma Gandhi">
+            <h3>Mahatma Gandhi</h3>
+            <p>Discover how Gandhi’s philosophy of nonviolence and peaceful resistance helped India achieve independence and inspired global change.</p>
+            <a href="gandhi.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="gorbachevheader.jpg" alt="Mikhail Gorbachev">
+            <h3>Mikhail Gorbachev</h3>
+            <p>Explore Gorbachev’s reformist leadership that ushered in the end of the Cold War and led to the peaceful dissolution of the Soviet Union.</p>
+            <a href="gorbachev.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card">
+            <img src="genghiskhanheader.jpg" alt="Genghis Khan">
+            <h3>Genghis Khan</h3>
+            <p>Learn how Genghis Khan built the Mongol Empire, uniting tribes and reshaping continents with strategy, innovation, and fierce ambition.</p>
+            <a href="genghiskhan.html" class="btn">Read More</a>
+          </div>
+          
+          
+      
+      <div class="article-card">
+        <img src="squidgamemainwallpaper.jpg" alt="Squid Game Article">
+        <h3>Squid Game Insights</h3>
+        <p>Discover the deeper psychology behind Squid Game characters and the lessons they bring.</p>
+        <a href="squidgame-about.html" class="btn">Read More</a>
+      </div>
+      
+      <div class="article-card">
+        <img src="leader.jpg" alt="Historical Leaders Article">
+        <h3>Leadership Through History</h3>
+        <p>Explore the traits of historical leaders and what makes them timeless icons.</p>
+        <a href="leaders-list.html" class="btn">Read More</a>
+      </div>
+      
+ </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Zinvana. All rights reserved.</p>
+      <p>This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
+          <img src="whiteinsta.png" alt="Instagram">
+        </a>
+        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
+          <img src="whitex.png" alt="Twitter">
+        </a>
+        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
+          <img src="youtube.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
