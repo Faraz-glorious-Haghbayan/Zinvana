@@ -6,7 +6,7 @@
   
     <title>Zinvana | Historical leaders list</title>
     <meta name="description" content="Discover the greatest leaders in history, from Winston Churchill to Gandhi. Explore their leadership styles, achievements, and lasting impact on the world.">
-    <meta name="keywords" content="greatest leaders, historical leaders, leadership styles, world history, Winston Churchill, Abraham Lincoln, Gandhi, Genghis Khan">
+    <meta name="keywords" content="greatest leaders, historical leaders, leadership styles, world history, Winston Churchill, Abraham Lincoln, Gandhi, Genghis Khan, influential leaders in history, abraham lincoln leadership quotes, leaders in history">
     <meta name="author" content="Zinvana">
     <meta name="robots" content="index, follow">
 
@@ -188,6 +188,80 @@
 }
 
 
+/* Toast Container */
+.toast {
+  position: fixed;
+  left: 50%;
+  width: 90%;
+  transform: translateX(-50%);
+  background: #252525;
+  color: #eeeeee;
+  padding: 15px 10px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid red;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Fade in keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Content layout */
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Button styling */
+.toast-button {
+  background: #e60000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.toast-button:hover {
+  background: #f0f0f0;
+}
+
+/* Timer progress bar container */
+.toast-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.7);
+  margin-top: 10px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Timer progress bar animation */
+.toast-progress::before {
+  content: "";
+  display: block;
+  height: 100%;
+  background: #fff;
+  width: 100%;
+  animation: countdown 5s linear forwards;
+}
+
+/* Keyframes for the countdown animation */
+@keyframes countdown {
+  from { width: 100%; }
+  to { width: 0; }
+}
+
+
         /* Responsive Styling */
         @media (max-width: 970px) {
             .leader-profile img {
@@ -210,7 +284,15 @@
         </div>
     </nav>
 
-    <h1>The Greatest Leaders in History</h1>
+    <div id="toast" class="toast" role="alert" aria-live="assertive">
+        <div class="toast-content">
+          <span class="toast-text">Find out which leader you are!</span>
+          <button class="toast-button" onclick="window.location.href='leaders.html'">Leader Quiz</button>
+        </div>
+        <div class="toast-progress"></div>
+      </div>
+
+    <h1>The Greatest and Most influential Leaders in History</h1>
 
     <section id="leaders-explainer">
         <h2>Influence, Power, and Leadership</h2>
@@ -405,5 +487,20 @@
           </a>
         </div>
       </footer>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // Customize duration in milliseconds (e.g., 5000ms = 5 seconds)
+          var toastDuration = 5000;
+          setTimeout(function() {
+            var toast = document.getElementById("toast");
+            if(toast) {
+              toast.style.transition = "opacity 0.5s ease-out";
+              toast.style.opacity = 0;
+              setTimeout(function() { toast.remove(); }, 500);
+            }
+          }, toastDuration);
+        });
+        </script>
 </body>
 </html>
