@@ -1,187 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Historical Leaders and Quizzes | Read Inspiring Stories | Zinvana</title>
-  <meta name="description" content="Discover all our blog articles on Zinvana. Stay updated with the latest insights, personality quizzes, and more!" />
-  <meta name="keywords" content="Zinvana, all articles, blog, personality quizzes, insights" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <title>Greatest and Most Influential Historical Leaders – Discover Their Secrets</title>
+    <meta name="description" content="Explore the greatest leaders in history—from Winston Churchill to Gandhi, from Abraham Lincoln to Genghis Khan. Discover their leadership traits, life lessons, and lasting impact. Learn key strategies from famous historical leaders." />
+    <meta name="keywords" content="greatest leaders, historical leaders, famous historical leaders, leadership styles, influential leaders in history, Winston Churchill, Abraham Lincoln, Gandhi, Genghis Khan" />
+    <meta name="author" content="Zinvana">
+    <meta name="robots" content="index, follow">
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="author" content="Zinvana" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://zinvana.com/all-articles.html" />
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Greatest Leaders in History – Uncover Their Leadership Secrets">
+    <meta property="og:description" content="Explore the legacies, leadership styles, and strategies of history’s most influential leaders. From inspiring speeches to bold reforms, learn from the best." />
+    <meta property="og:image" content="che.png">
+    <meta property="og:url" content="https://zinvana.com/leaders-list.html">
+    <meta property="og:type" content="website">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="All Articles | Zinvana" />
-  <meta property="og:description" content="Discover all our blog articles on Zinvana. Stay updated with the latest insights, personality quizzes, and more!" />
-  <meta property="og:image" content="hero.png" />
-  <meta property="og:url" content="https://zinvana.com/all-articles.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_US" />
+    <!-- Twitter Card for Social Media -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Greatest Leaders in History – Discover Their Impact">
+    <meta name="twitter:description" content="Dive deep into history with our comprehensive list of the world’s most influential leaders. Learn about their leadership traits, achievements, and enduring influence." />
+    <meta name="twitter:image" content="che.png">
 
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@Zinvana" />
-  <meta name="twitter:creator" content="@Zinvana" />
+    <!-- Favicon and Canonical URL -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://zinvana.com/leaders-list.html">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        nav {
+            display: flex;
+            position: relative;
+            z-index: 9999;
+            justify-content: space-between;
+            align-items: center;
+            background: #000; /* Dark background */
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2); /* Red-ish shadow */
+        }
+        nav .nav-left,
+        nav .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        nav a {
+            color: #fff; /* White text */
+            font-weight: 500;
+            font-size: 1.3rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #d32f2f; /* Red on hover */
+        }
+        nav img#brand-logo {
+            width: 10%;
+            min-width: 60px;
+            pointer-events: none;
+        }
 
-  <!-- Fonts & html2canvas -->
-  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+        h1 {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #ff4757;
+        }
 
-  <style>
-   html, body {
-      margin: 0;
-      padding: 0 !important;
-      border: 0;
-      vertical-align: baseline;
-    }
-    article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section {
-      display: block;
-    }
-    ol, ul {
-      list-style: none;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+        /* Section Styling */
+        #leaders-explainer {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
 
-    /* -------------------------------------
-       2) Base Styles
-    ------------------------------------- */
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #f4f5f7;
-      color: #333;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: opacity 0.3s;
-    }
-    a:hover {
-      opacity: 0.8;
-    }
+        #leaders-explainer h2 {
+            font-size: 1.6rem;
+            color: #ff4757;
+        }
 
-    /* -------------------------------------
-       3) Navigation
-    ------------------------------------- */
-    nav {
-      display: flex;
-      position: relative;
-      z-index: 9999;
-      justify-content: space-between;
-      align-items: center;
-      background: #000;
-      padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    nav .nav-left,
-    nav .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    nav a {
-      color: #dcdcdc;
-      font-weight: 500;
-      font-size: 1.3rem;
-    }
-    #brand-logo {
+        #leaders-explainer p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ccc;
+        }
 
-      width: 10%;
-      pointer-events: none;
-    }
+        #in-depth {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+            text-align: left;
+        }
+        #in-depth h2 {
+            font-size: 1.8rem;
+            color: #ff4757;
+            margin-bottom: 15px;
+        }
+        #in-depth h3 {
+            font-size: 1.4rem;
+            color: #ff7f50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        #in-depth p {
+            font-size: 1rem;
+            color: #ddd;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        #in-depth ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        #in-depth li {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 5px;
+            text-align: justify;
+        }
 
-    /* -------------------------------------
-       4) Header
-    ------------------------------------- */
-    header.main-header {
-      text-align: center;
-      padding: 100px 10px 40px;
-      background: url('header1.png') no-repeat center center/cover;
-      border-bottom: 2px solid #d32f2f;
-    }
-    header.main-header h1 {
-      font-size: 3rem;
-      color: #ffffff;
-      letter-spacing: 1px;
-    }
-    #tagline {
-      margin-top: 8px;
-      font-size: 1rem;
-      color: #ffffff;
-    }
+        /* Leader Profiles */
+        #leaders {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: left;
+        }
 
-    /* -------------------------------------
-       5) Articles Section
-    ------------------------------------- */
-    .articles-section {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .articles-section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #d32f2f;
-    }
-    .articles-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-    .article-card {
-      background: #1a1a1a;
-      border-radius: 8px;
-      overflow: hidden;
-      width: 280px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-      transition: transform 0.3s ease;
-      text-align: center;
-      color: #e0e0e0;
-    }
-    .article-card:hover {
-      transform: scale(1.03);
-    }
-    .article-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .article-card h3 {
-      font-size: 1.4rem;
-      margin: 15px 0 10px;
-      color: #ffcccb;
-    }
-    .article-card p {
-      font-size: 1rem;
-      padding: 0 15px 15px;
-      color: #ccc;
-    }
-    .article-card .btn {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 10px 20px;
-      background: #d32f2f;
-      color: #fff;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-    .article-card .btn:hover {
-      background: #b71c1c;
-    }
+        .leader-profile {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+            overflow: hidden;
+        }
 
-    /* -------------------------------------
-       6) Footer
-    ------------------------------------- */
-    footer {
+        .leader-profile h3 {
+            font-size: 1.4rem;
+            color: #ff4757;
+            margin-bottom: 10px;
+        }
+
+        .leader-profile p {
+            font-size: 1rem;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .leader-profile img {
+            width: 140px;
+            height: 140px;
+            border-radius: 8px;
+            object-fit: cover;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        .leader-profile ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+
+        .leader-profile li {
+            font-size: 1rem;
+            color: #ddd;
+            margin-bottom: 5px;
+        }
+
+        footer {
       background: #000;
       padding: 20px 10px;
       text-align: center;
@@ -189,15 +191,15 @@
       margin-top: 40px;
     }
     footer p {
-      font-size: 0.9rem;
-      color: #aaa;
       margin: 5px 0;
+      font-size: 1.3rem;
+      color: #aaa;
     }
     footer .social-icons {
       margin-top: 10px;
     }
     footer .social-icons img {
-      width: 3%;
+      width: 10%;
       margin: 0 8px;
       transition: opacity 0.3s;
       cursor: pointer;
@@ -206,245 +208,445 @@
       opacity: 0.7;
     }
 
-    /* -------------------------------------
-       7) Responsive Styles
-    ------------------------------------- */
-    @media (max-width: 970px) {
-      
-      header h1 {
-        font-size: 3.5rem;
-        color: red;
-      }
-      #tagline {
-        font-size: 0.95rem;
-      }
-      .articles-section {
-        padding: 0 10px;
-      }
-      #brand-logo{
-    width: 50%;
-  }
-      footer .social-icons img {
-        width: 10%;
-      }
-    }
-
-
-    @media (max-width: 600px) {
-  h1{
-    font-size: 2rem !important;
-  }
-  #brand-logo{
-    width: 50%;
-  }
+    .btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #ff0000;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
 }
-@media (max-width: 1300px) {
-  #brand-logo{
-    width: 10%;
-  }
+.btn:hover {
+  background-color: #b30000;
 }
-    @media (max-width: 630px) {
-      .articles-grid {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        gap: 20px;
-        padding-bottom: 20px;
-        justify-content: flex-start;
-      }
-      .article-card {
-        flex: 0 0 auto;
-      }
-    }
-  </style>
-
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Zinvana Articles",
-      "url": "https://zinvana.com/all-articles.html",
-      "description": "Explore the lives and philosophies of great historical leaders.",
-      "author": {
-        "@type": "Organization",
-        "name": "Zinvana"
-      }
-    }
-    </script>
-    
 
 
+/* Toast Container */
+.toast {
+  position: fixed;
+  left: 50%;
+  width: 90%;
+  transform: translateX(-50%);
+  background: #252525;
+  color: #eeeeee;
+  padding: 15px 10px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid red;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Fade in keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Content layout */
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Button styling */
+.toast-button {
+  background: #e60000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.toast-button:hover {
+  background: #f0f0f0;
+}
+
+/* Timer progress bar container */
+.toast-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.7);
+  margin-top: 10px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Timer progress bar animation */
+.toast-progress::before {
+  content: "";
+  display: block;
+  height: 100%;
+  background: #fff;
+  width: 100%;
+  animation: countdown 5s linear forwards;
+}
+
+/* Keyframes for the countdown animation */
+@keyframes countdown {
+  from { width: 100%; }
+  to { width: 0; }
+}
+
+
+        /* Responsive Styling */
+        @media (max-width: 970px) {
+            .leader-profile img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Top Navigation -->
-  <nav>
-    <div class="nav-left">
-      <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
-      <a href="index.html">Home</a>
+
+    <nav>
+        <div class="nav-left">
+            <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+            <a href="index.html">Home</a>
+            <a href="leaders.html">Quiz</a>
+        </div>
+        <div class="nav-right">
+            <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho">Contact</a>
+        </div>
+    </nav>
+
+   <!-- Toast Notification for Engagement -->
+   <div id="toast" class="toast" role="alert" aria-live="assertive">
+    <div class="toast-content">
+      <span class="toast-text">Find out which leader inspires you most!</span>
+      <button class="toast-button" onclick="window.location.href='leaders.html'">Take the Quiz</button>
     </div>
-    <div class="nav-right">
-      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho">Contact</a>
-      <a href="help.html">Help</a>
-    </div>
-  </nav>
+    <div class="toast-progress"></div>
+</div>
 
-  <!-- Header -->
-  <header class="main-header">
-    <h1>Zinvana</h1>
-    <p id="tagline">Find out everything about your favorite historical leader and Squidgame Character!</p>
-  </header>
+    <h1>The Greatest and most influential Leaders in History</h1>
 
-  <section class="articles-section">
-    <h2>All Articles</h2>
-    <div class="articles-grid">
-        <div class="article-card">
-            <img src="cyrusthegreatthumb.jpg" alt="Cyrus the Great wallpaper">
-            <h3>Cyrus the Great</h3>
-            <p>Learn about Cyrus the Great, founder of the Persian Empire, whose leadership and policies of tolerance set a lasting example in ancient history.</p>
-            <a href="cyrus.html" class="btn">Read More</a>         
-          </div>
-          
-          <div class="article-card">
-            <img src="churchillheader.jpg" alt="Winston Churchill">
-            <h3>Winston Churchill</h3>
-            <p>Explore the life of Winston Churchill, Britain’s steadfast wartime leader, whose words and willpower helped shape the outcome of World War II.</p>
-            <a href="churchill.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="lincolnheader.jpg" alt="Abraham Lincoln">
-            <h3>Abraham Lincoln</h3>
-            <p>Delve into the story of Abraham Lincoln, who led the United States through its Civil War and paved the path toward the abolition of slavery.</p>
-            <a href="lincoln.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="fdrheader.jpg" alt="Franklin D. Roosevelt">
-            <h3>Franklin D. Roosevelt</h3>
-            <p>Discover how FDR guided America through the Great Depression and WWII, reshaping the nation with bold reforms and resilient leadership.</p>
-            <a href="fdr.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="ashokaheader.jpg" alt="Ashoka the Great">
-            <h3>Ashoka the Great</h3>
-            <p>Learn about Ashoka, the Mauryan emperor who turned from conquest to compassion, promoting peace, welfare, and Buddhism across his realm.</p>
-            <a href="ashoka.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="hitlerheader.jpg" alt="Adolf Hitler">
-            <h3>Austrian Painter</h3>
-            <p>Examine Hitler’s rise and the devastation of WWII, tracing how one man’s ideology led to one of the darkest chapters in modern history.</p>
-            <a href="hitler.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="leninheader.jpg" alt="Vladimir Lenin wallpaper">
-            <h3>Vladimir Lenin</h3>
-            <p>Explore Lenin’s revolutionary vision and the role he played in shaping the Soviet Union during a pivotal era of global political change.</p>
-            <a href="lenin.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="suntzuheader.jpg" alt="Sun Tzu">
-            <h3>Sun Tzu</h3>
-            <p>Uncover the philosophy of Sun Tzu, whose timeless military treatise, *The Art of War*, continues to influence leaders around the world.</p>
-            <a href="suntzu.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="aureliusheader.jpg" alt="Marcus Aurelius">
-            <h3>Marcus Aurelius</h3>
-            <p>Reflect on the wisdom of Marcus Aurelius, Rome’s philosopher-king, whose *Meditations* embody the stoic path of strength and virtue.</p>
-            <a href="aurelius.html" class="btn">Read More</a>
-          </div>
+    <section id="leaders-explainer">
+        <h2>Influence, Power, and Leadership</h2>
+        <p>
+            Throughout the annals of history, great leaders have reshaped nations and inspired revolutions. Explore our curated list of <strong>historical leaders</strong> and gain insights into their leadership styles, defining moments, and enduring legacies. Whether you're studying for inspiration or looking to compare your own potential with the best in history, this is your gateway to understanding what truly makes a leader.
+        </p>
+    </section>
 
-          <div class="article-card">
-            <img src="gandhiheader.jpg" alt="Mahatma Gandhi">
-            <h3>Mahatma Gandhi (Hindi)</h3>
-            <p>Discover how Gandhi’s philosophy of nonviolence and peaceful resistance helped India achieve independence and inspired global change.</p>
-            <a href="gandhi-hi.html" class="btn">Read More</a>
-          </div>
+    <main>
+        <section id="leaders">
 
-          <div class="article-card">
-            <img src="ashokaheader.jpg" alt="Ashoka the Great">
-            <h3>Ashoka the Great (Hindi)</h3>
-            <p>Learn about Ashoka, the Mauryan emperor who turned from conquest to compassion, promoting peace, welfare, and Buddhism across his realm.</p>
-            <a href="ashoka-hi.html" class="btn">Read More</a>
-          </div>
+            <article class="leader-profile">
+                <img src="churchill.jpg" alt="Winston Churchill">
+                <h3>Winston Churchill – The Thoughtful Statesman</h3>
+                <p>
+                    Widely regarded as one of the greatest wartime leaders, Winston Churchill’s indomitable spirit and eloquent oratory inspired a nation during its darkest hours. His leadership style was rooted in resilience, strategic foresight, and a deep conviction in the power of words to mobilize people.
+                </p>
+                <p>
+                    Churchill not only led Britain through the adversity of World War II but also left behind a legacy of perseverance and diplomacy that continues to influence political leaders around the world.
+                </p>
+                <a href="churchill.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="lenin.jpg" alt="Lenin">
+                <h3>Lenin – The Charismatic Orator</h3>
+                <p>
+                    As the architect of the Soviet Revolution, Lenin transformed the political landscape of his time. His ability to articulate the vision for a new social order and mobilize millions was unparalleled. Through radical ideas and strategic propaganda, Lenin redefined the concept of leadership in a revolution.
+                </p>
+                <p>
+                    His legacy is a subject of intense debate, yet his influence on political thought and leadership remains indisputable.
+                </p>
+                <a href="lenin.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="lincoln.jpg" alt="Abraham Lincoln">
+                <h3>Abraham Lincoln – The Pragmatic Diplomat</h3>
+                <p>
+                    Known for his steady resolve and moral clarity, Abraham Lincoln led the United States through its greatest internal crisis—the Civil War. His ability to maintain unity and his commitment to equality have made him a timeless symbol of leadership and justice.
+                </p>
+                <p>
+                    Lincoln’s legacy teaches us the importance of compromise, empathy, and the pursuit of liberty in the face of division.
+                </p>
+                <a href="lincoln.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="fdr.jpg" alt="Franklin D. Roosevelt">
+                <h3>Franklin D. Roosevelt – The Dynamic Reformer</h3>
+                <p>
+                    Franklin D. Roosevelt’s innovative policies and charismatic leadership transformed the United States during the Great Depression and World War II. His New Deal programs redefined the role of government in society while his crisis management strategies provided hope to millions.
+                </p>
+                <p>
+                    FDR’s enduring legacy is evident in his commitment to social welfare, economic reform, and his forward-thinking vision that continues to inspire modern policymakers.
+                </p>
+                <a href="fdr.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="austrianpainter.png" alt="Austrian Painter">
+                <h3>Austrian Painter – The Visionary Leader</h3>
+                <p>
+                    While unconventional in his methods, the so-called “Austrian Painter” exemplifies creative leadership with an intense focus on artistic vision. His ability to merge art with strategy set him apart as a leader who dared to challenge traditional boundaries.
+                </p>
+                <p>
+                    His influence stretches beyond the realm of art, permeating into the philosophy of leadership and creative problem-solving.
+                </p>
+                <a href="hitler.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="ashoka.jpg" alt="Ashoka the Great">
+                <h3>Ashoka the Great – The Enlightened Sovereign</h3>
+                <p>
+                    Ashoka the Great transformed from a formidable conqueror into a proponent of peace and compassion. His embrace of Buddhism and his commitment to non-violence reshaped his empire and left a legacy defined by humanitarian ideals.
+                </p>
+                <p>
+                    His reign is studied for its pioneering approach to governance—a blend of military might tempered by benevolent administration.
+                </p>
+                <a href="ashoka.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="gandhi.jpg" alt="Mahatma Gandhi">
+                <h3>Mahatma Gandhi – The Compassionate Reformer</h3>
+                <p>
+                    Mahatma Gandhi led a non-violent revolution that not only freed India from colonial rule but also inspired civil rights movements around the globe. His philosophy of Satyagraha, or truth-force, continues to be a guiding principle for peaceful protest and ethical leadership.
+                </p>
+                <p>
+                    Gandhi’s life is a testament to the idea that true power lies in compassion, unity, and unwavering commitment to justice.
+                </p>
+                <a href="gandhi.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="gorbachev.jpg" alt="Mikhail Gorbachev">
+                <h3>Mikhail Gorbachev – The Innovative Visionary</h3>
+                <p>
+                    Mikhail Gorbachev’s reforms, particularly glasnost and perestroika, marked a historic turning point in global politics by opening up the closed systems of the Soviet era. His willingness to embrace change and challenge established norms illustrates the power of adaptive leadership.
+                </p>
+                <p>
+                    Gorbachev’s legacy is one of transformation, where the courage to reform led to a new era of openness and international cooperation.
+                </p>
+                <a href="gorbachev.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="chengis.jpg" alt="Genghis Khan">
+                <h3>Genghis Khan – The Iron Fist</h3>
+                <p>
+                    Genghis Khan redefined the concept of leadership through his relentless conquests and innovative military tactics. His ability to unite a multitude of tribes into a single formidable force and his strategic acumen set the standard for military leadership.
+                </p>
+                <p>
+                    Despite his reputation for brutality, Khan’s legacy also reflects the effectiveness of decisive, uncompromising action in times of conflict.
+                </p>
+                <a href="ghengiskhan.html" class="btn">Find out more about him</a>
+            </article>
 
-          <div class="article-card">
-            <img src="cyrusthegreatthumb.jpg" alt="Cyrus the Great wallpaper">
-            <h3>Cyrus the Great (Farsi)</h3>
-            <p>Learn about Cyrus the Great, founder of the Persian Empire, whose leadership and policies of tolerance set a lasting example in ancient history.</p>
-            <a href="cyrus-fa.html" class="btn">Read More</a>         
-          </div>
-          
-          <div class="article-card">
-            <img src="cheguevaraheader.jpg" alt="Che Guevara">
-            <h3>Che Guevara</h3>
-            <p>Explore the revolutionary life of Che Guevara, from his role in Cuba to his enduring legacy as a symbol of rebellion and radical change.</p>
-            <a href="cheguevara.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="gandhiheader.jpg" alt="Mahatma Gandhi">
-            <h3>Mahatma Gandhi</h3>
-            <p>Discover how Gandhi’s philosophy of nonviolence and peaceful resistance helped India achieve independence and inspired global change.</p>
-            <a href="gandhi.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="gorbachevheader.jpg" alt="Mikhail Gorbachev">
-            <h3>Mikhail Gorbachev</h3>
-            <p>Explore Gorbachev’s reformist leadership that ushered in the end of the Cold War and led to the peaceful dissolution of the Soviet Union.</p>
-            <a href="gorbachev.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="genghiskhanheader.jpg" alt="Genghis Khan">
-            <h3>Genghis Khan</h3>
-            <p>Learn how Genghis Khan built the Mongol Empire, uniting tribes and reshaping continents with strategy, innovation, and fierce ambition.</p>
-            <a href="ghengiskhan.html" class="btn">Read More</a>
-          </div>
-          
-          
-      
-      <div class="article-card">
-        <img src="squidgamemainwallpaper.jpg" alt="Squid Game Article">
-        <h3>Squid Game Insights</h3>
-        <p>Discover the deeper psychology behind Squid Game characters and the lessons they bring.</p>
-        <a href="squidgame-about.html" class="btn">Read More</a>
-      </div>
-      
-      <div class="article-card">
-        <img src="leader.jpg" alt="Historical Leaders Article">
-        <h3>Leadership Through History</h3>
-        <p>Explore the traits of historical leaders and what makes them timeless icons.</p>
-        <a href="leaders-list.html" class="btn">Read More</a>
-      </div>
-      
- </div>
-  </section>
+            <article class="leader-profile">
+                <img src="cleopatra.png" alt="Cleopatra">
+                <h3>Cleopatra – The Diplomatic Enchantress</h3>
+                <p>
+                    Cleopatra VII of Egypt was a master of political alliances and charismatic leadership. Fluent in multiple languages and a cunning strategist, she navigated the power dynamics of Rome with intelligence and charm.
+                </p>
+                <p>
+                    Her legacy is a blend of romance and realpolitik, proving that diplomacy and cultural savvy can be as powerful as military might.
+                </p>
+                <a href="cleopatra.html" class="btn">Find out more about her</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="augustus.jpg" alt="Augustus Caesar">
+                <h3>Augustus Caesar – The Imperial Architect</h3>
+                <p>
+                    As the first Roman Emperor, Augustus Caesar laid the foundation for the Roman Empire. His reign ushered in the Pax Romana, a period of unprecedented peace and prosperity.
+                </p>
+                <p>
+                    Augustus exemplified a leadership style rooted in reform, stability, and institutional resilience that set the tone for centuries of governance.
+                </p>
+                <a href="augustus.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="caesarheader.jpg" alt="Julius Caesar">
+                <h3>Julius Caesar – The Ambitious Strategist</h3>
+                <p>
+                    Julius Caesar was a brilliant general and shrewd political leader who expanded the Roman Republic and challenged its foundational systems. His bold decisions and reforms reshaped Rome.
+                </p>
+                <p>
+                    Though his rule ended in assassination, Caesar’s legacy is one of vision, decisiveness, and transformation.
+                </p>
+                <a href="caesar.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="mandelaheader.jpg" alt="Nelson Mandela">
+                <h3>Nelson Mandela – The Unifying Peacemaker</h3>
+                <p>
+                    Nelson Mandela's lifelong fight against apartheid and his presidency symbolized reconciliation and unity. His leadership was defined by forgiveness, integrity, and an unwavering belief in equality.
+                </p>
+                <p>
+                    Mandela's influence transcends South Africa, serving as a global emblem of moral leadership and peaceful resistance.
+                </p>
+                <a href="nelsonmandela.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="mlk.jpg" alt="Martin Luther King Jr.">
+                <h3>Martin Luther King Jr. – The Dream Bearer</h3>
+                <p>
+                    A powerful voice for civil rights, Martin Luther King Jr. led a movement grounded in non-violence, justice, and hope. His speeches and activism reshaped America's social conscience.
+                </p>
+                <p>
+                    His legacy is a beacon for equality and the belief that love and justice must guide leadership.
+                </p>
+                <a href="mlkj.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="alexander.jpg" alt="Alexander the Great">
+                <h3>Alexander the Great – The Conquering Visionary</h3>
+                <p>
+                    Alexander the Great built one of the largest empires in history by the age of thirty. His tactical genius and ambition forged a new era of Hellenistic culture and influence.
+                </p>
+                <p>
+                    His leadership was driven by bold strategy, innovation, and a relentless pursuit of greatness.
+                </p>
+                <a href="alexander.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="stalinheader.jpg" alt="Joseph Stalin">
+                <h3>Joseph Stalin – The Iron Autocrat</h3>
+                <p>
+                    Stalin's rule over the Soviet Union was marked by rapid industrialization and brutal authoritarian control. He transformed the USSR into a superpower at immense human cost.
+                </p>
+                <p>
+                    Controversial and complex, his leadership legacy is a stark example of the impact of centralized power and ideological extremism.
+                </p>
+                <a href="stalin.html" class="btn">Find out more about him</a>
+            </article>
+            
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Zinvana. All rights reserved.</p>
-      <p>This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-          <img src="whiteinsta.png" alt="Instagram">
-        </a>
-        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-          <img src="whitex.png" alt="Twitter">
-        </a>
-        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-          <img src="youtube.png" alt="YouTube">
-        </a>
-      </div>
-    </div>
-  </footer>
+            <article class="leader-profile">
+                <img src="aurelius.jpg" alt="Marcus Aurelius">
+                <h3>Marcus Aurelius – The Watchful Guardian</h3>
+                <p>
+                    Marcus Aurelius is remembered for his stoic philosophy and his dedication to duty and moral integrity. His writings offer a rare glimpse into the mind of a ruler who balanced the burdens of power with personal reflection and ethical responsibility.
+                </p>
+                <p>
+                    His lessons on self-discipline, the impermanence of life, and the importance of compassion remain influential in both philosophy and modern leadership studies.
+                </p>
+                <a href="aurelius.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="suntzu.jpg" alt="Sun Tzu">
+                <h3>Sun Tzu – The Elite Strategist</h3>
+                <p>
+                    Sun Tzu’s treatise, "The Art of War," transcends time, offering strategies that are still referenced in business, sports, and politics today. His emphasis on intelligence, adaptability, and the element of surprise exemplifies a strategic mindset that is essential for leadership in any era.
+                </p>
+                <p>
+                    As a master tactician, his philosophies provide profound lessons on preparation, risk management, and the importance of understanding both one’s own strengths and those of one’s adversaries.
+                </p>
+                <a href="suntzu.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="ataturk.jpg" alt="Mustafa Kemal Atatürk">
+                <h3>Mustafa Kemal Atatürk – The Enlightened Visionary</h3>
+                <p>
+                    Atatürk’s revolutionary reforms modernized Turkey and set a precedent for secular governance and progressive social policies. His insistence on education, national sovereignty, and modernization reshaped an entire nation, leaving a legacy that continues to serve as a benchmark for transformative leadership.
+                </p>
+                <p>
+                    Atatürk’s vision of a contemporary state exemplifies how bold, thoughtful reforms can lead a nation toward a brighter future.
+                </p>
+                <a href="ataturk.html" class="btn">Find out more about him</a>
+            </article>
+            
+            <article class="leader-profile">
+                <img src="che.png" alt="Che Guevara">
+                <h3>Che Guevara – The Revolutionary Firestarter</h3>
+                <p>
+                    Che Guevara’s iconic image stands as a symbol of rebellion and radical change. His unwavering commitment to overturning oppressive systems and empowering the marginalized has inspired generations of activists and revolutionaries.
+                </p>
+                <p>
+                    Guevara’s life reminds us that leadership is not always about consensus—it can also be about challenging the status quo with passion and purpose.
+                </p>
+                <a href="cheguevara.html" class="btn">Find out more about him</a>
+            </article>
+        </section>
+
+        <section id="in-depth">
+            <h2>In-Depth Analysis of Historical Leadership</h2>
+            <h3>The Evolution of Leadership</h3>
+            <p>
+                Over centuries, leadership has evolved from autocratic rule to more democratic and transformational styles. This evolution is influenced by cultural shifts, technological advances, and changing societal values. Studying historical leaders helps us understand these changes and the context in which these figures thrived.
+            </p>
+            <h3>Key Traits That Define a Great Leader</h3>
+            <p>
+                Great leaders often share common traits such as vision, resilience, strategic thinking, and the ability to inspire. They possess a unique blend of charisma and humility, using their personal strengths to drive innovation and unity among their followers.
+            </p>
+            <ul>
+                <li><strong>Vision:</strong> The ability to anticipate future trends and inspire collective action.</li>
+                <li><strong>Resilience:</strong> Overcoming adversity with determination and grace.</li>
+                <li><strong>Strategic Thinking:</strong> Crafting long-term plans that benefit society as a whole.</li>
+                <li><strong>Empathy:</strong> Understanding and addressing the needs of the people.</li>
+            </ul>
+            <h3>Comparative Analysis: How Do Modern Leaders Measure Up?</h3>
+            <p>
+                In today’s world, leadership is more complex than ever, blending traditional strategies with innovative thinking and digital empowerment. By comparing historical techniques with modern management practices, we can identify timeless principles that continue to define successful leadership across different eras.
+            </p>
+            <p>
+                This analysis not only deepens our appreciation for historical figures but also offers actionable lessons for today's leaders in business, politics, and community development.
+            </p>
+        </section>
+        
+        <section id="resources">
+            <h2>Additional Resources on Historical Leadership</h2>
+            <p>Enhance your knowledge on the impactful legacy of great leaders with these authoritative resources:</p>
+            <ul>
+                <li><a href="https://www.britannica.com/" style="color:#ff4757;" target="_blank">Encyclopedia Britannica</a> – In‑depth insights and biographies.</li>
+                <li><a href="https://www.nationalgeographic.com/" style="color:#ff4757;" target="_blank">National Geographic History</a> – Engaging stories and documentaries.</li>
+            </ul>
+            <p>
+                These resources not only provide further context on <strong>famous historical leaders</strong> but also deepen your understanding of the <strong>leadership styles</strong> that have shaped our world.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Zinvana. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
+            <img src="whiteinsta.png" alt="Instagram" />
+          </a>
+          <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
+            <img src="whitex.png" alt="Twitter" />
+          </a>
+          <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
+            <img src="youtube.png" alt="YouTube" />
+          </a>
+        </div>
+      </footer>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // Customize duration in milliseconds (e.g., 5000ms = 5 seconds)
+          var toastDuration = 5000;
+          setTimeout(function() {
+            var toast = document.getElementById("toast");
+            if(toast) {
+              toast.style.transition = "opacity 0.5s ease-out";
+              toast.style.opacity = 0;
+              setTimeout(function() { toast.remove(); }, 500);
+            }
+          }, toastDuration);
+        });
+        </script>
 </body>
 </html>
