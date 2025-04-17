@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Which Empire Would You Have Thrived In? | Zinvana</title>
+      
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Take the ultimate empire quiz and find out if you belong in Rome, Persia, the Mongol Horde, or Imperial China. Discover your ancient destiny!" />
+        <meta name="keywords" content="empire quiz, which empire are you, historical quiz, roman empire, persian empire, samurai, mongol horde, personality test" />
+        <meta name="author" content="Zinvana" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://zinvana.com/empires.html" />
+      
+        <!-- Open Graph (for Facebook, LinkedIn) -->
+        <meta property="og:title" content="Which Empire Would You Have Thrived In? | Zinvana" />
+        <meta property="og:description" content="Rome, Persia, the Mongol Horde, or Imperial China? Take this immersive personality test and find your imperial match!" />
+        <meta property="og:image" content="hero.png" />
+        <meta property="og:url" content="https://zinvana.com/empires.html" />
+        <meta property="og:type" content="website" />
+      
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Which Empire Would You Have Thrived In?" />
+        <meta name="twitter:description" content="Discover your historical destiny with our empire personality quiz!" />
+        <meta property="og:image" content="hero.png" />
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "Quiz",
+            "name": "Which Empire Would You Have Thrived In?",
+            "description": "A personality-based quiz that matches you with one of four legendary empires: Rome, Achaemenid Persia, Imperial China (Samurai), or the Mongol Horde.",
+            "about": [
+              "Roman Empire", 
+              "Achaemenid Persia", 
+              "Samurai Japan", 
+              "Mongol Empire"
+            ],
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zinvana",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://zinvana.com/logo.png"
+              }
+            }
+          }
+        </script>
+      
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+      
+        <!-- Fonts -->
+        <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+      
+        <!-- html2canvas for Share Screenshot -->
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+      
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H7GCZY7W0"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-3H7GCZY7W0');
+        </script>
+      
+       <link rel="stylesheet" href="quiz.css">
+       <style>
+        header {
+    background: url('persia2.jpg') no-repeat center/cover;
+        }
+       </style>
+      </head>
+      
+<body>
+
+    <!-- Top Navigation -->
+    <nav>
+      <div class="nav-left">
+        <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
+        <a href="index.html">Home</a>
+        <a href="#test">Test</a>
+      </div>
+      <div class="nav-right">
+        <a href="help.html">Help</a>
+      </div>
+    </nav>
+  
+    <!-- Header -->
+    <header>
+      <h1>Which Empire Would You Have Thrived In?</h1>
+      <div id="tagline">Were you meant for Rome, Persia, the Mongol Horde, or Imperial China?</div>
+    </header>
+  
+    <!-- Introduction -->
+    <section id="intro" style="max-width: 800px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); color: #333;">
+      <h2>Discover Your Imperial Calling</h2>
+      <p>
+        Ever wondered where your talents and temperament would have shone brightest among the great empires of history? In our free <strong>Empire Quiz</strong>, you’ll answer a series of questions to find out whether you’d excel as a Roman Citizen, an Achaemenid Noble, a Samurai Scholar, or a Mongol Raider.
+      </p>
+      <p>
+        From the engineering marvels of Rome to the vast palaces of Persia, the disciplined courts of Imperial China, and the boundless horizons of the Mongol steppe—your answers will reveal your ideal imperial home.
+      </p>
+      <a href="#test" style="display:inline-block; margin-top:10px; background:#d32f2f; color:#fff; padding:12px 20px; border-radius:6px; text-decoration:none;">Start the Quiz</a>
+    </section>
+  
+    <!-- Deep Dive into Empires -->
+    <section id="deep-dive" style="max-width: 800px; margin: 40px auto; padding: 20px; background: #fefefe; border:1px solid #ddd; border-radius:8px;">
+      <h2>Deep Dive into the Great Empires</h2>
+      <p>Explore what made each civilization unique:</p>
+      <ul>
+        <li><a href="romanempire.html">Rome</a> – Masters of engineering, law, and urban planning.</li>
+        <li><a href="achaemenidempire.html">Achaemenid Persia</a> – Visionary administration and cultural tolerance.</li>
+        <li><a href="tokugawashogunate.html">Tokugawa Shogunate</a> – Guardians of tradition, discipline, and cultural refinement.</li>
+        <li><a href="mongolempire.html">Mongol Horde</a> – Unmatched mobility, strategy, and adaptability.</li>
+      </ul>
+      <p>Click any link to learn more about each empire’s history, achievements, and legacy.</p>
+    </section>
+  
+    <!-- Empire Breakdown -->
+    <section id="leader-breakdown">
+      <h2>🔍 Empire Breakdown: Which One Suits You?</h2>
+      <p>Based on your answers, you’ll be matched to one of these four imperial archetypes:</p>
+      <div class="leader-grid">
+        <div class="leader-card">
+          <img src="roman.jpg" alt="Roman Citizen" />
+          <h3>🏛️ Roman Citizen</h3>
+          <p>Disciplined builders and lawmakers—your strength lies in order, architecture, and governance.</p>
+        </div>
+        <div class="leader-card">
+          <img src="persia.jpg" alt="Achaemenid Noble" />
+          <h3>👑 Achaemenid Noble</h3>
+          <p>Shrewd diplomats and patrons of culture—your talent is uniting diverse peoples under one banner.</p>
+        </div>
+        <div class="leader-card">
+          <img src="samurai.jpg" alt="Samurai Scholar" />
+          <h3>🎎 Samurai Scholar</h3>
+          <p>Honorable warriors and learned bureaucrats—your balance of discipline and intellect sets you apart.</p>
+        </div>
+        <div class="leader-card">
+          <img src="mongol.jpg" alt="Mongol Raider" />
+          <h3>🏹 Mongol Raider</h3>
+          <p>Fearless on horseback and masters of strategy—your greatest asset is speed, adaptability, and bold tactics.</p>
+        </div>
+      </div>
+      <div class="leader-button-container">
+        <a href="empires-list.html" class="see-more-btn">📜 See All Empires</a>
+      </div>
+    </section>
+  
+    <!-- Toast Notification Element -->
+    <div id="toast" class="hidden">
+      <div class="toast-icon">
+        <img src="heart.png" alt="heart icon" id="heart" />
+      </div>
+      <div class="toast-text">
+        <div class="toast-title" id="toast-title">Hail!</div>
+        <div class="toast-subtitle" id="toast-subtitle"></div>
+      </div>
+    </div>
+  
+    <!-- Quiz & Results -->
+    <main>
+      <section id="test">
+        <div id="progress-container">
+          <span id="progress-text">Question 1 of 12</span>
+        </div>
+        <div id="question-container">
+          <h2 id="question-title">Your question will appear here</h2>
+          <ul id="answer-options"></ul>
+        </div>
+        <button id="next-btn">Next</button>
+      </section>
+      <section id="results" class="hidden">
+        <h2>Your Imperial Match</h2>
+        <div id="evaluation"></div>
+        <div>
+          <button id="restart-btn">
+            <img src="restart.png" alt="Restart icon" style="width:18px; height:18px; margin-right:6px;" />
+            Restart Quiz
+          </button>
+          <button id="screenshot-btn">
+            <img src="camera.png" alt="Camera icon" />
+            Share Result
+          </button>
+        </div>
+      </section>
+    </main>
+  
+    <!-- Related Articles -->
+    <section id="related-articles">
+      <h2>Related Quizzes</h2>
+      <div class="articles-container">
+        <article class="blog-card">
+          <h3><a href="which-warrior.html">A List of all great leaders in History</a></h3>
+          <p>Explore the greatest leaders in history—from Winston Churchill to Gandhi, from Abraham Lincoln to Genghis Khan. Discover their leadership traits, life lessons, and lasting impact. Learn key strategies from famous historical leaders.</p>
+        </article>
+        <article class="blog-card">
+          <h3><a href="leaders.html">Which historical Leader are You?</a></h3>
+          <p>Discover which historical leader you are through our famous leader test! Compare your personality with important historical leaders like Napoleon, Gandhi, Lincoln, and more. Find out which historical figure best defines your leadership style.</p>
+        </article>
+      </div>
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="all-articles.html" class="btn" style="padding: 10px 20px; background: #d32f2f; color: #fff; border-radius: 4px; transition: background 0.3s; text-decoration: none;">
+          View All Articles
+        </a>
+      </div>
+    </section>
+  
+    <!-- FAQ -->
+     <section id="faq" class="test-explainer">
+    <h2 class="test-title">Frequently Asked Questions</h2>
+  
+    <div class="test-text">
+      <strong>What is this quiz about?</strong><br>
+      This quiz helps you discover which of four legendary empires—Rome, Achaemenid Persia, Imperial China (via the samurai ideal), or the Mongol Horde—best matches your personality, values, and natural strengths. By answering 12 engaging questions, you’ll uncover where in the ancient world you’d have thrived most.
+    </div>
+  
+    <div class="test-text">
+      <strong>Which empires are featured?</strong><br>
+      <ul>
+        <li><strong>Roman Empire</strong>: Masters of engineering, law, and civic order.</li>
+        <li><strong>Achaemenid Persia</strong>: Visionary administrators known for tolerance and infrastructure.</li>
+        <li><strong>Imperial China (Samurai Scholar)</strong>: In our quiz “samurai” represents the disciplined, scholarly tradition of East Asia.</li>
+        <li><strong>Mongol Horde</strong>: Unrivaled cavalry strategists famed for speed, adaptability, and bold tactics.</li>
+      </ul>
+    </div>
+  
+    <div class="test-text">
+      <strong>How does the quiz work?</strong><br>
+      Each question offers four choices—each tied to one empire archetype. When you select an answer, you earn “points” for that empire. At the end, the empire with the highest score becomes your primary match. If two are close, you may even get a secondary result highlighting a blended personality!
+    </div>
+  
+    <div class="test-text">
+      <strong>How many questions are there and how long will it take?</strong><br>
+      There are <strong>12 questions</strong> covering preferences in leadership style, environment, values, and more. Most people finish in under <strong>3 minutes</strong>—perfect for a quick historical detour!
+    </div>
+  
+    <div class="test-text">
+      <strong>How accurate is my result?</strong><br>
+      While this quiz is designed for entertainment and light self‑reflection, it’s built on clear, consistent archetypes drawn from each empire’s core values. Think of it as a fun way to explore your strengths through a historical lens—not a rigorous psychological assessment.
+    </div>
+  
+    <div class="test-text">
+      <strong>Is the quiz really free?</strong><br>
+      Absolutely! You can take it as many times as you like, share your results with friends, and explore deeper articles—all at no cost.
+    </div>
+  
+    <div class="test-text">
+      <strong>Can I retake or change my answers?</strong><br>
+      Yes. At the end of the quiz click “Restart Quiz” to reset all your choices. Feel free to experiment with different combinations to see how your result might shift.
+    </div>
+  
+    <div class="test-text">
+      <strong>How can I share my result?</strong><br>
+      Click the “Share Result” button to download a snapshot of your empire match or share directly to social platforms (if supported by your device). Show your friends which civilization you’d have ruled!
+    </div>
+  
+    <div class="test-text">
+      <strong>Can I use these results for educational purposes?</strong><br>
+      Of course! Teachers and history buffs can incorporate the quiz into lessons or group activities. It’s a fun conversation starter about empire‑building, cultural values, and how personality influences leadership across different civilizations.
+    </div>
+  </section>
+  
+  
+    <!-- Resources -->
+    <section id="resources" style="max-width:800px; margin:40px auto; padding:20px; background:#f8f9fa; border-radius:8px;">
+      <h2>Learn More About the Empires</h2>
+      <ul>
+        <li><a href="https://zinvana.com/romanempire.html" target="_blank">Roman Empire – Zinvana</a></li>
+        <li><a href="https://zinvana.com/achaemenidempire.html" target="_blank">Achaemenid Empire – Zinvana</a></li>
+        <li><a href="https://zinvana.com/tokugawashoganate.html" target="_blank">tokugawashoganate – Zinvana</a></li>
+        <li><a href="https://zinvana.com/mongolempire.html" target="_blank">Mongol Empire – Zinvana</a></li>
+      </ul>
+    </section>
+  
+   <!-- Footer -->
+   <footer>
+    <div class="container">
+      <p>&copy; 2025 Zinvana. All rights reserved.</p>
+      <p>This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
+          <img src="whiteinsta.png" alt="Instagram" />
+        </a>
+        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
+          <img src="whitex.png" alt="Twitter" />
+        </a>
+        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
+          <img src="youtube.png" alt="YouTube" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Toast titles
+  const toastTitles = [
+    "Hail!",
+    "Ave!",
+    "Strength!",
+    "Honor!",
+    "Victory!"
+  ];
+
+  // Themed toast messages for each empire
+  const toastMessagesMultiple = {
+    roman: [
+      "Valiant legionary at heart.",
+      "Order and law guide you.",
+      "Your discipline builds empires."
+    ],
+    achaemenid: [
+      "Administer with wisdom.",
+      "Your tolerance unites nations.",
+      "Grand as a Persian court."
+    ],
+    samurai: [
+      "Honor guides your blade.",
+      "Disciplined like a true samurai.",
+      "Your resolve is unwavering."
+    ],
+    mongol: [
+      "Swift as the steppe wind.",
+      "Raid like the great Khan.",
+      "Your spirit roams free across the plains."
+    ]
+  };
+
+  function showToastForCharacteristic(characteristic) {
+    const messages = toastMessagesMultiple[characteristic] || ["Well done!"];
+    let idx = toastMessageCounters[characteristic];
+    if (idx >= messages.length) idx = messages.length - 1;
+    const subtitle = messages[idx];
+    toastMessageCounters[characteristic]++;
+    showToast(subtitle);
+  }
+
+  function showToast(subtitleText) {
+    const toastEl = document.getElementById("toast");
+    const toastTitleEl = document.getElementById("toast-title");
+    const subtitleEl = document.getElementById("toast-subtitle");
+    toastTitleEl.textContent = toastTitles[Math.floor(Math.random() * toastTitles.length)];
+    subtitleEl.textContent = subtitleText;
+    toastEl.classList.remove("hidden");
+    void toastEl.offsetWidth;
+    toastEl.classList.add("show");
+    setTimeout(() => {
+      toastEl.classList.remove("show");
+      setTimeout(() => toastEl.classList.add("hidden"), 500);
+    }, 3000);
+  }
+
+  // Quiz questions
+  const questions = [
+    {
+      question: "1. Your dream realm would feature:",
+      options: [
+        { text: "Robust roads, aqueducts, and forums", value: "roman" },
+        { text: "Grand palaces, gardens, and magnificent courts", value: "achaemenid" },
+        { text: "Serene temples, bamboo groves, and tea houses", value: "samurai" },
+        { text: "Endless grasslands dotted with yurts", value: "mongol" }
+      ]
+    },
+    {
+      question: "2. Your ideal weapon is:",
+      options: [
+        { text: "Gladius and shield", value: "roman" },
+        { text: "Spear and scale armor", value: "achaemenid" },
+        { text: "Katana and lacquered armor", value: "samurai" },
+        { text: "Composite bow on horseback", value: "mongol" }
+      ]
+    },
+    {
+      question: "3. In governance you value:",
+      options: [
+        { text: "Codified law and citizenship", value: "roman" },
+        { text: "Bureaucracy and religious tolerance", value: "achaemenid" },
+        { text: "Honor and tradition", value: "samurai" },
+        { text: "Freedom and mobility", value: "mongol" }
+      ]
+    },
+    {
+      question: "4. Your leadership style is to:",
+      options: [
+        { text: "Bring order through discipline", value: "roman" },
+        { text: "Rule with empathy and tolerance", value: "achaemenid" },
+        { text: "Uphold loyalty and duty", value: "samurai" },
+        { text: "Lead swift, decisive raids", value: "mongol" }
+      ]
+    },
+    {
+      question: "5. Your ideal landscape:",
+      options: [
+        { text: "A bustling city with a grand forum", value: "roman" },
+        { text: "Lush palace gardens at sunset", value: "achaemenid" },
+        { text: "Misty mountain temple", value: "samurai" },
+        { text: "Vast rolling steppes", value: "mongol" }
+      ]
+    },
+    {
+      question: "6. Your guiding principle:",
+      options: [
+        { text: "\"SPQR\"", value: "roman" },
+        { text: "\"King of Kings\"", value: "achaemenid" },
+        { text: "\"Bushido\"", value: "samurai" },
+        { text: "\"Endless Sky\"", value: "mongol" }
+      ]
+    },
+    {
+      question: "7. You admire most:",
+      options: [
+        { text: "Julius Caesar", value: "roman" },
+        { text: "Cyrus the Great", value: "achaemenid" },
+        { text: "Miyamoto Musashi", value: "samurai" },
+        { text: "Genghis Khan", value: "mongol" }
+      ]
+    },
+    {
+      question: "8. Your greatest strength is:",
+      options: [
+        { text: "Engineering and organization", value: "roman" },
+        { text: "Administration and diplomacy", value: "achaemenid" },
+        { text: "Discipline and skill", value: "samurai" },
+        { text: "Strategy and mobility", value: "mongol" }
+      ]
+    },
+    {
+      question: "9. Against a rival you would:",
+      options: [
+        { text: "Outmaneuver with formations", value: "roman" },
+        { text: "Outwit with diplomacy", value: "achaemenid" },
+        { text: "Challenge in honorable combat", value: "samurai" },
+        { text: "Ambush with lightning speed", value: "mongol" }
+      ]
+    },
+    {
+      question: "10. The philosophy that appeals to you:",
+      options: [
+        { text: "Stoicism", value: "roman" },
+        { text: "Zoroastrianism", value: "achaemenid" },
+        { text: "Zen", value: "samurai" },
+        { text: "Tengriism", value: "mongol" }
+      ]
+    },
+    {
+      question: "11. You’d build a monument of:",
+      options: [
+        { text: "A grand Colosseum", value: "roman" },
+        { text: "The palaces of Persepolis", value: "achaemenid" },
+        { text: "A towering pagoda", value: "samurai" },
+        { text: "A portable ceremonial ger", value: "mongol" }
+      ]
+    },
+    {
+      question: "12. People admire you for your:",
+      options: [
+        { text: "Discipline and order", value: "roman" },
+        { text: "Wisdom and tolerance", value: "achaemenid" },
+        { text: "Honor and precision", value: "samurai" },
+        { text: "Fearlessness and freedom", value: "mongol" }
+      ]
+    }
+  ];
+
+  let currentQuestionIndex = 0;
+  const personalityScores = {
+    roman: 0,
+    achaemenid: 0,
+    samurai: 0,
+    mongol: 0
+  };
+  const toastMessageCounters = {
+    roman: 0,
+    achaemenid: 0,
+    samurai: 0,
+    mongol: 0
+  };
+
+  // DOM elements
+  const progressTextEl = document.getElementById("progress-text");
+  const questionTitleEl = document.getElementById("question-title");
+  const answerOptionsEl = document.getElementById("answer-options");
+  const nextBtn = document.getElementById("next-btn");
+  const resultsSection = document.getElementById("results");
+  const testSection = document.getElementById("test");
+  const evaluationEl = document.getElementById("evaluation");
+  const recommendationsEl = document.getElementById("recommendations");
+  const restartBtn = document.getElementById("restart-btn");
+  const screenshotBtn = document.getElementById("screenshot-btn");
+
+  function displayQuestion() {
+    progressTextEl.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+    answerOptionsEl.innerHTML = "";
+    const q = questions[currentQuestionIndex];
+    questionTitleEl.textContent = q.question;
+    q.options.forEach((opt, i) => {
+      const li = document.createElement("li");
+      const id = `q${currentQuestionIndex}-opt${i}`;
+      li.innerHTML = `
+        <label for="${id}">
+          <input type="radio" name="question${currentQuestionIndex}" id="${id}" value="${opt.value}" />
+          ${opt.text}
+        </label>
+      `;
+      answerOptionsEl.appendChild(li);
+    });
+  }
+
+  nextBtn.addEventListener("click", () => {
+    const checked = answerOptionsEl.querySelector('input[type="radio"]:checked');
+    if (!checked) {
+      alert("Please select an answer!");
+      return;
+    }
+    const val = checked.value;
+    personalityScores[val]++;
+    showToastForCharacteristic(val);
+    currentQuestionIndex++;
+    setTimeout(() => {
+      if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+      } else {
+        evaluateResults();
+      }
+    }, 600);
+  });
+
+  restartBtn.addEventListener("click", () => {
+    currentQuestionIndex = 0;
+    for (let k in personalityScores) personalityScores[k] = 0;
+    for (let k in toastMessageCounters) toastMessageCounters[k] = 0;
+    resultsSection.classList.add("hidden");
+    testSection.classList.remove("hidden");
+    displayQuestion();
+  });
+
+  screenshotBtn.addEventListener("click", () => {
+    html2canvas(document.getElementById("results")).then(canvas => {
+      canvas.toBlob(blob => {
+        const file = new File([blob], "quiz-result.png", { type: "image/png" });
+        if (navigator.share && navigator.canShare({ files: [file] })) {
+          navigator.share({
+            title: "Which Empire Quiz Result",
+            text: "My empire quiz result!",
+            files: [file]
+          });
+        } else {
+          const link = document.createElement("a");
+          link.download = "quiz-result.png";
+          link.href = canvas.toDataURL();
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      });
+    });
+  });
+
+  function evaluateResults() {
+    testSection.classList.add("hidden");
+    resultsSection.classList.remove("hidden");
+    const entries = Object.entries(personalityScores).sort((a,b) => b[1] - a[1]);
+    const [primary] = entries[0];
+    const [, secondScore] = entries[1] || [];
+    const secondary = secondScore > 0 ? entries[1][0] : null;
+
+    const personalityData = {
+      roman: {
+        title: "Roman Citizen",
+        character: "Roman Citizen",
+        image: "roman.jpg",
+        description: "Disciplined and organized, you thrive in structured societies with clear laws and engineering marvels.",
+        strengths: "Orderly, methodical, and resilient.",
+        improvement: "Embrace spontaneity and creativity.",
+        recommendations: "Governance, engineering, and law enforcement roles."
+      },
+      achaemenid: {
+        title: "Achaemenid Noble",
+        character: "Achaemenid Noble",
+        image: "persia.jpg",
+        description: "Visionary and tolerant, you excel at administration and uniting diverse peoples under one banner.",
+        strengths: "Diplomatic, strategic, and cultured.",
+        improvement: "Make decisive stands when needed.",
+        recommendations: "Diplomacy, administration, and cultural leadership."
+      },
+      samurai: {
+        title: "Samurai Scholar",
+        character: "Samurai Scholar",
+        image: "samurai.jpg",
+        description: "Honorable and disciplined, you balance martial prowess with intellectual rigor and ethical conduct.",
+        strengths: "Respectful, focused, and principled.",
+        improvement: "Adapt more readily to change.",
+        recommendations: "Education, martial training, and ethical leadership."
+      },
+      mongol: {
+        title: "Mongol Raider",
+        character: "Mongol Raider",
+        image: "mongol.jpg",
+        description: "Fearless and mobile, you excel in rapid campaigns and innovative tactics across vast territories.",
+        strengths: "Resourceful, courageous, and adaptive.",
+        improvement: "Plan long‑term logistics.",
+        recommendations: "Strategy, exploration, and mobile leadership."
+      },
+      default: {
+        title: "A Unique Spirit",
+        character: "Wanderer of Empires",
+        image: "default.png",
+        description: "Your attributes span many cultures, forging a leadership style uniquely your own.",
+        strengths: "Versatile, dynamic, and creative.",
+        improvement: "Refine your focus for greater impact.",
+        recommendations: "Any field you choose—forge your own path!"
+      }
+    };
+
+    const pData = personalityData[primary] || personalityData.default;
+    const sData = secondary ? (personalityData[secondary] || personalityData.default) : null;
+
+    let html = `
+      <div class="result-section">
+        <h3>Primary Match: ${pData.title}</h3>
+        <p>You are primarily <strong>${pData.character}</strong>!</p>
+        <img src="${pData.image}" class="character-image" alt="${pData.character}" />
+        <h4>Description</h4><p>${pData.description}</p>
+        <h4>Strengths</h4><p>${pData.strengths}</p>
+        <h4>Areas for Improvement</h4><p>${pData.improvement}</p>
+      </div>
+    `;
+
+    if (sData) {
+      html += `
+        <div class="result-section">
+          <h3>Secondary Match: ${sData.title}</h3>
+          <p>You also show strong <strong>${sData.character}</strong> tendencies!</p>
+          <img src="${sData.image}" class="character-image" alt="${sData.character}" />
+          <h4>Description</h4><p>${sData.description}</p>
+          <h4>Strengths</h4><p>${sData.strengths}</p>
+          <h4>Areas for Improvement</h4><p>${sData.improvement}</p>
+        </div>
+      `;
+    }
+
+    html += `
+      <div class="result-section">
+        <h3>Recommended Roles</h3>
+        <p>${pData.recommendations}</p>
+      </div>
+    `;
+
+    evaluationEl.innerHTML = html;
+  }
+
+  displayQuestion();
+});
+</script>
+
+  
+</body>
+</html>
