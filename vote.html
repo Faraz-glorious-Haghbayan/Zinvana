@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zinvana Live Vote</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- SEO Meta -->
+  <meta name="description" content="Cast your vote in real‑time matchups on Zinvana. Earn votes, refer friends, and watch live results update instantly!" />
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" />
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0b1f6a8.js" crossorigin="anonymous"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+  <style>
+    /* RESET & BASE */
+    html, body { margin:0; padding:0!important; height:100%; }
+    *, *::before, *::after { box-sizing:border-box; scroll-behavior:smooth; }
+    body { font-family:'Roboto',sans-serif; background:#f4f5f7; color:#333; line-height:1.5; transition:background .3s,color .3s; }
+    body.dark { background:#111; color:#eee; }
+    a { text-decoration:none; color:inherit; transition:opacity .3s; }
+    a:hover { opacity:.8; }
+
+    /* NAV */
+    nav { background:#000; color:#fff; display:flex; justify-content:space-between; align-items:center;
+          padding:.75rem 1.5rem; box-shadow:0 2px 4px rgba(255,0,0,0.2); position:sticky; top:0; z-index:1000; }
+    nav .nav-left, nav .nav-right { display:flex; align-items:center; gap:1rem; }
+    nav img#brand-logo { height:40px; }
+    nav a, nav button { font-weight:500; font-size:1rem; color:#fff; background:none; border:none; cursor:pointer; }
+    nav button { display:flex; align-items:center; gap:.25rem; }
+    nav .icon-btn:hover { opacity:.8; }
+    /* DARK TOGGLE */
+    #btn-theme { font-size:1.2rem; }
+
+    /* HERO */
+    header { text-align:center; padding:4rem 1rem; background:url('napoleon.jpg')no-repeat center/cover;
+             color:#fff; position:relative; overflow:hidden; }
+    header::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.4); }
+    header .hero-content { position:relative; z-index:1; max-width:600px; margin:auto; }
+    header h1 { font-size:2.5rem; font-weight:700; margin-bottom:.5rem; }
+    header p { font-size:1.1rem; }
+
+    /* CONTAINER & CARDS */
+    .container { max-width:520px; margin:2rem auto; padding:0 1rem; }
+    .card { background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05);
+            padding:1.5rem; margin-bottom:1.5rem; transition:transform .3s, background .3s, color .3s; }
+    body.dark .card { background:#222; color:#eee; box-shadow:0 4px 12px rgba(0,0,0,0.5); }
+    .card:hover { transform:translateY(-3px); }
+
+    /* AUTH & USER */
+    #auth-container { text-align:center; }
+    #btn-login { background:#d32f2f; color:#fff; padding:.75rem 1.5rem; font-size:1rem;
+                  border:none; border-radius:4px; cursor:pointer; transition:background .3s; }
+    #btn-login:hover { background:#b71c1c; }
+
+    .user-card { display:flex; align-items:center; gap:.75rem; margin-bottom:1rem; }
+    .user-card img { width:48px; height:48px; border-radius:50%; object-fit:cover; }
+    .user-info h2 { font-size:1.1rem; font-weight:500; }
+    .user-info span { color:#777; font-size:.9rem; }
+    body.dark .user-info span { color:#aaa; }
+
+    /* MATCH UI */
+    .match-header { display:flex; align-items:center; justify-content:center;
+                    gap:.5rem; font-size:1.25rem; font-weight:500; margin-bottom:1rem; }
+    .flag { font-size:1.5rem; }
+
+    .vote-buttons { display:flex; gap:1rem; justify-content:center; margin-bottom:.75rem; }
+    .vote-buttons button { flex:1; background:#1d8cf8; color:#fff; border:none; padding:.65rem;
+                           border-radius:6px; font-size:1rem; cursor:pointer; transition:background .3s; }
+    .vote-buttons button:hover { background:#1154c7; }
+    .vote-buttons button:disabled { background:#ccc; cursor:default; }
+
+    .note { text-align:center; color:#777; font-size:.85rem; margin-bottom:1rem; }
+    body.dark .note { color:#aaa; }
+
+    /* CREDITS */
+    .credits { text-align:center; font-size:1.1rem; margin-bottom:1rem; }
+    .credits i { margin-right:.5rem; }
+
+    /* RESULTS */
+    .results { margin:1.5rem 0; }
+    .result-bar { background:#ececec; border-radius:6px; overflow:hidden; height:1.5rem; margin-bottom:.75rem; }
+    .result-bar-inner { height:100%; line-height:1.5rem; color:#fff; font-size:.9rem;
+                        padding-left:.75rem; white-space:nowrap; transition:width .5s; }
+    .bar-A { background:#1d8cf8; }
+    .bar-B { background:#fbc658; color:#333; }
+
+    /* SHARE */
+    .share { display:flex; gap:.5rem; align-items:center; }
+    .share input { flex:1; padding:.6rem; border:1px solid #ddd; border-radius:4px; background:#fafafa; }
+    body.dark .share input { background:#333; color:#eee; border:1px solid #555; }
+    @keyframes glowPulse {
+      0% { box-shadow:0 0 6px rgba(255,105,0,0.7),0 0 12px rgba(255,105,0,0.5); transform:scale(1); }
+      50%{ box-shadow:0 0 12px rgba(255,105,0,1),0 0 24px rgba(255,105,0,0.7); transform:scale(1.05); }
+     100%{ box-shadow:0 0 6px rgba(255,105,0,0.7),0 0 12px rgba(255,105,0,0.5); transform:scale(1); }
+    }
+    .share button#btn-copy {
+      background: linear-gradient(135deg,#ff6a00,#ee0979); color:#fff; font-weight:600;
+      padding:.75rem 1rem; border:none; border-radius:6px; cursor:pointer;
+      animation:glowPulse 2s ease-in-out infinite; transition:transform .3s,box-shadow .3s;
+    }
+    .share button#btn-copy:hover {
+      transform:scale(1.1);
+      box-shadow:0 0 20px rgba(255,105,0,1),0 0 30px rgba(255,105,0,0.8);
+    }
+
+    /* 0‑VOTE CALL TO ACTION */
+    .no‑votes { text-align:center; margin-top:1rem; }
+    .no‑votes a {
+      display:inline-block; background:#ee0979; color:#fff; padding:.65rem 1.2rem;
+      border-radius:6px; font-weight:600; transition:background .3s;
+    }
+    .no‑votes a:hover { background:#c5126b; }
+
+    /* LOADER */
+    #loader {
+      position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+      border:6px solid #f3f3f3; border-top:6px solid #1d8cf8; border-radius:50%;
+      width:50px; height:50px; animation:spin 1s linear infinite; z-index:2000;
+    }
+    @keyframes spin { 100%{ transform:translate(-50%,-50%) rotate(360deg); } }
+
+    /* FOOTER */
+    footer { text-align:center; padding:1rem; font-size:.9rem; color:#777; }
+    body.dark footer { color:#aaa; }
+  </style>
+</head>
+<body>
+  <div id="loader"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-left">
+      <img src="zinvanalogo.png" id="brand-logo" alt="Zinvana Logo" />
+      <a href="index.html">Home</a>
+      <a href="leaders.html">Leaders Quiz</a>
+    </div>
+    <div class="nav-right">
+      <button id="btn-theme" class="icon-btn"><i class="fas fa-moon"></i></button>
+      <button id="btn-logout" class="icon-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero-content">
+      <h1>Live Voting Arena</h1>
+      <p>Sign in, cast your vote, refer friends and watch real‑time results!</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- AUTH -->
+    <div id="auth-container" class="card">
+      <button id="btn-login"><i class="fab fa-google"></i> Sign in with Google</button>
+    </div>
+
+    <!-- VOTE UI -->
+    <div id="vote-container" class="card" style="display:none;">
+
+      <!-- USER -->
+      <div class="user-card">
+        <img id="user-avatar" src="" alt="Your avatar" />
+        <div class="user-info">
+          <h2 id="user-name"></h2>
+          <span><i class="fas fa-coins"></i> <strong id="myCredits">–</strong> votes left</span>
+        </div>
+      </div>
+
+      <!-- MATCH -->
+      <div class="match-header">
+        <span id="flagA" class="flag"></span>
+        <span id="countryA">Country A</span>
+        <span>vs</span>
+        <span id="countryB">Country B</span>
+        <span id="flagB" class="flag"></span>
+      </div>
+
+      <!-- VOTE -->
+      <div class="vote-buttons">
+        <button id="voteA"><i class="fas fa-flag"></i> Vote A</button>
+        <button id="voteB"><i class="fas fa-flag"></i> Vote B</button>
+      </div>
+      <div class="note">Note: One vote per match. Choose wisely!</div>
+
+      <!-- RESULTS -->
+      <h3 style="text-align:center; margin-bottom:.5rem;">Live Results</h3>
+      <div class="results">
+        <div class="result-bar">
+          <div id="barA" class="result-bar-inner bar-A" role="progressbar"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">A: 0%</div>
+        </div>
+        <div class="result-bar">
+          <div id="barB" class="result-bar-inner bar-B" role="progressbar"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">B: 0%</div>
+        </div>
+      </div>
+
+      <!-- SHARE -->
+      <div class="share">
+        <input id="shareLink" readonly placeholder="Your referral link" />
+        <button id="btn-copy"><i class="fas fa-copy"></i> Copy & Earn!</button>
+      </div>
+
+      <!-- NO VOTES CTA -->
+      <div id="noVotes" class="no‑votes" style="display:none;">
+        <a href="#" id="getMore">Get more votes →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 Zinvana — Live results powered by Firebase</footer>
+
+  <script>
+    // Dark‑mode toggle
+    const btnTheme = document.getElementById('btn-theme');
+    const saved = localStorage.getItem('zinvanaTheme');
+    if (saved==='dark') document.body.classList.add('dark');
+    btnTheme.onclick = () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('zinvanaTheme', document.body.classList.contains('dark')?'dark':'light');
+    };
+
+    // Loader
+    const loader = document.getElementById('loader');
+    function hideLoader(){ loader.style.display='none'; }
+
+    // Firebase init
+    firebase.initializeApp({
+      apiKey: "AIzaSyACRVa8h1pEtBtcTaX4COdidJrQy__yFSE",
+      authDomain: "zinvana-voting.firebaseapp.com",
+      projectId: "zinvana-voting",
+      storageBucket: "zinvana-voting.appspot.com",
+      messagingSenderId: "59158648475",
+      appId: "1:59158648475:web:2bbe7c21f7f1eaa05a983e",
+      measurementId: "G-WZRXMGRMZ6"
+    });
+    const auth = firebase.auth(), db = firebase.firestore();
+
+    // UI refs
+    const btnLogin   = document.getElementById('btn-login');
+    const btnLogout  = document.getElementById('btn-logout');
+    const authUI     = document.getElementById('auth-container');
+    const voteUI     = document.getElementById('vote-container');
+    const avatarEl   = document.getElementById('user-avatar');
+    const nameEl     = document.getElementById('user-name');
+    const votesEl    = document.getElementById('myCredits');
+    const countryAEl = document.getElementById('countryA');
+    const countryBEl = document.getElementById('countryB');
+    const flagAEl    = document.getElementById('flagA');
+    const flagBEl    = document.getElementById('flagB');
+    const voteA      = document.getElementById('voteA');
+    const voteB      = document.getElementById('voteB');
+    const barA       = document.getElementById('barA');
+    const barB       = document.getElementById('barB');
+    const shareEl    = document.getElementById('shareLink');
+    const copyBtn    = document.getElementById('btn-copy');
+    const noVotesDiv = document.getElementById('noVotes');
+    const getMore    = document.getElementById('getMore');
+
+    let currentUser, currentMatchId, credits = 1;
+    const referral = new URLSearchParams(location.search).get('ref');
+    const countryToCode = { Egypt:'eg', Iran:'ir' };
+    function flagEmoji(name){
+      const cc=countryToCode[name];
+      return cc? cc.toUpperCase().replace(/./g,c=>String.fromCodePoint(127397+c.charCodeAt(0))):'';
+    }
+
+    // Copy referral
+    copyBtn.onclick = ()=>{
+      shareEl.select(); document.execCommand('copy');
+      copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+      setTimeout(()=>copyBtn.innerHTML='<i class="fas fa-copy"></i> Copy & Earn!',1500);
+    };
+
+    // Sign in/out
+    btnLogin.onclick = ()=> auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    btnLogout.onclick= ()=> auth.signOut();
+
+    auth.onAuthStateChanged(async user=>{
+      if(!user) {
+        authUI.style.display='block'; voteUI.style.display='none'; hideLoader();
+        return;
+      }
+      currentUser=user;
+      avatarEl.src=user.photoURL;
+      nameEl.textContent=user.displayName;
+      authUI.style.display='none';
+      voteUI.style.display='block';
+
+      // REFERRAL & CREDITS
+      try{
+        const userRef=db.collection('users').doc(user.uid);
+        const doc=await userRef.get();
+        if(!doc.exists){
+          credits=1;
+          const data={credits};
+          if(referral&&referral!==user.uid) data.referredBy=referral;
+          await userRef.set(data);
+          if(referral&&referral!==user.uid){
+            await db.collection('users').doc(referral)
+              .set({credits:firebase.firestore.FieldValue.increment(1)},{merge:true});
+          }
+        } else {
+          const d=doc.data();
+          credits=(typeof d.credits==='number')?d.credits:1;
+        }
+        votesEl.textContent=credits;
+      }catch(e){
+        console.error(e); alert('Error loading user data.');
+      }
+
+      // LOAD MATCH
+      try{
+        const q=await db.collection('matches').where('status','==','voting').limit(1).get();
+        if(q.empty){
+          countryAEl.textContent=countryBEl.textContent='No vote active';
+          hideLoader(); return;
+        }
+        const m=q.docs[0].data();
+        currentMatchId=q.docs[0].id;
+        countryAEl.textContent=m.countryA;
+        countryBEl.textContent=m.countryB;
+        flagAEl.textContent=flagEmoji(m.countryA);
+        flagBEl.textContent=flagEmoji(m.countryB);
+
+        // check existing vote
+        const voteDoc=await db.collection('matches').doc(currentMatchId)
+          .collection('votes').doc(user.uid).get();
+        const hasVoted=voteDoc.exists;
+        voteA.disabled=voteB.disabled=hasVoted||credits<1;
+
+        // show no‑votes CTA if credits=0
+        noVotesDiv.style.display=(credits<1&&!hasVoted)?'block':'none';
+        getMore.onclick=()=>window.prompt(
+          'Share this link to earn votes!', shareEl.value);
+
+        // live results
+        db.collection('matches').doc(currentMatchId)
+          .collection('votes').onSnapshot(snap=>{
+            let a=0,b=0;
+            snap.forEach(v=>v.data().choice==='A'?a++:b++);
+            const tot=a+b||1, pctA=Math.round(a/tot*100), pctB=Math.round(b/tot*100);
+            barA.style.width=pctA+'%'; barA.textContent=`A: ${pctA}%`; barA.setAttribute('aria-valuenow',pctA);
+            barB.style.width=pctB+'%'; barB.textContent=`B: ${pctB}%`; barB.setAttribute('aria-valuenow',pctB);
+          });
+      }catch(e){
+        console.error(e); alert('Error loading match.');
+      }finally{
+        hideLoader();
+      }
+
+      // CAST VOTE
+      async function cast(choice){
+        try{
+          if(credits<1) return alert('No votes left!');
+          const ex=await db.collection('matches').doc(currentMatchId)
+            .collection('votes').doc(user.uid).get();
+          if(ex.exists) return alert('Already voted!');
+          await db.collection('matches').doc(currentMatchId)
+            .collection('votes').doc(user.uid)
+            .set({choice, timestamp:firebase.firestore.FieldValue.serverTimestamp()});
+          credits--; votesEl.textContent=credits;
+          await db.collection('users').doc(user.uid).set({credits},{merge:true});
+          voteA.disabled=voteB.disabled=true;
+          noVotesDiv.style.display=(credits<1)?'block':'none';
+        }catch(e){
+          console.error(e); alert('Error submitting vote.');
+        }
+      }
+      voteA.onclick=()=>cast('A');
+      voteB.onclick=()=>cast('B');
+
+      // referral link
+      shareEl.value=`${location.origin}${location.pathname}?ref=${user.uid}`;
+    });
+  </script>
+</body>
+</html>
