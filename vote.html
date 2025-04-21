@@ -10,7 +10,13 @@
   <link rel="icon" href="favicon.ico" />
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a2e0b1f6a8.js" crossorigin="anonymous"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-pD1OYC0O1fz/VeSpmF/Yq6YSX8cYBl4xP0AJ5ux9QGSlYr0nhxF3eFleVZm+jRqtgV6Q3y13JP4WPGb8Mv3ENA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer" />
+
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
@@ -356,6 +362,7 @@
         hideLoader();
       }
 
+
       btnLogin.onclick = () => {
   auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     .catch(err => {
@@ -370,6 +377,8 @@
       }
     });
 };
+
+
 
 
       // CAST VOTE
