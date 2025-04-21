@@ -356,6 +356,22 @@
         hideLoader();
       }
 
+      btnLogin.onclick = () => {
+  auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    .catch(err => {
+      if (err.code === 'auth/unauthorized-domain') {
+        alert(
+          'This domain is not authorized for Google Sign‑In.\n' +
+          'Please add it in your Firebase console under Authentication → Settings → Authorized domains.'
+        );
+      } else {
+        console.error(err);
+        alert('Sign‑in error: ' + err.message);
+      }
+    });
+};
+
+
       // CAST VOTE
       async function cast(choice){
         try{
