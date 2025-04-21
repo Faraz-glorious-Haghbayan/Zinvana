@@ -238,11 +238,41 @@
     }
     @keyframes spin { 100%{ transform:translate(-50%,-50%) rotate(360deg); } }
 
-    /* FOOTER */
     footer {
-      text-align:center; padding:1rem; font-size:.9rem; color:#555;
-    }
-    body.dark footer { color:#aaa; }
+  background: #000;
+  padding: 0;
+  text-align: center;
+  border-top: 1px solid #d32f2f;
+  margin-top: 40px;
+}
+footer p {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 5px 0;
+}
+footer .social-icons {
+  margin-top: 10px;
+}
+footer .social-icons img {
+  width: 3%;
+  margin: 0 8px;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+footer .social-icons img:hover {
+  opacity: 0.7;
+}
+
+/* -------------------------------------
+   11) Responsive Styles
+------------------------------------- */
+@media (max-width: 970px) {
+  
+  footer .social-icons img {
+    width: 10%;
+  }
+  
+}
   </style>
 </head>
 <body>
@@ -268,6 +298,12 @@
       <p>Sign in, cast your vote, refer friends and watch real‑time results!</p>
     </div>
   </header>
+
+  <!-- WHAT IS ZINVANA? -->
+  <section class="card">
+    <h2>What Is Zinvana?</h2>
+    <p>Zinvana is a real‑time voting platform where you can sign in with Google, vote on head‑to‑head matchups, and compete with friends. Each referral gives you +1 vote credit, so share your unique link to climb the leaderboard and unlock future matchups.</p>
+  </section>
 
   <div class="container">
 
@@ -330,13 +366,6 @@
       </div>
     </div>
   </div>
-
-  <!-- WHAT IS ZINVANA? -->
-  <section class="card">
-    <h2>What Is Zinvana?</h2>
-    <p>Zinvana is a real‑time voting platform where you can sign in with Google, vote on head‑to‑head matchups, and compete with friends. Each referral gives you +1 vote credit, so share your unique link to climb the leaderboard and unlock future matchups.</p>
-  </section>
-
 
   <!-- HOW TO EARN EXTRA VOTES -->
   <section class="card">
@@ -424,7 +453,23 @@
 </section>
 
 
-  <footer>© 2025 Zinvana — Live results powered by Firebase</footer>
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Zinvana. All rights reserved.</p>
+    <p>This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
+        <img src="whiteinsta.png" alt="Instagram" />
+      </a>
+      <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
+        <img src="whitex.png" alt="Twitter" />
+      </a>
+      <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
+        <img src="youtube.png" alt="YouTube" />
+      </a>
+    </div>
+  </div>
+</footer>
 
   <script>
     // DARK‑MODE TOGGLE
