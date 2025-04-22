@@ -88,7 +88,7 @@
     header p  { font-size:1.1rem; }
 
     /* STRUCTURED INFO */
-    section.card { background:#f8fafc; /* very light steel */ }
+    section.card { background:#ececec; /* very light steel */ }
 
     /* CONTAINER & CARDS */
     .container { max-width:520px; margin:2rem auto; padding:0 1rem; }
@@ -128,13 +128,124 @@
     }
     body.dark .user-info span { color:#aaa; }
 
-    /* MATCH & TIMER */
-    .match-header {
-      display:flex; align-items:center; justify-content:center;
-      gap:.5rem;
-      font-size:1.25rem; font-weight:500;
-      margin-bottom:1rem;
-    }
+   /* MATCH HEADER – CARD STYLE */
+.match-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.country-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #e0e0e0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.country-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.flag {
+  font-size: 1.8rem; /* emoji flag size */
+}
+
+.country-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.vs-badge {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #555;
+  padding: 0 0.5rem;
+  /* optional little circle around VS */
+  background: #f0f0f0;
+  border-radius: 50%;
+  line-height: 1.8;
+}
+
+
+
+/* ==============================
+   MATCH HEADER – Eye‑Catching Cards
+   ============================== */
+
+   .match-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #222;
+}
+
+.match-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.country-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+}
+
+.country-box:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.country-a {
+  background: linear-gradient(135deg, #db070e 0%, #fecfef 100%);
+}
+
+.country-b {
+  background: linear-gradient(135deg, #0bad05 0%, #9fd4ac 100%);
+}
+
+.flag-icon {
+  font-size: 2.25rem;            /* large emoji flag */
+  display: inline-block;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.country-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Pulsing “VS” */
+
+.vs-box {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff0909 !important;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); color: #555; }
+  50%      { transform: scale(1.2); color: #222; }
+}
+
+
     .flag { font-size:1.5rem; }
     #countdown {
       text-align:center; font-size:1rem;
@@ -188,7 +299,7 @@
     }
     .share input {
       flex:1; padding:.6rem;
-      border:1px solid #cbd5e1;
+      border:1px solid #c41616;
       border-radius:4px; background:#fff;
     }
     body.dark .share input {
@@ -317,15 +428,24 @@ footer .social-icons img:hover {
           <span><i class="fas fa-coins"></i> <strong id="myCredits">–</strong> votes left</span>
         </div>
       </div>
-<h2>Better History?</h2>
-      <!-- MATCH HEADER & COUNTDOWN -->
-      <div class="match-header">
-        <span id="flagA" class="flag"></span>
-        <span id="countryA">Country A</span>
-        <span>vs</span>
-        <span id="countryB">Country B</span>
-        <span id="flagB" class="flag"></span>
-      </div>
+
+      <!-- MATCH TITLE -->
+<h2 class="match-title">Which country has the better history?</h2>
+
+<!-- MATCH HEADER -->
+<div class="match-header">
+  <div class="country-box country-a">
+    <span id="flagA" class="flag-icon"></span>
+    <span id="countryA" class="country-name"></span>
+  </div>
+  <div class="vs-box">VS</div>
+  <div class="country-box country-b">
+    <span id="flagB" class="flag-icon"></span>
+    <span id="countryB" class="country-name"></span>
+  </div>
+</div>
+
+
       <p id="countdown">—</p>
 
       <!-- VOTE BUTTONS -->
@@ -360,6 +480,12 @@ footer .social-icons img:hover {
       </div>
     </div>
   </div>
+
+  <!-- WHAT IS ZINVANA? -->
+  <section class="card">
+    <h2>What Is Zinvana?</h2>
+    <p>Zinvana is a real‑time voting platform where you can sign in with Google, vote on head‑to‑head matchups, and compete with friends. Each referral gives you +1 vote credit, so share your unique link to climb the leaderboard and unlock future matchups.</p>
+  </section>
 
   <!-- HOW TO EARN EXTRA VOTES -->
   <section class="card">
