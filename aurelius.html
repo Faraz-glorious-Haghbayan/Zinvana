@@ -15,6 +15,92 @@
   <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
+
+   <!-- Article & Person JSON-LD -->
+   <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://zinvana.com/aurelius.html#person",
+          "name": "Marcus Aurelius",
+          "birthDate": "0121-04-26",
+          "deathDate": "0180-03-17",
+          "nationality": "Roman",
+          "url": "https://zinvana.com/aurelius.html",
+          "image": "https://zinvana.com/images/aurelius.jpg"
+        },
+        {
+          "@type": "Article",
+          "@id": "https://zinvana.com/aurelius.html#Article",
+          "headline": "Marcus Aurelius – The Stoic Philosopher and Wise Ruler",
+          "author": { "@id": "https://zinvana.com/aurelius.html#person" },
+          "datePublished": "2025-04-20",
+          "dateModified": "2025-04-24",
+          "image": "https://zinvana.com/images/aurelius.jpg",
+          "mainEntityOfPage": "https://zinvana.com/aurelius.html",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Zinvana",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://zinvana.com/images/zinvanalogo.png"
+            }
+          },
+          "description": "Explore the comprehensive biography of Marcus Aurelius – his early life, Stoic philosophy, reign as Emperor, Meditations, key quotes, and a free leader quiz."
+        }
+      ]
+    }
+    </script>
+  
+    <!-- Breadcrumb JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zinvana.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Leaders Quiz", "item": "https://zinvana.com/leaders.html" },
+        { "@type": "ListItem", "position": 3, "name": "Marcus Aurelius", "item": "https://zinvana.com/aurelius.html" }
+      ]
+    }
+    </script>
+  
+    <!-- FAQ JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Marcus Aurelius’s Meditations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Meditations is a collection of personal writings by Marcus Aurelius, offering practical Stoic guidance on virtue, discipline, and resilience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How did Stoicism influence his rule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stoicism guided his decisions, emphasizing duty over pleasure, inner calm amid turmoil, and justice in governance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What free leader quiz does Zinvana offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our free Leader Personality Quiz helps you discover which historic figure’s traits you share—try it and find your inner philosopher!"
+          }
+        }
+      ]
+    }
+    </script>
+
   <!-- CSS Style: Inspired by leaders.html -->
   <style>
     html, body {
@@ -153,7 +239,7 @@
       width: 280px;
       background-color: #222222;
       color: #333;
-      border: 1px solid white;
+      border: 2px solid #ff9a00;
       padding: 15px;
       margin: 0 0 20px 20px;
       border-radius: 8px;
@@ -178,6 +264,10 @@
       content: "";
       display: table;
       clear: both;
+    }
+
+    .faq-item h3{
+      color: #ff9a00;
     }
     
     /* Footer */
@@ -208,7 +298,6 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav>
     <div class="nav-left">
       <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
@@ -219,6 +308,7 @@
       <a href="help.html">Help</a>
     </div>
   </nav>
+  
 
   <!-- Header -->
   <header>
@@ -240,6 +330,19 @@
     <p>
       Marcus Aurelius was born into a distinguished Roman family in 121 AD, where the ideals of duty and honor were part of everyday life. From his earliest years, he was exposed to the rigorous traditions of Roman education, which emphasized rhetoric, grammar, and the foundational texts of Greek philosophy. His tutors introduced him not only to the skills of debate and law but also to the ethical teachings that would later shape his life. Even as a young boy, Marcus showed a keen interest in the nature of human existence and the pursuit of virtue. His formative years were spent absorbing lessons that later influenced his approach to governance and personal conduct. The intellectual environment of his youth instilled in him a curiosity about the workings of the mind and a desire to understand the deeper meaning of life—a journey that would eventually lead him to the philosophy of Stoicism. Marcus’s education was further enriched by interactions with some of the most learned figures of his time, and these experiences laid the groundwork for a lifetime of reflection, self-discipline, and thoughtful leadership.
     </p>
+
+    <section id="quotes">
+      <h2>Key Stoic Quotes</h2>
+      <blockquote style="border-left:4px solid #ff9a00; padding-left:16px; color:#ddd; margin:20px 0;">
+        <p>"You have power over your mind – not outside events. Realize this, and you will find strength."</p>
+        <cite>— Marcus Aurelius, <em>Meditations</em></cite>
+      </blockquote>
+      <blockquote style="border-left:4px solid #ff9a00; padding-left:16px; color:#ddd; margin:20px 0;">
+        <p>"The happiness of your life depends upon the quality of your thoughts."</p>
+        <cite>— Marcus Aurelius, <em>Meditations</em></cite>
+      </blockquote>
+      <!-- add 2–3 more engaging quotes -->
+    </section>
   
     <h2>Family Heritage and Upbringing</h2>
     <p>
@@ -347,6 +450,24 @@
     </p>
   </main>
   
+  <section id="faq" style="margin-top:60px; background:#222; padding:30px; border-radius:8px; color: rgb(204, 204, 204);">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is Marcus Aurelius’s Meditations?</h3>
+      <p>Meditations is his personal journal of Stoic reflections—practical, timeless guidance on virtue, resilience, and leadership.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How did Stoicism shape his decisions?</h3>
+      <p>By teaching acceptance of fate, self-discipline, and prioritizing the common good over personal ambition.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Tell me about the free leader quiz</h3>
+      <p>Our <a href="leaders.html" class="quiz-btn">Leader Personality Quiz</a> helps you reveal which historic figure you most resemble—give it a try!</p>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
