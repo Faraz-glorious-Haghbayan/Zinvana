@@ -172,6 +172,7 @@
       min-width: 60px;
       pointer-events: none;
     }
+
   
     /* -------------------------------------
      4) Header (Squid Game Theme)
@@ -182,6 +183,7 @@
   padding:200px 10px 100px ;
   background: url('squidzinvana1.jpg') no-repeat center center/cover;
   border-bottom: 2px solid #d32f2f;
+  filter: contrast(1.2);
 }
 
 header h1 {
@@ -500,6 +502,87 @@ header h1 {
   line-height: 1.4;
 }
 
+#faq h3{
+  color: red;
+}
+
+
+#players {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background: #111;
+    border-radius: 10px;
+    color: #eee;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  }
+  #players h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #e53935;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  #players h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e53935;
+    margin: 10px auto 0;
+  }
+
+  /* Grid Layout */
+  .players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  /* Card Styles */
+  .player-card {
+    background: #1f1e1e !important;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .player-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  }
+
+  /* Character Image */
+  .player-card img {
+    width: 60%;
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 50px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    height: 200px;
+  }
+
+  /* Card Content */
+  .player-card .info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .player-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+    color: #fff;
+  }
+  .player-card p {
+    margin: 0;
+    line-height: 1.5;
+    color: #ccc;
+    flex: 1;
+  }
+
   
     /* -------------------------------------
      12) Responsive Styles
@@ -567,6 +650,9 @@ header h1 {
     </div>
   </nav>
 
+
+  
+
   <!-- Header -->
   <header>
     <h1>Zinvana</h1>
@@ -632,39 +718,200 @@ header h1 {
     </section>
   </main>
 
+ <!-- 2) Replace your inline-styled section with this cleaner markup -->
+<section id="players">
+  <h2>Meet the Players</h2>
+  <div class="players-grid">
 
-  <!-- Related Blog Articles Section -->
-<section id="related-articles">
-  <h2>Related Blog Articles</h2>
-  <div class="articles-container">
-    <article class="blog-card">
-      <h3><a href="squidgame-about.html">Everything about Squidgame and it's characters!</a></h3>
-      <p>Dive into the behavioral traits and psychological archetypes behind each iconic character.</p>
-    </article>
-    <article class="blog-card">
-      <h3><a href="index.html">Personality Test</a></h3>
-      <p>Understand about your strenghts, areas for improvement and to which animal you are more similar.</p>
-    </article>
+    <div class="player-card">
+      <img src="seong.png" alt="Seong Gi-hun (456)">
+      <div class="info">
+        <h3>Seong Gi-hun (456)</h3>
+        <p>
+          The everyman turned hero—Seong Gi-hun starts as a desperate chauffeur drowning in debt, 
+          but every challenge awakens courage he never knew he had. His impulsive compassion could save lives…or risk it all.
+        </p>
+      </div>
+    </div>
+
+    <div class="player-card">
+      <img src="cho.png" alt="Cho Sang-woo (218)">
+      <div class="info">
+        <h3>Cho Sang-woo (218)</h3>
+        <p>
+          A Harvard-trained strategist with a razor-sharp mind. Sang-woo’s calm logic and ruthless pragmatism 
+          make him both a formidable ally and a dangerous adversary in the fight for survival.
+        </p>
+      </div>
+    </div>
+
+    <div class="player-card">
+      <img src="kang.png" alt="Kang Sae-byeok (067)">
+      <div class="info">
+        <h3>Kang Sae-byeok (067)</h3>
+        <p>
+          Silent and unbreakable, this North Korean defector fights for her family’s freedom. 
+          Her steely determination masks a heart that’s risked everything for hope.
+        </p>
+      </div>
+    </div>
+
+    <div class="player-card">
+      <img src="ali.png" alt="Abdul Ali (199)">
+      <div class="info">
+        <h3>Abdul Ali (199)</h3>
+        <p>
+          The gentle giant whose loyalty knows no bounds. An immigrant working tirelessly for his loved ones, 
+          Ali’s kindness becomes his greatest strength in a world gone mad.
+        </p>
+      </div>
+    </div>
+
+    <div class="player-card">
+      <img src="oh.png" alt="Oh Il-nam (001)">
+      <div class="info">
+        <h3>Oh Il-nam (001)</h3>
+        <p>
+          The enigmatic grandfather with a mischievous sparkle in his eye. His frail exterior hides secrets that 
+          could rewrite the rules of the game.
+        </p>
+      </div>
+    </div>
+
+    <div class="player-card">
+      <img src="jang.png" alt="Jang Deok-su (101)">
+      <div class="info">
+        <h3>Jang Deok-su (101)</h3>
+        <p>
+          From street thug to unrelenting force—Deok-su wields fear like a weapon. In the arena of desperation, 
+          brutality becomes both his armor and his curse.
+        </p>
+      </div>
+    </div>
+
+    <div class="player-card">
+      <img src="han.png" alt="Han Mi-nyeo (212)">
+      <div class="info">
+        <h3>Han Mi-nyeo (212)</h3>
+        <p>
+          The wildcard queen whose loyalties shift like quicksand. Sweet one moment, lethal the next—Mi-nyeo’s 
+          unpredictable spirit keeps everyone on edge.
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
 
+
+
    <!-- What is Squid Game Section -->
-<section id="squidgame-explainer" style="max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; color: #e0e0e0;">
-  <img src="squidgame1.gif" alt="Squidgame gif Zinvana" id="gif" style="border: 2px solid orange; border-radius: 18px; width: 100%; ">
-  <h2 style="font-size: 1.6rem; margin-bottom: 12px; color: #d32f2f;">What is Squid Game?</h2>
-  <p style="font-size: 1rem; line-height: 1.6; color: #1a1a1a;">
-    Unless you've been living under a rock, you've probably heard of <strong>Squid Game</strong> — the global Netflix phenomenon that took the world by storm.
-    Set in South Korea, the series revolves around a deadly competition where financially struggling individuals compete in childhood games for a chance at a massive cash prize.
-    But there's a dark twist: <em>losing means elimination — literally</em>.
-  </p>
-  <p style="font-size: 1rem; line-height: 1.6; color: #1a1a1a;">
-    Beyond the shocking visuals and gripping plot, Squid Game dives deep into human psychology, survival instincts, and moral dilemmas. Every character represents a unique personality type,
-    making it a perfect backdrop for exploring behavior, choices, and identity. That’s exactly why we built this test — to help you discover <strong>which Squid Game character best matches your personality</strong>.
-  </p>
-  <p style="font-size: 1rem; line-height: 1.6; color: #1a1a1a;">
-    Are you the mastermind strategist, the selfless leader, the loyal follower — or something more unexpected? Take the test and find out.
-  </p>
+   <section id="squidgame-explainer" style="max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; color: #e0e0e0;">
+    <img src="squidgame1.gif" alt="Squidgame gif Zinvana" id="gif" style="border: 2px solid orange; border-radius: 18px; width: 100%; ">
+    <h2 style="font-size: 1.6rem; margin-bottom: 12px; color: #d32f2f;">What is Squid Game?</h2>
+    <p style="font-size: 1rem; line-height: 1.6; color: #1a1a1a;">
+      Unless you've been living under a rock, you've probably heard of <strong>Squid Game</strong> — the global Netflix phenomenon that took the world by storm.
+      Set in South Korea, the series revolves around a deadly competition where financially struggling individuals compete in childhood games for a chance at a massive cash prize.
+      But there's a dark twist: <em>losing means elimination — literally</em>.
+    </p>
+    <p style="font-size: 1rem; line-height: 1.6; color: #1a1a1a;">
+      Beyond the shocking visuals and gripping plot, Squid Game dives deep into human psychology, survival instincts, and moral dilemmas. Every character represents a unique personality type,
+      making it a perfect backdrop for exploring behavior, choices, and identity. That’s exactly why we built this test — to help you discover <strong>which Squid Game character best matches your personality</strong>.
+    </p>
+    <p style="font-size: 1rem; line-height: 1.6; color: #1a1a1a;">
+      Are you the mastermind strategist, the selfless leader, the loyal follower — or something more unexpected? Take the test and find out.
+    </p>
+  </section>
+
+  <section id="squidgame-details" style="max-width: 800px; margin: 40px auto; padding: 30px 20px; background: #1a1a1a; color: #e0e0e0; border-radius: 8px;">
+    <h2 style="text-align: center; font-size: 1.8rem; color: #d32f2f; border-bottom: 2px solid #d32f2f; padding-bottom: 10px;">Squid Game: The Phenomenon</h2>
+  
+    <h3 style="margin-top: 20px; font-size: 1.4rem; color: #fff;">Overview</h3>
+    <p style="line-height: 1.6; color: #ccc;">
+      <strong>Squid Game</strong> is a South Korean dystopian survival thriller series created, written, and directed by Hwang Dong-hyuk for Netflix.  
+      The show features 456 financially desperate contestants who risk their lives in a series of deadly childhood games for a top prize of ₩45.6 billion (approximately US $39.9 million).  
+      Its title draws directly from the traditional Korean playground game “squid,” reflecting both nostalgia and brutal stakes.  
+    </p>
+    <!-- :contentReference[oaicite:0]{index=0} -->
+  
+    <h3 style="margin-top: 20px; font-size: 1.4rem; color: #fff;">Plot Synopsis</h3>
+    <p style="line-height: 1.6; color: #ccc;">
+      Players are whisked to a secret island where they compete in six rounds of classic children’s games—Red Light, Green Light; Ddakji; Tug-of-War; and more.  
+      Losing any round means instant elimination…literally.  
+      The story centers on Seong Gi-hun (Player 456), a down-on-his-luck man battling debt and personal demons as he fights for survival and redemption.  
+    </p>
+    <!-- :contentReference[oaicite:1]{index=1} -->
+  
+    <h3 style="margin-top: 20px; font-size: 1.4rem; color: #fff;">Themes and Social Commentary</h3>
+    <p style="line-height: 1.6; color: #ccc;">
+      At its core, Squid Game is a visceral critique of modern capitalism and economic inequality—pitting the wealthy as game-masters against the debt-stricken masses.  
+      Hwang Dong-hyuk’s concept sprang from a belief that “we are fighting for our lives in very unequal circumstances,” mirroring global financial divides.  
+      The series also probes human psychology: survival instincts, moral dilemmas, group dynamics, and the brutal costs of desperation.  
+    </p>
+    <!-- :contentReference[oaicite:2]{index=2} -->
+  
+    <h3 style="margin-top: 20px; font-size: 1.4rem; color: #fff;">Release History</h3>
+    <p style="line-height: 1.6; color: #ccc;">
+      <strong>Season 1</strong> debuted on Netflix on September 17, 2021.  
+      <strong>Season 2</strong> premiered on December 26, 2024.  
+      A <strong>third and final season</strong> is officially slated for release on June 27, 2025.  
+    </p>
+    <!-- :contentReference[oaicite:3]{index=3} -->
+  
+    <h3 style="margin-top: 20px; font-size: 1.4rem; color: #fff;">Reception and Awards</h3>
+    <p style="line-height: 1.6; color: #ccc;">
+      Squid Game became Netflix’s most-watched series ever—topping charts in over 90 countries within days of launch.  
+      It also made Emmy history as the first non-English drama to be nominated and to **win** at the Primetime Emmy Awards, earning 14 nominations and taking home 6 awards (including Outstanding Lead Actor, Directing, and Guest Actress).  
+    </p>
+    <!-- :contentReference[oaicite:4]{index=4} -->
+  
+    <h3 style="margin-top: 20px; font-size: 1.4rem; color: #fff;">Cultural Impact</h3>
+    <p style="line-height: 1.6; color: #ccc;">
+      Beyond TV, Squid Game has permeated pop culture:  
+      <ul style="list-style: disc inside; margin-top: 10px; color: #ccc;">
+        <li>Countless memes and viral challenges</li>
+        <li>Merchandise, spin-off video games, and theme-park experiences</li>
+        <li>Lively social media debates on wealth, power, and morality</li>
+      </ul>
+      Its blend of gore, suspense, and social allegory continues to spark discussion around global economic fairness and human nature.  
+    </p>
+    <!-- :contentReference[oaicite:5]{index=5} -->
+  </section>
+
+  <img src="squidzinvana2.jpg" alt="Squidgame Zinvana" style="width: 90%; display: block; margin: auto; border: 2px solid red; border-radius: 15px;">
+  
+
+<section id="faq" style="max-width: 800px; margin: 40px auto; padding: 30px 20px; background: #1a1a1a; color: #e0e0e0; border-radius: 8px;">
+  <h2 style="text-align: center; font-size: 1.6rem; color: #d32f2f; border-bottom: 2px solid #d32f2f; padding-bottom: 10px;">Frequently Asked Questions</h2>
+  <div style="margin-top: 20px;">
+    <h3>Is this Squid Game personality quiz accurate?</h3>
+    <p>Our quiz is designed by a team of psychology and data experts. While it's meant to be fun, it also uses real personality profiling models for insightful results.</p>
+
+    <h3>How many characters can I be matched with?</h3>
+    <p>You can be matched with over a dozen unique archetypes based on the Squid Game universe, each revealing your traits and tendencies.</p>
+
+    <h3>Is this quiz free to use?</h3>
+    <p>Yes, 100% free. No signup required and no personal data is stored.</p>
+
+    <h3>What do the results mean?</h3>
+    <p>Your results reflect your strengths, potential areas of improvement, and which Squid Game character aligns with your personality profile.</p>
+  </div>
 </section>
+
+  <!-- Related Blog Articles Section -->
+  <section id="related-articles">
+    <h2>Related Blog Articles</h2>
+    <div class="articles-container">
+      <article class="blog-card">
+        <h3><a href="squidgame-about.html">Everything about Squidgame and it's characters!</a></h3>
+        <p>Dive into the behavioral traits and psychological archetypes behind each iconic character.</p>
+      </article>
+      <article class="blog-card">
+        <h3><a href="index.html">Personality Test</a></h3>
+        <p>Understand about your strenghts, areas for improvement and to which animal you are more similar.</p>
+      </article>
+    </div>
+  </section>
 
 
  <!-- Footer -->
