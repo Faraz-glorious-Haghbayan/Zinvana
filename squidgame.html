@@ -179,24 +179,51 @@
     ------------------------------------- */
     
     header {
-  text-align: center;
-  padding:200px 10px 100px ;
-  background: url('squidzinvana1.jpg') no-repeat center center/cover;
+  position: relative;
+  height: 40vh;
+  overflow: hidden;
   border-bottom: 2px solid #d32f2f;
-  filter: contrast(1.2);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 3rem;
-  color: #f3f3f3;
-  letter-spacing: 1px;
+#header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
-    #tagline {
-      margin-top: 8px;
-      font-size: 1rem;
-      color: #ccc;
-    }
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #f3f3f3;
+  padding-top: 200px;
+}
+
+.header-content h1 {
+  font-size: 2rem;
+  /* soften video glow behind text */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+/* or give the tagline its own block */
+#tagline {
+  margin-top: 8px;
+  font-size: 2rem;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+
   
     /* -------------------------------------
      5) About Section
@@ -595,9 +622,7 @@ header h1 {
       header h1 {
         font-size: 3.5rem;
       }
-      #tagline {
-        font-size: 0.95rem;
-      }
+
       #about p {
         font-size: 0.9rem;
       }
@@ -653,11 +678,17 @@ header h1 {
 
   
 
-  <!-- Header -->
   <header>
-    <h1>Zinvana</h1>
-    <div id="tagline">Squidgame Personality test</div>
+    <video autoplay muted loop playsinline id="header-video">
+      <source src="squidzinvana1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="header-content">
+      <h1>Squidgame Personality Quiz</h1>
+      <div id="tagline">Zinvana</div>
+    </div>
   </header>
+  
 
   <!-- About Section -->
   <section id="about">
