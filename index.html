@@ -92,7 +92,7 @@
     <meta property="og:description" content="Take free quizzes to discover which Squid Game character you resemble, which historical leader you match, your MBTI type, and more." />
     <meta property="og:image" content="https://zinvana.com/Zinvana2.jpg" />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" /> 
+    <meta property="og:image:height" content="630" />    
     <meta property="og:locale" content="en_US" />
   
     <meta name="twitter:card" content="summary_large_image" />
@@ -100,7 +100,7 @@
     <meta name="twitter:creator" content="@Zinvana" />
     <meta name="twitter:title" content="Free & Fun Personality Quizzes | Zinvana" />
     <meta name="twitter:description" content="Uncover your true personality with our free quizzes—Squid Game, MBTI, historical leaders and more!" />
-    <meta name="twitter:image" content="Zinvana2.jpg" />
+    <meta name="twitter:image" content="https://zinvana.com/Zinvana2.jpg" />
   
     <!-- Utilities -->
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
@@ -130,7 +130,7 @@ ol, ul {
 ------------------------------------- */
 body {
   font-family: 'Roboto', sans-serif;
-  background: #f4f5f7;
+  background: #ffffff;
   color: #333;
   line-height: 1.6;
 }
@@ -176,22 +176,60 @@ nav a {
 /* -------------------------------------
    4) Header (Squid Game Theme)
 ------------------------------------- */
-header.main-header {
-  text-align: center;
-  padding: 100px 10px 40px;
-  background: url('header1.png') no-repeat center center/cover;
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;               /* less tall on mobile */
+  min-height: 300px;          /* ensure it never collapses */
+  overflow: hidden;
   border-bottom: 2px solid #d32f2f;
 }
-header.main-header h1 {
-  font-size: 3rem;
-  color: #f3f3f3;
-  letter-spacing: 1px;
+
+.header-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 20px;            /* safe padding on small screens */
 }
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+  z-index: 2;
+}
+
+
+#header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+
+.header-content h1 {
+  font-size: 4rem;          /* down from 4rem */
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
 #tagline {
-  margin-top: 8px;
-  font-size: 1rem;
-  color: #ccc;
+  font-size: 3rem;          /* down from 1.7rem */
+  margin-top: 0.5rem;
+  color: #eee;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
 }
+
+
 
 /* -------------------------------------
    5) Intro Section
@@ -432,12 +470,6 @@ footer .social-icons img:hover {
 ------------------------------------- */
 @media (max-width: 970px) {
   
-  header h1 {
-    font-size: 3.5rem;
-  }
-  #tagline {
-    font-size: 0.95rem;
-  }
   #about p, #squidgame-explainer p {
     font-size: 0.9rem;
   }
@@ -450,17 +482,25 @@ footer .social-icons img:hover {
   footer .social-icons img {
     width: 10%;
   }
+
+  header {
+    height: 50vh;
+  }
+  .header-content h1 {
+    font-size: 3rem;
+  }
+  #tagline {
+    font-size: 2rem;
+  }
   
 }
 
 @media (max-width: 600px) {
-  h1{
-    font-size: 2rem !important;
-  }
   #brand-logo{
     width: 50%;
   }
 }
+
 
 @media (max-width: 1920px) {
   #brand-logo{
@@ -637,12 +677,16 @@ footer .social-icons img:hover {
 
 
 
-  <!-- Header -->
-  <header class="main-header">
-    <h1>Zinvana</h1>
-    <p id="tagline">Discover Your True Self Through Our Personality Quizzes</p>
+  <header>
+    <video autoplay muted loop playsinline id="header-video">
+      <source src="leaders.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="header-content">
+      <h1>Zinvana</h1>
+      <div id="tagline">Free Personality Quiz</div>
+    </div>
   </header>
-
 
   <!-- Intro Section -->
   <section class="intro">
@@ -670,7 +714,7 @@ footer .social-icons img:hover {
 
     <!-- Squid Game Quiz Card -->
     <div class="quiz-card">
-      <img src="squidgamemainwallpaper.jpg" alt="Squid Game Personality Quiz" />
+      <img src="squidzinvana.gif" alt="Squid Game Personality Quiz" />
       <h3>🎭 Squidgame Personality Quiz</h3>
       <p>Are you a strategic mastermind like the Front Man, a survivor like Seong Gi-hun, loyal like Abdul Ali, or bold like Kang Sae-byeok?</p>
       <a href="squidgame.html" class="btn">Take Quiz</a>
@@ -919,7 +963,7 @@ style="padding:20px;border:1px solid #eee;border-radius:6px;">
   </div>
 </section>
 
-<img src="Zinvana2.jpg" alt="Zinvana Poster" class="poster" style="display: block; margin:0 auto;">
+<img src="zinvana2.jpg" alt="Zinvana Poster" class="poster" style="display: block; margin:0 auto;">
 
  <!-- Footer -->
  <footer>
