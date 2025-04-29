@@ -221,27 +221,58 @@
      4) Header (Squid Game Theme)
     ------------------------------------- */
     
-header {
-  text-align: center;
-  padding:200px 10px 100px ;
-  background: url('napoleon.jpg') no-repeat center/cover;
-  border-bottom: 2px solid #1f1f1f;
+    header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;               /* less tall on mobile */
+  min-height: 300px;          /* ensure it never collapses */
+  overflow: hidden;
+  border-bottom: 2px solid #d32f2f;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 3rem;
-  color: #ffffff;
-  text-shadow: 2px 2px black;
-  letter-spacing: 1px;
+.header-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 20px;            /* safe padding on small screens */
 }
-    #tagline {
-      margin-top: 8px;
-      font-size: 1.2rem;
-      color: #ccc;
-      text-shadow: 2px 2px black;
-    }
-  
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+  z-index: 2;
+}
+
+
+#header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+
+.header-content h1 {
+  font-size: 4rem;          /* down from 4rem */
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+#tagline {
+  font-size: 3rem;          /* down from 1.7rem */
+  margin-top: 0.5rem;
+  color: #eee;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
     /* -------------------------------------
      5) About Section
     ------------------------------------- */
@@ -718,12 +749,14 @@ header h1 {
       nav .nav-right a {
         font-size: 1rem;
       }
-      header h1 {
-        font-size: 3.5rem;
+      header {
+    height: 50vh;
+      }
+      .header-content h1 {
+        font-size: 3rem;
       }
       #tagline {
-        font-size: 1.3rem;
-        font-weight: bold;
+        font-size: 2rem;
       }
       #about p {
         font-size: 0.9rem;
@@ -760,6 +793,7 @@ header h1 {
         font-size: 1.2rem;
       }
     }
+
   </style>
   
 </head>
@@ -776,12 +810,15 @@ header h1 {
     </div>
   </nav>
 
-
-
-  <!-- Header -->
   <header>
-    <h1>Historical Leaders Personality Quiz</h1>
-    <p>Which iconic figure from history mirrors your leadership style?</p>
+    <video autoplay muted loop playsinline id="header-video">
+      <source src="leaders.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="header-content">
+      <h1>Historical Leaders Personality Quiz</h1>
+      <div id="tagline">Which historical Leader are you?</div>
+    </div>
   </header>
 
   <section id="intro" style="margin-left: 2%;">
