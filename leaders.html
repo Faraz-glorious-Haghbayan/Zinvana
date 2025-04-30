@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <!-- 1. SEO META -->
-   <title>Historical Leaders Personality Quiz | Which Iconic Leader Are You?</title>
+<title>Free Historical Leader Quiz</title>
    <meta name="description"
          content="Take Zinvana’s free Historical Leaders Personality Quiz and discover if you’re more Churchill, Gandhi, Napoleon, or another iconic figure. Compare your leadership style with history’s greatest." />
    <meta name="keywords"
@@ -43,6 +43,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes! The test is 100% free to take and share with others."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which historical leader are you?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Take our free quiz to discover which historical leader matches your personality—from Churchill to Atatürk."
             }
           },
           {
@@ -273,6 +281,46 @@ header::before {
   color: #eee;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
 }
+
+/* ===== Table of Contents ===== */
+.toc {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.toc h2 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #d32f2f;
+  padding-bottom: 4px;
+}
+.toc-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.toc-list a {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #f4f5f7;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #d32f2f;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.toc-list a:hover {
+  background: #e0e0e0;
+  color: #b71c1c;
+}
+
     /* -------------------------------------
      5) About Section
     ------------------------------------- */
@@ -794,6 +842,51 @@ header::before {
       }
     }
 
+    @media (max-width: 400px) {
+      #tagline{
+        font-size: 1.5rem;
+      }
+      h1{
+        font-size: 2rem !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+  /* 1) The outer wrapper handles overflow & gutter */
+.leader-scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* momentum on iOS */
+  padding: 0 10px;                   /* ← gives both edges breathing room */
+  box-sizing: border-box;
+}
+
+/* 2) The inner grid simply lays cards out in a row */
+.leader-grid {
+  display: inline-flex;  /* treat the grid itself like one long inline element */
+  gap: 10px;             /* space between cards */
+  /* no padding or margin here */
+}
+
+/* 3) Each card is fixed‐width so it won’t shrink below visible size */
+.leader-card {
+  flex: 0 0 auto;        /* don’t grow, don’t shrink, width based on content or explicit width */
+  width: calc(80vw - 1px); /* roughly 80% of viewport minus container padding */
+  scroll-snap-align: start; /* optional if you want snapping */
+}
+
+/* Optional snapping if you like that “carousel” feel */
+.leader-scroll-container {
+  scroll-snap-type: x mandatory;
+}
+.leader-card {
+  scroll-snap-align: start;
+}
+
+}
+
+
+
+
   </style>
   
 </head>
@@ -816,20 +909,29 @@ header::before {
       Your browser does not support the video tag.
     </video>
     <div class="header-content">
-      <h1>Historical Leaders Personality Quiz</h1>
-      <div id="tagline">Which historical Leader are you?</div>
+      <h1>Which Historical Leader Are You? Take a Free Quiz</h1>
+      <div id="tagline">Free historical Leader Quiz</div>
     </div>
   </header>
 
-  <section id="intro" style="margin-left: 2%;">
+  <!-- Table of Contents -->
+  <section class="toc">
+    <h2>Contents</h2>
+    <ul class="toc-list">
+      <li><a href="#intro">Which Historical Leader Are You?</a></li>
+      <li><a href="#leader-breakdown">Leader Breakdown</a></li>
+      <li><a href="#test">Personality Quiz</a></li>
+      <li><a href="#faq">Quiz FAQs</a></li>
+      <li><a href="#why-zinvana">Why Zinvana?</a></li>
+    </ul>
+  </section>
+
+
+  <section id="intro">
     <h2>Discover Your Inner Leader</h2>
     <p>
-      Throughout history, great leaders have shaped the world with vision, courage, and strategy.  
-      Our free <strong>Historical Leaders Personality Quiz</strong> compares your traits to those of famous figures—
-      from Winston Churchill’s steadfast resolve to Mahatma Gandhi’s peaceful conviction.
-    </p>
-    <p>
-      Ready to find out which legendary leader you align with? Scroll down, take the 20‑question test, and see your personalized result.
+      Did someone ever ask you: <strong>which historical leader are you</strong>?  
+      Take our free Historical Leaders Personality Quiz to see if you match Napoleon, Gandhi, Cyrus, or another historical Leader.
     </p>
   </section>
   
@@ -838,6 +940,7 @@ header::before {
     <h2>🔍 Leader Breakdown: Who Might You Be?</h2>
     <p>Our test analyzes your traits and matches you with a historical leader based on your personality, leadership style, and decision-making approach.</p>
   
+    <div class="leader-scroll-container">
     <div class="leader-grid">
       <!-- Napoleon -->
       <div class="leader-card">
@@ -881,9 +984,10 @@ header::before {
         <p>A ruler ahead of his time, Cyrus was known for his tolerance, leadership, and innovative governance.</p>
       </div>
     </div>
+    </div>  
     <div class="leader-button-container">
       <a href="leaders-list.html" class="see-more-btn">📜 See More Leaders</a>
-    </div>    
+    </div>  
   </section>
   
   <section id="top-quotes" style="max-width:800px;margin:40px auto;padding:20px;">
@@ -987,6 +1091,16 @@ header::before {
   </p>
 </section>
 
+<section id="why-it-matters" style="background-color: #1a1a1a; color: white; padding: 5%; border-radius: 20px;">
+  <h2>Why Discover Which Historical Leader You Are</h2>
+  <p>
+    Learning which <em>iconic leader</em> you resemble can reveal your natural <em>leadership style</em>, 
+    whether you’re a diplomatic peace-builder like Gandhi or a strategic tactician like Napoleon.
+  </p>
+</section>
+
+
+
 <section id="why-zinvana" style="max-width:800px;margin:40px auto;padding:20px;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
   <img src="napoleon1.gif" alt="Napoleon gif Zinvana" class="gif" style="border: 2px solid orange; border-radius: 18px; width: 80%; display: block; margin: auto;">
   <h2>Why Zinvana Is Unique (vs. Other Quiz Sites)</h2>
@@ -1020,6 +1134,8 @@ header::before {
     Take our quiz to discover not only <strong>which historical leader are you</strong> but also how you can apply these time-tested lessons to your everyday life.
   </p>
 </section>
+
+
 
 
  <!-- FAQ Section (Existing FAQs now emphasize historical leadership) -->
@@ -1829,6 +1945,50 @@ revolutionary: {
   
     displayQuestion();
   });
+
+
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const scroller = document.querySelector(".leader-scroll-container");
+    const cards = scroller.querySelectorAll(".leader-card");
+    if (!scroller || cards.length === 0) return;
+
+    // Compute how far to scroll each “step”:
+    // card width + gap (16px in your CSS)
+    const gap = 10;
+    let cardWidth = cards[0].getBoundingClientRect().width + gap;
+
+    // When window resizes, re-calc cardWidth
+    window.addEventListener("resize", () => {
+      cardWidth = cards[0].getBoundingClientRect().width + gap;
+    });
+
+    let position = 0;
+    const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+
+    function autoScroll() {
+      position += cardWidth;
+      // if we've reached (or passed) the end, loop back to start
+      if (position > maxScroll) {
+        position = 0;
+      }
+      scroller.scrollTo({
+        left: position,
+        behavior: "smooth"
+      });
+    }
+
+    // Kick off the loop every 3 seconds (adjust to taste)
+    const intervalId = setInterval(autoScroll, 3000);
+
+    // Optional: pause on hover/touch
+    scroller.addEventListener("mouseenter", () => clearInterval(intervalId));
+    scroller.addEventListener("touchstart", () => clearInterval(intervalId));
+  });
+
+
   </script>
   
 </body>
