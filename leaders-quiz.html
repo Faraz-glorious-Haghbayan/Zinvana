@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Leaders Quiz – Which Historical Leader Are You?</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="description" content="Take the Ultimate Leaders Quiz to discover which renowned historical leader you mirror most—Napoleon, Gandhi, Churchill, Mandela, and more. Deep insights, leader profiles, case studies, and actionable tips." />
+  <meta name="keywords" content="leaders quiz, historical leader quiz, leadership personality test, famous leaders, history quiz, leadership style test, which leader are you" />
+  <link rel="canonical" href="https://zinvana.com/leaders-quiz.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ultimate Leaders Quiz – Discover Your Historical Counterpart" />
+  <meta property="og:description" content="Match your leadership style with icons like Churchill, Mandela, or Atatürk in this free online quiz. Get in-depth analysis, leader case studies, and shareable results." />
+  <meta property="og:url" content="https://zinvana.com/leaders-quiz.html" />
+  <meta property="og:image" content="https://zinvana.com/assets/images/og-leaders-quiz.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Which Historical Leader Are You? – Free Leaders Quiz" />
+  <meta name="twitter:description" content="Find out if you’re more like Napoleon, Gandhi, or Lincoln. Take the in-depth leaders quiz with profiles, testimonials, and history insights." />
+  <meta name="twitter:image" content="https://zinvana.com/assets/images/og-leaders-quiz.jpg" />
+
+  <!-- Structured Data: Quiz + FAQ + Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+      {
+        "@type": "Quiz",
+        "name": "Ultimate Leaders Quiz",
+        "description": "A comprehensive 20-question quiz to discover which historical leader you resemble most.",
+        "url": "https://zinvana.com/leaders-quiz.html",
+        "educationalUse": "SelfAssessment",
+        "author": { "@type":"Organization","name":"Zinvana" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type":"Question","name":"Is the quiz really free?","acceptedAnswer":{"@type":"Answer","text":"Yes—no fees, no registration, just pure insight."}},
+          { "@type":"Question","name":"How long does it take?","acceptedAnswer":{"@type":"Answer","text":"Approximately 3–5 minutes for full results."}},
+          { "@type":"Question","name":"Can I retake it?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! Compare results and track your growth."}}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* [Existing styles… plus new classes] */
+    body { margin:0;font-family:'Roboto',sans-serif; background:#f5f6fa; color:#333; line-height:1.7; }
+    nav {
+      display: flex;
+      position: relative;
+      z-index: 9999;
+      justify-content: space-between;
+      align-items: center;
+      background: #000; /* Dark background */
+      padding: 15px 20px;
+      box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2); /* Red-ish shadow */
+    }
+    nav .nav-left,
+    nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff; /* White text */
+      font-weight: 500;
+      font-size: 1.3rem;
+    }
+    nav a:hover {
+      color: #d32f2f; /* Red on hover */
+    }
+    nav img#brand-logo {
+      width: 10%;
+      min-width: 60px;
+      pointer-events: none;
+    }
+    section { padding:60px 20px; max-width:900px; margin:auto; }
+    h2 { color:#c62828; margin-bottom:16px; font-size:2rem; }
+    h3 { color:#444; margin-top:40px; font-size:1.6rem; }
+    .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; }
+    .gallery img { width:100%; height:auto; border-radius:6px; }
+    .sample-questions li { margin-bottom:12px; }
+    .cta-button { display:inline-block;background:#d32f2f;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;transition:background .3s; }
+    .cta-button:hover { background:#b71c1c; }
+    #blog-insights p { margin-bottom:16px; }
+    #test-start { text-align:center; margin:60px 0; }
+
+
+    /* Leader Profiles Grid */
+#leader-profiles {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+#leader-profiles h2 {
+  color: #c62828;
+  margin-bottom: 32px;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+/* Grid container */
+.profile-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Card styling */
+.profile-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+  display: flex;
+  flex-direction: column;
+}
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Image */
+.profile-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content */
+.profile-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.profile-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  color: #333;
+}
+.profile-content .meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 12px;
+}
+.profile-content p {
+  flex: 1;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* “Learn More” button */
+.profile-content .btn {
+  align-self: flex-start;
+  padding: 8px 16px;
+  background: #c62828;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background .3s;
+}
+.profile-content .btn:hover {
+  background: #a71e1e;
+}
+
+
+
+/* Scrollable Leader Gallery */
+.leader-scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 10px;
+  box-sizing: border-box;
+  scroll-snap-type: x mandatory;
+  margin: 40px 0;
+  border: 2px solid black;
+  border-radius: 18px;
+}
+
+.leader-grid {
+  display: inline-flex;
+  gap: 20px;
+}
+
+.leader-card {
+  flex: 0 0 auto;
+  width: 10%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 15px;
+  scroll-snap-align: start;
+  transition: transform .3s, box-shadow .3s;
+}
+.leader-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.leader-card img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.leader-card h3 {
+  font-size: 1rem;
+  margin: 8px 0 4px;
+  color: #c62828;
+}
+
+.leader-card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.2;
+}
+
+.leader-card p.bio {
+  font-size: 0.85rem;
+  color: #444;
+  margin: 8px 0 12px;
+  line-height: 1.3;
+}
+
+.leader-button {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #c62828;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background .3s;
+}
+
+.leader-button:hover {
+  background: #a71e1e;
+}
+
+    footer {
+      background: #000;
+      padding: 20px 10px;
+      text-align: center;
+      border-top: 1px solid #d32f2f;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    footer .social-icons {
+      margin-top: 10px;
+    }
+    footer .social-icons img {
+      width: 10%;
+      margin: 0 8px;
+      transition: opacity 0.3s;
+      cursor: pointer;
+    }
+    footer .social-icons img:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
+      <a href="index.html">Home</a>
+      <a href="#test">Test</a>
+    </div>
+    <div class="nav-right">
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" style="background:#121212;color:#fff;text-align:center;padding:100px 20px;">
+    <h1 style="font-size:3rem;margin-bottom:20px;">Ultimate Leaders Quiz</h1>
+    <p style="font-size:1.3rem;max-width:700px;margin:auto;">Which historical titan are you? Dive deep into leadership styles, discover your match—Napoleon, Gandhi, Churchill, Mandela & more.</p>
+    <div id="test-start">
+      <a href="leaders.html" class="cta-button">▶ Start the Leaders Quiz</a>
+    </div>
+  </section>
+
+  <section id="intro">
+  <h1>Leaders Quiz: Which Historical Leader Are You?</h1>
+  <p>This in-depth <strong>FREE leaders quiz</strong> matches your personality to icons like Napoleon, Gandhi, or Churchill...</p>
+  <a href="#test" class="cta-button">▶ Take the Leaders Quiz Now</a>
+</section>
+
+  <!-- About the Quiz -->
+  <section id="about">
+    <h2>What Is the Leaders Quiz?</h2>
+    <p>The <strong>Leaders Quiz</strong> is a <em>20-question</em> interactive assessment designed to map your personality and values to legendary figures in world history. From strategic geniuses like <strong>Napoleon Bonaparte</strong> to moral visionaries like <strong>Mahatma Gandhi</strong>, uncover who you truly resemble.</p>
+    <ul>
+      <li>📝 <strong>20 in-depth questions</strong> across strategy, empathy, vision, and resolve</li>
+      <li>🔗 <strong>Personality insights</strong> & historical context</li>
+      <li>📊 <strong>Shareable infographic</strong> to showcase your match on social media</li>
+      <li>🎓 <strong>Actionable tips</strong> to develop your leadership style</li>
+    </ul>
+  </section>
+
+  <section id="leader-profiles">
+  <h2>Leader Profiles & Case Studies</h2>
+  <div class="profile-container">
+
+    <div class="profile-card">
+      <img src="napoleonwall.jpg" alt="Portrait of Napoleon Bonaparte">
+      <div class="profile-content">
+        <h3>Napoleon Bonaparte</h3>
+        <div class="meta">Late 18th – Early 19th Century</div>
+        <p>Revolutionized military tactics and governance. His bold strategies reshaped Europe and modern armies still study his campaigns today.</p>
+        <a href="napoleon.html" class="btn">Learn More</a>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <img src="gandhi.jpg" alt="Portrait of Mahatma Gandhi">
+      <div class="profile-content">
+        <h3>Mahatma Gandhi</h3>
+        <div class="meta">Early 20th Century</div>
+        <p>Pioneered non-violent resistance to lead India to independence. His philosophy of Satyagraha influenced civil rights movements worldwide.</p>
+        <a href="gandhi.html" class="btn">Learn More</a>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <img src="churchill.jpg" alt="Portrait of Winston Churchill">
+      <div class="profile-content">
+        <h3>Winston Churchill</h3>
+        <div class="meta">World War II Era</div>
+        <p>Inspired Britain with stirring oratory and unbreakable resolve. His leadership through adversity remains a masterclass in crisis management.</p>
+        <a href="churchill.html" class="btn">Learn More</a>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <img src="mandela.jpg" alt="Portrait of Nelson Mandela">
+      <div class="profile-content">
+        <h3>Nelson Mandela</h3>
+        <div class="meta">Late 20th Century</div>
+        <p>Ended apartheid through reconciliation and vision. His moral authority and determination fostered national healing in South Africa.</p>
+        <a href="mandela.html" class="btn">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Add additional .profile-card blocks here for each leader -->
+
+  </div>
+</section>
+
+
+<section id="leader-gallery">
+  <h2 style="text-align:center; color:#c62828;">All available Leaders</h2>
+  <h3 style="color: red; text-align: center;">Scroll to the right =></h3>
+  <div class="leader-scroll-container">
+    <div class="leader-grid">
+
+      <div class="leader-card">
+        <img src="ataturckheader.jpg" alt="Mustafa Kemal Atatürk">
+        <h3>Mustafa Kemal Atatürk</h3>
+        <p class="bio">Atatürk led Turkey to independence in 1923, then modernized its laws, language and education to build a secular republic.</p>
+        <a href="ataturk.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="lincolnheader1.jpg" alt="Abraham Lincoln">
+        <h3>Abraham Lincoln</h3>
+        <p class="bio">16th President of the United States who guided the nation through Civil War and abolished slavery with the Emancipation Proclamation.</p>
+        <a href="lincoln.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="cleopatraheader.jpg" alt="Cleopatra VII">
+        <h3>Cleopatra VII</h3>
+        <p class="bio">The last Ptolemaic ruler of Egypt, famed for her intelligence, political savvy and alliances with Rome’s top generals.</p>
+        <a href="cleopatra.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="cyrus1.jpg" alt="Cyrus the Great">
+        <h3>Cyrus the Great</h3>
+        <p class="bio">Founder of the Achaemenid Empire ca. 550 BCE, noted for his respectful governance of conquered peoples and codified laws.</p>
+        <a href="cyrus.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="muhammadheader.jpg" alt="Prophet Muhammad">
+        <h3>Prophet Muhammad</h3>
+        <p class="bio">Founder of Islam in the 7th century, unified Arabian tribes under a new religious and political order based on the Quran.</p>
+        <a href="muhammad.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="jesusheader.jpg" alt="Jesus of Nazareth">
+        <h3>Jesus of Nazareth</h3>
+        <p class="bio">Central figure of Christianity whose teachings on love, forgiveness, and compassion shaped Western moral thought.</p>
+        <a href="jesus.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="churchillheader.jpg" alt="Winston Churchill">
+        <h3>Winston Churchill</h3>
+        <p class="bio">Prime Minister of the UK during WWII, inspired Britain with his speeches and steadfast resistance to Nazism.</p>
+        <a href="churchill.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="elizabethheader.jpg" alt="Queen Elizabeth I">
+        <h3>Elizabeth I</h3>
+        <p class="bio">Reigned 1558–1603, oversaw England’s Golden Age in literature, exploration and Protestant consolidation.</p>
+        <a href="elizabeth.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="saladinheader.jpg" alt="Saladin">
+        <h3>Saladin</h3>
+        <p class="bio">First Sultan of Egypt & Syria, reclaimed Jerusalem in 1187 and won respect for his chivalry and mercy.</p>
+        <a href="saladin.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="leninheader.jpg" alt="Vladimir Lenin">
+        <h3>Vladimir Lenin</h3>
+        <p class="bio">Led the 1917 Bolshevik Revolution, founded the Russian Soviet Federative Socialist Republic.</p>
+        <a href="lenin.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="fdrheader.jpg" alt="Franklin D. Roosevelt">
+        <h3>F. D. Roosevelt</h3>
+        <p class="bio">U.S. President (1933–45), guided America through the Great Depression with the New Deal and WWII leadership.</p>
+        <a href="fdr.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="hitlerheader.jpg" alt="Austrian Painter Leader">
+        <h3>Austrian Painter</h3>
+        <p class="bio">Visionary artist-ruler who bridged culture and power.</p>
+        <a href="hitler.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="ashokaheader.jpg" alt="Ashoka the Great">
+        <h3>Ashoka the Great</h3>
+        <p class="bio">Mauryan emperor turned Buddhist patron after Kalinga War; erected pillars spreading Dharma across India.</p>
+        <a href="ashoka.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="gandhiheader.jpg" alt="Mahatma Gandhi">
+        <h3>Mahatma Gandhi</h3>
+        <p class="bio">Led India’s non-violent independence movement, pioneered civil disobedience and peaceful protest.</p>
+        <a href="gandhi.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="gorbachevheader.jpg" alt="Mikhail Gorbachev">
+        <h3>Mikhail Gorbachev</h3>
+        <p class="bio">USSR leader who introduced Perestroika & Glasnost, helping end the Cold War and dissolve the Soviet Union.</p>
+        <a href="gorbachev.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="genghiskhanheader.jpg" alt="Genghis Khan">
+        <h3>Genghis Khan</h3>
+        <p class="bio">Unified the Mongol tribes, created the largest contiguous land empire in history through military genius.</p>
+        <a href="ghengiskhan.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="augustusheader.jpg" alt="Emperor Augustus">
+        <h3>Augustus</h3>
+        <p class="bio">Rome’s first emperor (27 BCE), established the principate and ushered in the Pax Romana.</p>
+        <a href="augustus.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="caesarheader.jpg" alt="Julius Caesar">
+        <h3>Julius Caesar</h3>
+        <p class="bio">Expanded Rome’s territory as general, then crossed the Rubicon to reshape the Republic into an Empire.</p>
+        <a href="caesar.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="mandelaheader.jpg" alt="Nelson Mandela">
+        <h3>Nelson Mandela</h3>
+        <p class="bio">Led the struggle against apartheid, became South Africa’s first Black president and championed reconciliation.</p>
+        <a href="mandela.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="mlkheader.jpg" alt="Martin Luther King Jr.">
+        <h3>Martin Luther King Jr.</h3>
+        <p class="bio">Key figure in U.S. Civil Rights Movement, advocated non-violent protest and delivered the “I Have a Dream” speech.</p>
+        <a href="mlk.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="alexanderheader.jpg" alt="Alexander the Great">
+        <h3>Alexander the Great</h3>
+        <p class="bio">King of Macedonia by age 20, conquered Persia and beyond to create one of history’s largest empires.</p>
+        <a href="alexander.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="stalinheader.jpg" alt="Joseph Stalin">
+        <h3>Joseph Stalin</h3>
+        <p class="bio">Transformed the USSR into a superpower via Five-Year Plans but ruled with brutal repression.</p>
+        <a href="stalin.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="aureliusheader.jpg" alt="Marcus Aurelius">
+        <h3>Marcus Aurelius</h3>
+        <p class="bio">Philosopher-emperor of Rome, authored “Meditations” and exemplified Stoic virtue.</p>
+        <a href="aurelius.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="suntzuheader.jpg" alt="Sun Tzu">
+        <h3>Sun Tzu</h3>
+        <p class="bio">Ancient Chinese general and strategist, wrote “The Art of War” on warfare and leadership.</p>
+        <a href="suntzu.html" class="leader-button">Learn More</a>
+      </div>
+
+      <div class="leader-card">
+        <img src="cheguevaraheader.jpg" alt="Che Guevara">
+        <h3>Che Guevara</h3>
+        <p class="bio">Argentine-born revolutionary, key figure in Cuba’s 1959 revolution and global icon of rebellion.</p>
+        <a href="cheguevara.html" class="leader-button">Learn More</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Blog-Style Insights -->
+  <section id="blog-insights">
+    <h2>Leadership Insights & Historical Lessons</h2>
+    <p>Great leaders across history share common traits: clarity of vision, resilience under pressure, and the ability to inspire collective action. In this mini-blog, we dive into three timeless lessons:</p>
+    <h3>1. The Power of Narrative</h3>
+    <p>Churchill’s speeches galvanized a nation by weaving a story of hope. In modern organizations, leaders who craft and communicate a clear narrative foster alignment and purpose.</p>
+    <h3>2. Moral Authority Matters</h3>
+    <p>Gandhi’s nonviolent movement succeeded because it aligned with universal ethics. Authenticity and integrity are crucial in gaining trust.</p>
+    <h3>3. Adaptability in Chaos</h3>
+    <p>Napoleon’s rapid maneuvers showcase the need for agility. Today’s volatile markets demand leaders who pivot quickly and decisively.</p>
+  </section>
+
+
+  <!-- Why Take It -->
+  <section id="why-take" style="background:#222;color:#eee;">
+    <h2>Why Take the Leaders Quiz?</h2>
+    <ol>
+      <li>🔹 <strong>Boost Self-Awareness:</strong> Pinpoint your innate leadership approach.</li>
+      <li>🔹 <strong>Unlock Strengths & Blind Spots:</strong> Tailor your development path.</li>
+      <li>🔹 <strong>Learn from the Best:</strong> Apply historical strategies today.</li>
+      <li>🔹 <strong>Share & Compare:</strong> Engage colleagues with your results.</li>
+    </ol>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works">
+    <h2>How the Quiz Works</h2>
+    <ol>
+      <li><strong>Answer 20 Drilled-Down Questions:</strong> Strategy, empathy, vision, and resilience.</li>
+      <li><strong>Receive Your Match:</strong> Detailed leader profile + personality breakdown.</li>
+      <li><strong>Get Custom Advice:</strong> Tips and resources to level up your style.</li>
+      <li><strong>Share Your Badge:</strong> LinkedIn-ready graphic with #ZinvanaLeaders.</li>
+    </ol>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <dl>
+      <dt>Is the quiz really free?</dt>
+      <dd>Yes—completely free, no sign-up required.</dd>
+      <dt>How long does it take?</dt>
+      <dd>A brief 3–5 minutes for full insights.</dd>
+      <dt>Can I retake it?</dt>
+      <dd>Yes! Retake anytime and compare results.</dd>
+      <dt>Who designed these questions?</dt>
+      <dd>Our team of historians and psychologists crafted each question for accuracy and depth.</dd>
+      <dt>How do you protect my data?</dt>
+      <dd>We never store personal details—your answers are 100% anonymous.</dd>
+    </dl>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="cta" style="text-align:center;padding:80px 20px;">
+    <h2>Ready to Discover Your Inner Leader?</h2>
+    <p>Join over 50,000+ professionals who’ve unlocked their leadership style.</p>
+    <a href="/leaders.html" class="cta-button">▶ Take the Quiz Now</a>
+  </section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Zinvana. All rights reserved.</p>
+ 
+  <div class="social-icons">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
+      <img src="whiteinsta.png" alt="instagram" />
+    </a>
+    <!-- X (Twitter) -->
+    <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
+        <img src="whitex.png" alt="x" />
+      </a>
+    <!-- YouTube -->
+    <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
+      <img src="youtube.png" alt="youtube" />
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
