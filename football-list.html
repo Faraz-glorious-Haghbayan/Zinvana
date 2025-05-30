@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary title: include target keyword early -->
+  <title>Best Football Personality Quiz | Discover Your Iconic Player Match</title>
+
+  <!-- Improved meta description: ~155 characters, includes primary & secondary keywords -->
+  <meta name="description"
+        content="Take a free football personality quiz to find out if you’re a tactical genius like Pep Guardiola or a goal-machine like Ronaldo. Free, fast, fun." />
+
+  <!-- Focused keywords (but don’t overstuff) -->
+  <meta name="keywords"
+        content="football personality quiz, free football personality quiz, football archetypes, Pep Guardiola personality, Ronaldo traits, Messi quiz, player match" />
+
+  <!-- Tell crawlers to index & follow; specify canonical -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://zinvana.com/football-list.html" />
+
+  <!-- Preconnect & preload fonts or critical assets -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- e.g. if you’re using Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet" />
+
+  <!-- Open Graph & Twitter Cards with optimized tags -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Find Your Football Icon – Free Personality Quiz" />
+  <meta property="og:description" content="Discover whether you’re a silent maestro like Messi or a relentless machine like Ronaldo." />
+  <meta property="og:image"       content="zinvanafootheader.jpg" />
+  <meta property="og:url"         content="https://zinvana.com/football-list.html" />
+
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="Find Your Football Icon – Free Personality Quiz" />
+  <meta name="twitter:description" content="Discover whether you’re a silent maestro like Messi or a relentless machine like Ronaldo." />
+  <meta name="twitter:image"      content="zinvanafootheader.jpg" />
+
+  <!-- JSON-LD structured data: Article + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://zinvana.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Football Personality Quiz",
+            "item": "https://zinvana.com/football-list.html"
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Best Football Personality Quiz | Discover Your Iconic Player Match",
+        "description": "Take the ultimate football personality quiz to find out if you’re a tactical genius like Pep Guardiola or a goal-machine like Ronaldo.",
+        "image": "zinvanafootheader.jpg",
+        "author": { "@type": "Person", "name": "Zinvana" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Zinvana",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://zinvana.com/images/zinvanalogo.png"
+          }
+        },
+        "datePublished": "2025-05-30",
+        "mainEntityOfPage": "https://zinvana.com/football-list.html"
+      }
+    ]
+  }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    nav {
+    display: flex;
+    position: relative;
+    z-index: 9999;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2);
+    }
+    nav .nav-left,
+    nav .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    }
+    nav a {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.3rem;
+    }
+    nav a:hover {
+    color: #d32f2f;
+    }
+    nav img#brand-logo {
+    width: 10%;
+    min-width: 60px;
+    pointer-events: none;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 20px;
+      color: #ff4757;
+    }
+
+    #leaders-explainer {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #1e1e1e;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    #leaders-explainer h2 {
+      font-size: 1.6rem;
+      color: #ff4757;
+    }
+
+    #leaders-explainer p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    #leaders {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    .leader-profile {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #1a1a1a;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+      overflow: hidden;
+    }
+
+    .leader-profile h3 {
+      font-size: 1.4rem;
+      color: #ff4757;
+      margin-bottom: 10px;
+    }
+
+    .leader-profile p, .leader-profile li {
+      font-size: 1rem;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .leader-profile img {
+      width: 140px;
+      height: 140px;
+      border-radius: 8px;
+      object-fit: cover;
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+
+    .leader-profile ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #ff0000;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #b30000;
+    }
+
+    footer {
+      background: #000;
+      padding: 20px 10px;
+      text-align: center;
+      border-top: 1px solid #d32f2f;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 1.3rem;
+      color: #aaa;
+    }
+
+    footer .social-icons img {
+      width: 10%;
+      margin: 0 8px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 970px) {
+      .leader-profile img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
+      <a href="index.html">Home</a>
+      <a href="#test">Test</a>
+    </div>
+    <div class="nav-right">
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+
+  <h1>Discover Your Football Personality</h1>
+
+  <section id="leaders-explainer">
+    <h2>Which Football Icon Reflects You?</h2>
+    <p>
+      Football legends are more than just athletes — they are expressions of creativity, power, resilience, and genius. Explore these archetypes to find out which football icon aligns with your inner game. Each personality is built around signature traits, strengths, and legendary moments. Who are you on the pitch?
+    </p>
+  </section>
+
+<section id="leaders">
+
+  <!-- Player profiles begin -->
+
+  <article class="leader-profile">
+    <img src="pep.jpg" alt="Pep Guardiola">
+    <h3>Pep Guardiola – The Tactical Genius</h3>
+    <p><strong>Every pass has a purpose.</strong></p>
+    <p>
+      You think three moves ahead. Like Pep’s legendary PepTalks at Barça and Man City (2008–2025+), you break down complex strategies into simple patterns.
+      You thrive on video analysis, precision drills, and mastering positional rotations.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> 3× Champions League winner, 10× domestic league titles, Player-turned-manager icon.</li>
+      <li><strong>Best match traits:</strong> Game intelligence, spatial awareness, pattern recognition.</li>
+      <li><strong>Quiz tip:</strong> If you love analyzing heat-maps and set-piece routines, you’re the Tactician.</li>
+      <li><strong>Quote:</strong> “To control the game is to control time.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="ronaldo.jpg" alt="Cristiano Ronaldo">
+    <h3>Cristiano Ronaldo – The Relentless Machine</h3>
+    <p><strong>Work. Win. Repeat.</strong></p>
+    <p>
+      You push past limits with morning sprints, gym sessions, and perfecting your free-kick curve. From Sporting CP to Real Madrid, Juventus, United & Al-Nassr, you chase records.
+      Every goal, every sprint, every celebration fuels your relentless drive.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> 5× Ballon d’Or, all-time top UEFA Champions League scorer, 800+ career goals.</li>
+      <li><strong>Best match traits:</strong> Explosive power, clinical finishing, elite work ethic.</li>
+      <li><strong>Quiz tip:</strong> If you map your week around HIIT workouts and goal-scoring drills, you’re the Machine.</li>
+      <li><strong>Quote:</strong> “Your love makes me strong. Your hate makes me unstoppable.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="messi.jpg" alt="Lionel Messi">
+    <h3>Lionel Messi – The Silent Maestro</h3>
+    <p><strong>Let the ball do the talking.</strong></p>
+    <p>
+      You let skill speak louder than words. Silent in interviews but loud on the pitch with dribbles that defy physics.
+      With Barcelona’s La Masia roots, a record 91 goals in 2012, and World Cup glory in 2022, your magic is consistent artistry.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> 7× Ballon d’Or, World Cup 2022 champion, 700+ career goals.</li>
+      <li><strong>Best match traits:</strong> Close control, low-center dribbling, vision for killer passes.</li>
+      <li><strong>Quiz tip:</strong> If you spend hours perfecting no-look passes and tiny touch drills, you’re the Maestro.</li>
+      <li><strong>Quote:</strong> “You have to fight to reach your dream. You have to sacrifice and work hard for it.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="gattuso.jpg" alt="Gennaro Gattuso">
+    <h3>Gennaro Gattuso – The Warrior</h3>
+    <p><strong>Fierce. Unyielding. Passionate.</strong></p>
+    <p>
+      You channel pure grit and heart. Like Gattuso’s tackling demons at AC Milan, your energy fuels your entire team.
+      No tactic too dirty, no challenge too tough—you thrive in the trenches of midfield battles.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> UEFA Champions League winner, Italy 2006 World Cup champion, midfield enforcer legend.</li>
+      <li><strong>Best match traits:</strong> Aggressive pressing, fearless tackling, motivational leadership.</li>
+      <li><strong>Quiz tip:</strong> If you prefer endurance runs and one-on-one duels over fancy footwork, you’re the Warrior.</li>
+      <li><strong>Quote:</strong> “Heart over talent every day.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="ronaldinho.jpg" alt="Ronaldinho">
+    <h3>Ronaldinho – The Magician</h3>
+    <p><strong>Creativity Unleashed.</strong></p>
+    <p>
+      You live for the unthinkable flick, the audacious elastico, the crowd-stopping no-look pass.
+      Whether in Copa Libertadores or La Liga, your instinct for improvisation mesmerizes defenders and delights fans.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> 2005 FIFA World Player of the Year, Champions League 2006 winner, samba-style icon.</li>
+      <li><strong>Best match traits:</strong> Flair, unpredictability, pure joy in motion.</li>
+      <li><strong>Quiz tip:</strong> If your idea of training is juggling a ball for hours, you’re the Magician.</li>
+      <li><strong>Quote:</strong> “Play with joy and the rest follows.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="kante.jpg" alt="N'Golo Kanté">
+    <h3>N'Golo Kanté – The Stoic Maestro</h3>
+    <p><strong>Consistency & Humility.</strong></p>
+    <p>
+      You dominate without drama. From Caen to Leicester’s fairy-tale title, to Chelsea’s Champions League win, your engine never stops.
+      Quiet in the media, loud in tackles—your selflessness anchors every unit.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> 2× Premier League winner, 2018 World Cup champion, midfield workhorse.</li>
+      <li><strong>Best match traits:</strong> Interceptions, stamina, unshakeable positioning.</li>
+      <li><strong>Quiz tip:</strong> If you bail teammates out with key tackles and never seek the limelight, you’re the Stoic Maestro.</li>
+      <li><strong>Quote:</strong> “Let my work speak.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="buffon.jpg" alt="Gianluigi Buffon">
+    <h3>Gianluigi Buffon – The Wall</h3>
+    <p><strong>Last Line of Defense.</strong></p>
+    <p>
+      You inspire confidence in chaos. Like Buffon’s penalty-save artistry at Juventus and PSG, your reflexes and commanding presence make you the ultimate guardian.
+      Age only deepens your influence.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> 2006 World Cup winner, 10× Serie A titles, all-time most capped Italian player.</li>
+      <li><strong>Best match traits:</strong> Shot-stopping, aerial command, vocal organization.</li>
+      <li><strong>Quiz tip:</strong> If your pre-match ritual includes visualizing saves and practicing reflex drills, you’re the Wall.</li>
+      <li><strong>Quote:</strong> “Fearless between the posts.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="mbappe.jpg" alt="Kylian Mbappé">
+    <h3>Kylian Mbappé – The Rocket</h3>
+    <p><strong>Speed Meets Skill.</strong></p>
+    <p>
+      You accelerate past defenders with world-record sprints, then finish clinically. From Monaco breakout to PSG stardom and World Cup 2018 heroics, your pace and composure define modern forward play.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> 2018 World Cup winner (youngest since Pelé), multiple Ligue 1 top scorer, PSG talisman.</li>
+      <li><strong>Best match traits:</strong> Acceleration, composure under pressure, off-ball movement.</li>
+      <li><strong>Quiz tip:</strong> If you track your 0–100 km/h times and practice timed finishing drills, you’re the Rocket.</li>
+      <li><strong>Quote:</strong> “Explode at the moment.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="drogba.jpg" alt="Didier Drogba">
+    <h3>Didier Drogba – The Clutch Performer</h3>
+    <p><strong>Big Moments, Big Impact.</strong></p>
+    <p>
+      You rise when stakes are highest. Drogba’s 2012 Champions League final heroics epitomize your mindset. In crucial matches, you deliver headers, penalties, and leadership when it matters most.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> Chelsea legend, 2012 Champions League winner, Ivory Coast icon.</li>
+      <li><strong>Best match traits:</strong> Aerial dominance, physical strength, mental steel.</li>
+      <li><strong>Quiz tip:</strong> If you thrive under pressure and practice decisive finishing drills, you’re the Clutch Performer.</li>
+      <li><strong>Quote:</strong> “Rise when the world needs you.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="busquets.jpg" alt="Sergio Busquets">
+    <h3>Sergio Busquets – The Controller</h3>
+    <p><strong>Midfield Metronome.</strong></p>
+    <p>
+      You dictate rhythm with simple touches. Busquets’ PIR (Positioning, Intelligence, Reading the game) at Barça and Spain’s 2010 World Cup run mirrors your cool, precise style—always one step ahead.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> 3× Champions League winner, 2010 World Cup champion, Barça’s ‘invisible engine.’</li>
+      <li><strong>Best match traits:</strong> Ball retention, game-reading, timing of interceptions.</li>
+      <li><strong>Quiz tip:</strong> If you study pass networks and focus on tempo control drills, you’re the Controller.</li>
+      <li><strong>Quote:</strong> “Control the game, control the result.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="lahm.jpg" alt="Philipp Lahm">
+    <h3>Philipp Lahm – The Mentor</h3>
+    <p><strong>Wisdom & Leadership.</strong></p>
+    <p>
+      You guide with calm authority. Lahm’s versatility from full-back to midfield helped Bayern and Germany win everything—2014 World Cup, multiple Bundesliga titles. You lead by example, on and off the ball.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> 2014 World Cup winner & captain, 8× Bundesliga champion, tactical utility player.</li>
+      <li><strong>Best match traits:</strong> Versatility, positional intelligence, emotional intelligence.</li>
+      <li><strong>Quiz tip:</strong> If you mentor teammates in training and adapt to multiple positions, you’re the Mentor.</li>
+      <li><strong>Quote:</strong> “Lead by example every day.”</li>
+    </ul>
+  </article>
+
+  <article class="leader-profile">
+    <img src="vardy.jpg" alt="Jamie Vardy">
+    <h3>Jamie Vardy – The Joker</h3>
+    <p><strong>Wildcard Entertainer.</strong></p>
+    <p>
+      You thrive on unpredictability. Vardy’s record-breaking Leicester title run (2015–16) and lightning-fast counter-attacks capture your flair for surprise finishes and guerilla-style pace bursts.
+    </p>
+    <ul>
+      <li><strong>Career highlights:</strong> Premier League winner with Leicester, record 11-game goal streak.</li>
+      <li><strong>Best match traits:</strong> Explosive bursts, direct runs, poacher’s instinct.</li>
+      <li><strong>Quiz tip:</strong> If you practice reaction-time drills and love catching defenders off-guard, you’re the Joker.</li>
+      <li><strong>Quote:</strong> “Expect the unexpected.”</li>
+    </ul>
+  </article>
+
+</section>
+
+<!-- After your <section id="leaders">, insert this FAQ section -->
+
+<section id="faq" style="max-width:800px;margin:40px auto;padding:20px;background:#1a1a1a;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.8);">
+  <h2 style="color:#ff4757;font-size:1.8rem;margin-bottom:15px;">Free Football Personality Quiz – FAQ</h2>
+  <div itemscope itemtype="https://schema.org/FAQPage">
+
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom:20px;">
+      <h3 itemprop="name" style="color:#ff7f50;font-size:1.4rem;">What is a football personality quiz?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text" style="color:#ddd;font-size:1rem;line-height:1.6;">
+          A football personality quiz matches your playing style, habits, and mindset to legendary players—like Pep Guardiola’s tactical genius or Cristiano Ronaldo’s relentless machine. Our <strong>free football personality quiz</strong> asks targeted questions about your training preferences, match mentality, and favorite drills to pinpoint which football icon you most resemble.
+        </p>
+      </div>
+    </div>
+
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom:20px;">
+      <h3 itemprop="name" style="color:#ff7f50;font-size:1.4rem;">How do I take the quiz for free?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text" style="color:#ddd;font-size:1rem;line-height:1.6;">
+          Simply scroll to the top of this page and click the “<strong>Take the Quiz</strong>” button or link. Our quiz is completely free, mobile-friendly, and takes under 2 minutes. No email signup required—just enjoy discovering your football alter-ego instantly.
+        </p>
+      </div>
+    </div>
+
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom:20px;">
+      <h3 itemprop="name" style="color:#ff7f50;font-size:1.4rem;">Why is it important to know my football personality?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text" style="color:#ddd;font-size:1rem;line-height:1.6;">
+          Understanding your football personality helps you optimize training, choose the right position, and develop a growth plan tailored to your strengths—just like elite pros do. Whether you’re a budding striker or a midfield metronome, this quiz guides you toward targeted drills and tactics.
+        </p>
+      </div>
+    </div>
+
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom:20px;">
+      <h3 itemprop="name" style="color:#ff7f50;font-size:1.4rem;">Can I share my quiz results on social media?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text" style="color:#ddd;font-size:1rem;line-height:1.6;">
+          Absolutely! After you finish, click the “Share Your Result” button to post your football personality—complete with player image and custom graphic—to Facebook, Twitter, or Instagram. Challenge your friends to see who’s the true “Relentless Machine” or “Silent Maestro.”
+        </p>
+      </div>
+    </div>
+
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name" style="color:#ff7f50;font-size:1.4rem;">Is the quiz updated regularly?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text" style="color:#ddd;font-size:1rem;line-height:1.6;">
+          Yes—we refresh our quiz annually to include emerging stars like Kylian Mbappé and to refine questions based on user feedback. Whenever a new football archetype rises, you’ll find it here in our <strong>free football personality quiz</strong>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Zinvana. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/zinvana_official" target="_blank">
+        <img src="whiteinsta.png" alt="Instagram" />
+      </a>
+      <a href="https://x.com/farazglori80528" target="_blank">
+        <img src="whitex.png" alt="Twitter" />
+      </a>
+      <a href="https://youtube.com/@zinvana" target="_blank">
+        <img src="youtube.png" alt="YouTube" />
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

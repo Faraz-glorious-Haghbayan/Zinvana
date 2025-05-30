@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 1. SEO META -->
+   <title>Free Football Personality Quiz – Which Football Archetype Are You?</title>
+<meta name="description"
+      content="Take our free Football Personality Quiz to discover your archetype—Tactical Genius, Rocket, Silent Maestro, and more. Which football persona are you?" />
+<meta name="keywords"
+      content="football personality quiz, football archetype quiz, soccer personality test, which football persona am I" />
+    <link rel="canonical" href="https://zinvana.com/football-personality-quiz.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Football Legends Personality Quiz" />
+    <meta property="og:description"
+      content="Find out which football star matches your style—Messi, Ronaldo, Haaland & more!" />
+    <meta property="og:image" content="zinvanafootheader.jpg" />
+    <meta property="og:url" content="https://zinvana.com/football-personality-quiz.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Football Legends Personality Quiz" />
+    <meta name="twitter:description"
+      content="Dive into our free quiz and discover if you're the next Messi, Ronaldo, or Haaland." />
+    <meta name="twitter:image" content="zinvanafootheader.jpg" />
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Football Legends Quiz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A fun personality quiz matching you to famous footballers based on your play style and mindset."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the quiz free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, it’s completely free—no sign-up required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many questions are there?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There are 20 multiple-choice questions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I retake the quiz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely—just hit 'Restart Test' at the end."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Quiz Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "Which Football Legend Are You?",
+        "description": "Answer 15 questions to find out which legendary football player mirrors your style.",
+        "url": "https://zinvana.com/football-personality-quiz.html",
+        "numberOfQuestions": 15,
+        "educationalUse": "Entertainment"
+      }
+    </script>
+
+    <!-- Breadcrumb -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yourdomain.com/" },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Football Legends Personality Quiz",
+            "item": "https://zinvana.com/football-personality-quiz.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Favicon & Fonts -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- html2canvas for share -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script> 
+    <style>
+/* Remove default margins & padding */
+html, body {
+  margin: 0;
+  padding: 0 !important;
+  border: 0;
+  vertical-align: baseline;
+}
+/* Make HTML5 elements display like block in older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+/* Remove list styles */
+ol, ul {
+  list-style: none;
+}
+/* Set consistent box-sizing & smooth scrolling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* -------------------------------------  
+  2) Base Styles  
+------------------------------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f5f7;
+  color: #333;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+nav {
+  display: flex;
+  position: relative;
+  z-index: 9999;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2);
+}
+nav .nav-left,
+nav .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+nav a {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+nav a:hover {
+  color: #d32f2f;
+}
+nav img#brand-logo {
+  width: 10%;
+  min-width: 60px;
+  pointer-events: none;
+}
+
+
+.hero-header {
+  position: relative;
+  width: 100%;
+  height: 60vh;               
+  min-height: 300px;
+  background: url('zinifoot.gif') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hero-header::after {
+  content: "";
+  position: absolute;          
+  top: 0; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+.header-content {
+  position: relative;          
+  text-align: center;
+  z-index: 1;
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-content #tagline {
+  font-size: 1.2rem;
+}
+
+.toc {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.toc h2 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #d32f2f;
+  padding-bottom: 4px;
+}
+.toc-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+}
+.toc-list a {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #f4f5f7;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #d32f2f;
+  transition: background 0.2s, color 0.2s;
+}
+.toc-list a:hover {
+  background: #e0e0e0;
+  color: #b71c1c;
+}
+
+#intro{
+  color: rgb(31, 31, 31);
+  margin: 2% 5%;
+  font-style: italic;
+  border-radius: 50px;
+}
+
+#toast {
+  position: fixed;
+  top: 20px; left: 20px;
+  display: flex;
+  align-items: center;
+  background: #000;
+  border: 2px solid #d32f2f;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-family: 'Minecraftia', sans-serif;
+  text-shadow: 1px 1px #000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+}
+#toast.show {
+  opacity: 1;
+}
+.toast-icon img {
+  width: 28px;
+  image-rendering: pixelated;
+}
+.toast-text {
+  display: flex;
+  flex-direction: column;
+}
+.toast-title {
+  color: #d32f2f;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+.toast-subtitle {
+  color: #fff;
+  font-size: 0.95rem;
+}
+.hidden { 
+  display: none;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+}
+
+#test {
+  margin-bottom: 40px;
+}
+#progress-container {
+  margin-bottom: 15px;
+  text-align: right;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+#question-title {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+#answer-options li {
+  background: #2a2a2a;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: background 0.3s, transform 0.2s, border 0.3s;
+}
+#answer-options li:hover {
+  background: #3a3a3a;
+  transform: translateX(5px);
+}
+#answer-options input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  width: 22px; height: 22px;
+  margin-right: 10px;
+  border-radius: 2px;
+  position: relative;
+  top: 1px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+#answer-options input[type="radio"]:checked {
+  border-color: #d32f2f;
+}
+#answer-options input[type="radio"]:checked::before {
+  content: "✔";
+  color: #d32f2f;
+  font-weight: bold;
+  position: absolute;
+  left: 1px; top: -3px;
+  font-size: 1.3rem;
+}
+
+button {
+  display: inline-block;
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 20px 5px 0 5px;
+}
+button:hover {
+  background: #b71c1c;
+}
+
+/* Special Share Button */
+#screenshot-btn {
+  background: linear-gradient(135deg, #ff9a00, #ff4f00);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(255,79,0,0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  animation: pulse 1.5s infinite;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#screenshot-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(255,79,0,0.7);
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* -------------------------------------  
+  10) Results Section  
+------------------------------------- */
+#results {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  margin-top: 30px;
+  text-align: left;
+}
+#results h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #d32f2f;
+  padding-bottom: 10px;
+  color: #fff;
+}
+.result-section h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+.result-section p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.character-image {
+  max-width: 200px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+}
+
+/* -------------------------------------  
+  11) Footer (Squid Game Theme)  
+------------------------------------- */
+footer {
+  background: #000;
+  padding: 20px 10px;
+  text-align: center;
+  border-top: 1px solid #d32f2f;
+  margin-top: 40px;
+}
+footer p {
+  color: #aaa;
+  font-size:2rem;
+}
+footer .social-icons img {
+  width: 7%;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+footer .social-icons img:hover {
+  opacity: 0.7;
+}
+
+/* -------------------------------------  
+  FAQ & Related Articles  
+------------------------------------- */
+.test-explainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+.test-title {
+  font-size: 1.8rem;
+  color: #d32f2f;
+  margin-bottom: 16px;
+}
+.test-text {
+  color: #1a1a1a;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+strong {
+  color: #d32f2f;
+}
+#related-articles {
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 30px 20px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+  color: #e0e0e0;
+}
+#related-articles h2 {
+  font-size: 1.6rem;
+  color: #fff;
+  border-bottom: 2px solid #d32f2f;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.blog-card {
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 6px;
+  border-left: 4px solid #d32f2f;
+  transition: background 0.3s, transform 0.3s;
+}
+.blog-card:hover {
+  background: #3a3a3a;
+  transform: translateY(-5px);
+}
+.blog-card h3 a {
+  color: #d32f2f;
+}
+.blog-card h3 a:hover {
+  color: #fff;
+}
+.blog-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* -------------------------------------  
+  Responsive Styles  
+------------------------------------- */
+@media (max-width: 970px) {
+  nav a { font-size: 1rem; }
+  header { height: 50vh; }
+  .header-content h1 { font-size: 3rem; }
+  #tagline { font-size: 2rem; }
+  main { padding: 30px; }
+  #question-title { font-size: 1.15rem; }
+}
+@media (max-width: 600px) {
+  .leader-scroll-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 10px;
+  }
+  .leader-grid {
+    display: inline-flex;
+    gap: 10px;
+  }
+  .leader-card {
+    flex: 0 0 auto;
+    width: calc(80vw - 1px);
+    scroll-snap-align: start;
+  }
+  #toast {
+    top: 10px; left: 10px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  #toast .toast-icon img { width: 20px; }
+  #toast .toast-title { font-size: 0.85rem; }
+  #toast .toast-subtitle { font-size: 0.75rem; }
+  #results h2 { font-size: 1.2rem; }
+}
+@media (max-width: 400px) {
+  #tagline { font-size: 1.5rem; }
+  .header-content h1 { font-size: 2rem !important; }
+}
+
+/* Archetype Breakdown Section */
+#archetype-breakdown {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+}
+
+#archetype-breakdown h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#archetype-breakdown p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Leader Grid */
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Leader Cards */
+.leader-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.leader-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Leader Images */
+.leader-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Leader Titles */
+.leader-card h3 {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+/* Leader Descriptions */
+.leader-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* See More Leaders Button */
+.leader-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+.see-more-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: #ff5733;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+.see-more-btn:hover {
+  background: #e64a2e;
+  transform: scale(1.05);
+}
+
+#gif{
+  width: 50% !important;
+  margin: auto;
+  display: block;
+  border: 2px solid red;
+  border-radius: 18px;
+}
+
+/* Mobile: scrollable carousel for cards */
+@media (max-width: 600px) {
+  .leader-scroll-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 10px;
+    box-sizing: border-box;
+    scroll-snap-type: x mandatory;
+  }
+  .leader-grid {
+    display: inline-flex;
+    gap: 10px;
+  }
+  .leader-card {
+    flex: 0 0 auto;
+    width: calc(80vw - 1px);
+    scroll-snap-align: start;
+  }
+}
+
+/* -------------------------------------
+   Top Quotes Section
+------------------------------------- */
+#top-quotes {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 30px;
+  margin: 40px auto;
+}
+#top-quotes h2 {
+  color: #d32f2f;
+  border-bottom: 2px solid #d32f2f;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+#top-quotes ul {
+  padding-left: 20px;
+}
+#top-quotes li {
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* -------------------------------------
+   Testimonials
+------------------------------------- */
+#testimonials {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  margin: 40px auto;
+}
+#testimonials h2 {
+  color: #d32f2f;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#testimonials [itemprop="reviewBody"] {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 8px;
+}
+#testimonials [itemprop="author"] {
+  font-weight: bold;
+}
+#testimonials time {
+  color: #777;
+  font-size: 0.9rem;
+}
+#testimonials .reviewRating {
+  margin-top: 8px;
+}
+
+/* -------------------------------------
+   Deep Dive Section
+------------------------------------- */
+#deep-dive {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  margin: 40px auto;
+}
+#deep-dive h2 {
+  color: #d32f2f;
+  border-bottom: 2px solid #d32f2f;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+#deep-dive ul {
+  padding-left: 20px;
+  color: #333;
+}
+#deep-dive li {
+  margin-bottom: 10px;
+}
+
+/* -------------------------------------
+   Why It Matters
+------------------------------------- */
+#why-it-matters {
+  margin: 40px auto;
+  padding: 30px;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border-radius: 18px;
+  max-width: 800px;
+  text-align: center;
+}
+#why-it-matters h2 {
+  color: #d32f2f;
+  margin-bottom: 16px;
+}
+
+/* -------------------------------------
+   Why Zinvana
+------------------------------------- */
+#why-zinvana {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+}
+#why-zinvana h2 {
+  color: #d32f2f;
+  margin-bottom: 16px;
+}
+#why-zinvana ul {
+  padding-left: 20px;
+  color: #333;
+}
+#why-zinvana li {
+  margin-bottom: 10px;
+}
+
+/* -------------------------------------
+   FAQ Section
+------------------------------------- */
+#faq {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+#faq .test-title {
+  color: #d32f2f;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#faq .test-text {
+  margin-bottom: 16px;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+#faq strong {
+  color: #d32f2f;
+}
+
+/* -------------------------------------
+   Related Articles
+------------------------------------- */
+#related-articles {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+#related-articles h2 {
+  color: #fff;
+  border-bottom: 2px solid #d32f2f;
+  padding-bottom: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#related-articles .blog-card {
+  background: #2a2a2a;
+  padding: 20px;
+  border-left: 4px solid #d32f2f;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  transition: background 0.3s, transform 0.3s;
+}
+#related-articles .blog-card:hover {
+  background: #333;
+  transform: translateY(-4px);
+}
+#related-articles .blog-card h3 a {
+  color: #d32f2f;
+}
+#related-articles .blog-card p {
+  color: #ccc;
+  margin-top: 8px;
+}
+
+    </style>
+  </head>
+
+  <body>
+  <!-- Top Navigation -->
+  <nav>
+    <div class="nav-left">
+      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
+      <a href="index.html">Home</a>
+      <a href="#test">Test</a>
+    </div>
+    <div class="nav-right">
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+
+<!-- Header -->
+<header class="hero-header">
+  <div class="header-content">
+    <h1>Football Personality Quiz – Which Football Persona Are You?</h1>
+    <p id="tagline">Free Football Personality Quiz</p>
+  </div>
+</header>
+
+
+
+    <!-- Table of Contents -->
+  <section class="toc">
+    <h2>Contents</h2>
+    <ul class="toc-list">
+      <li><a href="#intro">Which Football Persona Are You?</a></li>
+      <li><a href="#archetype-breakdown">Archetype Breakdown</a></li>
+      <li><a href="#test">Personality Quiz</a></li>
+      <li><a href="#faq">Quiz FAQs</a></li>
+      <li><a href="#why-zinvana">Why Zinvana?</a></li>
+    </ul>
+  </section>
+
+<section id="intro">
+  <h2>Discover Your Football Personality Quiz Result</h2>
+  <p>
+    Ready to find out <strong>which football personality quiz</strong> archetype you are?  
+    Our free Football Personality Quiz probes your play-style, mindset, and skills across 15 questions to match you with iconic football personas—whether you’re a strategic <em>Tactical Genius</em>, an explosive <em>Rocket</em>, or the ever-reliable <em>Wall</em>.
+  </p>
+  <p>
+    This Football Personality Quiz isn’t just for fun—it’s designed by football analysts to give you insights into your natural strengths on the pitch.  
+    Jump in now and see your result in seconds!
+  </p>
+</section>
+
+
+  <!-- Archetype Breakdown -->
+  <section id="archetype-breakdown">
+    <h2>🔍 Archetype Breakdown: Who Could You Be?</h2>
+    <p>Our quiz analyzes your play-style, mentality, and skills, then matches you to one of 12 football archetypes.</p>
+
+    <div class="leader-scroll-container">
+      <div class="leader-grid">
+        <!-- Tactical Genius -->
+        <div class="leader-card">
+          <img src="pep.jpg" alt="Tactical Genius – Football Personality Quiz archetype" />
+          <h3>🧠 The Tactical Genius</h3>
+          <p>Calm and analytical, you see the game several moves ahead—every pass has a purpose.</p>
+        </div>
+
+        <!-- Relentless Machine -->
+        <div class="leader-card">
+          <img src="ronaldo.jpg" alt="Ronaldo – Football Personality Quiz" />
+          <h3>🏋️ The Relentless Machine</h3>
+          <p>Driven by results, you push beyond limits—an elite work ethic that never quits.</p>
+        </div>
+
+        <!-- Silent Maestro -->
+        <div class="leader-card">
+          <img src="messi.jpg" alt="Messi – Football Personality Quiz" />
+          <h3>🤫 The Silent Maestro</h3>
+          <p>Quiet off the pitch, magical on it—your feet do the talking.</p>
+        </div>
+
+        <!-- The Warrior -->
+        <div class="leader-card">
+          <img src="gattuso.jpg" alt="gattuso – Football Personality Quiz" />
+          <h3>⚔️ The Warrior</h3>
+          <p>Fierce and unyielding, you battle for every ball and inspire through sheer grit.</p>
+        </div>
+
+        <!-- The Magician -->
+        <div class="leader-card">
+          <img src="ronaldinho.jpg" alt="Ronaldinho – Football Personality Quiz" />
+          <h3>🎩 The Magician</h3>
+          <p>Unpredictable flair—your tricks and dribbles leave opponents spellbound.</p>
+        </div>
+
+        <!-- The Wall -->
+        <div class="leader-card">
+          <img src="buffon.jpg" alt="Buffon – Football Personality Quiz" />
+          <h3>🧱 The Wall</h3>
+          <p>Last line of defense—you’re impenetrable and fearless between the posts.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="leader-button-container">
+      <a href="football-list.html" class="see-more-btn">📜 See All 12 Archetypes</a>
+    </div>
+  </section>
+
+  <!-- Top 5 Football Quotes -->
+  <section id="top-quotes" style="max-width:800px;margin:40px auto;padding:20px;">
+    <h2>Top 5 Football Quotes</h2>
+    <img src="zinifoot.gif" alt="free football personality quiz" id="gif">
+    <ul>
+      <li>“Football is a simple game. Twenty-two men chase a ball for 90 minutes and at the end, the Germans win.” — Gary Lineker</li>
+      <li>“I’m not a perfectionist, but I like to feel that things are done well.” — Cristiano Ronaldo</li>
+      <li>“Some people think football is a matter of life and death. I assure you, it’s much more serious than that.” — Bill Shankly</li>
+      <li>“You have to fight to reach your dream. You have to sacrifice and work hard for it.” — Lionel Messi</li>
+      <li>“Talent without working hard is nothing.” — Lionel Messi</li>
+    </ul>
+  </section>
+
+  <!-- Toast Notification Element -->
+  <div id="toast" class="hidden">
+    <div class="toast-icon">
+      <img src="football.png" alt="Football Icon" />
+    </div>
+    <div class="toast-text">
+      <div class="toast-title" id="toast-title">Great Play!</div>
+      <div class="toast-subtitle" id="toast-subtitle"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Personality Test Section -->
+    <section id="test">
+      <!-- Progress indicator -->
+      <div id="progress-container">
+        <span id="progress-text">Question 1 of 15</span>
+      </div>
+      <div id="question-container">
+        <h2 id="question-title">Your question will appear here</h2>
+        <ul id="answer-options"></ul>
+      </div>
+      <button id="next-btn">Next</button>
+    </section>
+    
+    <!-- Results Section -->
+    <section id="results" class="hidden">
+      <h2>Your Football Persona</h2>
+      <div id="evaluation"></div>
+      <div id="recommendations"></div>
+      <div>
+        <button id="restart-btn">
+          <img src="restart.png" alt="Restart icon" style="width:18px; height:18px; margin-right:6px;" />
+          Restart Quiz
+        </button>
+        <button id="screenshot-btn">
+          <img src="camera.png" alt="Camera icon" />
+          Share Your Result!
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Testimonials -->
+  <section id="testimonials" style="max-width:800px;margin:40px auto;padding:20px;background:#f9f9f9;border-radius:8px;">
+    <h2>What Players Are Saying</h2>
+    <div itemscope itemtype="https://schema.org/Review">
+      <p itemprop="reviewBody">“I got 85% Machine and 70% Rocket—spot on, I live for fitness drills!”</p>
+      <p>—<span itemprop="author">Alex K.</span>, <time itemprop="datePublished" datetime="2025-05-10">May 10, 2025</time></p>
+      <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+        <meta itemprop="worstRating" content="1"/>
+        <meta itemprop="bestRating" content="5"/>
+        <meta itemprop="ratingValue" content="5"/>⭐️⭐️⭐️⭐️⭐️
+      </div>
+    </div>
+    <!-- Add 2–3 more reviews -->
+  </section>
+
+  <!-- Why Zinvana? -->
+  <section id="why-zinvana" style="max-width:800px;margin:40px auto;padding:20px;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+    <h2>Why Zinvana’s Football Quiz Stands Out</h2>
+    <ul>
+      <li><strong>Deep Dive Results:</strong> Full profiles on each archetype—tactics, strengths, play-styles, and quotes.</li>
+      <li><strong>Immersive Experience:</strong> Custom toasts, shareable result images, and slick animations keep you engaged.</li>
+      <li><strong>No Paywalls:</strong> Completely free, no sign-up required, and mobile-optimized.</li>
+      <li><strong>Expert Insights:</strong> Crafted by football analysts to give genuine, fun—and surprisingly accurate—results.</li>
+      <li><strong>SEO & Accessibility:</strong> Clean markup, alt-tags, and structured data so fans find us easily and everyone can play.</li>
+    </ul>
+    <p style="text-align:center;">
+      Ready to find your football persona? <a href="#test" style="color:#d32f2f;font-weight:bold;">Take the Quiz Now →</a>
+    </p>
+  </section>
+
+<section id="faq" class="test-explainer">
+  <h2 class="test-title">Football Personality Quiz FAQ</h2>
+  <div class="test-text">
+    <strong>What is the Football Personality Quiz?</strong><br>
+    Our Football Personality Quiz matches you to one of 12 football archetypes based on your answers.
+  </div>
+  <div class="test-text">
+    <strong>Is the quiz free?</strong><br>
+    Yes—100% free, no sign-up required.
+  </div>
+  <div class="test-text">
+    <strong>How long is the Football Personality Quiz?</strong><br>
+    15 engaging multiple-choice questions.
+  </div>
+  <div class="test-text">
+    <strong>Can I retake the quiz?</strong><br>
+    Absolutely—hit “Restart Quiz” at the end to explore different outcomes.
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"What is the Football Personality Quiz?",
+      "acceptedAnswer":{"@type":"Answer","text":"Our Football Personality Quiz matches you to one of 12 football archetypes based on your answers."}
+    },
+    {
+      "@type":"Question",
+      "name":"Is the quiz free?",
+      "acceptedAnswer":{"@type":"Answer","text":"Yes—100% free, no sign-up required."}
+    },
+    {
+      "@type":"Question",
+      "name":"How long is the Football Personality Quiz?",
+      "acceptedAnswer":{"@type":"Answer","text":"15 engaging multiple-choice questions."}
+    },
+    {
+      "@type":"Question",
+      "name":"Can I retake the quiz?",
+      "acceptedAnswer":{"@type":"Answer","text":"Hit “Restart Quiz” at the end to explore different outcomes."}
+    }
+  ]
+}
+</script>
+
+
+  <!-- Related Articles -->
+  <section id="related-articles">
+    <h2>Related Quizzes & Articles</h2>
+    <div class="articles-container">
+      <article class="blog-card">
+        <h3><a href="leaders.html">Which Historical Leader Are You?</a></h3>
+        <p>Discover your inner leader by taking our Leadership Personality Quiz.</p>
+      </article>
+      <article class="blog-card">
+        <h3><a href="squidgame.html">Which Squid Game Character Are You?</a></h3>
+        <p>Find out if you’re the Front Man, Player 456, or another Squid Game icon.</p>
+      </article>
+    </div>
+  </section>
+
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Zinvana. All rights reserved.</p>
+ 
+  <div class="social-icons">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
+      <img src="whiteinsta.png" alt="instagram" />
+    </a>
+    <!-- X (Twitter) -->
+    <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
+        <img src="whitex.png" alt="x" />
+      </a>
+    <!-- YouTube -->
+    <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
+      <img src="youtube.png" alt="youtube" />
+    </a>
+  </div>
+</footer>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// 1) Football–Style Toast Titles & Messages (Squid Game Theme)
+// ─────────────────────────────────────────────────────────────
+const toastTitles = [
+  "Nice Play!",
+  "Siuuuuuu!",
+  "It's MESSIIII!",
+  "Great Move!",
+  "Legendary!",
+  "What a Goal!",
+  "Epic Pass!"
+];
+
+const toastMessages = {
+  tactician: [
+    "Mastermind on the pitch!",
+    "You control the game!",
+    "Every move is calculated."
+  ],
+  machine: [
+    "Unstoppable work ethic!",
+    "Pure determination!",
+    "Goals are your language."
+  ],
+  silent_genius: [
+    "Magic in your boots!",
+    "Silence speaks volumes.",
+    "A true wizard."
+  ],
+  warrior: [
+    "Fierce and relentless!",
+    "You fight till the whistle!",
+    "No one dares stop you."
+  ],
+  magician: [
+    "Unpredictable flair!",
+    "You dazzle the crowd!",
+    "Pure creativity unleashed."
+  ],
+  stoic: [
+    "Quiet consistency!",
+    "You're rock-solid!",
+    "Trustworthy backbone."
+  ],
+  wall: [
+    "Nothing gets past you!",
+    "Impenetrable defense!",
+    "Last line of salvation."
+  ],
+  rocket: [
+    "Explosive speed!",
+    "Blitzing past everyone!",
+    "Pure acceleration!"
+  ],
+  clutch: [
+    "Big-game performer!",
+    "You shine under pressure!",
+    "When it matters most!"
+  ],
+  controller: [
+    "Midfield metronome!",
+    "You keep the rhythm!",
+    "Passing with precision."
+  ],
+  mentor: [
+    "Wisdom on and off pitch!",
+    "You guide the youth!",
+    "Experience speaks loudest."
+  ],
+  joker: [
+    "Full of surprises!",
+    "You keep them guessing!",
+    "Fun and unpredictable."
+  ]
+};
+
+// ─────────────────────────────────────────────────────────────
+// 2) Quiz Data: 15 Questions & 6 Options Each
+// ─────────────────────────────────────────────────────────────
+const footballQuestions = [
+  {
+    question: "1. Under pressure, you...",
+    options: [
+      { text: "Organize and control the team", value: "tactician" },
+      { text: "Push harder and score", value: "machine" },
+      { text: "Weave magic quietly", value: "silent_genius" },
+      { text: "Fight for every ball", value: "warrior" },
+      { text: "Keep calm and recycle possession", value: "stoic" },
+      { text: "Dictate play from deep", value: "controller" }
+    ]
+  },
+  {
+    question: "2. What thrills you most?",
+    options: [
+      { text: "Outsmarting the opponent", value: "tactician" },
+      { text: "Racking up goals", value: "machine" },
+      { text: "A moment of genius", value: "magician" },
+      { text: "A crunching tackle", value: "warrior" },
+      { text: "A last-ditch save", value: "wall" },
+      { text: "A match-winning sprint", value: "rocket" }
+    ]
+  },
+  {
+    question: "3. Your midfield role is...",
+    options: [
+      { text: "Set the tempo", value: "controller" },
+      { text: "Break lines with runs", value: "rocket" },
+      { text: "Link defense to attack", value: "stoic" },
+      { text: "Provide creative spark", value: "magician" },
+      { text: "Organize teammates", value: "mentor" },
+      { text: "Surprise with tricks", value: "joker" }
+    ]
+  },
+  {
+    question: "4. Fans remember you for...",
+    options: [
+      { text: "Tactical genius", value: "tactician" },
+      { text: "Relentless hustle", value: "machine" },
+      { text: "Silent brilliance", value: "silent_genius" },
+      { text: "Fierce determination", value: "warrior" },
+      { text: "Immense composure", value: "wall" },
+      { text: "Last-minute heroics", value: "clutch" }
+    ]
+  },
+  {
+    question: "5. You value most...",
+    options: [
+      { text: "Game intelligence", value: "tactician" },
+      { text: "Physical fitness", value: "machine" },
+      { text: "Technical skill", value: "magician" },
+      { text: "Mental toughness", value: "stoic" },
+      { text: "Leadership", value: "mentor" },
+      { text: "Fun and flair", value: "joker" }
+    ]
+  },
+  {
+    question: "6. In goal, you’d be a...",
+    options: [
+      { text: "Commanding leader", value: "mentor" },
+      { text: "Impenetrable wall", value: "wall" },
+      { text: "Sweeper-keeper", value: "rocket" },
+      { text: "Calm organizer", value: "stoic" },
+      { text: "Counselor and guide", value: "controller" },
+      { text: "Emotional motivator", value: "clutch" }
+    ]
+  },
+  {
+    question: "7. Your signature move is...",
+    options: [
+      { text: "Brilliant through-ball", value: "tactician" },
+      { text: "Explosive sprint & shot", value: "rocket" },
+      { text: "Deceptive dribble", value: "magician" },
+      { text: "Nutmeg surprise", value: "joker" },
+      { text: "Powerful header", value: "machine" },
+      { text: "Last-second tackle", value: "warrior" }
+    ]
+  },
+  {
+    question: "8. You hate...",
+    options: [
+      { text: "Chaos on the pitch", value: "tactician" },
+      { text: "Slacking teammates", value: "machine" },
+      { text: "Predictability", value: "magician" },
+      { text: "Weak effort", value: "stoic" },
+      { text: "Lack of structure", value: "controller" },
+      { text: "Boring matches", value: "joker" }
+    ]
+  },
+  {
+    question: "9. Best compliment you could hear?",
+    options: [
+      { text: "You’re a football brain", value: "tactician" },
+      { text: "You never stop running", value: "machine" },
+      { text: "You’ve got magic feet", value: "magician" },
+      { text: "You’re unbreakable", value: "wall" },
+      { text: "You calm the storm", value: "stoic" },
+      { text: "You lift the team", value: "mentor" }
+    ]
+  },
+  {
+    question: "10. Your pre-game ritual is...",
+    options: [
+      { text: "Studying the opponent", value: "tactician" },
+      { text: "Intense workout", value: "machine" },
+      { text: "Quiet reflection", value: "silent_genius" },
+      { text: "Motivational pep talk", value: "mentor" },
+      { text: "Listening to music", value: "joker" },
+      { text: "Visualization drills", value: "controller" }
+    ]
+  },
+  {
+    question: "11. Your ideal celebration?",
+    options: [
+      { text: "Tactical fist-pump", value: "tactician" },
+      { text: "Explosive roar", value: "machine" },
+      { text: "Silent gaze", value: "silent_genius" },
+      { text: "Dance for the crowd", value: "joker" },
+      { text: "Hug the team", value: "stoic" },
+      { text: "Share a tactic tip", value: "controller" }
+    ]
+  },
+  {
+    question: "12. You dream of...",
+    options: [
+      { text: "Legendary tactics", value: "tactician" },
+      { text: "Goal records", value: "machine" },
+      { text: "Moments of magic", value: "magician" },
+      { text: "Trophy lifts", value: "clutch" },
+      { text: "Building great players", value: "mentor" },
+      { text: "Unpredictable matches", value: "joker" }
+    ]
+  },
+  {
+    question: "13. Your weakness is...",
+    options: [
+      { text: "Overthinking", value: "tactician" },
+      { text: "Burnout risk", value: "machine" },
+      { text: "Shy off-pitch", value: "silent_genius" },
+      { text: "Too jokey", value: "joker" },
+      { text: "Too rigid", value: "controller" },
+      { text: "Too cautious", value: "stoic" }
+    ]
+  },
+  {
+    question: "14. You win by...",
+    options: [
+      { text: "Outthinking opponents", value: "tactician" },
+      { text: "Outworking them", value: "machine" },
+      { text: "Outdancing them", value: "magician" },
+      { text: "Outlasting them", value: "stoic" },
+      { text: "Outmaneuvering them", value: "controller" },
+      { text: "Unexpected flair", value: "joker" }
+    ]
+  },
+  {
+    question: "15. Your football mantra is...",
+    options: [
+      { text: "Tactics win titles", value: "tactician" },
+      { text: "Hard work beats talent", value: "machine" },
+      { text: "Magic makes moments", value: "magician" },
+      { text: "Experience guides youth", value: "mentor" },
+      { text: "Stay unbreakable", value: "wall" },
+      { text: "Surprise everyone", value: "joker" }
+    ]
+  }
+];
+
+// ─────────────────────────────────────────────────────────────
+// 3) Scores & Counters Initialization
+// ─────────────────────────────────────────────────────────────
+const scores = {
+  tactician: 0,
+  machine: 0,
+  silent_genius: 0,
+  warrior: 0,
+  magician: 0,
+  stoic: 0,
+  wall: 0,
+  rocket: 0,
+  clutch: 0,
+  controller: 0,
+  mentor: 0,
+  joker: 0
+};
+const toastCounters = {};
+Object.keys(scores).forEach(k => toastCounters[k] = 0);
+
+// ─────────────────────────────────────────────────────────────
+// 4) DOM Refs & State
+// ─────────────────────────────────────────────────────────────
+let currentQ = 0;
+const progressText      = document.getElementById("progress-text");
+const questionTitle     = document.getElementById("question-title");
+const answerOptions     = document.getElementById("answer-options");
+const nextBtn           = document.getElementById("next-btn");
+const testSection       = document.getElementById("test");
+const resultsSection    = document.getElementById("results");
+const evaluationEl      = document.getElementById("evaluation");
+const recommendationsEl = document.getElementById("recommendations");
+const restartBtn        = document.getElementById("restart-btn");
+const screenshotBtn     = document.getElementById("screenshot-btn");
+
+// ─────────────────────────────────────────────────────────────
+// 5) Display Question
+// ─────────────────────────────────────────────────────────────
+function displayQuestion() {
+  const q = footballQuestions[currentQ];
+  progressText.textContent = `Question ${currentQ+1} of ${footballQuestions.length}`;
+  questionTitle.textContent = q.question;
+  answerOptions.innerHTML = "";
+  q.options.forEach(opt => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <label>
+        <input type="radio" name="q${currentQ}" value="${opt.value}" />
+        ${opt.text}
+      </label>`;
+    answerOptions.appendChild(li);
+  });
+}
+
+// ─────────────────────────────────────────────────────────────
+// 6) Toast Helpers
+// ─────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const toastEl = document.getElementById("toast");
+  document.getElementById("toast-title").textContent = toastTitles[Math.floor(Math.random()*toastTitles.length)];
+  document.getElementById("toast-subtitle").textContent = msg;
+  toastEl.classList.remove("hidden");
+  void toastEl.offsetWidth;
+  toastEl.classList.add("show");
+  setTimeout(() => {
+    toastEl.classList.remove("show");
+    setTimeout(() => toastEl.classList.add("hidden"), 500);
+  }, 2000);
+}
+function showToastFor(val) {
+  const msgs = toastMessages[val] || ["Nice!"];
+  let idx = toastCounters[val]++;
+  if (idx >= msgs.length) idx = msgs.length - 1;
+  showToast(msgs[idx]);
+}
+
+// ─────────────────────────────────────────────────────────────
+// 7) Next Button Logic
+// ─────────────────────────────────────────────────────────────
+nextBtn.addEventListener("click", () => {
+  const choice = document.querySelector(`input[name="q${currentQ}"]:checked`);
+  if (!choice) return alert("Please select an answer.");
+  scores[choice.value]++;
+  showToastFor(choice.value);
+  currentQ++;
+  setTimeout(() => {
+    if (currentQ < footballQuestions.length) {
+      displayQuestion();
+    } else {
+      evaluateResults();
+    }
+  }, 500);
+});
+
+// ─────────────────────────────────────────────────────────────
+// 8) Evaluate & Display Results
+// ─────────────────────────────────────────────────────────────
+function evaluateResults() {
+  testSection.classList.add("hidden");
+  resultsSection.classList.remove("hidden");
+
+  const top = Object.entries(scores).sort((a,b) => b[1] - a[1])[0][0];
+  const data = {
+    tactician:    { title:"The Tactical Genius", player:"Pep Guardiola", image:"pep.jpg",      tagline:"Every pass has a purpose.",             description:"You see the game several moves ahead. Calm, composed, and analytical.", strengths:"Strategic, composed, precise.", improvement:"Trust spontaneity at times.", recommendations:"Coaching, midfield play.", quote:"To control the game is to control time." },
+    machine:      { title:"The Relentless Machine", player:"Cristiano Ronaldo", image:"ronaldo.jpg", tagline:"Work. Win. Repeat.",                description:"Driven by results. You push yourself beyond limits.", strengths:"Focused, determined, elite mindset.", improvement:"Connect more emotionally.", recommendations:"Striker, fitness leadership.", quote:"Your love makes me strong. Your hate makes me unstoppable." },
+    silent_genius:{ title:"The Silent Maestro",    player:"Lionel Messi",     image:"messi.jpg",    tagline:"Let the ball do the talking.",     description:"Quiet off pitch, magical on it. Actions speak louder than words.", strengths:"Humble, genius, efficient.", improvement:"Speak up sometimes.", recommendations:"Playmaker roles, quiet leadership.", quote:"You have to fight to reach your dream. You have to sacrifice and work hard for it." },
+    warrior:      { title:"The Warrior",           player:"Gennaro Gattuso",  image:"gattuso.jpg",  tagline:"Fierce, Unyielding, Passionate.", description:"You bring intensity and grit to every play, never backing down.", strengths:"Determined, fearless, motivational.", improvement:"Temper aggression with strategy.", recommendations:"Defensive midfield, team spirit roles.", quote:"Heart over talent every day." },
+    magician:     { title:"The Magician",          player:"Ronaldinho",       image:"ronaldinho.jpg",tagline:"Creativity Unleashed.",            description:"Your flair and unpredictability leave opponents spellbound.", strengths:"Creative, joyful, inspirational.", improvement:"Focus consistency.", recommendations:"Attacking midfield, entertainment roles.", quote:"Play with joy and the rest follows." },
+    stoic:        { title:"The Stoic Maestro",     player:"N'Golo Kanté",     image:"kante.jpg",     tagline:"Consistency & Humility.",           description:"Quietly dominant, you excel through unwavering consistency and selflessness.", strengths:"Reliable, humble, effective.", improvement:"Show your emotion more.", recommendations:"Defensive midfield, team foundation.", quote:"Let my work speak." },
+    wall:         { title:"The Wall",              player:"Gianluigi Buffon", image:"buffon.jpg",   tagline:"Last Line of Defense.",            description:"Nothing gets past you; you’re the ultimate guardian.", strengths:"Reliable, commanding, fearless.", improvement:"Lead the defense vocally.", recommendations:"Goalkeeping, defensive leadership.", quote:"Fearless between the posts." },
+    rocket:       { title:"The Rocket",            player:"Kylian Mbappé",    image:"mbappe.jpg",    tagline:"Speed Meets Skill.",              description:"Explosive pace and precision, you outrun all.", strengths:"Fast, clinical, dynamic.", improvement:"Balance speed with control.", recommendations:"Winger, forward roles.", quote:"Explode at the moment." },
+    clutch:       { title:"The Clutch Performer",  player:"Didier Drogba",     image:"drogba.jpg",    tagline:"Big Moments, Big Impact.",         description:"You rise to the occasion, delivering when it matters most.", strengths:"Composed, brave, decisive.", improvement:"Maintain peak in every match.", recommendations:"Striker, big-game roles.", quote:"Rise when the world needs you." },
+    controller:   { title:"The Controller",        player:"Sergio Busquets",  image:"busquets.jpg", tagline:"Midfield Metronome.",              description:"You dictate tempo and control space with effortless passing.", strengths:"Positioning, vision, composure.", improvement:"Add more forward thrust.", recommendations:"Deep-lying playmaker roles.", quote:"Control the game, control the result." },
+    mentor:       { title:"The Mentor",            player:"Philipp Lahm",      image:"lahm.jpg",      tagline:"Wisdom & Leadership.",            description:"Veteran presence guiding young talent.", strengths:"Leadership, intelligence, adaptability.", improvement:"Enjoy spontaneity more.", recommendations:"Captaincy, coaching roles.", quote:"Lead by example every day." },
+    joker:        { title:"The Joker",             player:"Jamie Vardy",      image:"vardy.jpg",     tagline:"Wildcard Entertainer.",           description:"Unpredictable, fun, always surprising.", strengths:"Versatility, flair, surprise factor.", improvement:"Focus energy strategically.", recommendations:"Super-sub, impact roles.", quote:"Expect the unexpected." }
+  };
+
+  const r = data[top];
+  evaluationEl.innerHTML = `
+    <div class="result-section">
+      <h3>${r.title} — ${r.player}</h3>
+      <img src="${r.image}" alt="${r.player}" class="character-image">
+      <p><strong>${r.tagline}</strong></p>
+      <p>${r.description}</p>
+    </div>`;
+  recommendationsEl.innerHTML = `
+    <div class="result-section">
+      <h3>Strengths</h3><p>${r.strengths}</p>
+      <h3>Room for Improvement</h3><p>${r.improvement}</p>
+      <h3>Ideal Roles</h3><p>${r.recommendations}</p>
+      <h3>Quote</h3><p>"${r.quote}"</p>
+    </div>`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// 9) Restart & Screenshot
+// ─────────────────────────────────────────────────────────────
+restartBtn.addEventListener("click", () => {
+  currentQ = 0;
+  Object.keys(scores).forEach(k => scores[k] = 0);
+  Object.keys(toastCounters).forEach(k => toastCounters[k] = 0);
+  resultsSection.classList.add("hidden");
+  testSection.classList.remove("hidden");
+  displayQuestion();
+});
+screenshotBtn.addEventListener("click", () => {
+  html2canvas(document.getElementById("results")).then(canvas => {
+    canvas.toBlob(blob => {
+      const file = new File([blob], "football-results.png", { type: "image/png" });
+      if (navigator.share && navigator.canShare({ files:[file] })) {
+        navigator.share({ title:"My Football Personality", text:"Check out my result!", files:[file] });
+      } else {
+        const link = document.createElement("a");
+        link.download = "football-results.png";
+        link.href = canvas.toDataURL();
+        link.click();
+      }
+    });
+  });
+});
+
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const scroller = document.querySelector(".leader-scroll-container");
+    const cards = scroller.querySelectorAll(".leader-card");
+    if (!scroller || cards.length === 0) return;
+
+    // Compute how far to scroll each “step”:
+    // card width + gap (16px in your CSS)
+    const gap = 10;
+    let cardWidth = cards[0].getBoundingClientRect().width + gap;
+
+    // When window resizes, re-calc cardWidth
+    window.addEventListener("resize", () => {
+      cardWidth = cards[0].getBoundingClientRect().width + gap;
+    });
+
+    let position = 0;
+    const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+
+    function autoScroll() {
+      position += cardWidth;
+      // if we've reached (or passed) the end, loop back to start
+      if (position > maxScroll) {
+        position = 0;
+      }
+      scroller.scrollTo({
+        left: position,
+        behavior: "smooth"
+      });
+    }
+
+    // Kick off the loop every 3 seconds (adjust to taste)
+    const intervalId = setInterval(autoScroll, 1500);
+
+    // Optional: pause on hover/touch
+    scroller.addEventListener("mouseenter", () => clearInterval(intervalId));
+    scroller.addEventListener("touchstart", () => clearInterval(intervalId));
+  });
+
+
+
+
+// ─────────────────────────────────────────────────────────────
+// 10) Initialize Quiz
+// ─────────────────────────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", displayQuestion);
+</script>
+
+
+  </body>
+</html>
