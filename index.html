@@ -105,550 +105,557 @@
     <!-- Utilities -->
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   
-  <style>
+     <style>
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0 !important;
+        border: 0;
+        vertical-align: baseline;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-html, body {
-      margin: 0;
-      padding: 0 !important;
-      border: 0;
-      vertical-align: baseline;
-    }
-ol, ul {
-  list-style: none;
-}
-*, *::before, *::after {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-/* -------------------------------------
+      /* -------------------------------------
    2) Base Styles
 ------------------------------------- */
-body {
-  font-family: 'Roboto', sans-serif;
-  background: #ffffff;
-  color: #333;
-  line-height: 1.6;
-}
-/* Anchor defaults */
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.3s;
-}
-a:hover {
-  opacity: 0.8;
-}
+      body {
+        font-family: "Roboto", sans-serif;
+        background: #ffffff;
+        color: #333;
+        line-height: 1.6;
+      }
+      /* Anchor defaults */
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: opacity 0.3s;
+      }
+      a:hover {
+        opacity: 0.8;
+      }
 
-/* -------------------------------------
+      /* -------------------------------------
    3) Navigation
 ------------------------------------- */
-nav {
-  display: flex;
-  position: relative;
-  z-index: 9999;
-  justify-content: space-between;
-  align-items: center;
-  background: #000000;
-  padding: 15px 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-nav .nav-left,
-nav .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-nav a {
-  color: #dcdcdc;
-  font-weight: 500;
-  font-size: 1.3rem;
-}
-#brand-logo {
-  width: 10%;
-  pointer-events: none; /* Prevent logo from blocking clicks if it overlaps */
-}
+      nav {
+        display: flex;
+        position: relative;
+        z-index: 9999;
+        justify-content: space-between;
+        align-items: center;
+        background: #000000;
+        padding: 15px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      nav .nav-left,
+      nav .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      nav a {
+        color: #dcdcdc;
+        font-weight: 500;
+        font-size: 1.3rem;
+      }
+      #brand-logo {
+        width: 30%;
+        pointer-events: none; /* Prevent logo from blocking clicks if it overlaps */
+      }
 
-/* -------------------------------------
+      /* -------------------------------------
    4) Header (Squid Game Theme)
 ------------------------------------- */
-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50vh;               /* less tall on mobile */
-  min-height: 300px;          /* ensure it never collapses */
-  overflow: hidden;
-  border-bottom: 2px solid #d32f2f;
-}
+      header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50vh; /* less tall on mobile */
+        min-height: 300px; /* ensure it never collapses */
+        overflow: hidden;
+        border-bottom: 2px solid #d32f2f;
+      }
 
-.header-content {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  padding: 0 20px;            /* safe padding on small screens */
-}
+      .header-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        padding: 0 20px; /* safe padding on small screens */
+      }
 
-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
-  z-index: 2;
-}
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.2)
+        );
+        z-index: 2;
+      }
 
+      #header-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
 
-#header-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
+      .header-content h1 {
+        font-size: 4rem; /* down from 4rem */
+        line-height: 1.2;
+        color: #fff;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      }
 
+      #tagline {
+        font-size: 3rem; /* down from 1.7rem */
+        margin-top: 0.5rem;
+        color: #eee;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+      }
 
-.header-content h1 {
-  font-size: 4rem;          /* down from 4rem */
-  line-height: 1.2;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-}
-
-#tagline {
-  font-size: 3rem;          /* down from 1.7rem */
-  margin-top: 0.5rem;
-  color: #eee;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
-}
-
-
-
-/* -------------------------------------
+      /* -------------------------------------
    5) Intro Section
 ------------------------------------- */
-.intro {
-  text-align: center;
-  padding: 40px 20px;
-  background: #fff;
-  color: #333;
-}
-.intro h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #d32f2f;
-}
-.intro p {
-  font-size: 1.1rem;
-  margin-bottom: 0;
-}
+      .intro {
+        text-align: center;
+        padding: 40px 20px;
+        background: #fff;
+        color: #333;
+      }
+      .intro h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #d32f2f;
+      }
+      .intro p {
+        font-size: 1.1rem;
+        margin-bottom: 0;
+      }
 
-
-/* -------------------------------------
+      /* -------------------------------------
    6) Quiz Grid Section
 ------------------------------------- */
-.quiz-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-  justify-content: center;
-}
-.quiz-card {
-  background: #1a1a1a;
-  border-radius: 8px;
-  overflow: hidden;
-  width: 280px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-  transition: transform 0.3s ease;
-  text-align: center;
-}
-.quiz-card:hover {
-  transform: scale(1.03);
-}
-.quiz-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.quiz-card h3 {
-  font-size: 1.4rem;
-  margin: 15px 0 10px;
-  color: #ffcccb;
-}
-.quiz-card p {
-  font-size: 1rem;
-  padding: 0 15px 15px;
-  color: #ccc;
-}
-.quiz-card .btn {
-  display: inline-block;
-  margin-bottom: 15px;
-  padding: 10px 20px;
-  background: #d32f2f;
-  color: #fff;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-.quiz-card .btn:hover {
-  background: #b71c1c;
-}
+      .quiz-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        justify-content: center;
+      }
+      .quiz-card {
+        background: #1a1a1a;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 280px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s ease;
+        text-align: center;
+      }
+      .quiz-card:hover {
+        transform: scale(1.03);
+      }
+      .quiz-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+      .quiz-card h3 {
+        font-size: 1.4rem;
+        margin: 15px 0 10px;
+        color: #ffcccb;
+      }
+      .quiz-card p {
+        font-size: 1rem;
+        padding: 0 15px 15px;
+        color: #ccc;
+      }
+      .quiz-card .btn {
+        display: inline-block;
+        margin-bottom: 15px;
+        padding: 10px 20px;
+        background: #d32f2f;
+        color: #fff;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+      .quiz-card .btn:hover {
+        background: #b71c1c;
+      }
 
-/* -------------------------------------
+      /* -------------------------------------
    7) Squid Game Explainer Section
 ------------------------------------- */
-#squidgame-explainer {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-  background: #e0e0e0;
-  border-radius: 8px;
-}
-#squidgame-explainer h2 {
-  font-size: 1.6rem;
-  color: #d32f2f;
-  margin-bottom: 12px;
-}
-#squidgame-explainer p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 16px;
-}
-#squidgame-explainer img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 20px;
-}
+      #squidgame-explainer {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        text-align: center;
+        background: #e0e0e0;
+        border-radius: 8px;
+      }
+      #squidgame-explainer h2 {
+        font-size: 1.6rem;
+        color: #d32f2f;
+        margin-bottom: 12px;
+      }
+      #squidgame-explainer p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 16px;
+      }
+      #squidgame-explainer img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
 
-/* -------------------------------------
+      /* -------------------------------------
    8) Article Content Section
 ------------------------------------- */
-.character-profile, .conclusion {
-  margin-bottom: 30px;
-  padding: 20px;
-  background: #1a1a1a;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.8);
-}
-.character-profile h3, .conclusion h3 {
-  font-size: 1.4rem;
-  color: #ff4757;
-  margin-bottom: 10px;
-}
-.character-profile p, .conclusion p {
-  font-size: 1rem;
-  color: #e0e0e0;
-  line-height: 1.6;
-}
-.character-profile img {
-  width: 140px;
-  height: 140px;
-  border-radius: 8px;
-  object-fit: cover;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 10px;
-}
+      .character-profile,
+      .conclusion {
+        margin-bottom: 30px;
+        padding: 20px;
+        background: #1a1a1a;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+      }
+      .character-profile h3,
+      .conclusion h3 {
+        font-size: 1.4rem;
+        color: #ff4757;
+        margin-bottom: 10px;
+      }
+      .character-profile p,
+      .conclusion p {
+        font-size: 1rem;
+        color: #e0e0e0;
+        line-height: 1.6;
+      }
+      .character-profile img {
+        width: 140px;
+        height: 140px;
+        border-radius: 8px;
+        object-fit: cover;
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
 
-#faq {
-  background: #fff;
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  border-top: 1px solid #ccc;
-}
-#faq h2 {
-  text-align: center;
-  color: #d32f2f;
-  margin-bottom: 20px;
-}
-.faq-item h4 {
-  margin-top: 15px;
-  color: #333;
-}
-.faq-item p {
-  color: #555;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
+      #faq {
+        background: #fff;
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        border-top: 1px solid #ccc;
+      }
+      #faq h2 {
+        text-align: center;
+        color: #d32f2f;
+        margin-bottom: 20px;
+      }
+      .faq-item h4 {
+        margin-top: 15px;
+        color: #333;
+      }
+      .faq-item p {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
 
-
-/* -------------------------------------
+      /* -------------------------------------
    9) Related Blog Articles Section
 ------------------------------------- */
-#related-articles {
-  margin: 40px auto;
-  max-width: 800px;
-  padding: 30px 20px;
-  background: #1a1a1a;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
-  color: #e0e0e0;
-}
-#related-articles h2 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #d32f2f;
-  padding-bottom: 10px;
-  text-align: center;
-  color: #fff;
-}
-.articles-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.blog-card {
-  background: #2a2a2a;
-  padding: 20px;
-  border-radius: 6px;
-  border-left: 4px solid #d32f2f;
-  transition: background 0.3s, transform 0.3s;
-}
-.blog-card:hover {
-  background: #3a3a3a;
-  transform: translateY(-5px);
-}
-.blog-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-.blog-card h3 a {
-  color: #d32f2f;
-}
-.blog-card h3 a:hover {
-  color: #fff;
-}
-.blog-card p {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
+      #related-articles {
+        margin: 40px auto;
+        max-width: 800px;
+        padding: 30px 20px;
+        background: #1a1a1a;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        color: #e0e0e0;
+      }
+      #related-articles h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #d32f2f;
+        padding-bottom: 10px;
+        text-align: center;
+        color: #fff;
+      }
+      .articles-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .blog-card {
+        background: #2a2a2a;
+        padding: 20px;
+        border-radius: 6px;
+        border-left: 4px solid #d32f2f;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .blog-card:hover {
+        background: #3a3a3a;
+        transform: translateY(-5px);
+      }
+      .blog-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      .blog-card h3 a {
+        color: #d32f2f;
+      }
+      .blog-card h3 a:hover {
+        color: #fff;
+      }
+      .blog-card p {
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
 
-/* -------------------------------------
+      /* -------------------------------------
    10) Footer
 ------------------------------------- */
-footer {
-  background: #000;
-  padding: 20px 10px;
-  text-align: center;
-  border-top: 1px solid #d32f2f;
-  margin-top: 40px;
-}
-footer p {
-  font-size: 0.9rem;
-  color: #aaa;
-  margin: 5px 0;
-}
-footer .social-icons {
-  margin-top: 10px;
-}
-footer .social-icons img {
-  width: 3%;
-  margin: 0 8px;
-  transition: opacity 0.3s;
-  cursor: pointer;
-}
-footer .social-icons img:hover {
-  opacity: 0.7;
-}
+      footer {
+        background: #000;
+        padding: 20px 10px;
+        text-align: center;
+        border-top: 1px solid #d32f2f;
+        margin-top: 40px;
+      }
+      footer p {
+        font-size: 0.9rem;
+        color: #aaa;
+        margin: 5px 0;
+      }
+      footer .social-icons {
+        margin-top: 10px;
+      }
+      footer .social-icons img {
+        width: 3%;
+        margin: 0 8px;
+        transition: opacity 0.3s;
+        cursor: pointer;
+      }
+      footer .social-icons img:hover {
+        opacity: 0.7;
+      }
 
-/* -------------------------------------
+      /* -------------------------------------
    11) Responsive Styles
 ------------------------------------- */
-@media (max-width: 970px) {
-  
-  #about p, #squidgame-explainer p {
-    font-size: 0.9rem;
-  }
-  main {
-    padding: 30px;
-  }
-  #brand-logo{
-    width: 100%;
-  }
-  footer .social-icons img {
-    width: 10%;
-  }
+      @media (max-width: 970px) {
+        main {
+          padding: 30px;
+        }
+        footer .social-icons img {
+          width: 10%;
+        }
+        header {
+          height: 50vh;
+        }
+        .header-content h1 {
+          font-size: 3rem;
+        }
+        #tagline {
+          font-size: 2rem;
+        }
+         #brand-logo{
+          width: 20% !important;
+        }
+      }
 
-  header {
-    height: 50vh;
-  }
-  .header-content h1 {
-    font-size: 3rem;
-  }
-  #tagline {
-    font-size: 2rem;
-  }
-  
-}
+      @media (max-width: 1920px) {
+        .poster {
+          width: 60% !important;
+        }
+        #brand-logo{
+          width: 20% !important;
+        }
+      }
 
-@media (max-width: 600px) {
-  #brand-logo{
-    width: 50%;
-  }
-}
+      @media (max-width: 630px) {
+        .quiz-grid {
+          flex-wrap: nowrap; /* Prevent wrapping */
+          overflow-x: auto; /* Enable horizontal scrolling */
+          -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+          gap: 20px; /* Adjust gap between cards */
+          padding-bottom: 20px; /* Extra space for scrollbar if needed */
+          justify-content: flex-start; /* Align cards to the left */
+        }
+        .quiz-card {
+          flex: 0 0 auto; /* Ensure cards don't shrink */
+        }
+      }
 
+      /* Toast Container */
+      .toast {
+        position: fixed;
+        left: 50%;
+        width: 70%;
+        transform: translateX(-50%);
+        background: #252525;
+        color: #eeeeee;
+        padding: 15px 10px;
+        border-radius: 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 3px solid red;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        z-index: 10000;
+        opacity: 0;
+        animation: fadeIn 0.5s forwards;
+      }
 
-@media (max-width: 1920px) {
-  #brand-logo{
-    width: 10%;
-  }
-  .poster{
-    width: 60% !important;
-  }
-}
+      /* Fade in keyframes */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
-@media (max-width: 630px) {
-  .quiz-grid {
-    flex-wrap: nowrap;               /* Prevent wrapping */
-    overflow-x: auto;                /* Enable horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    gap: 20px;                       /* Adjust gap between cards */
-    padding-bottom: 20px;            /* Extra space for scrollbar if needed */
-    justify-content: flex-start;     /* Align cards to the left */
-  }
-  .quiz-card {
-    flex: 0 0 auto;                 /* Ensure cards don't shrink */
-  }
-}
+      /* Content layout */
+      .toast-content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
+      /* Button styling */
+      .toast-button {
+        background: #e60000;
+        color: #ffffff;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .toast-button:hover {
+        background: #f0f0f0;
+      }
 
+      /* Timer progress bar container */
+      .toast-progress {
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.7);
+        margin-top: 10px;
+        border-radius: 2px;
+        overflow: hidden;
+      }
 
-/* Toast Container */
-.toast {
-  position: fixed;
-  left: 50%;
-  width: 70%;
-  transform: translateX(-50%);
-  background: #252525;
-  color: #eeeeee;
-  padding: 15px 10px;
-  border-radius: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 3px solid red;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  z-index: 10000;
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
-}
+      /* Timer progress bar animation */
+      .toast-progress::before {
+        content: "";
+        display: block;
+        height: 100%;
+        background: #fff;
+        width: 100%;
+        animation: countdown 5s linear forwards;
+      }
 
-/* Fade in keyframes */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+      /* Keyframes for the countdown animation */
+      @keyframes countdown {
+        from {
+          width: 100%;
+        }
+        to {
+          width: 0;
+        }
+      }
 
-/* Content layout */
-.toast-content {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+      .newsletter-signup {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: #f9f9f9;
+        text-align: center;
+        border-radius: 6px;
+      }
 
-/* Button styling */
-.toast-button {
-  background: #e60000;
-  color: #ffffff;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-.toast-button:hover {
-  background: #f0f0f0;
-}
+      .newsletter-label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
 
-/* Timer progress bar container */
-.toast-progress {
-  width: 100%;
-  height: 4px;
-  background: rgba(255,255,255,0.7);
-  margin-top: 10px;
-  border-radius: 2px;
-  overflow: hidden;
-}
+      .newsletter-input-group {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+      }
 
-/* Timer progress bar animation */
-.toast-progress::before {
-  content: "";
-  display: block;
-  height: 100%;
-  background: #fff;
-  width: 100%;
-  animation: countdown 5s linear forwards;
-}
+      .newsletter-input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        flex: 1 0 250px;
+        font-size: 1rem;
+      }
 
-/* Keyframes for the countdown animation */
-@keyframes countdown {
-  from { width: 100%; }
-  to { width: 0; }
-}
+      .newsletter-btn {
+        padding: 0.5rem 1.5rem;
+        background: #d32f2f;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+      }
 
-.newsletter-signup {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: #f9f9f9;
-  text-align: center;
-  border-radius: 6px;
-}
+      .newsletter-btn:hover {
+        background: #b22b2b;
+      }
 
-.newsletter-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.newsletter-input-group {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.newsletter-input {
-  padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  flex: 1 0 250px;
-  font-size: 1rem;
-}
-
-.newsletter-btn {
-  padding: 0.5rem 1.5rem;
-  background: #d32f2f;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.newsletter-btn:hover {
-  background: #b22b2b;
-}
-
-.newsletter-note {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: #666;
-}
-
-</style>
+      .newsletter-note {
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+        color: #666;
+      }
+    </style>
 
 </head>
 <body>
