@@ -1,0 +1,205 @@
+    html, body {
+      margin: 0;
+      padding: 0 !important;
+      font-family: 'Roboto', sans-serif;
+      background: #f4f5f7;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      color: #d32f2f;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+    nav {
+      display: flex;
+      position: relative;
+      z-index: 9999;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+      padding: 15px 20px;
+      box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2);
+    }
+    nav .nav-left,
+    nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.3rem;
+    }
+    nav a:hover {
+      color: #d32f2f;
+    }
+    nav img#brand-logo {
+      width: 10%;
+      min-width: 60px;
+      pointer-events: none;
+    }
+    header {
+      text-align: center;
+      padding: 150px 20px 100px;
+      background: url('messiheader.jpg') no-repeat center/cover;
+      background-size: cover;
+      color: #fff;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    header h1, header #tagline {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    #tagline {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    /* Main Content */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #070707;
+      color: #e0e0e0;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+    }
+    main h2 {
+      font-size: 2rem;
+      color: #ff9a00;
+      margin-bottom: 20px;
+
+      padding-bottom: 10px;
+    }
+    main h3 {
+      font-size: 1.6rem;
+      color: #ff9a00;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    main p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #ececec;
+      text-align: justify;
+    }
+    /* Infobox */
+    .infobox {
+      float: right;
+      width: 300px;
+      background-color: #222222;
+      color: #ffffff;
+      border: 1px solid #444444;
+      padding: 15px;
+      margin: 0 0 20px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .infobox img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .infobox p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .infobox strong {
+      color: #ff4f00;
+    }
+    /* Clearfix */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    section {
+      padding: 40px 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    section:last-of-type {
+      border-bottom: none;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #ff4f00;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: #ff4f00;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+    section h3 {
+      font-size: 1.5rem;
+      color: #ff4f00;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #dadada;
+      text-align: justify;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    footer {
+      background: #000;
+      color: #cecece;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+    footer .social-icons {
+      margin-top: 10px;
+    }
+    footer .social-icons img {
+      width: 7%;
+      margin: 0 8px;
+      transition: opacity 0.3s;
+      cursor: pointer;
+    }
+    footer .social-icons img:hover {
+      opacity: 0.7;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .infobox {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+      }
+    }
