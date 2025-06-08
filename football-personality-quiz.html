@@ -520,7 +520,7 @@ strong {
 /* -------------------------------------  
   Responsive Styles  
 ------------------------------------- */
-@media (max-width: 970px) {
+@media (max-width: 700px) {
   nav a { font-size: 1rem; }
   header { height: 50vh; }
   .header-content h1 { font-size: 3rem; }
@@ -528,7 +528,7 @@ strong {
   main { padding: 30px; }
   #question-title { font-size: 1.15rem; }
   footer img{
-    width: 20% !important;
+    width: 15% !important;
   }
 }
 @media (max-width: 600px) {
@@ -1029,6 +1029,7 @@ strong {
     </section>
   </main>
 
+
   <!-- Why Zinvana? -->
   <section id="why-zinvana" style="max-width:800px;margin:40px auto;padding:20px;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
     <h2>Why Zinvana’s Football Quiz Stands Out</h2>
@@ -1078,13 +1079,41 @@ strong {
         <p>Find out if you’re the Front Man, Player 456, or another Squid Game icon.</p>
       </article>
     </div>
+          <div style="text-align: center; margin-top: 32px;">
+            <a
+              href="all-articles.html"
+              class="see-more-btn"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 16px 36px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                background: linear-gradient(90deg, #f5421e 0%, #ff0645 100%);
+                color: #fff;
+                border-radius: 32px;
+                box-shadow: 10px 20px 18px rgba(221,36,118,0.18);
+                text-decoration: none;
+                letter-spacing: 1px;
+                border: none;
+                transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+                position: relative;
+                overflow: hidden;
+              "
+              onmouseover="this.style.transform='scale(1.07)';this.style.boxShadow='0 10px 24px rgba(221,36,118,0.25)';"
+              onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(221,36,118,0.18)';"
+            >
+              <img src="view.png" alt="" style="width: 28px; height: 28px; vertical-align: middle;" />
+              View All Articles
+            </a>
+          </div>
+    </section>
   </section>
 
 
 <!-- Footer -->
 <footer>
-  <p>© 2025 Zinvana. All rights reserved.</p>
- 
   <div class="social-icons">
     <!-- Instagram -->
     <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
@@ -1099,6 +1128,12 @@ strong {
       <img src="youtube.png" alt="youtube" />
     </a>
   </div>
+   <p style="color:#fff; font-size:1.1rem; margin:0; letter-spacing:0.5px;">
+      © 2025 <span style="color:#d32f2f; font-weight:bold;">Zinvana</span> &mdash; All rights reserved.
+    </p>
+    <div style="font-size:0.95rem; color:#aaa;">
+      <span>Made with <span style="color:#d32f2f;">&#10084;</span> for football fans</span>
+    </div>
 </footer>
 
 <script>
