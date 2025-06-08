@@ -863,6 +863,9 @@ strong {
   margin-top: 8px;
 }
 
+.fade-init { opacity: 0; transform: translateY(30px); transition: all 0.7s; }
+.fade-in { opacity: 1 !important; transform: none !important; }
+
     </style>
   </head>
 
@@ -1075,6 +1078,7 @@ strong {
     Absolutely—hit “Restart Quiz” at the end to explore different outcomes.
   </div>
 </section>
+
 
   <!-- Related Articles -->
   <section id="related-articles">
@@ -1569,6 +1573,24 @@ screenshotBtn.addEventListener("click", () => {
 // 10) Initialize Quiz
 // ─────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", displayQuestion);
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll("section, .quiz-card").forEach((el) => {
+      el.classList.add("fade-init");
+      observer.observe(el);
+    });
+  });
 </script>
 
 
