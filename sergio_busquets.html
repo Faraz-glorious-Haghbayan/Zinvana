@@ -369,5 +369,24 @@
       </a>
     </div>
   </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll("section, .quiz-card").forEach((el) => {
+      el.classList.add("fade-init");
+      observer.observe(el);
+    });
+  });
+</script>
 </body>
 </html>
