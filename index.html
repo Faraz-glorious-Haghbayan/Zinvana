@@ -692,6 +692,9 @@ nav img#brand-logo {
         background: #b22b2b;
       }
 
+      .fade-init { opacity: 0; transform: translateY(30px); transition: all 0.7s; }
+.fade-in { opacity: 1 !important; transform: none !important; }
+
       .newsletter-note {
         margin-top: 0.5rem;
         font-size: 0.85rem;
@@ -1304,21 +1307,23 @@ nav img#brand-logo {
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Customize duration in milliseconds (e.g., 5000ms = 5 seconds)
-        var toastDuration = 5000;
-        setTimeout(function () {
-          var toast = document.getElementById("toast");
-          if (toast) {
-            toast.style.transition = "opacity 0.5s ease-out";
-            toast.style.opacity = 0;
-            setTimeout(function () {
-              toast.remove();
-            }, 500);
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
           }
-        }, toastDuration);
-      });
-    </script>
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll("section, .quiz-card").forEach((el) => {
+      el.classList.add("fade-init");
+      observer.observe(el);
+    });
+  });
+</script>
   </body>
 </html>
