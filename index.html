@@ -187,45 +187,100 @@
    3) Navigation
 ------------------------------------- */
      nav {
-  display: flex;
-  position: relative;
-  z-index: 9999;
-  justify-content: space-between;
-  align-items: center;
-  background: #000;
-  padding: 0px 20px;
-  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2);
-}
-nav .nav-left,
-nav .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-nav a {
-  color: #fff;
-  font-weight: 500;
-  font-size: 1.3rem;
-}
-nav a:hover {
-  color: #d32f2f;
-}
-nav img#brand-logo {
-  width: 10%;
-  min-width: 60px;
-  pointer-events: none;
-}
-@media (max-width: 970px) {
-  nav a { font-size: 1rem; }
-  header { height: 50vh; }
-  .header-content h1 { font-size: 3rem; }
-  #tagline { font-size: 2rem; }
-  main { padding: 30px; }
-  #question-title { font-size: 1.15rem; }
-  footer img{
-    width: 20% !important;
-  }
-}
+        position: sticky;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.92);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        border-bottom: 2px solid #d32f2f;
+        padding: 0 32px;
+        min-height: 64px;
+        z-index: 10000;
+        transition: background 0.3s;
+      }
+      nav .nav-left, nav .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      nav a {
+        color: #fff;
+        font-weight: 500;
+        font-size: 1.15rem;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: background 0.2s, color 0.2s;
+      }
+      nav a:hover, nav a.active {
+        background: #d32f2f;
+        color: #fff;
+      }
+      nav img#brand-logo {
+        width: 3%;
+        margin-right: 50%;
+        border-radius: 18px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      }
+      /* Hamburger menu for mobile */
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        margin-left: 12px;
+      }
+      .nav-toggle span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: #fff;
+        margin: 4px 0;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+      @media (max-width: 900px) {
+        nav {
+          padding: 0 12px;
+        }
+        nav .nav-left, nav .nav-right {
+          gap: 10px;
+        }
+        nav img#brand-logo {
+          width: 10% !important;
+          min-width: 38px;
+        }
+      }
+      @media (max-width: 900px) {
+        nav .nav-left, nav .nav-right {
+          display: none;
+        }
+        nav .nav-mobile {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 64px;
+          left: 0;
+          width: 100vw;
+          background: rgba(24,24,24,0.98);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+          z-index: 10001;
+        }
+        nav .nav-mobile a {
+          padding: 18px 24px;
+          font-size: 1.2rem;
+          border-bottom: 1px solid #222;
+        }
+        .nav-toggle {
+          display: flex;
+        }
+      }
 
       /* -------------------------------------
    4) Header (Squid Game Theme)
@@ -575,39 +630,50 @@ nav img#brand-logo {
   </head>
   <body>
     <!-- Top Navigation -->
-  <nav>
-    <div class="nav-left">
-      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
-      <a href="#faq">faq</a>
-      <a href="#test">Test</a>
-    </div>
-    <div class="nav-right">
-      <a href="help.html">Help</a>
-    </div>
-  </nav>
+    <nav>
+      <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+      <div class="nav-left">
+        <a href="#faq">FAQ</a>
+        <a href="#test">Test</a>
+        <a href="leaders.html">Leaders Quiz</a>
+        <a href="test.html">Personality Test</a>
+      </div>
+      <div class="nav-right">
+        <a href="help.html">Help</a>
+      </div>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-mobile" id="nav-mobile" style="display:none;">
+        <a href="#faq">FAQ</a>
+        <a href="football-personality-quiz.html">Football Personality Quiz</a>
+        <a href="leaders.html">Leaders Quiz</a>
+        <a href="test.html">Personality Test</a>
+        <a href="help.html">Help</a>
+      </div>
+    </nav>
 
-    <header>
-      <video autoplay muted loop playsinline id="header-video">
+    <header style="background: linear-gradient(120deg, #d32f2f 0%, #181818 100%); border-bottom: 2px solid #d32f2f;">
+      <video autoplay muted loop playsinline id="header-video" style="opacity: 0.25;">
         <source src="zinvanaflags1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div class="header-content">
-        <h1>Zinvana</h1>
-        <div id="tagline">Free Personality Quiz</div>
+        <h1 style="font-family: 'Minecraftia', 'Roboto', sans-serif; font-size: 4.2rem; color: #fff; margin-bottom: 0.5rem;">Zinvana</h1>
+        <div id="tagline" style="font-size: 2.2rem; color: #ffcccb; margin-bottom: 1.5rem;">Free, Fun & Insightful Personality Quizzes</div>
+        <a href="#quiz-grid" class="btn" style="background: #d32f2f; color: #fff; padding: 14px 32px; border-radius: 6px; font-size: 1.2rem; font-weight: bold; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: background 0.2s;">Start Your Quiz</a>
       </div>
     </header>
 
     <!-- Intro Section -->
-    <section class="intro">
-      <h2>Explore Our Quizzes</h2>
-      <p>
-        Whether you're curious about which Squid Game character mirrors your
-        personality or want to explore classic personality traits, we have a
-        quiz for you.
-      </p>
+    <section class="intro" style="background: linear-gradient(90deg, #fff 70%, #ffeaea 100%); border-bottom: 2px solid #d32f2f;">
+      <h2 style="font-size: 2.2rem; color: #d32f2f;">Explore Our Quizzes</h2>
+      <p style="font-size: 1.15rem; color: #444;">Whether you're curious about which Squid Game character mirrors your personality or want to explore classic personality traits, we have a quiz for you.</p>
     </section>
 
-    <section class="quiz-grid">
+    <section class="quiz-grid" id="quiz-grid" style="background: #f8f8f8; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
       <!-- Historical Leaders Quiz Card -->
       <div class="quiz-card">
         <img src="napoleon1.gif" alt="Historical Leaders Personality Quiz" />
@@ -709,9 +775,9 @@ nav img#brand-logo {
         max-width: 900px;
         margin: 60px auto;
         padding: 40px;
-        background: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        background: linear-gradient(90deg, #fff 60%, #ffeaea 100%);
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
       "
     >
       <!-- Organization Aggregate Rating (for Search Engines) -->
@@ -731,15 +797,16 @@ nav img#brand-logo {
         }
       </script>
 
-      <h2 style="font-size: 2rem; color: #333; margin-bottom: 10px">
+      <h2 style="font-size: 2rem; color: #d32f2f; margin-bottom: 10px; text-align: center;">
         What Our Users Are Saying
       </h2>
       <p
         style="
           color: #555;
-          font-size: 1rem;
+          font-size: 1.1rem;
           line-height: 1.5;
           margin-bottom: 30px;
+          text-align: center;
         "
       >
         Join over <strong>10,000 quiz‑takers</strong> who have discovered their
@@ -993,11 +1060,11 @@ nav img#brand-logo {
         margin: 40px auto;
         padding: 20px;
         background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       "
     >
-      <h2>Why Zinvana Is Unique (vs. Other Quiz Sites)</h2>
+      <h2 style="color: #d32f2f;">Why Zinvana Is Unique (vs. Other Quiz Sites)</h2>
       <p>
         There are a lot of personality quizzes out there—BuzzFeed, Sporcle,
         History.com, and more—but here’s why Zinvana rises above the rest:
@@ -1039,8 +1106,8 @@ nav img#brand-logo {
       </p>
     </section>
 
-    <section id="faq">
-      <h2>📌 Frequently Asked Questions</h2>
+    <section id="faq" style="background: #f8f8f8; border-radius: 12px; max-width: 900px; margin: 40px auto; padding: 40px 20px; border-top: 1px solid #ccc;">
+      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 20px;">📌 Frequently Asked Questions</h2>
       <div class="faq-item">
         <h4>What types of personality quizzes do you offer?</h4>
         <p>
@@ -1072,8 +1139,8 @@ nav img#brand-logo {
     </section>
 
     <!-- Related Blog Articles Section -->
-    <section id="related-articles">
-      <h2>Related Blog Articles</h2>
+    <section id="related-articles" style="background: #fff; border-radius: 12px; margin: 40px auto; max-width: 800px; padding: 30px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);">
+      <h2 style="font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid #d32f2f; padding-bottom: 10px; text-align: center; color: #d32f2f;">Related Blog Articles</h2>
       <div class="articles-container">
         <article class="blog-card">
           <h3>
@@ -1128,39 +1195,17 @@ nav img#brand-logo {
       src="name.jpg"
       alt="Zinvana Poster"
       class="poster"
-      style="display: block; margin: 0 auto"
-    />
+      style="display: block; margin: 40px auto 0 auto; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); width: 60%; max-width: 600px;" />
 
     <!-- Footer -->
-    <footer>
+    <footer style="background: #181818; padding: 32px 10px; text-align: center; border-top: 2px solid #d32f2f; margin-top: 40px; color: #fff;">
       <div class="container">
-        <p>&copy; 2025 Zinvana. All rights reserved.</p>
-        <p>
-          This site is for informational purposes only and does not replace
-          professional advice. No personal data is stored or shared.
-        </p>
-        <div class="social-icons">
-          <a
-            href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="whiteinsta.png" alt="Instagram" />
-          </a>
-          <a
-            href="https://x.com/farazglori80528"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="whitex.png" alt="Twitter" />
-          </a>
-          <a
-            href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="youtube.png" alt="YouTube" />
-          </a>
+        <p style="font-size: 1.1rem; color: #fff;">&copy; 2025 Zinvana. All rights reserved.</p>
+        <p style="color: #bbb;">This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
+        <div class="social-icons" style="margin-top: 10px;">
+          <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer"><img src="whiteinsta.png" alt="Instagram" style="width: 32px; margin: 0 8px;" /></a>
+          <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer"><img src="whitex.png" alt="Twitter" style="width: 32px; margin: 0 8px;" /></a>
+          <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer"><img src="youtube.png" alt="YouTube" style="width: 32px; margin: 0 8px;" /></a>
         </div>
       </div>
     </footer>
@@ -1181,6 +1226,17 @@ nav img#brand-logo {
       el.classList.add("fade-init");
       observer.observe(el);
     });
+  });
+  // Hamburger menu toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const navMobile = document.getElementById('nav-mobile');
+  navToggle.addEventListener('click', function() {
+    navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+  });
+  navToggle.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+    }
   });
 </script>
   </body>
