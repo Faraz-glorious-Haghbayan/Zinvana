@@ -364,14 +364,17 @@
 ------------------------------------- */
       .quiz-grid {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap; /* Prevent wrapping on all devices */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
         gap: 30px;
         max-width: 1200px;
         margin: 40px auto;
-        padding: 0 20px;
-        justify-content: center;
+        padding: 0 20px 20px 20px; /* Extra space for scrollbar if needed */
+        justify-content: flex-start; /* Align cards to the left */
       }
       .quiz-card {
+        flex: 0 0 auto; /* Ensure cards don't shrink */
         background: #1a1a1a;
         border-radius: 8px;
         overflow: hidden;
@@ -723,6 +726,221 @@
       </div>
     </section>
 
+    <!-- How It Works Section -->
+    <section id="how-it-works" style="background: #fff; border-radius: 16px; width: 100%; max-width: none; margin: 48px 0 0 0; padding: 48px 0 36px 0; box-shadow: 0 4px 16px rgba(0,0,0,0.05); overflow: hidden;">
+      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 40px; font-size: 2rem; letter-spacing: -1px;">How Our Free Personality Quiz Works</h2>
+      <div class="how-works-steps-pro" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; max-width: 100vw; padding: 0 8px;">
+      <!-- Step 1 -->
+      <div class="how-works-step-pro">
+      <div class="how-works-icon-pro"><span>1</span><img src="zin1.png" alt="Choose a Quiz" /></div>
+      <h3>Choose a Quiz</h3>
+      <p>Pick from our free, fun, and accurate quizzes—MBTI, leaders, Squid Game, and more.</p>
+      </div>
+      <!-- Step 2 -->
+      <div class="how-works-step-pro">
+      <div class="how-works-icon-pro"><span>2</span><img src="zin2.png" alt="Answer Questions" /></div>
+      <h3>Answer Questions</h3>
+      <p>Just a few simple questions—no sign-up, no hassle, always free.</p>
+      </div>
+      <!-- Step 3 -->
+      <div class="how-works-step-pro">
+      <div class="how-works-icon-pro"><span>3</span><img src="zin3.png" alt="Get Instant Results" /></div>
+      <h3>Get Instant Results</h3>
+      <p>See your results instantly and share with friends—explore your profile!</p>
+      </div>
+      </div>
+      <style>
+      .how-works-steps-pro {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      max-width: 100vw;
+      padding: 0 8px;
+      }
+      .how-works-step-pro {
+      background: #f8f8f8;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(211,47,47,0.07);
+      padding: 32px 16px 24px 16px;
+      width: 100%;
+      max-width: 260px;
+      min-width: 180px;
+      text-align: center;
+      flex: 1 1 220px;
+      margin: 0 0px;
+      transition: box-shadow 0.2s;
+      }
+      .how-works-step-pro:hover {
+      box-shadow: 0 6px 24px rgba(211,47,47,0.13);
+      }
+      .how-works-icon-pro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      position: relative;
+      }
+      .how-works-icon-pro span {
+      display: inline-block;
+      background: #d32f2f;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      position: absolute;
+      left: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 2px 8px rgba(211,47,47,0.10);
+      }
+      .how-works-icon-pro img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-left: 18px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(211,47,47,0.10);
+      }
+      .how-works-step-pro h3 {
+      color: #d32f2f;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      margin-top: 10px;
+      }
+      .how-works-step-pro p {
+      color: #444;
+      font-size: 0.9rem;
+      margin: 0;
+      }
+      @media (max-width: 1200px) {
+      #how-it-works {
+      padding-left: 0;
+      padding-right: 0;
+      }
+      .how-works-steps-pro {
+      gap: 20px;
+      padding: 0 4px;
+      }
+      }
+      @media (max-width: 900px) {
+      .how-works-steps-pro {
+      flex-direction: column;
+      gap: 24px;
+      padding: 0 8px;
+      }
+      .how-works-step-pro h3 {
+      font-size: 2rem;
+      }
+     .how-works-step-pro p {
+      font-size: 1rem;
+      }
+      .how-works-step-pro {
+      width: 100% !important;
+      margin: 0 auto 16px auto;
+      max-width: 100%;
+      }
+      .how-works-icon-pro span {
+      left: 0;
+      top: -18px;
+      transform: none;
+      }
+      .how-works-icon-pro img {
+      margin-left: 0;
+      width: 60%;
+      }
+      }
+      </style>
+    </section>
+
+    <!-- Featured Quizzes Section -->
+    <section id="featured-quizzes" style="background: #f8f8f8; border-radius: 12px; max-width: 1000px; margin: 40px auto; padding: 40px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 30px;">Featured Free Personality Quizzes</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
+        <div style="flex: 1 1 300px; min-width: 260px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px; margin-bottom: 16px;">
+          <h3 style="color: #d32f2f; font-size: 1.15rem;">Classic Free Personality Quiz</h3>
+          <p>Discover your personality type with our most popular free personality quiz. Get instant, research-backed results and actionable insights—no sign-up required.</p>
+        </div>
+        <div style="flex: 1 1 300px; min-width: 260px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px; margin-bottom: 16px;">
+          <h3 style="color: #d32f2f; font-size: 1.15rem;">Historical Leaders Quiz</h3>
+          <p>Which historical leader are you? Take our free quiz to find out if you’re more like Napoleon, Gandhi, or Cleopatra. Fun, insightful, and always free.</p>
+        </div>
+        <div style="flex: 1 1 300px; min-width: 260px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px; margin-bottom: 16px;">
+          <h3 style="color: #d32f2f; font-size: 1.15rem;">MBTI & Pop Culture Quizzes</h3>
+          <p>Explore your MBTI type or discover which Squid Game or football character you resemble. All quizzes are free, fun, and easy to share.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Take a Personality Quiz Section -->
+    <section id="why-personality-quiz" style="background: #fff; border-radius: 12px; max-width: 1000px; margin: 40px auto; padding: 40px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 30px;">Why Take a Free Personality Quiz?</h2>
+      <p style="font-size: 1.1rem; color: #444; max-width: 800px; margin: 0 auto 20px auto; text-align: center;">A free personality quiz is more than just fun—it’s a powerful tool for self-discovery, personal growth, and even career planning. Zinvana’s quizzes are designed to be accurate, insightful, and always free. Whether you’re looking to understand your strengths, improve relationships, or just have a good time, our quizzes are the perfect place to start.</p>
+      <ul style="max-width: 700px; margin: 0 auto; color: #333;">
+        <li>✔️ 100% free, no sign-up required</li>
+        <li>✔️ Instant, research-backed results</li>
+        <li>✔️ Fun, modern, and mobile-friendly</li>
+        <li>✔️ Trusted by thousands of quiz-takers worldwide</li>
+      </ul>
+    </section>
+
+    <section
+      id="why-zinvana"
+      style="
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      "
+    >
+      <h2 style="color: #d32f2f;">Why Zinvana Is Unique (vs. Other Quiz Sites)</h2>
+      <p>
+        There are a lot of personality quizzes out there—BuzzFeed, Sporcle,
+        History.com, and more—but here’s why Zinvana rises above the rest:
+      </p>
+      <ul>
+        <li>
+          <strong>In‑Depth Profiles:</strong> Unlike many one‑question result
+          quizzes, we provide a <em>full Q&A page</em> on each historical
+          figure—covering their life story, leadership style, key decisions, and
+          lasting legacy.
+        </li>
+        <li>
+          <strong>Rich, Research‑Backed Content:</strong> Our write‑ups are
+          carefully sourced and written to give you genuine insights, not just
+          fun memes or cookie‑cutter descriptions.
+        </li>
+        <li>
+          <strong>Completely Free and No Sign‑Up:</strong> No barriers, no
+          paywalls—take as many quizzes as you like without providing an e‑mail
+          address.
+        </li>
+        <li>
+          <strong>Interactive Experiences:</strong> Personalized toasts,
+          shareable result images, and mobile‑friendly design make Zinvana
+          quizzes more engaging than the static quizzes on many competitor
+          sites.
+        </li>
+        <li>
+          <strong>SEO and Accessibility:</strong> We use structured data (FAQ
+          and Q&A schema), clear headings, and descriptive alt‑text so you get
+          fast results in search and accessible content on any device.
+        </li>
+      </ul>
+      <p style="text-align: center">
+        Ready for a deeper dive?
+        <a href="leaders.html" style="color: #d32f2f; font-weight: bold"
+          >Take our Historical Leaders Quiz now →</a
+        >
+      </p>
+    </section>
+
     <!-- Testimonials Section -->
     <section
       id="testimonials"
@@ -1009,57 +1227,23 @@
       </div>
     </section>
 
-    <section
-      id="why-zinvana"
-      style="
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      "
-    >
-      <h2 style="color: #d32f2f;">Why Zinvana Is Unique (vs. Other Quiz Sites)</h2>
-      <p>
-        There are a lot of personality quizzes out there—BuzzFeed, Sporcle,
-        History.com, and more—but here’s why Zinvana rises above the rest:
-      </p>
-      <ul>
-        <li>
-          <strong>In‑Depth Profiles:</strong> Unlike many one‑question result
-          quizzes, we provide a <em>full Q&A page</em> on each historical
-          figure—covering their life story, leadership style, key decisions, and
-          lasting legacy.
-        </li>
-        <li>
-          <strong>Rich, Research‑Backed Content:</strong> Our write‑ups are
-          carefully sourced and written to give you genuine insights, not just
-          fun memes or cookie‑cutter descriptions.
-        </li>
-        <li>
-          <strong>Completely Free and No Sign‑Up:</strong> No barriers, no
-          paywalls—take as many quizzes as you like without providing an e‑mail
-          address.
-        </li>
-        <li>
-          <strong>Interactive Experiences:</strong> Personalized toasts,
-          shareable result images, and mobile‑friendly design make Zinvana
-          quizzes more engaging than the static quizzes on many competitor
-          sites.
-        </li>
-        <li>
-          <strong>SEO and Accessibility:</strong> We use structured data (FAQ
-          and Q&A schema), clear headings, and descriptive alt‑text so you get
-          fast results in search and accessible content on any device.
-        </li>
-      </ul>
-      <p style="text-align: center">
-        Ready for a deeper dive?
-        <a href="leaders.html" style="color: #d32f2f; font-weight: bold"
-          >Take our Historical Leaders Quiz now →</a
-        >
-      </p>
+        <!-- Additional Testimonials -->
+    <section id="more-testimonials" style="background: #fff; border-radius: 12px; max-width: 900px; margin: 40px auto; padding: 40px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 30px;">More Reviews from Quiz-Takers</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;">
+        <div style="flex: 1 1 260px; min-width: 220px; background: #f8f8f8; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px;">
+          <p style="color: #444; font-style: italic;">“Best free personality quiz I’ve ever taken. The results were spot on and the site is so easy to use!”</p>
+          <p style="font-weight: 500; color: #333;">— Jordan S.</p>
+        </div>
+        <div style="flex: 1 1 260px; min-width: 220px; background: #f8f8f8; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px;">
+          <p style="color: #444; font-style: italic;">“I love that there’s no sign-up. Just click, answer, and get your results instantly. Highly recommend Zinvana!”</p>
+          <p style="font-weight: 500; color: #333;">— Samira L.</p>
+        </div>
+        <div style="flex: 1 1 260px; min-width: 220px; background: #f8f8f8; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px;">
+          <p style="color: #444; font-style: italic;">“The historical leader quiz was so much fun. I shared my results with all my friends!”</p>
+          <p style="font-weight: 500; color: #333;">— Diego M.</p>
+        </div>
+      </div>
     </section>
 
     <section id="faq" style="background: #f8f8f8; border-radius: 12px; max-width: 900px; margin: 40px auto; padding: 40px 20px; border-top: 1px solid #ccc;">
