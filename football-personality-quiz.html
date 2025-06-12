@@ -81,23 +81,6 @@
       }
     </script>
 
-    <!-- Breadcrumb -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://yourdomain.com/" },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Football Legends Personality Quiz",
-            "item": "https://zinvana.com/football-personality-quiz.html"
-          }
-        ]
-      }
-    </script>
-
     <!-- Favicon & Fonts -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
@@ -887,10 +870,25 @@ strong {
   <div class="header-content">
     <h1>Football Personality Quiz – Which Football Persona Are You?</h1>
     <p id="tagline">Free Football Personality Quiz</p>
+    <a href="#test" class="cta-hero-btn" style="display:inline-block;margin-top:24px;padding:18px 38px;font-size:1.25rem;font-weight:bold;background:linear-gradient(90deg,#d32f2f 0%,#ff9800 100%);color:#fff;border-radius:32px;box-shadow:0 4px 16px rgba(211,47,47,0.13);text-decoration:none;letter-spacing:1px;transition:background 0.2s,transform 0.2s;">Start the Quiz</a>
+    <div class="down-arrow" style="margin-top:32px;text-align:center;">
+      <span style="display:inline-block;animation:bounce 1.2s infinite;font-size:2.5rem;color:#ff9800;">&#8595;</span>
+    </div>
   </div>
 </header>
-
-
+<style>
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+.cta-hero-btn:hover { background: #b71c1c; transform: scale(1.04); }
+.toc-list a[href="#test"] {
+  background: #ff9800;
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid #d32f2f;
+}
+</style>
 
     <!-- Table of Contents -->
   <section class="toc">
@@ -998,18 +996,96 @@ strong {
   </div>
 
   <main>
+    <h1 style="text-align:center; color:#fff; font-size:2.4rem; margin-bottom:22px; letter-spacing:-1.5px; background:linear-gradient(90deg,#d32f2f 0%,#ff9800 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:900; text-shadow:0 4px 18px rgba(211,47,47,0.18),0 2px 8px #ff2600;"> Football Personality Quiz ⚡</h1>
     <!-- Personality Test Section -->
-    <section id="test">
-      <!-- Progress indicator -->
-      <div id="progress-container">
-        <span id="progress-text">Question 1 of 15</span>
+    <section id="test" style="background: linear-gradient(120deg, #232526 0%, #414345 100%); border-radius: 14px; box-shadow: 0 8px 32px rgba(44,44,44,0.18); padding: 36px 24px 32px 24px; max-width: 600px; margin: 0 auto 40px auto; position: relative;">
+      <!-- Progress Bar -->
+      <div id="progress-container" style="margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between;">
+        <span id="progress-text" style="color: #d32f2f; font-weight: bold; font-size: 1.1rem; letter-spacing: 0.5px;">Question 1 of 15</span>
+        <div style="flex:1; margin-left: 18px;">
+          <div style="background: #333; border-radius: 8px; height: 10px; width: 100%; overflow: hidden;">
+            <div id="progress-bar" style="background: linear-gradient(90deg, #d32f2f 0%, #ff9800 100%); height: 100%; width: 7%; border-radius: 8px; transition: width 0.4s;"></div>
+          </div>
+        </div>
       </div>
-      <div id="question-container">
-        <h2 id="question-title">Your question will appear here</h2>
-        <ul id="answer-options"></ul>
+      <!-- Question Card -->
+      <div id="question-container" style="background: #232526; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.12); padding: 32px 18px 24px 18px; margin-bottom: 18px;">
+        <h2 id="question-title" style="font-size: 1.45rem; color: #fff; margin-bottom: 22px; text-align: center; letter-spacing: 0.2px;">Your question will appear here</h2>
+        <ul id="answer-options" style="padding: 0; margin: 0; list-style: none;">
+          <!-- Options injected by JS -->
+        </ul>
       </div>
-      <button id="next-btn">Next</button>
+      <button id="next-btn" style="width: 100%; background: linear-gradient(90deg, #d32f2f 0%, #ff9800 100%); color: #fff; font-size: 1.15rem; font-weight: bold; padding: 16px 0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(211,47,47,0.10); letter-spacing: 1px; transition: background 0.2s, transform 0.2s;">Next &rarr;</button>
     </section>
+    <script>
+    // Enhance progress bar on question change
+    function updateProgressBar() {
+      const progressBar = document.getElementById("progress-bar");
+      const progressText = document.getElementById("progress-text");
+      if (!progressBar || !progressText) return;
+      const match = progressText.textContent.match(/Question (\d+) of (\d+)/);
+      if (!match) return;
+      const current = parseInt(match[1], 10);
+      const total = parseInt(match[2], 10);
+      const percent = Math.max(7, Math.round((current / total) * 100));
+      progressBar.style.width = percent + "%";
+    }
+    document.addEventListener("DOMContentLoaded", updateProgressBar);
+    document.getElementById("next-btn").addEventListener("click", () => setTimeout(updateProgressBar, 10));
+    </script>
+    <style>
+    /* Quiz Option Styles */
+    #answer-options li {
+      background: #292929;
+      margin-bottom: 14px;
+      padding: 16px 18px;
+      border-radius: 7px;
+      border: 2px solid transparent;
+      transition: background 0.25s, border 0.25s, box-shadow 0.2s;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      font-size: 1.07rem;
+      display: flex;
+      align-items: center;
+    }
+    #answer-options li:hover, #answer-options li.selected {
+      background: #353535;
+      border-color: #ff9800;
+      box-shadow: 0 2px 8px rgba(255,152,0,0.10);
+    }
+    #answer-options input[type="radio"] {
+      accent-color: #d32f2f;
+      width: 22px; height: 22px;
+      margin-right: 14px;
+      border-radius: 50%;
+      border: 2px solid #d32f2f;
+      outline: none;
+      cursor: pointer;
+      transition: border 0.2s;
+    }
+    #answer-options input[type="radio"]:checked {
+      border: 2px solid #ff9800;
+    }
+    @media (max-width: 700px) {
+      #test { padding: 18px 2vw 18px 2vw !important; }
+      #question-container { padding: 18px 4vw 16px 4vw !important; }
+      #question-title { font-size: 1.1rem !important; }
+      #next-btn { font-size: 1rem !important; padding: 12px 0 !important; }
+    }
+    </style>
+    <script>
+    // Option highlight on click (UX polish)
+    document.addEventListener("DOMContentLoaded", function() {
+      const answerOptions = document.getElementById("answer-options");
+      if (!answerOptions) return;
+      answerOptions.addEventListener("change", function(e) {
+        if (e.target && e.target.matches('input[type="radio"]')) {
+          Array.from(answerOptions.children).forEach(li => li.classList.remove("selected"));
+          if (e.target.closest("li")) e.target.closest("li").classList.add("selected");
+        }
+      });
+    });
+    </script>
     
     <!-- Results Section -->
     <section id="results" class="hidden">
@@ -1021,8 +1097,8 @@ strong {
           <img src="restart.png" alt="Restart icon" style="width:18px; height:18px; margin-right:6px;" />
           Restart Quiz
         </button>
-        <button id="screenshot-btn">
-          <img src="camera.png" alt="Camera icon" />
+        <button id="screenshot-btn" style="margin-top:18px; display:flex; align-items:center; gap:10px; background:linear-gradient(90deg,#ff9800 0%,#d32f2f 100%); color:#fff; font-size:1.08rem; font-weight:600; border:none; border-radius:8px; box-shadow:0 2px 8px rgba(255,152,0,0.13); padding:13px 22px; cursor:pointer; transition:background 0.2s,transform 0.2s;">
+          <img src="camera.png" alt="Share result" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;filter:drop-shadow(0 1px 2px #ff9800);" />
           Share Your Result!
         </button>
       </div>
