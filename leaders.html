@@ -97,6 +97,7 @@
       margin: 0;
       padding: 0 !important;
       border: 0;
+      background-color: white !important;
       vertical-align: baseline;
     }
   
@@ -183,7 +184,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;               /* less tall on mobile */
+  height: 90vh;               /* less tall on mobile */
   min-height: 300px;          /* ensure it never collapses */
   overflow: hidden;
   border-bottom: 2px solid #d32f2f;
@@ -216,20 +217,6 @@ header::before {
   z-index: 1;
 }
 
-
-.header-content h1 {
-  font-size: 4rem;          /* down from 4rem */
-  line-height: 1.2;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-}
-
-#tagline {
-  font-size: 3rem;          /* down from 1.7rem */
-  margin-top: 0.5rem;
-  color: #eee;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
-}
 
 /* ===== Table of Contents ===== */
 .toc {
@@ -749,9 +736,6 @@ header::before {
       header {
     height: 50vh;
       }
-      .header-content h1 {
-        font-size: 3rem;
-      }
       #tagline {
         font-size: 2rem;
       }
@@ -853,36 +837,424 @@ header::before {
   </nav>
 
   <header>
-    <video autoplay muted loop playsinline id="header-video">
-      <source src="leaders.mp4" type="video/mp4" alt="What Historical Leader Am I Quiz" />
+    <video autoplay muted loop playsinline id="header-video" aria-label="Background video montage of historical leaders" style="object-fit:cover;filter:brightness(0.45) blur(1.5px);">
+      <source src="leaders.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <div class="header-content">
-      <h1>Which Historical Leader Are You? Take a Free Quiz</h1>
-      <div id="tagline">Free historical Leader Quiz</div>
+    <div class="header-content" style="position:relative;z-index:3;text-align:center;padding:0 24px;max-width:900px;margin:0 auto;">
+      <h1 class="h1" style="font-size:3.5rem;color:#fff;font-weight:900;letter-spacing:-2.5px;margin-bottom:18px;text-shadow:0 8px 36px #d32f2faa,0 2px 0 #d32f2f,0 0 4px #000;line-height:1.05;">
+        Which Historical Leader Are You?
+      </h1>
+      <h2 id="tagline" class="hero-tagline" style="font-size:2.1rem;color:#ff9800;font-weight:900;text-shadow:0 3px 16px #000a;margin-bottom:30px;letter-spacing:0.7px;">
+        Discover Your Leadership Style with a free leadership personality Quiz
+      </h2>
+      <div class="header-intro-desktop" style="max-width:700px;margin:0 auto 24px auto;font-size:1.25rem;color:#fff;background:rgba(0,0,0,0.68);padding:26px 38px 22px 38px;border-radius:22px;line-height:1.8;box-shadow:0 6px 32px #d32f2f33;font-weight:500;backdrop-filter:blur(2px);border:1.5px solid #ff9800;">
+        <span style="font-size:1.18rem;color:#ff9800;font-weight:700;letter-spacing:0.7px;">
+          Unlock your inner leader.
+        </span>
+        <br>
+        Are you a visionary like <strong>Napoleon</strong>, a unifier like <strong>Gandhi</strong>, or a strategist like <strong>Churchill</strong>?<br>
+        <span style="color:#fff;font-size:1.08rem;">
+          Take our <strong>free, expert-reviewed Historical Leader Personality Quiz</strong> to discover which iconic figure best reflects your unique leadership style. No sign-up, instant results, and shareable insights!
+        </span>
+      </div>
+      <a href="#test" class="cta-hero-btn" style="margin-top:32px;font-size:1.25rem;padding:18px 56px;font-weight:900;background:linear-gradient(90deg,#d32f2f 0%,#ff9800 100%);color:#fff;border-radius:40px;box-shadow:0 10px 40px #d32f2f44;text-decoration:none;letter-spacing:1.2px;transition:background 0.2s,transform 0.2s,box-shadow 0.2s;border:none;outline:none;display:inline-block;">
+        <span style="vertical-align:middle;font-size:1.4em;margin-right:10px;">🚀</span>
+        Start the Free Quiz
+      </a>
+      <div class="header-badges-perfect">
+        <div class="badge">
+          <img src="privacy.png" alt="Privacy" />
+          <div>
+            <span class="badge-title">No sign-up</span>
+            <span class="badge-desc">100% privacy</span>
+          </div>
+        </div>
+        <div class="badge">
+          <img src="accuracy.png" alt="Accuracy" />
+          <div>
+            <span class="badge-title">Expert-reviewed</span>
+            <span class="badge-desc">Questions</span>
+          </div>
+        </div>
+        <div class="badge">
+          <img src="testimonials.png" alt="Testimonials" />
+          <div>
+            <span class="badge-title">5-star</span>
+            <span class="badge-desc">User reviews</span>
+          </div>
+        </div>
+      </div>
     </div>
+    <style>
+      .h1 {
+        font-size: 3.5rem;
+        color: #fff;
+        font-weight: 900;
+        letter-spacing: -2.5px;
+        margin-bottom: 18px;
+        text-shadow: 0 8px 36px #d32f2faa, 0 2px 0 #d32f2f, 0 0 4px #000;
+        line-height: 1.05;
+      }
+      #tagline {
+        font-size: 2.1rem;
+        color: #ff9800 !important;
+        font-weight: 900;
+        text-shadow: 0 3px 16px #000a;
+        margin-bottom: 30px;
+        letter-spacing: 0.7px;
+      }
+      .header-intro-desktop {
+        max-width: 700px;
+        display: none;
+        margin: 0 auto 24px auto;
+        font-size: 1.25rem;
+        color: #fff;
+        background: rgba(0,0,0,0.68);
+        padding: 26px 38px 22px 38px;
+        border-radius: 22px;
+        line-height: 1.8;
+        box-shadow: 0 6px 32px #d32f2f33;
+        font-weight: 500;
+        backdrop-filter: blur(2px);
+        border: 1.5px solid #ff9800;
+      }
+      .cta-hero-btn {
+        display: inline-block;
+        margin-top: 32px;
+        padding: 18px 56px;
+        font-size: 1.25rem;
+        font-weight: 900;
+        background: linear-gradient(90deg,#d32f2f 0%,#ff9800 100%);
+        color: #fff;
+        border-radius: 40px;
+        box-shadow: 0 10px 40px #d32f2f44;
+        text-decoration: none;
+        letter-spacing: 1.2px;
+        transition: background 0.2s,transform 0.2s, box-shadow 0.2s;
+        border: none;
+        outline: none;
+      }
+      .cta-hero-btn:hover, .cta-hero-btn:focus {
+        background: linear-gradient(90deg,#ff9800 0%,#d32f2f 100%);
+        transform: translateY(-3px) scale(1.06);
+        box-shadow: 0 14px 48px #ff980044;
+        color: #fff;
+      }
+
+      /* --- Improved Badges --- */
+      .header-badges-perfect {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 48px;
+        flex-wrap: wrap;
+      }
+      .header-badges-perfect .badge {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background: rgba(255,255,255,0.13);
+        border-radius: 18px;
+        box-shadow: 0 2px 12px #d32f2f22;
+        border: 2.5px solid #ff9800;
+        padding: 18px 32px 18px 18px;
+        min-width: 200px;
+        max-width: 260px;
+        transition: box-shadow 0.2s, transform 0.2s;
+        backdrop-filter: blur(2px);
+        position: relative;
+      }
+      .header-badges-perfect .badge:hover {
+        box-shadow: 0 6px 24px #ff980044;
+        transform: translateY(-2px) scale(1.04);
+        background: rgba(255,255,255,0.22);
+      }
+      .header-badges-perfect .badge img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 2px 8px #d32f2f22;
+        border: 2px solid #ff9800;
+        object-fit: cover;
+        padding: 4px;
+        transition: box-shadow 0.2s;
+      }
+      .header-badges-perfect .badge-title {
+        display: block;
+        color: #d32f2f;
+        font-weight: 700;
+        font-size: 1.13rem;
+        margin-bottom: 2px;
+        letter-spacing: 0.5px;
+      }
+      .header-badges-perfect .badge-desc {
+        display: block;
+        color: #ffffff;
+        font-size: 0.99rem;
+        font-weight: 500;
+        letter-spacing: 0.1px;
+      }
+      @media (max-width: 900px) {
+        .h1 {
+          font-size: 2.8rem !important;
+        }
+        #tagline {
+          font-size: 1.7rem !important;
+        }
+        .header-content {
+          padding: 0 6px !important;
+        }
+        .header-badges-perfect {
+          gap: 14px;
+          margin-top: 28px;
+        }
+        .header-badges-perfect .badge {
+          min-width: 140px;
+          max-width: 180px;
+          padding: 10px 10px 10px 10px;
+        }
+        .header-badges-perfect .badge img {
+          width: 36px;
+          height: 36px;
+        }
+        .header-badges-perfect .badge-title {
+          font-size: 0.99rem;
+        }
+        .header-badges-perfect .badge-desc {
+          font-size: 0.85rem;
+        }
+        .header-intro-desktop {
+          font-size: 0.99rem;
+          padding: 10px 6px 8px 6px;
+          border-radius: 10px;
+        }
+      }
+      @media (max-width: 600px) {
+        .h1 {
+          font-size: 2.1rem !important;
+        }
+        #tagline {
+          font-size: 1.25rem !important;
+        }
+        .header-content {
+          padding: 0 2px !important;
+        }
+        .header-badges-perfect {
+          gap: 8px;
+          margin-top: 18px;
+        }
+        .header-badges-perfect .badge {
+          min-width: 110px;
+          max-width: 100vw;
+          padding: 7px 7px 7px 7px;
+        }
+        .header-badges-perfect .badge img {
+          width: 28px;
+          height: 28px;
+        }
+        .header-badges-perfect .badge-title {
+          font-size: 0.85rem;
+        }
+        .header-badges-perfect .badge-desc {
+          font-size: 0.75rem;
+        }
+        .header-intro-desktop {
+          font-size: 0.85rem;
+          padding: 6px 2px 6px 2px;
+          border-radius: 6px;
+        }
+      }
+      @media (max-width: 400px) {
+        .header-badges-perfect {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
   </header>
 
-  <!-- Table of Contents -->
-  <section class="toc">
-    <h2>Contents</h2>
-    <ul class="toc-list">
-      <li><a href="#intro">Which Historical Leader Are You?</a></li>
-      <li><a href="#leader-breakdown">Leader Breakdown</a></li>
-      <li><a href="#test">Personality Quiz</a></li>
-      <li><a href="#faq">Quiz FAQs</a></li>
-      <li><a href="#why-zinvana">Why Zinvana?</a></li>
-    </ul>
+  <!-- Trust Section -->
+  <section id="trust-signals" style="max-width:800px;margin:40px auto 0 auto;padding:24px 20px 18px 20px;background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.07);text-align:center;">
+    <h2 style="color:#d32f2f;font-size:1.4rem;margin-bottom:18px;">Why Trust Zinvana?</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:center;">
+      <div style="flex:1 1 180px;min-width:180px;max-width:220px;">
+        <img src="privacy.png" alt="Privacy" style="width:38px;margin-bottom:8px;" />
+        <p style="font-size:1rem;color:#333;">No sign-up, no data collected, 100% privacy.</p>
+      </div>
+      <div style="flex:1 1 180px;min-width:180px;max-width:220px;">
+        <img src="accuracy.png" alt="Accuracy" style="width:38px;margin-bottom:8px;" />
+        <p style="font-size:1rem;color:#333;">Quiz reviewed by history and psychology experts.</p>
+      </div>
+      <div style="flex:1 1 180px;min-width:180px;max-width:220px;">
+        <img src="testimonials.png" alt="Testimonials" style="width:38px;margin-bottom:8px;" />
+        <p style="font-size:1rem;color:#333;">Thousands of 5-star reviews from real users.</p>
+      </div>
+      <div style="flex:1 1 180px;min-width:180px;max-width:220px;">
+        <img src="secure.png" alt="Secure" style="width:38px;margin-bottom:8px;" />
+        <p style="font-size:1rem;color:#333;">Secure, ad-free, and mobile-friendly experience.</p>
+      </div>
+    </div>
   </section>
 
+<!-- How It Works Section -->
+<section id="how-it-works" style="background: #fff; border-radius: 16px; width: 100%; max-width: none; margin: 48px 0 0 0; padding: 48px 0 36px 0; box-shadow: 0 4px 16px rgba(0,0,0,0.05); overflow: hidden;">
+  <h2 style="text-align: center; color: #d32f2f; margin-bottom: 40px; font-size: 2rem; letter-spacing: -1px;">How Our Free Personality Quiz Works</h2>
+  <div class="how-works-steps-pro" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; max-width: 100vw; padding: 0 8px;">
+    <!-- Step 1 -->
+    <div class="how-works-step-pro">
+      <div class="how-works-icon-pro"><span>1</span><img src="zin1.png" alt="Choose a Quiz" /></div>
+      <h3>Take the Free Quiz</h3>
+      <p>Answer 15–20 fun, research-backed questions about your leadership style.</p>
+    </div>
+    <!-- Step 2 -->
+    <div class="how-works-step-pro">
+      <div class="how-works-icon-pro"><span>2</span><img src="zin2.png" alt="Answer Questions" /></div>
+      <h3>Answer Questions</h3>
+      <p>Just a few simple questions—no sign-up, no hassle, always free.</p>
+    </div>
+    <!-- Step 3 -->
+    <div class="how-works-step-pro">
+      <div class="how-works-icon-pro"><span>3</span><img src="zin3.png" alt="Get Instant Results" /></div>
+      <h3>Get Instant Results</h3>
+      <p>See your results instantly and share with friends—explore your profile!</p>
+    </div>
+  </div>
+  <style>
+    .how-works-steps-pro {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      max-width: 100vw;
+      padding: 0 8px;
+    }
+    .how-works-step-pro {
+      background: #f8f8f8;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(211,47,47,0.07);
+      padding: 32px 16px 24px 16px;
+      width: 100%;
+      max-width: 260px;
+      min-width: 180px;
+      text-align: center;
+      flex: 1 1 220px;
+      margin: 0 0px;
+      transition: box-shadow 0.2s;
+    }
+    .how-works-step-pro:hover {
+      box-shadow: 0 6px 24px rgba(211,47,47,0.13);
+    }
+    .how-works-icon-pro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .how-works-icon-pro span {
+      display: inline-block;
+      background: #d32f2f;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      position: absolute;
+      left: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 2px 8px rgba(211,47,47,0.10);
+      }
+      .how-works-icon-pro img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-left: 18px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(211,47,47,0.10);
+      }
+      .how-works-step-pro h3 {
+      color: #d32f2f;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      margin-top: 10px;
+      }
+      .how-works-step-pro p {
+      color: #444;
+      font-size: 0.9rem;
+      margin: 0;
+      }
+      @media (max-width: 1200px) {
+      #how-it-works {
+      padding-left: 0;
+      padding-right: 0;
+      }
+      .how-works-steps-pro {
+      gap: 20px;
+      padding: 0 4px;
+      }
+      }
+      @media (max-width: 900px) {
+      .how-works-steps-pro {
+      flex-direction: column;
+      gap: 24px;
+      padding: 0 8px;
+      }
+      .how-works-step-pro h2 {
+      font-size: 3rem !important;
+      }
+     .how-works-step-pro p {
+      font-size: 1rem;
+      }
+      .how-works-step-pro {
+      width: 100% !important;
+      margin: 0 auto 16px auto;
+      max-width: 100%;
+      }
+      .how-works-icon-pro span {
+      left: 0;
+      top: -18px;
+      transform: none;
+      }
+      .how-works-icon-pro img {
+      margin-left: 0;
+      width: 60%;
+      }
+      }
+      </style>
+    </section>
 
-  <section id="intro" style="background-color: #1a1a1a; color: white; padding:5%; border-radius: 18px;">
-    <h2>Discover Your Inner Leader</h2>
-    <p>
-      Did someone ever ask you: <strong>which historical leader are you</strong>?  
-      Take our free Historical Leaders Personality Quiz to see if you match Napoleon, Gandhi, Cyrus, or another historical Leader.
+  <!-- Keyword-rich, professional intro above quiz -->
+  <section style="max-width:800px; margin:48px auto 0 auto; padding:32px 32px 18px 32px; background:#fff; border-radius:14px; box-shadow:0 4px 18px rgba(211,47,47,0.09); text-align:center;">
+    <h2 style="color:#d32f2f; font-size:2rem; margin-bottom:16px; letter-spacing:-1px; font-weight:700;">
+      Discover Your Historical Leadership Match
+    </h2>
+    <p style="color:#333; font-size:1.15rem; line-height:1.7; margin-bottom:18px;">
+      Are you a visionary like <strong>Napoleon</strong>, a unifier like <strong>Gandhi</strong>, or a strategist like <strong>Churchill</strong>? 
+      Take our <strong>free, expert-reviewed Historical Leader Personality Quiz</strong> to find out which iconic figure best reflects your unique leadership style.
     </p>
-    <p>Discover which historical figure you most resemble—whether you lean toward revolutionary firebrands, diplomatic visionaries, or stoic guardians of the past.</p>
+    <ul style="display:flex; flex-wrap:wrap; justify-content:center; gap:24px; list-style:none; padding:0; margin:0 0 18px 0;">
+      <li style="flex:1 1 180px; min-width:180px; max-width:220px; background:#f8f8f8; border-radius:8px; padding:16px 10px;">
+        <span style="color:#d32f2f; font-weight:600;">No sign-up</span><br>
+        <span style="color:#444; font-size:0.98rem;">100% privacy, instant results</span>
+      </li>
+      <li style="flex:1 1 180px; min-width:180px; max-width:220px; background:#f8f8f8; border-radius:8px; padding:16px 10px;">
+        <span style="color:#d32f2f; font-weight:600;">Expert-Reviewed</span><br>
+        <span style="color:#444; font-size:0.98rem;">Developed with historians & psychologists</span>
+      </li>
+      <li style="flex:1 1 180px; min-width:180px; max-width:220px; background:#f8f8f8; border-radius:8px; padding:16px 10px;">
+        <span style="color:#d32f2f; font-weight:600;">Shareable Results</span><br>
+        <span style="color:#444; font-size:0.98rem;">Personalized insights & leadership profile</span>
+      </li>
+    </ul>
+    <a href="#test" style="display:inline-block; margin-top:18px; padding:14px 36px; font-size:1.15rem; font-weight:bold; background:linear-gradient(90deg,#d32f2f 0%,#ff9800 100%); color:#fff; border-radius:32px; box-shadow:0 2px 8px rgba(211,47,47,0.13); text-decoration:none; letter-spacing:1px; transition:background 0.2s,transform 0.2s;">
+      Start the Free Quiz
+    </a>
   </section>
   
 
@@ -940,14 +1312,61 @@ header::before {
     </div>  
   </section>
   
-  <section id="top-quotes" style="max-width:800px;margin:40px auto;padding:20px;">
-    <h2>Top 5 Leadership Quotes</h2>
-    <ul>
-      <li>“We shall fight on the beaches…” — Winston Churchill</li>
-      <li>“Be the change…” — Mahatma Gandhi</li>
-      <li>“A house divided…” — Abraham Lincoln</li>
-      <li>“The only thing we have to fear…” — FDR</li>
-      <li>“It is not enough that I succeed… all others must fail.” — Genghis Khan</li>
+  <section id="top-quotes" style="max-width:800px; margin:48px auto 40px auto; padding:32px 28px; background:#fff; border-radius:14px; box-shadow:0 4px 18px rgba(0,0,0,0.08);">
+    <h2 style="color:#d32f2f; font-size:1.5rem; text-align:center; margin-bottom:28px; letter-spacing:-1px;">
+      Top 5 Timeless Leadership Quotes
+    </h2>
+    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:22px;">
+      <li style="display:flex; align-items:flex-start; gap:16px;">
+        <span style="font-size:1.6em; color:#ff9800;">“</span>
+        <div>
+          <span style="font-size:1.08rem; color:#333; font-style:italic;">
+            We shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets...
+          </span>
+          <br>
+          <span style="color:#888; font-size:0.98rem;">— Winston Churchill</span>
+        </div>
+      </li>
+      <li style="display:flex; align-items:flex-start; gap:16px;">
+        <span style="font-size:1.6em; color:#ff9800;">“</span>
+        <div>
+          <span style="font-size:1.08rem; color:#333; font-style:italic;">
+            Be the change that you wish to see in the world.
+          </span>
+          <br>
+          <span style="color:#888; font-size:0.98rem;">— Mahatma Gandhi</span>
+        </div>
+      </li>
+      <li style="display:flex; align-items:flex-start; gap:16px;">
+        <span style="font-size:1.6em; color:#ff9800;">“</span>
+        <div>
+          <span style="font-size:1.08rem; color:#333; font-style:italic;">
+            A house divided against itself cannot stand.
+          </span>
+          <br>
+          <span style="color:#888; font-size:0.98rem;">— Abraham Lincoln</span>
+        </div>
+      </li>
+      <li style="display:flex; align-items:flex-start; gap:16px;">
+        <span style="font-size:1.6em; color:#ff9800;">“</span>
+        <div>
+          <span style="font-size:1.08rem; color:#333; font-style:italic;">
+            The only thing we have to fear is fear itself.
+          </span>
+          <br>
+          <span style="color:#888; font-size:0.98rem;">— Franklin D. Roosevelt</span>
+        </div>
+      </li>
+      <li style="display:flex; align-items:flex-start; gap:16px;">
+        <span style="font-size:1.6em; color:#ff9800;">“</span>
+        <div>
+          <span style="font-size:1.08rem; color:#333; font-style:italic;">
+            It is not sufficient that I succeed — all others must fail.
+          </span>
+          <br>
+          <span style="color:#888; font-size:0.98rem;">— Genghis Khan</span>
+        </div>
+      </li>
     </ul>
   </section>
   
@@ -998,113 +1417,292 @@ header::before {
     </section>
   </main>
 
-  <section id="testimonials" style="max-width:800px;margin:40px auto;padding:20px;background:#f9f9f9;border-radius:8px;">
-    <h2>What People Are Saying</h2>
-    <div itemscope itemtype="https://schema.org/Review">
-      <p itemprop="reviewBody">“I was amazed to see I’m 90% Churchill and 75% Lincoln—so accurate!”</p>
-      <p>—<span itemprop="author">Emily R.</span>, <time itemprop="datePublished" datetime="2025-04-16">Apr 16, 2025</time></p>
-      <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-        <meta itemprop="worstRating" content="1"/>
-        <meta itemprop="bestRating" content="5"/>
-        <meta itemprop="ratingValue" content="5"/>⭐️⭐️⭐️⭐️⭐️
+  <section id="testimonials" style="max-width:800px;margin:48px auto 40px auto;padding:32px 24px;background:#fff;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,0.07);">
+    <h2 style="color:#d32f2f;font-size:1.5rem;text-align:center;margin-bottom:28px;">What People Are Saying</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
+      <!-- Testimonial 1 -->
+      <div itemscope itemtype="https://schema.org/Review" style="flex:1 1 220px;max-width:320px;background:#f9f9f9;border-radius:10px;padding:22px 18px;box-shadow:0 2px 8px rgba(211,47,47,0.07);margin-bottom:0;">
+        <p itemprop="reviewBody" style="font-size:1.08rem;color:#333;margin-bottom:12px;">“I was amazed to see I’m 90% Churchill and 75% Lincoln—so accurate!”</p>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-weight:600;color:#d32f2f;" itemprop="author">Emily R.</span>
+          <span style="color:#888;font-size:0.95rem;">
+            <time itemprop="datePublished" datetime="2025-04-16">Apr 16, 2025</time>
+          </span>
+        </div>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="margin-top:8px;">
+          <meta itemprop="worstRating" content="1"/>
+          <meta itemprop="bestRating" content="5"/>
+          <meta itemprop="ratingValue" content="5"/>
+          <span aria-label="5 out of 5 stars" style="color:#ff9800;font-size:1.2rem;">★★★★★</span>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div itemscope itemtype="https://schema.org/Review" style="flex:1 1 220px;max-width:320px;background:#f9f9f9;border-radius:10px;padding:22px 18px;box-shadow:0 2px 8px rgba(211,47,47,0.07);margin-bottom:0;">
+        <p itemprop="reviewBody" style="font-size:1.08rem;color:#333;margin-bottom:12px;">“The quiz was fun and insightful—my result matched my leadership style perfectly!”</p>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-weight:600;color:#d32f2f;" itemprop="author">Jason M.</span>
+          <span style="color:#888;font-size:0.95rem;">
+            <time itemprop="datePublished" datetime="2025-03-28">Mar 28, 2025</time>
+          </span>
+        </div>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="margin-top:8px;">
+          <meta itemprop="worstRating" content="1"/>
+          <meta itemprop="bestRating" content="5"/>
+          <meta itemprop="ratingValue" content="5"/>
+          <span aria-label="5 out of 5 stars" style="color:#ff9800;font-size:1.2rem;">★★★★★</span>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div itemscope itemtype="https://schema.org/Review" style="flex:1 1 220px;max-width:320px;background:#f9f9f9;border-radius:10px;padding:22px 18px;box-shadow:0 2px 8px rgba(211,47,47,0.07);margin-bottom:0;">
+        <p itemprop="reviewBody" style="font-size:1.08rem;color:#333;margin-bottom:12px;">“Loved the detailed results and the historical insights. Highly recommended!”</p>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-weight:600;color:#d32f2f;" itemprop="author">Priya S.</span>
+          <span style="color:#888;font-size:0.95rem;">
+            <time itemprop="datePublished" datetime="2025-02-10">Feb 10, 2025</time>
+          </span>
+        </div>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="margin-top:8px;">
+          <meta itemprop="worstRating" content="1"/>
+          <meta itemprop="bestRating" content="5"/>
+          <meta itemprop="ratingValue" content="5"/>
+          <span aria-label="5 out of 5 stars" style="color:#ff9800;font-size:1.2rem;">★★★★★</span>
+        </div>
       </div>
     </div>
-    <!-- Add 2–3 more -->
   </section>
 
 
-<section id="leader-intro">
-  <h2>Discover Your Inner Leader: Take the Leadership Personality Quiz</h2>
-  <p>Throughout history, leaders have shaped the world through their vision, strategy, and charisma. But which historical leader best matches your personality? 
-  Our <strong>free personality quiz</strong> is designed to analyze your traits and align them with famous figures such as Napoleon Bonaparte, Abraham Lincoln, or even Lenin.</p>
-  
-  <p>Unlike other <strong>16 personality quizzes</strong> or <strong>career personality tests</strong>, this <strong>leadership quiz</strong> focuses on your decision-making skills, values, and leadership tendencies. 
-  Whether you're an ambitious strategist like Alexander the Great or a diplomatic unifier like Nelson Mandela, you’ll find out your true historical counterpart.</p>
-
-  <a href="#test">Take the quiz now</a>
-</section>
-
-<section id="deep-dive" style="max-width: 800px; margin: 40px auto; padding: 20px; background: #fefefe; border: 1px solid #ddd; border-radius: 8px;">
-  <h2>Deep Dive into Historical Leadership</h2>
-  <p>
-    Historical leaders have not only defined eras but have also provided timeless lessons for modern challenges. Explore detailed insights and analysis on figures like:
+<section id="leader-intro" style="max-width: 850px; margin: 56px auto 0 auto; padding: 40px 32px 32px 32px; background: #fff; border-radius: 16px; box-shadow: 0 4px 18px rgba(211,47,47,0.09); text-align: center;">
+  <h2 style="color: #d32f2f; font-size: 2.1rem; font-weight: 700; margin-bottom: 18px; letter-spacing: -1px;">
+    Which Historical Leader Reflects Your Personality?
+  </h2>
+  <p style="color: #333; font-size: 1.18rem; line-height: 1.7; margin-bottom: 18px;">
+    History’s greatest leaders—visionaries, reformers, strategists, and unifiers—have shaped the world with their unique strengths. But which iconic figure mirrors <strong>your</strong> leadership style?
   </p>
-  <ul>
-    <li><a href="napoleon.html">Napoleon Bonaparte</a> – A master strategist who reshaped nations.</li>
-    <li><a href="gandhi.html">Mahatma Gandhi</a> – The epitome of non-violent resistance and change.</li>
-    <li><a href="lincoln.html">Abraham Lincoln</a> – A symbol of perseverance and unity in times of crisis.</li>
-    <li><a href="churchill.html">Winston Churchill</a> – Renowned for his speeches and leadership during war.</li>
-    <li><a href="ashoka.html">Ashoka the Great</a> – From fierce conqueror to proponent of peace.</li>
+  <p style="color: #444; font-size: 1.05rem; line-height: 1.7; margin-bottom: 18px;">
+    Our <strong>free, expert-designed Leadership Personality Quiz</strong> analyzes your decision-making, values, and approach to challenges. Discover if you’re a bold strategist like <strong>Napoleon</strong>, a unifying force like <strong>Gandhi</strong>, a resilient reformer like <strong>Atatürk</strong>, or another legendary figure.
+  </p>
+  <ul style="display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; list-style: none; padding: 0; margin: 0 0 18px 0;">
+    <li style="flex: 1 1 180px; min-width: 180px; max-width: 220px; background: #f8f8f8; border-radius: 8px; padding: 14px 10px;">
+      <span style="color: #d32f2f; font-weight: 600;">No Sign-Up Required</span><br>
+      <span style="color: #444; font-size: 0.98rem;">100% private, instant results</span>
+    </li>
+    <li style="flex: 1 1 180px; min-width: 180px; max-width: 220px; background: #f8f8f8; border-radius: 8px; padding: 14px 10px;">
+      <span style="color: #d32f2f; font-weight: 600;">Historian & Psychologist Reviewed</span><br>
+      <span style="color: #444; font-size: 0.98rem;">Backed by research and expert insight</span>
+    </li>
+    <li style="flex: 1 1 180px; min-width: 180px; max-width: 220px; background: #f8f8f8; border-radius: 8px; padding: 14px 10px;">
+      <span style="color: #d32f2f; font-weight: 600;">Personalized Leadership Profile</span><br>
+      <span style="color: #444; font-size: 0.98rem;">Shareable, actionable feedback</span>
+    </li>
   </ul>
-  <p>
-    Each of these pages provides further context on <strong>history leaders</strong> and why their leadership styles are still revered today.
-  </p>
+  <a href="#test" style="display: inline-block; margin-top: 18px; padding: 14px 36px; font-size: 1.15rem; font-weight: bold; background: linear-gradient(90deg,#d32f2f 0%,#ff9800 100%); color: #fff; border-radius: 32px; box-shadow: 0 2px 8px rgba(211,47,47,0.13); text-decoration: none; letter-spacing: 1px; transition: background 0.2s,transform 0.2s;">
+    Start the Free Quiz
+  </a>
 </section>
 
-<section id="why-it-matters" style="background-color: #1a1a1a; color: white; padding: 5%; border-radius: 20px;">
-  <h2>Why Discover Which Historical Leader You Are</h2>
-  <p>
-    Learning which <em>iconic leader</em> you resemble can reveal your natural <em>leadership style</em>, 
-    whether you’re a diplomatic peace-builder like Gandhi or a strategic tactician like Napoleon.
+<section id="deep-dive" style="max-width: 900px; margin: 56px auto; padding: 44px 36px; background: #fff; border-radius: 18px; box-shadow: 0 6px 24px rgba(211,47,47,0.10);">
+  <h2 style="color: #d32f2f; font-size: 2.2rem; margin-bottom: 22px; text-align: center; letter-spacing: -1px; font-weight: 700;">
+    Deep Dive: Leadership Lessons from History’s Greatest Figures
+  </h2>
+  <p style="font-size: 1.18rem; color: #222; line-height: 1.8; margin-bottom: 28px; text-align: center;">
+    Unlock the secrets of legendary leadership. Explore in-depth profiles of iconic figures—discover their defining moments, philosophies, and how their lessons can empower your own journey.
+  </p>
+  <div class="deep-dive-leader-grid" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; margin-bottom: 18px;">
+    <!-- Napoleon -->
+    <div class="deep-dive-leader-card" style="flex: 1 1 240px; min-width: 220px; max-width: 260px; background: #f8f8f8; border-radius: 14px; box-shadow: 0 2px 10px rgba(211,47,47,0.08); text-align: center; padding: 30px 16px 24px 16px; transition: box-shadow 0.2s;">
+      <img src="napoleon.jpg" alt="Napoleon Bonaparte" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(211,47,47,0.10);" />
+      <h3 style="color: #d32f2f; font-size: 1.22rem; margin-bottom: 8px;">Napoleon Bonaparte</h3>
+      <p style="color: #444; font-size: 1rem; margin-bottom: 18px;">Strategic mastermind who reshaped Europe and redefined modern leadership.</p>
+      <a href="napoleon.html" class="deep-dive-btn" style="display:inline-block;padding:10px 22px;background:#d32f2f;color:#fff;border-radius:24px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s;">Explore Napoleon &rarr;</a>
+    </div>
+    <!-- Gandhi -->
+    <div class="deep-dive-leader-card" style="flex: 1 1 240px; min-width: 220px; max-width: 260px; background: #f8f8f8; border-radius: 14px; box-shadow: 0 2px 10px rgba(211,47,47,0.08); text-align: center; padding: 30px 16px 24px 16px; transition: box-shadow 0.2s;">
+      <img src="gandhi.jpg" alt="Mahatma Gandhi" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(211,47,47,0.10);" />
+      <h3 style="color: #d32f2f; font-size: 1.22rem; margin-bottom: 8px;">Mahatma Gandhi</h3>
+      <p style="color: #444; font-size: 1rem; margin-bottom: 18px;">Pioneer of non-violent resistance and moral transformation.</p>
+      <a href="gandhi.html" class="deep-dive-btn" style="display:inline-block;padding:10px 22px;background:#d32f2f;color:#fff;border-radius:24px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s;">Explore Gandhi &rarr;</a>
+    </div>
+    <!-- Lincoln -->
+    <div class="deep-dive-leader-card" style="flex: 1 1 240px; min-width: 220px; max-width: 260px; background: #f8f8f8; border-radius: 14px; box-shadow: 0 2px 10px rgba(211,47,47,0.08); text-align: center; padding: 30px 16px 24px 16px; transition: box-shadow 0.2s;">
+      <img src="lincoln.jpg" alt="Abraham Lincoln" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(211,47,47,0.10);" />
+      <h3 style="color: #d32f2f; font-size: 1.22rem; margin-bottom: 8px;">Abraham Lincoln</h3>
+      <p style="color: #444; font-size: 1rem; margin-bottom: 18px;">Symbol of perseverance, unity, and ethical governance.</p>
+      <a href="lincoln.html" class="deep-dive-btn" style="display:inline-block;padding:10px 22px;background:#d32f2f;color:#fff;border-radius:24px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s;">Explore Lincoln &rarr;</a>
+    </div>
+    <!-- Churchill -->
+    <div class="deep-dive-leader-card" style="flex: 1 1 240px; min-width: 220px; max-width: 260px; background: #f8f8f8; border-radius: 14px; box-shadow: 0 2px 10px rgba(211,47,47,0.08); text-align: center; padding: 30px 16px 24px 16px; transition: box-shadow 0.2s;">
+      <img src="churchill.jpg" alt="Winston Churchill" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(211,47,47,0.10);" />
+      <h3 style="color: #d32f2f; font-size: 1.22rem; margin-bottom: 8px;">Winston Churchill</h3>
+      <p style="color: #444; font-size: 1rem; margin-bottom: 18px;">Master of rhetoric and resilience in the face of adversity.</p>
+      <a href="churchill.html" class="deep-dive-btn" style="display:inline-block;padding:10px 22px;background:#d32f2f;color:#fff;border-radius:24px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s;">Explore Churchill &rarr;</a>
+    </div>
+    <!-- Ashoka -->
+    <div class="deep-dive-leader-card" style="flex: 1 1 240px; min-width: 220px; max-width: 260px; background: #f8f8f8; border-radius: 14px; box-shadow: 0 2px 10px rgba(211,47,47,0.08); text-align: center; padding: 30px 16px 24px 16px; transition: box-shadow 0.2s;">
+      <img src="ashoka.jpg" alt="Ashoka the Great" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(211,47,47,0.10);" />
+      <h3 style="color: #d32f2f; font-size: 1.22rem; margin-bottom: 8px;">Ashoka the Great</h3>
+      <p style="color: #444; font-size: 1rem; margin-bottom: 18px;">From conqueror to peacemaker—champion of ethical rule.</p>
+      <a href="ashoka.html" class="deep-dive-btn" style="display:inline-block;padding:10px 22px;background:#d32f2f;color:#fff;border-radius:24px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s;">Explore Ashoka &rarr;</a>
+    </div>
+  </div>
+  <p style="font-size: 1.08rem; color: #333; text-align: center; margin-top: 18px;">
+    Want more inspiration? <a href="leaders-list.html" style="color: #d32f2f; text-decoration: underline; font-weight: 600;">See all leader profiles &rarr;</a>
   </p>
 </section>
+<style>
+  .deep-dive-leader-card:hover {
+    box-shadow: 0 6px 24px rgba(211,47,47,0.16);
+    transform: translateY(-4px) scale(1.03);
+  }
+  .deep-dive-btn:hover {
+    background: #b71c1c;
+  }
+  @media (max-width: 700px) {
+    .deep-dive-leader-grid {
+      flex-direction: column;
+      gap: 22px !important;
+    }
+    .deep-dive-leader-card {
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+  }
+</style>
 
-
-
-<section id="why-zinvana" style="max-width:800px;margin:40px auto;padding:20px;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-  <img src="napoleon1.gif" alt="What Historical Leader Am I Quiz" class="gif" style="border: 2px solid orange; border-radius: 18px; width: 80%; display: block; margin: auto;">
-  <h2>Why Zinvana Is Unique (vs. Other Quiz Sites)</h2>
-  <p>
-    There are a lot of personality quizzes out there—BuzzFeed, Sporcle, History.com, and more—but here’s why Zinvana rises above the rest:
+<section id="why-it-matters" style="background: linear-gradient(120deg, #d32f2f 0%, #1a1a1a 100%); color: #fff; padding: 48px 32px; border-radius: 18px; box-shadow: 0 6px 24px rgba(211,47,47,0.10); max-width: 800px; margin: 48px auto;">
+  <h2 style="font-size: 2rem; margin-bottom: 18px; text-align: center; letter-spacing: -1px;">Why Discover Your Historical Leadership Style?</h2>
+  <p style="font-size: 1.15rem; line-height: 1.7; text-align: center; margin-bottom: 18px;">
+    Understanding which <strong>iconic leader</strong> you align with offers powerful insight into your natural <strong>leadership style</strong> and strengths.
+    Are you a <span style="color:#ff9800;">visionary reformer</span> like Atatürk, a <span style="color:#ff9800;">strategic mastermind</span> like Napoleon, or a <span style="color:#ff9800;">diplomatic unifier</span> like Gandhi?
   </p>
-  <ul>
-    <li><strong>In‑Depth Profiles:</strong> Unlike many one‑question result quizzes, we provide a <em>full Q&A page</em> on each historical figure—covering their life story, leadership style, key decisions, and lasting legacy.</li>
-    <li><strong>Rich, Research‑Backed Content:</strong> Our write‑ups are carefully sourced and written to give you genuine insights, not just fun memes or cookie‑cutter descriptions.</li>
-    <li><strong>Completely Free and No Sign‑Up:</strong> No barriers, no paywalls—take as many quizzes as you like without providing an e‑mail address.</li>
-    <li><strong>Interactive Experiences:</strong> Personalized toasts, shareable result images, and mobile‑friendly design make Zinvana quizzes more engaging than the static quizzes on many competitor sites.</li>
-    <li><strong>SEO and Accessibility:</strong> We use structured data (FAQ and Q&A schema), clear headings, and descriptive alt‑text so you get fast results in search and accessible content on any device.</li>
+  <ul style="max-width: 600px; margin: 0 auto 18px auto; padding: 0; list-style: none;">
+    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+      <span style="font-size: 1.3em; margin-right: 10px;">🔎</span>
+      <span>Gain self-awareness about your approach to challenges, teamwork, and decision-making.</span>
+    </li>
+    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+      <span style="font-size: 1.3em; margin-right: 10px;">🌟</span>
+      <span>Discover strengths you can leverage in your career, studies, or community.</span>
+    </li>
+    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+      <span style="font-size: 1.3em; margin-right: 10px;">🤝</span>
+      <span>See which historical figures share your values and leadership philosophy.</span>
+    </li>
+    <li style="display: flex; align-items: flex-start;">
+      <span style="font-size: 1.3em; margin-right: 10px;">🚀</span>
+      <span>Apply timeless lessons from history’s greatest leaders to your own journey.</span>
+    </li>
   </ul>
-  <p style="text-align:center;">
-    Ready for a deeper dive? <a href="#test" style="color:#d32f2f;font-weight:bold;">Take our Historical Leaders Quiz now →</a>
+  <p style="text-align: center; margin-top: 24px;">
+    <a href="#test" style="display: inline-block; background: #ff9800; color: #fff; font-weight: bold; padding: 14px 36px; border-radius: 32px; font-size: 1.15rem; text-decoration: none; box-shadow: 0 2px 8px rgba(255,152,0,0.13); transition: background 0.2s, transform 0.2s;">Start the Quiz &rarr;</a>
   </p>
 </section>
 
 
 
-<!-- NEW: Why Historical Leadership Still Matters -->
-<section id="modern-relevance" style="max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); color: #333;">
-  <h2>Why Historical Leadership Still Matters Today</h2>
-  <p>
-    The lessons from <strong>important historical leaders</strong> continue to influence modern management, politics, and social change. By understanding their decision-making, strategic vision, and ethical dilemmas, you can gain insights applicable to today’s complex world.
+<section id="why-zinvana" style="max-width:800px; margin:48px auto; padding:36px 28px 32px 28px; background:#fff; border-radius:16px; box-shadow:0 6px 24px rgba(211,47,47,0.08);">
+  <img src="napoleon1.gif" alt="Animated Napoleon - Zinvana Quiz" style="display:block; margin:0 auto 28px auto; width:70%; max-width:420px; border-radius:18px; border:3px solid #ff9800; box-shadow:0 2px 12px rgba(255,152,0,0.09);" />
+  <h2 style="color:#d32f2f; font-size:2rem; font-weight:700; text-align:center; margin-bottom:18px; letter-spacing:-1px;">
+    What Makes Zinvana Different?
+  </h2>
+  <p style="color:#333; font-size:1.13rem; text-align:center; margin-bottom:22px;">
+    Not all personality quizzes are created equal. Here’s why <strong>Zinvana</strong> stands out from BuzzFeed, Sporcle, and other quiz sites:
   </p>
-  <p>
-    Whether you are a budding entrepreneur, a community leader, or simply curious about human behavior, reflecting on the successes and failures of these historical figures can guide you in forging your own path.
-  </p>
-  <p>
-    Take our quiz to discover not only <strong>which historical leader are you</strong> but also how you can apply these time-tested lessons to your everyday life.
+  <ul style="list-style:none; padding:0; margin:0 0 18px 0;">
+    <li style="display:flex; align-items:flex-start; gap:14px; margin-bottom:16px;">
+      <span style="font-size:1.5em; color:#ff9800;">📚</span>
+      <span><strong>Comprehensive Profiles:</strong> Each result links to an in-depth Q&amp;A page on your matched leader—exploring their story, leadership style, and legacy.</span>
+    </li>
+    <li style="display:flex; align-items:flex-start; gap:14px; margin-bottom:16px;">
+      <span style="font-size:1.5em; color:#ff9800;">🔬</span>
+      <span><strong>Expert-Reviewed Content:</strong> Our quizzes and write-ups are crafted with input from historians and psychologists for accuracy and insight.</span>
+    </li>
+    <li style="display:flex; align-items:flex-start; gap:14px; margin-bottom:16px;">
+      <span style="font-size:1.5em; color:#ff9800;">🔒</span>
+      <span><strong>Truly Free &amp; Private:</strong> No sign-up, no paywalls, and no data collection—enjoy unlimited quizzes with complete privacy.</span>
+    </li>
+    <li style="display:flex; align-items:flex-start; gap:14px; margin-bottom:16px;">
+      <span style="font-size:1.5em; color:#ff9800;">✨</span>
+      <span><strong>Interactive &amp; Shareable:</strong> Personalized toasts, downloadable result images, and a mobile-first design make your experience fun and engaging.</span>
+    </li>
+    <li style="display:flex; align-items:flex-start; gap:14px;">
+      <span style="font-size:1.5em; color:#ff9800;">🌐</span>
+      <span><strong>Accessible &amp; SEO-Optimized:</strong> We use structured data, clear headings, and descriptive alt text for fast, accessible results on any device.</span>
+    </li>
+  </ul>
+  <p style="text-align:center; margin-top:24px;">
+    <a href="#test" style="display:inline-block; background:linear-gradient(90deg,#d32f2f 0%,#ff9800 100%); color:#fff; font-weight:bold; padding:14px 38px; border-radius:32px; font-size:1.15rem; text-decoration:none; box-shadow:0 2px 8px rgba(211,47,47,0.13); transition:background 0.2s,transform 0.2s;">
+      Try the Historical Leaders Quiz Now &rarr;
+    </a>
   </p>
 </section>
 
 
 
+<!-- IMPROVED: Modern Relevance of Historical Leadership -->
+<section id="modern-relevance" style="max-width: 800px; margin: 48px auto; padding: 32px 28px; background: #fff; border-radius: 14px; box-shadow: 0 6px 24px rgba(211,47,47,0.09); color: #222;">
+  <h2 style="font-size: 2rem; color: #d32f2f; margin-bottom: 18px; text-align: center; letter-spacing: -1px;">
+    The Enduring Relevance of Historical Leadership
+  </h2>
+  <p style="font-size: 1.13rem; line-height: 1.7; margin-bottom: 16px;">
+    <strong>Timeless leadership lessons</strong> from history’s greatest figures continue to shape the way we approach challenges in business, government, and society. The strategies, values, and vision of iconic leaders like Napoleon, Gandhi, and Atatürk offer practical guidance for navigating today’s fast-changing world.
+  </p>
+  <ul style="max-width: 650px; margin: 0 auto 18px auto; padding: 0; list-style: none;">
+    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+      <span style="font-size: 1.3em; margin-right: 10px;">📖</span>
+      <span>Learn from real-world decisions—both triumphs and setbacks—that shaped nations and movements.</span>
+    </li>
+    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+      <span style="font-size: 1.3em; margin-right: 10px;">💡</span>
+      <span>Apply proven leadership principles—such as resilience, adaptability, and ethical judgment—to your own career and relationships.</span>
+    </li>
+    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+      <span style="font-size: 1.3em; margin-right: 10px;">🌍</span>
+      <span>Understand how historical context informs modern leadership, helping you anticipate challenges and inspire positive change.</span>
+    </li>
+  </ul>
+  <p style="font-size: 1.13rem; text-align: center; margin-top: 18px;">
+    Discover <strong>which historical leader you resemble</strong>—and unlock actionable insights to lead with confidence, vision, and purpose in today’s world.
+  </p>
+</section>
 
- <!-- FAQ Section (Existing FAQs now emphasize historical leadership) -->
- <section id="faq" class="test-explainer">
-  <h2 class="test-title">Frequently Asked Questions (FAQ)</h2>
-  <div class="test-text"><strong>What is the Historical Leaders Personality Test?</strong><br>
-  It's a leadership-themed personality quiz where you discover which iconic historical leader mirrors your traits, strengths, and style. This famous leader test connects you with <em>leaders in history</em> like Napoleon, Gandhi, and Lincoln.</div>
-
-  <div class="test-text"><strong>Is the quiz free?</strong><br>
-  Yes! The test is 100% free to take and share with others.</div>
-
-  <div class="test-text"><strong>What types of leaders can I get as results?</strong><br>
-  You could match with a range of figures—from revolutionary icons to diplomatic peacemakers among <strong>important historical leaders</strong>.</div>
-
-  <div class="test-text"><strong>How accurate is the quiz?</strong><br>
-  While it's meant for fun and self-reflection, the quiz uses behavioral analysis principles to suggest a leadership match based on your answers.</div>
-
-  <div class="test-text"><strong>Can I retake the quiz?</strong><br>
-  Absolutely! Click the "Restart Test" button to take it again and explore different outcomes.</div>
+<!-- FAQ Section (Professional, Modern Style) -->
+<section id="faq" class="test-explainer" style="max-width:800px;margin:48px auto 0 auto;padding:36px 28px 32px 28px;background:#fff;border-radius:16px;box-shadow:0 6px 24px rgba(211,47,47,0.08);">
+  <h2 class="test-title" style="color:#d32f2f;font-size:2rem;font-weight:700;text-align:center;margin-bottom:24px;letter-spacing:-1px;">
+    Frequently Asked Questions
+  </h2>
+  <div style="display:flex;flex-direction:column;gap:22px;">
+    <div style="background:#f8f8f8;border-radius:10px;padding:20px 18px;box-shadow:0 2px 8px rgba(211,47,47,0.06);">
+      <strong style="color:#d32f2f;">What is the Historical Leaders Personality Test?</strong>
+      <p style="color:#333;margin:8px 0 0 0;font-size:1.05rem;">
+        It’s a research-inspired quiz that matches your traits and strengths to iconic historical leaders—like Napoleon, Gandhi, Atatürk, and Lincoln—revealing your unique leadership style.
+      </p>
+    </div>
+    <div style="background:#f8f8f8;border-radius:10px;padding:20px 18px;box-shadow:0 2px 8px rgba(211,47,47,0.06);">
+      <strong style="color:#d32f2f;">Is the quiz really free?</strong>
+      <p style="color:#333;margin:8px 0 0 0;font-size:1.05rem;">
+        Yes—completely free, with no sign-up or data collection. Take and share your results instantly.
+      </p>
+    </div>
+    <div style="background:#f8f8f8;border-radius:10px;padding:20px 18px;box-shadow:0 2px 8px rgba(211,47,47,0.06);">
+      <strong style="color:#d32f2f;">Which leaders might I match with?</strong>
+      <p style="color:#333;margin:8px 0 0 0;font-size:1.05rem;">
+        You could be matched with visionaries, reformers, strategists, or unifiers—ranging from revolutionary icons to diplomatic peacemakers among history’s most influential figures.
+      </p>
+    </div>
+    <div style="background:#f8f8f8;border-radius:10px;padding:20px 18px;box-shadow:0 2px 8px rgba(211,47,47,0.06);">
+      <strong style="color:#d32f2f;">How accurate is the quiz?</strong>
+      <p style="color:#333;margin:8px 0 0 0;font-size:1.05rem;">
+        The quiz uses behavioral analysis and expert-reviewed questions for insightful, fun results. It’s designed for self-reflection—not as a scientific assessment.
+      </p>
+    </div>
+    <div style="background:#f8f8f8;border-radius:10px;padding:20px 18px;box-shadow:0 2px 8px rgba(211,47,47,0.06);">
+      <strong style="color:#d32f2f;">Can I retake the quiz?</strong>
+      <p style="color:#333;margin:8px 0 0 0;font-size:1.05rem;">
+        Absolutely! Click the <span style="color:#ff9800;font-weight:600;">Restart Test</span> button to explore different outcomes and discover new leadership matches.
+      </p>
+    </div>
+  </div>
 </section>
 
   <!-- Related Blog Articles Section -->
@@ -1120,6 +1718,23 @@ header::before {
         <p>Understand your leadership tendencies, strategic mindset, and where you align on the spectrum of influence and power.</p>
       </article>
     </div>
+       <!-- Button to view all articles -->
+      <div style="text-align: center; margin-top: 20px">
+        <a
+          href="all-articles.html"
+          class="btn"
+          style="
+            padding: 10px 20px;
+            background: #d32f2f;
+            color: #fff;
+            border-radius: 4px;
+            transition: background 0.3s;
+            text-decoration: none;
+          "
+        >
+          View All Articles
+        </a>
+      </div>
   </section>
 
 
