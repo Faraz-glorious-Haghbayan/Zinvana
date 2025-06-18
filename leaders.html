@@ -817,9 +817,9 @@ header::before {
 
 }
 
+
 .fade-init { opacity: 0; transform: translateY(30px); transition: all 0.7s; }
 .fade-in { opacity: 1 !important; transform: none !important; }
-
 
   </style>
   
@@ -1389,35 +1389,72 @@ header::before {
 
   <main>
     <!-- Personality Test Section -->
-    <section id="test">
+    <section id="test" style="background: linear-gradient(120deg, #181c24 0%, #232526 100%); border-radius: 36px; box-shadow: 0 16px 48px rgba(211,47,47,0.22); max-width: 720px; margin: 80px auto 0 auto; padding: 72px 48px 56px 48px; border: 4px solid #ff9800; position: relative; overflow: hidden;">
       <!-- Progress indicator -->
-      <div id="progress-container">
-        <!-- Will display something like "Question 1 of 15" -->
-        <span id="progress-text">Question 1 of 15</span>
+      <div id="progress-container" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px;">
+        <div style="font-weight: 900; color: #d32f2f; font-size: 1.45rem; letter-spacing: 0.5px; display: flex; align-items: center;">
+          <img src="zinvanalogo.png" alt="Quiz Icon" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 18px; border-radius: 50%; box-shadow: 0 2px 8px #ff980033;" />
+          <span style="font-size: 1.28rem;">Leadership Quiz</span>
+        </div>
+        <span id="progress-text" style="color: #ff9800; font-size: 1.18rem; font-weight: 700; background: #232526; border-radius: 20px; padding: 8px 26px; box-shadow: 0 2px 8px #d32f2f22;">
+          Progress: <span id="progress-current">1</span> / <span id="progress-total">20</span> &mdash; Answer each question to reveal your leadership profile
+        </span>
       </div>
-      <div id="question-container">
-        <h2 id="question-title">Your question will appear here</h2>
-        <ul id="answer-options">
+      <div id="question-container" style="margin-bottom: 48px;">
+        <h2 id="question-title" style="font-size: 2.2rem; color: #ff9800; font-weight: 900; margin-bottom: 38px; letter-spacing: -1.5px; text-shadow: 0 2px 16px #d32f2f33;">Your question will appear here</h2>
+        <ul id="answer-options" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 26px;">
           <!-- Radio button answers will be dynamically generated here -->
         </ul>
       </div>
-      <button id="next-btn">Next</button>
+      <div style="display: flex; justify-content: flex-end;">
+        <button id="next-btn" style="background: linear-gradient(90deg,#d32f2f 0%,#ff9800 100%); color: #fff; font-weight: bold; font-size: 1.25rem; padding: 20px 56px; border-radius: 48px; border: none; box-shadow: 0 10px 28px rgba(211,47,47,0.22); transition: background 0.2s,transform 0.2s; letter-spacing: 1.2px;">Next &rarr;</button>
+      </div>
+      <div style="margin-top: 36px; text-align: center; color: #ff9800; font-size: 1.15rem;">
+        <img src="secure.png" alt="Privacy" style="width: 26px; vertical-align: middle; margin-right: 12px;" />
+        <span style="font-weight:600;">100% private</span> &bull; No sign-up &bull; Instant results
+      </div>
+      <!-- Decorative background images for polish -->
+      <div style="position: absolute; top: -70px; right: -70px; opacity: 0.10; pointer-events: none;">
+        <img src="napoleonwall.jpg" alt="" style="width: 240px; border-radius: 50%; filter: blur(2px);" />
+      </div>
+      <div style="position: absolute; bottom: -70px; left: -70px; opacity: 0.10; pointer-events: none;">
+        <img src="cyrus.jpg" alt="" style="width: 200px; border-radius: 50%; filter: blur(2px);" />
+      </div>
     </section>
     
     <!-- Results Section -->
-    <section id="results" class="hidden">
-      <h2>Your Personality Results</h2>
-      <div id="evaluation"></div>
+    <section id="results" class="hidden" style="background: linear-gradient(120deg, #181c24 0%, #232526 100%); border-radius: 36px; box-shadow: 0 16px 48px rgba(211,47,47,0.22); max-width: 720px; margin: 80px auto 0 auto; padding: 72px 48px 56px 48px; border: 4px solid #ff9800; position: relative; overflow: hidden;">
+      <div style="text-align: center;">
+        <h2 style="color: #ff9800; font-size: 2.8rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -2px; text-shadow: 0 2px 16px #d32f2f33; display: flex; align-items: center; justify-content: center; gap: 16px;">
+          <img src="heart.png" alt="Results" style="width: 60px; vertical-align: middle;" />
+          Your Leadership Match
+        </h2>
+        <div style="color: #ff9800; font-size: 1.35rem; margin-bottom: 36px;">
+          Discover which historical leader reflects your unique style.
+        </div>
+      </div>
+      <div id="evaluation" style="margin-bottom: 36px;"></div>
       <div id="recommendations"></div>
-      <div>
-        <button id="restart-btn">
-          <img src="restart.png" alt="Restart icon" style="width:18px; height:18px; margin-right:6px;" />
+      <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 44px;">
+        <button id="restart-btn" style="background: #232526; color: #d32f2f; font-weight: bold; font-size: 1.18rem; padding: 20px 44px; border-radius: 40px; border: 2.5px solid #d32f2f; display: flex; align-items: center; gap: 14px; transition: background 0.2s, color 0.2s;">
+          <img src="restart.png" alt="Restart icon" style="width:26px; height:26px;" />
           Restart Test
         </button>
-        <button id="screenshot-btn">
-          <img src="camera.png" alt="Camera icon" />
+        <button id="screenshot-btn" style="background: linear-gradient(135deg, #ff9800, #d32f2f); color: white; font-size: 1.18rem; font-weight: bold; padding: 20px 44px; border: none; border-radius: 40px; box-shadow: 0 10px 28px rgba(255, 79, 0, 0.22); display: flex; align-items: center; gap: 14px; transition: background 0.2s,transform 0.2s;">
+          <img src="camera.png" alt="Camera icon" style="width: 28px; height: 28px;" />
           Share your result!
         </button>
+      </div>
+      <div style="margin-top: 36px; text-align: center; color: #ff9800; font-size: 1.15rem;">
+        <img src="send.png" alt="Share" style="width: 26px; vertical-align: middle; margin-right: 12px;" />
+        Download or share your personalized result image!
+      </div>
+      <!-- Decorative background images for polish -->
+      <div style="position: absolute; top: -70px; right: -70px; opacity: 0.10; pointer-events: none;">
+        <img src="napoleonwall.jpg" alt="" style="width: 240px; border-radius: 50%; filter: blur(2px);" />
+      </div>
+      <div style="position: absolute; bottom: -70px; left: -70px; opacity: 0.10; pointer-events: none;">
+        <img src="cyrus.jpg" alt="" style="width: 200px; border-radius: 50%; filter: blur(2px);" />
       </div>
     </section>
   </main>
@@ -1429,8 +1466,7 @@ header::before {
       <div itemscope itemtype="https://schema.org/Review" style="flex:1 1 220px;max-width:320px;background:#f9f9f9;border-radius:10px;padding:22px 18px;box-shadow:0 2px 8px rgba(211,47,47,0.07);margin-bottom:0;">
         <p itemprop="reviewBody" style="font-size:1.08rem;color:#333;margin-bottom:12px;">“I was amazed to see I’m 90% Churchill and 75% Lincoln—so accurate!”</p>
         <div style="display:flex;align-items:center;gap:8px;">
-          <span style="font-weight:600;color:#d32f2f;" itemprop="author">Emily R.</span>
-          <span style="color:#888;font-size:0.95rem;">
+          <span style="font-weight:600;color:#d32f2f;" itemprop="author">Emily R.</spasecure.png      <span style="color:#888;font-size:0.95rem;">
             <time itemprop="datePublished" datetime="2025-04-16">Apr 16, 2025</time>
           </span>
         </div>
@@ -2558,6 +2594,7 @@ revolutionary: {
     scroller.addEventListener("touchstart", () => clearInterval(intervalId));
   });
 
+
  document.addEventListener("DOMContentLoaded", function () {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -2574,6 +2611,7 @@ revolutionary: {
       observer.observe(el);
     });
   });
+
   </script>
   
 </body>
