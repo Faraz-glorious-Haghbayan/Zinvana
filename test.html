@@ -937,6 +937,10 @@
           border-radius: 6px !important;
         }
       }
+
+      .fade-init { opacity: 0; transform: translateY(30px); transition: all 0.7s; }
+.fade-in { opacity: 1 !important; transform: none !important; }
+
     </style>
   </header>
 
@@ -1105,6 +1109,7 @@
   </footer>
 
   <style>
+
     /* Responsive nav for <900px */
     @media (max-width: 900px) {
       nav {
@@ -1184,6 +1189,23 @@
 
   
 <script>
+
+   document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll("section, .quiz-card").forEach((el) => {
+      el.classList.add("fade-init");
+      observer.observe(el);
+    });
+  });
   /********** Toast Titles **********/
   const toastTitles = [
     "Nice Choice!",
