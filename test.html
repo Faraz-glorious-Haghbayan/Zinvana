@@ -895,11 +895,49 @@
   <header>
     <h1>Zinvana</h1>
     <div id="tagline">Trusted Personality Insights for Modern Professionals</div>
-    <div style="margin-top:18px; font-size:1.2rem; color:#ff5e62; font-weight:700;">
-      <span style="background: #fff3; padding: 6px 14px; border-radius: 8px;">
+    <div class="header-badge">
+      <span>
         #1 Free Personality Quiz Online – Fast, Accurate & 100% Free!
       </span>
     </div>
+    <style>
+      .header-badge {
+        margin-top: 18px;
+        font-size: 1.2rem;
+        color: #ff5e62;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+      }
+      .header-badge span {
+        background: #fff3;
+        padding: 6px 14px;
+        border-radius: 8px;
+        display: inline-block;
+        max-width: 95vw;
+        text-align: center;
+        word-break: break-word;
+      }
+      @media (max-width: 600px) {
+        header {
+          padding: 18px 4px 10px !important;
+        }
+        header h1 {
+          font-size: 1.25rem !important;
+        }
+        #tagline {
+          font-size: 0.98rem !important;
+        }
+        .header-badge {
+          font-size: 0.92rem !important;
+          margin-top: 10px !important;
+        }
+        .header-badge span {
+          padding: 4px 6px !important;
+          border-radius: 6px !important;
+        }
+      }
+    </style>
   </header>
 
   <!-- About Section -->
@@ -949,13 +987,13 @@
   </section>
 
   <!-- Toast Notification Element -->
-  <div id="toast" class="hidden" role="status" aria-live="polite">
-    <div class="toast-icon">
-      <img src="heart.png" alt="Notification" id="heart" />
+  <div id="toast" class="hidden" role="status" aria-live="polite" style="display:flex;align-items:center;gap:18px;box-shadow:0 6px 32px #ed1b2422,0 1.5px 0 #fff2 inset;background:rgba(24,24,28,0.96);border:2.5px solid #ed1b24;padding:18px 32px;border-radius:16px;min-width:320px;max-width:95vw;backdrop-filter:blur(10px);z-index:1000;">
+    <div class="toast-icon" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%);border-radius:50%;width:48px;height:48px;box-shadow:0 2px 12px #ed1b2411;">
+      <img src="heart.png" alt="Notification" id="heart" style="width:32px;height:32px;filter:drop-shadow(0 0 8px #ed1b24);" />
     </div>
-    <div class="toast-text">
-      <span class="toast-title" id="toast-title"></span>
-      <span class="toast-subtitle" id="toast-subtitle"></span>
+    <div class="toast-text" style="display:flex;flex-direction:column;justify-content:center;">
+      <span class="toast-title" id="toast-title" style="color:#ed1b24;font-size:1.22rem;font-weight:900;letter-spacing:0.8px;font-family:'Montserrat',sans-serif;margin-bottom:2px;text-shadow:0 2px 12px #ed1b2411;"></span>
+      <span class="toast-subtitle" id="toast-subtitle" style="color:#fff;font-size:1.08rem;opacity:0.97;font-family:'Roboto',Arial,sans-serif;"></span>
     </div>
   </div>
 
@@ -1012,10 +1050,23 @@
         <span style="color:#ff5e62; font-weight:600;">Test your wits, strategy, and spirit—find out now!</span>
       </p>
       <a href="squidgame.html" aria-label="Take the Squid Game Personality Test"
-        style="display:inline-flex; align-items:center; gap:18px; font-size:1.22em; border-radius:12px; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); color:#fff; font-weight:900; letter-spacing:1px; box-shadow:0 4px 24px #ed1b2411; border:2.5px solid #ed1b24; transition:background 0.2s, color 0.2s, border 0.2s, transform 0.15s;">
-        <img src="squidmask.png" alt="Squid Game Icon" style="width:50px; border-radius:7px;" />
+        style="display:inline-flex; align-items:center; gap:14px; font-size:1.08em; border-radius:10px; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); color:#fff; font-weight:900; letter-spacing:1px; box-shadow:0 4px 24px #ed1b2411; border:2px solid #ed1b24; transition:background 0.2s, color 0.2s, border 0.2s, transform 0.15s; padding:13px 22px; margin:0 auto;">
+        <img src="squidmask.png" alt="Squid Game Icon" style="width:34px; border-radius:6px;" />
         Free Squid Game Quiz
       </a>
+      <style>
+        @media (max-width: 600px) {
+          #squid-game-test a[aria-label="Take the Squid Game Personality Test"] {
+        font-size: 0.98em !important;
+        padding: 9px 10px !important;
+        gap: 8px !important;
+          }
+          #squid-game-test a[aria-label="Take the Squid Game Personality Test"] img {
+        width: 22px !important;
+        border-radius: 4px !important;
+          }
+        }
+      </style>
       <div style="margin-top:32px; color:#fff; opacity:0.82; font-size:1.01em;">
         <span style="background:#fff2; color:#ed1b24; font-weight:700; padding:6px 16px; border-radius:8px;">
           100% Free · No Sign-Up · Instant Results
@@ -1026,21 +1077,30 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 <strong>Zinvana</strong>. All rights reserved.</p>
-    <p>
-      This test is for informational purposes only and does not replace professional advice.<br />
-      <span style="font-weight:600;">No personal data is stored or shared.</span>
-    </p>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <img src="insta.png" alt="Instagram" />
-      </a>
-      <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-        <img src="x.png" alt="X" />
-      </a>
-      <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-        <img src="youtube.png" alt="YouTube" />
-      </a>
+    <div style="max-width:820px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px;">
+      <div style="text-align:left; flex:1 1 260px;">
+        <p style="margin:0; font-size:1.09rem; color:#fff; opacity:0.82;">
+          <strong style="color:#ed1b24; font-size:1.13rem;">Zinvana</strong> &copy; 2025. All rights reserved.
+        </p>
+        <p style="margin:6px 0 0; font-size:0.98rem; color:#fff; opacity:0.65;">
+          For informational purposes only. Not a substitute for professional advice.<br>
+          <span style="font-weight:600; color:#ff5e62;">No personal data stored or shared.</span>
+        </p>
+      </div>
+      <div class="social-icons" style="display:flex; align-items:center; gap:18px;">
+        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="insta.png" alt="Instagram" title="Instagram" />
+        </a>
+        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <img src="x.png" alt="X" title="X (Twitter)" />
+        </a>
+        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <img src="youtube.png" alt="YouTube" title="YouTube" />
+        </a>
+      </div>
+    </div>
+    <div style="margin-top:18px; text-align:center; font-size:0.97rem; color:#fff; opacity:0.55;">
+      Made with <span style="color:#ed1b24;">&#10084;</span> for self-discovery & growth.
     </div>
   </footer>
 
