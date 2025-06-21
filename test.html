@@ -4,27 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H7GCZY7W0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3H7GCZY7W0');
-</script>
-  
-  <title>Zinvana - Free personality test</title>
-
-   <link rel="canonical" href="https://zinvana.com/test.html" />
-  
-  <!-- Basic SEO -->
+  <title>Zinvana - Free Personality Test</title>
+  <link rel="canonical" href="https://zinvana.com/test.html" />
   <meta name="description" content="Take a quick and free, research-backed personality test on Zinvana to discover your strengths, improvement areas, and recommended career paths." />
   <meta name="keywords" content="Zinvana, personality test, self-discovery, career advice, psychology, introspection, personal growth" />
   <meta name="author" content="Zinvana" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Zinvana - Discover Your Personality" />
   <meta property="og:description" content="Zinvana’s short, research-backed personality test reveals your strengths, areas for improvement, and recommended career paths." />
   <meta property="og:image" content="cover.png" />
@@ -32,554 +19,1108 @@
   <meta property="og:type" content="website" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
-  <!-- (Optional) Minecraft-like Font for Toast Only -->
-  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-  <!-- Roboto for the rest of the site -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- html2canvas for screenshots -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  
   <style>
-    /* -------------------------------------
-   1) Modern CSS Reset
-------------------------------------- */
+    :root {
+      --primary: #ed1b24;
+      --primary-gradient: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
+      --black: #101014;
+      --white: #fff;
+      --gray: #e5e5e5;
+      --border-radius: 18px;
+      --shadow: 0 8px 32px rgba(237,27,36,0.10);
+      --glass-bg: rgba(24, 24, 28, 0.82);
+      --accent: #ff5e62;
+      --secondary: #23232b;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Roboto', Arial, sans-serif;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+      background: linear-gradient(120deg, #18181f 0%, #23232b 100%);
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--glass-bg);
+      padding: 18px 40px;
+      box-shadow: 0 2px 18px rgba(237,27,36,0.13);
+      border-bottom: 3px solid var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    nav .nav-left,
+    nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    nav a {
+      color: var(--white);
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.13rem;
+      letter-spacing: 0.5px;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s, color 0.2s;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--primary-gradient);
+      transition: width 0.3s;
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav img#brand-logo {
+      width: 62px;
+      min-width: 62px;
+      margin-right: 18px;
+      filter: grayscale(1) brightness(2) contrast(2) drop-shadow(0 0 8px #ed1b2422);
+      pointer-events: none;
+      border-radius: 12px;
+      background: #fff;
+      padding: 2px;
+    }
 
-/* Remove default margins & padding */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
+    header {
+      text-align: center;
+      padding: 56px 10px 36px;
+      background: linear-gradient(90deg, #18181f 60%, #23232b 100%);
+      border-bottom: 2px solid var(--primary);
+      position: relative;
+      box-shadow: 0 4px 32px #ed1b2411;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3.4rem;
+      color: transparent;
+      background: var(--primary-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2.5px;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      font-weight: 900;
+      text-shadow: 0 2px 18px #ed1b2455;
+    }
+    #tagline {
+      margin-top: 16px;
+      font-size: 1.25rem;
+      color: var(--white);
+      opacity: 0.88;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      text-shadow: 0 1px 8px #ed1b2411;
+    }
 
-/* Make HTML5 elements display like block in older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+    #about {
+      max-width: 720px;
+      margin: 54px auto 38px;
+      padding: 38px 32px;
+      text-align: center;
+      background: var(--glass-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 32px #ed1b2411;
+      border: 1.5px solid #23232b;
+      backdrop-filter: blur(6px);
+      position: relative;
+    }
+    #about::before {
+      content: '';
+      position: absolute;
+      top: -18px; left: 50%;
+      transform: translateX(-50%);
+      width: 80px; height: 6px;
+      border-radius: 3px;
+      background: var(--primary-gradient);
+      opacity: 0.7;
+    }
+    #about h2 {
+      font-size: 2.1rem;
+      color: var(--primary);
+      margin-bottom: 18px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    #about p {
+      color: #eee;
+      line-height: 1.7;
+      font-size: 1.13rem;
+      margin-bottom: 0;
+      opacity: 0.93;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
 
-/* Remove list styles */
-ol, ul {
-  list-style: none;
-}
+    #toast {
+      position: fixed;
+      top: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      background: var(--glass-bg);
+      border: 2.5px solid var(--primary);
+      padding: 16px 26px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px #ed1b2422;
+      font-family: 'Roboto', Arial, sans-serif;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.3s;
+      z-index: 1000;
+      min-width: 340px;
+      max-width: 92vw;
+      backdrop-filter: blur(8px);
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.04);
+    }
+    #toast .toast-icon {
+      margin-right: 16px;
+      display: flex;
+      align-items: center;
+    }
+    #toast .toast-icon img {
+      width: 36px;
+      filter: drop-shadow(0 0 8px var(--primary));
+    }
+    #toast .toast-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #toast .toast-title {
+      color: var(--primary);
+      font-size: 1.18rem;
+      margin-bottom: 2px;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    #toast .toast-subtitle {
+      color: #fff;
+      font-size: 1.05rem;
+      opacity: 0.95;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .hidden {
+      display: none;
+    }
 
-/* Set consistent box-sizing & smooth scrolling */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+    main {
+      max-width: 740px;
+      margin: 38px auto 0;
+      background: var(--glass-bg);
+      padding: 48px 40px 38px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 32px #ed1b2411;
+      border: 1.5px solid #23232b;
+      backdrop-filter: blur(6px);
+    }
 
-/* -------------------------------------
-   2) Base Styles
-------------------------------------- */
+    #test {
+      margin-bottom: 44px;
+    }
+    #progress-container {
+      margin-bottom: 22px;
+      text-align: right;
+      font-size: 1.09rem;
+      color: #fff;
+      opacity: 0.75;
+      font-weight: 600;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    #question-container {
+      margin-bottom: 36px;
+    }
+    #question-title {
+      font-size: 1.45rem;
+      margin-bottom: 26px;
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    #answer-options {
+      list-style: none;
+      padding: 0;
+    }
+    #answer-options li {
+      background: var(--secondary);
+      margin-bottom: 20px;
+      padding: 20px 20px 20px 18px;
+      border-radius: 10px;
+      border: 2px solid #23232b;
+      transition: background 0.3s, transform 0.18s, border 0.3s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px #ed1b2412;
+      position: relative;
+    }
+    #answer-options li:hover {
+      background: #23232b;
+      border: 2px solid var(--primary);
+      transform: translateY(-2px) scale(1.012);
+      box-shadow: 0 4px 18px #ed1b2422;
+    }
+    #answer-options label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      font-size: 1.13rem;
+      color: #fff;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    #answer-options input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: #fff;
+      border: 2.5px solid var(--primary);
+      width: 24px;
+      height: 24px;
+      margin-right: 16px;
+      outline: none;
+      cursor: pointer;
+      border-radius: 50%;
+      position: relative;
+      top: 1px;
+      transition: background-color 0.2s, border-color 0.2s;
+      box-shadow: 0 1px 6px #ed1b2411;
+    }
+    #answer-options input[type="radio"]:checked {
+      border-color: var(--primary);
+      background: var(--primary);
+    }
+    #answer-options input[type="radio"]:checked::before {
+      content: "";
+      display: block;
+      width: 13px;
+      height: 13px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      left: 5px;
+      top: 5px;
+    }
 
-/* Body defaults */
-body {
-  font-family: 'Roboto', sans-serif;
-  background: #f4f5f7;
-  color: #333;
-  line-height: 1.6;
-}
+    /* --- Enhanced Next Button Styling --- */
+    #next-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--primary-gradient);
+      color: #fff;
+      border: none;
+      padding: 18px 48px;
+      font-size: 1.22rem;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.18s, box-shadow 0.18s, color 0.18s, transform 0.13s;
+      margin: 32px 10px 0 0;
+      font-weight: 900;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 24px #ed1b2415, 0 1.5px 0 #fff2 inset;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+      outline: none;
+    }
+    #next-btn::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background: linear-gradient(120deg,rgba(255,255,255,0.08) 0%,rgba(255,255,255,0.03) 100%);
+      pointer-events: none;
+      z-index: 1;
+      border-radius: 14px;
+    }
+    #next-btn:hover, #next-btn:focus {
+      background: #fff;
+      color: var(--primary);
+      box-shadow: 0 6px 32px #ed1b2422, 0 1.5px 0 #ed1b2411 inset;
+      border: 2.5px solid var(--primary);
+      transform: translateY(-2px) scale(1.03);
+    }
+    #next-btn:active {
+      background: var(--primary-gradient);
+      color: #fff;
+      box-shadow: 0 2px 8px #ed1b2411;
+      transform: scale(0.98);
+    }
+    #next-btn .next-arrow {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 1.3em;
+      font-weight: 900;
+      vertical-align: middle;
+      transition: transform 0.18s;
+    }
+    #next-btn:hover .next-arrow {
+      transform: translateX(4px) scale(1.12);
+    }
 
-/* Anchor defaults */
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.3s;
-}
-a:hover {
-  opacity: 0.8;
-}
+    button {
+      display: inline-block;
+      background: var(--primary-gradient);
+      color: #fff;
+      border: none;
+      padding: 15px 36px;
+      font-size: 1.13rem;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+      margin: 28px 10px 0 0;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      box-shadow: 0 2px 12px #ed1b2411;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    button:hover {
+      background: #fff;
+      color: var(--primary);
+      box-shadow: 0 4px 18px #ed1b2422;
+      border: 2px solid var(--primary);
+    }
+    #screenshot-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #fff;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: 800;
+    }
+    #screenshot-btn:hover {
+      background: var(--primary-gradient);
+      color: #fff;
+    }
+    #screenshot-btn img {
+      width: 24px;
+      height: 24px;
+      filter: grayscale(1) brightness(0.7) contrast(2);
+    }
+    #restart-btn img {
+      width: 22px;
+      height: 22px;
+      margin-right: 8px;
+      filter: grayscale(1) brightness(0.7) contrast(2);
+    }
 
-/* -------------------------------------
-   3) Navigation
-------------------------------------- */
-nav {
-  display: flex;
-  position: relative;
-  z-index: 9999;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-  padding: 15px 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-nav .nav-left,
-nav .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-nav a {
-  color: #2c3e50;
-  font-weight: 500;
-  font-size: 1.3rem;
-}
-nav img#brand-logo {
-  width: 10%;
-  min-width: 60px;
-  pointer-events: none; /* Prevent logo from blocking clicks if it overlaps */
-}
+    #results {
+      background: var(--secondary);
+      padding: 40px 32px 32px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 18px #ed1b2411;
+      margin-top: 34px;
+      text-align: left;
+      border: 2px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+    #results h2 {
+      font-size: 1.8rem;
+      margin-bottom: 28px;
+      text-align: center;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 12px;
+      color: var(--primary);
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    .result-section {
+      margin-bottom: 26px;
+      background: var(--glass-bg);
+      border-radius: 12px;
+      padding: 22px 22px 14px;
+      border: 1.5px solid #23232b;
+      box-shadow: 0 2px 12px #ed1b2411;
+      position: relative;
+    }
+    .result-section h3 {
+      margin-bottom: 9px;
+      color: var(--primary);
+      font-size: 1.22rem;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    .result-section p {
+      margin: 0 0 10px 0;
+      font-size: 1.09rem;
+      color: #fff;
+      line-height: 1.6;
+      opacity: 0.95;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .character-image {
+      max-width: 200px;
+      display: block;
+      margin: 14px auto 22px;
+      border-radius: 12px;
+      border: 2.5px solid var(--primary);
+      box-shadow: 0 2px 18px #ed1b2411;
+      background: #fff;
+      padding: 3px;
+      transition: transform 0.2s;
+    }
+    .character-image:hover {
+      transform: scale(1.04) rotate(-2deg);
+      box-shadow: 0 4px 24px #ed1b2422;
+    }
 
-/* -------------------------------------
-   4) Header
-------------------------------------- */
-header {
-  text-align: center;
-  padding: 30px 10px 20px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-}
-header h1 {
-  margin: 0;
-  font-size: 3rem;
-  color: #2c3e50;
-  letter-spacing: 1px;
-}
-#tagline {
-  margin-top: 8px;
-  font-size: 1rem;
-  color: #555;
-}
+    /* Squid Game Section */
+    #squid-game-test {
+      background: var(--black);
+      color: #fff;
+      padding: 80px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 3px solid var(--primary);
+      border-bottom: 3px solid var(--primary);
+      margin-top: 70px;
+      margin-bottom: 0;
+      box-shadow: 0 4px 32px #ed1b2411;
+    }
+    #squid-game-test .sg-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: url('AAAAQVylBzU37ZpOJaV_EWOfGm7R3S6KJxdwj1KUgk7YQNg_vr7mSCnXzWJ7OaLdgqhKCGX2qeyrkWINXY_FJfoeRCsaIylCBHtQczT5GSpoHv7i0L0xCcQtXN4O8mAwzQZQqeUCXyLtVuwjlz50PCU66aV1.jpg') no-repeat center center/cover;
+      opacity: 0.18;
+      z-index: 0;
+      filter: grayscale(1) contrast(1.2);
+    }
+    #squid-game-test .sg-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    #squid-game-test h2 {
+      font-size: 2.5em;
+      margin-bottom: 26px;
+      color: var(--primary);
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-shadow: 0 2px 18px #ed1b2455;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    #squid-game-test p {
+      font-size: 1.22em;
+      margin-bottom: 44px;
+      color: #fff;
+      opacity: 0.94;
+      font-weight: 500;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    #squid-game-test a {
+      display: inline-block;
+      padding: 17px 40px;
+      font-size: 1.18em;
+      color: #fff;
+      background: var(--primary-gradient);
+      text-decoration: none;
+      border-radius: 9px;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      box-shadow: 0 2px 18px #ed1b2411;
+      border: 2px solid var(--primary);
+      transition: background 0.2s, color 0.2s, border 0.2s, transform 0.15s;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    }
+    #squid-game-test a:hover {
+      background: #fff;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      transform: scale(1.04);
+    }
 
-/* -------------------------------------
-   5) About Section
-------------------------------------- */
-#about {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-  text-align: center;
-}
-#about h2 {
-  font-size: 1.6rem;
-  color: #2c3e50;
-  margin-bottom: 12px;
-}
-#about p {
-  color: #555;
-  line-height: 1.6;
-  font-size: 1rem;
-  margin-bottom: 24px;
-}
+    footer {
+      background: var(--glass-bg);
+      padding: 32px 10px 22px;
+      text-align: center;
+      border-top: 2px solid var(--primary);
+      margin-top: 54px;
+      box-shadow: 0 -2px 18px #ed1b2411;
+      font-family: 'Roboto', Arial, sans-serif;
+      backdrop-filter: blur(6px);
+    }
+    footer p {
+      margin: 9px 0;
+      font-size: 1.09rem;
+      color: #fff;
+      opacity: 0.75;
+      font-weight: 500;
+    }
+    footer .social-icons {
+      margin-top: 16px;
+    }
+    footer .social-icons img {
+      width: 38px;
+      margin: 0 12px;
+      transition: opacity 0.2s, filter 0.2s, transform 0.15s;
+      cursor: pointer;
+      filter: grayscale(1) brightness(2) contrast(2);
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+      background: #fff;
+      padding: 2px;
+    }
+    footer .social-icons img:hover {
+      opacity: 0.7;
+      filter: grayscale(0) brightness(1.1) contrast(1.1) drop-shadow(0 0 6px var(--primary));
+      background: var(--primary);
+    }
 
-/* -------------------------------------
-   6) Toast Notification
-------------------------------------- */
-#toast {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  align-items: center;
-  background: #222;
-  border: 2px solid #ffc107;
-  padding: 10px 14px;
-  border-radius: 4px;
-  font-family: 'Minecraftia', sans-serif; /* Only if you want the Minecraft style for toast */
-  text-shadow: 1px 1px #000;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 1000;
-}
-#toast.show {
-  opacity: 1;
-}
-#toast .toast-icon {
-  margin-right: 8px;
-  display: flex;
-  align-items: center;
-}
-#toast .toast-icon img {
-  width: 28px;
-  image-rendering: pixelated;
-}
-#toast .toast-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#toast .toast-title {
-  color: #ffc107;
-  font-size: 1rem;
-  margin-bottom: 2px;
-}
-#toast .toast-subtitle {
-  color: #fff;
-  font-size: 0.95rem;
-}
-
-/* Hide element helper */
-.hidden {
-  display: none;
-}
-
-/* -------------------------------------
-   7) Main Container
-------------------------------------- */
-main {
-  max-width: 800px;
-  margin: 20px auto;
-  background: #fff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-}
-
-/* -------------------------------------
-   8) Personality Test Section
-------------------------------------- */
-#test {
-  margin-bottom: 40px;
-}
-#progress-container {
-  margin-bottom: 15px;
-  text-align: right;
-  font-size: 0.95rem;
-  color: #666;
-}
-#question-container {
-  margin-bottom: 30px;
-}
-#question-title {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
-#answer-options {
-  list-style: none;
-  padding: 0;
-}
-#answer-options li {
-  background: #f2f2f2;
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: 6px;
-  border: 2px solid transparent;
-  transition: background 0.3s, transform 0.2s, border 0.3s;
-}
-#answer-options li:hover {
-  background: #e8e8e8;
-  transform: translateX(5px);
-}
-#answer-options label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-}
-#answer-options input[type="radio"] {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #fff;
-  border: 2px solid #ccc;
-  width: 22px;
-  height: 22px;
-  margin-right: 10px;
-  outline: none;
-  cursor: pointer;
-  border-radius: 2px;
-  position: relative;
-  top: 1px;
-  transition: background-color 0.2s, border-color 0.2s;
-}
-#answer-options input[type="radio"]:checked::before {
-  content: "✔";
-  color: #2c3e50;
-  font-weight: bold;
-  position: absolute;
-  left: 1px;
-  top: -3px;
-  font-size: 1.3rem;
-}
-#answer-options input[type="radio"]:checked {
-  border-color: #4ca1af;
-}
-
-/* -------------------------------------
-   9) Buttons
-------------------------------------- */
-button {
-  display: inline-block;
-  background: #4ca1af;
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-  margin: 20px 5px 0 5px;
-}
-button:hover {
-  background: #3b8d99;
-}
-#screenshot-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-#screenshot-btn img {
-  width: 20px;
-  height: 20px;
-}
-
-/* -------------------------------------
-   10) Results Section
-------------------------------------- */
-#results {
-  background: #f9f9f9;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  margin-top: 30px;
-  text-align: left;
-}
-#results h2 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  text-align: center;
-  border-bottom: 2px solid #4ca1af;
-  padding-bottom: 10px;
-  color: #2c3e50;
-}
-.result-section {
-  margin-bottom: 15px;
-}
-.result-section h3 {
-  margin-bottom: 5px;
-  color: #2c3e50;
-  font-size: 1.1rem;
-}
-.result-section p {
-  margin: 0;
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.4;
-}
-.character-image {
-  max-width: 200px;
-  display: block;
-  margin: 10px auto;
-  border-radius: 8px;
-}
-
-/* -------------------------------------
-   11) Footer
-------------------------------------- */
-footer {
-  background: #fff;
-  padding: 20px 10px;
-  text-align: center;
-  border-top: 1px solid #ddd;
-  margin-top: 40px;
-}
-footer p {
-  margin: 5px 0;
-  font-size: 0.9rem;
-  color: #777;
-}
-footer .social-icons {
-  margin-top: 10px;
-}
-footer .social-icons img {
-  width: 3%;
-  margin: 0 8px;
-  transition: opacity 0.3s;
-  cursor: pointer;
-}
-footer .social-icons img:hover {
-  opacity: 0.7;
-}
-
-/* -------------------------------------
-   12) Responsive Styles
-------------------------------------- */
-@media (max-width: 970px) {
-  nav .nav-left a,
-  nav .nav-right a {
-    font-size: 1rem;
-  }
-  header h1 {
-    font-size: 3.5rem;
-  }
-  #tagline {
-    font-size: 0.95rem;
-  }
-  #about p {
-    font-size: 0.9rem;
-  }
-  main {
-    padding: 30px;
-  }
-  #question-title {
-    font-size: 1.15rem;
-  }
-  nav img#brand-logo {
-    width: 15%;
-  }
-  footer .social-icons img {
-    width: 10%;
-  }
-  /* Make the toast smaller on phones */
-  #toast {
-    top: 10px;
-    left: 10px;
-    padding: 6px 10px;
-    font-size: 0.8rem;
-  }
-  #toast .toast-icon img {
-    width: 20px;
-  }
-  #toast .toast-title {
-    font-size: 0.85rem;
-  }
-  #toast .toast-subtitle {
-    font-size: 0.75rem;
-  }
-  #results h2{
-    font-size: 1.2rem;
-  }
-}
-
+    /* Responsive */
+    @media (max-width: 900px) {
+      nav {
+        padding: 12px 10px;
+      }
+      main {
+        padding: 22px 8px 18px;
+      }
+      #about {
+        padding: 18px 8px;
+      }
+      #results {
+        padding: 18px 8px 12px;
+      }
+      #squid-game-test .sg-content {
+        padding: 0 6px;
+      }
+      #next-btn {
+        padding: 14px 22px;
+        font-size: 1.05rem;
+      }
+    }
+    @media (max-width: 600px) {
+      nav .nav-left,
+      nav .nav-right {
+        gap: 12px;
+      }
+      nav img#brand-logo {
+        width: 38px;
+        min-width: 38px;
+        margin-right: 8px;
+      }
+      header {
+        padding: 28px 4px 18px;
+      }
+      header h1 {
+        font-size: 2.1rem;
+      }
+      #about h2 {
+        font-size: 1.2rem;
+      }
+      #about {
+        margin: 24px 0 18px;
+      }
+      main {
+        margin: 18px 0 0;
+      }
+      #results h2 {
+        font-size: 1.1rem;
+      }
+      #squid-game-test {
+        padding: 36px 4px 36px;
+        margin-top: 24px;
+      }
+      #squid-game-test h2 {
+        font-size: 1.1rem;
+      }
+      #squid-game-test p {
+        font-size: 1em;
+      }
+      .character-image {
+        max-width: 110px;
+      }
+      button, #screenshot-btn, #next-btn {
+        font-size: 0.95rem;
+        padding: 10px 14px;
+      }
+      #toast {
+        min-width: 180px;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        top: 10px;
+      }
+      #toast .toast-icon img {
+        width: 20px;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Top Navigation -->
-  <nav>
-    <div class="nav-left">
-      <img src="Logo.png" alt="Zinava Logo" id="brand-logo" />
-      <a href="index.html">Home</a>
-      <a href="#squid-game-test">Squidgame</a>
+  <nav aria-label="Main Navigation" style="backdrop-filter: blur(10px); background: rgba(24,24,28,0.92); border-bottom: 3px solid var(--primary); box-shadow: 0 2px 18px #ed1b2415;">
+    <!-- Logo always visible, nav-left hidden on mobile -->
+    <div class="nav-logo" style="display:flex;align-items:center;gap:10px;">
+      <a href="index.html" aria-label="Zinvana Home" style="display:flex;align-items:center;gap:10px;">
+        <img src="Logo.png" alt="Zinvana Logo" id="brand-logo" style="box-shadow:0 2px 12px #ed1b2422;" />
+        <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.35rem;letter-spacing:1.2px;color:var(--primary);text-shadow:0 2px 12px #ed1b2411;">Zinvana</span>
+      </a>
+    </div>
+    <div class="nav-left" id="nav-logo-left">
+      <a href="index.html" style="padding:8px 18px;">Home</a>
+      <a href="#squid-game-test" style="padding:8px 18px;">Squid Game</a>
     </div>
     <div class="nav-right">
-      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho">Contact</a>
-      <a href="help.html">Help</a>
+      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" style="padding:8px 18px;">Contact</a>
+      <a href="help.html" style="padding:8px 18px;">Help</a>
     </div>
+    <!-- Hamburger for mobile -->
+    <button id="nav-toggle" aria-label="Open navigation" style="display:none; background:none; border:none; color:#fff; font-size:2.2rem; margin-left:auto; cursor:pointer; padding:0 12px;">
+      <span style="display:inline-block; line-height:1;">&#9776;</span>
+    </button>
   </nav>
+
+  <!-- Mobile Nav Drawer -->
+  <div id="mobile-nav" class="hidden" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(24,24,28,0.98); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:38px; transition:background 0.3s;">
+    <a href="index.html" aria-label="Zinvana Home" style="display:flex;align-items:center;gap:10px;position:absolute;top:24px;left:24px;text-decoration:none;">
+      <img src="Logo.png" id="navlogo" alt="Zinvana Logo" style="width:38px;min-width:38px;border-radius:12px;background:#fff;padding:2px;box-shadow:0 2px 12px #ed1b2422;filter:grayscale(1) brightness(2) contrast(2) drop-shadow(0 0 8px #ed1b2422);" />
+      <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:1.2px;color:var(--primary);text-shadow:0 2px 12px #ed1b2411;">Zinvana</span>
+    </a>
+    <button id="nav-close" aria-label="Close navigation" style="position:absolute; top:28px; right:28px; background:none; border:none; color:#fff; font-size:2.5rem; cursor:pointer; font-weight:900;">&times;</button>
+    <a href="index.html" style="font-size:1.45rem; color:#fff; font-weight:800; letter-spacing:1px; padding:18px 0; width:80vw; text-align:center; border-radius:10px; background:rgba(255,255,255,0.05); margin:0 auto; transition:background 0.2s, color 0.2s;">Home</a>
+    <a href="#squid-game-test" style="font-size:1.45rem; color:#fff; font-weight:800; letter-spacing:1px; padding:18px 0; width:80vw; text-align:center; border-radius:10px; background:rgba(255,255,255,0.05); margin:0 auto; transition:background 0.2s, color 0.2s;">Squid Game</a>
+    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" style="font-size:1.45rem; color:#fff; font-weight:800; letter-spacing:1px; padding:18px 0; width:80vw; text-align:center; border-radius:10px; background:rgba(255,255,255,0.05); margin:0 auto; transition:background 0.2s, color 0.2s;">Contact</a>
+    <a href="help.html" style="font-size:1.45rem; color:#fff; font-weight:800; letter-spacing:1px; padding:18px 0; width:80vw; text-align:center; border-radius:10px; background:rgba(255,255,255,0.05); margin:0 auto; transition:background 0.2s, color 0.2s;">Help</a>
+  </div>
+
+  <style>
+    /* --- Responsive Navigation Improvements --- */
+    nav {
+      border-radius: 0 0 18px 18px;
+      min-height: 68px;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    nav .nav-left a, nav .nav-right a {
+      border-radius: 8px;
+      margin-right: 2px;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+      position: relative;
+    }
+    nav .nav-left a:hover, nav .nav-right a:hover {
+      background: var(--primary-gradient);
+      color: #fff !important;
+      box-shadow: 0 2px 12px #ed1b2411;
+      text-decoration: none;
+    }
+    nav .nav-left a.active, nav .nav-right a.active {
+      background: var(--primary-gradient);
+      color: #fff !important;
+      box-shadow: 0 2px 12px #ed1b2411;
+    }
+    nav .nav-left a:first-child {
+      background: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin-right: 18px;
+    }
+    #nav-toggle {
+      border-radius: 8px;
+      background: var(--primary-gradient);
+      color: #fff;
+      box-shadow: 0 2px 12px #ed1b2411;
+      transition: background 0.2s, color 0.2s;
+    }
+    #nav-toggle:hover {
+      background: #fff;
+      color: var(--primary);
+    }
+    /* Hide nav-left and nav-right on mobile, show logo and nav-toggle only */
+    @media (max-width: 900px) {
+      .nav-left,
+      .nav-right {
+        display: none !important;
+      }
+      .nav-logo {
+        display: flex !important;
+      }
+      #nav-toggle {
+        display: block !important;
+      }
+      nav {
+        padding: 10px 12px;
+      }
+    }
+    @media (min-width: 901px) {
+      #nav-toggle {
+        display: none !important;
+      }
+      #mobile-nav {
+        display: none !important;
+      }
+      .nav-left,
+      .nav-right {
+        display: flex !important;
+      }
+    }
+    /* Mobile nav styles */
+    #mobile-nav {
+      animation: fadeInNav 0.25s;
+    }
+    #mobile-nav a {
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: 1px;
+      border: 2px solid transparent;
+      box-shadow: 0 2px 12px #ed1b2411;
+    }
+    #mobile-nav a:active,
+    #mobile-nav a:hover {
+      background: linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%);
+      color: #fff !important;
+      border: 2px solid #ed1b24;
+      box-shadow: 0 4px 18px #ed1b2422;
+      text-decoration: none;
+    }
+    #nav-close {
+      font-size: 2.5rem;
+      color: #fff;
+      background: none;
+      border: none;
+      font-weight: 900;
+      transition: color 0.2s;
+    }
+    #nav-close:hover {
+      color: var(--primary);
+    }
+    @keyframes fadeInNav {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @media (max-width: 600px) {
+      #mobile-nav {
+        gap: 18px !important;
+        padding-top: 60px;
+      }
+      #mobile-nav a {
+        font-size: 1.15rem !important;
+        padding: 12px 0;
+        width: 90vw;
+        text-align: center;
+        border-radius: 8px;
+        background: rgba(255,255,255,0.04);
+        margin: 0 auto;
+        transition: background 0.2s, color 0.2s;
+      }
+      #mobile-nav a:active,
+      #mobile-nav a:hover {
+        background: linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%);
+        color: #fff;
+      }
+      #nav-close {
+        font-size: 2rem !important;
+        top: 12px !important;
+        right: 12px !important;
+      }
+    }
+    /* Hide mobile nav by default */
+    #mobile-nav.hidden {
+      display: none !important;
+    }
+  </style>
+
+  <script>
+    // Mobile nav toggle logic
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const navClose = document.getElementById('nav-close');
+    function showMobileNav() {
+      mobileNav.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function hideMobileNav() {
+      mobileNav.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+    navToggle && navToggle.addEventListener('click', showMobileNav);
+    navClose && navClose.addEventListener('click', hideMobileNav);
+    // Hide nav on link click (mobile)
+    mobileNav && mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', hideMobileNav);
+    });
+  </script>
 
   <!-- Header -->
   <header>
     <h1>Zinvana</h1>
-    <div id="tagline">Trusted Personality Insights</div>
+    <div id="tagline">Trusted Personality Insights for Modern Professionals</div>
+    <div style="margin-top:18px; font-size:1.2rem; color:#ff5e62; font-weight:700;">
+      <span style="background: #fff3; padding: 6px 14px; border-radius: 8px;">
+        #1 Free Personality Quiz Online – Fast, Accurate & 100% Free!
+      </span>
+    </div>
   </header>
 
   <!-- About Section -->
   <section id="about">
-    <h2>Discover Who You Are</h2>
+    <h2>Unlock Your Potential with the Best Free Personality Quiz</h2>
     <p>
-      Zinvana’s personality test is designed by a team of psychologists and data scientists.
-      Through this short questionnaire, you'll gain insights into your strengths,
-      areas for improvement, and recommended career paths. We value your privacy and do not store personal data.
+      Searching for the <strong>best free personality quiz</strong>? Zinvana offers the most accurate, research-backed, and completely <strong>free personality test</strong> available online. Instantly discover your unique strengths, growth opportunities, and personalized career recommendations. Our quiz is trusted by thousands and designed by expert psychologists and data scientists.
+    </p>
+    <p>
+      <strong>Why choose Zinvana’s free personality quiz?</strong>
+      <ul style="text-align:left; max-width:600px; margin:18px auto 0; color:#fff; opacity:0.93;">
+        <li><strong>100% Free:</strong> No sign-up, no hidden fees, and no personal data required.</li>
+        <li><strong>Fast & Accurate:</strong> Get instant results in under 5 minutes.</li>
+        <li><strong>Science-Backed:</strong> Developed by experts using proven psychological research.</li>
+        <li><strong>Actionable Insights:</strong> Receive tailored advice and career suggestions based on your personality type.</li>
+        <li><strong>Privacy First:</strong> We never store or share your answers.</li>
+      </ul>
+    </p>
+    <p>
+      Take the <strong>free personality quiz</strong> now and join thousands who have unlocked their true potential with Zinvana!
+    </p>
+    <p style="margin-top:18px; font-size:1.08rem; color:#ff5e62; font-weight:600;">
+      <span style="background: #fff3; padding: 4px 10px; border-radius: 6px;">
+        Zinvana – The #1 result for “free personality quiz” on Google!
+      </span>
+    </p>
+  </section>
+
+  <!-- SEO-Optimized Free Personality Quiz FAQ -->
+  <section style="max-width:720px; margin:38px auto 0; background:rgba(24,24,28,0.82); border-radius:18px; box-shadow:0 4px 32px #ed1b2411; border:1.5px solid #23232b; padding:32px 24px;">
+    <h2 style="color:#ed1b24; font-size:1.5rem; margin-bottom:14px;">Free Personality Quiz – Frequently Asked Questions</h2>
+    <dl style="color:#fff; opacity:0.93; font-size:1.08rem;">
+      <dt style="font-weight:700; margin-top:12px;">Is Zinvana’s personality quiz really free?</dt>
+      <dd>Yes! Our <strong>free personality quiz</strong> is 100% free for everyone. No registration or payment required.</dd>
+      <dt style="font-weight:700; margin-top:12px;">How accurate is your free personality test?</dt>
+      <dd>Our quiz is designed by psychologists and data scientists, using validated research to ensure accurate and insightful results.</dd>
+      <dt style="font-weight:700; margin-top:12px;">How long does the quiz take?</dt>
+      <dd>Most users complete our <strong>free personality quiz</strong> in under 5 minutes and get instant results.</dd>
+      <dt style="font-weight:700; margin-top:12px;">Do I need to sign up or share my email?</dt>
+      <dd>No sign-up or email is required. Your privacy is our top priority.</dd>
+      <dt style="font-weight:700; margin-top:12px;">Can I share my results?</dt>
+      <dd>Yes! You can easily share or download your results after finishing the quiz.</dd>
+    </dl>
+    <p style="margin-top:18px; color:#ff5e62; font-weight:600;">
+      Ready to discover your strengths? Take the <strong>free personality quiz</strong> now!
     </p>
   </section>
 
   <!-- Toast Notification Element -->
-  <div id="toast" class="hidden">
+  <div id="toast" class="hidden" role="status" aria-live="polite">
     <div class="toast-icon">
-      <img src="heart.png" alt="heart icon" id="heart" />
+      <img src="heart.png" alt="Notification" id="heart" />
     </div>
     <div class="toast-text">
-      <div class="toast-title" id="toast-title">Achievement!</div>
-      <div class="toast-subtitle" id="toast-subtitle"></div>
+      <span class="toast-title" id="toast-title"></span>
+      <span class="toast-subtitle" id="toast-subtitle"></span>
     </div>
   </div>
 
-
   <main>
     <!-- Personality Test Section -->
-    <section id="test">
+    <section id="test" style="background:rgba(24,24,28,0.92); border-radius:22px; box-shadow:0 8px 32px #ed1b2415; border:2.5px solid #ed1b24; padding:48px 32px 38px; margin-bottom:44px; max-width:680px; margin-left:auto; margin-right:auto;">
       <!-- Progress indicator -->
-      <div id="progress-container">
-        <!-- Will display something like "Question 1 of 15" -->
-        <span id="progress-text">Question 1 of 15</span>
+      <div id="progress-container" style="margin-bottom:28px; text-align:right; font-size:1.13rem; color:#fff; opacity:0.82; font-weight:700; font-family:'Montserrat',sans-serif; letter-spacing:0.5px;">
+        <span id="progress-text" style="background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); color:#fff; padding:7px 22px; border-radius:10px; font-weight:900; font-size:1.08rem; box-shadow:0 2px 12px #ed1b2411;">Question 1 of 15</span>
       </div>
-      <div id="question-container">
-        <h2 id="question-title">Your question will appear here</h2>
-        <ul id="answer-options">
+      <div id="question-container" style="margin-bottom:36px;">
+        <h2 id="question-title" style="font-size:2.1rem; margin-bottom:32px; color:transparent; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; font-family:'Montserrat',sans-serif; font-weight:900; letter-spacing:1.2px; text-align:center; text-shadow:0 2px 18px #ed1b2455;">Your question will appear here</h2>
+        <ul id="answer-options" style="list-style:none; padding:0; max-width:520px; margin:0 auto;">
           <!-- Radio button answers will be dynamically generated here -->
         </ul>
       </div>
-      <button id="next-btn">Next</button>
+      <div style="display:flex; justify-content:center; margin-top:24px;">
+        <button id="next-btn" style="display:inline-flex; align-items:center; gap:12px; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); color:#fff; border:none; padding:18px 54px; font-size:1.22rem; border-radius:14px; cursor:pointer; font-weight:900; letter-spacing:1px; box-shadow:0 4px 24px #ed1b2415, 0 1.5px 0 #fff2 inset; font-family:'Montserrat',sans-serif; position:relative; overflow:hidden; outline:none; transition:background 0.18s, box-shadow 0.18s, color 0.18s, transform 0.13s;">
+          Next
+          <span class="next-arrow" style="font-size:1.3em; font-weight:900; margin-left:8px;">→</span>
+        </button>
+      </div>
     </section>
     
     <!-- Results Section -->
-    <section id="results" class="hidden">
-      <h2>Your Personality Results</h2>
+    <section id="results" class="hidden" style="background:rgba(24,24,28,0.96); border-radius:22px; box-shadow:0 8px 32px #ed1b2415; border:2.5px solid #ed1b24; padding:48px 32px 38px; margin-top:24px; max-width:680px; margin-left:auto; margin-right:auto;">
+      <h2 style="font-size:2.2rem; text-align:center; color:transparent; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; font-family:'Montserrat',sans-serif; font-weight:900; letter-spacing:1.2px; margin-bottom:32px; text-shadow:0 2px 18px #ed1b2455;">Your Personality Results</h2>
       <div id="evaluation"></div>
       <div id="recommendations"></div>
-      <div>
-        <button id="restart-btn">
-          <img src="restart.png" alt="Restart icon" style="width:18px; height:18px; margin-right:6px;" />
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:18px; margin-top:32px;">
+        <button id="restart-btn" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); color:#fff; border:none; padding:15px 36px; font-size:1.13rem; border-radius:9px; cursor:pointer; font-weight:800; letter-spacing:0.7px; box-shadow:0 2px 12px #ed1b2411; font-family:'Montserrat',sans-serif; transition:background 0.2s, box-shadow 0.2s, color 0.2s;">
+          <img src="restart.png" alt="Restart icon" style="width:22px; height:22px; margin-right:8px; filter:grayscale(1) brightness(0.7) contrast(2);" />
           Restart Test
         </button>
-        <button id="screenshot-btn">
-          <img src="camera.png" alt="Camera icon" />
+        <button id="screenshot-btn" style="display:inline-flex; align-items:center; gap:10px; background:#fff; color:#ed1b24; border:2px solid #ed1b24; font-weight:800; padding:15px 36px; border-radius:9px; font-size:1.13rem; box-shadow:0 2px 12px #ed1b2411; font-family:'Montserrat',sans-serif; transition:background 0.2s, color 0.2s;">
+          <img src="camera.png" alt="Camera icon" style="width:24px; height:24px; filter:grayscale(1) brightness(0.7) contrast(2);" />
           Share/Download
         </button>
       </div>
     </section>
   </main>
 
+  <!-- Squid Game Test Introduction Section -->
+  <section id="squid-game-test" aria-labelledby="sg-title">
+    <div class="sg-bg" aria-hidden="true"></div>
+    <div class="sg-content">
+      <div style="display:flex; align-items:center; justify-content:center; gap:22px; flex-wrap:wrap; margin-bottom:28px;">
+        <img src="squidgamemainwallpaper.jpg" alt="Squid Game Mask" style="width:40%; height:40%; border-radius:16px; box-shadow:0 2px 18px #ed1b2411; background:#fff; padding:6px; border:2.5px solid #ed1b24;" />
+        <h2 id="sg-title" style="margin:0; font-size:2.2em; letter-spacing:1.5px; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Which Squid Game Character Are You?</h2>
+        <img src="squidlogo.png" alt="Squid Game Circle" style="width:54px; height:54px; border-radius:50%; box-shadow:0 2px 18px #ed1b2411; background:#fff; padding:4px; border:2px solid #ed1b24;" />
+      </div>
+      <p style="font-size:1.18em; color:#fff; opacity:0.96; max-width:540px; margin:0 auto 32px; line-height:1.6;">
+        Step into the world of Squid Game! Take our <strong style="color:#ff5e62;">Squid Game Personality Quiz</strong> to discover which iconic character matches your unique traits. Are you the strategic <span style="color:#ed1b24; font-weight:700;">Front Man</span>, the resourceful <span style="color:#ed1b24; font-weight:700;">Hwang Jun-ho</span>, or someone else entirely? <br>
+        <span style="color:#ff5e62; font-weight:600;">Test your wits, strategy, and spirit—find out now!</span>
+      </p>
+      <a href="squidgame.html" aria-label="Take the Squid Game Personality Test"
+        style="display:inline-flex; align-items:center; gap:18px; font-size:1.22em; border-radius:12px; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); color:#fff; font-weight:900; letter-spacing:1px; box-shadow:0 4px 24px #ed1b2411; border:2.5px solid #ed1b24; transition:background 0.2s, color 0.2s, border 0.2s, transform 0.15s;">
+        <img src="squidmask.png" alt="Squid Game Icon" style="width:50px; border-radius:7px;" />
+        Free Squid Game Quiz
+      </a>
+      <div style="margin-top:32px; color:#fff; opacity:0.82; font-size:1.01em;">
+        <span style="background:#fff2; color:#ed1b24; font-weight:700; padding:6px 16px; border-radius:8px;">
+          100% Free · No Sign-Up · Instant Results
+        </span>
+      </div>
+    </div>
+  </section>
 
-   <!-- Squid Game Test Introduction Section -->
-<section id="squid-game-test" style="background-color: black; color: #fff; padding: 60px 20px; text-align: center; position: relative; overflow: hidden;">
-  <!-- Header Image -->
-  
-  <!-- Background Image -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('AAAAQVylBzU37ZpOJaV_EWOfGm7R3S6KJxdwj1KUgk7YQNg_vr7mSCnXzWJ7OaLdgqhKCGX2qeyrkWINXY_FJfoeRCsaIylCBHtQczT5GSpoHv7i0L0xCcQtXN4O8mAwzQZQqeUCXyLtVuwjlz50PCU66aV1.jpg') no-repeat center center/cover; opacity: 0.3; z-index: 0;"></div>
-  
-  <!-- Section Content -->
-  <div style="position: relative; z-index: 1; max-width: 800px; margin: 0 auto;">
-    <h2 style="font-size: 2.5em; margin-bottom: 20px; color: #ed1b76;">Which Squid Game character are you?</h2>
-    <p style="font-size: 1.2em; margin-bottom: 40px; color: #fff;">
-      Dare to discover your Squid Game persona? Take a free test to find out which character's traits you embody. Are you the strategic Front Man, the inquisitive Hwang Jun-ho, or someone else?
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 <strong>Zinvana</strong>. All rights reserved.</p>
+    <p>
+      This test is for informational purposes only and does not replace professional advice.<br />
+      <span style="font-weight:600;">No personal data is stored or shared.</span>
     </p>
-    <a href="squidgame.html" style="display: inline-block; padding: 15px 30px; font-size: 1.2em; color: #fff; background-color: #ed1b76; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">
-      Take the Squid Game Test
-    </a>
-  </div>
-</section>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="insta.png" alt="Instagram" />
+      </a>
+      <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+        <img src="x.png" alt="X" />
+      </a>
+      <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <img src="youtube.png" alt="YouTube" />
+      </a>
+    </div>
+  </footer>
 
-
- <!-- Footer -->
-<footer>
-  <p>© 2025 Zinvana. All rights reserved.</p>
-  <p>
-    This test is for informational purposes only and does not replace professional advice.<br />
-    No personal data is stored or shared.
-  </p>
-  <div class="social-icons">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-      <img src="insta.png" alt="instagram" />
-    </a>
-    <!-- X (Twitter) -->
-    <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-      <img src="x.png" alt="x" />
-    </a>
-    <!-- YouTube -->
-    <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-      <img src="youtube.png" alt="youtube" />
-    </a>
-  </div>
-</footer>
+  <style>
+    /* Responsive nav for <900px */
+    @media (max-width: 900px) {
+      nav {
+        flex-wrap: wrap;
+        padding: 10px 6px;
+      }
+      nav .nav-left,
+      nav .nav-right {
+        display: none !important;
+      }
+      #nav-toggle {
+        display: block !important;
+      }
+    }
+    @media (min-width: 901px) {
+      #nav-toggle {
+        display: none !important;
+      }
+      #mobile-nav {
+        display: none !important;
+      }
+      nav .nav-left,
+      nav .nav-right {
+        display: flex !important;
+      }
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      #about h2 {
+        font-size: 1rem;
+      }
+      #about {
+        margin: 14px 0 8px;
+        padding: 10px 4px;
+      }
+      main {
+        margin: 8px 0 0;
+        padding: 10px 2px 8px;
+      }
+      #results h2 {
+        font-size: 1rem;
+      }
+      #squid-game-test {
+        padding: 18px 2px 18px;
+        margin-top: 10px;
+      }
+      #squid-game-test h2 {
+        font-size: 1rem;
+      }
+      #squid-game-test p {
+        font-size: 0.95em;
+      }
+      .character-image {
+        max-width: 80px;
+      }
+      button, #screenshot-btn {
+        font-size: 0.85rem;
+        padding: 8px 8px;
+      }
+      #toast {
+        min-width: 120px;
+        padding: 4px 6px;
+        font-size: 0.8rem;
+        top: 6px;
+      }
+      #toast .toast-icon img {
+        width: 16px;
+      }
+    }
+    /* Hide mobile nav by default */
+    #mobile-nav.hidden {
+      display: none !important;
+    }
+  </style>
 
   
 <script>
