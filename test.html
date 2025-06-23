@@ -33,103 +33,36 @@
       --glass-bg: rgba(24, 24, 28, 0.82);
       --accent: #ff5e62;
       --secondary: #23232b;
+      --card-bg: rgba(30,32,38,0.98);
+      --card-shadow: 0 8px 32px #ed1b2415;
+      --divider: linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%);
     }
     html, body {
       margin: 0;
       padding: 0;
-      background: var(--black);
+      background: linear-gradient(120deg, #18181f 0%, #23232b 100%);
       color: var(--white);
       font-family: 'Roboto', Arial, sans-serif;
       min-height: 100vh;
       scroll-behavior: smooth;
-      background: linear-gradient(120deg, #18181f 0%, #23232b 100%);
-    }
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    a:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--glass-bg);
-      padding: 18px 40px;
-      box-shadow: 0 2px 18px rgba(237,27,36,0.13);
-      border-bottom: 3px solid var(--primary);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(8px);
-    }
-    nav .nav-left,
-    nav .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-    nav a {
-      color: var(--white);
-      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1.13rem;
-      letter-spacing: 0.5px;
-      padding: 6px 0;
-      border-bottom: 2px solid transparent;
-      transition: border 0.2s, color 0.2s;
-      position: relative;
-    }
-    nav a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: var(--primary-gradient);
-      transition: width 0.3s;
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-    }
-    nav a:hover {
-      color: var(--primary);
-    }
-    nav a:hover::after {
-      width: 100%;
-    }
-    nav img#brand-logo {
-      width: 62px;
-      min-width: 62px;
-      margin-right: 18px;
-      filter: grayscale(1) brightness(2) contrast(2) drop-shadow(0 0 8px #ed1b2422);
-      pointer-events: none;
-      border-radius: 12px;
-      background: #fff;
-      padding: 2px;
     }
 
-    header {
+    /* --- HERO SECTION --- */
+    .hero {
+      background: linear-gradient(120deg, #ed1b24 0%, #23232b 100%);
+      padding: 64px 0 48px 0;
       text-align: center;
-      padding: 56px 10px 36px;
-      background: linear-gradient(90deg, #18181f 60%, #23232b 100%);
-      border-bottom: 2px solid var(--primary);
-      position: relative;
-      box-shadow: 0 4px 32px #ed1b2411;
+      box-shadow: 0 8px 32px #ed1b2411;
+      border-bottom: 3px solid #ed1b24;
+      margin-bottom: 36px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 3.4rem;
-      color: transparent;
-      background: var(--primary-gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: 2.5px;
+    .hero h1 {
+      font-size: 2.8rem;
       font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
       font-weight: 900;
+      color: #fff;
+      margin-bottom: 18px;
+      letter-spacing: 2px;
       text-shadow: 0 2px 18px #ed1b2455;
     }
     #tagline {
@@ -142,30 +75,41 @@
       font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
       text-shadow: 0 1px 8px #ed1b2411;
     }
-
-    #about {
-      max-width: 720px;
-      margin: 54px auto 38px;
-      padding: 38px 32px;
-      text-align: center;
-      background: var(--glass-bg);
-      border-radius: var(--border-radius);
-      box-shadow: 0 4px 32px #ed1b2411;
-      border: 1.5px solid #23232b;
-      backdrop-filter: blur(6px);
-      position: relative;
-    }
-    #about::before {
-      content: '';
-      position: absolute;
-      top: -18px; left: 50%;
-      transform: translateX(-50%);
-      width: 80px; height: 6px;
-      border-radius: 3px;
+    .hero .cta-btn {
       background: var(--primary-gradient);
-      opacity: 0.7;
+      color: #fff;
+      font-size: 1.22rem;
+      font-weight: 900;
+      padding: 18px 54px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 24px #ed1b2415, 0 1.5px 0 #fff2 inset;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      transition: background 0.18s, box-shadow 0.18s, color 0.18s, transform 0.13s;
+      outline: none;
+      margin-top: 12px;
     }
-    #about h2 {
+    .hero .cta-btn:hover {
+      background: #fff;
+      color: var(--primary);
+      box-shadow: 0 6px 32px #ed1b2422, 0 1.5px 0 #ed1b2411 inset;
+      border: 2.5px solid var(--primary);
+      transform: translateY(-2px) scale(1.03);
+    }
+    /* --- CARD LAYOUTS --- */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      border: 1.5px solid #23232b;
+      padding: 38px 32px;
+      margin: 38px auto;
+      max-width: 720px;
+      position: relative;
+      transition: box-shadow 0.2s;
+    }
+    .card h2 {
       font-size: 2.1rem;
       color: var(--primary);
       margin-bottom: 18px;
@@ -173,85 +117,34 @@
       letter-spacing: 1.2px;
       font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
     }
-    #about p {
+    .card p, .card ul, .card dl {
       color: #eee;
       line-height: 1.7;
       font-size: 1.13rem;
-      margin-bottom: 0;
       opacity: 0.93;
       font-family: 'Roboto', Arial, sans-serif;
     }
-
-    #toast {
-      position: fixed;
-      top: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      background: var(--glass-bg);
-      border: 2.5px solid var(--primary);
-      padding: 16px 26px;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px #ed1b2422;
-      font-family: 'Roboto', Arial, sans-serif;
-      opacity: 0;
-      transition: opacity 0.5s ease, transform 0.3s;
-      z-index: 11000;
-      min-width: 340px;
-      max-width: 92vw;
-      backdrop-filter: blur(8px);
-      pointer-events: none;
+    .divider {
+      height: 4px;
+      width: 120px;
+      margin: 32px auto;
+      border-radius: 2px;
+      background: var(--divider);
+      opacity: 0.7;
     }
-    #toast.show {
-      opacity: 1;
-      transform: translateX(-50%) scale(1.04);
-    }
-    #toast .toast-icon {
-      margin-right: 16px;
-      display: flex;
-      align-items: center;
-    }
-    #toast .toast-icon img {
-      width: 36px;
-      filter: drop-shadow(0 0 8px var(--primary));
-    }
-    #toast .toast-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    #toast .toast-title {
-      color: var(--primary);
-      font-size: 1.18rem;
-      margin-bottom: 2px;
-      font-weight: 800;
-      letter-spacing: 0.7px;
-      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-    }
-    #toast .toast-subtitle {
-      color: #fff;
-      font-size: 1.05rem;
-      opacity: 0.95;
-      font-family: 'Roboto', Arial, sans-serif;
-    }
-    .hidden {
-      display: none;
-    }
-
-    main {
-      max-width: 740px;
-      margin: 38px auto 0;
-      background: var(--glass-bg);
-      padding: 48px 40px 38px;
-      border-radius: var(--border-radius);
-      box-shadow: 0 4px 32px #ed1b2411;
-      border: 1.5px solid #23232b;
-      backdrop-filter: blur(6px);
-    }
-
+    /* --- QUIZ SECTION --- */
     #test {
+      background: var(--card-bg);
+      border-radius: 22px;
+      box-shadow: var(--card-shadow);
+      border: 2.5px solid var(--primary);
+      padding: 48px 32px 38px;
       margin-bottom: 44px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      transition: box-shadow 0.2s;
     }
     #progress-container {
       margin-bottom: 22px;
@@ -262,33 +155,57 @@
       font-weight: 600;
       font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
     }
-    #question-container {
-      margin-bottom: 36px;
+    #progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #23232b;
+      border-radius: 6px;
+      margin-bottom: 18px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px #ed1b2411;
+    }
+    #progress-bar-inner {
+      height: 100%;
+      background: var(--primary-gradient);
+      width: 0;
+      border-radius: 6px;
+      transition: width 0.4s cubic-bezier(.68,-0.55,.27,1.55);
     }
     #question-title {
-      font-size: 1.45rem;
+      font-size: 1.7rem;
       margin-bottom: 26px;
       color: var(--primary);
-      font-weight: 800;
-      letter-spacing: 0.7px;
+      font-weight: 900;
+      letter-spacing: 1px;
       font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      text-align: center;
+      text-shadow: 0 2px 18px #ed1b2455;
     }
     #answer-options {
       list-style: none;
       padding: 0;
+      max-width: 520px;
+      margin: 0 auto;
     }
     #answer-options li {
-      background: var(--secondary);
+      background: #23232b;
       margin-bottom: 20px;
-      padding: 20px 20px 20px 18px;
-      border-radius: 10px;
+      padding: 22px 22px 22px 18px;
+      border-radius: 12px;
       border: 2px solid #23232b;
       transition: background 0.3s, transform 0.18s, border 0.3s, box-shadow 0.2s;
       box-shadow: 0 2px 12px #ed1b2412;
       position: relative;
+      cursor: pointer;
+      font-size: 1.15rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
+    #answer-options li.selected,
     #answer-options li:hover {
-      background: #23232b;
+      background: #18181f;
       border: 2px solid var(--primary);
       transform: translateY(-2px) scale(1.012);
       box-shadow: 0 4px 18px #ed1b2422;
@@ -303,15 +220,16 @@
       font-weight: 500;
       letter-spacing: 0.2px;
       font-family: 'Roboto', Arial, sans-serif;
+      width: 100%;
     }
     #answer-options input[type="radio"] {
       appearance: none;
       -webkit-appearance: none;
       background-color: #fff;
       border: 2.5px solid var(--primary);
-      width: 24px;
-      height: 24px;
-      margin-right: 16px;
+      width: 26px;
+      height: 26px;
+      margin-right: 18px;
       outline: none;
       cursor: pointer;
       border-radius: 50%;
@@ -319,6 +237,7 @@
       top: 1px;
       transition: background-color 0.2s, border-color 0.2s;
       box-shadow: 0 1px 6px #ed1b2411;
+      flex-shrink: 0;
     }
     #answer-options input[type="radio"]:checked {
       border-color: var(--primary);
@@ -332,138 +251,93 @@
       background: #fff;
       border-radius: 50%;
       position: absolute;
-      left: 5px;
-      top: 5px;
+      left: 6px;
+      top: 6px;
     }
-
-    /* --- Enhanced Next Button Styling --- */
-    #next-btn {
-      display: inline-flex;
+    /* --- TOAST --- */
+    #toast {
+      position: fixed;
+      top: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background: var(--primary-gradient);
-      color: #fff;
-      border: none;
-      padding: 18px 48px;
-      font-size: 1.22rem;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: background 0.18s, box-shadow 0.18s, color 0.18s, transform 0.13s;
-      margin: 32px 10px 0 0;
-      font-weight: 900;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 24px #ed1b2415, 0 1.5px 0 #fff2 inset;
-      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-      position: relative;
-      overflow: hidden;
-      outline: none;
-    }
-    #next-btn::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; width: 100%; height: 100%;
-      background: linear-gradient(120deg,rgba(255,255,255,0.08) 0%,rgba(255,255,255,0.03) 100%);
-      pointer-events: none;
-      z-index: 1;
-      border-radius: 14px;
-    }
-    #next-btn:hover, #next-btn:focus {
-      background: #fff;
-      color: var(--primary);
-      box-shadow: 0 6px 32px #ed1b2422, 0 1.5px 0 #ed1b2411 inset;
+      background: rgba(24,24,28,0.98);
       border: 2.5px solid var(--primary);
-      transform: translateY(-2px) scale(1.03);
+      padding: 18px 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px #ed1b2422;
+      font-family: 'Roboto', Arial, sans-serif;
+      opacity: 0;
+      transition: opacity 0.5s, transform 0.3s;
+      z-index: 11000;
+      min-width: 320px;
+      max-width: 95vw;
+      backdrop-filter: blur(10px);
+      pointer-events: none;
     }
-    #next-btn:active {
-      background: var(--primary-gradient);
-      color: #fff;
-      box-shadow: 0 2px 8px #ed1b2411;
-      transform: scale(0.98);
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.04);
     }
-    #next-btn .next-arrow {
-      display: inline-block;
-      margin-left: 8px;
-      font-size: 1.3em;
-      font-weight: 900;
-      vertical-align: middle;
-      transition: transform 0.18s;
-    }
-    #next-btn:hover .next-arrow {
-      transform: translateX(4px) scale(1.12);
-    }
-
-    button {
-      display: inline-block;
-      background: var(--primary-gradient);
-      color: #fff;
-      border: none;
-      padding: 15px 36px;
-      font-size: 1.13rem;
-      border-radius: 9px;
-      cursor: pointer;
-      transition: background 0.2s, box-shadow 0.2s, color 0.2s;
-      margin: 28px 10px 0 0;
-      font-weight: 800;
-      letter-spacing: 0.7px;
-      box-shadow: 0 2px 12px #ed1b2411;
-      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-    }
-    button:hover {
-      background: #fff;
-      color: var(--primary);
-      box-shadow: 0 4px 18px #ed1b2422;
-      border: 2px solid var(--primary);
-    }
-    #screenshot-btn {
-      display: inline-flex;
+    #toast .toast-icon {
+      margin-right: 16px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      background: #fff;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-      margin-left: 0;
-      margin-right: 0;
-      font-weight: 800;
-    }
-    #screenshot-btn:hover {
       background: var(--primary-gradient);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      box-shadow: 0 2px 12px #ed1b2411;
+    }
+    #toast .toast-icon img {
+      width: 32px;
+      filter: drop-shadow(0 0 8px #ed1b24);
+    }
+    #toast .toast-title {
+      color: var(--primary);
+      font-size: 1.22rem;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      font-family: 'Montserrat',sans-serif;
+      margin-bottom: 2px;
+      text-shadow: 0 2px 12px #ed1b2411;
+    }
+    #toast .toast-subtitle {
       color: #fff;
+      font-size: 1.08rem;
+      opacity: 0.97;
+      font-family: 'Roboto',Arial,sans-serif;
     }
-    #screenshot-btn img {
-      width: 24px;
-      height: 24px;
-      filter: grayscale(1) brightness(0.7) contrast(2);
-    }
-    #restart-btn img {
-      width: 22px;
-      height: 22px;
-      margin-right: 8px;
-      filter: grayscale(1) brightness(0.7) contrast(2);
-    }
-
+    /* --- RESULTS --- */
     #results {
-      background: var(--secondary);
-      padding: 40px 32px 32px;
+      background: var(--card-bg);
+      padding: 48px 32px 38px;
       border-radius: var(--border-radius);
-      box-shadow: 0 2px 18px #ed1b2411;
+      box-shadow: var(--card-shadow);
       margin-top: 34px;
       text-align: left;
       border: 2px solid var(--primary);
       position: relative;
       overflow: hidden;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
     }
     #results h2 {
-      font-size: 1.8rem;
-      margin-bottom: 28px;
+      font-size: 2.2rem;
       text-align: center;
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 12px;
-      color: var(--primary);
+      color: transparent;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Montserrat',sans-serif;
       font-weight: 900;
       letter-spacing: 1.2px;
-      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      margin-bottom: 32px;
+      text-shadow: 0 2px 18px #ed1b2455;
     }
     .result-section {
       margin-bottom: 26px;
@@ -491,7 +365,7 @@
       font-family: 'Roboto', Arial, sans-serif;
     }
     .character-image {
-      max-width: 200px;
+      max-width: 160px;
       display: block;
       margin: 14px auto 22px;
       border-radius: 12px;
@@ -574,24 +448,15 @@
     }
 
     footer {
-      background: var(--glass-bg);
+      background: #18181f;
       padding: 32px 10px 22px;
       text-align: center;
       border-top: 2px solid var(--primary);
       margin-top: 54px;
       box-shadow: 0 -2px 18px #ed1b2411;
       font-family: 'Roboto', Arial, sans-serif;
-      backdrop-filter: blur(6px);
-    }
-    footer p {
-      margin: 9px 0;
-      font-size: 1.09rem;
       color: #fff;
-      opacity: 0.75;
-      font-weight: 500;
-    }
-    footer .social-icons {
-      margin-top: 16px;
+      backdrop-filter: blur(6px);
     }
     footer .social-icons img {
       width: 38px;
@@ -609,84 +474,26 @@
       filter: grayscale(0) brightness(1.1) contrast(1.1) drop-shadow(0 0 6px var(--primary));
       background: var(--primary);
     }
-
-    /* Responsive */
+    /* --- RESPONSIVE --- */
     @media (max-width: 900px) {
-      nav {
-        padding: 12px 10px;
-      }
-      main {
-        padding: 22px 8px 18px;
-      }
-      #about {
-        padding: 18px 8px;
-      }
-      #results {
-        padding: 18px 8px 12px;
-      }
-      #squid-game-test .sg-content {
-        padding: 0 6px;
-      }
-      #next-btn {
-        padding: 14px 22px;
-        font-size: 1.05rem;
-      }
+      nav { padding: 0 8px; }
+      .hero h1 { font-size: 2.2rem; }
+      .card, #test, #results { padding: 18px 8px 18px; }
+      .character-image { max-width: 110px; }
+      .nav-links { gap: 12px; }
     }
     @media (max-width: 600px) {
-      nav .nav-left,
-      nav .nav-right {
-        gap: 12px;
-      }
-      nav img#brand-logo {
-        width: 38px;
-        min-width: 38px;
-        margin-right: 8px;
-      }
-      header {
-        padding: 28px 4px 18px;
-      }
-      header h1 {
-        font-size: 2.1rem;
-      }
-      #about h2 {
-        font-size: 1.2rem;
-      }
-      #about {
-        margin: 24px 0 18px;
-      }
-      main {
-        margin: 18px 0 0;
-      }
-      #results h2 {
-        font-size: 1.1rem;
-      }
-      #squid-game-test {
-        padding: 36px 4px 36px;
-        margin-top: 24px;
-      }
-      #squid-game-test h2 {
-        font-size: 1.1rem;
-      }
-      #squid-game-test p {
-        font-size: 1em;
-      }
-      .character-image {
-        max-width: 110px;
-      }
-      button, #screenshot-btn, #next-btn {
-        font-size: 0.95rem;
-        padding: 10px 14px;
-      }
-      #toast {
-        min-width: 180px;
-        padding: 8px 10px;
-        font-size: 0.9rem;
-        top: 10px;
-      }
-      #toast .toast-icon img {
-        width: 20px;
-      }
+      .hero { padding: 28px 4px 18px; }
+      .hero h1 { font-size: 1.5rem; }
+      .card h2 { font-size: 1.2rem; }
+      .character-image { max-width: 80px; }
+      .card, #test, #results { margin: 14px 0 8px; padding: 10px 4px; }
+      .nav-brand .brand-name { font-size: 0.98rem; }
     }
+
+
+    .fade-init { opacity: 0; transform: translateY(30px); transition: all 0.7s; }
+.fade-in { opacity: 1 !important; transform: none !important; }
   </style>
 </head>
 <body>
@@ -694,10 +501,10 @@
 <!-- Professional Navigation Bar -->
 <nav>
   <div class="nav-brand">
-    <a href="index.html" aria-label="Zinvana Home">
+    <a href="index.html" aria-label="Zinvana Home" style="display:flex;align-items:center;gap:0;">
       <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+      <span class="brand-name" style="margin-left:0;">Zinvana</span>
     </a>
-    <span class="brand-name">Zinvana</span>
   </div>
   <div class="nav-links nav-left">
     <a href="#faq">FAQ</a>
@@ -726,7 +533,8 @@
   nav {
     position: sticky;
     top: 0;
-    width: 100%;
+    padding: 10px;
+    max-width: 100% !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -734,7 +542,6 @@
     backdrop-filter: blur(18px) saturate(1.2);
     box-shadow: 0 8px 32px #ed1b2422, 0 1.5px 0 #fff2 inset;
     border-bottom: 3.5px solid #ed1b24;
-    padding: 0 54px;
     min-height: 76px;
     z-index: 10000;
     transition: background 0.3s;
@@ -743,7 +550,7 @@
   .nav-brand {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 0;
   }
   .nav-brand .brand-name {
     font-size: 1.65rem;
@@ -756,17 +563,18 @@
     background-clip: text;
     text-shadow: 0 2px 18px #ed1b2411;
     display: inline-block;
-    margin-left: 4px;
+    margin-left: 3% !important;
   }
   nav #brand-logo {
-    width: 62px;
+    width: 2%;
     min-width: 62px;
-    border-radius: 16px;
+    border-radius: 50%;
     background: #fff;
-    padding: 4px;
+    padding: 0px;
     box-shadow: 0 4px 18px #ed1b2411;
     filter: grayscale(1) brightness(2.2) contrast(2.2) drop-shadow(0 0 12px #ed1b2422);
     transition: transform 0.18s, box-shadow 0.18s;
+    margin-right:0;
   }
   nav #brand-logo:hover {
     transform: scale(1.08) rotate(-2deg);
@@ -775,14 +583,13 @@
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 38px;
+    gap: 30px;
   }
   nav a {
-    color: #fff;
+    color: #ffffff;
     font-weight: 800;
     font-size: 1.18rem;
     letter-spacing: 0.7px;
-    padding: 12px 0;
     border-bottom: 2.5px solid transparent;
     transition: border 0.2s, color 0.2s, background 0.2s;
     position: relative;
@@ -826,7 +633,6 @@
     background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
     border: none;
     cursor: pointer;
-    margin-left: 22px;
     z-index: 10001;
     border-radius: 12px;
     box-shadow: 0 2px 12px #ed1b2411;
@@ -860,7 +666,7 @@
     box-shadow: 0 2px 8px #ed1b2422;
   }
   .nav-toggle:focus {
-    outline: 2px solid #ed1b24;
+    outline: 2px solid #dd2525;
     outline-offset: 2px;
   }
   .nav-toggle:hover {
@@ -927,10 +733,10 @@
     .nav-brand .brand-name {
       display: inline-block;
       font-size: 1.18rem;
+      margin-left: 10% !important;
     }
     nav #brand-logo {
-      width: 44px;
-      min-width: 44px;
+      width: 70px !important;
     }
     .nav-mobile {
       display: none;
@@ -1006,103 +812,67 @@
   });
 </script>
 
-  <!-- Header -->
-  <header>
-    <h1>Zinvana</h1>
-    <div id="tagline">Trusted Personality Insights for Modern Professionals</div>
-    <div class="header-badge">
-      <span>
-        #1 Free Personality Quiz Online – Fast, Accurate & 100% Free!
-      </span>
-    </div>
-    <style>
-      .header-badge {
-        margin-top: 18px;
-        font-size: 1.2rem;
-        color: #ff5e62;
-        font-weight: 700;
-        display: flex;
-        justify-content: center;
-      }
-      .header-badge span {
-        background: #fff3;
-        padding: 6px 14px;
-        border-radius: 8px;
-        display: inline-block;
-        max-width: 95vw;
-        text-align: center;
-        word-break: break-word;
-      }
-      @media (max-width: 600px) {
-        header {
-          padding: 18px 4px 10px !important;
-        }
-        header h1 {
-          font-size: 1.25rem !important;
-        }
-        #tagline {
-          font-size: 0.98rem !important;
-        }
-        .header-badge {
-          font-size: 0.92rem !important;
-          margin-top: 10px !important;
-        }
-        .header-badge span {
-          padding: 4px 6px !important;
-          border-radius: 6px !important;
-        }
-      }
+<!-- Professional Hero/Header Section -->
+<header class="hero" style="position:relative;">
+  <h1>
+    Discover Your True Self<br>
+    <span style="font-size:1.5rem; font-weight:700; color:#ff5e62; display:block; margin-top:10px; letter-spacing:1.2px;">
+      Free Personality Test by Zinvana
+    </span>
+  </h1>
+  <div id="tagline">
+    Uncover your strengths, growth areas, and ideal career paths in minutes.<br>
+    <span style="color:#ff5e62; font-weight:700;">100% Free · No Sign-Up · Instant Results</span>
+  </div>
+  <button class="cta-btn" onclick="document.getElementById('test').scrollIntoView({behavior:'smooth'})" style="margin-top:32px;">
+    Start the Free Test
+  </button>
+  <!-- Decorative SVG wave for visual separation -->
+  <div style="position:absolute; left:0; right:0; bottom:-1px; width:100%; pointer-events:none; z-index:2;">
+    <svg viewBox="0 0 1440 60" width="100%" height="60" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="url(#hero-wave)"/>
+      <defs>
+        <linearGradient id="hero-wave" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#ed1b24"/>
+          <stop offset="1" stop-color="#ff5e62"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</header>
 
-      .fade-init { opacity: 0; transform: translateY(30px); transition: all 0.7s; }
-.fade-in { opacity: 1 !important; transform: none !important; }
-
-    </style>
-  </header>
-
-  <!-- About Section -->
-  <section id="about">
+<!-- About Section -->
+<section id="about">
     <h2>Unlock Your Potential with the Best Free Personality Quiz</h2>
     <p>
       Searching for the <strong>best free personality quiz</strong>? Zinvana offers the most accurate, research-backed, and completely <strong>free personality test</strong> available online. Instantly discover your unique strengths, growth opportunities, and personalized career recommendations. Our quiz is trusted by thousands and designed by expert psychologists and data scientists.
     </p>
-    <p>
-      <strong>Why choose Zinvana’s free personality quiz?</strong>
-      <ul style="text-align:left; max-width:600px; margin:18px auto 0; color:#fff; opacity:0.93;">
-        <li><strong>100% Free:</strong> No sign-up, no hidden fees, and no personal data required.</li>
-        <li><strong>Fast & Accurate:</strong> Get instant results in under 5 minutes.</li>
-        <li><strong>Science-Backed:</strong> Developed by experts using proven psychological research.</li>
-        <li><strong>Actionable Insights:</strong> Receive tailored advice and career suggestions based on your personality type.</li>
-        <li><strong>Privacy First:</strong> We never store or share your answers.</li>
-      </ul>
-    </p>
-    <p>
-      Take the <strong>free personality quiz</strong> now and join thousands who have unlocked their true potential with Zinvana!
-    </p>
-    <p style="margin-top:18px; font-size:1.08rem; color:#ff5e62; font-weight:600;">
-      <span style="background: #fff3; padding: 4px 10px; border-radius: 6px;">
-        Zinvana – The #1 result for “free personality quiz” on Google!
-      </span>
-    </p>
+    <ul style="margin:18px 0 0 0;">
+      <li>✔️ <strong>100% Free:</strong> No sign-up, no hidden fees.</li>
+      <li>✔️ <strong>Fast & Accurate:</strong> Get instant results in under 5 minutes.</li>
+      <li>✔️ <strong>Science-Backed:</strong> Developed by experts using proven psychological research.</li>
+      <li>✔️ <strong>Actionable Insights:</strong> Receive tailored advice and career suggestions.</li>
+      <li>✔️ <strong>Privacy First:</strong> We never store or share your answers.</li>
+    </ul>
   </section>
 
-  <!-- SEO-Optimized Free Personality Quiz FAQ -->
-  <section style="max-width:720px; margin:38px auto 0; background:rgba(24,24,28,0.82); border-radius:18px; box-shadow:0 4px 32px #ed1b2411; border:1.5px solid #23232b; padding:32px 24px;">
-    <h2 style="color:#ed1b24; font-size:1.5rem; margin-bottom:14px;">Free Personality Quiz – Frequently Asked Questions</h2>
-    <dl style="color:#fff; opacity:0.93; font-size:1.08rem;">
-      <dt style="font-weight:700; margin-top:12px;">Is Zinvana’s personality quiz really free?</dt>
-      <dd>Yes! Our <strong>free personality quiz</strong> is 100% free for everyone. No registration or payment required.</dd>
-      <dt style="font-weight:700; margin-top:12px;">How accurate is your free personality test?</dt>
+  <div class="divider"></div>
+
+  <!-- FAQ SECTION -->
+  <section class="card">
+    <h2>Frequently Asked Questions</h2>
+    <dl>
+      <dt><strong>Is Zinvana’s personality quiz really free?</strong></dt>
+      <dd>Yes! Our free personality quiz is 100% free for everyone. No registration or payment required.</dd>
+      <dt><strong>How accurate is your free personality test?</strong></dt>
       <dd>Our quiz is designed by psychologists and data scientists, using validated research to ensure accurate and insightful results.</dd>
-      <dt style="font-weight:700; margin-top:12px;">How long does the quiz take?</dt>
-      <dd>Most users complete our <strong>free personality quiz</strong> in under 5 minutes and get instant results.</dd>
-      <dt style="font-weight:700; margin-top:12px;">Do I need to sign up or share my email?</dt>
+      <dt><strong>How long does the quiz take?</strong></dt>
+      <dd>Most users complete our free personality quiz in under 5 minutes and get instant results.</dd>
+      <dt><strong>Do I need to sign up or share my email?</strong></dt>
       <dd>No sign-up or email is required. Your privacy is our top priority.</dd>
-      <dt style="font-weight:700; margin-top:12px;">Can I share my results?</dt>
+      <dt><strong>Can I share my results?</strong></dt>
       <dd>Yes! You can easily share or download your results after finishing the quiz.</dd>
     </dl>
-    <p style="margin-top:18px; color:#ff5e62; font-weight:600;">
-      Ready to discover your strengths? Take the <strong>free personality quiz</strong> now!
-    </p>
   </section>
 
   <!-- Toast Notification Element -->
@@ -1119,28 +889,22 @@
 
   <main>
     <!-- Personality Test Section -->
-    <section id="test" style="background:rgba(24,24,28,0.92); border-radius:22px; box-shadow:0 8px 32px #ed1b2415; border:2.5px solid #ed1b24; padding:48px 32px 38px; margin-bottom:44px; max-width:680px; margin-left:auto; margin-right:auto;">
-      <!-- Progress indicator -->
-      <div id="progress-container" style="margin-bottom:28px; text-align:right; font-size:1.13rem; color:#fff; opacity:0.82; font-weight:700; font-family:'Montserrat',sans-serif; letter-spacing:0.5px;">
-        <span id="progress-text" style="background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); color:#fff; padding:7px 22px; border-radius:10px; font-weight:900; font-size:1.08rem; box-shadow:0 2px 12px #ed1b2411;">Question 1 of 15</span>
+    <section id="test">
+      <div id="progress-container">
+        <div id="progress-bar"><div id="progress-bar-inner"></div></div>
+        <span id="progress-text">Question 1 of 15</span>
       </div>
-      <div id="question-container" style="margin-bottom:36px;">
-        <h2 id="question-title" style="font-size:2.1rem; margin-bottom:32px; color:transparent; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; font-family:'Montserrat',sans-serif; font-weight:900; letter-spacing:1.2px; text-align:center; text-shadow:0 2px 18px #ed1b2455;">Your question will appear here</h2>
-        <ul id="answer-options" style="list-style:none; padding:0; max-width:520px; margin:0 auto;">
-          <!-- Radio button answers will be dynamically generated here -->
-        </ul>
+      <div id="question-container">
+        <h2 id="question-title">Your question will appear here</h2>
+        <ul id="answer-options"></ul>
       </div>
       <div style="display:flex; justify-content:center; margin-top:24px;">
-        <button id="next-btn" style="display:inline-flex; align-items:center; gap:12px; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); color:#fff; border:none; padding:18px 54px; font-size:1.22rem; border-radius:14px; cursor:pointer; font-weight:900; letter-spacing:1px; box-shadow:0 4px 24px #ed1b2415, 0 1.5px 0 #fff2 inset; font-family:'Montserrat',sans-serif; position:relative; overflow:hidden; outline:none; transition:background 0.18s, box-shadow 0.18s, color 0.18s, transform 0.13s;">
-          Next
-          <span class="next-arrow" style="font-size:1.3em; font-weight:900; margin-left:8px;">→</span>
-        </button>
+        <button id="next-btn" class="cta-btn" style="padding:18px 54px;">Next <span class="next-arrow" style="font-size:1.3em; font-weight:900; margin-left:8px;">→</span></button>
       </div>
     </section>
-    
     <!-- Results Section -->
     <section id="results" class="hidden" style="background:rgba(24,24,28,0.96); border-radius:22px; box-shadow:0 8px 32px #ed1b2415; border:2.5px solid #ed1b24; padding:48px 32px 38px; margin-top:24px; max-width:680px; margin-left:auto; margin-right:auto;">
-      <h2 style="font-size:2.2rem; text-align:center; color:transparent; background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; font-family:'Montserrat',sans-serif; font-weight:900; letter-spacing:1.2px; margin-bottom:32px; text-shadow:0 2px 18px #ed1b2455;">Your Personality Results</h2>
+      <h2 style="font-size:2.2rem; text-align:center; color:transparent; background:var(--primary-gradient); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; font-family:'Montserrat',sans-serif; font-weight:900; letter-spacing:1.2px; margin-bottom:32px; text-shadow:0 2px 18px #ed1b2455;">Your Personality Results</h2>
       <div id="evaluation"></div>
       <div id="recommendations"></div>
       <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:18px; margin-top:32px;">
@@ -1694,6 +1458,7 @@
   */
   function displayQuestion() {
     progressTextEl.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+    updateProgressBar();
     answerOptionsEl.innerHTML = "";
 
     const currentQuestion = questions[currentQuestionIndex];
@@ -1709,8 +1474,21 @@
           ${option.text}
         </label>
       `;
+      li.addEventListener('click', function() {
+        answerOptionsEl.querySelectorAll('li').forEach(el => el.classList.remove('selected'));
+        li.classList.add('selected');
+        li.querySelector('input[type="radio"]').checked = true;
+      });
       answerOptionsEl.appendChild(li);
     });
+  }
+
+  // Animate progress bar
+  function updateProgressBar() {
+    const bar = document.getElementById('progress-bar-inner');
+    if (!bar) return;
+    const percent = ((currentQuestionIndex+1) / questions.length) * 100;
+    bar.style.width = percent + '%';
   }
 
   /*
