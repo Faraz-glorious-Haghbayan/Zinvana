@@ -197,10 +197,11 @@
       font-family: 'Roboto', Arial, sans-serif;
       opacity: 0;
       transition: opacity 0.5s ease, transform 0.3s;
-      z-index: 1000;
+      z-index: 11000;
       min-width: 340px;
       max-width: 92vw;
       backdrop-filter: blur(8px);
+      pointer-events: none;
     }
     #toast.show {
       opacity: 1;
@@ -689,207 +690,321 @@
   </style>
 </head>
 <body>
-  <!-- Top Navigation -->
-  <nav aria-label="Main Navigation" style="backdrop-filter: blur(10px); background: rgba(24,24,28,0.92); border-bottom: 3px solid var(--primary); box-shadow: 0 2px 18px #ed1b2415;">
-    <!-- Logo always visible, nav-left hidden on mobile -->
-    <div class="nav-logo" style="display:flex;align-items:center;gap:10px;">
-      <a href="index.html" aria-label="Zinvana Home" style="display:flex;align-items:center;gap:10px;">
-        <img src="Logo.png" alt="Zinvana Logo" id="brand-logo" style="box-shadow:0 2px 12px #ed1b2422;" />
-        <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.35rem;letter-spacing:1.2px;color:var(--primary);text-shadow:0 2px 12px #ed1b2411;">Zinvana</span>
-      </a>
-    </div>
-    <div class="nav-left" id="nav-logo-left">
-      <a href="index.html" style="padding:8px 18px;">Home</a>
-      <a href="#squid-game-test" style="padding:8px 18px;">Squid Game</a>
-    </div>
-    <div class="nav-right">
-      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" style="padding:8px 18px;">Contact</a>
-      <a href="help.html" style="padding:8px 18px;">Help</a>
-    </div>
-    <!-- Hamburger for mobile -->
-    <button id="nav-toggle" aria-label="Open navigation" style="display:none; background:none; border:none; color:#fff; font-size:2.2rem; margin-left:auto; cursor:pointer; padding:0 12px;">
-      <span style="display:inline-block; line-height:1;">&#9776;</span>
-    </button>
-  </nav>
 
-  <!-- Mobile Nav Drawer -->
-  <div id="mobile-nav" class="hidden" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(24,24,28,0.98); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:38px; transition:background 0.3s;">
-    <a href="index.html" aria-label="Zinvana Home" style="display:flex;align-items:center;gap:10px;position:absolute;top:24px;left:24px;text-decoration:none;">
-      <img src="Logo.png" id="navlogo" alt="Zinvana Logo" style="width:38px;min-width:38px;border-radius:12px;background:#fff;padding:2px;box-shadow:0 2px 12px #ed1b2422;filter:grayscale(1) brightness(2) contrast(2) drop-shadow(0 0 8px #ed1b2422);" />
-      <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:1.2px;color:var(--primary);text-shadow:0 2px 12px #ed1b2411;">Zinvana</span>
+<!-- Professional Navigation Bar -->
+<nav>
+  <div class="nav-brand">
+    <a href="index.html" aria-label="Zinvana Home">
+      <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
     </a>
-    <button id="nav-close" aria-label="Close navigation" style="position:absolute; top:28px; right:28px; background:none; border:none; color:#fff; font-size:2.5rem; cursor:pointer; font-weight:900;">&times;</button>
-    <a href="index.html" style="font-size:1.45rem; color:#fff; font-weight:800; letter-spacing:1px; padding:18px 0; width:80vw; text-align:center; border-radius:10px; background:rgba(255,255,255,0.05); margin:0 auto; transition:background 0.2s, color 0.2s;">Home</a>
-    <a href="#squid-game-test" style="font-size:1.45rem; color:#fff; font-weight:800; letter-spacing:1px; padding:18px 0; width:80vw; text-align:center; border-radius:10px; background:rgba(255,255,255,0.05); margin:0 auto; transition:background 0.2s, color 0.2s;">Squid Game</a>
-    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" style="font-size:1.45rem; color:#fff; font-weight:800; letter-spacing:1px; padding:18px 0; width:80vw; text-align:center; border-radius:10px; background:rgba(255,255,255,0.05); margin:0 auto; transition:background 0.2s, color 0.2s;">Contact</a>
-    <a href="help.html" style="font-size:1.45rem; color:#fff; font-weight:800; letter-spacing:1px; padding:18px 0; width:80vw; text-align:center; border-radius:10px; background:rgba(255,255,255,0.05); margin:0 auto; transition:background 0.2s, color 0.2s;">Help</a>
+    <span class="brand-name">Zinvana</span>
   </div>
+  <div class="nav-links nav-left">
+    <a href="#faq">FAQ</a>
+    <a href="#test">Test</a>
+    <a href="leaders.html">Leaders Quiz</a>
+    <a href="test.html" class="active">Personality Test</a>
+  </div>
+  <div class="nav-links nav-right">
+    <a href="help.html">Help</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  <div class="nav-mobile" id="nav-mobile" style="display:none;">
+    <a href="#faq">FAQ</a>
+    <a href="football-personality-quiz.html">Football Personality Quiz</a>
+    <a href="leaders.html">Leaders Quiz</a>
+    <a href="test.html" class="active">Personality Test</a>
+    <a href="help.html">Help</a>
+  </div>
+</nav>
 
-  <style>
-    /* --- Responsive Navigation Improvements --- */
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(24, 24, 28, 0.98);
+    backdrop-filter: blur(18px) saturate(1.2);
+    box-shadow: 0 8px 32px #ed1b2422, 0 1.5px 0 #fff2 inset;
+    border-bottom: 3.5px solid #ed1b24;
+    padding: 0 54px;
+    min-height: 76px;
+    z-index: 10000;
+    transition: background 0.3s;
+    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .nav-brand .brand-name {
+    font-size: 1.65rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 1.5px;
+    background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 18px #ed1b2411;
+    display: inline-block;
+    margin-left: 4px;
+  }
+  nav #brand-logo {
+    width: 62px;
+    min-width: 62px;
+    border-radius: 16px;
+    background: #fff;
+    padding: 4px;
+    box-shadow: 0 4px 18px #ed1b2411;
+    filter: grayscale(1) brightness(2.2) contrast(2.2) drop-shadow(0 0 12px #ed1b2422);
+    transition: transform 0.18s, box-shadow 0.18s;
+  }
+  nav #brand-logo:hover {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 8px 32px #ed1b2422;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+  }
+  nav a {
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.18rem;
+    letter-spacing: 0.7px;
+    padding: 12px 0;
+    border-bottom: 2.5px solid transparent;
+    transition: border 0.2s, color 0.2s, background 0.2s;
+    position: relative;
+    background: none;
+    border-radius: 0;
+    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    text-shadow: 0 2px 12px #ed1b2411;
+  }
+  nav a.active,
+  nav a:hover,
+  .nav-mobile a.active,
+  .nav-mobile a:hover {
+    color: #ed1b24;
+    border-bottom: 2.5px solid #ed1b24;
+    background: none;
+    text-decoration: none;
+  }
+  nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -2.5px;
+    border-radius: 2px;
+  }
+  nav a:hover::after,
+  nav a.active::after {
+    width: 100%;
+  }
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
+    border: none;
+    cursor: pointer;
+    margin-left: 22px;
+    z-index: 10001;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px #ed1b2411;
+    transition: background 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .nav-toggle .bar {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: all 0.35s cubic-bezier(.68,-0.55,.27,1.55);
+    box-shadow: 0 1px 6px #ed1b2411;
+    position: relative;
+  }
+  .nav-toggle.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
+    box-shadow: 0 2px 8px #ed1b2422;
+  }
+  .nav-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+  .nav-toggle.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
+    box-shadow: 0 2px 8px #ed1b2422;
+  }
+  .nav-toggle:focus {
+    outline: 2px solid #ed1b24;
+    outline-offset: 2px;
+  }
+  .nav-toggle:hover {
+    background: linear-gradient(90deg, #ff5e62 0%, #ed1b24 100%);
+    box-shadow: 0 4px 18px #ed1b2422;
+  }
+  .nav-toggle:active {
+    background: #ed1b24;
+  }
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100vw;
+    background: rgba(24,24,28,0.99);
+    box-shadow: 0 12px 48px #ed1b2422;
+    z-index: 10001;
+    animation: navMobileFadeIn 0.25s;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    overflow: hidden;
+  }
+  .nav-mobile a {
+    padding: 24px 38px;
+    font-size: 1.22rem;
+    border-bottom: 1.5px solid #23232b;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 0.9px;
+    transition: background 0.18s, color 0.18s;
+    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    text-shadow: 0 2px 12px #ed1b2411;
+  }
+  .nav-mobile a:last-child {
+    border-bottom: none;
+  }
+  .nav-mobile a:hover,
+  .nav-mobile a.active {
+    background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
+    color: #fff;
+    border-radius: 0;
+  }
+  @keyframes navMobileFadeIn {
+    from { opacity: 0; transform: translateY(-16px);}
+    to { opacity: 1; transform: none;}
+  }
+  @media (max-width: 1200px) {
     nav {
-      border-radius: 0 0 18px 18px;
-      min-height: 68px;
-      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.7px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 0 18px;
     }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .nav-links {
+      gap: 22px;
     }
-    nav .nav-left a, nav .nav-right a {
-      border-radius: 8px;
-      margin-right: 2px;
-      transition: background 0.18s, color 0.18s, box-shadow 0.18s;
-      position: relative;
-    }
-    nav .nav-left a:hover, nav .nav-right a:hover {
-      background: var(--primary-gradient);
-      color: #fff !important;
-      box-shadow: 0 2px 12px #ed1b2411;
-      text-decoration: none;
-    }
-    nav .nav-left a.active, nav .nav-right a.active {
-      background: var(--primary-gradient);
-      color: #fff !important;
-      box-shadow: 0 2px 12px #ed1b2411;
-    }
-    nav .nav-left a:first-child {
-      background: none !important;
-      box-shadow: none !important;
-      padding: 0 !important;
-      margin-right: 18px;
-    }
-    #nav-toggle {
-      border-radius: 8px;
-      background: var(--primary-gradient);
-      color: #fff;
-      box-shadow: 0 2px 12px #ed1b2411;
-      transition: background 0.2s, color 0.2s;
-    }
-    #nav-toggle:hover {
-      background: #fff;
-      color: var(--primary);
-    }
-    /* Hide nav-left and nav-right on mobile, show logo and nav-toggle only */
-    @media (max-width: 900px) {
-      .nav-left,
-      .nav-right {
-        display: none !important;
-      }
-      .nav-logo {
-        display: flex !important;
-      }
-      #nav-toggle {
-        display: block !important;
-      }
-      nav {
-        padding: 10px 12px;
-      }
-    }
-    @media (min-width: 901px) {
-      #nav-toggle {
-        display: none !important;
-      }
-      #mobile-nav {
-        display: none !important;
-      }
-      .nav-left,
-      .nav-right {
-        display: flex !important;
-      }
-    }
-    /* Mobile nav styles */
-    #mobile-nav {
-      animation: fadeInNav 0.25s;
-    }
-    #mobile-nav a {
-      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-      font-weight: 800;
-      letter-spacing: 1px;
-      border: 2px solid transparent;
-      box-shadow: 0 2px 12px #ed1b2411;
-    }
-    #mobile-nav a:active,
-    #mobile-nav a:hover {
-      background: linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%);
-      color: #fff !important;
-      border: 2px solid #ed1b24;
-      box-shadow: 0 4px 18px #ed1b2422;
-      text-decoration: none;
-    }
-    #nav-close {
-      font-size: 2.5rem;
-      color: #fff;
-      background: none;
-      border: none;
-      font-weight: 900;
-      transition: color 0.2s;
-    }
-    #nav-close:hover {
-      color: var(--primary);
-    }
-    @keyframes fadeInNav {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @media (max-width: 600px) {
-      #mobile-nav {
-        gap: 18px !important;
-        padding-top: 60px;
-      }
-      #mobile-nav a {
-        font-size: 1.15rem !important;
-        padding: 12px 0;
-        width: 90vw;
-        text-align: center;
-        border-radius: 8px;
-        background: rgba(255,255,255,0.04);
-        margin: 0 auto;
-        transition: background 0.2s, color 0.2s;
-      }
-      #mobile-nav a:active,
-      #mobile-nav a:hover {
-        background: linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%);
-        color: #fff;
-      }
-      #nav-close {
-        font-size: 2rem !important;
-        top: 12px !important;
-        right: 12px !important;
-      }
-    }
-    /* Hide mobile nav by default */
-    #mobile-nav.hidden {
+  }
+  @media (max-width: 900px) {
+    .nav-links {
       display: none !important;
     }
-  </style>
-
-  <script>
-    // Mobile nav toggle logic
+    .nav-toggle {
+      display: flex;
+    }
+    .nav-brand .brand-name {
+      display: inline-block;
+      font-size: 1.18rem;
+    }
+    nav #brand-logo {
+      width: 44px;
+      min-width: 44px;
+    }
+    .nav-mobile {
+      display: none;
+    }
+  }
+  @media (max-width: 600px) {
+    nav {
+      min-height: 54px;
+      padding: 0 4px;
+    }
+    .nav-brand .brand-name {
+      font-size: 1.02rem;
+    }
+    nav #brand-logo {
+      width: 28px;
+      min-width: 28px;
+      padding: 1px;
+    }
+    .nav-mobile a {
+      font-size: 1rem;
+      padding: 13px 10px;
+    }
+    .nav-toggle {
+      width: 38px;
+      height: 38px;
+    }
+    .nav-toggle .bar {
+      width: 22px;
+      height: 3px;
+      margin: 3px 0;
+    }
+  }
+  /* Subtle nav shadow on scroll */
+  nav.scrolled {
+    background: rgba(24,24,28,0.98);
+    box-shadow: 0 12px 48px #ed1b2422, 0 1.5px 0 #fff2 inset;
+    border-bottom: 3.5px solid #ff5e62;
+    transition: box-shadow 0.2s, border 0.2s;
+  }
+</style>
+<script>
+  // Hamburger menu toggle and nav scroll effect
+  document.addEventListener("DOMContentLoaded", function () {
     const navToggle = document.getElementById('nav-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-    const navClose = document.getElementById('nav-close');
-    function showMobileNav() {
-      mobileNav.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-    function hideMobileNav() {
-      mobileNav.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-    navToggle && navToggle.addEventListener('click', showMobileNav);
-    navClose && navClose.addEventListener('click', hideMobileNav);
-    // Hide nav on link click (mobile)
-    mobileNav && mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', hideMobileNav);
+    const navMobile = document.getElementById('nav-mobile');
+    navToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      navToggle.classList.toggle('open');
+      navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
     });
-  </script>
+    navToggle.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        navToggle.classList.toggle('open');
+        navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+      }
+    });
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!navMobile.contains(e.target) && !navToggle.contains(e.target)) {
+        navMobile.style.display = 'none';
+        navToggle.classList.remove('open');
+      }
+    });
+    // Add nav shadow on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 10) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  });
+</script>
 
   <!-- Header -->
   <header>
@@ -991,7 +1106,8 @@
   </section>
 
   <!-- Toast Notification Element -->
-  <div id="toast" class="hidden" role="status" aria-live="polite" style="display:flex;align-items:center;gap:18px;box-shadow:0 6px 32px #ed1b2422,0 1.5px 0 #fff2 inset;background:rgba(24,24,28,0.96);border:2.5px solid #ed1b24;padding:18px 32px;border-radius:16px;min-width:320px;max-width:95vw;backdrop-filter:blur(10px);z-index:1000;">
+  <div id="toast" class="hidden" role="status" aria-live="polite"
+    style="display:flex;align-items:center;gap:18px;box-shadow:0 6px 32px #ed1b2422,0 1.5px 0 #fff2 inset;background:rgba(24,24,28,0.96);border:2.5px solid #ed1b24;padding:18px 32px;border-radius:16px;min-width:320px;max-width:95vw;backdrop-filter:blur(10px);z-index:11000;pointer-events:none;">
     <div class="toast-icon" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#ed1b24 0%,#ff5e62 100%);border-radius:50%;width:48px;height:48px;box-shadow:0 2px 12px #ed1b2411;">
       <img src="heart.png" alt="Notification" id="heart" style="width:32px;height:32px;filter:drop-shadow(0 0 8px #ed1b24);" />
     </div>
