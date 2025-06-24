@@ -153,7 +153,6 @@
             overflow: hidden;
             transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
             position: relative;
-            min-height: 340px;
             border: 2.5px solid var(--glass-border);
             backdrop-filter: blur(12px);
             display: flex;
@@ -178,8 +177,8 @@
             line-height: 1.8;
         }
         .leader-profile img {
-            width: 110px;
-            height: 110px;
+            width: 250px;
+            height: 250px;
             border-radius: 18px;
             object-fit: cover;
             float: left;
@@ -220,11 +219,26 @@
             box-shadow: 0 2px 12px rgba(255,71,87,0.13);
             transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
             border: none;
+            min-width: 180px;
+            text-align: center;
+            cursor: pointer;
         }
-        .btn:hover {
+        .btn:hover, .btn:focus {
             background: linear-gradient(90deg, var(--accent2) 60%, var(--accent) 100%);
             box-shadow: 0 6px 24px rgba(255,71,87,0.22);
             transform: scale(1.06);
+            outline: none;
+        }
+        @media (max-width: 700px) {
+            .btn {
+                width: 100%;
+                min-width: unset;
+                font-size: 1.08rem;
+                padding: 14px 0;
+                margin-top: 12px;
+                border-radius: 12px;
+                box-sizing: border-box;
+            }
         }
 
         /* Toast Notification */
@@ -348,8 +362,8 @@
                 grid-template-columns: 1fr;
             }
             .leader-profile img {
-                width: 90px;
-                height: 90px;
+                width: 200px;
+                height: 200px;
                 margin-right: 14px;
             }
             .leader-profile {
