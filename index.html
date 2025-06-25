@@ -268,7 +268,7 @@
           width: 100vw;
           background: rgba(24,24,24,0.98);
           box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-          z-index: 10001;
+          z-index: 10000;
         }
         nav .nav-mobile a {
           padding: 18px 24px;
@@ -631,7 +631,7 @@
   </head>
   <body>
     <!-- Top Navigation -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
       <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
       <div class="nav-left">
         <a href="#faq">FAQ</a>
@@ -667,6 +667,100 @@
         <a href="#quiz-grid" class="btn" style="background: #d32f2f; color: #fff; padding: 16px 36px; border-radius: 8px; font-size: 1.25rem; font-weight: bold; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: background 0.2s;">Start Quiz</a>
       </div>
     </header>
+
+    <!-- Add a sticky, animated announcement bar for trust and engagement -->
+<div id="announcementBar" style="position:sticky;top:0;z-index:10001;background:linear-gradient(90deg,#d32f2f 60%,#ff5e62 100%);color:#fff;padding:12px 0;text-align:center;font-size:1.08rem;font-weight:700;letter-spacing:0.01em;box-shadow:0 2px 18px #d32f2f22;animation:slideDownBar 0.7s;">
+  <span>🎉 Over 10,000 users trust Zinvana for <b>free insightful personality quizzes</b> – No sign-up, always free, always fun!</span>
+</div>
+<style>
+@keyframes slideDownBar {
+  from { transform: translateY(-100%); opacity: 0;}
+  to { transform: translateY(0); opacity: 1;}
+}
+</style>
+
+<!-- Add after <header> for SEO, trust, and engagement -->
+<section id="seo-hero-content" style="background:linear-gradient(90deg,#fff 70%,#ffeaea 100%);border-radius:18px;box-shadow:0 4px 24px #d32f2f11;margin:0 auto 36px auto;max-width:950px;padding:36px 28px 28px 28px;border:2.5px solid #d32f2f;position:relative;">
+  <div style="position:absolute;top:18px;right:24px;z-index:2;">
+    <span style="background:#fff3; color:#d32f2f; font-weight:800; border-radius:8px; padding:7px 18px; font-size:1.01em; box-shadow:0 2px 8px #d32f2f11;">
+      <svg width="22" height="22" style="vertical-align:middle;margin-right:7px;" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+      Trusted by 10,000+ users
+    </span>
+  </div>
+  <h1 style="font-size:2.1rem;color:transparent;background:linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-family:'Montserrat',sans-serif;font-weight:900;letter-spacing:1.2px;margin-bottom:18px;text-align:center;">
+    <span style="display:inline-block;vertical-align:middle;">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" style="animation:spin 2.5s linear infinite;">
+        <circle cx="19" cy="19" r="17" stroke="#ff5e62" stroke-width="3" opacity="0.25"/>
+        <path d="M36 19a17 17 0 0 1-17 17" stroke="#d32f2f" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </span>
+    The #1 Free Insightful Personality Quiz Platform Online
+  </h1>
+  <p style="font-size:1.18rem;color:#222;opacity:0.97;line-height:1.7;text-align:center;margin-bottom:18px;">
+    <strong style="color:#d32f2f;">Zinvana</strong> is the most trusted destination for <strong>free personality quizzes</strong> and <strong>insightful personality tests</strong> online. Our quizzes are <b>always free</b>, require <b>no sign-up</b>, and deliver <b>instant, research-backed results</b>—helping you discover your strengths, leadership style, and unique traits in minutes.
+  </p>
+  <ul style="max-width:700px;margin:0 auto 18px auto;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
+    <li style="background:rgba(255,255,255,0.07);border-left:5px solid #d32f2f;border-radius:12px;padding:14px 18px;color:#222;">
+      <strong>100% Free, No Sign-Up:</strong> Take any quiz instantly—no registration, no paywalls, no ads.
+    </li>
+    <li style="background:rgba(255,255,255,0.07);border-left:5px solid #ff5e62;border-radius:12px;padding:14px 18px;color:#222;">
+      <strong>Scientifically Validated:</strong> Based on the Big Five, MBTI, and proven psychological models.
+    </li>
+    <li style="background:rgba(255,255,255,0.07);border-left:5px solid #d32f2f;border-radius:12px;padding:14px 18px;color:#222;">
+      <strong>Instant, Actionable Insights:</strong> Get a detailed breakdown of your personality, strengths, and growth areas.
+    </li>
+    <li style="background:rgba(255,255,255,0.07);border-left:5px solid #ff5e62;border-radius:12px;padding:14px 18px;color:#222;">
+      <strong>Shareable & Downloadable:</strong> Download your results or share with friends in one click.
+    </li>
+    <li style="background:rgba(255,255,255,0.07);border-left:5px solid #d32f2f;border-radius:12px;padding:14px 18px;color:#222;">
+      <strong>Privacy First:</strong> No data stored, no tracking—your journey is 100% confidential.
+    </li>
+  </ul>
+  <p style="font-size:1.13rem;color:#222;opacity:0.92;line-height:1.7;text-align:center;margin-bottom:0;">
+    Join <b>over 10,000 quiz-takers</b> who trust Zinvana for the <strong>best free insightful personality quizzes</strong> online. <a href="#quiz-grid" style="color:#d32f2f;text-decoration:underline;font-weight:600;">Start your free quiz now</a> and unlock your potential!
+  </p>
+  <div style="margin-top:22px;text-align:center;">
+    <a href="#quiz-grid" class="btn"
+      style="background:linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%);
+             color:#fff;
+             font-size:1.13rem;
+             font-weight:900;
+             padding:14px 18px;
+             border-radius:12px;
+             text-decoration:none;
+             box-shadow:0 4px 18px #d32f2f11;
+             transition:background 0.18s,box-shadow 0.18s,transform 0.13s;
+             display:inline-block;
+             max-width:100%;
+             width:100%;
+             box-sizing:border-box;">
+      Take the Free Insightful Personality Quiz
+    </a>
+  </div>
+  <style>
+    @media (max-width: 600px) {
+      #seo-hero-content .btn,
+      #seo-hero-content a.btn {
+        font-size: 1rem !important;
+        padding: 13px 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 10px !important;
+        box-sizing: border-box;
+      }
+      #seo-hero-content div[style*="text-align:center"] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  </style>
+</section>
+<style>
+@keyframes spin {
+  0% {transform:rotate(0deg);}
+  100% {transform:rotate(360deg);}
+}
+</style>
 
     <!-- Intro Section -->
     <section class="intro" style="background: linear-gradient(90deg, #fff 70%, #ffeaea 100%); border-bottom: 2px solid #d32f2f;">
@@ -857,23 +951,135 @@
       </style>
     </section>
 
-    <!-- Featured Quizzes Section -->
-    <section id="featured-quizzes" style="background: #f8f8f8; border-radius: 12px; max-width: 1000px; margin: 40px auto; padding: 40px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
-      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 30px;">Featured Free Personality Quizzes</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
-        <div style="flex: 1 1 300px; min-width: 260px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px; margin-bottom: 16px;">
-          <h3 style="color: #d32f2f; font-size: 1.15rem;">Classic Free Personality Quiz</h3>
-          <p>Discover your personality type with our most popular free personality quiz. Get instant, research-backed results and actionable insights—no sign-up required.</p>
+    <!-- Featured Quizzes Section (Modern, Eye-Catching, Responsive) -->
+    <section id="featured-quizzes" style="background: linear-gradient(90deg,#fff 70%,#ffeaea 100%); border-radius: 18px; max-width: 1100px; margin: 48px auto 40px auto; padding: 48px 28px 36px 28px; box-shadow: 0 6px 32px #d32f2f13; border: 2.5px solid #d32f2f; position:relative;">
+      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 38px; font-size: 2.2rem; font-family: 'Montserrat',sans-serif; font-weight: 900; letter-spacing: 1.2px;">
+        <span style="display:inline-block;vertical-align:middle;">
+          <svg width="36" height="36" viewBox="0 0 38 38" fill="none" style="animation:spin 2.5s linear infinite;">
+            <circle cx="19" cy="19" r="17" stroke="#ff5e62" stroke-width="3" opacity="0.25"/>
+            <path d="M36 19a17 17 0 0 1-17 17" stroke="#d32f2f" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Featured Free Personality Quizzes
+      </h2>
+      <div class="featured-quizzes-grid" style="display: grid; grid-template-columns: repeat(auto-fit,minmax(310px,1fr)); gap: 32px; justify-content: center; align-items: stretch;">
+        <!-- Card 1 -->
+        <div class="featured-quiz-card" style="background: #fff; border-radius: 16px; box-shadow: 0 4px 18px #d32f2f11; padding: 32px 24px 28px 24px; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.18s, transform 0.13s;">
+          <img src="personality.jpg" alt="Classic Free Personality Quiz" style="width: 72px; height: 72px; border-radius: 12px; margin-bottom: 18px; box-shadow: 0 2px 8px #d32f2f22; object-fit: cover;">
+          <h3 style="color: #d32f2f; font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; text-align: center;">Classic Free Personality Quiz</h3>
+          <p style="color: #444; font-size: 1.08rem; margin-bottom: 18px; text-align: center;">Discover your personality type with our most popular quiz. Get instant, research-backed results and actionable insights—no sign-up required.</p>
+          <a href="test.html" class="btn" style="background: linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%); color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-size: 1.08rem; box-shadow: 0 2px 8px #d32f2f11; transition: background 0.18s,transform 0.13s;">Take Quiz</a>
         </div>
-        <div style="flex: 1 1 300px; min-width: 260px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px; margin-bottom: 16px;">
-          <h3 style="color: #d32f2f; font-size: 1.15rem;">Historical Leaders Quiz</h3>
-          <p>Which historical leader are you? Take our free quiz to find out if you’re more like Napoleon, Gandhi, or Cleopatra. Fun, insightful, and always free.</p>
+        <!-- Card 2 -->
+        <div class="featured-quiz-card" style="background: #fff; border-radius: 16px; box-shadow: 0 4px 18px #d32f2f11; padding: 32px 24px 28px 24px; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.18s, transform 0.13s;">
+          <img src="napoleon1.gif" alt="Historical Leaders Quiz" style="width: 72px; height: 72px; border-radius: 12px; margin-bottom: 18px; box-shadow: 0 2px 8px #d32f2f22; object-fit: cover;">
+          <h3 style="color: #d32f2f; font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; text-align: center;">Historical Leaders Quiz</h3>
+          <p style="color: #444; font-size: 1.08rem; margin-bottom: 18px; text-align: center;">Which historical leader are you? Find out if you’re more like Napoleon, Gandhi, or Cleopatra. Fun, insightful, and always free.</p>
+          <a href="leaders.html" class="btn" style="background: linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%); color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-size: 1.08rem; box-shadow: 0 2px 8px #d32f2f11; transition: background 0.18s,transform 0.13s;">Discover Your Leader</a>
         </div>
-        <div style="flex: 1 1 300px; min-width: 260px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px; margin-bottom: 16px;">
-          <h3 style="color: #d32f2f; font-size: 1.15rem;">MBTI & Pop Culture Quizzes</h3>
-          <p>Explore your MBTI type or discover which Squid Game or football character you resemble. All quizzes are free, fun, and easy to share.</p>
+        <!-- Card 3 -->
+        <div class="featured-quiz-card" style="background: #fff; border-radius: 16px; box-shadow: 0 4px 18px #d32f2f11; padding: 32px 24px 28px 24px; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.18s, transform 0.13s;">
+          <img src="squidzinvana.gif" alt="MBTI & Pop Culture Quizzes" style="width: 72px; height: 72px; border-radius: 12px; margin-bottom: 18px; box-shadow: 0 2px 8px #d32f2f22; object-fit: cover;">
+          <h3 style="color: #d32f2f; font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; text-align: center;">MBTI & Pop Culture Quizzes</h3>
+          <p style="color: #444; font-size: 1.08rem; margin-bottom: 18px; text-align: center;">Explore your MBTI type or discover which Squid Game or football character you resemble. All quizzes are free, fun, and easy to share.</p>
+          <a href="squidgame.html" class="btn" style="background: linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%); color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-size: 1.08rem; box-shadow: 0 2px 8px #d32f2f11; transition: background 0.18s,transform 0.13s;">Try Pop Culture Quiz</a>
         </div>
       </div>
+      <style>
+        #featured-quizzes .featured-quizzes-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit,minmax(310px,1fr));
+          gap: 32px;
+          justify-content: center;
+          align-items: stretch;
+        }
+        #featured-quizzes .featured-quiz-card {
+          background: #fff;
+          border-radius: 16px;
+          box-shadow: 0 4px 18px #d32f2f11;
+          padding: 32px 24px 28px 24px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          transition: box-shadow 0.18s, transform 0.13s;
+          position: relative;
+          min-height: 340px;
+        }
+        #featured-quizzes .featured-quiz-card:hover {
+          box-shadow: 0 8px 32px #d32f2f22;
+          transform: translateY(-6px) scale(1.03);
+        }
+        #featured-quizzes .featured-quiz-card img {
+          width: 120px;
+          height: 120px;
+          border-radius: 12px;
+          margin-bottom: 18px;
+          box-shadow: 0 2px 8px #d32f2f22;
+          object-fit: cover;
+          background: #fff;
+        }
+        #featured-quizzes .btn {
+          background: linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%);
+          color: #fff;
+          font-weight: 700;
+          padding: 12px 26px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-size: 1.08rem;
+          box-shadow: 0 2px 8px #d32f2f11;
+          transition: background 0.18s,transform 0.13s;
+          margin-top: auto;
+          display: inline-block;
+        }
+        #featured-quizzes .btn:hover {
+          background: linear-gradient(90deg,#ff5e62 0%,#d32f2f 100%);
+          transform: scale(1.06);
+        }
+        @media (max-width: 900px) {
+          #featured-quizzes {
+            padding: 32px 6vw 24px 6vw !important;
+          }
+          #featured-quizzes .featured-quizzes-grid {
+            gap: 18px;
+          }
+          #featured-quizzes .featured-quiz-card {
+            padding: 24px 10px 20px 10px;
+            min-height: 0;
+          }
+        }
+        @media (max-width: 600px) {
+          #featured-quizzes {
+            padding: 18px 2vw 12px 2vw !important;
+            border-radius: 10px !important;
+          }
+          #featured-quizzes h2 {
+            font-size: 1.3rem !important;
+            margin-bottom: 18px !important;
+          }
+          #featured-quizzes .featured-quizzes-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+          }
+          #featured-quizzes .featured-quiz-card {
+            padding: 16px 4px 12px 4px;
+            border-radius: 10px;
+          }
+          #featured-quizzes .featured-quiz-card img {
+            width: 140px !important;
+            height: 140px !important;
+            margin-bottom: 10px;
+          }
+          #featured-quizzes .btn {
+            font-size: 0.98rem;
+            padding: 10px 12px;
+            border-radius: 7px;
+          }
+        }
+        @keyframes spin {
+          0% {transform:rotate(0deg);}
+          100% {transform:rotate(360deg);}
+        }
+      </style>
     </section>
 
     <!-- Why Take a Personality Quiz Section -->
@@ -1149,51 +1355,6 @@
             itemscope
             itemtype="https://schema.org/WebPage"
           >
-            <meta itemprop="url" content="https://zinvana.com/leaders.html" />
-            <meta itemprop="name" content="Historical Leaders Quiz" />
-          </div>
-
-          <p
-            itemprop="reviewBody"
-            style="color: #444; font-style: italic; margin-bottom: 15px"
-          >
-            “Super fun! I got Gandhi and now I feel way too peaceful. 😂 Great
-            way to spend 10 minutes.”
-          </p>
-
-          <p style="font-weight: 500; color: #333; margin-bottom: 8px">
-            — <span itemprop="author">Taylor W.</span>,
-            <time itemprop="datePublished" datetime="2025-04-11"
-              >Apr 11, 2025</time
-            >
-          </p>
-
-          <div
-            class="rating"
-            itemprop="reviewRating"
-            itemscope
-            itemtype="https://schema.org/Rating"
-          >
-            <meta itemprop="worstRating" content="1" />
-            <meta itemprop="bestRating" content="5" />
-            <meta itemprop="ratingValue" content="4" />
-            <span aria-label="4 out of 5 stars" style="color: #ffb400"
-              >★★★★☆</span
-            >
-          </div>
-        </div>
-
-        <div
-          class="testimonial"
-          itemscope
-          itemtype="https://schema.org/Review"
-          style="padding: 20px; border: 1px solid #eee; border-radius: 6px"
-        >
-          <div
-            itemprop="itemReviewed"
-            itemscope
-            itemtype="https://schema.org/WebPage"
-          >
             <meta itemprop="url" content="https://zinvana.com/empire.html" />
             <meta itemprop="name" content="Empires Personality Quiz" />
           </div>
@@ -1342,34 +1503,196 @@
       </div>
     </footer>
 
+<!-- Add a floating "Back to Top" and "Share" button for UX and engagement -->
+<button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:9999;background:linear-gradient(90deg,#d32f2f 60%,#ff5e62 100%);color:#fff;border:none;border-radius:50%;width:54px;height:54px;box-shadow:0 4px 24px #d32f2f11;cursor:pointer;transition:background 0.2s,transform 0.2s;">
+  <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="display:block;margin:auto;">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+<button id="shareBtn" aria-label="Share this page" style="position:fixed;bottom:100px;right:32px;z-index:9999;background:linear-gradient(90deg,#ff5e62 60%,#d32f2f 100%);color:#fff;border:none;border-radius:50%;width:54px;height:54px;box-shadow:0 4px 24px #d32f2f11;cursor:pointer;transition:background 0.2s,transform 0.2s;display:flex;align-items:center;justify-content:center;">
+  <svg width="26" height="26" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+    <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/>
+  </svg>
+</button>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    document.querySelectorAll("section, .quiz-card").forEach((el) => {
-      el.classList.add("fade-init");
-      observer.observe(el);
-    });
+document.addEventListener("DOMContentLoaded", function() {
+  // Back to top
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    btn.style.display = window.scrollY > 300 ? 'block' : 'none';
   });
-  // Hamburger menu toggle
+  btn.addEventListener('click', function() {
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+  // Share
+  document.getElementById('shareBtn').onclick = function() {
+    if (navigator.share) {
+      navigator.share({
+        title: document.title,
+        text: "Try the best free insightful personality quiz at Zinvana!",
+        url: window.location.href
+      });
+    } else {
+      prompt("Copy this link to share:", window.location.href);
+    }
+  };
+
+  // Fade-in observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  document.querySelectorAll("section, .quiz-card").forEach((el) => {
+    el.classList.add("fade-init");
+    observer.observe(el);
+  });
+
+  // Hamburger menu toggle (robust fix for nav-mobile)
   const navToggle = document.getElementById('nav-toggle');
   const navMobile = document.getElementById('nav-mobile');
-  navToggle.addEventListener('click', function() {
-    navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+  function closeMobileNav() {
+    navMobile.style.display = 'none';
+    navToggle.classList.remove('open');
+  }
+  function openMobileNav() {
+    navMobile.style.display = 'flex';
+    navToggle.classList.add('open');
+  }
+  navToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (navMobile.style.display === 'flex') {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
   });
   navToggle.addEventListener('keypress', function(e) {
     if (e.key === 'Enter' || e.key === ' ') {
-      navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+      if (navMobile.style.display === 'flex') {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
     }
   });
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', function(e) {
+    if (navMobile.style.display === 'flex' && !navMobile.contains(e.target) && !navToggle.contains(e.target)) {
+      closeMobileNav();
+    }
+  });
+  // Close nav on link click (for better UX)
+  Array.prototype.forEach.call(navMobile.querySelectorAll('a'), function(link) {
+    link.addEventListener('click', closeMobileNav);
+  });
+});
+</script>
+<style>
+#backToTop, #shareBtn { opacity:0.85; }
+#backToTop:hover, #shareBtn:hover { background:linear-gradient(90deg,#ff5e62 60%,#d32f2f 100%); transform:scale(1.08); opacity:1; }
+</style>
+
+<!-- Add a fun fact bar above the footer for engagement and SEO -->
+<div id="funFactBar" aria-live="polite" style="background:linear-gradient(90deg,#d32f2f 60%,#ff5e62 100%);color:#fff;padding:14px 0;text-align:center;font-size:1.09rem;font-weight:600;letter-spacing:0.01em;box-shadow:0 -2px 18px #d32f2f1a;">
+  <span id="funFactText">Did you know? Zinvana is the #1 ranked site for free insightful personality quizzes!</span>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const facts = [
+    "Did you know? Zinvana is the #1 ranked site for free insightful personality quizzes!",
+    "Did you know? Over 10,000 people have taken a free personality quiz on Zinvana.",
+    "Did you know? Our quizzes are always free and require no sign-up.",
+    "Did you know? Zinvana uses research-backed models for accurate results.",
+    "Did you know? You can instantly download or share your quiz results.",
+    "Did you know? No personal data is ever stored or tracked on Zinvana.",
+    "Did you know? Our quizzes are trusted by students, professionals, and educators worldwide.",
+    "Did you know? You can retake any quiz as many times as you want for free.",
+    "Did you know? Zinvana offers the most insightful personality quizzes online.",
+    "Did you know? Our quizzes are optimized for mobile, tablet, and desktop."
+  ];
+  let idx = 0;
+  setInterval(function() {
+    idx = (idx + 1) % facts.length;
+    document.getElementById('funFactText').textContent = facts[idx];
+  }, 7000);
+});
+</script>
+
+<!-- Add subtle fade-in stagger to quiz cards for modern look -->
+<style>
+.quiz-card {
+  opacity: 0;
+  transform: translateY(32px);
+  animation: fadeInCard 0.7s forwards;
+}
+.quiz-card:nth-child(1) { animation-delay: 0.1s;}
+.quiz-card:nth-child(2) { animation-delay: 0.2s;}
+.quiz-card:nth-child(3) { animation-delay: 0.3s;}
+.quiz-card:nth-child(4) { animation-delay: 0.4s;}
+.quiz-card:nth-child(5) { animation-delay: 0.5s;}
+.quiz-card:nth-child(6) { animation-delay: 0.6s;}
+.quiz-card:nth-child(7) { animation-delay: 0.7s;}
+.quiz-card:nth-child(8) { animation-delay: 0.8s;}
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(32px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+</style>
+
+<!-- Add FAQPage schema for SEO (JSON-LD, after all content but before </body>) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best free insightful personality quiz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zinvana offers the best free insightful personality quiz online, with instant, research-backed results and no sign-up required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Zinvana's personality quizzes really free?",
+           "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Every quiz on Zinvana is 100% free to take and share. No paywalls, no registration, just fun and insight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are Zinvana's quizzes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our quizzes are research-backed and designed by experts to provide both fun and accurate insights into your personality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I share my results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Download or share your result image directly with friends and family."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Zinvana the best free personality quiz site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zinvana stands out for its in-depth results, variety of quizzes, no sign-up policy, and a fun, modern experience on any device."
+      }
+    }
+  ]
+}
 </script>
   </body>
 </html>
