@@ -1,0 +1,3445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Influential Leaders in History | Historical Leaders Quiz | Zinvana</title>
+    <meta name="description" content="Discover history's most influential leaders who shaped civilizations! From Napoleon to Churchill, learn about the greatest leaders before taking our free Historical Leaders Personality Quiz at Zinvana.">
+    <meta name="keywords" content="influential leaders, historical leaders personality quiz, greatest leaders in history, Napoleon Bonaparte, Winston Churchill, leadership quiz, free personality test, Zinvana">
+    <meta name="author" content="Zinvana">
+    <meta property="og:title" content="Most Influential Leaders in History | Zinvana">
+    <meta property="og:description" content="Explore history's greatest leaders and discover which one matches your personality with our free quiz">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://zinvana.com/influencial_leaders.html">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #ed1b24;
+            --primary-dark: #c41419;
+            --primary-light: #ff5e62;
+            --secondary: #1a1a1a;
+            --tertiary: #f8f9fa;
+            --accent: #ff6b35;
+            --text-primary: #2c3e50;
+            --text-secondary: #5a6c7d;
+            --text-light: #8892a0;
+            --white: #ffffff;
+            --black: #000000;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 8px 25px rgba(0,0,0,0.12);
+            --shadow-heavy: 0 15px 35px rgba(0,0,0,0.15);
+            --shadow-glow: 0 0 30px rgba(237, 27, 36, 0.3);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, #2c2c2c 100%);
+            --gradient-mesh: radial-gradient(circle at 20% 80%, rgba(237, 27, 36, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 94, 98, 0.1) 0%, transparent 50%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-attachment: fixed;
+            font-weight: 400;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-mesh);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--white);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Modern Container System */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .container-fluid {
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        /* Navigation - Modern Glass Design */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(237, 27, 36, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            min-height: 80px;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .navbar-logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .navbar-logo-img {
+            height: 48px;
+            width: 48px;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .navbar-links a {
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .navbar-links a:hover::before,
+        .navbar-links a.active::before {
+            left: 0;
+        }
+
+        .navbar-links a:hover,
+        .navbar-links a.active {
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .navbar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .navbar-toggle:hover {
+            background: rgba(237, 27, 36, 0.1);
+        }
+
+        .navbar-toggle-icon {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            display: block;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .navbar-toggle-icon::before,
+        .navbar-toggle-icon::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .navbar-toggle-icon::before { top: -8px; }
+        .navbar-toggle-icon::after { top: 8px; }
+
+        /* Hero Section - Ultra Impactful Design */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, var(--primary) 70%, var(--primary-light) 100%);
+            padding: 12rem 0 10rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%);
+            animation: shimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: 15%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
+            50% { transform: translateY(-30px) scale(1.1) rotate(5deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            line-height: 0.95;
+            text-shadow: 
+                0 4px 20px rgba(0,0,0,0.5),
+                0 8px 40px rgba(0,0,0,0.3),
+                0 2px 4px rgba(0,0,0,0.8);
+            animation: fadeInUp 1.2s ease-out 0.3s both;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            line-height: 1.5;
+            animation: fadeInUp 1.2s ease-out 0.6s both;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            color: var(--primary);
+            padding: 1.75rem 3.5rem;
+            text-decoration: none;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: var(--transition-spring);
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.3),
+                0 20px 60px rgba(0,0,0,0.2),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+            border: 3px solid rgba(255,255,255,0.3);
+            animation: fadeInUp 1.2s ease-out 0.9s both;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            min-width: 280px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(237, 27, 36, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.4),
+                0 30px 80px rgba(0,0,0,0.3),
+                0 0 0 8px rgba(255,255,255,0.1);
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+            border-color: rgba(255,255,255,0.8);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .cta-button i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover i {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* Breadcrumb - Modern Design */
+        .breadcrumb {
+            background: var(--white);
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            margin-top: 80px;
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Main Content */
+        main {
+            background: var(--white);
+            position: relative;
+        }
+
+        .content-section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            margin: 2rem auto 0;
+            border-radius: var(--radius-sm);
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Enhanced Grid Systems */
+        .leaders-grid,
+        .qualities-grid,
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 10% 0;
+        }
+
+        /* Beautiful Cards */
+        .leader-card,
+        .quality-item,
+        .category-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Leader Card with Image */
+        .leader-card {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            min-height: 450px;
+        }
+
+        .leader-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .leader-card:hover .leader-image {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .leader-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .leader-card::before,
+        .quality-item::before,
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .leader-card:hover::before,
+        .quality-item:hover::before,
+        .category-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .leader-card:hover,
+        .quality-item:hover,
+        .category-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .leader-card h3,
+        .quality-item h3,
+        .category-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            transition: var(--transition);
+        }
+
+        .leader-card:hover h3,
+        .quality-item:hover h3 {
+            color: var(--primary);
+        }
+
+        .leader-card .period {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .leader-card p,
+        .quality-item p,
+        .category-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 2% !important;
+        }
+
+        /* Category Cards - Special Styling */
+        .categories {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .category-card {
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: var(--transition);
+        }
+
+        .category-card:hover::before {
+            transform: scale(1);
+        }
+
+        .category-card h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .category-card p {
+            color: rgba(255,255,255,0.9);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enhanced Timeline */
+        .timeline {
+            position: relative;
+            margin: 4rem 0;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-light);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-medium);
+            width: 45%;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .timeline-item:nth-child(odd) { left: 0; }
+        .timeline-item:nth-child(even) { left: 55%; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .timeline-item:nth-child(odd)::before { right: -64px; }
+        .timeline-item:nth-child(even)::before { left: -64px; }
+
+        .timeline-item h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 6rem 0;
+            margin: 6rem 0;
+            border-radius: var(--radius-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .stat-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+        }
+
+        /* Quality Icons */
+        .quality-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            background: rgba(237, 27, 36, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .quality-item:hover .quality-icon {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin: 4rem 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .faq-question {
+            background: var(--tertiary);
+            padding: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .faq-question.active::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-question:hover {
+            background: rgba(237, 27, 36, 0.05);
+        }
+
+        .faq-answer {
+            padding: 2rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Floating Elements */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-xl);
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: var(--shadow-heavy);
+            transition: var(--transition-spring);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(100px) scale(0.8);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .floating-cta.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+            animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+
+        @keyframes bounceIn {
+            0% { 
+                transform: translateY(100px) scale(0.3); 
+                opacity: 0;
+            }
+            50% { 
+                transform: translateY(-20px) scale(1.1); 
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(0) scale(1); 
+                opacity: 1;
+            }
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--white);
+            color: var(--primary);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .navbar-container {
+                padding: 1rem;
+            }
+            
+            .hero {
+                padding: 10rem 0 8rem;
+                min-height: 85vh;
+            }
+
+            .hero h1 {
+                font-size: clamp(3rem, 7vw, 5.5rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+                margin-bottom: 3.5rem;
+            }
+
+            .cta-button {
+                padding: 1.5rem 3rem;
+                font-size: 1.2rem;
+                min-width: 260px;
+            }
+            
+            .content-section {
+                padding: 4rem 0;
+            }
+            
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 4rem);
+                left: 4rem !important;
+                margin-left: 0;
+            }
+            
+            .timeline-item::before {
+                left: -2.75rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                gap: 0;
+                padding: 2rem 0;
+                box-shadow: var(--shadow-medium);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+
+            .navbar-links.open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .navbar-links a {
+                padding: 1rem 2rem;
+                border-radius: 0;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+            
+            .hero {
+                padding: 8rem 0 6rem;
+                margin-top: 80px;
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.5rem, 6vw, 4.5rem);
+                line-height: 1;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: clamp(1.1rem, 2vw, 1.5rem);
+                margin-bottom: 3rem;
+                padding: 0 1rem;
+            }
+
+            .cta-button {
+                padding: 1.4rem 2.5rem;
+                font-size: 1.1rem;
+                min-width: 240px;
+            }
+
+            .hero::after {
+                width: 200px;
+                height: 200px;
+                top: 15%;
+                right: 10%;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .leaders-grid,
+            .qualities-grid,
+            .categories {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .floating-cta,
+            .back-to-top {
+                bottom: 1rem;
+            }
+            
+            .floating-cta {
+                right: 1rem;
+                padding: 0.75rem 1.25rem;
+                font-size: 0.9rem;
+            }
+            
+            .back-to-top {
+                left: 1rem;
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 6rem 0 4rem;
+                min-height: 75vh;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3.5rem);
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: clamp(1rem, 4vw, 1.3rem);
+                margin-bottom: 2.5rem;
+                padding: 0 0.5rem;
+            }
+
+            .cta-button {
+                padding: 1.25rem 2rem;
+                font-size: 1rem;
+                min-width: 200px;
+                gap: 0.75rem;
+            }
+
+            .hero::after {
+                width: 150px;
+                height: 150px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-item h3 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: clamp(1.8rem, 9vw, 3rem);
+            }
+
+            .cta-button {
+                padding: 1.1rem 1.5rem;
+                font-size: 0.95rem;
+                min-width: 180px;
+            }
+        }
+
+        /* Enhanced Section Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(237, 27, 36, 0.1);
+            z-index: 1001;
+        }
+
+        .scroll-progress div {
+            height: 100%;
+            background: var(--gradient-primary);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Enhanced Navbar Scroll Effect */
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-1px);
+        }
+
+        /* Floating Navigation Dots */
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(237, 27, 36, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-dot:hover,
+        .nav-dot.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+
+        .nav-dot::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 150%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--white);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .nav-dot:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+        .footer {
+            background: var(--gradient-secondary);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            margin-top: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--primary-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-light);
+            transform: translateX(4px);
+        }
+
+        .footer-section.about-guide p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        .footer-bottom a {
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-bottom a:hover {
+            color: var(--white);
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(237, 27, 36, 0.1);
+            border-left: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced Hover Effects */
+        .hover-lift {
+            transition: var(--transition);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Search Bar Styles */
+        .search-section {
+            background: linear-gradient(135deg, var(--tertiary) 0%, var(--white) 100%);
+            padding: 4rem 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .search-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .search-wrapper {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.25rem 4rem 1.25rem 1.5rem;
+            font-size: 1.1rem;
+            border: 2px solid rgba(0,0,0,0.1);
+            border-radius: var(--radius-xl);
+            background: var(--white);
+            color: var(--text-primary);
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(237, 27, 36, 0.1), var(--shadow-medium);
+            transform: translateY(-2px);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-light);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .search-input:focus + .search-icon {
+            color: var(--primary);
+        }
+
+        .search-filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-button {
+            padding: 0.5rem 1rem;
+            border: 2px solid rgba(237, 27, 36, 0.2);
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .filter-button:hover,
+        .filter-button.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .search-results {
+            margin-top: 2rem;
+        }
+
+        .search-results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(0,0,0,0.05);
+        }
+
+        .results-count {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .clear-search {
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            transition: var(--transition);
+        }
+
+        .clear-search:hover {
+            color: var(--primary-dark);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .no-results h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .search-suggestions {
+            margin-top: 1rem;
+        }
+
+        .suggestion-chip {
+            display: inline-block;
+            background: rgba(237, 27, 36, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            margin: 0.25rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .suggestion-chip:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .search-highlight {
+            background: linear-gradient(135deg, rgba(255, 235, 59, 0.3) 0%, rgba(255, 193, 7, 0.3) 100%);
+            padding: 0.1rem 0.2rem;
+            border-radius: 0.2rem;
+            font-weight: 600;
+        }
+
+        .search-result-card {
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .search-result-card .achievements {
+            margin: 1rem 0;
+        }
+
+        .search-result-card .achievements ul {
+            margin: 0.5rem 0 0 1.5rem;
+            padding: 0;
+        }
+
+        .search-result-card .achievements li {
+            margin-bottom: 0.25rem;
+            color: var(--text-secondary);
+        }
+
+        .leader-meta {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tag,
+        .era-tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .category-tag.military {
+            background: rgba(220, 38, 127, 0.1);
+            color: #dc267f;
+        }
+
+        .category-tag.political {
+            background: rgba(237, 27, 36, 0.1);
+            color: var(--primary);
+        }
+
+        .category-tag.revolutionary {
+            background: rgba(255, 109, 40, 0.1);
+            color: #ff6d28;
+        }
+
+        .era-tag.ancient {
+            background: rgba(139, 69, 19, 0.1);
+            color: #8b4513;
+        }
+
+        .era-tag.medieval {
+            background: rgba(75, 0, 130, 0.1);
+            color: #4b0082;
+        }
+
+        .era-tag.renaissance {
+            background: rgba(255, 140, 0, 0.1);
+            color: #ff8c00;
+        }
+
+        .era-tag.modern {
+            background: rgba(0, 123, 191, 0.1);
+            color: #007bbf;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--tertiary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: var(--radius-sm);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="zinvanalogo.png" alt="Zinvana Logo" class="navbar-logo-img">
+                <span class="navbar-brand">Zinvana</span>
+            </a>
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                <span class="navbar-toggle-icon"></span>
+            </button>
+            <div class="navbar-links" id="navbar-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="leaders.html"><i class="fas fa-crown"></i> Leaders Quiz</a>
+                <a href="all-articles.html"><i class="fas fa-newspaper"></i> Articles</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/"><i class="fas fa-home"></i> Home</a> > 
+            <a href="/history"><i class="fas fa-scroll"></i> History</a> > 
+            <span><i class="fas fa-crown"></i> Influential Leaders</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <h1>Most Influential Leaders<br><span style="background: linear-gradient(135deg, #ff5e62 0%, #ffffff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">in History</span></h1>
+                <p class="hero-subtitle">Discover the extraordinary individuals who shaped civilizations, changed the course of history, and left lasting legacies that continue to influence our world today.</p>
+                <a href="leaders.html" class="cta-button">
+                    <i class="fas fa-crown"></i>
+                    Take the Leadership Quiz
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <section id="overview" class="content-section">
+                <h2 class="section-title">The Greatest Leaders Who Changed History</h2>
+                <div class="intro-text">
+                    <p>Throughout human history, exceptional leaders have emerged to guide nations, inspire movements, and transform societies. These influential leaders possessed unique combinations of vision, charisma, strategic thinking, and the ability to mobilize others toward common goals. From ancient emperors who built vast civilizations to modern revolutionaries who fought for freedom and equality, history's most influential leaders have left indelible marks on humanity.</p>
+                    
+                    <p>The study of influential leaders reveals patterns of leadership excellence that transcend time periods and cultures. Whether they led through military conquest, political innovation, spiritual guidance, or social reform, these remarkable individuals demonstrated the power of leadership to create lasting change. Understanding their methods, motivations, and legacies provides valuable insights into the nature of effective leadership and its impact on human civilization.</p>
+                </div>
+
+                <div class="stats-section">
+                    <div class="container">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <h3>5000+</h3>
+                                <p>Years of Leadership History</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>100+</h3>
+                                <p>Documented Influential Leaders</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>50+</h3>
+                                <p>Nations and Empires Shaped</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>Billions</h3>
+                                <p>Lives Impacted</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Top 20 Most Influential Leaders in World History</h3>
+                <div class="leaders-grid">
+                    <div class="leader-card">
+                        <img src="alexander1.jpg" alt="Alexander the Great" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Alexander the Great</h3>
+                            <div class="period">356-323 BCE</div>
+                            <p>King of Macedonia who created one of the largest empires in ancient history, stretching from Greece to India. His military genius, strategic vision, and cultural integration policies spread Hellenistic civilization across three continents.</p>
+                            <a href="alexander.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Explore Alexander's Legacy</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="julius1.jpg" alt="Julius Caesar" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Julius Caesar</h3>
+                            <div class="period">100-44 BCE</div>
+                            <p>Roman general and statesman whose military campaigns and political reforms transformed the Roman Republic into the Roman Empire. His administrative reforms and legal innovations had lasting impacts on governance worldwide.</p>
+                            <a href="julius-caesar.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Discover Caesar's Rome</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="napoleon.jpg" alt="Napoleon Bonaparte" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Napoleon Bonaparte</h3>
+                            <div class="period">1769-1821</div>
+                            <p>French military leader and emperor who dominated European politics for over a decade. Napoleon's military innovations, legal reforms, and administrative systems influenced governmental structures worldwide.</p>
+                            <a href="napoleon.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Enter Napoleon's Empire</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="chengis.jpg" alt="Genghis Khan" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Genghis Khan</h3>
+                            <div class="period">1162-1227</div>
+                            <p>Mongol emperor who founded the largest contiguous land empire in history. His military innovations and religious tolerance created an empire that facilitated trade and cultural exchange between East and West.</p>
+                            <a href="genghis-khan.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Journey the Mongol Empire</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="churchill.jpg" alt="Winston Churchill" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Winston Churchill</h3>
+                            <div class="period">1874-1965</div>
+                            <p>British Prime Minister who led Britain through World War II with unwavering determination. His oratory skills and strategic vision inspired the British people and shaped the modern democratic world.</p>
+                            <a href="churchill.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Experience Churchill's Britain</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="gandhi.jpg" alt="Mahatma Gandhi" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Mahatma Gandhi</h3>
+                            <div class="period">1869-1948</div>
+                            <p>Indian independence leader who pioneered nonviolent resistance as a means of political and social change. His philosophy of satyagraha inspired liberation movements worldwide and continues to influence activists globally.</p>
+                            <a href="gandhi.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Walk Gandhi's Path</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="lincoln.jpg" alt="Abraham Lincoln" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Abraham Lincoln</h3>
+                            <div class="period">1809-1865</div>
+                            <p>16th President who preserved the Union during the Civil War and ended slavery. His leadership during America's greatest crisis and vision of a united nation transformed the United States forever.</p>
+                            <a href="abraham-lincoln.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Follow Lincoln's Journey</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="mlk.jpg" alt="Martin Luther King Jr." class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Martin Luther King Jr.</h3>
+                            <div class="period">1929-1968</div>
+                            <p>American civil rights leader who advanced equality through nonviolent resistance. His powerful oratory and vision of racial justice transformed American society and inspired social movements worldwide.</p>
+                            <a href="martin-luther-king.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Explore the Dream</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="mandela.jpg" alt="Nelson Mandela" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Nelson Mandela</h3>
+                            <div class="period">1918-2013</div>
+                            <p>South African revolutionary who led the fight against apartheid and became the country's first black president. His commitment to reconciliation made him a global symbol of forgiveness and justice.</p>
+                            <a href="nelson-mandela.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Witness Mandela's Legacy</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="george.jpg" alt="George Washington" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>George Washington</h3>
+                            <div class="period">1732-1799</div>
+                            <p>First President of the United States and "Father of His Country." His leadership in war and peace, voluntary relinquishment of power, and democratic precedents shaped American democracy.</p>
+                            <a href="george-washington.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Meet the Founding Father</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="cyrus.jpg" alt="Cyrus the Great" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Cyrus the Great</h3>
+                            <div class="period">600-530 BCE</div>
+                            <p>Founder of the Persian Empire and creator of the first charter of human rights. His tolerant rule and administrative innovations created a model for governing diverse populations across vast territories.</p>
+                            <a href="cyrus.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Discover the Persian Empire</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="elizabeth1.jpg" alt="Elizabeth I" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Elizabeth I</h3>
+                            <div class="period">1533-1603</div>
+                            <p>Queen of England whose reign marked the Elizabethan Age of cultural flourishing and naval dominance. Her defeat of the Spanish Armada secured England's independence and maritime supremacy.</p>
+                            <a href="elizabeth-i.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Enter the Golden Age</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="fdr.jpg" alt="Franklin D. Roosevelt" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Franklin D. Roosevelt</h3>
+                            <div class="period">1882-1945</div>
+                            <p>32nd President who led America through the Great Depression and World War II. His New Deal programs and wartime leadership transformed American government and international relations.</p>
+                            <a href="franklin-roosevelt.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Explore the New Deal Era</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="catherine.jpg" alt="Catherine the Great" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Catherine the Great</h3>
+                            <div class="period">1729-1796</div>
+                            <p>Empress of Russia who expanded the empire and implemented enlightened reforms. Her territorial conquests and modernization efforts transformed Russia into a major European power.</p>
+                            <a href="catherine-the-great.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Rule with Catherine</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="bismarck.jpg" alt="Otto von Bismarck" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Otto von Bismarck</h3>
+                            <div class="period">1815-1898</div>
+                            <p>Prussian statesman who unified Germany through diplomatic skill and strategic warfare. His system of alliances and social welfare programs influenced European politics for decades.</p>
+                            <a href="otto-von-bismarck.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Unite with the Iron Chancellor</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="cleopatra.png" alt="Cleopatra VII" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Cleopatra VII</h3>
+                            <div class="period">69-30 BCE</div>
+                            <p>Last pharaoh of Egypt who maintained independence during Rome's rise. Her political intelligence and strategic alliances demonstrated exceptional leadership in a male-dominated world.</p>
+                            <a href="cleopatra.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Reign with the Last Pharaoh</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="charlemagne.jpg" alt="Charlemagne" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Charlemagne</h3>
+                            <div class="period">747-814 CE</div>
+                            <p>King of the Franks and first Holy Roman Emperor who united Western Europe under Christian rule. His Carolingian Renaissance revitalized European intellectual life and preserved classical knowledge.</p>
+                            <a href="charlemagne.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Build the Holy Roman Empire</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="augustus.jpg" alt="Augustus Caesar" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Augustus Caesar</h3>
+                            <div class="period">63 BCE-14 CE</div>
+                            <p>First Roman Emperor who transformed the chaotic Republic into the magnificent Empire. His administrative reforms and Pax Romana brought two centuries of unprecedented peace and prosperity.</p>
+                            <a href="augustus-caesar.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Found the Roman Empire</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="saladin.jpg" alt="Saladin" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Saladin</h3>
+                            <div class="period">1137-1193 CE</div>
+                            <p>Kurdish Muslim sultan renowned for his military genius and chivalrous character during the Crusades. His recapture of Jerusalem and honorable treatment of enemies earned respect from both Muslim and Christian worlds.</p>
+                            <a href="saladin.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>March with the Noble Sultan</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <img src="ataturk1.jpg" alt="Mustafa Kemal Atatürk" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>Mustafa Kemal Atatürk</h3>
+                            <div class="period">1881-1938 CE</div>
+                            <p>Visionary founder of modern Turkey who transformed the Ottoman Empire into a secular, modern republic. His revolutionary reforms became a model for post-colonial nations worldwide.</p>
+                            <a href="ataturk.html" class="professional-button">
+                                <div class="button-content">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Modernize with Atatürk</span>
+                                </div>
+                                <div class="button-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                .professional-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background: linear-gradient(135deg, #ff4f49 0%, #b40000 100%);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 16px;
+                    padding: 18px 24px;
+                    margin-top: auto;
+                    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    border: none;
+                    overflow: hidden;
+                    position: relative;
+                    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    letter-spacing: 0.5px;
+                }
+
+                .professional-button::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                    transition: left 0.6s ease;
+                }
+
+                .professional-button::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: width 0.6s ease, height 0.6s ease;
+                }
+
+                .button-content {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    z-index: 2;
+                    position: relative;
+                }
+
+                .button-content i {
+                    font-size: 1.1rem;
+                    transition: transform 0.3s ease;
+                }
+
+                .button-content span {
+                    font-weight: 600;
+                    transition: transform 0.3s ease;
+                }
+
+                .button-arrow {
+                    z-index: 2;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.15);
+                    transition: all 0.3s ease;
+                    backdrop-filter: blur(10px);
+                }
+
+                .button-arrow i {
+                    font-size: 0.9rem;
+                    transition: transform 0.3s ease;
+                }
+
+                .professional-button:hover {
+                    transform: translateY(-4px) scale(1.02);
+                    box-shadow: 
+                        0 15px 35px rgba(102, 126, 234, 0.4),
+                        0 25px 60px rgba(102, 126, 234, 0.3);
+                    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+                }
+
+                .professional-button:hover::before {
+                    left: 100%;
+                }
+
+                .professional-button:hover::after {
+                    width: 300px;
+                    height: 300px;
+                }
+
+                .professional-button:hover .button-content i {
+                    transform: scale(1.1) rotate(-5deg);
+                }
+
+                .professional-button:hover .button-content span {
+                    transform: translateX(2px);
+                }
+
+                .professional-button:hover .button-arrow {
+                    background: rgba(255,255,255,0.25);
+                    transform: scale(1.1);
+                }
+
+                .professional-button:hover .button-arrow i {
+                    transform: translateX(3px);
+                }
+
+                .professional-button:active {
+                    transform: translateY(-2px) scale(1.01);
+                    transition: all 0.1s ease;
+                }
+
+                /* Responsive adjustments */
+                @media (max-width: 768px) {
+                    .professional-button {
+                        padding: 16px 20px;
+                        font-size: 0.9rem;
+                    }
+                    
+                    .button-content span {
+                        font-size: 0.9rem;
+                    }
+                    
+                    .button-arrow {
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .professional-button {
+                        padding: 14px 18px;
+                        font-size: 0.85rem;
+                    }
+                    
+                    .button-content {
+                        gap: 10px;
+                    }
+                    
+                    .button-content span {
+                        font-size: 0.85rem;
+                    }
+                    
+                    .button-arrow {
+                        width: 26px;
+                        height: 26px;
+                    }
+                }
+                </style>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section" id="search">
+                <div class="container">
+                    <div class="search-container">
+                        <h2 class="search-title">Find Influential Leaders</h2>
+                        <p class="search-subtitle">Search through history's most influential leaders by name, era, achievements, or leadership style</p>
+                        
+                        <div class="search-wrapper">
+                            <input 
+                                type="text" 
+                                id="searchInput" 
+                                class="search-input" 
+                                placeholder="Search for leaders, time periods, achievements, or leadership qualities..."
+                                autocomplete="off"
+                            >
+                            <i class="fas fa-search search-icon" id="searchIcon"></i>
+                        </div>
+
+                        <div class="search-filters">
+                            <button class="filter-button active" data-filter="all">All Leaders</button>
+                            <button class="filter-button" data-filter="ancient">Ancient Era</button>
+                            <button class="filter-button" data-filter="medieval">Medieval Period</button>
+                            <button class="filter-button" data-filter="renaissance">Renaissance</button>
+                            <button class="filter-button" data-filter="modern">Modern Era</button>
+                            <button class="filter-button" data-filter="military">Military Leaders</button>
+                            <button class="filter-button" data-filter="political">Political Leaders</button>
+                            <button class="filter-button" data-filter="revolutionary">Revolutionary Leaders</button>
+                        </div>
+
+                        <div class="search-results" id="searchResults" style="display: none;">
+                            <div class="search-results-header">
+                                <span class="results-count" id="resultsCount">0 results found</span>
+                                <button class="clear-search" id="clearSearch">Clear search</button>
+                            </div>
+                            <div class="search-results-content" id="searchResultsContent">
+                                <!-- Results will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="no-results" id="noResults" style="display: none;">
+                            <h3>No leaders found</h3>
+                            <p>Try adjusting your search terms or filters</p>
+                            <div class="search-suggestions">
+                                <span>Try searching for:</span>
+                                <span class="suggestion-chip" data-suggestion="napoleon">Napoleon</span>
+                                <span class="suggestion-chip" data-suggestion="cleopatra">Cleopatra</span>
+                                <span class="suggestion-chip" data-suggestion="gandhi">Gandhi</span>
+                                <span class="suggestion-chip" data-suggestion="alexander">Alexander</span>
+                                <span class="suggestion-chip" data-suggestion="roosevelt">Roosevelt</span>
+                                <span class="suggestion-chip" data-suggestion="ancient">Ancient Leaders</span>
+                                <span class="suggestion-chip" data-suggestion="military">Military Leaders</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="categories" class="content-section">
+                <h2 class="section-title">Categories of Influential Leaders Throughout History</h2>
+                <div class="intro-text">
+                    <p>The most influential leaders in human history can be categorized by their primary spheres of impact, leadership styles, and the mechanisms through which they changed the world. Understanding these categories helps us analyze the different pathways to historical significance and the various ways individuals can shape civilization. Each category represents distinct approaches to leadership, from the battlefield to the philosophical realm, from the halls of power to grassroots movements.</p>
+                </div>
+                <div class="categories">
+                    <div class="category-card">
+                        <h3>🏛️ Political Leaders & Statesmen</h3>
+                        <p><strong>Masters of governance, diplomacy, and institutional building who shaped nations through political innovation and administrative excellence.</strong></p>
+                        <p>Political leaders like George Washington, Otto von Bismarck, and Lee Kuan Yew transformed their societies through constitutional innovation, diplomatic mastery, and effective governance. These leaders understood that lasting change requires strong institutions, rule of law, and sustainable political systems. They crafted constitutions, established precedents, negotiated treaties, and built governmental frameworks that outlasted their own tenures.</p>
+                        <p>Key characteristics include strategic thinking, consensus-building, institutional knowledge, and the ability to balance competing interests while maintaining long-term vision. Modern examples include figures like Franklin D. Roosevelt, whose New Deal reshaped American government, and Nelson Mandela, who managed South Africa's peaceful transition to democracy through political reconciliation rather than revolutionary upheaval.</p>
+                    </div>
+                    <div class="category-card">
+                        <h3>⚔️ Military Leaders & Conquerors</h3>
+                        <p><strong>Strategic geniuses who changed history through battlefield brilliance, territorial expansion, and military innovation.</strong></p>
+                        <p>Military leaders such as Alexander the Great, Genghis Khan, and Napoleon Bonaparte reshaped the world map through exceptional tactical skills, innovative strategies, and the ability to inspire fierce loyalty among their troops. These leaders understood that military power, when combined with effective administration and cultural integration, could create lasting empires that transcended mere conquest.</p>
+                        <p>Their influence extended far beyond warfare—they facilitated cultural exchange, established trade routes, spread technologies, and created administrative systems that governed diverse populations. Alexander's Hellenistic influence, the Mongol Empire's facilitation of East-West trade, and Napoleon's legal and administrative innovations demonstrate how military leaders often became inadvertent agents of cultural and intellectual progress.</p>
+                    </div>
+                    <div class="category-card">
+                        <h3>🕊️ Revolutionary Leaders & Freedom Fighters</h3>
+                        <p><strong>Visionaries who challenged oppressive systems and led transformative movements for independence, civil rights, and social justice.</strong></p>
+                        <p>Revolutionary leaders like Mahatma Gandhi, Martin Luther King Jr., and Simón Bolívar fundamentally altered society by challenging entrenched power structures and inspiring mass movements for change. These leaders possessed the rare ability to articulate compelling visions of justice, mobilize diverse coalitions, and maintain moral authority even under severe persecution.</p>
+                        <p>Their methods ranged from Gandhi's satyagraha (nonviolent resistance) to Bolívar's military campaigns for Latin American independence. What united them was their capacity to transform individual grievances into universal principles of human dignity, equality, and freedom. Their movements created lasting changes in law, social norms, and political structures while inspiring similar movements worldwide.</p>
+                    </div>
+                    <div class="category-card">
+                        <h3>📚 Intellectual Leaders & Philosophers</h3>
+                        <p><strong>Thinkers whose ideas, discoveries, and philosophical frameworks fundamentally changed human understanding and progress.</strong></p>
+                        <p>While not always holding formal political power, intellectual leaders like Confucius, Aristotle, John Locke, and Karl Marx profoundly influenced human civilization through ideas that shaped political systems, social structures, and cultural values. Their writings and teachings provided the intellectual foundations for governance models, ethical frameworks, and social movements that continue to influence contemporary life.</p>
+                        <p>These leaders understood that ideas have power to transcend time and geography. Confucian principles shaped East Asian societies for millennia, Aristotelian logic influenced Western education, Lockean political theory inspired democratic revolutions, and Marxist economics motivated 20th-century social movements. Their influence demonstrates that leadership can be exercised through intellectual contribution as powerfully as through direct political action.</p>
+                    </div>
+                    <div class="category-card">
+                        <h3>👑 Monarchs & Imperial Rulers</h3>
+                        <p><strong>Sovereign leaders who built empires, established dynasties, and created lasting institutions through absolute authority and visionary governance.</strong></p>
+                        <p>Imperial rulers like Cyrus the Great, Elizabeth I, Catherine the Great, and Emperor Ashoka wielded absolute power to create expansive empires, establish enduring institutions, and implement transformative policies. These leaders combined personal authority with administrative sophistication, cultural patronage, and often, surprising tolerance and wisdom in governing diverse populations.</p>
+                        <p>Their success often stemmed from understanding that effective empire-building required more than military conquest—it demanded cultural sensitivity, administrative efficiency, and the ability to integrate diverse peoples into unified political entities. The Persian Empire's tolerance of local customs, the Elizabethan Age's cultural flowering, and the Mauryan Empire's Buddhist-inspired governance demonstrate how enlightened monarchs could create golden ages of peace, prosperity, and cultural achievement.</p>
+                    </div>
+                    <div class="category-card">
+                        <h3>✊ Social Reformers & Activists</h3>
+                        <p><strong>Champions of human rights, equality, and social justice who transformed societies through moral leadership and grassroots organizing.</strong></p>
+                        <p>Social reformers like Frederick Douglass, Susan B. Anthony, Eleanor Roosevelt, and César Chávez changed history by challenging unjust social systems and expanding human rights. These leaders possessed extraordinary moral courage, communication skills, and the ability to maintain hope and determination despite facing powerful opposition and personal sacrifice.</p>
+                        <p>Their influence often began with local organizing but expanded to transform entire societies. They understood that lasting social change requires changing both laws and hearts, necessitating sustained campaigns that combined legal challenges, public education, moral persuasion, and grassroots mobilization. Their legacies include expanded voting rights, improved working conditions, enhanced civil rights protections, and greater recognition of human dignity across all social groups.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>Cross-Category Leadership Traits</h3>
+                    <div class="intro-text">
+                        <p>While these categories help organize our understanding of influential leaders, the most impactful figures often transcended single categories. Napoleon was both a military genius and political innovator; Gandhi combined social reform with political revolution; Churchill demonstrated both political leadership and wartime command. The greatest leaders possessed versatility, adapting their approaches to changing circumstances while maintaining consistent core principles.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="timeline" class="content-section">
+                <h2 class="section-title">Timeline of Influential Leadership: From Ancient Civilizations to Modern Era</h2>
+                <div class="intro-text">
+                    <p>The evolution of leadership throughout human history reveals fascinating patterns of how extraordinary individuals have shaped civilization during pivotal moments. This comprehensive timeline explores the major epochs of influential leadership, examining how changing social, technological, and political contexts created opportunities for different types of leaders to emerge and leave lasting impacts on human development.</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Ancient Era: The Dawn of Civilization (3000 BCE - 500 CE)</h3>
+                        <p><strong>The Foundation Period - Where Leadership Established the Pillars of Human Civilization</strong></p>
+                        <p>The ancient era witnessed the emergence of humanity's first great leaders who established the fundamental concepts of law, governance, and empire that continue to influence modern society. This period saw the rise of legendary figures like Hammurabi (c. 1792-1750 BCE), whose Code of Hammurabi created the world's first comprehensive legal system, establishing principles of justice, proportional punishment, and governmental authority that influenced legal traditions for millennia.</p>
+                        <p>Pharaoh Hatshepsut (1507-1458 BCE) revolutionized concepts of female leadership, ruling Egypt for 22 years and focusing on trade, building projects, and peaceful prosperity rather than military conquest. Her successful reign challenged gender assumptions about leadership that persisted for thousands of years. Meanwhile, Cyrus the Great (c. 600-530 BCE) founded the Persian Empire with unprecedented tolerance for local customs and religions, creating the Cyrus Cylinder—history's first human rights charter—and establishing models for governing diverse populations that influenced imperial administration throughout history.</p>
+                        <p>Alexander the Great (356-323 BCE) demonstrated how military genius combined with cultural vision could create lasting change, spreading Hellenistic civilization across three continents and facilitating cultural exchange that enriched human knowledge. The period concluded with figures like Augustus Caesar, whose transformation of the Roman Republic into the Roman Empire created governmental structures and legal frameworks that influenced Western civilization for over two millennia.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Classical Period: The Age of Empires and Spiritual Awakening (500-1000 CE)</h3>
+                        <p><strong>The Synthesis Period - Where Political Power Met Spiritual Authority and Intellectual Achievement</strong></p>
+                        <p>The classical period marked a crucial phase where political leadership increasingly intersected with religious and intellectual authority, creating leaders who combined temporal power with spiritual guidance and scholarly achievement. This era began with figures like Emperor Constantine (272-337 CE), whose conversion to Christianity and establishment of Constantinople fundamentally altered the relationship between political authority and religious faith, creating the model of Christian monarchy that dominated European politics for over a millennium.</p>
+                        <p>The period saw the rise of Prophet Muhammad (570-632 CE), whose spiritual leadership created not only a major world religion but also a political and social system that rapidly expanded across continents. His combination of religious vision, political acumen, and military strategy created the foundation for Islamic civilization and demonstrated how spiritual authority could generate extraordinary political and cultural influence.</p>
+                        <p>Justinian I (482-565 CE) exemplified the classical synthesis of political and intellectual leadership, commissioning the Corpus Juris Civilis that became the foundation of legal systems worldwide while reconquering much of the former Western Roman Empire. Similarly, Charlemagne (747-814 CE) combined military conquest with educational reform, creating the Carolingian Renaissance that preserved classical knowledge through the Dark Ages and established the template for the Holy Roman Empire. This period demonstrated how effective leaders could create lasting institutions by combining political power with cultural and intellectual patronage.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Medieval Era: The Age of Faith, Feudalism, and Cultural Exchange (1000-1500 CE)</h3>
+                        <p><strong>The Integration Period - Where Leaders Navigated Complex Religious, Political, and Cultural Landscapes</strong></p>
+                        <p>The medieval period produced leaders who excelled at managing complex feudal systems, religious conflicts, and increasing cultural exchange between civilizations. This era was dominated by figures who understood that effective leadership required balancing competing authorities—religious and secular, local and imperial, traditional and innovative.</p>
+                        <p>William the Conqueror (1028-1087) revolutionized English society through the Norman Conquest, introducing feudal systems, legal reforms, and administrative innovations that created the foundation of modern English governance. His Domesday Book represented unprecedented governmental organization and information gathering, establishing precedents for systematic administration that influenced bureaucratic development across Europe.</p>
+                        <p>Saladin (1137-1193) embodied the medieval ideal of chivalrous leadership, combining military excellence with diplomatic finesse and religious tolerance. His recapture of Jerusalem and respectful treatment of Christian prisoners established him as a model of honorable leadership that influenced both Islamic and Christian concepts of noble warfare. Meanwhile, figures like Eleanor of Aquitaine (1122-1204) demonstrated how medieval women could exercise significant political influence through strategic marriages, cultural patronage, and diplomatic skill.</p>
+                        <p>The period's most transformative leader was Genghis Khan (1162-1227), whose creation of the Mongol Empire facilitated unprecedented cultural and commercial exchange between East and West. His meritocratic system, religious tolerance, and establishment of the Pax Mongolica created conditions for technological transfer, trade expansion, and cultural synthesis that accelerated human development across continents.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Renaissance & Enlightenment: The Age of Humanism and Reason (1500-1800)</h3>
+                        <p><strong>The Innovation Period - Where Leaders Embraced New Ideas, Exploration, and Governmental Experimentation</strong></p>
+                        <p>The Renaissance and Enlightenment periods produced leaders who combined traditional political authority with humanist learning, scientific curiosity, and philosophical innovation. This era marked the transition from medieval to modern concepts of leadership, emphasizing education, cultural achievement, and rational governance.</p>
+                        <p>Elizabeth I of England (1533-1603) exemplified Renaissance leadership by combining political astuteness with cultural patronage, religious pragmatism, and strategic vision. Her defeat of the Spanish Armada secured English independence and maritime dominance, while her support for exploration, arts, and learning created the Elizabethan Golden Age that produced Shakespeare, Marlowe, and the foundations of English cultural supremacy.</p>
+                        <p>Catherine the Great of Russia (1729-1796) demonstrated how Enlightenment principles could be applied to imperial governance. Her legal reforms, educational initiatives, territorial expansions, and correspondence with Voltaire and other philosophers showed how rulers could modernize their societies while expanding their power. Her Nakaz (Instruction) represented one of history's most comprehensive attempts to apply Enlightenment political theory to practical governance.</p>
+                        <p>The period culminated with leaders like George Washington (1732-1799), whose presidency established crucial precedents for democratic governance, peaceful transfer of power, and limited executive authority. His voluntary relinquishment of power after two terms created a model of republican leadership that influenced democratic movements worldwide and demonstrated that effective leadership could be exercised through restraint as much as through assertion of authority.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Industrial & Imperial Age: The Era of Nation-Building and Global Power (1800-1900)</h3>
+                        <p><strong>The Expansion Period - Where Leaders Navigated Industrial Revolution, Democratic Movements, and Imperial Competition</strong></p>
+                        <p>The 19th century produced leaders who managed the unprecedented challenges of industrialization, democratic expansion, nationalism, and global imperial competition. This period required leaders who could adapt traditional governance structures to rapidly changing technological, economic, and social conditions while managing increasingly complex international relationships.</p>
+                        <p>Napoleon Bonaparte (1769-1821) dominated the era's beginning, creating legal, administrative, and educational systems that influenced governmental development worldwide. The Napoleonic Code became the foundation for legal systems across Europe and Latin America, while his meritocratic principles, educational reforms, and administrative innovations demonstrated how revolutionary ideals could be institutionalized through effective governance.</p>
+                        <p>Abraham Lincoln (1809-1865) faced the challenge of preserving democratic union during existential crisis, demonstrating how moral leadership could guide nations through fundamental transformations. His management of the Civil War, commitment to emancipation, and articulation of democratic principles in speeches like the Gettysburg Address showed how leaders could maintain national unity while pursuing social justice.</p>
+                        <p>Otto von Bismarck (1815-1898) exemplified 19th-century realpolitik, using diplomatic skill and strategic warfare to unify Germany and create the balance of power system that dominated European politics until World War I. His social welfare programs also pioneered the modern welfare state, demonstrating how conservative leaders could co-opt progressive demands through innovative policy solutions.</p>
+                        <p>The period also saw leaders like Simón Bolívar (1783-1830), whose liberation of South America from Spanish rule created multiple independent nations and established him as "El Libertador." His vision of Latin American unity and republican governance influenced independence movements worldwide and demonstrated how revolutionary leadership could create lasting political change across vast territories.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Modern Era: The Age of Global Challenges and Democratic Leadership (1900-Present)</h3>
+                        <p><strong>The Integration Period - Where Leaders Address Global Challenges, Technological Revolution, and Universal Human Rights</strong></p>
+                        <p>The modern era has produced leaders who faced unprecedented global challenges: world wars, decolonization, nuclear weapons, technological revolution, environmental crisis, and globalization. Modern influential leaders have demonstrated that effective leadership in the contemporary world requires understanding complex international systems, managing diverse coalitions, and addressing challenges that transcend national boundaries.</p>
+                        <p>Winston Churchill (1874-1965) embodied wartime leadership, using oratory, strategic vision, and moral courage to sustain British resistance during World War II's darkest moments. His speeches during the Blitz, strategic partnership with Roosevelt and Stalin, and post-war advocacy for European unity demonstrated how democratic leaders could mobilize free societies against totalitarian threats while building foundations for international cooperation.</p>
+                        <p>Mahatma Gandhi (1869-1948) revolutionized concepts of political resistance through satyagraha (nonviolent resistance), proving that moral authority could overcome imperial power and inspiring liberation movements worldwide. His methods influenced the American Civil Rights Movement, anti-apartheid struggle in South Africa, and peaceful democratic transitions across the globe, establishing nonviolence as a powerful tool for social and political change.</p>
+                        <p>Nelson Mandela (1918-2013) demonstrated how leaders could manage peaceful transitions from oppressive systems to democratic governance. His combination of principled resistance during apartheid, strategic negotiation during transition, and reconciliatory leadership as president showed how moral authority and political wisdom could heal divided societies while establishing democratic institutions.</p>
+                        <p>Modern leaders like Franklin D. Roosevelt created the template for activist government during crisis, while figures like Margaret Thatcher and Ronald Reagan demonstrated how conservative leadership could adapt to changing global economic conditions. Contemporary challenges require leaders who can address climate change, technological disruption, global inequality, and international cooperation while maintaining democratic legitimacy and social cohesion.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>Patterns and Lessons from Leadership Timeline</h3>
+                    <div class="intro-text">
+                        <p>This historical timeline reveals several consistent patterns: influential leaders often emerge during periods of crisis or transition, they successfully adapt to the technological and social conditions of their times, they build institutions that outlast their personal tenure, and they possess the vision to see beyond immediate challenges to longer-term possibilities. Understanding these patterns helps contemporary leaders develop strategies for addressing modern challenges while learning from history's most successful examples of transformational leadership.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="qualities" class="qualities-section">
+                <div class="container">
+                    <h2 class="section-title">Essential Qualities of Influential Leaders: The Science and Art of Transformational Leadership</h2>
+                    <div class="intro-text">
+                        <p>What separates ordinary leaders from those who change the course of history? Through analysis of history's most influential leaders, we can identify specific qualities, skills, and characteristics that enable certain individuals to achieve extraordinary impact. These essential leadership qualities transcend time periods, cultures, and contexts, representing universal principles of human influence and organizational transformation.</p>
+                        <p>Modern leadership research, combined with historical analysis, reveals that influential leaders possess a unique combination of cognitive abilities, emotional intelligence, moral courage, and strategic thinking that allows them to navigate complex challenges while inspiring others to achieve seemingly impossible goals. Understanding these qualities provides valuable insights for contemporary leaders seeking to maximize their positive impact.</p>
+                    </div>
+                    <div class="qualities-grid">
+                        <div class="quality-item">
+                            <div class="quality-icon">🎯</div>
+                            <h3>Visionary Leadership & Strategic Foresight</h3>
+                            <p><strong>The ability to envision compelling futures and create strategic pathways to achieve transformational goals.</strong></p>
+                            <p>Visionary leaders like Martin Luther King Jr., John F. Kennedy, and Steve Jobs possessed the rare ability to articulate compelling visions of the future that motivated millions to work toward seemingly impossible goals. They understood that effective leadership requires painting vivid pictures of better worlds while providing concrete steps for achieving those visions.</p>
+                            <p>Strategic foresight involves understanding long-term trends, anticipating challenges and opportunities, and making decisions that position organizations or movements for future success. Leaders like Otto von Bismarck demonstrated masterful strategic thinking by creating diplomatic systems that maintained European peace for decades, while figures like Lee Kuan Yew transformed Singapore through long-term planning and strategic economic development.</p>
+                            <p>Research shows that visionary leaders communicate their goals through storytelling, metaphors, and symbolic actions that make abstract concepts tangible and inspiring. They also possess the patience to pursue long-term objectives while managing short-term pressures and setbacks.</p>
+                        </div>
+                        <div class="quality-item">
+                            <div class="quality-icon">💪</div>
+                            <h3>Moral Courage & Principled Decision-Making</h3>
+                            <p><strong>The strength to make difficult decisions based on principles rather than convenience, even when facing severe opposition or personal cost.</strong></p>
+                            <p>Moral courage distinguishes truly influential leaders from mere power-holders. Leaders like Winston Churchill, who stood against appeasement of Nazi Germany when it was unpopular, and Harriet Tubman, who repeatedly risked her life leading enslaved people to freedom, demonstrated that principled leadership often requires taking stands that initially appear impossible or politically dangerous.</p>
+                            <p>This quality involves the willingness to sacrifice personal gain for larger principles, the ability to make unpopular decisions when they serve the greater good, and the strength to maintain integrity under pressure. Abraham Lincoln's decision to issue the Emancipation Proclamation despite political risks exemplifies how moral courage can drive historical transformation.</p>
+                            <p>Modern research indicates that principled leaders build trust and credibility that enables them to mobilize support during crises. Their consistency between values and actions creates the moral authority necessary for inspiring others to make significant sacrifices for shared goals.</p>
+                        </div>
+                        <div class="quality-item">
+                            <div class="quality-icon">🧠</div>
+                            <h3>Strategic Intelligence & Systems Thinking</h3>
+                            <p><strong>The capacity to analyze complex situations, understand systemic relationships, and develop comprehensive strategies for achieving objectives.</strong></p>
+                            <p>Strategic intelligence encompasses multiple cognitive abilities: analytical thinking, pattern recognition, situational awareness, and the ability to synthesize information from diverse sources. Leaders like Napoleon Bonaparte and Dwight D. Eisenhower excelled at military strategy, while figures like Franklin D. Roosevelt and Deng Xiaoping demonstrated strategic thinking in economic and political transformation.</p>
+                            <p>Systems thinking involves understanding how different elements of complex organizations or societies interact, recognizing unintended consequences, and designing interventions that account for systemic complexity. Catherine the Great's reforms of Russian legal and educational systems exemplify how strategic leaders implement comprehensive changes rather than isolated policies.</p>
+                            <p>Contemporary neuroscience research reveals that strategic thinkers excel at executive function, working memory, and cognitive flexibility—abilities that can be developed through practice, education, and experience. They also possess what psychologists term "cognitive complexity," enabling them to hold multiple perspectives simultaneously and find creative solutions to complex problems.</p>
+                        </div>
+                        <div class="quality-item">
+                            <div class="quality-icon">🎭</div>
+                            <h3>Charismatic Communication & Emotional Intelligence</h3>
+                            <p><strong>The magnetic ability to inspire, persuade, and connect with others through compelling communication and deep understanding of human emotions.</strong></p>
+                            <p>Charismatic leaders like John F. Kennedy, Ronald Reagan, and Barack Obama possessed exceptional communication skills that enabled them to inspire confidence, articulate complex ideas simply, and create emotional connections with diverse audiences. Their effectiveness stemmed from understanding that leadership is fundamentally about human relationships and emotional engagement.</p>
+                            <p>Emotional intelligence—the ability to understand and manage both personal emotions and those of others—enables leaders to build coalitions, resolve conflicts, and maintain team cohesion during stressful periods. Leaders like Nelson Mandela demonstrated extraordinary emotional intelligence by managing his own emotions during 27 years of imprisonment while later facilitating national reconciliation.</p>
+                            <p>Research in social psychology shows that charismatic leaders use specific communication techniques: vivid imagery, personal anecdotes, rhetorical questions, and inclusive language that creates shared identity. They also demonstrate authenticity, vulnerability, and genuine concern for others, which builds trust and emotional connection essential for sustained influence.</p>
+                        </div>
+                        <div class="quality-item">
+                            <div class="quality-icon">⚖️</div>
+                            <h3>Integrity & Authentic Leadership</h3>
+                            <p><strong>The unwavering consistency between personal values, public statements, and actual behavior that builds trust and credibility necessary for sustained influence.</strong></p>
+                            <p>Integrity represents the foundation of sustainable leadership influence. Leaders like George Washington, who voluntarily relinquished power after two presidential terms, and Mahatma Gandhi, who lived according to the principles he advocated, demonstrated that authentic leadership requires personal consistency and moral credibility.</p>
+                            <p>Authentic leaders understand that their personal behavior serves as a model for others and that any gap between stated values and actual actions undermines their ability to inspire and influence. This quality involves self-awareness, honesty about personal limitations, willingness to admit mistakes, and commitment to continuous personal growth and learning.</p>
+                            <p>Organizational psychology research demonstrates that authentic leaders create more engaged, committed, and productive followers. Their transparency and consistency reduce uncertainty, build psychological safety, and enable others to take calculated risks in pursuit of shared objectives. This creates positive organizational cultures that amplify leadership effectiveness.</p>
+                        </div>
+                        <div class="quality-item">
+                            <div class="quality-icon">🌟</div>
+                            <h3>Resilience & Adaptive Leadership</h3>
+                            <p><strong>The ability to recover from setbacks, learn from failures, and adapt strategies based on changing circumstances while maintaining focus on core objectives.</strong></p>
+                            <p>Resilient leaders like Eleanor Roosevelt, who transformed personal adversity into advocacy for human rights, and Ernest Shackleton, who led his crew through extraordinary Antarctic survival challenges, demonstrate that setbacks often create opportunities for demonstrating leadership character and building deeper credibility.</p>
+                            <p>Adaptive leadership involves recognizing when existing strategies are no longer effective, experimenting with new approaches, and learning from both successes and failures. Leaders like Franklin D. Roosevelt showed exceptional adaptability by trying multiple approaches to address the Great Depression until finding effective solutions through the New Deal programs.</p>
+                            <p>Psychological research on resilience reveals that it can be developed through practices such as cognitive reframing, social support networks, stress management techniques, and maintaining perspective during difficult periods. Resilient leaders also demonstrate what researchers call "post-traumatic growth"—using challenging experiences to develop greater wisdom, empathy, and effectiveness.</p>
+                        </div>
+                        <div class="quality-item">
+                            <div class="quality-icon">🤝</div>
+                            <h3>Collaborative Leadership & Team Building</h3>
+                            <p><strong>The skill to identify, develop, and coordinate talented individuals while creating collaborative environments that maximize collective achievement.</strong></p>
+                            <p>Even the most capable leaders recognize that sustainable success requires building strong teams and developing other leaders. George Washington excelled at identifying and utilizing the talents of individuals like Alexander Hamilton and Thomas Jefferson, while leaders like Katherine Johnson (though not in formal leadership roles) demonstrated how collaborative approaches can solve complex problems more effectively than individual efforts.</p>
+                            <p>Collaborative leaders understand that diversity of perspectives, skills, and experiences enhances decision-making and problem-solving. They create inclusive environments where team members feel valued, heard, and empowered to contribute their best work. This involves active listening, conflict resolution skills, and the ability to synthesize different viewpoints into coherent strategies.</p>
+                            <p>Modern research on team dynamics shows that collaborative leaders foster psychological safety, encourage constructive dissent, and create shared accountability systems that enable teams to achieve extraordinary results. They also excel at succession planning, ensuring that their organizations or movements can continue thriving beyond their personal involvement.</p>
+                        </div>
+                        <div class="quality-item">
+                            <div class="quality-icon">⚡</div>
+                            <h3>Decisiveness & Crisis Management</h3>
+                            <p><strong>The capacity to make timely, well-informed decisions under pressure while managing uncertainty and leading effectively during crises.</strong></p>
+                            <p>Crisis situations often reveal true leadership character and capabilities. Leaders like Harry S. Truman, who made the difficult decision to use atomic weapons to end World War II, and Angela Merkel, who managed multiple European crises including the 2008 financial crisis and refugee crisis, demonstrate that influential leaders must be able to make consequential decisions with incomplete information under intense pressure.</p>
+                            <p>Effective crisis management involves rapid information gathering, stakeholder consultation, clear communication, and the ability to maintain calm while projecting confidence. It also requires understanding when to make quick decisions versus when to gather additional information, and how to learn from decision outcomes to improve future judgment.</p>
+                            <p>Research in decision science shows that effective leaders use structured decision-making processes, consider multiple scenarios, and maintain decision-making frameworks that work under pressure. They also understand the psychological and emotional aspects of crisis leadership, providing stability and hope when others feel overwhelmed by uncertainty and change.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h3>Developing These Leadership Qualities</h3>
+                        <div class="intro-text">
+                            <p>While some individuals may have natural predispositions toward certain leadership qualities, research consistently shows that these characteristics can be developed through deliberate practice, education, mentoring, and real-world experience. The most effective approach involves self-assessment to identify current strengths and growth areas, followed by targeted development activities such as leadership training, challenging assignments, mentoring relationships, and regular feedback from trusted advisors.</p>
+                            <p>Historical analysis reveals that many influential leaders developed their capabilities through diverse experiences that tested and refined their abilities. Military service, educational challenges, early career setbacks, and exposure to different cultures and perspectives all contributed to their leadership development. Contemporary leaders can accelerate their growth by seeking similar diverse experiences while focusing on continuous learning and self-improvement.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Leadership Styles and Their Impact</h2>
+                <div class="intro-text">
+                    <p>Throughout history, influential leaders have employed various leadership styles to achieve their goals and leave lasting impacts. Understanding these different approaches provides insights into the diverse paths to effective leadership and the context-dependent nature of successful leadership strategies.</p>
+                </div>
+
+                <div class="leaders-grid">
+                    <div class="leader-card">
+                        <h3>Transformational Leadership</h3>
+                        <p><strong>Examples:</strong> Nelson Mandela, Franklin D. Roosevelt, Mahatma Gandhi</p>
+                        <p>Transformational leaders inspire and motivate followers to achieve extraordinary outcomes by appealing to their higher-order needs and values. They create a vision for change, develop followers into leaders, and build trust through personal integrity. These leaders often emerge during times of crisis or significant social change.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Autocratic Leadership</h3>
+                        <p><strong>Examples:</strong> Napoleon Bonaparte, Julius Caesar, Catherine the Great</p>
+                        <p>Autocratic leaders maintain strict control over decision-making and expect compliance from followers. While this style can be effective in crisis situations or when quick decisions are needed, successful autocratic leaders often combined firm control with genuine concern for their people's welfare and long-term prosperity.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Democratic Leadership</h3>
+                        <p><strong>Examples:</strong> Abraham Lincoln, George Washington, Winston Churchill</p>
+                        <p>Democratic leaders involve followers in decision-making processes while maintaining final authority. They encourage participation, value input from others, and build consensus when possible. This style is particularly effective in situations requiring innovation, commitment, and buy-in from multiple stakeholders.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Servant Leadership</h3>
+                        <p><strong>Examples:</strong> Mahatma Gandhi, Martin Luther King Jr., Mother Teresa</p>
+                        <p>Servant leaders prioritize the needs of their followers and communities above their own interests. They focus on empowering others, building community, and creating positive change through service. This style often characterizes leaders of social movements and humanitarian causes.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Charismatic Leadership</h3>
+                        <p><strong>Examples:</strong> John F. Kennedy, Winston Churchill, Alexander the Great</p>
+                        <p>Charismatic leaders rely on their personal charm, communication skills, and emotional appeal to influence followers. They often articulate compelling visions and inspire devotion through their personality and speaking ability. However, the effectiveness of charismatic leadership often depends on the leader's character and intentions.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Strategic Leadership</h3>
+                        <p><strong>Examples:</strong> Otto von Bismarck, Theodore Roosevelt, Lee Kuan Yew</p>
+                        <p>Strategic leaders excel at long-term planning, analysis of complex situations, and making decisions that position their organizations or nations for future success. They balance multiple competing interests and considerations while maintaining focus on overarching objectives.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Lessons from History's Greatest Leaders</h2>
+                <div class="leaders-grid">
+                    <div class="leader-card">
+                        <h3>The Power of Persistence</h3>
+                        <p>Leaders like Winston Churchill and Abraham Lincoln faced numerous setbacks and failures before achieving their greatest successes. Churchill's early political career included several defeats, and Lincoln lost multiple elections before becoming president. Their persistence in the face of adversity demonstrates the importance of resilience and long-term commitment to achieving meaningful goals.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Moral Leadership Matters</h3>
+                        <p>Leaders who combined power with strong moral principles, such as Nelson Mandela and Mahatma Gandhi, achieved lasting positive change that continues to inspire generations. Their commitment to justice, equality, and nonviolence proved that ethical leadership can be more powerful than force or coercion in creating sustainable transformation.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Innovation and Adaptation</h3>
+                        <p>Successful leaders like Catherine the Great and Franklin D. Roosevelt demonstrated the importance of innovation and adaptation in leadership. They were willing to experiment with new approaches, learn from other cultures and systems, and modify their strategies based on changing circumstances and new information.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Communication Excellence</h3>
+                        <p>Great leaders throughout history have been exceptional communicators. From Julius Caesar's writings to Martin Luther King Jr.'s speeches, effective leaders understand how to articulate their vision, inspire their followers, and persuade others to support their cause. The ability to communicate clearly and persuasively remains essential for leadership success.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Building Strong Teams</h3>
+                        <p>Even the most capable leaders recognize the importance of surrounding themselves with talented advisors and supporters. Leaders like George Washington and Theodore Roosevelt excelled at identifying and developing talent, delegating effectively, and creating teams that could execute their vision successfully.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Understanding Context</h3>
+                        <p>Effective leaders understand their historical moment and adapt their approach accordingly. What worked for Alexander the Great in ancient times would not necessarily work today, but the underlying principles of vision, courage, and strategic thinking remain relevant across different eras and contexts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="content-section">
+                <h2 class="section-title">Frequently Asked Questions About Influential Leaders</h2>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <div class="faq-question">What makes a leader truly influential in history?</div>
+                        <div class="faq-answer">Truly influential leaders in history typically possess several key characteristics: they create lasting change that extends far beyond their lifetime, they inspire and mobilize large numbers of people toward common goals, they make decisions that fundamentally alter the course of events, and they leave behind institutions, ideas, or movements that continue to shape society. Additionally, influential leaders often emerge during pivotal moments in history when their unique combination of skills, vision, and circumstances allows them to have maximum impact.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do we measure the influence of historical leaders?</div>
+                        <div class="faq-answer">The influence of historical leaders is measured through multiple criteria: the geographic and temporal scope of their impact, the number of people affected by their decisions and actions, the permanence of the changes they created, their influence on subsequent leaders and movements, their contributions to human progress and civilization, and their continued relevance and study in modern times. Historians also consider both positive and negative impacts, as even controversial leaders can be highly influential in shaping history.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Can leadership qualities be learned or are they innate?</div>
+                        <div class="faq-answer">Research and historical evidence suggest that while some individuals may have natural predispositions toward leadership, most leadership qualities can be developed through education, experience, and practice. Many of history's greatest leaders, including Abraham Lincoln and Nelson Mandela, developed their leadership skills over time through study, reflection, and real-world experience. Key learnable skills include communication, strategic thinking, emotional intelligence, and decision-making, while personal qualities like integrity and perseverance can be cultivated through conscious effort and commitment.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What role does timing play in leadership influence?</div>
+                        <div class="faq-answer">Timing plays a crucial role in leadership influence, as many great leaders emerged at moments when their particular skills and vision were most needed. Winston Churchill's wartime leadership, Martin Luther King Jr.'s role during the Civil Rights Movement, and George Washington's leadership during America's founding all demonstrate how the convergence of the right person with the right moment in history can amplify a leader's influence. However, truly great leaders also have the ability to recognize and seize opportunities, making their own timing to some extent.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How have influential leaders adapted to changing times throughout history?</div>
+                        <div class="faq-answer">Successful leaders throughout history have demonstrated remarkable adaptability to changing circumstances, technologies, and social conditions. They have embraced new communication methods (from Caesar's written dispatches to FDR's radio broadcasts), adapted military and political strategies to new technologies and contexts, evolved their leadership styles based on their followers' needs and expectations, and learned from other cultures and systems to improve their own approaches. This adaptability often distinguishes truly influential leaders from those whose impact was limited to their immediate time and place.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What common mistakes did even great leaders make?</div>
+                        <div class="faq-answer">Even history's most influential leaders made significant mistakes that offer valuable lessons: overextension of resources and territory (Napoleon's Russian campaign, Alexander's exhausted army), failure to plan for succession (many great leaders left power vacuums), underestimating opponents or overestimating their own capabilities, allowing personal flaws to affect judgment, and sometimes losing touch with the people they led. These mistakes remind us that leadership is a continuous learning process and that even great leaders must remain humble and adaptable.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do cultural differences affect perceptions of influential leaders?</div>
+                        <div class="faq-answer">Cultural perspectives significantly influence how leaders are perceived and remembered. A leader viewed as heroic in one culture may be seen as a conqueror or oppressor in another. For example, Alexander the Great is celebrated in Greek culture but viewed differently in Persian culture. This highlights the importance of understanding multiple perspectives when studying historical leaders and recognizing that influence can be both positive and negative depending on one's viewpoint. Modern scholarship increasingly emphasizes the need to examine leaders from multiple cultural and historical perspectives.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What can modern leaders learn from historical figures?</div>
+                        <div class="faq-answer">Modern leaders can learn numerous valuable lessons from historical figures: the importance of clear vision and effective communication, the need for moral courage and ethical decision-making, the value of resilience and persistence in the face of adversity, the necessity of adapting to changing circumstances while maintaining core principles, the power of building strong teams and developing others, and the significance of understanding one's historical moment and context. Additionally, studying both the successes and failures of historical leaders provides insights into effective leadership strategies and common pitfalls to avoid.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">The Evolution of Leadership Through the Ages</h2>
+                <div class="intro-text">
+                    <p>Leadership has evolved significantly throughout human history, adapting to changing social structures, technologies, and global challenges. Understanding this evolution helps us appreciate how leadership concepts have developed and what lessons remain relevant for contemporary leaders.</p>
+                </div>
+
+                <div class="leaders-grid">
+                    <div class="leader-card">
+                        <h3>Ancient Leadership: Divine Right and Personal Authority</h3>
+                        <p>In ancient civilizations, leaders often claimed divine authority or ruled through personal charisma and military might. Pharaohs, kings, and emperors like Cyrus the Great and Alexander the Great established their legitimacy through conquest, religious sanction, or hereditary claims. Leadership was highly personalized, with the leader's character and decisions directly shaping the fate of entire civilizations.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Medieval Leadership: Feudalism and Religious Authority</h3>
+                        <p>Medieval leadership was characterized by complex feudal hierarchies and the significant influence of religious institutions. Leaders like Charlemagne and William the Conqueror operated within systems that balanced temporal and spiritual power. Leadership legitimacy came from a combination of noble birth, religious approval, and military capability, with elaborate ceremonies and traditions reinforcing authority.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Renaissance Leadership: Humanism and Diplomacy</h3>
+                        <p>The Renaissance brought new concepts of leadership that emphasized education, cultural patronage, and diplomatic skill. Leaders like the Medici rulers and Elizabeth I combined political power with support for arts and learning. This period saw the rise of more sophisticated diplomatic relations and the idea that leaders should be well-educated and culturally refined.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Enlightenment Leadership: Reason and Constitutional Authority</h3>
+                        <p>Enlightenment thinking introduced concepts of rational governance, constitutional limits on power, and leaders' accountability to the people. Leaders like George Washington and Thomas Jefferson embodied these new ideals, establishing precedents for democratic leadership and peaceful transfer of power that continue to influence modern governance.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Industrial Age Leadership: Organization and Mass Communication</h3>
+                        <p>The Industrial Revolution created new challenges and opportunities for leaders, who had to manage larger, more complex organizations and communicate with broader audiences. Leaders like Abraham Lincoln and Otto von Bismarck used new technologies like telegraphs and railways to extend their influence, while also developing new forms of mass communication and political organization.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Modern Leadership: Media, Globalization, and Collaboration</h3>
+                        <p>Contemporary leadership operates in an interconnected, media-saturated world where leaders must navigate global challenges, diverse stakeholders, and rapid technological change. Modern influential leaders like Nelson Mandela and Mahatma Gandhi have shown how moral authority and collaborative approaches can be more effective than traditional authoritarian methods in creating lasting change.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Geographic Distribution of Influential Leaders</h2>
+                <div class="intro-text">
+                    <p>Throughout history, influential leaders have emerged from every continent and culture, each contributing unique perspectives and approaches to leadership. This global distribution of leadership excellence demonstrates that great leadership transcends cultural, ethnic, and geographic boundaries.</p>
+                </div>
+
+                <div class="leaders-grid">
+                    <div class="leader-card">
+                        <h3>European Leaders</h3>
+                        <p><strong>Notable Examples:</strong> Napoleon Bonaparte, Winston Churchill, Elizabeth I, Otto von Bismarck, Catherine the Great</p>
+                        <p>European leaders have significantly influenced global politics, warfare, and governance systems. From the Roman Empire to modern democratic institutions, European leadership concepts have spread worldwide through colonization, trade, and cultural exchange. The continent has produced leaders who excelled in military strategy, political innovation, and diplomatic relations.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Asian Leaders</h3>
+                        <p><strong>Notable Examples:</strong> Genghis Khan, Cyrus the Great, Saladin, Emperor Meiji, Lee Kuan Yew</p>
+                        <p>Asian leaders have created some of history's largest empires and most sophisticated governmental systems. From the Persian Empire's tolerance and administrative efficiency to China's bureaucratic innovations and Japan's rapid modernization, Asian leadership has emphasized long-term thinking, cultural synthesis, and adaptive governance strategies.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>American Leaders</h3>
+                        <p><strong>Notable Examples:</strong> George Washington, Abraham Lincoln, Franklin D. Roosevelt, Martin Luther King Jr., Simon Bolívar</p>
+                        <p>American leaders have pioneered democratic governance, federal systems, and civil rights movements. From the founding fathers who established constitutional democracy to civil rights leaders who expanded equality, American leadership has emphasized individual rights, democratic processes, and the peaceful resolution of conflicts through legal and political means.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>African Leaders</h3>
+                        <p><strong>Notable Examples:</strong> Nelson Mandela, Cleopatra VII, Shaka Zulu, Haile Selassie, Kwame Nkrumah</p>
+                        <p>African leaders have demonstrated exceptional skills in unifying diverse populations, resisting colonialism, and building modern nations. From ancient Egyptian pharaohs to modern independence leaders, African leadership has emphasized community building, resistance to oppression, and the integration of traditional values with modern governance.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Middle Eastern Leaders</h3>
+                        <p><strong>Notable Examples:</strong> Saladin, Cyrus the Great, Harun al-Rashid, Golda Meir, Mustafa Kemal Atatürk</p>
+                        <p>Middle Eastern leaders have shaped religious, cultural, and political developments that influenced the entire world. From ancient Persian tolerance to Islamic golden age leadership and modern nation-building, Middle Eastern leaders have excelled in cultural synthesis, religious leadership, and managing diverse populations in strategic geographic locations.</p>
+                    </div>
+
+                    <div class="leader-card">
+                        <h3>Oceanic Leaders</h3>
+                        <p><strong>Notable Examples:</strong> King Kamehameha I, Queen Liliuokalani, Sir Edmund Hillary (as expedition leader)</p>
+                        <p>Leaders from Oceania, while fewer in global historical records, have demonstrated unique approaches to leadership that emphasize environmental harmony, community consensus, and sustainable resource management. Pacific Island leaders developed sophisticated navigation and resource management systems that sustained their societies for centuries.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Promotion Section -->
+            <section class="content-section" style="background: linear-gradient(135deg, #d32f2f 0%, #ff5e62 100%); color: white; border-radius: 20px; text-align: center; margin: 4rem 0;">
+                <div class="container" style="padding: 4rem 2rem;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: white;">Discover Your Leadership Style!</h2>
+                    <p style="font-size: 1.3rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        Now that you've learned about history's most influential leaders, discover which legendary leader you resemble most! Take our free Historical Leaders Personality Quiz and uncover your unique leadership style, strengths, and potential.
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; min-width: 200px;">
+                            <h4 style="margin-bottom: 0.5rem;">🎯 100% Free</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.9;">No sign-up required</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; min-width: 200px;">
+                            <h4 style="margin-bottom: 0.5rem;">⚡ Instant Results</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.9;">Get results immediately</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; min-width: 200px;">
+                            <h4 style="margin-bottom: 0.5rem;">📊 Detailed Analysis</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.9;">Comprehensive personality breakdown</p>
+                        </div>
+                    </div>
+                    <a href="leaders.html" style="display: inline-block; background: white; color: #d32f2f; padding: 1.2rem 3rem; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s, box-shadow 0.3s;">
+                        Take the Free Leadership Quiz Now
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Floating CTA -->
+    <a href="leaders.html" class="floating-cta">
+        <i class="fas fa-quiz"></i>
+        Take Quiz
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <footer class="zinvana-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Zinvana Quizzes</h4>
+                    <ul>
+                        <li><a href="leaders.html">Historical Leaders Quiz</a></li>
+                        <li><a href="empire.html">Empires Quiz</a></li>
+                        <li><a href="persian_kings-quiz.html">Persian Kings Quiz</a></li>
+                        <li><a href="football-personality-quiz.html">Football Personality Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Leadership Resources</h4>
+                    <ul>
+                        <li><a href="cyrus.html">Cyrus the Great</a></li>
+                        <li><a href="napoleon.html">Napoleon Bonaparte</a></li>
+                        <li><a href="churchill.html">Winston Churchill</a></li>
+                        <li><a href="all-articles.html">All Articles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About Zinvana</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html">Free Personality Tests</a></li>
+                        <li><a href="all-empires.html">Historical Empires</a></li>
+                        <li><a href="all-articles.html">Leadership Articles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section about-guide">
+                    <h4>About This Guide</h4>
+                    <p>
+                        This comprehensive guide to influential leaders in history is part of Zinvana's collection of educational resources. Discover your leadership style with our free personality quizzes and explore the lives of history's greatest leaders.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2025 <span>Zinvana</span>. All rights reserved.
+                    &nbsp;|&nbsp;
+                    <a href="/privacy">Privacy Policy</a>
+                    &nbsp;|&nbsp;
+                    <a href="/terms">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <style>
+    .zinvana-footer {
+        background: linear-gradient(135deg, #232526 0%, #414345 100%);
+        color: #f1f1f1;
+        border-radius: 24px 24px 0 0;
+        margin-top: 4rem;
+        box-shadow: 0 -4px 24px rgba(44,62,80,0.08);
+        font-size: 1rem;
+        width: 100%;
+    }
+    .zinvana-footer .container {
+        padding: 2.5rem 1rem 1rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: space-between;
+    }
+    .footer-section {
+        flex: 1 1 200px;
+        min-width: 180px;
+        margin-bottom: 1.5rem;
+    }
+    .footer-section h4 {
+        color: #ff5e62;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-section ul li {
+        margin-bottom: 0.5rem;
+    }
+    .footer-section ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.2s;
+        font-size: 1rem;
+    }
+    .footer-section ul li a:hover,
+    .footer-section ul li a:focus {
+        color: #ff5e62;
+        text-decoration: underline;
+        outline: none;
+    }
+    .footer-section.about-guide {
+        flex: 2 1 320px;
+        min-width: 220px;
+    }
+    .footer-section.about-guide p {
+        color: #e0e0e0;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin: 0;
+    }
+    .footer-bottom {
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid #34495e;
+        margin-top: 1.5rem;
+    }
+    .footer-bottom p {
+        color: #bbb;
+        font-size: 0.98rem;
+        margin: 0;
+    }
+    .footer-bottom span {
+        color: #ff5e62;
+        font-weight: bold;
+    }
+    .footer-bottom a {
+        color: #ff5e62;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footer-bottom a:hover,
+    .footer-bottom a:focus {
+        text-decoration: underline;
+        color: #fff;
+        outline: none;
+    }
+    @media (max-width: 900px) {
+        .footer-content {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .footer-section {
+            min-width: 0;
+        }
+        .footer-section.about-guide {
+            min-width: 0;
+        }
+    }
+    @media (max-width: 600px) {
+        .zinvana-footer .container {
+            padding: 2rem 0.5rem 1rem 0.5rem;
+        }
+        .footer-section {
+            font-size: 0.98rem;
+        }
+        .footer-section h4 {
+            font-size: 1rem;
+        }
+    }
+    </style>
+
+    <script>
+        // Loading overlay
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Scroll progress indicator
+        function updateScrollProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            const progressBar = document.querySelector('.scroll-progress div');
+            if (progressBar) {
+                progressBar.style.width = scrolled + '%';
+            }
+        }
+
+        window.addEventListener('scroll', updateScrollProgress);
+
+        // Enhanced navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Floating CTA visibility
+        window.addEventListener('scroll', function() {
+            const floatingCTA = document.querySelector('.floating-cta');
+            const backToTop = document.querySelector('.back-to-top');
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            
+            if (scrollPosition > windowHeight) {
+                if (floatingCTA) floatingCTA.classList.add('visible');
+                if (backToTop) backToTop.classList.add('visible');
+            } else {
+                if (floatingCTA) floatingCTA.classList.remove('visible');
+                if (backToTop) backToTop.classList.remove('visible');
+            }
+        });
+
+        // Begin: Navigation JS from test.html
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.getElementById('navbar-toggle');
+            const links = document.getElementById('navbar-links');
+            toggle.addEventListener('click', function() {
+                links.classList.toggle('open');
+            });
+            // Optional: Close menu on link click (mobile)
+            links.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        links.classList.remove('open');
+                    }
+                });
+            });
+        });
+        // End: Navigation JS from test.html
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+                
+                // Hide all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                });
+                
+                // Show clicked answer if it wasn't visible
+                if (!isVisible) {
+                    answer.style.display = 'block';
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Enhanced scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.leader-card, .category-card, .quality-item, .timeline-item, .animate-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            document.querySelectorAll('.stat-item h3').forEach(counter => {
+                const target = counter.innerText;
+                const isNumber = !isNaN(target.replace(/[+,]/g, ''));
+                
+                if (isNumber) {
+                    const number = parseInt(target.replace(/[+,]/g, ''));
+                    let current = 0;
+                    const increment = number / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= number) {
+                            current = number;
+                            clearInterval(timer);
+                        }
+                        counter.innerText = Math.floor(current).toLocaleString() + (target.includes('+') ? '+' : '');
+                    }, 50);
+                }
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+
+        // SEO and analytics tracking
+        function trackPageView() {
+            if (typeof gtag !== 'undefined') {
+                gtag('config', 'GA_MEASUREMENT_ID', {
+                    page_title: 'Most Influential Leaders in History',
+                    page_location: window.location.href
+                });
+            }
+        }
+
+        // Track user engagement
+        let scrollDepth = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (currentScroll > scrollDepth) {
+                scrollDepth = Math.min(currentScroll, 100);
+                if (scrollDepth % 25 === 0 && typeof gtag !== 'undefined') {
+                    gtag('event', 'scroll_depth', {
+                        'event_category': 'engagement',
+                        'event_label': scrollDepth + '%'
+                    });
+                }
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            trackPageView();
+            initializeSearch();
+        });
+
+        // Search functionality
+        function initializeSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const searchResultsContent = document.getElementById('searchResultsContent');
+            const resultsCount = document.getElementById('resultsCount');
+            const noResults = document.getElementById('noResults');
+            const clearSearch = document.getElementById('clearSearch');
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const suggestionChips = document.querySelectorAll('.suggestion-chip');
+
+            // Leader data for searching
+            const leaders = [
+                {
+                    name: "Alexander the Great",
+                    period: "356-323 BCE",
+                    category: "military",
+                    era: "ancient",
+                    image: "alexanderheader.jpg",
+                    description: "Macedonian king who created one of the largest empires in ancient history",
+                    achievements: ["conquered Persian Empire", "spread Greek culture", "founded Alexandria"],
+                    keywords: ["military genius", "conqueror", "macedonian", "hellenistic"]
+                },
+                {
+                    name: "Julius Caesar",
+                    period: "100-44 BCE",
+                    category: "political",
+                    era: "ancient",
+                    image: "caesarheader.jpg",
+                    description: "Roman general and statesman who played a critical role in the transformation of the Roman Republic into the Roman Empire",
+                    achievements: ["Gallic Wars", "crossed Rubicon", "reformed calendar"],
+                    keywords: ["roman", "dictator", "republic", "empire", "gallic wars"]
+                },
+                {
+                    name: "Napoleon Bonaparte",
+                    period: "1769-1821",
+                    category: "military",
+                    era: "modern",
+                    image: "napoleonheader.jpg",
+                    description: "French military leader who rose to prominence during the French Revolution and became Emperor of France",
+                    achievements: ["Napoleonic Code", "conquered most of Europe", "military innovations"],
+                    keywords: ["french emperor", "military genius", "napoleonic wars", "code civil"]
+                },
+                {
+                    name: "Winston Churchill",
+                    period: "1874-1965",
+                    category: "political",
+                    era: "modern",
+                    image: "churchillheader.jpg",
+                    description: "British Prime Minister who led Britain to victory in World War II",
+                    achievements: ["WWII leadership", "Iron Curtain speech", "Nobel Prize in Literature"],
+                    keywords: ["british", "world war", "prime minister", "speeches"]
+                },
+                {
+                    name: "Mahatma Gandhi",
+                    period: "1869-1948",
+                    category: "revolutionary",
+                    era: "modern",
+                    image: "gandhiheader.jpg",
+                    description: "Indian independence leader who pioneered nonviolent resistance",
+                    achievements: ["Indian independence", "civil rights", "nonviolent resistance"],
+                    keywords: ["nonviolence", "independence", "civil rights", "satyagraha"]
+                },
+                {
+                    name: "Abraham Lincoln",
+                    period: "1809-1865",
+                    category: "political",
+                    era: "modern",
+                    image: "lincolnheader.jpg",
+                    description: "16th President of the United States who preserved the Union during the Civil War",
+                    achievements: ["ended slavery", "preserved Union", "Gettysburg Address"],
+                    keywords: ["civil war", "emancipation", "union", "slavery"]
+                },
+                {
+                    name: "Martin Luther King Jr.",
+                    period: "1929-1968",
+                    category: "revolutionary",
+                    era: "modern",
+                    image: "mlkheader.jpg",
+                    description: "American civil rights leader who advanced civil rights through nonviolent resistance",
+                    achievements: ["civil rights movement", "I Have a Dream speech", "Nobel Peace Prize"],
+                    keywords: ["civil rights", "nonviolence", "dream speech", "equality"]
+                },
+                {
+                    name: "Nelson Mandela",
+                    period: "1918-2013",
+                    category: "revolutionary",
+                    era: "modern",
+                    image: "mandelaheader.jpg",
+                    description: "South African revolutionary who became the country's first black president",
+                    achievements: ["ended apartheid", "reconciliation", "Nobel Peace Prize"],
+                    keywords: ["apartheid", "reconciliation", "south africa", "freedom fighter"]
+                },
+                {
+                    name: "George Washington",
+                    period: "1732-1799",
+                    category: "political",
+                    era: "modern",
+                    image: "georgeheader.jpg",
+                    description: "First President of the United States and commander-in-chief of the Continental Army",
+                    achievements: ["American Revolution", "established precedents", "Farewell Address"],
+                    keywords: ["founding father", "revolution", "precedents", "democracy"]
+                },
+                {
+                    name: "Cyrus the Great",
+                    period: "600-530 BCE",
+                    category: "political",
+                    era: "ancient",
+                    image: "cyrus3.jpg",
+                    description: "Founder of the Persian Empire and creator of the first charter of human rights",
+                    achievements: ["Persian Empire", "Cyrus Cylinder", "religious tolerance"],
+                    keywords: ["persian", "human rights", "tolerance", "empire"]
+                },
+                {
+                    name: "Elizabeth I",
+                    period: "1533-1603",
+                    category: "political",
+                    era: "renaissance",
+                    image: "elizabethheader.jpg",
+                    description: "Queen of England whose reign marked the Elizabethan Age",
+                    achievements: ["defeated Spanish Armada", "cultural flowering", "religious settlement"],
+                    keywords: ["elizabethan", "armada", "golden age", "virgin queen"]
+                },
+                {
+                    name: "Franklin D. Roosevelt",
+                    period: "1882-1945",
+                    category: "political",
+                    era: "modern",
+                    image: "fdrheader.jpg",
+                    description: "32nd President who led the nation through the Great Depression and World War II",
+                    achievements: ["New Deal", "WWII leadership", "four terms"],
+                    keywords: ["new deal", "depression", "world war", "fireside chats"]
+                },
+                {
+                    name: "Catherine the Great",
+                    period: "1729-1796",
+                    category: "political",
+                    era: "modern",
+                    image: "catherineheader.jpg",
+                    description: "Empress of Russia who expanded the empire and implemented reforms",
+                    achievements: ["territorial expansion", "legal reforms", "cultural patronage"],
+                    keywords: ["russian empress", "enlightenment", "expansion", "reforms"]
+                },
+                {
+                    name: "Otto von Bismarck",
+                    period: "1815-1898",
+                    category: "political",
+                    era: "modern",
+                    image: "bismarckheader.jpg",
+                    description: "Prussian statesman who unified Germany",
+                    achievements: ["German unification", "realpolitik", "social welfare"],
+                    keywords: ["german unification", "iron chancellor", "realpolitik", "prussia"]
+                },
+                {
+                    name: "Cleopatra VII",
+                    period: "69-30 BCE",
+                    category: "political",
+                    era: "ancient",
+                    image: "cleopatraheader.jpg",
+                    description: "Last pharaoh of Egypt who maintained independence during Rome's rise",
+                    achievements: ["Egyptian independence", "political alliances", "cultural patronage"],
+                    keywords: ["pharaoh", "egypt", "caesar", "antony"]
+                },
+                {
+                    name: "Charlemagne",
+                    period: "747-814 CE",
+                    category: "political",
+                    era: "medieval",
+                    image: "charlemagneheader.jpg",
+                    description: "King of Franks and first Holy Roman Emperor",
+                    achievements: ["Holy Roman Empire", "Carolingian Renaissance", "European unification"],
+                    keywords: ["holy roman empire", "carolingian", "medieval", "frankish"]
+                },
+                {
+                    name: "Augustus Caesar",
+                    period: "63 BCE-14 CE",
+                    category: "political",
+                    era: "ancient",
+                    image: "augustusheader.jpg",
+                    description: "First Roman Emperor who established the Pax Romana",
+                    achievements: ["Roman Empire", "Pax Romana", "administrative reforms"],
+                    keywords: ["roman emperor", "pax romana", "octavian", "empire"]
+                },
+                {
+                    name: "Saladin",
+                    period: "1137-1193 CE",
+                    category: "military",
+                    era: "medieval",
+                    image: "saladinheader.jpg",
+                    description: "Kurdish Muslim sultan who led during the Crusades",
+                    achievements: ["recaptured Jerusalem", "Third Crusade", "chivalrous conduct"],
+                    keywords: ["crusades", "jerusalem", "kurdish", "muslim"]
+                },
+                {
+                    name: "Mustafa Kemal Atatürk",
+                    period: "1881-1938",
+                    category: "revolutionary",
+                    era: "modern",
+                    image: "ataturk1.jpg",
+                    description: "Founder and first President of modern Turkey",
+                    achievements: ["modernized Turkey", "secular reforms", "women's rights"],
+                    keywords: ["turkish", "modernization", "secular", "reforms"]
+                }
+            ];
+
+            let currentFilter = 'all';
+            let searchTerm = '';
+
+            // Event listeners
+            searchInput.addEventListener('input', handleSearch);
+            clearSearch.addEventListener('click', clearSearchResults);
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    currentFilter = button.dataset.filter;
+                    performSearch();
+                });
+            });
+
+            suggestionChips.forEach(chip => {
+                chip.addEventListener('click', () => {
+                    searchInput.value = chip.dataset.suggestion;
+                    handleSearch();
+                });
+            });
+
+            function handleSearch() {
+                searchTerm = searchInput.value.trim().toLowerCase();
+                performSearch();
+            }
+
+            function performSearch() {
+                if (!searchTerm && currentFilter === 'all') {
+                    hideResults();
+                    return;
+                }
+
+                const filteredLeaders = leaders.filter(leader => {
+                    // Filter by category
+                    if (currentFilter !== 'all' && leader.category !== currentFilter && leader.era !== currentFilter) {
+                        return false;
+                    }
+
+                    // Filter by search term
+                    if (searchTerm) {
+                        const searchFields = [
+                            leader.name,
+                            leader.description,
+                            ...leader.achievements,
+                            ...leader.keywords,
+                            leader.period,
+                            leader.era,
+                            leader.category
+                        ].join(' ').toLowerCase();
+
+                        return searchFields.includes(searchTerm);
+                    }
+
+                    return true;
+                });
+
+                displayResults(filteredLeaders);
+            }
+
+            function displayResults(results) {
+                if (results.length === 0) {
+                    showNoResults();
+                    return;
+                }
+
+                hideNoResults();
+                showResults();
+
+                resultsCount.textContent = `${results.length} result${results.length !== 1 ? 's' : ''} found`;
+
+                searchResultsContent.innerHTML = results.map(leader => `
+                    <div class="leader-card search-result-card">
+                        <img src="${leader.image || 'default.png'}" alt="${leader.name}" class="leader-image" onerror="this.style.display='none'">
+                        <div class="leader-content">
+                            <h3>${highlightText(leader.name, searchTerm)}</h3>
+                            <div class="period">${leader.period}</div>
+                            <p>${highlightText(leader.description, searchTerm)}</p>
+                            <div class="achievements">
+                                <strong>Key Achievements:</strong>
+                                <ul>
+                                    ${leader.achievements.map(achievement => 
+                                        `<li>${highlightText(achievement, searchTerm)}</li>`
+                                    ).join('')}
+                                </ul>
+                            </div>
+                            <div class="leader-meta">
+                                <span class="category-tag ${leader.category}">${capitalizeFirst(leader.category)} Leader</span>
+                                <span class="era-tag ${leader.era}">${capitalizeFirst(leader.era)} Era</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            function highlightText(text, term) {
+                if (!term) return text;
+                const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
+                return text.replace(regex, '<span class="search-highlight">$1</span>');
+            }
+
+            function escapeRegExp(string) {
+                return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }
+
+            function capitalizeFirst(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1);
+            }
+
+            function showResults() {
+                searchResults.style.display = 'block';
+                noResults.style.display = 'none';
+            }
+
+            function showNoResults() {
+                searchResults.style.display = 'none';
+                noResults.style.display = 'block';
+            }
+
+            function hideNoResults() {
+                noResults.style.display = 'none';
+            }
+
+            function hideResults() {
+                searchResults.style.display = 'none';
+                noResults.style.display = 'none';
+            }
+
+            function clearSearchResults() {
+                searchInput.value = '';
+                searchTerm = '';
+                currentFilter = 'all';
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                filterButtons[0].classList.add('active');
+                hideResults();
+            }
+        }
+    </script>
+</body>
+</html>
