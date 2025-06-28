@@ -3,30 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cristiano Ronaldo – Complete Biography, Records, News & Stats | Zinvana</title>
+  <title>Cristiano Ronaldo – Complete Biography & Career Records | Zinvana</title>
 
   <!-- Primary Meta Tags -->
-  <meta name="title" content="Cristiano Ronaldo – Complete Biography, Records, News & Stats | Zinvana" />
-  <meta name="description" content="Explore Cristiano Ronaldo’s full biography, club and international records, career milestones, latest news, stats, highlights, and off-field ventures. Zinvana – your definitive source on the Portuguese superstar." />
-  <meta name="keywords" content="Cristiano Ronaldo, Ronaldo biography, Real Madrid, Manchester United, Juventus, Portugal captain, Ronaldo records" />
-  <meta name="author" content="Your Name or Organization" />
+  <meta name="title" content="Cristiano Ronaldo – Complete Biography & Career Records | Zinvana" />
+  <meta name="description" content="Explore Cristiano Ronaldo's complete biography, career records, achievements, and legacy. From Madeira to global superstar - discover the story of one of football's greatest players of all time." />
+  <meta name="keywords" content="Cristiano Ronaldo, football biography, Real Madrid, Manchester United, Juventus, Al Nassr, Portugal captain, Ballon d'Or, Champions League, football records, CR7" />
+  <meta name="author" content="Zinvana" />
   <link rel="canonical" href="https://zinvana.com/cristiano_ronaldo.html" />
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:url" content="https://zinvana.com/cristiano_ronaldo.html" />
-  <meta property="og:title" content="Cristiano Ronaldo – Complete Biography, Records, News & Stats | Zinvana" />
-  <meta property="og:description" content="Explore Cristiano Ronaldo’s full biography, club and international records, career milestones, latest news, stats, highlights, and off-field ventures. Zinvana – your definitive source on the Portuguese superstar." />
+  <meta property="og:title" content="Cristiano Ronaldo – Complete Biography & Career Records | Zinvana" />
+  <meta property="og:description" content="Discover the incredible journey of Cristiano Ronaldo from Madeira to global football icon. Complete biography, career highlights, and achievements." />
   <meta property="og:image" content="https://zinvana.com/ronaldoheader.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Zinvana" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://zinvana.com/cristiano_ronaldo.html" />
-  <meta name="twitter:title" content="Cristiano Ronaldo – Complete Biography, Records, News & Stats | Zinvana" />
-  <meta name="twitter:description" content="Explore Cristiano Ronaldo’s full biography, club and international records, career milestones, latest news, stats, highlights, and off-field ventures. Zinvana – your definitive source on the Portuguese superstar." />
+  <meta name="twitter:title" content="Cristiano Ronaldo – Complete Biography & Career Records | Zinvana" />
+  <meta name="twitter:description" content="Discover the incredible journey of Cristiano Ronaldo from Madeira to global football icon. Complete biography, career highlights, and achievements." />
   <meta name="twitter:image" content="https://zinvana.com/ronaldoheader.jpg" />
+  <meta name="twitter:site" content="@zinvana_official" />
+  <meta name="twitter:creator" content="@zinvana_official" />
 
-  <!-- Structured Data: Person & FAQ -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -87,7 +92,7 @@
             "name": "What individual awards has he received?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "He has earned five Ballon d’Or awards, multiple Golden Boots, FIFA World Player of the Year honors, and inclusion in FIFPro World XI numerous times."
+              "text": "He has earned five Ballon d'Or awards, multiple Golden Boots, FIFA World Player of the Year honors, and inclusion in FIFPro World XI numerous times."
             }
           }
         ]
@@ -96,333 +101,2075 @@
   }
   </script>
 
-  <link rel="stylesheet" href="football.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    header { background: url('ronaldoheader.jpg') no-repeat center/cover; }
+    :root {
+      --primary-gold: #d4af37;
+      --dark-gold: #b8941f;
+      --light-gold: #f4e9c7;
+      --navy: #1a2238;
+      --light-navy: #2c3548;
+      --cream: #faf9f6;
+      --text-dark: #2c3e50;
+      --text-light: #666;
+      --border-light: #e8e6e0;
+      --shadow: rgba(0,0,0,0.1);
+      --shadow-hover: rgba(0,0,0,0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* Loading Animation */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-content {
+      text-align: center;
+      color: #f8f9fa;
+    }
+
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 3px solid rgba(212, 175, 55, 0.3);
+      border-top: 3px solid var(--primary-gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    .loading-content p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--primary-gold);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26, 34, 56, 0.95);
+      backdrop-filter: blur(15px);
+      z-index: 1000;
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .navbar.scrolled {
+      background: rgba(26, 34, 56, 0.98);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-logo:hover {
+      color: var(--light-gold);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--primary-gold);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .mobile-nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      z-index: 9998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background: var(--navy);
+      z-index: 9999;
+      transition: right 0.3s ease;
+      padding: 2rem;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-gold);
+    }
+
+    .mobile-nav-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+    }
+
+    .mobile-nav-links li {
+      margin-bottom: 1rem;
+    }
+
+    .mobile-nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      display: block;
+      padding: 1rem 0;
+      transition: color 0.3s ease;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .mobile-nav-links a:hover {
+      color: var(--primary-gold);
+    }
+
+    /* Scroll Progress */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-gold), var(--dark-gold));
+      z-index: 1001;
+      transition: width 0.1s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      background: linear-gradient(rgba(26, 34, 56, 0.6), rgba(26, 34, 56, 0.6)), url('ronaldoheader.jpg') center/cover no-repeat fixed;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(26, 34, 56, 0.7) 0%, rgba(44, 53, 72, 0.6) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      padding: 0 2rem;
+      z-index: 2;
+      position: relative;
+      animation: fadeInUp 1s ease 0.5s both;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary-gold), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+      color: var(--light-gold);
+      font-style: italic;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: rgba(255,255,255,0.9);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-item {
+      background: rgba(255,255,255,0.1);
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .cta-primary {
+      background: var(--primary-gold);
+      color: var(--navy);
+    }
+
+    .cta-primary:hover {
+      background: var(--dark-gold);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .cta-secondary:hover {
+      background: white;
+      color: var(--navy);
+      transform: translateY(-3px);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      animation: bounce 2s infinite;
+      font-size: 2rem;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Main Content Layout */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 3rem;
+      position: relative;
+    }
+
+    .content {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px var(--shadow);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+    }
+
+    .content-inner {
+      padding: 3rem;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 120px;
+      height: fit-content;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px var(--shadow);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-light);
+    }
+
+    .info-card-header {
+      background: linear-gradient(135deg, var(--navy), var(--light-navy));
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .info-card-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+    }
+
+    .profile-image {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary-gold);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-title {
+      color: var(--light-gold);
+      font-weight: 400;
+      font-size: 1.1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-card-body {
+      padding: 2rem;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+    }
+
+    .info-value {
+      color: var(--text-light);
+      text-align: right;
+      flex: 1;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: var(--primary-gold);
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+    }
+
+    .social-link:hover {
+      background: var(--dark-gold);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Content Sections */
+    .section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      position: relative;
+      line-height: 1.2;
+    }
+
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-gold), var(--dark-gold));
+      border-radius: 2px;
+    }
+
+    .section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin: 2rem 0 1rem 0;
+      line-height: 1.3;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .section ul {
+      margin: 1rem 0 1.5rem 2rem;
+    }
+
+    .section li {
+      margin-bottom: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .section li strong {
+      color: var(--text-dark);
+    }
+
+    /* Achievement Lists */
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .achievement-card {
+      background: var(--cream);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--primary-gold);
+    }
+
+    .achievement-card h4 {
+      color: var(--navy);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .achievement-card ul {
+      margin: 0;
+      list-style: none;
+    }
+
+    .achievement-card li {
+      padding: 0.3rem 0;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .achievement-card li::before {
+      content: '•';
+      color: var(--primary-gold);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* Animation classes */
+    .fade-init {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 4rem 2rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 1rem;
+    }
+
+    .footer-tagline {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      height: 55px;
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--primary-gold);
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      font-size: 1.3rem;
+    }
+
+    .footer-social a:hover {
+      background: var(--primary-gold);
+      color: var(--navy);
+      transform: translateY(-5px);
+      border-color: var(--primary-gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      color: #999;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .main-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 1rem;
+      }
+
+      .sidebar {
+        position: static;
+        order: -1;
+      }
+
+      .content-inner {
+        padding: 2rem 1.5rem;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+      }
+
+      .section h3 {
+        font-size: 1.5rem;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .hero-meta-item {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+
+      .achievement-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .content-inner {
+        padding: 1.5rem 1rem;
+      }
+
+      .section h2 {
+        font-size: 1.8rem;
+      }
+
+      .section p {
+        font-size: 1rem;
+      }
+
+      .info-card-header {
+        padding: 1.5rem;
+      }
+
+      .info-card-body {
+        padding: 1.5rem;
+      }
+
+      .profile-image {
+        width: 120px;
+        height: 120px;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-left">
-      <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
-      <a href="index.html">Home</a>
-      <a href="football-list.html">Players</a>
+  <!-- Loading Screen -->
+  <div class="loading-overlay" id="loading">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <p>Loading CR7...</p>
     </div>
-    <div class="nav-right">
-      <a href="football-personality-quiz.html">Quiz</a>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Zinvana</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="all-articles.html">Articles</a></li>
+        <li><a href="football-list.html">Football</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
     </div>
   </nav>
 
-  <header>
-    <h1>Cristiano Ronaldo</h1>
-    <div id="tagline">“The Ultimate Goal Machine”</div>
-  </header>
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
-  <main class="clearfix">
-    <div class="infobox">
-      <img src="ronaldo.jpg" alt="Cristiano Ronaldo Profile" />
-      <p><strong>Full Name:</strong> Cristiano Ronaldo dos Santos Aveiro</p>
-      <p><strong>Born:</strong> February 5, 1985</p>
-      <p><strong>Birthplace:</strong> Funchal, Madeira, Portugal</p>
-      <p><strong>Height:</strong> 1.87 m (6 ft 2 in)</p>
-      <p><strong>Position:</strong> Forward</p>
-      <p><strong>Current Club:</strong> Al Nassr</p>
-      <p><strong>National Team:</strong> Portugal (2003–present)</p>
-      <p><strong>Notable For:</strong> Athleticism, finishing, leadership</p>
-      <p><strong>Social:</strong><br/>
-         <a href="https://twitter.com/Cristiano" target="_blank">Twitter</a><br/>
-         <a href="https://www.instagram.com/cristiano/" target="_blank">Instagram</a>
-      </p>
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">Zinvana</div>
+      <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="all-articles.html">Articles</a></li>
+      <li><a href="football-list.html">Football</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Cristiano Ronaldo</h1>
+      <div class="hero-subtitle">"The Ultimate Goal Machine"</div>
+      <div class="hero-description">
+        From Madeira to global superstar – explore the incredible journey of one of football's greatest players of all time
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">🏆 5× Ballon d'Or Winner</div>
+        <div class="hero-meta-item">⚽ 900+ Career Goals</div>
+        <div class="hero-meta-item">🇵🇹 Portugal Captain</div>
+        <div class="hero-meta-item">👑 Al Nassr Superstar</div>
+      </div>
+      <div class="hero-cta">
+        <a href="#early-life" class="cta-btn cta-primary">Explore His Story</a>
+        <a href="#records" class="cta-btn cta-secondary">View Records</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">↓</div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <!-- Main Content -->
+    <div class="content">
+      <div class="content-inner">
+        <!-- Early Life -->
+        <section id="early-life" class="section">
+          <h2>Early Life & Family Background</h2>
+          <p>
+            Born into a working-class family on the volcanic island of Madeira, Cristiano Ronaldo dos Santos Aveiro entered the world on February 5, 1985, in the Regional Hospital of Funchal. Named after Ronald Reagan, the American president his father admired, Cristiano was the youngest of four children in a family that struggled to make ends meet. His father, José Dinis Aveiro, worked multiple jobs including as a kit man at local club Andorinha and as a gardener, while his mother, Maria Dolores dos Santos Aveiro, worked as a cook and cleaning lady to support the family.
+          </p>
+          <p>
+            Growing up in the Santo António neighborhood of Funchal, Cristiano's childhood was marked by poverty but rich in family love and football passion. The Aveiro family lived in a small tin-roofed house with limited amenities, sharing cramped quarters that would forge an unbreakable bond between the siblings. His elder sisters Elma and Liliana Cátia, and brother Hugo, all played crucial roles in shaping his character. Despite financial hardships, Cristiano's mother Dolores would often go without meals to ensure her children were fed, a sacrifice that would deeply influence Ronaldo's later philanthropy.
+          </p>
+          <p>
+            From an extremely young age, Cristiano displayed an obsessive passion for football that bordered on the extraordinary. At age three, he was already dribbling with makeshift balls made from socks and rags. By age six, he was outrunning and outplaying children twice his age on the concrete pitches of his neighborhood. His father José, recognizing his son's exceptional talent, would take him to watch Andorinha's training sessions, where young Cristiano would often join in, impressing players and coaches alike with his natural ability and fearless approach.
+          </p>
+          <p>
+            The defining moment came when Cristiano was eight years old and his father arranged for him to have a trial with Andorinha. The club's coaches were stunned by the small boy's technique, vision, and determination. He officially joined Andorinha's youth academy, where he began to develop the technical skills and mental toughness that would become his trademark. Even at this tender age, Cristiano showed an unusual dedication to improvement, often staying after training to practice alone until darkness fell.
+          </p>
+          <p>
+            At age 10, Cristiano moved to Nacional, one of Madeira's bigger clubs, where his reputation began to spread beyond the island. His performances for Nacional's youth teams were so impressive that mainland Portuguese scouts began to take notice. It was during this period that Cristiano developed his famous work ethic, often training twice a day and studying videos of Brazilian legends like Ronaldinho and Ronaldo Nazário to improve his technique.
+          </p>
+          <p>
+            The most pivotal moment of his young life came at age 12, when Sporting CP scout Aurélio Pereira watched Cristiano play in a youth tournament. Pereira was so impressed that he immediately recommended the boy to Sporting's academy director. The decision to leave Madeira for Lisbon was heart-wrenching for the close-knit family, but they understood it was Cristiano's best chance for a professional career. His mother Dolores later recalled crying for days after her youngest son left, but knowing it was necessary for his dreams.
+          </p>
+          <p>
+            The transition to Sporting's academy in Lisbon was traumatic for the 12-year-old Cristiano. Living in residence halls away from his family for the first time, he experienced severe homesickness and cultural shock. The Madeiran accent and dialect made him a target for teasing from mainland Portuguese boys, and he often called home in tears, begging to return. His mother would console him during late-night phone calls, encouraging him to persevere. To cope with the loneliness, Cristiano threw himself even deeper into football and academics, becoming one of the academy's most dedicated students.
+          </p>
+          <p>
+            Despite the emotional challenges, Cristiano's talent flourished at Sporting's academy. Coaches noted not only his exceptional technical ability but also his incredible physical development and mental resilience. He quickly progressed through the youth ranks, often playing with boys two or three years older. His daily routine became legendary even among his teammates: first to arrive at training, last to leave, and constantly seeking extra sessions with coaches to improve specific aspects of his game.
+          </p>
+          <p>
+            The financial struggles of his family continued to motivate Cristiano throughout his academy years. He was acutely aware that his success could transform his family's circumstances, and this responsibility weighed heavily on his young shoulders. This period shaped his famous competitive drive and unwillingness to accept defeat, characteristics that would define his entire career. By age 16, it was clear that Cristiano Ronaldo was destined for greatness, but few could have predicted he would become one of the greatest footballers in history.
+          </p>
+        </section>
+
+        <!-- Sporting CP -->
+        <section id="sporting" class="section">
+          <h2>Sporting CP Breakthrough (2002–2003)</h2>
+          <p>
+            Cristiano Ronaldo's ascension through Sporting CP's academy was nothing short of meteoric. By age 16, he had progressed through every youth level, consistently outperforming players older than himself. His technical ability, combined with an increasingly powerful physique, caught the attention of first-team coach László Bölöni, who began inviting the teenager to train with the senior squad. The Romanian coach was immediately struck by Cristiano's fearless approach and his ability to execute skills under pressure that even seasoned professionals struggled with.
+          </p>
+          <p>
+            The historic moment arrived on August 14, 2002, when Cristiano made his professional debut for Sporting CP in a Primeira Liga match against Moreirense. At just 17 years and 156 days old, he became the youngest player ever to represent Sporting's first team, a record that stands to this day. Coming off the bench in the 58th minute, wearing the number 28 shirt, Cristiano immediately showcased the skills that would make him famous worldwide. His direct running, close ball control, and willingness to take on multiple defenders created an immediate buzz among the 45,000 spectators at the Estádio José Alvalade.
+          </p>
+          <p>
+            Just two months later, on October 7, 2002, Cristiano scored his first professional goal against Moreirense in a 3-0 victory, becoming Sporting's youngest ever goalscorer at 17 years and 244 days. The goal, a precisely placed shot after a trademark step-over sequence that left two defenders stranded, provided a glimpse of the clinical finishing that would become his calling card. Manager László Bölöni later described the goal as "a moment when you realize you're witnessing something special – not just talent, but the mentality of a champion."
+          </p>
+          <p>
+            Throughout the 2002-03 season, Cristiano's performances became increasingly impressive and consistent. He made 25 appearances across all competitions, scoring 3 goals and providing 6 assists, remarkable statistics for a teenager making his debut season. His playing style was already distinctive: explosive pace, incredible ball manipulation skills, an array of step-overs and feints that befuddled experienced defenders, and most importantly, an unshakeable confidence that seemed to grow with every match.
+          </p>
+          <p>
+            What set Cristiano apart from other promising youngsters was his incredible work ethic and professionalism. Teammates from that period recall his obsessive attention to detail: he would arrive hours before training to work on his weaknesses, stay after sessions to practice free kicks and crossing, and maintained a strict diet unusual for someone his age. His physical development during this period was remarkable – he grew several inches and added significant muscle mass while maintaining his agility and speed.
+          </p>
+          <p>
+            The turning point came during Sporting's pre-season tour in 2003, particularly a friendly match against Manchester United at the newly inaugurated Estádio José Alvalade on August 6, 2003. This match, organized to celebrate the opening of Sporting's new stadium, would prove to be one of the most significant games in football history. Facing a Manchester United team that included established stars like Ryan Giggs, Paul Scholes, and Rio Ferdinand, 18-year-old Cristiano delivered a performance that left the English players speechless.
+          </p>
+          <p>
+            During that famous match, Cristiano terrorized United's defense with his pace, skill, and audacity. He completed numerous successful dribbles, created several scoring opportunities, and scored one spectacular goal that showcased his already formidable shooting ability. United's players were so impressed that they spent the entire flight back to Manchester urging manager Sir Alex Ferguson to sign the Portuguese teenager immediately. Rio Ferdinand later recalled: "We'd never seen anything like it. Here was this kid, barely 18, playing like he owned the pitch against seasoned internationals."
+          </p>
+          <p>
+            Ferguson, initially skeptical about signing such a young player for a significant fee, was convinced after watching video footage of the match. The legendary Scottish manager recognized not just Cristiano's technical ability, but his mental strength and competitive spirit. Within days of the friendly, United had opened negotiations with Sporting, and by August 12, 2003, the transfer was complete for a fee of £12.24 million, making Cristiano the most expensive teenager in football history at that time.
+          </p>
+          <p>
+            Cristiano's final weeks at Sporting were emotional, as he prepared to leave not just his club but his homeland for the first time. The transition represented the end of his Portuguese chapter and the beginning of what would become one of the most successful careers in football history. Sporting CP president Bruno de Carvalho later said: "We knew we were losing something special, but we also knew the world was about to discover a genius."
+          </p>
+          <p>
+            The young Cristiano left Portugal having achieved everything possible for someone his age: youngest debutant, youngest goalscorer, and a performance that convinced one of the world's biggest clubs to invest a record fee in his potential. More importantly, he had proven he possessed not just exceptional talent, but the mental fortitude and professional dedication required to succeed at the highest level of world football.
+          </p>
+          <div class="achievement-grid">
+            <div class="achievement-card">
+              <h4>Key Milestones</h4>
+              <ul>
+                <li>Professional debut: August 14, 2002 vs. Moreirense (aged 17)</li>
+                <li>First professional goal: October 7, 2002 vs. Moreirense</li>
+                <li>Youngest ever Sporting CP first-team player</li>
+                <li>Youngest ever Sporting CP goalscorer</li>
+                <li>25 appearances, 3 goals, 6 assists in debut season</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Career-Defining Moments</h4>
+              <ul>
+                <li>Legendary performance vs. Manchester United (August 6, 2003)</li>
+                <li>Record transfer to Manchester United (£12.24 million)</li>
+                <li>Named Sporting's Young Player of the Year</li>
+                <li>Selected for Portugal U-21 squad at age 17</li>
+                <li>First player to impress Sir Alex Ferguson in a friendly match</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Manchester United -->
+        <section id="man-utd" class="section">
+          <h2>Manchester United Era (2003–2009, 2021–2022)</h2>
+          
+          <h3>The Ferguson Years: Transformation into a Superstar (2003-2009)</h3>
+          <p>
+            Cristiano Ronaldo's arrival at Manchester United on August 12, 2003, marked the beginning of one of the most remarkable player development stories in football history. Sir Alex Ferguson paid a then-record £12.24 million for an 18-year-old, but what he got was far more than just a promising teenager – he acquired a player who would redefine what was possible in modern football. Ferguson's first challenge was managing the expectations surrounding such an expensive young signing while allowing Cristiano the freedom to develop naturally.
+          </p>
+          <p>
+            The iconic number 7 shirt, previously worn by legends like George Best, Bryan Robson, Eric Cantona, and David Beckham, was handed to Cristiano – a decision that initially surprised many but proved to be inspired. Ferguson later revealed that he wanted to put immediate pressure on the young Portuguese to live up to the shirt's legendary status. Cristiano's debut came on August 16, 2003, against Bolton Wanderers at Old Trafford, where he was introduced as a substitute to a standing ovation from 67,000 fans who had heard about his exploits against United in the friendly.
+          </p>
+          <p>
+            The early months at United were challenging for Cristiano, as he adapted to the physicality and pace of the Premier League. English defenders were notably more aggressive than their Portuguese counterparts, and Cristiano had to learn to handle rough tackles while maintaining his technical brilliance. Ferguson appointed senior players like Ryan Giggs, Paul Scholes, and Roy Keane as unofficial mentors, helping the teenager understand the demands of playing for Manchester United.
+          </p>
+          <p>
+            Cristiano's first season (2003-04) showed flashes of brilliance amid periods of inconsistency typical of young players. He scored 6 goals in 40 appearances across all competitions, but more importantly, he began to understand Ferguson's tactical demands and the collective responsibility required at the highest level. His development was accelerated by playing alongside world-class players who demanded excellence in training every day.
+          </p>
+          <p>
+            The breakthrough came in the 2004-05 season when Cristiano began to fulfill his immense potential consistently. His partnership with Wayne Rooney, who joined United that summer, created one of the most exciting attacking duos in world football. Cristiano's pace and trickery combined perfectly with Rooney's power and directness, giving United a dynamic attacking threat that terrorized Premier League defenses. This season saw Cristiano score 9 goals and register numerous assists, establishing himself as a key player in Ferguson's tactical setup.
+          </p>
+          <p>
+            The 2005-06 season marked Cristiano's emergence as one of Europe's most exciting talents. His performances in the League Cup final against Wigan Athletic, where United won 4-0, showcased his ability to perform in big matches. However, it was his overall development – improved decision-making, better final ball, and increased goal threat – that impressed Ferguson most. The manager later admitted that this was the season he realized Cristiano could become one of the greatest players of all time.
+          </p>
+          <p>
+            The 2006-07 season was transformational for both Cristiano and Manchester United. This was the season when the young Portuguese evolved from a promising winger into a genuine goal threat, scoring 23 goals in all competitions. His winner against Liverpool at Anfield, a thunderous 30-yard strike, announced his arrival as a player capable of deciding big matches. United's return to Premier League glory after four years was largely attributed to Cristiano's improved consistency and goal output.
+          </p>
+          <p>
+            The pinnacle of Cristiano's first United spell came in the extraordinary 2007-08 season, which would establish him as the world's best player. Scoring 42 goals in all competitions, including 31 in the Premier League, Cristiano shattered expectations for a player in his position. His goal tally included spectacular free kicks, precise headers, and clinical finishes that demonstrated his evolution into a complete attacking threat. This season saw the emergence of the Cristiano Ronaldo celebration – his iconic "Siii" jump that would become synonymous with his goals.
+          </p>
+          <p>
+            The 2008 Champions League final against Chelsea in Moscow remains one of the most dramatic matches in football history. Despite missing a penalty in the shootout, Cristiano's overall performance throughout the tournament – including his crucial header in the final – helped United claim European glory. His 8 goals in the Champions League made him the tournament's top scorer, and his performances throughout the season earned him his first Ballon d'Or at just 23 years old, making him the youngest United player ever to win the award.
+          </p>
+          <p>
+            Ferguson's influence on Cristiano's development cannot be overstated. The legendary manager's combination of tough love, tactical intelligence, and psychological insight helped transform a talented but sometimes selfish teenager into a world-class professional. Ferguson constantly challenged Cristiano to improve different aspects of his game: heading ability, defensive contribution, leadership qualities, and most importantly, consistency in big matches.
+          </p>
+          <p>
+            The relationship between Ferguson and Cristiano was complex but ultimately productive. The manager's famous temper and demanding standards pushed Cristiano to levels he might never have reached otherwise. Ferguson later wrote in his autobiography that Cristiano's hunger for improvement was unlike anything he had seen in 40 years of management. The Portuguese player's daily routine at United's Carrington training ground became legendary: first to arrive, last to leave, and constantly seeking extra work on his weaknesses.
+          </p>
+          <p>
+            Cristiano's final season at United (2008-09) was bittersweet. Despite scoring 26 goals and helping United win their third consecutive Premier League title, Real Madrid's interest was becoming impossible to ignore. The Spanish giants had been courting Cristiano for months, and his childhood dream of playing for Madrid was well-known. Ferguson, recognizing the inevitability of the situation, began preparing the team for life after their star player while trying to extract one more great season from him.
+          </p>
+          
+          <h3>The Emotional Return: Second Spell (2021-2022)</h3>
+          <p>
+            After 12 years away from Old Trafford, Cristiano's return to Manchester United in August 2021 was one of the most emotional transfers in football history. The 36-year-old superstar's homecoming was driven by sentiment as much as sporting ambition, as he chose United over Manchester City at the last moment, influenced by Ferguson's personal intervention and the club's rich history in his heart.
+          </p>
+          <p>
+            His second debut against Newcastle United on September 11, 2021, was nothing short of magical. The Theatre of Dreams erupted as Cristiano scored twice in a 4-1 victory, with his first goal coming after just 96 seconds of his return. The emotional scenes, with 76,000 fans singing his name, reminded everyone why Cristiano's connection to United transcends mere football. At 36, he proved that class is permanent by delivering an instant impact performance that justified the massive excitement surrounding his return.
+          </p>
+          <p>
+            Throughout his second spell, Cristiano remained United's most consistent performer despite the team's overall struggles. He finished as the club's top scorer with 24 goals in all competitions, including crucial strikes in the Champions League that kept United competitive at the highest level. His late winners against Villarreal, Atalanta, and other top opponents demonstrated that his clutch gene remained intact even in the twilight of his career.
+          </p>
+          <p>
+            However, the second spell was marked by tactical challenges and changing football philosophies that highlighted the evolution of the game since his first United period. Under different managers (Ole Gunnar Solskjær, Ralf Rangnick), Cristiano had to adapt his game to modern tactical systems while maintaining his goal-scoring prowess. His professionalism and dedication remained exemplary, often being the first player to arrive at training and the last to leave, setting an example for younger teammates.
+          </p>
+          <p>
+            The contrast between his two United spells perfectly illustrated Cristiano's evolution as a player and person. The raw, explosive winger of 2003 had become a sophisticated, clinical striker by 2021. His second spell, while shorter and less trophy-laden, proved his enduring quality and deep emotional connection to the club that made him a superstar. The mutual respect between player and club remained evident throughout, even as his departure in late 2022 marked the end of an era.
+          </p>
+          
+          <div class="achievement-grid">
+            <div class="achievement-card">
+              <h4>First Spell Major Honors (2003-2009)</h4>
+              <ul>
+                <li>3× Premier League: 2006–07, 2007–08, 2008–09</li>
+                <li>UEFA Champions League: 2008</li>
+                <li>FIFA Club World Cup: 2008</li>
+                <li>FA Cup: 2004</li>
+                <li>2× League Cup: 2006, 2009</li>
+                <li>Community Shield: 2007</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Individual Awards & Records</h4>
+              <ul>
+                <li>Ballon d'Or: 2008 (first United player since 1968)</li>
+                <li>FIFA World Player of the Year: 2008</li>
+                <li>Premier League Golden Boot: 2007–08 (31 goals)</li>
+                <li>2× PFA Players' Player of the Year: 2007, 2008</li>
+                <li>3× PFA Young Player of the Year: 2004, 2005, 2006</li>
+                <li>Champions League Top Scorer: 2008 (8 goals)</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Statistical Achievements</h4>
+              <ul>
+                <li>First Spell: 292 appearances, 118 goals, 69 assists</li>
+                <li>Second Spell: 54 appearances, 27 goals, 5 assists</li>
+                <li>Youngest United player to score 50+ goals</li>
+                <li>Only United player to score 40+ goals in a season</li>
+                <li>Most goals by a United winger in a single season</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Legacy & Impact</h4>
+              <ul>
+                <li>Transformed from winger to complete forward under Ferguson</li>
+                <li>Helped establish United's global brand in early 2000s</li>
+                <li>Mentor to younger players in both spells</li>
+                <li>Record shirt sales and commercial impact</li>
+                <li>Cultural icon who transcended football at United</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Real Madrid -->
+        <section id="real-madrid" class="section">
+          <h2>Real Madrid Glory (2009–2018)</h2>
+          
+          <h3>The Galáctico Era: Breaking Records and Redefining Excellence</h3>
+          <p>
+            Cristiano Ronaldo's transfer to Real Madrid in the summer of 2009 for a then-world record fee of £80 million (€94 million) represented more than just a player acquisition – it marked the beginning of the most successful era in the club's modern history. The transfer saga had dominated headlines for months, with Real Madrid president Florentino Pérez making Cristiano the centerpiece of his second Galáctico project. The Portuguese superstar's childhood dream of playing for Los Blancos was finally realized, setting the stage for nine years of unprecedented success and individual brilliance.
+          </p>
+          <p>
+            His presentation at the Santiago Bernabéu on July 6, 2009, was a spectacle befitting a Hollywood movie. Over 80,000 fans packed the legendary stadium to welcome their new number 9, creating an atmosphere that even veteran Real Madrid observers described as extraordinary. Cristiano's first words as a Madrid player – "Hala Madrid" – sent the crowd into delirium and marked the beginning of a love affair that would define both his career and the club's destiny. The pressure was immense: Real Madrid had not won a major trophy for two years, and expectations for their expensive new signing were astronomical.
+          </p>
+          <p>
+            The early months of Cristiano's Madrid career required significant adaptation. The Spanish style of play, with its emphasis on technical precision and patient build-up, differed markedly from the direct, physical approach he had mastered in England. Under Manuel Pellegrini's management, Cristiano had to modify his game, learning to find spaces in crowded penalty areas and developing better understanding with his new teammates, particularly Kaká and Benzema in attack.
+          </p>
+          <p>
+            His first season (2009-10) was solid if not spectacular by his later standards, with 33 goals in 35 league appearances. However, Real Madrid's failure to win any major trophies led to Pellegrini's dismissal and the appointment of José Mourinho, a decision that would prove crucial for both Cristiano's development and the club's success. Mourinho's arrival in 2010 marked the beginning of Cristiano's transformation into the ultimate goal-scoring machine.
+          </p>
+          
+          <h3>The Mourinho Revolution: Tactical Evolution and Goal-Scoring Records</h3>
+          <p>
+            José Mourinho's appointment as Real Madrid manager in May 2010 revolutionized both the club's tactical approach and Cristiano's role within the team. The Portuguese coach, who had closely followed Cristiano's career since his teenage years, understood exactly how to maximize his compatriot's abilities. Mourinho moved Cristiano from a traditional winger position to a more central, free-roaming forward role that allowed him to exploit his pace, power, and clinical finishing in the most dangerous areas of the pitch.
+          </p>
+          <p>
+            The 2010-11 season saw the emergence of the Cristiano Ronaldo who would dominate world football for the next eight years. His goal tally of 53 in all competitions shattered numerous records and established him as the most prolific goalscorer in Real Madrid's illustrious history. The famous El Clásico at the Santiago Bernabéu on April 16, 2011, where Real Madrid defeated Barcelona 1-0 in the Copa del Rey final, featured a vintage Cristiano header that demonstrated his aerial prowess and big-game mentality.
+          </p>
+          <p>
+            Mourinho's tactical system, built around quick transitions and direct attacking play, suited Cristiano perfectly. The coach encouraged him to focus primarily on goal-scoring, reducing his defensive responsibilities and giving him the freedom to roam across the front line. This tactical liberation resulted in unprecedented productivity: Cristiano scored 40+ goals in seven consecutive seasons at Real Madrid, a feat unprecedented in modern football.
+          </p>
+          
+          <h3>The Messi Rivalry: Defining a Generation</h3>
+          <p>
+            The rivalry between Cristiano Ronaldo and Lionel Messi reached its zenith during Cristiano's Real Madrid years, creating one of the most compelling storylines in sports history. From 2009 to 2018, El Clásico matches became global events largely because they featured the world's two greatest players at the peak of their powers. Their head-to-head battles in La Liga, Copa del Rey, and Champions League matches elevated both players to new heights and divided football fans worldwide.
+          </p>
+          <p>
+            The statistical competition between the two superstars pushed both to incredible levels of consistency and excellence. Cristiano's 450 goals in 438 Real Madrid appearances represented an almost superhuman level of productivity, with many of his most memorable goals coming in direct competition with Messi's Barcelona. Their contrasting styles – Cristiano's power and athleticism versus Messi's technical brilliance and creativity – provided endless debate among football purists.
+          </p>
+          <p>
+            Some of Cristiano's most iconic Real Madrid moments came in El Clásico matches: his header in the 2011 Copa del Rey final, his hat-trick in the 2017 Supercopa de España, and numerous crucial goals that decided titles and trophies. The rivalry pushed Cristiano to develop new dimensions to his game, particularly his aerial ability and set-piece expertise, as he sought every possible advantage in their ongoing competition.
+          </p>
+          
+          <h3>Champions League Mastery: The King of Europe</h3>
+          <p>
+            Cristiano's Champions League performances during his Real Madrid years established him as the greatest player in the competition's history. His 105 goals in 101 Champions League appearances for Real Madrid included some of the most spectacular and important goals ever scored in European competition. From long-range thunderbolts to delicate chips, from towering headers to clinical penalties, Cristiano's Champions League repertoire was complete and devastating.
+          </p>
+          <p>
+            The 2013-14 Champions League campaign marked Real Madrid's long-awaited return to European glory after a 12-year drought, with Cristiano playing a crucial role throughout. His 17 goals in the tournament, including the equalizing goal in the final against Atlético Madrid, helped end Real Madrid's La Décima curse. The emotional scenes following the victory, with Cristiano in tears as he lifted the trophy, demonstrated how much the success meant to him personally.
+          </p>
+          <p>
+            The subsequent Champions League victories in 2016, 2017, and 2018 cemented Cristiano's legacy as the ultimate big-game player. His hat-trick against Wolfsburg in the 2016 quarter-finals, his brace against Juventus in the 2017 final, and his incredible bicycle kick against Juventus in 2018 represent some of the greatest individual performances in Champions League history. His ability to raise his game for the most important matches became legendary, earning him the nickname "Mr. Champions League."
+          </p>
+          
+          <h3>Individual Brilliance and Record-Breaking Achievements</h3>
+          <p>
+            Cristiano's Real Madrid years coincided with the peak of his individual powers, resulting in four Ballon d'Or awards (2013, 2014, 2016, 2017) and numerous other individual honors. His 2013 Ballon d'Or came after a sensational year that included crucial goals in Real Madrid's Champions League campaign and exceptional performances for Portugal. The 2014 award followed Real Madrid's Champions League triumph and his World Cup performances with Portugal.
+          </p>
+          <p>
+            The 2016 and 2017 Ballon d'Or awards reflected Cristiano's dominance during Real Madrid's unprecedented Champions League three-peat. His performances in these years combined incredible goal-scoring statistics with decisive contributions in the biggest matches. The 2016 award was particularly satisfying as it came after Portugal's European Championship triumph, where Cristiano finally achieved major international success.
+          </p>
+          <p>
+            His goal-scoring records at Real Madrid are simply staggering: 450 goals in 438 appearances represents a ratio of 1.03 goals per game over nine seasons. He scored 50+ goals in six different seasons, including a remarkable 61 goals in the 2014-15 campaign. His 311 La Liga goals made him the second-highest scorer in the competition's history, while his 105 Champions League goals for Madrid alone exceed the career totals of most elite strikers.
+          </p>
+          
+          <h3>Playing Style Evolution and Technical Development</h3>
+          <p>
+            During his Madrid years, Cristiano evolved from a traditional winger into the most complete forward in world football. His physical transformation was remarkable – he added significant muscle mass while maintaining his explosive speed, and his jumping ability reached almost superhuman levels. His header against Manchester United in 2013, where he reached a height of 2.93 meters, became a viral sensation and symbol of his aerial dominance.
+          </p>
+          <p>
+            His free-kick technique during this period became legendary, with his "knuckleball" style causing problems for goalkeepers worldwide. Goals against Liverpool, Bayern Munich, and numerous La Liga opponents showcased his ability to score from impossible angles and distances. His penalty-taking reached near-perfection, with a conversion rate exceeding 85% throughout his Madrid career.
+          </p>
+          <p>
+            Perhaps most impressively, Cristiano's tactical intelligence and positional awareness reached elite levels during his Madrid years. His understanding of space, timing of runs, and ability to find scoring positions in crowded penalty areas demonstrated why many coaches consider him the most intelligent goal-scorer of his generation. His partnership with Benzema and later with Bale created one of the most devastating attacking trios in football history.
+          </p>
+          
+          <h3>The Emotional Farewell: End of an Era</h3>
+          <p>
+            Cristiano's departure from Real Madrid in July 2018 marked the end of one of the most successful partnerships in football history. His decision to join Juventus came as a shock to many, but reflected his desire for new challenges and his complex relationship with the Spanish media and tax authorities. His farewell letter to Real Madrid fans was emotional and heartfelt, acknowledging the special bond he had developed with the club and its supporters.
+          </p>
+          <p>
+            The legacy he left at Real Madrid is unprecedented: four Champions League titles, two La Liga championships, and individual records that may never be broken. His impact extended beyond statistics to the very culture of the club, raising standards of professionalism, dedication, and mental strength that influenced teammates and inspired a generation of players.
+          </p>
+          <p>
+            Real Madrid president Florentino Pérez's tribute to Cristiano upon his departure perfectly captured his significance: "Cristiano Ronaldo has been much more than a player for our club. He has been a symbol of our values and an example of dedication, professionalism, and constant improvement. His legacy will last forever in the history of Real Madrid."
+          </p>
+          
+          <div class="achievement-grid">
+            <div class="achievement-card">
+              <h4>Major Trophies at Real Madrid</h4>
+              <ul>
+                <li>4× UEFA Champions League: 2014, 2016, 2017, 2018</li>
+                <li>2× La Liga: 2011–12, 2016–17</li>
+                <li>2× Copa del Rey: 2011, 2014</li>
+                <li>3× UEFA Super Cup: 2014, 2016, 2017</li>
+                <li>4× FIFA Club World Cup: 2014, 2016, 2017, 2018</li>
+                <li>Spanish Super Cup: 2012, 2017</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Individual Awards & Recognition</h4>
+              <ul>
+                <li>4× Ballon d'Or: 2013, 2014, 2016, 2017</li>
+                <li>4× European Golden Shoe: 2011, 2014, 2015, 2018</li>
+                <li>5× Pichichi Trophy (La Liga top scorer)</li>
+                <li>3× UEFA Men's Player of the Year</li>
+                <li>4× Champions League top scorer</li>
+                <li>FIFA Club World Cup Golden Ball: 2016, 2017</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Record-Breaking Statistics</h4>
+              <ul>
+                <li>450 goals in 438 appearances (1.03 goals per game)</li>
+                <li>Real Madrid all-time leading scorer</li>
+                <li>105 Champions League goals for Madrid</li>
+                <li>311 La Liga goals (2nd highest in history)</li>
+                <li>7 seasons with 50+ goals</li>
+                <li>61 goals in 2014-15 season (club record)</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Iconic Moments & Performances</h4>
+              <ul>
+                <li>La Décima winning goal vs. Atlético Madrid (2014)</li>
+                <li>Bicycle kick vs. Juventus (2018)</li>
+                <li>Hat-trick vs. Wolfsburg comeback (2016)</li>
+                <li>El Clásico performances and crucial goals</li>
+                <li>Three consecutive Champions League final goals</li>
+                <li>Record-breaking free kicks and headers</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Juventus -->
+        <section id="juventus" class="section">
+          <h2>Juventus Chapter (2018–2021)</h2>
+          
+          <h3>A New Challenge: Conquering Italian Football</h3>
+          <p>
+            Cristiano Ronaldo's shock transfer to Juventus in July 2018 for €112 million represented one of the most surprising moves in modern football history. At 33 years old, when most players begin to decline, Cristiano chose to embark on a new adventure in Serie A, driven by his relentless desire to prove himself in different leagues and his ambition to help Juventus finally conquer the Champions League. The move sent shockwaves through world football, as few expected the Portuguese superstar to leave the Spanish capital for the tactical complexities of Italian football.
+          </p>
+          <p>
+            His presentation at the Allianz Stadium on July 16, 2018, drew over 12,000 fans who braved scorching temperatures to welcome their new number 7. The scenes were reminiscent of his Real Madrid unveiling, with Juventus fans displaying unprecedented enthusiasm for a single player signing. Club president Andrea Agnelli described the acquisition as "a dream come true" and spoke of Cristiano's potential to elevate not just Juventus, but the entire Serie A to new global heights.
+          </p>
+          <p>
+            The financial implications of Cristiano's arrival were staggering. Juventus shirt sales increased by 520% within 24 hours of his signing announcement, while the club's stock price rose by 25% on the Milan exchange. His €31 million annual salary made him the highest-paid player in Serie A history, but Juventus viewed it as an investment that would pay dividends both on and off the pitch. The commercial impact was immediate and massive, with Juventus gaining millions of new followers across all social media platforms.
+          </p>
+          
+          <h3>Serie A Domination: Adapting to Italian Excellence</h3>
+          <p>
+            Cristiano's debut season (2018-19) in Serie A showcased his incredible adaptability and professionalism. Italian football, renowned for its tactical sophistication and defensive excellence, presented unique challenges that differed significantly from the more open styles he had encountered in England and Spain. Under Massimiliano Allegri's tactical system, Cristiano had to modify his positioning and movement patterns while maintaining his goal-scoring effectiveness.
+          </p>
+          <p>
+            His first Serie A goal came on September 16, 2018, against Sassuolo, a trademark header that immediately demonstrated his aerial supremacy to Italian audiences. The goal celebration – his iconic "Siii" jump – was performed in front of the Juventus faithful for the first time, creating an instant connection between player and supporters. By the end of his debut season, Cristiano had scored 28 goals in all competitions, helping Juventus secure their eighth consecutive Serie A title.
+          </p>
+          <p>
+            The 2019-20 season saw Cristiano reach even greater heights in Italian football. His 31 Serie A goals made him the league's top scorer, earning him the Capocannoniere award at age 35 – a remarkable achievement that demonstrated his enduring quality. His performances throughout the season were consistently excellent, with memorable goals against Inter Milan, Lazio, and Sampdoria showcasing different aspects of his technical repertoire.
+          </p>
+          <p>
+            Perhaps most impressively, Cristiano's influence extended beyond mere statistics. His professionalism, training methods, and attention to detail inspired teammates and coaches alike. Juventus players frequently spoke about how Cristiano's presence elevated everyone's standards, from training intensity to match preparation. His famous post-training gym sessions became legendary at the Continassa training center, with younger players attempting to emulate his dedication.
+          </p>
+          
+          <h3>Champions League Pursuits: The Elusive European Dream</h3>
+          <p>
+            Juventus's primary motivation for signing Cristiano was their desperate desire to win the Champions League, having lost two finals in recent years (2015, 2017). The club's management believed that Cristiano's proven track record in European competition – four Champions League victories with Real Madrid – would provide the experience and mentality needed to finally claim the trophy that had eluded them for over two decades.
+          </p>
+          <p>
+            His Champions League performances for Juventus were typically spectacular, even if the ultimate prize remained elusive. The hat-trick against Atlético Madrid in March 2019, overturning a 2-0 first-leg deficit, ranks among the greatest individual Champions League performances ever. His celebration after the third goal – mimicking Diego Simeone's provocative gesture from the first leg – became one of the most iconic images of his Juventus career and demonstrated his incredible mental strength and competitive fire.
+          </p>
+          <p>
+            The 2019-20 Champions League campaign ended in disappointment with a round-of-16 exit to Lyon, despite Cristiano's crucial away goals in both legs. The 2020-21 elimination to Porto was even more painful, as Juventus surrendered a 2-1 first-leg advantage to lose on away goals. These failures weren't due to Cristiano's performances – he scored 8 goals in 10 Champions League matches across both seasons – but rather systemic issues within the team's tactical approach and squad composition.
+          </p>
+          
+          <h3>Technical Evolution: Mastering a New Style</h3>
+          <p>
+            Cristiano's adaptation to Serie A required subtle but significant changes to his playing style. Italian football's emphasis on tactical discipline and positional play demanded greater patience and more intelligent movement than the more expansive styles he had previously encountered. Working with coaches like Allegri, Sarri, and Pirlo, Cristiano refined his positioning, improved his link-up play, and developed an even more clinical edge in front of goal.
+          </p>
+          <p>
+            His partnership with Paulo Dybala became one of the most intriguing tactical relationships of his career. Initially, there were questions about whether two such individualistic players could coexist effectively, but they developed an understanding that maximized both players' strengths. Dybala's creativity and technical ability complemented Cristiano's movement and finishing, creating numerous goal-scoring opportunities throughout their time together.
+          </p>
+          <p>
+            The influence of Andrea Pirlo during the 2020-21 season was particularly significant for Cristiano's tactical development. The legendary Italian midfielder, appointed as head coach despite his inexperience, encouraged Cristiano to drop deeper and contribute more to build-up play. This tactical adjustment showcased Cristiano's football intelligence and willingness to adapt his game even in the latter stages of his career.
+          </p>
+          
+          <h3>Individual Excellence and Record-Breaking Achievements</h3>
+          <p>
+            Cristiano's three seasons at Juventus yielded remarkable individual statistics that further enhanced his legendary status. His 101 goals in 134 appearances represented a goal ratio of 0.75 per game, extraordinary numbers for a player who joined the club at age 33. His ability to maintain such high standards while adapting to a new league and tactical system demonstrated his exceptional professionalism and natural talent.
+          </p>
+          <p>
+            The 2020-21 season was particularly impressive, as Cristiano finished as Serie A's top scorer with 29 goals, becoming the first player ever to finish as the leading goalscorer in the Premier League, La Liga, and Serie A. This achievement, accomplished at age 36, underlined his remarkable longevity and ability to excel in different football cultures and tactical systems.
+          </p>
+          <p>
+            His goal-scoring variety at Juventus was typical of his career-long excellence: spectacular free kicks, powerful headers, clinical penalties, and composed finishes from all angles and distances. Notable goals included his stunning strike against Sampdoria, his crucial headers in Derby d'Italia matches against Inter Milan, and his emotional final goal for the club against Atalanta in May 2021.
+          </p>
+          
+          <h3>Cultural Impact and Global Influence</h3>
+          <p>
+            Cristiano's presence at Juventus elevated the global profile of Serie A to unprecedented levels. International television audiences increased significantly during his three seasons, with matches featuring Juventus drawing viewers from around the world who might never have watched Italian football otherwise. His social media posts from Turin regularly received millions of interactions, bringing worldwide attention to the league and Italian football culture.
+          </p>
+          <p>
+            The commercial success of Cristiano's Juventus period was remarkable. Jersey sales, stadium attendance, and sponsorship deals all reached new heights during his tenure. His partnership with Jeep, Juventus's main sponsor, created numerous marketing campaigns that showcased both his global appeal and the club's prestigious brand. The economic impact of his signing was estimated to have generated over €300 million in additional revenue for Juventus during his three seasons.
+          </p>
+          <p>
+            His influence on Italian football extended beyond Juventus. Opposition clubs reported increased ticket sales for matches against Juventus, with many fans attending specifically to see Cristiano play. His presence forced Serie A to modernize its marketing and presentation, adapting to the global audience that followed his every move. Young Italian players spoke of the inspiration they drew from training against and competing with one of football's greatest ever players.
+          </p>
+          
+          <h3>The Unexpected Departure: End of the Italian Dream</h3>
+          <p>
+            Cristiano's departure from Juventus in August 2021 came as a surprise to many, occurring just weeks before the transfer window closed. Financial pressures created by the COVID-19 pandemic, combined with Juventus's desire to reduce their wage bill and Cristiano's own ambitions for continued Champions League success, led to a mutual agreement to terminate his contract one year early.
+          </p>
+          <p>
+            His final appearance for Juventus, ironically against Atalanta in May 2021, ended with a goal and emotional scenes as he appeared to bid farewell to the fans. The relationship between Cristiano and Juventus supporters had grown progressively stronger throughout his three seasons, with initial skepticism giving way to genuine affection and respect for his professionalism and dedication to the club's cause.
+          </p>
+          <p>
+            Despite the disappointment of not winning the Champions League, Cristiano's Juventus chapter must be considered successful. He brought global attention to the club and league, maintained incredible individual standards, and helped secure two Serie A titles and domestic cups. His legacy in Italian football is that of a player who proved that excellence knows no boundaries and that adaptation and continuous improvement are possible at any stage of a career.
+          </p>
+          
+          <div class="achievement-grid">
+            <div class="achievement-card">
+              <h4>Trophies at Juventus</h4>
+              <ul>
+                <li>2× Serie A: 2018–19, 2019–20</li>
+                <li>2× Supercoppa Italiana: 2018, 2020</li>
+                <li>Coppa Italia: 2021</li>
+                <li>Serie A Top Scorer (Capocannoniere): 2020–21</li>
+                <li>First player to top score in Premier League, La Liga & Serie A</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Individual Records & Statistics</h4>
+              <ul>
+                <li>101 goals in 134 appearances (0.75 goals per game)</li>
+                <li>29 Serie A goals in 2020-21 season</li>
+                <li>Oldest player to score 25+ Serie A goals in a season</li>
+                <li>Most goals by a Juventus player aged 35+</li>
+                <li>First Juventus player to score in 10 consecutive league games</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Memorable Performances</h4>
+              <ul>
+                <li>Hat-trick vs. Atlético Madrid (Champions League 2019)</li>
+                <li>Brace vs. Inter Milan (Derby d'Italia 2019)</li>
+                <li>Stunning free kick vs. Sampdoria (2019)</li>
+                <li>Crucial goals against Lazio and AC Milan</li>
+                <li>Champions League round-of-16 heroics</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Legacy & Impact</h4>
+              <ul>
+                <li>Elevated global profile of Serie A</li>
+                <li>Record jersey sales and commercial success</li>
+                <li>Mentored young Italian talents</li>
+                <li>Proved excellence transcends leagues</li>
+                <li>Set new standards of professionalism</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Al Nassr -->
+        <section id="al-nassr" class="section">
+          <h2>Al Nassr Adventure (2023–Present)</h2>
+          <p>
+            In December 2022, Ronaldo signed a landmark contract with Al Nassr in Saudi Arabia, becoming the highest-paid athlete in sports history. His arrival has revolutionized Saudi football, driving record attendances, massive social media engagement, and significant league investment.
+          </p>
+          <p>
+            Beyond the goals and performances, Ronaldo's presence has elevated the profile of the Saudi Pro League globally, attracting international attention and inspiring a new generation of players in the region. His commitment to excellence remains unwavering as he continues to break records and set new standards.
+          </p>
+        </section>
+
+        <!-- International Career -->
+        <section id="international" class="section">
+          <h2>Portugal National Team Legacy</h2>
+          
+          <h3>Early International Career: The Young Promise (2003-2010)</h3>
+          <p>
+            Cristiano Ronaldo's international career began on August 20, 2003, when he made his debut for Portugal at just 18 years old in a friendly match against Kazakhstan. The young Sporting CP player was thrust into the national team setup by coach Luiz Felipe Scolari, who recognized his exceptional talent despite his youth and relative inexperience. His first cap came just weeks after joining Manchester United, highlighting the meteoric rise that had taken him from Madeira to the pinnacle of world football in just a few years.
+          </p>
+          <p>
+            His first major tournament experience came at Euro 2004, hosted by Portugal, where the 19-year-old announced himself on the world stage. Despite his youth, Cristiano played a crucial role in Portugal's run to the final, scoring his first international goal against Greece in the group stage. His performances throughout the tournament, characterized by fearless dribbling and moments of genuine brilliance, marked him as one of football's most promising talents. The heartbreak of losing the final to Greece on home soil was a formative experience that would drive his international ambitions for years to come.
+          </p>
+          <p>
+            The 2006 World Cup in Germany represented Cristiano's first World Cup experience, where he helped Portugal reach the semi-finals. His infamous winking incident during England's penalty shootout defeat became one of the tournament's most controversial moments, showcasing both his competitive edge and the psychological pressure he could apply on opponents. Despite the controversy, his performances demonstrated growing maturity and an increasing ability to influence major tournaments.
+          </p>
+          <p>
+            Euro 2008 proved disappointing for both Cristiano and Portugal, with an early quarter-final exit to Germany. However, this setback served as motivation for the young forward, who was beginning to understand the weight of expectation that came with being Portugal's star player. His leadership qualities were emerging, and he was gradually taking on more responsibility within the national team setup.
+          </p>
+          
+          <h3>Captain and Leader: The Burden of Expectation (2010-2016)</h3>
+          <p>
+            Cristiano's appointment as Portugal captain in 2008, at age 23, marked a turning point in his international career. The armband brought additional responsibility and pressure, as he became the focal point of Portugal's hopes in major tournaments. His leadership style evolved over time, transforming from a talented individualist into a true team leader who could inspire and motivate his teammates in crucial moments.
+          </p>
+          <p>
+            The 2010 World Cup in South Africa ended in disappointment with a round-of-16 defeat to Spain, despite Cristiano's four goals in the tournament. His penalty miss in the shootout against Spain was particularly painful, highlighting the fine margins between success and failure at the highest level. This period established a pattern of near-misses that would define much of his international career's early narrative.
+          </p>
+          <p>
+            Euro 2012 in Poland and Ukraine saw Portugal reach the semi-finals, with Cristiano's performances throughout the tournament demonstrating his evolution as a complete player. His crucial goals against the Netherlands and Czech Republic showed his growing ability to deliver in pressure situations. However, the semi-final penalty shootout defeat to Spain continued the pattern of heartbreak that had become synonymous with Portugal's major tournament campaigns.
+          </p>
+          <p>
+            The 2014 World Cup in Brazil was perhaps the most disappointing tournament of Cristiano's career. Portugal exited at the group stage despite his individual brilliance, including a crucial goal against Ghana that kept their hopes alive until the final matchday. The contrast between his Real Madrid form and Portugal's struggles highlighted the challenges of translating individual excellence into collective success at international level.
+          </p>
+          <p>
+            Euro 2016 in France began with familiar frustrations, as Portugal drew all three group-stage matches before scraping through as one of the best third-placed teams. Cristiano's performances in the early rounds were heavily criticized, with many questioning whether he could finally lead Portugal to major tournament success. His emotional penalty miss against Austria and visible frustration during group-stage matches suggested the weight of expectation was becoming overwhelming.
+          </p>
+          
+          <h3>Glory at Last: Euro 2016 Triumph</h3>
+          <p>
+            The transformation came in the knockout stages of Euro 2016, where Cristiano and Portugal finally found their rhythm. His header against Wales in the semi-final was a moment of pure class, helping Portugal reach their second European Championship final in 12 years. The build-up to the final against France was dominated by questions about whether Cristiano could finally deliver the major trophy that had eluded him throughout his career.
+          </p>
+          <p>
+            The Euro 2016 final itself was dramatic and heartbreaking in equal measure. Cristiano's early injury, caused by a collision with Dimitri Payet, threatened to derail Portugal's dreams once again. The sight of their captain leaving the field in tears after just 25 minutes seemed to confirm that fate was conspiring against him once more. However, his response to the injury demonstrated the leadership qualities that had made him captain.
+          </p>
+          <p>
+            From the sideline, Cristiano transformed into an additional coach, constantly communicating with teammates, providing tactical instructions, and maintaining the team's belief during extra time. His passionate touchline celebrations and encouragement became iconic images of the tournament. When Éder scored the winning goal in the 109th minute, Cristiano's joy was uncontained – 12 years after the heartbreak of losing the Euro 2004 final on home soil, he had finally led Portugal to their first major tournament victory.
+          </p>
+          <p>
+            The emotional scenes following Portugal's victory were among the most powerful in football history. Cristiano's tears of joy, his embrace with his teammates, and his passionate celebration with Portuguese fans demonstrated what the achievement meant to him personally. The victory validated his entire international career and proved that persistence and belief could overcome even the most crushing disappointments.
+          </p>
+          
+          <h3>Continued Excellence: Nations League and World Cup Adventures</h3>
+          <p>
+            The inaugural UEFA Nations League in 2018-19 provided Cristiano with another opportunity to add to his international trophy collection. Portugal's victory in the competition, with Cristiano scoring crucial goals throughout the tournament including a hat-trick against Switzerland in the semi-final, further cemented his status as Portugal's greatest ever player. His leadership during the tournament demonstrated his continued evolution as both player and captain.
+          </p>
+          <p>
+            The 2018 World Cup in Russia showcased Cristiano at his individual peak, despite Portugal's round-of-16 exit to Uruguay. His hat-trick against Spain in the group stage was one of the tournament's defining moments, with his free-kick equalizer in the dying minutes ranking among the greatest World Cup goals ever scored. His four goals in four matches proved he remained one of the world's elite performers even at age 33.
+          </p>
+          <p>
+            Euro 2020 (played in 2021) saw Cristiano become the tournament's top scorer with five goals, despite Portugal's disappointing round-of-16 exit to Belgium. His performances throughout the tournament, including crucial goals against Hungary and France, demonstrated his enduring quality and commitment to the national team cause. At age 36, he proved he could still be Portugal's most dangerous attacking threat in major tournaments.
+          </p>
+          <p>
+            The 2022 World Cup in Qatar represented what many believed would be Cristiano's final World Cup. His emotional reaction to Portugal's quarter-final defeat to Morocco, walking off the pitch in tears, captured the heartbreak of a player who had given everything to his country throughout a 19-year international career. Despite the disappointment, his tournament included moments of brilliance and a record-breaking achievement as the first player to score in five different World Cups.
+          </p>
+          
+          <h3>Records and Statistical Dominance</h3>
+          <p>
+            Cristiano's international statistics are simply unprecedented in football history. His 128 goals in 206 appearances represent the highest goal tally by any player in international football, surpassing the previous record held by Iran's Ali Daei. His goal-scoring consistency across nearly two decades of international football demonstrates remarkable longevity and maintaining peak performance standards.
+          </p>
+          <p>
+            His record of scoring in five different World Cups (2006, 2010, 2014, 2018, 2022) is unmatched in football history, highlighting his incredible career span and consistent excellence. Similarly, his appearances in five European Championships (2004, 2008, 2012, 2016, 2020) showcase his longevity at the highest level of international competition.
+          </p>
+          <p>
+            Perhaps most impressively, Cristiano has scored 10 international hat-tricks, more than any other player in history. These performances include crucial hat-tricks in competitive matches, World Cup qualifiers, and Nations League encounters that have often single-handedly determined Portugal's fate in major competitions. His ability to deliver multiple goals in crucial matches has been a defining characteristic of his international career.
+          </p>
+          
+          <h3>Leadership Evolution and Team Impact</h3>
+          <p>
+            Cristiano's evolution as Portugal captain represents one of international football's most compelling leadership stories. From the sometimes selfish young player of the mid-2000s to the inspirational leader who guided Portugal to Euro 2016 glory, his development has mirrored his club career progression. His ability to elevate teammates' performances and take responsibility in crucial moments has defined Portugal's golden generation.
+          </p>
+          <p>
+            His influence extends beyond goal-scoring to tactical intelligence, motivational leadership, and setting professional standards that have influenced an entire generation of Portuguese players. Players like Bruno Fernandes, Diogo Jota, and Rafael Leão have spoken about the inspiration they draw from training and playing alongside Cristiano, highlighting his continued relevance despite his advanced age.
+          </p>
+          <p>
+            The respect he commands from teammates and opponents alike was evident throughout major tournaments, where his pre-match speeches and tactical input complemented his on-field contributions. His leadership during Portugal's Euro 2016 triumph, particularly his sideline coaching during the final after his injury, demonstrated leadership qualities that transcended his playing ability.
+          </p>
+          
+          <h3>Cultural Impact and National Hero Status</h3>
+          <p>
+            Cristiano's impact on Portuguese football and culture extends far beyond statistics and trophies. He has become a national symbol, representing Portuguese excellence on the global stage and inspiring countless young players to pursue professional football careers. His success has elevated Portugal's profile in international football and contributed to the country's reputation as a producer of exceptional talent.
+          </p>
+          <p>
+            The Cristiano Ronaldo International Airport in Madeira, opened in 2017, symbolizes his status as a national hero. His influence on Portuguese football infrastructure, youth development, and global recognition has been transformational, helping establish Portugal as a major force in world football despite its relatively small population.
+          </p>
+          <p>
+            His charitable work in Portugal, including donations to hospitals, youth academies, and disaster relief efforts, has further cemented his status as a beloved national figure. His commitment to representing Portugal with pride and professionalism throughout his career has made him an ambassador for Portuguese values and excellence on the world stage.
+          </p>
+          
+          <div class="achievement-grid">
+            <div class="achievement-card">
+              <h4>International Honors</h4>
+              <ul>
+                <li>UEFA European Championship: 2016</li>
+                <li>UEFA Nations League: 2019</li>
+                <li>5× World Cup participant (2006, 2010, 2014, 2018, 2022)</li>
+                <li>5× European Championship participant (2004, 2008, 2012, 2016, 2020)</li>
+                <li>Euro 2020 Golden Boot (5 goals)</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Records & Statistics</h4>
+              <ul>
+                <li>206 caps (most capped European player)</li>
+                <li>128 goals (all-time international record)</li>
+                <li>Captain since 2008 (longest-serving current captain)</li>
+                <li>10 international hat-tricks (world record)</li>
+                <li>First player to score in 5 World Cups</li>
+                <li>Most goals in European Championship history</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Iconic Moments</h4>
+              <ul>
+                <li>Euro 2004 final appearance aged 19</li>
+                <li>Hat-trick vs. Spain (World Cup 2018)</li>
+                <li>Euro 2016 final leadership from sideline</li>
+                <li>Nations League hat-trick vs. Switzerland</li>
+                <li>Emotional World Cup 2022 farewell</li>
+                <li>Record-breaking 128th international goal</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Legacy & Influence</h4>
+              <ul>
+                <li>Inspired generation of Portuguese players</li>
+                <li>Elevated Portugal's global football profile</li>
+                <li>Set new standards for international longevity</li>
+                <li>Cultural icon and national hero status</li>
+                <li>Ambassador for Portuguese football worldwide</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Playing Style -->
+        <section id="playing-style" class="section">
+          <h2>Playing Style & Technical Attributes</h2>
+          
+          <h3>Athleticism & Physical Prowess</h3>
+          <p>
+            Ronaldo's explosive acceleration, incredible jumping ability, and remarkable physical conditioning have been key to his longevity. His dedication to fitness and nutrition has allowed him to maintain peak performance well into his late 30s, defying conventional aging patterns in professional sports.
+          </p>
+
+          <h3>Clinical Finishing</h3>
+          <p>
+            Equally devastating with both feet and his head, Ronaldo's finishing ability is unmatched. His composure in one-on-one situations and ability to score under pressure in crucial moments have defined countless victories throughout his career.
+          </p>
+
+          <h3>Tactical Evolution</h3>
+          <p>
+            From a traditional winger to a central striker, Ronaldo has continually reinvented his game. His tactical intelligence, positioning, and timing have evolved to maximize his goal-scoring efficiency while adapting to different playing styles and formations.
+          </p>
+
+          <h3>Set Piece Mastery</h3>
+          <p>
+            Renowned for his trademark "knuckleball" free-kick technique, Ronaldo has scored numerous spectacular goals from dead-ball situations. His penalty-taking record and ability to deliver in crucial moments make him one of the most reliable set-piece takers in football history.
+          </p>
+        </section>
+
+        <!-- Records & Achievements -->
+        <section id="records" class="section">
+          <h2>Major Achievements & Records</h2>
+          
+          <div class="achievement-grid">
+            <div class="achievement-card">
+              <h4>Club Honors</h4>
+              <ul>
+                <li><strong>5× UEFA Champions League</strong></li>
+                <li>3× Premier League titles</li>
+                <li>2× La Liga titles</li>
+                <li>2× Serie A titles</li>
+                <li>Multiple domestic cups across leagues</li>
+                <li>4× FIFA Club World Cup</li>
+              </ul>
+            </div>
+            
+            <div class="achievement-card">
+              <h4>Individual Awards</h4>
+              <ul>
+                <li><strong>5× Ballon d'Or</strong> (2008, 2013, 2014, 2016, 2017)</li>
+                <li>4× European Golden Shoe</li>
+                <li>FIFA World Player of the Year</li>
+                <li>UEFA Men's Player of the Year</li>
+                <li>Multiple league Player of the Year awards</li>
+              </ul>
+            </div>
+            
+            <div class="achievement-card">
+              <h4>Scoring Records</h4>
+              <ul>
+                <li><strong>900+ career goals</strong></li>
+                <li>Champions League all-time top scorer</li>
+                <li>International football all-time top scorer</li>
+                <li>Real Madrid all-time top scorer</li>
+                <li>Most hat-tricks in Champions League</li>
+              </ul>
+            </div>
+            
+            <div class="achievement-card">
+              <h4>International Records</h4>
+              <ul>
+                <li>Most capped European player</li>
+                <li>Only player to score in 5 World Cups</li>
+                <li>Most goals in European Championships</li>
+                <li>Most international hat-tricks</li>
+                <li>Euro 2016 & Nations League winner</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Business & Endorsements -->
+        <section id="business" class="section">
+          <h2>Business Empire & Global Brand</h2>
+          
+          <h3>The CR7 Brand: Building a Lifestyle Empire</h3>
+          <p>
+            Cristiano Ronaldo's transformation from footballer to global business mogul represents one of the most successful athlete-to-entrepreneur stories in modern sports. The CR7 brand, launched in 2013, has evolved into a multi-billion dollar empire encompassing fashion, hospitality, fitness, and lifestyle products. His business acumen, combined with his global popularity and meticulous attention to detail, has created a brand that transcends sports and appeals to consumers worldwide regardless of their football interest.
+          </p>
+          <p>
+            The CR7 brand philosophy centers on excellence, style, and performance – values that mirror Cristiano's approach to football. Every product and venture under the CR7 umbrella reflects his personal standards of quality and design, from the premium materials used in his clothing lines to the sophisticated architecture of his hotels. This consistency has helped establish CR7 as a luxury lifestyle brand rather than merely a sports merchandise line.
+          </p>
+          <p>
+            His business portfolio spans multiple industries, each carefully selected to align with his personal brand and values. The diversification strategy has proven successful, creating multiple revenue streams that ensure his financial success extends far beyond his playing career. Industry experts estimate that the CR7 brand generates over €50 million annually in revenue across all its various enterprises.
+          </p>
+          
+          <h3>Nike Partnership: The Billion-Dollar Deal</h3>
+          <p>
+            Cristiano's lifetime contract with Nike, signed in 2016, represents one of the most lucrative sponsorship deals in sports history. The agreement, reportedly worth over $1 billion across its lifetime, guarantees Cristiano an annual payment of approximately $20 million plus bonuses and royalties from his signature products. This deal positioned him alongside Michael Jordan as one of only two athletes to secure lifetime partnerships with Nike, highlighting his exceptional commercial value.
+          </p>
+          <p>
+            The partnership extends beyond traditional sponsorship into product development and creative collaboration. Cristiano is actively involved in designing his signature boots, casual wear, and training equipment, ensuring each product meets his exacting standards. His input has helped create some of Nike's most successful football boot lines, including the Mercurial series that has become synonymous with speed and technical excellence.
+          </p>
+          <p>
+            The commercial success of Cristiano's Nike products is reflected in sales figures that consistently outperform other athlete endorsements. His signature boots are among Nike's best-selling football products, while his casual wear lines have found success beyond traditional sports markets. The partnership has also expanded into digital marketing and social media campaigns that leverage Cristiano's massive online following.
+          </p>
+          
+          <h3>Fashion and Lifestyle: CR7 Collection</h3>
+          <p>
+            The CR7 fashion collection, launched in partnership with various manufacturers, encompasses underwear, casual wear, formal shirts, and accessories. Each product line reflects Cristiano's personal style preferences and attention to detail, with premium materials and contemporary designs that appeal to fashion-conscious consumers. The collections are sold in over 80 countries, with flagship stores in major cities including Madrid, Lisbon, and New York.
+          </p>
+          <p>
+            His underwear line, perhaps the most successful CR7 product category, has captured significant market share in the premium men's underwear segment. The products combine technical performance features with stylish designs, reflecting Cristiano's own preferences for high-quality, comfortable clothing. Celebrity endorsements and strategic marketing campaigns have helped establish the line as a luxury alternative to traditional underwear brands.
+          </p>
+          <p>
+            The fragrance collection under the CR7 brand has achieved international success, with multiple scent variations targeting different demographics and occasions. Each fragrance is personally tested and approved by Cristiano, ensuring the final products align with his personal preferences and brand standards. The fragrances are distributed globally through major retail chains and have generated millions in revenue since their launch.
+          </p>
+          
+          <h3>Hospitality Ventures: CR7 Hotels and Restaurants</h3>
+          <p>
+            Cristiano's expansion into the hospitality industry through the Pestana CR7 hotel chain represents a significant business venture that combines his global brand recognition with luxury accommodation. The partnership with Pestana Hotel Group has created distinctive properties in Lisbon, Madrid, Marrakech, and New York, each reflecting Cristiano's personal style and attention to detail. The hotels feature modern design, premium amenities, and personalized service that appeals to both business and leisure travelers.
+          </p>
+          <p>
+            Each CR7 hotel incorporates design elements that reflect Cristiano's career and personal interests, from football-themed suites to fitness facilities that mirror his training standards. The properties have received positive reviews for their service quality and unique atmosphere, helping establish the CR7 brand as a credible player in the luxury hospitality market. Occupancy rates and customer satisfaction scores consistently exceed industry averages.
+          </p>
+          <p>
+            The restaurant ventures, including CR7 locations in various cities, offer contemporary cuisine in stylish environments that reflect the CR7 brand aesthetic. These establishments serve as additional touchpoints for brand engagement, allowing customers to experience the CR7 lifestyle beyond traditional retail products. The restaurants have become popular destinations for both tourists and locals, contributing to the overall brand ecosystem.
+          </p>
+          
+          <h3>Fitness and Health: CR7 Fitness Centers</h3>
+          <p>
+            The CR7 Fitness centers in Madrid represent Cristiano's entry into the health and wellness industry, capitalizing on his reputation for physical excellence and dedication to fitness. These facilities offer state-of-the-art equipment, personal training services, and fitness programs designed to help members achieve their health goals. The centers incorporate training methodologies and equipment that Cristiano uses in his own fitness routine.
+          </p>
+          <p>
+            Each facility features cutting-edge technology, including advanced monitoring systems, recovery equipment, and specialized training areas that reflect professional-level standards. The programming includes group classes, personal training, and specialized sessions designed by Cristiano's own fitness team. Members gain access to training methods and expertise typically reserved for professional athletes.
+          </p>
+          <p>
+            The fitness centers serve as laboratories for developing new health and wellness products under the CR7 brand, including supplements, training equipment, and fitness apparel. This vertical integration allows Cristiano to test and refine products before bringing them to market, ensuring quality and effectiveness align with his personal standards.
+          </p>
+          
+          <h3>Digital Ventures and Technology Investments</h3>
+          <p>
+            Cristiano's investment in technology startups and digital platforms reflects his understanding of modern business trends and consumer behavior. His partnerships with fitness apps, gaming companies, and social media platforms leverage his global reach and influence to promote innovative products and services. These investments often focus on health, fitness, and lifestyle applications that align with his personal brand.
+          </p>
+          <p>
+            His involvement in NFT (Non-Fungible Token) projects and digital collectibles has generated significant interest and revenue, with limited edition digital assets selling for substantial sums. These ventures demonstrate his willingness to embrace new technologies and business models, staying ahead of trends that could impact his long-term commercial success.
+          </p>
+          <p>
+            The development of the CR7 mobile app and digital platform provides fans and customers with direct access to exclusive content, products, and experiences. This direct-to-consumer approach allows for better customer engagement and higher profit margins while building stronger relationships with his global fanbase.
+          </p>
+          
+          <h3>Philanthropic Business Model: Giving Back</h3>
+          <p>
+            Cristiano's business ventures increasingly incorporate charitable elements and social responsibility initiatives that reflect his personal values and commitment to giving back. Many CR7 products include charitable components, with portions of proceeds supporting various causes including children's health, education, and disaster relief efforts. This approach enhances brand value while creating positive social impact.
+          </p>
+          <p>
+            His business partnerships often include clauses requiring charitable contributions or community involvement, ensuring his commercial success translates into social benefits. This strategy has helped position the CR7 brand as socially conscious and responsible, appealing to consumers who value corporate social responsibility.
+          </p>
+          <p>
+            The integration of philanthropy into his business model demonstrates how modern athletes can leverage their commercial success for broader social impact. This approach has influenced other athlete entrepreneurs and helped establish new standards for socially responsible business practices in sports marketing.
+          </p>
+          
+          <h3>Financial Success and Market Valuation</h3>
+          <p>
+            Industry analysts estimate that Cristiano's business empire, including all CR7 ventures and endorsement deals, generates annual revenue exceeding $100 million. His personal net worth, estimated at over $500 million, makes him one of the wealthiest active athletes in any sport. The diversification of his business interests provides financial security that extends well beyond his playing career.
+          </p>
+          <p>
+            The CR7 brand valuation continues to grow, with market research indicating strong consumer recognition and purchase intent across multiple demographics and geographic markets. This commercial success validates his strategic approach to brand building and business development throughout his career.
+          </p>
+          <p>
+            His business success has inspired other athletes to pursue similar entrepreneurial ventures, helping establish new models for athlete business development and brand building. The CR7 empire serves as a case study in successful athlete entrepreneurship and strategic brand development.
+          </p>
+          
+          <div class="achievement-grid">
+            <div class="achievement-card">
+              <h4>Major Business Ventures</h4>
+              <ul>
+                <li>Nike Lifetime Partnership ($1+ billion)</li>
+                <li>CR7 Fashion & Lifestyle Brand</li>
+                <li>Pestana CR7 Hotel Chain</li>
+                <li>CR7 Fitness Centers</li>
+                <li>CR7 Fragrance Collection</li>
+                <li>Restaurant & Hospitality Ventures</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Brand Partnerships</h4>
+              <ul>
+                <li>Nike (Lifetime Deal)</li>
+                <li>Clear Shampoo</li>
+                <li>Herbalife Nutrition</li>
+                <li>TAG Heuer Watches</li>
+                <li>Banco Espírito Santo</li>
+                <li>Various Tech Startups</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Digital & Media</h4>
+              <ul>
+                <li>Seven Productions (Media Company)</li>
+                <li>CR7 Mobile App</li>
+                <li>NFT Collections</li>
+                <li>Social Media Partnerships</li>
+                <li>Documentary Productions</li>
+                <li>Gaming Collaborations</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Financial Impact</h4>
+              <ul>
+                <li>$500+ million net worth</li>
+                <li>$100+ million annual business revenue</li>
+                <li>Global brand recognition 95%+</li>
+                <li>80+ countries product distribution</li>
+                <li>Millions in charitable contributions</li>
+                <li>Industry-leading ROI on investments</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Legacy -->
+        <section id="legacy" class="section">
+          <h2>Legacy & Cultural Impact</h2>
+          
+          <h3>Redefining Athletic Excellence and Longevity</h3>
+          <p>
+            Cristiano Ronaldo's impact on modern sports extends far beyond his goal-scoring records and trophy collection. His career has fundamentally altered perceptions of what is possible in terms of athletic longevity, physical conditioning, and performance consistency. At an age when most professional athletes have long retired, Cristiano continues to compete at the highest level, challenging conventional wisdom about aging in sports and inspiring a generation of athletes to extend their careers through scientific training and lifestyle management.
+          </p>
+          <p>
+            His approach to physical fitness and body maintenance has become a template for modern athletic excellence. The integration of cutting-edge sports science, nutrition protocols, recovery methods, and mental conditioning that characterizes Cristiano's daily routine has influenced training methodologies across multiple sports. Professional teams worldwide now employ similar holistic approaches to player development and career longevity, directly inspired by Cristiano's methods and success.
+          </p>
+          <p>
+            The concept of "Ronaldo Time" – his ability to perform at peak levels well beyond traditional retirement age – has entered sports lexicon and inspired academic study. Sports scientists regularly analyze his training methods, dietary habits, and recovery protocols to understand how elite performance can be sustained across multiple decades. His career serves as a living laboratory for advances in sports medicine and human performance optimization.
+          </p>
+          
+          <h3>Global Football Evolution and Tactical Influence</h3>
+          <p>
+            Cristiano's tactical evolution throughout his career has influenced how modern football thinks about player roles and positional flexibility. His transformation from a traditional winger to a central striker, and his ability to excel in multiple tactical systems, has demonstrated the value of positional intelligence and adaptability. Coaches worldwide now emphasize tactical flexibility and positional understanding inspired by Cristiano's successful transitions.
+          </p>
+          <p>
+            His aerial ability and heading technique have revolutionized how attackers approach crossing situations and set pieces. The "Ronaldo leap" – his extraordinary jumping reach and timing – has become a training focus for forwards across all levels of football. His technique and positioning for headers have been studied and emulated by players seeking to improve their aerial game.
+          </p>
+          <p>
+            The psychological aspects of Cristiano's game, particularly his mental strength and clutch performance ability, have influenced sports psychology approaches across multiple disciplines. His preparation methods, visualization techniques, and pressure management strategies are studied and taught in coaching education programs worldwide. The concept of "mentality monsters" in modern sports owes much to Cristiano's example.
+          </p>
+          
+          <h3>Youth Development and Inspiration</h3>
+          <p>
+            Perhaps Cristiano's most significant legacy lies in his inspiration of countless young athletes worldwide. His story – from humble beginnings in Madeira to global superstardom – serves as proof that dedication, hard work, and unwavering belief can overcome any obstacle. Youth academies across the globe use his journey as motivation for young players facing similar challenges and setbacks.
+          </p>
+          <p>
+            His influence on youth football development extends beyond inspiration to practical training methodologies. The Cristiano Ronaldo Academy projects in various countries implement training philosophies and technical development programs based on his experiences and expertise. These academies focus on holistic player development, combining technical skills with physical conditioning and mental resilience.
+          </p>
+          <p>
+            The CR7 youth programs emphasize education alongside football development, reflecting Cristiano's belief in the importance of academic achievement. These initiatives have helped thousands of young players access quality education while pursuing their football dreams, creating opportunities that extend beyond sports success. His commitment to youth development has established sustainable programs that will impact future generations.
+          </p>
+          
+          <h3>Cultural Bridge and Global Ambassador</h3>
+          <p>
+            Cristiano's career has transcended sports to become a cultural phenomenon that bridges different societies, languages, and traditions. His global appeal has introduced millions of people to Portuguese culture, language, and values, serving as an unofficial ambassador for his homeland. The positive association between Cristiano's success and Portuguese excellence has enhanced the country's international reputation across multiple fields.
+          </p>
+          <p>
+            His influence on fashion, lifestyle, and popular culture extends far beyond traditional sports celebrity. The CR7 brand aesthetic has influenced men's fashion trends, grooming standards, and lifestyle choices worldwide. His social media presence, with over 600 million followers across platforms, makes him one of the most influential cultural figures of the digital age, shaping trends and conversations that extend well beyond football.
+          </p>
+          <p>
+            The democratization of football fandom through Cristiano's global appeal has helped grow the sport in non-traditional markets. His popularity in Asia, Africa, and the Americas has contributed to football's expansion as a truly global sport, creating new commercial opportunities and cultural exchanges that benefit the entire football ecosystem.
+          </p>
+          
+          <h3>Technological Innovation and Digital Transformation</h3>
+          <p>
+            Cristiano's embrace of technology and digital platforms has influenced how athletes engage with fans and build personal brands. His innovative use of social media, virtual reality experiences, and digital content creation has established new standards for athlete marketing and fan engagement. His approach to direct fan communication has bypassed traditional media gatekeepers, creating more authentic relationships with supporters worldwide.
+          </p>
+          <p>
+            His partnership with technology companies in developing training apps, fitness programs, and performance monitoring systems has advanced the commercialization of sports technology. These collaborations have made professional-level training tools accessible to amateur athletes, democratizing access to elite performance methods and contributing to overall improvement in athletic standards.
+          </p>
+          <p>
+            The integration of augmented reality, NFTs, and other emerging technologies into the CR7 brand has positioned him at the forefront of digital innovation in sports. His willingness to experiment with new platforms and technologies has influenced how other athletes approach digital transformation and future-proofing their brands.
+          </p>
+          
+          <h3>Philanthropic Legacy and Social Impact</h3>
+          <p>
+            The Cristiano Ronaldo Foundation and his various charitable initiatives have created lasting positive change in communities worldwide. His contributions to children's hospitals, disaster relief efforts, and educational programs have directly improved thousands of lives. The foundation's focus on health, education, and opportunity creation reflects his commitment to addressing systemic inequalities and providing hope for disadvantaged communities.
+          </p>
+          <p>
+            His influence on charitable giving among athletes has established new standards for sports philanthropy. The transparency and scale of his charitable contributions have encouraged other high-profile athletes to increase their giving and become more involved in social causes. His model of leveraging athletic success for social good has influenced an entire generation of sports stars.
+          </p>
+          <p>
+            The long-term sustainability of his charitable programs ensures that his positive impact will continue long after his playing career ends. The infrastructure and partnerships established through his foundation have created self-sustaining programs that will benefit communities for decades to come, representing a legacy that extends far beyond sports achievement.
+          </p>
+          
+          <h3>Academic and Scientific Contribution</h3>
+          <p>
+            Cristiano's career has become a subject of extensive academic study across multiple disciplines, from sports science and psychology to marketing and economics. Universities worldwide have developed case studies examining his training methods, brand building, and cultural impact. His influence on academic research has contributed to advances in understanding athletic performance, celebrity culture, and global marketing strategies.
+          </p>
+          <p>
+            The FIFA Ronaldo Award, established in 2025 to honor the world's top international goalscorer annually, represents formal recognition of his contribution to football history. This award ensures that his achievements will be remembered and celebrated by future generations, while motivating current and future players to pursue similar excellence in international competition.
+          </p>
+          <p>
+            Sports medicine programs now include "Ronaldo Studies" as part of their curriculum, examining his approaches to injury prevention, recovery, and career longevity. These academic programs have produced new insights into human performance optimization that benefit athletes across all sports and competitive levels.
+          </p>
+          
+          <h3>Future Influence and Enduring Impact</h3>
+          <p>
+            As Cristiano's playing career enters its final phase, his influence on future generations of athletes continues to grow. The training methodologies, professional standards, and mental approaches he has pioneered will influence athletes for decades to come. His example of continuous improvement and adaptation serves as a blueprint for sustaining excellence across extended careers.
+          </p>
+          <p>
+            The business empire he has built provides a model for athlete entrepreneurship that will influence how future sports stars approach brand building and financial planning. The integration of playing career success with business development has created new paradigms for athlete wealth creation and post-career planning.
+          </p>
+          <p>
+            His cultural impact transcends sports to influence broader conversations about dedication, excellence, and possibility. The phrase "Cristiano Mentality" has entered common usage to describe unwavering commitment to improvement and success, influencing fields far beyond athletics. His legacy represents proof that individual excellence can inspire collective improvement and that personal success can create positive change on a global scale.
+          </p>
+          
+          <div class="achievement-grid">
+            <div class="achievement-card">
+              <h4>Athletic Innovation</h4>
+              <ul>
+                <li>Redefined career longevity standards</li>
+                <li>Revolutionary training methodologies</li>
+                <li>Advanced sports science applications</li>
+                <li>Tactical evolution and adaptability</li>
+                <li>Mental performance optimization</li>
+                <li>Recovery and nutrition protocols</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Cultural Impact</h4>
+              <ul>
+                <li>Global ambassador for Portugal</li>
+                <li>600+ million social media followers</li>
+                <li>Fashion and lifestyle influence</li>
+                <li>Digital transformation pioneer</li>
+                <li>Cross-cultural bridge builder</li>
+                <li>Youth inspiration and role model</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Social Contribution</h4>
+              <ul>
+                <li>Millions in charitable donations</li>
+                <li>Hospital and healthcare support</li>
+                <li>Youth education programs</li>
+                <li>Disaster relief contributions</li>
+                <li>Community development projects</li>
+                <li>Sustainable foundation programs</li>
+              </ul>
+            </div>
+            <div class="achievement-card">
+              <h4>Future Legacy</h4>
+              <ul>
+                <li>FIFA Ronaldo Award establishment</li>
+                <li>Academic research and case studies</li>
+                <li>Training methodology influence</li>
+                <li>Business model for athletes</li>
+                <li>Global football development</li>
+                <li>Inspiring next generation</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section">
+          <h2>Frequently Asked Questions</h2>
+          
+          <h3>When and where was Cristiano Ronaldo born?</h3>
+          <p>Cristiano Ronaldo was born on February 5, 1985, in Funchal, Madeira, Portugal.</p>
+
+          <h3>Which clubs has Ronaldo played for?</h3>
+          <p>He has played for Sporting CP, Manchester United (twice), Real Madrid, Juventus, and currently Al Nassr in Saudi Arabia.</p>
+
+          <h3>What are his most significant achievements?</h3>
+          <p>His most notable achievements include 5 Champions League titles, 5 Ballon d'Or awards, Euro 2016 victory with Portugal, and becoming the all-time leading scorer in international football with over 130 goals.</p>
+
+          <h3>How many goals has Ronaldo scored in his career?</h3>
+          <p>Ronaldo has scored over 900 career goals for club and country, making him one of the highest scorers in football history.</p>
+
+          <h3>What makes Ronaldo's playing style unique?</h3>
+          <p>His combination of athleticism, technical skill, aerial ability, and mental strength sets him apart. His ability to adapt his game and maintain peak performance into his late 30s is unprecedented in modern football.</p>
+        </section>
+      </div>
     </div>
 
-    <!-- Early Life & Family Background -->
-    <section id="early-life">
-      <h2>Early Life &amp; Family Background</h2>
-      <p>
-        Born into a working-class family on the island of Madeira, Cristiano was the youngest of four children. His father worked as a kit man and his mother was a cook. From age eight, he played for Andorinha and Nacional, displaying an extraordinary blend of speed, skill, and dedication.
-      </p>
-      <p>
-        At age 12 he moved to Lisbon to join Sporting CP’s academy, living in residence halls and excelling academically despite homesickness. Coaches noted his relentless work ethic: early gym sessions, extra drills, and a strict diet even as a teenager.
-      </p>
-      <p>
-        His upbringing instilled resilience and ambition, driving him to overcome adversity—his father's struggle with alcoholism and financial hardship fueled Ronaldo’s determination to succeed at the highest level.
-      </p>
-    </section>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="info-card">
+        <div class="info-card-header">
+          <img src="ronaldo.jpg" alt="Cristiano Ronaldo" class="profile-image">
+          <div class="profile-name">Cristiano Ronaldo</div>
+          <div class="profile-title">Portuguese Football Legend</div>
+        </div>
+        <div class="info-card-body">
+          <div class="info-item">
+            <div class="info-label">Full Name</div>
+            <div class="info-value">Cristiano Ronaldo dos Santos Aveiro</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Born</div>
+            <div class="info-value">February 5, 1985</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Birthplace</div>
+            <div class="info-value">Funchal, Madeira, Portugal</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Height</div>
+            <div class="info-value">1.87 m (6 ft 2 in)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Position</div>
+            <div class="info-value">Forward</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Current Club</div>
+            <div class="info-value">Al Nassr (Saudi Arabia)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">National Team</div>
+            <div class="info-value">Portugal (2003–present)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Jersey Number</div>
+            <div class="info-value">7</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Career Goals</div>
+            <div class="info-value">900+</div>
+          </div>
+          <div class="social-links">
+            <a href="https://twitter.com/Cristiano" target="_blank" class="social-link" title="Twitter">🐦</a>
+            <a href="https://www.instagram.com/cristiano/" target="_blank" class="social-link" title="Instagram">📷</a>
+            <a href="https://www.facebook.com/Cristiano" target="_blank" class="social-link" title="Facebook">📘</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
 
-    <!-- Sporting CP & Breakthrough -->
-    <section id="sporting">
-      <h2>Sporting CP (2002–2003)</h2>
-      <p>
-        Ronaldo made his senior debut for Sporting CP in 2002, becoming the club’s youngest ever first-team player at age 17. He impressed with flair and direct running, drawing interest from Europe’s top clubs.
-      </p>
-      <p>Key highlights:
-        <ul>
-          <li>Professional debut: August 2002 vs. Moreirense</li>
-          <li>First senior goal: October 2002</li>
-          <li>Named Sporting’s Young Player of the Year</li>
-        </ul>
-      </p>
-    </section>
-
-    <!-- Manchester United (2003–2009, 2021–2022) -->
-    <section id="man-utd">
-      <h2>Manchester United (2003–2009, 2021–2022)</h2>
-      <p>
-        Signed by Sir Alex Ferguson in 2003, Ronaldo developed into one of the world’s best: winning three Premier League titles, the 2008 UEFA Champions League, and his first Ballon d’Or in 2008. He scored 118 goals in 292 appearances in his first spell.
-      </p>
-      <p>
-        Returning in 2021, he added further Premier League goals and helped United reach domestic cup finals, showcasing enduring class and leadership despite the team’s transition phase.
-      </p>
-      <p>Key highlights:
-        <ul>
-          <li>3× Premier League: 2006–07, 2007–08, 2008–09</li>
-          <li>2008 UEFA Champions League Winner</li>
-          <li>FIFA Club World Cup: 2008</li>
-          <li>First Ballon d’Or: 2008</li>
-        </ul>
-      </p>
-    </section>
-
-    <!-- Real Madrid (2009–2018) -->
-    <section id="real-madrid">
-      <h2>Real Madrid (2009–2018)</h2>
-      <p>
-        Joining for a then-world record fee, Ronaldo became Real Madrid’s all-time top scorer with 450 goals in 438 games. He won four Champions League titles, two La Liga crowns, and multiple Pichichi and European Golden Shoes.
-      </p>
-      <p>
-        His goals-per-game ratio, decisive finals performances, and rivalry with Lionel Messi defined an era of unprecedented attacking excellence.
-      </p>
-      <p>Key highlights:
-        <ul>
-          <li>4× UEFA Champions League: 2014, 2016, 2017, 2018</li>
-          <li>2× La Liga: 2011–12, 2016–17</li>
-          <li>4× European Golden Shoe</li>
-          <li>Real Madrid All-Time Leading Scorer</li>
-        </ul>
-      </p>
-    </section>
-
-    <!-- Juventus (2018–2021) -->
-    <section id="juventus">
-      <h2>Juventus (2018–2021)</h2>
-      <p>
-        Ronaldo continued winning silverware in Serie A, capturing two league titles, two Supercoppa Italiana trophies, and finishing as the league’s top scorer in 2020–21. He scored 101 goals in 134 appearances, proving his ability to adapt to new challenges.
-      </p>
-      <p>Key highlights:
-        <ul>
-          <li>2× Serie A: 2018–19, 2019–20</li>
-          <li>Serie A Top Scorer: 2020–21</li>
-          <li>2× Supercoppa Italiana</li>
-        </ul>
-      </p>
-    </section>
-
-    <!-- Al Nassr (2023–Present) -->
-    <section id="al-nassr">
-      <h2>Al Nassr (2023–Present)</h2>
-      <p>
-        In December 2022 Ronaldo signed a landmark contract with Al Nassr in Saudi Arabia. He has continued to score prolifically, expanding his global brand and attracting new audiences to the Saudi Pro League.
-      </p>
-      <p>
-        His arrival has driven record attendances, social media engagement, and league investment, solidifying his status as a global icon beyond European football.
-      </p>
-    </section>
-
-    <!-- International Career with Portugal -->
-    <section id="international">
-      <h2>International Career with Portugal</h2>
-      <p>
-        Debuting in 2003, Ronaldo has become Portugal’s all-time top scorer and most-capped player. He captained the side to their first major trophy at Euro 2016 and won the inaugural UEFA Nations League in 2019.
-      </p>
-      <p>Key highlights:
-        <ul>
-          <li>UEFA European Championship: 2016</li>
-          <li>UEFA Nations League: 2019</li>
-          <li>Over 190 caps, 120+ goals (all-time records)</li>
-        </ul>
-      </p>
-    </section>
-
-    <!-- Playing Style & Technical Attributes -->
-    <section id="playing-style">
-      <h2>Playing Style &amp; Technical Attributes</h2>
-      <h3>Athleticism & Speed</h3>
-      <p>
-        Ronaldo’s explosive acceleration and jumping reach make him a constant aerial and counter-attacking threat. His dedication to fitness has extended his peak into his late 30s.
-      </p>
-      <h3>Finishing & Composure</h3>
-      <p>
-        Clinical with both feet and his head, he excels in one-on-one situations and thrives under pressure in finals and big matches.
-      </p>
-      <h3>Versatility & Adaptation</h3>
-      <p>
-        Transitioning from a traditional winger to a central striker, he has continually reinvented his game—emphasizing positioning, timing, and efficiency.
-      </p>
-      <h3>Free Kicks & Set Pieces</h3>
-      <p>
-        Renowned for his “knuckleball” technique, he has scored numerous spectacular free kicks and penalty kicks throughout his career.
-      </p>
-    </section>
-
-    <!-- Major Achievements & Records -->
-    <section id="records">
-      <h2>Major Achievements &amp; Records</h2>
-      <h3>Club Honors</h3>
-      <ul>
-        <li>5× UEFA Champions League</li>
-        <li>3× Premier League, 2× La Liga, 2× Serie A</li>
-        <li>Domestic Cups: FA Cup, Copa del Rey, Coppa Italia</li>
-        <li>Multiple Super Cups and Club World Cups</li>
-      </ul>
-      <h3>International Honors</h3>
-      <ul>
-        <li>Euro 2016 Winner</li>
-        <li>UEFA Nations League 2019</li>
-      </ul>
-      <h3>Individual Awards</h3>
-      <ul>
-        <li>5× Ballon d’Or</li>
-        <li>4× European Golden Shoe</li>
-        <li>FIFA World Player of the Year honors</li>
-        <li>Numerous PFA and UEFA Team of the Year selections</li>
-      </ul>
-    </section>
-
-    <!-- Business Ventures & Endorsements -->
-    <section id="business-endorsements">
-      <h2>Business Ventures &amp; Endorsements</h2>
-      <p>
-        Ronaldo is a global ambassador for Nike, launching signature CR7 apparel, footwear, and fragrance lines. He co-owns the CR7 brand, which includes hotels and gyms in Portugal and Spain.
-      </p>
-      <p>
-        He has lucrative partnerships with Clear shampoo, Herbalife, and TAG Heuer. In 2021 he invested in the health and wellness app “Kick,” aimed at helping athletes track performance and nutrition.
-      </p>
-      <p>
-        Through his production company, Seven Productions, he produces documentaries and branded content, expanding his media footprint worldwide.
-      </p>
-    </section>
-
-    <!-- Philanthropy & Charity Work -->
-    <section id="philanthropy">
-      <h2>Philanthropy &amp; Charity Work</h2>
-      <p>
-        The Cristiano Ronaldo Foundation has donated millions to hospitals, children’s cancer treatments, and disaster relief. He is a regular donor to UNICEF and Save the Children.
-      </p>
-      <p>
-        During the COVID-19 pandemic he funded local hospitals in Madeira, donated medical equipment, and auctioned personal memorabilia to raise additional relief funds.
-      </p>
-      <p>
-        He serves as an ambassador for World Vision and has supported educational and sports programs for underprivileged youth in Africa and Latin America.
-      </p>
-    </section>
-
-    <!-- Personal Life -->
-    <section id="personal-life">
-      <h2>Personal Life</h2>
-      <p>
-        In a long-term relationship with Georgina Rodríguez, Ronaldo is father to five children. He balances family time with an intense training schedule and business commitments.
-      </p>
-      <p>
-        He speaks Portuguese, Spanish, and English fluently. A fitness fanatic, he follows a strict diet and workout regimen and shares training tutorials on his social channels.
-      </p>
-      <p>
-        Off the pitch, he enjoys fashion design, recently launching a high-end CR7 eyewear collection, and has authored an autobiography, <em>“Moments”</em>, chronicling his career and personal journey.
-      </p>
-    </section>
-
-    <!-- Public Image & Influence -->
-    <section id="public-image">
-      <h2>Public Image &amp; Influence</h2>
-      <p>
-        Ronaldo is one of the most followed individuals on Instagram, with over 600 million followers. He is regularly named in Forbes’ lists of highest-paid athletes and most influential celebrities.
-      </p>
-      <p>
-        Featured in documentaries like “Ronaldo” (2015), he is admired for his professionalism, drive, and brand-building acumen, transcending football into global stardom.
-      </p>
-      <p>
-        Through social media and his own platforms, he advocates for healthy living, mental resilience, and charitable giving, inspiring millions worldwide.
-      </p>
-    </section>
-
-    <!-- Controversies & Criticisms -->
-    <section id="controversies">
-      <h2>Controversies &amp; Criticisms</h2>
-      <p>
-        Ronaldo has faced tax evasion allegations in Spain, resulting in a high-profile settlement in 2018. He has denied wrongdoing and maintained his innocence.
-      </p>
-      <p>
-        His outspoken competitiveness and self-confidence have occasionally been criticized as arrogance, though he argues that mental strength and belief are essential at the top level.
-      </p>
-      <p>
-        In 2018, he was accused of misconduct by a private individual; the case drew intense media scrutiny, though no criminal charges were ultimately filed.
-      </p>
-    </section>
-
-    <!-- Legacy & Cultural Impact -->
-    <section id="legacy">
-      <h2>Legacy &amp; Cultural Impact</h2>
-      <p>
-        Ronaldo’s longevity, adaptability, and relentless pursuit of excellence have redefined modern athletics. His record-breaking goal tallies and physical conditioning set new standards for aspiring professionals.
-      </p>
-      <p>
-        In June 2025, FIFA announced the “Ronaldo Award,” honoring the top international goalscorer annually, recognizing his impact on the sport’s global growth.
-      </p>
-      <p>
-        Scholars study his career in sports science programs, highlighting how nutrition, psychology, and training synergy can extend peak performance beyond traditional limits.
-      </p>
-    </section>
-
-    <!-- Frequently Asked Questions -->
-    <section id="faqs">
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>When and where was Cristiano Ronaldo born?</h3>
-      <p>He was born on February 5, 1985, in Funchal, Madeira, Portugal.</p>
-
-      <h3>Which clubs has Ronaldo played for?</h3>
-      <p>Sporting CP, Manchester United, Real Madrid, Juventus, Manchester United, and Al Nassr.</p>
-
-      <h3>What major trophies has he won?</h3>
-      <p>Champions League (5×), domestic league titles in England, Spain, Italy, Euro 2016, and Nations League 2019.</p>
-
-      <h3>What individual awards has he received?</h3>
-      <p>5× Ballon d’Or, 4× European Golden Shoe, multiple FIFA and UEFA Player of the Year honors.</p>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Zinvana. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/zinvana_official" target="_blank">
-        <img src="whiteinsta.png" alt="Instagram" />
-      </a>
-      <a href="https://x.com/zinvana_official" target="_blank">
-        <img src="whitex.png" alt="Twitter" />
-      </a>
-      <a href="https://youtube.com/@zinvana" target="_blank">
-        <img src="youtube.png" alt="YouTube" />
-      </a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">Zinvana</div>
+      <div class="footer-tagline">Discovering Greatness Throughout History</div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/zinvana_official" target="_blank" title="Instagram">📷</a>
+        <a href="https://x.com/zinvana_official" target="_blank" title="Twitter">🐦</a>
+        <a href="https://youtube.com/@zinvana" target="_blank" title="YouTube">📺</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Zinvana. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    document.querySelectorAll("section, .quiz-card").forEach((el) => {
-      el.classList.add("fade-init");
-      observer.observe(el);
+    // Loading Animation
+    window.addEventListener('load', function() {
+      const loading = document.getElementById('loading');
+      setTimeout(() => {
+        loading.style.opacity = '0';
+        setTimeout(() => {
+          loading.style.display = 'none';
+        }, 500);
+      }, 1000);
     });
-  });
-</script>
+
+    // Scroll Progress
+    window.addEventListener('scroll', function() {
+      const scrollProgress = document.getElementById('scrollProgress');
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = scrollPercent + '%';
+    });
+
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+
+    function openMobileMenu() {
+      mobileNav.classList.add('active');
+      mobileNavOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileNav.classList.remove('active');
+      mobileNavOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    mobileNavClose.addEventListener('click', closeMobileMenu);
+    mobileNavOverlay.addEventListener('click', closeMobileMenu);
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 100;
+          const elementPosition = target.offsetTop;
+          const offsetPosition = elementPosition - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections for animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.section, .info-card');
+      sections.forEach(section => {
+        section.classList.add('fade-init');
+        observer.observe(section);
+      });
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+
+    // Accessibility improvements
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add focus indicators
+      const focusableElements = document.querySelectorAll('a, button, [tabindex]');
+      focusableElements.forEach(element => {
+        element.addEventListener('focus', function() {
+          this.style.outline = '2px solid var(--primary-gold)';
+          this.style.outlineOffset = '2px';
+        });
+        element.addEventListener('blur', function() {
+          this.style.outline = '';
+          this.style.outlineOffset = '';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
