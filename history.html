@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Hub | Explore Great Leaders, Empires & Civilizations | Zinvana</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover the greatest leaders, empires, and civilizations in history. From ancient Rome to modern leaders, explore comprehensive articles, take personality quizzes, and learn from the past at Zinvana's History Hub.">
+    <meta name="keywords" content="history, historical leaders, ancient empires, world history, personality quiz, historical civilizations, great leaders, ancient history, modern history">
+    <meta name="author" content="Zinvana">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zinvana.com/history.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="History Hub | Explore Great Leaders & Empires | Zinvana">
+    <meta property="og:description" content="Journey through history's greatest leaders and empires. Interactive quizzes, detailed articles, and fascinating insights await.">
+    <meta property="og:image" content="hero.png">
+    <meta property="og:url" content="https://zinvana.com/history.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="History Hub | Zinvana">
+    <meta name="twitter:description" content="Explore history's greatest leaders and empires through interactive content">
+    <meta name="twitter:image" content="hero.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "History Hub - Zinvana",
+        "description": "Comprehensive collection of historical content including leaders, empires, and civilizations",
+        "url": "https://zinvana.com/history.html",
+        "author": {
+            "@type": "Organization",
+            "name": "Zinvana"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Zinvana",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://zinvana.com/zinvanalogo.png"
+            }
+        }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #ff5e62;
+            --accent-color: #ff9800;
+            --gold-accent: #ffd700;
+            --dark-bg: #0a0a0a;
+            --dark-card: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c2c2c;
+            --text-light: #6b7280;
+            --text-muted: #9ca3af;
+            --card-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            --hover-shadow: 0 30px 80px rgba(211,47,47,0.25);
+            --glow-shadow: 0 0 40px rgba(211,47,47,0.3);
+            --border-radius: 20px;
+            --border-radius-large: 32px;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --gradient-primary: linear-gradient(135deg, #d32f2f 0%, #ff5e62 50%, #ff9800 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(211,47,47,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+        }
+
+        nav.scrolled {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+            border-bottom: 1px solid rgba(211,47,47,0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 85px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.6rem;
+            transition: var(--transition);
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-logo img {
+            width: 55px;
+            border-radius: 50%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-hero);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('cyrus1.jpg') center/cover;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(189, 167, 167, 0.9) 0%, rgba(138, 90, 90, 0.7) 50%, rgba(255,152,0,0.6) 100%);
+            z-index: 2;
+        }
+
+        /* Animated particles */
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 0.5s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 1.5s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 2.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            max-width: 1000px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            text-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            font-weight: 400;
+            line-height: 1.5;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            color: white;
+            padding: 1.5rem 3rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: var(--transition);
+        }
+
+        .hero-cta:hover::before {
+            left: 100%;
+        }
+
+        .hero-cta:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Featured Content Grid */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .featured-card {
+            background: white;
+            border-radius: var(--border-radius-large);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(211,47,47,0.1);
+        }
+
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .featured-card:hover::before {
+            opacity: 0.03;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--hover-shadow);
+            border-color: rgba(211,47,47,0.2);
+        }
+
+        .featured-card-image {
+            height: 280px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, transparent 50%, rgba(255,255,255,0.1) 100%);
+            z-index: 2;
+        }
+
+        .featured-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .featured-card:hover .featured-card-image img {
+            transform: scale(1.1);
+        }
+
+        .featured-card-content {
+            padding: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .featured-card p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .card-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: 0 8px 32px rgba(211,47,47,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: var(--transition);
+        }
+
+        .card-button:hover::before {
+            left: 100%;
+        }
+
+        .card-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(211,47,47,0.4);
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: var(--border-radius-large);
+            padding: 3rem 2.5rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(211,47,47,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--gradient-primary);
+        }
+
+        .category-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .category-card:hover::after {
+            opacity: 0.02;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--hover-shadow);
+            border-color: rgba(211,47,47,0.2);
+        }
+
+        .category-icon {
+            font-size: 3.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.1) rotateY(15deg);
+        }
+
+        .category-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 2;
+        }
+
+        .category-card p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .category-count {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 24px rgba(211,47,47,0.3);
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-count {
+            transform: scale(1.05);
+            box-shadow: 0 12px 32px rgba(211,47,47,0.4);
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: var(--dark-bg);
+            color: white;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('timeline-bg.jpg') center/cover;
+            opacity: 0.05;
+        }
+
+        .timeline-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-dark);
+            opacity: 0.9;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+            box-shadow: 0 0 20px rgba(211,47,47,0.5);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 5rem;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: calc(50% + 4rem);
+        }
+
+        .timeline-item:nth-child(even) {
+            text-align: left;
+            padding-left: calc(50% + 4rem);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 1.5rem;
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 0 30px rgba(211,47,47,0.6);
+            z-index: 3;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: calc(50% - 12px);
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: calc(50% - 12px);
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: var(--border-radius-large);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            background: rgba(255,255,255,0.12);
+            transform: scale(1.02);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+        }
+
+        .timeline-year {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            line-height: 1.3;
+        }
+
+        .timeline-content p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Interactive Elements */
+        .interactive-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interactive-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(211,47,47,0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .quiz-preview {
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius-large);
+            padding: 5rem 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 100px rgba(211,47,47,0.4);
+            z-index: 2;
+        }
+
+        .quiz-preview::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .quiz-preview::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.1; }
+        }
+
+        .quiz-preview h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .quiz-preview p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quiz-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+            color: var(--primary-color);
+            padding: 1.5rem 3rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .quiz-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(211,47,47,0.1), transparent);
+            transition: var(--transition);
+        }
+
+        .quiz-button:hover::before {
+            left: 100%;
+        }
+
+        .quiz-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 6rem 0 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            box-shadow: 0 0 20px rgba(211,47,47,0.5);
+        }
+
+        .footer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(211,47,47,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-section h4 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.05rem;
+            position: relative;
+        }
+
+        .footer-section ul li a::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover::before {
+            width: 10px;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--secondary-color);
+            transform: translateX(15px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+            position: relative;
+            z-index: 2;
+            font-size: 1.05rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+                height: 75px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .featured-grid,
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section {
+                padding: 5rem 0;
+            }
+
+            .timeline-item {
+                padding: 0 1rem !important;
+                text-align: left !important;
+            }
+
+            .timeline::before {
+                left: 1rem;
+            }
+
+            .timeline-item::before {
+                left: 0.5rem !important;
+            }
+
+            .quiz-preview {
+                padding: 3rem 1.5rem;
+            }
+
+            .quiz-preview h3 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animations */
+        .fade-in:nth-child(1) { transition-delay: 0.1s; }
+        .fade-in:nth-child(2) { transition-delay: 0.2s; }
+        .fade-in:nth-child(3) { transition-delay: 0.3s; }
+        .fade-in:nth-child(4) { transition-delay: 0.4s; }
+        .fade-in:nth-child(5) { transition-delay: 0.5s; }
+        .fade-in:nth-child(6) { transition-delay: 0.6s; }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(211,47,47,0.4);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--glow-shadow);
+        }
+
+        /* Additional Visual Enhancements */
+        .section:nth-child(even) {
+            background: rgba(248,250,252,0.5);
+        }
+
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: linear-gradient(45deg, transparent 0%, rgba(211,47,47,0.02) 50%, transparent 100%);
+            transform: translateY(-10%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">
+                    <img src="zinvanalogo.png" alt="Zinvana Logo">
+                    <span>Zinvana</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="history.html" class="active">History</a></li>
+                    <li><a href="leaders.html">Quiz</a></li>
+                    <li><a href="all-articles.html">Articles</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="hero-content fade-in">
+            <h1>Journey Through History</h1>
+            <p class="hero-subtitle">Discover the leaders, empires, and civilizations that shaped our world. From ancient Rome to modern times, explore the stories that define humanity.</p>
+            <a href="#featured" class="hero-cta">
+                <i class="fas fa-scroll"></i>
+                Explore History
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Content Section -->
+    <section class="section" id="featured">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Featured Collections</h2>
+                <p>Dive into our most popular historical content, from legendary leaders to mighty empires</p>
+            </div>
+            
+            <div class="featured-grid">
+                <div class="featured-card fade-in">
+                    <div class="featured-card-image">
+                        <img src="napoleonwall.jpg" alt="Historical Leaders">
+                    </div>
+                    <div class="featured-card-content">
+                        <h3>Legendary Leaders</h3>
+                        <p>Discover the greatest leaders in history - from Napoleon and Churchill to Gandhi and Cleopatra. Learn about their triumphs, failures, and lasting legacies.</p>
+                        <a href="leaders.html" class="card-button">
+                            <i class="fas fa-crown"></i>
+                            Take Leaders Quiz
+                        </a>
+                    </div>
+                </div>
+
+                <div class="featured-card fade-in">
+                    <div class="featured-card-image">
+                        <img src="roman3.jpg" alt="Ancient Empires">
+                    </div>
+                    <div class="featured-card-content">
+                        <h3>Mighty Empires</h3>
+                        <p>Explore the rise and fall of history's greatest empires. From Rome and Persia to the Mongols and Ottomans - discover which empire suits your personality.</p>
+                        <a href="empire.html" class="card-button">
+                            <i class="fas fa-flag"></i>
+                            Empire Quiz
+                        </a>
+                    </div>
+                </div>
+
+                <div class="featured-card fade-in">
+                    <div class="featured-card-image">
+                        <img src="cyrusthegreatthumb.jpg" alt="Historical Articles">
+                    </div>
+                    <div class="featured-card-content">
+                        <h3>In-Depth Articles</h3>
+                        <p>Read comprehensive articles about historical figures, civilizations, and pivotal moments that changed the course of human history.</p>
+                        <a href="all-articles.html" class="card-button">
+                            <i class="fas fa-book-open"></i>
+                            Read Articles
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Explore by Category</h2>
+                <p>Find exactly what interests you in our organized historical collections</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Ancient Leaders</h3>
+                    <p>Explore the rulers who built the foundations of civilization</p>
+                    <span class="category-count">25+ Leaders</span>
+                </div>
+
+                <div class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Great Empires</h3>
+                    <p>Journey through the mightiest empires in human history</p>
+                    <span class="category-count">15+ Empires</span>
+                </div>
+
+                <div class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Modern History</h3>
+                    <p>Discover the leaders and events that shaped the modern world</p>
+                    <span class="category-count">30+ Articles</span>
+                </div>
+
+                <div class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3>Ancient Civilizations</h3>
+                    <p>Uncover the mysteries of lost civilizations and their cultures</p>
+                    <span class="category-count">20+ Civilizations</span>
+                </div>
+
+                <div class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-sword"></i>
+                    </div>
+                    <h3>Military History</h3>
+                    <p>Study the greatest battles and military strategists of all time</p>
+                    <span class="category-count">40+ Battles</span>
+                </div>
+
+                <div class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Great Thinkers</h3>
+                    <p>Learn from philosophers and innovators who changed how we think</p>
+                    <span class="category-count">15+ Thinkers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2 style="color: white;">Historical Timeline</h2>
+                <p style="color: #ccc;">Key moments that shaped human civilization</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">550 BCE</div>
+                        <div class="timeline-title">Cyrus the Great founds the Persian Empire</div>
+                        <p>The first great multicultural empire with revolutionary policies of tolerance and human rights.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">27 BCE</div>
+                        <div class="timeline-title">Augustus becomes first Roman Emperor</div>
+                        <p>The Roman Republic transforms into an empire that would dominate the Mediterranean for centuries.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1206 CE</div>
+                        <div class="timeline-title">Genghis Khan unites the Mongol tribes</div>
+                        <p>The beginning of the largest contiguous land empire in human history.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1453 CE</div>
+                        <div class="timeline-title">Ottoman Empire conquers Constantinople</div>
+                        <p>The fall of the Byzantine Empire and the rise of Ottoman dominance in Europe and Asia.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1789 CE</div>
+                        <div class="timeline-title">French Revolution begins</div>
+                        <p>The birth of modern democracy and the end of absolute monarchy in Europe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Section -->
+    <section class="interactive-section">
+        <div class="container">
+            <div class="quiz-preview fade-in">
+                <h3>Discover Your Historical Identity</h3>
+                <p>Take our personality quizzes to find out which historical leader or empire matches your personality and leadership style</p>
+                <a href="leaders.html" class="quiz-button">
+                    <i class="fas fa-play"></i>
+                    Start Your Journey
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Historical Quizzes</h4>
+                    <ul>
+                        <li><a href="leaders.html">Leaders Personality Quiz</a></li>
+                        <li><a href="empire.html">Empire Quiz</a></li>
+                        <li><a href="persian_kings-quiz.html">Persian Kings Quiz</a></li>
+                        <li><a href="all-empires.html">All Empires</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Featured Leaders</h4>
+                    <ul>
+                        <li><a href="cyrus.html">Cyrus the Great</a></li>
+                        <li><a href="napoleon.html">Napoleon Bonaparte</a></li>
+                        <li><a href="churchill.html">Winston Churchill</a></li>
+                        <li><a href="cleopatra.html">Cleopatra VII</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Great Empires</h4>
+                    <ul>
+                        <li><a href="romanempire.html">Roman Empire</a></li>
+                        <li><a href="achaemenidempire.html">Persian Empire</a></li>
+                        <li><a href="ottoman.html">Ottoman Empire</a></li>
+                        <li><a href="british.html">British Empire</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About Zinvana</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="help.html">Help & Support</a></li>
+                        <li><a href="all-articles.html">All Articles</a></li>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zinvana. All rights reserved. | Explore history, discover yourself.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "History Hub - Zinvana",
+        "description": "Comprehensive collection of historical content including leaders, empires, and civilizations with interactive quizzes and detailed articles",
+        "url": "https://zinvana.com/history.html",
+        "author": {
+            "@type": "Organization",
+            "name": "Zinvana"
+        },
+        "hasPart": [
+            {
+                "@type": "WebPage",
+                "name": "Historical Leaders Quiz",
+                "url": "https://zinvana.com/leaders.html"
+            },
+            {
+                "@type": "WebPage", 
+                "name": "Empire Quiz",
+                "url": "https://zinvana.com/empire.html"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Historical Articles",
+                "url": "https://zinvana.com/all-articles.html"
+            }
+        ]
+    }
+    </script>
+</body>
+</html>
