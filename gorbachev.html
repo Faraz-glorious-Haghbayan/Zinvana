@@ -8,6 +8,23 @@
   <meta name="keywords" content="Mikhail Gorbachev, biography, Glasnost, Perestroika, Soviet Union, Cold War, reforms, international diplomacy, political history, legacy" />
   <meta name="author" content="Zinvana" />
   <link rel="canonical" href="https://zinvana.com/gorbachev.html" />
+
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Zinvana" />
+  <meta property="og:url" content="https://zinvana.com/gorbachev.html" />
+  <meta property="og:title" content="Mikhail Gorbachev: Biography, Glasnost, Perestroika & Legacy | Zinvana" />
+  <meta property="og:description" content="Explore the life of Mikhail Gorbachev, the last Soviet leader who transformed the USSR through Glasnost and Perestroika. Discover his reforms and lasting impact." />
+  <meta property="og:image" content="https://zinvana.com/gorbachev.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Zinvana" />
+  <meta name="twitter:title" content="Mikhail Gorbachev: Biography, Glasnost, Perestroika & Legacy | Zinvana" />
+  <meta name="twitter:description" content="Explore the life of Mikhail Gorbachev, the last Soviet leader who transformed the USSR through Glasnost and Perestroika." />
+  <meta name="twitter:image" content="https://zinvana.com/gorbachev.jpg" />
   
   <script type="application/ld+json">
     {
@@ -60,406 +77,1254 @@
     
 
   <!-- Fonts -->
-  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- CSS Style -->
+  <!-- CSS Style: Modern Professional Design -->
   <style>
-    html, body {
+    /* CSS Custom Properties */
+    :root {
+      --primary-gold: #d4af37;
+      --primary-navy: #1a2238;
+      --secondary-gold: #f4e5a3;
+      --text-light: #f8f9fa;
+      --text-dark: #333333;
+      --background-light: #ffffff;
+      --accent-color: #8b4513;
+      --shadow-light: rgba(212, 175, 55, 0.1);
+      --shadow-dark: rgba(26, 34, 56, 0.3);
+      --gradient-primary: linear-gradient(135deg, var(--primary-gold) 0%, var(--accent-color) 100%);
+      --gradient-secondary: linear-gradient(135deg, var(--primary-navy) 0%, #2c3e50 100%);
+    }
+
+    /* Reset and Base Styles */
+    * {
       margin: 0;
-      padding: 0 !important;
-      border: 0;
-      vertical-align: baseline;
-    }
-    *, *::before, *::after {
+      padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
+      font-size: 16px;
     }
+
     body {
-      font-family: 'Roboto', sans-serif;
-      background: #ffffff;
-      color: #333;
-      line-height: 1.8;
-      padding: 20px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--background-light);
+      overflow-x: hidden;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: opacity 0.3s;
+
+    /* Loading Animation */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
-    a:hover {
-      opacity: 0.8;
+
+    .loading-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
     }
-    /* Navigation */
+
+    .loading-content {
+      text-align: center;
+      color: var(--primary-gold);
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(212, 175, 55, 0.3);
+      border-top: 3px solid var(--primary-gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Navigation Bar */
     nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      background: rgba(26, 34, 56, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    nav.scrolled {
+      padding: 0.5rem 2rem;
+      background: rgba(26, 34, 56, 0.98);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #000;
-      padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(255,0,0,0.2);
+      max-width: 1400px;
+      margin: 0 auto;
     }
-    nav .nav-left, nav .nav-right {
+
+    .nav-left {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 2rem;
     }
-    nav a {
-      color: #fff;
+
+    .nav-logo {
+      height: 40px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
       font-weight: 500;
-      font-size: 1.3rem;
+      font-size: 1rem;
+      position: relative;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0;
     }
-    nav a:hover {
-      color: #d32f2f;
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: width 0.3s ease;
     }
-    nav img#brand-logo {
-      width: 10%;
-      min-width: 60px;
-      pointer-events: none;
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
-    /* Header */
-    header {
-      text-align: center;
-      padding: 200px 10px 100px;
-      background: url('gorbachevheader.jpg') no-repeat center/cover;
-      border-bottom: 2px solid #1f1f1f;
+
+    .nav-links a:hover {
+      color: var(--primary-gold);
+      transform: translateY(-2px);
     }
-    header h1 {
+
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-light);
       font-size: 1.5rem;
-      color: #ffffff;
-      text-shadow: 2px 2px #000;
-      letter-spacing: 1px;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-toggle:hover {
+      background: rgba(212, 175, 55, 0.1);
+    }
+
+    .mobile-menu-toggle.active {
+      transform: rotate(90deg);
+    }
+
+    /* Mobile Navigation Menu */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      background: rgba(26, 34, 56, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 1001;
+      transition: right 0.3s ease;
+      padding: 80px 2rem 2rem;
+      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      padding: 0;
       margin: 0;
     }
-    #tagline {
-      margin-top: 8px;
+
+    .mobile-nav-links li {
+      margin-bottom: 1rem;
+    }
+
+    .mobile-nav-links a {
+      display: block;
+      color: var(--text-light);
+      text-decoration: none;
       font-size: 1.2rem;
-      color: #ccc;
-      text-shadow: 2px 2px #000;
+      font-weight: 500;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      transition: all 0.3s ease;
     }
-    /* Main Content */
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #1a1a1a;
-      color: #e0e0e0;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+
+    .mobile-nav-links a:hover {
+      color: var(--primary-gold);
+      transform: translateX(10px);
     }
-    main h2 {
-      font-size: 2rem;
-      color: #ff9a00;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ff4f00;
-      padding-bottom: 10px;
+
+    .mobile-nav-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text-light);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
     }
-    main h3 {
-      font-size: 1.6rem;
-      color: #ff9a00;
-      margin-top: 30px;
-      margin-bottom: 10px;
+
+    .mobile-nav-close:hover {
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--primary-gold);
     }
-    main p {
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      color: #bbbbbb;
-      text-align: justify;
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(26, 34, 56, 0.7), rgba(26, 34, 56, 0.7)), url('gorbachevheader.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 2rem;
+      animation: fadeInUp 1s ease 0.5s both;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      color: var(--secondary-gold);
+      margin-bottom: 2rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--primary-gold);
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .scroll-indicator:hover {
+      transform: translateX(-50%) translateY(-5px);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Main Content Container */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      position: relative;
+    }
+
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      align-items: start;
+    }
+
     /* Infobox */
     .infobox {
-      float: right;
-      width: 280px;
-      background-color: #222222;
-      color: #333;
-      border: 1px solid #fff;
-      padding: 15px;
-      margin: 0 0 20px 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      background: var(--background-light);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px var(--shadow-dark);
+      position: sticky;
+      top: 120px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: all 0.3s ease;
     }
+
+    .infobox:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px var(--shadow-dark);
+    }
+
     .infobox img {
       width: 100%;
-      border-radius: 5px;
-      margin-bottom: 10px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
     }
-    .infobox p {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      margin-bottom: 5px;
+
+    .infobox img:hover {
+      transform: scale(1.05);
     }
-    .infobox strong {
-      color: #d32f2f;
+
+    .infobox h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      text-align: center;
     }
-    /* Clearfix */
-    .clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
     }
+
+    .info-label {
+      font-weight: 600;
+      color: var(--primary-navy);
+    }
+
+    .info-value {
+      color: var(--text-dark);
+      text-align: right;
+    }
+
+    /* Main Content */
+    .main-content {
+      background: var(--background-light);
+      border-radius: 15px;
+      padding: 3rem;
+      box-shadow: 0 10px 30px var(--shadow-light);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .main-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .content-section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .content-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .content-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--primary-navy);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .content-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+    }
+
+    .content-section h2::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(212, 175, 55, 0.2);
+    }
+
+    .content-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      text-align: justify;
+    }
+
+    .content-section p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 1;
+      float: left;
+      margin: 0.1rem 0.5rem 0 0;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Timeline Table */
+    .timeline-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      box-shadow: 0 5px 15px var(--shadow-light);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .timeline-table thead {
+      background: var(--gradient-primary);
+    }
+
+    .timeline-table th {
+      padding: 1rem;
+      color: var(--text-light);
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .timeline-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .timeline-table tr:nth-child(even) {
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    .timeline-table tr:hover {
+      background: rgba(212, 175, 55, 0.1);
+      transform: scale(1.01);
+      transition: all 0.3s ease;
+    }
+
+    .year-cell {
+      font-weight: 600;
+      color: var(--primary-navy);
+      font-size: 1.1rem;
+    }
+
     /* Footer */
     footer {
-      background: #000;
-      padding: 20px 10px;
+      background: var(--gradient-secondary);
+      color: var(--text-light);
+      padding: 3rem 2rem 2rem;
       text-align: center;
-      border-top: 1px solid #d32f2f;
-      margin-top: 40px;
+      margin-top: 4rem;
+      position: relative;
+      overflow: hidden;
     }
-    footer p {
-      margin: 5px 0;
-      font-size: 1.3rem;
-      color: #aaa;
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gradient-primary);
     }
-    footer .social-icons {
-      margin-top: 10px;
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    footer .social-icons img {
-      width: 10%;
-      margin: 0 8px;
-      transition: opacity 0.3s;
-      cursor: pointer;
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
     }
-    footer .social-icons img:hover {
-      opacity: 0.7;
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .social-links a:hover {
+      background: var(--primary-gold);
+      transform: translateY(-3px);
+      border-color: var(--primary-gold);
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .social-links img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) invert(1);
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover img {
+      filter: brightness(0);
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .infobox {
+        position: static;
+        order: -1;
+        margin-bottom: 2rem;
+      }
+
+      .main-container {
+        padding: 2rem 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      nav {
+        padding: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .main-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .content-section h2 {
+        font-size: 1.8rem;
+      }
+
+      .content-section p {
+        font-size: 1rem;
+      }
+
+      .infobox {
+        padding: 1.5rem;
+      }
+
+      .social-links {
+        gap: 1rem;
+      }
+
+      .social-links a {
+        width: 45px;
+        height: 45px;
+      }
+
+      .timeline-table th,
+      .timeline-table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        background-attachment: scroll;
+      }
+
+      .hero-content {
+        padding: 1rem;
+      }
+
+      .main-content {
+        padding: 1.5rem 1rem;
+      }
+
+      .content-section p:first-of-type::first-letter {
+        font-size: 3rem;
+        margin: 0.05rem 0.3rem 0 0;
+      }
+
+      footer {
+        padding: 2rem 1rem 1.5rem;
+      }
+    }
+
+    /* Touch Device Optimizations */
+    @media (hover: none) and (pointer: coarse) {
+      .nav-links a:hover::after {
+        width: 0;
+      }
+
+      .nav-links a:active::after {
+        width: 100%;
+      }
+
+      .infobox:hover {
+        transform: none;
+      }
+
+      .social-links a:hover {
+        transform: none;
+      }
+    }
+
+    /* High DPI Display Optimizations */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .hero {
+        background-image: linear-gradient(rgba(26, 34, 56, 0.7), rgba(26, 34, 56, 0.7)), url('gorbachevheader.jpg');
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      nav, footer, .scroll-indicator {
+        display: none;
+      }
+
+      .hero {
+        height: auto;
+        background: none;
+        color: black;
+        padding: 2rem 0;
+      }
+
+      .main-content {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-left">
-      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
-      <a href="index.html">Home</a>
-      <a href="leaders.html">Quiz</a>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <p>Loading...</p>
     </div>
-    <div class="nav-right">
-      <a href="help.html">Help</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="mainNav">
+    <div class="nav-container">
+      <div class="nav-left">
+        <img src="zinvanalogo.png" alt="Zinvana Logo" class="nav-logo" />
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="leaders.html">Quiz</a></li>
+          <li><a href="help.html">Help</a></li>
+        </ul>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        ☰
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">×</button>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="leaders.html">Quiz</a></li>
+      <li><a href="help.html">Help</a></li>
+      <li><a href="all-empires.html">Empires</a></li>
+      <li><a href="all-articles.html">Articles</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
   
- <!-- Header -->
- <header>
-  <h1>Mikhail Gorbachev | Soviet Reformer, Glasnost and Perestroika – Biography and Quotes of Mikhail Gorbachev</h1>
-  <div id="tagline">The Reformer Who Transformed a Superpower</div>
-</header>
-
-
-
-<main class="clearfix">
-  <aside class="infobox" itemscope itemtype="https://schema.org/Person">
-    <img itemprop="image" src="gorbachev.jpg" alt="Mikhail Gorbachev" />
-    <h3 itemprop="name">Mikhail Gorbachev</h3>
-    <p><strong>Born:</strong> <time itemprop="birthDate" datetime="1931-03-02">March 2, 1931</time></p>
-    <p><strong>Died:</strong> <time itemprop="deathDate" datetime="2022-08-30">August 30, 2022</time></p>
-    <p><strong>Role:</strong> <span itemprop="jobTitle">General Secretary, Communist Party of the USSR</span></p>
-    <p><strong>Known For:</strong> Glasnost, Perestroika, ending the Cold War</p>
-    <link itemprop="sameAs" href="https://en.wikipedia.org/wiki/Mikhail_Gorbachev" />
-  </aside>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Mikhail Gorbachev</h1>
+      <p class="hero-subtitle">The Reformer Who Transformed a Superpower</p>
+    </div>
+    <div class="scroll-indicator" onclick="document.querySelector('.main-container').scrollIntoView({behavior: 'smooth'})">
+      <div style="font-size: 2rem;">↓</div>
+      <div style="font-size: 0.8rem; margin-top: 0.5rem;">Scroll Down</div>
+    </div>
+  </section>
   
-  <!-- 2. Early Life -->
-  <h2 id="early-life">Mikhail Gorbachev's Early Life &amp; Education</h2>
-  <p>
-    <strong>Mikhail Gorbachev</strong>—the last Soviet leader and reformer—was born on March 2, 1931, in Privolnoye, Stavropol.  
-    Raised amid post–World War II hardships, this future General Secretary developed resilience and a thirst for change.  
-    His scholarship led him from a local Soviet school to Moscow State University, where he studied law and the social sciences.
-  </p>
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="content-wrapper">
+      <!-- Main Content -->
+      <main class="main-content" id="mainContent">
 
-  <!-- 3. Timeline (example of breaking up long text with structured data) -->
-  <h3>Timeline of Key Events</h3>
-  <table>
-    <thead>
-      <tr><th>Year</th><th>Event</th></tr>
-    </thead>
-    <tbody>
-      <tr><td style="color: red;">1955</td><td>Mikhail Gorbachev Joins Communist Party</td></tr>
-      <tr><td style="color: red;">1970s</td><td>Mikhail Gorbachev rose to regional party leadership</td></tr>
-      <tr><td style="color: red;">1985</td><td>Mikhail Gorbachev ecomes General Secretary</td></tr>
-      <tr><td style="color: red;">1986</td><td>Mikhail Gorbachev Launches Glasnost &amp; Perestroika</td></tr>
-      <tr><td style="color: red;">1991</td><td>Mikhail Gorbachev's Dissolution of the USSR</td></tr>
-    </tbody>
-  </table>
+        <!-- Early Life and Education -->
+        <div class="content-section">
+          <h2>Early Life and Education</h2>
+          <p>Mikhail Sergeyevich Gorbachev was born on March 2, 1931, in the village of Privolnoye, in the Stavropol region of the Russian Soviet Federative Socialist Republic. Born into a peasant family during the tumultuous early years of the Soviet Union, Gorbachev's childhood was marked by the hardships of collectivization, the devastation of World War II, and the harsh realities of rural Soviet life. His father, Sergey Andreyevich Gorbachev, worked as a combine harvester operator, while his mother, Maria Panteleyevna, was a collective farm worker.</p>
+          <p>The future Soviet leader's formative years were shaped by the Great Patriotic War, during which his village was occupied by German forces for several months in 1942. This experience of foreign occupation and the subsequent liberation by Soviet forces would profoundly influence his worldview and his later commitment to preventing nuclear war. Despite the chaos of wartime, Gorbachev distinguished himself academically, showing an early aptitude for learning and leadership that would serve him throughout his career.</p>
+          <p>Gorbachev's exceptional academic performance earned him admission to Moscow State University in 1950, where he studied law at the Faculty of Law. This was a remarkable achievement for a peasant's son, reflecting both his intellectual capabilities and the educational opportunities that the Soviet system, despite its many flaws, could provide to talented individuals from humble backgrounds. At university, he met his future wife, Raisa Maksimovna Titarenko, who was studying philosophy, and they married in 1953.</p>
+          <p>During his university years, Gorbachev became deeply involved in the Communist Youth League (Komsomol), demonstrating the organizational skills and political acumen that would later characterize his rise through the party hierarchy. His legal education provided him with a systematic approach to problem-solving and an understanding of institutional frameworks that would prove invaluable in his later reform efforts. This combination of rural origins, wartime experience, and quality education created a unique perspective that would influence his approach to leadership and reform.</p>
+        </div>
 
-  <!-- 4. Political Rise -->
-  <h2 id="political-rise">Mikhail Gorbachev’s Political Rise &amp; Early Career</h2>
-  <p>
-    Entering the Communist Party in his twenties, Gorbachev distinguished himself as a pragmatic Soviet leader willing to challenge rigid bureaucracy.  
-    By the early 1980s, his reformist reputation had catapulted him into the Politburo—setting the stage for his historic elevation in 1985.
-  </p>
-  <p>
-    <em>Example:</em> In a 1983 speech he argued for greater efficiency in collective farms—an early hint of the later Perestroika reforms.
-  </p>
+        <!-- Timeline of Key Events -->
+        <div class="content-section">
+          <h2>Timeline of Key Events</h2>
+          <table class="timeline-table">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Event</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="year-cell">1931</td>
+                <td>Born in Privolnoye, Stavropol Region</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1955</td>
+                <td>Joins the Communist Party of the Soviet Union</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1970</td>
+                <td>Becomes First Secretary of Stavropol Regional Committee</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1980</td>
+                <td>Elected to the Politburo as a full member</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1985</td>
+                <td>Becomes General Secretary of the Communist Party</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1986</td>
+                <td>Launches Glasnost and Perestroika reforms</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1987</td>
+                <td>Signs INF Treaty with United States</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1990</td>
+                <td>Wins Nobel Peace Prize</td>
+              </tr>
+              <tr>
+                <td class="year-cell">1991</td>
+                <td>Resigns as Soviet leader; USSR dissolves</td>
+              </tr>
+              <tr>
+                <td class="year-cell">2022</td>
+                <td>Dies on August 30 in Moscow</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-  <!-- 5. Glasnost & Perestroika -->
-  <h2 id="glasnost-perestroika">Mikhail Gorbachev’s Glasnost &amp; Perestroika Reforms</h2>
-  <p>
-    Confronting Soviet stagnation, Gorbachev introduced <strong>Glasnost</strong> (openness) and <strong>Perestroika</strong> (restructuring).  
-    Glasnost reduced censorship and encouraged public debate; Perestroika injected market mechanisms into the command economy.
-  </p>
-  <img src="glasnost-decree.png" 
-       alt="Gorbachev signing the Glasnost decree" 
-       style="max-width:100%;margin:20px 0;border-radius:8px;" />
+        <!-- Political Rise and Early Career -->
+        <div class="content-section">
+          <h2>Political Rise and Early Career</h2>
+          <p>After graduating from Moscow State University in 1955, Gorbachev returned to Stavropol to begin his career in the Communist Party apparatus. He joined the party in the same year and quickly demonstrated the combination of administrative competence, political acumen, and personal charisma that would propel him through the Soviet hierarchy. His early assignments in the Komsomol and party organizations provided him with invaluable experience in managing people and resources within the complex Soviet bureaucratic system.</p>
+          <p>Gorbachev's rise through the regional party organization was steady and methodical. By 1962, he had become a party organizer for collective and state farms, a position that gave him firsthand experience with the chronic problems of Soviet agriculture. This experience would later inform his understanding of the deep structural problems within the Soviet economic system and the need for fundamental reform rather than superficial adjustments.</p>
+          <p>His breakthrough came in 1970 when he was appointed First Secretary of the Stavropol Regional Party Committee, making him the youngest regional party leader in the Soviet Union at the age of 39. In this role, Gorbachev demonstrated his ability to implement innovative approaches to regional development, including experiments with agricultural reform and improved coordination between party and government officials. His success in Stavropol brought him to the attention of senior party leaders in Moscow.</p>
+          <p>The turning point in Gorbachev's career came through his relationships with influential party figures, particularly Yuri Andropov, who served as KGB chairman before becoming General Secretary. Andropov recognized Gorbachev's potential as a reformer and helped facilitate his move to Moscow in 1978 as a Central Committee secretary responsible for agriculture. This position gave Gorbachev national visibility and experience with the central party apparatus.</p>
+          <p>Gorbachev's election to the Politburo in 1980 as the youngest full member marked his arrival as a major figure in Soviet politics. During the final years of Leonid Brezhnev's leadership and the brief tenures of Andropov and Konstantin Chernenko, Gorbachev gained crucial experience in foreign policy, domestic affairs, and party politics. By the time he became General Secretary in March 1985, he had developed a clear vision of the changes needed to revitalize the Soviet system.</p>
+        </div>
 
-  <!-- 6. Ending the Cold War -->
-  <h2 id="cold-war">Mikhail Gorbachev’s Role in Ending the Cold War</h2>
-  <p>
-    Through arms-reduction treaties and high-profile summits with Reagan and Thatcher, Gorbachev redefined Soviet diplomacy.  
-    His leadership moved the USSR from confrontation to cooperation—ultimately bringing down the Iron Curtain.  
-    Learn more in our <a href="cold-war.html">Cold War overview</a>.
-  </p>
+        <!-- Glasnost and Perestroika Reforms -->
+        <div class="content-section">
+          <h2>Glasnost and Perestroika Reforms</h2>
+          <p>Upon becoming General Secretary in 1985, Mikhail Gorbachev faced a Soviet Union in deep crisis. The economy was stagnating, technological progress had slowed, and public cynicism about the party and government was widespread. His response was to launch two interconnected reform programs that would fundamentally transform the Soviet Union: Glasnost (openness) and Perestroika (restructuring). These reforms represented the most ambitious attempt to reform the Soviet system since its establishment.</p>
+          <p>Glasnost, introduced in 1986, aimed to increase transparency and reduce censorship throughout Soviet society. This policy allowed for unprecedented public discussion of social problems, historical events, and government policies. For the first time since the early Soviet period, citizens could openly criticize government actions, debate alternative policies, and access previously forbidden literature and films. The policy led to the rehabilitation of many political prisoners and the acknowledgment of historical injustices, including Stalin's purges.</p>
+          <p>Perestroika, the restructuring of the Soviet economic and political system, proved even more revolutionary in its implications. Gorbachev recognized that the centrally planned economy was incapable of competing with market-based systems and needed fundamental reform. His economic reforms included allowing limited private enterprise, reducing central planning, and giving more autonomy to individual enterprises and collective farms. These changes represented a dramatic departure from traditional Soviet economic orthodoxy.</p>
+          <p>The political dimensions of Perestroika were equally significant. Gorbachev introduced competitive elections, reduced the Communist Party's monopoly on power, and allowed the emergence of independent political organizations. The creation of the Congress of People's Deputies in 1989 provided a forum for genuine political debate and marked the beginning of democratic governance in the Soviet Union. These reforms unleashed forces that would ultimately lead to the dissolution of the Soviet system.</p>
+          <p>The implementation of these reforms faced enormous resistance from conservative elements within the party and government who viewed them as a betrayal of Soviet principles. Gorbachev had to navigate carefully between reformers who wanted faster change and conservatives who wanted to preserve the status quo. This balancing act became increasingly difficult as the reforms gained momentum and began to produce unintended consequences, including ethnic tensions and economic disruption.</p>
+          <p>Despite the challenges and ultimate failure to preserve the Soviet Union, Glasnost and Perestroika represented a genuine attempt to democratize and modernize an authoritarian system. These reforms had profound international implications, contributing to the end of the Cold War and inspiring democratic movements throughout Eastern Europe. Gorbachev's willingness to allow peaceful change, even when it threatened his own power, demonstrated remarkable political courage and vision.</p>
+        </div>
 
-    
-    <!-- 7. Cultural Renaissance and Freedom of Expression -->
-    <h2>Cultural Renaissance and Freedom of Expression</h2>
-    <p>
-      The era of Glasnost ushered in a cultural renaissance within the Soviet Union. For the first time in decades, the public was allowed to engage in open dialogue about art, literature, and history. This newfound freedom led to the reemergence of classical literature, a revival of artistic expression, and the exposure of previously forbidden subjects.
-    </p>
-    <p>
-      Artists, writers, and intellectuals found an unprecedented platform for creative expression, challenging old norms and exploring ideas that had once been suppressed. This cultural flowering not only enriched the spiritual life of the nation but also played a significant role in redefining the Soviet cultural identity.
-    </p>
-    <p>
-      The cultural revival during Gorbachev’s tenure is widely regarded as one of his most significant contributions, leaving a lasting impact on the artistic legacy of the former Soviet Union.
-    </p>
-    
-    <!-- 8. Diplomatic Initiatives and International Legacy -->
-    <h2>Diplomatic Initiatives and International Legacy</h2>
-    <p>
-      In international affairs, Gorbachev’s tenure marked a turning point in Soviet diplomacy. His openness to dialogue and willingness to engage with both NATO and non-aligned countries helped to transform the Soviet Union’s image on the global stage. Through landmark treaties such as the Intermediate-Range Nuclear Forces (INF) Treaty and Strategic Arms Reduction Talks (START), he contributed to a significant reduction in Cold War tensions.
-    </p>
-    <p>
-      Gorbachev’s diplomatic efforts not only facilitated the end of the bipolar world order but also reoriented the Soviet Union toward a more cooperative role in global affairs. His legacy in international relations is characterized by the values of dialogue, mutual respect, and disarmament, themes that continue to influence diplomatic negotiations today.
-    </p>
-    <p>
-      His vision for a less confrontational world helped lay the groundwork for the international system that emerged after the Cold War.
-    </p>
-    
-    <!-- 9. The Role of Leadership in Systemic Transformation -->
-    <h2>The Role of Leadership in Systemic Transformation</h2>
-    <p>
-      Mikhail Gorbachev’s career is a testament to how visionary leadership can drive systemic change even in the most entrenched and rigid structures. His resolve to reform the Soviet system—despite fierce internal resistance—demonstrated a profound belief in the possibility of renewal. By championing policies that encouraged transparency and decentralization, he set in motion processes that ultimately contributed to the transformation of not only the Soviet economy and political system but also its cultural landscape.
-    </p>
-    <p>
-      His leadership style, which combined pragmatism with idealism, has since been studied as a model for change management in large organizations and states. Gorbachev’s example underscores that even deeply rooted systems can evolve when guided by integrity, vision, and determination.
-    </p>
-    
-    <!-- 10. Famous Quotes and Philosophical Reflections -->
-    <h2>Mikhail Gorbachev’s famous Quotes and Philosophical Reflections</h2>
-    <p>
-      Mikhail Gorbachev is also remembered for his powerful and enduring quotes that encapsulate his vision for a better world. Among his most famous sayings is: 
-      <em>"The future is not something we enter. The future is something we create."</em> This quote reflects his belief in proactive change and the importance of collective responsibility in shaping our destiny.
-    </p>
-    <p>
-      He also once noted, <em>"We must, at all costs, build a world that is free of the contradictions that lead to war."</em> Such reflections reveal his deep commitment to peace and his desire to foster an international community based on understanding and collaboration.
-    </p>
-    <p>
-      Another memorable quote is: <em>"Change is never easy; it is, however, inevitable. Our challenge is to adapt and use change as a tool for progress."</em> These words continue to inspire leaders and reformers worldwide, encapsulating Gorbachev’s belief that even daunting challenges can be overcome through determination and collaborative effort.
-    </p>
-    
-    <!-- 11. Impact on International Relations and Global Diplomacy -->
-    <h2>Mikhail Gorbachev’s Impact on International Relations and Global Diplomacy</h2>
-    <p>
-      The reforms initiated by Gorbachev not only altered the domestic landscape of the Soviet Union but also redefined its role in the world. His diplomatic outreach and efforts to foster openness played a significant role in dismantling the barriers of the Cold War. By prioritizing dialogue and reducing nuclear armaments, he contributed to a new international order based on mutual cooperation.
-    </p>
-    <p>
-      His legacy in international relations is particularly significant; it serves as a reminder that even systems steeped in rivalry and isolation can embrace change and work collectively toward global peace and security.
-    </p>
-    
-    <!-- 12. Economic and Structural Reforms: Successes and Setbacks -->
-    <h2>Mikhail Gorbachev’s Economic and Structural Reforms: Successes and Setbacks</h2>
-    <p>
-      The ambitious economic reforms under Perestroika were designed to transform a bloated, centrally planned economy into a more efficient, market-responsive system. Despite the theoretical promise of these policies, the reality was marked by deep structural challenges. Problems such as inflation, bureaucratic inefficiency, and supply chain disruptions undermined progress.
-    </p>
-    <p>
-      Nevertheless, the reform efforts provided valuable lessons. By introducing elements of decentralization and private enterprise, Gorbachev set in motion processes that would later enable post-Soviet states to rebuild their economies. Although his economic policies did not deliver immediate prosperity, they opened the door to long‑term transformation and modernization.
-    </p>
-    
-    <!-- 13. Social Transformations and the Cultural Shift -->
-    <h2>Social Transformations and the Cultural Shift</h2>
-    <p>
-      The policy of Glasnost did more than just free up the press—it sparked a cultural transformation that permeated all layers of Soviet society. For the first time, citizens could openly debate historical events, question long‑standing taboos, and seek accountability from their leaders. This openness led to a revival of artistic expression, a flourishing of literature, and a reinvigoration of national identity.
-    </p>
-    <p>
-      These social transformations fostered a sense of empowerment among the populace, gradually eroding the rigid hierarchical structures of the past and paving the way for a more participatory form of governance.
-    </p>
-    
-    <!-- 14. The Dissolution of the Soviet Union and Gorbachev’s Later Years -->
-    <h2>The Dissolution of the Soviet Union and Gorbachev’s Later Years</h2>
-    <p>
-      Despite his best efforts to reform the Soviet system, Gorbachev ultimately witnessed the unraveling of the Soviet Union. The rapid pace of social and economic change, combined with longstanding regional and ethnic tensions, culminated in a dramatic collapse in 1991. In his later years, Gorbachev reflected on the challenges of implementing radical reforms in an entrenched system, and he continued to advocate for dialogue and responsible leadership even as the world around him transformed.
-    </p>
-    <p>
-      His farewell as the leader of the Soviet Union marked both an end and a beginning—ushering in a period of transformation and new challenges that continue to shape the global landscape.
-    </p>
-    
-    <!-- 15. Legacy, Reflections, and the Lessons for Future Leaders -->
-    <h2>Legacy, Reflections, and Lessons for Future Leaders</h2>
-    <p>
-      Mikhail Gorbachev’s legacy is one of bold initiative and controversial reform. As the architect of policies that ultimately led to the end of the Cold War, his tenure marked a pivotal turning point in modern history. While opinions on his reforms remain divided, there is no denying the profound impact of his leadership on both domestic policies and international relations.
-    </p>
-    <p>
-      The lessons drawn from Gorbachev’s life include the importance of transparency, the necessity of adaptability, and the enduring value of dialogue in overcoming even the most entrenched conflicts. His career serves as a potent reminder that effective leadership sometimes demands radical change, even at the risk of instability. For future leaders, Gorbachev’s example underscores that true progress is achieved not merely through the preservation of power, but through the courage to build a better, more open society.
-    </p>
-    
-    <!-- 16. Further Reading and Scholarly Perspectives -->
-    <h2>Further Reading and Scholarly Perspectives</h2>
-    <p>
-      Scholars continue to debate and analyze the transformative period of Gorbachev’s rule. Numerous academic works, biographies, and archival studies offer in-depth insights into the policies of Glasnost and Perestroika, the economic and political challenges of the era, and the lasting impact of his reforms on global politics.
-    </p>
-    <p>
-      For those interested in exploring this era further, key resources include translated works of Gorbachev’s speeches and writings, critical analyses by modern historians, and comprehensive studies of Cold War diplomacy. These materials not only deepen our understanding of his legacy but also provide a broader context for the sweeping changes of the late 20th century.
-    </p>
-    
-    <!-- 17. Cultural and Global Impact of Gorbachev's Reforms -->
-    <h2>Cultural and Global Impact of Gorbachev's Reforms</h2>
-    <p>
-      The influence of Gorbachev's reforms extended far beyond the borders of the Soviet Union. His policies initiated a cultural revolution within the USSR that revived suppressed art, literature, and historical discourse. Internationally, his openness fostered a wave of democratization across Eastern Europe and altered the trajectory of global politics.
-    </p>
-    <p>
-      Many contemporary leaders and reformists look back on his era as a time when the possibility of change was demonstrated on an unprecedented scale. The cultural impact of Glasnost, in particular, has inspired movements for free speech and transparency across the world, influencing political discourse in countries with a history of authoritarianism.
-    </p>
-    
-    <!-- 18. Gorbachev's Later Reflections and Public Life -->
-    <h2>Gorbachev's Later Reflections and Public Life</h2>
-    <p>
-      After stepping down from power, Mikhail Gorbachev remained an active public figure, engaging in debates about global security, economic reform, and political ethics. In interviews and memoirs, he reflected candidly on his successes and failures, offering valuable insights into the complexities of governing a superpower in crisis.
-    </p>
-    <p>
-      His later writings and public speeches continue to emphasize the need for responsible leadership and the importance of learning from history. Gorbachev’s willingness to assess his own actions and admit mistakes has earned him respect even among his critics, further solidifying his legacy as a leader who was both transformative and introspective.
-    </p>
-    
-    <!-- 19. Personal Challenges and the Cost of Reform -->
-    <h2>Personal Challenges and the Cost of Mikhail Gorbachev’s Reform</h2>
-    <p>
-      Despite his visionary policies, Gorbachev’s time in power was fraught with personal and political challenges. The immense pressure of leading a nation in crisis, coupled with the backlash from conservative elements within the Communist Party, exacted a heavy personal toll. Gorbachev faced not only professional setbacks but also the emotional and psychological burdens of trying to usher in radical change under extraordinary circumstances.
-    </p>
-    <p>
-      His journey reflects the inherent conflict between the desire for progress and the resistance to change—a struggle that continues to resonate in political discourse around the world.
-    </p>
-    
-    <!-- 20. Final Reflections and the Vision for a Better Future -->
-    <h2>Final Reflections and the Vision for a Better Future</h2>
-    <p>
-      Mikhail Gorbachev’s legacy is complex and multifaceted. His pioneering efforts in transforming the Soviet political and economic system paved the way for a new era of global cooperation and democratic reform. Though his tenure was accompanied by significant challenges and controversies, his commitment to openness, dialogue, and reform offers timeless lessons for future generations.
-    </p>
-    <p>
-      In reflecting on his life, one finds a powerful reminder that true leadership requires the courage to change and the wisdom to learn from the past. Gorbachev’s vision continues to inspire those who believe in the possibility of building a more transparent, compassionate, and effective governance system in the face of overwhelming odds.
-    </p>
-  </main>
-  
+        <!-- Role in Ending the Cold War -->
+        <div class="content-section">
+          <h2>Role in Ending the Cold War</h2>
+          <p>Mikhail Gorbachev's most significant contribution to world history was his pivotal role in ending the Cold War without triggering a nuclear catastrophe. His approach to international relations represented a fundamental break with traditional Soviet foreign policy, emphasizing cooperation over confrontation and demonstrating that ideological differences need not lead to military conflict. His diplomatic initiatives helped transform the global political landscape and created the foundation for a more peaceful international order.</p>
+          <p>From the beginning of his tenure as General Secretary, Gorbachev signaled a new approach to relations with the West. His first major international initiative was a moratorium on nuclear testing, announced unilaterally in 1985. This gesture, along with his proposal for the complete elimination of nuclear weapons by the year 2000, captured global attention and helped establish him as a serious partner for arms control negotiations. His willingness to make concrete concessions marked a dramatic departure from the confrontational approach of his predecessors.</p>
+          <p>The series of summits between Gorbachev and U.S. President Ronald Reagan became defining moments of the late Cold War period. Their first meeting in Geneva in 1985 established a personal relationship that would prove crucial to subsequent negotiations. The Reykjavik Summit in 1986, despite ending without agreement, demonstrated both leaders' commitment to dramatic arms reductions. The breakthrough came with the Washington Summit in 1987, which resulted in the Intermediate-Range Nuclear Forces (INF) Treaty, the first agreement to actually eliminate an entire class of nuclear weapons.</p>
+          <p>Gorbachev's "new thinking" in foreign policy extended beyond arms control to encompass a fundamental reexamination of Soviet international commitments. His decision to withdraw Soviet forces from Afghanistan, announced in 1988, ended a costly and unpopular conflict that had become the Soviet Union's Vietnam. More significantly, his abandonment of the Brezhnev Doctrine, which had justified Soviet intervention in Eastern Europe, paved the way for the peaceful transformation of communist governments throughout the region.</p>
+          <p>The fall of the Berlin Wall in November 1989 symbolized the end of the Cold War division of Europe, and Gorbachev's restraint was crucial to ensuring this transition occurred peacefully. Despite pressure from hardliners in Moscow to intervene militarily, Gorbachev refused to use force to preserve communist rule in Eastern Europe. His recognition that the Soviet Union could not and should not maintain its empire through coercion represented a decisive break with imperial traditions dating back centuries.</p>
+          <p>Gorbachev's diplomatic achievements earned him worldwide recognition, including the Nobel Peace Prize in 1990. However, his success in ending the Cold War came at the cost of weakening his position at home, where many viewed his concessions to the West as evidence of weakness or betrayal. This tension between international acclaim and domestic criticism would ultimately contribute to his downfall, but his contribution to world peace remains his most enduring legacy.</p>
+        </div>
+
+        <!-- Cultural Renaissance and Freedom of Expression -->
+        <div class="content-section">
+          <h2>Cultural Renaissance and Freedom of Expression</h2>
+          <p>The era of Glasnost ushered in an unprecedented cultural renaissance within the Soviet Union, as decades of artistic repression gave way to an explosion of creative freedom and intellectual inquiry. For the first time since the early Soviet period, writers, artists, filmmakers, and intellectuals could explore previously forbidden themes and challenge official orthodoxies. This cultural flowering represented one of Gorbachev's most significant and lasting contributions to Soviet society, transforming the intellectual landscape of the nation.</p>
+          <p>The relaxation of censorship led to the publication of previously banned works by authors such as Alexander Solzhenitsyn, Vasily Grossman, and Boris Pasternak. Solzhenitsyn's "The Gulag Archipelago," which documented the horrors of Stalin's prison camp system, was officially published in the Soviet Union for the first time, providing citizens with unvarnished accounts of their own history. This literary revival allowed Soviet readers to engage with their cultural heritage and confront difficult truths about their past.</p>
+          <p>Cinema experienced a similar transformation, with filmmakers producing works that challenged official narratives and explored complex social issues. Directors like Alexei Balabanov and Alexander Sokurov created films that examined the psychological and moral consequences of Soviet policies, while documentaries exposed environmental disasters, social problems, and historical injustices that had been hidden from public view. This cinematic renaissance helped shape public discourse and contributed to growing awareness of systemic problems.</p>
+          <p>The emergence of independent media outlets and publications provided platforms for diverse voices and perspectives that had been suppressed under previous regimes. Newspapers and magazines began investigating corruption, questioning government policies, and providing forums for public debate. This journalistic freedom, while sometimes chaotic and divisive, represented a fundamental step toward creating an informed citizenry capable of participating in democratic governance.</p>
+          <p>The cultural revival extended beyond literature and media to encompass music, theater, and visual arts. Rock music, previously associated with Western decadence, gained official acceptance and became a vehicle for youth expression and social commentary. Traditional folk arts experienced a revival as ethnic minorities gained greater freedom to express their cultural identities. This cultural diversity enriched Soviet society and helped foster greater understanding among different ethnic and regional groups.</p>
+          <p>Perhaps most importantly, the cultural renaissance fostered a new generation of intellectuals and artists who would continue to shape post-Soviet culture. The freedom to question, criticize, and create without fear of persecution unleashed creative energies that had been suppressed for decades. While some of these cultural changes contributed to political instability, they also provided the foundation for a more open and dynamic society that could engage with global cultural trends and contribute to international artistic dialogue.</p>
+        </div>
+
+        <!-- Diplomatic Initiatives and International Legacy -->
+        <div class="content-section">
+          <h2>Diplomatic Initiatives and International Legacy</h2>
+          <p>Mikhail Gorbachev's approach to international diplomacy revolutionized Soviet foreign policy and transformed the global political landscape. His commitment to resolving conflicts through negotiation rather than confrontation, combined with his willingness to make unilateral concessions in the interest of peace, established new standards for international leadership. His diplomatic initiatives demonstrated that even the most entrenched conflicts could be resolved through patient dialogue and mutual understanding.</p>
+          <p>The cornerstone of Gorbachev's diplomatic strategy was the concept of "reasonable sufficiency" in military affairs, which rejected the traditional Soviet emphasis on military superiority in favor of maintaining only those forces necessary for legitimate defense. This philosophy led to dramatic reductions in Soviet military spending and troop deployments, freeing resources for domestic development while reducing international tensions. His willingness to implement these reductions unilaterally demonstrated genuine commitment to peaceful coexistence.</p>
+          <p>Gorbachev's engagement with Western leaders went beyond formal negotiations to include extensive public diplomacy that helped change international perceptions of the Soviet Union. His charismatic personality and evident sincerity in pursuing peace made him a popular figure in Western countries, creating political pressure on Western governments to respond positively to his initiatives. This "Gorbymania" became a significant factor in international relations, demonstrating the power of personal diplomacy in the modern era.</p>
+          <p>The Soviet withdrawal from regional conflicts under Gorbachev's leadership helped resolve several long-standing international disputes. Beyond Afghanistan, the Soviet Union reduced its support for proxy conflicts in Africa, Central America, and Asia, allowing for negotiated settlements to conflicts that had persisted for decades. This retreat from global confrontation represented a fundamental shift in Soviet strategic thinking and contributed to a more stable international environment.</p>
+          <p>Gorbachev's vision of a "common European home" and his support for European integration reflected his understanding that security in the modern world required cooperation rather than division. His willingness to accept German reunification within NATO, despite strong domestic opposition, demonstrated remarkable strategic vision and helped lay the foundation for post-Cold War European security architecture. This approach earned him respect and gratitude from European leaders who had viewed the Soviet Union as an existential threat.</p>
+          <p>The international recognition of Gorbachev's contributions to peace culminated in his receipt of the Nobel Peace Prize in 1990, making him only the second Soviet leader to receive this honor. However, his true legacy lies not in awards but in the practical achievements of his diplomacy: the elimination of entire classes of nuclear weapons, the peaceful resolution of the German question, and the transformation of international relations from confrontation to cooperation. These achievements provided the foundation for the relatively peaceful post-Cold War order that emerged in the 1990s.</p>
+        </div>
+
+        <!-- Economic Reforms and Structural Challenges -->
+        <div class="content-section">
+          <h2>Economic Reforms and Structural Challenges</h2>
+          <p>The economic dimension of Gorbachev's reform program, while less successful than his diplomatic initiatives, represented a genuine attempt to modernize the Soviet planned economy and make it competitive with market-based systems. The economic challenges facing the Soviet Union in the 1980s were enormous: declining growth rates, technological backwardness, chronic shortages of consumer goods, and a bloated military-industrial complex that consumed a disproportionate share of national resources. Gorbachev's economic reforms, while ultimately unsuccessful in preserving the Soviet system, provided valuable lessons about the difficulties of transitioning from planned to market economies.</p>
+          <p>The initial phase of economic reform focused on improving efficiency within the existing planned economy through measures such as quality control campaigns and anti-alcohol initiatives. The campaign against alcoholism, while well-intentioned, proved economically counterproductive by reducing state revenues from alcohol sales and driving the consumption of alcohol underground. These early experiences taught Gorbachev that superficial reforms could not address the fundamental structural problems of the Soviet economy.</p>
+          <p>Recognizing the need for more fundamental changes, Gorbachev introduced the Law on State Enterprise in 1987, which gave individual enterprises greater autonomy in production and pricing decisions. This reform, however, created chaos rather than efficiency, as enterprise managers lacked experience in making independent decisions while the central planning apparatus remained largely intact. The result was a "worst of both worlds" scenario in which neither planning nor market mechanisms functioned effectively.</p>
+          <p>The legalization of small-scale private enterprise through the Cooperative Law of 1988 represented a more successful reform initiative. This legislation allowed individuals to establish small businesses in services and light manufacturing, creating the first legal private sector in the Soviet Union since the 1920s. While these cooperatives remained small and faced bureaucratic obstacles, they demonstrated that Soviet citizens could successfully operate market-oriented enterprises given the opportunity.</p>
+          <p>The most ambitious economic reform was the attempt to integrate the Soviet Union into the global economy through joint ventures with foreign companies and increased foreign trade. This opening to international markets exposed Soviet enterprises to global competition and provided access to advanced technology and management expertise. However, the lack of convertible currency and the absence of legal frameworks for foreign investment limited the impact of these initiatives.</p>
+          <p>The economic reforms ultimately failed to achieve their primary objective of revitalizing the Soviet economy, instead contributing to economic instability and shortages that undermined public support for Gorbachev's leadership. The transition from a planned to a market economy proved far more complex and disruptive than reformers had anticipated, requiring institutional changes that were incompatible with preserving the Soviet political system. Despite their failure to save the Soviet Union, these reforms provided valuable experience for the post-Soviet transitions and demonstrated both the possibilities and limitations of gradual economic reform.</p>
+        </div>
+        
+        <!-- 7. Cultural Renaissance and Freedom of Expression -->
+        <h2>Cultural Renaissance and Freedom of Expression</h2>
+        <p>
+          The era of Glasnost ushered in a cultural renaissance within the Soviet Union. For the first time in decades, the public was allowed to engage in open dialogue about art, literature, and history. This newfound freedom led to the reemergence of classical literature, a revival of artistic expression, and the exposure of previously forbidden subjects.
+        </p>
+        <p>
+          Artists, writers, and intellectuals found an unprecedented platform for creative expression, challenging old norms and exploring ideas that had once been suppressed. This cultural flowering not only enriched the spiritual life of the nation but also played a significant role in redefining the Soviet cultural identity.
+        </p>
+        <p>
+          The cultural revival during Gorbachev’s tenure is widely regarded as one of his most significant contributions, leaving a lasting impact on the artistic legacy of the former Soviet Union.
+        </p>
+        
+        <!-- 8. Diplomatic Initiatives and International Legacy -->
+        <h2>Diplomatic Initiatives and International Legacy</h2>
+        <p>
+          In international affairs, Gorbachev’s tenure marked a turning point in Soviet diplomacy. His openness to dialogue and willingness to engage with both NATO and non-aligned countries helped to transform the Soviet Union’s image on the global stage. Through landmark treaties such as the Intermediate-Range Nuclear Forces (INF) Treaty and Strategic Arms Reduction Talks (START), he contributed to a significant reduction in Cold War tensions.
+        </p>
+        <p>
+          Gorbachev’s diplomatic efforts not only facilitated the end of the bipolar world order but also reoriented the Soviet Union toward a more cooperative role in global affairs. His legacy in international relations is characterized by the values of dialogue, mutual respect, and disarmament, themes that continue to influence diplomatic negotiations today.
+        </p>
+        <p>
+          His vision for a less confrontational world helped lay the groundwork for the international system that emerged after the Cold War.
+        </p>
+        
+        <!-- 9. The Role of Leadership in Systemic Transformation -->
+        <h2>The Role of Leadership in Systemic Transformation</h2>
+        <p>
+          Mikhail Gorbachev’s career is a testament to how visionary leadership can drive systemic change even in the most entrenched and rigid structures. His resolve to reform the Soviet system—despite fierce internal resistance—demonstrated a profound belief in the possibility of renewal. By championing policies that encouraged transparency and decentralization, he set in motion processes that ultimately contributed to the transformation of not only the Soviet economy and political system but also its cultural landscape.
+        </p>
+        <p>
+          His leadership style, which combined pragmatism with idealism, has since been studied as a model for change management in large organizations and states. Gorbachev’s example underscores that even deeply rooted systems can evolve when guided by integrity, vision, and determination.
+        </p>
+        
+        <!-- 10. Famous Quotes and Philosophical Reflections -->
+        <h2>Mikhail Gorbachev’s famous Quotes and Philosophical Reflections</h2>
+        <p>
+          Mikhail Gorbachev is also remembered for his powerful and enduring quotes that encapsulate his vision for a better world. Among his most famous sayings is: 
+          <em>"The future is not something we enter. The future is something we create."</em> This quote reflects his belief in proactive change and the importance of collective responsibility in shaping our destiny.
+        </p>
+        <p>
+          He also once noted, <em>"We must, at all costs, build a world that is free of the contradictions that lead to war."</em> Such reflections reveal his deep commitment to peace and his desire to foster an international community based on understanding and collaboration.
+        </p>
+        <p>
+          Another memorable quote is: <em>"Change is never easy; it is, however, inevitable. Our challenge is to adapt and use change as a tool for progress."</em> These words continue to inspire leaders and reformers worldwide, encapsulating Gorbachev’s belief that even daunting challenges can be overcome through determination and collaborative effort.
+        </p>
+        
+        <!-- 11. Impact on International Relations and Global Diplomacy -->
+        <h2>Mikhail Gorbachev’s Impact on International Relations and Global Diplomacy</h2>
+        <p>
+          The reforms initiated by Gorbachev not only altered the domestic landscape of the Soviet Union but also redefined its role in the world. His diplomatic outreach and efforts to foster openness played a significant role in dismantling the barriers of the Cold War. By prioritizing dialogue and reducing nuclear armaments, he contributed to a new international order based on mutual cooperation.
+        </p>
+        <p>
+          His legacy in international relations is particularly significant; it serves as a reminder that even systems steeped in rivalry and isolation can embrace change and work collectively toward global peace and security.
+        </p>
+        
+        <!-- 12. Economic and Structural Reforms: Successes and Setbacks -->
+        <h2>Mikhail Gorbachev’s Economic and Structural Reforms: Successes and Setbacks</h2>
+        <p>
+          The ambitious economic reforms under Perestroika were designed to transform a bloated, centrally planned economy into a more efficient, market-responsive system. Despite the theoretical promise of these policies, the reality was marked by deep structural challenges. Problems such as inflation, bureaucratic inefficiency, and supply chain disruptions undermined progress.
+        </p>
+        <p>
+          Nevertheless, the reform efforts provided valuable lessons. By introducing elements of decentralization and private enterprise, Gorbachev set in motion processes that would later enable post-Soviet states to rebuild their economies. Although his economic policies did not deliver immediate prosperity, they opened the door to long‑term transformation and modernization.
+        </p>
+        
+        <!-- 13. Social Transformations and the Cultural Shift -->
+        <h2>Social Transformations and the Cultural Shift</h2>
+        <p>
+          The policy of Glasnost did more than just free up the press—it sparked a cultural transformation that permeated all layers of Soviet society. For the first time, citizens could openly debate historical events, question long‑standing taboos, and seek accountability from their leaders. This openness led to a revival of artistic expression, a flourishing of literature, and a reinvigoration of national identity.
+        </p>
+        <p>
+          These social transformations fostered a sense of empowerment among the populace, gradually eroding the rigid hierarchical structures of the past and paving the way for a more participatory form of governance.
+        </p>
+        
+        <!-- 14. The Dissolution of the Soviet Union and Gorbachev’s Later Years -->
+        <h2>The Dissolution of the Soviet Union and Gorbachev’s Later Years</h2>
+        <p>
+          Despite his best efforts to reform the Soviet system, Gorbachev ultimately witnessed the unraveling of the Soviet Union. The rapid pace of social and economic change, combined with longstanding regional and ethnic tensions, culminated in a dramatic collapse in 1991. In his later years, Gorbachev reflected on the challenges of implementing radical reforms in an entrenched system, and he continued to advocate for dialogue and responsible leadership even as the world around him transformed.
+        </p>
+        <p>
+          His farewell as the leader of the Soviet Union marked both an end and a beginning—ushering in a period of transformation and new challenges that continue to shape the global landscape.
+        </p>
+        
+        <!-- 15. Legacy, Reflections, and the Lessons for Future Leaders -->
+        <h2>Legacy, Reflections, and Lessons for Future Leaders</h2>
+        <p>
+          Mikhail Gorbachev’s legacy is one of bold initiative and controversial reform. As the architect of policies that ultimately led to the end of the Cold War, his tenure marked a pivotal turning point in modern history. While opinions on his reforms remain divided, there is no denying the profound impact of his leadership on both domestic policies and international relations.
+        </p>
+        <p>
+          The lessons drawn from Gorbachev’s life include the importance of transparency, the necessity of adaptability, and the enduring value of dialogue in overcoming even the most entrenched conflicts. His career serves as a potent reminder that effective leadership sometimes demands radical change, even at the risk of instability. For future leaders, Gorbachev’s example underscores that true progress is achieved not merely through the preservation of power, but through the courage to build a better, more open society.
+        </p>
+        
+        <!-- 16. Further Reading and Scholarly Perspectives -->
+        <h2>Further Reading and Scholarly Perspectives</h2>
+        <p>
+          Scholars continue to debate and analyze the transformative period of Gorbachev’s rule. Numerous academic works, biographies, and archival studies offer in-depth insights into the policies of Glasnost and Perestroika, the economic and political challenges of the era, and the lasting impact of his reforms on global politics.
+        </p>
+        <p>
+          For those interested in exploring this era further, key resources include translated works of Gorbachev’s speeches and writings, critical analyses by modern historians, and comprehensive studies of Cold War diplomacy. These materials not only deepen our understanding of his legacy but also provide a broader context for the sweeping changes of the late 20th century.
+        </p>
+        
+        <!-- 17. Cultural and Global Impact of Gorbachev's Reforms -->
+        <h2>Cultural and Global Impact of Gorbachev's Reforms</h2>
+        <p>
+          The influence of Gorbachev's reforms extended far beyond the borders of the Soviet Union. His policies initiated a cultural revolution within the USSR that revived suppressed art, literature, and historical discourse. Internationally, his openness fostered a wave of democratization across Eastern Europe and altered the trajectory of global politics.
+        </p>
+        <p>
+          Many contemporary leaders and reformists look back on his era as a time when the possibility of change was demonstrated on an unprecedented scale. The cultural impact of Glasnost, in particular, has inspired movements for free speech and transparency across the world, influencing political discourse in countries with a history of authoritarianism.
+        </p>
+        
+        <!-- 18. Gorbachev's Later Reflections and Public Life -->
+        <h2>Gorbachev's Later Reflections and Public Life</h2>
+        <p>
+          After stepping down from power, Mikhail Gorbachev remained an active public figure, engaging in debates about global security, economic reform, and political ethics. In interviews and memoirs, he reflected candidly on his successes and failures, offering valuable insights into the complexities of governing a superpower in crisis.
+        </p>
+        <p>
+          His later writings and public speeches continue to emphasize the need for responsible leadership and the importance of learning from history. Gorbachev’s willingness to assess his own actions and admit mistakes has earned him respect even among his critics, further solidifying his legacy as a leader who was both transformative and introspective.
+        </p>
+        
+        <!-- 19. Personal Challenges and the Cost of Reform -->
+        <h2>Personal Challenges and the Cost of Mikhail Gorbachev’s Reform</h2>
+        <p>
+          Despite his visionary policies, Gorbachev’s time in power was fraught with personal and political challenges. The immense pressure of leading a nation in crisis, coupled with the backlash from conservative elements within the Communist Party, exacted a heavy personal toll. Gorbachev faced not only professional setbacks but also the emotional and psychological burdens of trying to usher in radical change under extraordinary circumstances.
+        </p>
+        <p>
+          His journey reflects the inherent conflict between the desire for progress and the resistance to change—a struggle that continues to resonate in political discourse around the world.
+        </p>
+        
+        <!-- 20. Final Reflections and the Vision for a Better Future -->
+        <h2>Final Reflections and the Vision for a Better Future</h2>
+        <p>
+          Mikhail Gorbachev’s legacy is complex and multifaceted. His pioneering efforts in transforming the Soviet political and economic system paved the way for a new era of global cooperation and democratic reform. Though his tenure was accompanied by significant challenges and controversies, his commitment to openness, dialogue, and reform offers timeless lessons for future generations.
+        </p>
+        <p>
+          In reflecting on his life, one finds a powerful reminder that true leadership requires the courage to change and the wisdom to learn from the past. Gorbachev’s vision continues to inspire those who believe in the possibility of building a more transparent, compassionate, and effective governance system in the face of overwhelming odds.
+        </p>
+      </main>
+
+      <!-- Infobox with Key Details -->
+      <aside class="infobox">
+        <img src="gorbachev.jpg" alt="Mikhail Gorbachev" />
+        <h3>Mikhail Gorbachev</h3>
+        <div class="info-item">
+          <span class="info-label">Born:</span>
+          <span class="info-value">March 2, 1931, Privolnoye, USSR</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Died:</span>
+          <span class="info-value">August 30, 2022, Moscow, Russia</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Nationality:</span>
+          <span class="info-value">Soviet/Russian</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Position:</span>
+          <span class="info-value">General Secretary, CPSU (1985-1991)</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Known For:</span>
+          <span class="info-value">Glasnost, Perestroika, ending the Cold War</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Awards:</span>
+          <span class="info-value">Nobel Peace Prize (1990)</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+      
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Zinvana. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-        <img src="whiteinsta.png" alt="Instagram" />
-      </a>
-      <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-        <img src="whitex.png" alt="Twitter" />
-      </a>
-      <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-        <img src="youtube.png" alt="YouTube" />
-      </a>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+          <img src="whiteinsta.png" alt="Instagram" />
+        </a>
+        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+          <img src="whitex.png" alt="Twitter" />
+        </a>
+        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel">
+          <img src="youtube.png" alt="YouTube" />
+        </a>
+      </div>
+      <p class="footer-text">&copy; 2025 Zinvana. All rights reserved. | Exploring the lives of history's greatest leaders and their enduring legacies.</p>
     </div>
   </footer>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Loading Animation
+    window.addEventListener('load', function() {
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      setTimeout(() => {
+        loadingOverlay.classList.add('hidden');
+        // Start fade-in animations after loading
+        setTimeout(() => {
+          observeElements();
+        }, 500);
+      }, 1000);
+    });
+
+    // Navigation Scroll Effect
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('mainNav');
+      if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Intersection Observer for Fade-in Animations
+    function observeElements() {
+      const mainContent = document.getElementById('mainContent');
+      const sections = document.querySelectorAll('.content-section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Observe main content
+      if (mainContent) {
+        mainContent.classList.add('visible');
+      }
+
+      // Observe each section for staggered animation
+      sections.forEach((section, index) => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        observer.observe(section);
+      });
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+
+    function toggleMobileMenu() {
+      mobileMenuToggle.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      mobileNavOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+
+    function closeMobileMenu() {
+      mobileMenuToggle.classList.remove('active');
+      mobileNav.classList.remove('active');
+      mobileNavOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (mobileMenuToggle) {
+      mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    }
+
+    if (mobileNavClose) {
+      mobileNavClose.addEventListener('click', closeMobileMenu);
+    }
+
+    if (mobileNavOverlay) {
+      mobileNavOverlay.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close mobile menu when clicking on a navigation link
+    document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+        closeMobileMenu();
+      }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add parallax effect to hero section
+    window.addEventListener('scroll', function() {
+      const hero = document.getElementById('hero');
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.5;
+      hero.style.transform = `translateY(${rate}px)`;
+    });
+
+    // Enhanced hover effects for infobox
+    const infobox = document.querySelector('.infobox');
+    if (infobox) {
+      infobox.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.02)';
+      });
+      
+      infobox.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    }
+
+    // Performance optimization: Throttle scroll events
+    let ticking = false;
+    function updateOnScroll() {
+      // Update scroll-dependent animations here
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(updateOnScroll);
+        ticking = true;
+      }
+    });
+
+    // SEO and Analytics ready
+    console.log('Mikhail Gorbachev biography page loaded successfully - Zinvana Historical Biographies');
+  </script>
 </body>
 </html>
