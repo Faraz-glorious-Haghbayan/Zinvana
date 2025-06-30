@@ -4,16 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
-  <title>Everything About Squid Game | Zinvana</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H7GCZY7W0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3H7GCZY7W0');
+  </script>
+  
+  <title>Everything About Squid Game | Psychology & Character Analysis | Zinvana</title>
   
   <meta name="description" content="Explore the world of Squid Game on Zinvana. Learn everything about this global Netflix phenomenon—from its high-stakes plot and gripping survival games to in-depth character analyses that reveal the unique psychological traits of each player. Discover how Squid Game mirrors real-life struggles, cultural commentary, and the human condition." />
-<meta name="keywords" content="Squid Game explained, Squid Game overview, Squid Game character analysis, Squid Game psychology, Netflix Squid Game, Squid Game deep dive, Squid Game plot, Squid Game player traits, Squid Game archetypes, Squid Game cultural impact, Squid Game review, Squid Game themes, survival game analysis" />
-<meta name="author" content="Zinvana" />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://zinvana.com/squidgame-about.html" />
+  <meta name="keywords" content="Squid Game explained, Squid Game overview, Squid Game character analysis, Squid Game psychology, Netflix Squid Game, Squid Game deep dive, Squid Game plot, Squid Game player traits, Squid Game archetypes, Squid Game cultural impact, Squid Game review, Squid Game themes, survival game analysis" />
+  <meta name="author" content="Zinvana" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://zinvana.com/squidgame-about.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Everything About Squid Game | Zinvana" />
+  <meta property="og:title" content="Everything About Squid Game | Psychology & Character Analysis | Zinvana" />
   <meta property="og:description" content="Explore the plot, characters, themes, and cultural impact of Squid Game—the global Netflix phenomenon." />
   <meta property="og:image" content="squidgamemainwallpaper.jpg" />
   <meta property="og:url" content="https://zinvana.com/squidgame-about.html" />
@@ -21,483 +30,1108 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Everything About Squid Game | Zinvana" />
+  <meta name="twitter:title" content="Everything About Squid Game | Psychology & Character Analysis | Zinvana" />
   <meta name="twitter:description" content="Learn all about Squid Game—from its captivating plot and memorable characters to its deep social commentary." />
   <meta name="twitter:image" content="squidgamemainwallpaper.jpg" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-  <!-- Fonts & html2canvas -->
-  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Inline CSS (Same Squid Game Theme as Main Web) -->
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    /* -------------------------------------
-       1) Modern CSS Reset
-    ------------------------------------- */
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, font, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed, 
-    figure, figcaption, footer, header, hgroup, 
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
+    :root {
+      --primary-pink: #FF6B9D;
+      --primary-teal: #4ECDC4;
+      --dark-bg: #0A0A0A;
+      --darker-bg: #050505;
+      --card-bg: #111111;
+      --text-primary: #FFFFFF;
+      --text-secondary: #B0B0B0;
+      --accent-orange: #FF8A65;
+      --accent-purple: #BA68C8;
+      --success-green: #66BB6A;
+      --warning-red: #EF5350;
+      --glass-bg: rgba(17, 17, 17, 0.8);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      border: 0;
-      vertical-align: baseline;
-    }
-    article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section {
-      display: block;
-    }
-    ol, ul {
-      list-style: none;
-    }
-    *, *::before, *::after {
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
-  
-    /* -------------------------------------
-       2) Base Styles
-    ------------------------------------- */
+
     body {
-      font-family: 'Roboto', sans-serif;
-      background: #f4f5f7;
-      color: #333;
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      overflow-x: hidden;
       line-height: 1.6;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: opacity 0.3s;
+
+    /* Animated Background */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(45deg, var(--dark-bg), var(--darker-bg));
     }
-    a:hover {
-      opacity: 0.8;
+
+    .bg-animation::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 40% 40%, rgba(186, 104, 200, 0.15) 0%, transparent 50%);
+      animation: backgroundMove 20s ease-in-out infinite;
     }
-  
-    /* -------------------------------------
-       3) Navigation (Squid Game Theme)
-    ------------------------------------- */
+
+    @keyframes backgroundMove {
+      0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+      25% { transform: translateX(50px) translateY(-30px) rotate(1deg); }
+      50% { transform: translateX(-30px) translateY(50px) rotate(-1deg); }
+      75% { transform: translateX(-50px) translateY(-30px) rotate(0.5deg); }
+    }
+
+    /* Navigation */
     nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #000;
-      padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2);
-      position: sticky;
-      top: 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
       z-index: 1000;
+      transition: all 0.3s ease;
     }
-    .nav-left, .nav-right {
+
+    nav::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, var(--primary-pink), var(--primary-teal));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    nav.scrolled::before {
+      opacity: 0.1;
+    }
+
+    .nav-brand {
       display: flex;
-      gap: 20px;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-brand .brand-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary-pink), var(--primary-teal));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav #brand-logo {
+      height: 40px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+
+    nav #brand-logo:hover {
+      transform: scale(1.1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
       align-items: center;
     }
+
     nav a {
-      color: #fff;
+      color: var(--text-primary);
       font-weight: 500;
-      font-size: 1.3rem;
-    }
-    nav a:hover {
-      color: #d32f2f;
-    }
-    #brand-logo {
-      width: 10%;
-      min-width: 60px;
-      pointer-events: none;
-    }
-  
-    /* -------------------------------------
-       4) Header (Squid Game Theme)
-    ------------------------------------- */
-    header {
-      text-align: center;
-      padding: 100px 10px 40px;
-      background: url('AAAAQVylBzU37ZpOJaV_EWOfGm7R3S6KJxdwj1KUgk7YQNg_vr7mSCnXzWJ7OaLdgqhKCGX2qeyrkWINXY_FJfoeRCsaIylCBHtQczT5GSpoHv7i0L0xCcQtXN4O8mAwzQZQqeUCXyLtVuwjlz50PCU66aV1.jpg') no-repeat center center/cover;
-      border-bottom: 2px solid #d32f2f;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      color: #f3f3f3;
-      letter-spacing: 1px;
-    }
-    #tagline {
-      margin-top: 8px;
       font-size: 1rem;
-      color: #ccc;
+      position: relative;
+      transition: all 0.3s ease;
+      text-decoration: none;
     }
-  
-    /* -------------------------------------
-       5) About/Article Section
-    ------------------------------------- */
-    #about {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: left;
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-pink), var(--primary-teal));
+      transition: width 0.3s ease;
     }
-    #about h2 {
-      font-size: 1.8rem;
-      color: #4e4e4e;
-      margin-bottom: 12px;
-      border-bottom: 2px solid #d32f2f;
-      padding-bottom: 10px;
-      text-align: center;
+
+    nav a:hover,
+    nav a.active {
+      color: var(--primary-pink);
     }
-    #about p {
-      color: #3d3d3d;
-      line-height: 1.6;
-      font-size: 1rem;
-      margin-bottom: 24px;
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
     }
-  
-    /* Article content styling */
-    .character-profile, .conclusion {
-      margin-bottom: 30px;
-      padding: 20px;
-      background: #1a1a1a;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
     }
-    .character-profile h3, .conclusion h3 {
-      font-size: 1.4rem;
-      color: #ff4757;
-      margin-bottom: 10px;
-    }
-    .character-profile p, .conclusion p {
-      font-size: 1rem;
-      color: #fff !important;
-      line-height: 1.6;
-    }
-    .character-profile img {
-      width: 140px;
-      height: 140px;
-      border-radius: 8px;
-      object-fit: cover;
-      float: left;
-      margin-right: 20px;
-      margin-bottom: 10px;
-    }
-  
-    /* -------------------------------------
-       6) What is Squid Game Section
-    ------------------------------------- */
-    #squidgame-explainer {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      text-align: center;
-      background: #e0e0e0;
+
+    .nav-toggle:hover {
+      background: var(--glass-bg);
       border-radius: 8px;
     }
-    #squidgame-explainer h2 {
-      font-size: 1.6rem;
-      color: #d32f2f;
-      margin-bottom: 12px;
+
+    .nav-toggle .bar {
+      width: 25px;
+      height: 3px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
     }
-    #squidgame-explainer p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #202020;
-      margin-bottom: 16px;
+
+    .nav-toggle.open .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
     }
-  
-    /* -------------------------------------
-       7) Related Blog Articles Section
-    ------------------------------------- */
-    #related-articles {
-      margin: 40px auto;
-      max-width: 800px;
-      padding: 30px 20px;
-      background: #1a1a1a;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
-      color: #e0e0e0;
+
+    .nav-toggle.open .bar:nth-child(2) {
+      opacity: 0;
     }
-    #related-articles h2 {
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #d32f2f;
-      padding-bottom: 10px;
-      text-align: center;
-      color: #fff;
+
+    .nav-toggle.open .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
     }
-    .articles-container {
+
+    .nav-mobile {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 2rem;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 1.5rem;
+      animation: slideDown 0.3s ease;
     }
-    .blog-card {
-      background: #2a2a2a;
-      padding: 20px;
-      border-radius: 6px;
-      transition: background 0.3s, transform 0.3s;
-      border-left: 4px solid #d32f2f;
-    }
-    .blog-card:hover {
-      background: #3a3a3a;
-      transform: translateY(-5px);
-    }
-    .blog-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-    .blog-card h3 a {
-      color: #d32f2f;
-    }
-    .blog-card h3 a:hover {
-      color: #fff;
-    }
-    .blog-card p {
-      color: #ccc;
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-  
-    /* -------------------------------------
-       8) Footer
-    ------------------------------------- */
-    footer {
-      background: #000;
-      padding: 20px 10px;
+
+    .nav-mobile a {
+      padding: 1rem;
+      border-radius: 10px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
       text-align: center;
-      border-top: 1px solid #d32f2f;
-      margin-top: 40px;
+      transition: all 0.3s ease;
     }
-    footer p {
-      font-size: 0.9rem;
-      color: #aaa;
-      margin: 5px 0;
+
+    .nav-mobile a:last-child {
+      background: linear-gradient(135deg, var(--primary-pink), var(--primary-teal));
+      color: white;
+      font-weight: 600;
     }
-    footer .social-icons {
-      margin-top: 10px;
+
+    .nav-mobile a:hover,
+    .nav-mobile a.active {
+      background: var(--primary-pink);
+      color: white;
     }
-    footer .social-icons img {
-      width: 3%;
-      margin: 0 8px;
-      transition: opacity 0.3s;
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 2rem;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary-pink), var(--primary-teal), var(--accent-purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 3s ease-in-out infinite;
+    }
+
+    @keyframes textShine {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, var(--primary-pink), var(--primary-teal));
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
       cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+      position: relative;
+      overflow: hidden;
     }
-    footer .social-icons img:hover {
-      opacity: 0.7;
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
     }
-  
-    /* -------------------------------------
-       9) Responsive Styles
-    ------------------------------------- */
-    @media (max-width: 970px) {
-      nav .nav-left a,
-      nav .nav-right a {
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
+    }
+
+    /* Explainer Section */
+    .explainer-section {
+      padding: 5rem 0;
+      background: var(--dark-bg);
+    }
+
+    .explainer-content {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .explainer-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-pink), var(--primary-teal), var(--accent-purple));
+    }
+
+    .explainer-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+    }
+
+    .explainer-content p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .explainer-image {
+      margin-top: 2rem;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .explainer-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Characters Section */
+    .characters-section {
+      padding: 5rem 0;
+      background: var(--darker-bg);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .characters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .character-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .character-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(255, 107, 157, 0.1);
+      border-color: var(--primary-pink);
+    }
+
+    .character-header {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .character-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 15px;
+      object-fit: cover;
+      border: 3px solid var(--primary-teal);
+      flex-shrink: 0;
+    }
+
+    .character-info h3 {
+      color: var(--primary-pink);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .character-info .archetype {
+      background: rgba(78, 205, 196, 0.1);
+      color: var(--primary-teal);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .character-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .conclusion-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .conclusion-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-purple), var(--primary-pink), var(--primary-teal));
+    }
+
+    .conclusion-card h3 {
+      color: var(--primary-pink);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .conclusion-card p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* Related Articles */
+    .related-section {
+      padding: 5rem 0;
+      background: var(--dark-bg);
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .article-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary-pink), var(--primary-teal));
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(255, 107, 157, 0.1);
+      border-color: var(--primary-pink);
+    }
+
+    .article-card h3 {
+      color: var(--text-primary);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .article-card h3 a {
+      color: var(--primary-pink);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .article-card h3 a:hover {
+      color: var(--primary-teal);
+    }
+
+    .article-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-teal);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .article-link:hover {
+      color: var(--primary-pink);
+      transform: translateX(5px);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--darker-bg);
+      padding: 3rem 0 2rem;
+      border-top: 1px solid var(--glass-border);
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary-pink), var(--primary-teal), transparent);
+    }
+
+    .footer-content {
+      text-align: center;
+      color: var(--text-secondary);
+    }
+
+    .footer-content p {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      width: 50px;
+      height: 50px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      background: var(--primary-pink);
+      border-color: var(--primary-pink);
+      transform: translateY(-3px);
+    }
+
+    .social-links img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .hero {
+        padding-top: 8rem;
+      }
+
+      .characters-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .character-header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .character-image {
+        align-self: center;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
+      .explainer-content,
+      .conclusion-card {
+        padding: 2rem;
+      }
+
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
         font-size: 1rem;
       }
-      header h1 {
-        font-size: 3.5rem;
+
+      .section-header h2 {
+        font-size: 2rem;
       }
-      #tagline {
-        font-size: 0.95rem;
-      }
-      #about p, #squidgame-explainer p {
-        font-size: 0.9rem;
-      }
-      main {
-        padding: 30px;
-      }
-      nav img#brand-logo {
-        width: 15%;
-      }
-      footer .social-icons img {
-        width: 10%;
-      }
-      #toast {
-        top: 10px;
-        left: 10px;
-        padding: 6px 10px;
-        font-size: 0.8rem;
-      }
-      #toast .toast-icon img {
-        width: 20px;
-      }
-      #toast .toast-title {
-        font-size: 0.85rem;
-      }
-      #toast .toast-subtitle {
-        font-size: 0.75rem;
-      }
-      #results h2 {
-        font-size: 1.2rem;
+
+      .character-card,
+      .article-card {
+        padding: 1.5rem;
       }
     }
   </style>
-  
 </head>
 <body>
-  <!-- Top Navigation -->
+  <!-- Animated Background -->
+  <div class="bg-animation"></div>
+
+  <!-- Navigation -->
   <nav>
-    <div class="nav-left">
-      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
-      <a href="index.html">Home</a>
-      <a href="squidgame.html">Test</a>
+    <div class="nav-brand">
+      <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+      <span class="brand-name">Zinvana</span>
     </div>
-    <div class="nav-right">
-      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho">Contact</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="squidgame.html">Quiz</a>
+      <a href="squidgame-about.html" class="active">About</a>
+      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank">Contact</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+    <div class="nav-mobile" id="nav-mobile" style="display: none;">
+      <a href="index.html">Home</a>
+      <a href="squidgame.html">Quiz</a>
+      <a href="squidgame-about.html" class="active">About</a>
+      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank">Contact</a>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header>
-    <h1>Zinvana | |Squidgame</h1>
-    <div id="tagline">Squidgame</div>
-  </header>
-
- 
-
-  <!-- What is Squid Game Section -->
-  <section id="squidgame-explainer">
-    <h2>What is Squid Game?</h2>
-    <p>
-      Unless you've been living under a rock, you've probably heard of <strong>Squid Game</strong> — the global Netflix phenomenon that took the world by storm.
-      Set in South Korea, the series revolves around a deadly competition where financially struggling individuals compete in childhood games for a chance at a massive cash prize.
-      But there's a dark twist: <em>losing means elimination — literally</em>.
-    </p>
-    <p>
-      Beyond its shocking visuals and intense plot, Squid Game delves into human psychology, survival instincts, and moral dilemmas.
-      Every character represents a distinct archetype, making it a rich text for understanding behavior, choices, and identity.
-    </p>
-    <p>
-      From the underdog idealism of Gi-hun to the cold rationality of Sang-woo, the series challenges us to question: who are we when pushed to the brink?
-      This phenomenon isn’t just a story—it's a mirror reflecting our deepest fears, desires, and societal critiques.
-    </p>
-    <img src="squidgamemainwallpaper.jpg" alt="Squid Game Overview" style="max-width: 80%; height: auto; margin-top: 20px; border-radius: 8px;">
-  </section>
-
-  <!-- Main Content: Article Section -->
-  <main>
-    <section id="about">
-      <h2>The Psychology Behind Squid Game Characters</h2>
-      <p>
-        Netflix’s <em>Squid Game</em> captivated audiences not only with its survival drama, but also with its exploration of human nature.
-        Each character is crafted to represent a unique psychological archetype—offering insights into our motivations, fears, and desires.
-      </p>
-
-      <article class="character-profile">
-        <img src="seong.png" alt="Seong Gi-hun">
-        <h3>Seong Gi-hun (Player 456) – The Underdog Idealist</h3>
-        <p>
-          Gi-hun represents the <strong>"Everyman" archetype</strong>. Despite his personal flaws, his inherent empathy and morality shine through.
-          His internal struggle—embodying <strong>cognitive dissonance</strong>—mirrors the battle between survival and ethics.
-        </p>
-      </article>
-
-      <article class="character-profile">
-        <img src="cho.png" alt="Cho Sang-woo">
-        <h3>Cho Sang-woo (Player 218) – The Strategic Narcissist</h3>
-        <p>
-          Symbolizing the darker aspects of ambition, Sang-woo’s character delves into the <strong>"Shadow Self"</strong>.
-          His calculated, cold rationality is often driven by <strong>ego and status anxiety</strong>, a classic sign of high Machiavellianism.
-        </p>
-      </article>
-
-      <article class="character-profile">
-        <img src="kang.png" alt="Kang Sae-byeok">
-        <h3>Kang Sae-byeok (Player 067) – The Hardened Survivor</h3>
-        <p>
-          Sae-byeok’s journey highlights <strong>attachment issues and trauma resilience</strong>.
-          Her guarded nature is a defense mechanism forged in the crucible of harsh survival realities.
-          She exemplifies an <strong>avoidant attachment style</strong> in the face of extreme adversity.
-        </p>
-      </article>
-
-      <article class="character-profile">
-        <img src="ali.png" alt="Abdul Ali">
-        <h3>Abdul Ali (Player 199) – The Loyal Innocent</h3>
-        <p>
-          Embodying pure altruism and blind trust, Ali represents the <strong>naive idealist archetype</strong>.
-          His unwavering loyalty, while admirable, also exposes the vulnerability of kindness in a ruthless environment.
-        </p>
-      </article>
-
-      <article class="character-profile">
-        <img src="oh.png" alt="Oh Il-nam">
-        <h3>Oh Il-nam (Player 001) – The Masked Puppet Master</h3>
-        <p>
-          Initially appearing as a frail elder, Il-nam’s character is a study in <strong>moral disengagement</strong>.
-          His eventual reveal of a <strong>psychopathic detachment</strong> challenges our notions of empathy and morality.
-        </p>
-      </article>
-
-      <article class="character-profile">
-        <img src="jang.png" alt="Jang Deok-su">
-        <h3>Jang Deok-su – The Impulsive Antagonist</h3>
-        <p>
-          Operating purely on <strong>primal instincts</strong>, Deok-su’s aggression and dominance underscore the raw human drive for power.
-          His portrayal aligns with traits found in antisocial personality disorders.
-        </p>
-      </article>
-
-      <article class="character-profile">
-        <img src="han.png" alt="Han Mi-nyeo">
-        <h3>Han Mi-nyeo – The Chaotic Manipulator</h3>
-        <p>
-          Mi-nyeo’s erratic and unpredictable nature reflects the extremes of emotional volatility.
-          Her character hints at elements of <strong>histrionic personality disorder</strong>, as she craves attention through unstable means.
-        </p>
-      </article>
-
-      <article class="conclusion">
-        <h3>Conclusion: What Squid Game Teaches Us</h3>
-        <p>
-          At its core, <em>Squid Game</em> is a reflection on human nature under extreme pressure.
-          The series forces us to confront uncomfortable truths about morality, survival, and the duality of man.
-          In each character, we see a mirror of our own inner conflicts—challenging us to ask: Who are we when pushed to the edge?
-        </p>
-      </article>
-    </section>
-  </main>
-
-  <!-- Related Blog Articles Section -->
-  <section id="related-articles">
-    <h2>Related to this:</h2>
-    <div class="articles-container">
-      <article class="blog-card">
-        <h3><a href="squidgame.html">Which Squid Game Character Are You?</a></h3>
-        <p>Take our personality quiz and discover which character’s traits align with your own.</p>
-      </article>
-      <article class="blog-card">
-        <h3><a href="index.html">Personality Test</a></h3>
-        <p>Understand about your strenghts, areas for improvement and to which animal you are more similar.</p>
-      </article>
-    </div>
-  </section>
-
- <footer>
-    <div class="container">
-      <p>&copy; 2025 Zinvana. All rights reserved.</p>
-      <p>This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-          <img src="whiteinsta.png" alt="Instagram" />
-        </a>
-        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-          <img src="whitex.png" alt="Twitter" />
-        </a>
-        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-          <img src="youtube.png" alt="YouTube" />
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content fade-in">
+        <h1>The Psychology of Squid Game</h1>
+        <p>Dive deep into the complex characters and psychological themes that made Squid Game a global phenomenon. Understand the archetypes, motivations, and human nature behind each player.</p>
+        <a href="squidgame.html" class="cta-button">
+          <i class="fas fa-play"></i>
+          Take the Quiz Now
         </a>
       </div>
-    </div>
-  </footer>
-  
+    </section>
+
+    <!-- What is Squid Game Section -->
+    <section class="explainer-section">
+      <div class="container">
+        <div class="explainer-content fade-in"></div>
+          <h2>What is Squid Game? The Complete Guide to Netflix's Most-Watched Series</h2>
+          <p>
+            <strong>Squid Game</strong> (오징어 게임) is a South Korean survival drama television series created by Hwang Dong-hyuk for Netflix. Released in September 2021, it became Netflix's most-watched series of all time, garnering over 1.65 billion viewing hours in its first 28 days. The show follows 456 financially desperate players who compete in a series of children's games for a ₩45.6 billion prize pool, with the deadly twist that losing means death.
+          </p>
+          <p>
+            The series masterfully combines elements of psychological thriller, social commentary, and horror, creating a unique viewing experience that resonated with audiences worldwide. Set against the backdrop of modern South Korea's economic inequality, <strong>Squid Game</strong> explores themes of class struggle, capitalism, desperation, and human nature under extreme pressure.
+          </p>
+          <p>
+            The show's six games include Red Light Green Light, Sugar Honeycombs (Dalgona), Tug of War, Marbles, Glass Stepping Stones, and the titular Squid Game. Each game serves as both entertainment and metaphor, reflecting different aspects of Korean childhood culture while highlighting the contestants' psychological states.
+          </p>
+          <p>
+            Beyond its shocking visuals and intense plot, <strong>Squid Game</strong> delves into human psychology, survival instincts, and moral dilemmas. Every character represents a distinct archetype, making it a rich text for understanding behavior, choices, and identity. The series earned critical acclaim, winning multiple awards including six Emmy Awards, a Golden Globe, and a SAG Award.
+          </p>
+          <p>
+            From the underdog idealism of Gi-hun to the cold rationality of Sang-woo, the series challenges us to question: who are we when pushed to the brink? Director Hwang Dong-hyuk spent over a decade developing the concept, drawing inspiration from his own experiences with financial hardship and South Korea's economic struggles.
+          </p>
+          <div class="explainer-image">
+            <img src="squidgamemainwallpaper.jpg" alt="Squid Game Netflix Series Overview - Main Characters and Games" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Analysis Section -->
+    <section class="explainer-section">
+      <div class="container">
+        <div class="explainer-content fade-in">
+          <h2>Squid Game Cultural Impact and Global Success</h2>
+          <p>
+            <strong>Squid Game's</strong> unprecedented success transcended entertainment, becoming a cultural phenomenon that sparked global conversations about inequality, capitalism, and social justice. The series topped Netflix charts in 94 countries and was viewed by over 142 million households, making it the platform's biggest series launch ever.
+          </p>
+          <p>
+            The show's impact extended beyond viewership statistics. <strong>Squid Game</strong> merchandise, from tracksuits to Dalgona candy, became worldwide bestsellers. Halloween costumes based on the series dominated 2021, while the games themselves were recreated in schools, social media challenges, and even corporate team-building events.
+          </p>
+          <p>
+            Critics praised the series for its sharp social commentary on capitalism and class warfare. The visual symbolism, from the geometric masks of the guards to the colorful playground aesthetic contrasted with violence, created lasting cultural images. The series sparked academic discussions about Korean Wave (Hallyu), global streaming culture, and the universality of economic desperation.
+          </p>
+          <p>
+            Netflix reported that <strong>Squid Game</strong> generated an estimated $900 million in impact value, despite costing only $21.4 million to produce. The series success paved the way for increased investment in Korean content and international non-English programming across streaming platforms.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section class="characters-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>The Psychology Behind Squid Game Characters: Complete Character Analysis</h2>
+          <p>
+            Netflix's <em>Squid Game</em> captivated audiences not only with its survival drama, but also with its exploration of human nature.
+            Each character is crafted to represent a unique psychological archetype—offering insights into our motivations, fears, and desires. Here's our comprehensive analysis of every major character.
+          </p>
+        </div>
+
+        <div class="characters-grid">
+          <div class="character-card fade-in">
+            <div class="character-header">
+              <img src="seong.png" alt="Seong Gi-hun Player 456 Squid Game Character Analysis" class="character-image" />
+              <div class="character-info">
+                <h3>Seong Gi-hun (Player 456) - The Protagonist</h3>
+                <span class="archetype">The Underdog Idealist</span>
+              </div>
+            </div>
+            <div class="character-description">
+              <p>
+                <strong>Gi-hun</strong> represents the <strong>"Everyman" archetype</strong> and serves as the moral compass of Squid Game. A 47-year-old chauffeur drowning in debt, his character embodies the struggles of South Korea's working class. Despite his gambling addiction and personal failures, his inherent empathy and morality shine through, creating the <strong>cognitive dissonance</strong> that drives the series' central tension.
+              </p>
+              <p>
+                Psychologically, Gi-hun exhibits traits of learned helplessness combined with unexpected resilience. His decision-making process reflects the classic battle between survival instinct and ethical principles, making him relatable to viewers facing their own moral dilemmas. His transformation throughout the series represents the psychological impact of trauma and survival guilt.
+              </p>
+            </div>
+          </div>
+
+          <div class="character-card fade-in">
+            <div class="character-header">
+              <img src="cho.png" alt="Cho Sang-woo Player 218 Squid Game Strategic Character" class="character-image" />
+              <div class="character-info">
+                <h3>Cho Sang-woo (Player 218) - The Fallen Prodigy</h3>
+                <span class="archetype">The Strategic Narcissist</span>
+              </div>
+            </div>
+            <div class="character-description">
+              <p>
+                <strong>Sang-woo</strong> embodies the dark side of ambition and represents South Korea's pressure-cooker education system. A Seoul National University graduate and financial analyst, his character explores how societal expectations can corrupt moral judgment. His calculated, cold rationality stems from <strong>status anxiety</strong> and represents high Machiavellianism traits.
+              </p>
+              <p>
+                His psychological profile reveals narcissistic tendencies masked by surface-level charm and intelligence. Sang-woo's downfall illustrates how shame and desperation can lead to the abandonment of previously held moral principles, making him one of the series' most complex antagonists.
+              </p>
+            </div>
+          </div>
+
+          <div class="character-card fade-in">
+            <div class="character-header">
+              <img src="kang.png" alt="Kang Sae-byeok Player 067 North Korean Defector Character" class="character-image" />
+              <div class="character-info">
+                <h3>Kang Sae-byeok (Player 067) - The North Korean Defector</h3>
+                <span class="archetype">The Hardened Survivor</span>
+              </div>
+            </div>
+            <div class="character-description">
+              <p>
+                <strong>Sae-byeok's</strong> character represents the trauma of displacement and the North Korean defector experience in South Korea. Her guarded nature reflects <strong>attachment trauma</strong> and survival mechanisms developed through extreme adversity. She exemplifies an <strong>avoidant attachment style</strong> while maintaining deep loyalty to family.
+              </p>
+              <p>
+                Her psychological resilience comes from necessity rather than choice, showcasing how trauma can both strengthen and isolate individuals. Sae-byeok's arc explores themes of trust, sacrifice, and the cost of survival in a hostile environment, making her one of the series' most compelling characters.
+              </p>
+            </div>
+          </div>
+
+          <div class="character-card fade-in">
+            <div class="character-header">
+              <img src="ali.png" alt="Abdul Ali Player 199 Pakistani Worker Squid Game" class="character-image" />
+              <div class="character-info">
+                <h3>Abdul Ali (Player 199) - The Migrant Worker</h3>
+                <span class="archetype">The Loyal Innocent</span>
+              </div>
+            </div>
+            <div class="character-description">
+              <p>
+                <strong>Ali</strong> represents the vulnerability of migrant workers and the exploitation of trust. A Pakistani factory worker in South Korea, his character embodies pure altruism and represents the <strong>naive idealist archetype</strong>. His unwavering loyalty and kindness expose the tragic consequences of goodness in a corrupt system.
+              </p>
+              <p>
+                Psychologically, Ali demonstrates high empathy and agreeableness, traits that make him both beloved by audiences and tragically exploitable. His character serves as social commentary on immigration, labor rights, and the treatment of foreign workers in developed nations.
+              </p>
+            </div>
+          </div>
+
+          <div class="character-card fade-in">
+            <div class="character-header">
+              <img src="oh.png" alt="Oh Il-nam Player 001 Squid Game Mastermind Old Man" class="character-image" />
+              <div class="character-info">
+                <h3>Oh Il-nam (Player 001) - The Game Creator</h3>
+                <span class="archetype">The Masked Puppet Master</span>
+              </div>
+            </div>
+            <div class="character-description">
+              <p>
+                <strong>Il-nam's</strong> character represents the ultimate twist in Squid Game's narrative. Initially appearing as a vulnerable elderly man with dementia, his true identity as the game's creator reveals a study in <strong>moral disengagement</strong> and <strong>psychopathic detachment</strong>. His character challenges viewers' assumptions about age, vulnerability, and evil.
+              </p>
+              <p>
+                His psychological profile suggests high intelligence combined with a complete lack of empathy for human suffering. Il-nam's motivation—boredom and the thrill of playing games with human lives—represents the ultimate corruption of wealth and power, serving as a critique of the ultra-wealthy's disconnect from human suffering.
+              </p>
+            </div>
+          </div>
+
+          <div class="character-card fade-in">
+            <div class="character-header">
+              <img src="jang.png" alt="Jang Deok-su Gangster Character Squid Game Villain" class="character-image" />
+              <div class="character-info">
+                <h3>Jang Deok-su - The Gangster</h3>
+                <span class="archetype">The Impulsive Antagonist</span>
+              </div>
+            </div>
+            <div class="character-description">
+              <p>
+                <strong>Deok-su</strong> operates on pure <strong>primal instincts</strong> and represents toxic masculinity taken to its extreme. His aggressive dominance and complete lack of moral restraint showcase antisocial personality traits. As a gangster fleeing debt, his character embodies the criminal underworld's brutal survival tactics.
+              </p>
+              <p>
+                His psychological makeup reveals high impulsivity, low empathy, and a predatory approach to relationships. Deok-su's character serves as a foil to more sympathetic players, representing what humans become when stripped of societal constraints and moral development.
+              </p>
+            </div>
+          </div>
+
+          <div class="character-card fade-in">
+            <div class="character-header">
+              <img src="han.png" alt="Han Mi-nyeo Female Character Squid Game Manipulator" class="character-image" />
+              <div class="character-info">
+                <h3>Han Mi-nyeo - The Unpredictable Survivor</h3>
+                <span class="archetype">The Chaotic Manipulator</span>
+              </div>
+            </div>
+            <div class="character-description">
+              <p>
+                <strong>Mi-nyeo's</strong> erratic behavior and desperate survival tactics reflect extreme emotional volatility and abandonment issues. Her character demonstrates traits consistent with <strong>histrionic personality disorder</strong>, including attention-seeking behavior, emotional instability, and manipulative relationships.
+              </p>
+              <p>
+                Her psychological profile reveals deep-seated trauma and a desperate need for connection masked by aggressive self-preservation. Mi-nyeo's unpredictability makes her both dangerous and tragic, representing how desperation can lead to complete psychological breakdown.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="conclusion-card fade-in">
+          <h3>What Squid Game Teaches Us About Human Psychology</h3>
+          <p>
+            At its core, <em>Squid Game</em> is a reflection on human nature under extreme pressure. The series forces us to confront uncomfortable truths about morality, survival, and the duality of man. Through its character analysis, we see how economic desperation, social pressure, and survival instincts can either corrupt or purify human behavior.
+          </p>
+          <p>
+            The show's psychological depth extends beyond individual characters to explore systemic issues: class inequality, the failure of capitalism to provide basic human dignity, and the psychological toll of modern economic systems. Each character represents different coping mechanisms for trauma, poverty, and social marginalization.
+          </p>
+          <p>
+            <strong>Squid Game's</strong> lasting impact lies in its ability to make viewers question their own moral boundaries while highlighting the universal human struggles that transcend cultural and national boundaries. The series remains relevant as a psychological study of desperation, hope, and the lengths people will go to survive.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Squid Game Games Analysis Section -->
+    <section class="explainer-section">
+      <div class="container">
+        <div class="explainer-content fade-in">
+          <h2>The Six Squid Game Challenges: Psychological Analysis of Each Game</h2>
+          <p>
+            Each game in <strong>Squid Game</strong> was carefully chosen to represent different psychological and physical challenges, reflecting Korean childhood experiences while testing various human capabilities and moral boundaries.
+          </p>
+          <p>
+            <strong>Red Light, Green Light</strong> tests impulse control and the ability to follow rules under pressure. <strong>Sugar Honeycomb (Dalgona)</strong> requires patience, precision, and strategic thinking. <strong>Tug of War</strong> emphasizes teamwork, strategy over strength, and group dynamics. <strong>Marbles</strong> forces players to betray those closest to them, testing moral boundaries. <strong>Glass Stepping Stones</strong> combines luck with calculated risk-taking. Finally, the <strong>Squid Game</strong> itself represents the ultimate test of survival instinct versus moral restraint.
+          </p>
+          <p>
+            These games serve as metaphors for life's challenges, from childhood innocence to adult corruption, highlighting how competition and desperation can transform harmless activities into matters of life and death.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Articles Section -->
+    <section class="related-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Explore More Squid Game Content</h2>
+          <p>Continue your journey into the world of Squid Game psychology and personality analysis</p>
+        </div>
+        
+        <div class="articles-grid">
+          <div class="article-card fade-in">
+            <h3><a href="squidgame.html">Which Squid Game Character Are You? - Personality Quiz</a></h3>
+            <p>Take our comprehensive Squid Game personality quiz and discover which character's traits align with your own psychological profile. Get detailed insights into your personality type, survival strategies, and moral compass based on the show's iconic characters.</p>
+            <a href="squidgame.html" class="article-link">
+              Take Squid Game Quiz <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          
+          <div class="article-card fade-in">
+            <h3><a href="index.html">Complete Personality Assessment</a></h3>
+            <p>Understand your strengths, areas for improvement, and discover which animal archetype best represents your personality traits and behavioral patterns. Perfect complement to your Squid Game character analysis.</p>
+            <a href="index.html" class="article-link">
+              Start Assessment <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          
+          <div class="article-card fade-in">
+            <h3><a href="all-articles.html">More Psychology Articles</a></h3>
+            <p>Explore our collection of personality articles, character analyses from popular shows like Squid Game, and psychological insights from popular culture and history.</p>
+            <a href="all-articles.html" class="article-link">
+              Browse Articles <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2025 Zinvana. All rights reserved.</p>
+          <p>This site is for educational and entertainment purposes only and does not replace professional psychological advice. No personal data is stored or shared.</p>
+          
+          <div class="social-links">
+            <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img src="whiteinsta.png" alt="Instagram" />
+            </a>
+            <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <img src="whitex.png" alt="Twitter" />
+            </a>
+            <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <img src="youtube.png" alt="YouTube" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script>
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMobile = document.getElementById('nav-mobile');
+
+      if (navToggle && navMobile) {
+        navToggle.addEventListener('click', function() {
+          navToggle.classList.toggle('open');
+          if (navMobile.style.display === 'none' || navMobile.style.display === '') {
+            navMobile.style.display = 'flex';
+          } else {
+            navMobile.style.display = 'none';
+          }
+        });
+      }
+
+      // Navbar scroll effect
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const nav = document.querySelector('nav');
+          if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+          } else {
+            nav.classList.remove('scrolled');
+          }
+        }, 10);
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all fade-in elements
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
