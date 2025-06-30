@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 1. SEO META -->
+    <!-- SEO META -->
    <title>Free Football Personality Quiz – Which Football Player Are You?</title>
 <meta name="description"
       content="Take our free Football Personality Quiz to discover your archetype—Tactical Genius, Rocket, Silent Maestro, and more. Which football persona are you?" />
@@ -83,908 +83,1191 @@
 
     <!-- Favicon & Fonts -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <!-- html2canvas for share -->
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script> 
     <style>
-/* Remove default margins & padding */
-html, body {
+/* ==========================================================================
+   MODERN FOOTBALL QUIZ STYLING
+   ========================================================================== */
+
+/* Reset & Base Styles */
+* {
   margin: 0;
-  padding: 0 !important;
-  border: 0;
-  vertical-align: baseline;
-}
-/* Make HTML5 elements display like block in older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-/* Remove list styles */
-ol, ul {
-  list-style: none;
-}
-/* Set consistent box-sizing & smooth scrolling */
-*,
-*::before,
-*::after {
+  padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
-/* -------------------------------------  
-  2) Base Styles  
-------------------------------------- */
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --dark-bg: #0f1419;
+  --card-bg: #1a1f2e;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a9c0;
+  --border-color: #2d3748;
+  --shadow-light: 0 4px 25px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 12px 60px rgba(0, 0, 0, 0.25);
+  --border-radius: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body {
-  font-family: 'Roboto', sans-serif;
-  background: #f4f5f7;
-  color: #333;
+  font-family: 'Inter', sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-primary);
   line-height: 1.6;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.3s;
-}
-a:hover {
-  opacity: 0.8;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
+/* Enhanced Navigation */
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
-  position: relative;
-  z-index: 9999;
   justify-content: space-between;
   align-items: center;
-  background: #000;
-  padding: 15px 20px;
-  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  background: rgba(15, 20, 25, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
 }
+
 nav .nav-left,
 nav .nav-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
 }
+
 nav a {
-  color: #fff;
+  color: var(--text-secondary);
   font-weight: 500;
-  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  position: relative;
 }
+
 nav a:hover {
-  color: #d32f2f;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
 }
+
 nav img#brand-logo {
-  width: 10%;
-  min-width: 60px;
-  pointer-events: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  transition: var(--transition);
 }
 
+nav img#brand-logo:hover {
+  transform: scale(1.05);
+}
 
+/* Hero Section */
 .hero-header {
   position: relative;
   width: 100%;
-  height: 60vh;               
-  min-height: 300px;
-  background: url('zinifoot.gif') center center / cover no-repeat;
+  height: 100vh;
+  min-height: 600px;
+  background: linear-gradient(135deg, rgba(15, 20, 25, 0.8), rgba(26, 31, 46, 0.9)), 
+              url('zinifoot.gif') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  text-align: center;
+  overflow: hidden;
 }
 
-.hero-header::after {
-  content: "";
-  position: absolute;          
-  top: 0; bottom: 0; left: 0; right: 0;
-  background: rgba(0,0,0,0.3);
+.hero-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 .header-content {
-  position: relative;          
-  text-align: center;
-  z-index: 1;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 2rem;
+  animation: fadeInUp 1s ease-out;
 }
 
 .header-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .header-content #tagline {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.cta-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--primary-gradient);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.cta-hero-btn:hover::before {
+  left: 100%;
+}
+
+.cta-hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.down-arrow {
+  margin-top: 3rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Table of Contents */
+.toc {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+}
+
+.toc h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.toc-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.toc-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.toc-list a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+.toc-list a::before {
+  content: '⚽';
   font-size: 1.2rem;
 }
 
-.toc {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-.toc h2 {
-  margin: 0 0 12px;
-  font-size: 1.5rem;
-  color: #333;
-  border-bottom: 2px solid #d32f2f;
-  padding-bottom: 4px;
-}
-.toc-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 15px;
-}
-.toc-list a {
-  display: inline-block;
-  padding: 6px 12px;
-  background: #f4f5f7;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  color: #d32f2f;
-  transition: background 0.2s, color 0.2s;
-}
-.toc-list a:hover {
-  background: #e0e0e0;
-  color: #b71c1c;
+/* Section Styling */
+section {
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  padding: 0 2rem;
 }
 
-#intro{
-  color: rgb(31, 31, 31);
-  margin: 2% 5%;
-  font-style: italic;
-  border-radius: 50px;
+#intro {
+  background: var(--card-bg);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+  text-align: center;
 }
 
+#intro h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#intro p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+#intro strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Toast Notification */
 #toast {
   position: fixed;
-  top: 20px; left: 20px;
+  top: 100px;
+  right: 2rem;
   display: flex;
   align-items: center;
-  background: #000;
-  border: 2px solid #d32f2f;
-  padding: 10px 14px;
-  border-radius: 4px;
-  font-family: 'Minecraftia', sans-serif;
-  text-shadow: 1px 1px #000;
+  gap: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
   opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 1000;
+  transform: translateX(100%);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1001;
+  backdrop-filter: blur(20px);
 }
+
 #toast.show {
   opacity: 1;
+  transform: translateX(0);
 }
+
 .toast-icon img {
-  width: 28px;
-  image-rendering: pixelated;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
 }
+
 .toast-text {
   display: flex;
   flex-direction: column;
 }
+
 .toast-title {
-  color: #d32f2f;
+  color: var(--text-primary);
+  font-weight: 600;
   font-size: 1rem;
-  margin-bottom: 2px;
+  margin-bottom: 0.25rem;
 }
+
 .toast-subtitle {
-  color: #fff;
-  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
+
 .hidden { 
-  display: none;
+  display: none !important;
 }
 
+/* Main Quiz Container */
 main {
-  max-width: 800px;
-  margin: 20px auto;
-  background: #1a1a1a;
-  color: #e0e0e0;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+  max-width: 900px;
+  margin: 2rem auto 4rem auto;
+  padding: 0 2rem;
 }
 
+main h1 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Quiz Section */
 #test {
-  margin-bottom: 40px;
-}
-#progress-container {
-  margin-bottom: 15px;
-  text-align: right;
-  font-size: 0.95rem;
-  color: #aaa;
-}
-#question-title {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  color: #fff;
-}
-#answer-options li {
-  background: #2a2a2a;
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: 6px;
-  border: 2px solid transparent;
-  transition: background 0.3s, transform 0.2s, border 0.3s;
-}
-#answer-options li:hover {
-  background: #3a3a3a;
-  transform: translateX(5px);
-}
-#answer-options input[type="radio"] {
-  appearance: none;
-  background-color: #fff;
-  border: 2px solid #ccc;
-  width: 22px; height: 22px;
-  margin-right: 10px;
-  border-radius: 2px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--border-color);
   position: relative;
-  top: 1px;
-  transition: background-color 0.2s, border-color 0.2s;
+  overflow: hidden;
 }
-#answer-options input[type="radio"]:checked {
-  border-color: #d32f2f;
-}
-#answer-options input[type="radio"]:checked::before {
-  content: "✔";
-  color: #d32f2f;
-  font-weight: bold;
+
+#test::before {
+  content: '';
   position: absolute;
-  left: 1px; top: -3px;
-  font-size: 1.3rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-gradient);
 }
 
-button {
-  display: inline-block;
-  background: #d32f2f;
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-  margin: 20px 5px 0 5px;
-}
-button:hover {
-  background: #b71c1c;
-}
-
-/* Special Share Button */
-#screenshot-btn {
-  background: linear-gradient(135deg, #ff9a00, #ff4f00);
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(255,79,0,0.5);
-  cursor: pointer;
+#progress-container {
   display: flex;
   align-items: center;
-  animation: pulse 1.5s infinite;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-#screenshot-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(255,79,0,0.7);
-}
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1rem;
 }
 
-/* -------------------------------------  
-  10) Results Section  
-------------------------------------- */
+#progress-text {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.progress-bar-container {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  background: var(--primary-gradient);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+#question-container {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#question-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+#answer-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#answer-options li {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+#answer-options li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: left 0.6s;
+}
+
+#answer-options li:hover::before {
+  left: 100%;
+}
+
+#answer-options li:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+#answer-options li.selected {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: #667eea;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+}
+
+#answer-options label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+#answer-options input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--text-secondary);
+  border-radius: 50%;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  flex-shrink: 0;
+}
+
+#answer-options input[type="radio"]:checked {
+  border-color: #667eea;
+  background: var(--primary-gradient);
+}
+
+#answer-options input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#next-btn {
+  width: 100%;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+}
+
+#next-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+#next-btn:hover::before {
+  left: 100%;
+}
+
+#next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+#next-btn:active {
+  transform: translateY(0);
+}
+
+/* Results Section */
 #results {
-  background: #1a1a1a;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.8);
-  margin-top: 30px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#results::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--success-gradient);
+}
+
+#results h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  background: var(--success-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.result-section {
+  margin-bottom: 2rem;
   text-align: left;
 }
-#results h2 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  text-align: center;
-  border-bottom: 2px solid #d32f2f;
-  padding-bottom: 10px;
-  color: #fff;
-}
+
 .result-section h3 {
-  color: #fff;
-  font-size: 1.1rem;
-  margin-bottom: 5px;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
+
 .result-section p {
-  color: #ccc;
+  color: var(--text-secondary);
+  line-height: 1.7;
   font-size: 1rem;
-  line-height: 1.4;
+  margin-bottom: 1rem;
 }
+
 .character-image {
-  max-width: 200px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 2rem auto;
   display: block;
-  margin: 10px auto;
-  border-radius: 8px;
+  border: 4px solid #667eea;
+  box-shadow: var(--shadow-medium);
 }
 
-/* -------------------------------------  
-  11) Footer (Squid Game Theme)  
-------------------------------------- */
-footer {
-  background: #000;
-  padding: 20px 10px;
-  text-align: center;
-  border-top: 1px solid #d32f2f;
-  margin-top: 40px;
-}
-footer p {
-  color: #aaa;
-  font-size:1.5rem;
-}
-footer .social-icons img {
-  width: 7%;
-  margin: 0 8px;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-footer .social-icons img:hover {
-  opacity: 0.7;
+/* Action Buttons */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
-
-
-/* -------------------------------------  
-  FAQ & Related Articles  
-------------------------------------- */
-.test-explainer {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-.test-title {
-  font-size: 1.8rem;
-  color: #d32f2f;
-  margin-bottom: 16px;
-}
-.test-text {
-  color: #1a1a1a;
+#restart-btn,
+#screenshot-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 12px;
   font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-strong {
-  color: #d32f2f;
-}
-#related-articles {
-  margin: 40px auto;
-  max-width: 800px;
-  padding: 30px 20px;
-  background: #1a1a1a;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
-  color: #e0e0e0;
-}
-#related-articles h2 {
-  font-size: 1.6rem;
-  color: #fff;
-  border-bottom: 2px solid #d32f2f;
-  padding-bottom: 10px;
-  text-align: center;
-}
-.blog-card {
-  background: #2a2a2a;
-  padding: 20px;
-  border-radius: 6px;
-  border-left: 4px solid #d32f2f;
-  transition: background 0.3s, transform 0.3s;
-}
-.blog-card:hover {
-  background: #3a3a3a;
-  transform: translateY(-5px);
-}
-.blog-card h3 a {
-  color: #d32f2f;
-}
-.blog-card h3 a:hover {
-  color: #fff;
-}
-.blog-card p {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.4;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  box-shadow: var(--shadow-light);
 }
 
-/* -------------------------------------  
-  Responsive Styles  
-------------------------------------- */
-@media (max-width: 700px) {
-  nav a { font-size: 1rem; }
-  header { height: 50vh; }
-  .header-content h1 { font-size: 3rem; }
-  #tagline { font-size: 2rem; }
-  main { padding: 30px; }
-  #question-title { font-size: 1.15rem; }
-  footer img{
-    width: 15% !important;
-  }
-}
-@media (max-width: 600px) {
-  .leader-scroll-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 10px;
-  }
-  .leader-grid {
-    display: inline-flex;
-    gap: 10px;
-  }
-  .leader-card {
-    flex: 0 0 auto;
-    width: calc(80vw - 1px);
-    scroll-snap-align: start;
-  }
-  #toast {
-    top: 10px; left: 10px;
-    padding: 6px 10px;
-    font-size: 0.8rem;
-  }
-  #toast .toast-icon img { width: 20px; }
-  #toast .toast-title { font-size: 0.85rem; }
-  #toast .toast-subtitle { font-size: 0.75rem; }
-  #results h2 { font-size: 1.2rem; }
-}
-@media (max-width: 400px) {
-  #tagline { font-size: 1.5rem; }
-  .header-content h1 { font-size: 2rem !important; }
+#restart-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
 }
 
-/* Archetype Breakdown Section */
+#restart-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+#screenshot-btn {
+  background: var(--accent-gradient);
+  color: white;
+}
+
+#screenshot-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Archetype Breakdown */
 #archetype-breakdown {
+  background: var(--card-bg);
+  padding: 4rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
   text-align: center;
-  padding: 40px 20px;
-  background: #f8f9fa;
+  margin-bottom: 4rem;
 }
 
 #archetype-breakdown h2 {
-  font-size: 28px;
-  color: #333;
-  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 #archetype-breakdown p {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Leader Grid */
+.leader-scroll-container {
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
 .leader-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  justify-content: center;
-  padding: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
 }
 
-/* Leader Cards */
 .leader-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.leader-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Leader Images */
+.leader-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.leader-card:hover::before {
+  transform: scaleX(1);
+}
+
+.leader-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
 .leader-card img {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
+  border: 3px solid #667eea;
+  transition: var(--transition);
 }
 
-/* Leader Titles */
+.leader-card:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
 .leader-card h3 {
-  font-size: 20px;
-  color: #222;
-  margin-bottom: 8px;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-/* Leader Descriptions */
 .leader-card p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.4;
-}
-
-/* See More Leaders Button */
-.leader-button-container {
-  text-align: center;
-  margin-top: 30px;
-}
-.see-more-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  background: #ff5733;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
-}
-.see-more-btn:hover {
-  background: #e64a2e;
-  transform: scale(1.05);
-}
-
-#gif{
-  width: 50% !important;
-  margin: auto;
-  display: block;
-  border: 2px solid red;
-  border-radius: 18px;
-}
-
-/* Mobile: scrollable carousel for cards */
-@media (max-width: 600px) {
-  .leader-scroll-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 10px;
-    box-sizing: border-box;
-    scroll-snap-type: x mandatory;
-  }
-  .leader-grid {
-    display: inline-flex;
-    gap: 10px;
-  }
-  .leader-card {
-    flex: 0 0 auto;
-    width: calc(80vw - 1px);
-    scroll-snap-align: start;
-  }
-}
-
-/* -------------------------------------
-   Top Quotes Section
-------------------------------------- */
-#top-quotes {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding: 30px;
-  margin: 40px auto;
-}
-#top-quotes h2 {
-  color: #d32f2f;
-  border-bottom: 2px solid #d32f2f;
-  padding-bottom: 8px;
-  margin-bottom: 16px;
-  text-align: center;
-}
-#top-quotes ul {
-  padding-left: 20px;
-}
-#top-quotes li {
-  margin-bottom: 12px;
-  color: #555;
-  font-size: 1rem;
-}
-
-/* -------------------------------------
-   Testimonials
-------------------------------------- */
-#testimonials {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background: #fff;
-  border-radius: 8px;
-  padding: 30px;
-  margin: 40px auto;
-}
-#testimonials h2 {
-  color: #d32f2f;
-  margin-bottom: 20px;
-  text-align: center;
-}
-#testimonials [itemprop="reviewBody"] {
-  font-style: italic;
-  color: #333;
-  margin-bottom: 8px;
-}
-#testimonials [itemprop="author"] {
-  font-weight: bold;
-}
-#testimonials time {
-  color: #777;
-  font-size: 0.9rem;
-}
-#testimonials .reviewRating {
-  margin-top: 8px;
-}
-
-/* -------------------------------------
-   Deep Dive Section
-------------------------------------- */
-#deep-dive {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 30px;
-  margin: 40px auto;
-}
-#deep-dive h2 {
-  color: #d32f2f;
-  border-bottom: 2px solid #d32f2f;
-  padding-bottom: 8px;
-  margin-bottom: 16px;
-  text-align: center;
-}
-#deep-dive ul {
-  padding-left: 20px;
-  color: #333;
-}
-#deep-dive li {
-  margin-bottom: 10px;
-}
-
-/* -------------------------------------
-   Why It Matters
-------------------------------------- */
-#why-it-matters {
-  margin: 40px auto;
-  padding: 30px;
-  background: #1a1a1a;
-  color: #e0e0e0;
-  border-radius: 18px;
-  max-width: 800px;
-  text-align: center;
-}
-#why-it-matters h2 {
-  color: #d32f2f;
-  margin-bottom: 16px;
-}
-
-/* -------------------------------------
-   Why Zinvana
-------------------------------------- */
-#why-zinvana {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding: 30px;
-  margin: 40px auto;
-  max-width: 800px;
-  text-align: center;
-}
-#why-zinvana h2 {
-  color: #d32f2f;
-  margin-bottom: 16px;
-}
-#why-zinvana ul {
-  padding-left: 20px;
-  color: #333;
-}
-#why-zinvana li {
-  margin-bottom: 10px;
-}
-
-/* -------------------------------------
-   FAQ Section
-------------------------------------- */
-#faq {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding: 30px;
-  margin: 40px auto;
-  max-width: 800px;
-}
-#faq .test-title {
-  color: #d32f2f;
-  margin-bottom: 20px;
-  text-align: center;
-}
-#faq .test-text {
-  margin-bottom: 16px;
-  color: #333;
-  font-size: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
   line-height: 1.6;
 }
-#faq strong {
-  color: #d32f2f;
+
+.see-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--accent-gradient);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
 }
 
-/* -------------------------------------
-   Related Articles
-------------------------------------- */
-#related-articles {
-  background: #1a1a1a;
-  color: #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 30px;
-  margin: 40px auto;
-  max-width: 800px;
+.see-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
 }
-#related-articles h2 {
-  color: #fff;
-  border-bottom: 2px solid #d32f2f;
-  padding-bottom: 8px;
+
+/* Quotes Section */
+#top-quotes {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+  margin-bottom: 4rem;
+}
+
+#top-quotes h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-#related-articles .blog-card {
-  background: #2a2a2a;
-  padding: 20px;
-  border-left: 4px solid #d32f2f;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  transition: background 0.3s, transform 0.3s;
+
+#gif {
+  width: 60%;
+  max-width: 400px;
+  height: auto;
+  margin: 2rem auto;
+  display: block;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
 }
-#related-articles .blog-card:hover {
-  background: #333;
+
+#top-quotes ul {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#top-quotes li {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #667eea;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+#top-quotes li:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(8px);
+}
+
+/* Other Sections */
+#why-zinvana,
+#faq {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+  margin-bottom: 4rem;
+}
+
+#why-zinvana h2,
+#faq h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+#why-zinvana ul {
+  list-style: none;
+  padding: 0;
+}
+
+#why-zinvana li {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid #667eea;
+}
+
+#why-zinvana strong {
+  color: var(--text-primary);
+}
+
+.test-text {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid #667eea;
+}
+
+.test-text strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Related Articles */
+#related-articles {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+  margin-bottom: 4rem;
+}
+
+#related-articles h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blog-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+  border-left: 4px solid #667eea;
+}
+
+.blog-card:hover {
+  background: rgba(255, 255, 255, 0.08);
   transform: translateY(-4px);
-}
-#related-articles .blog-card h3 a {
-  color: #d32f2f;
-}
-#related-articles .blog-card p {
-  color: #ccc;
-  margin-top: 8px;
+  box-shadow: var(--shadow-light);
 }
 
-.fade-init { opacity: 0; transform: translateY(30px); transition: all 0.7s; }
-.fade-in { opacity: 1 !important; transform: none !important; }
+.blog-card h3 a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
 
+.blog-card h3 a:hover {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blog-card p {
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background: var(--dark-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 3rem 2rem 2rem 2rem;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.social-icons a {
+  display: block;
+  transition: var(--transition);
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+}
+
+.social-icons a:hover img {
+  box-shadow: var(--shadow-light);
+}
+
+footer p {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .header-content #tagline {
+    font-size: 1.2rem;
+  }
+  
+  nav {
+    padding: 1rem;
+  }
+  
+  nav .nav-left,
+  nav .nav-right {
+    gap: 1rem;
+  }
+  
+  .toc-list {
+    grid-template-columns: 1fr;
+  }
+  
+  #test,
+  #results {
+    padding: 2rem;
+  }
+  
+  #progress-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .leader-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #toast {
+    right: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+}
     </style>
   </head>
 
   <body>
-  <!-- Top Navigation -->
+  <!-- Enhanced Navigation -->
   <nav>
     <div class="nav-left">
-      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
-      <a href="index.html">Home</a>
-      <a href="#test">Test</a>
+      <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="#test"><i class="fas fa-play-circle"></i> Quiz</a>
     </div>
     <div class="nav-right">
-      <a href="help.html">Help</a>
+      <a href="help.html"><i class="fas fa-question-circle"></i> Help</a>
     </div>
   </nav>
 
-<!-- Header -->
+<!-- Enhanced Hero Section -->
 <header class="hero-header">
   <div class="header-content">
-    <h1>Football Personality Quiz – Which Football Player Are You?</h1>
-    <h2 id="tagline">Free Football Personality Quiz</h2>
-    <a href="#test" class="cta-hero-btn" style="display:inline-block;margin-top:24px;padding:18px 38px;font-size:1.25rem;font-weight:bold;background:linear-gradient(90deg,#d32f2f 0%,#ff9800 100%);color:#fff;border-radius:32px;box-shadow:0 4px 16px rgba(211,47,47,0.13);text-decoration:none;letter-spacing:1px;transition:background 0.2s,transform 0.2s;">Start the Quiz</a>
-    <div class="down-arrow" style="margin-top:32px;text-align:center;">
-      <span style="display:inline-block;animation:bounce 1.2s infinite;font-size:2.5rem;color:#ff9800;">&#8595;</span>
+    <h1>Discover Your Football Personality</h1>
+    <h2 id="tagline">Which legendary player matches your style?</h2>
+    <a href="#test" class="cta-hero-btn">
+      <i class="fas fa-rocket"></i>
+      Start Your Journey
+    </a>
+    <div class="down-arrow">
+      <i class="fas fa-chevron-down" style="font-size: 2rem; color: #667eea; animation: bounce 2s infinite;"></i>
     </div>
   </div>
 </header>
-<style>
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(12px); }
-}
-.cta-hero-btn:hover { background: #b71c1c; transform: scale(1.04); }
-.toc-list a[href="#test"] {
-  background: #ff9800;
-  color: #fff;
-  font-weight: bold;
-  border: 2px solid #d32f2f;
-}
-</style>
 
-    <!-- Table of Contents -->
+    <!-- Enhanced Table of Contents -->
   <section class="toc">
-    <h2>Contents</h2>
+    <h2><i class="fas fa-list-ul"></i> Navigate the Quiz</h2>
     <ul class="toc-list">
-      <li><a href="#intro">Which Football Persona Are You?</a></li>
-      <li><a href="#archetype-breakdown">Archetype Breakdown</a></li>
-      <li><a href="#test">Personality Quiz</a></li>
-      <li><a href="#faq">Quiz FAQs</a></li>
-      <li><a href="#why-zinvana">Why Zinvana?</a></li>
+      <li><a href="#intro">Quiz Introduction</a></li>
+      <li><a href="#archetype-breakdown">Player Archetypes</a></li>
+      <li><a href="#test">Take the Quiz</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+      <li><a href="#why-zinvana">Why Choose Zinvana?</a></li>
     </ul>
   </section>
 
+<!-- Enhanced Introduction -->
 <section id="intro">
-  <h2>Discover Your Football Personality Quiz Result</h2>
+  <h2><i class="fas fa-futbol"></i> Discover Your Football Identity</h2>
   <p>
-    Ready to find out <strong>which football personality quiz</strong> archetype you are?  
-    Our free Football Personality Quiz probes your play-style, mindset, and skills across 15 questions to match you with iconic football personas—whether you’re a strategic <em>Tactical Genius</em>, an explosive <em>Rocket</em>, or the ever-reliable <em>Wall</em>.
+    Ready to uncover your true football persona? Our scientifically-designed <strong>Football Personality Quiz</strong> 
+    analyzes your playing style, tactical mindset, and on-field instincts across 15 carefully crafted questions.
   </p>
   <p>
-    This Football Personality Quiz isn’t just for fun—it’s designed by football analysts to give you insights into your natural strengths on the pitch.  
-    Jump in now and see your result in seconds!
+    Whether you're a strategic mastermind like Pep Guardiola, a relentless machine like Cristiano Ronaldo, 
+    or a silent genius like Lionel Messi, this quiz reveals the football archetype that defines your approach to the beautiful game.
+  </p>
+  <p>
+    <strong>🎯 What makes our quiz special:</strong> Deep psychological insights, detailed archetype profiles, 
+    and results you can share with fellow football enthusiasts. Get ready to see yourself in a whole new light!
   </p>
 </section>
 
-
-  <!-- Archetype Breakdown -->
+  <!-- Enhanced Archetype Breakdown -->
   <section id="archetype-breakdown">
-    <h2>🔍 Archetype Breakdown: Who Could You Be?</h2>
-    <p>Our quiz analyzes your play-style, mentality, and skills, then matches you to one of 12 football archetypes.</p>
+    <h2><i class="fas fa-users"></i> Football Personality Archetypes</h2>
+    <p>Our quiz analyzes your responses to match you with one of 12 distinct football personalities, each representing a unique approach to the game.</p>
 
     <div class="leader-scroll-container">
       <div class="leader-grid">
         <!-- Tactical Genius -->
         <div class="leader-card">
-          <img src="pep.jpg" alt="Tactical Genius – Football Personality Quiz archetype" />
-          <h3>🧠 The Tactical Genius</h3>
-          <p>Calm and analytical, you see the game several moves ahead—every pass has a purpose.</p>
+          <img src="pep.jpg" alt="Tactical Genius" />
+          <h3><i class="fas fa-brain"></i> The Tactical Genius</h3>
+          <p>Master strategist who sees the game like a chess match. Every move is calculated, every pass has purpose.</p>
         </div>
 
         <!-- Relentless Machine -->
         <div class="leader-card">
-          <img src="ronaldo.jpg" alt="Ronaldo – Football Personality Quiz" />
-          <h3>🏋️ The Relentless Machine</h3>
-          <p>Driven by results, you push beyond limits—an elite work ethic that never quits.</p>
+          <img src="ronaldo.jpg" alt="Relentless Machine" />
+          <h3><i class="fas fa-dumbbell"></i> The Relentless Machine</h3>
+          <p>Unstoppable work ethic meets unwavering determination. Goals and trophies are your only language.</p>
         </div>
 
         <!-- Silent Maestro -->
         <div class="leader-card">
-          <img src="messi.jpg" alt="Messi – Football Personality Quiz" />
-          <h3>🤫 The Silent Maestro</h3>
-          <p>Quiet off the pitch, magical on it—your feet do the talking.</p>
+          <img src="messi.jpg" alt="Silent Maestro" />
+          <h3><i class="fas fa-magic"></i> The Silent Maestro</h3>
+          <p>Quiet off the pitch, magical on it. Your feet weave spells that leave defenders mesmerized.</p>
         </div>
 
         <!-- The Warrior -->
         <div class="leader-card">
-          <img src="gattuso.jpg" alt="gattuso – Football Personality Quiz" />
-          <h3>⚔️ The Warrior</h3>
-          <p>Fierce and unyielding, you battle for every ball and inspire through sheer grit.</p>
+          <img src="gattuso.jpg" alt="The Warrior" />
+          <h3><i class="fas fa-shield-alt"></i> The Warrior</h3>
+          <p>Fierce competitor who battles for every ball. Your intensity and grit inspire teammates to greatness.</p>
         </div>
 
         <!-- The Magician -->
         <div class="leader-card">
-          <img src="ronaldinho.jpg" alt="Ronaldinho – Football Personality Quiz" />
-          <h3>🎩 The Magician</h3>
-          <p>Unpredictable flair—your tricks and dribbles leave opponents spellbound.</p>
+          <img src="ronaldinho.jpg" alt="The Magician" />
+          <h3><i class="fas fa-hat-wizard"></i> The Magician</h3>
+          <p>Master of flair and creativity. Your unpredictable moves and skills leave crowds in awe.</p>
         </div>
 
         <!-- The Wall -->
         <div class="leader-card">
-          <img src="buffon.jpg" alt="Buffon – Football Personality Quiz" />
-          <h3>🧱 The Wall</h3>
-          <p>Last line of defense—you’re impenetrable and fearless between the posts.</p>
+          <img src="buffon.jpg" alt="The Wall" />
+          <h3><i class="fas fa-hand-paper"></i> The Wall</h3>
+          <p>Impenetrable last line of defense. Nothing gets past your commanding presence in goal.</p>
         </div>
       </div>
     </div>
 
     <div class="leader-button-container">
-      <a href="football-list.html" class="see-more-btn">📜 See All 12 Archetypes</a>
+      <a href="football-list.html" class="see-more-btn">
+        <i class="fas fa-eye"></i>
+        Explore All 12 Archetypes
+      </a>
     </div>
   </section>
 
-  <!-- Top 5 Football Quotes -->
-  <section id="top-quotes" style="max-width:800px;margin:40px auto;padding:20px;">
-    <h2>Top 5 Football Quotes</h2>
-    <img src="zinifoot.gif" alt="free football personality quiz" id="gif">
+  <!-- Enhanced Quotes Section -->
+  <section id="top-quotes">
+    <h2><i class="fas fa-quote-left"></i> Legendary Football Wisdom</h2>
+    <img src="zinifoot.gif" alt="Football Quiz Animation" id="gif">
     <ul>
-      <li>“Football is a simple game. Twenty-two men chase a ball for 90 minutes and at the end, the Germans win.” — Gary Lineker</li>
-      <li>“I’m not a perfectionist, but I like to feel that things are done well.” — Cristiano Ronaldo</li>
-      <li>“Some people think football is a matter of life and death. I assure you, it’s much more serious than that.” — Bill Shankly</li>
-      <li>“You have to fight to reach your dream. You have to sacrifice and work hard for it.” — Lionel Messi</li>
-      <li>“Talent without working hard is nothing.” — Lionel Messi</li>
+      <li><i class="fas fa-star"></i> "Football is a simple game. Twenty-two men chase a ball for 90 minutes and at the end, the Germans win." — Gary Lineker</li>
+      <li><i class="fas fa-trophy"></i> "I'm not a perfectionist, but I like to feel that things are done well." — Cristiano Ronaldo</li>
+      <li><i class="fas fa-heart"></i> "Some people think football is a matter of life and death. I assure you, it's much more serious than that." — Bill Shankly</li>
+      <li><i class="fas fa-fire"></i> "You have to fight to reach your dream. You have to sacrifice and work hard for it." — Lionel Messi</li>
+      <li><i class="fas fa-gem"></i> "Talent without working hard is nothing." — Lionel Messi</li>
     </ul>
   </section>
 
-  <!-- Toast Notification Element -->
+  <!-- Enhanced Toast Notification -->
   <div id="toast" class="hidden">
     <div class="toast-icon">
       <img src="heart.png" alt="Football Icon" />
@@ -996,221 +1279,214 @@ strong {
   </div>
 
   <main>
-    <h1 style="text-align:center; color:#fff; font-size: 1.5rem; margin-bottom:22px; letter-spacing:-1.5px; background:linear-gradient(90deg,#d32f2f 0%,#ff9800 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:900; text-shadow:0 4px 18px rgba(211,47,47,0.18),0 2px 8px #ff2600;"> Football Personality Quiz ⚡</h1>
-    <!-- Personality Test Section -->
-    <section id="test" style="background: linear-gradient(120deg, #232526 0%, #414345 100%); border-radius: 14px; box-shadow: 0 8px 32px rgba(44,44,44,0.18); padding: 36px 24px 32px 24px; max-width: 600px; margin: 0 auto 40px auto; position: relative;">
-      <!-- Progress Bar -->
-      <div id="progress-container" style="margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between;">
-        <span id="progress-text" style="color: #d32f2f; font-weight: bold; font-size: 1.1rem; letter-spacing: 0.5px;">Question 1 of 15</span>
-        <div style="flex:1; margin-left: 18px;">
-          <div style="background: #333; border-radius: 8px; height: 10px; width: 100%; overflow: hidden;">
-            <div id="progress-bar" style="background: linear-gradient(90deg, #d32f2f 0%, #ff9800 100%); height: 100%; width: 7%; border-radius: 8px; transition: width 0.4s;"></div>
-          </div>
+    <h1><i class="fas fa-futbol"></i> Football Personality Quiz</h1>
+    
+    <!-- Enhanced Quiz Section -->
+    <section id="test">
+      <!-- Enhanced Progress Bar -->
+      <div id="progress-container">
+        <span id="progress-text">Question 1 of 15</span>
+        <div class="progress-bar-container">
+          <div id="progress-bar"></div>
         </div>
       </div>
-      <!-- Question Card -->
-      <div id="question-container" style="background: #232526; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.12); padding: 32px 18px 24px 18px; margin-bottom: 18px;">
-        <h2 id="question-title" style="font-size: 1.45rem; color: #fff; margin-bottom: 22px; text-align: center; letter-spacing: 0.2px;">Your question will appear here</h2>
-        <ul id="answer-options" style="padding: 0; margin: 0; list-style: none;">
+      
+      <!-- Enhanced Question Container -->
+      <div id="question-container">
+        <h2 id="question-title">Your question will appear here</h2>
+        <ul id="answer-options">
           <!-- Options injected by JS -->
         </ul>
       </div>
-      <button id="next-btn" style="width: 100%; background: linear-gradient(90deg, #d32f2f 0%, #ff9800 100%); color: #fff; font-size: 1.15rem; font-weight: bold; padding: 16px 0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(211,47,47,0.10); letter-spacing: 1px; transition: background 0.2s, transform 0.2s;">Next &rarr;</button>
+      
+      <button id="next-btn">
+        <i class="fas fa-arrow-right"></i>
+        Next Question
+      </button>
     </section>
-    <script>
-    // Enhance progress bar on question change
-    function updateProgressBar() {
-      const progressBar = document.getElementById("progress-bar");
-      const progressText = document.getElementById("progress-text");
-      if (!progressBar || !progressText) return;
-      const match = progressText.textContent.match(/Question (\d+) of (\d+)/);
-      if (!match) return;
-      const current = parseInt(match[1], 10);
-      const total = parseInt(match[2], 10);
-      const percent = Math.max(7, Math.round((current / total) * 100));
-      progressBar.style.width = percent + "%";
-    }
-    document.addEventListener("DOMContentLoaded", updateProgressBar);
-    document.getElementById("next-btn").addEventListener("click", () => setTimeout(updateProgressBar, 10));
-    </script>
-    <style>
-    /* Quiz Option Styles */
-    #answer-options li {
-      background: #292929;
-      margin-bottom: 14px;
-      padding: 16px 18px;
-      border-radius: 7px;
-      border: 2px solid transparent;
-      transition: background 0.25s, border 0.25s, box-shadow 0.2s;
-      cursor: pointer;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-      font-size: 1.07rem;
-      display: flex;
-      align-items: center;
-    }
-    #answer-options li:hover, #answer-options li.selected {
-      background: #353535;
-      border-color: #ff9800;
-      box-shadow: 0 2px 8px rgba(255,152,0,0.10);
-    }
-    #answer-options input[type="radio"] {
-      accent-color: #d32f2f;
-      width: 22px; height: 22px;
-      margin-right: 14px;
-      border-radius: 50%;
-      border: 2px solid #d32f2f;
-      outline: none;
-      cursor: pointer;
-      transition: border 0.2s;
-    }
-    #answer-options input[type="radio"]:checked {
-      border: 2px solid #ff9800;
-    }
-    @media (max-width: 700px) {
-      #test { padding: 18px 2vw 18px 2vw !important; }
-      #question-container { padding: 18px 4vw 16px 4vw !important; }
-      #question-title { font-size: 1.1rem !important; }
-      #next-btn { font-size: 1rem !important; padding: 12px 0 !important; }
-    }
-    </style>
-    <script>
-    // Option highlight on click (UX polish)
-    document.addEventListener("DOMContentLoaded", function() {
-      const answerOptions = document.getElementById("answer-options");
-      if (!answerOptions) return;
-      answerOptions.addEventListener("change", function(e) {
-        if (e.target && e.target.matches('input[type="radio"]')) {
-          Array.from(answerOptions.children).forEach(li => li.classList.remove("selected"));
-          if (e.target.closest("li")) e.target.closest("li").classList.add("selected");
-        }
-      });
-    });
-    </script>
     
-    <!-- Results Section -->
+    <!-- Enhanced Results Section -->
     <section id="results" class="hidden">
-      <h2>Your Football Persona</h2>
+      <h2><i class="fas fa-medal"></i> Your Football Persona</h2>
       <div id="evaluation"></div>
       <div id="recommendations"></div>
-      <div>
+      <div class="button-group">
         <button id="restart-btn">
-          <img src="restart.png" alt="Restart icon" style="width:18px; height:18px; margin-right:6px;" />
-          Restart Quiz
+          <i class="fas fa-redo"></i>
+          Retake Quiz
         </button>
-        <button id="screenshot-btn" style="margin-top:18px; display:flex; align-items:center; gap:10px; background:linear-gradient(90deg,#ff9800 0%,#d32f2f 100%); color:#fff; font-size:1.08rem; font-weight:600; border:none; border-radius:8px; box-shadow:0 2px 8px rgba(255,152,0,0.13); padding:13px 22px; cursor:pointer; transition:background 0.2s,transform 0.2s;">
-          <img src="camera.png" alt="Share result" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;filter:drop-shadow(0 1px 2px #ff9800);" />
-          Share Your Result!
+        <button id="screenshot-btn">
+          <i class="fas fa-camera"></i>
+          Share Result
         </button>
       </div>
     </section>
   </main>
 
-
-  <!-- Why Zinvana? -->
-  <section id="why-zinvana" style="max-width:800px;margin:40px auto;padding:20px;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-    <h2>Why Zinvana’s Football Quiz Stands Out</h2>
+  <!-- Enhanced Why Zinvana Section -->
+  <section id="why-zinvana">
+    <h2><i class="fas fa-crown"></i> Why Zinvana's Quiz Leads the Pack</h2>
     <ul>
-      <li><strong>Deep Dive Results:</strong> Full profiles on each archetype—tactics, strengths, play-styles, and quotes.</li>
-      <li><strong>Immersive Experience:</strong> Custom toasts, shareable result images, and slick animations keep you engaged.</li>
-      <li><strong>No Paywalls:</strong> Completely free, no sign-up required, and mobile-optimized.</li>
-      <li><strong>Expert Insights:</strong> Crafted by football analysts to give genuine, fun—and surprisingly accurate—results.</li>
-      <li><strong>SEO & Accessibility:</strong> Clean markup, alt-tags, and structured data so fans find us easily and everyone can play.</li>
+      <li><strong><i class="fas fa-microscope"></i> Deep Psychological Analysis:</strong> Our quiz uses advanced personality profiling to deliver incredibly accurate results that truly reflect your football identity.</li>
+      <li><strong><i class="fas fa-palette"></i> Immersive Experience:</strong> Custom animations, interactive elements, and stunning visuals create an engaging journey from start to finish.</li>
+      <li><strong><i class="fas fa-unlock"></i> Completely Free:</strong> No hidden costs, no email required, no paywalls. Just pure football personality discovery.</li>
+      <li><strong><i class="fas fa-certificate"></i> Expert-Crafted Content:</strong> Developed by football analysts and sports psychologists for authentic, meaningful insights.</li>
+      <li><strong><i class="fas fa-mobile-alt"></i> Perfect on Any Device:</strong> Seamlessly optimized for desktop, tablet, and mobile with lightning-fast loading.</li>
     </ul>
-    <p style="text-align:center;">
-      Ready to find your football persona? <a href="#test" style="color:#d32f2f;font-weight:bold;">Take the Quiz Now →</a>
-    </p>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="#test" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: var(--primary-gradient); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: var(--transition);">
+        <i class="fas fa-rocket"></i>
+        Discover Your Football Persona Now
+      </a>
+    </div>
   </section>
 
-<section id="faq" class="test-explainer">
-  <h2 class="test-title">Football Personality Quiz FAQ</h2>
+<!-- Enhanced FAQ Section -->
+<section id="faq">
+  <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+  
   <div class="test-text">
-    <strong>What is the Football Personality Quiz?</strong><br>
-    Our Football Personality Quiz matches you to one of 12 football archetypes based on your answers.
+    <strong><i class="fas fa-info-circle"></i> What is the Football Personality Quiz?</strong>
+    Our comprehensive quiz analyzes your playing style, tactical preferences, and psychological traits to match you with one of 12 distinct football archetypes, each representing legendary players and their unique approaches to the game.
   </div>
+  
   <div class="test-text">
-    <strong>Is the quiz free?</strong><br>
-    Yes—100% free, no sign-up required.
+    <strong><i class="fas fa-dollar-sign"></i> Is the quiz completely free?</strong>
+    Absolutely! 100% free with no hidden costs, email requirements, or premium upgrades. We believe everyone deserves to discover their football identity without barriers.
   </div>
+  
   <div class="test-text">
-    <strong>How long is the Football Personality Quiz?</strong><br>
-    15 engaging multiple-choice questions.
+    <strong><i class="fas fa-clock"></i> How long does the quiz take?</strong>
+    The quiz features 15 engaging multiple-choice questions and typically takes 3-5 minutes to complete. Each question is designed to reveal different aspects of your football personality.
   </div>
+  
   <div class="test-text">
-    <strong>Can I retake the quiz?</strong><br>
-    Absolutely—hit “Restart Quiz” at the end to explore different outcomes.
+    <strong><i class="fas fa-redo-alt"></i> Can I retake the quiz for different results?</strong>
+    Definitely! Hit the "Retake Quiz" button after seeing your results to explore different outcomes or see how consistent your football identity is across multiple attempts.
+  </div>
+  
+  <div class="test-text">
+    <strong><i class="fas fa-share-alt"></i> Can I share my results?</strong>
+    Yes! Use our built-in sharing feature to create a beautiful image of your results and share your football persona with friends on social media or save it for yourself.
   </div>
 </section>
 
-
-  <!-- Related Articles -->
+  <!-- Enhanced Related Articles -->
   <section id="related-articles">
-    <h2>Related Quizzes & Articles</h2>
+    <h2><i class="fas fa-newspaper"></i> Explore More Personality Quizzes</h2>
     <div class="articles-container">
       <article class="blog-card">
-        <h3><a href="leaders.html">Which Historical Leader Are You?</a></h3>
-        <p>Discover your inner leader by taking our Leadership Personality Quiz.</p>
+        <h3><a href="leaders.html"><i class="fas fa-crown"></i> Which Historical Leader Are You?</a></h3>
+        <p>Discover your leadership style and find out which great historical figure shares your commanding presence and decision-making approach.</p>
       </article>
       <article class="blog-card">
-        <h3><a href="squidgame.html">Which Squid Game Character Are You?</a></h3>
-        <p>Find out if you’re the Front Man, Player 456, or another Squid Game icon.</p>
+        <h3><a href="squidgame.html"><i class="fas fa-gamepad"></i> Which Squid Game Character Are You?</a></h3>
+        <p>Dive into the psychological depths of the hit series and discover which character's survival instincts and moral compass align with yours.</p>
       </article>
     </div>
-          <div style="text-align: center; margin-top: 32px;">
-            <a
-              href="all-articles.html"
-              class="see-more-btn"
-              style="
-                display: inline-flex;
-                align-items: center;
-                gap: 10px;
-                padding: 16px 36px;
-                font-size: 1.2rem;
-                font-weight: bold;
-                background: linear-gradient(90deg, #f5421e 0%, #ff0645 100%);
-                color: #fff;
-                border-radius: 32px;
-                box-shadow: 10px 20px 18px rgba(221,36,118,0.18);
-                text-decoration: none;
-                letter-spacing: 1px;
-                border: none;
-                transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-                position: relative;
-                overflow: hidden;
-              "
-              onmouseover="this.style.transform='scale(1.07)';this.style.boxShadow='0 10px 24px rgba(221,36,118,0.25)';"
-              onmouseout="this.style.transform='';this.style.boxShadow='0 6px 18px rgba(221,36,118,0.18)';"
-            >
-              <img src="view.png" alt="" style="width: 28px; height: 28px; vertical-align: middle;" />
-              View All Articles
-            </a>
-          </div>
-    </section>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="all-articles.html" class="see-more-btn">
+        <i class="fas fa-th-large"></i>
+        View All Personality Quizzes
+      </a>
+    </div>
   </section>
 
-
-<!-- Footer -->
+<!-- Enhanced Footer -->
 <footer>
   <div class="social-icons">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-      <img src="whiteinsta.png" alt="instagram" />
+    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram">
+      <img src="whiteinsta.png" alt="Instagram" />
     </a>
-    <!-- X (Twitter) -->
-    <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-        <img src="whitex.png" alt="x" />
-      </a>
-    <!-- YouTube -->
-    <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-      <img src="youtube.png" alt="youtube" />
+    <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" title="Follow us on X (Twitter)">
+      <img src="whitex.png" alt="X (Twitter)" />
+    </a>
+    <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" title="Subscribe to our YouTube">
+      <img src="youtube.png" alt="YouTube" />
     </a>
   </div>
-   <p style="color:#fff; font-size:1.1rem; margin:0; letter-spacing:0.5px;">
-      © 2025 <span style="color:#d32f2f; font-weight:bold;">Zinvana</span> &mdash; All rights reserved.
-    </p>
-    <div style="font-size:0.95rem; color:#aaa;">
-      <span>Made with <span style="color:#d32f2f;">&#10084;</span> for football fans</span>
-    </div>
+  <p>
+    © 2025 <span style="background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;">Zinvana</span> — All rights reserved.
+  </p>
+  <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
+    <span>Crafted with <span style="color: #f093fb;">❤️</span> for football fans worldwide</span>
+  </div>
 </footer>
+ 
+<script>
+// Enhanced progress bar with smooth animations
+function updateProgressBar() {
+  const progressBar = document.getElementById("progress-bar");
+  const progressText = document.getElementById("progress-text");
+  if (!progressBar || !progressText) return;
+  
+  const match = progressText.textContent.match(/Question (\d+) of (\d+)/);
+  if (!match) return;
+  
+  const current = parseInt(match[1], 10);
+  const total = parseInt(match[2], 10);
+  const percent = Math.max(7, Math.round((current / total) * 100));
+  
+  // Smooth progress bar animation
+  progressBar.style.width = percent + "%";
+  
+  // Add glow effect when progressing
+  progressBar.style.boxShadow = `0 0 20px rgba(102, 126, 234, ${percent / 100})`;
+}
+
+// Enhanced option selection with smooth interactions
+document.addEventListener("DOMContentLoaded", function() {
+  const answerOptions = document.getElementById("answer-options");
+  if (!answerOptions) return;
+  
+  // Handle radio button changes
+  answerOptions.addEventListener("change", function(e) {
+    if (e.target && e.target.matches('input[type="radio"]')) {
+      // Remove selected class from all options
+      Array.from(answerOptions.children).forEach(li => {
+        li.classList.remove("selected");
+      });
+      
+      // Add selected class to current option
+      const parentLi = e.target.closest("li");
+      if (parentLi) {
+        parentLi.classList.add("selected");
+        
+        // Add a subtle pulse animation
+        parentLi.style.animation = "pulse 0.3s ease-in-out";
+        setTimeout(() => {
+          parentLi.style.animation = "";
+        }, 300);
+      }
+    }
+  });
+  
+  // Handle clicking on entire option
+  answerOptions.addEventListener("click", function(e) {
+    const li = e.target.closest("li");
+    if (li) {
+      const radio = li.querySelector('input[type="radio"]');
+      if (radio && !radio.checked) {
+        radio.checked = true;
+        radio.dispatchEvent(new Event('change'));
+      }
+    }
+  });
+  
+  // Initialize progress bar
+  updateProgressBar();
+});
+
+// Update progress when next button is clicked
+document.addEventListener("DOMContentLoaded", function() {
+  const nextBtn = document.getElementById("next-btn");
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      setTimeout(updateProgressBar, 50);
+    });
+  }
+});
+</script>
 
 <script>
 // ─────────────────────────────────────────────────────────────
@@ -1512,6 +1788,9 @@ function displayQuestion() {
       </label>`;
     answerOptions.appendChild(li);
   });
+  
+  // Update progress bar with smooth animation
+  updateProgressBar();
 }
 
 // ─────────────────────────────────────────────────────────────
