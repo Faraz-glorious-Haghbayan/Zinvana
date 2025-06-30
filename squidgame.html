@@ -1531,6 +1531,8 @@
       position: relative;
       overflow: hidden;
       backdrop-filter: blur(10px);
+      outline: none; /* Remove focus outline that might cause scroll */
+      scroll-margin: 0; /* Prevent scroll-into-view behavior */
     }
 
     .answer-btn::before {
@@ -4545,10 +4547,17 @@
         const answerDiv = document.createElement('div');
         answerDiv.className = 'answer-btn';
         answerDiv.textContent = answer;
+        answerDiv.tabIndex = -1; // Prevent focus from causing scroll
         answerDiv.onclick = (e) => {
           e.preventDefault();
           e.stopPropagation();
+          // Prevent any potential scroll behavior
+          const scrollPosition = window.scrollY;
           selectAnswer(index);
+          // Restore scroll position if it changed
+          if (window.scrollY !== scrollPosition) {
+            window.scrollTo(0, scrollPosition);
+          }
         };
         answersContainer.appendChild(answerDiv);
       });
@@ -4559,6 +4568,10 @@
 
     // Select Answer
     function selectAnswer(answerIndex) {
+      // Store current scroll position
+      const currentScrollY = window.scrollY;
+      const currentScrollX = window.scrollX;
+      
       // Remove previous selection
       document.querySelectorAll('.answer-btn').forEach(btn => {
         btn.classList.remove('selected');
@@ -4570,6 +4583,11 @@
       // Store answer
       userAnswers[currentQuestion] = answerIndex;
       updateNextButton();
+      
+      // Restore scroll position if it changed
+      if (window.scrollY !== currentScrollY || window.scrollX !== currentScrollX) {
+        window.scrollTo(currentScrollX, currentScrollY);
+      }
     }
 
     // Update Progress Bar
