@@ -167,9 +167,26 @@
 ------------------------------------- */
       body {
         font-family: "Roboto", sans-serif;
-        background: #ffffff;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-attachment: fixed;
         color: #333;
         line-height: 1.6;
+        overflow-x: hidden;
+        position: relative;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+          radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: -1;
       }
       /* Anchor defaults */
       a {
@@ -191,14 +208,20 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgba(0, 0, 0, 0.92);
-        backdrop-filter: blur(8px);
-        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-        border-bottom: 2px solid #d32f2f;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        border-bottom: 2px solid rgba(211, 47, 47, 0.8);
         padding: 0 32px;
-        min-height: 64px;
+        min-height: 70px;
         z-index: 10000;
-        transition: background 0.3s;
+        transition: all 0.3s ease;
+      }
+      nav:hover {
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
       }
       nav .nav-left, nav .nav-right {
         display: flex;
@@ -207,21 +230,45 @@
       }
       nav a {
         color: #fff;
-        font-weight: 500;
-        font-size: 1.15rem;
-        padding: 8px 16px;
-        border-radius: 4px;
-        transition: background 0.2s, color 0.2s;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 12px 20px;
+        border-radius: 25px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+      nav a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+      nav a:hover::before {
+        left: 100%;
       }
       nav a:hover, nav a.active {
-        background: #d32f2f;
+        background: linear-gradient(45deg, #d32f2f, #ff6b6b);
         color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
       }
       nav img#brand-logo {
         width: 3%;
         margin-right: 50%;
-        border-radius: 18px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        border-radius: 50%;
+        box-shadow: 0 4px 20px rgba(211, 47, 47, 0.3);
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+      }
+      nav img#brand-logo:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 6px 30px rgba(211, 47, 47, 0.5);
       }
       /* Hamburger menu for mobile */
       .nav-toggle {
@@ -281,24 +328,40 @@
       }
 
       /* -------------------------------------
-   4) Header (Squid Game Theme)
+   4) Header (Enhanced Beautiful Theme)
 ------------------------------------- */
       header {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 50vh; /* less tall on mobile */
-        min-height: 300px; /* ensure it never collapses */
+        height: 60vh;
+        min-height: 400px;
         overflow: hidden;
-        border-bottom: 2px solid #d32f2f;
+        border-bottom: 3px solid rgba(211, 47, 47, 0.8);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #d32f2f 100%);
+      }
+      header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="0.3" fill="white" opacity="0.1"/><circle cx="40" cy="60" r="0.4" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        pointer-events: none;
       }
 
       .header-content {
         position: relative;
         z-index: 3;
         text-align: center;
-        padding: 0 20px; /* safe padding on small screens */
+        padding: 0 20px;
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
       }
 
       header::before {
@@ -309,9 +372,10 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.6),
-          rgba(0, 0, 0, 0.2)
+          135deg,
+          rgba(103, 126, 234, 0.3) 0%,
+          rgba(118, 75, 162, 0.4) 50%,
+          rgba(211, 47, 47, 0.6) 100%
         );
         z-index: 2;
       }
@@ -327,17 +391,30 @@
       }
 
       .header-content h1 {
-        font-size: 2rem !important; /* down from 4rem */
+        font-size: 3.5rem !important;
         line-height: 1.2;
         color: #fff;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(45deg, #fff, #ffcccb, #fff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+      @keyframes glow {
+        from { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)); }
+        to { filter: drop-shadow(0 0 30px rgba(255, 204, 203, 0.8)); }
       }
 
       #tagline {
-        font-size: 1rem !important; /* down from 1.7rem */
+        font-size: 1.3rem !important;
         margin-top: 0.5rem;
-        color: #eee;
-        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
       }
 
       /* -------------------------------------
@@ -345,18 +422,41 @@
 ------------------------------------- */
       .intro {
         text-align: center;
-        padding: 40px 20px;
-        background: #fff;
+        padding: 60px 20px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
         color: #333;
+        margin: -50px 20px 40px 20px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 5;
+      }
+      .intro::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(103, 126, 234, 0.05), rgba(211, 47, 47, 0.05));
+        border-radius: 20px;
+        z-index: -1;
       }
       .intro h2 {
-        font-size: 2rem;
-        margin-bottom: 10px;
-        color: #d32f2f;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        background: linear-gradient(45deg, #d32f2f, #764ba2);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
       }
       .intro p {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
         margin-bottom: 0;
+        line-height: 1.7;
+        color: #555;
       }
 
       /* -------------------------------------
@@ -364,83 +464,147 @@
 ------------------------------------- */
       .quiz-grid {
         display: flex;
-        flex-wrap: nowrap; /* Prevent wrapping on all devices */
-        overflow-x: auto; /* Enable horizontal scrolling */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         gap: 30px;
         max-width: 1200px;
         margin: 40px auto;
-        padding: 0 20px 20px 20px; /* Extra space for scrollbar if needed */
-        justify-content: flex-start; /* Align cards to the left */
+        padding: 40px 20px 20px 20px;
+        justify-content: flex-start;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 25px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
       .quiz-card {
-        flex: 0 0 auto; /* Ensure cards don't shrink */
-        background: #1a1a1a;
-        border-radius: 8px;
+        flex: 0 0 auto;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
         overflow: hidden;
-        width: 280px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-        transition: transform 0.3s ease;
+        width: 300px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+      }
+      .quiz-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2, #d32f2f);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .quiz-card:hover::before {
+        opacity: 1;
       }
       .quiz-card:hover {
-        transform: scale(1.03);
+        transform: translateY(-15px) scale(1.05);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 1);
       }
       .quiz-card img {
         width: 100%;
-        height: 180px;
+        height: 200px;
         object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .quiz-card:hover img {
+        transform: scale(1.1);
       }
       .quiz-card h3 {
-        font-size: 1.4rem;
-        margin: 15px 0 10px;
-        color: #ffcccb;
+        font-size: 1.5rem;
+        margin: 20px 0 15px;
+        background: linear-gradient(45deg, #d32f2f, #764ba2);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
       }
       .quiz-card p {
         font-size: 1rem;
-        padding: 0 15px 15px;
-        color: #ccc;
+        padding: 0 20px 20px;
+        color: #666;
+        line-height: 1.6;
       }
       .quiz-card .btn {
         display: inline-block;
-        margin-bottom: 15px;
-        padding: 10px 20px;
-        background: #d32f2f;
+        margin-bottom: 20px;
+        padding: 12px 30px;
+        background: linear-gradient(45deg, #d32f2f, #ff6b6b);
         color: #fff;
-        border-radius: 4px;
-        transition: background 0.3s;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
       }
       .quiz-card .btn:hover {
-        background: #b71c1c;
+        background: linear-gradient(45deg, #ff6b6b, #d32f2f);
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(211, 47, 47, 0.4);
       }
 
       /* -------------------------------------
-   7) Squid Game Explainer Section
+   7) Enhanced Section Styling
 ------------------------------------- */
       #squidgame-explainer {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 20px;
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 40px;
         text-align: center;
-        background: #e0e0e0;
-        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+      #squidgame-explainer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(103, 126, 234, 0.05), rgba(211, 47, 47, 0.05));
+        z-index: -1;
       }
       #squidgame-explainer h2 {
-        font-size: 1.6rem;
-        color: #d32f2f;
-        margin-bottom: 12px;
+        font-size: 2.2rem;
+        background: linear-gradient(45deg, #d32f2f, #764ba2);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+        font-weight: 700;
       }
       #squidgame-explainer p {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #333;
-        margin-bottom: 16px;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 25px;
       }
       #squidgame-explainer img {
         max-width: 100%;
         height: auto;
-        border-radius: 8px;
-        margin-top: 20px;
+        border-radius: 20px;
+        margin-top: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      #squidgame-explainer img:hover {
+        transform: scale(1.05);
       }
 
       /* -------------------------------------
@@ -448,184 +612,435 @@
 ------------------------------------- */
       .character-profile,
       .conclusion {
-        margin-bottom: 30px;
-        padding: 20px;
-        background: #1a1a1a;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        margin-bottom: 40px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .character-profile::before,
+      .conclusion::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2, #d32f2f);
+        z-index: 1;
+      }
+      .character-profile:hover,
+      .conclusion:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
       }
       .character-profile h3,
       .conclusion h3 {
-        font-size: 1.4rem;
-        color: #ff4757;
-        margin-bottom: 10px;
+        font-size: 1.6rem;
+        background: linear-gradient(45deg, #d32f2f, #764ba2);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 15px;
+        font-weight: 600;
       }
       .character-profile p,
       .conclusion p {
-        font-size: 1rem;
-        color: #e0e0e0;
-        line-height: 1.6;
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.8;
       }
       .character-profile img {
-        width: 140px;
-        height: 140px;
-        border-radius: 8px;
+        width: 160px;
+        height: 160px;
+        border-radius: 20px;
         object-fit: cover;
         float: left;
-        margin-right: 20px;
-        margin-bottom: 10px;
+        margin-right: 25px;
+        margin-bottom: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+      .character-profile img:hover {
+        transform: scale(1.1) rotate(2deg);
       }
 
       #faq {
-        background: #fff;
-        padding: 40px 20px;
-        max-width: 900px;
-        margin: 0 auto;
-        border-top: 1px solid #ccc;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 50px 30px;
+        max-width: 1000px;
+        margin: 40px auto;
+        border-radius: 25px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+      #faq::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(103, 126, 234, 0.03), rgba(211, 47, 47, 0.03));
+        z-index: -1;
       }
       #faq h2 {
         text-align: center;
-        color: #d32f2f;
+        background: linear-gradient(45deg, #d32f2f, #764ba2);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      .faq-item {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
         margin-bottom: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .faq-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.8);
       }
       .faq-item h4 {
-        margin-top: 15px;
+        margin-top: 0;
+        margin-bottom: 15px;
         color: #333;
+        font-size: 1.3rem;
+        font-weight: 600;
       }
       .faq-item p {
-        color: #555;
-        font-size: 0.95rem;
-        line-height: 1.5;
+        color: #666;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin: 0;
       }
 
       /* -------------------------------------
    9) Related Blog Articles Section
 ------------------------------------- */
       #related-articles {
-        margin: 40px auto;
-        max-width: 800px;
-        padding: 30px 20px;
-        background: #1a1a1a;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-        color: #e0e0e0;
+        margin: 60px auto;
+        max-width: 1000px;
+        padding: 40px 30px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+      #related-articles::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(103, 126, 234, 0.03), rgba(211, 47, 47, 0.03));
+        z-index: -1;
       }
       #related-articles h2 {
-        font-size: 1.6rem;
-        margin-bottom: 20px;
-        border-bottom: 2px solid #d32f2f;
-        padding-bottom: 10px;
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        border-bottom: 3px solid transparent;
+        border-image: linear-gradient(90deg, #667eea, #764ba2, #d32f2f) 1;
+        padding-bottom: 15px;
         text-align: center;
-        color: #fff;
+        background: linear-gradient(45deg, #d32f2f, #764ba2);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
       }
       .articles-container {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
       }
       .blog-card {
-        background: #2a2a2a;
-        padding: 20px;
-        border-radius: 6px;
-        border-left: 4px solid #d32f2f;
-        transition: background 0.3s, transform 0.3s;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(15px);
+        padding: 30px;
+        border-radius: 20px;
+        border-left: 5px solid transparent;
+        border-image: linear-gradient(45deg, #d32f2f, #764ba2) 1;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      .blog-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(103, 126, 234, 0.02), rgba(211, 47, 47, 0.02));
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: -1;
+      }
+      .blog-card:hover::before {
+        opacity: 1;
       }
       .blog-card:hover {
-        background: #3a3a3a;
-        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
       }
       .blog-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        font-weight: 600;
       }
       .blog-card h3 a {
-        color: #d32f2f;
+        background: linear-gradient(45deg, #d32f2f, #764ba2);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease;
       }
       .blog-card h3 a:hover {
-        color: #fff;
+        background: linear-gradient(45deg, #764ba2, #d32f2f);
+        background-clip: text;
+        -webkit-background-clip: text;
       }
       .blog-card p {
-        color: #ccc;
-        font-size: 0.95rem;
-        line-height: 1.4;
+        color: #666;
+        font-size: 1.05rem;
+        line-height: 1.7;
       }
 
       /* -------------------------------------
    10) Footer
 ------------------------------------- */
       footer {
-        background: #000;
-        padding: 20px 10px;
+        background: rgba(24, 24, 24, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 40px 20px;
         text-align: center;
-        border-top: 1px solid #d32f2f;
-        margin-top: 40px;
+        border-top: 3px solid transparent;
+        border-image: linear-gradient(90deg, #667eea, #764ba2, #d32f2f) 1;
+        margin-top: 60px;
+        position: relative;
+        overflow: hidden;
+      }
+      footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(103, 126, 234, 0.1), rgba(211, 47, 47, 0.1));
+        z-index: -1;
       }
       footer p {
-        font-size: 0.9rem;
-        color: #aaa;
-        margin: 5px 0;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 10px 0;
+        line-height: 1.6;
       }
       footer .social-icons {
-        margin-top: 10px;
+        margin-top: 20px;
       }
       footer .social-icons img {
-        width: 3%;
-        margin: 0 8px;
-        transition: opacity 0.3s;
+        width: 40px;
+        height: 40px;
+        margin: 0 15px;
+        transition: all 0.3s ease;
         cursor: pointer;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px;
+        backdrop-filter: blur(10px);
       }
       footer .social-icons img:hover {
-        opacity: 0.7;
+        transform: translateY(-5px) scale(1.2);
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 25px rgba(211, 47, 47, 0.3);
       }
 
       /* -------------------------------------
-   11) Responsive Styles
+   11) Enhanced Responsive Styles & Animations
 ------------------------------------- */
+      
+      /* Smooth scrollbar for quiz grid */
+      .quiz-grid::-webkit-scrollbar {
+        height: 8px;
+      }
+      .quiz-grid::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+      }
+      .quiz-grid::-webkit-scrollbar-thumb {
+        background: linear-gradient(90deg, #667eea, #d32f2f);
+        border-radius: 4px;
+      }
+      .quiz-grid::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(90deg, #d32f2f, #667eea);
+      }
+
+      /* Add floating animation to cards */
+      @keyframes float-card {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+      }
+      
+      .quiz-card {
+        animation: float-card 4s ease-in-out infinite;
+      }
+      .quiz-card:nth-child(2) { animation-delay: -0.5s; }
+      .quiz-card:nth-child(3) { animation-delay: -1s; }
+      .quiz-card:nth-child(4) { animation-delay: -1.5s; }
+      .quiz-card:nth-child(5) { animation-delay: -2s; }
+      .quiz-card:nth-child(6) { animation-delay: -2.5s; }
+      .quiz-card:nth-child(7) { animation-delay: -3s; }
+      .quiz-card:nth-child(8) { animation-delay: -3.5s; }
+
+      /* Enhanced buttons */
+      .btn {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+      .btn:hover::before {
+        left: 100%;
+      }
+
       @media (max-width: 970px) {
         main {
-          padding: 30px;
+          padding: 20px;
         }
         footer .social-icons img {
-          width: 10%;
+          width: 35px;
+          height: 35px;
         }
         header {
           height: 50vh;
+          min-height: 350px;
         }
         .header-content h1 {
-          font-size: 3rem;
+          font-size: 2.5rem !important;
         }
         #tagline {
-          font-size: 2rem;
-        }
-         #brand-logo{
-          width: 10% !important;
-        }
-      }
-
-      @media (max-width: 1920px) {
-        .poster {
-          width: 60% !important;
+          font-size: 1.1rem !important;
         }
         #brand-logo{
-          width: 10%;
+          width: 8% !important;
+        }
+        .intro {
+          margin: -30px 15px 30px 15px;
+          padding: 40px 15px;
+        }
+        .quiz-grid {
+          padding: 30px 15px 15px 15px;
+        }
+        .quiz-card {
+          width: 260px;
         }
       }
 
-            @media (max-width: 630px) {
-        .quiz-grid {
-          flex-wrap: nowrap; /* Prevent wrapping */
-          overflow-x: auto; /* Enable horizontal scrolling */
-          -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-          gap: 20px; /* Adjust gap between cards */
-          padding-bottom: 20px; /* Extra space for scrollbar if needed */
-          justify-content: flex-start; /* Align cards to the left */
+      @media (max-width: 768px) {
+        .header-content h1 {
+          font-size: 2rem !important;
+        }
+        #tagline {
+          font-size: 1rem !important;
+        }
+        .intro h2 {
+          font-size: 2rem;
+        }
+        .intro p {
+          font-size: 1.1rem;
         }
         .quiz-card {
-          flex: 0 0 auto; /* Ensure cards don't shrink */
+          width: 240px;
+        }
+        .quiz-card h3 {
+          font-size: 1.3rem;
+        }
+        .quiz-card p {
+          font-size: 0.95rem;
+          padding: 0 15px 15px;
+        }
+        nav {
+          padding: 0 15px;
+        }
+        #brand-logo {
+          width: 12% !important;
         }
       }
-      .fade-init { opacity: 0; transform: translateY(30px); transition: all 0.7s; }
-.fade-in { opacity: 1 !important; transform: none !important; }
+
+      @media (max-width: 480px) {
+        .header-content h1 {
+          font-size: 1.8rem !important;
+        }
+        .intro {
+          margin: -20px 10px 20px 10px;
+          padding: 30px 10px;
+        }
+        .quiz-grid {
+          padding: 20px 10px 10px 10px;
+        }
+        .quiz-card {
+          width: 220px;
+        }
+        #faq, #related-articles, #squidgame-explainer {
+          margin: 30px 10px;
+          padding: 25px 15px;
+        }
+      }
+      .fade-init { 
+        opacity: 0; 
+        transform: translateY(30px); 
+        transition: all 0.7s; 
+      }
+      .fade-in { 
+        opacity: 1 !important; 
+        transform: none !important; 
+      }
+
+      /* Add some sparkle effects */
+      @keyframes sparkle {
+        0%, 100% { opacity: 0; transform: scale(0); }
+        50% { opacity: 1; transform: scale(1); }
+      }
+      
+      .sparkle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: #fff;
+        border-radius: 50%;
+        animation: sparkle 2s infinite;
+      }
 
     </style>
   </head>
@@ -657,26 +1072,119 @@
       </div>
     </nav>
 
-    <header style="background: linear-gradient(120deg, #d32f2f 0%, #181818 100%); border-bottom: 2px solid #d32f2f;">
-      <video autoplay muted loop playsinline id="header-video" style="opacity: 0.22;">
+    <header style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #d32f2f 100%); border-bottom: 3px solid rgba(211, 47, 47, 0.8); position: relative; overflow: hidden;">
+      <!-- Add animated particles -->
+      <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+      <video autoplay muted loop playsinline id="header-video" style="opacity: 0.15;">
         <source src="zinvanaflags1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div class="header-content">
-        <h1 style="font-family: 'Minecraftia', 'Roboto', sans-serif; font-size: 3.2rem; color: #fff; margin-bottom: 0.5rem;">Free Personality Quiz</h1>
-        <div id="tagline" style="font-size: 1.5rem; color: #ffcccb; margin-bottom: 1.5rem;">Discover your true self with the best free personality quizzes—no sign-up, always fun, always insightful.</div>
-        <a href="#quiz-grid" class="btn" style="background: #d32f2f; color: #fff; padding: 16px 36px; border-radius: 8px; font-size: 1.25rem; font-weight: bold; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: background 0.2s;">Start Quiz</a>
+        <h1 style="font-family: 'Minecraftia', 'Roboto', sans-serif; font-size: 3.5rem; color: #fff; margin-bottom: 1rem;">Free Personality Quiz</h1>
+        <div id="tagline" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; font-weight: 300; letter-spacing: 1px;">Discover your true self with the best free personality quizzes—no sign-up, always fun, always insightful.</div>
+        <a href="#quiz-grid" class="btn" style="background: linear-gradient(45deg, #d32f2f, #ff6b6b); color: #fff; padding: 18px 40px; border-radius: 50px; font-size: 1.3rem; font-weight: bold; text-decoration: none; box-shadow: 0 8px 30px rgba(211, 47, 47, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px; position: relative; overflow: hidden;">
+          <span style="position: relative; z-index: 2;">Start Quiz</span>
+        </a>
       </div>
     </header>
 
-    <!-- Add a sticky, animated announcement bar for trust and engagement -->
-<div id="announcementBar" style="position:sticky;top:0;z-index:10001;background:linear-gradient(90deg,#d32f2f 60%,#ff5e62 100%);color:#fff;padding:12px 0;text-align:center;font-size:1.08rem;font-weight:700;letter-spacing:0.01em;box-shadow:0 2px 18px #d32f2f22;animation:slideDownBar 0.7s;">
-  <span>🎉 Over 10,000 users trust Zinvana for <b>free insightful personality quizzes</b> – No sign-up, always free, always fun!</span>
-</div>
+    <style>
+      /* Animated particles */
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .particle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        animation: float-particle 8s infinite ease-in-out;
+      }
+      .particle:nth-child(1) {
+        width: 6px; height: 6px;
+        left: 10%; top: 20%;
+        animation-delay: 0s;
+      }
+      .particle:nth-child(2) {
+        width: 4px; height: 4px;
+        left: 80%; top: 60%;
+        animation-delay: -2s;
+      }
+      .particle:nth-child(3) {
+        width: 8px; height: 8px;
+        left: 60%; top: 30%;
+        animation-delay: -4s;
+      }
+      .particle:nth-child(4) {
+        width: 3px; height: 3px;
+        left: 30%; top: 70%;
+        animation-delay: -6s;
+      }
+      .particle:nth-child(5) {
+        width: 5px; height: 5px;
+        left: 90%; top: 20%;
+        animation-delay: -8s;
+      }
+      @keyframes float-particle {
+        0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0; }
+        10%, 90% { opacity: 1; }
+        50% { transform: translateY(-50px) translateX(20px) rotate(180deg); }
+      }
+    </style>
+
+    <div id="announcementBar" style="position:sticky;top:0;z-index:10001;background:linear-gradient(90deg,#667eea 0%, #764ba2 50%, #d32f2f 100%);color:#fff;padding:15px 8px;text-align:center;font-size:1.1rem;font-weight:700;letter-spacing:0.5px;box-shadow:0 4px 25px rgba(103, 126, 234, 0.3);animation:slideDownBar 0.7s; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+      <span style="display: inline-flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 100%;">
+        <span style="animation: pulse 2s infinite;">🎉</span>
+        <span style="text-align: center; line-height: 1.3;">Over 10,000 users trust Zinvana for <b>free insightful personality quizzes</b> – No sign-up, always free, always fun!</span>
+        <span style="animation: pulse 2s infinite; animation-delay: 1s;">✨</span>
+      </span>
+    </div>
+
+    <style>
+    @media (max-width: 768px) {
+      #announcementBar {
+        font-size: 0.95rem !important;
+        padding: 12px 6px !important;
+        letter-spacing: 0.3px !important;
+      }
+      #announcementBar span {
+        gap: 8px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #announcementBar {
+        font-size: 0.85rem !important;
+        padding: 10px 4px !important;
+        letter-spacing: 0.2px !important;
+      }
+      #announcementBar span {
+        gap: 6px !important;
+      }
+      #announcementBar span span {
+        line-height: 1.2 !important;
+      }
+    }
+    </style>
 <style>
 @keyframes slideDownBar {
   from { transform: translateY(-100%); opacity: 0;}
   to { transform: translateY(0); opacity: 1;}
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 </style>
 
@@ -764,12 +1272,12 @@
 </style>
 
     <!-- Intro Section -->
-    <section class="intro" style="background: linear-gradient(90deg, #fff 70%, #ffeaea 100%); border-bottom: 2px solid #d32f2f;">
-      <h2 style="font-size: 2.2rem; color: #d32f2f;">Why Take a Free Personality Quiz?</h2>
-      <p style="font-size: 1.15rem; color: #444; max-width: 700px; margin: 0 auto;">Zinvana offers the most accurate, fun, and insightful free personality quizzes online. Whether you want to discover your MBTI type, find out which historical leader you resemble, or just have fun with friends, our quizzes are always free and require no sign-up. Start exploring yourself today!</p>
+    <section class="intro" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 25px; margin: -50px 20px 40px 20px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); position: relative; z-index: 5;">
+      <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, #d32f2f, #764ba2); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Why Take a Free Personality Quiz?</h2>
+      <p style="font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.7;">Zinvana offers the most accurate, fun, and insightful free personality quizzes online. Whether you want to discover your MBTI type, find out which historical leader you resemble, or just have fun with friends, our quizzes are always free and require no sign-up. Start exploring yourself today!</p>
     </section>
 
-    <section class="quiz-grid" id="quiz-grid" style="background: #f8f8f8; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+    <section class="quiz-grid" id="quiz-grid" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border-radius: 25px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); border: 1px solid rgba(255, 255, 255, 0.2);">
       <!-- Historical Leaders Quiz Card -->
       <div class="quiz-card">
         <img src="napoleon1.gif" alt="Historical Leaders Free Personality Quiz" />
@@ -1437,12 +1945,6 @@
       <h2 style="font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid #d32f2f; padding-bottom: 10px; text-align: center; color: #d32f2f;">Related Blog Articles</h2>
       <div class="articles-container">
         <article class="blog-card">
-          <h3><a href="influencial_leaders.html">Influential Leaders</a></h3>
-          <p>
-           Discover history's most influential leaders who shaped civilizations! From Napoleon to Churchill, learn about the greatest leaders before taking our free Historical Leaders Personality Quiz at Zinvana.
-          </p>
-        </article>
-        <article class="blog-card">
           <h3>
             <a href="squidgame-about.html"
               >Everything about Squidgame and its characters!</a
@@ -1479,6 +1981,12 @@
           <p>
             Understand your strengths, areas for improvement and which animal
             you are more similar to.
+          </p>
+        </article>
+         <article class="blog-card">
+          <h3><a href="influencial_leaders.html">Influential Leaders</a></h3>
+          <p>
+           Discover history's most influential leaders who shaped civilizations! From Napoleon to Churchill, learn about the greatest leaders before taking our free Historical Leaders Personality Quiz at Zinvana.
           </p>
         </article>
       </div>
@@ -1521,12 +2029,12 @@
     </footer>
 
 <!-- Add a floating "Back to Top" and "Share" button for UX and engagement -->
-<button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:9999;background:linear-gradient(90deg,#d32f2f 60%,#ff5e62 100%);color:#fff;border:none;border-radius:50%;width:54px;height:54px;box-shadow:0 4px 24px #d32f2f11;cursor:pointer;transition:background 0.2s,transform 0.2s;">
+<button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:40px;right:40px;z-index:9999;background:linear-gradient(45deg,#667eea 0%,#764ba2 50%,#d32f2f 100%);color:#fff;border:none;border-radius:50%;width:60px;height:60px;box-shadow:0 8px 30px rgba(103, 126, 234, 0.4);cursor:pointer;transition:all 0.3s ease;backdrop-filter:blur(10px);">
   <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="display:block;margin:auto;">
     <path d="M12 19V5M5 12l7-7 7 7"/>
   </svg>
 </button>
-<button id="shareBtn" aria-label="Share this page" style="position:fixed;bottom:100px;right:32px;z-index:9999;background:linear-gradient(90deg,#ff5e62 60%,#d32f2f 100%);color:#fff;border:none;border-radius:50%;width:54px;height:54px;box-shadow:0 4px 24px #d32f2f11;cursor:pointer;transition:background 0.2s,transform 0.2s;display:flex;align-items:center;justify-content:center;">
+<button id="shareBtn" aria-label="Share this page" style="position:fixed;bottom:120px;right:40px;z-index:9999;background:linear-gradient(45deg,#764ba2 0%,#d32f2f 50%,#ff6b6b 100%);color:#fff;border:none;border-radius:50%;width:60px;height:60px;box-shadow:0 8px 30px rgba(211, 47, 47, 0.4);cursor:pointer;transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);">
   <svg width="26" height="26" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
     <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/>
   </svg>
@@ -1611,27 +2119,44 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <style>
-#backToTop, #shareBtn { opacity:0.85; }
-#backToTop:hover, #shareBtn:hover { background:linear-gradient(90deg,#ff5e62 60%,#d32f2f 100%); transform:scale(1.08); opacity:1; }
+#backToTop, #shareBtn { 
+  opacity: 0.9; 
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#backToTop:hover, #shareBtn:hover { 
+  transform: translateY(-5px) scale(1.1); 
+  opacity: 1; 
+  box-shadow: 0 15px 40px rgba(103, 126, 234, 0.5);
+}
+#shareBtn:hover {
+  box-shadow: 0 15px 40px rgba(211, 47, 47, 0.5);
+}
+#backToTop:active, #shareBtn:active {
+  transform: translateY(-2px) scale(1.05);
+}
 </style>
 
 <!-- Add a fun fact bar above the footer for engagement and SEO -->
-<div id="funFactBar" aria-live="polite" style="background:linear-gradient(90deg,#d32f2f 60%,#ff5e62 100%);color:#fff;padding:14px 0;text-align:center;font-size:1.09rem;font-weight:600;letter-spacing:0.01em;box-shadow:0 -2px 18px #d32f2f1a;">
-  <span id="funFactText">Did you know? Zinvana is the #1 ranked site for free insightful personality quizzes!</span>
+<div id="funFactBar" aria-live="polite" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#d32f2f 100%);color:#fff;padding:20px 0;text-align:center;font-size:1.1rem;font-weight:600;letter-spacing:0.5px;box-shadow:0 -8px 30px rgba(103, 126, 234, 0.2);backdrop-filter:blur(10px);position:relative;">
+  <span id="funFactText" style="display:inline-flex;align-items:center;gap:10px;">
+    <span style="animation: pulse 2s infinite;">💡</span>
+    Did you know? Zinvana is the #1 ranked site for free insightful personality quizzes!
+    <span style="animation: pulse 2s infinite; animation-delay: 1s;">✨</span>
+  </span>
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const facts = [
-    "Did you know? Zinvana is the #1 ranked site for free insightful personality quizzes!",
-    "Did you know? Over 10,000 people have taken a free personality quiz on Zinvana.",
-    "Did you know? Our quizzes are always free and require no sign-up.",
-    "Did you know? Zinvana uses research-backed models for accurate results.",
-    "Did you know? You can instantly download or share your quiz results.",
-    "Did you know? No personal data is ever stored or tracked on Zinvana.",
-    "Did you know? Our quizzes are trusted by students, professionals, and educators worldwide.",
-    "Did you know? You can retake any quiz as many times as you want for free.",
-    "Did you know? Zinvana offers the most insightful personality quizzes online.",
-    "Did you know? Our quizzes are optimized for mobile, tablet, and desktop."
+    "💡 Did you know? Zinvana is the #1 ranked site for free insightful personality quizzes! ✨",
+    "🎯 Over 10,000 people have taken a free personality quiz on Zinvana. 🌟",
+    "🆓 Our quizzes are always free and require no sign-up. 🎉",
+    "🔬 Zinvana uses research-backed models for accurate results. 📊",
+    "📱 You can instantly download or share your quiz results. 💫",
+    "🔒 No personal data is ever stored or tracked on Zinvana. 🛡️",
+    "👥 Our quizzes are trusted by students, professionals, and educators worldwide. 🌍",
+    "🔄 You can retake any quiz as many times as you want for free. ⭐",
+    "🎪 Zinvana offers the most insightful personality quizzes online. 🚀",
+    "📱 Our quizzes are optimized for mobile, tablet, and desktop. 💻"
   ];
   let idx = 0;
   setInterval(function() {
