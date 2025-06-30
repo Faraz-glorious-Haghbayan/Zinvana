@@ -12,11 +12,29 @@
   <link rel="canonical" href="https://zinvana.com/muhammad.html" />
 
   <!-- Fonts -->
-  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- CSS Styles -->
+  <!-- CSS Styles: Professional Modern Design -->
   <style>
+    :root {
+      --primary-gold: #d4af37;
+      --dark-gold: #b8941f;
+      --light-gold: #f4e4a6;
+      --deep-navy: #1a1a2e;
+      --medium-navy: #16213e;
+      --light-navy: #0f3460;
+      --text-primary: #2c3e50;
+      --text-secondary: #666;
+      --text-light: #f8f9fa;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --shadow-light: 0 2px 10px rgba(0,0,0,0.1);
+      --shadow-medium: 0 4px 20px rgba(0,0,0,0.15);
+      --shadow-heavy: 0 8px 30px rgba(0,0,0,0.2);
+      --border-radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
     /* Reset and Base Styles */
     html, body {
       margin: 0;
@@ -24,163 +42,856 @@
       border: 0;
       vertical-align: baseline;
     }
+
     *, *::before, *::after {
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
+
     body {
-      font-family: 'Roboto', sans-serif;
-      background: #f4f5f7;
-      color: #333;
-      line-height: 1.8;
-      padding: 20px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 400;
+      overflow-x: hidden;
     }
+
     a {
       text-decoration: none;
       color: inherit;
-      transition: opacity 0.3s;
+      transition: var(--transition);
     }
+
     a:hover {
-      opacity: 0.8;
+      transform: translateY(-1px);
     }
+
     /* Navigation */
     nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #000;
-      padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(255,0,0,0.2);
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 40px;
+      box-shadow: var(--shadow-medium);
+      z-index: 1000;
+      transition: var(--transition);
     }
-    nav .nav-left, nav .nav-right {
+
+    nav.scrolled {
+      background: rgba(26, 26, 46, 0.98);
+      padding: 12px 40px;
+    }
+
+    nav .nav-left,
+    nav .nav-right {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 30px;
     }
+
     nav a {
-      color: #fff;
+      color: var(--text-light);
       font-weight: 500;
-      font-size: 1.3rem;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: var(--transition);
+      position: relative;
     }
+
     nav a:hover {
-      color: #d32f2f;
+      color: var(--primary-gold);
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-1px);
     }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary-gold);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+
+    nav a:hover::after {
+      width: 80%;
+    }
+
     nav img#brand-logo {
-      width: 10%;
-      min-width: 60px;
-      pointer-events: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: var(--transition);
     }
+
+    nav img#brand-logo:hover {
+      transform: scale(1.1);
+    }
+
     /* Header */
     header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(15, 52, 96, 0.9) 100%), url('hallo.jpg') no-repeat center/cover;
+      color: var(--text-light);
       text-align: center;
-      padding: 200px 10px 100px;
-      background: url('hallo.jpg') no-repeat center/cover; /* Replace with a relevant image */
-      border-bottom: 2px solid #1f1f1f;
+      overflow: hidden;
     }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%, rgba(212, 175, 55, 0.1) 100%);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+
+    header .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
     header h1 {
-      font-size: 3rem;
-      color: #ffffff;
-      text-shadow: 2px 2px #000;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 700;
+      color: var(--text-light);
+      text-shadow: 2px 4px 8px rgba(0,0,0,0.5);
+      letter-spacing: 2px;
+      margin: 0 0 20px 0;
+      line-height: 1.2;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #tagline {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      color: var(--light-gold);
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+      font-weight: 300;
       letter-spacing: 1px;
       margin: 0;
+      animation: fadeInUp 1s ease-out 0.3s both;
     }
-    #tagline {
-      margin-top: 8px;
-      font-size: 1.2rem;
-      color: #ccc;
-      text-shadow: 2px 2px #000;
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--light-gold);
+      animation: bounce 2s infinite;
     }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
     /* Main Content */
     main {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #1a1a1a;
-      color: #e0e0e0;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+      max-width: 1200px;
+      margin: 80px auto;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      padding: 60px 40px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-heavy);
+      position: relative;
+      overflow: hidden;
     }
+
+    main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-gold) 0%, var(--dark-gold) 50%, var(--primary-gold) 100%);
+    }
+
     main h2 {
-      font-size: 2rem;
-      color: #ff9a00;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ff4f00;
-      padding-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      color: var(--deep-navy);
+      margin: 40px 0 25px 0;
+      font-weight: 600;
+      line-height: 1.3;
+      position: relative;
+      padding-left: 20px;
     }
+
+    main h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 40px;
+      background: linear-gradient(180deg, var(--primary-gold) 0%, var(--dark-gold) 100%);
+      border-radius: 2px;
+    }
+
+    main h2:first-of-type {
+      margin-top: 0;
+    }
+
     main h3 {
-      font-size: 1.6rem;
-      color: #ff9a00;
-      margin-top: 30px;
-      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      color: var(--light-navy);
+      margin: 30px 0 15px 0;
+      font-weight: 500;
     }
+
     main p {
-      font-size: 1rem;
+      font-size: 16px;
       line-height: 1.8;
-      margin-bottom: 20px;
-      color: #bbbbbb;
+      margin-bottom: 24px;
+      color: var(--text-secondary);
       text-align: justify;
+      hyphens: auto;
     }
+
+    main p:first-letter {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: var(--primary-gold);
+    }
+
     /* Infobox */
     .infobox {
       float: right;
-      width: 280px;
-      background-color: #222222;
-      color: #333;
-      border: 1px solid #fff;
-      padding: 15px;
-      margin: 0 0 20px 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      width: 320px;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 25px;
+      margin: 0 0 30px 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-medium);
+      transition: var(--transition);
+      position: sticky;
+      top: 120px;
     }
+
+    .infobox:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-heavy);
+    }
+
     .infobox img {
       width: 100%;
-      border-radius: 5px;
-      margin-bottom: 10px;
+      border-radius: var(--border-radius);
+      margin-bottom: 20px;
+      transition: var(--transition);
+      object-fit: cover;
+      height: 200px;
     }
+
+    .infobox img:hover {
+      transform: scale(1.02);
+    }
+
     .infobox p {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      margin-bottom: 5px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+      text-align: left;
     }
+
     .infobox strong {
-      color: #d32f2f;
+      color: var(--primary-gold);
+      font-weight: 600;
     }
+
     /* Clearfix */
     .clearfix::after {
       content: "";
       display: table;
       clear: both;
     }
+
     /* Footer */
     footer {
-      background: #000;
-      padding: 20px 10px;
+      background: linear-gradient(135deg, var(--deep-navy) 0%, var(--medium-navy) 100%);
+      padding: 50px 40px 30px;
       text-align: center;
-      border-top: 1px solid #d32f2f;
-      margin-top: 40px;
+      border-top: 3px solid var(--primary-gold);
+      margin-top: 80px;
+      color: var(--text-light);
     }
+
     footer p {
       margin: 5px 0;
-      font-size: 1.3rem;
-      color: #aaa;
+      font-size: 15px;
+      color: rgba(248, 249, 250, 0.8);
+      font-weight: 300;
     }
+
     footer .social-icons {
-      margin-top: 10px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
+
+    footer .social-icons a {
+      display: inline-block;
+      padding: 12px;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    footer .social-icons a:hover {
+      background: var(--primary-gold);
+      transform: translateY(-3px);
+    }
+
     footer .social-icons img {
-      width: 10%;
-      margin: 0 8px;
-      transition: opacity 0.3s;
-      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      transition: var(--transition);
     }
-    footer .social-icons img:hover {
+
+    footer .social-icons a:hover img {
+      filter: brightness(0) invert(1);
+    }
+
+    /* Enhanced Responsive Design */
+    
+    /* Large tablets and small desktops */
+    @media (max-width: 1024px) {
+      main {
+        max-width: 95%;
+        margin: 60px auto;
+        padding: 50px 30px;
+      }
+
+      .infobox {
+        width: 300px;
+        margin: 0 0 25px 25px;
+      }
+
+      nav {
+        padding: 12px 30px;
+      }
+    }
+
+    /* Tablets */
+    @media (max-width: 768px) {
+      nav {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+      }
+
+      nav .nav-left,
+      nav .nav-right {
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
+
+      nav img#brand-logo {
+        width: 40px;
+        height: 40px;
+      }
+
+      header {
+        height: 80vh;
+        padding: 0 20px;
+      }
+
+      header h1 {
+        font-size: clamp(2.5rem, 7vw, 3.5rem);
+        margin-bottom: 15px;
+      }
+
+      #tagline {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+      }
+
+      main {
+        margin: 40px 20px;
+        padding: 40px 25px;
+      }
+
+      main h2 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        padding-left: 15px;
+        margin: 30px 0 20px 0;
+      }
+
+      main h2::before {
+        height: 30px;
+        width: 3px;
+      }
+
+      main h3 {
+        font-size: clamp(1.2rem, 4vw, 1.4rem);
+      }
+
+      main p {
+        font-size: 15px;
+        line-height: 1.7;
+        text-align: left;
+      }
+
+      .infobox {
+        float: none;
+        width: 100%;
+        margin: 0 0 30px 0;
+        position: static;
+        padding: 20px;
+      }
+
+      .infobox img {
+        height: 180px;
+      }
+
+      footer {
+        padding: 40px 20px 20px;
+      }
+
+      footer .social-icons {
+        gap: 15px;
+      }
+
+      footer .social-icons img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    /* Mobile landscape and small tablets */
+    @media (max-width: 640px) {
+      header {
+        height: 70vh;
+      }
+
+      main {
+        margin: 30px 15px;
+        padding: 30px 20px;
+      }
+
+      main h2 {
+        margin: 25px 0 15px 0;
+      }
+    }
+
+    /* Mobile phones */
+    @media (max-width: 480px) {
+      nav {
+        padding: 8px 15px;
+      }
+
+      nav .nav-left,
+      nav .nav-right {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 13px;
+        padding: 5px 8px;
+      }
+
+      nav img#brand-logo {
+        width: 35px;
+        height: 35px;
+      }
+
+      header {
+        height: 60vh;
+        padding: 0 15px;
+      }
+
+      header h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        letter-spacing: 1px;
+      }
+
+      #tagline {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        letter-spacing: 0.5px;
+      }
+
+      .scroll-indicator {
+        bottom: 20px;
+      }
+
+      .scroll-indicator svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      main {
+        margin: 20px 10px;
+        padding: 25px 15px;
+        border-radius: 8px;
+      }
+
+      main::before {
+        height: 3px;
+      }
+
+      main h2 {
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
+        padding-left: 12px;
+        margin: 20px 0 15px 0;
+      }
+
+      main h2::before {
+        height: 25px;
+        width: 3px;
+      }
+
+      main h3 {
+        font-size: clamp(1.1rem, 5vw, 1.3rem);
+        margin: 20px 0 10px 0;
+      }
+
+      main p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+
+      .infobox {
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .infobox img {
+        height: 150px;
+        margin-bottom: 15px;
+      }
+
+      .infobox p {
+        font-size: 13px;
+        margin-bottom: 6px;
+      }
+
+      footer {
+        padding: 30px 15px 20px;
+      }
+
+      footer p {
+        font-size: 14px;
+      }
+
+      footer .social-icons {
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      footer .social-icons a {
+        padding: 10px;
+      }
+
+      footer .social-icons img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    /* Very small screens */
+    @media (max-width: 360px) {
+      nav {
+        padding: 6px 10px;
+      }
+
+      nav a {
+        font-size: 12px;
+        padding: 4px 6px;
+      }
+
+      nav img#brand-logo {
+        width: 30px;
+        height: 30px;
+      }
+
+      header {
+        height: 50vh;
+        padding: 0 10px;
+      }
+
+      main {
+        margin: 15px 8px;
+        padding: 20px 12px;
+      }
+
+      main h2 {
+        font-size: 1.2rem;
+        padding-left: 10px;
+      }
+
+      main h2::before {
+        height: 20px;
+        width: 2px;
+      }
+
+      main p {
+        font-size: 13px;
+      }
+
+      .infobox {
+        padding: 12px;
+      }
+
+      .infobox img {
+        height: 120px;
+      }
+
+      footer {
+        padding: 25px 10px 15px;
+      }
+    }
+
+    /* Landscape orientation adjustments */
+    @media (max-height: 500px) and (orientation: landscape) {
+      header {
+        height: 100vh;
+        padding: 0 20px;
+      }
+
+      header h1 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+      }
+
+      #tagline {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+      }
+
+      .scroll-indicator {
+        bottom: 15px;
+      }
+    }
+
+    /* Touch device optimizations */
+    @media (hover: none) and (pointer: coarse) {
+      nav a {
+        padding: 10px 14px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      footer .social-icons a {
+        padding: 14px;
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Remove hover effects on touch devices */
+      nav a:hover,
+      .infobox:hover,
+      footer .social-icons a:hover {
+        transform: none;
+      }
+    }
+
+    /* Loading Animation */
+    .loading {
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Toast Notification Styles */
+    .toast-container {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 9999;
+    }
+
+    .toast {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--primary-gold) 0%, var(--dark-gold) 100%);
+      color: var(--deep-navy);
+      padding: 16px 24px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-heavy);
+      margin-bottom: 16px;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: none;
+      min-width: 300px;
+      max-width: 450px;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast-icon {
+      margin-right: 16px;
+      background: var(--text-light);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .toast-content {
+      flex-grow: 1;
+    }
+
+    .toast-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+      color: var(--deep-navy);
+    }
+
+    .toast-message {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      color: var(--deep-navy);
+      opacity: 0.9;
+    }
+
+    .toast-button {
+      display: inline-block;
+      background: var(--deep-navy);
+      color: var(--text-light);
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .toast-button:hover {
+      background: var(--light-navy);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .toast-close {
+      background: none;
+      border: none;
+      color: var(--deep-navy);
+      cursor: pointer;
+      padding: 4px;
+      margin-left: 16px;
       opacity: 0.7;
+      transition: var(--transition);
+    }
+
+    .toast-close:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .toast-container {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+      }
+      
+      .toast {
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
     }
   </style>
 </head>
-<body>
+<body class="loading">
+  <!-- Toast Notification -->
+  <div class="toast-container">
+    <div class="toast">
+      <div class="toast-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary-gold)">
+          <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+        </svg>
+      </div>
+      <div class="toast-content">
+        <div class="toast-title">Discover Your Leadership Style!</div>
+        <div class="toast-message">Take our historical leader personality quiz to find which great leader you most closely resemble.</div>
+        <a href="leaders.html" class="toast-button">Take the Quiz</a>
+      </div>
+      <button class="toast-close" aria-label="Close notification">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 7.293l3.646-3.647a.5.5 0 0 1 .708.708L8.707 8l3.647 3.646a.5.5 0 0 1-.708.708L8 8.707l-3.646 3.647a.5.5 0 0 1-.708-.708L7.293 8 3.646 4.354a.5.5 0 1 1 .708-.708L8 7.293z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
   <!-- Navigation -->
-  <nav>
+  <nav id="navbar">
     <div class="nav-left">
       <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
       <a href="index.html">Home</a>
@@ -193,15 +904,22 @@
   
   <!-- Header -->
   <header>
-    <h1>Prophet Muhammad</h1>
-    <div id="tagline">The Messenger of God and Unifier of Humanity</div>
+    <div class="hero-content">
+      <h1>Prophet Muhammad</h1>
+      <div id="tagline">The Messenger of God and Unifier of Humanity</div>
+    </div>
+    <div class="scroll-indicator">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 4l-8 8h16l-8-8zm0 8l-8 8h16l-8-8z"/>
+      </svg>
+    </div>
   </header>
   
   <!-- Main Content -->
   <main class="clearfix">
     <!-- Infobox with Key Details -->
     <div class="infobox">
-      <img src="muhammad.jpg" alt="Prophet Muhammad" />
+      <img src="muhammadheader1.jpg" alt="Prophet Muhammad" />
       <p><strong>Born:</strong> c. 570 CE in Mecca, Arabia</p>
       <p><strong>Died:</strong> 632 CE in Medina</p>
       <p><strong>Nationality:</strong> Arab</p>
@@ -212,127 +930,262 @@
     <!-- Early Life and Background -->
     <h2>Early Life and Background</h2>
     <p>
-      Prophet Muhammad was born in the city of Mecca around 570 CE into the respected Banu Hashim clan of the Quraysh tribe. His early life was characterized by hardship and modesty; he was orphaned at a young age and raised by his grandfather and later by his uncle. Growing up in a society steeped in polytheistic beliefs and constant tribal rivalries, Muhammad was exposed to the prevailing customs and moral dilemmas of his time. Even as a child, he became known for his honesty, integrity, and deep sense of justice—qualities that would later define his prophetic mission.
+      Prophet Muhammad was born in the city of Mecca around 570 CE into the respected Banu Hashim clan of the Quraysh tribe, during what historians call the "Year of the Elephant." His birth occurred in a period of significant political and social upheaval in the Arabian Peninsula, as various tribal confederations competed for control of the lucrative trade routes that connected the Byzantine and Persian empires with the markets of Yemen and East Africa. The Quraysh tribe held a particularly privileged position as the guardians of the Kaaba, the sacred shrine that attracted pilgrims from across the Arabian Peninsula and generated substantial revenue for Meccan merchants.
     </p>
     <p>
-      His formative years in a volatile social environment instilled in him a profound awareness of the inequalities and injustices present in society. These early experiences laid the groundwork for his later revelations and teachings, which called for the establishment of a monotheistic order based on compassion, social justice, and moral accountability.
+      Muhammad's early life was marked by profound personal tragedy and hardship that would profoundly shape his character and worldview. His father, Abdullah ibn Abd al-Muttalib, died before his birth, leaving the family in reduced circumstances despite their noble lineage. When Muhammad was only six years old, his mother Aminah also passed away, making him an orphan in a society where family protection was essential for survival. He was subsequently raised by his paternal grandfather, Abd al-Muttalib, who was the chief of the Banu Hashim clan and held considerable influence in Meccan society.
+    </p>
+    <p>
+      Following his grandfather's death when Muhammad was eight years old, he came under the care of his uncle Abu Talib, a respected merchant who would become one of his most important protectors in later years. Under Abu Talib's guidance, Muhammad learned the intricacies of trade and commerce, accompanying merchant caravans on their journeys to Syria and other distant markets. These travels exposed him to diverse cultures, religions, and philosophical traditions, including Christianity and Judaism, which would later influence his understanding of monotheistic principles.
+    </p>
+    <p>
+      Growing up in a society characterized by stark social inequalities, tribal warfare, and moral corruption, Muhammad developed a deep sensitivity to injustice and suffering. Pre-Islamic Arabian society was marked by the practice of infanticide, particularly of female children, widespread slavery, and the exploitation of the weak by the powerful. The worship of multiple deities and the associated rituals often involved practices that Muhammad would later condemn as morally degrading. Despite these challenging circumstances, he earned the nickname "Al-Amin" (the Trustworthy) and "As-Sadiq" (the Truthful) for his exceptional honesty and integrity in business dealings.
+    </p>
+    <p>
+      His marriage to Khadijah bint Khuwaylid, a wealthy widow and successful businesswoman, when he was twenty-five years old, marked a turning point in his life. Khadijah, who was fifteen years his senior, had employed Muhammad to manage her trading ventures and was impressed by his competence and moral character. Their marriage provided him with financial security and social standing, but more importantly, Khadijah would become his first supporter and believer when he began receiving divine revelations. The union produced four daughters and, according to some sources, two sons who died in infancy.
+    </p>
+    <p>
+      During this period of his life, Muhammad was known for his contemplative nature and would often retreat to the cave of Hira on Mount Jabal al-Nour near Mecca for meditation and reflection. These spiritual retreats, which became more frequent as he approached his fortieth year, reflected his growing dissatisfaction with the moral and spiritual state of Meccan society. Archaeological evidence suggests that such practices of retreat and meditation were not uncommon among individuals seeking spiritual enlightenment in pre-Islamic Arabia, indicating Muhammad's participation in a broader tradition of religious seeking.
     </p>
     
     <!-- The Revelation and The Call to Prophethood -->
     <h2>The Revelation and The Call to Prophethood</h2>
     <p>
-      At the age of 40, while meditating in a cave outside Mecca, Muhammad received his first divine revelation from God through the angel Gabriel. This seminal event marked the beginning of his prophethood and the gradual disclosure of the Quran, the holy book of Islam. The messages he received emphasized the oneness of God (Tawhid), the importance of prayer, charity, and moral conduct, and the need for social justice. These revelations challenged the established order and called the people of Mecca to abandon their polytheistic practices in favor of a unified monotheistic belief.
+      The transformative moment that would change the course of human history occurred during the month of Ramadan in the year 610 CE, when Muhammad was forty years old and engaged in one of his regular spiritual retreats in the cave of Hira. According to Islamic tradition, it was during one of these nights of contemplation that the Angel Gabriel (Jibril in Arabic) appeared to him with the first revelation from Allah. The angel commanded him to "Read!" (Iqra!), to which Muhammad replied that he could not read, as he was unlettered. This initial encounter was both terrifying and overwhelming, leaving Muhammad trembling and seeking comfort from his wife Khadijah.
     </p>
     <p>
-      Despite initial resistance and hostility from many quarters, the sincerity and clarity of his message eventually attracted a small group of devoted followers. This period of early prophethood was marked by personal sacrifice, perseverance, and the transformative power of divine guidance, all of which set the stage for the dramatic changes that were to come.
+      The first verses revealed constitute the opening of what would later become the 96th chapter of the Quran: "Read in the name of your Lord who created, created man from a clot of blood. Read, and your Lord is most generous, who taught by the pen, taught man what he did not know." These inaugural words established fundamental themes that would permeate the entire Quranic revelation: the importance of knowledge and learning, the creative power of God, and the divine origin of human understanding. The emphasis on reading and the pen as instruments of divine knowledge would later inspire the Islamic civilization's remarkable achievements in literacy, education, and scholarly pursuits.
+    </p>
+    <p>
+      Following this initial revelation, there was a period of silence known as "Fatra al-Wahy" that lasted several months, during which Muhammad experienced doubt and anxiety about the nature of his experience. This interval of spiritual uncertainty was eventually broken by subsequent revelations that confirmed his prophetic mission and provided guidance for the challenges ahead. The gradual nature of the Quranic revelation, which continued for twenty-three years until his death, allowed for the organic development of Islamic law, ethics, and theology in response to the changing circumstances faced by the growing Muslim community.
+    </p>
+    <p>
+      The core message of Muhammad's prophetic calling centered on the fundamental principle of Tawhid—the absolute oneness and uniqueness of God—which directly challenged the polytheistic beliefs and practices prevalent in Arabian society. This monotheistic message was not entirely foreign to the Arabian Peninsula, as Jewish and Christian communities had long been present in the region, but Muhammad's presentation of Islamic monotheism offered a distinctly Arabian expression of Abrahamic faith. The Quran explicitly acknowledges the continuity with previous revelations while asserting its role as the final and complete guidance for humanity.
+    </p>
+    <p>
+      Beyond theological matters, the early revelations addressed pressing social and moral issues of the time, including the treatment of orphans, the rights of women, the proper conduct of commercial transactions, and the obligation to care for the poor and marginalized. These teachings challenged existing social hierarchies and economic practices, advocating for a more equitable distribution of wealth and resources. The revolutionary nature of these ideas explains much of the resistance Muhammad encountered from the Meccan elite, whose economic and social privileges were threatened by the egalitarian principles of Islam.
+    </p>
+    <p>
+      Khadijah's immediate acceptance of Muhammad's prophetic claim and her unwavering support during the early years of his mission were crucial to the survival and development of Islam. Her belief in her husband's integrity and the authenticity of his revelations provided him with the emotional and psychological foundation necessary to persevere through the initial period of rejection and hostility. The first converts to Islam included not only family members like Ali ibn Abi Talib (Muhammad's young cousin) and Zayd ibn Harithah (his adopted son), but also close friends like Abu Bakr, who would later become the first Caliph after Muhammad's death.
+    </p>
+    <p>
+      The early Muslim community was remarkably diverse, including people from various social backgrounds, ethnicities, and economic circumstances. Among the first converts were slaves like Bilal ibn Rabah, an Abyssinian who would become the first muezzin (caller to prayer), and wealthy merchants like Uthman ibn Affan, who would later become the third Caliph. This diversity reflected the universal appeal of the Islamic message and its promise of spiritual and social equality regardless of worldly status or tribal affiliation.
     </p>
     
     <!-- The Hijrah and Formation of the Muslim Community -->
     <h2>The Hijrah and Formation of the Muslim Community</h2>
     <p>
-      The migration (Hijrah) of Muhammad and his followers from Mecca to Medina in 622 CE stands as a defining moment in Islamic history. This event not only marked the establishment of the first Muslim community (Ummah) but also signified the beginning of the Islamic calendar. In Medina, Muhammad assumed the role of both spiritual guide and political leader, forging alliances among various tribes and establishing a constitution that guaranteed rights, duties, and mutual responsibilities among the inhabitants.
+      The migration (Hijrah) of Muhammad and his followers from Mecca to Medina in 622 CE represents one of the most pivotal moments in Islamic history and serves as the beginning of the Islamic calendar. This momentous journey was precipitated by escalating persecution of Muslims in Mecca and the invitation extended by the tribes of Yathrib (later renamed Medina) for Muhammad to serve as a mediator in their ongoing tribal conflicts. The decision to migrate was not taken lightly, as it meant abandoning ancestral lands, tribal protections, and economic opportunities in favor of an uncertain future in a distant city.
     </p>
     <p>
-      The Hijrah was a turning point that enabled the consolidation of Muslim society through peaceful coexistence, community support, and the establishment of a just social order based on the principles revealed in the Quran. This period witnessed the evolution of Islamic law and ethical guidelines, laying the foundation for a society where spiritual and temporal affairs were intricately linked.
+      The events leading to the Hijrah began with the Pledge of Aqaba, where representatives from the tribes of Aws and Khazraj in Medina secretly met with Muhammad during the annual pilgrimage season and accepted Islam. These tribes, who had been locked in generations of warfare, recognized in Muhammad's message a potential path to peace and unity. They formally invited him to their city and promised to protect him and his followers with the same loyalty they would show their own kinsmen. This pledge marked the first formal political alliance of the nascent Muslim community.
+    </p>
+    <p>
+      The actual migration was carried out in secret over several months, with small groups of Muslims quietly leaving Mecca to avoid detection by the hostile Quraysh authorities. Muhammad himself remained until the end, ensuring the safety of his followers and making final arrangements for those who would stay behind. His own journey with Abu Bakr has become legendary in Islamic tradition, particularly their three-day hiding in the cave of Thawr while Meccan search parties scoured the area. The famous incident of a spider weaving its web across the cave entrance, which allegedly misled their pursuers, has become a powerful symbol of divine protection in Islamic folklore.
+    </p>
+    <p>
+      Upon arriving in Medina, Muhammad faced the enormous challenge of transforming a diverse group of refugees and local converts into a cohesive community. The early Muslim community (Ummah) consisted of three distinct groups: the Muhajirun (emigrants from Mecca), the Ansar (helpers from Medina who had converted to Islam), and the various Jewish tribes who had long resided in the city. The integration of these groups required extraordinary diplomatic skill and visionary leadership, as each brought different cultural traditions, economic interests, and political loyalties.
+    </p>
+    <p>
+      One of Muhammad's most innovative solutions was the establishment of brotherhood bonds (Mu'akhat) between the Meccan emigrants and Medinan converts. These relationships went beyond mere hospitality, creating formal partnerships in which the Ansar shared their homes, businesses, and even inheritance rights with the displaced Muhajirun. This remarkable system of mutual support not only addressed immediate practical needs but also fostered deep emotional bonds that transcended tribal affiliations and created a new form of social organization based on religious rather than kinship ties.
+    </p>
+    <p>
+      The Constitution of Medina (Sahifat al-Madinah), one of history's earliest written constitutional documents, established the legal and political framework for this diverse community. This remarkable document recognized the various tribes and religious groups as distinct communities while creating overarching principles for mutual defense, conflict resolution, and collective governance. The constitution guaranteed religious freedom for Jewish and other non-Muslim communities while establishing Muhammad's authority as the final arbitrator in disputes and the supreme commander in matters of war and peace.
+    </p>
+    <p>
+      The transformation of Medina under Muhammad's leadership was nothing short of revolutionary. The city evolved from a collection of warring tribes into a unified political entity that would serve as the prototype for Islamic governance. The establishment of regular communal prayers, the institution of mandatory charity (Zakat), and the development of Islamic legal principles created new forms of social solidarity and economic justice. The weekly Friday congregational prayers became not only religious observances but also important forums for community consultation and the dissemination of guidance on both spiritual and temporal matters.
+    </p>
+    <p>
+      The success of the Medina experiment demonstrated the practical viability of the Islamic social vision and provided a model that would later be adapted as Muslim armies carried the faith to distant lands. The principles established during this period—including religious tolerance, social welfare, consultative governance, and the rule of law—would become fundamental features of Islamic civilization and continue to influence Muslim political thought to this day.
     </p>
     
     <!-- Leadership in Medina and Social Reforms -->
     <h2>Leadership in Medina and Social Reforms</h2>
     <p>
-      After the Hijrah, Muhammad’s leadership transformed Medina into a thriving and organized community. As the head of state and spiritual leader, he introduced reforms that touched every facet of life—from legal systems and economic practices to family and social relations. His leadership was characterized by a blend of wisdom, compassion, and pragmatism, as he sought to eliminate social inequities and promote justice among his followers.
+      Muhammad's leadership in Medina demonstrated a remarkable synthesis of spiritual guidance and practical governance that would become a defining characteristic of Islamic civilization. As both Prophet and head of state, he faced the unprecedented challenge of creating a new social order that balanced the demands of divine revelation with the complex realities of human society. His approach to governance was characterized by consultation (Shura), justice (Adl), and compassion (Rahma), principles that were consistently applied even when dealing with former enemies or challenging social problems.
     </p>
     <p>
-      The establishment of the Medina Constitution was one of his most notable achievements. This document served as an early example of a pluralistic and inclusive political system, providing rights and responsibilities to both Muslims and non-Muslims. Through measures such as equitable distribution of wealth, support for the underprivileged, and arbitration of disputes, Muhammad laid the groundwork for a society rooted in mutual respect and collective welfare.
+      Among the most significant social reforms implemented during this period was the transformation of women's status in Arabian society. Pre-Islamic Arabia treated women as property, denied them inheritance rights, and permitted unlimited polygamy and arbitrary divorce. The Quranic revelations received in Medina established women's rights to inherit property, own businesses, choose their marriage partners, and receive financial support during divorce proceedings. The Prophet's own example, particularly his respectful treatment of his wives and daughters, provided a practical model for implementing these revolutionary changes.
     </p>
-    
+    <p>
+      The abolition of usury (Riba) and the establishment of ethical business practices represented another major economic reform that challenged existing commercial customs. The Quranic prohibition of interest-based lending was accompanied by the promotion of profit-sharing partnerships, charitable lending, and trade-based commerce. These changes were not merely theoretical but were actively implemented in Medina's marketplace, where Muhammad personally supervised commercial transactions and arbitrated business disputes to ensure compliance with Islamic ethical standards.
+    </p>
+    <p>
+      The institution of Zakat (mandatory charity) created the world's first systematic welfare state, establishing specific rates and procedures for the collection and distribution of wealth from the rich to the poor. This was not voluntary charity but a legally enforceable obligation that recognized society's collective responsibility for its most vulnerable members. The Zakat system covered various forms of wealth including livestock, agricultural produce, trade goods, and precious metals, creating a comprehensive framework for economic redistribution that prevented the extreme accumulation of wealth while guaranteeing basic subsistence for all community members.
+    </p>
+    <p>
+      Criminal justice reform under Muhammad's leadership emphasized rehabilitation and community restoration rather than mere punishment. The Quranic principle of proportional justice (Qisas) was balanced by strong encouragement for forgiveness and compensation, creating a system that prioritized healing social wounds over satisfying desires for revenge. The introduction of strict evidentiary requirements, including the need for multiple credible witnesses in serious cases, protected individuals from false accusations while maintaining social order.
+    </p>
+    <p>
+      Educational reform was another crucial aspect of Muhammad's social transformation program. Despite being unlettered himself, he placed enormous emphasis on learning and knowledge acquisition, declaring that "seeking knowledge is an obligation upon every Muslim, male and female." The establishment of regular study circles in the mosque, the memorization and writing down of Quranic verses, and the encouragement of literacy among all community members laid the foundation for Islam's later achievements in scholarship and intellectual development.
+    </p>
+    <p>
+      The reform of slavery, while not involving immediate abolition, introduced unprecedented protections and pathways to freedom for enslaved persons. Islamic law required that slaves be well-treated, properly fed and clothed, and given opportunities to earn their freedom through various means including contractual arrangements, charitable manumission, and educational achievement. The liberation of slaves was consistently presented as one of the most meritorious acts a Muslim could perform, leading to gradual but significant reductions in the enslaved population.
+    </p>
+    <p>
+      Muhammad's approach to tribal reconciliation and conflict resolution drew upon traditional Arabian customs while introducing new principles of justice and mercy. His role as arbiter in inter-tribal disputes demonstrated the possibility of transcending traditional loyalties in favor of universal principles of fairness. The success of these efforts in pacifying Medina's historically fractious tribal environment provided compelling evidence of Islam's potential to create lasting peace and stability in troubled societies.
+    </p>
+
     <!-- Military and Diplomatic Efforts -->
     <h2>Military and Diplomatic Efforts</h2>
     <p>
-      Facing external threats from rival tribes and internal challenges, Muhammad’s leadership extended into strategic military and diplomatic realms. His military campaigns, though not primarily focused on conquest, were vital for the defense of the nascent Muslim community. Key battles, such as Badr, Uhud, and the Trench, demonstrated his ability to lead his followers under challenging circumstances while preserving ethical conduct on the battlefield.
+      Muhammad's military leadership represented a revolutionary approach to warfare that emphasized strategic thinking, ethical conduct, and limited objectives rather than conquest for its own sake. Facing existential threats from the powerful Quraysh confederation and their Bedouin allies, the Muslim community was forced to develop sophisticated military capabilities while maintaining the moral principles established by Quranic revelation. The defensive nature of most early Islamic military campaigns reflected Muhammad's preference for negotiation and peaceful resolution whenever possible.
     </p>
     <p>
-      Equally significant were his diplomatic initiatives that sought to build alliances with neighboring tribes and secure peace agreements. Through treaties and negotiations, he managed to expand the reach of Islam while minimizing bloodshed and fostering a sense of unity among diverse groups. His balanced approach to warfare and diplomacy set a precedent for future Muslim rulers and remains a subject of study in military history and conflict resolution.
+      The Battle of Badr in 624 CE marked the first major military victory for the Muslim forces and demonstrated the effectiveness of Muhammad's tactical innovations. Despite being heavily outnumbered by the Meccan army, the Muslims achieved a decisive victory through superior positioning, disciplined coordination, and high morale. The battle's outcome was interpreted by both Muslims and their enemies as divine validation of the Islamic cause, significantly enhancing the prestige and confidence of the nascent Muslim community while dealing a severe blow to Meccan pride and economic interests.
+    </p>
+    <p>
+      The subsequent Battle of Uhud in 625 CE provided crucial lessons in military discipline and the dangers of overconfidence. Although the Muslims initially gained the upper hand, their premature celebration and abandonment of strategic positions allowed the Meccan cavalry to regroup and inflict heavy casualties. Muhammad himself was wounded in the fighting, but his personal courage and continued leadership prevented what could have been a catastrophic defeat from becoming a complete rout. The experience led to important reforms in military organization and battle tactics.
+    </p>
+    <p>
+      The Siege of Medina (Battle of the Trench) in 627 CE showcased Muhammad's diplomatic and strategic genius. Faced with a massive coalition of enemies seeking to destroy the Muslim community once and for all, Muhammad adopted the innovative defensive strategy of digging a protective trench around the city's vulnerable approaches. This Persian-inspired tactic, combined with diplomatic efforts to divide the enemy coalition, successfully frustrated the siege and led to the confederates' withdrawal after several weeks of fruitless attempts to breach the Muslim defenses.
+    </p>
+    <p>
+      Muhammad's diplomatic achievements were equally impressive and demonstrated his understanding that lasting peace required more than military victory. The Treaty of Hudaybiyyah in 628 CE, initially criticized by some Muslims as overly conciliatory to the Meccans, proved to be a masterpiece of strategic thinking. By securing a ten-year truce and gaining recognition of Muslim legitimacy, the treaty allowed Islam to spread peacefully throughout the Arabian Peninsula while giving the Muslim community time to consolidate its gains and prepare for future challenges.
+    </p>
+    <p>
+      The principle of proportional response and protection of non-combatants established precedents that would later be codified in Islamic international law. Muhammad's instructions to his military commanders consistently emphasized the protection of civilians, religious buildings, agricultural resources, and prisoners of war. These ethical guidelines, revolutionary for their time, reflected the Quranic emphasis on justice and mercy even in the context of armed conflict.
+    </p>
+    <p>
+      The diplomatic integration of former enemies through marriage alliances, tribal partnerships, and generous treatment of defeated opponents demonstrated Muhammad's understanding that sustainable peace required healing rather than humiliation. His marriage to Safiyyah bint Huyayy, a Jewish woman from the Banu Nadir tribe, and his respectful treatment of Christian delegations from Najran illustrated the possibility of maintaining both religious distinctiveness and political cooperation.
+    </p>
+    <p>
+      The conquest of Mecca in 630 CE represented the culmination of Muhammad's military and diplomatic strategy, achieved with minimal bloodshed through a combination of overwhelming force and generous amnesty offers. His decision to spare his former persecutors and even appoint some of them to important positions demonstrated both political wisdom and genuine commitment to the Islamic principles of forgiveness and reconciliation.
     </p>
     
     <!-- The Impact of the Quran and Islamic Teachings -->
     <h2>The Impact of the Quran and Islamic Teachings</h2>
     <p>
-      Central to Muhammad’s mission was the revelation of the Quran, which not only provided spiritual guidance but also laid down the principles for all aspects of life. The Quran's teachings emphasized social justice, economic equity, moral conduct, and the importance of community solidarity. Its verses became a source of legal and ethical guidance, influencing governance, education, and social norms within the Muslim community.
+      The Quran, revealed to Muhammad over a period of twenty-three years, represents far more than a religious text; it constitutes a comprehensive guide for human civilization that addresses spiritual, legal, social, economic, and political dimensions of life. The gradual revelation of the Quran allowed for the organic development of Islamic thought and practice, with each verse addressing specific circumstances while establishing universal principles that would guide Muslim communities across diverse cultural and historical contexts.
     </p>
     <p>
-      The profound impact of the Quran extended well beyond its religious significance; it shaped cultural practices, inspired scholarly pursuits, and contributed to a rich legacy of art, literature, and philosophy in the Islamic world. The enduring influence of these teachings continues to shape societies around the globe, providing a framework for ethical conduct and community organization that resonates with millions of believers today.
+      The literary excellence of the Quran had an immediate and profound impact on Arabian society, challenging the established poetic traditions while establishing new standards of eloquence and meaning. Pre-Islamic Arabia prized poetic skill above almost all other cultural achievements, and the Quran's unique style—neither poetry nor prose in the conventional sense—represented a revolutionary form of expression that captured the imagination of even its harshest critics. The text's linguistic innovations, including its sophisticated use of rhythm, imagery, and rhetorical devices, influenced the development of Arabic literature for centuries to come.
     </p>
-    
+    <p>
+      The Quranic emphasis on knowledge and rational inquiry laid the intellectual foundations for what would become known as the Islamic Golden Age. Verses commanding believers to "read," "think," "observe," and "reflect" created a religious culture that valued learning and scientific investigation as forms of worship. This intellectual orientation, combined with the practical demands of managing a rapidly expanding empire, motivated Muslim scholars to preserve, translate, and build upon the scientific and philosophical achievements of earlier civilizations.
+    </p>
+    <p>
+      The social justice teachings of the Quran introduced revolutionary concepts that challenged existing hierarchies and power structures throughout the known world. The text's uncompromising stance against exploitation, its advocacy for the rights of the marginalized, and its vision of a society based on mutual responsibility rather than tribal privilege provided the ideological foundation for significant social transformations. These teachings inspired liberation movements and social reform efforts far beyond the boundaries of the Islamic world.
+    </p>
+    <p>
+      The economic principles embedded in Quranic teaching created alternative models to both Byzantine and Persian economic systems. The prohibition of usury, the emphasis on trade and commerce, the institution of mandatory charity, and the promotion of economic justice established frameworks that influenced commercial practices across vast regions of Africa, Asia, and Europe. Islamic banking principles, derived from Quranic injunctions, continue to provide alternatives to conventional financial systems in the modern world.
+    </p>
+    <p>
+      The legal methodology developed to interpret and apply Quranic principles gave rise to sophisticated systems of jurisprudence that influenced legal development far beyond Muslim societies. The emphasis on consultation, precedent, and reasoned interpretation created judicial traditions that balanced respect for revealed text with practical problem-solving. Islamic legal principles regarding contracts, property rights, family law, and criminal justice influenced legal systems throughout the medieval world and continue to shape contemporary legal discourse.
+    </p>
+    <p>
+      The environmental ethics implicit in Quranic teaching promoted sustainable relationships between human beings and the natural world. Concepts such as stewardship (khalifa), balance (mizan), and prohibition of waste (israf) provided frameworks for resource management that emphasized conservation and responsible use rather than unlimited exploitation. These principles influenced agricultural practices, urban planning, and resource management throughout Islamic civilization.
+    </p>
+    <p>
+      The psychological and spiritual impact of Quranic recitation and memorization created distinctive forms of religious experience that shaped Islamic culture and identity. The practice of memorizing the entire Quran, undertaken by millions of Muslims throughout history, created living repositories of the text while fostering deep spiritual connections between believers and their faith. The musical and rhythmic qualities of Quranic recitation influenced the development of Islamic arts and contributed to distinctive aesthetic traditions.
+    </p>
+
     <!-- Political and Administrative Reforms -->
     <h2>Political and Administrative Reforms</h2>
     <p>
-      As Prophet and leader, Muhammad instituted reforms that redefined the political and administrative landscape of Arabia. Through the establishment of the Medina Constitution and other legal frameworks, he introduced ideas of governance that emphasized accountability, consultation, and the rule of law. His political vision extended to promoting justice, protecting the rights of the underprivileged, and ensuring that power was exercised responsibly.
+      Muhammad's political innovations in Medina established precedents for Islamic governance that would influence statecraft across three continents for over a millennium. The transformation of a collection of feuding tribes into a unified political entity required the development of new institutions, legal frameworks, and administrative practices that balanced religious principles with practical governance needs. His success in creating legitimate authority derived from divine mandate while maintaining popular consent through consultation established distinctive patterns of Islamic political thought.
     </p>
     <p>
-      These reforms laid the groundwork for the future evolution of Islamic governance and influenced later caliphates. They underscored the importance of a government that serves its people through transparent administration and equitable distribution of resources. The legacy of these early political reforms is still evident in contemporary Islamic legal and political systems, serving as a testament to Muhammad’s visionary approach to leadership.
-    </p>
-    
-    <!-- Personal Life, Character, and Ethical Conduct -->
-    <h2>Personal Life, Character, and Ethical Conduct</h2>
-    <p>
-      Muhammad’s personal life and character have been the subject of much admiration and study. Known for his humility, compassion, and unwavering commitment to truth, he exhibited qualities that endeared him to his followers and set the moral standard for the Muslim community. His interactions with others, marked by generosity and forgiveness, were often highlighted as examples of exemplary ethical conduct.
+      The Constitution of Medina represents one of history's earliest examples of written constitutional government, establishing principles of religious tolerance, collective security, and shared governance that were revolutionary for their time. The document's recognition of religious diversity within a unified political framework provided a model for pluralistic governance that influenced later Islamic empires as they administered religiously diverse populations. The constitution's emphasis on consultation and consensus-building established precedents for participatory governance that continue to influence Islamic political movements.
     </p>
     <p>
-      Despite enduring great personal hardship, including the loss of loved ones and enduring persecution, he maintained a steadfast commitment to his principles. His personal habits, such as simplicity in living and a deep sense of humility, resonated deeply with the common people. These personal attributes, combined with his dedication to justice and integrity, contributed significantly to his legacy as not only a religious prophet but also as an enduring moral leader.
-    </p>
-    
-    <!-- Legacy and Influence on World History -->
-    <h2>Legacy and Influence on World History</h2>
-    <p>
-      The legacy of Prophet Muhammad transcends the realm of religion and continues to impact global history and culture. As the founder of Islam, his teachings have influenced nearly two billion people and shaped diverse aspects of art, literature, law, and social conduct throughout centuries. His leadership established a community that eventually grew into a vast empire spanning multiple continents.
+      The administrative reforms implemented in Medina created efficient systems for tax collection, military organization, judicial administration, and public welfare that could be adapted to larger and more complex societies. The appointment of governors and judges based on competence and character rather than tribal affiliation established meritocratic principles that would later enable Islamic civilization to incorporate talent from diverse ethnic and cultural backgrounds. These administrative innovations facilitated the rapid expansion and effective governance of the early Islamic empire.
     </p>
     <p>
-      The influence of his ideas can be seen in the widespread adoption of Islamic culture and the development of a comprehensive legal and ethical system that continues to guide many aspects of modern society. His message of unity, justice, and compassion has inspired reformers and leaders around the world, making his legacy one of the most significant in human history.
-    </p>
-    
-    <!-- Scholarly Interpretations and Historical Debates -->
-    <h2>Scholarly Interpretations and Historical Debates</h2>
-    <p>
-      Muhammad’s life and legacy have been extensively analyzed by scholars from various disciplines, including theology, history, sociology, and political science. While his role as the Prophet of Islam is widely acknowledged, academic debates continue regarding the socio-political dynamics of his time, the historical context of his revelations, and the evolution of Islamic law. Different schools of thought offer varying interpretations of his life and the nature of his mission.
+      The establishment of regular consultative assemblies (shura) for important decisions created institutional frameworks for collective decision-making that balanced divine guidance with human wisdom. The principle that rulers should consult with their subjects on matters affecting the community established limitations on autocratic power that influenced Islamic political theory for centuries. Even during periods of imperial expansion and monarchical rule, the ideal of consultative governance remained a powerful check on arbitrary authority.
     </p>
     <p>
-      These debates not only enrich our understanding of his contributions but also provide a broader perspective on the role of religion in shaping societies. The diversity of scholarly views reflects the complexity of his legacy and underscores the multifaceted impact of his teachings on both Eastern and Western civilizations.
-    </p>
-    
-    <!-- Cultural Impact and Global Spread of Islam -->
-    <h2>Cultural Impact and Global Spread of Islam</h2>
-    <p>
-      The cultural impact of Prophet Muhammad extends far beyond the borders of the Arabian Peninsula. His teachings laid the foundation for a civilization that contributed immensely to the fields of science, medicine, mathematics, philosophy, and art during the Islamic Golden Age. The dissemination of Islamic culture through trade, conquest, and scholarly exchanges fostered a dynamic period of learning and innovation.
+      The integration of former enemies into positions of responsibility and trust demonstrated sophisticated understanding of political reconciliation and nation-building. Muhammad's appointment of former Meccan aristocrats to important administrative and military positions after the conquest of Mecca illustrated his recognition that lasting political integration required magnanimity and inclusion rather than punishment and exclusion. This approach influenced later Islamic practices of incorporating local elites into imperial administration.
     </p>
     <p>
-      Today, the cultural and intellectual heritage of Islam continues to influence global thought and practice. The universal values of justice, education, and human dignity that were embedded in his teachings inspire countless initiatives and movements across the world. From the preservation of ancient texts to modern educational reforms, the contributions of Islam to world civilization remain a vibrant and lasting legacy of Prophet Muhammad’s mission.
+      The development of diplomatic protocols and international law established precedents for relations between Islamic states and non-Muslim powers. The treaties negotiated with various Arabian tribes, the Byzantine Empire, and other political entities created frameworks for peaceful coexistence that recognized legitimate differences while establishing common standards for commercial and diplomatic interaction. These precedents influenced the development of international law and diplomatic practice throughout the medieval period.
     </p>
-    
+    <p>
+      The fiscal innovations implemented in Medina, including the systematic collection of zakat and the administration of public resources for collective benefit, established models of public finance that emphasized social responsibility and equitable distribution. The principle that public resources should serve public welfare rather than private enrichment created standards of governmental accountability that influenced Islamic political expectations for centuries. These fiscal principles provided alternatives to both Byzantine and Persian models of public finance.
+    </p>
+    <p>
+      The military reforms that created disciplined and effective armed forces while maintaining ethical constraints on warfare established patterns of military organization that enabled rapid Islamic expansion while limiting civilian casualties and property destruction. The combination of tactical innovation, logistical efficiency, and moral restraint created military capabilities that were both formidable and politically sustainable, contributing to the remarkable success of early Islamic conquests.
+    </p>
+
     <!-- Modern Relevance and Lessons for Leadership -->
     <h2>Modern Relevance and Lessons for Leadership</h2>
     <p>
-      In our rapidly changing world, the leadership and moral guidance of Prophet Muhammad offer timeless lessons. His vision of a just society, built on principles of compassion, equality, and mutual respect, resonates powerfully in today’s discussions on human rights, democracy, and social justice. Modern leaders and reformers frequently draw inspiration from his ability to unite diverse peoples and to advocate for the underprivileged.
+      In an era characterized by global interconnectedness, cultural diversity, and complex social challenges, the leadership principles demonstrated by Prophet Muhammad offer remarkably relevant insights for contemporary leaders across political, business, and social sectors. His ability to unite diverse groups under common purpose while respecting individual differences provides valuable lessons for managing multicultural organizations and building inclusive societies. The synthesis of visionary thinking with practical problem-solving that characterized his leadership remains essential for addressing modern challenges.
     </p>
     <p>
-      His model of ethical leadership, underscored by humility and practical wisdom, provides a blueprint for addressing contemporary challenges in governance and conflict resolution. By emphasizing dialogue over confrontation and justice over tyranny, his example serves as a beacon for those striving to build more inclusive and humane societies. The enduring relevance of his teachings reminds us that true leadership involves serving others and forging a path toward collective progress.
+      The consultative decision-making processes established in Medina offer important alternatives to both autocratic and purely democratic approaches to governance. Muhammad's practice of seeking input from diverse stakeholders while maintaining clear lines of authority demonstrates how leaders can benefit from collective wisdom without abdication of responsibility. This approach proves particularly relevant for complex organizations requiring both expert knowledge and stakeholder buy-in for effective implementation of policies and strategies.
     </p>
-    
+    <p>
+      His emphasis on transparency, accountability, and ethical conduct provides crucial guidance for addressing contemporary concerns about corruption and abuse of power. The principle that leadership is a trust (amanah) rather than a privilege establishes standards for public service that prioritize collective welfare over personal gain. These principles offer frameworks for creating institutional safeguards against corruption while promoting public confidence in governmental and organizational leadership.
+    </p>
+    <p>
+      The economic principles derived from Muhammad's teachings provide alternatives to both unfettered capitalism and centralized socialism that address contemporary concerns about inequality and sustainable development. The emphasis on equitable distribution, social responsibility, and environmental stewardship offers frameworks for creating economic systems that balance efficiency with justice. Islamic banking and finance, based on these principles, demonstrate practical alternatives to conventional financial systems that may better serve social needs.
+    </p>
+    <p>
+      His approach to conflict resolution, emphasizing dialogue, reconciliation, and proportional response, provides valuable insights for addressing contemporary international and domestic conflicts. The precedents established for protecting civilians, respecting enemy property, and offering generous terms for peace demonstrate that effective military action need not compromise moral principles. These examples offer guidance for military and political leaders facing decisions about intervention and peacekeeping in complex conflict situations.
+    </p>
+    <p>
+      The educational philosophy promoted during Muhammad's time, emphasizing critical thinking, empirical observation, and practical application, offers important guidance for contemporary educational reform. The integration of spiritual, intellectual, and practical education demonstrated in early Islamic society provides models for holistic educational approaches that prepare students for both personal fulfillment and social contribution. The emphasis on lifelong learning and intellectual humility remains relevant for rapidly changing technological and social environments.
+    </p>
+    <p>
+      His treatment of religious and cultural diversity within a unified political framework offers valuable lessons for managing pluralistic societies while maintaining social cohesion. The Constitution of Medina's recognition of religious autonomy within political unity provides precedents for constitutional arrangements that respect minority rights while maintaining majority rule. These principles offer guidance for societies struggling to balance cultural diversity with national integration.
+    </p>
+    <p>
+      The environmental consciousness implicit in Islamic teachings provides frameworks for addressing contemporary ecological challenges. The emphasis on stewardship rather than exploitation, waste prevention, and resource conservation offers alternatives to unsustainable consumption patterns. These principles suggest pathways for developing economies that respect ecological limits while meeting human needs for growth and development.
+    </p>
+
     <!-- Impact on Global Ethics and Interfaith Relations -->
     <h2>Impact on Global Ethics and Interfaith Relations</h2>
     <p>
-      One of the remarkable aspects of Muhammad’s legacy is the emphasis on interfaith dialogue and ethical conduct. His efforts to establish a community that respected diverse beliefs and practices paved the way for a rich tradition of inter-religious understanding in the Islamic world. His example encourages Muslims and people of other faiths alike to engage in meaningful conversations across cultural and religious divides.
+      The interfaith engagement exemplified by Prophet Muhammad established precedents for respectful dialogue among different religious traditions that remain relevant for contemporary efforts to promote religious understanding and cooperation. His interactions with Christian, Jewish, and polytheist communities demonstrated that meaningful religious differences need not preclude political cooperation, commercial partnership, or personal friendship. These examples provide guidance for building pluralistic societies that honor both religious distinctiveness and civic unity.
     </p>
     <p>
-      This spirit of tolerance and ethical engagement continues to have profound implications in today’s globalized society. In an era where religious and cultural conflicts are still pervasive, the interfaith principles derived from his teachings provide a framework for building bridges and fostering peace. The legacy of his approach to inter-religious relations contributes significantly to ongoing efforts aimed at promoting global harmony and mutual understanding.
+      The Quranic recognition of Christians and Jews as "People of the Book" created theological frameworks for acknowledging religious diversity while maintaining Islamic distinctiveness. This approach influenced the development of Islamic law regarding religious minorities and established precedents for religious tolerance that generally surpassed contemporary standards in Byzantine and Persian societies. The concept of protected communities (dhimmi) within Islamic states, while reflecting medieval social arrangements, demonstrated possibilities for religious coexistence under challenging historical circumstances.
     </p>
-    
+    <p>
+      The ethical principles derived from Muhammad's teachings influenced the development of international humanitarian law and human rights concepts that transcend religious boundaries. Islamic emphasis on protecting non-combatants, caring for prisoners of war, and respecting enemy property contributed to evolving standards of civilized warfare that influenced later international legal developments. The prohibition of killing civilians, destroying crops, and harming religious buildings established precedents that continue to influence contemporary discussions of military ethics.
+    </p>
+    <p>
+      The commercial partnerships established between Muslim and non-Muslim merchants demonstrated that religious differences need not impede economic cooperation and mutual benefit. The Islamic emphasis on honest dealing, contract fulfillment, and fair pricing created business relationships that transcended religious boundaries and contributed to economic integration across diverse societies. These examples offer guidance for contemporary global economic relationships that must navigate cultural and religious diversity.
+    </p>
+    <p>
+      The intellectual exchange facilitated by early Islamic civilization created unprecedented opportunities for cross-cultural learning and synthesis. Muslim scholars' preservation and translation of Greek, Persian, and Indian texts, combined with original contributions to philosophy and science, created intellectual traditions that influenced subsequent development in multiple civilizations. This example demonstrates the possibility of maintaining religious identity while engaging constructively with diverse intellectual traditions.
+    </p>
+    <p>
+      The marriage alliances and diplomatic relationships established with non-Muslim leaders illustrated sophisticated understanding of how personal relationships can facilitate political cooperation despite religious differences. Muhammad's respectful treatment of foreign delegations and his careful attention to diplomatic protocol established precedents for international relations that recognized legitimate differences while seeking common ground for cooperation.
+    </p>
+    <p>
+      The social welfare systems established in early Islamic society demonstrated concern for human dignity that transcended religious boundaries. The protection offered to religious minorities, the care provided for refugees and displaced persons, and the assistance given to economically disadvantaged individuals illustrated practical application of universal humanitarian principles. These examples provide guidance for contemporary efforts to address global humanitarian challenges.
+    </p>
+    <p>
+      The environmental stewardship emphasized in Islamic teaching reflects universal concerns about human responsibility toward the natural world that transcend particular religious traditions. The concepts of balance, conservation, and sustainable use provide frameworks for environmental cooperation among diverse religious and cultural communities facing common ecological challenges. These principles suggest possibilities for building environmental consensus across religious and cultural boundaries.
+    </p>
+
     <!-- Final Reflections and Continuing Influence -->
     <h2>Final Reflections and Continuing Influence</h2>
     <p>
-      The life and mission of Prophet Muhammad remain central to the identity of nearly two billion Muslims worldwide. His transformative impact on the spiritual, political, and cultural fabric of humanity continues to be felt in every corner of the globe. As the progenitor of a faith that values justice, compassion, and human dignity, his legacy challenges each generation to reflect on the path toward a more equitable and peaceful world.
+      The enduring significance of Prophet Muhammad's life and mission can be measured not only by the global spread of Islamic civilization but also by the continuing relevance of the principles and institutions he established nearly fourteen centuries ago. In an era of rapid technological change, cultural globalization, and complex social challenges, the fundamental questions addressed by Muhammad's teachings—how to create just societies, how to balance individual rights with collective responsibilities, how to manage diversity while maintaining unity—remain as pressing today as they were in seventh-century Arabia.
     </p>
     <p>
-      Modern scholarship and global discourse continue to revisit his life, drawing lessons from his achievements and struggles. Whether through the lens of theology, history, or social reform, the enduring influence of his teachings serves as a profound reminder of the power of visionary leadership. His example inspires millions to pursue a path of personal and collective improvement, reaffirming that the quest for truth and justice is both timeless and universal.
+      The remarkable durability of Islamic civilization, spanning multiple continents and historical periods while maintaining recognizable core characteristics, testifies to the adaptability and universality of the principles established during Muhammad's lifetime. From the classical caliphates to modern nation-states, from medieval Andalusia to contemporary Southeast Asia, Muslim societies have demonstrated capacity for creative adaptation while preserving essential spiritual and ethical commitments. This flexibility within consistency offers valuable lessons for other civilizations facing challenges of modernization and cultural change.
+    </p>
+    <p>
+      The continuing growth of Islam as a global religion, with nearly two billion adherents representing diverse ethnicities, languages, and cultural traditions, demonstrates the universal appeal of Muhammad's message across historical and geographical boundaries. The success of Islamic civilization in creating cohesive identities among diverse populations while respecting local customs and traditions offers important insights for contemporary efforts to build inclusive global communities that honor both unity and diversity.
+    </p>
+    <p>
+      The scholarly investigation of Muhammad's life and teachings by both Muslim and non-Muslim researchers continues to yield new insights into the historical development of Islamic civilization and its contributions to global culture. Modern archaeological discoveries, textual analysis, and comparative historical studies provide increasingly sophisticated understanding of the social, political, and economic innovations that emerged during the early Islamic period. This ongoing scholarship enriches appreciation for both the historical significance and contemporary relevance of Muhammad's legacy.
+    </p>
+    <p>
+      The contemporary revival of interest in Islamic principles of governance, economics, and social organization reflects recognition that traditional Islamic approaches may offer solutions to modern problems that purely secular ideologies have failed to address adequately. From Islamic banking and finance to restorative justice systems, from environmental stewardship to community-based education, contemporary societies are rediscovering practical applications of principles established during Muhammad's lifetime.
+    </p>
+    <p>
+      The interfaith dialogue and cooperation increasingly characteristic of contemporary religious life draws extensively upon precedents established during Muhammad's interactions with diverse religious communities. Modern efforts to build bridges among different faith traditions often reference the religious tolerance and respectful engagement demonstrated in early Islamic society as evidence that meaningful religious differences need not preclude cooperation for common purposes.
+    </p>
+    <p>
+      The global humanitarian challenges of the contemporary era—including poverty, disease, environmental degradation, and social inequality—require responses that transcend national, cultural, and religious boundaries. The universal principles of justice, compassion, and stewardship emphasized in Muhammad's teachings provide frameworks for building international consensus around common human needs and shared planetary responsibilities. These principles suggest possibilities for creating global institutions that serve universal human welfare while respecting cultural diversity.
+    </p>
+    <p>
+      The ultimate measure of Muhammad's historical significance lies not simply in the achievements of Islamic civilization but in the continuing capacity of his teachings to inspire individuals and communities toward higher standards of ethical conduct, social justice, and spiritual development. In a world often characterized by cynicism about leadership and pessimism about human potential, the example of Muhammad's life offers compelling evidence that transformative leadership based on principled conviction and genuine concern for human welfare remains possible and necessary. His legacy challenges each generation to aspire toward the creation of societies that reflect humanity's highest aspirations for justice, compassion, and dignity.
     </p>
   </main>
   
@@ -351,5 +1204,77 @@
       </a>
     </div>
   </footer>
+
+  <script>
+    // Navigation scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add loading animation
+    window.addEventListener('load', function() {
+      document.body.classList.remove('loading');
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections for animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('main h2');
+      sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
+      });
+    });
+
+    // Show toast notification after a delay
+    setTimeout(() => {
+      const toast = document.querySelector('.toast');
+      toast.classList.add('show');
+    }, 2000);
+
+    // Close toast notification
+    document.querySelector('.toast-close').addEventListener('click', () => {
+      const toast = document.querySelector('.toast');
+      toast.classList.remove('show');
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 600);
+    });
+  </script>
 </body>
 </html>
