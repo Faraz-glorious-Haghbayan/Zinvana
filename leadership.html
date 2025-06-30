@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Which historical leader am I? Take the ultimate free quiz to discover if you’re more like Napoleon, Gandhi, Cleopatra, or Churchill. Find your leadership style and match with famous leaders in history!" />
-  <meta name="keywords" content="which historical leader am I, what historical leader am I, historical leader quiz, which historical leader are you, famous leaders test, leadership personality test, free historical leader quiz, leadership style quiz, leader personality test, Zinvana" />
+  <meta name="keywords" content="which historical leader am i, what historical leader am i, historical leader quiz, which historical leader are you, famous leaders test, leadership personality test, free historical leader quiz, leadership style quiz, leader personality test, Zinvana" />
   <meta name="author" content="Zinvana" />
   <link rel="canonical" href="https://zinvana.com/leadership.html" />
   <meta name="robots" content="index, follow">
@@ -75,117 +75,818 @@
 
   <title>Which Historical Leader Am I? | Free Historical Leader Quiz & Personality Test | Zinvana</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    * {
       margin: 0;
-      background: #fcfcfc;
-      color: #222;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animated background pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+      animation: drift 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes drift {
+      0% { transform: translateX(-10px) translateY(-10px); }
+      100% { transform: translateX(10px) translateY(10px); }
+    }
+
     .quiz-hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('cyrusheader.png') center/cover no-repeat;
-      padding: 80px 20px;
+      background: linear-gradient(135deg, rgba(255, 0, 0, 0.9), rgba(0, 0, 0, 0.8), rgba(255, 0, 0, 0.7)), 
+                  url('cyrusheader.png') center/cover no-repeat;
+      padding: 120px 20px 100px;
       text-align: center;
-      color: #fff;
+      position: relative;
+      box-shadow: 0 15px 40px rgba(255, 0, 0, 0.3);
+      overflow: hidden;
     }
+
+    .quiz-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: shine 4s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
+
     .quiz-hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
+      font-size: 3.8rem;
+      font-weight: 900;
+      margin-bottom: 30px;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+      background: linear-gradient(45deg, #ffffff, #ff0000, #ffffff, #ff0000);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 3s ease-in-out infinite alternate;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -1px;
     }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
     .quiz-hero p {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .quiz-intro {
+      font-size: 1.5rem;
       max-width: 850px;
-      margin: 60px auto;
-      padding: 0 20px;
+      margin: 0 auto;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      position: relative;
+      z-index: 1;
+      opacity: 0.95;
+      line-height: 1.7;
+    }
+
+    .quiz-intro {
+      max-width: 950px;
+      margin: 100px auto;
+      padding: 50px 40px;
       text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 25px;
+      box-shadow: 
+        0 20px 50px rgba(255, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 0, 0, 0.3);
+      position: relative;
+      backdrop-filter: blur(10px);
     }
+
+    .quiz-intro::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ff0000, transparent);
+      animation: topBorder 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes topBorder {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
     .quiz-intro h2 {
-      font-size: 2rem;
-      color: #2c3e50;
-      margin-bottom: 20px;
+      font-size: 2.8rem;
+      color: #ff0000;
+      margin-bottom: 35px;
+      font-weight: 800;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+      position: relative;
     }
+
+    .quiz-intro h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #ff0000, transparent);
+    }
+
     .quiz-intro p {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       line-height: 1.8;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      color: #ffffff;
+      opacity: 0.9;
     }
+
+    .quiz-intro strong {
+      color: #ff0000;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
     .cta-button {
       display: inline-block;
-      background-color: red;
-      color: #fff;
-      padding: 14px 28px;
+      background: linear-gradient(135deg, #ff0000, #cc0000);
+      color: #ffffff;
+      padding: 20px 50px;
       text-decoration: none;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      transition: background 0.3s ease;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border-radius: 60px;
+      transition: all 0.4s ease;
+      box-shadow: 
+        0 10px 30px rgba(255, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+      overflow: hidden;
     }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .cta-button:hover::before {
+      left: 100%;
+    }
+
     .cta-button:hover {
-      background-color: #1a242f;
+      transform: translateY(-4px);
+      box-shadow: 
+        0 15px 40px rgba(255, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: linear-gradient(135deg, #cc0000, #ff0000);
+    }
+
+    .cta-button:active {
+      transform: translateY(-2px);
     }
 
     .faq-section {
-      max-width: 850px;
-      margin: 60px auto;
-      padding: 0 20px;
+      max-width: 950px;
+      margin: 100px auto;
+      padding: 0 40px;
     }
 
     .faq-section h3 {
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #ff0000;
+      text-align: center;
+      font-weight: 800;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .faq-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #ff0000, transparent);
     }
 
     .faq-section details {
-      margin-bottom: 15px;
-      background: #f6d9d9;
-      border: 2px solid black;
-      padding: 15px 20px;
-      border-radius: 6px;
+      margin-bottom: 25px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 0, 0, 0.3);
+      padding: 25px 30px;
+      border-radius: 15px;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .faq-section details:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 0, 0, 0.3);
+      border-color: #ff0000;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .faq-section details[open] {
+      background: rgba(255, 0, 0, 0.1);
+      border-color: #ff0000;
     }
 
     .faq-section summary {
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
+      color: #ff0000;
+      font-size: 1.2rem;
+      padding: 15px 0;
+      transition: all 0.3s ease;
+      list-style: none;
+      position: relative;
+    }
+
+    .faq-section summary::before {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-section details[open] summary::before {
+      content: '−';
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .faq-section summary:hover {
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(255, 0, 0, 0.5);
+    }
+
+    .faq-section details p {
+      margin-top: 20px;
+      color: #ffffff;
+      opacity: 0.9;
+      line-height: 1.8;
+      font-size: 1.1rem;
     }
 
     footer {
-      background: #000;
-      padding: 20px 10px;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      padding: 50px 30px;
       text-align: center;
-      border-top: 1px solid #d32f2f;
+      border-top: 3px solid #ff0000;
+      margin-top: 80px;
+      box-shadow: 0 -10px 30px rgba(255, 0, 0, 0.2);
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ff0000, transparent);
+    }
+
+    footer p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+      color: #ffffff;
+      opacity: 0.8;
+    }
+
+    footer .social-icons {
+      margin-top: 30px;
+    }
+
+    footer .social-icons a {
+      display: inline-block;
+      margin: 0 20px;
+      transition: transform 0.4s ease;
+    }
+
+    footer .social-icons img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 3px solid #ff0000;
+      padding: 10px;
+      background: rgba(255, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      filter: brightness(1.2);
+    }
+
+    footer .social-icons a:hover {
+      transform: translateY(-8px);
+    }
+
+    footer .social-icons img:hover {
+      border-color: #ffffff;
+      background: rgba(255, 0, 0, 0.3);
+      box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
+      filter: brightness(1.5);
+    }
+
+    /* Mobile Responsiveness */
+    @media screen and (max-width: 768px) {
+      .quiz-hero h1 { 
+        font-size: 2.8rem; 
+      }
+      .quiz-hero p { 
+        font-size: 1.2rem; 
+      }
+      .quiz-intro h2 { 
+        font-size: 2.2rem; 
+      }
+      .quiz-intro p { 
+        font-size: 1.1rem; 
+      }
+      .faq-section h3 { 
+        font-size: 2rem; 
+      }
+      .quiz-intro, .faq-section {
+        margin: 60px auto;
+        padding: 30px 20px;
+      }
+      .cta-button {
+        padding: 18px 35px;
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      footer .social-icons img {
+        width: 40px;
+        height: 40px;
+        margin: 0 15px;
+      }
+      .quiz-hero {
+        padding: 80px 15px 70px;
+      }
+      .quiz-hero h1 {
+        font-size: 2.2rem;
+      }
+      .quiz-hero p {
+        font-size: 1rem;
+      }
+    }
+
+    /* New Content Sections Styles */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .leadership-styles, .why-quiz, .historical-context {
+      margin: 100px auto;
+      padding: 60px 0;
+    }
+
+    .leadership-styles {
+      background: rgba(255, 0, 0, 0.05);
+      border-radius: 30px;
+      backdrop-filter: blur(10px);
+    }
+
+    .historical-context {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 30px;
+      backdrop-filter: blur(10px);
+    }
+
+    .leadership-styles h2, .why-quiz h2, .historical-context h2 {
+      font-size: 2.8rem;
+      color: #ff0000;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 800;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .intro-text {
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 60px;
+      color: #ffffff;
+      opacity: 0.9;
+      line-height: 1.8;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .leadership-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(255, 0, 0, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .leadership-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(255, 0, 0, 0.3);
+      border-color: #ff0000;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .leadership-card h3 {
+      color: #ff0000;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .leadership-card h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      opacity: 0.8;
+      font-style: italic;
+    }
+
+    .leadership-card p {
+      color: #ffffff;
+      line-height: 1.7;
+      margin-bottom: 12px;
+      opacity: 0.9;
+    }
+
+    .leadership-card strong {
+      color: #ff0000;
+      font-weight: 600;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 50px 0;
+    }
+
+    .benefit-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 0, 0, 0.2);
+      border-radius: 15px;
+      padding: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .benefit-item:hover {
+      border-color: #ff0000;
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .benefit-item h3 {
+      color: #ff0000;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .benefit-item p {
+      color: #ffffff;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    .quiz-features {
+      background: rgba(255, 0, 0, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 50px;
+      border: 2px solid rgba(255, 0, 0, 0.3);
+    }
+
+    .quiz-features h3 {
+      color: #ff0000;
+      font-size: 1.6rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .quiz-features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .quiz-features li {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .quiz-features strong {
+      color: #ff0000;
+      font-weight: 600;
+    }
+
+    .context-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
       margin-top: 40px;
     }
+
+    .research-section h3, .timeline-section h3 {
+      color: #ff0000;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .research-section p, .timeline-section p {
+      color: #ffffff;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .research-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .research-section li {
+      color: #ffffff;
+      margin-bottom: 15px;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .research-section li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    .research-section strong {
+      color: #ff0000;
+      font-weight: 600;
+    }
+
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #ff0000, rgba(255, 0, 0, 0.3));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background: #ff0000;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    .timeline-item h4 {
+      color: #ff0000;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .timeline-item p {
+      color: #ffffff;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    .leadership-lessons {
+      margin-top: 60px;
+    }
+
+    .leadership-lessons h3 {
+      color: #ff0000;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .lesson-card {
+      background: rgba(255, 0, 0, 0.1);
+      border: 2px solid rgba(255, 0, 0, 0.3);
+      border-radius: 15px;
+      padding: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .lesson-card:hover {
+      transform: translateY(-3px);
+      border-color: #ff0000;
+      box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
+    }
+
+    .lesson-card h4 {
+      color: #ff0000;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .lesson-card p {
+      color: #ffffff;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      padding: 50px 30px;
+      text-align: center;
+      border-top: 3px solid #ff0000;
+      margin-top: 80px;
+      box-shadow: 0 -10px 30px rgba(255, 0, 0, 0.2);
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ff0000, transparent);
+    }
+
     footer p {
-      margin: 5px 0;
-      font-size: 0.9rem;
-      color: #aaa;
+      margin: 15px 0;
+      font-size: 1.1rem;
+      color: #ffffff;
+      opacity: 0.8;
     }
+
     footer .social-icons {
-      margin-top: 10px;
+      margin-top: 30px;
     }
+
+    footer .social-icons a {
+      display: inline-block;
+      margin: 0 20px;
+      transition: transform 0.4s ease;
+    }
+
     footer .social-icons img {
-      width: 3%;
-      margin: 0 8px;
-      transition: opacity 0.3s;
-      cursor: pointer;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 3px solid #ff0000;
+      padding: 10px;
+      background: rgba(255, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      filter: brightness(1.2);
     }
+
+    footer .social-icons a:hover {
+      transform: translateY(-8px);
+    }
+
     footer .social-icons img:hover {
-      opacity: 0.7;
+      border-color: #ffffff;
+      background: rgba(255, 0, 0, 0.3);
+      box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
+      filter: brightness(1.5);
     }
 
-    @media screen and (max-width: 600px) {
-      .quiz-hero h1 { font-size: 2rem; }
-      .quiz-hero p, .quiz-intro p { font-size: 1rem; }
-      .quiz-intro h2, .faq-section h3 { font-size: 1.4rem; }
-    }
-    @media (max-width: 970px) {
-      footer .social-icons img {
-        width: 10%;
+    /* Mobile Responsiveness for New Sections */
+    @media (max-width: 768px) {
+      .leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
+      
+      .benefits-grid, .lessons-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .context-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .leadership-styles h2, .why-quiz h2, .historical-context h2 {
+        font-size: 2.2rem;
+      }
+      
+      .intro-text {
+        font-size: 1.1rem;
+      }
+      
+      .leadership-styles, .why-quiz, .historical-context {
+        margin: 60px auto;
+        padding: 40px 0;
+      }
+      
+      .quiz-features {
+        padding: 25px;
+      }
+    }
 
+    @media (max-width: 480px) {
+      .leadership-card, .benefit-item, .lesson-card {
+        padding: 20px;
+      }
+      
+      .timeline-item {
+        padding-left: 35px;
+      }
+      
+      .timeline::before {
+        left: 15px;
+      }
+      
+      .timeline-item::before {
+        left: 9px;
+      }
     }
   </style>
 </head>
@@ -203,6 +904,173 @@
     <a href="leaders.html" class="cta-button">Start the Which Historical Leader Am I Quiz</a>
   </section>
 
+  <!-- Leadership Styles Section -->
+  <section class="leadership-styles">
+    <div class="container">
+      <h2>Understanding Historical Leadership Styles: Which Type Are You?</h2>
+      <p class="intro-text">Historical leaders have shaped civilizations through distinct leadership approaches. Our comprehensive quiz analyzes your personality traits, decision-making patterns, and leadership preferences to match you with the most similar historical figure from over 4,000 years of documented history.</p>
+      
+      <div class="leadership-grid">
+        <div class="leadership-card">
+          <h3>🏛️ The Visionary Empire Builder</h3>
+          <h4>Examples: Alexander the Great, Cyrus the Great, Napoleon Bonaparte</h4>
+          <p><strong>Key Traits:</strong> Strategic thinking, ambitious goals, military genius, cultural expansion</p>
+          <p><strong>Leadership Style:</strong> These leaders combined military prowess with grand vision. They didn't just conquer territories—they built lasting empires that influenced culture, law, and governance for centuries. Empire builders demonstrate exceptional strategic planning, inspire loyalty through shared vision, and possess the rare ability to see opportunities where others see obstacles.</p>
+          <p><strong>Modern Relevance:</strong> Visionary empire builders excel in competitive industries, startup environments, and transformational leadership roles. They thrive as CEOs of expanding companies, military strategists, and political leaders driving major reforms.</p>
+        </div>
+
+        <div class="leadership-card">
+          <h3>⚖️ The Peaceful Revolutionary</h3>
+          <h4>Examples: Mahatma Gandhi, Nelson Mandela, Martin Luther King Jr.</h4>
+          <p><strong>Key Traits:</strong> Moral authority, non-violent resistance, social justice, inspirational communication</p>
+          <p><strong>Leadership Style:</strong> These leaders created massive social change through peaceful means, moral conviction, and the power of unified movements. They proved that lasting change comes through hearts and minds, not force. Peaceful revolutionaries possess extraordinary emotional intelligence, unwavering principles, and the ability to inspire hope in the darkest circumstances.</p>
+          <p><strong>Modern Relevance:</strong> Peaceful revolutionaries thrive in social movements, humanitarian organizations, change management roles, and community leadership positions. They excel as nonprofit directors, social entrepreneurs, and corporate culture transformation leaders.</p>
+        </div>
+
+        <div class="leadership-card">
+          <h3>👑 The Diplomatic Strategist</h3>
+          <h4>Examples: Cleopatra VII, Elizabeth I, Winston Churchill</h4>
+          <p><strong>Key Traits:</strong> Political intelligence, cultural adaptation, crisis management, alliance building</p>
+          <p><strong>Leadership Style:</strong> Master politicians who navigated complex international relationships, survived existential threats, and maintained power through intelligence rather than brute force. They excel at reading people, building strategic alliances, and finding win-win solutions in seemingly impossible situations.</p>
+          <p><strong>Modern Relevance:</strong> Diplomatic strategists excel in international business, government relations, crisis management positions, and complex organizational leadership. They thrive as ambassadors, negotiators, and executive leaders managing diverse stakeholder groups.</p>
+        </div>
+
+        <div class="leadership-card">
+          <h3>⚔️ The Military Genius</h3>
+          <h4>Examples: Julius Caesar, Joan of Arc, Saladin, Hannibal</h4>
+          <p><strong>Key Traits:</strong> Tactical brilliance, battlefield leadership, loyalty inspiration, strategic courage</p>
+          <p><strong>Leadership Style:</strong> These leaders combined tactical genius with personal bravery, leading from the front and inspiring absolute loyalty through shared hardship and victory. They possess exceptional decision-making under pressure, tactical thinking, and the ability to inspire others to achieve the seemingly impossible.</p>
+          <p><strong>Modern Relevance:</strong> Military geniuses succeed in high-pressure environments, emergency services, competitive business sectors, and crisis leadership roles. They excel as military officers, emergency response coordinators, and business leaders in highly competitive markets.</p>
+        </div>
+
+        <div class="leadership-card">
+          <h3>🏛️ The Reformist Statesman</h3>
+          <h4>Examples: Abraham Lincoln, Franklin D. Roosevelt, Theodore Roosevelt</h4>
+          <p><strong>Key Traits:</strong> Progressive vision, institutional reform, crisis navigation, democratic leadership</p>
+          <p><strong>Leadership Style:</strong> These leaders transformed their nations through democratic processes, constitutional changes, and progressive policies that addressed systemic challenges. They balance idealism with pragmatism, building consensus while driving meaningful change through established institutions.</p>
+          <p><strong>Modern Relevance:</strong> Reformist statesmen thrive in public service, organizational development, social enterprise leadership, and institutional reform roles. They excel as government officials, university administrators, and corporate leaders driving sustainable change.</p>
+        </div>
+
+        <div class="leadership-card">
+          <h3>🌟 The Cultural Icon</h3>
+          <h4>Examples: Marcus Aurelius, Confucius, Benjamin Franklin</h4>
+          <p><strong>Key Traits:</strong> Philosophical wisdom, cultural influence, intellectual leadership, moral example</p>
+          <p><strong>Leadership Style:</strong> These leaders shaped civilizations through ideas, moral example, and cultural contributions that outlasted any political power they held. They lead through wisdom, teaching, and personal example, creating lasting impact through the power of ideas and moral authority.</p>
+          <p><strong>Modern Relevance:</strong> Cultural icons excel in education, media, thought leadership, and values-based organizations. They thrive as professors, authors, spiritual leaders, and organizational culture champions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Take This Quiz Section -->
+  <section class="why-quiz">
+    <div class="container">
+      <h2>Why Take Our Historical Leader Personality Quiz?</h2>
+      
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <h3>🧠 Scientifically Based Assessment</h3>
+          <p>Our quiz combines historical research with modern personality psychology, analyzing traits like the Big Five personality factors, leadership styles from Harvard Business Review research, and historical leadership patterns documented by leading scholars. Each question is designed based on real leadership scenarios faced by historical figures.</p>
+        </div>
+
+        <div class="benefit-item">
+          <h3>📚 Educational Value</h3>
+          <p>Learn about fascinating historical figures while discovering your own leadership potential. Each result includes detailed historical context, leadership lessons, and practical applications for modern life. Transform your understanding of both history and your own capabilities.</p>
+        </div>
+
+        <div class="benefit-item">
+          <h3>🎯 Personal Development</h3>
+          <p>Understanding your historical leadership match helps identify your natural strengths, potential blind spots, and areas for growth. Use these insights for career planning, team building, and personal development. Discover leadership approaches you never considered.</p>
+        </div>
+
+        <div class="benefit-item">
+          <h3>🌍 Cross-Cultural Perspective</h3>
+          <p>Our assessment includes leaders from diverse cultures, time periods, and backgrounds—from ancient civilizations to modern democracies, ensuring a comprehensive view of leadership styles. Learn from Eastern philosophy, Western democracy, African wisdom, and more.</p>
+        </div>
+      </div>
+
+      <div class="quiz-features">
+        <h3>What Makes Our Historical Leadership Quiz Unique:</h3>
+        <ul>
+          <li>✅ <strong>25+ Comprehensive Questions</strong> covering decision-making, crisis management, team building, and moral choices</li>
+          <li>✅ <strong>15+ Historical Leader Results</strong> from ancient times to the modern era across all continents</li>
+          <li>✅ <strong>Detailed Analysis</strong> of your leadership style with practical applications for career and life</li>
+          <li>✅ <strong>Historical Context</strong> explaining why your matched leader was successful and their lasting impact</li>
+          <li>✅ <strong>Modern Relevance</strong> showing how to apply historical leadership lessons in today's world</li>
+          <li>✅ <strong>Career Guidance</strong> based on your leadership personality type and historical match</li>
+          <li>✅ <strong>Team Building Insights</strong> for understanding how you work with others</li>
+          <li>✅ <strong>Crisis Management Style</strong> based on how historical leaders handled challenges</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historical Context Section -->
+  <section class="historical-context">
+    <div class="container">
+      <h2>The Science Behind Historical Leadership Analysis</h2>
+      
+      <div class="context-content">
+        <div class="research-section">
+          <h3>Research-Based Methodology</h3>
+          <p>Our historical leader quiz is built on extensive research from leading institutions and combines multiple validated approaches:</p>
+          <ul>
+            <li><strong>Harvard Business School Leadership Studies:</strong> Analysis of transformational vs. transactional leadership patterns across cultures and time periods</li>
+            <li><strong>Oxford Historical Research:</strong> Comprehensive biographies and leadership pattern analysis from documented historical sources</li>
+            <li><strong>Psychological Assessment Principles:</strong> Based on validated personality frameworks including MBTI, Big Five, and leadership competency models</li>
+            <li><strong>Cross-Cultural Leadership Studies:</strong> Incorporating leadership styles from Eastern and Western traditions, ancient and modern approaches</li>
+            <li><strong>Military Leadership Analysis:</strong> Tactical and strategic decision-making patterns from history's greatest military minds</li>
+            <li><strong>Political Science Research:</strong> Governance styles and political leadership effectiveness studies</li>
+          </ul>
+        </div>
+
+        <div class="timeline-section">
+          <h3>Historical Leadership Evolution</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h4>Ancient Era (3000 BCE - 500 CE)</h4>
+              <p>Divine authority leaders like Cyrus the Great and Cleopatra combined religious legitimacy with practical governance, establishing patterns of centralized power and cultural integration. These leaders created the foundation of organized civilization and demonstrated that effective leadership requires both vision and pragmatic execution.</p>
+            </div>
+            <div class="timeline-item">
+              <h4>Classical Period (500 BCE - 1500 CE)</h4>
+              <p>Military strategists like Alexander and Julius Caesar pioneered tactical leadership, while philosophers like Marcus Aurelius developed ethical leadership frameworks still used today. This era proved that sustainable leadership requires both strategic thinking and moral foundation.</p>
+            </div>
+            <div class="timeline-item">
+              <h4>Renaissance & Enlightenment (1400 - 1800)</h4>
+              <p>Leaders like Elizabeth I and Frederick the Great balanced traditional authority with emerging democratic ideals, diplomatic sophistication, and cultural patronage. They showed how leaders can adapt traditional power structures to changing social expectations.</p>
+            </div>
+            <div class="timeline-item">
+              <h4>Modern Era (1800 - Present)</h4>
+              <p>Transformational leaders like Lincoln, Gandhi, and Churchill demonstrated how moral authority, communication skills, and democratic values could drive massive social change. Modern leadership emphasizes inspiration over intimidation and consensus over coercion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leadership-lessons">
+        <h3>Universal Leadership Lessons from History</h3>
+        <div class="lessons-grid">
+          <div class="lesson-card">
+            <h4>Vision Must Match Reality</h4>
+            <p>Successful historical leaders like Cyrus the Great combined ambitious vision with practical implementation. They understood that dreams without execution remain fantasies, while action without vision leads nowhere.</p>
+          </div>
+          <div class="lesson-card">
+            <h4>Adaptability Ensures Survival</h4>
+            <p>Leaders like Cleopatra and Winston Churchill survived by adapting their strategies to changing circumstances while maintaining their core principles. Flexibility in methods with consistency in values.</p>
+          </div>
+          <div class="lesson-card">
+            <h4>Moral Authority Trumps Force</h4>
+            <p>Gandhi and Martin Luther King Jr. proved that moral leadership creates more lasting change than coercion. People follow leaders they respect more readily than those they fear.</p>
+          </div>
+          <div class="lesson-card">
+            <h4>Communication Creates Connection</h4>
+            <p>From Abraham Lincoln's speeches to Franklin Roosevelt's radio addresses, great leaders excel at communicating their vision in ways that inspire and unite diverse groups of people.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="faq-section">
     <h3>Frequently Asked Questions About the Which Historical Leader Am I Quiz</h3>
 
@@ -213,7 +1081,7 @@
 
     <details>
       <summary>Is the historical leader quiz free?</summary>
-      <p>Yes, our "which historical leader am I" quiz is 100% free to take and share with friends.</p>
+      <p>Yes, our "which historical leader am i" quiz is 100% free to take and share with friends.</p>
     </details>
 
     <details>
@@ -223,7 +1091,37 @@
 
     <details>
       <summary>Can I share my result on social media?</summary>
-      <p>Absolutely! Share your results and challenge your friends to find out who they’d be in history with our "which historical leader am I" quiz.</p>
+      <p>Absolutely! Share your results and challenge your friends to find out who they'd be in history with our "which historical leader am I" quiz.</p>
+    </details>
+
+    <details>
+      <summary>How long does the historical leadership quiz take?</summary>
+      <p>The complete assessment takes 8-12 minutes to finish thoughtfully. We've carefully designed 25 comprehensive questions that cover different aspects of leadership without being overwhelming. Each question explores specific leadership scenarios, moral dilemmas, decision-making preferences, and personality traits that historical leaders faced in real situations.</p>
+    </details>
+
+    <details>
+      <summary>Which historical leaders can I be matched with?</summary>
+      <p>Our database includes 15+ diverse historical leaders spanning 4,000 years of history: <strong>Military Strategists</strong> (Alexander the Great, Julius Caesar, Napoleon Bonaparte, Joan of Arc), <strong>Peaceful Revolutionaries</strong> (Mahatma Gandhi, Martin Luther King Jr., Nelson Mandela), <strong>Empire Builders</strong> (Cyrus the Great, Augustus Caesar, Cleopatra VII), <strong>Democratic Leaders</strong> (Abraham Lincoln, Winston Churchill, Franklin D. Roosevelt), <strong>Philosophers & Reformers</strong> (Marcus Aurelius, Confucius, Theodore Roosevelt), and many more representing diverse cultures and time periods.</p>
+    </details>
+
+    <details>
+      <summary>Can I use this quiz for team building or educational purposes?</summary>
+      <p>Absolutely! Our historical leader quiz is perfect for team building exercises, leadership development programs, history classes, and corporate training. Many educators use it to make history engaging, while HR departments find it valuable for understanding team dynamics and leadership potential. The results spark meaningful discussions about leadership styles, historical lessons, and personal development.</p>
+    </details>
+
+    <details>
+      <summary>What makes your quiz different from other leadership assessments?</summary>
+      <p>Unlike generic personality tests, our quiz specifically focuses on leadership traits demonstrated by history's most successful leaders. We combine historical accuracy with practical modern applications. Each result includes: detailed historical context, leadership lessons from your matched leader, specific career guidance, team collaboration insights, and crisis management approaches. Plus, we cover leaders from diverse cultures and time periods, not just Western figures.</p>
+    </details>
+
+    <details>
+      <summary>Is this quiz suitable for students and young people?</summary>
+      <p>Definitely! The quiz is designed for anyone interested in leadership and history, typically ages 13+. It's particularly valuable for students studying history, political science, or business leadership. Young people often discover leadership potential they didn't know they had, while learning about fascinating historical figures who changed the world.</p>
+    </details>
+
+    <details>
+      <summary>Can the quiz help with career planning?</summary>
+      <p>Absolutely! Understanding your historical leadership match provides valuable career insights. Each result includes specific career paths where your leadership style typically thrives, industry recommendations, team roles that suit your personality, and leadership development areas to focus on.</p>
     </details>
   </section>
 
