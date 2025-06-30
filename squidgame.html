@@ -145,82 +145,7 @@
       75% { transform: translateX(-50px) translateY(-30px) rotate(0.5deg); }
     }
 
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-      padding: 1rem 2rem;
-      transition: all 0.3s ease;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-pink);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .logo i {
-      font-size: 1.2rem;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary-teal);
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary-teal);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
+    
     /* Hero Section */
     .hero {
       min-height: 100vh;
@@ -2510,45 +2435,7 @@
       .container { padding: 0 3rem; }
     }
 
-    /* Enhanced Mobile Navigation */
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem 0;
-        backdrop-filter: blur(15px);
-      }
-      
-      .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0 1rem;
-      }
-      
-      .nav-links {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        background: rgba(20, 20, 20, 0.9);
-        padding: 1rem;
-        border-radius: 15px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      .nav-links li a {
-        padding: 0.8rem 1.2rem;
-        border-radius: 25px;
-        background: rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
-        font-size: 0.9rem;
-        white-space: nowrap;
-      }
 
-      .nav-links li a:hover {
-        background: var(--primary-teal);
-        color: #000;
-      }
-    }
 
     /* Extra Small Devices (phones, less than 576px) */
     @media (max-width: 575px) {
@@ -2826,11 +2713,6 @@
         padding: 1rem 1.5rem;
       }
       
-      .nav-links a {
-        min-height: 44px;
-        padding: 1rem 1.5rem;
-      }
-      
       /* Remove hover effects that don't work on touch */
       .character-card:hover,
       .game-card:hover,
@@ -2966,25 +2848,371 @@
 <body>
   <!-- Animated Background -->
   <div class="bg-animation"></div>
-
-  <!-- Navigation -->
+  <!-- Squid Game Themed Navigation Bar -->
   <nav>
-    <div class="nav-container">
-      <a href="#" class="logo">
-        <i class="fas fa-gamepad"></i>
-        Zinvana
+    <div class="nav-brand">
+      <a href="index.html" aria-label="Zinvana Home" style="display:flex;align-items:center;gap:0;">
+        <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+        <span class="brand-name" style="margin-left:0;">Zinvana</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="#quiz">Take Quiz</a></li>
-        <li><a href="#quiz-tips">Quiz Tips</a></li>
-        <li><a href="#characters">Characters</a></li>
-        <li><a href="#character-insights">Insights</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#stats">Stats</a></li>
-      </ul>
+    </div>
+    <div class="nav-links nav-left">
+      <a href="#faq">FAQ</a>
+      <a href="#quiz">Take Quiz</a>
+      <a href="#characters">Characters</a>
+      <a href="#about" class="active">About Quiz</a>
+    </div>
+    <div class="nav-links nav-right">
+      <a href="help.html">Help</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div class="nav-mobile" id="nav-mobile" style="display:none;">
+      <a href="#faq">FAQ</a>
+      <a href="#quiz">Take Quiz</a>
+      <a href="#characters">Characters</a>
+      <a href="#about" class="active">About Quiz</a>
+      <a href="help.html">Help</a>
     </div>
   </nav>
+
+  <style>
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 107, 157, 0.2);
+      min-height: 70px;
+      z-index: 10000;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    nav::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-pink), var(--primary-teal));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    nav.scrolled::before {
+      opacity: 1;
+    }
+    
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .nav-brand .brand-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, var(--primary-pink), var(--primary-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.5px;
+      margin-left: 0.5rem;
+    }
+    
+    nav #brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-pink), var(--primary-teal));
+      padding: 2px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+    }
+    
+    nav #brand-logo:hover {
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 8px 25px rgba(255, 107, 157, 0.5);
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    nav a {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-pink), var(--primary-teal));
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover,
+    nav a.active {
+      color: var(--primary-teal);
+    }
+    
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+    
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 10001;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-toggle:hover {
+      border-color: var(--primary-teal);
+      box-shadow: 0 4px 15px rgba(78, 205, 196, 0.2);
+    }
+    
+    .nav-toggle .bar {
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      margin: 3px 0;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-toggle.open .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+      background: var(--primary-pink);
+    }
+    
+    .nav-toggle.open .bar:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    
+    .nav-toggle.open .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+      background: var(--primary-pink);
+    }
+    
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-top: none;
+      border-radius: 0 0 15px 15px;
+      overflow: hidden;
+      animation: slideDown 0.3s ease;
+    }
+    
+    .nav-mobile a {
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .nav-mobile a:last-child {
+      border-bottom: none;
+    }
+    
+    .nav-mobile a:hover,
+    .nav-mobile a.active {
+      background: rgba(255, 107, 157, 0.1);
+      color: var(--primary-pink);
+    }
+    
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .nav-toggle {
+        display: flex;
+      }
+      
+      .nav-brand .brand-name {
+        font-size: 1.2rem;
+      }
+      
+      nav #brand-logo {
+        width: 35px;
+        height: 35px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      nav {
+        padding: 0.75rem;
+        min-height: 60px;
+      }
+      
+      .nav-brand .brand-name {
+        font-size: 1.1rem;
+        margin-left: 0.3rem;
+      }
+      
+      nav #brand-logo {
+        width: 32px;
+        height: 32px;
+      }
+      
+      .nav-toggle {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .nav-toggle .bar {
+        width: 20px;
+        height: 2px;
+        margin: 2.5px 0;
+      }
+      
+      .nav-mobile a {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* Scroll effects */
+    nav.scrolled {
+      background: rgba(10, 10, 10, 0.98);
+      border-bottom-color: rgba(255, 107, 157, 0.4);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Focus states for accessibility */
+    nav a:focus,
+    .nav-toggle:focus {
+      outline: 2px solid var(--primary-teal);
+      outline-offset: 2px;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMobile = document.getElementById('nav-mobile');
+      const nav = document.querySelector('nav');
+      
+      // Mobile menu toggle
+      navToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navToggle.classList.toggle('open');
+        navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+      });
+      
+      // Keyboard support
+      navToggle.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          navToggle.classList.toggle('open');
+          navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
+        }
+      });
+      
+      // Close mobile nav when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target)) {
+          navMobile.style.display = 'none';
+          navToggle.classList.remove('open');
+        }
+      });
+      
+      // Close mobile nav when clicking on links
+      navMobile.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+          navMobile.style.display = 'none';
+          navToggle.classList.remove('open');
+        }
+      });
+      
+      // Scroll effects
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+        if (scrollTimeout) return;
+        
+        scrollTimeout = setTimeout(() => {
+          if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+          } else {
+            nav.classList.remove('scrolled');
+          }
+          scrollTimeout = null;
+        }, 10);
+      });
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            const offsetTop = target.offsetTop - 80; // Account for fixed nav
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
