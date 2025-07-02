@@ -1,0 +1,3017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal Universe Quiz | Zinvana - Discover Your Cosmic Identity</title>
+    <meta name="description" content="Take our groundbreaking Personal Universe Quiz and discover your cosmic identity! Get deep insights into your personality, relationships, and life purpose. Join 100,000+ people who found their universe.">
+    <meta name="keywords" content="personality quiz, universe quiz, cosmic identity, personality test, zinvana, personal development, self discovery">
+    <meta name="author" content="Zinvana">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zinvana.com/universe-quiz">
+    <meta property="og:title" content="🌌 Your Personal Universe Quiz - Discover Your Cosmic Identity">
+    <meta property="og:description" content="What type of universe are you? Take our viral quiz and discover if you're a Creative Nebula, Love Supernova, or one of 4 other cosmic identities!">
+    <meta property="og:image" content="https://zinvana.com/universe-quiz-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zinvana.com/universe-quiz">
+    <meta property="twitter:title" content="🌌 Your Personal Universe Quiz - What's Your Cosmic Identity?">
+    <meta property="twitter:description" content="Join 100,000+ people discovering their cosmic identity! Are you a Creative Nebula or Love Supernova? Find out now!">
+    <meta property="twitter:image" content="https://zinvana.com/universe-quiz-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "Personal Universe Quiz",
+        "description": "Discover your cosmic personality type and get deep insights into your identity",
+        "author": {
+            "@type": "Organization",
+            "name": "Zinvana"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Zinvana"
+        }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #0a0a23 0%, #1a0033 50%, #000000 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Animated Background Stars */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: linear-gradient(90deg, #ffffff, transparent);
+            animation: shoot 3s linear infinite;
+        }
+
+        @keyframes shoot {
+            0% {
+                transform: translateX(-100px) translateY(100px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100vw) translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        /* Header */
+        .header {
+            position: relative;
+            z-index: 10;
+            padding: 2rem 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: #b0b0b0;
+            font-weight: 300;
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ffffff, #e0e0e0, #ffffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #a0a0a0;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .cosmic-orb {
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #4ecdc4, #45b7d1, #667eea, #764ba2);
+            animation: float 6s ease-in-out infinite, rotate 20s linear infinite;
+            box-shadow: 
+                0 0 40px rgba(78, 205, 196, 0.3),
+                0 0 80px rgba(69, 183, 209, 0.2),
+                inset 0 0 40px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cosmic-orb::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 30%;
+            height: 30%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Quiz Start Button */
+        .start-quiz-btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #ffffff;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .start-quiz-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .start-quiz-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .start-quiz-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 4rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #4ecdc4;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-description {
+            color: #b0b0b0;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Preview Section */
+        .preview {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .preview-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .preview-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .preview-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .preview-label {
+            font-weight: 600;
+            color: #4ecdc4;
+            margin-bottom: 0.5rem;
+        }
+
+        .preview-text {
+            color: #d0d0d0;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
+        }
+
+        .footer-text {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .cosmic-orb {
+                width: 150px;
+                height: 150px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 2rem 0;
+            }
+
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(78, 205, 196, 0.3);
+            border-top: 3px solid #4ecdc4;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Quiz Container */
+        .quiz-container {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-progress {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .quiz-progress-bar {
+            height: 100%;
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 3px;
+        }
+
+        .question-container {
+            margin-bottom: 2rem;
+        }
+
+        .question-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .question-subtitle {
+            font-size: 1rem;
+            color: #b0b0b0;
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .answers-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .answer-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .answer-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(78, 205, 196, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .answer-option:hover {
+            border-color: rgba(78, 205, 196, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .answer-option:hover::before {
+            left: 100%;
+        }
+
+        .answer-option.selected {
+            border-color: #4ecdc4;
+            background: rgba(78, 205, 196, 0.1);
+            transform: scale(1.02);
+        }
+
+        .answer-text {
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .answer-description {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            line-height: 1.4;
+        }
+
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .quiz-btn {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .quiz-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .quiz-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .question-counter {
+            color: #4ecdc4;
+            font-weight: 600;
+        }
+
+        /* Results Section */
+        .results-container {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .results-universe {
+            width: 300px;
+            height: 300px;
+            margin: 2rem auto;
+            border-radius: 50%;
+            position: relative;
+            animation: float 6s ease-in-out infinite, rotate 30s linear infinite;
+            box-shadow: 
+                0 0 60px rgba(78, 205, 196, 0.4),
+                0 0 120px rgba(69, 183, 209, 0.3);
+        }
+
+        .universe-core {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #4ecdc4, #45b7d1, #667eea, #764ba2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .universe-ring {
+            position: absolute;
+            border: 2px solid rgba(78, 205, 196, 0.3);
+            border-radius: 50%;
+            animation: rotate 15s linear infinite reverse;
+        }
+
+        .universe-ring:nth-child(1) {
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+        }
+
+        .universe-ring:nth-child(2) {
+            width: 140%;
+            height: 140%;
+            top: -20%;
+            left: -20%;
+            animation-duration: 20s;
+        }
+
+        .results-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .results-subtitle {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+        }
+
+        .universe-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-label {
+            color: #4ecdc4;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .cosmic-story {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+
+        .story-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #4ecdc4;
+        }
+
+        .story-text {
+            color: #d0d0d0;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .share-results {
+            margin-top: 2rem;
+        }
+
+        .share-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            margin: 0 0.5rem;
+        }
+
+        .retake-btn {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+        }
+
+        /* Enhanced Results Sections */
+        .results-sections {
+            display: grid;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .personality-breakdown {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .trait-bars {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .trait-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .trait-name {
+            min-width: 120px;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        .trait-progress {
+            flex: 1;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .trait-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            border-radius: 4px;
+            transition: width 2s ease;
+        }
+
+        .trait-percentage {
+            min-width: 40px;
+            color: #4ecdc4;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .life-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .life-area {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .area-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #4ecdc4;
+        }
+
+        .area-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .area-description {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .cosmic-advice {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(69, 183, 209, 0.1));
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            margin: 2rem 0;
+        }
+
+        .advice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .advice-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .advice-type {
+            color: #4ecdc4;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .advice-content {
+            color: #d0d0d0;
+            line-height: 1.5;
+        }
+
+        .universe-compatibility {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .compatibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .compatibility-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .compatibility-type {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        .compatibility-percentage {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .compatibility-excellent { color: #4ecdc4; }
+        .compatibility-good { color: #96ceb4; }
+        .compatibility-moderate { color: #feca57; }
+
+        .compatibility-description {
+            color: #b0b0b0;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .growth-path {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .growth-timeline {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .growth-phase {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .phase-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .phase-content {
+            flex: 1;
+        }
+
+        .phase-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #4ecdc4;
+        }
+
+        .phase-description {
+            color: #d0d0d0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .cosmic-warnings {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(238, 90, 82, 0.1));
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            margin: 2rem 0;
+        }
+
+        .warning-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .warning-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .warning-icon {
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .warning-text {
+            color: #d0d0d0;
+            line-height: 1.5;
+        }
+
+        .detailed-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-detail {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #4ecdc4;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-description {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        /* Professional Elements */
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        .trust-icon {
+            color: #4ecdc4;
+        }
+
+        .viral-cta {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .viral-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(78, 205, 196, 0.05), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .viral-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+
+        .viral-text {
+            font-size: 1.1rem;
+            color: #d0d0d0;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .viral-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .viral-stat {
+            text-align: center;
+        }
+
+        .viral-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4ecdc4;
+        }
+
+        .viral-label {
+            font-size: 0.8rem;
+            color: #b0b0b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-proof {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 3px solid #4ecdc4;
+            position: relative;
+        }
+
+        .testimonial-text {
+            color: #d0d0d0;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .author-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: #4ecdc4;
+            font-size: 0.9rem;
+        }
+
+        .author-result {
+            color: #b0b0b0;
+            font-size: 0.8rem;
+        }
+
+        .urgency-banner {
+            background: linear-gradient(90deg, #ff6b6b, #ee5a52);
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3); }
+            50% { box-shadow: 0 2px 20px rgba(255, 107, 107, 0.6); }
+        }
+
+        .trending-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .fomo-counter {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 10px;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .counter-text {
+            color: #ff6b6b;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .live-counter {
+            color: #4ecdc4;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .professional-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(78, 205, 196, 0.1);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            color: #4ecdc4;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-primary:hover::before {
+            left: 100%;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .social-share-preview {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .share-preview-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #4ecdc4;
+        }
+
+        .preview-examples {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .preview-example {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid #4ecdc4;
+        }
+
+        .preview-platform {
+            font-weight: 600;
+            color: #4ecdc4;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .preview-text {
+            color: #d0d0d0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .quiz-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .results-universe {
+                width: 200px;
+                height: 200px;
+            }
+
+            .universe-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .quiz-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Urgency Banner -->
+    <div class="urgency-banner" id="urgencyBanner">
+        🔥 <span id="liveCounter">127,439</span> people discovered their universe today! Join the cosmic revolution!
+    </div>
+
+    <!-- Header -->
+    <header class="header" style="margin-top: 60px;">
+        <div class="logo">ZINVANA</div>
+        <div class="tagline">Discover Your Digital Identity</div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="professional-badges">
+                <div class="badge">
+                    <i class="fas fa-award"></i> Science-Based
+                </div>
+                <div class="badge">
+                    <i class="fas fa-users"></i> 250K+ Taken
+                </div>
+                <div class="badge">
+                    <i class="fas fa-star"></i> 4.9/5 Rating
+                </div>
+                <div class="badge">
+                    <i class="fas fa-clock"></i> 5 Min Quiz
+                </div>
+            </div>
+
+            <h1 class="hero-title">Your Personal Universe Quiz</h1>
+            <p class="hero-subtitle">
+                🌌 The viral quiz that's taking the internet by storm!<br>
+                Discover the cosmic blueprint of your personality, values, and potential.<br>
+                Join over <strong>250,000 people</strong> who found their universe.
+            </p>
+            
+            <div class="cosmic-orb" style="position: relative;">
+                <div class="trending-badge">🔥 VIRAL</div>
+            </div>
+
+            <!-- Viral CTA Section -->
+            <div class="viral-cta">
+                <h2 class="viral-title">🚀 Ready to Go Viral with Your Results?</h2>
+                <p class="viral-text">Join the cosmic trend! Share your universe and see how you compare with friends.</p>
+                
+                <div class="viral-stats">
+                    <div class="viral-stat">
+                        <div class="viral-number">2.3M</div>
+                        <div class="viral-label">Shares This Week</div>
+                    </div>
+                    <div class="viral-stat">
+                        <div class="viral-number">89%</div>
+                        <div class="viral-label">Share Their Results</div>
+                    </div>
+                    <div class="viral-stat">
+                        <div class="viral-number">4.2M</div>
+                        <div class="viral-label">Total Views</div>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#quiz" class="cta-primary" onclick="startQuiz()">
+                        <i class="fas fa-rocket"></i> Take The Viral Quiz Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt trust-icon"></i>
+                    100% Private & Secure
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-clock trust-icon"></i>
+                    Takes Only 5 Minutes
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-mobile-alt trust-icon"></i>
+                    Works on All Devices
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-share trust-icon"></i>
+                    Instantly Shareable
+                </div>
+            </div>
+
+            <!-- FOMO Counter -->
+            <div class="fomo-counter">
+                <div class="counter-text">
+                    ⚡ <span class="live-counter" id="recentTakers">1,247</span> people took this quiz in the last hour!
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="feature-title">Your Core Star</h3>
+                <p class="feature-description">
+                    Discover your fundamental personality type - the burning star at the center of your personal universe that drives everything else.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <h3 class="feature-title">Orbital Values</h3>
+                <p class="feature-description">
+                    Uncover the core values that orbit around your personality, influencing your decisions and shaping your life's trajectory.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="feature-title">Galaxy Type</h3>
+                <p class="feature-description">
+                    Learn how you interact with others and form relationships - your unique social constellation pattern.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="feature-title">Universe Expansion</h3>
+                <p class="feature-description">
+                    Explore your growth potential and discover the infinite possibilities for your personal evolution.
+                </p>
+            </div>
+        </section>
+
+        <!-- Preview Section -->
+        <section class="preview">
+            <h2 class="preview-title">What You'll Discover</h2>
+            <div class="preview-grid">
+                <div class="preview-item">
+                    <div class="preview-label">Your Cosmic Origin Story</div>
+                    <div class="preview-text">A personalized narrative about how your universe formed</div>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-label">Life Mission Generator</div>
+                    <div class="preview-text">AI-generated purpose based on your unique cosmic profile</div>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-label">Compatibility Mapping</div>
+                    <div class="preview-text">See how your universe aligns with others</div>
+                </div>
+                <div class="preview-item">
+                    <div class="preview-label">Growth Trajectory</div>
+                    <div class="preview-text">Your personalized path for expansion and evolution</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="social-proof">
+            <h3 class="story-title">🌟 What People Are Saying</h3>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "OMG! I'm a Love Supernova and it's SO accurate! Shared with all my friends and we're comparing results. This is addictive!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div>
+                            <div class="author-name">Sarah M.</div>
+                            <div class="author-result">Love Supernova</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "This quiz is going viral for a reason! I'm a Wisdom Galaxy and the insights are incredibly deep. Best personality test ever!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div>
+                            <div class="author-name">Marcus T.</div>
+                            <div class="author-result">Wisdom Galaxy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "My whole team took this and we're obsessed! I'm an Adventure Spiral and it explained SO much about my personality. 10/10!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div>
+                            <div class="author-name">Jessica K.</div>
+                            <div class="author-result">Adventure Spiral</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Share Preview Section -->
+        <section class="social-share-preview">
+            <h3 class="share-preview-title">📱 How Your Results Will Look When Shared</h3>
+            <div class="preview-examples">
+                <div class="preview-example">
+                    <div class="preview-platform">Instagram Story</div>
+                    <div class="preview-text">"Just discovered I'm a Creative Nebula! 🌌✨ This cosmic quiz is so accurate it's scary. Link in bio! #UniverseQuiz #CosmicIdentity"</div>
+                </div>
+                <div class="preview-example">
+                    <div class="preview-platform">Twitter/X</div>
+                    <div class="preview-text">"I'm officially a Harmony Constellation! 🌟 This viral quiz just revealed so much about my personality. What universe are you? 🚀"</div>
+                </div>
+                <div class="preview-example">
+                    <div class="preview-platform">TikTok Caption</div>
+                    <div class="preview-text">"POV: You take the viral universe quiz and it calls you out perfectly 💀 I'm a Balance Binary and it's TOO accurate #UniverseQuiz #Viral"</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-text">
+            &copy; 2025 Zinvana. Exploring the infinite dimensions of digital identity.
+        </div>
+    </footer>
+
+    <!-- Loading Section (Hidden) -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Calculating your cosmic coordinates...</p>
+    </div>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container" id="quizContainer">
+        <div class="quiz-header">
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar" id="progressBar"></div>
+            </div>
+            <div class="question-counter">
+                Question <span id="currentQuestion">1</span> of <span id="totalQuestions">12</span>
+            </div>
+        </div>
+
+        <div class="question-container" id="questionContainer">
+            <!-- Questions will be dynamically loaded here -->
+        </div>
+
+        <div class="quiz-navigation">
+            <button class="quiz-btn" id="prevBtn" onclick="previousQuestion()" disabled>Previous</button>
+            <button class="quiz-btn" id="nextBtn" onclick="nextQuestion()" disabled>Next</button>
+        </div>
+    </div>
+
+    <!-- Results Container -->
+    <div class="results-container" id="resultsContainer">
+        <h1 class="results-title" id="universeType">Your Universe Awaits...</h1>
+        <p class="results-subtitle" id="universeSubtitle">Calculating your cosmic identity...</p>
+        
+        <div class="results-universe">
+            <div class="universe-core">
+                <div class="universe-ring"></div>
+                <div class="universe-ring"></div>
+            </div>
+        </div>
+
+        <!-- Detailed Stats Overview -->
+        <div class="detailed-stats" id="detailedStats">
+            <!-- Will be populated with stats -->
+        </div>
+
+        <!-- Core Universe Information -->
+        <div class="cosmic-story">
+            <h3 class="story-title">Your Cosmic Origin Story</h3>
+            <p class="story-text" id="originStory">
+                Your universe is being analyzed...
+            </p>
+        </div>
+
+        <div class="cosmic-story">
+            <h3 class="story-title">Your Life Mission</h3>
+            <p class="story-text" id="lifeMission">
+                Your purpose is being calculated...
+            </p>
+        </div>
+
+        <!-- Enhanced Results Sections -->
+        <div class="results-sections">
+            <!-- Personality Breakdown -->
+            <div class="personality-breakdown">
+                <h3 class="story-title">Your Cosmic Personality Spectrum</h3>
+                <div class="trait-bars" id="traitBars">
+                    <!-- Will be populated with trait bars -->
+                </div>
+            </div>
+
+            <!-- Life Areas Analysis -->
+            <div class="personality-breakdown">
+                <h3 class="story-title">How Your Universe Influences Your Life</h3>
+                <div class="life-areas" id="lifeAreas">
+                    <!-- Will be populated with life area analysis -->
+                </div>
+            </div>
+
+            <!-- Universe Compatibility -->
+            <div class="universe-compatibility">
+                <h3 class="story-title">Cosmic Compatibility Matrix</h3>
+                <p style="color: #b0b0b0; margin-bottom: 1rem;">How well your universe harmonizes with others</p>
+                <div class="compatibility-grid" id="compatibilityGrid">
+                    <!-- Will be populated with compatibility data -->
+                </div>
+            </div>
+
+            <!-- Growth Path -->
+            <div class="growth-path">
+                <h3 class="story-title">Your Cosmic Evolution Path</h3>
+                <p style="color: #b0b0b0; margin-bottom: 1rem;">The journey of expansion and transformation ahead</p>
+                <div class="growth-timeline" id="growthTimeline">
+                    <!-- Will be populated with growth phases -->
+                </div>
+            </div>
+
+            <!-- Cosmic Advice -->
+            <div class="cosmic-advice">
+                <h3 class="story-title"><i class="fas fa-lightbulb"></i> Cosmic Guidance for Your Universe</h3>
+                <p style="color: #b0b0b0; margin-bottom: 1rem;">Personalized insights to help your universe thrive</p>
+                <div class="advice-grid" id="adviceGrid">
+                    <!-- Will be populated with advice -->
+                </div>
+            </div>
+
+            <!-- Cosmic Warnings -->
+            <div class="cosmic-warnings">
+                <h3 class="story-title"><i class="fas fa-exclamation-triangle"></i> Cosmic Challenges to Navigate</h3>
+                <p style="color: #b0b0b0; margin-bottom: 1rem;">Potential obstacles and how to transform them into growth</p>
+                <div class="warning-list" id="warningList">
+                    <!-- Will be populated with warnings -->
+                </div>
+            </div>
+        </div>
+
+        <div class="share-results">
+            <button class="quiz-btn share-btn" onclick="shareResults()">
+                <i class="fas fa-share"></i> Share Your Universe & Go Viral!
+            </button>
+            <button class="quiz-btn retake-btn" onclick="retakeQuiz()">
+                <i class="fas fa-redo"></i> Explore Another Universe
+            </button>
+            
+            <!-- Viral encouragement -->
+            <div style="margin-top: 1rem; text-align: center;">
+                <p style="color: #b0b0b0; font-size: 0.9rem;">
+                    🔥 <strong>Join 89% of users</strong> who share their cosmic identity!<br>
+                    Tag friends to compare universes and watch the magic happen ✨
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz Data
+        const quizQuestions = [
+            {
+                question: "How does your universe prefer to expand?",
+                subtitle: "Your growth philosophy shapes the very fabric of your cosmic identity",
+                answers: [
+                    {
+                        text: "Through explosive bursts of creativity",
+                        description: "Like supernovas, you create brilliant moments of innovation",
+                        scores: { creativity: 3, energy: 2, innovation: 3, chaos: 1 }
+                    },
+                    {
+                        text: "With steady, calculated progression",
+                        description: "Like planetary formation, you build lasting foundations",
+                        scores: { stability: 3, wisdom: 2, patience: 3, order: 2 }
+                    },
+                    {
+                        text: "By connecting and merging with others",
+                        description: "Like galaxy clusters, you grow through relationships",
+                        scores: { connection: 3, empathy: 2, collaboration: 3, harmony: 2 }
+                    },
+                    {
+                        text: "Through mysterious, unknown forces",
+                        description: "Like dark matter, your growth comes from unseen dimensions",
+                        scores: { mystery: 3, intuition: 3, depth: 2, exploration: 2 }
+                    }
+                ]
+            },
+            {
+                question: "What kind of star burns at your core?",
+                subtitle: "The energy source that powers your entire existence",
+                answers: [
+                    {
+                        text: "A brilliant blue giant - intense and transformative",
+                        description: "You burn bright and fast, changing everything around you",
+                        scores: { energy: 3, transformation: 3, intensity: 3, leadership: 2 }
+                    },
+                    {
+                        text: "A steady yellow dwarf - reliable and life-giving",
+                        description: "You provide consistent warmth and support to others",
+                        scores: { stability: 3, nurturing: 3, reliability: 3, care: 2 }
+                    },
+                    {
+                        text: "A mysterious pulsar - rhythmic and precise",
+                        description: "You operate with perfect timing and hidden knowledge",
+                        scores: { precision: 3, mystery: 2, rhythm: 3, intelligence: 3 }
+                    },
+                    {
+                        text: "A binary system - dual nature in perfect balance",
+                        description: "You embody multiple aspects dancing in harmony",
+                        scores: { balance: 3, complexity: 3, adaptability: 2, duality: 3 }
+                    }
+                ]
+            },
+            {
+                question: "How do new ideas form in your universe?",
+                subtitle: "Your creative process reveals the architecture of your mind",
+                answers: [
+                    {
+                        text: "Like lightning storms - sudden and electrifying",
+                        description: "Inspiration strikes you in powerful, unexpected moments",
+                        scores: { creativity: 3, spontaneity: 3, energy: 2, innovation: 2 }
+                    },
+                    {
+                        text: "Like crystal formation - gradual and precise",
+                        description: "You build ideas systematically, layer by layer",
+                        scores: { precision: 3, patience: 3, structure: 3, perfection: 2 }
+                    },
+                    {
+                        text: "Like tidal forces - influenced by external rhythms",
+                        description: "Your creativity flows with the energy of others",
+                        scores: { empathy: 3, connection: 2, sensitivity: 3, intuition: 2 }
+                    },
+                    {
+                        text: "Like black holes - by pulling everything inward first",
+                        description: "You absorb all information before creating something new",
+                        scores: { depth: 3, analysis: 3, contemplation: 3, wisdom: 2 }
+                    }
+                ]
+            },
+            {
+                question: "What force holds your personal solar system together?",
+                subtitle: "The fundamental principle that organizes your life",
+                answers: [
+                    {
+                        text: "Love and emotional connections",
+                        description: "Relationships are the gravity that shapes your world",
+                        scores: { love: 3, connection: 3, empathy: 3, care: 2 }
+                    },
+                    {
+                        text: "Purpose and meaningful work",
+                        description: "Your mission provides the central organizing force",
+                        scores: { purpose: 3, determination: 3, focus: 3, achievement: 2 }
+                    },
+                    {
+                        text: "Knowledge and understanding",
+                        description: "Curiosity and learning drive your cosmic order",
+                        scores: { wisdom: 3, curiosity: 3, intelligence: 3, exploration: 2 }
+                    },
+                    {
+                        text: "Freedom and infinite possibilities",
+                        description: "Expansion and choice create your cosmic structure",
+                        scores: { freedom: 3, adventure: 3, independence: 3, exploration: 2 }
+                    }
+                ]
+            },
+            {
+                question: "When your universe encounters a black hole (major challenge), you:",
+                subtitle: "Your response to adversity reveals your cosmic resilience",
+                answers: [
+                    {
+                        text: "Use it as a portal to transform into something greater",
+                        description: "You see challenges as gateways to evolution",
+                        scores: { transformation: 3, courage: 3, growth: 3, optimism: 2 }
+                    },
+                    {
+                        text: "Study it carefully before finding a way around",
+                        description: "You approach problems with wisdom and strategy",
+                        scores: { wisdom: 3, strategy: 3, patience: 2, analysis: 3 }
+                    },
+                    {
+                        text: "Rally other cosmic forces to help you through",
+                        description: "You believe in the power of community and support",
+                        scores: { collaboration: 3, connection: 3, trust: 3, leadership: 2 }
+                    },
+                    {
+                        text: "Accept it as part of your cosmic journey",
+                        description: "You find peace in the natural flow of existence",
+                        scores: { acceptance: 3, wisdom: 2, peace: 3, resilience: 3 }
+                    }
+                ]
+            },
+            {
+                question: "Your universe's communication method is:",
+                subtitle: "How you share your cosmic energy with others",
+                answers: [
+                    {
+                        text: "Brilliant light shows that inspire and energize",
+                        description: "You communicate through passion and enthusiasm",
+                        scores: { inspiration: 3, energy: 3, charisma: 3, creativity: 2 }
+                    },
+                    {
+                        text: "Gentle gravitational pulls that guide subtly",
+                        description: "You influence others through quiet wisdom and example",
+                        scores: { wisdom: 3, subtlety: 3, influence: 2, patience: 3 }
+                    },
+                    {
+                        text: "Harmonic frequencies that create resonance",
+                        description: "You connect with others on deep, intuitive levels",
+                        scores: { empathy: 3, intuition: 3, harmony: 3, connection: 2 }
+                    },
+                    {
+                        text: "Complex mathematical patterns of truth",
+                        description: "You share knowledge through logic and precision",
+                        scores: { intelligence: 3, logic: 3, precision: 3, truth: 2 }
+                    }
+                ]
+            },
+            {
+                question: "In your universe, time flows:",
+                subtitle: "Your relationship with time shapes your cosmic perspective",
+                answers: [
+                    {
+                        text: "In spirals - past, present, and future interconnected",
+                        description: "You see time as a continuous, flowing cycle",
+                        scores: { wisdom: 3, continuity: 3, depth: 2, perspective: 3 }
+                    },
+                    {
+                        text: "In focused beams - intensely concentrated moments",
+                        description: "You experience time through peak moments of clarity",
+                        scores: { focus: 3, intensity: 3, presence: 3, concentration: 2 }
+                    },
+                    {
+                        text: "Like a gentle river - steady and nurturing",
+                        description: "You move with time's natural rhythm peacefully",
+                        scores: { peace: 3, patience: 3, flow: 3, acceptance: 2 }
+                    },
+                    {
+                        text: "In quantum leaps - jumping between possibilities",
+                        description: "You experience time as opportunities for change",
+                        scores: { adaptability: 3, possibility: 3, innovation: 2, change: 3 }
+                    }
+                ]
+            },
+            {
+                question: "Your universe's greatest treasure is:",
+                subtitle: "What you value most reveals your cosmic essence",
+                answers: [
+                    {
+                        text: "The connections between all living beings",
+                        description: "You treasure the web of relationships that bind us all",
+                        scores: { connection: 3, love: 3, unity: 3, compassion: 2 }
+                    },
+                    {
+                        text: "The endless frontier of undiscovered knowledge",
+                        description: "You value the infinite potential for learning and growth",
+                        scores: { curiosity: 3, exploration: 3, knowledge: 3, growth: 2 }
+                    },
+                    {
+                        text: "The power to create and bring new things into existence",
+                        description: "You treasure your ability to manifest and innovate",
+                        scores: { creativity: 3, power: 3, manifestation: 3, innovation: 2 }
+                    },
+                    {
+                        text: "The peace found in perfect cosmic balance",
+                        description: "You value harmony and equilibrium above all else",
+                        scores: { balance: 3, harmony: 3, peace: 3, wisdom: 2 }
+                    }
+                ]
+            },
+            {
+                question: "When other universes approach yours, you:",
+                subtitle: "Your interaction style reveals your social cosmic nature",
+                answers: [
+                    {
+                        text: "Welcome them with open cosmic arms",
+                        description: "You naturally embrace and include others",
+                        scores: { openness: 3, welcoming: 3, inclusion: 3, warmth: 2 }
+                    },
+                    {
+                        text: "Observe them carefully before deciding",
+                        description: "You prefer to understand before engaging",
+                        scores: { caution: 3, observation: 3, wisdom: 2, analysis: 3 }
+                    },
+                    {
+                        text: "Share your cosmic gifts generously",
+                        description: "You naturally give and support others",
+                        scores: { generosity: 3, sharing: 3, support: 3, kindness: 2 }
+                    },
+                    {
+                        text: "Create beautiful cosmic dances together",
+                        description: "You love collaborative creation and harmony",
+                        scores: { collaboration: 3, creativity: 2, harmony: 3, joy: 3 }
+                    }
+                ]
+            },
+            {
+                question: "Your universe's ultimate destiny is:",
+                subtitle: "Your vision for the future reflects your deepest aspirations",
+                answers: [
+                    {
+                        text: "To become a beacon of light for all existence",
+                        description: "You aspire to inspire and guide others",
+                        scores: { leadership: 3, inspiration: 3, service: 3, light: 2 }
+                    },
+                    {
+                        text: "To understand the deepest mysteries of reality",
+                        description: "You seek ultimate knowledge and truth",
+                        scores: { wisdom: 3, truth: 3, understanding: 3, depth: 2 }
+                    },
+                    {
+                        text: "To create perfect harmony with all other universes",
+                        description: "You dream of universal peace and connection",
+                        scores: { harmony: 3, unity: 3, peace: 3, connection: 2 }
+                    },
+                    {
+                        text: "To continuously expand into infinite possibilities",
+                        description: "You envision endless growth and exploration",
+                        scores: { expansion: 3, possibility: 3, growth: 3, adventure: 2 }
+                    }
+                ]
+            },
+            {
+                question: "If you could give one gift to the cosmic community:",
+                subtitle: "Your offering reveals your core contribution to existence",
+                answers: [
+                    {
+                        text: "The spark of infinite creativity",
+                        description: "You bring innovation and artistic inspiration",
+                        scores: { creativity: 3, innovation: 3, inspiration: 3, art: 2 }
+                    },
+                    {
+                        text: "The foundation of unwavering support",
+                        description: "You provide stability and reliable strength",
+                        scores: { support: 3, stability: 3, reliability: 3, strength: 2 }
+                    },
+                    {
+                        text: "The bridge of deep understanding",
+                        description: "You facilitate connection and empathy",
+                        scores: { understanding: 3, empathy: 3, bridge: 3, connection: 2 }
+                    },
+                    {
+                        text: "The key to hidden cosmic wisdom",
+                        description: "You unlock secrets and reveal truth",
+                        scores: { wisdom: 3, secrets: 3, revelation: 3, knowledge: 2 }
+                    }
+                ]
+            },
+            {
+                question: "In moments of cosmic silence, you:",
+                subtitle: "How you exist in stillness reveals your truest nature",
+                answers: [
+                    {
+                        text: "Listen to the whispers of infinite possibility",
+                        description: "You tune into potential and future dreams",
+                        scores: { intuition: 3, possibility: 3, dreams: 3, future: 2 }
+                    },
+                    {
+                        text: "Feel the heartbeat of universal love",
+                        description: "You connect with the emotional core of existence",
+                        scores: { love: 3, emotion: 3, connection: 3, heart: 2 }
+                    },
+                    {
+                        text: "Contemplate the patterns that connect all things",
+                        description: "You seek the underlying order and meaning",
+                        scores: { contemplation: 3, patterns: 3, connection: 2, meaning: 3 }
+                    },
+                    {
+                        text: "Simply exist in perfect peaceful being",
+                        description: "You find completeness in pure existence",
+                        scores: { peace: 3, being: 3, completeness: 3, presence: 2 }
+                    }
+                ]
+            }
+        ];
+
+        // Universe Types and Results
+        const universeTypes = {
+            "Creative Nebula": {
+                description: "The Artist of Infinity",
+                traits: ["creativity", "innovation", "inspiration", "art"],
+                colors: ["#ff6b6b", "#4ecdc4", "#45b7d1"],
+                story: "Your universe began in a spectacular burst of creative energy, where stardust and dreams collided to form the most beautiful cosmic patterns ever seen. You are the artist of infinity, painting reality with strokes of pure imagination. Your core star burns with the fire of endless possibility, and every planet in your system represents a different creative endeavor. You don't just exist in your universe - you constantly recreate it, making it more beautiful with each passing moment.",
+                mission: "Your mission is to bring beauty and innovation into existence. You are here to show others that reality is not fixed, but a canvas waiting for creative expression. Through your art, ideas, and unique perspective, you inspire others to see the world not as it is, but as it could be. Your universe expands through creative collaboration, touching other cosmic beings and awakening their own creative potential.",
+                lifeAreas: {
+                    career: "You thrive in creative fields where innovation is valued. Consider roles in design, arts, content creation, or entrepreneurship where you can bring new ideas to life.",
+                    relationships: "You bring excitement and novelty to relationships. Partners are drawn to your imaginative nature, but you need freedom to express your creativity.",
+                    growth: "Your growth comes through experimenting with new forms of expression. Don't be afraid to try unconventional approaches.",
+                    challenges: "Structure and routine can feel limiting. Find ways to incorporate creative freedom even in structured environments."
+                },
+                advice: {
+                    strengths: "Embrace your role as an innovator. Your unique perspective is exactly what the world needs to solve complex problems.",
+                    relationships: "Seek partners who appreciate your creative spirit and give you space to explore new ideas without judgment.",
+                    career: "Look for opportunities where you can pioneer new approaches. Your creativity is your greatest professional asset.",
+                    growth: "Set aside dedicated time for pure creative exploration without any pressure to produce results."
+                },
+                warnings: {
+                    scattered: "Your abundant ideas can lead to scattered energy. Focus on completing projects before starting new ones.",
+                    criticism: "Don't let criticism of your unconventional ideas dim your creative fire. Not everyone will understand your vision initially.",
+                    perfectionism: "Avoid perfectionism that prevents you from sharing your creations. Sometimes 'done' is better than 'perfect'."
+                },
+                compatibility: {
+                    "Creative Nebula": { percentage: 95, description: "Explosive creative synergy" },
+                    "Harmony Constellation": { percentage: 85, description: "Beautiful collaborative potential" },
+                    "Adventure Spiral": { percentage: 90, description: "Exciting creative journeys together" },
+                    "Wisdom Galaxy": { percentage: 75, description: "Wisdom guides creativity well" },
+                    "Love Supernova": { percentage: 88, description: "Love nurtures creative expression" },
+                    "Balance Binary": { percentage: 70, description: "Structure can support creativity" }
+                },
+                growthPath: [
+                    { title: "Creative Exploration", description: "Experiment with different forms of creative expression to discover your unique voice and style." },
+                    { title: "Skill Mastery", description: "Develop technical skills in your chosen creative mediums while maintaining your innovative spirit." },
+                    { title: "Collaborative Creation", description: "Learn to work with others, blending your creativity with different perspectives and skills." },
+                    { title: "Creative Leadership", description: "Guide and inspire other creative beings, becoming a beacon for innovation in your field." },
+                    { title: "Cosmic Innovation", description: "Transcend traditional boundaries and create entirely new forms of expression that inspire universes." }
+                ]
+            },
+            "Harmony Constellation": {
+                description: "The Cosmic Diplomat",
+                traits: ["harmony", "connection", "empathy", "peace"],
+                colors: ["#96ceb4", "#feca57", "#ff9ff3"],
+                story: "Your universe formed through the gentle merger of cosmic forces that chose cooperation over conflict. You are the cosmic diplomat, where every celestial body exists in perfect resonance with others. Your core star emits frequencies of understanding and compassion, creating gravitational fields that draw others into peaceful orbit. Your universe is a sanctuary where different cosmic energies learn to dance together in harmony.",
+                mission: "Your mission is to bridge differences and create understanding between all cosmic beings. You are the translator of hearts, helping others find common ground even in the vastness of space. Your universe serves as a model for how diversity can create strength, and how different energies can combine to create something more beautiful than any could achieve alone.",
+                lifeAreas: {
+                    career: "You excel in roles that involve bringing people together - counseling, mediation, team leadership, or community building.",
+                    relationships: "You're a natural peacemaker who helps others resolve conflicts. You create safe spaces for authentic connection.",
+                    growth: "Your growth comes through learning to balance helping others with caring for yourself. Set healthy boundaries.",
+                    challenges: "You may absorb others' emotions too easily. Practice emotional protection techniques."
+                },
+                advice: {
+                    strengths: "Your ability to see all sides and create harmony is rare and valuable. Trust your diplomatic instincts.",
+                    relationships: "Remember that healthy relationships require honesty, not just harmony. It's okay to express disagreement constructively.",
+                    career: "Seek environments where collaboration is valued over competition. Your team-building skills are exceptional.",
+                    growth: "Learn to say no without guilt. Helping others shouldn't come at the expense of your own well-being."
+                },
+                warnings: {
+                    people_pleasing: "Avoid sacrificing your own needs to keep others happy. True harmony includes your voice too.",
+                    conflict_avoidance: "Don't avoid all conflict - sometimes healthy disagreement leads to better solutions.",
+                    energy_drain: "Protect your energy when dealing with toxic people who take advantage of your caring nature."
+                },
+                compatibility: {
+                    "Harmony Constellation": { percentage: 92, description: "Perfect peaceful understanding" },
+                    "Love Supernova": { percentage: 95, description: "Love and harmony in perfect union" },
+                    "Wisdom Galaxy": { percentage: 88, description: "Wise harmony creates stability" },
+                    "Creative Nebula": { percentage: 85, description: "Creativity flourishes in harmony" },
+                    "Balance Binary": { percentage: 90, description: "Natural equilibrium together" },
+                    "Adventure Spiral": { percentage: 78, description: "Adventure balanced by peace" }
+                },
+                growthPath: [
+                    { title: "Self-Harmony", description: "Learn to create inner peace and balance before extending harmony to others." },
+                    { title: "Boundary Setting", description: "Develop healthy boundaries that protect your energy while still helping others." },
+                    { title: "Conflict Resolution", description: "Master advanced techniques for mediating and resolving conflicts between others." },
+                    { title: "Community Building", description: "Create and lead communities that embody your values of cooperation and understanding." },
+                    { title: "Universal Peace", description: "Become a force for peace on a larger scale, influencing positive change in the world." }
+                ]
+            },
+            "Wisdom Galaxy": {
+                description: "The Cosmic Sage",
+                traits: ["wisdom", "knowledge", "truth", "understanding"],
+                colors: ["#667eea", "#764ba2", "#f093fb"],
+                story: "Your universe formed from the condensed knowledge of countless cosmic cycles, where each star represents a lesson learned and each planet holds ancient wisdom. You are the cosmic sage, possessing an innate understanding of the deeper patterns that govern all existence. Your core star burns with the cool, steady light of accumulated wisdom, and your universe serves as a living library of cosmic truth.",
+                mission: "Your mission is to seek, preserve, and share the deepest truths of existence. You are the keeper of cosmic wisdom, helping others navigate the complexities of life through understanding and insight. Your universe expands not through force, but through the gentle sharing of knowledge that illuminates the path for all cosmic travelers.",
+                lifeAreas: {
+                    career: "You're drawn to roles involving research, teaching, analysis, or advisory positions where your insight guides others.",
+                    relationships: "Others seek your counsel and value your perspective. You prefer deep, meaningful connections over superficial ones.",
+                    growth: "Your growth comes through continuous learning and the practical application of wisdom in daily life.",
+                    challenges: "You may overthink situations or become paralyzed by seeing too many possibilities and consequences."
+                },
+                advice: {
+                    strengths: "Your deep understanding and analytical abilities are gifts. Trust your intuition and share your insights.",
+                    relationships: "Remember that not everyone wants advice - sometimes people just need to be heard and understood.",
+                    career: "Seek roles where your knowledge and wisdom can make a real difference in people's lives.",
+                    growth: "Balance learning with action. Sometimes the best wisdom comes from experience, not just study."
+                },
+                warnings: {
+                    analysis_paralysis: "Don't let overthinking prevent you from taking action. Sometimes you must act with incomplete information.",
+                    intellectual_pride: "Stay humble and remember that wisdom includes knowing what you don't know.",
+                    isolation: "Don't withdraw too much into study. Wisdom is meant to be shared and applied in the world."
+                },
+                compatibility: {
+                    "Wisdom Galaxy": { percentage: 88, description: "Deep intellectual connection" },
+                    "Balance Binary": { percentage: 92, description: "Wisdom and balance unite perfectly" },
+                    "Harmony Constellation": { percentage: 88, description: "Wise harmony creates peace" },
+                    "Creative Nebula": { percentage: 75, description: "Wisdom guides creative expression" },
+                    "Love Supernova": { percentage: 82, description: "Love enriched by wisdom" },
+                    "Adventure Spiral": { percentage: 70, description: "Wisdom provides grounding for adventure" }
+                },
+                growthPath: [
+                    { title: "Knowledge Acquisition", description: "Build a solid foundation of knowledge across multiple domains that interest you." },
+                    { title: "Pattern Recognition", description: "Develop your ability to see connections and patterns that others miss." },
+                    { title: "Wisdom Application", description: "Learn to apply your knowledge practically to solve real-world problems." },
+                    { title: "Teaching & Mentoring", description: "Share your wisdom by teaching and mentoring others on their journeys." },
+                    { title: "Sage Leadership", description: "Become a trusted advisor and wise leader who guides important decisions." }
+                ]
+            },
+            "Adventure Spiral": {
+                description: "The Cosmic Explorer",
+                traits: ["exploration", "adventure", "freedom", "possibility"],
+                colors: ["#fa709a", "#fee140", "#43e97b"],
+                story: "Your universe is in constant motion, a spiral galaxy of infinite exploration where no two moments are ever the same. You are the cosmic explorer, always pushing the boundaries of what's possible. Your core star is actually a wandering pulsar, never staying in one place, and your planets orbit in ever-expanding ellipses that reach toward new frontiers. Your universe grows by incorporating new discoveries and experiences from uncharted cosmic territories.",
+                mission: "Your mission is to push the boundaries of what's possible and inspire others to embrace the unknown. You are the cosmic pioneer, showing that growth comes through courage to venture beyond familiar horizons. Your universe serves as proof that the greatest treasures are found not in comfort zones, but in the vast unexplored regions of possibility.",
+                lifeAreas: {
+                    career: "You thrive in dynamic environments with travel, variety, and new challenges. Avoid rigid, repetitive roles.",
+                    relationships: "You need partners who share your love of adventure or at least support your need for exploration and growth.",
+                    growth: "Your growth comes through new experiences, challenges, and stepping outside your comfort zone regularly.",
+                    challenges: "Commitment and routine can feel restricting. Find ways to bring novelty into necessary structures."
+                },
+                advice: {
+                    strengths: "Your courage to explore the unknown is inspiring. Use this to pioneer new paths for yourself and others.",
+                    relationships: "Communicate your need for adventure to partners. Include them in your explorations when possible.",
+                    career: "Seek opportunities that offer variety, growth, and the chance to break new ground in your field.",
+                    growth: "Schedule regular adventures, even small ones. Novelty keeps your spirit alive and energy high."
+                },
+                warnings: {
+                    commitment_issues: "Don't let fear of commitment prevent you from building deep, meaningful relationships.",
+                    restlessness: "Learn to find adventure in everyday moments, not just major life changes.",
+                    escape_tendency: "Face challenges rather than escaping to new experiences when things get difficult."
+                },
+                compatibility: {
+                    "Adventure Spiral": { percentage: 94, description: "Endless exciting explorations together" },
+                    "Creative Nebula": { percentage: 90, description: "Creative adventures and innovation" },
+                    "Love Supernova": { percentage: 85, description: "Love that grows through shared adventures" },
+                    "Harmony Constellation": { percentage: 78, description: "Adventure balanced by harmony" },
+                    "Wisdom Galaxy": { percentage: 70, description: "Wisdom grounds adventurous spirit" },
+                    "Balance Binary": { percentage: 72, description: "Structure supports sustainable adventure" }
+                },
+                growthPath: [
+                    { title: "Comfort Zone Expansion", description: "Regularly challenge yourself with new experiences that stretch your capabilities." },
+                    { title: "Skill Diversification", description: "Develop a wide range of skills that enable greater adventures and opportunities." },
+                    { title: "Mindful Exploration", description: "Learn to be present during adventures rather than always seeking the next experience." },
+                    { title: "Adventure Leadership", description: "Guide others on their own journeys of exploration and personal growth." },
+                    { title: "Pioneer Impact", description: "Use your explorations to open new paths and possibilities for entire communities." }
+                ]
+            },
+            "Love Supernova": {
+                description: "The Heart of the Cosmos",
+                traits: ["love", "compassion", "care", "nurturing"],
+                colors: ["#ff9a9e", "#fecfef", "#ffc3a0"],
+                story: "Your universe was born from the most powerful force in existence - pure, unconditional love. You are the heart of the cosmos, where every star burns with compassion and every planet is a sanctuary for those who need healing. Your core star doesn't just provide light and warmth - it provides the emotional sustenance that allows life to not just survive, but flourish. Your universe is a beacon of hope for all cosmic beings seeking acceptance and understanding.",
+                mission: "Your mission is to heal and nurture the cosmic community through the power of unconditional love. You are the cosmic healer, showing others that vulnerability is strength and that love is the most powerful force for transformation. Your universe expands through acts of kindness, creating ripple effects of compassion that touch every corner of existence.",
+                lifeAreas: {
+                    career: "You're drawn to helping professions - healthcare, counseling, education, or social work where you can make a difference in people's lives.",
+                    relationships: "You give deeply and create strong emotional bonds. You have the power to heal hearts and nurture souls.",
+                    growth: "Your growth comes through learning to love yourself as much as you love others. Self-care isn't selfish.",
+                    challenges: "You may give too much and neglect your own needs. Burnout is a real risk for your generous heart."
+                },
+                advice: {
+                    strengths: "Your capacity for love and compassion is extraordinary. This is your superpower - use it wisely.",
+                    relationships: "Remember that healthy love includes boundaries. You can't pour from an empty cup.",
+                    career: "Your empathy is valuable, but protect yourself from taking on others' pain as your own.",
+                    growth: "Practice self-compassion. Treat yourself with the same kindness you show others."
+                },
+                warnings: {
+                    emotional_exhaustion: "Your big heart can lead to burnout. Regular self-care and boundaries are essential.",
+                    codependency: "Avoid relationships where you're always the giver. Healthy relationships involve mutual support.",
+                    people_pleasing: "Don't sacrifice your authentic self to be loved. You're worthy of love exactly as you are."
+                },
+                compatibility: {
+                    "Love Supernova": { percentage: 96, description: "Infinite love multiplied" },
+                    "Harmony Constellation": { percentage: 95, description: "Love and harmony in perfect unity" },
+                    "Wisdom Galaxy": { percentage: 82, description: "Wise love creates deep understanding" },
+                    "Creative Nebula": { percentage: 88, description: "Love inspires beautiful creation" },
+                    "Adventure Spiral": { percentage: 85, description: "Love that grows through shared journeys" },
+                    "Balance Binary": { percentage: 87, description: "Love balanced with stability" }
+                },
+                growthPath: [
+                    { title: "Self-Love Foundation", description: "Develop a strong foundation of self-love and self-compassion before giving to others." },
+                    { title: "Healthy Boundaries", description: "Learn to set loving boundaries that protect your energy while still caring for others." },
+                    { title: "Healing Skills", description: "Develop professional or informal skills in healing, counseling, or supportive practices." },
+                    { title: "Community Building", description: "Create communities and spaces where love and compassion can flourish." },
+                    { title: "Universal Love", description: "Become a source of healing love that transforms not just individuals but entire communities." }
+                ]
+            },
+            "Balance Binary": {
+                description: "The Cosmic Equilibrium",
+                traits: ["balance", "stability", "harmony", "order"],
+                colors: ["#84fab0", "#8fd3f4", "#a8edea"],
+                story: "Your universe exists as a perfect binary system, where opposing forces dance in eternal harmony. You are the cosmic equilibrium, demonstrating that true strength comes from balance rather than extremes. Your twin core stars represent the dual nature of existence - light and shadow, action and rest, expansion and contraction - all held in perfect cosmic balance. Your universe serves as a stabilizing force for other cosmic systems.",
+                mission: "Your mission is to bring stability and balance to the cosmic community. You are the cosmic mediator, helping others find equilibrium between opposing forces in their own universes. Through your example, others learn that peace comes not from avoiding conflict, but from finding the perfect balance point where all forces can coexist harmoniously.",
+                lifeAreas: {
+                    career: "You excel in roles requiring fairness, organization, and strategic thinking. Project management, law, or finance suit your balanced nature.",
+                    relationships: "You bring stability and fairness to relationships. Others appreciate your level-headed approach to conflicts.",
+                    growth: "Your growth comes through finding balance in all areas of life and helping others achieve their own equilibrium.",
+                    challenges: "You may struggle with making quick decisions or taking sides when balance seems impossible."
+                },
+                advice: {
+                    strengths: "Your ability to see all sides and maintain balance is a rare gift. Trust your instinct for fairness.",
+                    relationships: "Your stability is comforting to others, but remember that some imbalance can lead to growth too.",
+                    career: "Seek roles where your organizational skills and fair judgment are valued and utilized.",
+                    growth: "Sometimes you need to lean into temporary imbalance to reach a new, better equilibrium."
+                },
+                warnings: {
+                    decision_paralysis: "Don't let the desire for perfect balance prevent you from making necessary decisions.",
+                    avoiding_risks: "Some risks are worth taking. Perfect balance isn't always the best path forward.",
+                    suppressing_emotions: "Balance doesn't mean suppressing strong emotions. Allow yourself to feel fully."
+                },
+                compatibility: {
+                    "Balance Binary": { percentage: 93, description: "Perfect equilibrium together" },
+                    "Wisdom Galaxy": { percentage: 92, description: "Wisdom and balance create stability" },
+                    "Harmony Constellation": { percentage: 90, description: "Natural harmony and balance" },
+                    "Love Supernova": { percentage: 87, description: "Love supported by stability" },
+                    "Adventure Spiral": { percentage: 72, description: "Balance provides safe base for adventure" },
+                    "Creative Nebula": { percentage: 70, description: "Structure supports creative expression" }
+                },
+                growthPath: [
+                    { title: "Inner Balance", description: "Achieve balance within yourself before trying to balance external situations." },
+                    { title: "Dynamic Equilibrium", description: "Learn that balance is active and flowing, not static and rigid." },
+                    { title: "Decision Mastery", description: "Develop confidence in making decisions even when perfect balance isn't possible." },
+                    { title: "Balance Teaching", description: "Help others find their own balance and equilibrium in life and relationships." },
+                    { title: "Cosmic Stability", description: "Become a stabilizing force that helps maintain harmony in larger systems and communities." }
+                ]
+            }
+        };
+
+        // Quiz State
+        let currentQuestionIndex = 0;
+        let answers = [];
+        let scores = {};
+
+        // Initialize scores
+        function initializeScores() {
+            scores = {
+                creativity: 0, innovation: 0, inspiration: 0, art: 0,
+                harmony: 0, connection: 0, empathy: 0, peace: 0,
+                wisdom: 0, knowledge: 0, truth: 0, understanding: 0,
+                exploration: 0, adventure: 0, freedom: 0, possibility: 0,
+                love: 0, compassion: 0, care: 0, nurturing: 0,
+                balance: 0, stability: 0, order: 0, equilibrium: 0
+            };
+        }
+
+        // Create animated stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 100;
+            
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                starsContainer.appendChild(star);
+            }
+
+            // Create shooting stars
+            setInterval(() => {
+                const shootingStar = document.createElement('div');
+                shootingStar.className = 'shooting-star';
+                shootingStar.style.top = Math.random() * 50 + '%';
+                shootingStar.style.left = '-100px';
+                starsContainer.appendChild(shootingStar);
+
+                setTimeout(() => {
+                    shootingStar.remove();
+                }, 3000);
+            }, 5000);
+        }
+
+        // Initialize stars when page loads
+        window.addEventListener('load', createStars);
+
+        // Start quiz function
+        function startQuiz() {
+            // Show loading animation
+            document.getElementById('loading').style.display = 'block';
+            
+            // Smooth scroll to loading section
+            document.getElementById('loading').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+
+            // Initialize quiz
+            setTimeout(() => {
+                initializeScores();
+                currentQuestionIndex = 0;
+                answers = [];
+                
+                // Hide loading and hero, show quiz
+                document.getElementById('loading').style.display = 'none';
+                document.querySelector('.hero').style.display = 'none';
+                document.querySelector('.features').style.display = 'none';
+                document.querySelector('.preview').style.display = 'none';
+                document.getElementById('quizContainer').style.display = 'block';
+                
+                // Load first question
+                loadQuestion();
+                updateProgress();
+                
+                // Scroll to quiz
+                document.getElementById('quizContainer').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            }, 2000);
+        }
+
+        function loadQuestion() {
+            const question = quizQuestions[currentQuestionIndex];
+            const container = document.getElementById('questionContainer');
+            
+            container.innerHTML = `
+                <div class="question-title">${question.question}</div>
+                <div class="question-subtitle">${question.subtitle}</div>
+                <div class="answers-grid">
+                    ${question.answers.map((answer, index) => `
+                        <div class="answer-option" onclick="selectAnswer(${index})">
+                            <div class="answer-text">${answer.text}</div>
+                            <div class="answer-description">${answer.description}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            // Update question counter
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            document.getElementById('totalQuestions').textContent = quizQuestions.length;
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentQuestionIndex === 0;
+            document.getElementById('nextBtn').disabled = true;
+        }
+
+        function selectAnswer(answerIndex) {
+            // Remove previous selections
+            document.querySelectorAll('.answer-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+
+            // Add selection to clicked option
+            document.querySelectorAll('.answer-option')[answerIndex].classList.add('selected');
+
+            // Store answer
+            answers[currentQuestionIndex] = answerIndex;
+
+            // Enable next button
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        function nextQuestion() {
+            if (answers[currentQuestionIndex] === undefined) return;
+
+            // Add scores from current answer
+            const question = quizQuestions[currentQuestionIndex];
+            const selectedAnswer = question.answers[answers[currentQuestionIndex]];
+            
+            Object.keys(selectedAnswer.scores).forEach(trait => {
+                scores[trait] = (scores[trait] || 0) + selectedAnswer.scores[trait];
+            });
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < quizQuestions.length) {
+                loadQuestion();
+                updateProgress();
+            } else {
+                showResults();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+                updateProgress();
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestionIndex + 1) / quizQuestions.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function determineUniverseType() {
+            // Calculate dominant traits
+            const traitCategories = {
+                "Creative Nebula": ["creativity", "innovation", "inspiration", "art"],
+                "Harmony Constellation": ["harmony", "connection", "empathy", "peace"],
+                "Wisdom Galaxy": ["wisdom", "knowledge", "truth", "understanding"],
+                "Adventure Spiral": ["exploration", "adventure", "freedom", "possibility"],
+                "Love Supernova": ["love", "compassion", "care", "nurturing"],
+                "Balance Binary": ["balance", "stability", "order", "equilibrium"]
+            };
+
+            let highestScore = 0;
+            let dominantType = "Creative Nebula";
+
+            Object.keys(traitCategories).forEach(type => {
+                const typeScore = traitCategories[type].reduce((sum, trait) => {
+                    return sum + (scores[trait] || 0);
+                }, 0);
+
+                if (typeScore > highestScore) {
+                    highestScore = typeScore;
+                    dominantType = type;
+                }
+            });
+
+            return dominantType;
+        }
+
+        function showResults() {
+            const universeType = determineUniverseType();
+            const universe = universeTypes[universeType];
+
+            // Hide quiz container
+            document.getElementById('quizContainer').style.display = 'none';
+
+            // Show results
+            document.getElementById('resultsContainer').style.display = 'block';
+            document.getElementById('universeType').textContent = universeType;
+            document.getElementById('universeSubtitle').textContent = universe.description;
+            document.getElementById('originStory').textContent = universe.story;
+            document.getElementById('lifeMission').textContent = universe.mission;
+
+            // Update universe visual
+            const universeCore = document.querySelector('.universe-core');
+            universeCore.style.background = `radial-gradient(circle at 30% 30%, ${universe.colors.join(', ')})`;
+
+            // Generate detailed stats
+            generateDetailedStats(universe);
+            
+            // Generate trait bars
+            generateTraitBars();
+            
+            // Generate life areas analysis
+            generateLifeAreas(universe);
+            
+            // Generate compatibility matrix
+            generateCompatibilityMatrix(universe);
+            
+            // Generate growth path
+            generateGrowthPath(universe);
+            
+            // Generate advice
+            generateAdvice(universe);
+            
+            // Generate warnings
+            generateWarnings(universe);
+
+            // Scroll to results
+            document.getElementById('resultsContainer').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function generateDetailedStats(universe) {
+            const totalQuestions = quizQuestions.length;
+            const maxPossibleScore = totalQuestions * 3; // Max score per trait
+            
+            // Calculate key metrics
+            const topTraits = Object.keys(scores)
+                .sort((a, b) => scores[b] - scores[a])
+                .slice(0, 8);
+                
+            const avgScore = topTraits.reduce((sum, trait) => sum + scores[trait], 0) / topTraits.length;
+            const universeStrength = Math.round((avgScore / maxPossibleScore) * 100);
+            const balanceScore = calculateBalanceScore();
+            const uniquenessScore = calculateUniquenessScore();
+
+            const statsHTML = `
+                <div class="stat-detail">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
+                    <div class="stat-number">${universeStrength}%</div>
+                    <div class="stat-description">Universe Strength</div>
+                </div>
+                <div class="stat-detail">
+                    <div class="stat-icon"><i class="fas fa-balance-scale"></i></div>
+                    <div class="stat-number">${balanceScore}%</div>
+                    <div class="stat-description">Cosmic Balance</div>
+                </div>
+                <div class="stat-detail">
+                    <div class="stat-icon"><i class="fas fa-gem"></i></div>
+                    <div class="stat-number">${uniquenessScore}%</div>
+                    <div class="stat-description">Uniqueness Factor</div>
+                </div>
+                <div class="stat-detail">
+                    <div class="stat-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                    <div class="stat-number">${Math.round(Object.keys(scores).filter(trait => scores[trait] > 0).length / Object.keys(scores).length * 100)}%</div>
+                    <div class="stat-description">Trait Diversity</div>
+                </div>
+            `;
+            
+            document.getElementById('detailedStats').innerHTML = statsHTML;
+        }
+
+        function calculateBalanceScore() {
+            const traitValues = Object.values(scores);
+            const mean = traitValues.reduce((a, b) => a + b, 0) / traitValues.length;
+            const variance = traitValues.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / traitValues.length;
+            const standardDeviation = Math.sqrt(variance);
+            
+            // Lower standard deviation = more balanced = higher score
+            const maxStdDev = 10; // Reasonable max for our scoring system
+            return Math.max(0, Math.round((1 - Math.min(standardDeviation, maxStdDev) / maxStdDev) * 100));
+        }
+
+        function calculateUniquenessScore() {
+            // Calculate how unique the trait combination is
+            const activeTraits = Object.keys(scores).filter(trait => scores[trait] > 0);
+            const traitCombinationScore = activeTraits.length * 2;
+            
+            // Factor in the distribution of scores
+            const sortedScores = Object.values(scores).sort((a, b) => b - a);
+            const topHeaviness = sortedScores[0] / (sortedScores.reduce((a, b) => a + b, 0) || 1);
+            
+            // More diverse = more unique
+            const diversityBonus = (1 - topHeaviness) * 50;
+            
+            return Math.min(100, Math.round(traitCombinationScore + diversityBonus));
+        }
+
+        function generateTraitBars() {
+            const maxScore = Math.max(...Object.values(scores));
+            const significantTraits = Object.keys(scores)
+                .filter(trait => scores[trait] > 0)
+                .sort((a, b) => scores[b] - scores[a])
+                .slice(0, 12);
+
+            const barsHTML = significantTraits.map(trait => {
+                const percentage = Math.round((scores[trait] / maxScore) * 100);
+                return `
+                    <div class="trait-bar">
+                        <div class="trait-name">${trait.charAt(0).toUpperCase() + trait.slice(1)}</div>
+                        <div class="trait-progress">
+                            <div class="trait-fill" style="width: ${percentage}%"></div>
+                        </div>
+                        <div class="trait-percentage">${percentage}%</div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('traitBars').innerHTML = barsHTML;
+        }
+
+        function generateLifeAreas(universe) {
+            const areas = [
+                { icon: 'fas fa-briefcase', title: 'Career & Purpose', key: 'career' },
+                { icon: 'fas fa-heart', title: 'Relationships', key: 'relationships' },
+                { icon: 'fas fa-seedling', title: 'Personal Growth', key: 'growth' },
+                { icon: 'fas fa-mountain', title: 'Challenges', key: 'challenges' }
+            ];
+
+            const areasHTML = areas.map(area => `
+                <div class="life-area">
+                    <div class="area-icon"><i class="${area.icon}"></i></div>
+                    <div class="area-title">${area.title}</div>
+                    <div class="area-description">${universe.lifeAreas[area.key]}</div>
+                </div>
+            `).join('');
+
+            document.getElementById('lifeAreas').innerHTML = areasHTML;
+        }
+
+        function generateCompatibilityMatrix(universe) {
+            const compatibilityHTML = Object.keys(universe.compatibility).map(type => {
+                const compat = universe.compatibility[type];
+                let className = 'compatibility-moderate';
+                if (compat.percentage >= 90) className = 'compatibility-excellent';
+                else if (compat.percentage >= 80) className = 'compatibility-good';
+
+                return `
+                    <div class="compatibility-item">
+                        <div class="compatibility-type">${type}</div>
+                        <div class="compatibility-percentage ${className}">${compat.percentage}%</div>
+                        <div class="compatibility-description">${compat.description}</div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('compatibilityGrid').innerHTML = compatibilityHTML;
+        }
+
+        function generateGrowthPath(universe) {
+            const pathHTML = universe.growthPath.map((phase, index) => `
+                <div class="growth-phase">
+                    <div class="phase-number">${index + 1}</div>
+                    <div class="phase-content">
+                        <div class="phase-title">${phase.title}</div>
+                        <div class="phase-description">${phase.description}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('growthTimeline').innerHTML = pathHTML;
+        }
+
+        function generateAdvice(universe) {
+            const adviceTypes = [
+                { type: 'Strengths', content: universe.advice.strengths },
+                { type: 'Relationships', content: universe.advice.relationships },
+                { type: 'Career', content: universe.advice.career },
+                { type: 'Growth', content: universe.advice.growth }
+            ];
+
+            const adviceHTML = adviceTypes.map(advice => `
+                <div class="advice-card">
+                    <div class="advice-type">${advice.type}</div>
+                    <div class="advice-content">${advice.content}</div>
+                </div>
+            `).join('');
+
+            document.getElementById('adviceGrid').innerHTML = adviceHTML;
+        }
+
+        function generateWarnings(universe) {
+            const warningTypes = Object.keys(universe.warnings);
+            
+            const warningsHTML = warningTypes.map(warning => `
+                <div class="warning-item">
+                    <div class="warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="warning-text">
+                        <strong>${warning.replace('_', ' ').toUpperCase()}:</strong> ${universe.warnings[warning]}
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('warningList').innerHTML = warningsHTML;
+        }
+
+        function shareResults() {
+            const universeType = document.getElementById('universeType').textContent;
+            const universeName = universeType.replace(' ', '');
+            
+            // Create engaging share texts
+            const shareTexts = [
+                `🌌 I just discovered I'm a ${universeType}! This viral universe quiz is SO accurate it's scary. What cosmic identity are you? Take the quiz and find out! ✨ #UniverseQuiz #${universeName} #CosmicIdentity`,
+                `OMG! 🚀 I'm officially a ${universeType} and this quiz CALLED ME OUT! Join 250,000+ people discovering their cosmic identity. This is why it's going viral! 🔥 #ViralQuiz #${universeName}`,
+                `POV: You take the universe quiz that everyone's talking about and it's TOO accurate 💀 I'm a ${universeType} - what are you? 🌟 #UniverseQuiz #${universeName} #Viral`,
+                `Just took the cosmic quiz that's breaking the internet! 🌌 I'm a ${universeType} and it explained EVERYTHING about my personality! Your turn! ✨ #CosmicIdentity #${universeName}`
+            ];
+            
+            const randomText = shareTexts[Math.floor(Math.random() * shareTexts.length)];
+            const url = window.location.href;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: `I'm a ${universeType}! 🌌`,
+                    text: randomText,
+                    url: url
+                }).then(() => {
+                    // Track share success
+                    updateViralStats();
+                    showShareSuccess();
+                });
+            } else {
+                // Fallback to clipboard with enhanced text
+                const fullText = `${randomText}\n\n🔗 Take the quiz: ${url}`;
+                navigator.clipboard.writeText(fullText).then(() => {
+                    showShareSuccess();
+                    updateViralStats();
+                });
+            }
+        }
+
+        function showShareSuccess() {
+            // Create success message
+            const successDiv = document.createElement('div');
+            successDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+                color: white;
+                padding: 1.5rem 2rem;
+                border-radius: 15px;
+                z-index: 10000;
+                text-align: center;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+                animation: popIn 0.5s ease;
+            `;
+            successDiv.innerHTML = `
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+                <div style="font-weight: 600; margin-bottom: 0.5rem;">Ready to Go Viral!</div>
+                <div style="font-size: 0.9rem;">Your cosmic identity has been copied! Share it everywhere and watch the magic happen ✨</div>
+            `;
+            
+            document.body.appendChild(successDiv);
+            
+            setTimeout(() => {
+                successDiv.remove();
+            }, 3000);
+        }
+
+        function updateViralStats() {
+            // Simulate real-time updates to viral stats
+            const counters = ['liveCounter', 'recentTakers'];
+            
+            counters.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    const currentNum = parseInt(element.textContent.replace(/,/g, ''));
+                    const newNum = currentNum + Math.floor(Math.random() * 10) + 1;
+                    element.textContent = newNum.toLocaleString();
+                }
+            });
+        }
+
+        // Animate counters on page load
+        function animateCounters() {
+            const counters = [
+                { id: 'liveCounter', target: 127439, increment: 1247 },
+                { id: 'recentTakers', target: 1247, increment: 23 }
+            ];
+
+            counters.forEach(counter => {
+                const element = document.getElementById(counter.id);
+                if (element) {
+                    let current = 0;
+                    const increment = Math.ceil(counter.target / 50);
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= counter.target) {
+                            current = counter.target;
+                            clearInterval(timer);
+                            
+                            // Continue updating periodically
+                            setInterval(() => {
+                                const newValue = current + Math.floor(Math.random() * counter.increment);
+                                element.textContent = newValue.toLocaleString();
+                                current = newValue;
+                            }, 5000 + Math.random() * 10000);
+                        }
+                        element.textContent = current.toLocaleString();
+                    }, 50);
+                }
+            });
+        }
+
+        // Add urgency banner auto-hide
+        function initUrgencyBanner() {
+            const banner = document.getElementById('urgencyBanner');
+            let isVisible = true;
+            
+            // Auto-update the banner periodically
+            setInterval(() => {
+                if (isVisible) {
+                    const counter = document.getElementById('liveCounter');
+                    const current = parseInt(counter.textContent.replace(/,/g, ''));
+                    const newCount = current + Math.floor(Math.random() * 50) + 10;
+                    counter.textContent = newCount.toLocaleString();
+                }
+            }, 8000);
+            
+            // Make banner clickable to hide/show
+            banner.addEventListener('click', () => {
+                if (isVisible) {
+                    banner.style.transform = 'translateY(-100%)';
+                    isVisible = false;
+                    document.querySelector('.header').style.marginTop = '0';
+                } else {
+                    banner.style.transform = 'translateY(0)';
+                    isVisible = true;
+                    document.querySelector('.header').style.marginTop = '60px';
+                }
+            });
+        }
+
+        // Enhanced analytics tracking
+        function trackEvent(eventName, data = {}) {
+            // This would integrate with your analytics platform
+            console.log(`Event: ${eventName}`, data);
+            
+            // Example: Google Analytics 4
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, data);
+            }
+        }
+
+        // Track quiz start
+        function trackQuizStart() {
+            trackEvent('quiz_started', {
+                quiz_type: 'universe_quiz',
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        // Track quiz completion
+        function trackQuizComplete(universeType) {
+            trackEvent('quiz_completed', {
+                quiz_type: 'universe_quiz',
+                result: universeType,
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        // Enhanced start quiz function
+        function startQuiz() {
+            trackQuizStart();
+            
+            // Show loading animation
+            document.getElementById('loading').style.display = 'block';
+            
+            // Smooth scroll to loading section
+            document.getElementById('loading').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+
+            // Initialize quiz
+            setTimeout(() => {
+                initializeScores();
+                currentQuestionIndex = 0;
+                answers = [];
+                
+                // Hide loading and hero, show quiz
+                document.getElementById('loading').style.display = 'none';
+                document.querySelector('.hero').style.display = 'none';
+                document.querySelector('.features').style.display = 'none';
+                document.querySelector('.preview').style.display = 'none';
+                document.querySelector('.social-proof').style.display = 'none';
+                document.querySelector('.social-share-preview').style.display = 'none';
+                document.getElementById('quizContainer').style.display = 'block';
+                
+                // Load first question
+                loadQuestion();
+                updateProgress();
+                
+                // Scroll to quiz
+                document.getElementById('quizContainer').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            }, 2000);
+        }
+
+        // Enhanced show results function
+        function showResults() {
+            const universeType = determineUniverseType();
+            const universe = universeTypes[universeType];
+
+            // Track completion
+            trackQuizComplete(universeType);
+
+            // Hide quiz container
+            document.getElementById('quizContainer').style.display = 'none';
+
+            // Show results
+            document.getElementById('resultsContainer').style.display = 'block';
+            document.getElementById('universeType').textContent = universeType;
+            document.getElementById('universeSubtitle').textContent = universe.description;
+            document.getElementById('originStory').textContent = universe.story;
+            document.getElementById('lifeMission').textContent = universe.mission;
+
+            // Update universe visual
+            const universeCore = document.querySelector('.universe-core');
+            universeCore.style.background = `radial-gradient(circle at 30% 30%, ${universe.colors.join(', ')})`;
+
+            // Generate all result sections
+            generateDetailedStats(universe);
+            generateTraitBars();
+            generateLifeAreas(universe);
+            generateCompatibilityMatrix(universe);
+            generateGrowthPath(universe);
+            generateAdvice(universe);
+            generateWarnings(universe);
+
+            // Scroll to results
+            document.getElementById('resultsContainer').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+
+            // Show share encouragement after a delay
+            setTimeout(() => {
+                showShareEncouragement(universeType);
+            }, 3000);
+        }
+
+        function showShareEncouragement(universeType) {
+            const encouragement = document.createElement('div');
+            encouragement.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+                color: white;
+                padding: 1rem;
+                border-radius: 15px;
+                z-index: 1000;
+                max-width: 300px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                animation: slideIn 0.5s ease;
+                cursor: pointer;
+            `;
+            encouragement.innerHTML = `
+                <div style="font-weight: 600; margin-bottom: 0.5rem;">🚀 Ready to go viral?</div>
+                <div style="font-size: 0.9rem;">Share your ${universeType} result and see what your friends get!</div>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.8;">Click to share instantly ✨</div>
+            `;
+            
+            encouragement.addEventListener('click', () => {
+                shareResults();
+                encouragement.remove();
+            });
+            
+            document.body.appendChild(encouragement);
+            
+            setTimeout(() => {
+                if (encouragement.parentNode) {
+                    encouragement.remove();
+                }
+            }, 10000);
+        }
+
+        // Initialize everything when page loads
+        window.addEventListener('load', () => {
+            createStars();
+            animateCounters();
+            initUrgencyBanner();
+        });
+
+        function retakeQuiz() {
+            // Reset everything
+            document.getElementById('resultsContainer').style.display = 'none';
+            document.querySelector('.hero').style.display = 'block';
+            document.querySelector('.features').style.display = 'grid';
+            document.querySelector('.preview').style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Reset quiz state
+            currentQuestionIndex = 0;
+            answers = [];
+            initializeScores();
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to cosmic orb
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            const orb = document.querySelector('.cosmic-orb');
+            if (orb) {
+                orb.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Add interactive hover effects
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
