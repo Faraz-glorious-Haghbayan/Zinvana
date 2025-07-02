@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-    <title>Greatest and Most Influential Historical Leaders – Discover Their Secrets</title>
-    <meta name="description" content="Explore the greatest leaders in history—from Winston Churchill to Gandhi, from Abraham Lincoln to Genghis Khan. Discover their leadership traits, life lessons, and lasting impact. Learn key strategies from famous historical leaders." />
-    <meta name="keywords" content="greatest leaders, historical leaders, famous historical leaders, leadership styles, influential leaders in history, Winston Churchill, Abraham Lincoln, Gandhi, Genghis Khan" />
+    <title>Most Influential Leaders in History | Famous Historical Leaders & Their Legacies</title>
+    <meta name="description" content="Discover the most influential leaders in history. Explore famous historical leaders like Winston Churchill, Gandhi, Lincoln & more. Learn leadership traits, strategies & legacies that shaped our world. Complete guide to influential leaders." />
+    <meta name="keywords" content="influential leaders, famous leaders, historical leaders, most influential leaders in history, famous historical leaders, greatest leaders, leadership traits, historical figures, world leaders, political leaders, military leaders, spiritual leaders" />
     <meta name="author" content="Zinvana">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph for Social Media -->
-    <meta property="og:title" content="Greatest Leaders in History – Uncover Their Leadership Secrets">
+    <meta property="og:title" content="Most Influential Leaders in History | Famous Historical Leaders">
     <meta property="og:description" content="Explore the legacies, leadership styles, and strategies of history’s most influential leaders. From inspiring speeches to bold reforms, learn from the best." />
     <meta property="og:image" content="che.png">
     <meta property="og:url" content="https://zinvana.com/leaders-list.html">
@@ -19,13 +19,62 @@
 
     <!-- Twitter Card for Social Media -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Greatest Leaders in History – Discover Their Impact">
+    <meta name="twitter:title" content="Most Influential Leaders in History | Famous Historical Leaders">
     <meta name="twitter:description" content="Dive deep into history with our comprehensive list of the world’s most influential leaders. Learn about their leadership traits, achievements, and enduring influence." />
     <meta name="twitter:image" content="che.png">
 
     <!-- Favicon and Canonical URL -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://zinvana.com/leaders-list.html">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Most Influential Leaders in History | Famous Historical Leaders",
+      "description": "Discover the most influential leaders in history. Complete guide to famous historical leaders including Winston Churchill, Gandhi, Lincoln and more.",
+      "url": "https://zinvana.com/leaders-list.html",
+      "about": {
+        "@type": "Thing",
+        "name": "Historical Leaders"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Famous Historical Leaders",
+        "description": "Collection of the most influential leaders throughout history",
+        "numberOfItems": 15,
+        "itemListElement": [
+          {
+            "@type": "Person",
+            "name": "Winston Churchill",
+            "description": "British Prime Minister during World War II, one of the most influential leaders",
+            "url": "https://zinvana.com/churchill.html"
+          },
+          {
+            "@type": "Person", 
+            "name": "Mahatma Gandhi",
+            "description": "Leader of Indian independence movement through non-violent resistance",
+            "url": "https://zinvana.com/gandhi.html"
+          },
+          {
+            "@type": "Person",
+            "name": "Abraham Lincoln", 
+            "description": "16th President of the United States who led during Civil War",
+            "url": "https://zinvana.com/lincoln.html"
+          },
+          {
+            "@type": "Person",
+            "name": "Cyrus the Great",
+            "description": "Founder of the Persian Empire known for tolerance and justice",
+            "url": "https://zinvana.com/cyrus.html"
+          }
+        ]
+      },
+      "keywords": ["influential leaders", "famous leaders", "historical leaders", "leadership", "history"]
+    }
+    </script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap');
 
@@ -134,14 +183,15 @@
 
         /* Explainer Section */
         #leaders-explainer {
-            max-width: 900px;
+            width: 100%;
             margin: 0 auto 36px auto;
-            padding: 36px 32px;
+            padding: 36px 5%;
             background: var(--glass-bg);
-            border-radius: var(--card-radius);
+            border-radius: 0;
             box-shadow: var(--shadow), 0 2px 0 var(--accent);
             backdrop-filter: blur(18px);
-            border: 2.5px solid var(--glass-border);
+            border-top: 2.5px solid var(--glass-border);
+            border-bottom: 2.5px solid var(--glass-border);
             animation: fadeInUp 0.9s;
         }
         #leaders-explainer h2 {
@@ -160,14 +210,17 @@
 
         /* Leader Profiles Grid */
         #leaders {
-            max-width: 1400px;
+            width: 100%;
             margin: 0 auto 72px auto;
-            padding: 0 18px;
+            padding: 40px 3%;
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
             justify-content: center;
             animation: fadeInUp 1.1s;
+            background: rgba(26,26,46,0.3);
+            border-top: 2px solid var(--glass-border);
+            border-bottom: 2px solid var(--glass-border);
         }
 
         /* Leader Card */
@@ -252,15 +305,16 @@
 
         /* In-Depth Section */
         #in-depth {
-            max-width: 900px;
+            width: 100%;
             margin: 0 auto 48px auto;
-            padding: 40px 32px;
+            padding: 40px 5%;
             background: rgba(36,38,54,0.89);
-            border-radius: var(--card-radius);
+            border-radius: 0;
             box-shadow: var(--shadow), 0 2px 0 var(--accent);
             text-align: left;
             backdrop-filter: blur(18px);
-            border: 2.5px solid var(--glass-border);
+            border-top: 2.5px solid var(--glass-border);
+            border-bottom: 2.5px solid var(--glass-border);
             animation: fadeInUp 1.3s;
         }
         #in-depth h2 {
@@ -314,28 +368,47 @@
         .toast {
             position: fixed;
             left: 50%;
-            top: 36px;
+            top: 24px;
             width: 96%;
-            max-width: 420px;
+            max-width: 480px;
             transform: translateX(-50%);
-            background: rgba(36,38,54,0.97);
+            background: linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(22,33,62,0.95) 50%, rgba(15,52,96,0.95) 100%);
             color: #fff;
-            padding: 18px 22px 14px 22px;
-            border-radius: 18px;
+            padding: 20px 24px 16px 24px;
+            border-radius: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 2.5px solid var(--accent);
-            box-shadow: 0 12px 48px rgba(255,71,87,0.18), 0 2px 0 var(--accent);
+            border: 2px solid var(--accent);
+            box-shadow: 0 20px 60px rgba(255,71,87,0.25), 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
             z-index: 10000;
             opacity: 0;
-            animation: fadeIn 0.7s forwards;
+            animation: slideInDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
             font-size: 1.13rem;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateX(-50%) translateY(-24px);}
-            to { opacity: 1; transform: translateX(-50%) translateY(0);}
+        .toast::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,71,87,0.05) 0%, rgba(255,127,80,0.05) 100%);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+        @keyframes slideInDown {
+            from { 
+                opacity: 0; 
+                transform: translateX(-50%) translateY(-60px) scale(0.9);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
         }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(32px);}
@@ -344,44 +417,68 @@
         .toast-content {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
         }
         .toast-text {
-            font-size: 1.13rem;
-            font-weight: 500;
+            font-size: 1.15rem;
+            font-weight: 600;
             color: #fff;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            flex: 1;
         }
         .toast-button {
-            background: linear-gradient(90deg, var(--accent) 60%, var(--accent2) 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
             color: #fff;
             border: none;
-            padding: 10px 22px;
-            border-radius: 7px;
+            padding: 12px 24px;
+            border-radius: 12px;
             cursor: pointer;
-            font-weight: bold;
-            font-size: 1.09rem;
-            transition: background var(--transition), transform var(--transition);
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 15px rgba(255,71,87,0.3);
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        .toast-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .toast-button:hover::before {
+            left: 100%;
         }
         .toast-button:hover {
-            background: linear-gradient(90deg, var(--accent2) 60%, var(--accent) 100%);
-            color: #fff;
-            transform: scale(1.08);
+            background: linear-gradient(135deg, var(--accent2) 0%, var(--accent) 100%);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255,71,87,0.4);
         }
         .toast-progress {
             width: 100%;
-            height: 5px;
-            background: rgba(255,255,255,0.18);
-            margin-top: 10px;
-            border-radius: 2.5px;
+            height: 4px;
+            background: rgba(255,255,255,0.15);
+            margin-top: 12px;
+            border-radius: 2px;
             overflow: hidden;
+            position: relative;
+            z-index: 2;
         }
         .toast-progress::before {
             content: "";
             display: block;
             height: 100%;
-            background: linear-gradient(90deg, #fff 60%, var(--accent) 100%);
+            background: linear-gradient(90deg, #fff 0%, var(--accent) 50%, var(--accent2) 100%);
             width: 100%;
-            animation: countdown 5s linear forwards;
+            animation: countdown 6s linear forwards;
+            border-radius: 2px;
         }
         @keyframes countdown {
             from { width: 100%; }
@@ -423,11 +520,13 @@
         @media (max-width: 1400px) {
             #leaders {
                 gap: 24px;
+                padding: 40px 4%;
             }
         }
         @media (max-width: 1100px) {
             #leaders {
                 gap: 16px;
+                padding: 30px 3%;
             }
             .leader-profile {
                 width: 90vw;
@@ -436,17 +535,38 @@
         }
         @media (max-width: 900px) {
             .hero h1 { font-size: 2.1rem; }
-            .hero-content { padding: 32px 8px 18px 8px; }
-            #leaders-explainer, #in-depth { padding: 18px 4vw; }
+            .hero-content { padding: 32px 5% 18px 5%; }
+            #leaders-explainer, #in-depth { padding: 18px 4%; }
+            #leaders { padding: 20px 2%; }
             .leader-profile { width: 98vw; max-width: 98vw; }
         }
         @media (max-width: 700px) {
             .hero h1 { font-size: 1.4rem; }
-            .hero-content { padding: 14px 2vw 10px 2vw; }
-            #leaders-explainer, #in-depth { padding: 10px 2vw; }
+            .hero-content { padding: 14px 3% 10px 3%; }
+            #leaders-explainer, #in-depth { padding: 15px 3%; }
+            #leaders { padding: 15px 2%; }
             .leader-profile { padding: 12px 4px; }
             .btn { width: 100%; margin-top: 12px; }
-            .toast { max-width: 98vw; font-size: 1rem; padding: 14px 6px 10px 6px; }
+            .toast { 
+                max-width: 95vw; 
+                font-size: 1rem; 
+                padding: 16px 12px 12px 12px; 
+                top: 16px;
+                border-radius: 16px;
+            }
+            .toast-content {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .toast-text {
+                font-size: 1.05rem;
+            }
+            .toast-button {
+                padding: 10px 20px;
+                font-size: 1rem;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -485,7 +605,8 @@
   nav {
     position: sticky;
     top: 0;
-    padding: 0 32px !important;
+    padding: 0 5% !important;
+    width: 100% !important;
     max-width: 100% !important;
     display: flex;
     justify-content: space-between;
@@ -794,7 +915,7 @@
 </div>
 
 <!-- Add Quick Filter and Back to Top button just after nav and before hero -->
-<section id="quick-filter" style="max-width:900px;margin:32px auto 0 auto;display:flex;justify-content:center;align-items:center;gap:18px;">
+<section id="quick-filter" style="width:100%;margin:32px auto 0 auto;display:flex;justify-content:center;align-items:center;gap:18px;padding:20px 5%;background:rgba(36,38,54,0.6);backdrop-filter:blur(10px);border-top:2px solid var(--glass-border);border-bottom:2px solid var(--glass-border);">
   <input id="leaderFilter" type="text" placeholder="Search leaders..." style="padding:12px 18px;border-radius:8px;border:1.5px solid #ff7f50;background:#23243a;color:#fff;font-size:1.08rem;box-shadow:0 2px 8px #ff7f5011;outline:none;width:260px;max-width:80vw;">
   <select id="traitFilter" style="padding:12px 18px;border-radius:8px;border:1.5px solid #ff7f50;background:#23243a;color:#fff;font-size:1.08rem;">
     <option value="">All Traits</option>
@@ -878,7 +999,7 @@ document.addEventListener("DOMContentLoaded", function() {
   <div class="hero-content">
     <h1>
       <span style="display:inline-block; background:linear-gradient(90deg,#ff4757 30%,#ff7f50 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
-        The Greatest and Most Influential Leaders in History
+        Most Influential Leaders in History | Famous Historical Leaders
       </span>
     </h1>
     <div style="margin-bottom:18px;">
@@ -893,8 +1014,8 @@ document.addEventListener("DOMContentLoaded", function() {
       </span>
     </div>
     <p style="font-size:1.35rem; color:#fff; max-width:700px; margin:0 auto 32px auto; text-shadow:0 2px 24px #23243a55;">
-      Discover the stories, strategies, and legacies of the world's most impactful leaders.<br>
-      <span style="color:#ff7f50;font-weight:600;">Dive deep into their journeys and find out what makes a leader truly great.</span>
+      Explore the most <strong>influential leaders</strong> and <strong>famous historical leaders</strong> who shaped civilizations, led revolutions, and changed the course of history.<br>
+      <span style="color:#ff7f50;font-weight:600;">From ancient rulers to modern visionaries - discover what makes these leaders truly extraordinary.</span>
     </p>
     <a href="leaders.html" class="btn" style="font-size:1.22rem; padding:17px 44px; box-shadow:0 6px 32px #ff475733; letter-spacing:0.04em;">
       <span style="vertical-align:middle; margin-right:10px;">
@@ -924,9 +1045,9 @@ document.addEventListener("DOMContentLoaded", function() {
 </style>
 
     <section id="leaders-explainer">
-        <h2>Influence, Power, and Leadership</h2>
+        <h2>Most Influential Leaders and Famous Historical Leaders</h2>
         <p>
-            Throughout the annals of history, great leaders have reshaped nations and inspired revolutions. Explore our curated list of <strong>historical leaders</strong> and gain insights into their leadership styles, defining moments, and enduring legacies. Whether you're studying for inspiration or looking to compare your own potential with the best in history, this is your gateway to understanding what truly makes a leader.
+            Discover the most <strong>influential leaders</strong> in world history who shaped civilizations and changed the course of humanity. Our comprehensive guide features <strong>famous leaders</strong> and <strong>historical leaders</strong> from every era - from ancient rulers like Cyrus the Great to modern visionaries like Gandhi. Explore their leadership styles, revolutionary strategies, and lasting legacies that continue to inspire leaders today. Whether you're studying leadership principles or seeking inspiration from the world's greatest minds, this definitive collection of <strong>famous historical leaders</strong> provides deep insights into what makes truly influential leadership.
         </p>
     </section>
 
@@ -934,7 +1055,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <section id="leaders">
 
             <article class="leader-profile">
-                <img src="churchill.jpg" alt="Winston Churchill">
+                <img src="churchill.jpg" alt="Winston Churchill - Most Influential British Leader and WWII Prime Minister">
                 <h3>Winston Churchill – The Thoughtful Statesman</h3>
                 <p>
                     Widely regarded as one of the greatest wartime leaders, Winston Churchill’s indomitable spirit and eloquent oratory inspired a nation during its darkest hours. His leadership style was rooted in resilience, strategic foresight, and a deep conviction in the power of words to mobilize people.
@@ -956,7 +1077,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="cyrus.jpg" alt="Cyrus the Great">
+                <img src="cyrus.jpg" alt="Cyrus the Great - Famous Persian Empire Founder and Historical Leader">
                 <h3>Cyrus the Great – The Just Conqueror</h3>
                 <p>
                     Revered as the founder of the Achaemenid Empire, Cyrus the Great combined military brilliance with a profound sense of justice and tolerance. His leadership redefined empire-building through respect for diverse cultures, religions, and traditions within his realm.
@@ -1110,7 +1231,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="lincoln.jpg" alt="Abraham Lincoln">
+                <img src="lincoln.jpg" alt="Abraham Lincoln - Famous American President and Historical Leader">
                 <h3>Abraham Lincoln – The Pragmatic Diplomat</h3>
                 <p>
                     Known for his steady resolve and moral clarity, Abraham Lincoln led the United States through its greatest internal crisis—the Civil War. His ability to maintain unity and his commitment to equality have made him a timeless symbol of leadership and justice.
@@ -1198,7 +1319,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="gandhi.jpg" alt="Mahatma Gandhi">
+                <img src="gandhi.jpg" alt="Mahatma Gandhi - Most Influential Leader of Indian Independence Movement">
                 <h3>Mahatma Gandhi – The Compassionate Reformer</h3>
                 <p>
                     Mahatma Gandhi led a non-violent revolution that not only freed India from colonial rule but also inspired civil rights movements around the globe. His philosophy of Satyagraha, or truth-force, continues to be a guiding principle for peaceful protest and ethical leadership.
@@ -1485,6 +1606,77 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
         </section>
 
+        <!-- New SEO-optimized content section -->
+        <section id="influential-leaders-guide" style="width: 100%; margin: 48px auto; padding: 40px 5%; background: rgba(36,38,54,0.89); border-radius: 0; box-shadow: 0 8px 32px rgba(44,83,100,0.13), 0 2px 0 #ff4757; text-align: left; backdrop-filter: blur(18px); border-top: 2.5px solid rgba(255,255,255,0.10); border-bottom: 2.5px solid rgba(255,255,255,0.10);">
+            <h2 style="font-size: 2rem; color: #ff4757; margin-bottom: 18px; font-family: 'Montserrat', Arial, sans-serif; font-weight: 800;">Why Study the Most Influential Leaders in History?</h2>
+            
+            <p style="font-size: 1.08rem; color: #e0e0e0; margin-bottom: 20px; line-height: 1.7;">
+                Understanding <strong>influential leaders</strong> throughout history provides invaluable insights into effective leadership, decision-making, and human motivation. These <strong>famous leaders</strong> shaped civilizations, led revolutions, and created lasting change that continues to impact our world today.
+            </p>
+
+            <h3 style="font-size: 1.18rem; color: #ff7f50; margin-top: 24px; margin-bottom: 10px; font-family: 'Montserrat', Arial, sans-serif;">Categories of Famous Historical Leaders</h3>
+            
+            <ul style="margin-left: 28px; margin-bottom: 18px;">
+                <li style="font-size: 1.08rem; color: #e0e0e0; margin-bottom: 8px;"><strong>Political Leaders:</strong> Winston Churchill, Abraham Lincoln, Franklin D. Roosevelt - leaders who guided nations through crisis</li>
+                <li style="font-size: 1.08rem; color: #e0e0e0; margin-bottom: 8px;"><strong>Military Leaders:</strong> Cyrus the Great, Salahudin, Genghis Khan - conquerors who built empires</li>
+                <li style="font-size: 1.08rem; color: #e0e0e0; margin-bottom: 8px;"><strong>Spiritual Leaders:</strong> Jesus, Prophet Muhammad, Gandhi - figures who inspired billions through faith and philosophy</li>
+                <li style="font-size: 1.08rem; color: #e0e0e0; margin-bottom: 8px;"><strong>Revolutionary Leaders:</strong> Lenin, Che Guevara - those who transformed societies through radical change</li>
+                <li style="font-size: 1.08rem; color: #e0e0e0; margin-bottom: 8px;"><strong>Royal Leaders:</strong> Elizabeth I, Cleopatra - monarchs who wielded power with wisdom and strength</li>
+            </ul>
+
+            <h3 style="font-size: 1.18rem; color: #ff7f50; margin-top: 24px; margin-bottom: 10px; font-family: 'Montserrat', Arial, sans-serif;">Leadership Lessons from History's Greatest Leaders</h3>
+            
+            <p style="font-size: 1.08rem; color: #e0e0e0; margin-bottom: 20px; line-height: 1.7;">
+                Each of these <strong>historical leaders</strong> offers unique lessons in leadership effectiveness. From Churchill's resilience during World War II to Gandhi's non-violent resistance, from Cyrus the Great's tolerance to Lincoln's moral courage - studying their methods helps develop modern leadership skills.
+            </p>
+
+            <h3 style="font-size: 1.18rem; color: #ff7f50; margin-top: 24px; margin-bottom: 10px; font-family: 'Montserrat', Arial, sans-serif;">Impact of Influential Leaders on Modern Society</h3>
+            
+            <p style="font-size: 1.08rem; color: #e0e0e0; margin-bottom: 20px; line-height: 1.7;">
+                The legacies of these <strong>famous historical leaders</strong> continue to influence modern politics, business, and social movements. Their strategies, philosophies, and approaches to leadership remain relevant for contemporary leaders seeking to create positive change and inspire others.
+            </p>
+        </section>
+
+    <!-- FAQ Section for SEO -->
+    <section id="faq-section" style="width: 100%; margin: 48px auto; padding: 40px 5%; background: rgba(36,38,54,0.89); border-radius: 0; box-shadow: 0 8px 32px rgba(44,83,100,0.13), 0 2px 0 #ff4757; text-align: left; backdrop-filter: blur(18px); border-top: 2.5px solid rgba(255,255,255,0.10); border-bottom: 2.5px solid rgba(255,255,255,0.10);">
+        <h2 style="font-size: 2rem; color: #ff4757; margin-bottom: 24px; font-family: 'Montserrat', Arial, sans-serif; font-weight: 800;">Frequently Asked Questions About Influential Leaders</h2>
+        
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 24px;">
+            <h3 itemprop="name" style="font-size: 1.18rem; color: #ff7f50; margin-bottom: 10px; font-family: 'Montserrat', Arial, sans-serif;">Who are the most influential leaders in history?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text" style="font-size: 1.08rem; color: #e0e0e0; line-height: 1.7;">The most influential leaders in history include Winston Churchill, Mahatma Gandhi, Abraham Lincoln, Cyrus the Great, Jesus Christ, Prophet Muhammad, Napoleon Bonaparte, Alexander the Great, and Nelson Mandela. These famous leaders shaped civilizations, led transformative movements, and left lasting legacies that continue to influence the world today.</p>
+            </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 24px;">
+            <h3 itemprop="name" style="font-size: 1.18rem; color: #ff7f50; margin-bottom: 10px; font-family: 'Montserrat', Arial, sans-serif;">What makes a leader historically significant?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text" style="font-size: 1.08rem; color: #e0e0e0; line-height: 1.7;">Historical leaders become significant through their lasting impact on society, their ability to inspire change, their influence on future generations, and their role in shaping major historical events. Famous historical leaders demonstrate exceptional vision, courage, strategic thinking, and the ability to mobilize people toward common goals.</p>
+            </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 24px;">
+            <h3 itemprop="name" style="font-size: 1.18rem; color: #ff7f50; margin-bottom: 10px; font-family: 'Montserrat', Arial, sans-serif;">How do influential leaders impact modern society?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text" style="font-size: 1.08rem; color: #e0e0e0; line-height: 1.7;">Influential leaders from history continue to impact modern society through their ideas, institutions they created, movements they started, and leadership principles they established. Their legacies influence contemporary politics, business practices, social movements, and leadership development programs worldwide.</p>
+            </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 24px;">
+            <h3 itemprop="name" style="font-size: 1.18rem; color: #ff7f50; margin-bottom: 10px; font-family: 'Montserrat', Arial, sans-serif;">What leadership traits do famous historical leaders share?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text" style="font-size: 1.08rem; color: #e0e0e0; line-height: 1.7;">Common traits among famous leaders include vision, resilience, charisma, strategic thinking, moral courage, adaptability, and the ability to inspire others. Historical leaders also demonstrate strong communication skills, decision-making abilities, and the capacity to lead during times of crisis and change.</p>
+            </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 24px;">
+            <h3 itemprop="name" style="font-size: 1.18rem; color: #ff7f50; margin-bottom: 10px; font-family: 'Montserrat', Arial, sans-serif;">Which historical leaders changed the world the most?</h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text" style="font-size: 1.08rem; color: #e0e0e0; line-height: 1.7;">The historical leaders who changed the world the most include Jesus Christ and Prophet Muhammad (religious transformation), Cyrus the Great (human rights and tolerance), Gandhi (non-violent resistance), Churchill (democracy preservation), Lincoln (abolition of slavery), and various revolutionary leaders who shaped modern political systems.</p>
+            </div>
+        </div>
+    </section>
+
         <section id="in-depth">
             <h2>In-Depth Analysis of Historical Leadership</h2>
             <h3>The Evolution of Leadership</h3>
@@ -1512,36 +1704,124 @@ document.addEventListener("DOMContentLoaded", function() {
         
 
     </main>
-    <footer style="background:linear-gradient(90deg,#23243a 60%,#2c2e4a 100%);border-top:2.5px solid #ff4757;padding:32px 10px 18px 10px;text-align:center;box-shadow:0 -2px 18px #ff47571a;font-size:1.13rem;backdrop-filter:blur(10px);">
-      <p style="margin:10px 0;font-size:1.15rem;color:#e0e0e0;letter-spacing:0.02em;">
-        &copy; 2025 Zinvana. All rights reserved.
-        <span style="margin-left:18px;">
-          <a href="mailto:hello@zinvana.com" style="color:#ff7f50;text-decoration:none;font-weight:600;">Contact</a>
-        </span>
-      </p>
-      <div class="social-icons" style="margin-top:10px;">
-        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-          <img src="whiteinsta.png" alt="Instagram" style="width:32px;margin:0 8px;"/>
-        </a>
-        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-          <img src="whitex.png" alt="Twitter" style="width:32px;margin:0 8px;"/>
-        </a>
-        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-          <img src="youtube.png" alt="YouTube" style="width:32px;margin:0 8px;"/>
-        </a>
+    <footer style="background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 30%, #16213e 70%, #0f3460 100%); border-top: none; padding: 56px 24px 40px 24px; text-align: center; box-shadow: 0 -12px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05); font-size: 1.13rem; position: relative; overflow: hidden;">
+      <!-- Enhanced decorative background elements -->
+      <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,71,87,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; animation: slowFloat 12s ease-in-out infinite;"></div>
+      <div style="position: absolute; bottom: -120px; right: -120px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,127,80,0.06) 0%, transparent 70%); border-radius: 50%; pointer-events: none; animation: slowFloat 15s ease-in-out infinite reverse;"></div>
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 400px; background: radial-gradient(ellipse, rgba(255,71,87,0.03) 0%, transparent 70%); pointer-events: none; animation: slowPulse 10s ease-in-out infinite;"></div>
+      
+      <!-- Main footer content -->
+      <div style="position: relative; z-index: 3; max-width: 1200px; margin: 0 auto;">
+        <!-- Brand section with enhanced styling -->
+        <div style="margin-bottom: 40px;">
+          <div style="display: inline-flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+            <div style="width: 64px; height: 64px; background: linear-gradient(45deg, #ff4757, #ff7f50); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(255,71,87,0.3); animation: gentlePulse 4s ease-in-out infinite;">
+              <svg width="32" height="32" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M9 12l2 2 4-4"/>
+                <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3 style="font-family: 'Montserrat', Arial, sans-serif; font-size: 2.8rem; font-weight: 900; margin: 0; background: linear-gradient(135deg, #ff4757 0%, #ff7f50 50%, #ffa726 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              Zinvana
+            </h3>
+          </div>
+          <p style="font-size: 1.15rem; color: #c0c0c0; margin: 0; max-width: 650px; margin: 0 auto; line-height: 1.7; font-weight: 400;">
+            Discover the most <strong style="color: #ff7f50;">influential leaders</strong> in history and unlock the secrets of great leadership. Explore, learn, and get inspired by history's greatest minds.
+          </p>
+        </div>
+
+        <!-- Enhanced links section with better spacing and hover effects -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-bottom: 40px; font-size: 1.08rem;">
+          <a href="index.html" style="color: #e8e8e8; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border-bottom: 2px solid transparent; padding: 8px 0; position: relative;" onmouseover="this.style.color='#ff7f50'; this.style.borderBottomColor='#ff7f50'; this.style.transform='translateY(-2px)'" onmouseout="this.style.color='#e8e8e8'; this.style.borderBottomColor='transparent'; this.style.transform='translateY(0)'">Home</a>
+          <a href="leaders.html" style="color: #e8e8e8; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border-bottom: 2px solid transparent; padding: 8px 0; position: relative;" onmouseover="this.style.color='#ff7f50'; this.style.borderBottomColor='#ff7f50'; this.style.transform='translateY(-2px)'" onmouseout="this.style.color='#e8e8e8'; this.style.borderBottomColor='transparent'; this.style.transform='translateY(0)'">Leaders Quiz</a>
+          <a href="test.html" style="color: #e8e8e8; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border-bottom: 2px solid transparent; padding: 8px 0; position: relative;" onmouseover="this.style.color='#ff7f50'; this.style.borderBottomColor='#ff7f50'; this.style.transform='translateY(-2px)'" onmouseout="this.style.color='#e8e8e8'; this.style.borderBottomColor='transparent'; this.style.transform='translateY(0)'">Personality Test</a>
+          <a href="help.html" style="color: #e8e8e8; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border-bottom: 2px solid transparent; padding: 8px 0; position: relative;" onmouseover="this.style.color='#ff7f50'; this.style.borderBottomColor='#ff7f50'; this.style.transform='translateY(-2px)'" onmouseout="this.style.color='#e8e8e8'; this.style.borderBottomColor='transparent'; this.style.transform='translateY(0)'">Help</a>
+          <a href="mailto:hello@zinvana.com" style="color: #ff7f50; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border-bottom: 2px solid transparent; padding: 8px 0; position: relative;" onmouseover="this.style.color='#ff4757'; this.style.borderBottomColor='#ff4757'; this.style.transform='translateY(-2px)'" onmouseout="this.style.color='#ff7f50'; this.style.borderBottomColor='transparent'; this.style.transform='translateY(0)'">Contact Us</a>
+        </div>
+
+        <!-- Enhanced social media section -->
+        <div style="margin-bottom: 32px;">
+          <p style="font-size: 1.1rem; color: #b8b8b8; margin-bottom: 20px; font-weight: 600; letter-spacing: 0.02em;">Follow Our Journey</p>
+          <div style="display: flex; justify-content: center; gap: 24px;">
+            <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(45deg, #ff4757, #ff7f50); border-radius: 16px; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: 0 6px 20px rgba(255,71,87,0.3); position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px) scale(1.1)'; this.style.boxShadow='0 12px 32px rgba(255,71,87,0.5)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(255,71,87,0.3)'">
+              <img src="whiteinsta.png" alt="Instagram" style="width: 28px; height: 28px; filter: brightness(1.2); position: relative; z-index: 2;" />
+              <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1), transparent 70%); transform: translateX(-100%); transition: transform 0.6s;" onmouseover="this.style.transform='translateX(100%)'"></div>
+            </a>
+            <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(45deg, #ff4757, #ff7f50); border-radius: 16px; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: 0 6px 20px rgba(255,71,87,0.3); position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px) scale(1.1)'; this.style.boxShadow='0 12px 32px rgba(255,71,87,0.5)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(255,71,87,0.3)'">
+              <img src="whitex.png" alt="Twitter" style="width: 24px; height: 24px; filter: brightness(1.2); position: relative; z-index: 2;" />
+              <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1), transparent 70%); transform: translateX(-100%); transition: transform 0.6s;" onmouseover="this.style.transform='translateX(100%)'"></div>
+            </a>
+            <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(45deg, #ff4757, #ff7f50); border-radius: 16px; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: 0 6px 20px rgba(255,71,87,0.3); position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px) scale(1.1)'; this.style.boxShadow='0 12px 32px rgba(255,71,87,0.5)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 6px 20px rgba(255,71,87,0.3)'">
+              <img src="youtube.png" alt="YouTube" style="width: 30px; height: 30px; filter: brightness(1.2); position: relative; z-index: 2;" />
+              <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1), transparent 70%); transform: translateX(-100%); transition: transform 0.6s;" onmouseover="this.style.transform='translateX(100%)'"></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Copyright section with enhanced styling -->
+        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px;">
+          <p style="margin: 0; font-size: 1.02rem; color: #999; letter-spacing: 0.03em; font-weight: 400;">
+            &copy; 2025 <strong style="color: #ff7f50;">Zinvana</strong>. All rights reserved. | <em style="color: #b8b8b8;">Inspiring leadership through history.</em>
+          </p>
+        </div>
       </div>
+      
+      <!-- Additional CSS for animations -->
+      <style>
+        @keyframes slowFloat {
+          0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+          50% { transform: translateY(-30px) rotate(180deg); opacity: 1; }
+        }
+        
+        @keyframes slowPulse {
+          0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+          50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
+        }
+        
+        @keyframes gentlePulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+          footer {
+            padding: 40px 16px 32px 16px !important;
+          }
+          footer h3 {
+            font-size: 2.2rem !important;
+          }
+          footer .brand-icon {
+            width: 48px !important;
+            height: 48px !important;
+          }
+          footer .social-links {
+            gap: 16px !important;
+          }
+          footer .social-links a {
+            width: 48px !important;
+            height: 48px !important;
+          }
+          footer .nav-links {
+            gap: 24px !important;
+            flex-direction: column !important;
+          }
+        }
+      </style>
     </footer>
 
       <script>
         document.addEventListener("DOMContentLoaded", function() {
-          // Customize duration in milliseconds (e.g., 5000ms = 5 seconds)
-          var toastDuration = 5000;
+          // Increased duration to 6 seconds to match enhanced animation
+          var toastDuration = 6000;
           setTimeout(function() {
             var toast = document.getElementById("toast");
             if(toast) {
-              toast.style.transition = "opacity 0.5s ease-out";
+              toast.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
               toast.style.opacity = 0;
-              setTimeout(function() { toast.remove(); }, 500);
+              toast.style.transform = "translateX(-50%) translateY(-40px) scale(0.95)";
+              setTimeout(function() { toast.remove(); }, 600);
             }
           }, toastDuration);
         });
@@ -1625,29 +1905,145 @@ document.getElementById('shareBtn').onclick = function() {
 .leader-profile:nth-child(20) { animation-delay: 2.0s;}
 </style>
 
-<!-- Add a "Did you know?" fun fact bar above the footer -->
-<div id="funFactBar" style="background:linear-gradient(90deg,#ff4757 60%,#ff7f50 100%);color:#fff;padding:14px 0;text-align:center;font-size:1.09rem;font-weight:600;letter-spacing:0.01em;box-shadow:0 -2px 18px #ff47571a;">
-  <span id="funFactText">Did you know? Genghis Khan's empire was the largest contiguous empire in history.</span>
+<!-- Enhanced "Did you know?" fun fact bar above the footer -->
+<div id="funFactBar" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #fff; padding: 24px 20px; text-align: center; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.02em; box-shadow: 0 -8px 32px rgba(255,71,87,0.15), inset 0 1px 0 rgba(255,255,255,0.1); position: relative; overflow: hidden; border-top: 3px solid #ff4757;">
+  <!-- Decorative background elements -->
+  <div style="position: absolute; top: -30px; left: -30px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(255,71,87,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; animation: float 6s ease-in-out infinite;"></div>
+  <div style="position: absolute; bottom: -40px; right: -40px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(255,127,80,0.06) 0%, transparent 70%); border-radius: 50%; pointer-events: none; animation: float 8s ease-in-out infinite reverse;"></div>
+  
+  <!-- Fun fact content -->
+  <div style="position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+    <!-- Lightbulb icon -->
+    <div style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: linear-gradient(45deg, #ff4757, #ff7f50); border-radius: 50%; box-shadow: 0 4px 15px rgba(255,71,87,0.3); animation: pulse 2s ease-in-out infinite;">
+      <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <path d="M9 21h6M12 3v0c2.761 0 5 2.239 5 5 0 2.126-1.327 3.939-3.2 4.667L13 13H11l-.8-.333C8.327 11.939 7 10.126 7 8c0-2.761 2.239-5 5-5z"/>
+        <path d="M9 21h6"/>
+      </svg>
+    </div>
+    
+    <!-- Fact text with typewriter effect -->
+    <div style="flex: 1; min-width: 300px;">
+      <span id="funFactText" style="font-size: 1.15rem; font-weight: 600; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.3); line-height: 1.4; display: inline-block;">
+        Did you know? Genghis Khan's empire was the largest contiguous empire in history.
+      </span>
+    </div>
+    
+    <!-- Progress indicator -->
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="width: 60px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; overflow: hidden;">
+        <div id="factProgress" style="height: 100%; background: linear-gradient(90deg, #ff4757, #ff7f50); width: 0%; transition: width 0.3s ease; border-radius: 2px;"></div>
+      </div>
+      <span style="font-size: 0.9rem; color: #b8b8b8; font-weight: 500;" id="factCounter">1/10</span>
+    </div>
+  </div>
 </div>
+
+<style>
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255,71,87,0.3); }
+  50% { transform: scale(1.1); box-shadow: 0 6px 20px rgba(255,71,87,0.5); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { border-color: transparent; }
+  51%, 100% { border-color: #ff4757; }
+}
+
+.typewriter-text {
+  overflow: hidden;
+  border-right: 2px solid #ff4757;
+  white-space: nowrap;
+  animation: typewriter 2s steps(40, end), blink 1s step-end infinite;
+}
+
+/* Mobile responsiveness for fun fact bar */
+@media (max-width: 768px) {
+  #funFactBar {
+    padding: 20px 16px !important;
+  }
+  #funFactBar > div > div:first-child {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  #funFactBar svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  #funFactText {
+    font-size: 1.05rem !important;
+  }
+  #funFactBar > div {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+</style>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const facts = [
-    "Did you know? Genghis Khan's empire was the largest contiguous empire in history.",
-    "Did you know? Cleopatra spoke at least 7 languages.",
-    "Did you know? Gandhi inspired civil rights movements worldwide.",
-    "Did you know? Sun Tzu's 'Art of War' is still taught in military academies.",
-    "Did you know? Nelson Mandela spent 27 years in prison before becoming president.",
-    "Did you know? Elizabeth I never married and was called the 'Virgin Queen'.",
-    "Did you know? Che Guevara was a trained doctor before becoming a revolutionary.",
-    "Did you know? Marcus Aurelius wrote 'Meditations' as a personal journal.",
-    "Did you know? Augustus Caesar ruled for over 40 years.",
-    "Did you know? Abraham Lincoln was a self-taught lawyer."
+    "Genghis Khan's empire was the largest contiguous empire in history.",
+    "Cleopatra spoke at least 9 languages and was highly educated.",
+    "Gandhi inspired civil rights movements across the world.",
+    "Sun Tzu's 'Art of War' is still taught in military academies today.",
+    "Nelson Mandela spent 27 years in prison before becoming president.",
+    "Elizabeth I never married and was called the 'Virgin Queen'.",
+    "Che Guevara was a trained doctor before becoming a revolutionary.",
+    "Marcus Aurelius wrote 'Meditations' as a personal journal.",
+    "Augustus Caesar ruled the Roman Empire for over 40 years.",
+    "Abraham Lincoln was a self-taught lawyer who became president."
   ];
-  let idx = 0;
-  setInterval(function() {
-    idx = (idx + 1) % facts.length;
-    document.getElementById('funFactText').textContent = facts[idx];
-  }, 7000);
+  
+  let currentIndex = 0;
+  const factText = document.getElementById('funFactText');
+  const factProgress = document.getElementById('factProgress');
+  const factCounter = document.getElementById('factCounter');
+  
+  function updateFact() {
+    // Add fade out effect
+    factText.style.opacity = '0';
+    factText.style.transform = 'translateY(10px)';
+    
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % facts.length;
+      factText.textContent = `Did you know? ${facts[currentIndex]}`;
+      factCounter.textContent = `${currentIndex + 1}/${facts.length}`;
+      
+      // Reset and animate progress
+      factProgress.style.width = '0%';
+      setTimeout(() => {
+        factProgress.style.transition = 'width 8s linear';
+        factProgress.style.width = '100%';
+      }, 100);
+      
+      // Add fade in effect
+      factText.style.opacity = '1';
+      factText.style.transform = 'translateY(0)';
+    }, 300);
+  }
+  
+  // Initialize progress and counter
+  factCounter.textContent = `1/${facts.length}`;
+  setTimeout(() => {
+    factProgress.style.transition = 'width 8s linear';
+    factProgress.style.width = '100%';
+  }, 500);
+  
+  // Set up transitions
+  factText.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+  
+  // Update fact every 8 seconds
+  setInterval(updateFact, 8000);
 });
 </script>
 </body>
