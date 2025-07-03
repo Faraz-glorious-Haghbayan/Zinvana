@@ -88,17 +88,18 @@
     ------------------------------------- */
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f4f5f7;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: #333;
       line-height: 1.6;
+      min-height: 100vh;
     }
     a {
       text-decoration: none;
       color: inherit;
-      transition: opacity 0.3s;
+      transition: all 0.3s ease;
     }
     a:hover {
-      opacity: 0.8;
+      transform: translateY(-2px);
     }
 
     /* -------------------------------------
@@ -106,29 +107,40 @@
     ------------------------------------- */
     nav {
       display: flex;
-      position: relative;
+      position: sticky;
+      top: 0;
       z-index: 9999;
       justify-content: space-between;
       align-items: center;
-      background: #000;
-      padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 20px 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     nav .nav-left,
     nav .nav-right {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 30px;
     }
     nav a {
-      color: #dcdcdc;
+      color: #fff;
       font-weight: 500;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
     }
     #brand-logo {
-
       width: 10%;
       pointer-events: none;
+      filter: brightness(1.2);
     }
 
     /* -------------------------------------
@@ -136,159 +148,424 @@
     ------------------------------------- */
     header.main-header {
       text-align: center;
-      padding: 100px 10px 40px;
-      background: url('header1.png') no-repeat center center/cover;
-      border-bottom: 2px solid #d32f2f;
+      padding: 120px 20px 80px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('header1.png') no-repeat center center/cover;
+      position: relative;
+      overflow: hidden;
+    }
+    header.main-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(103, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+      z-index: 1;
+    }
+    header.main-header * {
+      position: relative;
+      z-index: 2;
     }
     header.main-header h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       color: #ffffff;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      font-weight: 700;
     }
     #tagline {
-      margin-top: 8px;
-      font-size: 1rem;
+      margin-top: 20px;
+      font-size: 1.3rem;
       color: #ffffff;
+      max-width: 800px;
+      margin: 20px auto 0;
+      opacity: 0.95;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
 
     /* -------------------------------------
        5) Articles Section
     ------------------------------------- */
     .articles-section {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 1400px;
+      margin: 60px auto;
+      padding: 0 40px;
+      position: relative;
+    }
+    .articles-section::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
     }
     .articles-section h2 {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #d32f2f;
+      font-size: 3rem;
+      margin-bottom: 60px;
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      letter-spacing: 1px;
     }
     .articles-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      justify-items: center;
     }
     .article-card {
-      background: #1a1a1a;
-      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
       overflow: hidden;
-      width: 280px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-      transition: transform 0.3s ease;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       text-align: center;
-      color: #e0e0e0;
+      color: #333;
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+    }
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(103, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+    .article-card:hover::before {
+      opacity: 1;
     }
     .article-card:hover {
-      transform: scale(1.03);
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
     }
     .article-card img {
       width: 100%;
-      height: 180px;
+      height: 220px;
       object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .article-card:hover img {
+      transform: scale(1.1);
     }
     .article-card h3 {
-      font-size: 1.4rem;
-      margin: 15px 0 10px;
-      color: #ffcccb;
+      font-size: 1.5rem;
+      margin: 25px 20px 15px;
+      color: #2c3e50;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
     }
     .article-card p {
       font-size: 1rem;
-      padding: 0 15px 15px;
-      color: #ccc;
+      padding: 0 25px 25px;
+      color: #666;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
     }
     .article-card .btn {
       display: inline-block;
-      margin-bottom: 15px;
-      padding: 10px 20px;
-      background: #d32f2f;
+      margin-bottom: 25px;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
       color: #fff;
-      border-radius: 4px;
-      transition: background 0.3s;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 15px rgba(103, 126, 234, 0.3);
     }
     .article-card .btn:hover {
-      background: #b71c1c;
+      background: linear-gradient(135deg, #764ba2, #667eea);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(103, 126, 234, 0.4);
     }
 
     /* -------------------------------------
        6) Footer
     ------------------------------------- */
     footer {
-      background: #000;
-      padding: 20px 10px;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 50px 40px;
       text-align: center;
-      border-top: 1px solid #d32f2f;
-      margin-top: 40px;
+      margin-top: 80px;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
     footer p {
-      font-size: 0.9rem;
-      color: #aaa;
-      margin: 5px 0;
+      font-size: 1rem;
+      color: #ccc;
+      margin: 10px 0;
+      line-height: 1.6;
     }
     footer .social-icons {
-      margin-top: 10px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
     footer .social-icons img {
-      width: 3%;
-      margin: 0 8px;
-      transition: opacity 0.3s;
+      width: 40px;
+      height: 40px;
+      transition: all 0.3s ease;
       cursor: pointer;
+      border-radius: 50%;
+      padding: 8px;
+      background: rgba(255,255,255,0.1);
     }
     footer .social-icons img:hover {
-      opacity: 0.7;
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-3px) scale(1.1);
     }
 
     /* -------------------------------------
        7) Responsive Styles
     ------------------------------------- */
-    @media (max-width: 970px) {
-      
+    @media (max-width:450px) {
+      nav {
+        padding: 15px 20px;
+      }
+      nav .nav-left,
+      nav .nav-right {
+        gap: 15px;
+      }
+      header.main-header {
+        padding: 100px 15px 60px;
+      }
       header h1 {
-        font-size: 3.5rem;
-        color: red;
+        font-size: 3rem;
       }
       #tagline {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
       }
       .articles-section {
-        padding: 0 10px;
+        padding: 0 20px;
+        margin: 40px auto;
+      }
+      .articles-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+      }
+      .articles-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
       }
       #brand-logo{
-    width: 50%;
-  }
+        width: 30% !important;
+      }
+      footer {
+        padding: 40px 20px;
+      }
       footer .social-icons img {
-        width: 10%;
+        width: 35px;
+        height: 35px;
       }
     }
 
-
     @media (max-width: 600px) {
-  h1{
-    font-size: 2rem !important;
-  }
-  #brand-logo{
-    width: 50%;
-  }
-}
-@media (max-width: 1300px) {
-  #brand-logo{
-    width: 10%;
-  }
-}
-    @media (max-width: 630px) {
+      nav {
+        padding: 10px 15px;
+      }
+      nav a {
+        font-size: 1rem;
+        padding: 8px 15px;
+      }
+      header.main-header {
+        padding: 80px 10px 50px;
+      }
+      h1{
+        font-size: 2.5rem !important;
+      }
+      #tagline {
+        font-size: 1rem;
+      }
+      .articles-section {
+        margin: 30px auto;
+        padding: 0 15px;
+      }
+      .articles-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
       .articles-grid {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        gap: 20px;
-        padding-bottom: 20px;
-        justify-content: flex-start;
+        grid-template-columns: 1fr;
+        gap: 25px;
       }
       .article-card {
-        flex: 0 0 auto;
+        max-width: 100%;
       }
+      #brand-logo{
+        width: 40%;
+      }
+      footer {
+        padding: 30px 15px;
+      }
+      footer .social-icons {
+        gap: 15px;
+      }
+      footer .social-icons img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @media (max-width: 1300px) {
+      #brand-logo{
+        width: 12%;
+      }
+    }
+    
+    /* Smooth scrolling and loading animations */
+    .article-card {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .article-card:nth-child(1) { animation-delay: 0.1s; }
+    .article-card:nth-child(2) { animation-delay: 0.2s; }
+    .article-card:nth-child(3) { animation-delay: 0.3s; }
+    .article-card:nth-child(4) { animation-delay: 0.4s; }
+    .article-card:nth-child(5) { animation-delay: 0.5s; }
+    .article-card:nth-child(6) { animation-delay: 0.6s; }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #764ba2, #667eea);
+    }
+
+    /* Search and Filter Styles */
+    .search-filter-section {
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    .search-container {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    #searchInput {
+      width: 100%;
+      padding: 15px 50px 15px 20px;
+      border: none;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      font-size: 1.1rem;
+      color: #333;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    #searchInput:focus {
+      outline: none;
+      background: rgba(255,255,255,1);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      transform: translateY(-2px);
+    }
+    
+    .search-icon {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: #666;
+    }
+    
+    .filter-container {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .filter-btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    .filter-btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+    
+    .filter-btn.active {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      box-shadow: 0 8px 25px rgba(103, 126, 234, 0.3);
+    }
+    
+    /* Loading animation */
+    .loading {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+      margin: 50px auto;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Article categories for filtering */
+    .article-card.hidden {
+      display: none;
     }
   </style>
 
@@ -330,64 +607,180 @@
 
   <section class="articles-section">
     <h2>All Articles</h2>
+    
+    <!-- Search and Filter Section -->
+    <div class="search-filter-section">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search articles..." />
+        <div class="search-icon">🔍</div>
+      </div>
+      
+      <div class="filter-container">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="historical">Historical Leaders</button>
+        <button class="filter-btn" data-category="football">Football</button>
+        <button class="filter-btn" data-category="empires">Empires</button>
+        <button class="filter-btn" data-category="quiz">Quizzes</button>
+      </div>
+    </div>
+    
     <div class="articles-grid">
-        <div class="article-card">
+        <div class="article-card" data-category="historical">
             <img src="cyrusthegreatthumb.jpg" alt="Cyrus the Great wallpaper">
             <h3>Cyrus the Great</h3>
             <p>Learn about Cyrus the Great, founder of the Persian Empire, whose leadership and policies of tolerance set a lasting example in ancient history.</p>
             <a href="cyrus.html" class="btn">Read More</a>         
           </div>
 
-          <div class="article-card">
+          <div class="article-card" data-category="historical">
             <img src="hallo.jpg" alt="Prophet Muhammad">
             <h3>Prophet Muhammad</h3>
             <p>Explore the life of Prophet Muhammad, whose revelations shaped a new spiritual path and united the Arabian Peninsula under Islam.</p>
             <a href="muhammad.html" class="btn">Read More</a>
           </div>
           
-          <div class="article-card">
+          <div class="article-card" data-category="historical">
             <img src="jesusheader.jpg" alt="Jesus of Nazareth">
             <h3>Jesus of Nazareth</h3>
             <p>Follow the teachings and legacy of Jesus, a spiritual leader whose message of love and salvation sparked a global faith tradition.</p>
             <a href="jesus.html" class="btn">Read More</a>
           </div>
           
-          <div class="article-card">
+          <div class="article-card" data-category="empires">
             <img src="ottoman.gif" alt="Ottoman Empire">
             <h3>Ottoman Empire</h3>
             <p>Trace the evolution of the Ottoman Empire from a small Anatolian beylik to a vast, multi-continental power—its governance, culture, and military prowess.</p>
             <a href="ottoman.html" class="btn">Read More</a>
           </div>
 
-        <div class="article-card">
+          <div class="article-card" data-category="historical">
             <img src="mao.gif" alt="famous leaders">
             <h3>Famous leaders in History</h3>
             <p>Explore the lives and legacies of the most famous leaders in history. From conquerors and visionaries to reformers and revolutionaries, this article covers world-changing leadership eras.</p>
             <a href="famous-leaders.html" class="btn">Read More</a>
           </div>
           
-          <div class="article-card">
+          <div class="article-card" data-category="empires">
             <img src="inca.jpg" alt="Inca Empire">
             <h3>Inca Empire</h3>
             <p>Uncover the engineering marvels and administrative genius of the Inca Empire, from the high Andes heartland to its sophisticated road systems.</p>
             <a href="inca.html" class="btn">Read More</a>
           </div>
 
-          <div class="article-card">
+          <div class="article-card" data-category="empires">
             <img src="aztec1.jpg" alt="Aztec Empire">
             <h3>Aztec Empire</h3>
             <p>Dive into the rise and fall of the Aztec Empire: its foundation, societal structure, religious practices, and encounters with European explorers.</p>
             <a href="aztec.html" class="btn">Read More</a>
           </div>
           
-          <div class="article-card">
+          <div class="article-card" data-category="empires">
             <img src="british.gif" alt="British Empire">
             <h3>British Empire</h3>
             <p>Explore the global reach of the British Empire, its colonial administration, maritime dominance, cultural impact, and the path to decolonization.</p>
             <a href="british-empire.html" class="btn">Read More</a>
           </div>
+          
+          
+          <div class="article-card" data-category="historical">
+            <img src="cleopatraheader.jpg" alt="Cleopatra">
+            <h3>Cleopatra</h3>
+            <p>Dive into the world of Cleopatra, the last Pharaoh of Egypt, known for her intellect, political prowess, and legendary alliances.</p>
+            <a href="cleopatra.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card" data-category="historical">
+            <img src="elizabethheader.jpg" alt="Elizabeth I">
+            <h3>Elizabeth I</h3>
+            <p>Uncover the reign of Elizabeth I, the Virgin Queen, whose leadership brought stability, cultural flourishing, and naval triumph to England.</p>
+            <a href="elizabethI.html" class="btn">Read More</a>
+          </div>
 
-       <!-- Article Cards for All Featured Players -->
+          <div class="article-card" data-category="quiz">
+            <img src="roman.gif" alt="empires">
+            <h3>Empires Personality Quiz</h3>
+            <p>Take the ultimate empire quiz and find out if you belong in Rome, Persia, the Mongol Horde, or Imperial China. Discover your ancient destiny!</p>
+            <a href="empire.html" class="btn">Read More</a>
+          </div>
+
+          <div class="article-card" data-category="quiz">
+            <img src="cyrus.gif" alt="Universe">
+            <h3>Persian Kings Personality Quiz</h3>
+            <p>Take the ultimate Persian Kings quiz and discover if you’d rule as Cyrus the Great, Darius I, Khosrow I, or another legendary monarch. Find your ancient destiny!</p>
+            <a href="persian_kings-quiz.html" class="btn">Read More</a>
+          </div>
+
+          <div class="article-card" data-category="quiz">
+            <img src="zinifoot.gif" alt="Football personality quiz">
+            <h3>Football personality quiz</h3>
+            <p>Take our free Football Personality Quiz to discover your archetype—Tactical Genius, Rocket, Silent Maestro, and more. Which football persona are you?</p>
+            <a href="football-personality-quiz.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card" data-category="quiz">
+            <img src="universe.gif" alt="Universe">
+            <h3>Universe Personality Quiz</h3>
+            <p>Take our groundbreaking Personal Universe Quiz and discover your cosmic identity! Get deep insights into your personality, relationships, and life purpose. Join 100,000+ people who found their universe.</p>
+            <a href="universe_quiz.html" class="btn">Read More</a>
+          </div>
+
+          <div class="article-card" data-category="quiz">
+            <img src="einstein.jpg" alt="innovator">
+            <h3>Innovator Personality Quiz</h3>
+            <p>Which genius inventor are you? Einstein? Tesla? da Vinci? Jobs? FREE 2-min test reveals your innovation DNA. 98.7% accuracy!</p>
+            <a href="inventor_quiz.html" class="btn">Read More</a>
+          </div>
+
+          <div class="article-card" data-category="quiz">
+            <img src="squidgame.gif" alt="Squidgame Personality Quiz">
+            <h3>Squidgame Personality Quiz</h3>
+            <p>Free Squid Game personality quiz! Discover which character you are from both Season 1 & 2. 100% accurate results with detailed character analysis. Take the quiz now!</p>
+            <a href="squidgame.html" class="btn">Read More</a>
+          </div>
+
+          <div class="article-card" data-category="quiz">
+            <img src="jaguar2.jpg" alt="Classic Personality Quiz">
+            <h3>Classic Personality Quiz</h3>
+            <p>Take the most insightful and free personality quiz online. Zinvana's research-backed personality test reveals your strengths, growth areas, and ideal career paths instantly. Try the best free insightful personality quiz now!</p>
+            <a href="test.html" class="btn">Read More</a>
+          </div>
+
+          <div class="article-card" data-category="quiz">
+            <img src="lenin.gif" alt="political thinker">
+            <h3>Political Thinker Personality Quiz</h3>
+            <p>Discover which political thinker best matches your views. Are you a revolutionary like Karl Marx, a free market advocate like Adam Smith, a pragmatic realist like Machiavelli, or a champion of rights like John Locke?</p>
+            <a href="political.html" class="btn">Read More</a>
+          </div>
+
+          <div class="article-card" data-category="historical">
+            <img src="saladinheader.jpg" alt="Salahudin">
+            <h3>Salahudin</h3>
+            <p>Learn about Salahudin, the chivalrous Muslim leader who recaptured Jerusalem and earned respect across religious lines during the Crusades.</p>
+            <a href="saladin.jpg" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card" data-category="empires">
+            <img src="achaemenidempire.gif" alt="Winston Churchill">
+            <h3>Achaemenid Empire</h3>
+            <p>Explore the comprehensive history of the Achaemenid Empire, from its origins to its innovative administration, military conquests, cultural integration, and lasting legacy.</p>
+            <a href="achaemenidempire.html" class="btn">Read More</a>
+          </div>
+
+          <div class="article-card" data-category="empires">
+            <img src="mongolempireexpansion.gif" alt="Genghis Khan">
+            <h3>Mongol Empire</h3>
+            <p>Discover the rise of the Mongol Empire, the world's largest contiguous land empire, known for its unmatched military strategy, swift conquests, and cultural exchange across Eurasia.</p>
+            <a href="mongolempire.html" class="btn">Read More</a>
+          </div>
+          
+          <div class="article-card" data-category="empires">
+            <img src="roman2.jpg" alt="Roman Architecture">
+            <h3>Roman Empire</h3>
+            <p>Dive into the legacy of the Roman Empire—masters of engineering, law, and governance—whose influence shaped the foundation of Western civilization for centuries.</p>
+            <a href="romanempire.html" class="btn">Read More</a>
+          </div>  
+          
+                    <!-- Article Cards for All Featured Players -->
           <div class="article-card">
             <img src="buffonheader.jpg" alt="Gianluigi Buffon Profile">
             <h3>Gianluigi Buffon</h3>
@@ -466,49 +859,6 @@
           </div>
 
           
-          
-          <div class="article-card">
-            <img src="cleopatraheader.jpg" alt="Cleopatra">
-            <h3>Cleopatra</h3>
-            <p>Dive into the world of Cleopatra, the last Pharaoh of Egypt, known for her intellect, political prowess, and legendary alliances.</p>
-            <a href="cleopatra.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="elizabethheader.jpg" alt="Elizabeth I">
-            <h3>Elizabeth I</h3>
-            <p>Uncover the reign of Elizabeth I, the Virgin Queen, whose leadership brought stability, cultural flourishing, and naval triumph to England.</p>
-            <a href="elizabethI.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="saladinheader.jpg" alt="Salahudin">
-            <h3>Salahudin</h3>
-            <p>Learn about Salahudin, the chivalrous Muslim leader who recaptured Jerusalem and earned respect across religious lines during the Crusades.</p>
-            <a href="saladin.jpg" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="achaemenidempire.gif" alt="Winston Churchill">
-            <h3>Achaemenid Empire</h3>
-            <p>Explore the comprehensive history of the Achaemenid Empire, from its origins to its innovative administration, military conquests, cultural integration, and lasting legacy.</p>
-            <a href="achaemenidempire.html" class="btn">Read More</a>
-          </div>
-
-          <div class="article-card">
-            <img src="mongolempireexpansion.gif" alt="Genghis Khan">
-            <h3>Mongol Empire</h3>
-            <p>Discover the rise of the Mongol Empire, the world's largest contiguous land empire, known for its unmatched military strategy, swift conquests, and cultural exchange across Eurasia.</p>
-            <a href="mongolempire.html" class="btn">Read More</a>
-          </div>
-          
-          <div class="article-card">
-            <img src="roman2.jpg" alt="Roman Architecture">
-            <h3>Roman Empire</h3>
-            <p>Dive into the legacy of the Roman Empire—masters of engineering, law, and governance—whose influence shaped the foundation of Western civilization for centuries.</p>
-            <a href="romanempire.html" class="btn">Read More</a>
-          </div>       
-          
           <div class="article-card">
             <img src="tokugawashoganate.jpg" alt="Samurai Warrior">
             <h3>Tokugawa Shogunate</h3>
@@ -579,13 +929,6 @@
             <p>Learn about Salahudin, the chivalrous Muslim leader who recaptured Jerusalem and earned respect across religious lines during the Crusades.</p>
             <a href="saladin-q&a.html" class="btn">Read More</a>
           </div>
-
-          <div class="article-card">
-            <img src="cyrus1.jpg" alt="leaders Quiz">
-            <h3>Leaders Quiz</h3>
-            <p>Take the Ultimate Free Leaders Quiz to discover which historical leader you mirror most—Napoleon, Gandhi, Churchill or Cyrus </p>
-            <a href="leaders-quiz.html" class="btn">Read More</a>
-          </div>
           
           <div class="article-card">
             <img src="churchill2.jpg" alt="Winston Churchill">
@@ -648,6 +991,13 @@
             <h3>Sun Tzu</h3>
             <p>Uncover the philosophy of Sun Tzu, whose timeless military treatise, *The Art of War*, continues to influence leaders around the world.</p>
             <a href="suntzu.html" class="btn">Read More</a>
+          </div>
+
+          <div class="article-card" data-category="quiz">
+            <img src="cyrus1.jpg" alt="leaders Quiz">
+            <h3>Leaders Quiz</h3>
+            <p>Take the Ultimate Free Leaders Quiz to discover which historical leader you mirror most—Napoleon, Gandhi, Churchill or Cyrus </p>
+            <a href="leaders-quiz.html" class="btn">Read More</a>
           </div>
           
           <div class="article-card">
@@ -787,5 +1137,126 @@
       </div>
     </div>
   </footer>
+
+  <script>
+// Search and Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const articleCards = document.querySelectorAll('.article-card');
+    
+    let currentFilter = 'all';
+    
+    // Search functionality
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        filterArticles(searchTerm, currentFilter);
+    });
+    
+    // Filter functionality
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            currentFilter = this.dataset.category;
+            const searchTerm = searchInput.value.toLowerCase();
+            filterArticles(searchTerm, currentFilter);
+        });
+    });
+    
+    function filterArticles(searchTerm, category) {
+        articleCards.forEach(card => {
+            const title = card.querySelector('h3') ? card.querySelector('h3').textContent.toLowerCase() : '';
+            const description = card.querySelector('p') ? card.querySelector('p').textContent.toLowerCase() : '';
+            
+            // Determine category based on content if not explicitly set
+            let cardCategory = card.dataset.category;
+            if (!cardCategory) {
+                // Auto-categorize based on content
+                const content = (title + ' ' + description).toLowerCase();
+                if (content.includes('football') || content.includes('soccer') || content.includes('messi') || content.includes('ronaldo') || content.includes('neymar') || content.includes('buffon') || content.includes('mbappe') || content.includes('drogba') || content.includes('busquets') || content.includes('lahm') || content.includes('vardy') || content.includes('guardiola') || content.includes('ronaldinho')) {
+                    cardCategory = 'football';
+                } else if (content.includes('empire') || content.includes('ottoman') || content.includes('roman') || content.includes('mongol') || content.includes('british') || content.includes('aztec') || content.includes('inca') || content.includes('achaemenid')) {
+                    cardCategory = 'empires';
+                } else if (content.includes('quiz') || content.includes('test') || content.includes('discover which')) {
+                    cardCategory = 'quiz';
+                } else {
+                    cardCategory = 'historical';
+                }
+            }
+            
+            const matchesSearch = searchTerm === '' || title.includes(searchTerm) || description.includes(searchTerm);
+            const matchesCategory = category === 'all' || cardCategory === category;
+            
+            if (matchesSearch && matchesCategory) {
+                card.style.display = 'block';
+                card.classList.remove('hidden');
+            } else {
+                card.style.display = 'none';
+                card.classList.add('hidden');
+            }
+        });
+        
+        // Show "No results" message if no articles are visible
+        const visibleCards = document.querySelectorAll('.article-card:not(.hidden)');
+        const existingMessage = document.querySelector('.no-results-message');
+        
+        if (visibleCards.length === 0 && !existingMessage) {
+            const noResultsDiv = document.createElement('div');
+            noResultsDiv.className = 'no-results-message';
+            noResultsDiv.style.cssText = `
+                text-align: center;
+                padding: 50px;
+                color: #fff;
+                font-size: 1.2rem;
+                grid-column: 1 / -1;
+            `;
+            noResultsDiv.innerHTML = `
+                <h3>No articles found</h3>
+                <p>Try adjusting your search terms or filters</p>
+            `;
+            document.querySelector('.articles-grid').appendChild(noResultsDiv);
+        } else if (visibleCards.length > 0 && existingMessage) {
+            existingMessage.remove();
+        }
+    }
+    
+    // Smooth scroll for navigation
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Add loading animation on page load
+    const articlesGrid = document.querySelector('.articles-grid');
+    articlesGrid.style.opacity = '0';
+    
+    setTimeout(() => {
+        articlesGrid.style.transition = 'opacity 0.5s ease';
+        articlesGrid.style.opacity = '1';
+    }, 200);
+});
+
+// Add parallax effect to header
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const header = document.querySelector('header.main-header');
+    if (header) {
+        header.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+  </script>
+
 </body>
 </html>
