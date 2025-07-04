@@ -18,11 +18,9 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
     <!-- Font Libraries -->
-    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <!-- Structured Data: FAQ + Breadcrumbs -->
     <script type="application/ld+json">
@@ -166,10 +164,10 @@
    2) Base Styles
 ------------------------------------- */
       body {
-        font-family: "Roboto", sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: "Inter", "Poppins", sans-serif;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         background-attachment: fixed;
-        color: #333;
+        color: #1e293b;
         line-height: 1.6;
         overflow-x: hidden;
         position: relative;
@@ -184,9 +182,9 @@
         width: 100%;
         height: 100%;
         background-image: 
-          radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-          radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+          radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.03) 0%, transparent 50%),
+          radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
         pointer-events: none;
         z-index: -1;
       }
@@ -212,11 +210,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgba(18, 18, 18, 0.95);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(30px);
         -webkit-backdrop-filter: blur(30px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         padding: 0 5%;
         min-height: 80px;
         z-index: 10000;
@@ -226,16 +224,16 @@
       /* Scrolled state */
       nav.scrolled {
         background: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
         min-height: 70px;
       }
       
       nav.scrolled a {
-        color: #333;
+        color: #1e293b;
       }
       
       nav.scrolled .nav-toggle span {
-        background: #333;
+        background: #1e293b;
       }
 
       /* Navigation layout */
@@ -279,7 +277,7 @@
 
       /* Navigation links */
       nav a {
-        color: rgba(255, 255, 255, 0.9);
+        color: #475569;
         font-weight: 500;
         font-size: 0.95rem;
         padding: 12px 24px;
@@ -301,7 +299,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, rgba(211, 47, 47, 0.1), rgba(255, 107, 107, 0.1));
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(16, 185, 129, 0.08));
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: -1;
@@ -312,23 +310,23 @@
       }
 
       nav a:hover {
-        color: #fff;
-        background: linear-gradient(135deg, #d32f2f, #ff6b6b);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #1e293b;
+        background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+        border: 1px solid rgba(59, 130, 246, 0.2);
         transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(211, 47, 47, 0.3);
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
       }
 
       nav.scrolled a:hover {
-        color: #fff;
+        color: #1e293b;
       }
 
       /* Active state */
       nav a.active {
-        background: linear-gradient(135deg, #d32f2f, #ff6b6b);
+        background: linear-gradient(135deg, #3b82f6, #10b981);
         color: #fff;
         border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
       }
 
       /* Enhanced hamburger menu */
@@ -341,14 +339,14 @@
         height: 48px;
         cursor: pointer;
         border-radius: 8px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(59, 130, 246, 0.1);
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
       }
       
       .nav-toggle:hover {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(59, 130, 246, 0.2);
         transform: scale(1.05);
       }
 
@@ -356,7 +354,7 @@
         display: block;
         width: 24px;
         height: 2px;
-        background: rgba(255, 255, 255, 0.9);
+        background: #475569;
         margin: 3px 0;
         border-radius: 2px;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -447,7 +445,7 @@
           left: 0;
           width: 100vw;
           height: calc(100vh - 70px);
-          background: rgba(18, 18, 18, 0.98);
+          background: rgba(255, 255, 255, 0.98);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
           display: none;
@@ -476,7 +474,7 @@
         }
         
         .nav-mobile a {
-          color: rgba(255, 255, 255, 0.9);
+          color: #475569;
           font-size: 1.2rem;
           font-weight: 500;
           padding: 18px 30px;
@@ -485,8 +483,8 @@
           width: 85%;
           max-width: 320px;
           text-align: center;
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: rgba(59, 130, 246, 0.05);
+          border: 1px solid rgba(59, 130, 246, 0.15);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
@@ -499,7 +497,7 @@
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+          background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
           transition: left 0.5s;
         }
         
@@ -510,10 +508,10 @@
         
         .nav-mobile a:hover,
         .nav-mobile a:active {
-          background: linear-gradient(135deg, #d32f2f, #ff6b6b);
+          background: linear-gradient(135deg, #3b82f6, #10b981);
           border: 1px solid rgba(255, 255, 255, 0.3);
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(211, 47, 47, 0.4);
+          box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
           color: #fff;
         }
       }
@@ -618,9 +616,9 @@
         height: 60vh;
         min-height: 400px;
         overflow: hidden;
-        border-bottom: 3px solid rgba(211, 47, 47, 0.8);
+        border-bottom: 3px solid rgba(59, 130, 246, 0.6);
         margin-top: 80px; /* Account for fixed navigation */
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #d32f2f 100%);
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
       }
       
       @media (max-width: 768px) {
@@ -676,9 +674,9 @@
         height: 100%;
         background: linear-gradient(
           135deg,
-          rgba(103, 126, 234, 0.3) 0%,
-          rgba(118, 75, 162, 0.4) 50%,
-          rgba(211, 47, 47, 0.6) 100%
+          rgba(59, 130, 246, 0.1) 0%,
+          rgba(16, 185, 129, 0.1) 50%,
+          rgba(239, 68, 68, 0.1) 100%
         );
         z-index: 2;
       }
@@ -696,28 +694,25 @@
       .header-content h1 {
         font-size: 3.5rem !important;
         line-height: 1.2;
-        color: #fff;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        background: linear-gradient(45deg, #fff, #ffcccb, #fff);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #1e293b;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        font-weight: 800;
         margin-bottom: 1rem;
-        animation: glow 2s ease-in-out infinite alternate;
+        animation: fadeInUp 1s ease-out;
       }
-      @keyframes glow {
-        from { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)); }
-        to { filter: drop-shadow(0 0 30px rgba(255, 204, 203, 0.8)); }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
       #tagline {
         font-size: 1.3rem !important;
         margin-top: 0.5rem;
-        color: rgba(255, 255, 255, 0.9);
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-        font-weight: 300;
-        letter-spacing: 1px;
+        color: #475569;
+        font-weight: 400;
+        letter-spacing: 0.5px;
         margin-bottom: 2rem;
+        animation: fadeInUp 1s ease-out 0.3s both;
       }
 
       /* -------------------------------------
@@ -728,12 +723,13 @@
         padding: 60px 20px;
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        color: #333;
+        color: #1e293b;
         margin: -50px 20px 40px 20px;
         border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         position: relative;
         z-index: 5;
+        border: 1px solid rgba(59, 130, 246, 0.1);
       }
       .intro::before {
         content: '';
@@ -742,14 +738,14 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(103, 126, 234, 0.05), rgba(211, 47, 47, 0.05));
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.02), rgba(16, 185, 129, 0.02));
         border-radius: 20px;
         z-index: -1;
       }
       .intro h2 {
         font-size: 2.5rem;
         margin-bottom: 15px;
-        background: linear-gradient(45deg, #d32f2f, #764ba2);
+        background: linear-gradient(45deg, #3b82f6, #10b981);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -759,102 +755,204 @@
         font-size: 1.2rem;
         margin-bottom: 0;
         line-height: 1.7;
-        color: #555;
+        color: #64748b;
       }
 
       /* -------------------------------------
-   6) Quiz Grid Section
+   6) Quiz Gallery Section - Horizontal Scrolling Gallery
 ------------------------------------- */
       .quiz-grid {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        gap: 30px;
         width: 100%;
-        margin: 40px 0;
-        padding: 40px 20px 20px 20px;
-        justify-content: flex-start;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        border-radius: 25px;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      .quiz-card {
-        flex: 0 0 auto;
+        max-width: 1400px;
+        margin: 40px auto;
+        padding: 40px 20px;
         background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
         border-radius: 20px;
-        overflow: hidden;
-        width: 300px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        text-align: center;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px rgba(59, 130, 246, 0.08);
+        border: 1px solid rgba(59, 130, 246, 0.1);
         position: relative;
       }
+      
+      .quiz-gallery-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+      }
+      
+      .quiz-gallery {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        padding: 10px 0;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+      }
+      
+      .quiz-gallery::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+      }
+      
+      /* Navigation Arrows */
+      .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid rgba(59, 130, 246, 0.2);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+      
+      .gallery-nav:hover {
+        background: rgba(59, 130, 246, 0.1);
+        border-color: rgba(59, 130, 246, 0.4);
+        transform: translateY(-50%) scale(1.1);
+      }
+      
+      .gallery-nav.prev {
+        left: 15px;
+      }
+      
+      .gallery-nav.next {
+        right: 15px;
+      }
+      
+      .gallery-nav svg {
+        width: 20px;
+        height: 20px;
+        fill: #3b82f6;
+      }
+      
+      /* Scroll Indicators */
+      .gallery-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      
+      .gallery-dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: rgba(59, 130, 246, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .gallery-dot.active {
+        background: #3b82f6;
+        transform: scale(1.2);
+      }
+      
+      /* Add a subtle fade-in animation */
+      .quiz-grid {
+        animation: fadeInGrid 0.8s ease-out;
+      }
+      
+      @keyframes fadeInGrid {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .quiz-card {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-align: center;
+        border: 1px solid rgba(59, 130, 246, 0.1);
+        position: relative;
+        flex: 0 0 320px; /* Fixed width for horizontal scrolling */
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+      }
+      
       .quiz-card::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #667eea, #764ba2, #d32f2f);
+        height: 3px;
+        background: linear-gradient(90deg, #3b82f6, #10b981, #ef4444);
         opacity: 0;
-        transition: opacity 0.3s;
+        transition: opacity 0.3s ease;
       }
+      
       .quiz-card:hover::before {
         opacity: 1;
       }
+      
+      /* Optimized hover effect - less intensive */
       .quiz-card:hover {
-        transform: translateY(-15px) scale(1.05);
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 1);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15);
+        /* Removed scale transform to improve performance */
       }
+      
       .quiz-card img {
         width: 100%;
         height: 200px;
         object-fit: cover;
-        transition: transform 0.4s ease;
+        transition: transform 0.3s ease;
       }
+      
       .quiz-card:hover img {
-        transform: scale(1.1);
+        transform: scale(1.02); /* Reduced scale for better performance */
       }
+      
       .quiz-card h3 {
-        font-size: 1.5rem;
-        margin: 20px 0 15px;
-        background: linear-gradient(45deg, #d32f2f, #764ba2);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 600;
+        font-size: 1.4rem;
+        margin: 20px 20px 15px;
+        color: #1e293b;
+        font-weight: 700;
+        line-height: 1.3;
+        flex-grow: 0;
       }
+      
       .quiz-card p {
-        font-size: 1rem;
-        padding: 0 20px 20px;
-        color: #666;
+        font-size: 0.95rem;
+        padding: 0 20px;
+        color: #64748b;
         line-height: 1.6;
+        margin: 0;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
       }
+      
       .quiz-card .btn {
         display: inline-block;
-        margin-bottom: 20px;
-        padding: 12px 30px;
-        background: linear-gradient(45deg, #d32f2f, #ff6b6b);
+        margin: 20px 20px 24px;
+        padding: 12px 24px;
+        background: linear-gradient(45deg, #3b82f6, #10b981);
         color: #fff;
-        border-radius: 25px;
+        border-radius: 8px;
         transition: all 0.3s ease;
         font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
         font-size: 0.9rem;
-        box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+        text-decoration: none;
+        box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);
+        flex-shrink: 0;
       }
+      
       .quiz-card .btn:hover {
-        background: linear-gradient(45deg, #ff6b6b, #d32f2f);
+        background: linear-gradient(45deg, #2563eb, #059669);
         transform: translateY(-2px);
-        box-shadow: 0 15px 35px rgba(211, 47, 47, 0.4);
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
       }
 
       /* -------------------------------------
@@ -1182,47 +1280,71 @@
       }
 
       /* -------------------------------------
-   11) Enhanced Responsive Styles & Animations
+   11) Enhanced Responsive Styles & Performance Optimizations
 ------------------------------------- */
       
-      /* Smooth scrollbar for quiz grid */
-      .quiz-grid::-webkit-scrollbar {
-        height: 8px;
-      }
-      .quiz-grid::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-      }
-      .quiz-grid::-webkit-scrollbar-thumb {
-        background: linear-gradient(90deg, #667eea, #d32f2f);
-        border-radius: 4px;
-      }
-      .quiz-grid::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(90deg, #d32f2f, #667eea);
-      }
-
-      /* Add floating animation to cards */
-      @keyframes float-card {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
+      /* Responsive gallery adjustments */
+      @media (max-width: 768px) {
+        .quiz-grid {
+          padding: 30px 15px;
+        }
+        
+        .quiz-card {
+          flex: 0 0 280px; /* Smaller width on mobile */
+        }
+        
+        .gallery-nav {
+          width: 40px;
+          height: 40px;
+        }
+        
+        .gallery-nav svg {
+          width: 16px;
+          height: 16px;
+        }
       }
       
-      .quiz-card {
-        animation: float-card 4s ease-in-out infinite;
+      @media (max-width: 480px) {
+        .quiz-card {
+          flex: 0 0 260px; /* Even smaller on very small screens */
+        }
+        
+        .gallery-nav.prev {
+          left: 10px;
+        }
+        
+        .gallery-nav.next {
+          right: 10px;
+        }
+        .quiz-grid {
+          padding: 20px 10px;
+          gap: 16px;
+        }
+        
+        .quiz-card h3 {
+          font-size: 1.2rem;
+          margin: 16px 16px 12px;
+        }
+        
+        .quiz-card p {
+          font-size: 0.9rem;
+          padding: 0 16px 16px;
+        }
+        
+        .quiz-card .btn {
+          margin: 0 16px 20px;
+          padding: 10px 20px;
+          font-size: 0.85rem;
+        }
       }
-      .quiz-card:nth-child(2) { animation-delay: -0.5s; }
-      .quiz-card:nth-child(3) { animation-delay: -1s; }
-      .quiz-card:nth-child(4) { animation-delay: -1.5s; }
-      .quiz-card:nth-child(5) { animation-delay: -2s; }
-      .quiz-card:nth-child(6) { animation-delay: -2.5s; }
-      .quiz-card:nth-child(7) { animation-delay: -3s; }
-      .quiz-card:nth-child(8) { animation-delay: -3.5s; }
 
-      /* Enhanced buttons */
+      /* Enhanced buttons with better performance */
       .btn {
         position: relative;
         overflow: hidden;
+        will-change: transform; /* Optimize for animations */
       }
+      
       .btn::before {
         content: '';
         position: absolute;
@@ -1231,8 +1353,9 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s;
+        transition: left 0.5s ease;
       }
+      
       .btn:hover::before {
         left: 100%;
       }
@@ -1244,7 +1367,7 @@
         box-sizing: border-box;
       }
 
-      @media (max-width: 970px) {
+      @media (max-width: 800px) {
         main {
           padding: 20px;
         }
@@ -1263,70 +1386,18 @@
           font-size: 1.1rem !important;
         }
         #brand-logo{
-          width: 8% !important;
+          width: 15% !important;
+
         }
         .intro {
           margin: -30px 15px 30px 15px;
           padding: 40px 15px;
         }
-        .quiz-grid {
-          padding: 30px 15px 15px 15px;
-        }
         .quiz-card {
-          width: 260px;
+          width: 100%;
         }
       }
 
-      @media (max-width: 768px) {
-        .header-content h1 {
-          font-size: 2rem !important;
-        }
-        #tagline {
-          font-size: 1rem !important;
-        }
-        .intro h2 {
-          font-size: 2rem;
-        }
-        .intro p {
-          font-size: 1.1rem;
-        }
-        .quiz-card {
-          width: 240px;
-        }
-        .quiz-card h3 {
-          font-size: 1.3rem;
-        }
-        .quiz-card p {
-          font-size: 0.95rem;
-          padding: 0 15px 15px;
-        }
-        nav {
-          padding: 0 15px;
-        }
-        #brand-logo {
-          width: 12% !important;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .header-content h1 {
-          font-size: 1.8rem !important;
-        }
-        .intro {
-          margin: -20px 10px 20px 10px;
-          padding: 30px 10px;
-        }
-        .quiz-grid {
-          padding: 20px 10px 10px 10px;
-        }
-        .quiz-card {
-          width: 220px;
-        }
-        #faq, #related-articles, #squidgame-explainer {
-          margin: 30px 10px;
-          padding: 25px 15px;
-        }
-      }
       .fade-init { 
         opacity: 0; 
         transform: translateY(30px); 
@@ -1389,7 +1460,7 @@
       </div>
     </nav>
 
-    <header style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #d32f2f 100%); border-bottom: 3px solid rgba(211, 47, 47, 0.8); position: relative; overflow: hidden;">
+    <header style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%); border-bottom: 3px solid rgba(59, 130, 246, 0.6); position: relative; overflow: hidden;">
       <!-- Add animated particles -->
       <div class="particles">
         <div class="particle"></div>
@@ -1398,14 +1469,14 @@
         <div class="particle"></div>
         <div class="particle"></div>
       </div>
-      <video autoplay muted loop playsinline id="header-video" style="opacity: 0.15;">
+      <video autoplay muted loop playsinline id="header-video" style="opacity: 0.05;">
         <source src="zinvanaflags1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div class="header-content">
-        <h1 style="font-family: 'Minecraftia', 'Roboto', sans-serif; font-size: 3.5rem; color: #fff; margin-bottom: 1rem;">Free Personality Quiz</h1>
-        <div id="tagline" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; font-weight: 300; letter-spacing: 1px;">Discover your true self with the best free personality quizzes—no sign-up, always fun, always insightful.</div>
-        <a href="#quiz-grid" class="btn" style="background: linear-gradient(45deg, #d32f2f, #ff6b6b); color: #fff; padding: 18px 40px; border-radius: 50px; font-size: 1.3rem; font-weight: bold; text-decoration: none; box-shadow: 0 8px 30px rgba(211, 47, 47, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px; position: relative; overflow: hidden;">
+        <h1 style="font-family: 'Inter', 'Poppins', sans-serif; font-size: 3.5rem; color: #1e293b; margin-bottom: 1rem; font-weight: 800;">Free Personality Quiz</h1>
+        <div id="tagline" style="font-size: 1.3rem; color: #475569; margin-bottom: 2rem; font-weight: 400; letter-spacing: 0.5px;">Discover your true self with the best free personality quizzes—no sign-up, always fun, always insightful.</div>
+        <a href="#quiz-grid" class="btn" style="background: linear-gradient(45deg, #3b82f6, #10b981); color: #fff; padding: 18px 40px; border-radius: 50px; font-size: 1.3rem; font-weight: bold; text-decoration: none; box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px; position: relative; overflow: hidden;">
           <span style="position: relative; z-index: 2;">Start Quiz</span>
         </a>
       </div>
@@ -1424,7 +1495,7 @@
       }
       .particle {
         position: absolute;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(59, 130, 246, 0.6);
         border-radius: 50%;
         animation: float-particle 8s infinite ease-in-out;
       }
@@ -1437,21 +1508,25 @@
         width: 4px; height: 4px;
         left: 80%; top: 60%;
         animation-delay: -2s;
+        background: rgba(16, 185, 129, 0.6);
       }
       .particle:nth-child(3) {
         width: 8px; height: 8px;
         left: 60%; top: 30%;
         animation-delay: -4s;
+        background: rgba(239, 68, 68, 0.6);
       }
       .particle:nth-child(4) {
         width: 3px; height: 3px;
         left: 30%; top: 70%;
         animation-delay: -6s;
+        background: rgba(16, 185, 129, 0.6);
       }
       .particle:nth-child(5) {
         width: 5px; height: 5px;
         left: 90%; top: 20%;
         animation-delay: -8s;
+        background: rgba(59, 130, 246, 0.6);
       }
       @keyframes float-particle {
         0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0; }
@@ -1460,11 +1535,11 @@
       }
     </style>
 
-    <div id="announcementBar" style="position:sticky;top:0;z-index:1000;background:linear-gradient(90deg,#667eea 0%, #764ba2 50%, #d32f2f 100%);color:#fff;padding:15px 8px;text-align:center;font-size:1.1rem;font-weight:700;letter-spacing:0.5px;box-shadow:0 4px 25px rgba(103, 126, 234, 0.3);animation:slideDownBar 0.7s; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+    <div id="announcementBar" style="position:sticky;top:0;z-index:1000;background:linear-gradient(90deg,#3b82f6 0%, #10b981 50%, #ef4444 100%);color:#fff;padding:15px 8px;text-align:center;font-size:1.1rem;font-weight:700;letter-spacing:0.5px;box-shadow:0 4px 25px rgba(59, 130, 246, 0.3);animation:slideDownBar 0.7s; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
       <span style="display: inline-flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 100%;">
-        <span style="animation: pulse 2s infinite;">🎉</span>
-        <span style="text-align: center; line-height: 1.3;">Over 10,000 users trust Zinvana for <b>free insightful personality quizzes</b> – No sign-up, free,fun!</span>
-        <span style="animation: pulse 2s infinite; animation-delay: 1s;"></span>
+        <span style="animation: pulse 2s infinite;">✨</span>
+        <span style="text-align: center; line-height: 1.3;">Over 10,000 users trust Zinvana for <b>free insightful personality quizzes</b> – No sign-up, free, fun!</span>
+        <span style="animation: pulse 2s infinite; animation-delay: 1s;">🎯</span>
       </span>
     </div>
 
@@ -1506,56 +1581,56 @@
 </style>
 
 <!-- Add after <header> for SEO, trust, and engagement -->
-<section id="seo-hero-content" style="background:linear-gradient(90deg,#fff 70%,#ffeaea 100%);border-radius:18px;box-shadow:0 4px 24px #d32f2f11;margin:0 auto 36px auto;width:100%;padding:36px 28px 28px 28px;border:2.5px solid #d32f2f;position:relative;">
-  <div style="position:absolute;top:18px;right:24px;z-index:2;">
-    <span style="background:#fff3; color:#d32f2f; font-weight:800; border-radius:8px; padding:7px 18px; font-size:1.01em; box-shadow:0 2px 8px #d32f2f11;">
-      <svg width="22" height="22" style="vertical-align:middle;margin-right:7px;" fill="none" stroke="#d32f2f" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+<section id="seo-hero-content" style="background:linear-gradient(135deg,#fff 0%,#f8fafc 100%);border-radius:20px;box-shadow:0 10px 40px rgba(59, 130, 246, 0.1);margin:0 auto 36px auto;width:100%;padding:40px 32px 32px 32px;border:2px solid #3b82f6;position:relative;">
+  <div style="position:absolute;top:20px;right:24px;z-index:2;">
+    <span style="background:#f0f9ff; color:#3b82f6; font-weight:800; border-radius:8px; padding:8px 20px; font-size:1.02em; box-shadow:0 2px 8px rgba(59, 130, 246, 0.2);">
+      <svg width="22" height="22" style="vertical-align:middle;margin-right:7px;" fill="none" stroke="#3b82f6" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
       Trusted by 10,000+ users
     </span>
   </div>
-  <h1 style="font-size:2.1rem;color:transparent;background:linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-family:'Montserrat',sans-serif;font-weight:900;letter-spacing:1.2px;margin-bottom:18px;text-align:center;">
+  <h1 style="font-size:2.4rem;color:#1e293b;font-family:'Inter','Poppins',sans-serif;font-weight:900;letter-spacing:0.8px;margin-bottom:18px;text-align:center;">
     <span style="display:inline-block;vertical-align:middle;">
       <svg width="38" height="38" viewBox="0 0 38 38" fill="none" style="animation:spin 2.5s linear infinite;">
-        <circle cx="19" cy="19" r="17" stroke="#ff5e62" stroke-width="3" opacity="0.25"/>
-        <path d="M36 19a17 17 0 0 1-17 17" stroke="#d32f2f" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="19" cy="19" r="17" stroke="#10b981" stroke-width="3" opacity="0.25"/>
+        <path d="M36 19a17 17 0 0 1-17 17" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
       </svg>
     </span>
     The #1 Free Insightful Personality Quiz Platform Online
   </h1>
-  <p style="font-size:1.18rem;color:#222;opacity:0.97;line-height:1.7;text-align:center;margin-bottom:18px;">
-    <strong style="color:#d32f2f;">Zinvana</strong> is the most trusted destination for <strong>free personality quizzes</strong> and <strong>insightful personality tests</strong> online. Our quizzes are <b>always free</b>, require <b>no sign-up</b>, and deliver <b>instant, research-backed results</b>—helping you discover your strengths, leadership style, and unique traits in minutes.
+  <p style="font-size:1.18rem;color:#475569;line-height:1.8;text-align:center;margin-bottom:20px;">
+    <strong style="color:#3b82f6;">Zinvana</strong> is the most trusted destination for <strong>free personality quizzes</strong> and <strong>insightful personality tests</strong> online. Our quizzes are <b>always free</b>, require <b>no sign-up</b>, and deliver <b>instant, research-backed results</b>—helping you discover your strengths, leadership style, and unique traits in minutes.
   </p>
-  <ul style="max-width:700px;margin:0 auto 18px auto;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
-    <li style="background:rgba(255,255,255,0.07);border-left:5px solid #d32f2f;border-radius:12px;padding:14px 18px;color:#222;">
+  <ul style="max-width:700px;margin:0 auto 20px auto;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+    <li style="background:rgba(59, 130, 246, 0.05);border-left:5px solid #3b82f6;border-radius:12px;padding:16px 20px;color:#1e293b;">
       <strong>100% Free, No Sign-Up:</strong> Take any quiz instantly—no registration, no paywalls, no ads.
     </li>
-    <li style="background:rgba(255,255,255,0.07);border-left:5px solid #ff5e62;border-radius:12px;padding:14px 18px;color:#222;">
+    <li style="background:rgba(16, 185, 129, 0.05);border-left:5px solid #10b981;border-radius:12px;padding:16px 20px;color:#1e293b;">
       <strong>Scientifically Validated:</strong> Based on the Big Five, MBTI, and proven psychological models.
     </li>
-    <li style="background:rgba(255,255,255,0.07);border-left:5px solid #d32f2f;border-radius:12px;padding:14px 18px;color:#222;">
+    <li style="background:rgba(59, 130, 246, 0.05);border-left:5px solid #3b82f6;border-radius:12px;padding:16px 20px;color:#1e293b;">
       <strong>Instant, Actionable Insights:</strong> Get a detailed breakdown of your personality, strengths, and growth areas.
     </li>
-    <li style="background:rgba(255,255,255,0.07);border-left:5px solid #ff5e62;border-radius:12px;padding:14px 18px;color:#222;">
+    <li style="background:rgba(16, 185, 129, 0.05);border-left:5px solid #10b981;border-radius:12px;padding:16px 20px;color:#1e293b;">
       <strong>Shareable & Downloadable:</strong> Download your results or share with friends in one click.
     </li>
-    <li style="background:rgba(255,255,255,0.07);border-left:5px solid #d32f2f;border-radius:12px;padding:14px 18px;color:#222;">
+    <li style="background:rgba(59, 130, 246, 0.05);border-left:5px solid #3b82f6;border-radius:12px;padding:16px 20px;color:#1e293b;">
       <strong>Privacy First:</strong> No data stored, no tracking—your journey is 100% confidential.
     </li>
   </ul>
-  <p style="font-size:1.13rem;color:#222;opacity:0.92;line-height:1.7;text-align:center;margin-bottom:0;">
-    Join <b>over 10,000 quiz-takers</b> who trust Zinvana for the <strong>best free insightful personality quizzes</strong> online. <a href="#quiz-grid" style="color:#d32f2f;text-decoration:underline;font-weight:600;">Start your free quiz now</a> and unlock your potential!
+  <p style="font-size:1.14rem;color:#475569;line-height:1.7;text-align:center;margin-bottom:0;">
+    Join <b>over 10,000 quiz-takers</b> who trust Zinvana for the <strong>best free insightful personality quizzes</strong> online. <a href="#quiz-grid" style="color:#3b82f6;text-decoration:underline;font-weight:600;">Start your free quiz now</a> and unlock your potential!
   </p>
-  <div style="margin-top:22px;text-align:center;">
+  <div style="margin-top:24px;text-align:center;">
     <a href="#quiz-grid" class="btn"
-      style="background:linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%);
+      style="background:linear-gradient(90deg,#3b82f6 0%,#10b981 100%);
              color:#fff;
-             font-size:1.13rem;
-             font-weight:900;
-             padding:14px 18px;
+             font-size:1.16rem;
+             font-weight:700;
+             padding:16px 24px;
              border-radius:12px;
              text-decoration:none;
-             box-shadow:0 4px 18px #d32f2f11;
-             transition:background 0.18s,box-shadow 0.18s,transform 0.13s;
+             box-shadow:0 4px 20px rgba(59, 130, 246, 0.3);
+             transition:all 0.3s ease;
              display:inline-block;
              max-width:100%;
              width:100%;
@@ -1568,7 +1643,7 @@
       #seo-hero-content .btn,
       #seo-hero-content a.btn {
         font-size: 1rem !important;
-        padding: 13px 8px !important;
+        padding: 14px 16px !important;
         width: 100% !important;
         max-width: 100% !important;
         border-radius: 10px !important;
@@ -1594,7 +1669,14 @@
       <p style="font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.7;">Zinvana offers the most accurate, fun, and insightful free personality quizzes online. Whether you want to discover your MBTI type, find out which historical leader you resemble, or just have fun with friends, our quizzes are always free and require no sign-up. Start exploring yourself today!</p>
     </section>
 
-    <section class="quiz-grid" id="quiz-grid" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border-radius: 25px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); border: 1px solid rgba(255, 255, 255, 0.2);">
+    <section class="quiz-grid" id="quiz-grid">
+      <div class="quiz-gallery-wrapper">
+        <div class="gallery-nav prev" onclick="scrollGallery(-1)">
+          <svg viewBox="0 0 24 24">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </div>
+        <div class="quiz-gallery" id="quiz-gallery">
       <div class="quiz-card">
         <img src="einstein.jpg" alt="Famous Inventors Personality Quiz" />
         <h3>🧠 Famous Inventors Personality Quiz</h3>
@@ -1655,11 +1737,19 @@
         <p>Discover your personality type with our research-backed quiz that explores your strengths and potential career paths. 100% free, no sign-up required.</p>
         <a href="test.html" class="btn">Start Quiz</a>
       </div>
+        </div>
+        <div class="gallery-nav next" onclick="scrollGallery(1)">
+          <svg viewBox="0 0 24 24">
+            <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="gallery-dots" id="gallery-dots"></div>
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" style="background: #fff; border-radius: 16px; width: 100%; margin: 48px 0 0 0; padding: 48px 0 36px 0; box-shadow: 0 4px 16px rgba(0,0,0,0.05); overflow: hidden;">
-      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 40px; font-size: 2rem; letter-spacing: -1px;">How Our Free Personality Quiz Works</h2>
+    <section id="how-it-works" style="background: #fff; border-radius: 20px; width: 100%; margin: 48px 0 0 0; padding: 48px 0 36px 0; box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1); overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.1);">
+      <h2 style="text-align: center; color: #1e293b; margin-bottom: 40px; font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px;">How Our Free Personality Quiz Works</h2>
       <div class="how-works-steps-pro" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; max-width: 100vw; padding: 0 8px;">
       <!-- Step 1 -->
       <div class="how-works-step-pro">
@@ -1690,20 +1780,22 @@
       padding: 0 8px;
       }
       .how-works-step-pro {
-      background: #f8f8f8;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(211,47,47,0.07);
+      background: #f8fafc;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
       padding: 32px 16px 24px 16px;
       width: 100%;
-      max-width: 260px;
-      min-width: 180px;
+      max-width: 280px;
+      min-width: 200px;
       text-align: center;
-      flex: 1 1 220px;
+      flex: 1 1 240px;
       margin: 0 0px;
-      transition: box-shadow 0.2s;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(59, 130, 246, 0.1);
       }
       .how-works-step-pro:hover {
-      box-shadow: 0 6px 24px rgba(211,47,47,0.13);
+      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+      transform: translateY(-5px);
       }
       .how-works-icon-pro {
       display: flex;
@@ -1714,39 +1806,40 @@
       }
       .how-works-icon-pro span {
       display: inline-block;
-      background: #d32f2f;
+      background: #3b82f6;
       color: #fff;
       font-weight: bold;
       font-size: 1.1rem;
       border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      line-height: 32px;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
       position: absolute;
-      left: -18px;
+      left: -20px;
       top: 50%;
       transform: translateY(-50%);
-      box-shadow: 0 2px 8px rgba(211,47,47,0.10);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
       }
       .how-works-icon-pro img {
       width: 100%;
       object-fit: cover;
       border-radius: 12px;
-      margin-left: 18px;
+      margin-left: 20px;
       background: #fff;
-      box-shadow: 0 2px 8px rgba(211,47,47,0.10);
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
       }
       .how-works-step-pro h3 {
-      color: #d32f2f;
-      font-size: 1.3rem;
-      margin-bottom: 10px;
+      color: #1e293b;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
       font-weight: 700;
-      margin-top: 10px;
+      margin-top: 12px;
       }
       .how-works-step-pro p {
-      color: #444;
-      font-size: 0.9rem;
+      color: #64748b;
+      font-size: 1rem;
       margin: 0;
+      line-height: 1.6;
       }
       @media (max-width: 1200px) {
       #how-it-works {
@@ -1788,136 +1881,6 @@
       </style>
     </section>
 
-    <!-- Featured Quizzes Section (Modern, Eye-Catching, Responsive) -->
-    <section id="featured-quizzes" style="background: linear-gradient(90deg,#fff 70%,#ffeaea 100%); border-radius: 18px; width: 100%; margin: 48px 0 40px 0; padding: 48px 28px 36px 28px; box-shadow: 0 6px 32px #d32f2f13; border: 2.5px solid #d32f2f; position:relative;">
-      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 38px; font-size: 2.2rem; font-family: 'Montserrat',sans-serif; font-weight: 900; letter-spacing: 1.2px;">
-        <span style="display:inline-block;vertical-align:middle;">
-          <svg width="36" height="36" viewBox="0 0 38 38" fill="none" style="animation:spin 2.5s linear infinite;">
-            <circle cx="19" cy="19" r="17" stroke="#ff5e62" stroke-width="3" opacity="0.25"/>
-            <path d="M36 19a17 17 0 0 1-17 17" stroke="#d32f2f" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-        </span>
-        Featured Free Personality Quizzes
-      </h2>
-      <div class="featured-quizzes-grid" style="display: grid; grid-template-columns: repeat(auto-fit,minmax(310px,1fr)); gap: 32px; justify-content: center; align-items: stretch;">
-        <!-- Card 1 -->
-        <div class="featured-quiz-card" style="background: #fff; border-radius: 16px; box-shadow: 0 4px 18px #d32f2f11; padding: 32px 24px 28px 24px; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.18s, transform 0.13s;">
-          <img src="personality.jpg" alt="Classic Free Personality Quiz" style="width: 72px; height: 72px; border-radius: 12px; margin-bottom: 18px; box-shadow: 0 2px 8px #d32f2f22; object-fit: cover;">
-          <h3 style="color: #d32f2f; font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; text-align: center;">Classic Free Personality Quiz</h3>
-          <p style="color: #444; font-size: 1.08rem; margin-bottom: 18px; text-align: center;">Discover your personality type with our most popular quiz. Get instant, research-backed results and actionable insights—no sign-up required.</p>
-          <a href="test.html" class="btn" style="background: linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%); color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-size: 1.08rem; box-shadow: 0 2px 8px #d32f2f11; transition: background 0.18s,transform 0.13s;">Take Quiz</a>
-        </div>
-        <!-- Card 2 -->
-        <div class="featured-quiz-card" style="background: #fff; border-radius: 16px; box-shadow: 0 4px 18px #d32f2f11; padding: 32px 24px 28px 24px; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.18s, transform 0.13s;">
-          <img src="napoleon1.gif" alt="Historical Leaders Quiz" style="width: 72px; height: 72px; border-radius: 12px; margin-bottom: 18px; box-shadow: 0 2px 8px #d32f2f22; object-fit: cover;">
-          <h3 style="color: #d32f2f; font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; text-align: center;">Historical Leaders Quiz</h3>
-          <p style="color: #444; font-size: 1.08rem; margin-bottom: 18px; text-align: center;">Which historical leader are you? Find out if you’re more like Napoleon, Gandhi, or Cleopatra. Fun, insightful, and always free.</p>
-          <a href="leaders.html" class="btn" style="background: linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%); color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-size: 1.08rem; box-shadow: 0 2px 8px #d32f2f11; transition: background 0.18s,transform 0.13s;">Discover Your Leader</a>
-        </div>
-        <!-- Card 3 -->
-        <div class="featured-quiz-card" style="background: #fff; border-radius: 16px; box-shadow: 0 4px 18px #d32f2f11; padding: 32px 24px 28px 24px; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.18s, transform 0.13s;">
-          <img src="squidzinvana.gif" alt="MBTI & Pop Culture Quizzes" style="width: 72px; height: 72px; border-radius: 12px; margin-bottom: 18px; box-shadow: 0 2px 8px #d32f2f22; object-fit: cover;">
-          <h3 style="color: #d32f2f; font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; text-align: center;">MBTI & Pop Culture Quizzes</h3>
-          <p style="color: #444; font-size: 1.08rem; margin-bottom: 18px; text-align: center;">Explore your MBTI type or discover which Squid Game or football character you resemble. All quizzes are free, fun, and easy to share.</p>
-          <a href="squidgame.html" class="btn" style="background: linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%); color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-size: 1.08rem; box-shadow: 0 2px 8px #d32f2f11; transition: background 0.18s,transform 0.13s;">Try Pop Culture Quiz</a>
-        </div>
-      </div>
-      <style>
-        #featured-quizzes .featured-quizzes-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit,minmax(310px,1fr));
-          gap: 32px;
-          justify-content: center;
-          align-items: stretch;
-        }
-        #featured-quizzes .featured-quiz-card {
-          background: #fff;
-          border-radius: 16px;
-          box-shadow: 0 4px 18px #d32f2f11;
-          padding: 32px 24px 28px 24px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          transition: box-shadow 0.18s, transform 0.13s;
-          position: relative;
-          min-height: 340px;
-        }
-        #featured-quizzes .featured-quiz-card:hover {
-          box-shadow: 0 8px 32px #d32f2f22;
-          transform: translateY(-6px) scale(1.03);
-        }
-        #featured-quizzes .featured-quiz-card img {
-          width: 120px;
-          height: 120px;
-          border-radius: 12px;
-          margin-bottom: 18px;
-          box-shadow: 0 2px 8px #d32f2f22;
-          object-fit: cover;
-          background: #fff;
-        }
-        #featured-quizzes .btn {
-          background: linear-gradient(90deg,#d32f2f 0%,#ff5e62 100%);
-          color: #fff;
-          font-weight: 700;
-          padding: 12px 26px;
-          border-radius: 8px;
-          text-decoration: none;
-          font-size: 1.08rem;
-          box-shadow: 0 2px 8px #d32f2f11;
-          transition: background 0.18s,transform 0.13s;
-          margin-top: auto;
-          display: inline-block;
-        }
-        #featured-quizzes .btn:hover {
-          background: linear-gradient(90deg,#ff5e62 0%,#d32f2f 100%);
-          transform: scale(1.06);
-        }
-        @media (max-width: 900px) {
-          #featured-quizzes {
-            padding: 32px 6vw 24px 6vw !important;
-          }
-          #featured-quizzes .featured-quizzes-grid {
-            gap: 18px;
-          }
-          #featured-quizzes .featured-quiz-card {
-            padding: 24px 10px 20px 10px;
-            min-height: 0;
-          }
-        }
-        @media (max-width: 600px) {
-          #featured-quizzes {
-            padding: 18px 2vw 12px 2vw !important;
-            border-radius: 10px !important;
-          }
-          #featured-quizzes h2 {
-            font-size: 1.3rem !important;
-            margin-bottom: 18px !important;
-          }
-          #featured-quizzes .featured-quizzes-grid {
-            grid-template-columns: 1fr;
-            gap: 12px;
-          }
-          #featured-quizzes .featured-quiz-card {
-            padding: 16px 4px 12px 4px;
-            border-radius: 10px;
-          }
-          #featured-quizzes .featured-quiz-card img {
-            width: 140px !important;
-            height: 140px !important;
-            margin-bottom: 10px;
-          }
-          #featured-quizzes .btn {
-            font-size: 0.98rem;
-            padding: 10px 12px;
-            border-radius: 7px;
-          }
-        }
-        @keyframes spin {
-          0% {transform:rotate(0deg);}
-          100% {transform:rotate(360deg);}
-        }
-      </style>
-    </section>
 
     <!-- Why Take a Personality Quiz Section -->
     <section id="why-personality-quiz" style="background: #fff; border-radius: 12px; width: 100%; margin: 40px 0; padding: 40px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
@@ -2225,27 +2188,8 @@
       </div>
     </section>
 
-        <!-- Additional Testimonials -->
-    <section id="more-testimonials" style="background: #fff; border-radius: 12px; width: 100%; margin: 40px 0; padding: 40px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
-      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 30px;">More Reviews from Quiz-Takers</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;">
-        <div style="flex: 1 1 260px; min-width: 220px; background: #f8f8f8; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px;">
-          <p style="color: #444; font-style: italic;">“Best free personality quiz I’ve ever taken. The results were spot on and the site is so easy to use!”</p>
-          <p style="font-weight: 500; color: #333;">— Jordan S.</p>
-        </div>
-        <div style="flex: 1 1 260px; min-width: 220px; background: #f8f8f8; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px;">
-          <p style="color: #444; font-style: italic;">“I love that there’s no sign-up. Just click, answer, and get your results instantly. Highly recommend Zinvana!”</p>
-          <p style="font-weight: 500; color: #333;">— Samira L.</p>
-        </div>
-        <div style="flex: 1 1 260px; min-width: 220px; background: #f8f8f8; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 24px;">
-          <p style="color: #444; font-style: italic;">“The historical leader quiz was so much fun. I shared my results with all my friends!”</p>
-          <p style="font-weight: 500; color: #333;">— Diego M.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" style="background: #f8f8f8; border-radius: 12px; width: 100%; margin: 40px 0; padding: 40px 20px; border-top: 1px solid #ccc;">
-      <h2 style="text-align: center; color: #d32f2f; margin-bottom: 20px;">📌 Free Personality Quiz FAQ</h2>
+    <section id="faq" style="background: #f8fafc; border-radius: 16px; width: 100%; margin: 40px 0; padding: 40px 20px; border: 1px solid rgba(59, 130, 246, 0.1); box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);">
+      <h2 style="text-align: center; color: #1e293b; margin-bottom: 20px; font-size: 2.2rem; font-weight: 700;">📌 Free Personality Quiz FAQ</h2>
       <div class="faq-item">
         <h4>What is a free personality quiz?</h4>
         <p>A free personality quiz is an online test that helps you discover your unique traits, strengths, and potential—all at no cost. Zinvana offers the best free personality quizzes with instant results and no sign-up required.</p>
@@ -2354,10 +2298,10 @@
       style="display: block; margin: 40px auto 0 auto; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); width: 50%;" />
 
     <!-- Footer -->
-    <footer style="background: #181818; padding: 32px 10px; text-align: center; border-top: 2px solid #d32f2f; margin-top: 40px; color: #fff;">
+    <footer style="background: #1e293b; padding: 32px 10px; text-align: center; border-top: 2px solid #3b82f6; margin-top: 40px; color: #fff; border-radius: 16px 16px 0 0;">
       <div class="container">
         <p style="font-size: 1.1rem; color: #fff;">&copy; 2025 Zinvana. All rights reserved.</p>
-        <p style="color: #bbb;">This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
+        <p style="color: #94a3b8;">This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
         <div class="social-icons" style="margin-top: 10px;">
           <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer"><img src="whiteinsta.png" alt="Instagram" style="width: 32px; margin: 0 8px;" /></a>
           <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer"><img src="whitex.png" alt="Twitter" style="width: 32px; margin: 0 8px;" /></a>
@@ -2367,12 +2311,12 @@
     </footer>
 
 <!-- Add a floating "Back to Top" and "Share" button for UX and engagement -->
-<button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:40px;right:40px;z-index:9999;background:linear-gradient(45deg,#667eea 0%,#764ba2 50%,#d32f2f 100%);color:#fff;border:none;border-radius:50%;width:60px;height:60px;box-shadow:0 8px 30px rgba(103, 126, 234, 0.4);cursor:pointer;transition:all 0.3s ease;backdrop-filter:blur(10px);">
+<button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:40px;right:40px;z-index:9999;background:linear-gradient(45deg,#3b82f6 0%,#10b981 50%,#ef4444 100%);color:#fff;border:none;border-radius:50%;width:60px;height:60px;box-shadow:0 8px 30px rgba(59, 130, 246, 0.4);cursor:pointer;transition:all 0.3s ease;backdrop-filter:blur(10px);">
   <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="display:block;margin:auto;">
     <path d="M12 19V5M5 12l7-7 7 7"/>
   </svg>
 </button>
-<button id="shareBtn" aria-label="Share this page" style="position:fixed;bottom:120px;right:40px;z-index:9999;background:linear-gradient(45deg,#764ba2 0%,#d32f2f 50%,#ff6b6b 100%);color:#fff;border:none;border-radius:50%;width:60px;height:60px;box-shadow:0 8px 30px rgba(211, 47, 47, 0.4);cursor:pointer;transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);">
+<button id="shareBtn" aria-label="Share this page" style="position:fixed;bottom:120px;right:40px;z-index:9999;background:linear-gradient(45deg,#10b981 0%,#3b82f6 50%,#ef4444 100%);color:#fff;border:none;border-radius:50%;width:60px;height:60px;box-shadow:0 8px 30px rgba(59, 130, 246, 0.4);cursor:pointer;transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);">
   <svg width="26" height="26" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
     <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/>
   </svg>
@@ -2551,10 +2495,10 @@ document.addEventListener("DOMContentLoaded", function() {
 #backToTop:hover, #shareBtn:hover { 
   transform: translateY(-5px) scale(1.1); 
   opacity: 1; 
-  box-shadow: 0 15px 40px rgba(103, 126, 234, 0.5);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
 }
 #shareBtn:hover {
-  box-shadow: 0 15px 40px rgba(211, 47, 47, 0.5);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
 }
 #backToTop:active, #shareBtn:active {
   transform: translateY(-2px) scale(1.05);
@@ -2562,7 +2506,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </style>
 
 <!-- Add a fun fact bar above the footer for engagement and SEO -->
-<div id="funFactBar" aria-live="polite" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#d32f2f 100%);color:#fff;padding:20px 0;text-align:center;font-size:1.1rem;font-weight:600;letter-spacing:0.5px;box-shadow:0 -8px 30px rgba(103, 126, 234, 0.2);backdrop-filter:blur(10px);position:relative;">
+<div id="funFactBar" aria-live="polite" style="background:linear-gradient(135deg,#3b82f6 0%,#10b981 50%,#ef4444 100%);color:#fff;padding:20px 0;text-align:center;font-size:1.1rem;font-weight:600;letter-spacing:0.5px;box-shadow:0 -8px 30px rgba(59, 130, 246, 0.2);backdrop-filter:blur(10px);position:relative;">
   <span id="funFactText" style="display:inline-flex;align-items:center;gap:10px;">
     <span style="animation: pulse 2s infinite;">💡</span>
     Did you know? Zinvana is the #1 ranked site for free insightful personality quizzes!
@@ -2591,24 +2535,34 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<!-- Add subtle fade-in stagger to quiz cards for modern look -->
+<!-- Add subtle fade-in stagger to quiz cards for modern look - Performance Optimized -->
 <style>
 .quiz-card {
   opacity: 0;
-  transform: translateY(32px);
-  animation: fadeInCard 0.7s forwards;
+  transform: translateY(20px);
+  animation: fadeInCard 0.6s ease-out forwards;
 }
 .quiz-card:nth-child(1) { animation-delay: 0.1s;}
-.quiz-card:nth-child(2) { animation-delay: 0.2s;}
-.quiz-card:nth-child(3) { animation-delay: 0.3s;}
-.quiz-card:nth-child(4) { animation-delay: 0.4s;}
-.quiz-card:nth-child(5) { animation-delay: 0.5s;}
-.quiz-card:nth-child(6) { animation-delay: 0.6s;}
-.quiz-card:nth-child(7) { animation-delay: 0.7s;}
-.quiz-card:nth-child(8) { animation-delay: 0.8s;}
+.quiz-card:nth-child(2) { animation-delay: 0.15s;}
+.quiz-card:nth-child(3) { animation-delay: 0.2s;}
+.quiz-card:nth-child(4) { animation-delay: 0.25s;}
+.quiz-card:nth-child(5) { animation-delay: 0.3s;}
+.quiz-card:nth-child(6) { animation-delay: 0.35s;}
+.quiz-card:nth-child(7) { animation-delay: 0.4s;}
+.quiz-card:nth-child(8) { animation-delay: 0.45s;}
+.quiz-card:nth-child(9) { animation-delay: 0.5s;}
+.quiz-card:nth-child(10) { animation-delay: 0.55s;}
 @keyframes fadeInCard {
-  from { opacity: 0; transform: translateY(32px);}
+  from { opacity: 0; transform: translateY(20px);}
   to { opacity: 1; transform: translateY(0);}
+}
+/* Disable animations on slower devices */
+@media (prefers-reduced-motion: reduce) {
+  .quiz-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 </style>
 
@@ -2661,5 +2615,188 @@ document.addEventListener("DOMContentLoaded", function() {
   ]
 }
 </script>
+
+<!-- Quiz Gallery JavaScript -->
+<script>
+let currentScrollPosition = 0;
+let cardsVisible = 3; // Default number of cards visible
+let cardWidth = 344; // Card width + gap
+
+// Calculate visible cards based on screen width
+function updateVisibleCards() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= 480) {
+    cardsVisible = 1;
+    cardWidth = 280;
+  } else if (screenWidth <= 768) {
+    cardsVisible = 2;
+    cardWidth = 304;
+  } else if (screenWidth <= 1024) {
+    cardsVisible = 3;
+    cardWidth = 344;
+  } else {
+    cardsVisible = 4;
+    cardWidth = 344;
+  }
+}
+
+// Initialize gallery
+function initGallery() {
+  updateVisibleCards();
+  createDots();
+  updateDots();
+}
+
+// Scroll gallery function
+function scrollGallery(direction) {
+  const gallery = document.getElementById('quiz-gallery');
+  const totalCards = document.querySelectorAll('.quiz-card').length;
+  const maxPosition = Math.max(0, totalCards - cardsVisible);
+  
+  currentScrollPosition += direction;
+  
+  // Wrap around at the ends
+  if (currentScrollPosition < 0) {
+    currentScrollPosition = maxPosition;
+  } else if (currentScrollPosition > maxPosition) {
+    currentScrollPosition = 0;
+  }
+  
+  const scrollAmount = currentScrollPosition * cardWidth;
+  gallery.scrollTo({
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+  
+  updateDots();
+}
+
+// Create dots for pagination
+function createDots() {
+  const dotsContainer = document.getElementById('gallery-dots');
+  const totalCards = document.querySelectorAll('.quiz-card').length;
+  const totalDots = Math.max(1, totalCards - cardsVisible + 1);
+  
+  dotsContainer.innerHTML = '';
+  
+  for (let i = 0; i < totalDots; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'gallery-dot';
+    dot.onclick = () => scrollToPosition(i);
+    dotsContainer.appendChild(dot);
+  }
+}
+
+// Update active dot
+function updateDots() {
+  const dots = document.querySelectorAll('.gallery-dot');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentScrollPosition);
+  });
+}
+
+// Scroll to specific position
+function scrollToPosition(position) {
+  currentScrollPosition = position;
+  const gallery = document.getElementById('quiz-gallery');
+  const scrollAmount = currentScrollPosition * cardWidth;
+  
+  gallery.scrollTo({
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+  
+  updateDots();
+}
+
+// Auto-scroll functionality
+let autoScrollInterval;
+
+function startAutoScroll() {
+  autoScrollInterval = setInterval(() => {
+    scrollGallery(1);
+  }, 5000); // Auto-scroll every 5 seconds
+}
+
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+
+// Touch/swipe support for mobile
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
+
+function handleTouchStart(e) {
+  startX = e.touches[0].clientX;
+  isDragging = true;
+  stopAutoScroll();
+}
+
+function handleTouchMove(e) {
+  if (!isDragging) return;
+  currentX = e.touches[0].clientX;
+}
+
+function handleTouchEnd() {
+  if (!isDragging) return;
+  
+  const diff = startX - currentX;
+  const threshold = 50;
+  
+  if (Math.abs(diff) > threshold) {
+    if (diff > 0) {
+      scrollGallery(1); // Swipe left - next
+    } else {
+      scrollGallery(-1); // Swipe right - previous
+    }
+  }
+  
+  isDragging = false;
+  startAutoScroll();
+}
+
+// Keyboard navigation
+function handleKeydown(e) {
+  if (e.key === 'ArrowLeft') {
+    scrollGallery(-1);
+    stopAutoScroll();
+    setTimeout(startAutoScroll, 1000);
+  } else if (e.key === 'ArrowRight') {
+    scrollGallery(1);
+    stopAutoScroll();
+    setTimeout(startAutoScroll, 1000);
+  }
+}
+
+// Initialize everything when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+  initGallery();
+  startAutoScroll();
+  
+  // Add event listeners
+  const gallery = document.getElementById('quiz-gallery');
+  gallery.addEventListener('touchstart', handleTouchStart, { passive: true });
+  gallery.addEventListener('touchmove', handleTouchMove, { passive: true });
+  gallery.addEventListener('touchend', handleTouchEnd);
+  
+  // Pause auto-scroll on hover
+  const galleryWrapper = document.querySelector('.quiz-gallery-wrapper');
+  galleryWrapper.addEventListener('mouseenter', stopAutoScroll);
+  galleryWrapper.addEventListener('mouseleave', startAutoScroll);
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', handleKeydown);
+  
+  // Update on window resize
+  window.addEventListener('resize', () => {
+    updateVisibleCards();
+    createDots();
+    currentScrollPosition = 0;
+    scrollToPosition(0);
+  });
+});
+</script>
+
   </body>
 </html>
