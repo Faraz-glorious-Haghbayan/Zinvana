@@ -161,45 +161,87 @@
       }
 
       /* -------------------------------------
-   2) Base Styles
+   2) Minimal Base Styles - Ultra Lightweight
 ------------------------------------- */
-      body {
-        font-family: "Inter", "Poppins", sans-serif;
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        background-attachment: fixed;
-        color: #1e293b;
-        line-height: 1.6;
-        overflow-x: hidden;
-        position: relative;
-        width: 100%;
-        max-width: none;
-      }
-      body::before {
-        content: '';
+      
+      /* Minimal Loading Screen */
+      .loading-screen {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: 
-          radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.03) 0%, transparent 50%),
-          radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
-        pointer-events: none;
-        z-index: -1;
+        background: #667eea;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        opacity: 1;
+        transition: opacity 0.3s ease;
       }
-      /* Anchor defaults */
+      
+      .loading-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .loading-content {
+        text-align: center;
+        color: white;
+      }
+      
+      .loading-logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+      
+      .loading-text {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+      
+      .loading-bar {
+        width: 150px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 1px;
+        overflow: hidden;
+        margin: 0 auto;
+      }
+      
+      .loading-progress {
+        height: 100%;
+        background: #ffffff;
+        transition: width 0.2s ease;
+        border-radius: 1px;
+      }
+
+      /* Minimal Body Styling */
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #ffffff;
+        color: #0f172a;
+        line-height: 1.6;
+        overflow-x: hidden;
+        width: 100%;
+        font-size: 16px;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Simple anchor styles */
       a {
         text-decoration: none;
         color: inherit;
-        transition: opacity 0.3s;
-      }
-      a:hover {
-        opacity: 0.8;
+        transition: color 0.2s ease;
       }
 
       /* -------------------------------------
-   3) Navigation - Enhanced Modern Design
+   3) Minimal Navigation - Clean & Fast
 ------------------------------------- */
       nav {
         position: fixed;
@@ -211,29 +253,17 @@
         justify-content: space-between;
         align-items: center;
         background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
-        border-bottom: 1px solid rgba(59, 130, 246, 0.1);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         padding: 0 5%;
-        min-height: 80px;
-        z-index: 10000;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      /* Scrolled state */
-      nav.scrolled {
-        background: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
         min-height: 70px;
+        z-index: 10000;
+        transition: box-shadow 0.2s ease;
       }
       
-      nav.scrolled a {
-        color: #1e293b;
-      }
-      
-      nav.scrolled .nav-toggle span {
-        background: #1e293b;
+      /* Minimal scrolled state */
+      nav.scrolled {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
 
       /* Navigation layout */
@@ -243,21 +273,20 @@
         justify-content: space-between;
         width: 100%;
         margin: 0 auto;
+        max-width: 1400px;
       }
 
-      /* Logo styling */
+      /* Simple logo styling */
       nav img#brand-logo {
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
-        transition: all 0.4s ease;
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
+        transition: transform 0.2s ease;
         object-fit: cover;
       }
       
       nav img#brand-logo:hover {
         transform: scale(1.05);
-        box-shadow: 0 8px 25px rgba(211, 47, 47, 0.5);
       }
 
       /* Navigation links container */
@@ -275,94 +304,60 @@
         justify-content: center;
       }
 
-      /* Navigation links */
+      /* Clean navigation links */
       nav a {
         color: #475569;
         font-weight: 500;
-        font-size: 0.95rem;
-        padding: 12px 24px;
-        border-radius: 12px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        text-transform: capitalize;
-        letter-spacing: 0.3px;
+        font-size: 0.925rem;
+        padding: 10px 18px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
         background: transparent;
-        border: 1px solid transparent;
-      }
-
-      /* Hover effects */
-      nav a::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(16, 185, 129, 0.08));
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: -1;
-      }
-
-      nav a:hover::before {
-        opacity: 1;
       }
 
       nav a:hover {
-        color: #1e293b;
-        background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-        border: 1px solid rgba(59, 130, 246, 0.2);
-        transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+        color: #0f172a;
+        background: #f1f5f9;
       }
 
-      nav.scrolled a:hover {
-        color: #1e293b;
-      }
-
-      /* Active state */
+      /* Simple active state */
       nav a.active {
-        background: linear-gradient(135deg, #3b82f6, #10b981);
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        background: #667eea;
+        color: #ffffff;
       }
 
-      /* Enhanced hamburger menu */
+      /* Simple hamburger menu */
       .nav-toggle {
         display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
         cursor: pointer;
-        border-radius: 8px;
-        background: rgba(59, 130, 246, 0.1);
-        backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
-        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 6px;
+        background: #f8fafc;
+        transition: background 0.2s ease;
+        border: 1px solid #e2e8f0;
       }
       
       .nav-toggle:hover {
-        background: rgba(59, 130, 246, 0.2);
-        transform: scale(1.05);
+        background: #f1f5f9;
       }
 
       .nav-toggle span {
         display: block;
-        width: 24px;
+        width: 22px;
         height: 2px;
         background: #475569;
-        margin: 3px 0;
-        border-radius: 2px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        margin: 2px 0;
+        border-radius: 1px;
+        transition: all 0.2s ease;
       }
 
       /* Hamburger animation */
       .nav-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+        transform: rotate(45deg) translate(5px, 5px);
       }
       
       .nav-toggle.active span:nth-child(2) {
@@ -370,7 +365,7 @@
       }
       
       .nav-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+        transform: rotate(-45deg) translate(5px, -5px);
       }
 
       /* Mobile menu - hidden by default */
@@ -378,7 +373,7 @@
         display: none;
       }
 
-      /* Large tablet adjustments - keep all nav elements visible */
+      /* Responsive navigation */
       @media (max-width: 1200px) {
         nav {
           padding: 0 3%;
@@ -386,26 +381,17 @@
         
         nav a {
           font-size: 0.9rem;
-          padding: 10px 18px;
+          padding: 8px 16px;
         }
         
         .nav-center {
-          gap: 6px;
-        }
-        
-        .nav-right {
           gap: 6px;
         }
       }
 
-      /* Medium screens - reduce spacing but keep all visible */
       @media (max-width: 900px) {
         nav {
           padding: 0 2%;
-        }
-        
-        .nav-center {
-          gap: 4px;
         }
         
         nav a {
@@ -414,47 +400,35 @@
         }
       }
 
-      /* Tablet and phone breakpoint */
       @media (max-width: 768px) {
         nav {
           padding: 0 20px;
-          min-height: 70px;
+          min-height: 65px;
         }
         
-        /* Hide all navigation links on phones */
         nav .nav-left, 
         nav .nav-right, 
         nav .nav-center {
           display: none;
         }
         
-        /* Show only toggle button */
         .nav-toggle {
           display: flex;
         }
         
-        /* Adjust nav container for phone layout */
-        .nav-container {
-          justify-content: space-between;
-        }
-        
-        /* Mobile menu overlay */
         .nav-mobile {
           position: fixed;
-          top: 70px;
+          top: 65px;
           left: 0;
           width: 100vw;
-          height: calc(100vh - 70px);
+          height: calc(100vh - 65px);
           background: rgba(255, 255, 255, 0.98);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
           display: none;
           flex-direction: column;
           align-items: center;
           justify-content: flex-start;
-          padding: 40px 20px 20px 20px;
+          padding: 30px 20px;
           z-index: 9999;
-          animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           overflow-y: auto;
         }
         
@@ -462,223 +436,64 @@
           display: flex;
         }
         
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
         .nav-mobile a {
           color: #475569;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           font-weight: 500;
-          padding: 18px 30px;
-          margin: 8px 0;
-          border-radius: 15px;
-          width: 85%;
-          max-width: 320px;
+          padding: 15px 25px;
+          margin: 6px 0;
+          border-radius: 8px;
+          width: 80%;
+          max-width: 300px;
           text-align: center;
-          background: rgba(59, 130, 246, 0.05);
-          border: 1px solid rgba(59, 130, 246, 0.15);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          overflow: hidden;
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          transition: all 0.2s ease;
         }
         
-        .nav-mobile a::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-          transition: left 0.5s;
-        }
-        
-        .nav-mobile a:hover::before,
-        .nav-mobile a:active::before {
-          left: 100%;
-        }
-        
-        .nav-mobile a:hover,
-        .nav-mobile a:active {
-          background: linear-gradient(135deg, #3b82f6, #10b981);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        .nav-mobile a:hover {
+          background: #667eea;
           color: #fff;
         }
       }
 
-      /* Small phone optimizations */
       @media (max-width: 480px) {
         nav {
-          min-height: 65px;
+          min-height: 60px;
           padding: 0 16px;
         }
         
         nav img#brand-logo {
-          width: 40px;
-          height: 40px;
-        }
-        
-        .nav-toggle {
-          width: 44px;
-          height: 44px;
-          border-radius: 10px;
-        }
-        
-        .nav-toggle span {
-          width: 22px;
-          height: 2px;
-        }
-        
-        .nav-mobile {
-          top: 65px;
-          height: calc(100vh - 65px);
-          padding: 30px 16px 16px 16px;
-        }
-        
-        .nav-mobile a {
-          font-size: 1.1rem;
-          padding: 16px 25px;
-          width: 90%;
-          max-width: 280px;
-          margin: 6px 0;
-        }
-      }
-
-      /* Extra small phones */
-      @media (max-width: 360px) {
-        nav {
-          min-height: 60px;
-          padding: 0 12px;
-        }
-        
-        nav img#brand-logo {
-          width: 36px;
-          height: 36px;
-        }
-        
-        .nav-toggle {
-          width: 40px;
-          height: 40px;
-        }
-        
-        .nav-toggle span {
-          width: 20px;
-          height: 2px;
+          width: 38px;
+          height: 38px;
         }
         
         .nav-mobile {
           top: 60px;
           height: calc(100vh - 60px);
-          padding: 25px 12px 12px 12px;
+          padding: 25px 16px;
         }
         
         .nav-mobile a {
           font-size: 1rem;
-          padding: 14px 20px;
-          width: 95%;
-          max-width: 250px;
-          margin: 5px 0;
-        }
-      }
-
-      /* Landscape orientation on phones */
-      @media (max-width: 768px) and (orientation: landscape) and (max-height: 500px) {
-        .nav-mobile {
-          padding: 20px 16px 16px 16px;
-          justify-content: flex-start;
-        }
-        
-        .nav-mobile a {
-          padding: 12px 24px;
-          margin: 4px 0;
-          font-size: 1rem;
+          padding: 12px 20px;
+          width: 85%;
         }
       }
 
       /* -------------------------------------
-   4) Header (Enhanced Beautiful Theme)
+   4) Minimal Header - Clean & Fast
 ------------------------------------- */
       header {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 60vh;
-        min-height: 400px;
+        height: 65vh;
+        min-height: 450px;
         overflow: hidden;
-        border-bottom: 3px solid rgba(59, 130, 246, 0.6);
-        margin-top: 80px; /* Account for fixed navigation */
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-      }
-      
-      @media (max-width: 768px) {
-        header {
-          margin-top: 70px; /* Adjust for phone nav height */
-          min-height: 350px;
-        }
-      }
-      
-      @media (max-width: 480px) {
-        header {
-          margin-top: 65px; /* Adjust for small phone nav height */
-          min-height: 300px;
-          height: 50vh;
-        }
-      }
-
-      @media (max-width: 360px) {
-        header {
-          margin-top: 60px; /* Adjust for extra small phone nav height */
-          min-height: 280px;
-        }
-      }
-      header::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="0.3" fill="white" opacity="0.1"/><circle cx="40" cy="60" r="0.4" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-        pointer-events: none;
-      }
-
-      .header-content {
-        position: relative;
-        z-index: 3;
-        text-align: center;
-        padding: 0 20px;
-        animation: float 6s ease-in-out infinite;
-      }
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-      }
-
-      header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          rgba(59, 130, 246, 0.1) 0%,
-          rgba(16, 185, 129, 0.1) 50%,
-          rgba(239, 68, 68, 0.1) 100%
-        );
-        z-index: 2;
+        margin-top: 70px;
+        background: #f8fafc;
       }
 
       #header-video {
@@ -689,245 +504,341 @@
         height: 100%;
         object-fit: cover;
         z-index: 1;
+        opacity: 0.6;
       }
 
+      /* Clean header content */
+      .header-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        padding: 0 30px;
+        max-width: 700px;
+      }
+
+      /* Simple typography */
       .header-content h1 {
-        font-size: 3.5rem !important;
+        font-size: 3.2rem !important;
         line-height: 1.2;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
         color: #1e293b;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        font-weight: 800;
-        margin-bottom: 1rem;
-        animation: fadeInUp 1s ease-out;
-      }
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
       }
 
+      /* Clean tagline */
       #tagline {
-        font-size: 1.3rem !important;
-        margin-top: 0.5rem;
-        color: #475569;
+        font-size: 1.2rem !important;
+        margin-top: 1rem;
+        color: #64748b;
         font-weight: 400;
-        letter-spacing: 0.5px;
         margin-bottom: 2rem;
-        animation: fadeInUp 1s ease-out 0.3s both;
+        line-height: 1.5;
+      }
+
+      /* Simple CTA button */
+      .header-cta {
+        margin-top: 1.5rem;
+      }
+      
+      .header-cta-btn {
+        display: inline-block;
+        padding: 14px 28px;
+        background: #667eea;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 10px rgba(102, 126, 234, 0.2);
+      }
+      
+      .header-cta-btn:hover {
+        background: #5a67d8;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      /* Responsive header adjustments */
+      @media (max-width: 768px) {
+        header {
+          height: 55vh;
+          min-height: 350px;
+        }
+        
+        .header-content {
+          padding: 0 20px;
+        }
+        
+        .header-content h1 {
+          font-size: 2.5rem !important;
+        }
+        
+        #tagline {
+          font-size: 1.1rem !important;
+        }
+        
+        .header-cta-btn {
+          padding: 12px 24px;
+          font-size: 0.95rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        header {
+          height: 50vh;
+          min-height: 320px;
+        }
+        
+        .header-content h1 {
+          font-size: 2rem !important;
+        }
+        
+        #tagline {
+          font-size: 1rem !important;
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      /* Clean main content wrapper */
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      @media (max-width: 768px) {
+        main {
+          padding: 0 16px;
+        }
       }
 
       /* -------------------------------------
-   5) Intro Section
+   5) Minimal Intro Section
 ------------------------------------- */
       .intro {
         text-align: center;
-        padding: 60px 20px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        color: #1e293b;
-        margin: -50px 20px 40px 20px;
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        position: relative;
-        z-index: 5;
-        border: 1px solid rgba(59, 130, 246, 0.1);
+        padding: 60px 30px;
+        background: #ffffff;
+        color: #0f172a;
+        margin: -60px 20px 60px 20px;
+        border-radius: 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
       }
-      .intro::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(59, 130, 246, 0.02), rgba(16, 185, 129, 0.02));
-        border-radius: 20px;
-        z-index: -1;
-      }
+      
       .intro h2 {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-        background: linear-gradient(45deg, #3b82f6, #10b981);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 700;
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+        color: #667eea;
+        font-weight: 600;
+        line-height: 1.2;
       }
+      
       .intro p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         margin-bottom: 0;
-        line-height: 1.7;
+        line-height: 1.6;
         color: #64748b;
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       /* -------------------------------------
-   6) Quiz Gallery Section - Horizontal Scrolling Gallery
+   6) Minimal Quiz Gallery - Lightweight Design
 ------------------------------------- */
       .quiz-grid {
         width: 100%;
         max-width: 1400px;
-        margin: 40px auto;
-        padding: 40px 20px;
-        background: rgba(255, 255, 255, 0.95);
+        margin: 60px auto;
+        padding: 60px 40px;
+        background: #ffffff;
         border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(59, 130, 246, 0.08);
-        border: 1px solid rgba(59, 130, 246, 0.1);
-        position: relative;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f1f5f9;
       }
       
       .quiz-gallery-wrapper {
-        position: relative;
         overflow: hidden;
         border-radius: 16px;
       }
       
       .quiz-gallery {
         display: flex;
-        gap: 24px;
+        gap: 30px;
         overflow-x: auto;
         overflow-y: hidden;
         scroll-behavior: smooth;
-        padding: 10px 0;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE/Edge */
+        padding: 20px 0;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
       }
       
       .quiz-gallery::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
+        display: none;
       }
       
-      /* Navigation Arrows */
+      /* Next-Level Navigation Arrows */
       .gallery-nav {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.95);
-        border: 2px solid rgba(59, 130, 246, 0.2);
+        background: 
+          linear-gradient(135deg, rgba(128, 204, 248, 0.9), rgba(248, 250, 252, 0.9));
+        backdrop-filter: blur(15px) saturate(180%);
+        border: 2px solid rgba(102, 126, 234, 0.2);
         border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
+        width: 56px;
+        height: 56px;
+        display: flex; /* Now visible on all screen sizes */
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 10;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 15;
+        box-shadow: 
+          0 8px 25px rgba(0, 0, 0, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
       }
       
       .gallery-nav:hover {
-        background: rgba(59, 130, 246, 0.1);
-        border-color: rgba(59, 130, 246, 0.4);
-        transform: translateY(-50%) scale(1.1);
+        background: linear-gradient(135deg, #94a4e7, #c599f0);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) scale(1.15);
+        box-shadow: 
+          0 15px 35px rgba(102, 126, 234, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      }
+      
+      .gallery-nav:hover svg {
+        fill: #864646;
       }
       
       .gallery-nav.prev {
-        left: 15px;
+        left: 20px;
       }
       
       .gallery-nav.next {
-        right: 15px;
+        right: 20px;
       }
       
       .gallery-nav svg {
-        width: 20px;
-        height: 20px;
-        fill: #3b82f6;
-      }
-      
-      /* Scroll Indicators */
-      .gallery-dots {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
-      }
-      
-      .gallery-dot {
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        background: rgba(59, 130, 246, 0.3);
-        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        fill: #667eea !important;
         transition: all 0.3s ease;
       }
       
+      /* Advanced Scroll Indicators */
+      .gallery-dots {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 40px;
+        z-index: 2;
+        position: relative;
+      }
+      
+      .gallery-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(102, 126, 234, 0.2);
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .gallery-dot::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, #000000);
+        border-radius: 50%;
+        transition: all 0.4s ease;
+      }
+      
       .gallery-dot.active {
-        background: #3b82f6;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        transform: scale(1.3);
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+      }
+      
+      .gallery-dot:hover::before {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .gallery-dot:hover {
+        background: rgba(102, 126, 234, 0.4);
         transform: scale(1.2);
       }
       
-      /* Add a subtle fade-in animation */
+      /* Advanced grid animation */
       .quiz-grid {
-        animation: fadeInGrid 0.8s ease-out;
+        animation: slideInFromBottom 1s ease-out;
       }
       
-      @keyframes fadeInGrid {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+      @keyframes slideInFromBottom {
+        0% { 
+          opacity: 0; 
+          transform: translateY(60px) scale(0.95); 
+        }
+        100% { 
+          opacity: 1; 
+          transform: translateY(0) scale(1); 
+        }
       }
       
+      /* Minimal Quiz Cards */
       .quiz-card {
-        background: #fff;
-        border-radius: 16px;
+        background: #ffffff;
+        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease;
         text-align: center;
-        border: 1px solid rgba(59, 130, 246, 0.1);
-        position: relative;
-        flex: 0 0 320px; /* Fixed width for horizontal scrolling */
-        min-height: 400px;
+        border: 1px solid #e2e8f0;
+        flex: 0 0 320px;
+        min-height: 420px;
         display: flex;
         flex-direction: column;
       }
       
-      .quiz-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #3b82f6, #10b981, #ef4444);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-      
-      .quiz-card:hover::before {
-        opacity: 1;
-      }
-      
-      /* Optimized hover effect - less intensive */
       .quiz-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15);
-        /* Removed scale transform to improve performance */
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
       }
       
       .quiz-card img {
         width: 100%;
         height: 200px;
         object-fit: cover;
-        transition: transform 0.3s ease;
+        transition: transform 0.2s ease;
       }
       
       .quiz-card:hover img {
-        transform: scale(1.02); /* Reduced scale for better performance */
+        transform: scale(1.02);
       }
       
       .quiz-card h3 {
         font-size: 1.4rem;
         margin: 20px 20px 15px;
         color: #1e293b;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 1.3;
-        flex-grow: 0;
       }
       
       .quiz-card p {
         font-size: 0.95rem;
         padding: 0 20px;
         color: #64748b;
-        line-height: 1.6;
+        line-height: 1.5;
         margin: 0;
         flex-grow: 1;
         display: flex;
@@ -936,255 +847,198 @@
       
       .quiz-card .btn {
         display: inline-block;
-        margin: 20px 20px 24px;
+        margin: 20px;
         padding: 12px 24px;
-        background: linear-gradient(45deg, #3b82f6, #10b981);
-        color: #fff;
+        background: #667eea;
+        color: #ffffff;
         border-radius: 8px;
-        transition: all 0.3s ease;
-        font-weight: 600;
-        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        font-weight: 500;
+        font-size: 0.95rem;
         text-decoration: none;
-        box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);
-        flex-shrink: 0;
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
       }
       
       .quiz-card .btn:hover {
-        background: linear-gradient(45deg, #2563eb, #059669);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+        background: #5a67d8;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
       }
 
       /* -------------------------------------
-   7) Enhanced Section Styling
+   7) Minimal Section Styling
 ------------------------------------- */
       #squidgame-explainer {
         width: 100%;
-        margin: 60px 0;
-        padding: 40px;
+        margin: 50px 0;
+        padding: 30px;
         text-align: center;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 25px;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        position: relative;
-        overflow: hidden;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
       }
-      #squidgame-explainer::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(103, 126, 234, 0.05), rgba(211, 47, 47, 0.05));
-        z-index: -1;
-      }
+      
       #squidgame-explainer h2 {
-        font-size: 2.2rem;
-        background: linear-gradient(45deg, #d32f2f, #764ba2);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 20px;
-        font-weight: 700;
+        font-size: 2rem;
+        color: #667eea;
+        margin-bottom: 15px;
+        font-weight: 600;
       }
+      
       #squidgame-explainer p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #555;
-        margin-bottom: 25px;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #64748b;
+        margin-bottom: 20px;
       }
+      
       #squidgame-explainer img {
         max-width: 100%;
         height: auto;
-        border-radius: 20px;
-        margin-top: 30px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
+        border-radius: 12px;
+        margin-top: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
       }
+      
       #squidgame-explainer img:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
       }
 
       /* -------------------------------------
-   8) Article Content Section
+   8) Minimal Article Content Section
 ------------------------------------- */
       .character-profile,
       .conclusion {
-        margin-bottom: 40px;
-        padding: 30px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        transition: transform 0.3s ease;
-        position: relative;
-        overflow: hidden;
+        margin-bottom: 30px;
+        padding: 25px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        transition: transform 0.2s ease;
       }
-      .character-profile::before,
-      .conclusion::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #667eea, #764ba2, #d32f2f);
-        z-index: 1;
-      }
+      
       .character-profile:hover,
       .conclusion:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
+      
       .character-profile h3,
       .conclusion h3 {
-        font-size: 1.6rem;
-        background: linear-gradient(45deg, #d32f2f, #764ba2);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 15px;
+        font-size: 1.5rem;
+        color: #667eea;
+        margin-bottom: 12px;
         font-weight: 600;
       }
+      
       .character-profile p,
       .conclusion p {
-        font-size: 1.1rem;
-        color: #555;
-        line-height: 1.8;
+        font-size: 1rem;
+        color: #64748b;
+        line-height: 1.6;
       }
+      
       .character-profile img {
-        width: 160px;
-        height: 160px;
-        border-radius: 20px;
+        width: 140px;
+        height: 140px;
+        border-radius: 12px;
         object-fit: cover;
         float: left;
-        margin-right: 25px;
-        margin-bottom: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
+        margin-right: 20px;
+        margin-bottom: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
       }
+      
       .character-profile img:hover {
-        transform: scale(1.1) rotate(2deg);
+        transform: scale(1.05);
       }
 
       #faq {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        padding: 50px 30px;
+        background: #ffffff;
+        padding: 40px 25px;
         width: 100%;
-        margin: 40px 0;
-        border-radius: 25px;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        position: relative;
-        overflow: hidden;
+        margin: 30px 0;
+        border-radius: 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
       }
-      #faq::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(103, 126, 234, 0.03), rgba(211, 47, 47, 0.03));
-        z-index: -1;
-      }
+      
       #faq h2 {
         text-align: center;
-        background: linear-gradient(45deg, #d32f2f, #764ba2);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 30px;
-        font-size: 2.5rem;
-        font-weight: 700;
-      }
-      .faq-item {
-        background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
-        padding: 25px;
-        margin-bottom: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        transition: all 0.3s ease;
-        cursor: pointer;
-      }
-      .faq-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        background: rgba(255, 255, 255, 0.8);
-      }
-      .faq-item h4 {
-        margin-top: 0;
-        margin-bottom: 15px;
-        color: #333;
-        font-size: 1.3rem;
+        color: #667eea;
+        margin-bottom: 25px;
+        font-size: 2.2rem;
         font-weight: 600;
       }
+      
+      .faq-item {
+        background: #f8fafc;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 15px;
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      
+      .faq-item:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        background: #ffffff;
+      }
+      
+      .faq-item h4 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        color: #1e293b;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      
       .faq-item p {
-        color: #666;
-        font-size: 1.05rem;
-        line-height: 1.7;
+        color: #64748b;
+        font-size: 1rem;
+        line-height: 1.6;
         margin: 0;
       }
 
       /* -------------------------------------
-   9) Related Blog Articles Section
+   9) Minimal Related Blog Articles Section
 ------------------------------------- */
       #related-articles {
-        margin: 60px 0;
+        margin: 50px 0;
         width: 100%;
-        padding: 40px 30px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 25px;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        position: relative;
-        overflow: hidden;
+        padding: 30px 25px;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
       }
-      #related-articles::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(103, 126, 234, 0.03), rgba(211, 47, 47, 0.03));
-        z-index: -1;
-      }
+      
       #related-articles h2 {
-        font-size: 2.2rem;
-        margin-bottom: 30px;
-        border-bottom: 3px solid transparent;
-        border-image: linear-gradient(90deg, #667eea, #764ba2, #d32f2f) 1;
-        padding-bottom: 15px;
+        font-size: 2rem;
+        margin-bottom: 25px;
         text-align: center;
-        background: linear-gradient(45deg, #d32f2f, #764ba2);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 700;
+        color: #667eea;
+        font-weight: 600;
       }
+      
       .articles-container {
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 20px;
       }
+      
       .blog-card {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(15px);
-        padding: 30px;
-        border-radius: 20px;
-        border-left: 5px solid transparent;
-        border-image: linear-gradient(45deg, #d32f2f, #764ba2) 1;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
+        background: #f8fafc;
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 4px solid #667eea;
+        transition: all 0.2s ease;
       }
       .blog-card::before {
         content: '';
@@ -1230,7 +1084,290 @@
       }
 
       /* -------------------------------------
-   10) Footer
+   10) Professional CTA Section
+------------------------------------- */
+      .cta-section {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+        color: #ffffff;
+        padding: 80px 40px;
+        margin: 80px 20px;
+        border-radius: 24px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+      }
+      
+      .cta-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cta-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23cta-pattern)"/></svg>');
+        z-index: 1;
+      }
+      
+      .cta-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .cta-text h2 {
+        font-size: 3rem;
+        margin-bottom: 24px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      .cta-text p {
+        font-size: 1.25rem;
+        margin-bottom: 40px;
+        line-height: 1.6;
+        opacity: 0.95;
+      }
+      
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .cta-primary, .cta-secondary {
+        display: inline-block;
+        padding: 16px 32px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .cta-primary {
+        background: rgba(255, 255, 255, 0.95);
+        color: #6366f1;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+      }
+      
+      .cta-primary:hover {
+        background: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+      }
+      
+      .cta-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+      }
+      
+      .cta-secondary:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
+      }
+      
+      /* Professional poster styling */
+      .poster-pro {
+        display: block;
+        margin: 60px auto;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        width: 60%;
+        max-width: 600px;
+        transition: transform 0.3s ease;
+      }
+      
+      .poster-pro:hover {
+        transform: scale(1.02);
+      }
+
+      /* -------------------------------------
+   11) Enhanced Professional Footer
+------------------------------------- */
+      .footer-pro {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #ffffff;
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .footer-pro::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="0.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-pattern)"/></svg>');
+        z-index: 1;
+      }
+      
+      .footer-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 40px 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+      
+      .footer-section h3 {
+        color: #ffffff;
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      
+      .footer-section h4 {
+        color: #e2e8f0;
+        font-size: 1.125rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .footer-logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+      }
+      
+      .footer-brand p {
+        color: #94a3b8;
+        line-height: 1.6;
+        margin: 0;
+        font-size: 1rem;
+      }
+      
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+      
+      .footer-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-size: 0.95rem;
+      }
+      
+      .footer-links a:hover {
+        color: #6366f1;
+        transform: translateX(5px);
+      }
+      
+      .social-links-pro {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+      
+      .social-links-pro a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        color: #cbd5e1;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+      
+      .social-links-pro a:hover {
+        background: #6366f1;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+      }
+      
+      .social-links-pro svg {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .newsletter-text {
+        color: #94a3b8;
+        font-size: 0.9rem;
+        margin: 0;
+        line-height: 1.5;
+      }
+      
+      .footer-bottom {
+        position: relative;
+        z-index: 2;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 30px 40px;
+      }
+      
+      .footer-bottom-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      
+      .footer-bottom-content p {
+        color: #94a3b8;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+      
+      .footer-bottom-links {
+        display: flex;
+        gap: 24px;
+      }
+      
+      .footer-bottom-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+      }
+      
+      .footer-bottom-links a:hover {
+        color: #6366f1;
+      }
+      
+      .footer-disclaimer {
+        color: #64748b;
+        font-size: 0.85rem;
+        margin: 20px auto 0;
+        text-align: center;
+        line-height: 1.5;
+        max-width: 600px;
+      }
+
+      /* -------------------------------------
+   12) Legacy Footer Styles (for compatibility)
 ------------------------------------- */
       footer {
         background: rgba(24, 24, 24, 0.95);
@@ -1283,30 +1420,157 @@
    11) Enhanced Responsive Styles & Performance Optimizations
 ------------------------------------- */
       
-      /* Responsive gallery adjustments */
+      /* Responsive gallery adjustments - Professional */
       @media (max-width: 768px) {
+        /* CTA Section Responsive */
+        .cta-section {
+          padding: 60px 20px;
+          margin: 60px 16px;
+        }
+        
+        .cta-text h2 {
+          font-size: 2.2rem;
+        }
+        
+        .cta-text p {
+          font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .cta-primary, .cta-secondary {
+          width: 100%;
+          max-width: 280px;
+          text-align: center;
+        }
+        
+        /* Footer Responsive */
+        .footer-content {
+          padding: 40px 20px 30px;
+          grid-template-columns: 1fr;
+          gap: 30px;
+          text-align: center;
+        }
+        
+        .footer-brand {
+          align-items: center;
+        }
+        
+        .footer-bottom {
+          padding: 20px;
+        }
+        
+        .footer-bottom-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .footer-bottom-links {
+          justify-content: center;
+        }
+        
+        .poster-pro {
+          width: 80%;
+        }
+        
+        /* Quiz Grid Responsive */
         .quiz-grid {
-          padding: 30px 15px;
+          padding: 40px 20px;
+          margin: 40px auto;
         }
         
         .quiz-card {
-          flex: 0 0 280px; /* Smaller width on mobile */
+          flex: 0 0 300px; /* Smaller width on mobile */
         }
         
         .gallery-nav {
-          width: 40px;
-          height: 40px;
+          display: flex; /* Show navigation arrows on mobile */
+          width: 44px;
+          height: 44px;
         }
         
         .gallery-nav svg {
-          width: 16px;
-          height: 16px;
+          width: 18px;
+          height: 18px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        /* CTA Section Small Mobile */
+        .cta-section {
+          padding: 40px 16px;
+          margin: 40px 12px;
+        }
+        
+        .cta-text h2 {
+          font-size: 1.8rem;
+        }
+        
+        .cta-text p {
+          font-size: 1rem;
+          margin-bottom: 30px;
+        }
+        
+        .cta-primary, .cta-secondary {
+          padding: 14px 24px;
+          font-size: 1rem;
+        }
+        
+        /* Footer Small Mobile */
+        .footer-content {
+          padding: 30px 16px 20px;
+          gap: 25px;
+        }
+        
+        .social-links-pro {
+          justify-content: center;
+        }
+        
+        .footer-bottom {
+          padding: 16px;
+        }
+        
+        .footer-bottom-links {
+          flex-direction: column;
+          gap: 12px;
+        }
+        
+        .poster-pro {
+          width: 90%;
+        }
+        
+        /* Quiz Grid Small Mobile */
+        .quiz-grid {
+          padding: 40px 20px;
+          margin: 40px auto;
+        }
+        
+        .quiz-card {
+          flex: 0 0 300px; /* Smaller width on mobile */
+        }
+        
+        .gallery-nav {
+          display: flex; /* Show navigation arrows on mobile */
+          width: 44px;
+          height: 44px;
+        }
+        
+        .gallery-nav svg {
+          width: 18px;
+          height: 18px;
         }
       }
       
       @media (max-width: 480px) {
         .quiz-card {
           flex: 0 0 260px; /* Even smaller on very small screens */
+        }
+        
+        .gallery-nav {
+          display: flex; /* Ensure arrows are visible on small phones */
         }
         
         .gallery-nav.prev {
@@ -1426,6 +1690,17 @@
     </style>
   </head>
   <body>
+    <!-- Next-Level Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-content">
+        <img src="zinvanalogo.png" alt="Zinvana" class="loading-logo" />
+        <div class="loading-text">Discover Your True Self</div>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Top Navigation -->
     <nav role="navigation" aria-label="Main navigation" id="navbar">
       <div class="nav-container">
@@ -1460,25 +1735,28 @@
       </div>
     </nav>
 
-    <header style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%); border-bottom: 3px solid rgba(59, 130, 246, 0.6); position: relative; overflow: hidden;">
-      <!-- Add animated particles -->
+    <!-- Professional main content wrapper -->
+    <main class="main-content">
+
+    <header style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%); border-bottom: 1px solid rgba(226, 232, 240, 0.6); position: relative; overflow: hidden;">
+      <!-- Subtle background elements -->
       <div class="particles">
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
       </div>
-      <video autoplay muted loop playsinline id="header-video" style="opacity: 0.05;">
+      <video autoplay muted loop playsinline id="header-video" style="opacity: 0.03;">
         <source src="zinvanaflags1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div class="header-content">
-        <h1 style="font-family: 'Inter', 'Poppins', sans-serif; font-size: 3.5rem; color: #1e293b; margin-bottom: 1rem; font-weight: 800;">Free Personality Quiz</h1>
-        <div id="tagline" style="font-size: 1.3rem; color: #475569; margin-bottom: 2rem; font-weight: 400; letter-spacing: 0.5px;">Discover your true self with the best free personality quizzes—no sign-up, always fun, always insightful.</div>
-        <a href="#quiz-grid" class="btn" style="background: linear-gradient(45deg, #3b82f6, #10b981); color: #fff; padding: 18px 40px; border-radius: 50px; font-size: 1.3rem; font-weight: bold; text-decoration: none; box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px; position: relative; overflow: hidden;">
-          <span style="position: relative; z-index: 2;">Start Quiz</span>
-        </a>
+        <h1 class="text-gradient">Free Personality Quiz</h1>
+        <div id="tagline">Discover your true self with the most accurate and insightful free personality quizzes—no sign-up required, always engaging.</div>
+        <div class="header-cta">
+          <a href="#quiz-grid" class="header-cta-btn no-effect">
+            <span>Start Your Journey</span>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -1676,6 +1954,7 @@
             <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
           </svg>
         </div>
+         <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, #3296da, #4034b1); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Our completely Free Personality Quizes</h2>
         <div class="quiz-gallery" id="quiz-gallery">
       <div class="quiz-card">
         <img src="einstein.jpg" alt="Famous Inventors Personality Quiz" />
@@ -1696,10 +1975,19 @@
         <a href="leaders.html" class="btn">Discover Your Leader</a>
       </div>
       <div class="quiz-card">
-        <img src="zinifoot.gif" alt="Free Football Personality Quiz" />
-        <h3>⚽ Football Personality Quiz</h3>
-        <p>Take a free Football Personality Quiz to discover your archetype. Are you a Tactical Genius, Rocket, Silent Maestro or maybe something else?</p>
-        <a href="football-personality-quiz.html" class="btn">Discover Your Empire</a>
+        <div class="card-image-wrapper">
+          <img src="zinifoot.gif" alt="Free Football Personality Quiz" />
+        </div>
+        <div class="card-content">
+          <h3>⚽ Football Personality Quiz</h3>
+          <div class="quiz-stats">
+            <div class="quiz-stat">🏆 Sports fans love it</div>
+            <div class="quiz-stat">⚡ 2 min</div>
+            <div class="quiz-stat">🎯 Fun results</div>
+          </div>
+          <p>What's your football personality archetype? Are you a Tactical Genius who sees every angle, a Lightning Rocket with unstoppable speed, or a Silent Maestro who controls the game?</p>
+          <a href="football-personality-quiz.html" class="btn">⚽ Play Now</a>
+        </div>
       </div>
       <div class="quiz-card">
         <img src="cyrus.gif" alt="Persian Kings Free Personality Quiz" />
@@ -1747,141 +2035,6 @@
       <div class="gallery-dots" id="gallery-dots"></div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" style="background: #fff; border-radius: 20px; width: 100%; margin: 48px 0 0 0; padding: 48px 0 36px 0; box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1); overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.1);">
-      <h2 style="text-align: center; color: #1e293b; margin-bottom: 40px; font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px;">How Our Free Personality Quiz Works</h2>
-      <div class="how-works-steps-pro" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; max-width: 100vw; padding: 0 8px;">
-      <!-- Step 1 -->
-      <div class="how-works-step-pro">
-      <div class="how-works-icon-pro"><span>1</span><img src="zin1.png" alt="Choose a Quiz" /></div>
-      <h3>Choose a Quiz</h3>
-      <p>Pick from our free, fun, and accurate quizzes—MBTI, leaders, Squid Game, and more.</p>
-      </div>
-      <!-- Step 2 -->
-      <div class="how-works-step-pro">
-      <div class="how-works-icon-pro"><span>2</span><img src="zin2.png" alt="Answer Questions" /></div>
-      <h3>Answer Questions</h3>
-      <p>Just a few simple questions—no sign-up, no hassle, always free.</p>
-      </div>
-      <!-- Step 3 -->
-      <div class="how-works-step-pro">
-      <div class="how-works-icon-pro"><span>3</span><img src="zin3.png" alt="Get Instant Results" /></div>
-      <h3>Get Instant Results</h3>
-      <p>See your results instantly and share with friends—explore your profile!</p>
-      </div>
-      </div>
-      <style>
-      .how-works-steps-pro {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 32px;
-      max-width: 100vw;
-      padding: 0 8px;
-      }
-      .how-works-step-pro {
-      background: #f8fafc;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
-      padding: 32px 16px 24px 16px;
-      width: 100%;
-      max-width: 280px;
-      min-width: 200px;
-      text-align: center;
-      flex: 1 1 240px;
-      margin: 0 0px;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(59, 130, 246, 0.1);
-      }
-      .how-works-step-pro:hover {
-      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
-      transform: translateY(-5px);
-      }
-      .how-works-icon-pro {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      position: relative;
-      }
-      .how-works-icon-pro span {
-      display: inline-block;
-      background: #3b82f6;
-      color: #fff;
-      font-weight: bold;
-      font-size: 1.1rem;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      line-height: 36px;
-      position: absolute;
-      left: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-      }
-      .how-works-icon-pro img {
-      width: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-left: 20px;
-      background: #fff;
-      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
-      }
-      .how-works-step-pro h3 {
-      color: #1e293b;
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-      font-weight: 700;
-      margin-top: 12px;
-      }
-      .how-works-step-pro p {
-      color: #64748b;
-      font-size: 1rem;
-      margin: 0;
-      line-height: 1.6;
-      }
-      @media (max-width: 1200px) {
-      #how-it-works {
-      padding-left: 0;
-      padding-right: 0;
-      }
-      .how-works-steps-pro {
-      gap: 20px;
-      padding: 0 4px;
-      }
-      }
-      @media (max-width: 900px) {
-      .how-works-steps-pro {
-      flex-direction: column;
-      gap: 24px;
-      padding: 0 8px;
-      }
-      .how-works-step-pro h3 {
-      font-size: 2rem;
-      }
-     .how-works-step-pro p {
-      font-size: 1rem;
-      }
-      .how-works-step-pro {
-      width: 100% !important;
-      margin: 0 auto 16px auto;
-      max-width: 100%;
-      }
-      .how-works-icon-pro span {
-      left: 0;
-      top: -18px;
-      transform: none;
-      }
-      .how-works-icon-pro img {
-      margin-left: 0;
-      width: 60%;
-      }
-      }
-      </style>
-    </section>
-
-
     <!-- Why Take a Personality Quiz Section -->
     <section id="why-personality-quiz" style="background: #fff; border-radius: 12px; width: 100%; margin: 40px 0; padding: 40px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
       <h2 style="text-align: center; color: #d32f2f; margin-bottom: 30px;">Why Take a Free Personality Quiz?</h2>
@@ -1893,6 +2046,253 @@
         <li>✔️ Trusted by thousands of quiz-takers worldwide</li>
       </ul>
     </section>
+
+       <!-- How It Works Section -->
+    <section id="how-it-works" style="background: #fff; border-radius: 20px; width: 100%; margin: 48px 0 0 0; padding: 48px 20px 36px 20px; box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1); overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.1);">
+      <h2 style="text-align: center; color: #1e293b; margin-bottom: 40px; font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px;">How Our Free Personality Quiz Works</h2>
+      
+      <div class="how-works-gallery-wrapper">
+        <div class="how-works-nav prev" onclick="scrollHowWorksGallery(-1)">
+          <svg viewBox="0 0 24 24">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </div>
+        <div class="how-works-gallery" id="how-works-gallery">
+          <!-- Step 1 -->
+          <div class="how-works-step-pro">
+            <div class="how-works-icon-pro"><span>1</span><img src="zin1.png" alt="Choose a Quiz" /></div>
+            <h3>Choose a Quiz</h3>
+            <p>Pick from our free, fun, and accurate quizzes—MBTI, leaders, Squid Game, and more.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="how-works-step-pro">
+            <div class="how-works-icon-pro"><span>2</span><img src="zin2.png" alt="Answer Questions" /></div>
+            <h3>Answer Questions</h3>
+            <p>Just a few simple questions—no sign-up, no hassle, always free.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="how-works-step-pro">
+            <div class="how-works-icon-pro"><span>3</span><img src="zin3.png" alt="Get Instant Results" /></div>
+            <h3>Get Instant Results</h3>
+            <p>See your results instantly and share with friends—explore your profile!</p>
+          </div>
+        </div>
+        <div class="how-works-nav next" onclick="scrollHowWorksGallery(1)">
+          <svg viewBox="0 0 24 24">
+            <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="how-works-dots" id="how-works-dots"></div>
+      <style>
+      /* How Works Gallery Styles */
+      .how-works-gallery-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+      
+      .how-works-gallery {
+        display: flex;
+        gap: 32px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        padding: 10px 0;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+      }
+      
+      .how-works-gallery::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+      }
+      
+      /* Navigation Arrows for How Works */
+      .how-works-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(46, 168, 250, 0.95);
+        border: 2px solid rgba(59, 130, 246, 0.2);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: none; /* Hidden by default on desktop */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+      
+      .how-works-nav:hover {
+        background: rgba(59, 130, 246, 0.1);
+        border-color: rgba(59, 130, 246, 0.4);
+        transform: translateY(-50%) scale(1.1);
+      }
+      
+      .how-works-nav.prev {
+        left: 15px;
+      }
+      
+      .how-works-nav.next {
+        right: 15px;
+      }
+      
+      .how-works-nav svg {
+        width: 50px;
+        height: 50px;
+        fill: #f7f8fa;
+      }
+      
+      /* Dots for How Works - Professional */
+      .how-works-dots {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 32px;
+      }
+      
+      .how-works-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(99, 102, 241, 0.25);
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      
+      .how-works-dot.active {
+        background: #6366f1;
+        transform: scale(1.2);
+      }
+      
+      .how-works-dot:hover {
+        background: rgba(99, 102, 241, 0.4);
+      }
+      
+      .how-works-step-pro {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+        padding: 40px 24px 32px 24px;
+        text-align: center;
+        transition: all 0.2s ease;
+        border: 1px solid rgba(226, 232, 240, 0.6);
+        flex: 0 0 320px; /* Fixed width for horizontal scrolling */
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+      }
+      .how-works-step-pro:hover {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+        transform: translateY(-2px);
+        border-color: rgba(99, 102, 241, 0.2);
+      }
+      .how-works-icon-pro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+        position: relative;
+        flex-shrink: 0;
+      }
+      .how-works-icon-pro span {
+        display: inline-block;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.125rem;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        position: absolute;
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+      }
+      .how-works-icon-pro img {
+        width: 100%;
+        max-width: 120px;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-left: 20px;
+        background: #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      }
+      .how-works-step-pro h3 {
+        color: #0f172a;
+        font-size: 1.375rem;
+        margin-bottom: 16px;
+        font-weight: 600;
+        margin-top: 20px;
+        flex-shrink: 0;
+        letter-spacing: -0.01em;
+      }
+      .how-works-step-pro p {
+        color: #64748b;
+        font-size: 1rem;
+        margin: 0;
+        line-height: 1.6;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.01em;
+      }
+      
+      /* Responsive styles for How Works Gallery */
+      @media (max-width: 768px) {
+        .how-works-step-pro {
+          flex: 0 0 260px;
+        }
+        
+        .how-works-nav {
+          display: flex; /* Show navigation arrows on mobile */
+          width: 40px;
+          height: 40px;
+        }
+        
+        .how-works-nav svg {
+          width: 16px;
+          height: 16px;
+        }
+        
+        .how-works-nav.prev {
+          left: 10px;
+        }
+        
+        .how-works-nav.next {
+          right: 10px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .how-works-step-pro {
+          flex: 0 0 240px;
+        }
+        
+        .how-works-nav {
+          display: flex; /* Ensure arrows are visible on small phones */
+        }
+        
+        .how-works-icon-pro span {
+          left: 0;
+          top: -18px;
+          transform: none;
+        }
+        .how-works-icon-pro img {
+          margin-left: 0;
+          width: 60%;
+        }
+      }
+      </style>
+    </section>
+
 
     <section
       id="why-zinvana"
@@ -2291,22 +2691,88 @@
       </div>
     </section>
 
+    <!-- Professional CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <div class="cta-text">
+          <h2>Ready to Discover Your True Self?</h2>
+          <p>Join thousands who've already taken our personality quizzes. Start your journey of self-discovery today—it's free, fun, and takes just minutes!</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="#quiz-grid" class="cta-primary">Take a Quiz Now</a>
+          <a href="#how-it-works" class="cta-secondary">Learn How It Works</a>
+        </div>
+      </div>
+    </section>
+
     <img
       src="name.jpg"
       alt="Zinvana Poster"
-      class="poster"
-      style="display: block; margin: 40px auto 0 auto; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); width: 50%;" />
+      class="poster-pro" />
 
-    <!-- Footer -->
-    <footer style="background: #1e293b; padding: 32px 10px; text-align: center; border-top: 2px solid #3b82f6; margin-top: 40px; color: #fff; border-radius: 16px 16px 0 0;">
-      <div class="container">
-        <p style="font-size: 1.1rem; color: #fff;">&copy; 2025 Zinvana. All rights reserved.</p>
-        <p style="color: #94a3b8;">This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
-        <div class="social-icons" style="margin-top: 10px;">
-          <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer"><img src="whiteinsta.png" alt="Instagram" style="width: 32px; margin: 0 8px;" /></a>
-          <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer"><img src="whitex.png" alt="Twitter" style="width: 32px; margin: 0 8px;" /></a>
-          <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer"><img src="youtube.png" alt="YouTube" style="width: 32px; margin: 0 8px;" /></a>
+    <!-- Enhanced Professional Footer -->
+    <footer class="footer-pro">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-brand">
+            <img src="logo.png" alt="Zinvana Logo" class="footer-logo" />
+            <h3>Zinvana</h3>
+            <p>Discover your true personality with our free, accurate, and fun quizzes. No sign-up required.</p>
+          </div>
         </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#quiz-grid">All Quizzes</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Popular Quizzes</h4>
+          <ul class="footer-links">
+            <li><a href="leaders.html">Historical Leaders Personality Quiz</a></li>
+            <li><a href="squidgame.html">Squid Game Character</a></li>
+            <li><a href="cyrus.html">Persian Kings Personality Quiz</a></li>
+            <li><a href="football-personality-quiz.html">Football Personality Quiz</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Connect With Us</h4>
+          <div class="social-links-pro">
+            <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+          <p class="newsletter-text">Stay updated with new quizzes and features!</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2025 Zinvana. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/contact">Contact</a>
+          </div>
+        </div>
+        <p class="footer-disclaimer">This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
       </div>
     </footer>
 
@@ -2323,6 +2789,26 @@
 </button>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+  // Simple loading screen
+  const loadingScreen = document.querySelector('.loading-screen');
+  const loadingProgress = document.querySelector('.loading-progress');
+  
+  let progress = 0;
+  const loadingInterval = setInterval(() => {
+    progress += 20;
+    if (loadingProgress) {
+      loadingProgress.style.width = progress + '%';
+    }
+    if (progress >= 100) {
+      clearInterval(loadingInterval);
+      setTimeout(() => {
+        if (loadingScreen) {
+          loadingScreen.classList.add('hidden');
+        }
+      }, 200);
+    }
+  }, 100);
+
   // Back to top
   const btn = document.getElementById('backToTop');
   window.addEventListener('scroll', function() {
@@ -2331,6 +2817,7 @@ document.addEventListener("DOMContentLoaded", function() {
   btn.addEventListener('click', function() {
     window.scrollTo({top:0,behavior:'smooth'});
   });
+  
   // Share
   document.getElementById('shareBtn').onclick = function() {
     if (navigator.share) {
@@ -2344,50 +2831,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
-  // Fade-in observer
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("fade-in");
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-  document.querySelectorAll("section, .quiz-card").forEach((el) => {
-    el.classList.add("fade-init");
-    observer.observe(el);
-  });
-
-  // Enhanced Navigation functionality with mobile optimizations
+  // Simple navigation functionality
   const navbar = document.getElementById('navbar');
   const navToggle = document.getElementById('nav-toggle');
   const navMobile = document.getElementById('nav-mobile');
   
-  // Navbar scroll effect with performance optimization
-  let ticking = false;
-  function updateNavOnScroll() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Add scrolled class when scrolled down
-    if (scrollTop > 50) {
+  // Simple navbar scroll effect
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 50) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
-    
-    ticking = false;
-  }
-  
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      requestAnimationFrame(updateNavOnScroll);
-      ticking = true;
-    }
   });
 
-  // Mobile navigation toggle with better mobile support
+  // Mobile navigation toggle
   function toggleMobileNav() {
     const isOpen = navMobile.classList.contains('show');
     
@@ -2395,15 +2853,10 @@ document.addEventListener("DOMContentLoaded", function() {
       navMobile.classList.remove('show');
       navToggle.classList.remove('active');
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
     } else {
       navMobile.classList.add('show');
       navToggle.classList.add('active');
-      // Prevent background scrolling on mobile
       document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
     }
   }
 
@@ -2411,33 +2864,11 @@ document.addEventListener("DOMContentLoaded", function() {
     navMobile.classList.remove('show');
     navToggle.classList.remove('active');
     document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
   }
 
-  // Enhanced event listeners with touch support
   navToggle.addEventListener('click', function(e) {
-    e.stopPropagation();
     e.preventDefault();
     toggleMobileNav();
-  });
-
-  // Touch events for better mobile experience
-  navToggle.addEventListener('touchstart', function(e) {
-    e.preventDefault();
-  });
-
-  navToggle.addEventListener('touchend', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    toggleMobileNav();
-  });
-
-  navToggle.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleMobileNav();
-    }
   });
 
   // Close mobile nav when clicking outside
@@ -2460,80 +2891,24 @@ document.addEventListener("DOMContentLoaded", function() {
       closeMobileNav();
     }
   });
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        const offsetTop = target.offsetTop - 100; // Account for fixed nav
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // Hamburger menu toggle (keeping existing for compatibility)
-  function closeMobileNavLegacy() {
-    navMobile.style.display = 'none';
-    navToggle.classList.remove('open');
-  }
-  function openMobileNavLegacy() {
-    navMobile.style.display = 'flex';
-    navToggle.classList.add('open');
-  }
 });
 </script>
 <style>
 #backToTop, #shareBtn { 
   opacity: 0.9; 
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
 }
 #backToTop:hover, #shareBtn:hover { 
-  transform: translateY(-5px) scale(1.1); 
+  transform: translateY(-2px); 
   opacity: 1; 
-  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
-}
-#shareBtn:hover {
-  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
-}
-#backToTop:active, #shareBtn:active {
-  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 </style>
 
-<!-- Add a fun fact bar above the footer for engagement and SEO -->
-<div id="funFactBar" aria-live="polite" style="background:linear-gradient(135deg,#3b82f6 0%,#10b981 50%,#ef4444 100%);color:#fff;padding:20px 0;text-align:center;font-size:1.1rem;font-weight:600;letter-spacing:0.5px;box-shadow:0 -8px 30px rgba(59, 130, 246, 0.2);backdrop-filter:blur(10px);position:relative;">
-  <span id="funFactText" style="display:inline-flex;align-items:center;gap:10px;">
-    <span style="animation: pulse 2s infinite;">💡</span>
-    Did you know? Zinvana is the #1 ranked site for free insightful personality quizzes!
-    <span style="animation: pulse 2s infinite; animation-delay: 1s;">✨</span>
-  </span>
+<!-- Simple fun fact bar -->
+<div id="funFactBar" style="background:#667eea;color:#fff;padding:15px 0;text-align:center;font-size:1rem;font-weight:500;">
+  💡 Zinvana offers the best free personality quizzes with instant results! ✨
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const facts = [
-    "💡 Did you know? Zinvana is the #1 ranked site for free insightful personality quizzes! ✨",
-    "🎯 Over 10,000 people have taken a free personality quiz on Zinvana. 🌟",
-    "🆓 Our quizzes are always free and require no sign-up. 🎉",
-    "🔬 Zinvana uses research-backed models for accurate results. 📊",
-    "📱 You can instantly download or share your quiz results. 💫",
-    "🔒 No personal data is ever stored or tracked on Zinvana. 🛡️",
-    "👥 Our quizzes are trusted by students, professionals, and educators worldwide. 🌍",
-    "🔄 You can retake any quiz as many times as you want for free. ⭐",
-    "🎪 Zinvana offers the most insightful personality quizzes online. 🚀",
-    "📱 Our quizzes are optimized for mobile, tablet, and desktop. 💻"
-  ];
-  let idx = 0;
-  setInterval(function() {
-    idx = (idx + 1) % facts.length;
-    document.getElementById('funFactText').textContent = facts[idx];
-  }, 7000);
-});
-</script>
 
 <!-- Add subtle fade-in stagger to quiz cards for modern look - Performance Optimized -->
 <style>
@@ -2795,7 +3170,395 @@ document.addEventListener('DOMContentLoaded', function() {
     currentScrollPosition = 0;
     scrollToPosition(0);
   });
+  
+  // Initialize How Works Gallery
+  initHowWorksGallery();
 });
+
+// How Works Gallery JavaScript
+let howWorksCurrentPosition = 0;
+let howWorksCardsVisible = 2; // Default number of cards visible
+let howWorksCardWidth = 312; // Card width + gap
+
+// Calculate visible cards based on screen width for How Works
+function updateHowWorksVisibleCards() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= 480) {
+    howWorksCardsVisible = 1;
+    howWorksCardWidth = 272;
+  } else if (screenWidth <= 768) {
+    howWorksCardsVisible = 1;
+    howWorksCardWidth = 292;
+  } else {
+    howWorksCardsVisible = 2;
+    howWorksCardWidth = 312;
+  }
+}
+
+// Initialize How Works gallery
+function initHowWorksGallery() {
+  updateHowWorksVisibleCards();
+  createHowWorksDots();
+  updateHowWorksDots();
+}
+
+// Scroll How Works gallery function
+function scrollHowWorksGallery(direction) {
+  const gallery = document.getElementById('how-works-gallery');
+  const totalCards = document.querySelectorAll('.how-works-step-pro').length;
+  const maxPosition = Math.max(0, totalCards - howWorksCardsVisible);
+  
+  howWorksCurrentPosition += direction;
+  
+  // Wrap around at the ends
+  if (howWorksCurrentPosition < 0) {
+    howWorksCurrentPosition = maxPosition;
+  } else if (howWorksCurrentPosition > maxPosition) {
+    howWorksCurrentPosition = 0;
+  }
+  
+  const scrollAmount = howWorksCurrentPosition * howWorksCardWidth;
+  gallery.scrollTo({
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+  
+  updateHowWorksDots();
+}
+
+// Create dots for How Works pagination
+function createHowWorksDots() {
+  const dotsContainer = document.getElementById('how-works-dots');
+  const totalCards = document.querySelectorAll('.how-works-step-pro').length;
+  const totalDots = Math.max(1, totalCards - howWorksCardsVisible + 1);
+  
+  dotsContainer.innerHTML = '';
+  
+  for (let i = 0; i < totalDots; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'how-works-dot';
+    dot.onclick = () => scrollHowWorksToPosition(i);
+    dotsContainer.appendChild(dot);
+  }
+}
+
+// Update active dot for How Works
+function updateHowWorksDots() {
+  const dots = document.querySelectorAll('.how-works-dot');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === howWorksCurrentPosition);
+  });
+}
+
+// Scroll to specific position for How Works
+function scrollHowWorksToPosition(position) {
+  howWorksCurrentPosition = position;
+  const gallery = document.getElementById('how-works-gallery');
+  const scrollAmount = howWorksCurrentPosition * howWorksCardWidth;
+  
+  gallery.scrollTo({
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+  
+  updateHowWorksDots();
+}
+
+// Touch/swipe support for How Works gallery
+let howWorksStartX = 0;
+let howWorksCurrentX = 0;
+let howWorksIsDragging = false;
+
+function handleHowWorksTouchStart(e) {
+  howWorksStartX = e.touches[0].clientX;
+  howWorksIsDragging = true;
+}
+
+function handleHowWorksTouchMove(e) {
+  if (!howWorksIsDragging) return;
+  howWorksCurrentX = e.touches[0].clientX;
+}
+
+function handleHowWorksTouchEnd() {
+  if (!howWorksIsDragging) return;
+  
+  const diff = howWorksStartX - howWorksCurrentX;
+  const threshold = 50;
+  
+  if (Math.abs(diff) > threshold) {
+    if (diff > 0) {
+      scrollHowWorksGallery(1); // Swipe left - next
+    } else {
+      scrollHowWorksGallery(-1); // Swipe right - previous
+    }
+  }
+  
+  howWorksIsDragging = false;
+}
+
+// Add How Works gallery event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  const howWorksGallery = document.getElementById('how-works-gallery');
+  if (howWorksGallery) {
+    howWorksGallery.addEventListener('touchstart', handleHowWorksTouchStart, { passive: true });
+    howWorksGallery.addEventListener('touchmove', handleHowWorksTouchMove, { passive: true });
+    howWorksGallery.addEventListener('touchend', handleHowWorksTouchEnd);
+    
+    // Update on window resize for How Works
+    window.addEventListener('resize', () => {
+      updateHowWorksVisibleCards();
+      createHowWorksDots();
+      howWorksCurrentPosition = 0;
+      scrollHowWorksToPosition(0);
+    });
+  }
+});
+
+// Next-Level Loading Screen & Advanced Features
+document.addEventListener('DOMContentLoaded', function() {
+  // Advanced Loading Screen Animation
+  const loadingScreen = document.getElementById('loadingScreen');
+  const loadingProgress = document.querySelector('.loading-progress');
+  
+  // Simulate loading with realistic progress
+  let progress = 0;
+  const progressInterval = setInterval(() => {
+    progress += Math.random() * 15 + 5; // Random progress increments
+    if (progress > 95) progress = 95;
+    
+    loadingProgress.style.width = progress + '%';
+    
+    if (progress >= 95) {
+      clearInterval(progressInterval);
+      
+      // Complete loading after short delay
+      setTimeout(() => {
+        loadingProgress.style.width = '100%';
+        
+        setTimeout(() => {
+          loadingScreen.classList.add('hidden');
+          
+          // Remove loading screen from DOM after transition
+          setTimeout(() => {
+            loadingScreen.remove();
+          }, 500);
+          
+          // Initialize advanced animations
+          initAdvancedAnimations();
+        }, 300);
+      }, 200);
+    }
+  }, 100);
+  
+  // Force complete loading after 3 seconds max
+  setTimeout(() => {
+    clearInterval(progressInterval);
+    loadingProgress.style.width = '100%';
+    loadingScreen.classList.add('hidden');
+    setTimeout(() => {
+      loadingScreen.remove();
+      initAdvancedAnimations();
+    }, 500);
+  }, 3000);
+});
+
+// Advanced Animations & Effects
+function initAdvancedAnimations() {
+  // Advanced Scroll Navigation Enhancement
+  const nav = document.getElementById('navbar');
+  let lastScrollY = window.scrollY;
+  
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 100) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+    
+    // Hide nav on scroll down, show on scroll up
+    if (currentScrollY > lastScrollY && currentScrollY > 200) {
+      nav.style.transform = 'translateY(-100%)';
+    } else {
+      nav.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollY = currentScrollY;
+  });
+  
+  // Advanced Intersection Observer for Animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'slideInFromBottom 0.8s ease-out forwards';
+        entry.target.style.opacity = '1';
+        
+        // Add stagger effect for cards
+        if (entry.target.classList.contains('quiz-card')) {
+          const cards = entry.target.parentElement.children;
+          Array.from(cards).forEach((card, index) => {
+            setTimeout(() => {
+              card.style.animation = 'slideInFromBottom 0.6s ease-out forwards';
+              card.style.opacity = '1';
+            }, index * 100);
+          });
+        }
+      }
+    });
+  }, observerOptions);
+  
+  // Observe elements for advanced animations
+  const animatedElements = document.querySelectorAll('.quiz-card, .intro, .quiz-grid, .how-works-step-pro');
+  animatedElements.forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+  
+  // Advanced Parallax Effect for Header
+  const header = document.querySelector('header');
+  const headerContent = document.querySelector('.header-content');
+  
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+    const rate2 = scrolled * -0.2;
+    
+    if (header) {
+      header.style.transform = `translateY(${rate}px)`;
+    }
+    if (headerContent) {
+      headerContent.style.transform = `translateY(${rate2}px)`;
+    }
+  });
+  
+  // Enhanced Navigation Mobile Menu
+  const navToggle = document.getElementById('nav-toggle');
+  const navMobile = document.querySelector('.nav-mobile');
+  
+  if (navToggle && navMobile) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navMobile.classList.toggle('show');
+      
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = navMobile.classList.contains('show') ? 'hidden' : 'auto';
+    });
+    
+    // Close mobile menu when clicking on a link
+    const navLinks = navMobile.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navMobile.classList.remove('show');
+        document.body.style.overflow = 'auto';
+      });
+    });
+  }
+  
+  // Advanced Card Hover Effects with 3D Transform
+  const cards = document.querySelectorAll('.quiz-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+    });
+  });
+  
+  // Advanced Smooth Scroll for CTA buttons
+  const ctaButtons = document.querySelectorAll('.header-cta-btn, .cta-primary, .cta-secondary');
+  ctaButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = button.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+  
+  // Add particle cursor effect
+  createParticleCursor();
+}
+
+// Advanced Particle Cursor Effect
+function createParticleCursor() {
+  const particles = [];
+  const particleCount = 6;
+  
+  document.addEventListener('mousemove', (e) => {
+    for (let i = 0; i < particleCount; i++) {
+      createParticle(e.clientX, e.clientY);
+    }
+  });
+  
+  function createParticle(x, y) {
+    const particle = document.createElement('div');
+    particle.style.cssText = `
+      position: fixed;
+      pointer-events: none;
+      width: 4px;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      z-index: 9999;
+      left: ${x}px;
+      top: ${y}px;
+      opacity: 0.7;
+      transform: scale(0);
+      animation: particleExpand 0.6s ease-out forwards;
+    `;
+    
+    document.body.appendChild(particle);
+    
+    setTimeout(() => {
+      particle.remove();
+    }, 600);
+  }
+  
+  // Add particle animation keyframes
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes particleExpand {
+      0% {
+        transform: scale(0) translate(0, 0);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1) translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px);
+        opacity: 0.4;
+      }
+      100% {
+        transform: scale(0) translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
 </script>
 
   </body>
