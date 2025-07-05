@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PewDiePie - Gaming YouTuber Profile | Zinvana</title>
+    <meta name="description" content="Discover PewDiePie (Felix Kjellberg), the most subscribed individual YouTuber who dominated gaming content and built a global community of millions.">
+    <meta name="keywords" content="PewDiePie, Felix Kjellberg, gaming YouTuber, gaming influencer, YouTube gaming, Swedish YouTuber, Let's Play videos">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="PewDiePie - Gaming YouTuber Profile | Zinvana">
+    <meta property="og:description" content="Explore the journey of PewDiePie, the legendary gaming YouTuber who became the king of YouTube and inspired millions of content creators worldwide.">
+    <meta property="og:image" content="https://zinvana.com/pewdiepie-profile.jpg">
+    <meta property="og:url" content="https://zinvana.com/pewdiepie.html">
+    <meta property="og:type" content="profile">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 25%, #ffd23f 50%, #06ffa5 75%, #4ecdc4 100%);
+            background-attachment: fixed;
+            color: #2c3e50;
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(247, 147, 30, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 210, 63, 0.25) 0%, transparent 50%);
+            z-index: -1;
+            animation: backgroundFloat 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes backgroundFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            33% { transform: translateY(-15px) rotate(120deg); opacity: 0.8; }
+            66% { transform: translateY(-25px) rotate(240deg); opacity: 0.9; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #ff6b35;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 20px 80px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .profile-image {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                0 25px 50px rgba(255, 107, 53, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+            animation: profileFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.02); }
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                0 35px 70px rgba(255, 107, 53, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #ff6b35;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #64748b;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.2);
+            border-color: rgba(255, 107, 53, 0.4);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ff6b35;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ff6b35;
+        }
+
+        .bio-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .bio-text {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        .bio-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .bio-highlights {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            padding: 30px;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .bio-highlights h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .highlight-item span {
+            font-size: 1.2rem;
+        }
+
+        /* Achievement Cards */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 107, 53, 0.3);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .achievement-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .achievement-desc {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff6b35;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Social Links */
+        .social-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.2);
+            background: #ff6b35;
+            color: white;
+        }
+
+        .social-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Back to Quiz Button */
+        .back-to-quiz {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-quiz:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .bio-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-year {
+                left: 30px;
+                transform: translateX(-50%);
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index_new.html" class="logo">
+                <img src="zinvanalogo.png" alt="Zinvana Logo">
+                Zinvana
+            </a>
+            <div class="nav-links">
+                <a href="youtubers-personality-quiz.html">Take Quiz</a>
+                <a href="all-empires.html">Empires</a>
+                <a href="all-articles.html">Articles</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="pewdiepie.jpg" alt="PewDiePie" class="profile-image">
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">Gaming Legend</div>
+                <h1 class="hero-title">PewDiePie</h1>
+                <p class="hero-subtitle">Swedish YouTuber & Gaming Icon who became the most subscribed individual creator and inspired millions worldwide</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">111M</div>
+                        <div class="stat-label">YouTube Subscribers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8K</div>
+                        <div class="stat-label">Videos Created</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2010</div>
+                        <div class="stat-label">Started YouTube</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="content-section">
+        <h2 class="section-title">About PewDiePie</h2>
+        <div class="bio-content">
+            <div class="bio-text">
+                <p>Felix Arvid Ulf Kjellberg, known worldwide as PewDiePie, is a Swedish YouTuber who revolutionized gaming content and became the most influential individual creator on the platform. Born on October 24, 1989, in Gothenburg, Sweden, Felix transformed from a university student studying industrial economics to the king of YouTube gaming content.</p>
+                
+                <p>Starting his channel in 2010 with horror game playthroughs and comedic commentary, PewDiePie's authentic personality and genuine reactions resonated with millions of viewers. His "Let's Play" videos, particularly featuring games like Amnesia and Happy Wheels, established the template for modern gaming content creation and inspired countless creators worldwide.</p>
+                
+                <p>Beyond gaming, PewDiePie has shown remarkable adaptability, evolving his content to include meme reviews, philosophy discussions, book reviews, and lifestyle vlogs. His ability to stay relevant across different trends while maintaining his core identity has solidified his position as YouTube's most enduring and beloved creator.</p>
+            </div>
+            
+            <div class="bio-highlights">
+                <h3>Key Achievements</h3>
+                <div class="highlight-item">
+                    <span>👑</span>
+                    Most subscribed individual YouTuber
+                </div>
+                <div class="highlight-item">
+                    <span>🎮</span>
+                    Gaming content pioneer
+                </div>
+                <div class="highlight-item">
+                    <span>📱</span>
+                    Meme culture influencer
+                </div>
+                <div class="highlight-item">
+                    <span>💫</span>
+                    YouTube's longest reigning king
+                </div>
+                <div class="highlight-item">
+                    <span>🌍</span>
+                    Global cultural phenomenon
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="content-section">
+        <h2 class="section-title">Major Achievements</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-icon">🎮</div>
+                <h3 class="achievement-title">Gaming Content Pioneer</h3>
+                <p class="achievement-desc">Pioneered the modern Let's Play format and established the template for gaming commentary that millions of creators now follow worldwide.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-icon">👑</div>
+                <h3 class="achievement-title">YouTube Subscriber Record</h3>
+                <p class="achievement-desc">Became the most subscribed individual YouTuber with over 111 million subscribers, maintaining this position for years and inspiring countless creators.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-icon">📺</div>
+                <h3 class="achievement-title">Billion View Milestone</h3>
+                <p class="achievement-desc">Achieved multiple billion-view videos and accumulated tens of billions of total views across his gaming and entertainment content.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-icon">🌟</div>
+                <h3 class="achievement-title">Cultural Impact</h3>
+                <p class="achievement-desc">Transformed from gaming YouTuber to cultural icon, influencing meme culture, internet trends, and the broader entertainment landscape.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-icon">💝</div>
+                <h3 class="achievement-title">Charitable Giving</h3>
+                <p class="achievement-desc">Raised millions for various charities through livestreams and campaigns, using his platform to support causes like mental health awareness and education.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-icon">📚</div>
+                <h3 class="achievement-title">Content Evolution</h3>
+                <p class="achievement-desc">Successfully evolved content beyond gaming to include philosophy, book reviews, and lifestyle content while maintaining audience engagement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Timeline -->
+    <section class="content-section">
+        <h2 class="section-title">Career Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Channel Creation</h3>
+                    <p class="timeline-desc">Created PewDiePie channel while studying at Chalmers University, starting with Let's Play videos of horror games like Amnesia: The Dark Descent.</p>
+                </div>
+                <div class="timeline-year">2010</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">1 Million Subscribers</h3>
+                    <p class="timeline-desc">Reached the first major milestone of 1 million subscribers, establishing himself as a major force in gaming content creation.</p>
+                </div>
+                <div class="timeline-year">2012</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Most Subscribed Channel</h3>
+                    <p class="timeline-desc">Became the most subscribed YouTube channel, overtaking established media companies and proving individual creators could dominate the platform.</p>
+                </div>
+                <div class="timeline-year">2013</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">50 Million Subscribers</h3>
+                    <p class="timeline-desc">Reached 50 million subscribers, cementing his position as YouTube's undisputed king and inspiring the "Subscribe to PewDiePie" movement.</p>
+                </div>
+                <div class="timeline-year">2017</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">T-Series Battle</h3>
+                    <p class="timeline-desc">Engaged in the historic subscriber battle with T-Series, mobilizing the entire YouTube community in support and reaching 100 million subscribers.</p>
+                </div>
+                <div class="timeline-year">2019</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Content Evolution</h3>
+                    <p class="timeline-desc">Continues to evolve content with philosophy videos, book reviews, and lifestyle content while maintaining his position as YouTube's most influential individual creator.</p>
+                </div>
+                <div class="timeline-year">2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links -->
+    <section class="social-section">
+        <h2 class="section-title">Connect with PewDiePie</h2>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@pewdiepie" class="social-link" target="_blank">
+                <span class="social-icon">📺</span>
+                YouTube Channel
+            </a>
+            <a href="https://www.instagram.com/pewdiepie" class="social-link" target="_blank">
+                <span class="social-icon">📸</span>
+                Instagram
+            </a>
+            <a href="https://www.twitter.com/pewdiepie" class="social-link" target="_blank">
+                <span class="social-icon">🐦</span>
+                Twitter
+            </a>
+            <a href="https://www.twitch.tv/pewdiepie" class="social-link" target="_blank">
+                <span class="social-icon">🎮</span>
+                Twitch
+            </a>
+        </div>
+    </section>
+
+    <!-- Back to Quiz -->
+    <a href="youtubers-personality-quiz.html" class="back-to-quiz">← Back to Quiz</a>
+</body>
+</html>

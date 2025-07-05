@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MrBeast - Philanthropic YouTuber Profile | Zinvana</title>
+    <meta name="description" content="Discover MrBeast (Jimmy Donaldson), the philanthropic YouTuber who revolutionized content creation with massive giveaways and charitable acts.">
+    <meta name="keywords" content="MrBeast, Jimmy Donaldson, philanthropic YouTuber, YouTube challenges, giveaways, charity, content creator, viral videos">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="MrBeast - Philanthropic YouTuber Profile | Zinvana">
+    <meta property="og:description" content="Explore the incredible journey of MrBeast, the YouTuber who changed the game with massive challenges, giveaways, and philanthropic content.">
+    <meta property="og:image" content="https://zinvana.com/mrbeast-profile.jpg">
+    <meta property="og:url" content="https://zinvana.com/mrbeast.html">
+    <meta property="og:type" content="profile">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #00d4aa 0%, #00c9a7 25%, #00b894 50%, #00a085 75%, #009975 100%);
+            background-attachment: fixed;
+            color: #2c3e50;
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 170, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 201, 167, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 184, 148, 0.25) 0%, transparent 50%);
+            z-index: -1;
+            animation: backgroundFloat 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes backgroundFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            33% { transform: translateY(-15px) rotate(120deg); opacity: 0.8; }
+            66% { transform: translateY(-25px) rotate(240deg); opacity: 0.9; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #00d4aa;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #00d4aa;
+            background: rgba(0, 212, 170, 0.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 20px 80px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .profile-image {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                0 25px 50px rgba(0, 212, 170, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+            animation: profileFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.02); }
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                0 35px 70px rgba(0, 212, 170, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4aa, #00c9a7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #00d4aa;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #64748b;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 212, 170, 0.2);
+            border-color: rgba(0, 212, 170, 0.4);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #00d4aa;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #00d4aa;
+        }
+
+        .bio-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .bio-text {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.1);
+        }
+
+        .bio-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .bio-highlights {
+            background: linear-gradient(135deg, #00d4aa 0%, #00c9a7 100%);
+            padding: 30px;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .bio-highlights h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .highlight-item span {
+            font-size: 1.2rem;
+        }
+
+        /* Achievement Cards */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 170, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #00d4aa, #00c9a7);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 170, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 212, 170, 0.15);
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .achievement-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .achievement-desc {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #00d4aa, #00c9a7);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.1);
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00d4aa;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Social Links */
+        .social-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 212, 170, 0.2);
+            background: #00d4aa;
+            color: white;
+        }
+
+        .social-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Back to Quiz Button */
+        .back-to-quiz {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #00d4aa, #00c9a7);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(0, 212, 170, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-quiz:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 212, 170, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .bio-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-year {
+                left: 30px;
+                transform: translateX(-50%);
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index_new.html" class="logo">
+                <img src="zinvanalogo.png" alt="Zinvana Logo">
+                Zinvana
+            </a>
+            <div class="nav-links">
+                <a href="youtubers-personality-quiz.html">Take Quiz</a>
+                <a href="all-empires.html">Empires</a>
+                <a href="all-articles.html">Articles</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="mrbeast.jpg" alt="MrBeast" class="profile-image">
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">Philanthropic Pioneer</div>
+                <h1 class="hero-title">MrBeast</h1>
+                <p class="hero-subtitle">American YouTuber & Entrepreneur who revolutionized content creation with massive challenges, giveaways, and charitable acts</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">323M</div>
+                        <div class="stat-label">YouTube Subscribers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">881</div>
+                        <div class="stat-label">Videos Created</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2012</div>
+                        <div class="stat-label">Started YouTube</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="content-section">
+        <h2 class="section-title">About MrBeast</h2>
+        <div class="bio-content">
+            <div class="bio-text">
+                <p>Jimmy Donaldson, known worldwide as MrBeast, is an American YouTuber, entrepreneur, and philanthropist who has fundamentally changed the landscape of content creation. Born on May 7, 1998, in Kansas and raised in North Carolina, Jimmy transformed from a teenager making gaming videos to becoming one of the most influential and highest-earning content creators in the world.</p>
+                
+                <p>Starting his YouTube journey in 2012 at age 13, MrBeast initially focused on gaming content and commentary videos. However, his breakthrough came when he shifted to creating elaborate challenge videos, massive giveaways, and philanthropic content that often costs hundreds of thousands or even millions of dollars to produce.</p>
+                
+                <p>What sets MrBeast apart is his unique combination of entertainment and philanthropy. His videos regularly feature life-changing prizes, charitable donations, and community impact projects. From planting 20 million trees to giving away private islands and millions of dollars, he has redefined what's possible in content creation while inspiring millions to be more generous and community-minded.</p>
+            </div>
+            
+            <div class="bio-highlights">
+                <h3>Key Achievements</h3>
+                <div class="highlight-item">
+                    <span>💰</span>
+                    Highest-earning YouTuber globally
+                </div>
+                <div class="highlight-item">
+                    <span>🌳</span>
+                    Team Trees: 20M trees planted
+                </div>
+                <div class="highlight-item">
+                    <span>🍔</span>
+                    MrBeast Burger business empire
+                </div>
+                <div class="highlight-item">
+                    <span>❤️</span>
+                    Millions donated to charity
+                </div>
+                <div class="highlight-item">
+                    <span>🏆</span>
+                    Creator Awards & recognition
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="content-section">
+        <h2 class="section-title">Major Achievements</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-icon">💰</div>
+                <h3 class="achievement-title">Record-Breaking Giveaways</h3>
+                <p class="achievement-desc">Given away millions of dollars in cash, cars, houses, and other prizes to contestants and random people, setting new standards for generosity in content creation.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-icon">🌳</div>
+                <h3 class="achievement-title">Team Trees Initiative</h3>
+                <p class="achievement-desc">Co-founded the Team Trees campaign that raised over $20 million to plant 20 million trees worldwide, demonstrating the power of YouTube for environmental causes.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-icon">🍔</div>
+                <h3 class="achievement-title">MrBeast Burger Empire</h3>
+                <p class="achievement-desc">Launched MrBeast Burger, a virtual restaurant concept that became one of the fastest-growing food delivery brands with hundreds of locations.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-icon">📺</div>
+                <h3 class="achievement-title">Most Subscribed Individual</h3>
+                <p class="achievement-desc">Became one of the most subscribed individual YouTubers with over 300 million subscribers, surpassing traditional media companies.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-icon">🏆</div>
+                <h3 class="achievement-title">Business Innovation</h3>
+                <p class="achievement-desc">Built a multi-million dollar content creation business, employing dozens of people and revolutionizing how YouTube videos are produced and funded.</p>
+            </div>
+            
+            <div class="achievement-card">
+                <div class="achievement-icon">💡</div>
+                <h3 class="achievement-title">Content Format Pioneer</h3>
+                <p class="achievement-desc">Created the template for modern high-budget YouTube content, inspiring countless creators to think bigger and more creatively about their videos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Timeline -->
+    <section class="content-section">
+        <h2 class="section-title">Career Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">YouTube Channel Start</h3>
+                    <p class="timeline-desc">Started his YouTube channel at age 13, initially focusing on gaming content and commentary videos with modest viewership and engagement.</p>
+                </div>
+                <div class="timeline-year">2012</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Viral Content Breakthrough</h3>
+                    <p class="timeline-desc">Created his first viral video counting to 100,000, which took 40 hours and marked the beginning of his extreme challenge content style.</p>
+                </div>
+                <div class="timeline-year">2017</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Million Dollar Videos</h3>
+                    <p class="timeline-desc">Started creating videos with increasingly larger budgets and prizes, including giving away cars, houses, and massive cash prizes to contestants.</p>
+                </div>
+                <div class="timeline-year">2018</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Team Trees Campaign</h3>
+                    <p class="timeline-desc">Launched the Team Trees initiative, raising over $20 million to plant 20 million trees and proving YouTube's power for environmental causes.</p>
+                </div>
+                <div class="timeline-year">2019</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Business Empire Launch</h3>
+                    <p class="timeline-desc">Launched MrBeast Burger and other business ventures, expanding beyond YouTube into entrepreneurship and product development.</p>
+                </div>
+                <div class="timeline-year">2020</div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Global Influence</h3>
+                    <p class="timeline-desc">Continues to break records with increasingly ambitious projects, maintaining his position as YouTube's most innovative and generous creator.</p>
+                </div>
+                <div class="timeline-year">2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links -->
+    <section class="social-section">
+        <h2 class="section-title">Connect with MrBeast</h2>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@mrbeast" class="social-link" target="_blank">
+                <span class="social-icon">📺</span>
+                YouTube Channel
+            </a>
+            <a href="https://www.instagram.com/mrbeast" class="social-link" target="_blank">
+                <span class="social-icon">📸</span>
+                Instagram
+            </a>
+            <a href="https://www.twitter.com/mrbeast" class="social-link" target="_blank">
+                <span class="social-icon">🐦</span>
+                Twitter
+            </a>
+            <a href="https://www.mrbeastburger.com" class="social-link" target="_blank">
+                <span class="social-icon">🍔</span>
+                MrBeast Burger
+            </a>
+        </div>
+    </section>
+
+    <!-- Back to Quiz -->
+    <a href="youtubers-personality-quiz.html" class="back-to-quiz">← Back to Quiz</a>
+</body>
+</html>
