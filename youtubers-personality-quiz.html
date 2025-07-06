@@ -2454,36 +2454,199 @@
             <p>Discover your YouTuber personality match from 25+ top creators including PewDiePie, MrBeast, Emma Chamberlain, Marques Brownlee, and more! Our scientifically-backed assessment analyzes your personality traits, content preferences, and creative style to find your perfect match.</p>
             
             <div class="feature-highlight">
-                <p>🏆 Most Comprehensive YouTuber Quiz | ⚡ 8-Minute Assessment | 🎯 95% Accuracy Rate | 🆓 Completely Free</p>
+            <p>🏆 Most Comprehensive YouTuber Quiz | ⚡ 8-Minute Assessment | 🎯 95% Accuracy Rate | 🆓 Completely Free</p>
             </div>
             
             <div class="quiz-benefits">
-                <div class="benefit-item">
-                    <span class="benefit-icon">🎮</span>
-                    <div>
-                        <h4>Gaming Creators</h4>
-                        <p>Match with PewDiePie, Markiplier, Ninja, Pokimane</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-icon">🎬</span>
-                    <div>
-                        <h4>Lifestyle & Vlogs</h4>
-                        <p>Discover Emma Chamberlain, David Dobrik style</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-icon">💰</span>
-                    <div>
-                        <h4>Business & Education</h4>
-                        <p>Find your MrBeast, MKBHD personality type</p>
-                    </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">🎮</span>
+                <div>
+                <h4>Gaming Creators</h4>
+                <p>Match with PewDiePie, Markiplier, Ninja, Pokimane</p>
                 </div>
             </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">🎬</span>
+                <div>
+                <h4>Lifestyle & Vlogs</h4>
+                <p>Discover Emma Chamberlain, David Dobrik style</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">💰</span>
+                <div>
+                <h4>Business & Education</h4>
+                <p>Find your MrBeast, MKBHD personality type</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <style>
+        /* Responsive fixes for quiz-benefits and benefit-item */
+        @media (max-width: 768px) {
+            .quiz-benefits {
+            grid-template-columns: 1fr !important;
+            gap: 15px !important;
+            margin: 20px 0 !important;
+            max-width: 100% !important;
+            }
+            .benefit-item {
+            flex-direction: row !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+            padding: 15px !important;
+            gap: 12px !important;
+            }
+            .benefit-icon {
+            font-size: 1.7rem !important;
+            min-width: 40px !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .quiz-benefits {
+            margin: 10px 0 !important;
+            }
+            .benefit-item {
+            padding: 10px !important;
+            gap: 8px !important;
+            }
+            .benefit-icon {
+            font-size: 1.3rem !important;
+            min-width: 28px !important;
+            }
+        }
+        </style>
             
-            <button class="start-btn" onclick="startQuiz()">Start Your Creator Journey ➤</button>
-            
-            <p class="trust-indicators">✅ No Email Required | ✅ Instant Results | ✅ 2M+ Quizzes Completed</p>
+            <div class="start-actions">
+                <button class="start-btn" onclick="startQuiz()">
+                    <span class="start-emoji">🚀</span>
+                    <span>Start Your Creator Journey</span>
+                    <span class="start-arrow">➤</span>
+                </button>
+                <div class="start-highlights">
+                    <span class="highlight-badge badge-gradient-1">
+                        <span class="badge-icon">✅</span> No Email Required
+                    </span>
+                    <span class="highlight-badge badge-gradient-2">
+                        <span class="badge-icon">⚡</span> Instant Results
+                    </span>
+                    <span class="highlight-badge badge-gradient-3">
+                        <span class="badge-icon">🌟</span> Completely Free
+                    </span>
+                </div>
+            </div>
+            <style>
+            .start-actions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 22px;
+                margin-top: 38px;
+                animation: fadeInUp 1s cubic-bezier(.4,0,.2,1);
+            }
+            .start-btn {
+                font-size: 1.25em;
+                padding: 22px 54px;
+                border-radius: 44px;
+                box-shadow: 0 10px 36px rgba(102,126,234,0.22), 0 2px 0 rgba(255,255,255,0.6) inset;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+                color: #fff;
+                font-weight: 800;
+                letter-spacing: 1.5px;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                transition: transform 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.18s cubic-bezier(.4,0,.2,1);
+                position: relative;
+                overflow: hidden;
+            }
+            .start-btn:hover, .start-btn:focus {
+                transform: translateY(-4px) scale(1.04);
+                box-shadow: 0 18px 48px rgba(102,126,234,0.32), 0 2px 0 rgba(255,255,255,0.7) inset;
+                outline: none;
+            }
+            .start-emoji, .start-arrow {
+                font-size: 1.35em;
+                filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+            }
+            .start-arrow {
+                margin-left: 8px;
+                transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+            }
+            .start-btn:hover .start-arrow {
+                transform: translateX(4px) scale(1.1);
+            }
+            .start-highlights {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 14px;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .highlight-badge {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-weight: 700;
+                font-size: 1.05em;
+                border-radius: 22px;
+                padding: 10px 22px;
+                color: #fff;
+                box-shadow: 0 4px 18px rgba(102,126,234,0.10);
+                background: #667eea;
+                letter-spacing: 0.2px;
+                transition: transform 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.18s cubic-bezier(.4,0,.2,1);
+                border: none;
+                position: relative;
+                z-index: 1;
+            }
+            .highlight-badge .badge-icon {
+                font-size: 1.15em;
+                margin-right: 2px;
+                filter: drop-shadow(0 1px 2px rgba(0,0,0,0.07));
+            }
+            .badge-gradient-1 {
+                background: linear-gradient(90deg,#667eea 0%,#764ba2 100%);
+            }
+            .badge-gradient-2 {
+                background: linear-gradient(90deg,#f093fb 0%,#4facfe 100%);
+            }
+            .badge-gradient-3 {
+                background: linear-gradient(90deg,#ff5858 0%,#f09819 100%);
+
+            }
+            .highlight-badge:hover, .highlight-badge:focus {
+                transform: translateY(-2px) scale(1.04);
+                box-shadow: 0 8px 28px rgba(102,126,234,0.18);
+                outline: none;
+            }
+            @media (max-width: 600px) {
+                .start-actions {
+                    gap: 16px;
+                    margin-top: 22px;
+                }
+                .start-btn {
+                    font-size: 1em;
+                    padding: 15px 18px;
+                    border-radius: 22px;
+                    gap: 10px;
+                }
+                .start-emoji, .start-arrow {
+                    font-size: 1.1em;
+                }
+                .start-highlights {
+                    gap: 8px;
+                    margin-top: 7px;
+                }
+                .highlight-badge {
+                    font-size: 0.98em;
+                    padding: 7px 13px;
+                    border-radius: 14px;
+                }
+            }
+            </style>
         </div>
 
         <!-- Questions -->
