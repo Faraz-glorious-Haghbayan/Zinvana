@@ -61,98 +61,166 @@
 
   <!-- Fonts & html2canvas -->
   <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
   <style>
-   html, body {
+    /* =====================================
+       MODERN PROFESSIONAL CSS RESET & BASE
+    ===================================== */
+    * {
       margin: 0;
-      padding: 0 !important;
-      border: 0;
-      vertical-align: baseline;
-    }
-    article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section {
-      display: block;
-    }
-    ol, ul {
-      list-style: none;
-    }
-    *, *::before, *::after {
+      padding: 0;
       box-sizing: border-box;
+    }
+    
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --accent-gradient: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+      --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --text-primary: #2c3e50;
+      --text-secondary: #7f8c8d;
+      --text-light: #ecf0f1;
+      --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.1);
+      --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.15);
+      --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.2);
+      --border-radius: 24px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html {
       scroll-behavior: smooth;
+      font-size: 16px;
     }
 
-    /* -------------------------------------
-       2) Base Styles
-    ------------------------------------- */
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--primary-gradient);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      line-height: 1.7;
       min-height: 100vh;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.3s ease;
-    }
-    a:hover {
-      transform: translateY(-2px);
+      overflow-x: hidden;
     }
 
-    /* -------------------------------------
-       3) Navigation
-    ------------------------------------- */
-    nav {
-      display: flex;
-      position: sticky;
+    /* =====================================
+       ANIMATED BACKGROUND ELEMENTS
+    ===================================== */
+    body::before {
+      content: '';
+      position: fixed;
       top: 0;
-      z-index: 9999;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+      animation: backgroundFloat 20s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes backgroundFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    /* =====================================
+       NAVIGATION - GLASSMORPHISM STYLE
+    ===================================== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(10px);
       padding: 20px 40px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    nav .nav-left,
-    nav .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-    nav a {
-      color: #fff;
-      font-weight: 500;
-      font-size: 1.1rem;
-      padding: 10px 20px;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    nav a:hover {
-      background: rgba(255,255,255,0.1);
-      transform: translateY(-2px);
-    }
-    #brand-logo {
-      width: 10%;
-      pointer-events: none;
-      filter: brightness(1.2);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      transition: var(--transition);
     }
 
-    /* -------------------------------------
-       4) Header
-    ------------------------------------- */
+    nav::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--primary-gradient);
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    nav a {
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 12px 24px;
+      border-radius: 50px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    nav a:hover::before {
+      left: 100%;
+    }
+
+    nav a:hover {
+      background: var(--glass-bg);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    #brand-logo {
+      width: 60px;
+      height: auto;
+      filter: brightness(1.2) drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+      transition: var(--transition);
+    }
+
+    #brand-logo:hover {
+      transform: scale(1.05) rotate(5deg);
+    }
+
+    /* =====================================
+       HERO HEADER WITH ENHANCED TYPOGRAPHY
+    ===================================== */
     header.main-header {
+      margin-top: 80px;
+      padding: 120px 40px;
       text-align: center;
-      padding: 120px 20px 80px;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('header1.png') no-repeat center center/cover;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
       position: relative;
       overflow: hidden;
     }
+
     header.main-header::before {
       content: '';
       position: absolute;
@@ -160,80 +228,216 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(45deg, rgba(103, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+      background: var(--dark-gradient);
+      opacity: 0.8;
       z-index: 1;
     }
+
     header.main-header * {
       position: relative;
       z-index: 2;
     }
+
     header.main-header h1 {
-      font-size: 4rem;
-      color: #ffffff;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 5rem);
       font-weight: 700;
-    }
-    #tagline {
-      margin-top: 20px;
-      font-size: 1.3rem;
-      color: #ffffff;
-      max-width: 800px;
-      margin: 20px auto 0;
-      opacity: 0.95;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      color: var(--text-light);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff, #e3f2fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: titleGlow 3s ease-in-out infinite alternate;
     }
 
-    /* -------------------------------------
-       5) Articles Section
-    ------------------------------------- */
-    .articles-section {
-      max-width: 1400px;
-      margin: 60px auto;
-      padding: 0 40px;
-      position: relative;
+    @keyframes titleGlow {
+      from { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+      to { text-shadow: 0 0 40px rgba(255,255,255,0.8), 0 0 60px rgba(103, 126, 234, 0.4); }
     }
-    .articles-section::before {
+
+    #tagline {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 800px;
+      margin: 0 auto;
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    /* =====================================
+       SEARCH & FILTER SECTION
+    ===================================== */
+    .search-filter-section {
+      margin: 80px auto 60px;
+      max-width: 1200px;
+      padding: 0 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .search-container {
+      position: relative;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 20px 60px 20px 24px;
+      border: none;
+      border-radius: 60px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+
+    #searchInput:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: var(--shadow-medium);
+      transform: translateY(-2px);
+      border-color: rgba(103, 126, 234, 0.3);
+    }
+
+    #searchInput::placeholder {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      pointer-events: none;
+    }
+
+    .filter-container {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--glass-border);
+    }
+
+    .filter-btn {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .filter-btn::before {
       content: '';
       position: absolute;
-      top: -30px;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.6s;
+    }
+
+    .filter-btn:hover::before {
+      left: 100%;
+    }
+
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .filter-btn.active {
+      background: var(--primary-gradient);
+      color: white;
+      box-shadow: var(--shadow-medium);
+      transform: translateY(-2px);
+    }
+
+    /* =====================================
+       ARTICLES SECTION
+    ===================================== */
+    .articles-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+      position: relative;
+    }
+
+    .articles-section h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 80px;
+      color: var(--text-light);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      position: relative;
+    }
+
+    .articles-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
       left: 50%;
       transform: translateX(-50%);
       width: 100px;
       height: 4px;
-      background: linear-gradient(90deg, #667eea, #764ba2);
+      background: var(--accent-gradient);
       border-radius: 2px;
     }
-    .articles-section h2 {
-      text-align: center;
-      font-size: 3rem;
-      margin-bottom: 60px;
-      color: #fff;
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-      letter-spacing: 1px;
-    }
+
     .articles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
       gap: 40px;
-      justify-items: center;
+      padding: 20px 0;
     }
+
+    /* =====================================
+       ENHANCED ARTICLE CARDS
+    ===================================== */
     .article-card {
       background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      border-radius: var(--border-radius);
       overflow: hidden;
-      width: 100%;
-      max-width: 380px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      text-align: center;
-      color: #333;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid var(--glass-border);
+      transition: var(--transition);
       position: relative;
+      animation: cardFadeIn 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(40px);
     }
+
     .article-card::before {
       content: '';
       position: absolute;
@@ -241,331 +445,387 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(103, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+      background: var(--primary-gradient);
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
       z-index: 1;
     }
+
     .article-card:hover::before {
-      opacity: 1;
+      opacity: 0.05;
     }
+
     .article-card:hover {
-      transform: translateY(-15px) scale(1.03);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: var(--shadow-strong);
     }
+
     .article-card img {
       width: 100%;
-      height: 220px;
+      height: 340px;
       object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-    .article-card:hover img {
-      transform: scale(1.1);
-    }
-    .article-card h3 {
-      font-size: 1.5rem;
-      margin: 25px 20px 15px;
-      color: #2c3e50;
-      font-weight: 600;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       position: relative;
       z-index: 2;
     }
+
+    .article-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .article-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 24px 24px 16px;
+      color: var(--text-primary);
+      line-height: 1.3;
+      position: relative;
+      z-index: 2;
+      letter-spacing: -0.01em;
+    }
+
     .article-card p {
       font-size: 1rem;
-      padding: 0 25px 25px;
-      color: #666;
+      padding: 0 24px;
+      color: var(--text-secondary);
       line-height: 1.6;
+      margin-bottom: 24px;
       position: relative;
       z-index: 2;
+      font-weight: 400;
     }
+
     .article-card .btn {
       display: inline-block;
-      margin-bottom: 25px;
-      padding: 12px 30px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
+      margin: 0 24px 24px;
+      padding: 14px 32px;
+      background: var(--primary-gradient);
+      color: white;
       border-radius: 50px;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      text-decoration: none;
       position: relative;
       z-index: 2;
-      box-shadow: 0 4px 15px rgba(103, 126, 234, 0.3);
+      box-shadow: 0 8px 25px rgba(103, 126, 234, 0.3);
+      overflow: hidden;
     }
+
+    .article-card .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.6s;
+    }
+
+    .article-card .btn:hover::before {
+      left: 100%;
+    }
+
     .article-card .btn:hover {
-      background: linear-gradient(135deg, #764ba2, #667eea);
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(103, 126, 234, 0.4);
+      box-shadow: 0 12px 35px rgba(103, 126, 234, 0.4);
+      background: linear-gradient(135deg, #764ba2, #667eea);
     }
 
-    /* -------------------------------------
-       6) Footer
-    ------------------------------------- */
-    footer {
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(10px);
-      padding: 50px 40px;
-      text-align: center;
-      margin-top: 80px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    footer p {
-      font-size: 1rem;
-      color: #ccc;
-      margin: 10px 0;
-      line-height: 1.6;
-    }
-    footer .social-icons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    footer .social-icons img {
-      width: 40px;
-      height: 40px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border-radius: 50%;
-      padding: 8px;
-      background: rgba(255,255,255,0.1);
-    }
-    footer .social-icons img:hover {
-      background: rgba(255,255,255,0.2);
-      transform: translateY(-3px) scale(1.1);
-    }
-
-    /* -------------------------------------
-       7) Responsive Styles
-    ------------------------------------- */
-    @media (max-width:450px) {
-      nav {
-        padding: 15px 20px;
-      }
-      nav .nav-left,
-      nav .nav-right {
-        gap: 15px;
-      }
-      header.main-header {
-        padding: 100px 15px 60px;
-      }
-      header h1 {
-        font-size: 3rem;
-      }
-      #tagline {
-        font-size: 1.1rem;
-      }
-      .articles-section {
-        padding: 0 20px;
-        margin: 40px auto;
-      }
-      .articles-section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 40px;
-      }
-      .articles-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-      }
-      #brand-logo{
-        width: 30% !important;
-      }
-      footer {
-        padding: 40px 20px;
-      }
-      footer .social-icons img {
-        width: 35px;
-        height: 35px;
+    /* =====================================
+       ANIMATION DELAYS FOR STAGGERED LOADING
+    ===================================== */
+    @keyframes cardFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    @media (max-width: 600px) {
-      nav {
-        padding: 10px 15px;
-      }
-      nav a {
-        font-size: 1rem;
-        padding: 8px 15px;
-      }
-      header.main-header {
-        padding: 80px 10px 50px;
-      }
-      h1{
-        font-size: 2.5rem !important;
-      }
-      #tagline {
-        font-size: 1rem;
-      }
-      .articles-section {
-        margin: 30px auto;
-        padding: 0 15px;
-      }
-      .articles-section h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-      }
-      .articles-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-      .article-card {
-        max-width: 100%;
-      }
-      #brand-logo{
-        width: 40%;
-      }
-      footer {
-        padding: 30px 15px;
-      }
-      footer .social-icons {
-        gap: 15px;
-      }
-      footer .social-icons img {
-        width: 30px;
-        height: 30px;
-      }
-    }
-
-    @media (max-width: 1300px) {
-      #brand-logo{
-        width: 12%;
-      }
-    }
-    
-    /* Smooth scrolling and loading animations */
-    .article-card {
-      animation: fadeInUp 0.6s ease-out forwards;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    
     .article-card:nth-child(1) { animation-delay: 0.1s; }
     .article-card:nth-child(2) { animation-delay: 0.2s; }
     .article-card:nth-child(3) { animation-delay: 0.3s; }
     .article-card:nth-child(4) { animation-delay: 0.4s; }
     .article-card:nth-child(5) { animation-delay: 0.5s; }
     .article-card:nth-child(6) { animation-delay: 0.6s; }
-    
-    @keyframes fadeInUp {
+    .article-card:nth-child(7) { animation-delay: 0.7s; }
+    .article-card:nth-child(8) { animation-delay: 0.8s; }
+    .article-card:nth-child(9) { animation-delay: 0.9s; }
+
+    /* =====================================
+       ENHANCED FOOTER
+    ===================================== */
+    footer {
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(20px);
+      padding: 60px 40px;
+      text-align: center;
+      margin-top: 80px;
+      border-top: 1px solid var(--glass-border);
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--dark-gradient);
+      opacity: 0.1;
+      z-index: 1;
+    }
+
+    footer * {
+      position: relative;
+      z-index: 2;
+    }
+
+    footer p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 12px 0;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .social-icons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .social-icons img {
+      width: 48px;
+      height: 48px;
+      transition: var(--transition);
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 12px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+    }
+
+    .social-icons img:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-4px) scale(1.1);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* =====================================
+       CUSTOM SCROLLBAR
+    ===================================== */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-gradient);
+      border-radius: 6px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-gradient);
+      background-clip: content-box;
+    }
+
+    /* =====================================
+       RESPONSIVE DESIGN
+    ===================================== */
+    @media (max-width: 768px) {
+      nav {
+        padding: 16px 24px;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .nav-left, .nav-right {
+        gap: 20px;
+      }
+
+      nav a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      #brand-logo {
+        width: 50px;
+      }
+
+      header.main-header {
+        padding: 100px 24px 80px;
+        margin-top: 100px;
+      }
+
+      .search-filter-section {
+        padding: 0 24px;
+        margin: 60px auto 40px;
+      }
+
+      .filter-container {
+        gap: 12px;
+      }
+
+      .filter-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+      }
+
+      .articles-section {
+        padding: 0 24px 60px;
+      }
+
+      .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      footer {
+        padding: 40px 24px;
+      }
+
+      .social-icons {
+        gap: 20px;
+      }
+
+      .social-icons img {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 12px 16px;
+      }
+
+      .nav-left, .nav-right {
+        gap: 12px;
+      }
+
+      nav a {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+      }
+
+      #brand-logo {
+        width: 40px;
+      }
+
+      header.main-header {
+        padding: 80px 16px 60px;
+        margin-top: 80px;
+      }
+
+      .search-filter-section {
+        padding: 0 16px;
+        gap: 32px;
+      }
+
+      #searchInput {
+        padding: 16px 50px 16px 20px;
+        font-size: 1rem;
+      }
+
+      .filter-container {
+        padding: 16px;
+      }
+
+      .filter-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+
+      .articles-section {
+        padding: 0 16px 40px;
+      }
+
+      .articles-section h2 {
+        margin-bottom: 60px;
+      }
+
+      .articles-grid {
+        gap: 24px;
+      }
+
+      .article-card h3 {
+        font-size: 1.3rem;
+        margin: 20px 20px 12px;
+      }
+
+      .article-card p {
+        padding: 0 20px;
+        margin-bottom: 20px;
+      }
+
+      .article-card .btn {
+        margin: 0 20px 20px;
+        padding: 12px 24px;
+      }
+
+      footer {
+        padding: 32px 16px;
+      }
+
+      .social-icons img {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+      }
+    }
+
+    /* =====================================
+       LOADING STATES & UTILITIES
+    ===================================== */
+    .loading {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s linear infinite;
+      margin: 60px auto;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .article-card.hidden {
+      display: none;
+    }
+
+    /* Enhanced focus styles for accessibility */
+    *:focus-visible {
+      outline: 2px solid rgba(103, 126, 234, 0.6);
+      outline-offset: 2px;
+    }
+
+    /* Smooth page transitions */
+    .page-transition {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: pageLoad 0.8s ease-out forwards;
+    }
+
+    @keyframes pageLoad {
       to {
         opacity: 1;
         transform: translateY(0);
       }
-    }
-    
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: rgba(255,255,255,0.1);
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border-radius: 5px;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(135deg, #764ba2, #667eea);
-    }
-
-    /* Search and Filter Styles */
-    .search-filter-section {
-      margin-bottom: 50px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
-    
-    .search-container {
-      position: relative;
-      max-width: 500px;
-      width: 100%;
-    }
-    
-    #searchInput {
-      width: 100%;
-      padding: 15px 50px 15px 20px;
-      border: none;
-      border-radius: 50px;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(10px);
-      font-size: 1.1rem;
-      color: #333;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-    
-    #searchInput:focus {
-      outline: none;
-      background: rgba(255,255,255,1);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-      transform: translateY(-2px);
-    }
-    
-    .search-icon {
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.2rem;
-      color: #666;
-    }
-    
-    .filter-container {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .filter-btn {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      background: rgba(255,255,255,0.2);
-      color: #fff;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-    
-    .filter-btn:hover {
-      background: rgba(255,255,255,0.3);
-      transform: translateY(-2px);
-    }
-    
-    .filter-btn.active {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      box-shadow: 0 8px 25px rgba(103, 126, 234, 0.3);
-    }
-    
-    /* Loading animation */
-    .loading {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border: 3px solid rgba(255,255,255,0.3);
-      border-radius: 50%;
-      border-top-color: #fff;
-      animation: spin 1s ease-in-out infinite;
-      margin: 50px auto;
-    }
-    
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    
-    /* Article categories for filtering */
-    .article-card.hidden {
-      display: none;
     }
   </style>
 
@@ -621,12 +881,13 @@
         <button class="filter-btn" data-category="football">Football</button>
         <button class="filter-btn" data-category="empires">Empires</button>
         <button class="filter-btn" data-category="quiz">Quizzes</button>
+        <button class="filter-btn" data-category="brawlers">Brawlers</button>
         <button class="filter-btn" data-category="youtubers">Youtubers</button>
       </div>
     </div>
     
     <div class="articles-grid">
-        <div class="article-card" data-category="historical">
+        <div class="article-card" data-category="historical</div>">
             <img src="cyrusthegreatthumb.jpg" alt="Cyrus the Great wallpaper">
             <h3>Cyrus the Great</h3>
             <p>Learn about Cyrus the Great, founder of the Persian Empire, whose leadership and policies of tolerance set a lasting example in ancient history.</p>
@@ -698,17 +959,17 @@
           </div>
 
           <div class="article-card" data-category="quiz">
-            <img src="roman.gif" alt="empires">
-            <h3>Empires Personality Quiz</h3>
-            <p>Take the ultimate empire quiz and find out if you belong in Rome, Persia, the Mongol Horde, or Imperial China. Discover your ancient destiny!</p>
-            <a href="empire.html" class="btn">Read More</a>
-          </div>
-
-          <div class="article-card" data-category="quiz">
             <img src="zinvanabs.png" alt="Zinvana personality quiz">
             <h3>Brawlstars personality quiz</h3>
             <p>Take the ultimate Brawl Stars personality quiz and discover which Brawler matches your playstyle! Are you a sharpshooter, a tank, or a support? Find out now!</p>
             <a href="brawlstars-quiz.html" class="btn">Read More</a>
+          </div>
+
+          <div class="article-card" data-category="quiz">
+            <img src="roman.gif" alt="empires">
+            <h3>Empires Personality Quiz</h3>
+            <p>Take the ultimate empire quiz and find out if you belong in Rome, Persia, the Mongol Horde, or Imperial China. Discover your ancient destiny!</p>
+            <a href="empire.html" class="btn">Read More</a>
           </div>
 
           <div class="article-card" data-category="quiz">
@@ -1183,6 +1444,20 @@
             <a href="ishowspeed.html" class="btn">Read More</a>
             </div>
 
+            <div class="article-card" data-category="youtubers">
+            <img src="ninja.jpg" alt="youtuber Ninja" onerror="this.src='default.png'">
+            <h3>Ninja</h3>
+            <p>Discover Ninja, the legendary gaming streamer who revolutionized Fortnite content and became the most recognizable face in gaming entertainment worldwide.</p>
+            <a href="ninja.html" class="btn">Read More</a>
+            </div>
+
+            <div class="article-card" data-category="youtubers">
+            <img src="moistcritical.jpg" alt="youtuber MoistCr1TiKaL" onerror="this.src='default.png'">
+            <h3>MoistCr1TiKaL</h3>
+            <p>Explore MoistCr1TiKaL's unique deadpan commentary style, gaming content, and brutally honest takes that have made him an internet phenomenon.</p>
+            <a href="moist-critical.html" class="btn">Read More</a>
+            </div>
+
           <div class="article-card">
             <img src="gandhiheader.jpg" alt="Mahatma Gandhi">
             <h3>Mahatma Gandhi</h3>
@@ -1233,6 +1508,574 @@
         <h3>Mikhail Gorbachev (Russian)</h3>
         <p>Explore Gorbachev’s reformist leadership that ushered in the end of the Cold War and led to the peaceful dissolution of the Soviet Union.</p>
         <a href="gorbachev.html" class="btn">Read More</a>
+      </div>
+
+      <!-- Brawl Stars Brawlers Section -->
+      
+      <!-- Legendary Brawlers -->
+      <div class="article-card" data-category="brawlers">
+        <img src="spike.jpg" alt="Spike - The Cactus Slinger brawler guide">
+        <h3>Spike</h3>
+        <p>Master Spike's explosive cactus grenades and area control abilities. Learn advanced strategies, builds, and tips for this legendary Brawl Stars character.</p>
+        <a href="brawler-spike.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="leon.jpg" alt="Leon - The Stealthy Assassin brawler guide">
+        <h3>Leon</h3>
+        <p>Become invisible with Leon's legendary assassin powers. Discover stealth tactics, spinning blade techniques, and invisibility strategies.</p>
+        <a href="brawler-leon.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="crow.jpg" alt="Crow - The Poison Assassin brawler guide">
+        <h3>Crow</h3>
+        <p>Poison your enemies with Crow's legendary dagger attacks. Learn mobility tactics, poison damage optimization, and aerial strike strategies.</p>
+        <a href="brawler-crow.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="sandy.jpg" alt="Sandy - The Sleepy Support brawler guide">
+        <h3>Sandy</h3>
+        <p>Control battlefields with Sandy's sandstorm support abilities. Master team invisibility tactics and piercing tornado attacks.</p>
+        <a href="brawler-sandy.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="amber.jpg" alt="Amber - The Fire Starter brawler guide">
+        <h3>Amber</h3>
+        <p>Ignite the battlefield with Amber's continuous fire streams. Learn oil spreading tactics and area denial fire strategies.</p>
+        <a href="brawler-amber.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="meg.jpg" alt="Meg - The Mech Pilot brawler guide">
+        <h3>Meg</h3>
+        <p>Transform into a powerful mech with Meg's unique legendary abilities. Master dual-form combat and mech transformation strategies.</p>
+        <a href="brawler-meg.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="chester.jpg" alt="Chester - The Jester brawler guide">
+        <h3>Chester</h3>
+        <p>Embrace chaos with Chester's unpredictable jester abilities. Learn to adapt to random Super effects and explosive bell tactics.</p>
+        <a href="brawler-chester.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="cordelius.jpg" alt="Cordelius - The Mushroom Guardian brawler guide">
+        <h3>Cordelius</h3>
+        <p>Master the shadow realm with Cordelius's poison mushroom attacks. Learn portal tactics and 1v1 shadow dimension strategies.</p>
+        <a href="brawler-cordelius.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="kit.jpg" alt="Kit - The Feline Fighter brawler guide">
+        <h3>Kit</h3>
+        <p>Teleport across the battlefield with Kit's legendary feline abilities. Master position swapping and energy blast support tactics.</p>
+        <a href="brawler-kit.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="draco.jpg" alt="Draco - The Dragon Warrior brawler guide">
+        <h3>Draco</h3>
+        <p>Unleash dragon fire with Draco's devastating flame attacks. Learn fireball tactics and dragon breath area control strategies.</p>
+        <a href="brawler-draco.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="kenji.jpg" alt="Kenji - The Samurai brawler guide">
+        <h3>Kenji</h3>
+        <p>Master the way of the sword with Kenji's samurai techniques. Learn shadow clone deployment and swift dash attack strategies.</p>
+        <a href="brawler-kenji.html" class="btn">Read More</a>
+      </div>
+
+      <!-- Mythic Brawlers -->
+      <div class="article-card" data-category="brawlers">
+        <img src="mortis.jpg" alt="Mortis - The Dashing Assassin brawler guide">
+        <h3>Mortis</h3>
+        <p>Dash through enemies with Mortis's vampire-like abilities. Master life steal mechanics and high-mobility assassination tactics.</p>
+        <a href="brawler-mortis.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="tara.jpg" alt="Tara - The Mystic Fortune Teller brawler guide">
+        <h3>Tara</h3>
+        <p>Manipulate gravity with Tara's mystical powers. Learn black hole tactics and piercing card attack strategies.</p>
+        <a href="brawler-tara.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="gene.jpg" alt="Gene - The Magic Lamp Support brawler guide">
+        <h3>Gene</h3>
+        <p>Pull enemies with Gene's magical lamp spirit. Master healing support and enemy displacement tactics.</p>
+        <a href="brawler-gene.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="max.jpg" alt="Max - The Super Speedy Brawler guide">
+        <h3>Max</h3>
+        <p>Speed across the battlefield with Max's energy drink powers. Learn rapid-fire tactics and team speed boost strategies.</p>
+        <a href="brawler-max.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="mrp.jpg" alt="Mr. P - The Business Penguin brawler guide">
+        <h3>Mr. P</h3>
+        <p>Command porter robots with Mr. P's business expertise. Master bouncing suitcase attacks and spawning ally tactics.</p>
+        <a href="brawler-mrp.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="sprout.jpg" alt="Sprout - The Wall Builder brawler guide">
+        <h3>Sprout</h3>
+        <p>Reshape battlefields with Sprout's wall-building abilities. Master strategic hedge placement and explosive seed tactics.</p>
+        <a href="brawler-sprout.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="byron.jpg" alt="Byron - The Healer/Poisoner brawler guide">
+        <h3>Byron</h3>
+        <p>Heal allies and poison enemies with Byron's dual-purpose attacks. Master piercing shot positioning and support tactics.</p>
+        <a href="brawler-byron.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="squeak.jpg" alt="Squeak - The Blob Thrower brawler guide">
+        <h3>Squeak</h3>
+        <p>Stick explosive blobs with Squeak's delayed-damage attacks. Learn area denial and strategic wall sticking tactics.</p>
+        <a href="brawler-squeak.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="lou.jpg" alt="Lou - The Snowcone Master brawler guide">
+        <h3>Lou</h3>
+        <p>Freeze enemies with Lou's icy snowcone attacks. Master freeze mechanics and ice block area control strategies.</p>
+        <a href="brawler-lou.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="ruffs.jpg" alt="Ruffs - The Space Dog brawler guide">
+        <h3>Colonel Ruffs</h3>
+        <p>Support your team with Ruffs's military supply drops. Learn power-up placement and damage boost strategies.</p>
+        <a href="brawler-ruffs.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="belle.jpg" alt="Belle - The Goldarm Gang Leader brawler guide">
+        <h3>Belle</h3>
+        <p>Mark enemies for elimination with Belle's bouncing shots. Master ricochet damage and target marking tactics.</p>
+        <a href="brawler-belle.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="buzz.jpg" alt="Buzz - The Lifeguard brawler guide">
+        <h3>Buzz</h3>
+        <p>Hook enemies with Buzz's lifeguard rescue tactics. Learn torpedo attacks and gap-closing hook strategies.</p>
+        <a href="brawler-buzz.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="ash.jpg" alt="Ash - The Trash Collector brawler guide">
+        <h3>Ash</h3>
+        <p>Build rage with Ash's trash collector fury. Master damage scaling and rage meter optimization strategies.</p>
+        <a href="brawler-ash.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="lola.jpg" alt="Lola - The Drama Queen brawler guide">
+        <h3>Lola</h3>
+        <p>Create mirror images with Lola's dramatic clone abilities. Master Ego positioning and double-damage combos.</p>
+        <a href="brawler-lola.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="grom.jpg" alt="Grom - The Demolitions Expert brawler guide">
+        <h3>Grom</h3>
+        <p>Demolish with Grom's explosive radio-controlled bombs. Learn area denial and remote detonation strategies.</p>
+        <a href="brawler-grom.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="fang.jpg" alt="Fang - The Kung Fu Master brawler guide">
+        <h3>Fang</h3>
+        <p>Chain flying kicks with Fang's martial arts mastery. Learn combo mechanics and kick chain optimization.</p>
+        <a href="brawler-fang.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="eve.jpg" alt="Eve - The Mother of Hatchlings brawler guide">
+        <h3>Eve</h3>
+        <p>Spawn alien hatchlings with Eve's swarm tactics. Master autonomous minion control and area domination.</p>
+        <a href="brawler-eve.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="janet.jpg" alt="Janet - The Stunt Double brawler guide">
+        <h3>Janet</h3>
+        <p>Fly across battlefields with Janet's aerial stunts. Master flight mechanics and aerial bombardment strategies.</p>
+        <a href="brawler-janet.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="bonnie.jpg" alt="Bonnie - The Cannon Rider brawler guide">
+        <h3>Bonnie</h3>
+        <p>Transform between combat modes with Bonnie's cannon-riding abilities. Master dual-mode tactics and versatile combat.</p>
+        <a href="brawler-bonnie.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="otis.jpg" alt="Otis - The Artist brawler guide">
+        <h3>Otis</h3>
+        <p>Silence enemies with Otis's artistic paint attacks. Learn ability disruption and ink control strategies.</p>
+        <a href="brawler-otis.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="sam.jpg" alt="Sam - The Heavy Hitter brawler guide">
+        <h3>Sam</h3>
+        <p>Crush enemies with Sam's massive hammer attacks. Master grab mechanics and heavy melee combat tactics.</p>
+        <a href="brawler-sam.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="gus.jpg" alt="Gus - The Ghost brawler guide">
+        <h3>Gus</h3>
+        <p>Protect allies with Gus's ghostly spirit shields. Master defensive support and piercing spirit attacks.</p>
+        <a href="brawler-gus.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="buster.jpg" alt="Buster - The Projectionist brawler guide">
+        <h3>Buster</h3>
+        <p>Block projectiles with Buster's cinema shield abilities. Master defensive tanking and projection tactics.</p>
+        <a href="brawler-buster.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="gray.jpg" alt="Gray - The Shapeshifter brawler guide">
+        <h3>Gray</h3>
+        <p>Shapeshift into enemies with Gray's mimicry abilities. Master transformation tactics and ability copying strategies.</p>
+        <a href="brawler-gray.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="mandy.jpg" alt="Mandy - The Sweet Shooter brawler guide">
+        <h3>Mandy</h3>
+        <p>Focus shots with Mandy's candy-powered precision attacks. Learn damage focusing and sweet spot optimization.</p>
+        <a href="brawler-mandy.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="rt.jpg" alt="R-T - The Security Robot brawler guide">
+        <h3>R-T</h3>
+        <p>Deploy legs and surf with R-T's transforming robot abilities. Master dual-mode security tactics and mobility.</p>
+        <a href="brawler-rt.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="willow.jpg" alt="Willow - The Mind Controller brawler guide">
+        <h3>Willow</h3>
+        <p>Control enemy minds with Willow's lantern magic. Master mind control tactics and possession strategies.</p>
+        <a href="brawler-willow.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="maisie.jpg" alt="Maisie - The Sharpshooter brawler guide">
+        <h3>Maisie</h3>
+        <p>Mark and hunt targets with Maisie's tracking abilities. Master precision shooting and target tracking strategies.</p>
+        <a href="brawler-maisie.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="hank.jpg" alt="Hank - The Water Balloon Fighter brawler guide">
+        <h3>Hank</h3>
+        <p>Throw bubbles and water balloons with Hank's aquatic arsenal. Master bubble mechanics and water-based tactics.</p>
+        <a href="brawler-hank.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="pearl.jpg" alt="Pearl - The Ocean Defender brawler guide">
+        <h3>Pearl</h3>
+        <p>Control heat with Pearl's temperature-based attacks. Master heat management and oceanic defense strategies.</p>
+        <a href="brawler-pearl.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="charlie.jpg" alt="Charlie - The Spider Controller brawler guide">
+        <h3>Charlie</h3>
+        <p>Command spiders with Charlie's arachnid army. Master web creation and spider control tactical strategies.</p>
+        <a href="brawler-charlie.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="mico.jpg" alt="Mico - The Monkey Brawler guide">
+        <h3>Mico</h3>
+        <p>Swing through battles with Mico's monkey agility. Master swinging mechanics and primate combat tactics.</p>
+        <a href="brawler-mico.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="melodie.jpg" alt="Melodie - The Musical Brawler guide">
+        <h3>Melodie</h3>
+        <p>Create musical attacks with Melodie's harmonic abilities. Master rhythm-based combat and musical strategies.</p>
+        <a href="brawler-melodie.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="lily.jpg" alt="Lily - The Nature Spirit brawler guide">
+        <h3>Lily</h3>
+        <p>Control nature with Lily's elemental plant powers. Master botanical abilities and natural magic tactics.</p>
+        <a href="brawler-lily.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="clancy.jpg" alt="Clancy - The Director brawler guide">
+        <h3>Clancy</h3>
+        <p>Direct the battlefield with Clancy's command abilities. Master tactical leadership and direction strategies.</p>
+        <a href="brawler-clancy.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="moe.jpg" alt="Moe - The Rat Controller brawler guide">
+        <h3>Moe</h3>
+        <p>Control rodents with Moe's rat army tactics. Master pest control and rodent swarm strategies.</p>
+        <a href="brawler-moe.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="juju.jpg" alt="Juju - The Voodoo Master brawler guide">
+        <h3>Juju</h3>
+        <p>Cast voodoo spells with Juju's mystical magic. Master curse tactics and supernatural abilities.</p>
+        <a href="brawler-juju.html" class="btn">Read More</a>
+      </div>
+
+      <!-- Epic Brawlers -->
+      <div class="article-card" data-category="brawlers">
+        <img src="piper.jpg" alt="Piper - The Sharpshooter Gal brawler guide">
+        <h3>Piper</h3>
+        <p>Snipe from long range with Piper's umbrella rifle. Master distance-based damage and precision shooting tactics.</p>
+        <a href="brawler-piper.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="pam.jpg" alt="Pam - The Mama Bear brawler guide">
+        <h3>Pam</h3>
+        <p>Heal and protect with Pam's maternal support abilities. Master scrap blast attacks and healing turret placement.</p>
+        <a href="brawler-pam.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="frank.jpg" alt="Frank - The Heavyweight brawler guide">
+        <h3>Frank</h3>
+        <p>Stun enemies with Frank's massive hammer attacks. Master area stunning and heavyweight combat tactics.</p>
+        <a href="brawler-frank.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="bibi.jpg" alt="Bibi - The Batter brawler guide">
+        <h3>Bibi</h3>
+        <p>Knock back enemies with Bibi's baseball bat swings. Master home run mechanics and knockback strategies.</p>
+        <a href="brawler-bibi.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="bea.jpg" alt="Bea - The Bee Keeper brawler guide">
+        <h3>Bea</h3>
+        <p>Charge shots with Bea's bee-powered attacks. Master supercharged mechanics and bee swarm strategies.</p>
+        <a href="brawler-bea.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="nani.jpg" alt="Nani - The Robot Nanny brawler guide">
+        <h3>Nani</h3>
+        <p>Control Peep drone with Nani's robotic precision. Master orb shooting and drone guidance tactics.</p>
+        <a href="brawler-nani.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="edgar.jpg" alt="Edgar - The Parkour Assassin brawler guide">
+        <h3>Edgar</h3>
+        <p>Leap and heal with Edgar's parkour assassin abilities. Master life steal mechanics and aerial assault tactics.</p>
+        <a href="brawler-edgar.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="griff.jpg" alt="Griff - The Gift Shop Manager brawler guide">
+        <h3>Griff</h3>
+        <p>Spread coins with Griff's cash register attacks. Master money-based projectiles and business tactics.</p>
+        <a href="brawler-griff.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="gale.jpg" alt="Gale - The Snow Blower brawler guide">
+        <h3>Gale</h3>
+        <p>Push enemies with Gale's wind and snow attacks. Master knockback mechanics and winter storm strategies.</p>
+        <a href="brawler-gale.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="colette.jpg" alt="Colette - The Gift Shop Worker brawler guide">
+        <h3>Colette</h3>
+        <p>Deal percentage damage with Colette's scrapbook attacks. Master health-based damage and collection tactics.</p>
+        <a href="brawler-colette.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="surge.jpg" alt="Surge - The Protector Robot brawler guide">
+        <h3>Surge</h3>
+        <p>Upgrade through stages with Surge's evolution mechanics. Master split shots and progressive power tactics.</p>
+        <a href="brawler-surge.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="emz.jpg" alt="Emz - The Zombie Influencer brawler guide">
+        <h3>Emz</h3>
+        <p>Spread damage with Emz's hair spray attacks. Master area denial and continuous damage strategies.</p>
+        <a href="brawler-emz.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="stu.jpg" alt="Stu - The Stunt Driver brawler guide">
+        <h3>Stu</h3>
+        <p>Crash and burn with Stu's stunt driving abilities. Master knockback resistance and speed tactics.</p>
+        <a href="brawler-stu.html" class="btn">Read More</a>
+      </div>
+
+      <!-- Super Rare Brawlers -->
+      <div class="article-card" data-category="brawlers">
+        <img src="penny.jpg" alt="Penny - The Plunderer brawler guide">
+        <h3>Penny</h3>
+        <p>Deploy cannon turrets with Penny's pirate arsenal. Master gold bag attacks and mortar placement strategies.</p>
+        <a href="brawler-penny.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="darryl.jpg" alt="Darryl - The Barrel Bot brawler guide">
+        <h3>Darryl</h3>
+        <p>Roll and shoot with Darryl's barrel robot abilities. Master steel hoops rolling and shotgun tactics.</p>
+        <a href="brawler-darryl.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="carl.jpg" alt="Carl - The Geologist brawler guide">
+        <h3>Carl</h3>
+        <p>Throw boomerang pickaxes with Carl's geology expertise. Master returning projectiles and spinning tactics.</p>
+        <a href="brawler-carl.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="jacky.jpg" alt="Jacky - The Demolition Worker brawler guide">
+        <h3>Jacky</h3>
+        <p>Swing 360-degree attacks with Jacky's jackhammer. Master area control and enemy pulling strategies.</p>
+        <a href="brawler-jacky.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="8bit.jpg" alt="8-Bit - The Video Game brawler guide">
+        <h3>8-Bit</h3>
+        <p>Boost damage with 8-Bit's retro arcade power. Master damage turret placement and high-damage tactics.</p>
+        <a href="brawler-8bit.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="rico.jpg" alt="Rico - The Ricochet Robot brawler guide">
+        <h3>Rico</h3>
+        <p>Bounce shots with Rico's ricochet abilities. Master wall bouncing and indirect attack strategies.</p>
+        <a href="brawler-rico.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="tick.jpg" alt="Tick - The Explosive Expert brawler guide">
+        <h3>Tick</h3>
+        <p>Throw mines with Tick's explosive expertise. Master area denial and detachable head tactics.</p>
+        <a href="brawler-tick.html" class="btn">Read More</a>
+      </div>
+
+      <!-- Rare Brawlers -->
+      <div class="article-card" data-category="brawlers">
+        <img src="poco.jpg" alt="Poco - The Mariachi Musician brawler guide">
+        <h3>Poco</h3>
+        <p>Heal allies with Poco's musical magic. Master team support and sound wave piercing attacks.</p>
+        <a href="brawler-poco.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="rosa.jpg" alt="Rosa - The Botany Brawler guide">
+        <h3>Rosa</h3>
+        <p>Shield with plants using Rosa's botanical powers. Master damage reduction and extended melee tactics.</p>
+        <a href="brawler-rosa.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="elprimo.jpg" alt="El Primo - The Wrestler brawler guide">
+        <h3>El Primo</h3>
+        <p>Jump and punch with El Primo's wrestling might. Master aerial attacks and close-range combat tactics.</p>
+        <a href="brawler-elprimo.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="barley.jpg" alt="Barley - The Bartender brawler guide">
+        <h3>Barley</h3>
+        <p>Throw acid bottles with Barley's bartending skills. Master indirect attacks and area denial strategies.</p>
+        <a href="brawler-barley.html" class="btn">Read More</a>
+      </div>
+
+      <!-- Common/Trophy Road Brawlers -->
+      <div class="article-card" data-category="brawlers">
+        <img src="shelly.jpg" alt="Shelly - The Sheriff brawler guide">
+        <h3>Shelly</h3>
+        <p>Blast with shotgun power using Shelly's sheriff skills. Master close-range damage and wall-breaking tactics.</p>
+        <a href="brawler-shelly.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="nita.jpg" alt="Nita - The Bear Tamer brawler guide">
+        <h3>Nita</h3>
+        <p>Command Bruce the Bear with Nita's nature powers. Master pet control and piercing shockwave attacks.</p>
+        <a href="brawler-nita.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="colt.jpg" alt="Colt - The Sharpshooter brawler guide">
+        <h3>Colt</h3>
+        <p>Fire rapid bullets with Colt's sharpshooter precision. Master long-range tactics and bullet storm strategies.</p>
+        <a href="brawler-colt.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="bull.jpg" alt="Bull - The Berserker brawler guide">
+        <h3>Bull</h3>
+        <p>Charge through enemies with Bull's berserker fury. Master close-range power and charging tactics.</p>
+        <a href="brawler-bull.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="jessie.jpg" alt="Jessie - The Sharpshooter brawler guide">
+        <h3>Jessie</h3>
+        <p>Build turrets with Jessie's engineering skills. Master bouncing attacks and scrappy turret placement.</p>
+        <a href="brawler-jessie.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="brock.jpg" alt="Brock - The Rocket Launcher brawler guide">
+        <h3>Brock</h3>
+        <p>Launch explosive rockets with Brock's demolition expertise. Master area damage and long-range tactics.</p>
+        <a href="brawler-brock.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="dynamike.jpg" alt="Dynamike - The Demolitionist brawler guide">
+        <h3>Dynamike</h3>
+        <p>Throw dynamite with Mike's explosive mining skills. Master indirect attacks and delayed explosions.</p>
+        <a href="brawler-dynamike.html" class="btn">Read More</a>
+      </div>
+
+      <div class="article-card" data-category="brawlers">
+        <img src="bo.jpg" alt="Bo - The Eagle Hunter brawler guide">
+        <h3>Bo</h3>
+        <p>Set explosive traps with Bo's hunting expertise. Master mine placement and explosive arrow tactics.</p>
+        <a href="brawler-bo.html" class="btn">Read More</a>
       </div>
       
  </div>
