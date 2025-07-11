@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Brawlers - Brawl Stars Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0a0a23 0%, #1a1a3e 50%, #2d1b69 100%);
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #00d4ff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #00d4ff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #ff6b6b);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00d4ff, #ff6b6b, #4ecdc4);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(45deg, #00d4ff, #4ecdc4);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .brawler-count {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* Brawlers Grid */
+        .brawlers-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .brawlers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .brawler-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brawler-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #f39c12);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .brawler-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .brawler-card:hover::before {
+            opacity: 1;
+        }
+
+        .brawler-image-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .brawler-card:hover .brawler-image-container {
+            border-color: #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .brawler-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .difficulty-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            padding: 0.2rem 0.4rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .difficulty-easy { background: #2ecc71; }
+        .difficulty-medium { background: #f39c12; }
+        .difficulty-hard { background: #e74c3c; }
+
+        .brawler-info {
+            text-align: center;
+        }
+
+        .brawler-name {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .brawler-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .description-section {
+            margin-bottom: 1rem;
+        }
+
+        .brawler-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85rem;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            color: #00d4ff;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .abilities-section, .game-modes-section, .tips-section {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .abilities-list, .game-modes-list {
+            display: flex;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+        }
+
+        .ability-tag, .mode-tag {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .mode-tag {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            border-color: rgba(46, 204, 113, 0.3);
+        }
+
+        .tip-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8rem;
+            font-style: italic;
+            line-height: 1.3;
+        }
+
+        .brawler-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: white;
+        }
+
+        .rarity-legendary { color: #ff6b6b; }
+        .rarity-mythic { color: #e74c3c; }
+        .rarity-epic { color: #9b59b6; }
+        .rarity-super-rare { color: #3498db; }
+        .rarity-rare { color: #2ecc71; }
+        .rarity-common { color: #95a5a6; }
+
+        .view-guide-btn {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 15px;
+            background: linear-gradient(45deg, #00d4ff, #4ecdc4);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .view-guide-btn:hover {
+            background: linear-gradient(45deg, #4ecdc4, #00d4ff);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 4rem;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #4ecdc4;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.95);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                backdrop-filter: blur(10px);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .brawlers-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brawlers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #00d4ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                🎮 Brawl Stars Guide
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="all-brawlers.html" class="nav-link active">All Brawlers</a></li>
+                <li><a href="brawlstars-quiz.html" class="nav-link">Quiz</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">ALL BRAWLERS</h1>
+        <p class="hero-subtitle">Discover every brawler in the arena with detailed guides, stats, and strategies</p>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search brawlers..." id="searchInput">
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="legendary">Legendary</button>
+            <button class="filter-btn" data-filter="mythic">Mythic</button>
+            <button class="filter-btn" data-filter="epic">Epic</button>
+            <button class="filter-btn" data-filter="super-rare">Super Rare</button>
+            <button class="filter-btn" data-filter="rare">Rare</button>
+            <button class="filter-btn" data-filter="common">Common</button>
+        </div>
+        <div class="brawler-count">
+            Showing <span id="brawlerCount">0</span> brawlers
+        </div>
+    </section>
+
+    <!-- Loading Animation -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Loading brawlers...</p>
+    </div>
+
+    <!-- Brawlers Grid -->
+    <section class="brawlers-container">
+        <div class="brawlers-grid" id="brawlersGrid">
+            <!-- Brawler cards will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">&copy; 2024 Brawl Stars Guide. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="brawlstars-quiz.html" class="footer-link">Quiz</a>
+        </div>
+        <p class="footer-text">Made with ❤️ for Brawl Stars fans</p>
+    </footer>
+
+    <script>
+        // Brawlers data - Complete collection of all 87 brawlers with comprehensive SEO information
+        const brawlersData = [
+            // Legendary Brawlers
+            {
+                name: "Spike",
+                subtitle: "The Cactus Slinger",
+                type: "Damage Dealer",
+                rarity: "legendary",
+                health: "3360",
+                image: "spike.jpg",
+                page: "brawler-spike.html",
+                description: "Spike is a legendary brawler known for his explosive cactus grenades and area control abilities. His main attack shoots needle balls that explode on impact, dealing splash damage to multiple enemies. His Super creates a massive area of spikes that damages and slows enemies.",
+                abilities: ["Needle Grenade", "Stick Around!", "Fertilize", "Curveball"],
+                gameModesStrong: ["Gem Grab", "Bounty", "Heist", "Hot Zone"],
+                gameModesWeak: ["Brawl Ball", "Siege"],
+                tips: "Use walls for protection, control areas with your Super, excellent for zoning enemies",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2017"
+            },
+            {
+                name: "Leon",
+                subtitle: "The Stealthy Assassin",
+                type: "Assassin",
+                rarity: "legendary",
+                health: "3360",
+                image: "leon.jpg",
+                page: "brawler-leon.html",
+                description: "Leon is a legendary assassin brawler with invisibility powers. His main attack throws spinning blades that deal high damage at close range. His Super makes him invisible, allowing for surprise attacks and quick escapes from dangerous situations.",
+                abilities: ["Spinner Blades", "Smoke Trails", "Invisiheal", "Clone Projector"],
+                gameModesStrong: ["Showdown", "Gem Grab", "Bounty"],
+                gameModesWeak: ["Siege", "Heist"],
+                tips: "Ambush enemies from bushes, use invisibility to escape danger, excel in close-range combat",
+                attackRange: "Short-Medium",
+                difficulty: "Medium",
+                releaseDate: "2018"
+            },
+            {
+                name: "Crow",
+                subtitle: "The Poison Assassin",
+                type: "Assassin",
+                rarity: "legendary",
+                health: "2400",
+                image: "crow.jpg",
+                page: "brawler-crow.html",
+                description: "Crow is a legendary assassin brawler who specializes in poison damage and mobility. His main attack throws poisoned daggers that deal damage over time. His Super allows him to leap great distances while dropping poisoned daggers below.",
+                abilities: ["Switchblade", "Swoop", "Extra Toxic", "Carrion Crow"],
+                gameModesStrong: ["Showdown", "Bounty", "Gem Grab"],
+                gameModesWeak: ["Heist", "Siege"],
+                tips: "Maintain distance, use poison to weaken enemies, excellent mobility with Super",
+                attackRange: "Long",
+                difficulty: "Hard",
+                releaseDate: "2017"
+            },
+            {
+                name: "Sandy",
+                subtitle: "The Sleepy Support",
+                type: "Support",
+                rarity: "legendary",
+                health: "3360",
+                image: "sandy.jpg",
+                page: "brawler-sandy.html",
+                description: "Sandy is a legendary support brawler who controls the battlefield with sand storms. His main attack creates a sand tornado that pierces through enemies. His Super creates a massive sandstorm that makes all allies within it invisible.",
+                abilities: ["Pebble Blast", "Sandstorm", "Rude Sands", "Healing Winds"],
+                gameModesStrong: ["Gem Grab", "Brawl Ball", "Hot Zone"],
+                gameModesWeak: ["Bounty", "Heist"],
+                tips: "Use sandstorm for team invisibility, control lanes with piercing attack, support teammates",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2019"
+            },
+            {
+                name: "Amber",
+                subtitle: "The Fire Starter",
+                type: "Damage Dealer",
+                rarity: "legendary",
+                health: "2800",
+                image: "amber.jpg",
+                page: "brawler-amber.html",
+                description: "Amber is a legendary damage dealer who wields fire-based attacks. Her main attack creates a continuous stream of fire that can be directed at enemies. Her Super throws oil that spreads and can be ignited for massive area damage.",
+                abilities: ["Torch", "Wild Flames", "Scorchin' Siphon", "Dancing Flames"],
+                gameModesStrong: ["Heist", "Hot Zone", "Siege"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Control areas with fire stream, ignite oil pools for maximum damage, excellent at area denial",
+                attackRange: "Long",
+                difficulty: "Hard",
+                releaseDate: "2020"
+            },
+            {
+                name: "Meg",
+                subtitle: "The Mech Pilot",
+                type: "Damage Dealer",
+                rarity: "legendary",
+                health: "2800",
+                image: "meg.jpg",
+                page: "brawler-meg.html",
+                description: "Meg is a unique legendary brawler who transforms into a powerful mech suit. In her normal form, she has low health but high damage. When her Super charges, she enters her mech form with significantly increased health and different abilities.",
+                abilities: ["Mag Blast", "Heavy Metal", "Force Field", "Self Destruction"],
+                gameModesStrong: ["Gem Grab", "Brawl Ball", "Hot Zone"],
+                gameModesWeak: ["Bounty", "Heist"],
+                tips: "Survive to reach mech form, use transformation strategically, high risk high reward playstyle",
+                attackRange: "Medium-Long",
+                difficulty: "Hard",
+                releaseDate: "2021"
+            },
+            {
+                name: "Chester",
+                subtitle: "The Jester",
+                type: "Damage Dealer",
+                rarity: "legendary",
+                health: "3360",
+                image: "chester.jpg",
+                page: "brawler-chester.html",
+                description: "Chester is a legendary trickster brawler with unpredictable abilities. His main attack throws explosive bells that deal area damage. His Super cycles through different random effects, making him highly unpredictable in battle.",
+                abilities: ["Bells", "Candy Popper", "Bell o' Mania", "Spicy Dice"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Bounty", "Heist"],
+                tips: "Adapt to random Super effects, use unpredictability as advantage, control areas with bells",
+                attackRange: "Medium",
+                difficulty: "Hard",
+                releaseDate: "2022"
+            },
+            {
+                name: "Cordelius",
+                subtitle: "The Mushroom Guardian",
+                type: "Assassin",
+                rarity: "legendary",
+                health: "3360",
+                image: "cordelius.jpg",
+                page: "brawler-cordelius.html",
+                description: "Cordelius is a legendary assassin who can transport enemies to the shadow realm. His main attack shoots poison mushrooms that deal damage over time. His Super creates a portal that can drag enemies into a 1v1 shadow dimension.",
+                abilities: ["Poison Mushroom", "Shadow Realm", "Mushroom Garden", "Replanting"],
+                gameModesStrong: ["Showdown", "Gem Grab", "Knockout"],
+                gameModesWeak: ["Heist", "Siege"],
+                tips: "Use shadow realm for key eliminations, poison enemies for sustained damage, isolate threats",
+                attackRange: "Medium",
+                difficulty: "Hard",
+                releaseDate: "2023"
+            },
+            {
+                name: "Kit",
+                subtitle: "The Feline Fighter",
+                type: "Support",
+                rarity: "legendary",
+                health: "3360",
+                image: "kit.jpg",
+                page: "brawler-kit.html",
+                description: "Kit is a legendary support brawler with teleportation abilities. His main attack shoots energy blasts that can charge his Super faster when hitting enemies. His Super allows him to teleport and swap positions with allies.",
+                abilities: ["Cardboard Launcher", "Cheezy Whiz", "Overly Attached", "Chessy Clash"],
+                gameModesStrong: ["Gem Grab", "Brawl Ball", "Hot Zone"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use teleportation for positioning, support teammates with swaps, control battlefield movement",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2023"
+            },
+            {
+                name: "Draco",
+                subtitle: "The Dragon Warrior",
+                type: "Damage Dealer",
+                rarity: "legendary",
+                health: "3360",
+                image: "draco.jpg",
+                page: "brawler-draco.html",
+                description: "Draco is a legendary dragon-themed brawler with powerful fire attacks. His main attack shoots fireballs that explode on impact. His Super creates a devastating dragon breath attack that deals massive damage in a wide area.",
+                abilities: ["Dragon Breath", "Flame Thrower", "Fire Shield", "Dragon Rage"],
+                gameModesStrong: ["Heist", "Hot Zone", "Siege"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Control chokepoints with fire attacks, use dragon breath for area denial, high damage potential",
+                attackRange: "Medium-Long",
+                difficulty: "Medium",
+                releaseDate: "2024"
+            },
+            {
+                name: "Kenji",
+                subtitle: "The Samurai",
+                type: "Assassin",
+                rarity: "legendary",
+                health: "3360",
+                image: "kenji.jpg",
+                page: "brawler-kenji.html",
+                description: "Kenji is a legendary samurai assassin with swift sword attacks. His main attack is a quick dash that deals damage to enemies in his path. His Super creates multiple shadow clones that attack nearby enemies automatically.",
+                abilities: ["Dash Slash", "Shadow Clone", "Bushido", "Way of the Sword"],
+                gameModesStrong: ["Showdown", "Gem Grab", "Knockout"],
+                gameModesWeak: ["Heist", "Siege"],
+                tips: "Use dash for mobility and damage, deploy clones strategically, excel in close combat",
+                attackRange: "Short",
+                difficulty: "Hard",
+                releaseDate: "2024"
+            },
+            
+            // Mythic Brawlers
+            {
+                name: "Mortis",
+                subtitle: "The Dashing Assassin",
+                type: "Assassin",
+                rarity: "mythic",
+                health: "3360",
+                image: "mortis.jpg",
+                page: "brawler-mortis.html",
+                description: "Mortis is a dashing vampire-like assassin who can dash through enemies and drain their life force. His mobility and burst damage make him deadly against low-health brawlers, but he struggles against tanks and groups.",
+                abilities: ["Dash Attack", "Life Steal", "High Mobility", "Burst Damage"],
+                gameModesStrong: ["Gem Grab", "Bounty", "Brawl Ball"],
+                gameModesWeak: ["Heist", "Siege", "Hot Zone"],
+                tips: "Use Mortis to pick off low-health enemies and escape quickly. His dash can go through walls - use this for surprise attacks. Avoid tanky brawlers and groups of enemies.",
+                attackRange: "Melee",
+                difficulty: "Hard",
+                releaseDate: "2017"
+            },
+            {
+                name: "Tara",
+                subtitle: "The Mystic Fortune Teller",
+                type: "Skirmisher",
+                rarity: "mythic",
+                health: "3360",
+                image: "tara.jpg",
+                page: "brawler-tara.html",
+                description: "Tara is a mystical fortune teller who manipulates gravity and shadows to devastate her enemies. Her piercing cards can hit multiple targets, and her Super creates a devastating black hole that pulls enemies together.",
+                abilities: ["Piercing Attack", "Gravity Manipulation", "Shadow Clone", "Area Control"],
+                gameModesStrong: ["Gem Grab", "Bounty", "Brawl Ball", "Heist"],
+                gameModesWeak: ["Showdown", "Hot Zone"],
+                tips: "Use Tara's Super to group enemies for your team's AoE attacks. Her piercing cards excel at controlling choke points. Time her Shadow gadget for escapes or surprise attacks.",
+                attackRange: "Long",
+                difficulty: "Hard",
+                releaseDate: "2017"
+            },
+            {
+                name: "Gene",
+                subtitle: "The Magic Lamp Support",
+                type: "Support",
+                rarity: "mythic",
+                health: "3200",
+                image: "gene.jpg",
+                page: "brawler-gene.html",
+                description: "Gene is a mystical support brawler who wields ancient magic to heal allies and manipulate enemy positions. His lamp spirit can reach across the battlefield to pull unsuspecting enemies into danger.",
+                abilities: ["Healing Magic", "Enemy Displacement", "Spirit Control", "Team Support"],
+                gameModesStrong: ["Gem Grab", "Bounty", "Siege", "Hot Zone"],
+                gameModesWeak: ["Showdown", "Heist"],
+                tips: "Use Gene's hand to pull enemies out of cover or into your team. His healing is crucial for keeping tanks alive. Practice predicting enemy movement for successful pulls.",
+                attackRange: "Medium",
+                difficulty: "Very Hard",
+                releaseDate: "2019"
+            },
+            {
+                name: "Max",
+                subtitle: "The Super Speedy Brawler",
+                type: "Support",
+                rarity: "mythic",
+                health: "2800",
+                image: "max.jpg",
+                page: "brawler-max.html",
+                description: "Max is a high-energy brawler fueled by energy drinks who brings speed and chaos to the battlefield. Her rapid-fire attacks and speed-boosting Super can turn the tide of any match through superior mobility.",
+                abilities: ["High Movement Speed", "Rapid Fire", "Team Speed Boost", "Area Damage"],
+                gameModesStrong: ["Brawl Ball", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Heist", "Siege"],
+                tips: "Use Max's speed to dodge attacks and get better positioning. Her Super gives the entire team increased speed - use it for coordinated pushes or retreats.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2019"
+            },
+            {
+                name: "Mr. P",
+                subtitle: "The Business Penguin",
+                type: "Thrower",
+                rarity: "mythic",
+                health: "2800",
+                image: "mrp.jpg",
+                page: "brawler-mrp.html",
+                description: "Mr. P is a sophisticated hotel manager who commands an army of porter robots. His bouncing suitcases and spawning porters create constant pressure on enemies while controlling key map areas.",
+                abilities: ["Bouncing Projectiles", "Spawning Allies", "Map Control", "Persistent Pressure"],
+                gameModesStrong: ["Siege", "Hot Zone", "Gem Grab", "Heist"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Place porter spawn points strategically to control key areas. Mr. P's suitcases bounce over walls - use this for indirect attacks. Keep porter spawns active for constant map pressure.",
+                attackRange: "Long",
+                difficulty: "Hard",
+                releaseDate: "2020"
+            },
+            {
+                name: "Sprout",
+                subtitle: "The Wall Builder",
+                type: "Thrower",
+                rarity: "mythic",
+                health: "2400",
+                image: "sprout.jpg",
+                page: "brawler-sprout.html",
+                description: "Sprout is a nature-loving robot who controls the battlefield through strategic wall placement and explosive seeds. This thrower can reshape maps and create new tactical opportunities with organic barriers.",
+                abilities: ["Wall Creation", "Area Denial", "Indirect Attacks", "Map Control"],
+                gameModesStrong: ["Heist", "Siege", "Hot Zone", "Gem Grab"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Use Sprout's hedge walls to block enemy escapes or create cover for your team. Plant walls strategically to control choke points and reshape the battlefield to your advantage.",
+                attackRange: "Long",
+                difficulty: "Very Hard",
+                releaseDate: "2020"
+            },
+            {
+                name: "Byron",
+                subtitle: "The Healer/Poisoner",
+                type: "Support",
+                rarity: "mythic",
+                health: "2400",
+                image: "byron.jpg",
+                page: "brawler-byron.html",
+                description: "Byron is a dubious snake oil salesman who can both heal and harm with his mysterious concoctions. His piercing shots can heal allies or poison enemies, making positioning crucial for maximum effectiveness.",
+                abilities: ["Dual-Purpose Attacks", "Healing Over Time", "Poison Damage", "Piercing Shots"],
+                gameModesStrong: ["Gem Grab", "Bounty", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Showdown", "Heist"],
+                tips: "Position Byron behind cover to safely heal allies and damage enemies. His shots pierce through targets - line up multiple allies for efficient healing or enemies for maximum damage.",
+                attackRange: "Very Long",
+                difficulty: "Hard",
+                releaseDate: "2020"
+            },
+            {
+                name: "Squeak",
+                subtitle: "The Blob Thrower",
+                type: "Thrower",
+                rarity: "mythic",
+                health: "2800",
+                image: "squeak.jpg",
+                page: "brawler-squeak.html",
+                description: "Squeak is Colonel Ruffs' loyal canine companion who attacks with explosive sticky bombs. His delayed-damage projectiles stick to enemies and walls, creating area denial and strategic pressure points.",
+                abilities: ["Sticky Explosives", "Delayed Damage", "Area Control", "Wall Sticking"],
+                gameModesStrong: ["Hot Zone", "Siege", "Heist", "Gem Grab"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Squeak's bombs stick to enemies and explode after a delay - predict enemy movement. Use walls to bank shots around corners and create unexpected angles of attack.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2021"
+            },
+            {
+                name: "Lou",
+                subtitle: "The Snowcone Master",
+                type: "Sharpshooter",
+                rarity: "mythic",
+                health: "2800",
+                image: "lou.jpg",
+                page: "brawler-lou.html",
+                description: "Lou is a frosty snowcone vendor who freezes enemies with his icy attacks. His main attack shoots snowballs that slow enemies, and when they take enough freeze damage, they become completely frozen and unable to move.",
+                abilities: ["Freeze Effect", "Slowing Attacks", "Ice Block", "Area Control"],
+                gameModesStrong: ["Hot Zone", "Gem Grab", "Brawl Ball", "Knockout"],
+                gameModesWeak: ["Bounty", "Heist"],
+                tips: "Use Lou's freeze mechanic to lock down key enemies. His Super creates ice blocks for cover and area denial. Focus on slowing fast enemies first.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2020"
+            },
+            {
+                name: "Ruffs",
+                subtitle: "The Space Dog",
+                type: "Support",
+                rarity: "mythic",
+                health: "2800",
+                image: "ruffs.jpg",
+                page: "brawler-ruffs.html",
+                description: "Colonel Ruffs is a military space dog who supports his team with power-ups and supply drops. His main attack fires energy shots, and his Super drops a supply box that can boost ally damage significantly.",
+                abilities: ["Power-Up Supply", "Damage Boost", "Energy Shots", "Team Support"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Siege", "Brawl Ball"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Place supply drops strategically for teammates to collect. Ruffs works best supporting high-damage allies. Stay behind cover while supporting your team.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2021"
+            },
+            {
+                name: "Belle",
+                subtitle: "The Goldarm Gang Leader",
+                type: "Sharpshooter",
+                rarity: "mythic",
+                health: "2800",
+                image: "belle.jpg",
+                page: "brawler-belle.html",
+                description: "Belle is the leader of the Goldarm Gang, a sharpshooter who marks enemies for elimination. Her main attack deals extra damage on the second bounce, and her Super marks an enemy, making them take extra damage from all sources.",
+                abilities: ["Bouncing Shots", "Enemy Marking", "Damage Amplification", "Long Range"],
+                gameModesStrong: ["Bounty", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Heist", "Brawl Ball"],
+                tips: "Use walls to get optimal bounces for maximum damage. Mark high-priority targets with your Super. Belle excels at long-range engagements.",
+                attackRange: "Very Long",
+                difficulty: "Hard",
+                releaseDate: "2021"
+            },
+            {
+                name: "Buzz",
+                subtitle: "The Lifeguard",
+                type: "Assassin",
+                rarity: "mythic",
+                health: "4200",
+                image: "buzz.jpg",
+                page: "brawler-buzz.html",
+                description: "Buzz is a vigilant lifeguard who protects the beach with his torpedo attacks and rescue hook. His main attack shoots a torpedo that deals splash damage, and his Super hooks onto enemies to pull himself toward them.",
+                abilities: ["Torpedo Attack", "Hook Mechanics", "Splash Damage", "Gap Closing"],
+                gameModesStrong: ["Brawl Ball", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Bounty", "Heist"],
+                tips: "Use Buzz's hook to engage enemies or escape danger. His torpedo deals area damage - use it against grouped enemies. Time your hooks carefully for maximum impact.",
+                attackRange: "Medium",
+                difficulty: "Hard",
+                releaseDate: "2021"
+            },
+            {
+                name: "Ash",
+                subtitle: "The Trash Collector",
+                type: "Tank",
+                rarity: "mythic",
+                health: "5600",
+                image: "ash.jpg",
+                page: "brawler-ash.html",
+                description: "Ash is a rage-fueled trash collector who gets stronger as he takes damage. His main attack sweeps trash in a wide arc, and his rage meter increases his damage and speed as his health decreases.",
+                abilities: ["Rage Mechanic", "Sweeping Attack", "Damage Scaling", "Speed Boost"],
+                gameModesStrong: ["Brawl Ball", "Hot Zone", "Gem Grab", "Siege"],
+                gameModesWeak: ["Bounty", "Heist"],
+                tips: "Let Ash take damage to build rage and increase his power. Use his wide attack to hit multiple enemies. He becomes more dangerous at low health.",
+                attackRange: "Short",
+                difficulty: "Medium",
+                releaseDate: "2021"
+            },
+            {
+                name: "Lola",
+                subtitle: "The Drama Queen",
+                type: "Damage Dealer",
+                rarity: "mythic",
+                health: "2800",
+                image: "lola.jpg",
+                page: "brawler-lola.html",
+                description: "Lola is a dramatic actress who creates mirror images of herself for devastating combo attacks. Her main attack shoots energy blasts, and her Super creates an Ego clone that mimics her attacks.",
+                abilities: ["Clone Creation", "Mirror Attacks", "Double Damage", "Positioning Control"],
+                gameModesStrong: ["Gem Grab", "Bounty", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Brawl Ball", "Heist"],
+                tips: "Position Lola's Ego clone strategically for maximum damage. Use the clone to attack from multiple angles. Coordinate both characters for devastating combos.",
+                attackRange: "Long",
+                difficulty: "Very Hard",
+                releaseDate: "2021"
+            },
+            {
+                name: "Grom",
+                subtitle: "The Demolitions Expert",
+                type: "Thrower",
+                rarity: "mythic",
+                health: "3360",
+                image: "grom.jpg",
+                page: "brawler-grom.html",
+                description: "Grom is a demolitions expert who specializes in area denial with explosive devices. His main attack throws bombs that deal area damage, and his Super creates a massive radio-controlled explosion.",
+                abilities: ["Area Explosions", "Remote Detonation", "Wall Breaking", "Area Denial"],
+                gameModesStrong: ["Heist", "Hot Zone", "Siege", "Gem Grab"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Use Grom's explosives to break walls and control areas. His Super can be manually detonated for precise timing. Excellent for defending objectives.",
+                attackRange: "Long",
+                difficulty: "Hard",
+                releaseDate: "2021"
+            },
+            {
+                name: "Fang",
+                subtitle: "The Kung Fu Master",
+                type: "Assassin",
+                rarity: "mythic",
+                health: "3360",
+                image: "fang.jpg",
+                page: "brawler-fang.html",
+                description: "Fang is a martial arts master who chains together powerful kicks for devastating combos. His main attack is a flying kick that can chain to nearby enemies, and his Super allows him to reset and continue combos.",
+                abilities: ["Chain Attacks", "Flying Kicks", "Combo Potential", "High Mobility"],
+                gameModesStrong: ["Brawl Ball", "Gem Grab", "Knockout", "Hot Zone"],
+                gameModesWeak: ["Bounty", "Heist"],
+                tips: "Chain Fang's kicks between multiple enemies for maximum damage. Use walls and obstacles to extend combo chains. His Super resets kick chains for extended combos.",
+                attackRange: "Medium",
+                difficulty: "Hard",
+                releaseDate: "2022"
+            },
+            {
+                name: "Eve",
+                subtitle: "The Mother of Hatchlings",
+                type: "Damage Dealer",
+                rarity: "mythic",
+                health: "2800",
+                image: "eve.jpg",
+                page: "brawler-eve.html",
+                description: "Eve is an alien mother who spawns hatchlings to attack enemies. Her main attack shoots energy orbs that spawn baby hatchlings on impact, and her Super creates multiple hatchlings that seek out enemies.",
+                abilities: ["Hatchling Spawning", "Autonomous Minions", "Area Control", "Swarm Tactics"],
+                gameModesStrong: ["Hot Zone", "Gem Grab", "Siege", "Heist"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Use Eve's hatchlings to control multiple areas simultaneously. Her spawned units provide excellent map control. Focus on spawning hatchlings in key locations.",
+                attackRange: "Long",
+                difficulty: "Hard",
+                releaseDate: "2022"
+            },
+            {
+                name: "Janet",
+                subtitle: "The Stunt Double",
+                type: "Damage Dealer",
+                rarity: "mythic",
+                health: "2800",
+                image: "janet.jpg",
+                page: "brawler-janet.html",
+                description: "Janet is a fearless stunt double who performs aerial maneuvers and explosive attacks. Her main attack shoots energy blasts that deal consistent damage, and her Super allows her to fly across the battlefield while raining down projectiles.",
+                abilities: ["Aerial Flight", "Flying Attacks", "Long Range Shots", "Aerial Bombardment"],
+                gameModesStrong: ["Bounty", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Brawl Ball", "Heist"],
+                tips: "Use Janet's flight to reach high ground and avoid enemy attacks. Her aerial bombardment is excellent for controlling large areas. Keep distance and use her mobility advantage.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2022"
+            },
+            {
+                name: "Bonnie",
+                subtitle: "The Cannon Rider",
+                type: "Sharpshooter",
+                rarity: "mythic",
+                health: "2800",
+                image: "bonnie.jpg",
+                page: "brawler-bonnie.html",
+                description: "Bonnie is a young pirate who transforms between long-range and close-range combat modes. In her normal form, she shoots cannonballs from long range, but her Super allows her to ride Clyde the cannon for devastating close-range attacks.",
+                abilities: ["Dual Combat Modes", "Long Range Cannons", "Close Range Transformation", "High Mobility"],
+                gameModesStrong: ["Gem Grab", "Bounty", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Heist", "Siege"],
+                tips: "Switch between Bonnie's modes based on the situation. Use long-range mode for poking and close-range mode for finishing enemies. Her transformation provides excellent versatility.",
+                attackRange: "Variable",
+                difficulty: "Hard",
+                releaseDate: "2022"
+            },
+            {
+                name: "Otis",
+                subtitle: "The Artist",
+                type: "Sharpshooter",
+                rarity: "mythic",
+                health: "2800",
+                image: "otis.jpg",
+                page: "brawler-otis.html",
+                description: "Otis is a creative artist who silences enemies and controls the battlefield with his paint attacks. His main attack shoots ink blobs that deal damage, and his Super silences enemies, preventing them from using their attacks or Supers.",
+                abilities: ["Ink Attacks", "Enemy Silencing", "Ability Disruption", "Control Effects"],
+                gameModesStrong: ["Gem Grab", "Bounty", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Heist", "Brawl Ball"],
+                tips: "Use Otis's silence effect to disable dangerous enemy abilities. His paint attacks provide good poke damage. Focus on silencing key threats in team fights.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2022"
+            },
+            {
+                name: "Sam",
+                subtitle: "The Heavy Hitter",
+                type: "Assassin",
+                rarity: "mythic",
+                health: "4200",
+                image: "sam.jpg",
+                page: "brawler-sam.html",
+                description: "Sam is a powerful construction worker who wields a massive hammer for devastating close-range attacks. His main attack delivers crushing blows with extended range, and his Super allows him to grab and slam enemies.",
+                abilities: ["Heavy Hammer Attacks", "Extended Melee Range", "Enemy Grabbing", "High Damage"],
+                gameModesStrong: ["Brawl Ball", "Gem Grab", "Hot Zone", "Showdown"],
+                gameModesWeak: ["Bounty", "Siege"],
+                tips: "Use Sam's grab ability to pull enemies into danger or away from objectives. His hammer has good range for a melee brawler. Excellent for controlling key areas.",
+                attackRange: "Short-Medium",
+                difficulty: "Medium",
+                releaseDate: "2022"
+            },
+            {
+                name: "Gus",
+                subtitle: "The Ghost",
+                type: "Support",
+                rarity: "mythic",
+                health: "2400",
+                image: "gus.jpg",
+                page: "brawler-gus.html",
+                description: "Gus is a friendly ghost who provides shields and spirit support to his team. His main attack shoots spirit blasts that pierce through enemies, and his Super creates protective shields for allies that absorb damage.",
+                abilities: ["Spirit Attacks", "Shield Generation", "Ally Protection", "Piercing Shots"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Siege", "Brawl Ball"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Use Gus's shields to protect low-health allies during crucial moments. His piercing attacks can hit multiple enemies. Focus on supporting teammates rather than dealing damage.",
+                attackRange: "Medium",
+                difficulty: "Easy",
+                releaseDate: "2022"
+            },
+            {
+                name: "Buster",
+                subtitle: "The Projectionist",
+                type: "Tank",
+                rarity: "mythic",
+                health: "5600",
+                image: "buster.jpg",
+                page: "brawler-buster.html",
+                description: "Buster is a movie theater tank who blocks projectiles and charges into enemies. His main attack shoots film reels that deal damage, and his Super allows him to charge forward while becoming immune to projectiles.",
+                abilities: ["Projectile Immunity", "Charging Attack", "Film Reel Shots", "Damage Blocking"],
+                gameModesStrong: ["Brawl Ball", "Hot Zone", "Gem Grab", "Siege"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Buster's projectile immunity to tank enemy shots and protect teammates. His charge attack is excellent for engaging or escaping. Block damage for your team.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2022"
+            },
+            {
+                name: "Gray",
+                subtitle: "The Trickster",
+                type: "Support",
+                rarity: "mythic",
+                health: "2800",
+                image: "gray.jpg",
+                page: "brawler-gray.html",
+                description: "Gray is a mysterious portal master who manipulates space-time to transport allies and confuse enemies. His electromagnetic attacks and portal creation abilities offer unique tactical advantages and map control options.",
+                abilities: ["Portal Creation", "Ally Transportation", "Electromagnetic Damage", "Space Manipulation"],
+                gameModesStrong: ["Gem Grab", "Brawl Ball", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Bounty", "Heist"],
+                tips: "Use Gray's portals to give allies unexpected positioning advantages. His electromagnetic shots can hit multiple enemies - position for maximum damage. Portal placement is key to success.",
+                attackRange: "Medium",
+                difficulty: "Very Hard",
+                releaseDate: "2023"
+            },
+            {
+                name: "Mandy",
+                subtitle: "The Candy Shop Owner",
+                type: "Sharpshooter",
+                rarity: "mythic",
+                health: "2800",
+                image: "mandy.jpg",
+                page: "brawler-mandy.html",
+                description: "Mandy is a perfectionist candy maker who shoots focused energy beams with incredible precision. Her main attack focuses longer for more damage and range, and her Super creates a devastating focused beam that pierces through everything.",
+                abilities: ["Focused Energy Beams", "Precision Targeting", "Range Extension", "Piercing Shots"],
+                gameModesStrong: ["Bounty", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Brawl Ball", "Heist"],
+                tips: "Charge Mandy's shots for maximum damage and range. Her focused beam can eliminate multiple enemies in a line. Excellent for long-range eliminations.",
+                attackRange: "Very Long",
+                difficulty: "Hard",
+                releaseDate: "2023"
+            },
+            {
+                name: "R-T",
+                subtitle: "The Robot Duo",
+                type: "Support",
+                rarity: "mythic",
+                health: "3360",
+                image: "rt.jpg",
+                page: "brawler-rt.html",
+                description: "R-T is a dual robot system with R (rolling) and T (flying) working together. The main attack shoots energy blasts, and the Super transforms between different modes, providing versatility in combat and support roles.",
+                abilities: ["Dual Robot System", "Mode Transformation", "Energy Blasts", "Versatile Support"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Siege", "Brawl Ball"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Switch between R-T's modes based on the situation. Use their transformation ability to adapt to different combat scenarios. Excellent for providing team support.",
+                attackRange: "Medium",
+                difficulty: "Hard",
+                releaseDate: "2023"
+            },
+            {
+                name: "Willow",
+                subtitle: "The Mind Controller",
+                type: "Support",
+                rarity: "mythic",
+                health: "2800",
+                image: "willow.jpg",
+                page: "brawler-willow.html",
+                description: "Willow is a sinister mind controller who can take control of enemy brawlers and turn them against their own team. Her spore attacks and mind control Super create chaos and confusion on the battlefield.",
+                abilities: ["Mind Control", "Enemy Conversion", "Spore Damage", "Team Disruption"],
+                gameModesStrong: ["Gem Grab", "Bounty", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Showdown", "Heist"],
+                tips: "Use Willow's mind control on high-health enemies or those with dangerous Supers. Her spores deal damage over time - great for finishing off weakened enemies. Control high-value targets first.",
+                attackRange: "Medium",
+                difficulty: "Very Hard",
+                releaseDate: "2023"
+            },
+            {
+                name: "Maisie",
+                subtitle: "The Treasure Hunter",
+                type: "Sharpshooter",
+                rarity: "mythic",
+                health: "2800",
+                image: "maisie.jpg",
+                page: "brawler-maisie.html",
+                description: "Maisie is an adventurous treasure hunter who uses explosive traps and precise shots. Her main attack shoots bouncing projectiles, and her Super deploys motion-activated traps that provide area control and damage.",
+                abilities: ["Bouncing Projectiles", "Motion Traps", "Area Control", "Trap Deployment"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Bounty", "Siege"],
+                gameModesWeak: ["Brawl Ball", "Showdown"],
+                tips: "Place Maisie's traps in strategic locations to control enemy movement. Her bouncing shots can hit enemies around corners. Use traps to defend key areas.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2023"
+            },
+            {
+                name: "Hank",
+                subtitle: "The Bubble Blower",
+                type: "Tank",
+                rarity: "mythic",
+                health: "5600",
+                image: "hank.jpg",
+                page: "brawler-hank.html",
+                description: "Hank is a marine biologist tank who uses water-based attacks and bubble shields. His main attack shoots water blasts that deal damage, and his Super creates protective bubbles that shield allies from incoming damage.",
+                abilities: ["Water Blasts", "Bubble Shields", "Ally Protection", "Marine Combat"],
+                gameModesStrong: ["Hot Zone", "Gem Grab", "Siege", "Brawl Ball"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Hank's bubble shields to protect teammates during crucial moments. His water attacks provide consistent damage. Excellent for supporting your team in group fights.",
+                attackRange: "Medium",
+                difficulty: "Easy",
+                releaseDate: "2023"
+            },
+            {
+                name: "Pearl",
+                subtitle: "The Deep Sea Fighter",
+                type: "Damage Dealer",
+                rarity: "mythic",
+                health: "3360",
+                image: "pearl.jpg",
+                page: "brawler-pearl.html",
+                description: "Pearl is an underwater warrior who fights with her massive shell and marine abilities. Her main attack launches heavy shell projectiles that deal significant damage, and her Super creates a powerful whirlpool that pulls enemies toward the center.",
+                abilities: ["Shell Projectiles", "Whirlpool Vortex", "Marine Combat", "Underwater Mobility"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Knockout", "Siege"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Use Pearl's whirlpool Super to control enemy positioning and group them together. Her shell attacks deal heavy damage at close range. Best used in team fights.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2023"
+            },
+            {
+                name: "Larry & Lawrie",
+                subtitle: "The Security Duo",
+                type: "Damage Dealer",
+                rarity: "mythic",
+                health: "3360",
+                image: "lawrie.jpg",
+                page: "brawler-lawrie.html",
+                description: "Larry & Lawrie are a robotic security duo who work together to maintain order and eliminate threats. Larry provides surveillance and control while Lawrie delivers enforcement with powerful attacks. Their coordinated abilities make them formidable opponents in team scenarios.",
+                abilities: ["Dual Control", "Security Enforcement", "Surveillance System", "Coordinated Strikes"],
+                gameModesStrong: ["Hot Zone", "Gem Grab", "Siege", "Knockout"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Use Larry & Lawrie's teamwork to control key areas of the map. Their dual nature allows for versatile positioning. Coordinate with teammates for maximum effectiveness.",
+                attackRange: "Medium",
+                difficulty: "Hard",
+                releaseDate: "2023"
+            },
+            {
+                name: "Angelo",
+                subtitle: "The Flying Brawler",
+                type: "Damage Dealer",
+                rarity: "mythic",
+                health: "2800",
+                image: "angelo.jpg",
+                page: "brawler-angelo.html",
+                description: "Angelo is a celestial brawler who uses divine flight and heavenly attacks to dominate the battlefield. His main attack shoots holy projectiles that pierce through enemies, and his Super allows him to fly above obstacles and rain down divine judgment from above.",
+                abilities: ["Divine Flight", "Holy Projectiles", "Celestial Strike", "Heavenly Judgment"],
+                gameModesStrong: ["Bounty", "Knockout", "Hot Zone", "Gem Grab"],
+                gameModesWeak: ["Showdown", "Brawl Ball"],
+                tips: "Use Angelo's flight ability to escape dangerous situations and gain positional advantage. His piercing attacks excel at hitting multiple enemies. Stay mobile and use elevation to your advantage.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2023"
+            },
+            {
+                name: "Berry",
+                subtitle: "The Sweet Fighter",
+                type: "Assassin",
+                rarity: "mythic",
+                health: "3360",
+                image: "berry.jpg",
+                page: "brawler-berry.html",
+                description: "Berry is a sweet but deadly assassin who uses fruit-based attacks and sugar rush abilities. Her main attack shoots sticky berry projectiles that slow enemies, and her Super triggers a sugar rush that increases her speed and damage for a short duration.",
+                abilities: ["Berry Projectiles", "Sugar Rush", "Sticky Attacks", "Sweet Combos"],
+                gameModesStrong: ["Gem Grab", "Brawl Ball", "Knockout", "Hot Zone"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Berry's sugar rush Super to quickly close gaps and eliminate enemies. Her sticky attacks help control enemy movement. Best used for quick assassinations and escapes.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2023"
+            },
+            {
+                name: "Melodie",
+                subtitle: "The Musical Brawler",
+                type: "Assassin",
+                rarity: "mythic",
+                health: "3360",
+                image: "melodie.jpg",
+                page: "brawler-melodie.html",
+                description: "Melodie is a musical assassin who uses rhythmic attacks and sonic abilities to eliminate enemies. Her main attack shoots musical notes that increase in damage with each consecutive hit, and her Super creates a sound barrier that reflects enemy projectiles back at them.",
+                abilities: ["Musical Notes", "Rhythm Combos", "Sonic Reflection", "Sound Barriers"],
+                gameModesStrong: ["Gem Grab", "Brawl Ball", "Knockout", "Hot Zone"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Melodie's rhythm combos to build up damage over time. Her sonic reflection Super can turn enemy attacks against them. Best used for quick eliminations and defensive plays.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2023"
+            },
+            {
+                name: "Lily",
+                subtitle: "The Teleporter",
+                type: "Assassin",
+                rarity: "mythic",
+                health: "3360",
+                image: "lily.jpg",
+                page: "brawler-lily.html",
+                description: "Lily is a mystical assassin who uses teleportation and dimensional magic to outmaneuver enemies. Her main attack shoots energy bursts that mark enemies for teleportation, and her Super allows her to instantly teleport to any marked enemy and deal massive damage.",
+                abilities: ["Energy Bursts", "Teleportation", "Dimensional Magic", "Mark Targeting"],
+                gameModesStrong: ["Gem Grab", "Brawl Ball", "Knockout", "Hot Zone"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Lily's teleportation to surprise enemies and escape dangerous situations. Mark priority targets before engaging. Best used for quick assassinations and mobility plays.",
+                attackRange: "Medium",
+                difficulty: "Hard",
+                releaseDate: "2023"
+            },
+            {
+                name: "Clancy",
+                subtitle: "The Fish Fighter",
+                type: "Damage Dealer",
+                rarity: "mythic",
+                health: "3360",
+                image: "clancy.jpg",
+                page: "brawler-clancy.html",
+                description: "Clancy is an aquatic fighter who uses marine combat techniques and fish-based abilities. His main attack shoots schools of fish that deal damage over time, and his Super creates a tidal wave that pushes enemies away and deals significant damage.",
+                abilities: ["Fish Swarms", "Tidal Waves", "Marine Combat", "Aquatic Control"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Knockout", "Brawl Ball"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Clancy's fish swarms to apply continuous pressure on enemies. His tidal wave Super provides excellent crowd control. Best used in close to medium range combat.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2023"
+            },
+            {
+                name: "Moe",
+                subtitle: "The Tunnel Digger",
+                type: "Damage Dealer",
+                rarity: "mythic",
+                health: "3360",
+                image: "moe.jpg",
+                page: "brawler-moe.html",
+                description: "Moe is an underground specialist who uses tunneling abilities and earth-based attacks. His main attack shoots dirt projectiles that create temporary walls, and his Super allows him to dig underground tunnels for rapid movement and surprise attacks from below.",
+                abilities: ["Dirt Projectiles", "Underground Tunnels", "Wall Creation", "Surprise Attacks"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Knockout", "Brawl Ball"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Moe's tunneling ability to escape danger and reposition quickly. His dirt walls provide temporary cover for your team. Best used for flanking and ambush tactics.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2023"
+            },
+            {
+                name: "Juju",
+                subtitle: "The Spirit Summoner",
+                type: "Support",
+                rarity: "mythic",
+                health: "2800",
+                image: "juju.jpg",
+                page: "brawler-juju.html",
+                description: "Juju is a mystical spirit summoner who calls upon supernatural forces to aid in battle. Her main attack shoots spirit orbs that phase through walls and seek enemies, and her Super summons protective spirits that shield allies and provide area healing over time.",
+                abilities: ["Spirit Orbs", "Protective Spirits", "Phase Attacks", "Area Healing"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Siege", "Heist"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Use Juju's phase attacks to hit enemies behind cover. Her protective spirits provide excellent team support during pushes. Best used for sustained team fights and area control.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2023"
+            },
+            {
+                name: "Shade",
+                subtitle: "The Shadow Fighter",
+                type: "Assassin",
+                rarity: "mythic",
+                health: "3360",
+                image: "shade.jpg",
+                page: "brawler-shade.html",
+                description: "Shade is a shadow assassin who manipulates darkness and stealth to eliminate enemies silently. Her main attack shoots shadow projectiles that pierce through enemies and walls, and her Super allows her to become invisible for a short time, gaining increased movement speed and damage.",
+                abilities: ["Shadow Projectiles", "Invisibility", "Stealth Movement", "Darkness Control"],
+                gameModesStrong: ["Gem Grab", "Brawl Ball", "Knockout", "Hot Zone"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Shade's invisibility to surprise enemies and escape dangerous situations. Her piercing attacks excel at hitting multiple targets. Best used for stealth assassinations and flanking maneuvers.",
+                attackRange: "Medium",
+                difficulty: "Hard",
+                releaseDate: "2023"
+            },
+            
+            // Epic Brawlers
+            {
+                name: "Piper",
+                subtitle: "The Sharpshooter",
+                type: "Sharpshooter",
+                rarity: "epic",
+                health: "2400",
+                image: "piper.jpg",
+                page: "brawler-piper.html",
+                description: "Piper is an elegant sniper who deals devastating damage at long range. Her rifle shots deal more damage the farther they travel, and her Super allows her to escape danger with explosive grenades.",
+                abilities: ["Long Range Mastery", "Distance Damage Scaling", "Explosive Escape", "High Precision"],
+                gameModesStrong: ["Bounty", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Brawl Ball", "Heist"],
+                tips: "Keep maximum distance from enemies for highest damage. Use Piper's Super to escape close-range threats. Position behind cover and pick off low-health enemies.",
+                attackRange: "Very Long",
+                difficulty: "Hard",
+                releaseDate: "2017"
+            },
+            {
+                name: "Pam",
+                subtitle: "The Healing Machine",
+                type: "Support",
+                rarity: "epic",
+                health: "4200",
+                image: "pam.jpg",
+                page: "brawler-pam.html",
+                description: "Pam is a tough mechanic who provides healing support and devastating scrap metal attacks. Her main attack shoots a spread of scrap that deals high damage up close, and her Super deploys a healing turret for her team.",
+                abilities: ["Scrap Metal Attack", "Healing Turret", "High Health", "Team Support"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Siege", "Heist"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Place Pam's healing turret in strategic locations for maximum team benefit. Her scrap attack is deadly at close range. Use her high health to tank damage for the team.",
+                attackRange: "Medium",
+                difficulty: "Easy",
+                releaseDate: "2018"
+            },
+            {
+                name: "Frank",
+                subtitle: "The Heavy Hitter",
+                type: "Tank",
+                rarity: "epic",
+                health: "5600",
+                image: "frank.jpg",
+                page: "brawler-frank.html",
+                description: "Frank is a massive tank who deals devastating area damage with his hammer attacks. His main attack has a wind-up time but hits multiple enemies, and his Super creates a stunning shockwave across the battlefield.",
+                abilities: ["Area Damage", "Stunning Attacks", "High Health", "Crowd Control"],
+                gameModesStrong: ["Brawl Ball", "Hot Zone", "Gem Grab", "Siege"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Frank's attacks to hit multiple enemies at once. Time his wind-up carefully to avoid being interrupted. His Super can stun entire enemy teams.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2018"
+            },
+            {
+                name: "Bibi",
+                subtitle: "The Batter",
+                type: "Batter",
+                rarity: "epic",
+                health: "3360",
+                image: "bibi.jpg",
+                page: "brawler-bibi.html",
+                description: "Bibi is a street-smart batter who swings her bat with incredible force. Her main attack charges up for extra damage and knockback, and her Super launches a bubble that bounces and deals damage.",
+                abilities: ["Charging Attacks", "Knockback Effects", "Bubble Projectile", "Movement Speed"],
+                gameModesStrong: ["Brawl Ball", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Bounty", "Heist"],
+                tips: "Let Bibi's bat charge for maximum damage and knockback. Use her speed to close gaps quickly. Her bubble can control lanes and hit multiple enemies.",
+                attackRange: "Short",
+                difficulty: "Medium",
+                releaseDate: "2019"
+            },
+            {
+                name: "Bea",
+                subtitle: "The Bee",
+                type: "Sharpshooter",
+                rarity: "epic",
+                health: "2400",
+                image: "bea.jpg",
+                page: "brawler-bea.html",
+                description: "Bea is a bee-themed sharpshooter who gets stronger when enemies damage her. Her main attack shoots bee drones that deal normal damage, but after taking damage, her next shot becomes supercharged and deals massive damage.",
+                abilities: ["Supercharged Shot", "Bee Drones", "Damage Revenge", "Long Range Precision"],
+                gameModesStrong: ["Bounty", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Brawl Ball", "Heist"],
+                tips: "Let enemies hit Bea to activate her supercharged shot. Use her long range to stay safe while dealing damage. Her supercharged shot can eliminate most brawlers in one hit.",
+                attackRange: "Very Long",
+                difficulty: "Medium",
+                releaseDate: "2019"
+            },
+            {
+                name: "Nani",
+                subtitle: "The Remote Control",
+                type: "Sharpshooter",
+                rarity: "epic",
+                health: "2400",
+                image: "nani.jpg",
+                page: "brawler-nani.html",
+                description: "Nani is a robotic nanny who shoots energy orbs and controls a mechanical companion. Her main attack shoots three energy orbs in a triangular pattern, and her Super takes control of Peep, a flying robot that can deal massive damage.",
+                abilities: ["Triple Energy Orbs", "Remote Control", "Peep Drone", "Precision Targeting"],
+                gameModesStrong: ["Bounty", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Brawl Ball", "Heist"],
+                tips: "Master Nani's orb pattern for consistent hits. Use Peep strategically to eliminate key targets or check bushes. Her long range makes her excellent for controlling lanes.",
+                attackRange: "Very Long",
+                difficulty: "Very Hard",
+                releaseDate: "2020"
+            },
+            {
+                name: "Edgar",
+                subtitle: "The Parkour Pro",
+                type: "Assassin",
+                rarity: "epic",
+                health: "3360",
+                image: "edgar.jpg",
+                page: "brawler-edgar.html",
+                description: "Edgar is a parkour enthusiast who can leap over walls and heal while dealing damage. His main attack consists of rapid punches that heal him, and his Super allows him to jump over walls and obstacles.",
+                abilities: ["Life Steal Punches", "Wall Jumping", "Self Healing", "High Mobility"],
+                gameModesStrong: ["Showdown", "Gem Grab", "Brawl Ball", "Hot Zone"],
+                gameModesWeak: ["Bounty", "Siege"],
+                tips: "Use Edgar's jump to ambush enemies or escape danger. His punches heal him - stay aggressive in close combat. Excellent for assassinating low-health enemies.",
+                attackRange: "Short",
+                difficulty: "Medium",
+                releaseDate: "2020"
+            },
+            {
+                name: "Griff",
+                subtitle: "The Gift Shop Owner",
+                type: "Damage Dealer",
+                rarity: "epic",
+                health: "2800",
+                image: "griff.jpg",
+                page: "brawler-griff.html",
+                description: "Griff is a greedy gift shop owner who shoots coins and bills for profit. His main attack shoots a spread of coins that deal more damage at optimal range, and his Super throws a cashbox that bounces and deals area damage.",
+                abilities: ["Coin Spread Attack", "Optimal Range Damage", "Bouncing Cashbox", "Money Theme"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Bounty", "Knockout"],
+                gameModesWeak: ["Brawl Ball", "Heist"],
+                tips: "Maintain optimal range with Griff for maximum coin damage. His cashbox bounces for extra hits. Use his moderate range to stay safe while dealing consistent damage.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2021"
+            },
+            {
+                name: "Gale",
+                subtitle: "The Janitor",
+                type: "Support",
+                rarity: "epic",
+                health: "2800",
+                image: "gale.jpg",
+                page: "brawler-gale.html",
+                description: "Gale is an elderly janitor who uses wind-based attacks to control enemy movement. His main attack shoots snowballs that slow enemies, and his Super creates a powerful wind that pushes enemies away.",
+                abilities: ["Slowing Snowballs", "Wind Knockback", "Enemy Displacement", "Movement Control"],
+                gameModesStrong: ["Hot Zone", "Gem Grab", "Brawl Ball", "Siege"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Gale's wind to push enemies into walls or away from objectives. His slowing attack helps control enemy movement. Excellent for protecting teammates and objectives.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2020"
+            },
+            {
+                name: "Colette",
+                subtitle: "The Collector",
+                type: "Damage Dealer",
+                rarity: "epic",
+                health: "2800",
+                image: "colette.jpg",
+                page: "brawler-colette.html",
+                description: "Colette is an obsessive fan who deals percentage-based damage to enemies. Her main attack deals damage based on enemy's current health, and her Super dashes through enemies, dealing damage both ways.",
+                abilities: ["Percentage Damage", "Health-Based Scaling", "Dash Attack", "Fan Obsession"],
+                gameModesStrong: ["Showdown", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Heist", "Siege"],
+                tips: "Colette is excellent against high-health brawlers due to percentage damage. Use her dash to escape or chase enemies. Her damage scales with enemy health.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2020"
+            },
+            {
+                name: "Surge",
+                subtitle: "The Upgraded Hero",
+                type: "Damage Dealer",
+                rarity: "epic",
+                health: "2800",
+                image: "surge.jpg",
+                page: "brawler-surge.html",
+                description: "Surge is a superhero who upgrades his abilities throughout the match. His main attack shoots energy blasts that split when hitting enemies, and his Super teleports him and upgrades his abilities with each level.",
+                abilities: ["Splitting Energy Blasts", "Teleportation", "Ability Upgrades", "Progressive Power"],
+                gameModesStrong: ["Showdown", "Gem Grab", "Knockout", "Hot Zone"],
+                gameModesWeak: ["Heist", "Siege"],
+                tips: "Upgrade Surge by hitting enemies with his split shots. Each Super level makes him stronger. Use teleportation for positioning and escapes.",
+                attackRange: "Long",
+                difficulty: "Hard",
+                releaseDate: "2020"
+            },
+            {
+                name: "Emz",
+                subtitle: "The Zombie Influencer",
+                type: "Damage Dealer",
+                rarity: "epic",
+                health: "2800",
+                image: "emz.jpg",
+                page: "brawler-emz.html",
+                description: "Emz is a social media influencer zombie who creates toxic clouds around her. Her main attack creates a cloud of hairspray that deals damage over time, and her Super pushes enemies away while slowing them.",
+                abilities: ["Damage Over Time", "Area Control", "Enemy Pushback", "Slowing Effects"],
+                gameModesStrong: ["Hot Zone", "Gem Grab", "Brawl Ball", "Siege"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Emz's area damage to control multiple enemies at once. Her Super pushes enemies away and slows them. Excellent for area denial and crowd control.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2019"
+            },
+            {
+                name: "Stu",
+                subtitle: "The Stuntman",
+                type: "Damage Dealer",
+                rarity: "epic",
+                health: "2800",
+                image: "stu.jpg",
+                page: "brawler-stu.html",
+                description: "Stu is a daredevil stuntman who performs explosive tricks and maneuvers. His main attack shoots pyrotechnic blasts, and his Super allows him to dash forward while leaving a trail of fire behind him.",
+                abilities: ["Pyrotechnic Blasts", "Dash Attack", "Fire Trail", "High Mobility"],
+                gameModesStrong: ["Brawl Ball", "Gem Grab", "Hot Zone", "Knockout"],
+                gameModesWeak: ["Bounty", "Heist"],
+                tips: "Use Stu's dash to engage enemies or escape danger. His fire trail damages enemies who follow him. Great for hit-and-run tactics and quick repositioning.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2021"
+            },
+            {
+                name: "Doug",
+                subtitle: "The Hot Dog Vendor",
+                type: "Support",
+                rarity: "epic",
+                health: "3360",
+                image: "doug.jpg",
+                page: "brawler-doug.html",
+                description: "Doug is a friendly hotdog vendor who supports his team with healing stations and area damage. His mobile hotdog stand provides continuous healing while his hot sauce attacks create area denial zones.",
+                abilities: ["Healing Station", "Area Healing", "Hot Sauce Damage", "Mobile Support"],
+                gameModesStrong: ["Hot Zone", "Siege", "Gem Grab", "Heist"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Place Doug's hotdog stand in strategic locations for maximum team healing. His hot sauce creates area denial - use it to control choke points and objectives.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2023"
+            },
+            {
+                name: "Chuck",
+                subtitle: "The Train Conductor",
+                type: "Damage Dealer",
+                rarity: "epic",
+                health: "3360",
+                image: "chuck.jpg",
+                page: "brawler-chuck.html",
+                description: "Chuck is a spectral train conductor who can phase through walls and summon ghost trains. His supernatural mobility and piercing attacks make him a formidable damage dealer capable of surprise attacks.",
+                abilities: ["Wall Phasing", "Ghost Train", "Piercing Attacks", "Supernatural Mobility"],
+                gameModesStrong: ["Gem Grab", "Bounty", "Knockout", "Brawl Ball"],
+                gameModesWeak: ["Hot Zone", "Siege"],
+                tips: "Use Chuck's wall-phasing ability to escape danger or surprise enemies. His ghost train can travel through walls - use this for unexpected attacks and map control.",
+                attackRange: "Medium",
+                difficulty: "Hard",
+                releaseDate: "2023"
+            },
+            {
+                name: "Mico",
+                subtitle: "The Monkey Brawler",
+                type: "Assassin",
+                rarity: "epic",
+                health: "3360",
+                image: "mico.jpg",
+                page: "brawler-mico.html",
+                description: "Mico is an agile monkey assassin who excels at quick movements and acrobatic attacks. His main attack consists of rapid slashes, and his Super allows him to swing across the battlefield with incredible speed.",
+                abilities: ["Rapid Slashes", "Acrobatic Movement", "Swing Attack", "High Agility"],
+                gameModesStrong: ["Brawl Ball", "Gem Grab", "Knockout", "Hot Zone"],
+                gameModesWeak: ["Bounty", "Siege"],
+                tips: "Use Mico's mobility to quickly engage and disengage from fights. His swing ability is perfect for escaping danger or chasing low-health enemies. Excel in close-quarters combat.",
+                attackRange: "Short",
+                difficulty: "Medium",
+                releaseDate: "2024"
+            },
+            
+            // Super Rare Brawlers
+            {
+                name: "Penny",
+                subtitle: "The Plundering Pirate",
+                type: "Damage Dealer",
+                rarity: "super-rare",
+                health: "2800",
+                image: "penny.jpg",
+                page: "brawler-penny.html",
+                description: "Penny is a swashbuckling pirate who commands explosive cannons and coin bags. Her main attack shoots coin bags that split into multiple coins, and her Super deploys a powerful cannon turret that bombards the battlefield.",
+                abilities: ["Splitting Projectiles", "Cannon Turret", "Area Bombardment", "Map Control"],
+                gameModesStrong: ["Heist", "Siege", "Hot Zone", "Gem Grab"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Place Penny's cannon turret in strategic locations for maximum map control. Her coin bags split for extra damage - great against grouped enemies. Use cannon for area denial.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2018"
+            },
+            {
+                name: "Darryl",
+                subtitle: "The Barrel Bot",
+                type: "Tank",
+                rarity: "super-rare",
+                health: "4200",
+                image: "darryl.jpg",
+                page: "brawler-darryl.html",
+                description: "Darryl is a rolling robot pirate who shoots dual shotguns and can roll across the battlefield. His main attack fires two shotguns simultaneously, and his Super allows him to roll forward and break through walls.",
+                abilities: ["Dual Shotguns", "Rolling Attack", "Wall Breaking", "High Mobility"],
+                gameModesStrong: ["Brawl Ball", "Gem Grab", "Hot Zone", "Showdown"],
+                gameModesWeak: ["Bounty", "Siege"],
+                tips: "Use Darryl's roll to close gaps and escape danger. His dual shotguns deal massive close-range damage. Roll through walls for surprise attacks.",
+                attackRange: "Short",
+                difficulty: "Medium",
+                releaseDate: "2018"
+            },
+            {
+                name: "Carl",
+                subtitle: "The Geologist",
+                type: "Thrower",
+                rarity: "super-rare",
+                health: "3360",
+                image: "carl.jpg",
+                page: "brawler-carl.html",
+                description: "Carl is a geology enthusiast who throws a boomerang pickaxe that returns to him. His main attack throws a pickaxe that penetrates through enemies and returns, and his Super allows him to spin and move while throwing continuously.",
+                abilities: ["Boomerang Attack", "Penetrating Projectile", "Spinning Movement", "Continuous Damage"],
+                gameModesStrong: ["Hot Zone", "Gem Grab", "Brawl Ball", "Siege"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Position Carl to hit multiple enemies with his returning pickaxe. His Super allows movement while attacking - use for repositioning. Great for controlling lanes.",
+                attackRange: "Medium",
+                difficulty: "Medium",
+                releaseDate: "2019"
+            },
+            {
+                name: "Jacky",
+                subtitle: "The Demolition Worker",
+                type: "Tank",
+                rarity: "super-rare",
+                health: "4200",
+                image: "jacky.jpg",
+                page: "brawler-jacky.html",
+                description: "Jacky is a tough construction worker who swings her jackhammer in wide arcs. Her main attack hits all enemies around her in a 360-degree radius, and her Super pulls all nearby enemies toward her.",
+                abilities: ["360-Degree Attack", "Enemy Pulling", "Close Range Control", "Area Damage"],
+                gameModesStrong: ["Brawl Ball", "Hot Zone", "Gem Grab", "Showdown"],
+                gameModesWeak: ["Bounty", "Siege"],
+                tips: "Use Jacky's 360-degree attack to hit multiple enemies at once. Her Super pulls enemies into her range - perfect for close combat. Excellent in tight spaces.",
+                attackRange: "Short",
+                difficulty: "Easy",
+                releaseDate: "2020"
+            },
+            {
+                name: "8-Bit",
+                subtitle: "The Video Game",
+                type: "Sharpshooter",
+                rarity: "super-rare",
+                health: "3360",
+                image: "8bit.jpg",
+                page: "brawler-8bit.html",
+                description: "8-Bit is a retro arcade machine with devastating firepower but limited mobility. His main attack shoots powerful lasers with high damage, and his Super deploys a damage-boosting turret for his team.",
+                abilities: ["High Damage Output", "Damage Boost Turret", "Long Range", "Slow Movement"],
+                gameModesStrong: ["Heist", "Siege", "Hot Zone", "Gem Grab"],
+                gameModesWeak: ["Showdown", "Brawl Ball"],
+                tips: "Position 8-Bit carefully due to his slow speed. His damage boost turret benefits the entire team. Use his high damage to control long lanes.",
+                attackRange: "Very Long",
+                difficulty: "Medium",
+                releaseDate: "2019"
+            },
+            {
+                name: "Rico",
+                subtitle: "The Ricochet Robot",
+                type: "Sharpshooter",
+                rarity: "super-rare",
+                health: "2400",
+                image: "rico.jpg",
+                page: "brawler-rico.html",
+                description: "Rico is a bounty hunter robot who specializes in ricochet shots off walls. His main attack bounces off walls and gains damage with each bounce, and his Super fires multiple bouncing bullets in a spread pattern.",
+                abilities: ["Ricochet Shots", "Wall Bouncing", "Damage Amplification", "Indirect Attacks"],
+                gameModesStrong: ["Heist", "Bounty", "Hot Zone", "Gem Grab"],
+                gameModesWeak: ["Brawl Ball", "Showdown"],
+                tips: "Use walls to bounce Rico's shots for maximum damage. His bullets get stronger with each bounce. Master ricochet angles for indirect attacks.",
+                attackRange: "Long",
+                difficulty: "Hard",
+                releaseDate: "2017"
+            },
+            {
+                name: "Tick",
+                subtitle: "The Explosive Expert",
+                type: "Thrower",
+                rarity: "super-rare",
+                health: "2400",
+                image: "tick.jpg",
+                page: "brawler-tick.html",
+                description: "Tick is a bomb-throwing robot who specializes in area denial and indirect attacks. His main attack throws three mines that explode when enemies approach, and his Super detaches his head which chases and explodes on enemies.",
+                abilities: ["Mine Throwing", "Proximity Explosions", "Head Detachment", "Area Denial"],
+                gameModesStrong: ["Heist", "Hot Zone", "Siege", "Gem Grab"],
+                gameModesWeak: ["Showdown", "Brawl Ball"],
+                tips: "Use Tick's mines to control key areas and choke points. His detached head can chase enemies - use for finishing kills. Excellent for area denial and defense.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2019"
+            },
+            
+            // Rare Brawlers
+            {
+                name: "Poco",
+                subtitle: "The Mariachi Musician",
+                type: "Support",
+                rarity: "rare",
+                health: "3360",
+                image: "poco.jpg",
+                page: "brawler-poco.html",
+                description: "Poco is a musical skeleton who heals allies and damages enemies with his enchanted guitar. His main attack creates sound waves that pierce through enemies, and his Super heals all nearby allies simultaneously.",
+                abilities: ["Piercing Sound Waves", "Team Healing", "Musical Magic", "Support Specialist"],
+                gameModesStrong: ["Gem Grab", "Brawl Ball", "Hot Zone", "Siege"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Stay behind tanks and heal them with Poco's Super. His piercing attack can hit multiple enemies through walls. Focus on keeping teammates alive rather than dealing damage.",
+                attackRange: "Medium",
+                difficulty: "Easy",
+                releaseDate: "2017"
+            },
+            {
+                name: "Rosa",
+                subtitle: "The Botany Brawler",
+                type: "Tank",
+                rarity: "rare",
+                health: "4200",
+                image: "rosa.jpg",
+                page: "brawler-rosa.html",
+                description: "Rosa is a tough botanist who uses plant power to dominate close-range combat. Her main attack has extended reach with her plant fists, and her Super provides a damage-reducing shield made of thorny vines.",
+                abilities: ["Extended Melee Range", "Damage Reduction Shield", "Plant Power", "Close Combat"],
+                gameModesStrong: ["Brawl Ball", "Gem Grab", "Hot Zone", "Showdown"],
+                gameModesWeak: ["Bounty", "Siege"],
+                tips: "Use Rosa's shield to tank damage and get close to enemies. Her extended range helps in melee combat. Activate Super before engaging in team fights.",
+                attackRange: "Short",
+                difficulty: "Easy",
+                releaseDate: "2019"
+            },
+            {
+                name: "El Primo",
+                subtitle: "The Wrestler",
+                type: "Tank",
+                rarity: "rare",
+                health: "5600",
+                image: "elprimo.jpg",
+                page: "brawler-elprimo.html",
+                description: "El Primo is a masked wrestler who uses his fists and aerial attacks to dominate the arena. His main attack delivers powerful punches at close range, and his Super allows him to jump across the battlefield and land on enemies.",
+                abilities: ["High Health", "Jumping Attack", "Close Range Power", "Area Landing Damage"],
+                gameModesStrong: ["Brawl Ball", "Gem Grab", "Hot Zone", "Showdown"],
+                gameModesWeak: ["Bounty", "Siege"],
+                tips: "Use El Primo's jump to escape danger or surprise enemies. His high health makes him excellent for tanking damage. Get close to enemies for maximum punch damage.",
+                attackRange: "Short",
+                difficulty: "Easy",
+                releaseDate: "2017"
+            },
+            {
+                name: "Barley",
+                subtitle: "The Bartender",
+                type: "Thrower",
+                rarity: "rare",
+                health: "2400",
+                image: "barley.jpg",
+                page: "brawler-barley.html",
+                description: "Barley is a robotic bartender who throws bottles of corrosive acid over walls. His main attack lobs bottles that create puddles of damaging acid, and his Super throws multiple bottles in a wide spread pattern.",
+                abilities: ["Acid Damage Over Time", "Indirect Attacks", "Area Denial", "Wall Throwing"],
+                gameModesStrong: ["Heist", "Siege", "Hot Zone", "Gem Grab"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Use Barley's bottles to control areas and deny enemy movement. His acid deals damage over time - great for area denial. Throw over walls to hit hidden enemies.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2017"
+            },
+            
+            // Common Brawlers
+            {
+                name: "Shelly",
+                subtitle: "The Sheriff",
+                type: "Damage Dealer",
+                rarity: "common",
+                health: "3360",
+                image: "shelly.jpg",
+                page: "brawler-shelly.html",
+                description: "Shelly is the first brawler every player receives and a versatile damage dealer with a devastating close-range shotgun. Her main attack spreads pellets that deal massive damage up close, and her Super destroys walls and deals area damage.",
+                abilities: ["Shotgun Spread", "Wall Breaking", "Close Range Damage", "Area Destruction"],
+                gameModesStrong: ["Showdown", "Brawl Ball", "Hot Zone", "Gem Grab"],
+                gameModesWeak: ["Bounty", "Siege"],
+                tips: "Get close to enemies for maximum shotgun damage. Use Super to break walls and escape or chase enemies. Shelly excels in bushes and close-quarters combat.",
+                attackRange: "Short",
+                difficulty: "Easy",
+                releaseDate: "2017"
+            },
+            {
+                name: "Nita",
+                subtitle: "The Bear Tamer",
+                type: "Damage Dealer",
+                rarity: "common",
+                health: "3360",
+                image: "nita.jpg",
+                page: "brawler-nita.html",
+                description: "Nita is a nature-loving brawler who commands a powerful bear companion. Her main attack creates shockwaves that pierce through enemies, and her Super summons Bruce the Bear to attack enemies and tank damage.",
+                abilities: ["Piercing Shockwave", "Bear Summoning", "Pet Control", "Area Damage"],
+                gameModesStrong: ["Gem Grab", "Brawl Ball", "Hot Zone", "Heist"],
+                gameModesWeak: ["Bounty", "Showdown"],
+                tips: "Use Nita's bear to tank damage and distract enemies. Her piercing attack can hit multiple enemies - line them up for maximum damage. Bear provides excellent map control.",
+                attackRange: "Medium",
+                difficulty: "Easy",
+                releaseDate: "2017"
+            },
+            {
+                name: "Colt",
+                subtitle: "The Sharpshooter",
+                type: "Sharpshooter",
+                rarity: "common",
+                health: "2400",
+                image: "colt.jpg",
+                page: "brawler-colt.html",
+                description: "Colt is a classic sharpshooter who fires rapid bursts of bullets in a straight line. His main attack shoots multiple bullets that deal high damage, and his Super creates a devastating bullet storm that destroys walls.",
+                abilities: ["Rapid Fire", "Long Range", "Wall Breaking", "High DPS"],
+                gameModesStrong: ["Bounty", "Gem Grab", "Heist", "Hot Zone"],
+                gameModesWeak: ["Brawl Ball", "Showdown"],
+                tips: "Keep distance from enemies and aim carefully with Colt. His bullets can break walls - use this strategically. Excellent for controlling lanes and providing consistent damage.",
+                attackRange: "Very Long",
+                difficulty: "Medium",
+                releaseDate: "2017"
+            },
+            {
+                name: "Bull",
+                subtitle: "The Berserker",
+                type: "Tank",
+                rarity: "common",
+                health: "4200",
+                image: "bull.jpg",
+                page: "brawler-bull.html",
+                description: "Bull is a tanky berserker who charges into battle with his shotgun blazing. His main attack deals devastating close-range damage, and his Super allows him to charge through enemies and walls.",
+                abilities: ["Close Range Power", "Charging Attack", "Wall Breaking", "High Health"],
+                gameModesStrong: ["Brawl Ball", "Showdown", "Hot Zone", "Gem Grab"],
+                gameModesWeak: ["Bounty", "Siege"],
+                tips: "Use bushes to ambush enemies with Bull's high damage. His Super can break walls and escape danger. Stick to close-range combat for maximum effectiveness.",
+                attackRange: "Short",
+                difficulty: "Easy",
+                releaseDate: "2017"
+            },
+            {
+                name: "Jessie",
+                subtitle: "The Sharpshooter",
+                type: "Sharpshooter",
+                rarity: "common",
+                health: "2800",
+                image: "jessie.jpg",
+                page: "brawler-jessie.html",
+                description: "Jessie is a tech-savvy engineer who builds turrets and controls electricity. Her main attack bounces between enemies, and her Super deploys a powerful scrappy turret that provides area control.",
+                abilities: ["Bouncing Attacks", "Turret Deployment", "Chain Lightning", "Map Control"],
+                gameModesStrong: ["Heist", "Siege", "Hot Zone", "Gem Grab"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Place Jessie's turret strategically for maximum coverage. Her bouncing shots are deadly against grouped enemies. Use turret to control key map areas.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2017"
+            },
+            {
+                name: "Brock",
+                subtitle: "The Rocket Launcher",
+                type: "Sharpshooter",
+                rarity: "common",
+                health: "2400",
+                image: "brock.jpg",
+                page: "brawler-brock.html",
+                description: "Brock is an explosive demolitions expert who launches rockets from long range. His main attack fires rockets that deal area damage, and his Super creates a massive rocket barrage across the battlefield.",
+                abilities: ["Explosive Rockets", "Area Damage", "Long Range", "Wall Breaking"],
+                gameModesStrong: ["Bounty", "Gem Grab", "Heist", "Hot Zone"],
+                gameModesWeak: ["Brawl Ball", "Showdown"],
+                tips: "Use Brock's rockets to hit enemies behind cover. His area damage is excellent for controlling choke points. Keep maximum distance for safety.",
+                attackRange: "Very Long",
+                difficulty: "Medium",
+                releaseDate: "2017"
+            },
+            {
+                name: "Dynamike",
+                subtitle: "The Demolitionist",
+                type: "Thrower",
+                rarity: "common",
+                health: "2400",
+                image: "dynamike.jpg",
+                page: "brawler-dynamike.html",
+                description: "Dynamike is an old miner who throws explosive dynamite sticks over walls. His main attack lobs dynamite that explodes after a delay, and his Super creates a massive explosive barrel that deals huge area damage.",
+                abilities: ["Indirect Attacks", "Delayed Explosions", "Wall Throwing", "Area Control"],
+                gameModesStrong: ["Heist", "Siege", "Hot Zone", "Gem Grab"],
+                gameModesWeak: ["Showdown", "Bounty"],
+                tips: "Predict enemy movement with Dynamike's delayed explosions. Use walls to your advantage for indirect attacks. His Super can change the course of team fights.",
+                attackRange: "Long",
+                difficulty: "Hard",
+                releaseDate: "2017"
+            },
+            {
+                name: "Bo",
+                subtitle: "The Eagle Hunter",
+                type: "Sharpshooter",
+                rarity: "common",
+                health: "3360",
+                image: "bo.jpg",
+                page: "brawler-bo.html",
+                description: "Bo is a tribal hunter who sets explosive traps and fires explosive arrows. His main attack shoots arrows that spread and deal area damage, and his Super plants invisible mines that explode when enemies approach.",
+                abilities: ["Explosive Arrows", "Mine Traps", "Area Damage", "Stealth Traps"],
+                gameModesStrong: ["Gem Grab", "Hot Zone", "Bounty", "Siege"],
+                gameModesWeak: ["Brawl Ball", "Showdown"],
+                tips: "Place Bo's mines in bushes and choke points for maximum effectiveness. His arrows spread - great for hitting multiple enemies. Use mines to control map areas.",
+                attackRange: "Long",
+                difficulty: "Medium",
+                releaseDate: "2017"
+            }
+        ];
+
+        // DOM Elements
+        const searchInput = document.getElementById('searchInput');
+        const brawlersGrid = document.getElementById('brawlersGrid');
+        const brawlerCount = document.getElementById('brawlerCount');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const loading = document.getElementById('loading');
+
+        // State
+        let currentFilter = 'all';
+        let searchTerm = '';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showLoading();
+            setTimeout(() => {
+                hideLoading();
+                renderBrawlers();
+                updateBrawlerCount();
+            }, 1000);
+        });
+
+        // Navigation
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Search functionality
+        searchInput.addEventListener('input', (e) => {
+            searchTerm = e.target.value.toLowerCase();
+            renderBrawlers();
+            updateBrawlerCount();
+        });
+
+        // Filter functionality
+        filterButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                e.target.classList.add('active');
+                
+                currentFilter = e.target.dataset.filter;
+                renderBrawlers();
+                updateBrawlerCount();
+            });
+        });
+
+        // Show/Hide loading
+        function showLoading() {
+            loading.style.display = 'block';
+            brawlersGrid.style.display = 'none';
+        }
+
+        function hideLoading() {
+            loading.style.display = 'none';
+            brawlersGrid.style.display = 'grid';
+        }
+
+        // Render brawlers
+        function renderBrawlers() {
+            const filteredBrawlers = brawlersData.filter(brawler => {
+                const matchesFilter = currentFilter === 'all' || brawler.rarity === currentFilter;
+                const matchesSearch = brawler.name.toLowerCase().includes(searchTerm) ||
+                                    brawler.subtitle.toLowerCase().includes(searchTerm) ||
+                                    brawler.type.toLowerCase().includes(searchTerm) ||
+                                    brawler.rarity.toLowerCase().includes(searchTerm) ||
+                                    (brawler.description && brawler.description.toLowerCase().includes(searchTerm)) ||
+                                    (brawler.abilities && brawler.abilities.some(ability => ability.toLowerCase().includes(searchTerm))) ||
+                                    (brawler.gameModesStrong && brawler.gameModesStrong.some(mode => mode.toLowerCase().includes(searchTerm))) ||
+                                    (brawler.tips && brawler.tips.toLowerCase().includes(searchTerm)) ||
+                                    (brawler.attackRange && brawler.attackRange.toLowerCase().includes(searchTerm)) ||
+                                    (brawler.difficulty && brawler.difficulty.toLowerCase().includes(searchTerm));
+                
+                return matchesFilter && matchesSearch;
+            });
+
+            brawlersGrid.innerHTML = '';
+
+            filteredBrawlers.forEach((brawler, index) => {
+                const brawlerCard = createBrawlerCard(brawler);
+                brawlerCard.style.animationDelay = `${index * 0.1}s`;
+                brawlersGrid.appendChild(brawlerCard);
+            });
+        }
+
+        // Create brawler card
+        function createBrawlerCard(brawler) {
+            const card = document.createElement('div');
+            card.className = 'brawler-card';
+            card.style.animation = 'fadeInUp 0.6s ease-out forwards';
+            
+            // Create abilities list if available
+            const abilitiesHtml = brawler.abilities ? 
+                `<div class="abilities-section">
+                    <div class="section-title">Abilities</div>
+                    <div class="abilities-list">${brawler.abilities.slice(0, 2).map(ability => 
+                        `<span class="ability-tag">${ability}</span>`
+                    ).join('')}</div>
+                 </div>` : '';
+            
+            // Create game modes info if available
+            const gameModesHtml = brawler.gameModesStrong ? 
+                `<div class="game-modes-section">
+                    <div class="section-title">Best Game Modes</div>
+                    <div class="game-modes-list">${brawler.gameModesStrong.slice(0, 2).map(mode => 
+                        `<span class="mode-tag">${mode}</span>`
+                    ).join('')}</div>
+                 </div>` : '';
+            
+            // Create description if available
+            const descriptionHtml = brawler.description ? 
+                `<div class="description-section">
+                    <p class="brawler-description">${brawler.description.substring(0, 120)}...</p>
+                 </div>` : '';
+            
+            card.innerHTML = `
+                <div class="brawler-image-container">
+                    <img src="${brawler.image}" alt="${brawler.name} - ${brawler.subtitle} guide and tips" class="brawler-image" 
+                         onerror="this.src='https://via.placeholder.com/120x120/333/fff?text=${brawler.name.charAt(0)}'">
+                    ${brawler.difficulty ? `<div class="difficulty-badge difficulty-${brawler.difficulty.toLowerCase()}">${brawler.difficulty}</div>` : ''}
+                </div>
+                <div class="brawler-info">
+                    <h3 class="brawler-name">${brawler.name}</h3>
+                    <p class="brawler-subtitle">${brawler.subtitle}</p>
+                    ${descriptionHtml}
+                    <div class="brawler-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Type</div>
+                            <div class="stat-value">${brawler.type}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Rarity</div>
+                            <div class="stat-value rarity-${brawler.rarity}">${capitalizeRarity(brawler.rarity)}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Health</div>
+                            <div class="stat-value">${brawler.health}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Range</div>
+                            <div class="stat-value">${brawler.attackRange || getRole(brawler.type)}</div>
+                        </div>
+                    </div>
+                    ${abilitiesHtml}
+                    ${gameModesHtml}
+                    ${brawler.tips ? `<div class="tips-section"><div class="section-title">Quick Tip</div><p class="tip-text">${brawler.tips.substring(0, 80)}...</p></div>` : ''}
+                    <button class="view-guide-btn" onclick="window.location.href='${brawler.page}'" title="View complete ${brawler.name} guide with strategies, builds, and tips">
+                        View Complete Guide
+                    </button>
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Helper functions
+        function capitalizeRarity(rarity) {
+            return rarity.split('-').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1)
+            ).join(' ');
+        }
+
+        function getRole(type) {
+            const roles = {
+                'Damage Dealer': 'DPS',
+                'Sharpshooter': 'Ranged',
+                'Heavyweight': 'Tank',
+                'Assassin': 'Stealth',
+                'Support': 'Healer',
+                'Thrower': 'Area',
+                'Skirmisher': 'Fighter',
+                'Batter': 'Melee'
+            };
+            return roles[type] || 'Fighter';
+        }
+
+        function updateBrawlerCount() {
+            const filteredBrawlers = brawlersData.filter(brawler => {
+                const matchesFilter = currentFilter === 'all' || brawler.rarity === currentFilter;
+                const matchesSearch = brawler.name.toLowerCase().includes(searchTerm) ||
+                                    brawler.subtitle.toLowerCase().includes(searchTerm) ||
+                                    brawler.type.toLowerCase().includes(searchTerm) ||
+                                    brawler.rarity.toLowerCase().includes(searchTerm);
+                
+                return matchesFilter && matchesSearch;
+            });
+
+            brawlerCount.textContent = filteredBrawlers.length;
+        }
+
+        // Add CSS animation for cards
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+            
+            if (e.key === '/' && e.target !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+
+        // Performance optimization: Lazy loading for images
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '50px'
+        };
+
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Add some interactive particles for visual appeal
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '1';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            particle.style.opacity = '0.7';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px) translateX(0px)', opacity: 0.7 },
+                { transform: `translateY(-${window.innerHeight + 100}px) translateX(${(Math.random() - 0.5) * 200}px)`, opacity: 0 }
+            ], {
+                duration: 3000 + Math.random() * 2000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 2000);
+    </script>
+</body>
+</html>
