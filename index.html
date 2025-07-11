@@ -3138,7 +3138,6 @@ let isDragging = false;
 function handleTouchStart(e) {
   startX = e.touches[0].clientX;
   isDragging = true;
-  stopAutoScroll();
 }
 
 function handleTouchMove(e) {
@@ -3161,26 +3160,21 @@ function handleTouchEnd() {
   }
   
   isDragging = false;
-  startAutoScroll();
 }
 
 // Keyboard navigation
 function handleKeydown(e) {
   if (e.key === 'ArrowLeft') {
     scrollGallery(-1);
-    stopAutoScroll();
-    setTimeout(startAutoScroll, 1000);
   } else if (e.key === 'ArrowRight') {
     scrollGallery(1);
-    stopAutoScroll();
-    setTimeout(startAutoScroll, 1000);
   }
 }
 
 // Initialize everything when the page loads
 document.addEventListener('DOMContentLoaded', function() {
   initGallery();
-  startAutoScroll();
+  // Removed auto-scroll initialization
   
   // Add event listeners
   const gallery = document.getElementById('quiz-gallery');
@@ -3188,10 +3182,7 @@ document.addEventListener('DOMContentLoaded', function() {
   gallery.addEventListener('touchmove', handleTouchMove, { passive: true });
   gallery.addEventListener('touchend', handleTouchEnd);
   
-  // Pause auto-scroll on hover
-  const galleryWrapper = document.querySelector('.quiz-gallery-wrapper');
-  galleryWrapper.addEventListener('mouseenter', stopAutoScroll);
-  galleryWrapper.addEventListener('mouseleave', startAutoScroll);
+  // Removed auto-scroll pause/resume on hover
   
   // Keyboard navigation
   document.addEventListener('keydown', handleKeydown);
@@ -3199,8 +3190,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update on window resize
   window.addEventListener('resize', () => {
     updateVisibleCards();
-    createDots();
-    currentScrollPosition = 0;
     scrollToPosition(0);
   });
   
