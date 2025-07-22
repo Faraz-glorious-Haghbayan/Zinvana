@@ -57,37 +57,13 @@
       "name": "Which YouTuber Are You? Ultimate Personality Quiz 2025",
       "description": "The most comprehensive and accurate YouTuber personality assessment featuring 50+ top creators including PewDiePie, MrBeast, Emma Chamberlain, KSI, Logan Paul, Markiplier, James Charles, and more. Discover your content creation style, personality match, and creator potential.",
       "url": "https://zinvana.com/youtubers-personality-quiz.html",
-      "author": {
-        "@type": "Organization",
-        "name": "Zinvana",
-        "url": "https://zinvana.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://zinvana.com/zinvanalogo.png"
+        .answer:hover {
+            background: #e8f0fe;
+            border-color: #3b82f6;
+            color: #111;
+            box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+            transform: translateY(-1px);
         }
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Zinvana",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://zinvana.com/zinvanalogo.png",
-          "width": 200,
-          "height": 200
-        }
-      },
-      "datePublished": "2025-01-01",
-      "dateModified": "2025-07-15",
-      "inLanguage": "en-US",
-      "isAccessibleForFree": true,
-      "learningResourceType": "Quiz",
-      "educationalLevel": "General",
-      "timeRequired": "PT3M",
-      "interactionStatistic": {
-        "@type": "InteractionCounter",
-        "interactionType": "https://schema.org/TakeAction",
-        "userInteractionCount": 2000000
-      },
       "mainEntity": {
         "@type": "Question",
         "name": "Which YouTuber personality matches yours perfectly?",
@@ -1549,23 +1525,23 @@
         }
 
         .answer {
-            background: rgba(15, 23, 42, 0.7);
+            background: rgba(15, 23, 42, 0.07);
             border: 2px solid rgba(59, 130, 246, 0.3);
             border-radius: 18px;
             padding: 25px 30px;
             cursor: pointer;
             transition: all 0.1s ease;
             font-size: 1.1em;
-            color: #e2e8f0;
+            color: #111;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .answer:hover {
-            background: rgba(59, 130, 246, 0.1);
-            border-color: rgba(59, 130, 246, 0.6);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
-            color: #f8fafc;
+            background: #e8f0fe;
+            border-color: #3b82f6;
+            color: #111;
+            box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+            transform: translateY(-1px);
         }
 
         .answer::before {
@@ -1582,13 +1558,7 @@
             transition: left 0.6s ease;
         }
 
-        .answer:hover {
-            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
-            border-color: #3b82f6;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+        /* Remove duplicate/gradient hover for .answer */
 
         .answer:hover::before {
             left: 100%;
@@ -5301,80 +5271,27 @@
             }
         }
 
-        // Add some visual enhancements
+        // Simplified answer click/hover effects for performance
         document.addEventListener('DOMContentLoaded', function() {
-            // Add click effects to answers
             document.querySelectorAll('.answer').forEach(answer => {
                 answer.addEventListener('click', function() {
-                    // Create ripple effect
-                    const ripple = document.createElement('span');
-                    ripple.style.position = 'absolute';
-                    ripple.style.borderRadius = '50%';
-                    ripple.style.background = 'rgba(255, 255, 255, 0.6)';
-                    ripple.style.transform = 'scale(0)';
-                    ripple.style.animation = 'ripple 0.6s linear';
-                    ripple.style.left = '50%';
-                    ripple.style.top = '50%';
-                    ripple.style.width = '20px';
-                    ripple.style.height = '20px';
-                    ripple.style.marginLeft = '-10px';
-                    ripple.style.marginTop = '-10px';
-                    
-                    this.appendChild(ripple);
-                    
-                    // Enhanced visual feedback
-                    this.style.background = 'linear-gradient(145deg, #ff0000 0%, #ff3333 30%, #ff6666 60%, #e60000 100%)';
+                    this.style.background = '#e60000';
                     this.style.color = 'white';
-                    this.style.transform = 'scale(0.98) rotateX(2deg)';
-                    this.style.boxShadow = '0 8px 25px rgba(255, 0, 0, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.5)';
-                    
                     setTimeout(() => {
                         this.style.background = '';
                         this.style.color = '';
-                        this.style.transform = '';
-                        this.style.boxShadow = '';
-                        ripple.remove();
-                    }, 300);
+                    }, 200);
                 });
-                
-                // Add hover sound effect simulation
                 answer.addEventListener('mouseenter', function() {
-                    this.style.filter = 'brightness(1.1)';
+                    this.style.background = '#ffeaea';
                 });
-                
                 answer.addEventListener('mouseleave', function() {
-                    this.style.filter = '';
+                    this.style.background = '';
                 });
             });
-            
-            // Add scroll reveal effects for mobile
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe answer elements
-            document.querySelectorAll('.answer').forEach(answer => {
-                answer.style.opacity = '0';
-                answer.style.transform = 'translateY(20px)';
-                answer.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(answer);
-            });
-            
-            // Add particle effect to background
-            createParticleEffect();
         });
         
-        // Add CSS for ripple effect
+        // Ripple effect CSS only (particle CSS removed for performance)
         const style = document.createElement('style');
         style.textContent = `
             @keyframes ripple {
@@ -5383,103 +5300,14 @@
                     opacity: 0;
                 }
             }
-            
-            .particle {
-                position: fixed;
-                pointer-events: none;
-                width: 4px;
-                height: 4px;
-                background: radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, rgba(255, 0, 0, 0) 70%);
-                border-radius: 50%;
-                /* animation removed for performance */
-                z-index: -1;
-            }
-            
-            @keyframes float {
-                0% {
-                    transform: translateY(100vh) rotate(0deg);
-                    opacity: 0;
-                }
-                10% {
-                    opacity: 1;
-                }
-                90% {
-                    opacity: 1;
-                }
-                100% {
-                    transform: translateY(-100px) rotate(360deg);
-                    opacity: 0;
-                }
-            }
         `;
         document.head.appendChild(style);
         
         // Advanced Visual Enhancement Features
         
-        // Enhanced particle effect function with better colors
-        function createParticleEffect() {
-            function createParticle() {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Use brand colors instead of red
-                const colors = [
-                    'rgba(102, 126, 234, 0.8)',
-                    'rgba(118, 75, 162, 0.8)',
-                    'rgba(240, 147, 251, 0.8)',
-                    'rgba(79, 172, 254, 0.8)'
-                ];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                
-                particle.style.left = Math.random() * 100 + 'vw';
-                particle.style.animationDelay = Math.random() * 15 + 's';
-                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
-                particle.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
-                particle.style.boxShadow = `0 0 10px ${color}`;
-                document.body.appendChild(particle);
-                
-                setTimeout(() => {
-                    if (particle.parentNode) {
-                        particle.remove();
-                    }
-                }, 25000);
-            }
-            
-            // Create initial particles
-            for (let i = 0; i < 12; i++) {
-                setTimeout(createParticle, i * 1500);
-            }
-            
-            // Continue creating particles
-            setInterval(createParticle, 2500);
-        }
+        // Particle effect function removed for performance
         
-        // Add dynamic cursor effects
-        document.addEventListener('mousemove', function(e) {
-            if (window.innerWidth > 768) { // Only on desktop
-                const cursor = document.createElement('div');
-                cursor.style.cssText = `
-                    position: fixed;
-                    width: 6px;
-                    height: 6px;
-                    background: linear-gradient(135deg, #667eea, #764ba2);
-                    border-radius: 50%;
-                    pointer-events: none;
-                    z-index: 9999;
-                    left: ${e.clientX - 3}px;
-                    top: ${e.clientY - 3}px;
-                    opacity: 0.9;
-                    animation: cursorTrail 1s ease-out forwards;
-                `;
-                document.body.appendChild(cursor);
-                
-                setTimeout(() => {
-                    if (cursor.parentNode) {
-                        cursor.remove();
-                    }
-                }, 1000);
-            }
-        });
+        // Dynamic cursor effects removed for performance
         
         // Enhanced button interactions
         document.querySelectorAll('.start-btn, .restart-btn').forEach(btn => {
@@ -5694,38 +5522,7 @@
             });
         });
 
-        // Enhanced entrance animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-
-        // Observe sections for animations
-        document.querySelectorAll('.faq-section, .about-section, .footer-pro, .seo-content').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            observer.observe(section);
-        });
-
-        // Add CSS for fade in animation
-        const animationStyle = document.createElement('style');
-        animationStyle.textContent = `
-            @keyframes fadeInUp {
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        `;
-        document.head.appendChild(animationStyle);
+        // Section entrance animations removed for performance
     </script>
 
 </body>
