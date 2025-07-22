@@ -2269,7 +2269,7 @@
                 name: "Darryl",
                 type: "Tank",
                 emoji: "🏴‍☠️",
-                traits: ["adventurous", "mobile", "resilient", "independent", "rolling"],
+                traits: ["adventurous", "mobile", "resilient", "independent", "adaptable"],
                 description: "You're adventurous and resilient, always rolling with the punches! Like Darryl, you can adapt to any situation and aren't afraid to dive into danger.",
                 personality: [
                     { icon: "🏴‍☠️", trait: "Adventurous spirit" },
@@ -2295,7 +2295,7 @@
                 name: "Rosa",
                 type: "Tank",
                 emoji: "🌹",
-                traits: ["protective", "scientific", "caring", "thorny", "growing"],
+                traits: ["protective", "scientific", "caring", "tough", "nurturing"],
                 description: "You're protective and scientific, with a caring nature that has thorns when needed. Like Rosa, you're constantly growing and learning while protecting what you love.",
                 personality: [
                     { icon: "🌹", trait: "Beautiful but thorny" },
@@ -2323,7 +2323,7 @@
                 name: "Leon",
                 type: "Assassin", 
                 emoji: "🥷",
-                traits: ["stealthy", "agile", "young", "mischievous", "invisible"],
+                traits: ["stealthy", "agile", "mischievous", "quick", "cunning"],
                 description: "You're agile and mischievous with a talent for disappearing when things get tough. Like Leon, you prefer to stay hidden and strike when least expected.",
                 personality: [
                     { icon: "👻", trait: "Master of invisibility" },
@@ -2336,7 +2336,7 @@
                 name: "Sandy",
                 type: "Support",
                 emoji: "💤",
-                traits: ["sleepy", "mysterious", "supportive", "dreamy", "sandy"],
+                traits: ["peaceful", "mysterious", "supportive", "calm", "patient"],
                 description: "You're laid-back and mysterious, preferring to support others from behind a veil of mystery. Like Sandy, you're always a little sleepy but incredibly powerful when you need to be.",
                 personality: [
                     { icon: "💤", trait: "Relaxed personality" },
@@ -2405,7 +2405,7 @@
                 name: "Tick",
                 type: "Thrower",
                 emoji: "💣",
-                traits: ["persistent", "annoying", "explosive", "small", "tenacious"],
+                traits: ["persistent", "determined", "explosive", "tenacious", "competitive"],
                 description: "You're persistent and tenacious, never giving up even when others find you annoying. Like Tick, you may be small but you pack a big punch and stick to your goals.",
                 personality: [
                     { icon: "🔄", trait: "Never gives up" },
@@ -2485,7 +2485,7 @@
                 name: "Sprout",
                 type: "Thrower",
                 emoji: "🌱",
-                traits: ["growing", "protective", "natural", "barrier-building", "green"],
+                traits: ["growing", "protective", "caring", "strategic", "nurturing"],
                 description: "You're constantly growing and learning, with a natural protective instinct. Like Sprout, you know how to create barriers and safe spaces for others to flourish.",
                 personality: [
                     { icon: "🌱", trait: "Always growing" },
@@ -2500,7 +2500,7 @@
                 name: "Spike",
                 type: "Sharpshooter",
                 emoji: "🌵",
-                traits: ["quiet", "spiky", "desert-dwelling", "unique", "prickly"],
+                traits: ["quiet", "unique", "independent", "patient", "caring"],
                 description: "You're quiet and unique with a prickly exterior but a kind heart. Like Spike, you prefer to let your actions speak louder than words and you're perfectly comfortable being different.",
                 personality: [
                     { icon: "🌵", trait: "Unique and special" },
@@ -2553,7 +2553,7 @@
                 name: "Leon",
                 type: "Assassin",
                 emoji: "🦎",
-                traits: ["invisible", "quick", "mischievous", "adaptive", "chameleon-like"],
+                traits: ["stealthy", "quick", "mischievous", "adaptive", "clever"],
                 description: "You're adaptable and mischievous with the ability to blend into any situation. Like Leon, you're quick-thinking and know when to strike and when to disappear.",
                 personality: [
                     { icon: "👻", trait: "Master of stealth" },
@@ -2566,7 +2566,7 @@
                 name: "Amber",
                 type: "Skirmisher",
                 emoji: "🔥",
-                traits: ["fiery", "passionate", "continuous", "burning", "intense"],
+                traits: ["passionate", "intense", "energetic", "determined", "powerful"],
                 description: "You're fiery and passionate with an intense personality that burns bright. Like Amber, you bring warmth and energy to everything you do, but you can also be overwhelming.",
                 personality: [
                     { icon: "🔥", trait: "Passionate nature" },
@@ -2579,7 +2579,7 @@
                 name: "Meg",
                 type: "Damage Dealer",
                 emoji: "🤖",
-                traits: ["mechanical", "evolving", "powerful", "technological", "transforming"],
+                traits: ["intelligent", "evolving", "powerful", "analytical", "adaptable"],
                 description: "You're mechanical and constantly evolving, always looking to upgrade yourself. Like Meg, you start small but have the potential to become incredibly powerful.",
                 personality: [
                     { icon: "🤖", trait: "Tech enthusiast" },
@@ -2594,7 +2594,7 @@
                 name: "Gale",
                 type: "Support",
                 emoji: "❄️",
-                traits: ["cool", "maintenance", "organized", "systematic", "weathered"],
+                traits: ["calm", "organized", "systematic", "methodical", "reliable"],
                 description: "You're cool-headed and systematic, always maintaining order wherever you go. Like Gale, you prefer to keep things clean and organized, and you're not afraid of hard work.",
                 personality: [
                     { icon: "❄️", trait: "Cool under pressure" },
@@ -2725,27 +2725,100 @@
         }
 
         function calculateResult() {
-            // Find the brawler with the most matching traits
-            let bestMatch = null;
-            let highestScore = 0;
+            // First, analyze trait frequency across all brawlers to identify rare traits
+            const traitFrequency = {};
+            const totalBrawlers = Object.keys(brawlers).length;
             
-            Object.entries(brawlers).forEach(([key, brawler]) => {
-                let score = 0;
+            Object.values(brawlers).forEach(brawler => {
                 brawler.traits.forEach(trait => {
-                    score += userTraits[trait] || 0;
+                    traitFrequency[trait] = (traitFrequency[trait] || 0) + 1;
                 });
-                
-                // Add bonus for exact trait matches
-                const exactMatches = brawler.traits.filter(trait => (userTraits[trait] || 0) > 0).length;
-                score += exactMatches * 2;
-                
-                if (score > highestScore) {
-                    highestScore = score;
-                    bestMatch = brawler;
-                }
             });
             
-            displayResult(bestMatch);
+            // Calculate scores for all brawlers with better distribution
+            let brawlerScores = [];
+            
+            Object.entries(brawlers).forEach(([key, brawler]) => {
+                let rawScore = 0;
+                let matchedTraits = 0;
+                let rarityBonus = 0;
+                
+                // Calculate base score from trait matches
+                brawler.traits.forEach(trait => {
+                    const traitCount = userTraits[trait] || 0;
+                    if (traitCount > 0) {
+                        rawScore += traitCount;
+                        matchedTraits++;
+                        
+                        // Add bonus for rare traits to help unique brawlers
+                        const traitRarity = traitFrequency[trait] || 1;
+                        const rareTraitBonus = traitRarity <= 2 ? 2 : (traitRarity <= 4 ? 1 : 0);
+                        rarityBonus += rareTraitBonus;
+                    }
+                });
+                
+                // Add base chance for brawlers with no matches (ensures everyone can appear)
+                const baseChance = matchedTraits === 0 ? 0.5 : 0;
+                
+                // Normalize score by number of brawler traits to ensure fairness
+                const normalizedScore = brawler.traits.length > 0 ? rawScore / brawler.traits.length : 0;
+                
+                // Add bonus for trait coverage (percentage of brawler's traits that match)
+                const traitCoverage = brawler.traits.length > 0 ? matchedTraits / brawler.traits.length : 0;
+                const coverageBonus = traitCoverage * 3; // Reduced from 5 to allow more variety
+                
+                // Final score combines multiple factors for fair distribution
+                const finalScore = normalizedScore + coverageBonus + rarityBonus + baseChance;
+                
+                brawlerScores.push({
+                    key: key,
+                    brawler: brawler,
+                    score: finalScore,
+                    rawScore: rawScore,
+                    matchedTraits: matchedTraits,
+                    traitCoverage: traitCoverage,
+                    rarityBonus: rarityBonus
+                });
+            });
+            
+            // Sort by score (descending)
+            brawlerScores.sort((a, b) => b.score - a.score);
+            
+            // Create a weighted selection pool from top candidates
+            const topScore = brawlerScores[0].score;
+            const minThreshold = Math.max(topScore * 0.7, 0.5); // Allow candidates within 70% of top score
+            const candidates = brawlerScores.filter(item => item.score >= minThreshold);
+            
+            // If we have very few candidates, expand the pool
+            if (candidates.length < 3) {
+                candidates.push(...brawlerScores.slice(0, Math.min(5, brawlerScores.length)));
+                // Remove duplicates
+                const seen = new Set();
+                const uniqueCandidates = candidates.filter(item => {
+                    if (seen.has(item.key)) return false;
+                    seen.add(item.key);
+                    return true;
+                });
+                candidates.length = 0;
+                candidates.push(...uniqueCandidates);
+            }
+            
+            // Weighted random selection - higher scores have better chances but not guaranteed wins
+            const weights = candidates.map(item => Math.max(item.score, 0.1)); // Ensure minimum weight
+            const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+            
+            let random = Math.random() * totalWeight;
+            let selectedBrawler = candidates[0].brawler; // fallback
+            
+            for (let i = 0; i < candidates.length; i++) {
+                random -= weights[i];
+                if (random <= 0) {
+                    selectedBrawler = candidates[i].brawler;
+                    break;
+                }
+            }
+            
+            displayResult(selectedBrawler);
         }
 
         function displayResult(brawler) {
