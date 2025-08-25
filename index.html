@@ -1913,160 +1913,841 @@
       <p style="font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.7;">Zinvana offers the most accurate, fun, and insightful free personality quizzes online. Whether you want to discover your MBTI type, find out which historical leader you resemble, or just have fun with friends, our quizzes are always free and require no sign-up. Start exploring yourself today!</p>
     </section>
 
+    <!-- Professional Quiz Gallery Section -->
     <section class="quiz-grid" id="quiz-grid">
       <div class="quiz-gallery-wrapper">
-      <div class="gallery-nav prev" onclick="scrollGallery(-1)">
-      <svg viewBox="0 0 24 24">
-      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-      </svg>
-      </div>
-      <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, #3296da, #4034b1); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Our completely Free Personality Quizes</h2>
-      <div class="quiz-gallery" id="quiz-gallery">
-      <div class="quiz-card">
-      <img src="zinvanabs.png" alt="Brawl Stars Personality Quiz" />
-      <h3>🎮 Brawl Stars Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">🎮 Gamers love it</div>
-        <div class="quiz-stat">⚡ 3 min</div>
-        <div class="quiz-stat">🏆 All 85+ brawlers</div>
-      </div>
-      <p>Which Brawl Stars brawler are you? Discover if you're Spike, Leon, Shelly, or any of the 85+ brawlers! Our comprehensive quiz analyzes your personality and fighting style.</p>
-      <a href="brawlstars-quiz.html" class="btn">Find Your Brawler</a>
-      </div>
-      <div class="quiz-card">
-      <img src="einstein.jpg" alt="Famous Inventors Personality Quiz" />
-      <h3>🧠 Famous Inventors Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">👨‍🔬 Science fans love it</div>
-        <div class="quiz-stat">⚡ 2 min</div>
-        <div class="quiz-stat">🎯 98.7% accuracy</div>
-      </div>
-      <p>Which genius inventor are you? Einstein? Tesla? da Vinci? Jobs? FREE 2-min test reveals your innovation DNA. Try it out!</p>
-      <a href="inventor_quiz.html" class="btn">Discover Your Leader</a>
-      </div>
-      <div class="quiz-card">
-      <img src="mrbeast.jpg" alt="Youtubers free Personality Quiz" />
-      <h3>🎬 Youtubers Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">🧑‍🔬 Everybody love it</div>
-        <div class="quiz-stat">⚡ 2 min</div>
-        <div class="quiz-stat">🌐 Trending</div>
-      </div>
-      <p>Which famous YouTuber matches your personality? Are you a creative innovator like MrBeast, a storyteller like Markiplier, or a trendsetter like Emma Chamberlain? Take our free quiz and find out!</p>
-      <a href="youtubers-personality-quiz.html" class="btn">Take Quiz</a>
-      </div>
-      <div class="quiz-card">
-      <img src="universe.gif" alt="Universe Personality Quiz" />
-      <h3>🪐 Universe Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">🌌 Space fans love it</div>
-        <div class="quiz-stat">⚡ 3 min</div>
-        <div class="quiz-stat">🔮 Deep insights</div>
-      </div>
-      <p>Take our groundbreaking Personal Universe Quiz and discover your cosmic identity! Get deep insights into your personality, relationships, and life purpose.</p>
-      <a href="universe_quiz.html" class="btn">Discover Your Leader</a>
-      </div>
-      <div class="quiz-card">
-      <img src="lenin.gif" alt="Historical Leaders Free Personality Quiz" />
-      <h3>🏛️ Historical Leaders Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">🏺 History fans love it</div>
-        <div class="quiz-stat">⚡ 2 min</div>
-        <div class="quiz-stat">📜 In-depth results</div>
-      </div>
-         <div class="quiz-card">
-      <img src="marvel.gif" alt="Marvel Hero Personality Quiz" />
-      <h3>🦸 Marvel Hero Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">🦸‍♂️ Marvel fans love it</div>
-        <div class="quiz-stat">⚡ 2 min</div>
-        <div class="quiz-stat">🌟 Hero match</div>
-      </div>
-      <p>Which Marvel superhero are you? Take Zinvana's free quiz to discover if you're more like Iron Man, Captain America, Black Widow, or another iconic hero. 100% free, no sign-up.</p>
-      <a href="marvel-hero-quiz.html" class="btn">Find Your Marvel Hero</a>
-      </div>
-      <p>What historical leader am I? Take Zinvana's free quiz to discover if you're more like Napoleon, Churchill, Cyrus the Great, or another historical leader. 100% free, no sign-up.</p>
-      <a href="leaders.html" class="btn">Discover Your Leader</a>
-      </div>
-      <div class="quiz-card">
-      <div class="card-image-wrapper">
-        <img src="zinifoot.gif" alt="Free Football Personality Quiz" />
-      </div>
-      <div class="card-content">
-        <h3>⚽ Football Personality Quiz</h3>
-        <div class="quiz-stats">
-        <div class="quiz-stat">🏆 Football fans love it</div>
-        <div class="quiz-stat">⚡ 2 min</div>
-        <div class="quiz-stat">🎯 Fun results</div>
+        <!-- Navigation Arrow - Previous -->
+        <div class="gallery-nav prev" onclick="scrollGallery(-1)" aria-label="Previous quizzes">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
         </div>
-        <p>What's your football personality archetype? Are you a Tactical Genius who sees every angle, a Lightning Rocket with unstoppable speed, or a Silent Maestro who controls the game?</p>
-        <a href="football-personality-quiz.html" class="btn">⚽ Play Now</a>
+
+        <!-- Section Header -->
+        <div class="section-header">
+          <h2 class="section-title">Our Premium Free Personality Quizzes</h2>
+          <p class="section-subtitle">Discover your true self with scientifically-backed quizzes trusted by thousands</p>
+          <div class="trust-indicators">
+            <span class="trust-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              100% Free
+            </span>
+            <span class="trust-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+              Instant Results
+            </span>
+            <span class="trust-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+                <path d="M20 8v6"/>
+                <path d="M23 11h-6"/>
+              </svg>
+              No Sign-Up Required
+            </span>
+          </div>
+        </div>
+
+        <!-- Quiz Cards Gallery -->
+        <div class="quiz-gallery" id="quiz-gallery">
+          <!-- Brawl Stars Quiz -->
+          <div class="quiz-card featured">
+            <div class="card-badge trending">🔥 Trending</div>
+            <div class="card-image-container">
+              <img src="zinvanabs.png" alt="Brawl Stars Personality Quiz - Discover Your Brawler" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag gaming">🎮 Gaming</div>
+              <h3>Brawl Stars Personality Quiz</h3>
+              <p class="card-description">Discover which of 85+ Brawl Stars characters matches your gaming personality. From strategic masterminds to aggressive fighters.</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">👥</span>
+                  <span class="metric-text">50K+ taken</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">3 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">🎯</span>
+                  <span class="metric-text">All brawlers</span>
+                </div>
+              </div>
+              <a href="brawlstars-quiz.html" class="btn-primary">
+                <span>Find Your Brawler</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Famous Inventors Quiz -->
+          <div class="quiz-card">
+            <div class="card-badge popular">⭐ Popular</div>
+            <div class="card-image-container">
+              <img src="einstein.jpg" alt="Famous Inventors Personality Quiz - Einstein, Tesla, da Vinci" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag science">🧠 Science</div>
+              <h3>Famous Inventors Personality Quiz</h3>
+              <p class="card-description">Discover your innovation DNA. Are you Einstein's theoretical genius, Tesla's visionary mind, or da Vinci's Renaissance spirit?</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">🔬</span>
+                  <span class="metric-text">Science-backed</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">2 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">📊</span>
+                  <span class="metric-text">98.7% accuracy</span>
+                </div>
+              </div>
+              <a href="inventor_quiz.html" class="btn-primary">
+                <span>Discover Your Genius</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- YouTubers Quiz -->
+          <div class="quiz-card">
+            <div class="card-badge new">✨ New</div>
+            <div class="card-image-container">
+              <img src="mrbeast.jpg" alt="YouTubers Personality Quiz - MrBeast, Markiplier" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag entertainment">🎬 Entertainment</div>
+              <h3>YouTubers Personality Quiz</h3>
+              <p class="card-description">Which YouTube star matches your content creation style? From MrBeast's philanthropy to Emma's authenticity.</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">📺</span>
+                  <span class="metric-text">Creator insights</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">2 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">🌐</span>
+                  <span class="metric-text">Trending</span>
+                </div>
+              </div>
+              <a href="youtubers-personality-quiz.html" class="btn-primary">
+                <span>Find Your Style</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Universe Quiz -->
+          <div class="quiz-card premium">
+            <div class="card-badge exclusive">🪐 Exclusive</div>
+            <div class="card-image-container">
+              <img src="universe.gif" alt="Universe Personality Quiz - Cosmic Identity" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag mystical">🌌 Cosmic</div>
+              <h3>Universe Personality Quiz</h3>
+              <p class="card-description">Discover your cosmic identity and universal energy. Deep insights into your personality, relationships, and life purpose.</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">🔮</span>
+                  <span class="metric-text">Deep insights</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">3 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">✨</span>
+                  <span class="metric-text">Unique results</span>
+                </div>
+              </div>
+              <a href="universe_quiz.html" class="btn-primary">
+                <span>Explore Your Universe</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Marvel Hero Quiz -->
+          <div class="quiz-card">
+            <div class="card-badge hero">🦸 Hero</div>
+            <div class="card-image-container">
+              <img src="marvel.gif" alt="Marvel Hero Personality Quiz - Iron Man, Captain America" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag superhero">🦸‍♂️ Superhero</div>
+              <h3>Marvel Hero Personality Quiz</h3>
+              <p class="card-description">Which Marvel superhero embodies your spirit? Discover your heroic archetype from Iron Man's genius to Captain America's leadership.</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">Hero powers</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">🕐</span>
+                  <span class="metric-text">2 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">🌟</span>
+                  <span class="metric-text">Marvel official</span>
+                </div>
+              </div>
+              <a href="marvel-hero-quiz.html" class="btn-primary">
+                <span>Find Your Hero</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Historical Leaders Quiz -->
+          <div class="quiz-card featured">
+            <div class="card-badge bestseller">👑 Bestseller</div>
+            <div class="card-image-container">
+              <img src="lenin.gif" alt="Historical Leaders Personality Quiz - Napoleon, Churchill" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag history">🏛️ History</div>
+              <h3>Historical Leaders Personality Quiz</h3>
+              <p class="card-description">Discover your leadership archetype through history's greatest minds. From Napoleon's strategy to Churchill's resilience.</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">📚</span>
+                  <span class="metric-text">Research-based</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">2 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">📜</span>
+                  <span class="metric-text">In-depth profiles</span>
+                </div>
+              </div>
+              <a href="leaders.html" class="btn-primary">
+                <span>Discover Your Leadership</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Football Quiz -->
+          <div class="quiz-card">
+            <div class="card-badge sports">⚽ Sports</div>
+            <div class="card-image-container">
+              <img src="zinifoot.gif" alt="Football Personality Quiz - Playing Style Analysis" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag sports">⚽ Sports</div>
+              <h3>Football Personality Quiz</h3>
+              <p class="card-description">Discover your football archetype. Are you a tactical genius, lightning rocket, or silent maestro on the field?</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">🏆</span>
+                  <span class="metric-text">Pro analysis</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">2 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">🎯</span>
+                  <span class="metric-text">Playing style</span>
+                </div>
+              </div>
+              <a href="football-personality-quiz.html" class="btn-primary">
+                <span>Play Now</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Persian Kings Quiz -->
+          <div class="quiz-card">
+            <div class="card-badge cultural">👑 Cultural</div>
+            <div class="card-image-container">
+              <img src="cyrus.gif" alt="Persian Kings Personality Quiz - Ancient Rulers" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag ancient">🏺 Ancient</div>
+              <h3>Persian Kings Personality Quiz</h3>
+              <p class="card-description">Which legendary Persian monarch matches your ruling style? From Cyrus the Great's wisdom to Darius's innovation.</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">👑</span>
+                  <span class="metric-text">Royal legacy</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">2 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">🏛️</span>
+                  <span class="metric-text">Ancient wisdom</span>
+                </div>
+              </div>
+              <a href="persian_kings-quiz.html" class="btn-primary">
+                <span>Claim Your Throne</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Empires Quiz -->
+          <div class="quiz-card">
+            <div class="card-badge civilization">🏛️ Civilization</div>
+            <div class="card-image-container">
+              <img src="achaemenidempire.gif" alt="Empires Personality Quiz - Roman, Persian, Mongol" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag empire">🌍 Empire</div>
+              <h3>Empires Personality Quiz</h3>
+              <p class="card-description">Which great empire reflects your leadership philosophy? Roman discipline, Persian tolerance, or Mongol adaptability?</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">🗺️</span>
+                  <span class="metric-text">Global empires</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">2 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">🏰</span>
+                  <span class="metric-text">Empire match</span>
+                </div>
+              </div>
+              <a href="empire.html" class="btn-primary">
+                <span>Build Your Empire</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Squid Game Quiz -->
+          <div class="quiz-card">
+            <div class="card-badge tv-series">🎭 TV Series</div>
+            <div class="card-image-container">
+              <img src="squidzinvana.gif" alt="Squid Game Personality Quiz - Character Match" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag entertainment">🦑 K-Drama</div>
+              <h3>Squid Game Personality Quiz</h3>
+              <p class="card-description">Which Squid Game character represents your survival strategy? Strategic mastermind, loyal friend, or determined survivor?</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">🎲</span>
+                  <span class="metric-text">Strategy-based</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">2 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">🏆</span>
+                  <span class="metric-text">Fan favorite</span>
+                </div>
+              </div>
+              <a href="squidgame.html" class="btn-primary">
+                <span>Enter the Game</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Political Thinker Quiz -->
+          <div class="quiz-card">
+            <div class="card-badge intellectual">💡 Intellectual</div>
+            <div class="card-image-container">
+              <img src="karlmarx.jpg" alt="Political Thinker Personality Quiz - Marx, Smith, Locke" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag politics">🗳️ Politics</div>
+              <h3>Political Thinker Personality Quiz</h3>
+              <p class="card-description">Which political philosopher aligns with your worldview? From Marx's revolution to Smith's markets, find your ideology.</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">📚</span>
+                  <span class="metric-text">Philosophy-based</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">2 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">💭</span>
+                  <span class="metric-text">Thought-provoking</span>
+                </div>
+              </div>
+              <a href="political.html" class="btn-primary">
+                <span>Explore Your Ideology</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Classic Personality Quiz -->
+          <div class="quiz-card premium">
+            <div class="card-badge classic">🧠 Classic</div>
+            <div class="card-image-container">
+              <img src="personality.jpg" alt="Classic Personality Quiz - MBTI Big Five" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag psychology">🔬 Psychology</div>
+              <h3>Classic Personality Quiz</h3>
+              <p class="card-description">The gold standard of personality assessment. Research-backed analysis of your traits, strengths, and career potential.</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">📊</span>
+                  <span class="metric-text">Scientific</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">2 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">🎯</span>
+                  <span class="metric-text">MBTI/Big Five</span>
+                </div>
+              </div>
+              <a href="test.html" class="btn-primary">
+                <span>Start Assessment</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Arrow - Next -->
+        <div class="gallery-nav next" onclick="scrollGallery(1)" aria-label="Next quizzes">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+          </svg>
+        </div>
       </div>
-      </div>
-      <div class="quiz-card">
-      <img src="cyrus.gif" alt="Persian Kings Free Personality Quiz" />
-      <h3>🎭 Persian Kings Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">👑 Iranians love it</div>
-        <div class="quiz-stat">⚡ 2 min</div>
-        <div class="quiz-stat">👑 Ancient rulers</div>
-      </div>
-      <p>Take the ultimate Persian Kings quiz and discover if you'd rule as Cyrus the Great, Darius I, Khosrow I, or another legendary monarch. Find your ancient destiny!</p>
-      <a href="persian_kings-quiz.html" class="btn">Take Quiz</a>
-      </div>
-      <div class="quiz-card">
-      <img src="achaemenidempire.gif" alt="Empires Free Personality Quiz" />
-      <h3>🏛️ Empires Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">🌍 History fans love it</div>
-        <div class="quiz-stat">⚡ 2 min</div>
-        <div class="quiz-stat">🏰 Empire match</div>
-      </div>
-      <p>Take the ultimate empire quiz and find out if you belong in Rome, Persia, or the Mongol Empire. 100% free, always fun.</p>
-      <a href="empire.html" class="btn">Discover Your Empire</a>
-      </div>
-      <div class="quiz-card">
-      <img src="squidzinvana.gif" alt="Squid Game Free Personality Quiz" />
-      <h3>🎭 Squid Game Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">🦑 Squid Game fans love it</div>
-        <div class="quiz-stat">⚡ 2 min</div>
-        <div class="quiz-stat">🎲 TV character match</div>
-      </div>
-      <p>Are you a strategic mastermind like the Front Man, a survivor like Seong Gi-hun, loyal like Abdul Ali, or bold like Kang Sae-byeok? Take our free quiz and find out!</p>
-      <a href="squidgame.html" class="btn">Take Quiz</a>
-      </div>
-      <div class="quiz-card">
-      <img src="karlmarx.jpg" alt="Political Thinker Free Personality Quiz" />
-      <h3>🗳️ Political Thinker Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">📚 Political fans love it</div>
-        <div class="quiz-stat">⚡ 2 min</div>
-        <div class="quiz-stat">💡 Political match</div>
-      </div>
-      <p>Are you more like Karl Marx, Adam Smith, Machiavelli, or John Locke? Find out which political thinker aligns with your views. Free and insightful!</p>
-      <a href="political.html" class="btn">Find Your Thinker</a>
-      </div>
-      <div class="quiz-card">
-      <img src="personality.jpg" alt="Classic Free Personality Quiz" />
-      <h3>🧠 Classic Personality Quiz</h3>
-      <div class="quiz-stats">
-        <div class="quiz-stat">🧑‍🔬 Everybody love it</div>
-        <div class="quiz-stat">⚡ 2 min</div>
-        <div class="quiz-stat">🔎 MBTI/Big Five</div>
-      </div>
-      <p>Discover your personality type with our research-backed quiz that explores your strengths and potential career paths. 100% free, no sign-up required.</p>
-      <a href="test.html" class="btn">Start Quiz</a>
-      </div>
-      </div>
-      <div class="gallery-nav next" onclick="scrollGallery(1)">
-      <svg viewBox="0 0 24 24">
-      <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
-      </svg>
-      </div>
-      </div>
-      <div class="gallery-dots" id="gallery-dots"></div>
+
+      <!-- Gallery Dots Pagination -->
+      <div class="gallery-dots" id="gallery-dots" role="tablist" aria-label="Quiz gallery pagination"></div>
     </section>
+
+    <style>
+    /* Professional Section Header */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem !important;
+      font-weight: 800 !important;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem !important;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.25rem;
+      color: #64748b;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .trust-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(102, 126, 234, 0.1);
+      color: #667eea;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: 1px solid rgba(102, 126, 234, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .trust-badge:hover {
+      background: rgba(102, 126, 234, 0.15);
+      transform: translateY(-1px);
+    }
+
+    /* Enhanced Quiz Cards */
+    .quiz-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      flex: 0 0 340px;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      will-change: transform;
+    }
+
+    .quiz-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+
+    .quiz-card.featured {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border: 2px solid #667eea;
+    }
+
+    .quiz-card.premium {
+      background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+      border: 2px solid #eab308;
+    }
+
+    /* Card Badges */
+    .card-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 5;
+      background: rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .card-badge.trending {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+    }
+
+    .card-badge.popular {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+
+    .card-badge.new {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+
+    .card-badge.exclusive {
+      background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    }
+
+    .card-badge.bestseller {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+
+    /* Image Container */
+    .card-image-container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .card-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .quiz-card:hover .card-image-container img {
+      transform: scale(1.1);
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .quiz-card:hover .image-overlay {
+      opacity: 1;
+    }
+
+    /* Card Content */
+    .card-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    /* Category Tags */
+    .category-tag {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      width: fit-content;
+      border: 1px solid currentColor;
+    }
+
+    .category-tag.gaming { color: #8b5cf6; background: rgba(139, 92, 246, 0.1); }
+    .category-tag.science { color: #0ea5e9; background: rgba(14, 165, 233, 0.1); }
+    .category-tag.entertainment { color: #ef4444; background: rgba(239, 68, 68, 0.1); }
+    .category-tag.mystical { color: #8b5cf6; background: rgba(139, 92, 246, 0.1); }
+    .category-tag.superhero { color: #dc2626; background: rgba(220, 38, 38, 0.1); }
+    .category-tag.history { color: #d97706; background: rgba(217, 119, 6, 0.1); }
+    .category-tag.sports { color: #16a34a; background: rgba(22, 163, 74, 0.1); }
+    .category-tag.ancient { color: #ca8a04; background: rgba(202, 138, 4, 0.1); }
+    .category-tag.empire { color: #7c2d12; background: rgba(124, 45, 18, 0.1); }
+    .category-tag.politics { color: #4338ca; background: rgba(67, 56, 202, 0.1); }
+    .category-tag.psychology { color: #059669; background: rgba(5, 150, 105, 0.1); }
+
+    /* Card Title */
+    .card-content h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    /* Card Description */
+    .card-description {
+      color: #64748b;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    /* Quiz Metrics */
+    .quiz-metrics {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .metric {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .metric-icon {
+      font-size: 0.9rem;
+    }
+
+    /* Professional Button */
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-primary svg {
+      transition: transform 0.3s ease;
+    }
+
+    .btn-primary:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem !important;
+      }
+      
+      .section-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .trust-indicators {
+        gap: 1rem;
+      }
+      
+      .trust-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+      }
+      
+      .quiz-card {
+        flex: 0 0 300px;
+        min-height: 480px;
+      }
+      
+      .card-content {
+        padding: 1.25rem;
+      }
+      
+      .quiz-metrics {
+        gap: 0.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 1.75rem !important;
+      }
+      
+      .quiz-card {
+        flex: 0 0 280px;
+      }
+      
+      .card-content h3 {
+        font-size: 1.25rem;
+      }
+      
+      .trust-indicators {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+    }
+
+    /* Accessibility Improvements */
+    @media (prefers-reduced-motion: reduce) {
+      .quiz-card {
+        transition: box-shadow 0.2s ease;
+      }
+      
+      .quiz-card:hover {
+        transform: none;
+      }
+      
+      .btn-primary::before {
+        display: none;
+      }
+    }
+
+    /* Focus states for accessibility */
+    .quiz-card:focus-within {
+      outline: 2px solid #667eea;
+      outline-offset: 2px;
+    }
+
+    .btn-primary:focus {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+    </style>
 
     <!-- Why Take a Personality Quiz Section -->
     <section id="why-personality-quiz" style="background: #fff; border-radius: 12px; width: 100%; margin: 40px 0; padding: 40px 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
@@ -3028,23 +3709,23 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 let currentScrollPosition = 0;
 let cardsVisible = 3; // Default number of cards visible
-let cardWidth = 350; // Card width + gap (320px + 30px)
+let cardWidth = 370; // Card width + gap (340px + 30px)
 
 // Calculate visible cards based on screen width
 function updateVisibleCards() {
   const screenWidth = window.innerWidth;
   if (screenWidth <= 480) {
     cardsVisible = 1;
-    cardWidth = 300; // 280px card + 20px gap
+    cardWidth = 310; // 280px card + 30px gap
   } else if (screenWidth <= 768) {
     cardsVisible = 2;
-    cardWidth = 320; // 290px card + 30px gap
+    cardWidth = 330; // 300px card + 30px gap
   } else if (screenWidth <= 1024) {
     cardsVisible = 3;
-    cardWidth = 350; // 320px card + 30px gap
+    cardWidth = 370; // 340px card + 30px gap
   } else {
     cardsVisible = 4;
-    cardWidth = 350; // 320px card + 30px gap
+    cardWidth = 370; // 340px card + 30px gap
   }
 }
 
@@ -3189,8 +3870,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Update on window resize
   window.addEventListener('resize', () => {
+    const oldPosition = currentScrollPosition;
     updateVisibleCards();
-    scrollToPosition(0);
+    createDots();
+    
+    // Try to maintain relative position, but ensure it's valid
+    const totalCards = document.querySelectorAll('.quiz-card').length;
+    const maxPosition = Math.max(0, totalCards - cardsVisible);
+    currentScrollPosition = Math.min(oldPosition, maxPosition);
+    
+    scrollToPosition(currentScrollPosition);
   });
   
   // Initialize How Works Gallery
@@ -3585,4 +4274,3 @@ function createParticleCursor() {
 
   </body>
 </html>
-
