@@ -433,243 +433,341 @@
             opacity: 0.8;
         }
         
-        /* Navigation Styles - Professional Design */
+        /* Navigation Styles - Enhanced Modern Design */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                0 4px 30px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
             z-index: 1000;
             padding: 16px 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         nav.scrolled {
-            background: rgba(255, 255, 255, 0.99);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            background: rgba(5, 5, 5, 0.98);
+            backdrop-filter: blur(25px);
+            box-shadow: 
+                0 8px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.08);
             padding: 12px 0;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+        }
+
+        .nav-container::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 2rem;
+            right: 2rem;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(220, 38, 38, 0.3) 25%, 
+                rgba(220, 38, 38, 0.6) 50%, 
+                rgba(220, 38, 38, 0.3) 75%, 
+                transparent 100%);
+            opacity: 0.5;
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            padding: 8px;
+            border-radius: 12px;
+        }
+
+        .nav-logo::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #DC2626, #EF4444, #F59E0B, #10B981);
+            background-size: 300% 300%;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            animation: logoGradient 4s ease infinite;
+        }
+
+        @keyframes logoGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .nav-logo img {
-            height: 36px;
+            height: 50px;
             width: auto;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            border: 1px solid rgba(5, 150, 105, 0.2);
+            border-radius: 10px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 
+                0 4px 20px rgba(220, 38, 38, 0.4),
+                0 0 0 2px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-logo:hover::before {
+            opacity: 0.3;
         }
 
         .nav-logo:hover {
-            transform: translateY(-1px);
+            transform: translateY(-3px) scale(1.05);
         }
 
         .nav-logo:hover img {
-            border-color: #059669;
-            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+            box-shadow: 
+                0 8px 30px rgba(220, 38, 38, 0.6),
+                0 0 0 3px rgba(255, 255, 255, 0.2);
+            transform: rotate(5deg);
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 1rem;
             list-style: none;
             margin: 0;
             padding: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            padding: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-links a {
-            color: #1a202c;
+            color: #E5E7EB;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
+            font-size: 15px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
-            padding: 12px 16px;
-            border-radius: 8px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow: hidden;
         }
 
-        .nav-links a:hover {
-            color: #DC2626;
-            background: rgba(220, 38, 38, 0.05);
-            transform: translateY(-1px);
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #DC2626, #EF4444);
+            border-radius: 25px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: 8px;
-            left: 16px;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #DC2626, #EF4444);
-            transition: width 0.3s ease;
-            border-radius: 2px;
+            top: 50%;
+            left: -100%;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .nav-links a:hover {
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a:hover::before {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .nav-links a:hover::after {
-            width: calc(100% - 32px);
+            left: 100%;
         }
 
         .nav-links a.active {
-            color: #DC2626;
-            background: rgba(220, 38, 38, 0.08);
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #DC2626, #EF4444);
             font-weight: 600;
+            box-shadow: 
+                0 4px 20px rgba(220, 38, 38, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
-        .nav-links a.active::after {
-            width: calc(100% - 32px);
+        .nav-links a.active::before {
+            opacity: 0;
         }
 
         .nav-cta {
-            background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+            background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #F59E0B 100%);
             color: white;
             padding: 12px 24px;
-            border-radius: 12px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+            font-size: 14px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 
+                0 4px 20px rgba(220, 38, 38, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                transparent 100%);
+            transition: left 0.6s ease;
         }
 
         .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
-            background: linear-gradient(135deg, #B91C1C 0%, #DC2626 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 8px 30px rgba(220, 38, 38, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #B91C1C 0%, #DC2626 50%, #EF4444 100%);
         }
 
-        /* Mobile Navigation */
+        .nav-cta:hover::before {
+            left: 100%;
+        }
+
+        /* Enhanced Mobile Navigation */
         .nav-toggle {
             display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            padding: 8px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.8));
-            border: 2px solid rgba(255, 107, 107, 0.2);
-            border-radius: 10px;
-            transition: all 0.3s ease;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(220, 38, 38, 0.3);
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             backdrop-filter: blur(10px);
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-            width: 44px;
-            height: 44px;
+            box-shadow: 
+                0 4px 20px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            width: 48px;
+            height: 48px;
         }
 
         .nav-toggle:hover {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(254, 202, 202, 0.4));
-            border-color: rgba(255, 107, 107, 0.4);
-            transform: scale(1.05);
+            background: rgba(220, 38, 38, 0.2);
+            border-color: rgba(220, 38, 38, 0.6);
+            transform: scale(1.1);
+            box-shadow: 
+                0 6px 25px rgba(220, 38, 38, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         .nav-toggle span {
-            width: 22px;
-            height: 2px;
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
-            margin: 2px 0;
-            transition: all 0.3s ease;
-            border-radius: 2px;
+            width: 24px;
+            height: 3px;
+            background: linear-gradient(135deg, #DC2626, #EF4444);
+            margin: 3px 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
         }
 
         .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(4px, 4px);
-            background: #dc2626;
+            transform: rotate(45deg) translate(6px, 6px);
+            background: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
         }
 
         .nav-toggle.active span:nth-child(2) {
             opacity: 0;
+            transform: scale(0);
         }
 
         .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(4px, -4px);
-            background: #dc2626;
+            transform: rotate(-45deg) translate(6px, -6px);
+            background: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
         }
 
         .nav-mobile {
             display: none;
-            position: fixed;
-            top: 80px;
+            position: absolute;
+            top: 100%;
             left: 0;
             right: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.94));
-            backdrop-filter: blur(20px);
-            border-top: 2px solid rgba(255, 107, 107, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: none;
+            border-radius: 0 0 20px 20px;
             padding: 20px;
-            z-index: 1000;
-            transform: translateY(-20px);
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             opacity: 0;
-            transition: all 0.3s ease;
-            max-height: calc(100vh - 80px);
-            overflow-y: auto;
+            transform: translateY(-20px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .nav-mobile.active {
             display: block;
-            transform: translateY(0);
             opacity: 1;
+            transform: translateY(0);
         }
 
         .nav-mobile a {
-            display: flex;
-            align-items: center;
-            padding: 16px 20px;
-            margin-bottom: 10px;
-            color: #374151;
+            display: block;
+            color: #E5E7EB;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.6));
-            border-radius: 15px;
-            border: 2px solid rgba(255, 107, 107, 0.1);
+            padding: 16px 20px;
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: 12px;
+            margin-bottom: 8px;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            min-height: 56px;
-            -webkit-tap-highlight-color: rgba(255, 107, 107, 0.1);
-            touch-action: manipulation;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .nav-mobile a:hover,
-        .nav-mobile a:focus {
-            color: #dc2626;
-            border-color: rgba(255, 107, 107, 0.4);
-            transform: translateX(8px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.15);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(254, 202, 202, 0.3));
-        }
-
-        .nav-mobile a:active {
-            transform: translateX(4px) scale(0.98);
+        .nav-mobile a:hover {
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #DC2626, #EF4444);
+            transform: translateX(10px);
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
         }
 
         .nav-mobile a:last-child {
             margin-bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(78, 205, 196, 0.15));
-            border-color: rgba(255, 107, 107, 0.3);
-            color: #dc2626;
-            font-weight: 700;
         }
 
         /* Enhanced Mobile Responsive Navigation */
@@ -3649,6 +3747,87 @@
                     { text: "The responsibility to protect reality itself", traits: ["cosmic", "responsible", "protector"] },
                     { text: "The belief that with great power comes great responsibility", traits: ["responsibility", "moral", "heroic"] }
                 ]
+            },
+            {
+                question: "How do you prefer to work with others?",
+                options: [
+                    { text: "As part of a well-coordinated team effort", traits: ["team-player", "collaborative", "organized"] },
+                    { text: "Taking the lead when necessary", traits: ["leadership", "decisive", "commanding"] },
+                    { text: "Providing support and backup to others", traits: ["supportive", "reliable", "humble"] },
+                    { text: "Working independently but staying connected", traits: ["independent", "self-reliant", "focused"] }
+                ]
+            },
+            {
+                question: "What's most important in a friendship?",
+                options: [
+                    { text: "Mutual respect and shared values", traits: ["respectful", "principled", "loyal"] },
+                    { text: "Loyalty and having each other's backs", traits: ["loyal", "protective", "devoted"] },
+                    { text: "Being able to have fun and laugh together", traits: ["fun", "lighthearted", "social"] },
+                    { text: "Supporting each other through tough times", traits: ["supportive", "empathetic", "caring"] }
+                ]
+            },
+            {
+                question: "How do you handle your emotions?",
+                options: [
+                    { text: "I try to keep them controlled and logical", traits: ["controlled", "logical", "disciplined"] },
+                    { text: "I channel them into motivation and action", traits: ["passionate", "driven", "intense"] },
+                    { text: "I accept them as part of who I am", traits: ["self-aware", "accepting", "balanced"] },
+                    { text: "I use them to connect with and help others", traits: ["empathetic", "connecting", "caring"] }
+                ]
+            },
+            {
+                question: "What's your approach to technology?",
+                options: [
+                    { text: "I love creating and improving it", traits: ["innovative", "technological", "creative"] },
+                    { text: "I use it as a tool but prefer simpler solutions", traits: ["practical", "grounded", "efficient"] },
+                    { text: "I respect it but don't rely on it completely", traits: ["balanced", "traditional", "cautious"] },
+                    { text: "I adapt to whatever technology is available", traits: ["adaptive", "flexible", "resourceful"] }
+                ]
+            },
+            {
+                question: "How do you view your role in saving the world?",
+                options: [
+                    { text: "Using my unique skills to solve problems others can't", traits: ["unique", "problem-solver", "specialized"] },
+                    { text: "Standing up for what's right no matter the cost", traits: ["principled", "brave", "sacrificial"] },
+                    { text: "Being there when people need protection most", traits: ["protective", "reliable", "guardian"] },
+                    { text: "Inspiring others to be their best selves", traits: ["inspiring", "empowering", "motivational"] }
+                ]
+            },
+            {
+                question: "What's your biggest source of strength?",
+                options: [
+                    { text: "My family and the people I love", traits: ["family-focused", "loving", "connected"] },
+                    { text: "My unwavering beliefs and principles", traits: ["principled", "strong-willed", "moral"] },
+                    { text: "My ability to adapt and overcome any challenge", traits: ["adaptive", "resilient", "determined"] },
+                    { text: "The knowledge that I'm making a difference", traits: ["purpose-driven", "meaningful", "impactful"] }
+                ]
+            },
+            {
+                question: "How do you prefer to solve conflicts?",
+                options: [
+                    { text: "Through negotiation and finding common ground", traits: ["diplomatic", "peaceful", "reasonable"] },
+                    { text: "By taking decisive action when needed", traits: ["decisive", "action-oriented", "bold"] },
+                    { text: "Using strategy and careful planning", traits: ["strategic", "calculated", "thoughtful"] },
+                    { text: "By understanding all sides and finding fair solutions", traits: ["fair", "understanding", "balanced"] }
+                ]
+            },
+            {
+                question: "What type of training appeals to you most?",
+                options: [
+                    { text: "High-tech simulation and advanced technology", traits: ["technological", "futuristic", "advanced"] },
+                    { text: "Traditional military discipline and physical conditioning", traits: ["disciplined", "traditional", "physical"] },
+                    { text: "Mystical arts and ancient wisdom studies", traits: ["mystical", "ancient", "spiritual"] },
+                    { text: "Practical experience and learning on the job", traits: ["practical", "experienced", "adaptive"] }
+                ]
+            },
+            {
+                question: "How do you deal with overwhelming power?",
+                options: [
+                    { text: "I constantly work to improve control and precision", traits: ["perfectionist", "controlled", "disciplined"] },
+                    { text: "I focus on using it responsibly and morally", traits: ["responsible", "moral", "ethical"] },
+                    { text: "I seek guidance from mentors and wise advisors", traits: ["humble", "learning", "guided"] },
+                    { text: "I sometimes struggle but keep trying my best", traits: ["struggling", "determined", "realistic"] }
+                ]
             }
         ];
 
@@ -3941,6 +4120,186 @@
                     balance: 94,
                     innovation: 88,
                     heritage: 95
+                }
+            },
+            "scarlet_witch": {
+                name: "Scarlet Witch",
+                type: "Reality Manipulator",
+                emoji: "🔴",
+                image: "https://via.placeholder.com/150x200/DC2626/FFFFFF?text=Scarlet+Witch",
+                description: "You are Wanda Maximoff - Scarlet Witch! One of the most powerful beings in the universe with reality-warping abilities. You're passionate, protective, and learning to harness incredible power responsibly.",
+                traits: ["powerful", "emotional", "protective", "passionate", "complex"],
+                personality: [
+                    "🔴 Reality-Warping Power",
+                    "❤️ Deeply Emotional",
+                    "🛡️ Fiercely Protective",
+                    "🌪️ Passionate Nature",
+                    "🧠 Complex Psychology"
+                ],
+                psychologicalProfile: "You possess immense power tied to your emotions. Your journey involves learning to control incredible abilities while dealing with trauma and loss. Your protective instincts drive you to extraordinary lengths.",
+                strengths: [
+                    "Reality-warping magical abilities",
+                    "Fierce protective instincts",
+                    "Deep emotional intelligence",
+                    "Incredible raw power potential"
+                ],
+                weaknesses: [
+                    "Powers tied to emotional state",
+                    "Tendency toward isolation when hurt",
+                    "Difficulty controlling overwhelming abilities"
+                ],
+                careerMatches: ["Psychologist", "Artist", "Counselor", "Creative Director", "Therapist", "Social Worker"],
+                lifeAdvice: "Your emotions are not your weakness - they're the source of your strength. Learning to channel your feelings constructively will help you master both your powers and your destiny.",
+                personalityScores: {
+                    power: 99,
+                    emotion: 95,
+                    protection: 92,
+                    complexity: 90,
+                    growth: 85
+                }
+            },
+            "falcon": {
+                name: "Falcon",
+                type: "Aerial Warrior",
+                emoji: "🦅",
+                image: "https://via.placeholder.com/150x200/1F2937/FFFFFF?text=Falcon",
+                description: "You are Sam Wilson - Falcon! A dedicated soldier and counselor who became the new Captain America. You're loyal, grounded, and believe in lifting others up while staying true to your principles.",
+                traits: ["loyal", "grounded", "supportive", "principled", "dedicated"],
+                personality: [
+                    "🦅 Freedom Fighter",
+                    "🤝 Loyal Partner",
+                    "💪 Supportive Leader",
+                    "⭐ Principled Warrior",
+                    "🎯 Dedicated Professional"
+                ],
+                psychologicalProfile: "You combine military discipline with counseling skills and genuine empathy. Your ability to support others while maintaining your own strong moral center makes you a natural leader and trusted ally.",
+                strengths: [
+                    "Exceptional loyalty and partnership skills",
+                    "Strong counseling and support abilities",
+                    "Military training and tactical expertise",
+                    "Ability to inspire and uplift others"
+                ],
+                weaknesses: [
+                    "Sometimes overshadowed by more powerful heroes",
+                    "Burden of living up to legacy expectations",
+                    "Tendency to put others' needs before his own"
+                ],
+                careerMatches: ["Military Officer", "Counselor", "Social Worker", "Pilot", "Therapist", "Community Leader"],
+                lifeAdvice: "Your greatest strength is your ability to see the best in others and help them achieve it. Don't underestimate your own worth - sometimes the most powerful thing is simply being there for someone.",
+                personalityScores: {
+                    loyalty: 96,
+                    support: 94,
+                    principles: 90,
+                    leadership: 88,
+                    empathy: 92
+                }
+            },
+            "war_machine": {
+                name: "War Machine",
+                type: "Military Tech Hero",
+                emoji: "⚔️",
+                image: "https://via.placeholder.com/150x200/374151/FFFFFF?text=War+Machine",
+                description: "You are James Rhodes - War Machine! Tony Stark's best friend and a decorated military officer. You're disciplined, loyal, and bring military precision to superhero work.",
+                traits: ["disciplined", "loyal", "military", "reliable", "practical"],
+                personality: [
+                    "⚔️ Military Precision",
+                    "🤝 Unwavering Loyalty",
+                    "🎯 Disciplined Approach",
+                    "💪 Reliable Support",
+                    "🛡️ Practical Protection"
+                ],
+                psychologicalProfile: "You balance friendship with duty, bringing military discipline to the superhero world. Your loyalty to friends combined with professional military training makes you the ideal support and tactical partner.",
+                strengths: [
+                    "Military training and tactical expertise",
+                    "Advanced weapons and armor technology",
+                    "Unwavering loyalty to friends",
+                    "Practical problem-solving approach"
+                ],
+                weaknesses: [
+                    "Sometimes too by-the-book",
+                    "Can be overshadowed by flashier heroes",
+                    "Torn between military duty and superhero responsibilities"
+                ],
+                careerMatches: ["Military Officer", "Defense Contractor", "Security Specialist", "Pilot", "Strategic Advisor", "Technology Consultant"],
+                lifeAdvice: "Your steady reliability is invaluable - not everyone needs to be the star. Your friends count on you because they know you'll always be there when it matters most.",
+                personalityScores: {
+                    discipline: 94,
+                    loyalty: 95,
+                    reliability: 96,
+                    military: 92,
+                    support: 90
+                }
+            },
+            "ant_man": {
+                name: "Ant-Man",
+                type: "Size-Changing Hero",
+                emoji: "🐜",
+                image: "https://via.placeholder.com/150x200/059669/FFFFFF?text=Ant+Man",
+                description: "You are Scott Lang - Ant-Man! A former thief turned hero who can shrink to ant size or grow to giant proportions. You're humble, funny, and prove that anyone can become a hero.",
+                traits: ["humble", "funny", "reformed", "adaptive", "family-focused"],
+                personality: [
+                    "🐜 Size-Changing Abilities",
+                    "😄 Good-Natured Humor",
+                    "🏠 Family-Focused",
+                    "🔄 Reformed Character",
+                    "🌱 Humble Origins"
+                ],
+                psychologicalProfile: "You've transformed from making mistakes to making a difference. Your humor and humility make you relatable, while your dedication to family drives your heroic actions. You prove that heroes come from unexpected places.",
+                strengths: [
+                    "Size manipulation and quantum abilities",
+                    "Reformed perspective brings unique insights",
+                    "Natural humor and likeability",
+                    "Strong family motivation"
+                ],
+                weaknesses: [
+                    "Sometimes feels inadequate compared to other heroes",
+                    "Past mistakes create self-doubt",
+                    "Technology dependence for powers"
+                ],
+                careerMatches: ["Engineer", "Security Specialist", "Technician", "Family Counselor", "Inventor", "Small Business Owner"],
+                lifeAdvice: "Your past doesn't define your future - your choices do. You've already proven that transformation is possible. Stay humble and keep your family close - they're your greatest strength.",
+                personalityScores: {
+                    humor: 88,
+                    humility: 92,
+                    family: 95,
+                    adaptability: 87,
+                    growth: 90
+                }
+            },
+            "hawkeye": {
+                name: "Hawkeye",
+                type: "Master Archer",
+                emoji: "🏹",
+                image: "https://via.placeholder.com/150x200/7C3AED/FFFFFF?text=Hawkeye",
+                description: "You are Clint Barton - Hawkeye! A master marksman with perfect aim and a strong family man. You're grounded, loyal, and prove that you don't need superpowers to be a hero.",
+                traits: ["accurate", "grounded", "loyal", "family-oriented", "skilled"],
+                personality: [
+                    "🏹 Perfect Accuracy",
+                    "👨‍👩‍👧‍👦 Family First",
+                    "🎯 Focused Dedication",
+                    "🤝 Team Loyalty",
+                    "🌱 Down-to-Earth"
+                ],
+                psychologicalProfile: "You're the heart of any team, providing stability and human perspective among gods and super-soldiers. Your dedication to family keeps you grounded while your loyalty makes you invaluable in any crisis.",
+                strengths: [
+                    "Perfect marksmanship and archery skills",
+                    "Strong family values and motivation",
+                    "Excellent tactical and reconnaissance abilities",
+                    "Ability to remain calm under pressure"
+                ],
+                weaknesses: [
+                    "No superhuman abilities in a world of gods",
+                    "Family responsibilities can create conflict",
+                    "Sometimes feels expendable compared to powered heroes"
+                ],
+                careerMatches: ["Military Sniper", "Security Specialist", "Sports Trainer", "Family Counselor", "Precision Instructor", "Tactical Advisor"],
+                lifeAdvice: "Your humanity is your superpower. While others have incredible abilities, you have something just as valuable - the ability to stay grounded and remind everyone what they're fighting for.",
+                personalityScores: {
+                    accuracy: 99,
+                    family: 96,
+                    loyalty: 93,
+                    stability: 91,
+                    focus: 94
                 }
             }
         };
