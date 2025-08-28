@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H7GCZY7W0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3H7GCZY7W0');
+  </script>
+
+  <title>Captain America (Steve Rogers) - Complete Character Analysis | Zinvana</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Complete character analysis of Captain America (Steve Rogers) from Marvel Comics. Discover his personality traits, journey, psychology, and why he's America's First Avenger.">
+  <meta name="keywords" content="captain america, steve rogers, marvel character, captain america analysis, marvel superhero, chris evans, first avenger, character study">
+  <meta name="author" content="Zinvana">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Captain America (Steve Rogers) - Complete Character Analysis">
+  <meta property="og:description" content="Deep dive into the psychology and journey of Marvel's Captain America, Steve Rogers.">
+  <meta property="og:image" content="captainamerica.png">
+  <meta property="og:type" content="article">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Captain America (Steve Rogers) - Complete Character Analysis">
+  <meta name="twitter:description" content="Deep dive into the psychology and journey of Marvel's First Avenger.">
+  <meta name="twitter:image" content="captainamerica.png">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+    :root {
+      --primary-red: #DC143C;
+      --primary-blue: #1E3A8A;
+      --accent-green: #16A085;
+      --dark-bg: #0A0A0A;
+      --darker-bg: #050505;
+      --card-bg: #1A1A1A;
+      --text-primary: #FFFFFF;
+      --text-secondary: #B0B0B0;
+      --text-accent: #E5E7EB;
+      --glass-bg: rgba(26, 26, 26, 0.85);
+      --glass-border: rgba(255, 255, 255, 0.12);
+      --shadow-light: rgba(0, 0, 0, 0.15);
+      --shadow-medium: rgba(0, 0, 0, 0.25);
+      --shadow-heavy: rgba(0, 0, 0, 0.35);
+      --gradient-primary: linear-gradient(135deg, var(--primary-red), var(--primary-blue));
+      --gradient-hero: linear-gradient(135deg, rgba(220, 20, 60, 0.9), rgba(30, 58, 138, 0.9));
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.7;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Animated Background */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(145deg, var(--dark-bg), var(--darker-bg));
+      overflow: hidden;
+    }
+
+    .bg-animation::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120%;
+      height: 120%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(220, 20, 60, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(22, 160, 133, 0.05) 0%, transparent 50%);
+      animation: backgroundFloat 30s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    @keyframes backgroundFloat {
+      0%, 100% { 
+        transform: translate(0, 0) rotate(0deg) scale(1); 
+      }
+      25% { 
+        transform: translate(1%, -1%) rotate(0.3deg) scale(1.01); 
+      }
+      50% { 
+        transform: translate(-1%, 1%) rotate(-0.3deg) scale(0.99); 
+      }
+      75% { 
+        transform: translate(-1%, -1%) rotate(0.2deg) scale(1.01); 
+      }
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(25px);
+      border-bottom: 1px solid rgba(220, 20, 60, 0.15);
+      min-height: 80px;
+      z-index: 10000;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px var(--shadow-light);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-brand a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .nav-brand img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      transition: all 0.4s ease;
+    }
+
+    .nav-brand span {
+      font-size: 1.6rem;
+      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      position: relative;
+      padding: 0.75rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: width 0.4s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-red);
+      transform: translateY(-1px);
+    }
+
+    /* Mobile Navigation Toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+      padding: 8px;
+      z-index: 10001;
+    }
+
+    .nav-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(25px);
+      border-bottom: 1px solid rgba(220, 20, 60, 0.15);
+      padding: 2rem;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: all 0.3s ease;
+    }
+
+    .nav-mobile.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-mobile a {
+      display: block;
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .nav-mobile a:hover {
+      color: var(--primary-red);
+      padding-left: 1rem;
+    }
+
+    .nav-mobile a:last-child {
+      border-bottom: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(26, 26, 26, 0.95));
+    }
+
+    .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--text-accent);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      background: var(--glass-bg);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--glass-border);
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+
+    .hero-stat:hover {
+      transform: translateY(-3px);
+      border-color: rgba(220, 20, 60, 0.3);
+    }
+
+    .hero-stat .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-red);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .hero-stat .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .character-image-container {
+      position: relative;
+      width: 400px;
+      height: 500px;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(220, 20, 60, 0.3);
+      transition: all 0.6s ease;
+    }
+
+    .character-image-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-hero);
+      opacity: 0.1;
+      z-index: 2;
+    }
+
+    .character-image-container:hover {
+      transform: scale(1.02) rotate(-1deg);
+      box-shadow: 0 25px 80px rgba(220, 20, 60, 0.4);
+    }
+
+    .character-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.6s ease;
+    }
+
+    .hero-emblem {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--gradient-primary);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      padding: 0.75rem 1.25rem;
+      border-radius: 15px;
+      z-index: 3;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 6rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.01em;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Psychology Analysis */
+    .psychology-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .psychology-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 3rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .psychology-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-primary);
+    }
+
+    .psychology-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(220, 20, 60, 0.3);
+      box-shadow: 0 15px 40px var(--shadow-medium);
+    }
+
+    .psychology-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .psychology-card p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .trait-bars {
+      margin-top: 2rem;
+    }
+
+    .trait-bar {
+      margin-bottom: 1rem;
+    }
+
+    .trait-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text-accent);
+    }
+
+    .trait-progress {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .trait-fill {
+      height: 100%;
+      background: var(--gradient-primary);
+      border-radius: 10px;
+      transition: width 2s ease;
+    }
+
+    /* Journey Timeline */
+    .journey-timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--gradient-primary);
+      transform: translateX(-50%);
+    }
+
+    .journey-event {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    .journey-event:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .event-content {
+      flex: 1;
+      background: var(--glass-bg);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin: 0 2rem;
+      transition: all 0.4s ease;
+    }
+
+    .event-content:hover {
+      transform: translateY(-3px);
+      border-color: rgba(220, 20, 60, 0.3);
+    }
+
+    .event-number {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.2rem;
+      z-index: 2;
+    }
+
+    .event-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .event-description {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Character Analysis */
+    .analysis-section {
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.5), rgba(10, 10, 10, 0.8));
+      border-radius: 25px;
+      padding: 4rem;
+      margin: 4rem 0;
+      border: 1px solid var(--glass-border);
+    }
+
+    .analysis-content {
+      font-family: 'Crimson Text', serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-accent);
+    }
+
+    .analysis-content h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2rem 0 1.5rem;
+    }
+
+    .quote-section {
+      background: rgba(220, 20, 60, 0.1);
+      border-left: 4px solid var(--primary-red);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 0 15px 15px 0;
+    }
+
+    .quote-text {
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .quote-context {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Relationships Grid */
+    .relationships-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .relationship-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+
+    .relationship-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(220, 20, 60, 0.3);
+    }
+
+    .relationship-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      border: 3px solid var(--primary-red);
+    }
+
+    .relationship-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .relationship-type {
+      color: var(--primary-red);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .relationship-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .character-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gradient-primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+    }
+
+    .character-link-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+    }
+
+    .character-link-btn i {
+      font-size: 0.8rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--gradient-hero);
+      border-radius: 25px;
+      padding: 4rem;
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: white;
+      color: var(--primary-red);
+      padding: 1.25rem 2.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .hero-container {
+        gap: 3rem;
+      }
+
+      .character-image-container {
+        width: 380px;
+        height: 480px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+
+      .character-image-container {
+        width: 350px;
+        height: 450px;
+        margin: 0 auto;
+      }
+
+      .timeline-line {
+        left: 30px;
+        transform: none;
+      }
+
+      .journey-event {
+        flex-direction: row !important;
+        padding-left: 60px;
+      }
+
+      .event-number {
+        left: 30px;
+        transform: translateY(-50%);
+      }
+
+      .event-content {
+        margin-left: 2rem;
+        margin-right: 0;
+      }
+
+      .psychology-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .relationships-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+        min-height: 70px;
+      }
+
+      .nav-brand span {
+        font-size: 1.4rem;
+      }
+
+      .nav-brand img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .hero {
+        padding: 5rem 1rem 2rem;
+        min-height: 90vh;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        margin-bottom: 1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .hero-description {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .character-image-container {
+        width: 300px;
+        height: 380px;
+      }
+
+      .hero-emblem {
+        font-size: 1.2rem;
+        padding: 0.6rem 1rem;
+        top: 15px;
+        right: 15px;
+      }
+
+      .hero-stats {
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-stat {
+        flex: 1;
+        min-width: 100px;
+        padding: 1.2rem;
+      }
+
+      .hero-stat .stat-number {
+        font-size: 1.6rem;
+      }
+
+      .hero-stat .stat-label {
+        font-size: 0.8rem;
+      }
+
+      .section {
+        padding: 3rem 1rem;
+      }
+
+      .section-header h2 {
+        font-size: clamp(2rem, 6vw, 2.8rem);
+        margin-bottom: 1rem;
+      }
+
+      .section-header p {
+        font-size: 1.1rem;
+      }
+
+      .psychology-card,
+      .event-content,
+      .analysis-section,
+      .cta-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .psychology-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      .psychology-card p {
+        font-size: 1rem;
+      }
+
+      .trait-label {
+        font-size: 0.9rem;
+      }
+
+      .event-title {
+        font-size: 1.2rem;
+      }
+
+      .event-description {
+        font-size: 1rem;
+      }
+
+      .event-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+      }
+
+      .analysis-content h3 {
+        font-size: 1.6rem;
+        margin: 1.5rem 0 1rem;
+      }
+
+      .analysis-content {
+        font-size: 1rem;
+      }
+
+      .quote-text {
+        font-size: 1.2rem;
+      }
+
+      .relationship-card {
+        padding: 1.5rem;
+      }
+
+      .relationship-image {
+        width: 70px;
+        height: 70px;
+      }
+
+      .relationship-name {
+        font-size: 1.1rem;
+      }
+
+      .relationship-description {
+        font-size: 0.95rem;
+      }
+
+      .cta-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 1rem;
+        min-height: 60px;
+      }
+
+      .nav-brand span {
+        font-size: 1.2rem;
+      }
+
+      .nav-brand img {
+        width: 35px;
+        height: 35px;
+      }
+
+      .hero {
+        padding: 4rem 0.8rem 2rem;
+      }
+
+      .hero-container {
+        gap: 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2rem, 10vw, 3.5rem);
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .character-image-container {
+        width: 260px;
+        height: 320px;
+      }
+
+      .hero-emblem {
+        font-size: 1.1rem;
+        padding: 0.5rem 0.8rem;
+        top: 10px;
+        right: 10px;
+      }
+
+      .hero-stats {
+        gap: 1rem;
+      }
+
+      .hero-stat {
+        padding: 1rem 0.8rem;
+        min-width: 90px;
+      }
+
+      .hero-stat .stat-number {
+        font-size: 1.4rem;
+      }
+
+      .section {
+        padding: 2.5rem 0.8rem;
+      }
+
+      .psychology-card,
+      .event-content,
+      .analysis-section,
+      .cta-section {
+        padding: 1.5rem 1rem;
+      }
+
+      .event-content {
+        margin-left: 0.8rem;
+      }
+
+      .timeline-line {
+        left: 25px;
+      }
+
+      .event-number {
+        left: 25px;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+      }
+
+      .journey-event {
+        padding-left: 50px;
+      }
+
+      .relationship-card {
+        padding: 1.2rem;
+      }
+
+      .relationship-image {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+      }
+
+      .character-link-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+      }
+
+      .cta-button {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-content h1 {
+        font-size: clamp(1.8rem, 12vw, 3rem);
+      }
+
+      .character-image-container {
+        width: 240px;
+        height: 300px;
+      }
+
+      .hero-stat {
+        padding: 0.8rem 0.6rem;
+        min-width: 80px;
+      }
+
+      .psychology-card,
+      .event-content,
+      .analysis-section,
+      .cta-section {
+        padding: 1.2rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Animated Background -->
+  <div class="bg-animation"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-brand">
+      <a href="index.html" aria-label="Zinvana Home">
+        <img src="zinvanalogo.png" alt="Zinvana Logo" />
+        <span>Zinvana</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="marvel-quiz.html">Take Quiz</a>
+      <a href="marvel-quiz.html#characters">Characters</a>
+      <a href="marvel-quiz.html#about">About</a>
+      <a href="help.html">Help</a>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="nav-mobile" id="navMobile">
+    <a href="marvel-quiz.html">Take Quiz</a>
+    <a href="marvel-quiz.html#characters">Characters</a>
+    <a href="marvel-quiz.html#about">About</a>
+    <a href="help.html">Help</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content fade-in">
+        <h1>Captain America</h1>
+        <div class="hero-subtitle">Steve Rogers • America's First Avenger</div>
+        <p class="hero-description">
+          The living symbol of freedom and justice, Steve Rogers embodies the best of America. 
+          A man out of time who never compromises his principles, Captain America leads with 
+          courage, integrity, and an unwavering moral compass that inspires heroes and civilians alike.
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-number">1918</div>
+            <div class="stat-label">Birth Year</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">1941</div>
+            <div class="stat-label">First Mission</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Years Service</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-in">
+        <div class="character-image-container">
+          <img src="captainamerica.png" alt="Captain America Steve Rogers" class="character-image">
+          <div class="hero-emblem">★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Psychology Analysis Section -->
+  <section class="section">
+    <div class="section-header fade-in">
+      <h2>Psychological Profile</h2>
+      <p>Understanding the unwavering moral foundation that makes Captain America the conscience of the Marvel Universe</p>
+    </div>
+    
+    <div class="psychology-grid">
+      <div class="psychology-card fade-in">
+        <h3>Core Personality Traits</h3>
+        <p>Steve Rogers embodies the ideal of the selfless leader. His personality is defined by unwavering integrity, natural leadership, and an absolute commitment to protecting others, even at the cost of his own happiness.</p>
+        <div class="trait-bars">
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Leadership</span>
+              <span>98%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 98%;"></div>
+            </div>
+          </div>
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Integrity</span>
+              <span>100%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Courage</span>
+              <span>95%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Selflessness</span>
+              <span>97%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 97%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="psychology-card fade-in">
+        <h3>Motivational Drivers</h3>
+        <p>Captain America is driven by an unwavering sense of duty to protect the innocent and uphold justice. His motivations stem from personal conviction rather than external validation or reward.</p>
+        <div class="trait-bars">
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Protecting Others</span>
+              <span>100%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Justice & Freedom</span>
+              <span>98%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 98%;"></div>
+            </div>
+          </div>
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Team Unity</span>
+              <span>92%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 92%;"></div>
+            </div>
+          </div>
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Personal Recognition</span>
+              <span>15%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 15%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="psychology-card fade-in">
+        <h3>Combat & Strategic Thinking</h3>
+        <p>Beyond physical prowess, Captain America's greatest weapon is his tactical mind. He combines battlefield experience with natural leadership to inspire and coordinate effective team strategies.</p>
+        <div class="trait-bars">
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Tactical Planning</span>
+              <span>95%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Team Coordination</span>
+              <span>96%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 96%;"></div>
+            </div>
+          </div>
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Combat Efficiency</span>
+              <span>90%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="trait-bar">
+            <div class="trait-label">
+              <span>Adaptability</span>
+              <span>88%</span>
+            </div>
+            <div class="trait-progress">
+              <div class="trait-fill" style="width: 88%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Character Journey Timeline -->
+  <section class="section">
+    <div class="section-header fade-in">
+      <h2>The First Avenger's Journey</h2>
+      <p>Tracing Steve Rogers' transformation from a frail Brooklyn kid to the world's greatest symbol of hope</p>
+    </div>
+    
+    <div class="journey-timeline">
+      <div class="timeline-line"></div>
+      
+      <div class="journey-event fade-in">
+        <div class="event-number">1</div>
+        <div class="event-content">
+          <div class="event-title">The Kid from Brooklyn</div>
+          <div class="event-description">
+            Born weak and sickly, Steve Rogers compensated with determination and moral courage. 
+            Despite his physical limitations, he never backed down from bullies and always stood up 
+            for those who couldn't defend themselves.
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-event fade-in">
+        <div class="event-number">2</div>
+        <div class="event-content">
+          <div class="event-title">Super Soldier Transformation</div>
+          <div class="event-description">
+            Dr. Erskine's Super Soldier Serum chose Steve not for his physical strength, but for his 
+            character. The serum enhanced everything about him - his body, his mind, and most importantly, 
+            his already strong moral convictions.
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-event fade-in">
+        <div class="event-number">3</div>
+        <div class="event-content">
+          <div class="event-title">World War II Hero</div>
+          <div class="event-description">
+            Leading the Howling Commandos, Steve proved that true leadership comes from inspiring others. 
+            His willingness to sacrifice everything to stop the Red Skull established him as a symbol 
+            of hope and freedom.
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-event fade-in">
+        <div class="event-number">4</div>
+        <div class="event-content">
+          <div class="event-title">Man Out of Time</div>
+          <div class="event-description">
+            Awakening in the 21st century, Steve struggled to adapt to a changed world while 
+            maintaining his core values. His old-fashioned morality often clashed with modern 
+            cynicism, but never wavered.
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-event fade-in">
+        <div class="event-number">5</div>
+        <div class="event-content">
+          <div class="event-title">Assembling the Avengers</div>
+          <div class="event-description">
+            As the natural leader of the Avengers, Steve brought together Earth's mightiest heroes. 
+            His ability to inspire trust and coordinate diverse personalities made him the team's 
+            indispensable heart and conscience.
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-event fade-in">
+        <div class="event-number">6</div>
+        <div class="event-content">
+          <div class="event-title">Civil War and Sacrifice</div>
+          <div class="event-description">
+            When forced to choose between loyalty to government and loyalty to principles, Steve chose 
+            his convictions. His willingness to become a fugitive rather than compromise his beliefs 
+            showed that true heroism sometimes requires standing alone.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Character Analysis Section -->
+  <section class="section">
+    <div class="analysis-section fade-in">
+      <div class="analysis-content">
+        <h3>The Perfect Human Ideal</h3>
+        <p>
+          Captain America represents humanity's highest aspirations made manifest. Steve Rogers wasn't chosen 
+          to become a super soldier because he was the strongest or smartest candidate, but because he possessed 
+          something far rarer: an incorruptible moral core. The Super Soldier Serum doesn't create heroes—it 
+          amplifies what's already there. In Steve's case, it amplified a man who would rather die than compromise 
+          his principles.
+        </p>
+
+        <div class="quote-section">
+          <div class="quote-text">
+            "I can do this all day."
+          </div>
+          <div class="quote-context">
+            - Steve Rogers' signature phrase, embodying his endless determination
+          </div>
+        </div>
+
+        <h3>Leadership Through Example</h3>
+        <p>
+          What makes Captain America an extraordinary leader isn't his enhanced strength or tactical genius—it's 
+          his unwavering consistency. In a world where heroes often struggle with moral ambiguity, Steve provides 
+          a moral anchor. He leads not through commands but through example, inspiring others to be their best 
+          selves simply by witnessing his refusal to take the easy path.
+        </p>
+
+        <h3>The Burden of Perfection</h3>
+        <p>
+          Steve Rogers carries the psychological weight of being a living symbol. Every action is scrutinized, 
+          every decision carries the weight of representation. Yet rather than being crushed by these expectations, 
+          he uses them as motivation to constantly strive for his ideals. His greatest strength is also his 
+          greatest burden: the inability to accept moral compromise.
+        </p>
+
+        <div class="quote-section">
+          <div class="quote-text">
+            "The price of freedom is high. It always has been. And it's a price I'm willing to pay."
+          </div>
+          <div class="quote-context">
+            - Steve Rogers on the cost of standing up for what's right
+          </div>
+        </div>
+
+        <h3>Timeless Values in a Changing World</h3>
+        <p>
+          Captain America's greatest challenge isn't any supervillain—it's remaining true to timeless values 
+          in an increasingly cynical world. His struggle to adapt to modern moral complexities while maintaining 
+          his core principles creates internal conflict that makes him profoundly human despite his superhuman 
+          abilities. This tension between idealism and reality is what makes Steve Rogers not just a superhero, 
+          but a symbol of hope that goodness can endure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Relationships -->
+  <section class="section">
+    <div class="section-header fade-in">
+      <h2>Key Relationships</h2>
+      <p>The allies and friends who shaped Captain America's journey and revealed different facets of his character</p>
+    </div>
+    
+    <div class="relationships-grid">
+      <div class="relationship-card fade-in">
+        <img src="ironman.png" alt="Iron Man" class="relationship-image">
+        <div class="relationship-name">Tony Stark (Iron Man)</div>
+        <div class="relationship-type">Complicated Brotherhood</div>
+        <div class="relationship-description">
+          Despite their philosophical differences, Steve and Tony formed a deep respect for each other. 
+          Their conflicts often stemmed from their different approaches to heroism, but their friendship 
+          transcended their disagreements.
+        </div>
+        <a href="iron-man.html" class="character-link-btn">
+          <i class="fas fa-user"></i>
+          View Iron Man's Page
+        </a>
+      </div>
+
+      <div class="relationship-card fade-in">
+        <img src="thor.png" alt="Thor" class="relationship-image">
+        <div class="relationship-name">Thor Odinson</div>
+        <div class="relationship-type">Noble Warrior Bond</div>
+        <div class="relationship-description">
+          Thor recognized Steve as a worthy warrior from their first meeting. Their shared commitment 
+          to protecting others and willingness to sacrifice for the greater good created a strong bond 
+          between the Asgardian prince and the First Avenger.
+        </div>
+        <a href="thor.html" class="character-link-btn">
+          <i class="fas fa-user"></i>
+          View Thor's Page
+        </a>
+      </div>
+
+      <div class="relationship-card fade-in">
+        <img src="widow.png" alt="Black Widow" class="relationship-image">
+        <div class="relationship-name">Natasha Romanoff (Black Widow)</div>
+        <div class="relationship-type">Trusted Partner</div>
+        <div class="relationship-description">
+          Natasha became one of Steve's closest confidants, offering him guidance in navigating the 
+          modern world. Their partnership was built on mutual trust and respect, with Natasha helping 
+          Steve adapt while he inspired her to believe in redemption.
+        </div>
+        <a href="black-widow.html" class="character-link-btn">
+          <i class="fas fa-user"></i>
+          View Black Widow's Page
+        </a>
+      </div>
+
+      <div class="relationship-card fade-in">
+        <img src="falcon.png" alt="Falcon" class="relationship-image">
+        <div class="relationship-name">Sam Wilson (Falcon)</div>
+        <div class="relationship-type">Loyal Friend & Successor</div>
+        <div class="relationship-description">
+          Sam became Steve's most trusted friend and eventual successor as Captain America. Their friendship 
+          was built on shared values and mutual respect, with Sam helping Steve navigate both personal 
+          struggles and heroic duties.
+        </div>
+      </div>
+
+      <div class="relationship-card fade-in">
+        <img src="bucky.png" alt="Winter Soldier" class="relationship-image">
+        <div class="relationship-name">James "Bucky" Barnes</div>
+        <div class="relationship-type">Lifelong Best Friend</div>
+        <div class="relationship-description">
+          Bucky represents Steve's connection to his past and his humanity. Steve's unwavering loyalty 
+          to his childhood friend, even when Bucky became the Winter Soldier, demonstrated the depth 
+          of Steve's commitment to those he loves.
+        </div>
+      </div>
+
+      <div class="relationship-card fade-in">
+        <img src="peggy.png" alt="Peggy Carter" class="relationship-image">
+        <div class="relationship-name">Peggy Carter</div>
+        <div class="relationship-type">Love of His Life</div>
+        <div class="relationship-description">
+          Peggy was Steve's equal in every way—strong, intelligent, and principled. Their love story 
+          spanned decades and dimensions, representing Steve's greatest personal sacrifice and his 
+          deepest connection to his humanity and the life he never got to live.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section">
+    <div class="cta-section fade-in">
+      <h2>Are You Like Captain America?</h2>
+      <p>
+        Take our free Marvel personality quiz to discover if you share Steve Rogers' unwavering integrity, 
+        natural leadership, and moral courage. Find out which Marvel hero matches your unique personality!
+      </p>
+      <a href="marvel-quiz.html#quiz" class="cta-button">
+        <i class="fas fa-play"></i>
+        Take the Free Quiz Now
+      </a>
+    </div>
+  </section>
+
+  <script>
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // Animate trait bars when they come into view
+          if (entry.target.classList.contains('psychology-card')) {
+            const traitFills = entry.target.querySelectorAll('.trait-fill');
+            traitFills.forEach((fill, index) => {
+              setTimeout(() => {
+                fill.style.width = fill.style.width;
+              }, index * 200);
+            });
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+
+    if (navToggle && navMobile) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMobile.classList.toggle('active');
+      });
+
+      // Close mobile nav when clicking on a link
+      navMobile.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navMobile.classList.remove('active');
+        });
+      });
+
+      // Close mobile nav when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navMobile.contains(e.target)) {
+          navToggle.classList.remove('active');
+          navMobile.classList.remove('active');
+        }
+      });
+    }
+
+    // Initialize animations
+    document.addEventListener('DOMContentLoaded', () => {
+      // Observe all fade-in elements
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Parallax effect for hero image
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        const heroHeight = hero.offsetHeight;
+        
+        if (scrolled < heroHeight) {
+          const characterImage = document.querySelector('.character-image-container');
+          characterImage.style.transform = `translateY(${scrolled * 0.1}px)`;
+        }
+      });
+    });
+
+    // Add loading states
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+</body>
+</html>
