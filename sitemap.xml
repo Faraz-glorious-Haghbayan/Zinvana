@@ -1536,19 +1536,6 @@ Features: Proper categorization, strategic priorities, change frequencies
     <priority>0.70</priority>
 </url>
 
-<url>
-    <loc>https://zinvana.com/hawkeye.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-</url>
-
-<url>
-    <loc>https://zinvana.com/falcon.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-</url>
 
 <!-- ====================================================================
      Q&A AND EDUCATIONAL PAGES
@@ -1703,3 +1690,4 @@ Features: Proper categorization, strategic priorities, change frequencies
 </url>
 
 </urlset>
+
