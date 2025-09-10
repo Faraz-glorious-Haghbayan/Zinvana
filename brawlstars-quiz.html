@@ -566,6 +566,49 @@
             font-size: 1.5rem;
         }
 
+        .next-btn {
+            font-family: 'Fredoka', sans-serif;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+            color: #fff;
+            border: 2px solid #667eea;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            margin-top: 25px;
+            width: 100%;
+            max-width: 300px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .next-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .next-btn:disabled {
+            background: #ccc;
+            border-color: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .next-btn:disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
         .quiz-container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
@@ -2283,6 +2326,10 @@
             <div class="question-number" id="questionNumber">Question 1 of 15</div>
             <div class="question-text" id="questionText"></div>
             <div class="options-grid" id="optionsGrid"></div>
+            
+            <button class="next-btn" id="nextBtn" onclick="nextQuestion()" disabled aria-label="Continue to next question">
+                Next Question →
+            </button>
         </div>
 
         <!-- Loading Screen -->
@@ -3725,45 +3772,126 @@
         }
 
         function startQuiz() {
-            document.getElementById('quizHeader').style.display = 'none';
-            document.getElementById('quizContainer').style.display = 'block';
-            
-            initializeTraits();
-            currentQuestion = 0;
-            selectedAnswer = null;
-            
-            updateProgressBar();
-            displayQuestion();
+            try {
+                console.log('Starting quiz...'); // Debug log
+                
+                const quizHeader = document.getElementById('quizHeader');
+                const quizContainer = document.getElementById('quizContainer');
+                
+                if (!quizHeader || !quizContainer) {
+                    console.error('Quiz elements not found!');
+                    return;
+                }
+                
+                quizHeader.style.display = 'none';
+                quizContainer.style.display = 'block';
+                
+                initializeTraits();
+                currentQuestion = 0;
+                selectedAnswer = null;
+                
+                updateProgressBar();
+                displayQuestion();
+                
+                // Scroll to quiz container
+                quizContainer.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                console.log('Quiz started successfully!');
+            } catch (error) {
+                console.error('Error starting quiz:', error);
+                alert('There was an error starting the quiz. Please refresh the page and try again.');
+            }
         }
 
         function displayQuestion() {
-            const question = questions[currentQuestion];
-            document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
-            document.getElementById('questionText').textContent = question.question;
-            
-            const optionsGrid = document.getElementById('optionsGrid');
-            optionsGrid.innerHTML = '';
-            
-            question.options.forEach((option, index) => {
-                const optionElement = document.createElement('div');
-                optionElement.classList.add('option');
-                optionElement.innerHTML = `<div class="option-text">${option.text}</div>`;
-                optionElement.onclick = () => selectOption(index);
-                optionsGrid.appendChild(optionElement);
-            });
-            
-            selectedAnswer = null;
+            try {
+                const question = questions[currentQuestion];
+                if (!question) {
+                    console.error('Question not found for index:', currentQuestion);
+                    return;
+                }
+                
+                const questionNumberEl = document.getElementById('questionNumber');
+                const questionTextEl = document.getElementById('questionText');
+                const optionsGrid = document.getElementById('optionsGrid');
+                
+                if (!questionNumberEl || !questionTextEl || !optionsGrid) {
+                    console.error('Quiz UI elements not found!');
+                    return;
+                }
+                
+                questionNumberEl.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+                questionTextEl.textContent = question.question;
+                
+                optionsGrid.innerHTML = '';
+                
+                question.options.forEach((option, index) => {
+                    const optionElement = document.createElement('div');
+                    optionElement.classList.add('option');
+                    optionElement.innerHTML = `<div class="option-text">${option.text}</div>`;
+                    optionElement.onclick = () => selectOption(index);
+                    
+                    // Add keyboard support
+                    optionElement.tabIndex = 0;
+                    optionElement.onkeydown = (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            selectOption(index);
+                        }
+                    };
+                    
+                    optionsGrid.appendChild(optionElement);
+                });
+                
+                selectedAnswer = null;
+                
+                // Disable next button until selection is made
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn) {
+                    nextBtn.disabled = true;
+                }
+                
+                console.log('Question displayed:', question.question);
+            } catch (error) {
+                console.error('Error displaying question:', error);
+                alert('There was an error displaying the question. Please refresh the page and try again.');
+            }
         }
 
         function selectOption(optionIndex) {
-            // Remove previous selection
-            document.querySelectorAll('.option').forEach(option => {
-                option.classList.remove('selected');
-            });
-            
-            // Select new option
-            document.querySelectorAll('.option')[optionIndex].classList.add('selected');
-            selectedAnswer = optionIndex;
+            try {
+                // Remove previous selection
+                document.querySelectorAll('.option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                
+                // Select new option
+                const options = document.querySelectorAll('.option');
+                if (options[optionIndex]) {
+                    options[optionIndex].classList.add('selected');
+                    selectedAnswer = optionIndex;
+                    
+                    // Enable next button
+                    const nextBtn = document.getElementById('nextBtn');
+                    if (nextBtn) {
+                        nextBtn.disabled = false;
+                        nextBtn.focus(); // Focus on next button for better UX
+                    }
+                    
+                    console.log('Option selected:', optionIndex);
+                } else {
+                    console.error('Option not found at index:', optionIndex);
+                }
+            } catch (error) {
+                console.error('Error selecting option:', error);
+            }
+        }
+
+        function nextQuestion() {
+            if (selectedAnswer === null) return;
             
             // Add traits from selected answer
             const selectedOption = questions[currentQuestion].options[selectedAnswer];
@@ -3771,17 +3899,20 @@
                 userTraits[trait] = (userTraits[trait] || 0) + 1;
             });
             
-            // Auto-advance to next question after a short delay
-            setTimeout(() => {
-                currentQuestion++;
+            currentQuestion++;
+            
+            if (currentQuestion < questions.length) {
+                updateProgressBar();
+                displayQuestion();
                 
-                if (currentQuestion < questions.length) {
-                    updateProgressBar();
-                    displayQuestion();
-                } else {
-                    showLoading();
+                // Disable next button until new selection
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn) {
+                    nextBtn.disabled = true;
                 }
-            }, 500); // 500ms delay to show the selection
+            } else {
+                showLoading();
+            }
         }
 
         function updateProgressBar() {
