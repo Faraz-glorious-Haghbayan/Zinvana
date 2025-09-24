@@ -576,19 +576,22 @@
         }
       }
 
-      /* Clean, Modern Hero Section */
+      /* ========================================
+         MODERN RESPONSIVE HERO SECTION
+       ======================================== */
+      
       .hero-section {
         position: relative;
         min-height: 100vh;
         display: flex;
         align-items: center;
-        justify-content: center;
         overflow: hidden;
         margin-top: 85px;
-        padding: 0 20px;
+        padding: 2rem 0;
       }
       
-      .hero-background {
+      /* Background with modern gradients and animations */
+      .hero-bg {
         position: absolute;
         top: 0;
         left: 0;
@@ -597,109 +600,785 @@
         z-index: 1;
       }
       
-      .hero-gradient {
+      .hero-gradient-bg {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         background: linear-gradient(135deg, 
-          rgba(99, 102, 241, 0.1) 0%, 
-          rgba(168, 85, 247, 0.08) 25%,
-          rgba(236, 72, 153, 0.06) 50%,
-          rgba(59, 130, 246, 0.08) 75%,
-          rgba(16, 185, 129, 0.06) 100%
-        );
-        animation: gradientMove 20s ease infinite;
+          rgba(102, 126, 234, 0.05) 0%,
+          rgba(168, 85, 247, 0.05) 25%,
+          rgba(236, 72, 153, 0.05) 50%,
+          rgba(59, 130, 246, 0.05) 75%,
+          rgba(16, 185, 129, 0.05) 100%);
+        animation: gradient-shift 15s ease-in-out infinite;
       }
       
-      @keyframes gradientMove {
+      @keyframes gradient-shift {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.02); }
+      }
+      
+      /* Floating geometric shapes */
+      .floating-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(40px);
+        opacity: 0.15;
+        animation: float-shape 20s infinite ease-in-out;
+      }
+      
+      .shape-1 {
+        width: 300px;
+        height: 300px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        top: 10%;
+        left: -10%;
+        animation-delay: 0s;
+      }
+      
+      .shape-2 {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(45deg, #f093fb, #f5576c);
+        bottom: 10%;
+        right: -5%;
+        animation-delay: -8s;
+      }
+      
+      .shape-3 {
+        width: 250px;
+        height: 250px;
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+        top: 60%;
+        left: 70%;
+        animation-delay: -4s;
+      }
+      
+      .shape-4 {
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(45deg, #43e97b, #38f9d7);
+        top: 20%;
+        right: 20%;
+        animation-delay: -12s;
+      }
+      
+      @keyframes float-shape {
+        0%, 100% { 
+          transform: translate(0, 0) rotate(0deg) scale(1);
+        }
+        25% { 
+          transform: translate(30px, -30px) rotate(90deg) scale(1.1);
+        }
+        50% { 
+          transform: translate(-20px, 40px) rotate(180deg) scale(0.9);
+        }
+        75% { 
+          transform: translate(40px, 20px) rotate(270deg) scale(1.05);
+        }
+      }
+      
+      /* Hero container with grid layout */
+      .hero-container {
+        position: relative;
+        z-index: 10;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 4rem;
+      }
+      
+      /* Ensure mobile-first responsive behavior */
+      @media (max-width: 768px) {
+        .hero-container {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+          text-align: center !important;
+          padding: 0 1rem !important;
+        }
+      }
+      
+      /* Hero content styles */
+      .hero-content {
+        max-width: 700px;
+      }
+      
+      /* Trust badge with animation */
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(102, 126, 234, 0.15);
+        border-radius: 50px;
+        padding: 0.75rem 1.5rem;
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #667eea;
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero-badge::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+        animation: badge-shine 3s infinite;
+      }
+      
+      .badge-sparkle {
+        font-size: 1.1rem;
+        animation: sparkle 2s infinite ease-in-out;
+      }
+      
+      @keyframes badge-shine {
+        0% { left: -100%; }
+        100% { left: 100%; }
+      }
+      
+      @keyframes sparkle {
         0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
-        50% { opacity: 0.8; transform: scale(1.1) rotate(1deg); }
+        50% { opacity: 0.8; transform: scale(1.2) rotate(180deg); }
       }
       
-      .hero-pattern {
+      /* Modern typography */
+      .hero-title {
+        font-size: 4.5rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.03em;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      /* Critical mobile typography fixes */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: clamp(1.8rem, 8vw, 3rem) !important;
+          line-height: 1.2 !important;
+          margin-bottom: 1rem !important;
+        }
+      }
+      
+      .title-line {
+        display: block;
+        color: #1a202c;
+        margin-bottom: 0.2rem;
+      }
+      
+      .title-highlight {
+        display: block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 70%, #4facfe 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+      }
+      
+      .hero-description {
+        font-size: 1.3rem;
+        line-height: 1.7;
+        color: #4a5568;
+        margin-bottom: 2.5rem;
+        max-width: 580px;
+      }
+      
+      /* Mobile description fixes */
+      @media (max-width: 768px) {
+        .hero-description {
+          font-size: clamp(0.9rem, 4vw, 1.1rem) !important;
+          line-height: 1.6 !important;
+          margin-bottom: 2rem !important;
+          max-width: 100% !important;
+          padding: 0 0.5rem !important;
+        }
+      }
+      
+      /* Modern button styles */
+      .hero-actions {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+      
+      .btn-hero-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.2rem 2.5rem;
+        border-radius: 16px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .btn-hero-primary::before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: 
-          radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.06) 0%, transparent 60%);
-        animation: patternFloat 25s linear infinite;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+        transition: opacity 0.3s ease;
+        opacity: 0;
       }
       
-      @keyframes patternFloat {
-        0% { transform: translateX(0) translateY(0); }
-        25% { transform: translateX(-20px) translateY(-10px); }
-        50% { transform: translateX(20px) translateY(10px); }
-        75% { transform: translateX(-10px) translateY(20px); }
-        100% { transform: translateX(0) translateY(0); }
+      .btn-hero-primary:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 12px 48px rgba(102, 126, 234, 0.5);
       }
       
-      .hero-container {
-        position: relative;
-        z-index: 10;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
+      .btn-hero-primary:hover::before {
+        opacity: 1;
       }
       
-      .hero-content {
-        text-align: center;
-        padding: 40px 0;
+      .btn-hero-primary:hover .btn-arrow {
+        transform: translateX(4px);
       }
       
-      .hero-badge {
+      .btn-arrow {
+        transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+      }
+      
+      .btn-hero-secondary {
         display: inline-flex;
         align-items: center;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(99, 102, 241, 0.2);
-        border-radius: 50px;
-        padding: 8px 20px;
-        margin-bottom: 32px;
-        font-size: 14px;
+        background: transparent;
+        color: #667eea;
+        padding: 1.2rem 2.5rem;
+        border: 2px solid #667eea;
+        border-radius: 16px;
+        text-decoration: none;
         font-weight: 600;
-        color: #6366f1;
-        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.15);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
       
-      .hero-title {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: #1e293b;
-        margin: 0 0 24px 0;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      .btn-hero-secondary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #667eea;
+        transition: width 0.3s ease;
+        z-index: -1;
       }
       
-      .hero-subtitle {
-        font-size: 1.25rem;
-        color: #64748b;
-        line-height: 1.6;
-        margin: 0 0 40px 0;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 40px;
+      .btn-hero-secondary:hover::before {
+        width: 100%;
       }
       
-      .hero-buttons {
+      .btn-hero-secondary:hover {
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+      }
+      
+      /* Stats section */
+      .hero-stats {
         display: flex;
-        gap: 16px;
-        justify-content: center;
         align-items: center;
-        margin-bottom: 60px;
+        gap: 2.5rem;
         flex-wrap: wrap;
       }
       
+      .stat-item {
+        text-align: center;
+      }
+      
+      .stat-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.3rem;
+        display: block;
+      }
+      
+      .stat-label {
+        font-size: 0.9rem;
+        color: #718096;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .stat-divider {
+        width: 1px;
+        height: 50px;
+        background: linear-gradient(to bottom, transparent, #e2e8f0, transparent);
+      }
+      
+      /* Visual preview cards */
+      .hero-visual {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        justify-self: center;
+      }
+      
+      .preview-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(102, 126, 234, 0.1);
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 12px 40px rgba(102, 126, 234, 0.08);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .preview-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .preview-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15);
+      }
+      
+      .preview-card:hover::before {
+        opacity: 1;
+      }
+      
+      .card-personality { animation: float-card 6s infinite ease-in-out; }
+      .card-leaders { animation: float-card 6s infinite ease-in-out -2s; }
+      .card-characters { animation: float-card 6s infinite ease-in-out -4s; }
+      
+      @keyframes float-card {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+      }
+      
+      .card-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      
+      .card-label {
+        font-weight: 600;
+        color: #2d3748;
+        font-size: 1rem;
+        margin: 0;
+      }
+      
+      /* ========================================
+         RESPONSIVE BREAKPOINTS - MOBILE FIRST
+       ======================================== */
+       
+      /* Mobile phones - Base styles */
+      @media (max-width: 480px) {
+        .hero-section {
+          margin-top: 70px;
+          padding: 1rem 0;
+          min-height: 100vh;
+        }
+        
+        .hero-container {
+          padding: 0 1rem;
+          gap: 1.5rem;
+          grid-template-columns: 1fr;
+          text-align: center;
+          max-width: 100%;
+        }
+        
+        .hero-content {
+          max-width: 100%;
+          order: 1;
+        }
+        
+        .hero-visual {
+          order: 2;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 0.5rem;
+          max-width: 100%;
+        }
+        
+        .hero-badge {
+          font-size: 0.7rem;
+          padding: 0.4rem 0.8rem;
+          margin-bottom: 1rem;
+          border-radius: 25px;
+        }
+        
+        .badge-sparkle {
+          font-size: 0.9rem;
+        }
+        
+        .hero-title {
+          font-size: 2rem;
+          margin-bottom: 0.8rem;
+          line-height: 1.2;
+        }
+        
+        .title-line {
+          font-size: 2rem;
+        }
+        
+        .title-highlight {
+          font-size: 2rem;
+        }
+        
+        .hero-description {
+          font-size: 0.9rem;
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
+          padding: 0 0.5rem;
+        }
+        
+        .hero-actions {
+          gap: 0.7rem;
+          margin-bottom: 1.5rem;
+          max-width: 100%;
+          flex-direction: column;
+        }
+        
+        .btn-hero-primary,
+        .btn-hero-secondary {
+          padding: 0.8rem 1.2rem;
+          font-size: 0.85rem;
+          border-radius: 10px;
+          width: 100%;
+          max-width: 280px;
+          margin: 0 auto;
+          text-align: center;
+          justify-content: center;
+        }
+        
+        .btn-arrow svg {
+          width: 16px;
+          height: 16px;
+        }
+        
+        .hero-stats {
+          flex-direction: row;
+          gap: 1rem;
+          text-align: center;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        
+        .stat-item {
+          flex: 1;
+          min-width: 60px;
+        }
+        
+        .stat-divider {
+          display: none;
+        }
+        
+        .stat-number {
+          font-size: 1.3rem;
+          margin-bottom: 0.2rem;
+        }
+        
+        .stat-label {
+          font-size: 0.7rem;
+          line-height: 1.2;
+        }
+        
+        .preview-card {
+          padding: 0.8rem 0.5rem;
+          border-radius: 10px;
+          min-width: 0;
+          flex: 1;
+          max-width: 90px;
+        }
+        
+        .card-icon {
+          font-size: 1.5rem;
+          margin-bottom: 0.3rem;
+        }
+        
+        .card-label {
+          font-size: 0.65rem;
+          line-height: 1.2;
+        }
+        
+        /* Minimal floating shapes on mobile for performance */
+        .shape {
+          opacity: 0.03;
+          filter: blur(80px);
+        }
+        
+        .shape-1, .shape-4 {
+          display: none;
+        }
+        
+        .shape-3 {
+          width: 150px;
+          height: 150px;
+        }
+      }
+      
+      /* Very small screens */
+      @media (max-width: 360px) {
+        .hero-section {
+          padding: 0.5rem 0;
+        }
+        
+        .hero-container {
+          padding: 0 0.8rem;
+          gap: 1rem;
+        }
+        
+        .hero-title {
+          font-size: 1.8rem;
+        }
+        
+        .title-line,
+        .title-highlight {
+          font-size: 1.8rem;
+        }
+        
+        .hero-description {
+          font-size: 0.85rem;
+          padding: 0;
+        }
+        
+        .btn-hero-primary,
+        .btn-hero-secondary {
+          padding: 0.7rem 1rem;
+          font-size: 0.8rem;
+          max-width: 250px;
+        }
+        
+        .hero-stats {
+          gap: 0.5rem;
+        }
+        
+        .stat-number {
+          font-size: 1.1rem;
+        }
+        
+        .stat-label {
+          font-size: 0.6rem;
+        }
+        
+        .preview-card {
+          padding: 0.6rem 0.3rem;
+          max-width: 75px;
+        }
+        
+        .card-icon {
+          font-size: 1.2rem;
+        }
+        
+        .card-label {
+          font-size: 0.6rem;
+        }
+      }
+      
+      /* Tablets */
+      @media (min-width: 481px) and (max-width: 768px) {
+        .hero-section {
+          margin-top: 75px;
+          padding: 1.5rem 0;
+          min-height: 90vh;
+        }
+        
+        .hero-container {
+          padding: 0 1.5rem;
+          gap: 2rem;
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        
+        .hero-visual {
+          flex-direction: row;
+          justify-content: center;
+          max-width: 400px;
+          margin: 0 auto;
+          gap: 1rem;
+        }
+        
+        .hero-badge {
+          font-size: 0.8rem;
+          padding: 0.6rem 1.3rem;
+          margin-bottom: 1.5rem;
+        }
+        
+        .hero-title {
+          font-size: 3rem;
+          margin-bottom: 1.2rem;
+        }
+        
+        .hero-description {
+          font-size: 1.1rem;
+          margin-bottom: 2rem;
+          max-width: 100%;
+        }
+        
+        .hero-actions {
+          flex-direction: row;
+          gap: 1rem;
+          margin-bottom: 2.5rem;
+          max-width: 450px;
+          margin-left: auto;
+          margin-right: auto;
+          justify-content: center;
+        }
+        
+        .btn-hero-primary,
+        .btn-hero-secondary {
+          padding: 1.1rem 2rem;
+          font-size: 1rem;
+          flex: 1;
+          max-width: 200px;
+        }
+        
+        .hero-stats {
+          gap: 2rem;
+          justify-content: center;
+          flex-direction: row;
+        }
+        
+        .stat-number {
+          font-size: 1.8rem;
+        }
+        
+        .stat-divider {
+          height: 40px;
+          display: block;
+        }
+        
+        .preview-card {
+          padding: 1.5rem;
+          border-radius: 16px;
+        }
+        
+        .card-icon {
+          font-size: 2.5rem;
+          margin-bottom: 0.8rem;
+        }
+        
+        .card-label {
+          font-size: 0.9rem;
+        }
+        
+        .shape {
+          opacity: 0.08;
+          filter: blur(50px);
+        }
+      }
+
+      /* Large tablets and small desktops */
+      @media (min-width: 769px) and (max-width: 1200px) {
+        .hero-container {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          text-align: center;
+        }
+        
+        .hero-visual {
+          flex-direction: row;
+          justify-content: center;
+          max-width: 500px;
+          margin: 0 auto;
+        }
+        
+        .hero-title {
+          font-size: 4rem;
+        }
+      }
+      
+      /* ========================================
+         RESPONSIVE INTRO SECTION
+       ======================================== */
+       
+      .responsive-intro {
+        padding: 20px !important;
+      }
+      
+      @media (max-width: 768px) {
+        .responsive-intro {
+          margin: -40px 10px 30px 10px !important;
+          width: calc(100% - 20px) !important;
+          border-radius: 24px !important;
+        }
+        
+        .intro-features {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+          padding: 0 !important;
+        }
+        
+        .feature-card {
+          margin: 0 !important;
+          padding: 20px !important;
+          border-radius: 12px !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .responsive-intro {
+          margin: -20px 5px 20px 5px !important;
+          width: calc(100% - 10px) !important;
+          border-radius: 20px !important;
+          padding: 15px !important;
+        }
+        
+        .intro-features {
+          gap: 12px !important;
+        }
+        
+        .feature-card {
+          padding: 16px !important;
+          border-radius: 10px !important;
+        }
+      }
+
       .btn-primary {
         display: inline-flex;
         align-items: center;
@@ -2160,39 +2839,84 @@
     <main class="main-content">
 
     <header class="hero-section">
-      <div class="hero-background">
-        <div class="hero-gradient"></div>
-        <div class="hero-pattern"></div>
+      <!-- Modern animated background -->
+      <div class="hero-bg">
+        <div class="hero-gradient-bg"></div>
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+          <div class="shape shape-4"></div>
+        </div>
       </div>
+      
+      <!-- Hero content grid -->
       <div class="hero-container">
         <div class="hero-content">
+          <!-- Trust badge -->
           <div class="hero-badge">
-            <span>✨ Most Accurate & Free</span>
+            <span class="badge-sparkle">✨</span>
+            <span>Free & Scientifically-Based Assessments</span>
           </div>
-          <h1 class="hero-title">Discover Your True Self</h1>
-          <p class="hero-subtitle">Take the world's most comprehensive personality quizzes and unlock deep insights about your character, strengths, and potential—completely free.</p>
-          <div class="hero-buttons">
-            <a href="#quiz-grid" class="btn-primary">
-              <span>Start Quiz Now</span>
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 12h12"/>
-              </svg>
+          
+          <!-- Main headline -->
+          <h1 class="hero-title">
+            <span class="title-line">Discover Your</span>
+            <span class="title-highlight">True Self</span>
+          </h1>
+          
+          <!-- Description -->
+          <p class="hero-description">
+            Take comprehensive personality quizzes designed by psychology experts. Gain valuable insights about your character, strengths, and potential—completely free, no registration required.
+          </p>
+          
+          <!-- Call-to-action buttons -->
+          <div class="hero-actions">
+            <a href="#quiz-grid" class="btn-hero-primary">
+              <span>Start Free Quiz</span>
+              <div class="btn-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
             </a>
-            <a href="#faq" class="btn-secondary">Learn More</a>
+            <a href="#faq" class="btn-hero-secondary">
+              <span>Learn More</span>
+            </a>
           </div>
+          
+          <!-- Trust indicators -->
           <div class="hero-stats">
-            <div class="stat">
-              <div class="stat-number">100k+</div>
-              <div class="stat-text">Users</div>
+            <div class="stat-item">
+              <div class="stat-number">5,000+</div>
+              <div class="stat-label">Quiz Completions</div>
             </div>
-            <div class="stat">
-              <div class="stat-number">98%</div>
-              <div class="stat-text">Accuracy</div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number">12</div>
+              <div class="stat-label">Quiz Types</div>
             </div>
-            <div class="stat">
-              <div class="stat-number">15+</div>
-              <div class="stat-text">Quizzes</div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Free Forever</div>
             </div>
+          </div>
+        </div>
+        
+        <!-- Visual preview cards -->
+        <div class="hero-visual">
+          <div class="preview-card card-personality">
+            <div class="card-icon">🧠</div>
+            <div class="card-label">MBTI Personality</div>
+          </div>
+          <div class="preview-card card-leaders">
+            <div class="card-icon">👑</div>
+            <div class="card-label">Historical Leaders</div>
+          </div>
+          <div class="preview-card card-characters">
+            <div class="card-icon">🎭</div>
+            <div class="card-label">Pop Culture</div>
           </div>
         </div>
       </div>
@@ -2759,12 +3483,38 @@
 }
 </style>
 
-    <!-- Intro Section - Enhanced -->
-    <section class="intro" style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%); backdrop-filter: blur(30px) saturate(180%); border-radius: 32px; margin: -80px 20px 40px 20px; box-shadow: 0 32px 64px rgba(0, 0, 0, 0.08), 0 16px 32px rgba(0, 0, 0, 0.04); border: 2px solid rgba(226, 232, 240, 0.2); position: relative; z-index: 5; width: calc(100% - 40px); overflow: hidden;">
+    <!-- Intro Section - Enhanced & Mobile Responsive -->
+    <section class="intro responsive-intro" style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%); backdrop-filter: blur(30px) saturate(180%); border-radius: 32px; margin: -80px 20px 40px 20px; box-shadow: 0 32px 64px rgba(0, 0, 0, 0.08), 0 16px 32px rgba(0, 0, 0, 0.04); border: 2px solid rgba(226, 232, 240, 0.2); position: relative; z-index: 5; width: calc(100% - 40px); overflow: hidden;">
       <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.03) 0%, transparent 60%), radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.03) 0%, transparent 60%); pointer-events: none;"></div>
-      <div style="position: relative; z-index: 1;">
-        <h2 style="font-size: 3rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 70%, #4facfe 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.02em;">Why Choose Our Free Personality Quizzes?</h2>
-        <p style="font-size: 1.3rem; color: #475569; max-width: 800px; margin: 0 auto; line-height: 1.8; opacity: 0.95;">Zinvana offers the most accurate, engaging, and scientifically-backed free personality quizzes online. Whether you want to discover your MBTI type, find out which historical leader you resemble, or explore your cosmic personality, our quizzes deliver profound insights that help you understand yourself better—all completely free with no sign-up required.</p>
+      <div style="position: relative; z-index: 1; padding: 48px 20px;">
+        <h2 class="intro-title" style="font-size: clamp(2rem, 6vw, 3rem); background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 70%, #4facfe 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.02em; text-align: center;">Why Choose Zinvana?</h2>
+        <p class="intro-description" style="font-size: clamp(1rem, 3vw, 1.3rem); color: #475569; max-width: 800px; margin: 0 auto 40px auto; line-height: 1.8; opacity: 0.95; text-align: center; padding: 0 10px;">Our personality quizzes are designed to be engaging, insightful, and educational. Whether you're curious about your MBTI type, want to discover which historical leader shares your traits, or explore fun pop culture connections, we provide thoughtful assessments that help you learn more about yourself—all completely free with no sign-up required.</p>
+        
+        <div class="intro-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: clamp(16px, 3vw, 24px); margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto; padding: 0 10px;">
+          <div class="feature-card" style="background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.1); border-radius: 16px; padding: clamp(16px, 4vw, 24px); text-align: center;">
+            <div style="width: clamp(40px, 8vw, 48px); height: clamp(40px, 8vw, 48px); background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+              <svg width="clamp(20px, 4vw, 24px)" height="clamp(20px, 4vw, 24px)" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <h3 style="color: #1e293b; margin-bottom: 8px; font-weight: 600; font-size: clamp(1rem, 3vw, 1.2rem);">Always Free</h3>
+            <p style="color: #64748b; margin: 0; font-size: clamp(0.85rem, 2.5vw, 0.95rem); line-height: 1.6;">No hidden costs, no premium features. All quizzes are completely free forever.</p>
+          </div>
+          
+          <div class="feature-card" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.1); border-radius: 16px; padding: clamp(16px, 4vw, 24px); text-align: center;">
+            <div style="width: clamp(40px, 8vw, 48px); height: clamp(40px, 8vw, 48px); background: linear-gradient(135deg, #10b981, #34d399); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+              <svg width="clamp(20px, 4vw, 24px)" height="clamp(20px, 4vw, 24px)" fill="white" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 style="color: #1e293b; margin-bottom: 8px; font-weight: 600; font-size: clamp(1rem, 3vw, 1.2rem);">No Registration</h3>
+            <p style="color: #64748b; margin: 0; font-size: clamp(0.85rem, 2.5vw, 0.95rem); line-height: 1.6;">Start taking quizzes immediately. No email required, no personal data collected.</p>
+          </div>
+          
+          <div class="feature-card" style="background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.1); border-radius: 16px; padding: clamp(16px, 4vw, 24px); text-align: center;">
+            <div style="width: clamp(40px, 8vw, 48px); height: clamp(40px, 8vw, 48px); background: linear-gradient(135deg, #a855f7, #c084fc); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+              <svg width="clamp(20px, 4vw, 24px)" height="clamp(20px, 4vw, 24px)" fill="white" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 style="color: #1e293b; margin-bottom: 8px; font-weight: 600; font-size: clamp(1rem, 3vw, 1.2rem);">Instant Results</h3>
+            <p style="color: #64748b; margin: 0; font-size: clamp(0.85rem, 2.5vw, 0.95rem); line-height: 1.6;">Get your detailed personality analysis immediately after completing any quiz.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -4521,7 +5271,7 @@
           <div class="footer-brand">
             <img src="zinvanalogo.png" alt="Zinvana Logo" class="footer-logo" />
             <h3>Zinvana</h3>
-            <p>Discover your true personality with our free, accurate, and fun quizzes. No sign-up required.</p>
+            <p>Discover your personality through engaging, thoughtful quizzes designed to provide meaningful insights about who you are. All quizzes are completely free with no registration required.</p>
           </div>
         </div>
         
@@ -4564,7 +5314,7 @@
               </svg>
             </a>
           </div>
-          <p class="newsletter-text">Stay updated with new quizzes and features!</p>
+          <p class="newsletter-text">Enjoy free personality quizzes and educational content!</p>
         </div>
       </div>
       
@@ -4576,7 +5326,7 @@
             <a href="/contact">Contact</a>
           </div>
         </div>
-        <p class="footer-disclaimer">This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
+        <p class="footer-disclaimer">All quizzes are for entertainment and educational purposes. No personal data is collected, stored, or shared. Results are not meant to replace professional psychological assessments.</p>
       </div>
     </footer>
 
