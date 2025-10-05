@@ -566,48 +566,7 @@
             font-size: 1.5rem;
         }
 
-        .next-btn {
-            font-family: 'Fredoka', sans-serif;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 50%, #667eea 100%);
-            color: #fff;
-            border: 2px solid #667eea;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-            margin-top: 25px;
-            width: 100%;
-            max-width: 300px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
 
-        .next-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
-        }
-
-        .next-btn:active {
-            transform: translateY(1px);
-            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
-        }
-
-        .next-btn:disabled {
-            background: #ccc;
-            border-color: #ccc;
-            cursor: not-allowed;
-            opacity: 0.6;
-            transform: none;
-            box-shadow: none;
-        }
-
-        .next-btn:disabled:hover {
-            transform: none;
-            box-shadow: none;
-        }
 
         .quiz-container {
             background: rgba(255, 255, 255, 0.95);
@@ -1302,11 +1261,7 @@
                 transform: scale(1.02);
             }
 
-            .next-btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-                margin-top: 20px;
-            }
+
 
             .brawler-image {
                 width: 200px;
@@ -1471,7 +1426,7 @@
                 border-radius: 12px;
             }
 
-            .start-btn, .retry-btn, .next-btn {
+            .start-btn, .retry-btn {
                 min-height: 50px;
                 touch-action: manipulation;
                 -webkit-tap-highlight-color: transparent;
@@ -1499,8 +1454,7 @@
             }
 
             .start-btn:active,
-            .retry-btn:active,
-            .next-btn:active {
+            .retry-btn:active {
                 transform: scale(0.95);
                 transition: transform 0.1s ease;
             }
@@ -1546,8 +1500,7 @@
         @media (max-width: 768px) {
             .option:focus,
             .start-btn:focus,
-            .retry-btn:focus,
-            .next-btn:focus {
+            .retry-btn:focus {
                 outline: 3px solid #667eea;
                 outline-offset: 2px;
             }
@@ -2326,10 +2279,6 @@
             <div class="question-number" id="questionNumber">Question 1 of 15</div>
             <div class="question-text" id="questionText"></div>
             <div class="options-grid" id="optionsGrid"></div>
-            
-            <button class="next-btn" id="nextBtn" onclick="nextQuestion()" disabled aria-label="Continue to next question">
-                Next Question →
-            </button>
         </div>
 
         <!-- Loading Screen -->
@@ -3848,11 +3797,13 @@
                 
                 selectedAnswer = null;
                 
-                // Disable next button until selection is made
-                const nextBtn = document.getElementById('nextBtn');
-                if (nextBtn) {
-                    nextBtn.disabled = true;
-                }
+                // Re-enable option clicks for new question and reset opacity
+                setTimeout(() => {
+                    document.querySelectorAll('.option').forEach(option => {
+                        option.style.pointerEvents = 'auto';
+                        option.style.opacity = '1';
+                    });
+                }, 100);
                 
                 console.log('Question displayed:', question.question);
             } catch (error) {
@@ -3863,6 +3814,9 @@
 
         function selectOption(optionIndex) {
             try {
+                // Prevent multiple selections during transition
+                if (selectedAnswer !== null) return;
+                
                 // Remove previous selection
                 document.querySelectorAll('.option').forEach(option => {
                     option.classList.remove('selected');
@@ -3874,14 +3828,21 @@
                     options[optionIndex].classList.add('selected');
                     selectedAnswer = optionIndex;
                     
-                    // Enable next button
-                    const nextBtn = document.getElementById('nextBtn');
-                    if (nextBtn) {
-                        nextBtn.disabled = false;
-                        nextBtn.focus(); // Focus on next button for better UX
-                    }
+                    // Disable all options to prevent multiple clicks
+                    options.forEach((option, index) => {
+                        option.style.pointerEvents = 'none';
+                        // Add visual feedback for non-selected options
+                        if (index !== optionIndex) {
+                            option.style.opacity = '0.5';
+                        }
+                    });
                     
                     console.log('Option selected:', optionIndex);
+                    
+                    // Automatically advance to next question after a short delay
+                    setTimeout(() => {
+                        nextQuestion();
+                    }, 1000); // 1 second delay to show the selection clearly
                 } else {
                     console.error('Option not found at index:', optionIndex);
                 }
@@ -3904,12 +3865,6 @@
             if (currentQuestion < questions.length) {
                 updateProgressBar();
                 displayQuestion();
-                
-                // Disable next button until new selection
-                const nextBtn = document.getElementById('nextBtn');
-                if (nextBtn) {
-                    nextBtn.disabled = true;
-                }
             } else {
                 showLoading();
             }
