@@ -153,6 +153,38 @@
       /* Subtle page fade-in on load */
       body {
         animation: pageLoad 0.8s ease-out;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+      }
+      
+      /* Global responsive base */
+      * {
+        box-sizing: border-box;
+      }
+      
+      /* Ensure images are responsive */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Container responsiveness */
+      .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 15px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 10px;
+        }
       }
       
       @keyframes pageLoad {
@@ -193,6 +225,27 @@
       *::after {
         box-sizing: border-box;
         scroll-behavior: smooth;
+      }
+
+      /* Section spacing to prevent overlapping */
+      section {
+        position: relative;
+        margin: 40px 0;
+        z-index: 1;
+        clear: both;
+      }
+      
+      /* Ensure main content flows normally */
+      main {
+        position: relative;
+        z-index: 1;
+      }
+      
+      /* Quiz grid specific positioning */
+      .quiz-grid {
+        position: relative;
+        z-index: 2;
+        clear: both;
       }
 
       /* -------------------------------------
@@ -702,12 +755,53 @@
       }
       
       /* Ensure mobile-first responsive behavior */
+      @media (max-width: 1200px) {
+        .hero-container {
+          gap: 3rem;
+          padding: 0 1.5rem;
+        }
+      }
+      
+      @media (max-width: 900px) {
+        .hero-container {
+          gap: 2.5rem;
+          padding: 0 1.2rem;
+        }
+      }
+      
       @media (max-width: 768px) {
+        .hero-section {
+          margin-top: 60px;
+          padding: 1.5rem 0;
+          min-height: 80vh;
+        }
+        
         .hero-container {
           grid-template-columns: 1fr !important;
           gap: 2rem !important;
           text-align: center !important;
           padding: 0 1rem !important;
+        }
+        
+        .hero-content {
+          max-width: 100% !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .hero-section {
+          margin-top: 40px;
+          padding: 1rem 0;
+          min-height: 70vh;
+        }
+        
+        .hero-container {
+          padding: 0 0.8rem !important;
+          gap: 1.5rem !important;
+        }
+        
+        .hero-content {
+          max-width: 100% !important;
         }
       }
       
@@ -763,7 +857,7 @@
       
       /* Modern typography */
       .hero-title {
-        font-size: 4.5rem;
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
         font-weight: 900;
         line-height: 1.1;
         margin-bottom: 1.5rem;
@@ -797,7 +891,7 @@
       }
       
       .hero-description {
-        font-size: 1.3rem;
+        font-size: clamp(1rem, 3vw, 1.3rem);
         line-height: 1.7;
         color: #4a5568;
         margin-bottom: 2.5rem;
@@ -1343,7 +1437,7 @@
       
       @media (max-width: 768px) {
         .responsive-intro {
-          margin: -40px 10px 30px 10px !important;
+          margin: 30px 10px !important;
           width: calc(100% - 20px) !important;
           border-radius: 24px !important;
         }
@@ -1363,7 +1457,7 @@
       
       @media (max-width: 480px) {
         .responsive-intro {
-          margin: -20px 5px 20px 5px !important;
+          margin: 20px 5px !important;
           width: calc(100% - 10px) !important;
           border-radius: 20px !important;
           padding: 15px !important;
@@ -1587,7 +1681,7 @@
         padding: 60px 30px;
         background: #ffffff;
         color: #0f172a;
-        margin: -60px 20px 60px 20px;
+        margin: 40px 20px;
         border-radius: 16px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         border: 1px solid #e2e8f0;
@@ -1661,7 +1755,7 @@
         display: none;
       }
       
-      /* Next-Level Navigation Arrows */
+      /* Next-Level Navigation Arrows - Responsive carousel */
       .gallery-nav {
         position: absolute;
         top: 50%;
@@ -1673,7 +1767,7 @@
         border-radius: 50%;
         width: 56px;
         height: 56px;
-        display: flex; /* Now visible on all screen sizes */
+        display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
@@ -2452,7 +2546,25 @@
    11) Enhanced Responsive Styles & Performance Optimizations
 ------------------------------------- */
       
-      /* Responsive gallery adjustments - Professional */
+      /* Responsive gallery adjustments - Carousel */
+      @media (max-width: 1200px) {
+        .quiz-card {
+          flex: 0 0 320px;
+        }
+        .quiz-gallery {
+          gap: 25px;
+        }
+      }
+      
+      @media (max-width: 900px) {
+        .quiz-card {
+          flex: 0 0 300px;
+        }
+        .quiz-gallery {
+          gap: 20px;
+        }
+      }
+      
       @media (max-width: 768px) {
         /* CTA Section Responsive */
         .cta-section {
@@ -2515,18 +2627,17 @@
         }
         
         .quiz-card {
-          flex: 0 0 300px; /* Smaller width on mobile */
+          flex: 0 0 280px;
         }
         
         .gallery-nav {
-          display: flex; /* Show navigation arrows on mobile */
-          width: 44px;
-          height: 44px;
+          width: 48px;
+          height: 48px;
         }
         
         .gallery-nav svg {
-          width: 18px;
-          height: 18px;
+          width: 20px;
+          height: 20px;
         }
       }
       
@@ -2574,47 +2685,15 @@
           width: 90%;
         }
         
-        /* Quiz Grid Small Mobile */
+        /* Quiz Carousel Small Mobile */
         .quiz-grid {
-          padding: 40px 20px;
-          margin: 40px auto;
+          padding: 30px 15px;
+          margin: 30px auto;
         }
         
         .quiz-card {
-          flex: 0 0 300px; /* Smaller width on mobile */
-        }
-        
-        .gallery-nav {
-          display: flex; /* Show navigation arrows on mobile */
-          width: 44px;
-          height: 44px;
-        }
-        
-        .gallery-nav svg {
-          width: 18px;
-          height: 18px;
-        }
-      }
-      
-      @media (max-width: 480px) {
-        .quiz-card {
-          flex: 0 0 260px; /* Even smaller on very small screens */
-        }
-        
-        .gallery-nav {
-          display: flex; /* Ensure arrows are visible on small phones */
-        }
-        
-        .gallery-nav.prev {
-          left: 10px;
-        }
-        
-        .gallery-nav.next {
-          right: 10px;
-        }
-        .quiz-grid {
-          padding: 20px 10px;
-          gap: 16px;
+          flex: 0 0 260px;
+          min-height: 420px;
         }
         
         .quiz-card h3 {
@@ -2627,10 +2706,20 @@
           padding: 0 16px 16px;
         }
         
-        .quiz-card .btn {
+        .quiz-card .btn-primary {
           margin: 0 16px 20px;
           padding: 10px 20px;
           font-size: 0.85rem;
+        }
+        
+        .gallery-nav {
+          width: 44px;
+          height: 44px;
+        }
+        
+        .gallery-nav svg {
+          width: 18px;
+          height: 18px;
         }
       }
 
@@ -2671,26 +2760,58 @@
           width: 35px;
           height: 35px;
         }
-        header {
-          height: 80vh;
-          min-height: 350px;
-        }
-        .header-content h1 {
-          font-size: 2.5rem !important;
-        }
-        #tagline {
-          font-size: 1.1rem !important;
-        }
-        #brand-logo{
-          width: 15% !important;
-
+        .hero-section {
+          min-height: 80vh;
         }
         .intro {
-          margin: -30px 15px 30px 15px;
+          margin: 30px 15px;
           padding: 40px 15px;
         }
         .quiz-card {
           width: 100%;
+        }
+      }
+      
+      /* Extra small devices (phones under 375px) */
+      @media (max-width: 375px) {
+        .quiz-grid {
+          padding: 20px 10px;
+          margin: 20px auto;
+        }
+        
+        .quiz-gallery {
+          gap: 10px;
+        }
+        
+        .quiz-card {
+          min-height: 400px;
+          border-radius: 15px;
+        }
+        
+        .quiz-card h3 {
+          font-size: 1.1rem;
+          margin: 12px 12px 8px;
+        }
+        
+        .quiz-card p {
+          font-size: 0.85rem;
+          padding: 0 12px 12px;
+          line-height: 1.4;
+        }
+        
+        .quiz-card .btn-primary {
+          margin: 0 12px 15px;
+          padding: 8px 16px;
+          font-size: 0.8rem;
+        }
+        
+        .quiz-card .quiz-metrics {
+          padding: 0 12px;
+          gap: 8px;
+        }
+        
+        .quiz-card .metric {
+          font-size: 0.75rem;
         }
       }
 
@@ -2893,7 +3014,7 @@
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <div class="stat-number">12</div>
+              <div class="stat-number">14</div>
               <div class="stat-label">Quiz Types</div>
             </div>
             <div class="stat-divider"></div>
@@ -3484,7 +3605,7 @@
 </style>
 
     <!-- Intro Section - Enhanced & Mobile Responsive -->
-    <section class="intro responsive-intro" style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%); backdrop-filter: blur(30px) saturate(180%); border-radius: 32px; margin: -80px 20px 40px 20px; box-shadow: 0 32px 64px rgba(0, 0, 0, 0.08), 0 16px 32px rgba(0, 0, 0, 0.04); border: 2px solid rgba(226, 232, 240, 0.2); position: relative; z-index: 5; width: calc(100% - 40px); overflow: hidden;">
+    <section class="intro responsive-intro" style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%); backdrop-filter: blur(30px) saturate(180%); border-radius: 32px; margin: 40px 20px; box-shadow: 0 32px 64px rgba(0, 0, 0, 0.08), 0 16px 32px rgba(0, 0, 0, 0.04); border: 2px solid rgba(226, 232, 240, 0.2); position: relative; z-index: 5; width: calc(100% - 40px); overflow: hidden;">
       <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.03) 0%, transparent 60%), radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.03) 0%, transparent 60%); pointer-events: none;"></div>
       <div style="position: relative; z-index: 1; padding: 48px 20px;">
         <h2 class="intro-title" style="font-size: clamp(2rem, 6vw, 3rem); background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 70%, #4facfe 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.02em; text-align: center;">Why Choose Zinvana?</h2>
@@ -3587,6 +3708,41 @@
               </div>
               <a href="brawlstars-quiz.html" class="btn-primary">
                 <span>Find Your Brawler</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Classic Personality Test -->
+          <div class="quiz-card featured">
+            <div class="card-badge premium">🧠 Premium</div>
+            <div class="card-image-container">
+              <img src="cover.png" alt="Classic Personality Test - Discover Your True Self" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag psychology">🧠 Psychology</div>
+              <h3>Classic Personality Test</h3>
+              <p class="card-description">Discover your personality type from 8 distinct profiles with our comprehensive research-backed assessment. Get detailed insights into your strengths, career paths, and personal development.</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">🔬</span>
+                  <span class="metric-text">Research-based</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">15 questions</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">📊</span>
+                  <span class="metric-text">8 profiles</span>
+                </div>
+              </div>
+              <a href="test.html" class="btn-primary">
+                <span>Take Test Now</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M5 12h14"/>
                   <path d="M12 5l7 7-7 7"/>
@@ -3945,33 +4101,70 @@
             </div>
           </div>
 
-          <!-- Classic Personality Quiz -->
-          <div class="quiz-card premium">
-            <div class="card-badge classic">🧠 Classic</div>
+          <!-- Political Ideology Quiz -->
+          <div class="quiz-card">
+            <div class="card-badge trending">🔥 Trending</div>
             <div class="card-image-container">
-              <img src="personality.jpg" alt="Classic Personality Quiz - MBTI Big Five" loading="lazy" />
+              <img src="socialist.jpg" alt="Political Ideology Quiz - Conservative, Liberal, Socialist, Libertarian" loading="lazy" />
               <div class="image-overlay"></div>
             </div>
             <div class="card-content">
-              <div class="category-tag psychology">🔬 Psychology</div>
-              <h3>Classic Personality Quiz</h3>
-              <p class="card-description">The gold standard of personality assessment. Research-backed analysis of your traits, strengths, and career potential.</p>
+              <div class="category-tag politics">🗳️ Politics</div>
+              <h3>Political Ideology Quiz</h3>
+              <p class="card-description">Discover your true political alignment! Are you conservative, liberal, socialist, or libertarian? Find your place on the political spectrum.</p>
               <div class="quiz-metrics">
                 <div class="metric">
-                  <span class="metric-icon">📊</span>
-                  <span class="metric-text">Scientific</span>
+                  <span class="metric-icon">🧭</span>
+                  <span class="metric-text">Political compass</span>
                 </div>
                 <div class="metric">
                   <span class="metric-icon">⚡</span>
                   <span class="metric-text">2 min</span>
                 </div>
                 <div class="metric">
-                  <span class="metric-icon">🎯</span>
-                  <span class="metric-text">MBTI/Big Five</span>
+                  <span class="metric-icon">📊</span>
+                  <span class="metric-text">8 ideologies</span>
                 </div>
               </div>
-              <a href="test.html" class="btn-primary">
-                <span>Start Assessment</span>
+              <a href="political-ideology.html" class="btn-primary">
+                <span>Find Your Politics</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14"/>
+                  <path d="M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+         
+
+          <!-- Perfect Country Quiz -->
+          <div class="quiz-card featured">
+            <div class="card-badge trending">🔥 New</div>
+            <div class="card-image-container">
+              <img src="singapore.jpg" alt="Perfect Country Quiz - Find Your Ideal Country to Live In" loading="lazy" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+              <div class="category-tag lifestyle">🌍 Lifestyle</div>
+              <h3>Perfect Country Quiz</h3>
+              <p class="card-description">Find your ideal country to live in! Discover which nation matches your lifestyle, climate preferences, and values through our comprehensive assessment.</p>
+              <div class="quiz-metrics">
+                <div class="metric">
+                  <span class="metric-icon">🗺️</span>
+                  <span class="metric-text">8 countries</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">⚡</span>
+                  <span class="metric-text">5 min</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-icon">📊</span>
+                  <span class="metric-text">8 key factors</span>
+                </div>
+              </div>
+              <a href="perfect-country.html" class="btn-primary">
+                <span>Find Your Country</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M5 12h14"/>
                   <path d="M12 5l7 7-7 7"/>
@@ -5548,94 +5741,79 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- Quiz Gallery JavaScript -->
 <script>
 let currentScrollPosition = 0;
-let cardsVisible = 3; // Default number of cards visible
-let cardWidth = 370; // Card width + gap (340px + 30px)
 
-// Calculate visible cards based on screen width
-function updateVisibleCards() {
-  const screenWidth = window.innerWidth;
-  if (screenWidth <= 480) {
-    cardsVisible = 1;
-    cardWidth = 310; // 280px card + 30px gap
-  } else if (screenWidth <= 768) {
-    cardsVisible = 2;
-    cardWidth = 330; // 300px card + 30px gap
-  } else if (screenWidth <= 1024) {
-    cardsVisible = 3;
-    cardWidth = 370; // 340px card + 30px gap
-  } else {
-    cardsVisible = 4;
-    cardWidth = 370; // 340px card + 30px gap
+// Simple initialization - no complex calculations needed
+function initGallery() {
+  currentScrollPosition = 0;
+  const gallery = document.getElementById('quiz-gallery');
+  if (gallery) {
+    gallery.scrollTo({ left: 0, behavior: 'auto' });
   }
 }
 
-// Initialize gallery
-function initGallery() {
-  updateVisibleCards();
-  createDots();
-  updateDots();
-}
-
-// Scroll gallery function
+// Scroll gallery function - IMPROVED: One card at a time with last card visible
 function scrollGallery(direction) {
   const gallery = document.getElementById('quiz-gallery');
-  const totalCards = document.querySelectorAll('.quiz-card').length;
-  const maxPosition = Math.max(0, totalCards - cardsVisible);
+  const cards = document.querySelectorAll('.quiz-card');
   
+  if (!gallery || cards.length === 0) return;
+  
+  // Get actual dimensions from CSS
+  const firstCard = cards[0];
+  const cardWidth = firstCard.offsetWidth;
+  const galleryStyle = window.getComputedStyle(gallery);
+  const gap = parseInt(galleryStyle.gap) || 30;
+  
+  // Calculate scroll step
+  const scrollStep = cardWidth + gap;
+  
+  // Calculate how many cards fit in the visible area
+  const galleryWidth = gallery.offsetWidth;
+  const cardsPerView = Math.floor(galleryWidth / scrollStep);
+  
+  // Calculate maximum position (total cards - cards that fit in view)
+  const maxPosition = Math.max(0, cards.length - cardsPerView);
+  
+  // Update position
   currentScrollPosition += direction;
   
-  // Wrap around at the ends
+  // Handle boundaries with smooth wrapping
   if (currentScrollPosition < 0) {
     currentScrollPosition = maxPosition;
   } else if (currentScrollPosition > maxPosition) {
     currentScrollPosition = 0;
   }
   
-  const scrollAmount = currentScrollPosition * cardWidth;
+  // Calculate final scroll amount
+  const maxScroll = gallery.scrollWidth - gallery.offsetWidth;
+  const scrollAmount = Math.min(currentScrollPosition * scrollStep, maxScroll);
+  
+  // Scroll to exact position
   gallery.scrollTo({
     left: scrollAmount,
     behavior: 'smooth'
   });
-  
-  updateDots();
 }
 
-// Create dots for pagination
-function createDots() {
-  const dotsContainer = document.getElementById('gallery-dots');
-  const totalCards = document.querySelectorAll('.quiz-card').length;
-  const totalDots = Math.max(1, totalCards - cardsVisible + 1);
-  
-  dotsContainer.innerHTML = '';
-  
-  for (let i = 0; i < totalDots; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'gallery-dot';
-    dot.onclick = () => scrollToPosition(i);
-    dotsContainer.appendChild(dot);
-  }
-}
-
-// Update active dot
-function updateDots() {
-  const dots = document.querySelectorAll('.gallery-dot');
-  dots.forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentScrollPosition);
-  });
-}
-
-// Scroll to specific position
+// Scroll to specific position - IMPROVED
 function scrollToPosition(position) {
-  currentScrollPosition = position;
   const gallery = document.getElementById('quiz-gallery');
-  const scrollAmount = currentScrollPosition * cardWidth;
+  const cards = document.querySelectorAll('.quiz-card');
+  
+  if (!gallery || cards.length === 0) return;
+  
+  currentScrollPosition = position;
+  
+  // Get actual dimensions
+  const firstCard = cards[0];
+  const cardWidth = firstCard.offsetWidth;
+  const gap = parseInt(window.getComputedStyle(gallery).gap) || 30;
+  const scrollStep = cardWidth + gap;
   
   gallery.scrollTo({
-    left: scrollAmount,
+    left: currentScrollPosition * scrollStep,
     behavior: 'smooth'
   });
-  
-  updateDots();
 }
 
 // Auto-scroll functionality
@@ -5708,18 +5886,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Keyboard navigation
   document.addEventListener('keydown', handleKeydown);
   
-  // Update on window resize
+  // Update on window resize - SIMPLIFIED
   window.addEventListener('resize', () => {
-    const oldPosition = currentScrollPosition;
-    updateVisibleCards();
-    createDots();
-    
-    // Try to maintain relative position, but ensure it's valid
-    const totalCards = document.querySelectorAll('.quiz-card').length;
-    const maxPosition = Math.max(0, totalCards - cardsVisible);
-    currentScrollPosition = Math.min(oldPosition, maxPosition);
-    
-    scrollToPosition(currentScrollPosition);
+    // Reset to first position to avoid layout issues
+    currentScrollPosition = 0;
+    const gallery = document.getElementById('quiz-gallery');
+    if (gallery) {
+      gallery.scrollTo({ left: 0, behavior: 'auto' });
+    }
   });
   
   // Initialize How Works Gallery
