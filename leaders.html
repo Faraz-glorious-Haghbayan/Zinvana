@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <!-- 1. SEO META -->
-<title>Which Historical Leader Am I? | Free Quiz & Personality Test | Zinvana</title>
+<title>Historical Leadership Assessment | Discover Your Leadership Archetype | Zinvana</title>
 <meta name="description" content="Which historical leader am I? Take Zinvana’s free quiz to discover if you’re more like Napoleon, Churchill, Gandhi, or another iconic figure. Find your leadership style and match with famous leaders in history!" />
 <meta name="keywords" content="which historical leader am I, what historical leader am I, historical leaders quiz, which historical leader are you, leader personality test, history leadership quiz, famous leaders quiz, leadership style quiz, leadership personality test, free historical leader quiz, Zinvana" />
 <meta name="author" content="Zinvana" />
@@ -18,7 +18,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 <meta property="og:title" content="Which Historical Leader Am I? | Free Quiz & Personality Test | Zinvana" />
-<meta property="og:description" content="Take the ultimate 'Which Historical Leader Am I?' quiz. Discover your leadership style and see if you match with Napoleon, Churchill, Gandhi, or more. Free, fun, and insightful!" />
+<meta property="og:description" content="Discover your historical leadership archetype through comprehensive personality assessment. Match with legendary leaders and gain insights into your leadership style and potential." />
 <meta property="og:image" content="https://zinvana.com/cyrusheader.png" />
 <meta property="og:url" content="https://zinvana.com/leaders.html" />
 <meta property="og:type" content="website" />
@@ -109,13 +109,7 @@
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating", 
-    "ratingValue": "4.9",
-    "reviewCount": "12847",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
+
   "interactionStatistic": {
     "@type": "InteractionCounter",
     "interactionType": "https://schema.org/WriteAction",
@@ -850,7 +844,7 @@ header::after {
       padding: 20px 24px;
       border-radius: 16px;
       border: 2px solid rgba(99, 102, 241, 0.1);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       cursor: pointer;
       position: relative;
       overflow: hidden;
@@ -860,6 +854,54 @@ header::after {
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    
+    /* Selected state styling */
+    #answer-options li.selected {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1));
+      border-color: rgba(99, 102, 241, 0.6);
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.25);
+      transform: translateX(4px);
+    }
+    
+    /* Focus state for keyboard navigation */
+    #answer-options li:focus {
+      outline: 3px solid rgba(99, 102, 241, 0.4);
+      outline-offset: 2px;
+    }
+    
+    /* Prevent text selection during clicking */
+    #answer-options li * {
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    
+    /* Ensure radio inputs still work */
+    #answer-options input[type="radio"] {
+      pointer-events: auto;
+    }
+    
+    /* Loading state */
+    #answer-options li.loading {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(139, 92, 246, 0.05));
+      border-color: rgba(99, 102, 241, 0.2);
+      cursor: default;
+    }
+    
+    /* Processing state - prevent further clicks */
+    #answer-options li.processing {
+      pointer-events: none;
+      opacity: 0.8;
+      cursor: default;
+    }
+    
+    /* Keep selected option visible during processing */
+    #answer-options li.selected.processing {
+      opacity: 1;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1));
     }
     #answer-options li::before {
       content: '';
@@ -871,20 +913,25 @@ header::after {
       background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
       transition: left 0.6s ease;
     }
-    #answer-options li:hover {
+    #answer-options li:hover:not(.selected) {
       background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
       border-color: rgba(99, 102, 241, 0.4);
-      transform: translateX(8px) translateY(-2px);
-      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+      transform: translateX(6px) translateY(-1px);
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
     }
     
     #answer-options li:active {
-      transform: translateX(4px) translateY(-1px) scale(0.98);
+      transform: scale(0.96);
       transition-duration: 0.1s;
     }
     
+    #answer-options li.selected:hover {
+      transform: translateX(6px);
+      box-shadow: 0 12px 35px rgba(99, 102, 241, 0.3);
+    }
+    
     @media (hover: none) and (pointer: coarse) {
-      #answer-options li:hover {
+      #answer-options li:hover:not(.selected) {
         transform: none;
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
         border-color: rgba(99, 102, 241, 0.1);
@@ -894,7 +941,11 @@ header::after {
       #answer-options li:active {
         background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.08));
         border-color: rgba(99, 102, 241, 0.3);
-        transform: scale(0.98);
+        transform: scale(0.96);
+      }
+      
+      #answer-options li.selected:hover {
+        transform: translateX(4px);
       }
     }
     #answer-options li:hover::before {
@@ -914,6 +965,13 @@ header::after {
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
+      pointer-events: none; /* Prevent label from interfering with li clicks */
+    }
+    
+    /* Better text color for selected options */
+    #answer-options li.selected label {
+      color: #2d3748;
+      font-weight: 600;
     }
     #answer-options input[type="radio"] {
       appearance: none;
@@ -931,7 +989,8 @@ header::after {
     }
     #answer-options input[type="radio"]:checked {
       border-color: #667eea;
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+      background: linear-gradient(135deg, #667eea, #764ba2);
     }
     #answer-options input[type="radio"]:checked::before {
       content: "";
@@ -943,6 +1002,14 @@ header::after {
       height: 10px;
       background: white;
       border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Enhanced radio button visibility for selected options */
+    #answer-options li.selected input[type="radio"] {
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.4);
+      transform: scale(1.1);
     }
   
     /* -------------------------------------
@@ -1298,6 +1365,14 @@ header::after {
       border-radius: 12px !important;
       font-size: 0.95rem !important;
       line-height: 1.4 !important;
+      /* Improve touch targets on mobile */
+      min-height: 60px !important;
+      touch-action: manipulation !important;
+    }
+    
+    /* Better mobile selected state */
+    #answer-options li.selected {
+      transform: translateX(2px) !important;
     }
 
     #question-title {
@@ -1346,6 +1421,11 @@ header::after {
       padding: 16px 18px !important;
       font-size: 0.9rem !important;
       border-radius: 10px !important;
+      touch-action: manipulation !important;
+    }
+    
+    #answer-options li.selected {
+      transform: translateX(1px) !important;
     }
 
     #question-title {
@@ -1383,6 +1463,11 @@ header::after {
       min-height: 60px !important;
       padding: 14px 16px !important;
       font-size: 0.85rem !important;
+      touch-action: manipulation !important;
+    }
+    
+    #answer-options li.selected {
+      transform: translateX(1px) !important;
     }
 
     #question-title {
@@ -1830,24 +1915,24 @@ input:focus {
     
     <div class="header-content" style="position:relative;z-index:3;text-align:center;padding:0 24px;max-width:900px;margin:0 auto;">
       <h1 class="h1" style="font-size:4rem;color:#ffffff;font-weight:800;letter-spacing:-3px;margin-bottom:24px;text-shadow:0 4px 20px rgba(0,0,0,0.3);line-height:1.1;font-family:'Playfair Display', serif;">
-        Free Historical Leaders Personality Quiz
+        Historical Leadership Assessment
       </h1>
       <h2 id="tagline" class="hero-tagline" style="font-size:1.4rem;color:#f7fafc;font-weight:400;margin-bottom:32px;letter-spacing:0.5px;opacity:0.95;">
-        What Historical Leader Am I? - Discover Your Leadership Style Today
+        Discover Your Leadership Archetype Through Comprehensive Analysis
       </h2>
       <div class="header-intro-desktop" style="max-width:800px;margin:0 auto 32px auto;font-size:1.2rem;color:#ffffff;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);padding:32px 40px;border-radius:20px;line-height:1.7;box-shadow:0 8px 32px rgba(0,0,0,0.1);font-weight:400;border:1px solid rgba(255,255,255,0.2);">
         <span style="font-size:1.3rem;color:#ffffff;font-weight:600;letter-spacing:0.5px;">
-          Take the Ultimate FREE Historical Leaders Personality Quiz
+          Professional Leadership Assessment Platform
         </span>
         <br><br>
-        What historical leader am I? Are you a strategic visionary like <strong>Napoleon</strong>, a peaceful revolutionary like <strong>Gandhi</strong>, or a determined wartime leader like <strong>Churchill</strong>?<br><br>
+        Discover your leadership archetype through comprehensive personality analysis. Are you a strategic visionary like <strong>Napoleon</strong>, a peaceful revolutionary like <strong>Gandhi</strong>, or a determined crisis leader like <strong>Churchill</strong>?<br><br>
         <span style="color:#f7fafc;font-size:1.1rem;">
-          Our <strong>free historical leaders personality quiz</strong> is expert-reviewed and matches your unique traits with iconic figures from history. No sign-up required, instant results, completely free!
+          Our <strong>comprehensive leadership assessment</strong> analyzes your personality traits and matches you with historical figures who share your leadership DNA. No registration required, instant detailed results, always free!
         </span>
       </div>
       <a href="#test" class="cta-hero-btn" style="margin-top:24px;font-size:1.2rem;padding:20px 48px;font-weight:600;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#ffffff;border-radius:50px;box-shadow:0 8px 30px rgba(102,126,234,0.4);text-decoration:none;letter-spacing:0.5px;transition:all 0.3s ease;border:none;outline:none;display:inline-block;">
         <span style="vertical-align:middle;font-size:1.2em;margin-right:12px;">🚀</span>
-        Take Free Historical Leaders Quiz
+        Begin Leadership Assessment
       </a>
       <div class="header-badges-perfect">
         <div class="badge">
@@ -1865,10 +1950,10 @@ input:focus {
           </div>
         </div>
         <div class="badge">
-          <img src="testimonials.png" alt="Testimonials" />
+          <img src="testimonials.png" alt="Quality Assessment" />
           <div>
-            <span class="badge-title">5-star</span>
-            <span class="badge-desc">User reviews</span>
+            <span class="badge-title">Quality</span>
+            <span class="badge-desc">Assessment</span>
           </div>
         </div>
       </div>
@@ -2098,7 +2183,7 @@ input:focus {
       </div>
       <div style="flex:1 1 200px;min-width:200px;max-width:250px;padding:24px;background:rgba(102,126,234,0.05);border-radius:16px;border:1px solid rgba(102,126,234,0.1);">
         <img src="testimonials.png" alt="Testimonials" style="width:48px;height:48px;margin-bottom:16px;border-radius:12px;box-shadow:0 4px 15px rgba(102,126,234,0.2);" />
-        <p style="font-size:1.05rem;color:#4a5568;line-height:1.6;">Thousands of 5-star reviews from real users.</p>
+        <p style="font-size:1.05rem;color:#4a5568;line-height:1.6;">Trusted by users seeking leadership insights.</p>
       </div>
       <div style="flex:1 1 200px;min-width:200px;max-width:250px;padding:24px;background:rgba(102,126,234,0.05);border-radius:16px;border:1px solid rgba(102,126,234,0.1);">
         <img src="secure.png" alt="Secure" style="width:48px;height:48px;margin-bottom:16px;border-radius:12px;box-shadow:0 4px 15px rgba(102,126,234,0.2);" />
@@ -2109,25 +2194,25 @@ input:focus {
 
 <!-- How It Works Section -->
 <section id="how-it-works" style="background: #fff; border-radius: 16px; width: 80%; max-width: 1200px; margin: 48px auto 0 auto; padding: 48px 32px 36px 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); overflow: hidden;">
-  <h2 style="text-align: center; color: #d32f2f; margin-bottom: 40px; font-size: 2rem; letter-spacing: -1px;">How Our Free Personality Quiz Works</h2>
+  <h2 style="text-align: center; color: #1e40af; margin-bottom: 40px; font-size: 2rem; letter-spacing: -1px; font-weight: 700;">How Our Leadership Assessment Works</h2>
   <div class="how-works-steps-pro" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; max-width: 100vw; padding: 0 8px;">
     <!-- Step 1 -->
     <div class="how-works-step-pro">
-      <div class="how-works-icon-pro"><span>1</span><img src="zin1.png" alt="Choose a Quiz" /></div>
-      <h3>Take the Free Quiz</h3>
-      <p>Answer 15–20 fun, research-backed questions about your leadership style.</p>
+      <div class="how-works-icon-pro"><span>1</span><img src="zin1.png" alt="Assessment Questions" /></div>
+      <h3>Complete Assessment</h3>
+      <p>Answer 20 thoughtfully designed questions about your leadership approach, decision-making style, and values.</p>
     </div>
     <!-- Step 2 -->
     <div class="how-works-step-pro">
-      <div class="how-works-icon-pro"><span>2</span><img src="zin2.png" alt="Answer Questions" /></div>
-      <h3>Answer Questions</h3>
-      <p>Just a few simple questions—no sign-up, no hassle, always free.</p>
+      <div class="how-works-icon-pro"><span>2</span><img src="zin2.png" alt="Analysis Process" /></div>
+      <h3>Personality Analysis</h3>
+      <p>Our algorithm analyzes your responses across multiple leadership dimensions to identify your archetype.</p>
     </div>
     <!-- Step 3 -->
     <div class="how-works-step-pro">
-      <div class="how-works-icon-pro"><span>3</span><img src="zin3.png" alt="Get Instant Results" /></div>
-      <h3>Get Instant Results</h3>
-      <p>See your results instantly and share with friends—explore your profile!</p>
+      <div class="how-works-icon-pro"><span>3</span><img src="zin3.png" alt="Detailed Results" /></div>
+      <h3>Receive Insights</h3>
+      <p>Get detailed results with your historical leader match, strengths analysis, and development recommendations.</p>
     </div>
   </div>
   <style>
@@ -2140,20 +2225,23 @@ input:focus {
       padding: 0 8px;
     }
     .how-works-step-pro {
-      background: #f8f8f8;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(211,47,47,0.07);
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(30,64,175,0.08);
       padding: 32px 16px 24px 16px;
       width: 100%;
-      max-width: 260px;
-      min-width: 180px;
+      max-width: 280px;
+      min-width: 200px;
       text-align: center;
-      flex: 1 1 220px;
+      flex: 1 1 250px;
       margin: 0 0px;
-      transition: box-shadow 0.2s;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(30,64,175,0.1);
     }
     .how-works-step-pro:hover {
-      box-shadow: 0 6px 24px rgba(211,47,47,0.13);
+      box-shadow: 0 8px 30px rgba(30,64,175,0.15);
+      transform: translateY(-2px);
+      border-color: rgba(30,64,175,0.2);
     }
     .how-works-icon-pro {
       display: flex;
@@ -2164,19 +2252,19 @@ input:focus {
     }
     .how-works-icon-pro span {
       display: inline-block;
-      background: #d32f2f;
+      background: linear-gradient(135deg, #1e40af, #3730a3);
       color: #fff;
       font-weight: bold;
       font-size: 1.1rem;
       border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      line-height: 32px;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
       position: absolute;
       left: -18px;
       top: 50%;
       transform: translateY(-50%);
-      box-shadow: 0 2px 8px rgba(211,47,47,0.10);
+      box-shadow: 0 4px 12px rgba(30,64,175,0.3);
       }
       .how-works-icon-pro img {
       width: 100%;
@@ -2187,11 +2275,11 @@ input:focus {
       box-shadow: 0 2px 8px rgba(211,47,47,0.10);
       }
       .how-works-step-pro h3 {
-      color: #d32f2f;
+      color: #1e40af;
       font-size: 1.3rem;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-weight: 700;
-      margin-top: 10px;
+      margin-top: 15px;
       }
       .how-works-step-pro p {
       color: #444;
@@ -2240,24 +2328,24 @@ input:focus {
 
   <!-- Keyword-rich, professional intro above quiz -->
   <section style="width:80%; max-width:1200px; margin:48px auto 0 auto; padding:32px 32px 18px 32px; background:#fff; border-radius:14px; box-shadow:0 4px 18px rgba(211,47,47,0.09); text-align:center;">
-    <h2 style="color:#d32f2f; font-size:2rem; margin-bottom:16px; letter-spacing:-1px; font-weight:700;">
-      Discover Your Historical Leadership Match
+    <h2 style="color:#1e40af; font-size:2rem; margin-bottom:16px; letter-spacing:-1px; font-weight:700;">
+      Discover Your Historical Leadership Archetype
     </h2>
     <p style="color:#333; font-size:1.15rem; line-height:1.7; margin-bottom:18px;">
-      Are you a visionary like <strong>Napoleon</strong>, a unifier like <strong>Gandhi</strong>, or a strategist like <strong>Churchill</strong>? 
-      Take our <strong>free, expert-reviewed Historical Leader Personality Quiz</strong> to find out which iconic figure best reflects your unique leadership style.
+      Are you a strategic visionary like <strong>Napoleon</strong>, a peaceful revolutionary like <strong>Gandhi</strong>, or a crisis commander like <strong>Churchill</strong>? 
+      Take our <strong>comprehensive Historical Leadership Assessment</strong> to discover which iconic leader's approach matches your natural leadership style.
     </p>
     <ul style="display:flex; flex-wrap:wrap; justify-content:center; gap:24px; list-style:none; padding:0; margin:0 0 18px 0;">
       <li style="flex:1 1 180px; min-width:180px; max-width:220px; background:#f8f8f8; border-radius:8px; padding:16px 10px;">
-        <span style="color:#d32f2f; font-weight:600;">No sign-up</span><br>
+        <span style="color:#1e40af; font-weight:600;">No sign-up</span><br>
         <span style="color:#444; font-size:0.98rem;">100% privacy, instant results</span>
       </li>
       <li style="flex:1 1 180px; min-width:180px; max-width:220px; background:#f8f8f8; border-radius:8px; padding:16px 10px;">
-        <span style="color:#d32f2f; font-weight:600;">Expert-Reviewed</span><br>
-        <span style="color:#444; font-size:0.98rem;">Developed with historians & psychologists</span>
+        <span style="color:#1e40af; font-weight:600;">Comprehensive</span><br>
+        <span style="color:#444; font-size:0.98rem;">20 thoughtful assessment questions</span>
       </li>
       <li style="flex:1 1 180px; min-width:180px; max-width:220px; background:#f8f8f8; border-radius:8px; padding:16px 10px;">
-        <span style="color:#d32f2f; font-weight:600;">Shareable Results</span><br>
+        <span style="color:#1e40af; font-weight:600;">Detailed Results</span><br>
         <span style="color:#444; font-size:0.98rem;">Personalized insights & leadership profile</span>
       </li>
     </ul>
@@ -2271,36 +2359,36 @@ input:focus {
     <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);border-radius:32px 32px 0 0;"></div>
     
     <h2 style="font-size:2.5rem;font-weight:800;color:#1a202c;margin-bottom:32px;font-family:'Playfair Display', serif;letter-spacing:-1px;background:linear-gradient(135deg, #6366f1, #8b5cf6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-align:center;">
-      Free Historical Leaders Personality Quiz
+      Historical Leadership Assessment
     </h2>
     
     <div style="max-width:900px;margin:0 auto;text-align:center;">
       <p style="color:#374151;line-height:1.8;font-size:1.15rem;margin-bottom:24px;font-weight:400;">
-        <strong>What historical leader am I?</strong> This question has fascinated people throughout history. Our <strong>free historical leaders personality quiz</strong> uses advanced psychological profiling to match your unique traits with iconic leaders from across time and cultures.
+        <strong>What historical leader am I?</strong> This question has intrigued people throughout history. Our <strong>comprehensive historical leadership assessment</strong> analyzes your personality traits and decision-making patterns to match you with iconic leaders from across time and cultures.
       </p>
       
       <p style="color:#374151;line-height:1.8;font-size:1.15rem;margin-bottom:24px;font-weight:400;">
-        Whether you're wondering <strong>"which historical leader are you"</strong> or seeking to understand your leadership style, our expert-designed <strong>historical personality test</strong> provides accurate, insightful results. Discover if you share traits with Napoleon's strategic brilliance, Gandhi's peaceful revolution, Churchill's wartime determination, or Caesar's commanding presence.
+        Whether you're wondering <strong>"which historical leader are you"</strong> or seeking to understand your leadership style, our thoughtfully designed <strong>historical leadership assessment</strong> provides insightful results. Discover if you share traits with Napoleon's strategic brilliance, Gandhi's peaceful revolution, Churchill's crisis leadership, or Caesar's commanding presence.
       </p>
       
       <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.05));border-radius:20px;padding:32px;margin:32px 0;border:1px solid rgba(99,102,241,0.1);">
-        <h3 style="color:#1a202c;font-size:1.4rem;margin-bottom:16px;font-weight:700;">Why Our Historical Leaders Quiz is the Best:</h3>
+        <h3 style="color:#1a202c;font-size:1.4rem;margin-bottom:16px;font-weight:700;">Assessment Features:</h3>
         <ul style="text-align:left;color:#374151;line-height:1.7;font-size:1.05rem;list-style:none;padding:0;">
           <li style="margin-bottom:12px;padding-left:24px;position:relative;">
             <span style="position:absolute;left:0;top:0;color:#6366f1;font-weight:bold;">✓</span>
-            <strong>100% Free</strong> - No hidden costs, no sign-up required
+            <strong>100% Free</strong> - No hidden costs, no registration required
           </li>
           <li style="margin-bottom:12px;padding-left:24px;position:relative;">
             <span style="position:absolute;left:0;top:0;color:#6366f1;font-weight:bold;">✓</span>
-            <strong>Expert Developed</strong> - Created with historians and psychologists
+            <strong>Comprehensive Analysis</strong> - 20 questions across multiple dimensions
           </li>
           <li style="margin-bottom:12px;padding-left:24px;position:relative;">
             <span style="position:absolute;left:0;top:0;color:#6366f1;font-weight:bold;">✓</span>
-            <strong>Instant Results</strong> - Get your historical leader match immediately
+            <strong>Instant Results</strong> - Get your leadership archetype immediately
           </li>
           <li style="margin-bottom:12px;padding-left:24px;position:relative;">
             <span style="position:absolute;left:0;top:0;color:#6366f1;font-weight:bold;">✓</span>
-            <strong>Shareable</strong> - Download and share your personalized results
+            <strong>Detailed Analysis</strong> - In-depth insights and recommendations
           </li>
           <li style="padding-left:24px;position:relative;">
             <span style="position:absolute;left:0;top:0;color:#6366f1;font-weight:bold;">✓</span>
@@ -2452,14 +2540,17 @@ input:focus {
       </div>
       
       <div id="question-container" style="margin-bottom: 40px;">
-        <h2 id="question-title" style="font-size: 1.5rem; color: #2d3748; font-weight: 600; margin-bottom: 32px; letter-spacing: -0.5px; font-family: 'Playfair Display', serif;">Your question will appear here</h2>
+        <h2 id="question-title" style="font-size: 1.5rem; color: #2d3748; font-weight: 600; margin-bottom: 16px; letter-spacing: -0.5px; font-family: 'Playfair Display', serif;">Your question will appear here</h2>
+        <p style="text-align: center; color: #718096; font-size: 0.9rem; margin-bottom: 24px; font-style: italic;">
+          💡 Simply click your answer - the quiz will automatically advance to the next question
+        </p>
         <ul id="answer-options" style="list-style: none; padding: 0; margin: 0; display: grid; gap: 16px;">
           <!-- Radio button answers will be dynamically generated here -->
         </ul>
       </div>
       
       <div style="display: flex; justify-content: flex-end;">
-        <button id="next-btn" style="background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); color: white; font-weight: 600; font-size: 1rem; padding: 16px 32px; border-radius: 50px; border: none; box-shadow: 0 8px 25px rgba(102,126,234,0.3); transition: all 0.3s ease; letter-spacing: 0.5px; position: relative; overflow: hidden;">Next &rarr;</button>
+        <button id="next-btn" style="display: none; background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); color: white; font-weight: 600; font-size: 1rem; padding: 16px 32px; border-radius: 50px; border: none; box-shadow: 0 8px 25px rgba(102,126,234,0.3); transition: all 0.3s ease; letter-spacing: 0.5px; position: relative; overflow: hidden;">Next &rarr;</button>
       </div>
       
       <div style="margin-top: 24px; text-align: center; color: #718096; font-size: 0.95rem; padding: 16px; background: rgba(102,126,234,0.05); border-radius: 12px;">
@@ -3354,6 +3445,28 @@ for (const key in personalityScores) {
     const screenshotBtn = document.getElementById("screenshot-btn");
   
     /* 
+      Initialize quiz functionality
+    */
+    function initializeQuiz() {
+      // Ensure all previous selections are cleared
+      const allPreviousSelections = document.querySelectorAll('#answer-options li.selected');
+      allPreviousSelections.forEach(option => option.classList.remove('selected'));
+      
+      // Reset current question index if needed
+      if (currentQuestionIndex >= questions.length) {
+        currentQuestionIndex = 0;
+      }
+      
+      // Add a small loading indicator
+      answerOptionsEl.innerHTML = '<li style="text-align: center; padding: 20px; color: #667eea;">Loading questions...</li>';
+      
+      // Start the quiz with a brief delay for better UX
+      setTimeout(() => {
+        displayQuestion();
+      }, 100);
+    }
+    
+    /* 
       Display the current question with smooth transition
     */
     function displayQuestion() {
@@ -3364,6 +3477,10 @@ for (const key in personalityScores) {
       setTimeout(() => {
         progressTextEl.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
         answerOptionsEl.innerHTML = "";
+        
+        // Remove any processing states from previous questions
+        const allOptions = document.querySelectorAll('#answer-options li');
+        allOptions.forEach(opt => opt.classList.remove('processing'));
     
         const currentQuestion = questions[currentQuestionIndex];
         questionTitleEl.textContent = currentQuestion.question;
@@ -3378,6 +3495,67 @@ for (const key in personalityScores) {
               ${option.text}
             </label>
           `;
+          
+          // Add enhanced click handling with automatic progression
+          li.addEventListener('click', function(e) {
+            // Prevent multiple clicks during transition
+            if (this.classList.contains('processing')) return;
+            
+            // Ensure the radio button gets selected
+            const radioInput = this.querySelector('input[type="radio"]');
+            if (radioInput) {
+              // Clear any previously selected options
+              const allOptions = answerOptionsEl.querySelectorAll('li');
+              allOptions.forEach(opt => {
+                opt.classList.remove('selected');
+                opt.classList.add('processing'); // Prevent further clicks
+              });
+              
+              // Select this option
+              radioInput.checked = true;
+              this.classList.add('selected');
+              
+              // Provide visual feedback
+              this.style.transform = 'scale(0.98)';
+              setTimeout(() => {
+                this.style.transform = '';
+              }, 150);
+              
+              // Auto-advance to next question after a short delay
+              setTimeout(() => {
+                const selectedValue = radioInput.value;
+                if (personalityScores[selectedValue] !== undefined) {
+                  personalityScores[selectedValue]++;
+                }
+                
+                // Show a themed toast for this characteristic
+                showToastForCharacteristic(selectedValue);
+                
+                currentQuestionIndex++;
+                
+                // Move to next question or show results
+                setTimeout(() => {
+                  if (currentQuestionIndex < questions.length) {
+                    displayQuestion();
+                  } else {
+                    evaluateResults();
+                  }
+                }, 800); // Give time for toast to show
+              }, 600); // Brief delay for user to see their selection
+            }
+          });
+          
+          // Add keyboard support
+          li.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              this.click();
+            }
+          });
+          
+          // Make li focusable for keyboard navigation
+          li.tabIndex = 0;
+          
           answerOptionsEl.appendChild(li);
         });
 
@@ -3388,36 +3566,13 @@ for (const key in personalityScores) {
     }
   
     /*
-      Next button logic:
-      - Ensure an answer is selected
-      - Increment the relevant personality score
-      - Show the themed toast
-      - Move to next question or evaluate
+      Next button logic - DISABLED (auto-advance on selection)
+      The quiz now automatically advances when an option is selected
     */
-    nextBtn.addEventListener("click", () => {
-      const checkedInput = answerOptionsEl.querySelector('input[type="radio"]:checked');
-      if (!checkedInput) {
-        alert("Please select an answer before proceeding.");
-        return;
-      }
-      const selectedValue = checkedInput.value;
-      if (personalityScores[selectedValue] !== undefined) {
-        personalityScores[selectedValue]++;
-      }
-  
-      // Show a themed toast for this characteristic
-      showToastForCharacteristic(selectedValue);
-  
-      currentQuestionIndex++;
-      // Delay to let the toast appear
-      setTimeout(() => {
-        if (currentQuestionIndex < questions.length) {
-          displayQuestion();
-        } else {
-          evaluateResults();
-        }
-      }, 600);
-    });
+    // nextBtn.addEventListener("click", () => {
+    //   // This functionality has been moved to the option click handlers
+    //   // for automatic progression
+    // });
   
     /*
       Restart the test
@@ -3439,7 +3594,7 @@ for (const key in personalityScores) {
   
       resultsSection.classList.add("hidden");
       testSection.classList.remove("hidden");
-      displayQuestion();
+      initializeQuiz();
     });
   
     /*
@@ -3839,7 +3994,7 @@ for (const key in personalityScores) {
       evaluationEl.innerHTML = resultHTML;
     }
   
-    displayQuestion();
+    initializeQuiz();
   });
 
 
