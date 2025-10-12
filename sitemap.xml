@@ -1,1693 +1,1073 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-<!-- 
-==============================================================================
-ZINVANA.COM SITEMAP - Optimized for SEO & User Experience
-Last Updated: 2025-08-30
-Description: Comprehensive sitemap for Zinvana's personality quiz platform
-Features: Proper categorization, strategic priorities, change frequencies
-==============================================================================
--->
-
-<!-- HOMEPAGE - Maximum Priority -->
-<url>
-    <loc>https://zinvana.com/</loc>
-    <lastmod>2025-08-30T12:39:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.00</priority>
-</url>
-
-<!-- ====================================================================
-     MAIN QUIZ CATEGORIES - Highest Priority Landing Pages
-     ==================================================================== -->
-
-<!-- Core Personality Quizzes -->
-<url>
-    <loc>https://zinvana.com/test.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-</url>
-
-<url>
-    <loc>https://zinvana.com/leaders.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-</url>
-
-<url>
-    <loc>https://zinvana.com/marvel-quiz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-</url>
-
-<url>
-    <loc>https://zinvana.com/football-personality-quiz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-</url>
-
-<url>
-    <loc>https://zinvana.com/brawlstars-quiz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-</url>
-
-<!-- Popular Culture & Entertainment Quizzes -->
-<url>
-    <loc>https://zinvana.com/squidgame.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-</url>
-
-<url>
-    <loc>https://zinvana.com/youtubers-personality-quiz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-</url>
-
-<url>
-    <loc>https://zinvana.com/ai-personality.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-</url>
-
-<url>
-    <loc>https://zinvana.com/inventor_quiz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-</url>
-
-<url>
-    <loc>https://zinvana.com/universe_quiz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-</url>
-
-<!-- Historical & Educational Quizzes -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
 <url>
-    <loc>https://zinvana.com/persian_kings-quiz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+<loc>https://zinvana.com/</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>1.00</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/empire.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+<loc>https://zinvana.com/leaders.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/political.html</loc>
-    <lastmod>2025-08-30T12:39:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+<loc>https://zinvana.com/test.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/history.html</loc>
-    <lastmod>2025-08-30T12:39:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+<loc>https://zinvana.com/football-personality-quiz.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
-<!-- ====================================================================
-     CORE SITE NAVIGATION - Essential Pages
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/about.html</loc>
-    <lastmod>2025-08-30T12:39:14+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+<loc>https://zinvana.com/help.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/help.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+<loc>https://zinvana.com/about.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/privacy.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawlstars-quiz.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
-<!-- ====================================================================
-     CATEGORY & LISTING PAGES - High SEO Value
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/all-articles.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+<loc>https://zinvana.com/inventor_quiz.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/all-brawlers.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+<loc>https://zinvana.com/youtubers-personality-quiz.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/all-empires.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+<loc>https://zinvana.com/universe_quiz.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/leaders-list.html</loc>
-    <lastmod>2025-08-30T12:39:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+<loc>https://zinvana.com/marvel-quiz.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/football-list.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+<loc>https://zinvana.com/persian_kings-quiz.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/influencial_leaders.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+<loc>https://zinvana.com/empire.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
-<!-- ====================================================================
-     HISTORICAL LEADERS - Individual Pages
-     ==================================================================== -->
-
-<!-- Ancient & Classical Leaders -->
 <url>
-    <loc>https://zinvana.com/cyrus.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/squidgame.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/alexander.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/political.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/augustus.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/political-ideology.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/aurelius.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/perfect-country.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/ashoka.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/squidgame-about.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
-<!-- Persian Kings -->
 <url>
-    <loc>https://zinvana.com/ardashir.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/history.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/artaxerxes.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/leaders-list.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
-<!-- Modern Historical Figures -->
 <url>
-    <loc>https://zinvana.com/napoleon.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/influencial_leaders.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/lincoln.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/all-articles.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/churchill.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/cyrus.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/gandhi.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/privacy</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/bismarck.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/index.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/ataturk.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/napoleon.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     SCIENTISTS & INNOVATORS
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/albert-einstein.html</loc>
-    <lastmod>2025-08-30T12:39:14+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/gandhi.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/leonardo-da-vinci.html</loc>
-    <lastmod>2025-08-30T12:39:14+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/lincoln.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/thomas-edison.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/churchill.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/steve-jobs.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/ashoka.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/bill-gates.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/privacy.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     YOUTUBE PERSONALITIES & CONTENT CREATORS
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/pewdiepie.html</loc>
-    <lastmod>2025-08-30T12:39:14+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/football-list.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/mrbeast.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/test</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/ksi.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/about</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/markiplier.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/albert-einstein.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/dream.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/leonardo-da-vinci.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/dantdm.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/thomas-edison.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/linustechtips.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/steve-jobs.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/veritasium.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/pewdiepie.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     ENTERTAINMENT & POPULAR CULTURE
-     ==================================================================== -->
-
-<!-- Marvel Characters -->
 <url>
-    <loc>https://zinvana.com/iron-man.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/mrbeast.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/captain-america.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/ksi.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/spider-man.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/markiplier.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/thor.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/linustechtips.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/black-widow.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/dream.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/hulk.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/dantdm.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/doctor-strange.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/veritasium.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/black-panther.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/ninja.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/ant-man.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/ishowspeed.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- Squid Game Characters -->
 <url>
-    <loc>https://zinvana.com/squidgame-about.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/iron-man.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/ilnam.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/captain-america.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     BRAWL STARS CHARACTERS - Gaming Category
-     ==================================================================== -->
-
-<!-- Top Brawlers -->
 <url>
-    <loc>https://zinvana.com/brawler-shelly.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/thor.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-colt.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/spider-man.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-bull.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/hulk.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-elprimo.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/black-widow.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-barley.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/leaders-quiz.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-poco.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/all-empires.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-rosa.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/all-brawlers.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-jessie.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/cambyses.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-brock.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/darius.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-dynamike.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/xerxes.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- Popular Brawlers -->
 <url>
-    <loc>https://zinvana.com/brawler-bo.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/artaxerxes.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-8bit.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/ardashir.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-emz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/shapur.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-stu.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/khosrow2.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-edgar.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/romanempire.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- Additional Brawlers -->
 <url>
-    <loc>https://zinvana.com/brawler-buzz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/achaemenidempire.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-griff.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/tokugawashogunate.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-ash.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/mongolempire.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-meg.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/ottoman.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-gus.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/british.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     HISTORICAL EMPIRES & CIVILIZATIONS
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/achaemenidempire.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/mughal.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/aztec.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/aztec.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     SUPPORTING & INFORMATIONAL PAGES
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/admin.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
+<loc>https://zinvana.com/inca.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/perestroika.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/gi-hun.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/superhero-marvel-personality-quiz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/sang-woo.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- Additional Brawl Stars Characters (Lower Priority) -->
 <url>
-    <loc>https://zinvana.com/brawler-amber.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/sae-byeok.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-angelo.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/deoksu.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-bea.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/lee-myung-gi.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-belle.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/park-jung-bae.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-berry.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/thanos.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-bibi.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/se-mi.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-bonnie.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/ali.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-buster.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/cleopatra.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-byron.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/muhammad.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-carl.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/jesus.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-chester.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/elizabethI.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-chuck.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/salahudin.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-clancy.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/lenin.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-colette.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/fdr.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-cordelius.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/hitler.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-crow.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/gorbachev.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-darryl.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/ghengiskhan.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-doug.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/augustus.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-draco.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/caesar.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-eve.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/nelsonmandela.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-fang.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/mlkj.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-frank.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/alexander.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-gale.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/stalin.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-gene.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/aurelius.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-gray.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/suntzu.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-grom.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/ataturk.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-hank.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/cheguevara.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- All Missing Brawl Stars Characters -->
 <url>
-    <loc>https://zinvana.com/brawler-jacky.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/history</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-janet.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/famous-leaders.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-juju.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/gianluigi_buffon.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-kenji.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/kylian_mbappe.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-kit.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/didier_drogba.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-leon.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/sergio_busquets.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-lily.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/philipp_lahm.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-lola.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/jamie_vardy.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-lou.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/pep_guardiola.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-maisie.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/cristiano_ronaldo.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-mandy.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/lionel_messi.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-max.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/ronaldinho.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-melodie.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/cyrus-q&a.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-mico.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/muhammad-q&a.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-moe.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/jesus-q&a.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-mortis.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/cleopatra-q&a.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-mrp.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/elizabethI-q&a.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-nani.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/saladin-q&a.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-nita.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/churchill-q&a.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-otis.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/lincoln-q&a.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-pam.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/franklin-d-roosevelt-q&a.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-pearl.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/lenin-q&a.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-penny.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/gandhi-hi.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-piper.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/ashoka-hi.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-rico.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/cyrus-fa.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-rt.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/glasnost.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-ruffs.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/emma-chamberlain.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-sam.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/logan-paul.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-sandy.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/david-dobrik.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-spike.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/james-charles.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-sprout.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/moist-critical.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-squeak.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/brawler-spike.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-surge.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/brawler-leon.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-tara.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/brawler-crow.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-tick.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/brawler-sandy.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/brawler-willow.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+<loc>https://zinvana.com/brawler-amber.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     MAJOR HISTORICAL LEADERS - Missing Figures
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/caesar.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-meg.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/cleopatra.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-chester.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/hitler.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-cordelius.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/stalin.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-kit.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/lenin.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-draco.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/mao.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-kenji.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/jesus.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-mortis.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/muhammad.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-tara.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/elizabethI.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-gene.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/fdr.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-max.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/mlkj.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-mrp.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/nelsonmandela.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-sprout.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/cheguevara.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-byron.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/ghengiskhan.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-squeak.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/salahudin.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-lou.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/suntzu.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-ruffs.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- More Persian/Ancient Leaders -->
 <url>
-    <loc>https://zinvana.com/darius.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-belle.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/xerxes.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-buzz.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/cambyses.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-ash.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/shapur.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-lola.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/khosrow2.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/brawler-grom.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- Modern Tech Leaders -->
 <url>
-    <loc>https://zinvana.com/elon-musk.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-fang.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/mark-zuckerberg.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-eve.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/jeff-bezos.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-janet.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     HISTORICAL EMPIRES - Missing Empires
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/romanempire.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-bonnie.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/mongolempire.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-otis.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/ottoman.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-sam.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/british.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-gus.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/mughal.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-buster.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/tokugawashogunate.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-gray.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/inca.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/brawler-mandy.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     FOOTBALL PLAYERS - Missing Stars
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/cristiano_ronaldo.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-rt.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/lionel_messi.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+<loc>https://zinvana.com/brawler-willow.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/ronaldinho.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-maisie.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/pep_guardiola.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-hank.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/neymarjr.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-pearl.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/kylian_mbappe.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-mico.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/gianluigi_buffon.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-melodie.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/didier_drogba.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-lily.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/jamie_vardy.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/brawler-clancy.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/sergio_busquets.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/brawler-moe.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/philipp_lahm.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/brawler-juju.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     MORE YOUTUBE PERSONALITIES & CONTENT CREATORS
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/ninja.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-piper.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/james-charles.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-pam.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/david-dobrik.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-frank.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/emma-chamberlain.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-bibi.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/logan-paul.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-bea.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/ishowspeed.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-nani.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/moist-critical.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/brawler-edgar.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     SQUID GAME CHARACTERS
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/gi-hun.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-griff.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/sae-byeok.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/brawler-gale.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/sang-woo.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/brawler-colette.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/deoksu.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-surge.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/se-mi.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-emz.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/park-jung-bae.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-stu.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/lee-myung-gi.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-penny.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     MORE MARVEL CHARACTERS
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/thanos.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-darryl.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-
-<!-- ====================================================================
-     Q&A AND EDUCATIONAL PAGES
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/churchill-q&a.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-carl.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/cleopatra-q&a.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-jacky.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/cyrus-q&a.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-8bit.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/elizabethI-q&a.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-rico.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/franklin-d-roosevelt-q&a.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-tick.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/jesus-q&a.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-poco.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/lenin-q&a.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-rosa.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/lincoln-q&a.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-elprimo.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/muhammad-q&a.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-barley.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/saladin-q&a.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+<loc>https://zinvana.com/brawler-shelly.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     MULTILINGUAL VARIATIONS
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/ashoka-hi.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/brawler-nita.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/gandhi-hi.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/brawler-colt.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/cyrus-fa.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/brawler-bull.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-<!-- ====================================================================
-     ADDITIONAL QUIZ PAGES & SUPPORTING CONTENT
-     ==================================================================== -->
-
 <url>
-    <loc>https://zinvana.com/leaders-quiz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-jessie.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/famous-leaders.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-brock.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/leadership.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+<loc>https://zinvana.com/brawler-dynamike.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/disney-princess-quiz.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+<loc>https://zinvana.com/brawler-bo.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/gorbachev.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+<loc>https://zinvana.com/ilnam.html</loc>
+<lastmod>2025-10-10T20:54:09+00:00</lastmod>
+<priority>0.51</priority>
 </url>
-
 <url>
-    <loc>https://zinvana.com/glasnost.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+<loc>https://zinvana.com/perestroika.html</loc>
+<lastmod>2025-10-10T20:54:08+00:00</lastmod>
+<priority>0.51</priority>
 </url>
-
-<url>
-    <loc>https://zinvana.com/ali.html</loc>
-    <lastmod>2025-08-30T12:39:13+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
-</url>
-
 </urlset>
-
