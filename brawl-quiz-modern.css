@@ -1,0 +1,136 @@
+/* Modern visual polish for Brawl Stars quiz (non-breaking overrides) */
+
+:root {
+  --bg-start: #0b1020;
+  --bg-end: #131b38;
+  --gold: #ffd700;
+  --accent: #667eea;
+  --accent-2: #764ba2;
+  --ink: #0f172a;
+}
+
+/* Global background refinement */
+body {
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(255,215,0,.08), transparent 60%),
+              radial-gradient(900px 500px at 110% 10%, rgba(102,126,234,.12), transparent 60%),
+              linear-gradient(135deg, var(--bg-start), var(--bg-end)) !important;
+}
+
+/* Header upgrades */
+.quiz-header {
+  transform: none !important;
+  backdrop-filter: blur(6px);
+}
+
+.quiz-header::before { opacity: .6; }
+.quiz-header::after { filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+
+.quiz-title {
+  letter-spacing: 1.5px;
+  text-shadow: 0 3px 0 #ff6b35, 0 6px 0 #8a2be2, 0 10px 25px rgba(0,0,0,.45) !important;
+}
+
+.quiz-subtitle { max-width: 980px; margin-inline: auto; }
+
+/* Panels: glass and depth */
+.quiz-container,
+.result-container {
+  background: rgba(255,255,255,0.9) !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  box-shadow: 0 15px 40px rgba(0,0,0,.18) !important;
+}
+
+.result-container {
+  background:
+    radial-gradient(800px 400px at 50% -10%, rgba(255,215,0,.10), transparent 60%),
+    linear-gradient(135deg, #101737, #0f1a3e 60%, #0c2048) !important;
+}
+
+/* Buttons */
+.start-btn,
+.retry-btn,
+.share-btn {
+  transition: transform .2s ease, box-shadow .25s ease, filter .2s ease !important;
+}
+
+.start-btn:hover,
+.retry-btn:hover,
+.share-btn:hover {
+  filter: brightness(1.03);
+}
+
+.start-btn { box-shadow: 0 12px 28px rgba(255,107,53,.35) !important; }
+.retry-btn { box-shadow: 0 10px 24px rgba(65,105,225,.28) !important; }
+.share-btn { box-shadow: 0 8px 18px rgba(0,0,0,.22) !important; }
+
+/* Progress bar */
+.progress-bar { height: 10px !important; border-radius: 6px !important; }
+.progress-fill {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)) !important;
+}
+
+/* Options */
+.option {
+  border: 2px solid #e2e8f0 !important;
+  background: linear-gradient(180deg, #fbfdff, #f6f9ff) !important;
+}
+.option:hover { transform: translateY(-3px) !important; }
+.option.selected {
+  border-color: var(--accent) !important;
+  box-shadow: 0 6px 16px rgba(102,126,234,.25);
+}
+
+.option-text { color: #1f2937 !important; }
+
+/* Result avatar */
+.brawler-image {
+  width: 240px !important;
+  height: 240px !important;
+  box-shadow: 0 18px 38px rgba(255,215,0,.42), inset 0 3px 0 rgba(255,255,255,.35) !important;
+}
+
+.brawler-name { letter-spacing: 1.5px !important; }
+.brawler-type { filter: drop-shadow(0 6px 12px rgba(0,0,0,.35)); }
+
+/* Cards on result */
+.analysis-section,
+.personality-traits,
+.life-advice,
+.career-matches,
+.personality-score {
+  background: linear-gradient(135deg, rgba(65,105,225,.95), rgba(138,43,226,.95)) !important;
+}
+
+.score-item {
+  background: linear-gradient(135deg, #ffe27a, #ffc14d) !important;
+}
+
+/* Stats */
+.stat-item { transform: translateZ(0); }
+.stat-item:hover { transform: translateY(-4px) !important; }
+
+/* Navigation polish */
+nav { backdrop-filter: saturate(120%) blur(8px); }
+.nav-logo img { box-shadow: 0 6px 14px rgba(0,0,0,.18); }
+
+/* Footer */
+.footer-pro { box-shadow: inset 0 1px 0 rgba(255,255,255,.04); }
+
+/* Accessibility */
+.option:focus,
+.start-btn:focus,
+.retry-btn:focus,
+.share-btn:focus,
+.nav-toggle:focus,
+.nav-links a:focus {
+  outline: 3px solid var(--accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* Mobile refinements */
+@media (max-width: 768px) {
+  .brawler-image { width: 200px !important; height: 200px !important; }
+  .quiz-header { padding: 24px 16px !important; }
+  .quiz-title { font-size: 1.9rem !important; }
+  .quiz-container, .result-container { padding: 22px 16px !important; }
+}
