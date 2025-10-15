@@ -1198,6 +1198,29 @@
             line-height: 1.7;
         }
 
+        /* Tablet landscape refinements */
+        @media (max-width: 1200px) {
+            .main-container { padding: 0 16px; }
+            .hero-section h1 { font-size: 3rem; }
+            .section-header h2 { font-size: 2.3rem; }
+            .guide-header h2 { font-size: 2.3rem; }
+            .guide-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+        }
+
+        /* Tablet portrait refinements */
+        @media (max-width: 992px) {
+            .container { max-width: 820px; }
+            nav .nav-left, nav .nav-right { gap: 20px; }
+            .hero-section h1 { font-size: 2.6rem; }
+            .hero-section .subtitle { font-size: 1.2rem; }
+            .section-header p { font-size: 1.08rem; }
+            .guide-toolbar { flex-direction: column; align-items: stretch; gap: 12px; }
+            .search-input { flex: 1 1 100%; max-width: none; }
+            .filter-chips { justify-content: center; }
+            .guide-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+            .characters-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+        }
+
         /* Two-column layout for answers on wider screens */
         @media (min-width: 720px) {
             .answers {
@@ -1308,6 +1331,46 @@
                 height: 20px;
                 font-size: 12px;
             }
+        }
+
+        /* Large phones / small tablets */
+        @media (max-width: 600px) {
+            .container { padding: 16px; }
+            nav .nav-left, nav .nav-right { gap: 12px; }
+            nav img#brand-logo { width: 36px; height: 36px; }
+            .hero-section h1 { font-size: 2.1rem; }
+            .hero-section .subtitle { font-size: 1.05rem; }
+            .section-header h2 { font-size: 1.9rem; }
+            .guide-header h2 { font-size: 2rem; }
+            .guide-grid { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+            .archetype-card-grid { grid-template-columns: 1fr; }
+            .characters-grid { grid-template-columns: 1fr; }
+            .wojak-image { width: 180px; height: 180px; }
+            .progress { height: 8px; }
+            .faq-section { padding: 56px 0; }
+            .cta-section { padding: 56px 0; }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+            body { padding-top: 64px; }
+            nav { padding: 8px 12px; }
+            .hero-section { padding: 48px 0 28px; }
+            .hero-section h1 { font-size: 1.85rem; }
+            .hero-section .description { font-size: 1rem; padding: 0 4px; }
+            .quiz-header { padding: 24px 16px; }
+            .quiz-header h2 { font-size: 1.6rem; }
+            .quiz-header p { font-size: 1rem; }
+            .answers { gap: 12px; }
+            .answer-btn { padding: 16px 18px 16px 50px; font-size: 0.95rem; }
+            .answer-btn .wojak-badge { left: 14px; width: 26px; height: 26px; }
+            .answer-btn .wojak-badge img { width: 16px; height: 16px; }
+            .answer-btn .chevron { right: 12px; width: 18px; height: 18px; font-size: 11px; }
+            .progress-meta { font-size: 0.9rem; }
+            .wojak-image { width: 160px; height: 160px; }
+            .section-header h2 { font-size: 1.7rem; }
+            .guide-grid { grid-template-columns: 1fr; }
+            .archetype-card-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
