@@ -1741,12 +1741,19 @@
       }
       
       .quiz-gallery {
-        display: flex;
-        gap: 30px;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: clamp(260px, 28vw, 360px);
+        gap: 20px;
         overflow-x: auto;
         overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+        scroll-padding: 10px;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
         scroll-behavior: smooth;
-        padding: 20px 0;
+        padding: 10px 0;
         scrollbar-width: none;
         -ms-overflow-style: none;
       }
@@ -1874,29 +1881,24 @@
       
       /* Enhanced Quiz Cards */
       .quiz-card {
-        background: linear-gradient(145deg, #ffffff 0%, rgba(248, 250, 252, 0.8) 100%);
-        border-radius: 20px;
+        background: #ffffff;
+        border-radius: 16px;
         overflow: hidden;
-        box-shadow: 
-          0 10px 25px rgba(0, 0, 0, 0.08),
-          0 4px 10px rgba(0, 0, 0, 0.03);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        transition: box-shadow 0.2s ease;
         text-align: center;
-        border: 2px solid rgba(226, 232, 240, 0.3);
-        flex: 0 0 350px;
-        min-height: 480px;
+        border: 1px solid rgba(226, 232, 240, 0.6);
+        min-height: 360px;
         display: flex;
         flex-direction: column;
         position: relative;
-        backdrop-filter: blur(10px);
+        scroll-snap-align: start;
+        contain: content;
       }
       
       .quiz-card:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 
-          0 20px 40px rgba(0, 0, 0, 0.12),
-          0 10px 20px rgba(0, 0, 0, 0.06);
-        border-color: rgba(102, 126, 234, 0.3);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+        border-color: rgba(102, 126, 234, 0.25);
       }
       
       .quiz-card::before {
@@ -1918,19 +1920,16 @@
       
       .quiz-card img {
         width: 100%;
-        height: 220px;
+        height: 160px;
         object-fit: cover;
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         border-radius: 16px 16px 0 0;
       }
       
-      .quiz-card:hover img {
-        transform: scale(1.05);
-      }
+      /* Remove heavy hover image transforms for perf */
       
       .quiz-card h3 {
-        font-size: 1.5rem !important;
-        margin: 24px 24px 16px !important;
+        font-size: 1.35rem !important;
+        margin: 16px 16px 10px !important;
         background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
         background-clip: text;
         -webkit-background-clip: text;
@@ -1941,8 +1940,8 @@
       }
       
       .quiz-card p {
-        font-size: 1rem !important;
-        padding: 0 24px !important;
+        font-size: 0.95rem !important;
+        padding: 0 16px !important;
         color: #64748b !important;
         line-height: 1.6 !important;
         margin: 0 !important;
@@ -1954,14 +1953,14 @@
       
       .quiz-card .btn {
         display: inline-block;
-        margin: 24px;
-        padding: 16px 28px;
+        margin: 16px;
+        padding: 12px 20px;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: #ffffff;
         border-radius: 12px;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 0.95rem;
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 0.02em;
@@ -2693,22 +2692,22 @@
         
         .quiz-card {
           flex: 0 0 260px;
-          min-height: 420px;
+          min-height: 340px;
         }
         
         .quiz-card h3 {
-          font-size: 1.2rem;
-          margin: 16px 16px 12px;
+          font-size: 1.15rem;
+          margin: 12px 12px 8px;
         }
         
         .quiz-card p {
           font-size: 0.9rem;
-          padding: 0 16px 16px;
+          padding: 0 12px 12px;
         }
         
         .quiz-card .btn-primary {
-          margin: 0 16px 20px;
-          padding: 10px 20px;
+          margin: 0 12px 14px;
+          padding: 10px 18px;
           font-size: 0.85rem;
         }
         
@@ -2784,24 +2783,24 @@
         }
         
         .quiz-card {
-          min-height: 400px;
+          min-height: 320px;
           border-radius: 15px;
         }
         
         .quiz-card h3 {
-          font-size: 1.1rem;
-          margin: 12px 12px 8px;
+          font-size: 1.05rem;
+          margin: 10px 10px 6px;
         }
         
         .quiz-card p {
           font-size: 0.85rem;
-          padding: 0 12px 12px;
+          padding: 0 10px 10px;
           line-height: 1.4;
         }
         
         .quiz-card .btn-primary {
-          margin: 0 12px 15px;
-          padding: 8px 16px;
+          margin: 0 10px 12px;
+          padding: 8px 14px;
           font-size: 0.8rem;
         }
         
@@ -3643,7 +3642,7 @@
     <section class="quiz-grid" id="quiz-grid">
       <div class="quiz-gallery-wrapper">
         <!-- Navigation Arrow - Previous -->
-        <div class="gallery-nav prev" onclick="scrollGallery(-1)" aria-label="Previous quizzes">
+  <div class="gallery-nav prev" onclick="scrollQuizzes(-1)" aria-label="Previous quizzes">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
           </svg>
@@ -4210,7 +4209,7 @@
         </div>
 
         <!-- Navigation Arrow - Next -->
-        <div class="gallery-nav next" onclick="scrollGallery(1)" aria-label="Next quizzes">
+  <div class="gallery-nav next" onclick="scrollQuizzes(1)" aria-label="Next quizzes">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
           </svg>
@@ -4329,7 +4328,7 @@
       border: 1px solid rgba(226, 232, 240, 0.6);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       flex: 0 0 340px;
-      min-height: 540px;
+      min-height: 360px;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -4350,7 +4349,7 @@
     }
 
     .quiz-card:hover {
-      transform: translateY(-12px) scale(1.02);
+      transform: translateY(-2px);
       box-shadow: 
         0 25px 50px rgba(0, 0, 0, 0.08),
         0 8px 16px rgba(0, 0, 0, 0.04),
@@ -4482,7 +4481,7 @@
     .card-image-container {
       position: relative;
       width: 100%;
-      height: 220px;
+      height: 180px;
       overflow: hidden;
       background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     }
@@ -4553,7 +4552,7 @@
     .card-image-container {
       position: relative;
       width: 100%;
-      height: 200px;
+      height: 170px;
       overflow: hidden;
     }
 
@@ -4758,7 +4757,7 @@
       
       .quiz-card {
         flex: 0 0 300px;
-        min-height: 480px;
+        min-height: 360px;
       }
       
       .card-content {
@@ -5774,164 +5773,85 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 </script>
 
-<!-- Quiz Gallery JavaScript -->
+<!-- Quiz Gallery JavaScript (Lightweight, scroll-snap based) -->
 <script>
-let currentScrollPosition = 0;
+// Scroll-snap carousel: compute pages from scrollLeft instead of observers
+let quizPageWidth = 0;
+let quizPages = 1;
+let quizPerView = 1;
 
-// Simple initialization - no complex calculations needed
-function initGallery() {
-  currentScrollPosition = 0;
+function computeQuizLayout() {
+  const gallery = document.getElementById('quiz-gallery');
+  const cards = gallery ? Array.from(gallery.querySelectorAll('.quiz-card')) : [];
+  if (!gallery || cards.length === 0) return { gallery, cards };
+  const gap = 20; // keep in sync with CSS
+  const cardWidth = cards[0].getBoundingClientRect().width;
+  quizPerView = Math.max(1, Math.floor((gallery.clientWidth + gap) / (cardWidth + gap)));
+  quizPageWidth = gallery.clientWidth; // one page is the viewport width
+  quizPages = Math.max(1, Math.ceil(cards.length / quizPerView));
+  return { gallery, cards };
+}
+
+function scrollQuizzes(direction) {
+  const { gallery } = computeQuizLayout();
+  if (!gallery) return;
+  gallery.scrollBy({ left: direction * quizPageWidth, behavior: 'smooth' });
+}
+
+function initQuizDots() {
+  const { gallery, cards } = computeQuizLayout();
+  const dotsWrap = document.getElementById('gallery-dots');
+  if (!gallery || !dotsWrap || !cards || cards.length === 0) return;
+  dotsWrap.innerHTML = '';
+  for (let i = 0; i < quizPages; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', 'Go to page ' + (i + 1));
+    dot.onclick = () => {
+      const left = i * quizPageWidth;
+      gallery.scrollTo({ left, behavior: 'smooth' });
+      updateQuizActiveDot(i);
+    };
+    dotsWrap.appendChild(dot);
+  }
+}
+
+function updateQuizActiveDot(index) {
+  const dots = document.querySelectorAll('#gallery-dots .gallery-dot');
+  dots.forEach((d, i) => d.classList.toggle('active', i === index));
+}
+
+function onQuizScroll() {
+  const { gallery } = computeQuizLayout();
+  if (!gallery) return;
+  const index = Math.round(gallery.scrollLeft / quizPageWidth);
+  updateQuizActiveDot(Math.min(quizPages - 1, Math.max(0, index)));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  computeQuizLayout();
+  initQuizDots();
+
   const gallery = document.getElementById('quiz-gallery');
   if (gallery) {
-    gallery.scrollTo({ left: 0, behavior: 'auto' });
+    gallery.addEventListener('scroll', onQuizScroll, { passive: true });
   }
-}
 
-// Scroll gallery function - IMPROVED: One card at a time with last card visible
-function scrollGallery(direction) {
-  const gallery = document.getElementById('quiz-gallery');
-  const cards = document.querySelectorAll('.quiz-card');
-  
-  if (!gallery || cards.length === 0) return;
-  
-  // Get actual dimensions from CSS
-  const firstCard = cards[0];
-  const cardWidth = firstCard.offsetWidth;
-  const galleryStyle = window.getComputedStyle(gallery);
-  const gap = parseInt(galleryStyle.gap) || 30;
-  
-  // Calculate scroll step
-  const scrollStep = cardWidth + gap;
-  
-  // Calculate how many cards fit in the visible area
-  const galleryWidth = gallery.offsetWidth;
-  const cardsPerView = Math.floor(galleryWidth / scrollStep);
-  
-  // Calculate maximum position (total cards - cards that fit in view)
-  const maxPosition = Math.max(0, cards.length - cardsPerView);
-  
-  // Update position
-  currentScrollPosition += direction;
-  
-  // Handle boundaries with smooth wrapping
-  if (currentScrollPosition < 0) {
-    currentScrollPosition = maxPosition;
-  } else if (currentScrollPosition > maxPosition) {
-    currentScrollPosition = 0;
-  }
-  
-  // Calculate final scroll amount
-  const maxScroll = gallery.scrollWidth - gallery.offsetWidth;
-  const scrollAmount = Math.min(currentScrollPosition * scrollStep, maxScroll);
-  
-  // Scroll to exact position
-  gallery.scrollTo({
-    left: scrollAmount,
-    behavior: 'smooth'
-  });
-}
-
-// Scroll to specific position - IMPROVED
-function scrollToPosition(position) {
-  const gallery = document.getElementById('quiz-gallery');
-  const cards = document.querySelectorAll('.quiz-card');
-  
-  if (!gallery || cards.length === 0) return;
-  
-  currentScrollPosition = position;
-  
-  // Get actual dimensions
-  const firstCard = cards[0];
-  const cardWidth = firstCard.offsetWidth;
-  const gap = parseInt(window.getComputedStyle(gallery).gap) || 30;
-  const scrollStep = cardWidth + gap;
-  
-  gallery.scrollTo({
-    left: currentScrollPosition * scrollStep,
-    behavior: 'smooth'
-  });
-}
-
-// Auto-scroll functionality
-let autoScrollInterval;
-
-function startAutoScroll() {
-  autoScrollInterval = setInterval(() => {
-    scrollGallery(1);
-  }, 2000); // Auto-scroll every 2 seconds
-}
-
-function stopAutoScroll() {
-  clearInterval(autoScrollInterval);
-}
-
-// Touch/swipe support for mobile
-let startX = 0;
-let currentX = 0;
-let isDragging = false;
-
-function handleTouchStart(e) {
-  startX = e.touches[0].clientX;
-  isDragging = true;
-}
-
-function handleTouchMove(e) {
-  if (!isDragging) return;
-  currentX = e.touches[0].clientX;
-}
-
-function handleTouchEnd() {
-  if (!isDragging) return;
-  
-  const diff = startX - currentX;
-  const threshold = 50;
-  
-  if (Math.abs(diff) > threshold) {
-    if (diff > 0) {
-      scrollGallery(1); // Swipe left - next
-    } else {
-      scrollGallery(-1); // Swipe right - previous
-    }
-  }
-  
-  isDragging = false;
-}
-
-// Keyboard navigation
-function handleKeydown(e) {
-  if (e.key === 'ArrowLeft') {
-    scrollGallery(-1);
-  } else if (e.key === 'ArrowRight') {
-    scrollGallery(1);
-  }
-}
-
-// Initialize everything when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-  initGallery();
-  // Removed auto-scroll initialization
-  
-  // Add event listeners
-  const gallery = document.getElementById('quiz-gallery');
-  gallery.addEventListener('touchstart', handleTouchStart, { passive: true });
-  gallery.addEventListener('touchmove', handleTouchMove, { passive: true });
-  gallery.addEventListener('touchend', handleTouchEnd);
-  
-  // Removed auto-scroll pause/resume on hover
-  
-  // Keyboard navigation
-  document.addEventListener('keydown', handleKeydown);
-  
-  // Update on window resize - SIMPLIFIED
   window.addEventListener('resize', () => {
-    // Reset to first position to avoid layout issues
-    currentScrollPosition = 0;
-    const gallery = document.getElementById('quiz-gallery');
-    if (gallery) {
-      gallery.scrollTo({ left: 0, behavior: 'auto' });
-    }
+    const currentIndex = Math.round((document.getElementById('quiz-gallery').scrollLeft || 0) / (quizPageWidth || 1));
+    computeQuizLayout();
+    initQuizDots();
+    // keep approximately on the same page after resize
+    const g = document.getElementById('quiz-gallery');
+    if (g) g.scrollTo({ left: currentIndex * quizPageWidth, behavior: 'auto' });
   });
-  
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') scrollQuizzes(-1);
+    if (e.key === 'ArrowRight') scrollQuizzes(1);
+  });
+
   // Initialize How Works Gallery
   initHowWorksGallery();
 });
