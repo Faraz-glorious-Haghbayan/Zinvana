@@ -83,6 +83,7 @@
     <meta name="author" content="Zinvana">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://zinvana.com/brawlstars-quiz.html">
+    <link rel="stylesheet" href="quiz-responsive.css">
     
     <!-- Advanced Performance Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2148,6 +2149,9 @@
             }
         }
     </style>
+    
+    <!-- Modern visual overrides -->
+    <link rel="stylesheet" href="brawl-quiz-modern.css">
 </head>
 <body>
     <!-- Professional Navigation -->
@@ -2184,7 +2188,7 @@
     <div class="container">
         <!-- Quiz Header -->
         <header class="quiz-header" id="quizHeader" role="banner">
-            <h1 class="quiz-title">🎮 Which Brawler Am I Quiz? #1 Most Accurate FREE Personality Test 2025 �</h1>
+            <h1 class="quiz-title">🎮 Which Brawler Am I Quiz? #1 Most Accurate FREE Personality Test 2025</h1>
             <p class="quiz-subtitle">
                 Take the <strong>#1 most accurate FREE Brawl Stars personality quiz</strong> and discover <strong>which brawler am I</strong>! 
                 Our scientifically-backed <strong>brawlstars quiz</strong> features all 85+ characters with instant results and detailed personality analysis. 
@@ -2296,7 +2300,7 @@
         <!-- Result Container -->
         <div class="result-container" id="resultContainer">
             <div class="brawler-image" id="brawlerImage">
-                <img src="colt.jpg" alt="Brawler" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                <img id="brawlerImgEl" src="colt.jpg" alt="Brawler" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
             </div>
             <h2 class="brawler-name" id="brawlerName">Your Brawler</h2>
             <div class="brawler-type" id="brawlerType">Brawler Type</div>
@@ -2805,8 +2809,8 @@
                         </svg>
                     </a>
                     <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4L15.8 12 9.6 15.6z"/>
                         </svg>
                     </a>
                 </div>
@@ -3984,10 +3988,16 @@
         }
 
         function displayResult(brawler) {
-            // Create image element for brawler
-            const brawlerImageElement = document.getElementById('brawlerImage');
-            const brawlerImageName = brawler.name.toLowerCase().replace(/\s+/g, '').replace(/-/g, '').replace(/_/g, '') + '.jpg';
-            brawlerImageElement.innerHTML = `<img src="${brawlerImageName}" alt="${brawler.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`;
+            // Image with fallback
+            const imgEl = document.getElementById('brawlerImgEl');
+            const candidate = brawler.name.toLowerCase().replace(/\s+/g, '').replace(/-/g, '').replace(/_/g, '') + '.jpg';
+            imgEl.src = candidate;
+            imgEl.alt = brawler.name;
+            imgEl.onerror = function () {
+                // graceful fallback to a generic image
+                this.onerror = null;
+                this.src = 'brawl.png';
+            };
             
             document.getElementById('brawlerName').textContent = brawler.name;
             document.getElementById('brawlerType').textContent = brawler.type;
@@ -4229,11 +4239,46 @@
             }
             
             document.getElementById('resultContainer').style.display = 'block';
+
+            // celebratory confetti for a polished feel
+            try { launchConfetti(600); } catch(e) { /* no-op */ }
             
             // Scroll to result
             document.getElementById('resultContainer').scrollIntoView({ 
                 behavior: 'smooth' 
             });
+        }
+
+        // Lightweight confetti (no deps)
+        function launchConfetti(durationMs = 800) {
+            const container = document.body;
+            const colors = ['#ffd700', '#ff6b35', '#8a2be2', '#4169e1', '#67e8f9'];
+            const pieces = Math.min(120, Math.max(50, Math.floor(window.innerWidth / 12)));
+            const frag = document.createDocumentFragment();
+            for (let i = 0; i < pieces; i++) {
+                const p = document.createElement('div');
+                const size = 6 + Math.random() * 8;
+                p.style.position = 'fixed';
+                p.style.top = '-10px';
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.width = size + 'px';
+                p.style.height = size * 0.6 + 'px';
+                p.style.background = colors[i % colors.length];
+                p.style.transform = `rotate(${Math.random()*360}deg)`;
+                p.style.opacity = '0.9';
+                p.style.borderRadius = '2px';
+                p.style.pointerEvents = 'none';
+                p.style.zIndex = 9999;
+                const fall = 60 + Math.random() * 60;
+                const drift = (Math.random() * 40 - 20);
+                p.animate([
+                    { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translate(${drift}px, ${window.innerHeight + fall}px) rotate(${360 + Math.random()*180}deg)`, opacity: 0.9 }
+                ], { duration: durationMs + Math.random()*500, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'forwards' });
+                frag.appendChild(p);
+                setTimeout(() => p.remove(), durationMs + 800 + Math.random()*500);
+            }
+            container.appendChild(frag);
         }
 
         function shareResult(platform) {
