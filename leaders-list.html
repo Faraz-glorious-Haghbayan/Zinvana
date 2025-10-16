@@ -9,6 +9,11 @@
     <meta name="keywords" content="influential leaders, famous leaders, historical leaders, most influential leaders in history, famous historical leaders, greatest leaders, leadership traits, historical figures, world leaders, political leaders, military leaders, spiritual leaders" />
     <meta name="author" content="Zinvana">
     <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#23243a">
+
+  <!-- Performance: preconnect to fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Open Graph for Social Media -->
     <meta property="og:title" content="Most Influential Leaders in History | Famous Historical Leaders">
@@ -91,9 +96,17 @@
             --transition: 0.22s cubic-bezier(.4,0,.2,1);
             --hero-gradient: linear-gradient(120deg, #2c2e4a 0%, #23243a 100%);
             --hero-overlay: rgba(36,38,54,0.82);
+            --max-wrap: 1100px;
+            --nav-height: 90px;
         }
+        @media (max-width: 600px) { :root { --nav-height: 54px; } }
 
-        body {
+    html, body { overflow-x: hidden; }
+    *, *::before, *::after { box-sizing: border-box; }
+    img, video { max-width: 100%; height: auto; }
+    svg { max-width: 100%; height: auto; }
+
+    body {
             font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
             background: var(--bg-gradient), url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
             background-size: cover, auto;
@@ -138,8 +151,8 @@
             z-index: 2;
             border-radius: 32px;
             pointer-events: none;
-            background: conic-gradient(from 90deg, #ff4757, #ff7f50, #23243a, #ff4757 100%);
-            opacity: 0.18;
+      background: conic-gradient(from 90deg, #ff4757, #ff7f50, #23243a, #ff4757 100%);
+      opacity: 0.08;
             filter: blur(2px);
             animation: heroBorderAnim 6s linear infinite;
         }
@@ -150,13 +163,13 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
+      max-width: var(--max-wrap);
             padding: 48px 24px 32px 24px;
             text-align: center;
         }
-        .hero h1 {
+    .hero h1 {
             font-family: 'Montserrat', Arial, sans-serif;
-            font-size: 3.3rem;
+      font-size: clamp(1.25rem, 5vw, 3.3rem);
             color: var(--accent);
             letter-spacing: 0.07em;
             font-weight: 900;
@@ -209,28 +222,33 @@
         }
 
         /* Leader Profiles Grid */
-        #leaders {
-            width: 100%;
-            margin: 0 auto 72px auto;
-            padding: 40px 3%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: center;
-            animation: fadeInUp 1.1s;
-            background: rgba(26,26,46,0.3);
-            border-top: 2px solid var(--glass-border);
-            border-bottom: 2px solid var(--glass-border);
-        }
+    #leaders {
+      width: 100%;
+      margin: 0 auto 72px auto;
+      padding: 40px 3%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      align-items: stretch;
+      animation: fadeInUp 1.1s;
+      background: rgba(26,26,46,0.3);
+      border-top: 2px solid var(--glass-border);
+      border-bottom: 2px solid var(--glass-border);
+      max-width: 1200px;
+    }
 
         /* Leader Card */
-        .leader-profile {
-            background: rgba(36,38,54,0.93);
-            border-radius: var(--card-radius);
-            box-shadow: var(--shadow), 0 2px 0 var(--accent);
-            border: 2.5px solid var(--glass-border);
-            backdrop-filter: blur(12px);
-            width: 350px;
+    .leader-profile {
+      background: rgba(36,38,54,0.9);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      border: 1px solid transparent;
+      background-image: linear-gradient(rgba(36,38,54,0.9), rgba(36,38,54,0.9)),
+                linear-gradient(135deg, rgba(255,71,87,0.35), rgba(255,127,80,0.35));
+      background-origin: padding-box, border-box;
+      background-clip: padding-box, border-box;
+      backdrop-filter: blur(12px) saturate(1.1);
+      width: min(350px, 100%);
             min-height: 480px;
             display: flex;
             flex-direction: column;
@@ -245,13 +263,15 @@
             animation: fadeInCard 0.7s forwards;
         }
         .leader-profile:hover {
-            transform: translateY(-10px) scale(1.04);
-            box-shadow: 0 24px 64px rgba(255,71,87,0.18), 0 2px 0 var(--accent2);
-            background: rgba(36,38,54,0.98);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 24px 64px rgba(255,71,87,0.18);
+      background-image: linear-gradient(rgba(36,38,54,0.98), rgba(36,38,54,0.98)),
+                linear-gradient(135deg, rgba(255,127,80,0.55), rgba(255,71,87,0.55));
         }
-        .leader-profile img {
-            width: 200px;
-            height: 200px;
+    .leader-profile img {
+      width: clamp(120px, 45vw, 200px);
+      aspect-ratio: 1 / 1;
+      height: auto;
             border-radius: 16px;
             object-fit: cover;
             margin-bottom: 18px;
@@ -273,6 +293,7 @@
             font-weight: 800;
             text-align: center;
             width: 100%;
+      overflow-wrap: anywhere;
         }
         .leader-profile p {
             font-size: 1.05rem;
@@ -280,6 +301,7 @@
             line-height: 1.7;
             margin-bottom: 8px;
             text-align: left;
+      overflow-wrap: anywhere;
         }
         .leader-profile ul {
             list-style: none;
@@ -288,10 +310,24 @@
             margin-bottom: 8px;
         }
         .leader-profile li {
-            font-size: 0.98rem;
-            color: #ddd;
-            margin-bottom: 4px;
+      font-size: 0.98rem;
+      color: #ddd;
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 18px;
         }
+    .leader-profile li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.08);
+      transform: translateY(-50%);
+    }
         .leader-profile .btn {
             align-self: stretch;
             margin-top: auto;
@@ -316,16 +352,17 @@
             border-top: 2.5px solid var(--glass-border);
             border-bottom: 2.5px solid var(--glass-border);
             animation: fadeInUp 1.3s;
+      max-width: 1100px;
         }
         #in-depth h2 {
-            font-size: 2rem;
+      font-size: clamp(1.4rem, 3.8vw, 2rem);
             color: var(--accent);
             margin-bottom: 18px;
             font-family: 'Montserrat', Arial, sans-serif;
             font-weight: 800;
         }
         #in-depth h3 {
-            font-size: 1.18rem;
+      font-size: clamp(1.05rem, 3.2vw, 1.18rem);
             color: var(--accent2);
             margin-top: 24px;
             margin-bottom: 10px;
@@ -341,6 +378,10 @@
             margin-left: 28px;
             margin-bottom: 18px;
         }
+    /* Constrain content slabs for readability */
+    #leaders-explainer { max-width: 1100px; }
+    #influential-leaders-guide, #faq-section { max-width: 1100px; }
+    #leaders-explainer, #influential-leaders-guide, #faq-section { margin-left: auto; margin-right: auto; }
 
         /* Button */
         .btn {
@@ -350,9 +391,9 @@
             color: #fff;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 9px;
+      border-radius: 12px;
             margin-top: 22px;
-            font-size: 1.13rem;
+      font-size: clamp(1rem, 2.8vw, 1.13rem);
             letter-spacing: 0.03em;
             box-shadow: 0 2px 12px rgba(255,71,87,0.13);
             transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
@@ -363,127 +404,14 @@
             box-shadow: 0 6px 24px rgba(255,71,87,0.22);
             transform: scale(1.06);
         }
+    .btn:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+    .btn svg { transition: transform 0.2s ease; }
+    .btn:hover svg { transform: translateX(3px); }
 
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            left: 50%;
-            top: 24px;
-            width: 96%;
-            max-width: 480px;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(22,33,62,0.95) 50%, rgba(15,52,96,0.95) 100%);
-            color: #fff;
-            padding: 20px 24px 16px 24px;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 2px solid var(--accent);
-            box-shadow: 0 20px 60px rgba(255,71,87,0.25), 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
-            z-index: 10000;
-            opacity: 0;
-            animation: slideInDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-            font-size: 1.13rem;
-            backdrop-filter: blur(20px);
-            position: relative;
-            overflow: hidden;
-        }
-        .toast::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255,71,87,0.05) 0%, rgba(255,127,80,0.05) 100%);
-            border-radius: 20px;
-            pointer-events: none;
-        }
-        @keyframes slideInDown {
-            from { 
-                opacity: 0; 
-                transform: translateX(-50%) translateY(-60px) scale(0.9);
-            }
-            to { 
-                opacity: 1; 
-                transform: translateX(-50%) translateY(0) scale(1);
-            }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(32px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        .toast-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            position: relative;
-            z-index: 2;
-        }
-        .toast-text {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #fff;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-            flex: 1;
-        }
-        .toast-button {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-            color: #fff;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 12px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1.05rem;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 4px 15px rgba(255,71,87,0.3);
-            position: relative;
-            overflow: hidden;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-        }
-        .toast-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        .toast-button:hover::before {
-            left: 100%;
-        }
-        .toast-button:hover {
-            background: linear-gradient(135deg, var(--accent2) 0%, var(--accent) 100%);
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(255,71,87,0.4);
-        }
-        .toast-progress {
-            width: 100%;
-            height: 4px;
-            background: rgba(255,255,255,0.15);
-            margin-top: 12px;
-            border-radius: 2px;
-            overflow: hidden;
-            position: relative;
-            z-index: 2;
-        }
-        .toast-progress::before {
-            content: "";
-            display: block;
-            height: 100%;
-            background: linear-gradient(90deg, #fff 0%, var(--accent) 50%, var(--accent2) 100%);
-            width: 100%;
-            animation: countdown 6s linear forwards;
-            border-radius: 2px;
-        }
-        @keyframes countdown {
-            from { width: 100%; }
-            to { width: 0; }
-        }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(32px);} 
+      to { opacity: 1; transform: translateY(0);} 
+    }
 
         /* Footer */
         footer {
@@ -519,26 +447,26 @@
         /* Responsive Styling */
         @media (max-width: 1400px) {
             #leaders {
-                gap: 24px;
+        gap: 24px;
                 padding: 40px 4%;
             }
         }
         @media (max-width: 1100px) {
             #leaders {
-                gap: 16px;
+        gap: 20px;
                 padding: 30px 3%;
             }
             .leader-profile {
-                width: 90vw;
+        width: 100%;
                 max-width: 420px;
             }
         }
         @media (max-width: 900px) {
-            .hero h1 { font-size: 2.1rem; }
+      .hero h1 { font-size: clamp(1.2rem, 6vw, 2.1rem); }
             .hero-content { padding: 32px 5% 18px 5%; }
             #leaders-explainer, #in-depth { padding: 18px 4%; }
             #leaders { padding: 20px 2%; }
-            .leader-profile { width: 98vw; max-width: 98vw; }
+      .leader-profile { width: 100%; max-width: 100%; }
         }
         @media (max-width: 700px) {
             .hero h1 { font-size: 1.4rem; }
@@ -547,377 +475,74 @@
             #leaders { padding: 15px 2%; }
             .leader-profile { padding: 12px 4px; }
             .btn { width: 100%; margin-top: 12px; }
-            .toast { 
-                max-width: 95vw; 
-                font-size: 1rem; 
-                padding: 16px 12px 12px 12px; 
-                top: 16px;
-                border-radius: 16px;
-            }
-            .toast-content {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
-            .toast-text {
-                font-size: 1.05rem;
-            }
-            .toast-button {
-                padding: 10px 20px;
-                font-size: 1rem;
-                width: 100%;
-            }
+            
         }
     </style>
 </head>
 <body>
 
-  <!-- Professional Navigation Bar -->
-<nav>
-  <div class="nav-brand">
-    <a href="index.html" aria-label="Zinvana Home">
-      <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
-      <span class="brand-name">Zinvana</span>
-    </a>
-  </div>
-  <div class="nav-links nav-left">
-    <a href="index.html">Home</a>
-    <a href="leaders.html">Leaders Quiz</a>
-    <a href="test.html" class="active">Personality Test</a>
-  </div>
-  <div class="nav-links nav-right">
-    <a href="help.html">Help</a>
-  </div>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-  <div class="nav-mobile" id="nav-mobile" style="display:none;">
-    <a href="index.html">Home</a>
-    <a href="leaders.html">Leaders Quiz</a>
-    <a href="test.html" class="active">Personality Test</a>
-    <a href="help.html">Help</a>
-  </div>
-</nav>
+  <!-- Top Navigation (exactly as leaders.html) -->
+  <nav>
+    <div class="nav-left">
+      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
+      <a href="index.html">Home</a>
+      <a href="leaders.html">Test</a>
+    </div>
+    <div class="nav-right">
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
 
 <style>
+  /* Navigation styles copied from leaders.html */
   nav {
-    position: sticky;
-    top: 0;
-    padding: 0 5% !important;
-    width: 100% !important;
-    max-width: 100% !important;
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
     justify-content: space-between;
     align-items: center;
-    background: rgba(24, 24, 28, 0.98);
-    backdrop-filter: blur(18px) saturate(1.2);
-    box-shadow: 0 8px 32px #ed1b2422, 0 1.5px 0 #fff2 inset;
-    border-bottom: 3.5px solid #ed1b24;
-    min-height: 82px;
-    z-index: 10000;
-    transition: background 0.3s;
-    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    background: rgba(15, 15, 35, 0.95);
+    backdrop-filter: blur(25px);
+    padding: 16px 32px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
   }
-  .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 0;
-  }
-  .nav-brand a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-  }
-  .nav-brand .brand-name {
-    font-size: 2.1rem;
-    font-weight: 900;
-    color: #fff;
-    letter-spacing: 2px;
-    background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 2px 18px #ed1b2411;
-    margin-left: 0 !important;
-    transition: font-size 0.2s;
-  }
-  nav #brand-logo {
-    width: 60px;
-    min-width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #fff;
-    padding: 0;
-    box-shadow: 0 4px 18px #ed1b2411;
-    filter: grayscale(1) brightness(2.2) contrast(2.2) drop-shadow(0 0 12px #ed1b2422);
-    transition: transform 0.18s, box-shadow 0.18s;
-    margin-right: 0;
-    border: 2.5px solid #ed1b24;
-    object-fit: cover;
-  }
-  nav #brand-logo:hover {
-    transform: scale(1.08) rotate(-2deg);
-    box-shadow: 0 8px 32px #ed1b2422;
-    border-color: #ff5e62;
-  }
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 36px;
-    margin: 0 10px;
-  }
-  nav a {
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 1.18rem;
-    letter-spacing: 0.7px;
-    border-bottom: 2.5px solid transparent;
-    transition: border 0.2s, color 0.2s, background 0.2s;
-    position: relative;
-    background: none;
-    border-radius: 0;
-    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-    text-shadow: 0 2px 12px #ed1b2411;
-    padding: 8px 0;
-    text-decoration: none;
-  }
-  nav a.active,
-  nav a:hover,
-  .nav-mobile a.active,
-  .nav-mobile a:hover {
-    color: #ed1b24;
-    border-bottom: 2.5px solid #ed1b24;
-    background: none;
-    text-decoration: none;
-  }
-  nav a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2.5px;
-    background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
-    transition: width 0.3s;
-    position: absolute;
-    left: 0;
-    bottom: -2.5px;
-    border-radius: 2px;
-  }
-  nav a:hover::after,
-  nav a.active::after {
-    width: 100%;
-  }
-  .nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
-    border: none;
-    cursor: pointer;
-    z-index: 10001;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px #ed1b2411;
-    transition: background 0.2s, box-shadow 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-  .nav-toggle .bar {
-    display: block;
-    width: 30px;
-    height: 4px;
-    background: #fff;
-    margin: 5px 0;
-    border-radius: 2px;
-    transition: all 0.35s cubic-bezier(.68,-0.55,.27,1.55);
-    box-shadow: 0 1px 6px #ed1b2411;
-    position: relative;
-  }
-  .nav-toggle.open .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-    background: linear-gradient(90deg, #ffffff 0%, #ff5e62 100%);
-    box-shadow: 0 2px 8px #ed1b2422;
-  }
-  .nav-toggle.open .bar:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0.2);
-  }
-  .nav-toggle.open .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-    background: linear-gradient(90deg, #ffffff 0%, #ff5e62 100%);
-    box-shadow: 0 2px 8px #ed1b2422;
-  }
-  .nav-toggle:focus {
-    outline: 2px solid #dd2525;
-    outline-offset: 2px;
-  }
-  .nav-toggle:hover {
-    background: linear-gradient(90deg, #ff5e62 0%, #ed1b24 100%);
-    box-shadow: 0 4px 18px #ed1b2422;
-  }
-  .nav-mobile {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 82px;
-    left: 0;
-    width: 100vw;
-    background: rgba(24,24,28,0.99);
-    box-shadow: 0 12px 48px #ed1b2422;
-    z-index: 10001;
-    animation: navMobileFadeIn 0.25s;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    overflow: hidden;
-  }
-  .nav-mobile a {
-    padding: 24px 38px;
-    font-size: 1.22rem;
-    border-bottom: 1.5px solid #23232b;
-    color: #fff;
-    font-weight: 900;
-    letter-spacing: 0.9px;
-    transition: background 0.18s, color 0.18s;
-    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-    text-shadow: 0 2px 12px #ed1b2411;
-  }
-  .nav-mobile a:last-child {
-    border-bottom: none;
-  }
-  .nav-mobile a:hover,
-  .nav-mobile a.active {
-    background: linear-gradient(90deg, #ed1b24 0%, #ff5e62 100%);
-    color: #fff;
-  }
-  @keyframes navMobileFadeIn {
-    from { opacity: 0; transform: translateY(-16px);}
-    to { opacity: 1; transform: none;}
-  }
-  @media (max-width: 1200px) {
-    nav {
-      padding: 0 10px;
-    }
-    .nav-links {
-      gap: 18px;
-    }
-    .nav-brand .brand-name {
-      font-size: 1.4rem;
-    }
-    nav #brand-logo {
-      width: 44px;
-      min-width: 44px;
-      height: 44px;
-    }
-  }
-  @media (max-width: 900px) {
-    .nav-links {
-      display: none !important;
-    }
-    .nav-toggle {
-      display: flex;
-    }
-    .nav-brand .brand-name {
-      display: inline-block;
-      font-size: 1.18rem;
-      margin-left: 0 !important;
-    }
-    nav #brand-logo {
-      width: 38px !important;
-      min-width: 38px !important;
-      height: 38px !important;
-    }
-    .nav-mobile {
-      display: none;
-    }
-  }
-  @media (max-width: 600px) {
-    nav {
-      min-height: 54px;
-      padding: 0 4px;
-    }
-    .nav-brand .brand-name {
-      font-size: 1.02rem;
-    }
-    nav #brand-logo {
-      width: 28px;
-      min-width: 28px;
-      height: 28px;
-      padding: 1px;
-    }
-    .nav-mobile a {
-      font-size: 1rem;
-      padding: 13px 10px;
-    }
-    .nav-toggle {
-      width: 38px;
-      height: 38px;
-    }
-    .nav-toggle .bar {
-      width: 22px;
-      height: 3px;
-      margin: 3px 0;
-    }
-  }
-  nav.scrolled {
-    background: rgba(24,24,28,0.98);
-    box-shadow: 0 12px 48px #ed1b2422, 0 1.5px 0 #fff2 inset;
-    border-bottom: 3.5px solid #ff5e62;
-    transition: box-shadow 0.2s, border 0.2s;
-  }
+  nav::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.6), transparent); }
+  nav .nav-left, nav .nav-right { display: flex; align-items: center; gap: 32px; }
+  nav a { color: #cbd5e1; font-weight: 500; font-size: 1rem; position: relative; transition: all 0.3s ease; text-decoration: none; padding: 8px 16px; border-radius: 8px; }
+  nav a:hover { color: #f8fafc; background: rgba(99, 102, 241, 0.15); transform: translateY(-1px); }
+  nav a::after { content: ''; position: absolute; bottom: 2px; left: 50%; width: 0; height: 2px; background: linear-gradient(90deg, #6366f1, #8b5cf6); transition: all 0.3s ease; transform: translateX(-50%); }
+  nav a:hover::after { width: 80%; }
+  nav img#brand-logo { width: 48px; height: 48px; border-radius: 12px; box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2); transition: transform 0.3s ease; }
+  nav img#brand-logo:hover { transform: scale(1.05); }
+  /* Body padding to account for fixed nav */
+  body { padding-top: 90px; }
+  @media (max-width: 600px) { body { padding-top: 70px; } nav { padding: 10px 16px; } nav .nav-left, nav .nav-right { gap: 16px; } nav img#brand-logo { width: 40px; height: 40px; } }
 </style>
-<script>
-  // Hamburger menu toggle and nav scroll effect
-  document.addEventListener("DOMContentLoaded", function () {
-    const navToggle = document.getElementById('nav-toggle');
-    const navMobile = document.getElementById('nav-mobile');
-    navToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      navToggle.classList.toggle('open');
-      navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
-    });
-    navToggle.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        navToggle.classList.toggle('open');
-        navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
-      }
-    });
-    // Close mobile nav when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!navMobile.contains(e.target) && !navToggle.contains(e.target)) {
-        navMobile.style.display = 'none';
-        navToggle.classList.remove('open');
-      }
-    });
-    // Add nav shadow on scroll
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 10) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-  });
-</script>
 
-   <!-- Toast Notification for Engagement -->
-   <div id="toast" class="toast" role="alert" aria-live="assertive">
-    <div class="toast-content">
-      <span class="toast-text">Find out which leader inspires you most!</span>
-      <button class="toast-button" onclick="window.location.href='leaders.html'">Take the Quiz</button>
-    </div>
-    <div class="toast-progress"></div>
-</div>
+   
+
+<!-- Concise Intro before Quick Filter -->
+<section id="leaders-intro" aria-labelledby="leaders-intro-title" style="margin:18px auto 0 auto; padding:20px 5%; max-width:1100px;">
+  <h2 id="leaders-intro-title" class="li-title">Explore History’s Most Influential Leaders</h2>
+  <p class="li-sub">Browse concise profiles across eras and cultures. Use the search and filters below to quickly find the leaders, traits, and legacies you care about.</p>
+  <div class="li-chips" role="list" aria-label="Quick tips">
+    <span role="listitem" class="li-chip">Type to search by name</span>
+    <span role="listitem" class="li-chip">Filter by leadership traits</span>
+    <span role="listitem" class="li-chip">Sort A–Z or Z–A</span>
+  </div>
+  <hr class="li-divider" aria-hidden="true" />
+  
+</section>
 
 <!-- Add Quick Filter and Back to Top button just after nav and before hero -->
-<section id="quick-filter" style="width:100%;margin:32px auto 0 auto;display:flex;justify-content:center;align-items:center;gap:18px;padding:20px 5%;background:rgba(36,38,54,0.6);backdrop-filter:blur(10px);border-top:2px solid var(--glass-border);border-bottom:2px solid var(--glass-border);">
-  <input id="leaderFilter" type="text" placeholder="Search leaders..." style="padding:12px 18px;border-radius:8px;border:1.5px solid #ff7f50;background:#23243a;color:#fff;font-size:1.08rem;box-shadow:0 2px 8px #ff7f5011;outline:none;width:260px;max-width:80vw;">
-  <select id="traitFilter" style="padding:12px 18px;border-radius:8px;border:1.5px solid #ff7f50;background:#23243a;color:#fff;font-size:1.08rem;">
+<section id="quick-filter" style="width:100%;margin:32px auto 0 auto;display:flex;justify-content:center;align-items:center;gap:14px;padding:16px 5%;background:rgba(36,38,54,0.6);backdrop-filter:blur(10px);border-top:2px solid var(--glass-border);border-bottom:2px solid var(--glass-border);flex-wrap:wrap;">
+  <input id="leaderFilter" type="text" placeholder="Search leaders..." aria-label="Search leaders" style="padding:12px 14px;border-radius:10px;border:1.5px solid #ff7f50;background:#23243a;color:#fff;font-size:1.05rem;box-shadow:0 2px 8px #ff7f5011;outline:none;width:260px;max-width:80vw;">
+  <select id="traitFilter" aria-label="Filter by trait" style="padding:12px 14px;border-radius:10px;border:1.5px solid #ff7f50;background:#23243a;color:#fff;font-size:1.05rem;">
     <option value="">All Traits</option>
     <option>Vision</option>
     <option>Resilience</option>
@@ -940,8 +565,14 @@
     <option>Chivalry</option>
     <option>Self-discipline</option>
   </select>
+  <select id="sortSelect" aria-label="Sort leaders" style="padding:12px 14px;border-radius:10px;border:1.5px solid #ff7f50;background:#23243a;color:#fff;font-size:1.05rem;">
+    <option value="">Sort: Default</option>
+    <option value="name-asc">Name A–Z</option>
+    <option value="name-desc">Name Z–A</option>
+  </select>
+  <span id="resultsCount" aria-live="polite" style="font-size:0.98rem;color:#fff8;">Showing all</span>
 </section>
-<button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:9999;background:linear-gradient(90deg,#ff4757 60%,#ff7f50 100%);color:#fff;border:none;border-radius:50%;width:54px;height:54px;box-shadow:0 4px 24px #ff475733;cursor:pointer;transition:background 0.2s,transform 0.2s;">
+<button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:24px;z-index:9999;background:linear-gradient(90deg,#ff4757 60%,#ff7f50 100%);color:#fff;border:none;border-radius:50%;width:54px;height:54px;box-shadow:0 4px 24px #ff475733;cursor:pointer;transition:background 0.2s,transform 0.2s;">
   <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="display:block;margin:auto;">
     <path d="M12 19V5M5 12l7-7 7 7"/>
   </svg>
@@ -952,19 +583,49 @@ document.addEventListener("DOMContentLoaded", function() {
   const filterInput = document.getElementById('leaderFilter');
   const traitSelect = document.getElementById('traitFilter');
   const cards = Array.from(document.querySelectorAll('.leader-profile'));
+  const leadersGrid = document.getElementById('leaders');
+  const sortSelect = document.getElementById('sortSelect');
+  const resultsCount = document.getElementById('resultsCount');
+  // Accessible region label
+  if (leadersGrid) { leadersGrid.setAttribute('role','region'); leadersGrid.setAttribute('aria-label','Leaders list'); }
+  // No results message
+  const noResults = document.createElement('div');
+  noResults.id = 'noResults';
+  noResults.textContent = 'No leaders match your filters.';
+  noResults.style.cssText = 'grid-column:1/-1;padding:24px;border:1px dashed #ff7f5088;border-radius:12px;color:#fff;opacity:0.85;background:rgba(36,38,54,0.6)';
+  leadersGrid.appendChild(noResults);
+  noResults.style.display = 'none';
   function filterLeaders() {
     const text = filterInput.value.toLowerCase();
     const trait = traitSelect.value;
+    let visible = 0;
     cards.forEach(card => {
       const name = card.querySelector('h3').textContent.toLowerCase();
       const traits = card.innerHTML.toLowerCase();
       const matchText = !text || name.includes(text);
       const matchTrait = !trait || traits.includes(trait.toLowerCase());
-      card.style.display = (matchText && matchTrait) ? '' : 'none';
+      const show = (matchText && matchTrait);
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
+    resultsCount.textContent = visible === cards.length ? `Showing all (${visible})` : `Showing ${visible}`;
+    noResults.style.display = visible === 0 ? 'block' : 'none';
   }
   filterInput.addEventListener('input', filterLeaders);
   traitSelect.addEventListener('change', filterLeaders);
+  // Sort by name
+  function sortCards() {
+    const val = sortSelect.value;
+    const nameOf = (el) => el.querySelector('h3').textContent.trim().toLowerCase();
+    const visible = cards.filter(c => c.style.display !== 'none');
+    const hidden = cards.filter(c => c.style.display === 'none');
+    if (val === 'name-asc' || val === 'name-desc') {
+      visible.sort((a,b) => nameOf(a).localeCompare(nameOf(b)) * (val === 'name-desc' ? -1 : 1));
+    }
+    visible.forEach(c => leadersGrid.appendChild(c));
+    hidden.forEach(c => leadersGrid.appendChild(c));
+  }
+  if (sortSelect) sortSelect.addEventListener('change', () => { filterLeaders(); sortCards(); });
 
   // Back to top button
   const btn = document.getElementById('backToTop');
@@ -974,15 +635,38 @@ document.addEventListener("DOMContentLoaded", function() {
   btn.addEventListener('click', function() {
     window.scrollTo({top:0,behavior:'smooth'});
   });
+  // init
+  filterLeaders();
 });
 </script>
 <style>
+#leaders-intro { background: rgba(15,18,28,0.86); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.28); }
+#leaders-intro .li-title { margin: 0 0 8px 0; font-family: 'Montserrat', Arial, sans-serif; font-weight: 800; letter-spacing: 0.01em; font-size: clamp(1.25rem, 3.8vw, 1.8rem); color: #f3f4f6; }
+#leaders-intro .li-sub { margin: 0 0 14px 0; color: #cbd5e1; font-size: 1.05rem; line-height: 1.6; }
+#leaders-intro .li-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 6px 0; }
+#leaders-intro .li-chip { padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.06); color: #e5e7eb; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.08); }
+#leaders-intro .li-divider { margin: 12px 0 0 0; border: none; height: 1px; background: rgba(255,255,255,0.06); }
+@media (max-width: 700px) {
+  #leaders-intro { padding: 14px 4%; margin-top: 8px; border-radius: 12px; }
+  #leaders-intro .li-title { font-size: 1.25rem; }
+  #leaders-intro .li-sub { font-size: 0.98rem; }
+  #leaders-intro .li-chip { font-size: 0.9rem; }
+}
 #quick-filter {
   animation: fadeInUp 0.7s;
+  flex-wrap: wrap;
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 9998;
 }
 #quick-filter input:focus, #quick-filter select:focus {
   border-color: #ff4757;
   outline: 2px solid #ff4757;
+}
+#quick-filter input, #quick-filter select { min-width: 220px; }
+@media (max-width: 700px) {
+  #quick-filter { justify-content: stretch; }
+  #quick-filter input, #quick-filter select, #quick-filter span { flex: 1 1 100%; max-width: 100%; }
 }
 #backToTop {
   opacity: 0.85;
@@ -1055,7 +739,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <section id="leaders">
 
             <article class="leader-profile">
-                <img src="churchill.jpg" alt="Winston Churchill - Most Influential British Leader and WWII Prime Minister">
+                <img loading="lazy" src="churchill.jpg" alt="Winston Churchill - Most Influential British Leader and WWII Prime Minister">
                 <h3>Winston Churchill – The Thoughtful Statesman</h3>
                 <p>
                     Widely regarded as one of the greatest wartime leaders, Winston Churchill’s indomitable spirit and eloquent oratory inspired a nation during its darkest hours. His leadership style was rooted in resilience, strategic foresight, and a deep conviction in the power of words to mobilize people.
@@ -1077,7 +761,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="cyrus.jpg" alt="Cyrus the Great - Famous Persian Empire Founder and Historical Leader">
+                <img loading="lazy" src="cyrus.jpg" alt="Cyrus the Great - Famous Persian Empire Founder and Historical Leader">
                 <h3>Cyrus the Great – The Just Conqueror</h3>
                 <p>
                     Revered as the founder of the Achaemenid Empire, Cyrus the Great combined military brilliance with a profound sense of justice and tolerance. His leadership redefined empire-building through respect for diverse cultures, religions, and traditions within his realm.
@@ -1099,7 +783,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>     
             
             <article class="leader-profile">
-                <img src="hallo.jpg" alt="Prophet Muhammad">
+                <img loading="lazy" src="hallo.jpg" alt="Prophet Muhammad">
                 <h3>Prophet Muhammad – The Messenger of Islam</h3>
                 <p>
                   Prophet Muhammad’s teachings laid the foundation of one of the world’s major religions, uniting tribes across Arabia under a shared spiritual and ethical vision.
@@ -1121,7 +805,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
             
             <article class="leader-profile">
-                <img src="jesusheader.jpg" alt="Jesus of Nazareth">
+                <img loading="lazy" src="jesusheader.jpg" alt="Jesus of Nazareth">
                 <h3>Jesus of Nazareth – The Spiritual Revolutionary</h3>
                 <p>
                   Jesus preached compassion, forgiveness, and love, inspiring a movement that would grow into one of the largest religions on Earth.
@@ -1143,7 +827,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
             
             <article class="leader-profile">
-                <img src="cleopatraheader.jpg" alt="Cleopatra">
+                <img loading="lazy" src="cleopatraheader.jpg" alt="Cleopatra">
                 <h3>Cleopatra – The Last Pharaoh of Egypt</h3>
                 <p>
                   Intelligent and politically astute, Cleopatra ruled Egypt at a time of great turmoil, forging powerful alliances with Rome’s most influential leaders.
@@ -1165,7 +849,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
             
             <article class="leader-profile">
-                <img src="elizabethheader.jpg" alt="Elizabeth I">
+                <img loading="lazy" src="elizabethheader.jpg" alt="Elizabeth I">
                 <h3>Elizabeth I – The Virgin Queen</h3>
                 <p>
                   Elizabeth I’s era brought relative peace, cultural revival, and global exploration to England after decades of turmoil and uncertainty.
@@ -1187,7 +871,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
             
             <article class="leader-profile">
-                <img src="saladinheader.jpg" alt="Salahudin">
+                <img loading="lazy" src="saladinheader.jpg" alt="Salahudin">
                 <h3>Salahudin – The Noble Warrior</h3>
                 <p>
                   Salahudin united the Muslim world and reclaimed Jerusalem during the Crusades with strategic brilliance and moral integrity admired by both allies and enemies.
@@ -1209,7 +893,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>              
 
             <article class="leader-profile">
-                <img src="lenin.jpg" alt="Lenin">
+                <img loading="lazy" src="lenin.jpg" alt="Lenin">
                 <h3>Lenin – The Charismatic Orator</h3>
                 <p>
                     As the architect of the Soviet Revolution, Lenin transformed the political landscape of his time. His ability to articulate the vision for a new social order and mobilize millions was unparalleled. Through radical ideas and strategic propaganda, Lenin redefined the concept of leadership in a revolution.
@@ -1231,7 +915,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="lincoln.jpg" alt="Abraham Lincoln - Famous American President and Historical Leader">
+                <img loading="lazy" src="lincoln.jpg" alt="Abraham Lincoln - Famous American President and Historical Leader">
                 <h3>Abraham Lincoln – The Pragmatic Diplomat</h3>
                 <p>
                     Known for his steady resolve and moral clarity, Abraham Lincoln led the United States through its greatest internal crisis—the Civil War. His ability to maintain unity and his commitment to equality have made him a timeless symbol of leadership and justice.
@@ -1253,7 +937,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="fdr.jpg" alt="Franklin D. Roosevelt">
+                <img loading="lazy" src="fdr.jpg" alt="Franklin D. Roosevelt">
                 <h3>Franklin D. Roosevelt – The Dynamic Reformer</h3>
                 <p>
                     Franklin D. Roosevelt’s innovative policies and charismatic leadership transformed the United States during the Great Depression and World War II. His New Deal programs redefined the role of government in society while his crisis management strategies provided hope to millions.
@@ -1274,30 +958,29 @@ document.addEventListener("DOMContentLoaded", function() {
                 <a href="fdr.html" class="btn">Find out more about him</a>
             </article>
 
-            <article class="leader-profile">
-                <img src="austrianpainter.png" alt="Austrian Painter">
-                <h3>Austrian Painter – The Visionary Leader</h3>
-                <p>
-                    While unconventional in his methods, the so-called “Austrian Painter” exemplifies creative leadership with an intense focus on artistic vision. His ability to merge art with strategy set him apart as a leader who dared to challenge traditional boundaries.
-                </p>
-                <p>
-                    His influence stretches beyond the realm of art, permeating into the philosophy of leadership and creative problem-solving.
-                </p>
-                <ul>
-                    <li><strong>Born:</strong> 1889, Braunau am Inn, Austria</li>
-                    <li><strong>Key Achievements:</strong> Rose to power in Germany, led the country through WWII, responsible for major historical events</li>
-                    <li><strong>Famous Quote:</strong> "If you want to shine like the sun, first burn like the sun."</li>
-                    <li><strong>Leadership Traits:</strong> Charisma, propaganda, strategic manipulation, oratory</li>
-                    <li><strong>Legacy:</strong> Infamous for totalitarian rule, responsible for immense suffering and war</li>
-                </ul>
-                <p>
-                    The legacy of the “Austrian Painter” is a cautionary tale of how charisma and vision, when unchecked by ethics, can lead to catastrophic consequences.
-                </p>
-                <a href="hitler.html" class="btn">Find out more about him</a>
+      <article class="leader-profile">
+        <img loading="lazy" src="austrianpainter.png" alt="Adolf Hitler">
+        <h3>Adolf Hitler – A Dictator’s Warning</h3>
+        <p>
+          Adolf Hitler led a violent totalitarian regime responsible for genocide, war, and immeasurable suffering. His rise shows how demagoguery, propaganda, and hate can dismantle institutions and devastate societies.
+        </p>
+        <p>
+          This entry is included strictly as a cautionary example: leadership without ethics becomes catastrophic. Understanding how it happened helps protect human rights and pluralist democracy.
+        </p>
+        <ul>
+          <li><strong>Born:</strong> 1889, Braunau am Inn, Austria</li>
+          <li><strong>Notoriety:</strong> Dictatorship of Nazi Germany, instigated World War II, Holocaust and crimes against humanity</li>
+          <li><strong>Key Warnings:</strong> Demagoguery, dehumanization, unchecked power, dismantling of democratic norms</li>
+          <li><strong>Legacy:</strong> Global symbol of extremism and atrocity; a reminder to resist hate and defend democracy</li>
+        </ul>
+        <p>
+          Never to be emulated, Hitler’s dictatorship underscores the need for ethical leadership, accountability, and protection of minorities.
+        </p>
+        <a href="hitler.html" class="btn" aria-label="Read a factual overview about Adolf Hitler">Learn the historical facts</a>
             </article>
 
             <article class="leader-profile">
-                <img src="ashoka.jpg" alt="Ashoka the Great">
+                <img loading="lazy" src="ashoka.jpg" alt="Ashoka the Great">
                 <h3>Ashoka the Great – The Enlightened Sovereign</h3>
                 <p>
                     Ashoka the Great transformed from a formidable conqueror into a proponent of peace and compassion. His embrace of Buddhism and his commitment to non-violence reshaped his empire and left a legacy defined by humanitarian ideals.
@@ -1319,7 +1002,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="gandhi.jpg" alt="Mahatma Gandhi - Most Influential Leader of Indian Independence Movement">
+                <img loading="lazy" src="gandhi.jpg" alt="Mahatma Gandhi - Most Influential Leader of Indian Independence Movement">
                 <h3>Mahatma Gandhi – The Compassionate Reformer</h3>
                 <p>
                     Mahatma Gandhi led a non-violent revolution that not only freed India from colonial rule but also inspired civil rights movements around the globe. His philosophy of Satyagraha, or truth-force, continues to be a guiding principle for peaceful protest and ethical leadership.
@@ -1341,7 +1024,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="gorbachev.jpg" alt="Mikhail Gorbachev">
+                <img loading="lazy" src="gorbachev.jpg" alt="Mikhail Gorbachev">
                 <h3>Mikhail Gorbachev – The Innovative Visionary</h3>
                 <p>
                     Mikhail Gorbachev’s reforms, particularly glasnost and perestroika, marked a historic turning point in global politics by opening up the closed systems of the Soviet era. His willingness to embrace change and challenge established norms illustrates the power of adaptive leadership.
@@ -1363,7 +1046,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="chengis.jpg" alt="Genghis Khan">
+                <img loading="lazy" src="chengis.jpg" alt="Genghis Khan">
                 <h3>Genghis Khan – The Iron Fist</h3>
                 <p>
                     Genghis Khan redefined the concept of leadership through his relentless conquests and innovative military tactics. His ability to unite a multitude of tribes into a single formidable force and his strategic acumen set the standard for military leadership.
@@ -1385,7 +1068,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="augustus.jpg" alt="Augustus Caesar">
+                <img loading="lazy" src="augustus.jpg" alt="Augustus Caesar">
                 <h3>Augustus Caesar – The Imperial Architect</h3>
                 <p>
                     As the first Roman Emperor, Augustus Caesar laid the foundation for the Roman Empire. His reign ushered in the Pax Romana, a period of unprecedented peace and prosperity.
@@ -1407,7 +1090,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="caesarheader.jpg" alt="Julius Caesar">
+                <img loading="lazy" src="caesarheader.jpg" alt="Julius Caesar">
                 <h3>Julius Caesar – The Ambitious Strategist</h3>
                 <p>
                     Julius Caesar was a brilliant general and shrewd political leader who expanded the Roman Republic and challenged its foundational systems. His bold decisions and reforms reshaped Rome.
@@ -1429,7 +1112,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="mandelaheader.jpg" alt="Nelson Mandela">
+                <img loading="lazy" src="mandelaheader.jpg" alt="Nelson Mandela">
                 <h3>Nelson Mandela – The Unifying Peacemaker</h3>
                 <p>
                     Nelson Mandela's lifelong fight against apartheid and his presidency symbolized reconciliation and unity. His leadership was defined by forgiveness, integrity, and an unwavering belief in equality.
@@ -1451,7 +1134,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="mlk.jpg" alt="Martin Luther King Jr.">
+                <img loading="lazy" src="mlk.jpg" alt="Martin Luther King Jr.">
                 <h3>Martin Luther King Jr. – The Dream Bearer</h3>
                 <p>
                     A powerful voice for civil rights, Martin Luther King Jr. led a movement grounded in non-violence, justice, and hope. His speeches and activism reshaped America's social conscience.
@@ -1473,7 +1156,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
             
             <article class="leader-profile">
-                <img src="alexander.jpg" alt="Alexander the Great">
+                <img loading="lazy" src="alexander.jpg" alt="Alexander the Great">
                 <h3>Alexander the Great – The Conquering Visionary</h3>
                 <p>
                     Alexander the Great built one of the largest empires in history by the age of thirty. His tactical genius and ambition forged a new era of Hellenistic culture and influence.
@@ -1495,7 +1178,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
             
             <article class="leader-profile">
-                <img src="stalinheader.jpg" alt="Joseph Stalin">
+                <img loading="lazy" src="stalinheader.jpg" alt="Joseph Stalin">
                 <h3>Joseph Stalin – The Iron Autocrat</h3>
                 <p>
                     Stalin's rule over the Soviet Union was marked by rapid industrialization and brutal authoritarian control. He transformed the USSR into a superpower at immense human cost.
@@ -1518,7 +1201,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
 
             <article class="leader-profile">
-                <img src="aurelius.jpg" alt="Marcus Aurelius">
+                <img loading="lazy" src="aurelius.jpg" alt="Marcus Aurelius">
                 <h3>Marcus Aurelius – The Watchful Guardian</h3>
                 <p>
                     Marcus Aurelius is remembered for his stoic philosophy and his dedication to duty and moral integrity. His writings offer a rare glimpse into the mind of a ruler who balanced the burdens of power with personal reflection and ethical responsibility.
@@ -1540,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
             
             <article class="leader-profile">
-                <img src="suntzu.jpg" alt="Sun Tzu">
+                <img loading="lazy" src="suntzu.jpg" alt="Sun Tzu">
                 <h3>Sun Tzu – The Elite Strategist</h3>
                 <p>
                     Sun Tzu’s treatise, "The Art of War," transcends time, offering strategies that are still referenced in business, sports, and politics today. His emphasis on intelligence, adaptability, and the element of surprise exemplifies a strategic mindset that is essential for leadership in any era.
@@ -1562,7 +1245,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
 
             <article class="leader-profile">
-                <img src="ataturk.jpg" alt="Mustafa Kemal Atatürk">
+                <img loading="lazy" src="ataturk.jpg" alt="Mustafa Kemal Atatürk">
                 <h3>Mustafa Kemal Atatürk – The Enlightened Visionary</h3>
                 <p>
                     Atatürk’s revolutionary reforms modernized Turkey and set a precedent for secular governance and progressive social policies. His insistence on education, national sovereignty, and modernization reshaped an entire nation, leaving a legacy that continues to serve as a benchmark for transformative leadership.
@@ -1584,7 +1267,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </article>
             
             <article class="leader-profile">
-                <img src="che.png" alt="Che Guevara">
+                <img loading="lazy" src="che.png" alt="Che Guevara">
                 <h3>Che Guevara – The Revolutionary Firestarter</h3>
                 <p>
                     Che Guevara’s iconic image stands as a symbol of rebellion and radical change. His unwavering commitment to overturning oppressive systems and empowering the marginalized has inspired generations of activists and revolutionaries.
@@ -1811,48 +1494,12 @@ document.addEventListener("DOMContentLoaded", function() {
       </style>
     </footer>
 
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          // Increased duration to 6 seconds to match enhanced animation
-          var toastDuration = 6000;
-          setTimeout(function() {
-            var toast = document.getElementById("toast");
-            if(toast) {
-              toast.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-              toast.style.opacity = 0;
-              toast.style.transform = "translateX(-50%) translateY(-40px) scale(0.95)";
-              setTimeout(function() { toast.remove(); }, 600);
-            }
-          }, toastDuration);
-        });
+      
 
-        
-        </script>
-
-<!-- Add a "Random Leader" button above the leader grid -->
-<div style="max-width:900px;margin:0 auto 18px auto;text-align:right;">
-  <button id="randomLeaderBtn" class="btn" style="padding:10px 22px;font-size:1.05rem;background:linear-gradient(90deg,#ff7f50 60%,#ff4757 100%);margin-bottom:8px;">
-    <svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:7px;" viewBox="0 0 24 24"><path d="M4 4v6h6M20 20v-6h-6M5 19l14-14"/></svg>
-    Surprise Me!
-  </button>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  var btn = document.getElementById('randomLeaderBtn');
-  var cards = Array.from(document.querySelectorAll('.leader-profile'));
-  btn.addEventListener('click', function() {
-    var visible = cards.filter(c => c.style.display !== 'none');
-    if (visible.length === 0) return;
-    var pick = visible[Math.floor(Math.random() * visible.length)];
-    pick.scrollIntoView({behavior:'smooth',block:'center'});
-    pick.style.boxShadow += ', 0 0 0 6px #ff7f50cc';
-    setTimeout(()=>{pick.style.boxShadow=pick.style.boxShadow.replace(', 0 0 0 6px #ff7f50cc','');},1200);
-  });
-});
-</script>
+<!-- Surprise Me button removed by request -->
 
 <!-- Add a "Share this page" floating button for engagement -->
-<button id="shareBtn" aria-label="Share this page" style="position:fixed;bottom:100px;right:32px;z-index:9999;background:linear-gradient(90deg,#ff7f50 60%,#ff4757 100%);color:#fff;border:none;border-radius:50%;width:54px;height:54px;box-shadow:0 4px 24px #ff475733;cursor:pointer;transition:background 0.2s,transform 0.2s;display:flex;align-items:center;justify-content:center;">
+<button id="shareBtn" aria-label="Share this page" style="position:fixed;bottom:calc(100px + env(safe-area-inset-bottom));right:24px;z-index:9999;background:linear-gradient(90deg,#ff7f50 60%,#ff4757 100%);color:#fff;border:none;border-radius:50%;width:54px;height:54px;box-shadow:0 4px 24px #ff475733;cursor:pointer;transition:background 0.2s,transform 0.2s;display:flex;align-items:center;justify-content:center;">
   <svg width="26" height="26" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
     <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/>
   </svg>
@@ -1873,6 +1520,9 @@ document.getElementById('shareBtn').onclick = function() {
 <style>
 #shareBtn { opacity:0.85; }
 #shareBtn:hover { background:linear-gradient(90deg,#ff4757 60%,#ff7f50 100%); transform:scale(1.08); opacity:1; }
+@media (max-width: 480px) {
+  #backToTop, #shareBtn { width: 48px !important; height: 48px !important; }
+}
 </style>
 
 <!-- Add a subtle fade-in stagger to leader cards -->
@@ -1991,6 +1641,12 @@ document.getElementById('shareBtn').onclick = function() {
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+  // Guard in case elements are missing on some pages
+  const factText = document.getElementById('funFactText');
+  const factProgress = document.getElementById('factProgress');
+  const factCounter = document.getElementById('factCounter');
+  if (!factText || !factProgress || !factCounter) return;
+
   const facts = [
     "Genghis Khan's empire was the largest contiguous empire in history.",
     "Cleopatra spoke at least 9 languages and was highly educated.",
@@ -2005,9 +1661,6 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
   
   let currentIndex = 0;
-  const factText = document.getElementById('funFactText');
-  const factProgress = document.getElementById('factProgress');
-  const factCounter = document.getElementById('factCounter');
   
   function updateFact() {
     // Add fade out effect
@@ -2019,12 +1672,13 @@ document.addEventListener("DOMContentLoaded", function() {
       factText.textContent = `Did you know? ${facts[currentIndex]}`;
       factCounter.textContent = `${currentIndex + 1}/${facts.length}`;
       
-      // Reset and animate progress
+      // Reset and animate progress cleanly: disable transition, reset to 0, force reflow, then animate to 100%
+      factProgress.style.transition = 'none';
       factProgress.style.width = '0%';
-      setTimeout(() => {
-        factProgress.style.transition = 'width 8s linear';
-        factProgress.style.width = '100%';
-      }, 100);
+      // Force reflow to ensure the browser applies the reset before animating
+      void factProgress.offsetWidth; // reflow
+      factProgress.style.transition = 'width 8s linear';
+      factProgress.style.width = '100%';
       
       // Add fade in effect
       factText.style.opacity = '1';
@@ -2034,10 +1688,14 @@ document.addEventListener("DOMContentLoaded", function() {
   
   // Initialize progress and counter
   factCounter.textContent = `1/${facts.length}`;
+  // Start the initial progress animation
+  factProgress.style.transition = 'none';
+  factProgress.style.width = '0%';
+  void factProgress.offsetWidth; // reflow
   setTimeout(() => {
     factProgress.style.transition = 'width 8s linear';
     factProgress.style.width = '100%';
-  }, 500);
+  }, 200);
   
   // Set up transitions
   factText.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
@@ -2046,5 +1704,96 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(updateFact, 8000);
 });
 </script>
+
+<!-- Professional theme overrides: calmer palette, refined typography, softer surfaces -->
+<style id="pro-theme">
+  :root {
+    --primary: #0d1321;
+    --secondary: #111827;
+    --accent: #ef4444; /* toned red */
+    --accent2: #fb7185; /* soft coral */
+    --glass-bg: rgba(17,24,39,0.72);
+    --glass-border: rgba(255,255,255,0.06);
+    --card-radius: 16px;
+  }
+
+  html, body { background: radial-gradient(1200px 600px at 50% -10%, #111827 0%, #0b1020 60%, #080b16 100%) !important; color: #e5e7eb; }
+  body { line-height: 1.6; text-align: left; }
+
+  /* (Nav styles are inherited from leaders.html spec; no overrides here) */
+
+  /* Hero: simplify visuals */
+  .hero { background: linear-gradient(180deg, #111827 0%, #0b1020 100%) !important; box-shadow: none !important; border: 0 !important; min-height: 320px; }
+  .hero::after { display: none !important; }
+  .hero::before { background: linear-gradient(180deg, rgba(8,11,22,0.6), rgba(8,11,22,0.6)) !important; }
+  .hero h1 { color: #f8fafc !important; letter-spacing: .02em !important; text-shadow: none !important; }
+  .hero p { color: #cbd5e1 !important; }
+  .hero .btn { font-weight: 700 !important; }
+  .hero-bg-svg { opacity: .15 !important; }
+
+  /* Quick filter bar */
+  #quick-filter { background: rgba(15,18,28,0.8) !important; border-top: 1px solid var(--glass-border) !important; border-bottom: 1px solid var(--glass-border) !important; gap: 12px !important; justify-content: flex-start !important; }
+  #quick-filter input, #quick-filter select { background: #0f1322 !important; border: 1px solid rgba(255,255,255,0.08) !important; color: #e5e7eb !important; box-shadow: none !important; }
+  #quick-filter input::placeholder { color: #9ca3af !important; }
+  #quick-filter span#resultsCount { color: #9ca3af !important; }
+
+  /* Cards */
+  #leaders { background: transparent !important; border-top: 1px solid var(--glass-border) !important; border-bottom: 1px solid var(--glass-border) !important; }
+  .leader-profile {
+    background: rgba(17,23,34,0.92) !important;
+    border-radius: var(--card-radius) !important;
+    border: 1px solid rgba(255,255,255,0.06) !important;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.28) !important;
+    transform: translateY(0) !important;
+  }
+  .leader-profile:hover { transform: translateY(-4px) !important; box-shadow: 0 24px 56px rgba(0,0,0,0.32) !important; }
+  .leader-profile img { border: 1px solid rgba(255,255,255,0.08) !important; box-shadow: 0 10px 24px rgba(0,0,0,0.25) !important; }
+  .leader-profile:hover img { border-color: rgba(255,255,255,0.18) !important; }
+  .leader-profile h3 { color: #f3f4f6 !important; letter-spacing: .2px; }
+  .leader-profile p { color: #cbd5e1 !important; }
+  .leader-profile li { color: #aeb7c5 !important; }
+
+  /* Buttons */
+  .btn { background: var(--accent) !important; border-radius: 10px !important; box-shadow: 0 8px 22px rgba(239,68,68,.25) !important; letter-spacing: .02em !important; }
+  .btn:hover { background: #f05252 !important; transform: translateY(-1px) !important; box-shadow: 0 12px 28px rgba(239,68,68,.28) !important; }
+
+  /* Floating buttons */
+  #backToTop, #shareBtn { background: var(--accent) !important; box-shadow: 0 10px 24px rgba(239,68,68,.28) !important; }
+  #backToTop:hover, #shareBtn:hover { background: #f05252 !important; }
+
+  /* Toast */
+  /* (Toast removed) */
+
+  /* In-depth and content slabs */
+  #leaders-explainer, #in-depth, #influential-leaders-guide, #faq-section { background: rgba(15,18,28,0.86) !important; box-shadow: 0 10px 30px rgba(0,0,0,0.28) !important; border-top: 1px solid var(--glass-border) !important; border-bottom: 1px solid var(--glass-border) !important; }
+  #leaders-explainer h2, #in-depth h2, #influential-leaders-guide h2, #faq-section h2 { color: #f3f4f6 !important; }
+  #in-depth h3, #influential-leaders-guide h3, #faq-section h3 { color: #e5e7eb !important; }
+  #leaders-explainer p, #in-depth p, #in-depth li, #influential-leaders-guide p, #faq-section p { color: #cbd5e1 !important; }
+
+  /* Footer: simplify */
+  footer { background: #0b1020 !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.06) !important; }
+  footer p, footer a { color: #cbd5e1 !important; }
+  footer a:hover { color: var(--accent) !important; }
+  footer [style*="radial-gradient"] { opacity: .08 !important; filter: saturate(0.9) !important; }
+
+  /* Accessibility: consistent focus */
+  :focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 2px !important; }
+
+  /* Reduce motion if requested */
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  }
+</style>
+<script>
+  // Align browser UI with calmer theme color
+  (function(){
+    try {
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute('content', '#0b1020');
+    } catch(e) {}
+  })();
+  </script>
+
 </body>
 </html>
+ 
