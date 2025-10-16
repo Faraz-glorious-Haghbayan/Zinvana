@@ -164,13 +164,11 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   
   
-    <!-- Fonts -->
-    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   
-    <!-- html2canvas for Share Screenshot -->
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <!-- html2canvas for Share Screenshot -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   
     <!-- Optional: Google Analytics or Google Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H7GCZY7W0"></script>
@@ -182,17 +180,8 @@
     </script>
 
   
-
-
-<link rel="icon" type="image/x-icon" href="favicon.ico" />
-
-
-  <!-- (Optional) Minecraft-like Font for Toast Only -->
-  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-  <!-- Roboto for the rest of the site -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- html2canvas for screenshots -->
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <!-- Unified stylesheet for page theme -->
+  <link rel="stylesheet" href="leaders.css" />
   
   <style>
     /* -------------------------------------
@@ -233,7 +222,7 @@
   
     /* Body defaults */
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
       background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #1a1a2e 75%, #0f0f23 100%);
       background-size: 400% 400%;
       animation: gradientShift 25s ease infinite;
@@ -1621,10 +1610,107 @@ header::after {
   transform: scale(1.05);
 }
 
-#leader-intro{
-  color: rgb(31, 31, 31);
-  margin: 2% 5%;
-  border-radius: 50px;
+#leader-intro {
+  width: 80%;
+  max-width: 1200px;
+  margin: 60px auto;
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(248,250,252,0.95));
+  backdrop-filter: blur(20px);
+  color: #1a202c;
+  padding: 48px 40px;
+  border-radius: 28px;
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  text-align: center;
+}
+
+#leader-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+  border-radius: 28px 28px 0 0;
+}
+
+#leader-intro .eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6366f1;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.25);
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+#leader-intro h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 8px 0 10px 0;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #1f2937, #0f172a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#leader-intro .li-subtitle {
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 820px;
+  margin: 0 auto 18px auto;
+}
+
+#leader-intro .li-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px 0 18px 0;
+}
+
+#leader-intro .li-chip {
+  padding: 10px 14px;
+  border: 1px solid #e6ebf3;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+#leader-intro p {
+  color: #374151;
+  line-height: 1.75;
+  font-size: 1.05rem;
+  margin: 0 auto 16px auto;
+  max-width: 900px;
+}
+
+@media (max-width: 900px) {
+  #leader-intro {
+    width: 95%;
+    padding: 28px 18px;
+    margin: 28px auto;
+    border-radius: 20px;
+  }
+  #leader-intro h2 { font-size: 2rem; }
+}
+
+@media (max-width: 600px) {
+  #leader-intro { width: 95%; padding: 24px 16px; }
+  #leader-intro h2 { font-size: 1.7rem; }
+  #leader-intro .li-subtitle { font-size: 1rem; }
 }
 
 
@@ -1878,6 +1964,46 @@ input:focus {
   background: linear-gradient(135deg, #764ba2, #667eea);
 }
 
+    /* -------------------------------------
+     Mobile/Tablet tweaks and reduced-motion safeguards
+    ------------------------------------- */
+    /* Safer typography scales on hero */
+    header .h1 {
+      font-size: clamp(1.9rem, 5.5vw, 3rem) !important;
+      letter-spacing: clamp(-1.5px, -0.6vw, -2px);
+    }
+    header #tagline {
+      font-size: clamp(1rem, 3.4vw, 1.4rem) !important;
+    }
+
+    /* Constrain common containers on small screens */
+    @media (max-width: 768px) {
+      .toc { width: 95% !important; padding: 20px 16px !important; }
+      #about { width: 95% !important; padding: 28px 18px !important; margin: 28px auto !important; }
+      main { width: 95% !important; padding: 24px 16px !important; }
+      header { height: 68vh; min-height: 420px; }
+    }
+
+    /* Softer or disabled hover transforms on touch */
+    @media (hover: none) and (pointer: coarse) {
+      .leader-card:hover,
+      .blog-card:hover,
+      .cta-hero-btn:hover {
+        transform: none !important;
+      }
+    }
+
+    /* Respect prefers-reduced-motion: stop background/particle animations */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+      #header-video { filter: none !important; }
+    }
+
+    /* Use small-viewport units where supported to avoid mobile URL bar jumps */
+    @supports (height: 100svh) {
+      header { height: 100svh; }
+    }
+
   </style>
   
 </head>
@@ -1914,7 +2040,7 @@ input:focus {
     </div>
     
     <div class="header-content" style="position:relative;z-index:3;text-align:center;padding:0 24px;max-width:900px;margin:0 auto;">
-      <h1 class="h1" style="font-size:4rem;color:#ffffff;font-weight:800;letter-spacing:-3px;margin-bottom:24px;text-shadow:0 4px 20px rgba(0,0,0,0.3);line-height:1.1;font-family:'Playfair Display', serif;">
+      <h1 class="h1" style="font-size:4rem;color:#ffffff;font-weight:800;letter-spacing:-3px;margin-bottom:24px;text-shadow:0 4px 20px rgba(0,0,0,0.3);line-height:1.1;">
         Historical Leadership Assessment
       </h1>
       <h2 id="tagline" class="hero-tagline" style="font-size:1.4rem;color:#f7fafc;font-weight:400;margin-bottom:32px;letter-spacing:0.5px;opacity:0.95;">
@@ -1930,7 +2056,7 @@ input:focus {
           Our <strong>comprehensive leadership assessment</strong> analyzes your personality traits and matches you with historical figures who share your leadership DNA. No registration required, instant detailed results, always free!
         </span>
       </div>
-      <a href="#test" class="cta-hero-btn" style="margin-top:24px;font-size:1.2rem;padding:20px 48px;font-weight:600;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#ffffff;border-radius:50px;box-shadow:0 8px 30px rgba(102,126,234,0.4);text-decoration:none;letter-spacing:0.5px;transition:all 0.3s ease;border:none;outline:none;display:inline-block;">
+      <a href="#test" class="cta-hero-btn" style="margin-top:24px;display:inline-block;">
         <span style="vertical-align:middle;font-size:1.2em;margin-right:12px;">🚀</span>
         Begin Leadership Assessment
       </a>
@@ -1965,14 +2091,14 @@ input:focus {
         font-weight: 900;
         letter-spacing: -2.5px;
         margin-bottom: 18px;
-        text-shadow: 0 8px 36px #d32f2faa, 0 2px 0 #d32f2f, 0 0 4px #000;
+        text-shadow: 0 6px 24px rgba(0,0,0,0.35);
         line-height: 1.05;
       }
       #tagline {
         font-size: 2.1rem;
-        color: #ff9800 !important;
-        font-weight: 900;
-        text-shadow: 0 3px 16px #000a;
+        color: #e5e7eb !important;
+        font-weight: 700;
+        text-shadow: 0 3px 12px rgba(0,0,0,0.35);
         margin-bottom: 30px;
         letter-spacing: 0.7px;
       }
@@ -1982,14 +2108,14 @@ input:focus {
         margin: 0 auto 24px auto;
         font-size: 1.25rem;
         color: #fff;
-        background: rgba(0,0,0,0.68);
+        background: rgba(0,0,0,0.45);
         padding: 26px 38px 22px 38px;
         border-radius: 22px;
         line-height: 1.8;
-        box-shadow: 0 6px 32px #d32f2f33;
+        box-shadow: 0 6px 32px rgba(99,102,241,0.25);
         font-weight: 500;
         backdrop-filter: blur(2px);
-        border: 1.5px solid #ff9800;
+        border: 1.5px solid rgba(255,255,255,0.25);
       }
       .cta-hero-btn {
         display: inline-block;
@@ -2095,7 +2221,7 @@ input:focus {
           font-size: 2.8rem !important;
         }
         #tagline {
-          font-size: 1.7rem !important;
+          font-size: 1.6rem !important;
         }
         .header-content {
           padding: 0 6px !important;
@@ -2130,7 +2256,7 @@ input:focus {
           font-size: 2.1rem !important;
         }
         #tagline {
-          font-size: 1.25rem !important;
+          font-size: 1.2rem !important;
         }
         .header-content {
           padding: 0 2px !important;
@@ -2170,232 +2296,208 @@ input:focus {
   </header>
 
   <!-- Trust Section -->
-  <section id="trust-signals" style="width:80%;max-width:1200px;margin:60px auto 0 auto;padding:40px 32px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:20px;box-shadow:0 20px 40px rgba(102,126,234,0.15);border:1px solid rgba(255,255,255,0.3);text-align:center;">
-    <h2 style="color:#2d3748;font-size:2rem;font-weight:700;margin-bottom:32px;font-family:'Playfair Display', serif;">Why Trust Zinvana?</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;align-items:flex-start;">
-      <div style="flex:1 1 200px;min-width:200px;max-width:250px;padding:24px;background:rgba(102,126,234,0.05);border-radius:16px;border:1px solid rgba(102,126,234,0.1);">
-        <img src="privacy.png" alt="Privacy" style="width:48px;height:48px;margin-bottom:16px;border-radius:12px;box-shadow:0 4px 15px rgba(102,126,234,0.2);" />
-        <p style="font-size:1.05rem;color:#4a5568;line-height:1.6;">No sign-up, no data collected, 100% privacy guaranteed.</p>
+  <section id="trust-signals" class="container section section-accent center unified">
+    <h2 class="gradient-title">Why Trust Zinvana?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <img src="privacy.png" alt="Privacy" />
+        <p>No sign-up, no data collected, 100% privacy guaranteed.</p>
       </div>
-      <div style="flex:1 1 200px;min-width:200px;max-width:250px;padding:24px;background:rgba(102,126,234,0.05);border-radius:16px;border:1px solid rgba(102,126,234,0.1);">
-        <img src="accuracy.png" alt="Accuracy" style="width:48px;height:48px;margin-bottom:16px;border-radius:12px;box-shadow:0 4px 15px rgba(102,126,234,0.2);" />
-        <p style="font-size:1.05rem;color:#4a5568;line-height:1.6;">Quiz reviewed by history and psychology experts.</p>
+      <div class="feature-card">
+        <img src="accuracy.png" alt="Accuracy" />
+        <p>Quiz reviewed by history and psychology experts.</p>
       </div>
-      <div style="flex:1 1 200px;min-width:200px;max-width:250px;padding:24px;background:rgba(102,126,234,0.05);border-radius:16px;border:1px solid rgba(102,126,234,0.1);">
-        <img src="testimonials.png" alt="Testimonials" style="width:48px;height:48px;margin-bottom:16px;border-radius:12px;box-shadow:0 4px 15px rgba(102,126,234,0.2);" />
-        <p style="font-size:1.05rem;color:#4a5568;line-height:1.6;">Trusted by users seeking leadership insights.</p>
+      <div class="feature-card">
+        <img src="testimonials.png" alt="Testimonials" />
+        <p>Trusted by users seeking leadership insights.</p>
       </div>
-      <div style="flex:1 1 200px;min-width:200px;max-width:250px;padding:24px;background:rgba(102,126,234,0.05);border-radius:16px;border:1px solid rgba(102,126,234,0.1);">
-        <img src="secure.png" alt="Secure" style="width:48px;height:48px;margin-bottom:16px;border-radius:12px;box-shadow:0 4px 15px rgba(102,126,234,0.2);" />
-        <p style="font-size:1.05rem;color:#4a5568;line-height:1.6;">Secure, ad-free, and mobile-friendly experience.</p>
+      <div class="feature-card">
+        <img src="secure.png" alt="Secure" />
+        <p>Secure, ad-free, and mobile-friendly experience.</p>
       </div>
     </div>
   </section>
 
+  <script>
+    // Pause the hero background video for users who prefer reduced motion
+    (function () {
+      var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!mq) return;
+      function applyReducedMotion(e) {
+        var vid = document.getElementById('header-video');
+        if (!vid) return;
+        if (e.matches) {
+          try { vid.pause(); } catch (err) {}
+          vid.removeAttribute('autoplay');
+          vid.removeAttribute('loop');
+          vid.setAttribute('aria-hidden', 'true');
+        }
+      }
+      applyReducedMotion(mq);
+      if (mq.addEventListener) mq.addEventListener('change', applyReducedMotion);
+      else if (mq.addListener) mq.addListener(applyReducedMotion);
+    })();
+  </script>
+
 <!-- How It Works Section -->
-<section id="how-it-works" style="background: #fff; border-radius: 16px; width: 80%; max-width: 1200px; margin: 48px auto 0 auto; padding: 48px 32px 36px 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); overflow: hidden;">
-  <h2 style="text-align: center; color: #1e40af; margin-bottom: 40px; font-size: 2rem; letter-spacing: -1px; font-weight: 700;">How Our Leadership Assessment Works</h2>
-  <div class="how-works-steps-pro" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; max-width: 100vw; padding: 0 8px;">
-    <!-- Step 1 -->
-    <div class="how-works-step-pro">
-      <div class="how-works-icon-pro"><span>1</span><img src="zin1.png" alt="Assessment Questions" /></div>
-      <h3>Complete Assessment</h3>
-      <p>Answer 20 thoughtfully designed questions about your leadership approach, decision-making style, and values.</p>
+  <section id="how-it-works" class="container section section-accent unified" aria-labelledby="how-it-works-title">
+    <h2 id="how-it-works-title" class="gradient-title center">How Our Leadership Assessment Works</h2>
+    <p class="hiw-subtitle center">Three quick steps to your leadership archetype.</p>
+
+    <ol class="hiw-steps" role="list">
+      <li class="hiw-step" role="listitem">
+        <div class="hiw-badge" aria-hidden="true">1</div>
+        <h3 class="hiw-step-title">Complete Assessment</h3>
+        <p class="hiw-step-text">Answer 20 thoughtfully designed questions about your leadership approach, decision-making style, and values.</p>
+      </li>
+
+      <li class="hiw-step" role="listitem">
+        <div class="hiw-badge" aria-hidden="true">2</div>
+        <h3 class="hiw-step-title">Personality Analysis</h3>
+        <p class="hiw-step-text">Our algorithm scores your responses across multiple leadership dimensions and identifies your core archetype.</p>
+      </li>
+
+      <li class="hiw-step" role="listitem">
+        <div class="hiw-badge" aria-hidden="true">3</div>
+        <h3 class="hiw-step-title">Receive Insights</h3>
+        <p class="hiw-step-text">Get your leader match with strengths, blind spots, and growth tips—ready to share or explore deeper.</p>
+      </li>
+    </ol>
+
+    <div class="cta-block">
+      <a href="#test" class="btn" aria-label="Start the free leadership quiz">Start the Free Quiz</a>
     </div>
-    <!-- Step 2 -->
-    <div class="how-works-step-pro">
-      <div class="how-works-icon-pro"><span>2</span><img src="zin2.png" alt="Analysis Process" /></div>
-      <h3>Personality Analysis</h3>
-      <p>Our algorithm analyzes your responses across multiple leadership dimensions to identify your archetype.</p>
-    </div>
-    <!-- Step 3 -->
-    <div class="how-works-step-pro">
-      <div class="how-works-icon-pro"><span>3</span><img src="zin3.png" alt="Detailed Results" /></div>
-      <h3>Receive Insights</h3>
-      <p>Get detailed results with your historical leader match, strengths analysis, and development recommendations.</p>
-    </div>
-  </div>
+  </section>
+
+  <!-- Scoped styles for How It Works -->
   <style>
-    .how-works-steps-pro {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 32px;
-      max-width: 100vw;
-      padding: 0 8px;
+    #how-it-works { position: relative; }
+    #how-it-works .hiw-subtitle {
+      color: #cbd5e1;
+      margin: 6px auto 22px auto;
+      max-width: 640px;
+      font-size: 1rem;
+      opacity: 0.9;
     }
-    .how-works-step-pro {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(30,64,175,0.08);
-      padding: 32px 16px 24px 16px;
-      width: 100%;
-      max-width: 280px;
-      min-width: 200px;
-      text-align: center;
-      flex: 1 1 250px;
-      margin: 0 0px;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(30,64,175,0.1);
-    }
-    .how-works-step-pro:hover {
-      box-shadow: 0 8px 30px rgba(30,64,175,0.15);
-      transform: translateY(-2px);
-      border-color: rgba(30,64,175,0.2);
-    }
-    .how-works-icon-pro {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
+
+    #how-it-works .hiw-steps {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
       position: relative;
     }
-    .how-works-icon-pro span {
-      display: inline-block;
-      background: linear-gradient(135deg, #1e40af, #3730a3);
-      color: #fff;
-      font-weight: bold;
-      font-size: 1.1rem;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      line-height: 36px;
+
+    #how-it-works .hiw-step {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 18px;
+      padding: 18px 18px 18px 66px;
+      position: relative;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      min-height: 82px;
+    }
+
+    #how-it-works .hiw-step:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(99,102,241,0.25);
+      background: rgba(255,255,255,0.09);
+    }
+
+    #how-it-works .hiw-badge {
       position: absolute;
-      left: -18px;
-      top: 50%;
-      transform: translateY(-50%);
-      box-shadow: 0 4px 12px rgba(30,64,175,0.3);
-      }
-      .how-works-icon-pro img {
-      width: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-left: 18px;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(211,47,47,0.10);
-      }
-      .how-works-step-pro h3 {
-      color: #1e40af;
-      font-size: 1.3rem;
-      margin-bottom: 12px;
+      left: 16px;
+      top: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      box-shadow: 0 6px 18px rgba(99,102,241,0.35);
+      border: 2px solid rgba(255,255,255,0.25);
+      letter-spacing: 0.2px;
+    }
+
+    #how-it-works .hiw-step-title {
+      margin: 0 0 6px 0;
+      font-size: 1.05rem;
+      line-height: 1.3;
+      color: #e5e7eb;
       font-weight: 700;
-      margin-top: 15px;
-      }
-      .how-works-step-pro p {
-      color: #444;
-      font-size: 0.9rem;
+    }
+
+    #how-it-works .hiw-step-text {
       margin: 0;
+      color: #cbd5e1;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      opacity: 0.95;
+    }
+
+    /* Desktop layout with timeline connector */
+    @media (min-width: 860px) {
+      #how-it-works .hiw-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
       }
-      @media (max-width: 1200px) {
-      #how-it-works {
-      padding-left: 0;
-      padding-right: 0;
+      #how-it-works .hiw-steps::before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: calc(16px + 20px); /* align with badge center */
+        right: calc(16px + 20px);
+        height: 2px;
+        background: linear-gradient(90deg, rgba(99,102,241,0.3), rgba(139,92,246,0.3));
+        border-radius: 2px;
+        z-index: 0;
       }
-      .how-works-steps-pro {
-      gap: 20px;
-      padding: 0 4px;
-      }
-      }
-      @media (max-width: 900px) {
-      .how-works-steps-pro {
-      flex-direction: column;
-      gap: 24px;
-      padding: 0 8px;
-      }
-      .how-works-step-pro h2 {
-      font-size: 3rem !important;
-      }
-     .how-works-step-pro p {
-      font-size: 1rem;
-      }
-      .how-works-step-pro {
-      width: 100% !important;
-      margin: 0 auto 16px auto;
-      max-width: 100%;
-      }
-      .how-works-icon-pro span {
-      left: 0;
-      top: -18px;
-      transform: none;
-      }
-      .how-works-icon-pro img {
-      margin-left: 0;
-      width: 60%;
-      }
-      }
-      </style>
-    </section>
+      #how-it-works .hiw-step { padding: 22px 20px 20px 66px; }
+      #how-it-works .hiw-step .hiw-badge { z-index: 1; }
+    }
+
+    /* Small screens tightening */
+    @media (max-width: 400px) {
+      #how-it-works .hiw-step { padding-left: 58px; }
+      #how-it-works .hiw-badge { width: 36px; height: 36px; font-size: 0.95rem; }
+      #how-it-works .hiw-step-title { font-size: 1rem; }
+      #how-it-works .hiw-step-text { font-size: 0.95rem; }
+    }
+  </style>
 
   <!-- Keyword-rich, professional intro above quiz -->
-  <section style="width:80%; max-width:1200px; margin:48px auto 0 auto; padding:32px 32px 18px 32px; background:#fff; border-radius:14px; box-shadow:0 4px 18px rgba(211,47,47,0.09); text-align:center;">
-    <h2 style="color:#1e40af; font-size:2rem; margin-bottom:16px; letter-spacing:-1px; font-weight:700;">
-      Discover Your Historical Leadership Archetype
-    </h2>
-    <p style="color:#333; font-size:1.15rem; line-height:1.7; margin-bottom:18px;">
-      Are you a strategic visionary like <strong>Napoleon</strong>, a peaceful revolutionary like <strong>Gandhi</strong>, or a crisis commander like <strong>Churchill</strong>? 
-      Take our <strong>comprehensive Historical Leadership Assessment</strong> to discover which iconic leader's approach matches your natural leadership style.
-    </p>
-    <ul style="display:flex; flex-wrap:wrap; justify-content:center; gap:24px; list-style:none; padding:0; margin:0 0 18px 0;">
-      <li style="flex:1 1 180px; min-width:180px; max-width:220px; background:#f8f8f8; border-radius:8px; padding:16px 10px;">
-        <span style="color:#1e40af; font-weight:600;">No sign-up</span><br>
-        <span style="color:#444; font-size:0.98rem;">100% privacy, instant results</span>
-      </li>
-      <li style="flex:1 1 180px; min-width:180px; max-width:220px; background:#f8f8f8; border-radius:8px; padding:16px 10px;">
-        <span style="color:#1e40af; font-weight:600;">Comprehensive</span><br>
-        <span style="color:#444; font-size:0.98rem;">20 thoughtful assessment questions</span>
-      </li>
-      <li style="flex:1 1 180px; min-width:180px; max-width:220px; background:#f8f8f8; border-radius:8px; padding:16px 10px;">
-        <span style="color:#1e40af; font-weight:600;">Detailed Results</span><br>
-        <span style="color:#444; font-size:0.98rem;">Personalized insights & leadership profile</span>
-      </li>
-    </ul>
-    <a href="#test" style="display:inline-block; margin-top:18px; padding:14px 36px; font-size:1.15rem; font-weight:bold; background:linear-gradient(90deg,#d32f2f 0%,#ff9800 100%); color:#fff; border-radius:32px; box-shadow:0 2px 8px rgba(211,47,47,0.13); text-decoration:none; letter-spacing:1px; transition:background 0.2s,transform 0.2s;">
-      Start the Free Quiz
-    </a>
+  <section class="container section unified center section-accent">
+    <h2 class="gradient-title">Discover Your Historical Leadership Archetype</h2>
+    <p class="lead" style="max-width:840px;margin:0 auto 16px auto;">Are you a strategic visionary like <strong>Napoleon</strong>, a peaceful revolutionary like <strong>Gandhi</strong>, or a crisis commander like <strong>Churchill</strong>? Take our <strong>Historical Leadership Assessment</strong> to discover which iconic leader's approach matches your natural style.</p>
+    <div class="chips" style="margin-top:12px;">
+      <span class="chip">No sign-up • Instant results</span>
+      <span class="chip">20 Insightful Questions</span>
+      <span class="chip">Personalized Insights</span>
+    </div>
+    <div class="cta-block">
+      <a href="#test" class="btn">Start the Free Quiz</a>
+    </div>
   </section>
   
   <!-- SEO-Optimized About Section -->
-  <section id="about-quiz" style="width:80%;max-width:1200px;margin:48px auto 40px auto;padding:40px 32px;background:linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95));backdrop-filter:blur(25px);border-radius:32px;box-shadow:0 40px 80px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);border:1px solid rgba(255, 255, 255, 0.2);position:relative;overflow:hidden;">
-    <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);border-radius:32px 32px 0 0;"></div>
-    
-    <h2 style="font-size:2.5rem;font-weight:800;color:#1a202c;margin-bottom:32px;font-family:'Playfair Display', serif;letter-spacing:-1px;background:linear-gradient(135deg, #6366f1, #8b5cf6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-align:center;">
-      Historical Leadership Assessment
-    </h2>
-    
-    <div style="max-width:900px;margin:0 auto;text-align:center;">
-      <p style="color:#374151;line-height:1.8;font-size:1.15rem;margin-bottom:24px;font-weight:400;">
-        <strong>What historical leader am I?</strong> This question has intrigued people throughout history. Our <strong>comprehensive historical leadership assessment</strong> analyzes your personality traits and decision-making patterns to match you with iconic leaders from across time and cultures.
-      </p>
-      
-      <p style="color:#374151;line-height:1.8;font-size:1.15rem;margin-bottom:24px;font-weight:400;">
-        Whether you're wondering <strong>"which historical leader are you"</strong> or seeking to understand your leadership style, our thoughtfully designed <strong>historical leadership assessment</strong> provides insightful results. Discover if you share traits with Napoleon's strategic brilliance, Gandhi's peaceful revolution, Churchill's crisis leadership, or Caesar's commanding presence.
-      </p>
-      
-      <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.05));border-radius:20px;padding:32px;margin:32px 0;border:1px solid rgba(99,102,241,0.1);">
-        <h3 style="color:#1a202c;font-size:1.4rem;margin-bottom:16px;font-weight:700;">Assessment Features:</h3>
-        <ul style="text-align:left;color:#374151;line-height:1.7;font-size:1.05rem;list-style:none;padding:0;">
-          <li style="margin-bottom:12px;padding-left:24px;position:relative;">
-            <span style="position:absolute;left:0;top:0;color:#6366f1;font-weight:bold;">✓</span>
-            <strong>100% Free</strong> - No hidden costs, no registration required
-          </li>
-          <li style="margin-bottom:12px;padding-left:24px;position:relative;">
-            <span style="position:absolute;left:0;top:0;color:#6366f1;font-weight:bold;">✓</span>
-            <strong>Comprehensive Analysis</strong> - 20 questions across multiple dimensions
-          </li>
-          <li style="margin-bottom:12px;padding-left:24px;position:relative;">
-            <span style="position:absolute;left:0;top:0;color:#6366f1;font-weight:bold;">✓</span>
-            <strong>Instant Results</strong> - Get your leadership archetype immediately
-          </li>
-          <li style="margin-bottom:12px;padding-left:24px;position:relative;">
-            <span style="position:absolute;left:0;top:0;color:#6366f1;font-weight:bold;">✓</span>
-            <strong>Detailed Analysis</strong> - In-depth insights and recommendations
-          </li>
-          <li style="padding-left:24px;position:relative;">
-            <span style="position:absolute;left:0;top:0;color:#6366f1;font-weight:bold;">✓</span>
-            <strong>Comprehensive</strong> - Matches with 20+ historical leaders
-          </li>
-        </ul>
-      </div>
+  <section id="about-quiz" class="container section section-accent unified center">
+    <h2 class="gradient-title">Historical Leadership Assessment</h2>
+    <div class="lead" style="max-width:900px;margin:0 auto 16px auto;"> <strong>What historical leader am I?</strong> This question has intrigued people throughout history. Our <strong>comprehensive historical leadership assessment</strong> analyzes your personality traits and decision-making patterns to match you with iconic leaders from across time and cultures.</div>
+    <p style="max-width:900px;margin:0 auto 24px auto;">Whether you're wondering <strong>"which historical leader are you"</strong> or seeking to understand your leadership style, our thoughtfully designed assessment helps you discover if you align with Napoleon's strategic brilliance, Gandhi's peaceful revolution, Churchill's crisis leadership, or Caesar's commanding presence.</p>
+    <div class="card" style="padding:28px 28px 20px 28px; border-radius:20px; margin:32px auto; max-width:840px;">
+      <h3 class="gradient-title" style="font-size:1.2rem; margin-top:0;">Assessment Features</h3>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;gap:14px;">
+        <li><span class="pill">✓ 100% Free</span></li>
+        <li><span class="pill">✓ 20 Insightful Questions</span></li>
+        <li><span class="pill">✓ Instant Archetype Result</span></li>
+        <li><span class="pill">✓ Detailed Strength Insights</span></li>
+        <li><span class="pill">✓ 20+ Leader Matches</span></li>
+      </ul>
     </div>
   </section>
 
@@ -2454,59 +2556,42 @@ input:focus {
     </div>  
   </section>
   
-  <section id="top-quotes" style="width:80%; max-width:1200px; margin:48px auto 40px auto; padding:32px 28px; background:#fff; border-radius:14px; box-shadow:0 4px 18px rgba(0,0,0,0.08);">
-    <h2 style="color:#d32f2f; font-size:1.5rem; text-align:center; margin-bottom:28px; letter-spacing:-1px;">
-      Top 5 Timeless Leadership Quotes
-    </h2>
-    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:22px;">
-      <li style="display:flex; align-items:flex-start; gap:16px;">
-        <span style="font-size:1.6em; color:#ff9800;">“</span>
+  <section id="top-quotes" class="container section unified section-accent">
+    <h2 class="gradient-title center" style="margin-bottom:24px;">Top 5 Timeless Leadership Quotes</h2>
+    <ul class="quote-list">
+      <li class="quote-item">
+        <span class="quote-item-icon">“</span>
         <div>
-          <span style="font-size:1.08rem; color:#333; font-style:italic;">
-            We shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets...
-          </span>
-          <br>
-          <span style="color:#888; font-size:0.98rem;">— Winston Churchill</span>
+          <span class="quote-text">We shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets...</span>
+          <span class="quote-author">— Winston Churchill</span>
         </div>
       </li>
-      <li style="display:flex; align-items:flex-start; gap:16px;">
-        <span style="font-size:1.6em; color:#ff9800;">“</span>
+      <li class="quote-item">
+        <span class="quote-item-icon">“</span>
         <div>
-          <span style="font-size:1.08rem; color:#333; font-style:italic;">
-            Be the change that you wish to see in the world.
-          </span>
-          <br>
-          <span style="color:#888; font-size:0.98rem;">— Mahatma Gandhi</span>
+          <span class="quote-text">Be the change that you wish to see in the world.</span>
+          <span class="quote-author">— Mahatma Gandhi</span>
         </div>
       </li>
-      <li style="display:flex; align-items:flex-start; gap:16px;">
-        <span style="font-size:1.6em; color:#ff9800;">“</span>
+      <li class="quote-item">
+        <span class="quote-item-icon">“</span>
         <div>
-          <span style="font-size:1.08rem; color:#333; font-style:italic;">
-            A house divided against itself cannot stand.
-          </span>
-          <br>
-          <span style="color:#888; font-size:0.98rem;">— Abraham Lincoln</span>
+          <span class="quote-text">A house divided against itself cannot stand.</span>
+          <span class="quote-author">— Abraham Lincoln</span>
         </div>
       </li>
-      <li style="display:flex; align-items:flex-start; gap:16px;">
-        <span style="font-size:1.6em; color:#ff9800;">“</span>
+      <li class="quote-item">
+        <span class="quote-item-icon">“</span>
         <div>
-          <span style="font-size:1.08rem; color:#333; font-style:italic;">
-            The only thing we have to fear is fear itself.
-          </span>
-          <br>
-          <span style="color:#888; font-size:0.98rem;">— Franklin D. Roosevelt</span>
+          <span class="quote-text">The only thing we have to fear is fear itself.</span>
+          <span class="quote-author">— Franklin D. Roosevelt</span>
         </div>
       </li>
-      <li style="display:flex; align-items:flex-start; gap:16px;">
-        <span style="font-size:1.6em; color:#ff9800;">“</span>
+      <li class="quote-item">
+        <span class="quote-item-icon">“</span>
         <div>
-          <span style="font-size:1.08rem; color:#333; font-style:italic;">
-            It is not sufficient that I succeed — all others must fail.
-          </span>
-          <br>
-          <span style="color:#888; font-size:0.98rem;">— Genghis Khan</span>
+          <span class="quote-text">It is not sufficient that I succeed — all others must fail.</span>
+          <span class="quote-author">— Genghis Khan</span>
         </div>
       </li>
     </ul>
@@ -2526,7 +2611,7 @@ input:focus {
 
   <main>
     <!-- Personality Test Section -->
-    <section id="test" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 24px; box-shadow: 0 25px 50px rgba(102,126,234,0.15); width: 80%; max-width: 1200px; margin: 60px auto 0 auto; padding: 48px 32px; border: 1px solid rgba(255,255,255,0.3); position: relative; overflow: hidden;">
+  <section id="test" class="container section" style="border-radius:24px; position: relative; overflow: hidden;">
       
       <!-- Progress indicator -->
       <div id="progress-container" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; padding: 20px 24px; background: rgba(102,126,234,0.05); border-radius: 16px; border: 1px solid rgba(102,126,234,0.1);">
@@ -2563,7 +2648,7 @@ input:focus {
     </section>
     
     <!-- Results Section -->
-    <section id="results" class="hidden" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 24px; box-shadow: 0 25px 50px rgba(102,126,234,0.15); width: 80%; max-width: 1200px; margin: 60px auto 0 auto; padding: 48px 32px; border: 1px solid rgba(255,255,255,0.3); position: relative; overflow: hidden;">
+  <section id="results" class="hidden container section" style="border-radius:24px; position: relative; overflow: hidden;">
       
       <div style="text-align: center; margin-bottom: 40px; position: relative; z-index: 2;">
         <h2 style="color: #1a202c; font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; font-family: 'Playfair Display', serif; display: flex; align-items: center; justify-content: center; gap: 16px; background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
@@ -2700,14 +2785,14 @@ input:focus {
     }
   </style>
 
-  <section id="testimonials" style="width:80%;max-width:1200px;margin:48px auto 40px auto;padding:32px 24px;background:#fff;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,0.07);">
+  <section id="testimonials" class="container section" style="padding:32px 24px;">
     <h2 style="color:#d32f2f;font-size:1.5rem;text-align:center;margin-bottom:28px;">What People Are Saying</h2>
     <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
       <!-- Testimonial 1 -->
       <div itemscope itemtype="https://schema.org/Review" style="flex:1 1 220px;max-width:320px;background:#f9f9f9;border-radius:10px;padding:22px 18px;box-shadow:0 2px 8px rgba(211,47,47,0.07);margin-bottom:0;">
         <p itemprop="reviewBody" style="font-size:1.08rem;color:#333;margin-bottom:12px;">“I was amazed to see I’m 90% Churchill and 75% Lincoln—so accurate!”</p>
         <div style="display:flex;align-items:center;gap:8px;">
-          <span style="font-weight:600;color:#d32f2f;" itemprop="author">Emily R.</spasecure.png      <span style="color:#888;font-size:0.95rem;">
+          <span style="font-weight:600;" itemprop="author">Emily R.</span><span style="color:#888;font-size:0.95rem;">
             <time itemprop="datePublished" datetime="2025-04-16">Apr 16, 2025</time>
           </span>
         </div>
@@ -2754,135 +2839,86 @@ input:focus {
   </section>
 
 
-<section id="leader-intro" style="width: 80%; max-width: 1200px; margin: 56px auto 0 auto; padding: 40px 32px 32px 32px; background: #fff; border-radius: 16px; box-shadow: 0 4px 18px rgba(211,47,47,0.09); text-align: center;">
-  <h2 style="color: #d32f2f; font-size: 2.1rem; font-weight: 700; margin-bottom: 18px; letter-spacing: -1px;">
-    Which Historical Leader Reflects Your Personality?
-  </h2>
-  <p style="color: #333; font-size: 1.18rem; line-height: 1.7; margin-bottom: 18px;">
-    History’s greatest leaders—visionaries, reformers, strategists, and unifiers—have shaped the world with their unique strengths. But which iconic figure mirrors <strong>your</strong> leadership style?
-  </p>
-  <p style="color: #444; font-size: 1.05rem; line-height: 1.7; margin-bottom: 18px;">
-    Our <strong>free, expert-designed Leadership Personality Quiz</strong> analyzes your decision-making, values, and approach to challenges. Discover if you’re a bold strategist like <strong>Napoleon</strong>, a unifying force like <strong>Gandhi</strong>, a resilient reformer like <strong>Atatürk</strong>, or another legendary figure.
-  </p>
-  <ul style="display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; list-style: none; padding: 0; margin: 0 0 18px 0;">
-    <li style="flex: 1 1 180px; min-width: 180px; max-width: 220px; background: #f8f8f8; border-radius: 8px; padding: 14px 10px;">
-      <span style="color: #d32f2f; font-weight: 600;">No Sign-Up Required</span><br>
-      <span style="color: #444; font-size: 0.98rem;">100% private, instant results</span>
-    </li>
-    <li style="flex: 1 1 180px; min-width: 180px; max-width: 220px; background: #f8f8f8; border-radius: 8px; padding: 14px 10px;">
-      <span style="color: #d32f2f; font-weight: 600;">Historian & Psychologist Reviewed</span><br>
-      <span style="color: #444; font-size: 0.98rem;">Backed by research and expert insight</span>
-    </li>
-    <li style="flex: 1 1 180px; min-width: 180px; max-width: 220px; background: #f8f8f8; border-radius: 8px; padding: 14px 10px;">
-      <span style="color: #d32f2f; font-weight: 600;">Personalized Leadership Profile</span><br>
-      <span style="color: #444; font-size: 0.98rem;">Shareable, actionable feedback</span>
-    </li>
-  </ul>
-  <a href="#test" style="display: inline-block; margin-top: 18px; padding: 14px 36px; font-size: 1.15rem; font-weight: bold; background: linear-gradient(90deg,#d32f2f 0%,#ff9800 100%); color: #fff; border-radius: 32px; box-shadow: 0 2px 8px rgba(211,47,47,0.13); text-decoration: none; letter-spacing: 1px; transition: background 0.2s,transform 0.2s;">
-    Start the Free Quiz
-  </a>
+<section id="leader-intro" class="container section">
+  <span class="eyebrow">Leadership Profile</span>
+  <h2>Which Historical Leader Reflects Your Personality?</h2>
+  <p class="li-subtitle">Explore the archetype that matches your approach to vision, strategy, and impact. Are you a bold strategist like Napoleon, a peaceful unifier like Gandhi, or a modernizing reformer like Atatürk?</p>
+  <div class="li-chips">
+    <span class="li-chip">No sign-up • Instant results</span>
+    <span class="li-chip">Historian & psychologist reviewed</span>
+    <span class="li-chip">Personalized leadership profile</span>
+  </div>
+  <p>Our free, expert-designed Leadership Personality Quiz analyzes your decision-making, values, and response to challenges—then maps you to a leader whose strengths mirror your own.</p>
+  <a href="#test" class="btn" style="display: inline-block; margin-top: 12px; text-decoration: none;">Start the Free Quiz</a>
 </section>
 
-<section id="deep-dive" style="width: 80%; max-width: 1200px; margin: 56px auto; padding: 44px 36px; background: #fff; border-radius: 18px; box-shadow: 0 6px 24px rgba(211,47,47,0.10);">
-  <h2 style="color: #d32f2f; font-size: 2.2rem; margin-bottom: 22px; text-align: center; letter-spacing: -1px; font-weight: 700;">
+<section id="deep-dive" class="container section">
+  <h2>
     Deep Dive: Leadership Lessons from History’s Greatest Figures
   </h2>
-  <p style="font-size: 1.18rem; color: #222; line-height: 1.8; margin-bottom: 28px; text-align: center;">
+  <p>
     Unlock the secrets of legendary leadership. Explore in-depth profiles of iconic figures—discover their defining moments, philosophies, and how their lessons can empower your own journey.
   </p>
-  <div class="deep-dive-leader-grid" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; margin-bottom: 18px;">
+  <div class="deep-dive-leader-grid">
     <!-- Napoleon -->
-    <div class="deep-dive-leader-card" style="flex: 1 1 240px; min-width: 220px; max-width: 260px; background: #f8f8f8; border-radius: 14px; box-shadow: 0 2px 10px rgba(211,47,47,0.08); text-align: center; padding: 30px 16px 24px 16px; transition: box-shadow 0.2s;">
-      <img src="napoleon.jpg" alt="Napoleon Bonaparte" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(211,47,47,0.10);" />
-      <h3 style="color: #d32f2f; font-size: 1.22rem; margin-bottom: 8px;">Napoleon Bonaparte</h3>
-      <p style="color: #444; font-size: 1rem; margin-bottom: 18px;">Strategic mastermind who reshaped Europe and redefined modern leadership.</p>
-      <a href="napoleon.html" class="deep-dive-btn" style="display:inline-block;padding:10px 22px;background:#d32f2f;color:#fff;border-radius:24px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s;">Explore Napoleon &rarr;</a>
+    <div class="deep-dive-leader-card">
+      <img src="napoleon.jpg" alt="Napoleon Bonaparte" />
+      <h3>Napoleon Bonaparte</h3>
+      <p>Strategic mastermind who reshaped Europe and redefined modern leadership.</p>
+      <a href="napoleon.html" class="deep-dive-btn">Explore Napoleon &rarr;</a>
     </div>
     <!-- Gandhi -->
-    <div class="deep-dive-leader-card" style="flex: 1 1 240px; min-width: 220px; max-width: 260px; background: #f8f8f8; border-radius: 14px; box-shadow: 0 2px 10px rgba(211,47,47,0.08); text-align: center; padding: 30px 16px 24px 16px; transition: box-shadow 0.2s;">
-      <img src="gandhi.jpg" alt="Mahatma Gandhi" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(211,47,47,0.10);" />
-      <h3 style="color: #d32f2f; font-size: 1.22rem; margin-bottom: 8px;">Mahatma Gandhi</h3>
-      <p style="color: #444; font-size: 1rem; margin-bottom: 18px;">Pioneer of non-violent resistance and moral transformation.</p>
-      <a href="gandhi.html" class="deep-dive-btn" style="display:inline-block;padding:10px 22px;background:#d32f2f;color:#fff;border-radius:24px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s;">Explore Gandhi &rarr;</a>
+    <div class="deep-dive-leader-card">
+      <img src="gandhi.jpg" alt="Mahatma Gandhi" />
+      <h3>Mahatma Gandhi</h3>
+      <p>Pioneer of non-violent resistance and moral transformation.</p>
+      <a href="gandhi.html" class="deep-dive-btn">Explore Gandhi &rarr;</a>
     </div>
     <!-- Lincoln -->
-    <div class="deep-dive-leader-card" style="flex: 1 1 240px; min-width: 220px; max-width: 260px; background: #f8f8f8; border-radius: 14px; box-shadow: 0 2px 10px rgba(211,47,47,0.08); text-align: center; padding: 30px 16px 24px 16px; transition: box-shadow 0.2s;">
-      <img src="lincoln.jpg" alt="Abraham Lincoln" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(211,47,47,0.10);" />
-      <h3 style="color: #d32f2f; font-size: 1.22rem; margin-bottom: 8px;">Abraham Lincoln</h3>
-      <p style="color: #444; font-size: 1rem; margin-bottom: 18px;">Symbol of perseverance, unity, and ethical governance.</p>
-      <a href="lincoln.html" class="deep-dive-btn" style="display:inline-block;padding:10px 22px;background:#d32f2f;color:#fff;border-radius:24px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s;">Explore Lincoln &rarr;</a>
+    <div class="deep-dive-leader-card">
+      <img src="lincoln.jpg" alt="Abraham Lincoln" />
+      <h3>Abraham Lincoln</h3>
+      <p>Symbol of perseverance, unity, and ethical governance.</p>
+      <a href="lincoln.html" class="deep-dive-btn">Explore Lincoln &rarr;</a>
     </div>
     <!-- Churchill -->
-    <div class="deep-dive-leader-card" style="flex: 1 1 240px; min-width: 220px; max-width: 260px; background: #f8f8f8; border-radius: 14px; box-shadow: 0 2px 10px rgba(211,47,47,0.08); text-align: center; padding: 30px 16px 24px 16px; transition: box-shadow 0.2s;">
-      <img src="churchill.jpg" alt="Winston Churchill" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(211,47,47,0.10);" />
-      <h3 style="color: #d32f2f; font-size: 1.22rem; margin-bottom: 8px;">Winston Churchill</h3>
-      <p style="color: #444; font-size: 1rem; margin-bottom: 18px;">Master of rhetoric and resilience in the face of adversity.</p>
-      <a href="churchill.html" class="deep-dive-btn" style="display:inline-block;padding:10px 22px;background:#d32f2f;color:#fff;border-radius:24px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s;">Explore Churchill &rarr;</a>
+    <div class="deep-dive-leader-card">
+      <img src="churchill.jpg" alt="Winston Churchill" />
+      <h3>Winston Churchill</h3>
+      <p>Master of rhetoric and resilience in the face of adversity.</p>
+      <a href="churchill.html" class="deep-dive-btn">Explore Churchill &rarr;</a>
     </div>
     <!-- Ashoka -->
-    <div class="deep-dive-leader-card" style="flex: 1 1 240px; min-width: 220px; max-width: 260px; background: #f8f8f8; border-radius: 14px; box-shadow: 0 2px 10px rgba(211,47,47,0.08); text-align: center; padding: 30px 16px 24px 16px; transition: box-shadow 0.2s;">
-      <img src="ashoka.jpg" alt="Ashoka the Great" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(211,47,47,0.10);" />
-      <h3 style="color: #d32f2f; font-size: 1.22rem; margin-bottom: 8px;">Ashoka the Great</h3>
-      <p style="color: #444; font-size: 1rem; margin-bottom: 18px;">From conqueror to peacemaker—champion of ethical rule.</p>
-      <a href="ashoka.html" class="deep-dive-btn" style="display:inline-block;padding:10px 22px;background:#d32f2f;color:#fff;border-radius:24px;font-weight:600;font-size:1rem;text-decoration:none;transition:background 0.2s;">Explore Ashoka &rarr;</a>
+    <div class="deep-dive-leader-card">
+      <img src="ashoka.jpg" alt="Ashoka the Great" />
+      <h3>Ashoka the Great</h3>
+      <p>From conqueror to peacemaker—champion of ethical rule.</p>
+      <a href="ashoka.html" class="deep-dive-btn">Explore Ashoka &rarr;</a>
     </div>
   </div>
-  <p style="font-size: 1.08rem; color: #333; text-align: center; margin-top: 18px;">
-    Want more inspiration? <a href="leaders-list.html" style="color: #d32f2f; text-decoration: underline; font-weight: 600;">See all leader profiles &rarr;</a>
+  <p style="text-align: center;">
+    Want more inspiration? <a href="leaders-list.html">See all leader profiles &rarr;</a>
   </p>
 </section>
-<style>
-  .deep-dive-leader-card:hover {
-    box-shadow: 0 6px 24px rgba(211,47,47,0.16);
-    transform: translateY(-4px) scale(1.03);
-  }
-  .deep-dive-btn:hover {
-    background: #b71c1c;
-  }
-  @media (max-width: 700px) {
-    .deep-dive-leader-grid {
-      flex-direction: column;
-      gap: 22px !important;
-    }
-    .deep-dive-leader-card {
-      max-width: 100% !important;
-      min-width: 0 !important;
-    }
-  }
-</style>
+ 
 
-<section id="why-it-matters" style="background: linear-gradient(120deg, #d32f2f 0%, #1a1a1a 100%); color: #fff; padding: 48px 32px; border-radius: 18px; box-shadow: 0 6px 24px rgba(211,47,47,0.10); width: 80%; max-width: 1200px; margin: 48px auto;">
-  <h2 style="font-size: 2rem; margin-bottom: 18px; text-align: center; letter-spacing: -1px;">Why Discover Your Historical Leadership Style?</h2>
-  <p style="font-size: 1.15rem; line-height: 1.7; text-align: center; margin-bottom: 18px;">
-    Understanding which <strong>iconic leader</strong> you align with offers powerful insight into your natural <strong>leadership style</strong> and strengths.
-    Are you a <span style="color:#ff9800;">visionary reformer</span> like Atatürk, a <span style="color:#ff9800;">strategic mastermind</span> like Napoleon, or a <span style="color:#ff9800;">diplomatic unifier</span> like Gandhi?
-  </p>
-  <ul style="max-width: 600px; margin: 0 auto 18px auto; padding: 0; list-style: none;">
-    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
-      <span style="font-size: 1.3em; margin-right: 10px;">🔎</span>
-      <span>Gain self-awareness about your approach to challenges, teamwork, and decision-making.</span>
-    </li>
-    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
-      <span style="font-size: 1.3em; margin-right: 10px;">🌟</span>
-      <span>Discover strengths you can leverage in your career, studies, or community.</span>
-    </li>
-    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
-      <span style="font-size: 1.3em; margin-right: 10px;">🤝</span>
-      <span>See which historical figures share your values and leadership philosophy.</span>
-    </li>
-    <li style="display: flex; align-items: flex-start;">
-      <span style="font-size: 1.3em; margin-right: 10px;">🚀</span>
-      <span>Apply timeless lessons from history’s greatest leaders to your own journey.</span>
-    </li>
-  </ul>
-  <p style="text-align: center; margin-top: 24px;">
-    <a href="#test" style="display: inline-block; background: #ff9800; color: #fff; font-weight: bold; padding: 14px 36px; border-radius: 32px; font-size: 1.15rem; text-decoration: none; box-shadow: 0 2px 8px rgba(255,152,0,0.13); transition: background 0.2s, transform 0.2s;">Start the Quiz &rarr;</a>
-  </p>
-</section>
+  <section id="why-it-matters" class="container section unified center section-accent">
+    <h2 class="gradient-title">Why Discover Your Historical Leadership Style?</h2>
+    <p class="lead" style="max-width:820px;margin:0 auto 18px auto;">Understanding which <strong>iconic leader</strong> you align with offers powerful insight into your natural <strong>leadership style</strong> and strengths.</p>
+    <ul style="max-width:640px;margin:0 auto 8px auto;padding:0;list-style:none;display:grid;gap:14px;">
+      <li class="pill" style="justify-content:flex-start;">🔎 Gain self-awareness about your approach to challenges and decision-making.</li>
+      <li class="pill" style="justify-content:flex-start;">🌟 Discover strengths you can leverage in work, study, or community.</li>
+      <li class="pill" style="justify-content:flex-start;">🤝 See which historical figures share your values and leadership philosophy.</li>
+      <li class="pill" style="justify-content:flex-start;">🚀 Apply timeless lessons from great leaders to your own journey.</li>
+    </ul>
+    <div class="cta-block" style="margin-top:12px;">
+      <a href="#test" class="btn">Start the Quiz &rarr;</a>
+    </div>
+  </section>
 
 
 
-<section id="why-zinvana" style="width:80%; max-width:1200px; margin:48px auto; padding:36px 28px 32px 28px; background:#fff; border-radius:16px; box-shadow:0 6px 24px rgba(211,47,47,0.08);">
+<section id="why-zinvana" class="container section" style="padding:36px 28px 32px 28px;">
   <img src="napoleon1.gif" alt="Animated Napoleon - Zinvana Quiz" style="display:block; margin:0 auto 28px auto; width:70%; max-width:420px; border-radius:18px; border:3px solid #ff9800; box-shadow:0 2px 12px rgba(255,152,0,0.09);" />
   <h2 style="color:#d32f2f; font-size:2rem; font-weight:700; text-align:center; margin-bottom:18px; letter-spacing:-1px;">
     What Makes Zinvana Different?
@@ -2913,7 +2949,7 @@ input:focus {
     </li>
   </ul>
   <p style="text-align:center; margin-top:24px;">
-    <a href="#test" style="display:inline-block; background:linear-gradient(90deg,#d32f2f 0%,#ff9800 100%); color:#fff; font-weight:bold; padding:14px 38px; border-radius:32px; font-size:1.15rem; text-decoration:none; box-shadow:0 2px 8px rgba(211,47,47,0.13); transition:background 0.2s,transform 0.2s;">
+    <a href="#test" class="btn" style="display:inline-block;">
       Try the Historical Leaders Quiz Now &rarr;
     </a>
   </p>
@@ -2922,7 +2958,7 @@ input:focus {
 
 
 <!-- IMPROVED: Modern Relevance of Historical Leadership -->
-<section id="modern-relevance" style="width: 80%; max-width: 1200px; margin: 48px auto; padding: 32px 28px; background: #fff; border-radius: 14px; box-shadow: 0 6px 24px rgba(211,47,47,0.09); color: #222;">
+<section id="modern-relevance" class="container section" style="color: inherit;">
   <h2 style="font-size: 2rem; color: #d32f2f; margin-bottom: 18px; text-align: center; letter-spacing: -1px;">
     The Enduring Relevance of Historical Leadership
   </h2>
@@ -2949,7 +2985,7 @@ input:focus {
 </section>
 
 <!-- FAQ Section (Professional, Modern Style) -->
-<section id="faq" class="test-explainer" style="width:80%;max-width:1200px;margin:48px auto 0 auto;padding:36px 28px 32px 28px;background:#fff;border-radius:16px;box-shadow:0 6px 24px rgba(211,47,47,0.08);">
+<section id="faq" class="test-explainer container section" style="padding:36px 28px 32px 28px;">
   <h2 class="test-title" style="color:#d32f2f;font-size:2rem;font-weight:700;text-align:center;margin-bottom:24px;letter-spacing:-1px;">
     Frequently Asked Questions
   </h2>
@@ -2988,7 +3024,7 @@ input:focus {
 </section>
 
   <!-- Related Blog Articles Section -->
-  <section id="related-articles">
+  <section id="related-articles" class="container section">
     <h2>Related Blog Articles</h2>
     <div class="articles-container">
       <article class="blog-card">
@@ -3020,7 +3056,7 @@ input:focus {
   </section>
 
   <!-- SEO-Rich Final Section -->
-  <section style="width:80%;max-width:1200px;margin:48px auto 40px auto;padding:40px 32px;background:linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95));backdrop-filter:blur(25px);border-radius:32px;box-shadow:0 40px 80px rgba(0, 0, 0, 0.15);border:1px solid rgba(255, 255, 255, 0.2);text-align:center;">
+  <section class="container section" style="text-align:center;">
     <h2 style="font-size:2.2rem;font-weight:800;color:#1a202c;margin-bottom:24px;font-family:'Playfair Display', serif;background:linear-gradient(135deg, #6366f1, #8b5cf6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
       Ready to Discover Your Historical Leader Match?
     </h2>
@@ -3033,23 +3069,51 @@ input:focus {
   </section>
 
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Zinvana. All rights reserved.</p>
- 
-  <div class="social-icons">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-      <img src="whiteinsta.png" alt="instagram" />
-    </a>
-    <!-- X (Twitter) -->
-    <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-        <img src="whitex.png" alt="x" />
-      </a>
-    <!-- YouTube -->
-    <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-      <img src="youtube.png" alt="youtube" />
-    </a>
+<!-- Footer (clean, responsive) -->
+<footer class="site-footer">
+  <div class="footer-pattern" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="zinvanalogo.png" alt="Zinvana" class="footer-logo" />
+      <h3 class="footer-title">Zinvana</h3>
+      <p class="footer-desc">Discover your true self through fun, engaging personality quizzes and assessments. From internet archetypes to leadership styles, we help you explore different aspects of your personality in an entertaining, educational way.</p>
+      <div class="footer-social">
+        <a class="social-link" href="https://x.com/farazglori80528" target="_blank" rel="noopener" aria-label="Follow on X (Twitter)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+      <p class="footer-note">Stay updated with our latest quizzes and personality assessments!</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Popular Quizzes</h4>
+      <ul class="footer-links">
+        <li><a href="/wojak-personality-quiz.html">Wojak Personality Quiz</a></li>
+        <li><a href="/sigma-male-quiz.html">Sigma Male Test</a></li>
+        <li><a href="/mbti-personality-test.html">MBTI Personality Test</a></li>
+        <li><a href="/perfect-country.html">Perfect Country Quiz</a></li>
+        <li><a href="/all-quizzes.html">View All Quizzes</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Resources</h4>
+      <ul class="footer-links">
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p>&copy; 2025 Zinvana. All rights reserved.</p>
+      <p>Made with ❤️ by the Zinvana Team</p>
+    </div>
+    <p class="footer-disclaimer">This historical leaders personality quiz is for educational and entertainment purposes only. Results are based on your responses and should not be considered professional psychological diagnosis or definitive personality assessments.</p>
   </div>
 </footer>
 
@@ -3675,14 +3739,14 @@ for (const key in personalityScores) {
   },
   extrovert: {
     title: "The Charismatic Orator",
-    character: "Lenin",
-    image: "lenin.jpg",
-    tagline: "Revolution Through Voice and Vision.",
-    description: "Dynamic and inspiring, you have the ability to rally people with your compelling presence and persuasive vision.",
+    character: "Abraham Lincoln",
+    image: "lincoln.jpg",
+    tagline: "Unity Through Voice and Vision.",
+    description: "Dynamic and inspiring, you rally people with a compelling presence and persuasive vision grounded in unity and purpose.",
     strengths: "Energetic, persuasive, and visionary.",
-    improvement: "Balance charisma with substantive policy.",
-    recommendations: "Great for roles in public speaking, politics, and media.",
-    quote: "There are decades where nothing happens; and there are weeks where decades happen."
+    improvement: "Balance charisma with consistent execution.",
+    recommendations: "Great for roles in public speaking, civic leadership, and media.",
+    quote: "A house divided against itself cannot stand."
   },
   balanced: {
     title: "The Pragmatic Diplomat",
@@ -3708,14 +3772,14 @@ for (const key in personalityScores) {
   },
   leader: {
     title: "The Visionary Leader",
-    character: "Austrian Painter (Adolf Hitler)",
-    image: "austrianpainter.png",
+    character: "Nelson Mandela",
+    image: "mandela.jpg",
     tagline: "Inspire, Lead, Unite.",
     description: "Inspiring and resolute, you lead with moral authority and the ability to unite people across divides.",
     strengths: "Inspirational, empathetic, and unifying.",
     improvement: "Ensure decisive actions always align with your vision.",
     recommendations: "Perfect for roles in social reform, diplomacy, and community leadership.",
-    quote: "Leadership is not about power, it's about purpose."
+    quote: "It always seems impossible until it's done."
   },
   supportive: {
     title: "The Compassionate Reformer",
@@ -3740,15 +3804,15 @@ for (const key in personalityScores) {
     quote: "If not now, when? If not us, who?"
   },
   ruthless: {
-    title: "The Iron Fist",
-    character: "Genghis Khan",
-    image: "chengis.jpg",
-    tagline: "Conquer, Command, Control.",
-    description: "Decisive and unyielding, your leadership is marked by tough, uncompromising decisions that leave a lasting impact.",
-    strengths: "Strong-willed, determined, and resolute.",
-    improvement: "Consider balancing firmness with empathy to inspire loyalty.",
-    recommendations: "Suitable for roles that demand stringent policies and decisive leadership.",
-    quote: "It is not sufficient that I succeed — all others must fail."
+    title: "The Resolute Commander",
+    character: "Catherine the Great",
+    image: "catherine.jpg",
+    tagline: "Resolve. Strategy. Reform.",
+    description: "Decisive and unyielding when needed, your leadership pairs firmness with strategic reform to achieve lasting impact.",
+    strengths: "Strong-willed, determined, and strategic.",
+    improvement: "Balance firmness with empathy to inspire loyalty.",
+    recommendations: "Suitable for roles that demand clear decisions and structured change.",
+    quote: "I may be kindly, I am often indulgent, but never weak."
   },
   vigilant: {
     title: "The Watchful Guardian",
@@ -3806,15 +3870,15 @@ for (const key in personalityScores) {
     quote: "The only true conquest is the conquest of oneself."
   },
   diplomat: {
-    title: "The Messenger of Islam",
-    character: "Prophet Muhammad",
-    image: "muhammad.jpg",
+    title: "The Bridge Builder",
+    character: "Kofi Annan",
+    image: "annan.jpg",
     tagline: "Mercy, Justice, and Unity.",
-    description: "A leader who united a divided people, you inspire with compassion, wisdom, and a vision for justice and community.",
-    strengths: "Merciful, just, and unifying.",
-    improvement: "Balance spiritual guidance with practical leadership.",
-    recommendations: "Ideal for roles in community building, mediation, and spiritual leadership.",
-    quote: "The best among you are those who have the best manners and character."
+    description: "You unite divided groups through compassion, wisdom, and a vision for justice and community.",
+    strengths: "Diplomatic, just, and unifying.",
+    improvement: "Balance consensus with timely decisions.",
+    recommendations: "Ideal for roles in community building, mediation, and diplomacy.",
+    quote: "We may have different religions, different languages, different colored skin, but we all belong to one human race."
   },
   revolutionary: {
     title: "The Revolutionary Firestarter",
@@ -3872,15 +3936,15 @@ for (const key in personalityScores) {
     quote: "Nothing hurts a noble soul more than to live under the shadow of a feeling of indebtedness."
   },
   spiritual: {
-    title: "The Spiritual Revolutionary",
-    character: "Jesus of Nazareth",
-    image: "jesus.jpg",
-    tagline: "Love. Sacrifice. Transformation.",
-    description: "You lead through love, sacrifice, and a vision for spiritual transformation and renewal.",
-    strengths: "Loving, sacrificial, and transformative.",
-    improvement: "Balance spiritual ideals with practical action.",
-    recommendations: "Ideal for roles in spiritual leadership, transformation, and renewal.",
-    quote: "Blessed are the peacemakers, for they will be called children of God."
+    title: "The Humanitarian Reformer",
+    character: "Mother Teresa",
+    image: "teresa.jpg",
+    tagline: "Compassion. Service. Dignity.",
+    description: "You lead through compassion and service, inspiring transformation with care and dignity for all.",
+    strengths: "Compassionate, service-driven, and humble.",
+    improvement: "Balance service with self-care and sustainable systems.",
+    recommendations: "Ideal for roles in humanitarian leadership and social care.",
+    quote: "Not all of us can do great things. But we can do small things with great love."
   },
   pharaoh: {
     title: "The Last Pharaoh of Egypt",
@@ -3927,15 +3991,15 @@ for (const key in personalityScores) {
     quote: "Veni, vidi, vici."
   },
   autocrat: {
-    title: "The Iron Autocrat",
-    character: "Joseph Stalin",
-    image: "stalin.png",
-    tagline: "Control. Power. Authority.",
-    description: "You lead with absolute authority and control, shaping the course of history through decisive and sometimes ruthless action.",
-    strengths: "Authoritative, powerful, and decisive.",
-    improvement: "Balance authority with compassion.",
-    recommendations: "Ideal for roles in crisis management, authority, and decisive leadership.",
-    quote: "The only real power comes out of a long rifle."
+    title: "The Centralizer",
+    character: "Augustus Caesar",
+    image: "augustus.jpg",
+    tagline: "Order. Stability. Authority.",
+    description: "You bring order and stability by centralizing authority with long-term institutional vision.",
+    strengths: "Authoritative, strategic, and decisive.",
+    improvement: "Balance control with transparency and accountability.",
+    recommendations: "Ideal for roles in crisis management and institution building.",
+    quote: "I found Rome a city of bricks and left it a city of marble."
   },
         default: {
           title: "A Unique Leader",
