@@ -1,0 +1,142 @@
+/* Minimal, modern theme for Disney Princess quiz page */
+:root {
+  --ink: #0f172a;
+  --muted: #475569;
+  --bg: #ffffff;
+  --bg-soft: #f8fafc;
+  --primary: #7c3aed; /* purple */
+  --primary-600: #6d28d9;
+  --accent: #ec4899; /* pink */
+  --border: #e2e8f0;
+  --radius: 14px;
+}
+
+/* Reset noisy effects from inline styles when present */
+.hero { background: none !important; min-height: auto !important; padding: 120px 0 64px !important; }
+.animated-bg, .bg-animation { display: none !important; }
+#zinvana-banner { display: none !important; }
+
+/* Clean hero */
+.hero-clean { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%); }
+.hero-clean .hero-inner { text-align: center; max-width: 760px; margin: 0 auto; }
+.hero-clean h1 { font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3rem); }
+.hero-clean .hero-subtitle { color: var(--muted); font-size: 1.05rem; margin-bottom: 24px; }
+.hero-clean .cta-button { background: var(--primary); color: #fff; border: 1px solid transparent; padding: 12px 20px; border-radius: 999px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 16px rgba(124,58,237,0.25); transition: transform .15s ease, box-shadow .2s ease, background .2s ease; }
+.hero-clean .cta-button:hover { transform: translateY(-2px); background: var(--primary-600); box-shadow: 0 10px 22px rgba(124,58,237,0.35); }
+
+/* Focus visibility */
+.cta-button:focus-visible,
+.answer-option:focus-visible,
+.result-actions .result-btn:focus-visible,
+.scroll-top:focus-visible {
+  outline: 3px solid #c7d2fe;
+  outline-offset: 2px;
+}
+
+/* Headings */
+section h2 { font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 10px; }
+section p.text-large { color: var(--muted); }
+
+/* Quiz section clean up */
+.quiz-section { padding-top: 56px; padding-bottom: 88px; }
+.quiz-container { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 6px 24px rgba(15,23,42,0.06); overflow: hidden; }
+.quiz-progress { padding: 16px 20px; border-bottom: 1px solid var(--border); display: grid; gap: 8px; }
+.progress-bar { height: 8px; background: #eef2ff; border-radius: 999px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); width: 0%; transition: width .35s ease; }
+.progress-text { color: var(--muted); font-weight: 600; font-size: 0.95rem; }
+
+.quiz-card { padding: 20px; }
+.question-container h3 { font-size: 1.25rem !important; color: var(--ink); margin: 4px 0 14px; }
+.answers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.answer-option { border: 1px solid var(--border); border-radius: 12px; padding: 14px 12px; display: flex; align-items: center; gap: 10px; cursor: pointer; background: #fff; transition: border-color .15s ease, box-shadow .15s ease, transform .05s ease; }
+.answer-option:hover { border-color: #c7d2fe; box-shadow: 0 4px 14px rgba(59,130,246,0.12); }
+.answer-option .answer-emoji { font-size: 1.1rem; }
+.answer-option .answer-text { color: var(--ink); font-weight: 600; }
+.answer-option.selected { border-color: var(--primary); box-shadow: 0 6px 18px rgba(124,58,237,0.18); transform: translateY(-1px); }
+
+/* Result */
+.quiz-result { padding: 20px; }
+.result-card { border: 1px solid var(--border); border-radius: var(--radius); background: #fff; box-shadow: 0 8px 28px rgba(15,23,42,0.08); overflow: hidden; }
+.result-header { text-align: center; padding: 24px 20px 8px; }
+.result-princess-image { width: 96px; height: 96px; object-fit: cover; border-radius: 16px; border: 6px solid #fff; box-shadow: 0 10px 20px rgba(15,23,42,0.15); }
+.result-crown { position: absolute; transform: translate(58px, -70px); font-size: 1.2rem; }
+.result-content { padding: 8px 20px 20px; }
+.result-trait { color: var(--muted); font-weight: 700; }
+.princess-qualities { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.quality-item { border: 1px solid var(--border); border-radius: 10px; padding: 10px; }
+.quality-name { font-weight: 700; color: var(--ink); margin-bottom: 6px; font-size: 0.95rem; }
+.quality-bar { height: 8px; background: #eef2ff; border-radius: 999px; overflow: hidden; }
+.quality-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary), var(--accent)); transition: width .6s ease; }
+.insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.insight-item { border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.insight-title { font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.insight-text { color: var(--muted); }
+.result-quote { margin-top: 14px; padding: 14px; background: var(--bg-soft); border: 1px dashed var(--border); border-radius: 10px; color: var(--muted); }
+.result-actions { padding: 16px 20px 24px; display: flex; gap: 12px; flex-wrap: wrap; }
+.result-actions .result-btn { border-radius: 999px; padding: 12px 18px; font-weight: 700; }
+.result-actions .primary { background: var(--primary); color: #fff; border: none; }
+.result-actions .secondary { background: #fff; color: var(--primary); border: 1px solid var(--primary); }
+
+/* Neutralize flashy share block in result */
+.result-actions > div { background: var(--bg-soft) !important; border: 1px solid var(--border) !important; border-radius: 12px !important; padding: 14px !important; box-shadow: none !important; animation: none !important; color: var(--muted) !important; }
+.result-actions > div h3 { color: var(--ink) !important; text-transform: none !important; letter-spacing: normal !important; font-size: 1.1rem !important; margin: 0 0 8px !important; }
+.result-actions > div p { color: var(--muted) !important; text-shadow: none !important; margin: 0 0 10px !important; }
+.result-actions > div button { background: var(--primary) !important; color: #fff !important; border: none !important; padding: 10px 14px !important; border-radius: 999px !important; font-weight: 700 !important; box-shadow: 0 6px 16px rgba(124,58,237,0.2) !important; animation: none !important; }
+.result-actions > div button:hover { filter: brightness(0.95); }
+
+/* Footer tighten up */
+footer { background: var(--bg-soft) !important; color: var(--muted) !important; padding-top: 40px !important; padding-bottom: 40px !important; border-top: 1px solid var(--border) !important; }
+footer > div:first-child { display: none !important; } /* hide decorative absolute layer */
+footer a { color: var(--muted) !important; }
+footer h3, footer h4 { color: var(--ink) !important; }
+
+/* Cards (princess preview) */
+.characters-grid { gap: 20px !important; }
+.character-card { border: 1px solid var(--border) !important; box-shadow: 0 8px 24px rgba(15,23,42,0.06) !important; border-radius: 16px !important; }
+.character-image-container { height: 220px !important; }
+.character-info h3 { color: var(--ink) !important; }
+.character-trait { color: var(--muted) !important; font-weight: 700 !important; }
+.stat-bar { background: #eef2ff !important; }
+.stat-fill { background: linear-gradient(90deg, var(--primary), var(--accent)) !important; }
+
+/* Scroll to top */
+.scroll-top { position: fixed; right: 20px; bottom: 20px; background: var(--primary); color: #fff; border: none; border-radius: 999px; padding: 10px 14px; box-shadow: 0 8px 24px rgba(124,58,237,0.28); opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+.scroll-top.visible { opacity: 1; pointer-events: all; transform: translateY(-2px); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .answers-grid, .princess-qualities, .insights-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 96px !important; padding-bottom: 48px !important; }
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* Features (clean) */
+.features-clean .section-header { text-align: center; max-width: 800px; margin: 0 auto 28px; }
+.value-props { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.prop { border: 1px solid var(--border); border-radius: 14px; background: #fff; padding: 18px; box-shadow: 0 6px 20px rgba(15,23,42,0.06); }
+.prop-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--bg-soft); display: grid; place-items: center; color: var(--primary); margin-bottom: 10px; }
+.prop h3 { margin: 4px 0 6px; font-size: 1.05rem; color: var(--ink); font-weight: 800; }
+.prop p { color: var(--muted); margin: 0; }
+
+@media (max-width: 1024px) {
+  .value-props { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .value-props { grid-template-columns: 1fr; }
+}
+
+/* About (clean & honest) */
+.about-clean { background: linear-gradient(180deg, var(--bg-soft) 0%, #fff 100%); }
+.about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start; }
+.about-points { list-style: none; padding: 0; margin: 14px 0 10px; display: grid; gap: 8px; }
+.about-points i { color: var(--primary); margin-right: 8px; }
+.about-note { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
+.about-card { border: 1px solid var(--border); border-radius: 14px; background: #fff; padding: 16px; box-shadow: 0 6px 20px rgba(15,23,42,0.06); margin-bottom: 12px; }
+.about-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--bg-soft); display: grid; place-items: center; color: var(--primary); margin-bottom: 8px; }
+.about-card h3 { margin: 2px 0 6px; font-size: 1.05rem; color: var(--ink); font-weight: 800; }
+.about-card p { margin: 0; color: var(--muted); }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
