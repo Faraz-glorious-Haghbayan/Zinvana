@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Augustus Caesar – The First Emperor and Architect of the Roman Empire</title>
   
   <!-- SEO Meta Tags -->
@@ -10,217 +10,74 @@
   <meta name="keywords" content="Augustus Caesar, augustus caesar accomplishments, biography, Roman Empire, Octavian, reforms, ancient Rome, emperor, legacy, history" />
   <meta name="author" content="Zinvana" />
   <link rel="canonical" href="https://zinvana.com/augustus.html" />
-  
-  <!-- Fonts -->
-  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  
-  <!-- CSS Style -->
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0 !important;
-      border: 0;
-      vertical-align: baseline;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #ffffff;
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: opacity 0.3s;
-    }
-    a:hover {
-      opacity: 0.8;
-    }
-    /* Navigation */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #000;
-      padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(255,0,0,0.2);
-    }
-    nav .nav-left, nav .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    nav a {
-      color: #fff;
-      font-weight: 500;
-      font-size: 1.3rem;
-    }
-    nav a:hover {
-      color: #d32f2f;
-    }
-    nav img#brand-logo {
-      width: 10%;
-      min-width: 60px;
-      pointer-events: none;
-    }
-    /* Header */
-    header {
-      text-align: center;
-      padding: 200px 10px 100px;
-      background: url('augustusheader.jpg') no-repeat center/cover; /* Replace with a relevant Augustus image */
-      border-bottom: 2px solid #1f1f1f;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: #ffffff;
-      text-shadow: 2px 2px black;
-      letter-spacing: 1px;
-      margin: 0;
-    }
-    #tagline {
-      margin-top: 8px;
-      font-size: 1.2rem;
-      color: #ccc;
-      text-shadow: 2px 2px black;
-    }
-    /* Main Content */
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #1a1a1a;
-      color: #e0e0e0;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.8);
-    }
-    main h2 {
-      font-size: 2rem;
-      color: #ff9a00;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ff4f00;
-      padding-bottom: 10px;
-    }
-    main h3 {
-      font-size: 1.6rem;
-      color: #ff9a00;
-      margin-top: 30px;
-      margin-bottom: 10px;
-    }
-    main p {
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      color: #bbbbbb;
-      text-align: justify;
-    }
-    /* Infobox */
-    .infobox {
-      float: right;
-      width: 280px;
-      background-color: #222222;
-      color: #333;
-      border: 1px solid white;
-      padding: 15px;
-      margin: 0 0 20px 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .infobox img {
-      width: 100%;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-    .infobox p {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      margin-bottom: 5px;
-    }
-    .infobox strong {
-      color: #d32f2f;
-    }
-    /* Clearfix */
-    .clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    /* Footer */
-    footer {
-      background: #000;
-      padding: 20px 10px;
-      text-align: center;
-      border-top: 1px solid #d32f2f;
-      margin-top: 40px;
-    }
-    footer p {
-      margin: 5px 0;
-      font-size: 1.3rem;
-      color: #aaa;
-    }
-    footer .social-icons {
-      margin-top: 10px;
-    }
-    footer .social-icons img {
-      width: 10%;
-      margin: 0 8px;
-      transition: opacity 0.3s;
-      cursor: pointer;
-    }
-    footer .social-icons img:hover {
-      opacity: 0.7;
-    }
-  </style>
+
+  <!-- Shared Cyrus-style CSS -->
+  <link rel="stylesheet" href="leader-shared.css" />
 </head>
 <body>
+  <div id="scroll-progress"></div>
+
   <!-- Navigation -->
-  <nav>
+  <nav id="navbar">
     <div class="nav-left">
-      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
-      <a href="index.html">Home</a>
-      <a href="leaders.html">Quiz</a>
+      <a class="brand-link" href="index.html" aria-label="Zinvana Home">
+        <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+        <span class="brand-text">Zinvana</span>
+      </a>
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="leaders-list.html">Leaders</a>
+      <a class="nav-link" href="leaders-quiz.html">Quiz</a>
     </div>
+    <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">☰</button>
     <div class="nav-right">
       <a href="help.html">Help</a>
+      <a href="#origins" onclick="scrollToSection('origins')">Origins</a>
+      <a href="#legacy" onclick="scrollToSection('legacy')">Legacy</a>
     </div>
   </nav>
 
   <!-- Header -->
-  <header>
-    <h1>Augustus Caesar</h1>
-    <div id="tagline">The First Emperor of Rome and Architect of the Pax Romana</div>
+  <header style="background-image:url('augustusheader.jpg')">
+    <div class="hero-content">
+      <h1>Augustus Caesar</h1>
+      <div id="tagline">The First Emperor of Rome and Architect of the Pax Romana</div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#origins" onclick="scrollToSection('origins')">Start Reading</a>
+        <a class="btn btn-secondary" href="leaders-list.html">More Leaders</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">Scroll ↓</div>
   </header>
 
   <!-- Main Content -->
-  <main class="clearfix">
+  <main>
     <!-- Infobox -->
-    <div class="infobox">
+    <aside class="infobox" aria-label="Augustus facts">
       <img src="augustus.jpg" alt="Augustus Caesar" />
+      <div class="freshness-badge">
+        <span>Expert Reviewed</span>
+        <small>Updated 2025</small>
+      </div>
       <p><strong>Born:</strong> September 23, 63 BCE</p>
       <p><strong>Died:</strong> August 19, 14 CE</p>
       <p><strong>Nationality:</strong> Roman</p>
       <p><strong>Occupation:</strong> Politician, Emperor</p>
       <p><strong>Known For:</strong> Founding the Roman Empire, Pax Romana</p>
-    </div>
+    </aside>
 
     <!-- 1. Origins and Family Background -->
-    <h2>Origins and Family Background</h2>
+  <h2 id="origins">Origins and Family Background</h2>
     <p>
       Born Gaius Octavius Thurinus on September 23, 63 BCE, in Rome, Augustus was born into a prominent plebeian family with connections to the illustrious Julius Caesar. His adoptive father, Julius Caesar, played a crucial role in shaping his destiny, and the early influence of Roman noble traditions set the stage for his future rise to power.
     </p>
     <p>
-      Augustus’ family background combined both privilege and the challenges of navigating Rome’s intricate social and political hierarchies. His adoption by Julius Caesar ensured that he inherited not only wealth and status but also the political ambition necessary for reshaping Roman governance.
+      Augustusâ€™ family background combined both privilege and the challenges of navigating Romeâ€™s intricate social and political hierarchies. His adoption by Julius Caesar ensured that he inherited not only wealth and status but also the political ambition necessary for reshaping Roman governance.
     </p>
 
     <!-- 2. Education and Early Ambition -->
     <h2>Education and Early Ambition</h2>
     <p>
-      Augustus received a thorough education in rhetoric, literature, and political philosophy—subjects that were essential for any aspiring Roman leader. Immersed in the teachings of Roman tradition and inspired by the legends of Rome’s past, he nurtured an ambition to restore and reorganize the state. His early years were marked by keen political insight and a desire to reform the ancient republican system.
+      Augustus received a thorough education in rhetoric, literature, and political philosophyâ€”subjects that were essential for any aspiring Roman leader. Immersed in the teachings of Roman tradition and inspired by the legends of Romeâ€™s past, he nurtured an ambition to restore and reorganize the state. His early years were marked by keen political insight and a desire to reform the ancient republican system.
     </p>
     <p>
       This combination of education and ambition laid the groundwork for his eventual transformation of Rome from a republic plagued by civil strife to a stable imperial power.
@@ -229,20 +86,20 @@
     <!-- 4. Major Accomplishments and Achievements -->
     <h2>Major Accomplishments and Achievements</h2>
     <p>
-      Augustus Caesar’s reign marked one of the most productive and transformative periods in Roman history. Among his most notable accomplishments was the establishment of the Roman Empire itself—ending a century of civil wars and ushering in a new era of centralized power and peace. His careful accumulation of authority under the guise of republican forms earned him the title "Princeps," or "First Citizen," and allowed him to rule effectively without appearing tyrannical.
+      Augustus Caesarâ€™s reign marked one of the most productive and transformative periods in Roman history. Among his most notable accomplishments was the establishment of the Roman Empire itselfâ€”ending a century of civil wars and ushering in a new era of centralized power and peace. His careful accumulation of authority under the guise of republican forms earned him the title "Princeps," or "First Citizen," and allowed him to rule effectively without appearing tyrannical.
     </p>
     <p>
-      He reorganized Rome’s financial and administrative systems, initiated ambitious building projects such as the Forum of Augustus, and famously claimed to have "found Rome a city of bricks and left it a city of marble." His reforms in taxation, census administration, and military service created a more stable and efficient state, while the establishment of the Praetorian Guard secured his personal and political safety.
+      He reorganized Romeâ€™s financial and administrative systems, initiated ambitious building projects such as the Forum of Augustus, and famously claimed to have "found Rome a city of bricks and left it a city of marble." His reforms in taxation, census administration, and military service created a more stable and efficient state, while the establishment of the Praetorian Guard secured his personal and political safety.
     </p>
     <p>
-      Perhaps his most enduring legacy was the institution of the Pax Romana, a two-century-long period of relative peace and stability that allowed for the flourishing of Roman culture, infrastructure, and economy. These accomplishments cemented Augustus' reputation as one of history’s most effective and visionary leaders.
+      Perhaps his most enduring legacy was the institution of the Pax Romana, a two-century-long period of relative peace and stability that allowed for the flourishing of Roman culture, infrastructure, and economy. These accomplishments cemented Augustus' reputation as one of historyâ€™s most effective and visionary leaders.
     </p>
 
 
     <!-- 3. Political and Military Ascent -->
     <h2>Political and Military Ascent</h2>
     <p>
-      Following Julius Caesar’s assassination in 44 BCE, the Roman world was thrown into turmoil. Augustus emerged as a key figure in the ensuing power struggles, skillfully maneuvering through complex alliances and rivalries. His military campaigns, coupled with his political acumen, allowed him to secure victories against his adversaries, most notably in the battles that led to the defeat of Mark Antony and Cleopatra.
+      Following Julius Caesarâ€™s assassination in 44 BCE, the Roman world was thrown into turmoil. Augustus emerged as a key figure in the ensuing power struggles, skillfully maneuvering through complex alliances and rivalries. His military campaigns, coupled with his political acumen, allowed him to secure victories against his adversaries, most notably in the battles that led to the defeat of Mark Antony and Cleopatra.
     </p>
     <p>
       His ascent was not only a demonstration of his capability on the battlefield but also of his strategic vision in harnessing the political resources of a deeply divided Rome.
@@ -251,10 +108,10 @@
     <!-- 4. The Transformation of the Republic -->
     <h2>The Transformation of the Republic</h2>
     <p>
-      One of Augustus’ most significant achievements was transforming the chaotic Roman Republic into a centralized, autocratic empire. By carefully consolidating power while preserving the façade of traditional republican institutions, he established a system of government that would last for centuries.
+      One of Augustusâ€™ most significant achievements was transforming the chaotic Roman Republic into a centralized, autocratic empire. By carefully consolidating power while preserving the faÃ§ade of traditional republican institutions, he established a system of government that would last for centuries.
     </p>
     <p>
-      Augustus’ approach included reorganizing the military, streamlining the bureaucracy, and initiating financial reforms that stabilized the economy. His policies effectively laid the groundwork for the long period of peace and prosperity known as the Pax Romana.
+      Augustusâ€™ approach included reorganizing the military, streamlining the bureaucracy, and initiating financial reforms that stabilized the economy. His policies effectively laid the groundwork for the long period of peace and prosperity known as the Pax Romana.
     </p>
 
     <!-- 5. Administrative Reforms and Governance -->
@@ -287,16 +144,16 @@
     <!-- 8. Foreign Policy and the Pax Romana -->
     <h2>Foreign Policy and the Pax Romana</h2>
     <p>
-      Augustus’ foreign policy was centered on establishing and maintaining peace throughout the vast territories of the empire. By securing Rome’s borders and negotiating alliances with neighboring states, he created a period known as the Pax Romana—a long era of relative stability and prosperity.
+      Augustusâ€™ foreign policy was centered on establishing and maintaining peace throughout the vast territories of the empire. By securing Romeâ€™s borders and negotiating alliances with neighboring states, he created a period known as the Pax Romanaâ€”a long era of relative stability and prosperity.
     </p>
     <p>
       His diplomatic initiatives and military deterrence laid the foundations for a new system of international relations in the ancient world, setting a precedent for future empires.
     </p>
 
     <!-- 9. Legacy and Enduring Impact -->
-    <h2>Legacy and Enduring Impact</h2>
+  <h2 id="legacy">Legacy and Enduring Impact</h2>
     <p>
-      Augustus’ achievements transformed Rome and left an indelible mark on world history. As the first emperor, his establishment of a stable and enduring government model influenced subsequent rulers for centuries. The Pax Romana not only allowed for economic development and cultural flourishing but also set the stage for the spread of Roman law, language, and customs throughout Europe.
+      Augustusâ€™ achievements transformed Rome and left an indelible mark on world history. As the first emperor, his establishment of a stable and enduring government model influenced subsequent rulers for centuries. The Pax Romana not only allowed for economic development and cultural flourishing but also set the stage for the spread of Roman law, language, and customs throughout Europe.
     </p>
     <p>
       His legacy is still evident today in the legal systems, administrative structures, and cultural ideals that trace their roots back to ancient Rome.
@@ -314,7 +171,7 @@
     <!-- 11. Influence on Western Civilization -->
     <h2>Influence on Western Civilization</h2>
     <p>
-      Augustus Caesar’s reforms and policies laid the foundation for the Roman Empire—a state that would influence the political, legal, and cultural landscape of the Western world for centuries. His administrative innovations, the spread of Roman culture, and the establishment of lasting legal principles are among the many contributions that continue to affect modern governance and societal organization.
+      Augustus Caesarâ€™s reforms and policies laid the foundation for the Roman Empireâ€”a state that would influence the political, legal, and cultural landscape of the Western world for centuries. His administrative innovations, the spread of Roman culture, and the establishment of lasting legal principles are among the many contributions that continue to affect modern governance and societal organization.
     </p>
     <p>
       The legacy of his reign is evident in the architecture, legal frameworks, and cultural traditions that have been passed down through the ages, underscoring his profound impact on Western civilization.
@@ -323,27 +180,52 @@
     <!-- 12. Further Reading and Resources -->
     <h2>Further Reading and Resources</h2>
     <p>
-      For those interested in exploring Augustus Caesar’s life in greater detail, a wealth of scholarly works, biographies, and primary sources are available. Seminal texts by historians such as Ronald Syme, Adrian Goldsworthy, and others provide deep insights into his reign and its impact on Roman history.
+      For those interested in exploring Augustus Caesarâ€™s life in greater detail, a wealth of scholarly works, biographies, and primary sources are available. Seminal texts by historians such as Ronald Syme, Adrian Goldsworthy, and others provide deep insights into his reign and its impact on Roman history.
     </p>
     <p>
       Museums, archives, and online collections also offer extensive resources that document the period of his rule and the legacy of the Roman Empire.
     </p>
   </main>
-  
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Zinvana. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-        <img src="whiteinsta.png" alt="Instagram" />
-      </a>
-      <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-        <img src="whitex.png" alt="Twitter" />
-      </a>
-      <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-        <img src="youtube.png" alt="YouTube" />
-      </a>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="leaders-list.html">All Leaders</a></li>
+          <li><a href="leaders-quiz.html">Leaders Quiz</a></li>
+          <li><a href="help.html">Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Related</h4>
+        <ul>
+          <li><a href="cyrus.html">Cyrus the Great</a></li>
+          <li><a href="caesar.html">Julius Caesar</a></li>
+          <li><a href="romanempire.html">Roman Empire</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Zinvana. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
+          <img src="whiteinsta.png" alt="Instagram" />
+        </a>
+        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
+          <img src="whitex.png" alt="X (Twitter)" />
+        </a>
+        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
+          <img src="youtube.png" alt="YouTube" />
+        </a>
+      </div>
     </div>
   </footer>
+
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" onclick="scrollToTop()">↑</button>
+  <script src="leader-shared.js"></script>
 </body>
 </html>
+
