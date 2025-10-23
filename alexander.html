@@ -2,214 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Alexander the Great – The Conqueror and Visionary Leader</title>
-  
+
   <!-- SEO Meta Tags -->
   <meta name="description" content="Explore a comprehensive biography of Alexander the Great – from his early life and education to his unprecedented conquests, military strategies, administrative policies, and enduring legacy as one of history's greatest military leaders." />
   <meta name="keywords" content="Alexander the Great, biography, ancient history, Macedon, conqueror, military strategy, legacy, leadership, historical biography" />
   <meta name="author" content="Zinvana" />
   <link rel="canonical" href="https://zinvana.com/alexander.html" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- CSS Styles -->
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0 !important;
-      border: 0;
-      vertical-align: baseline;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #ffffff;
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: opacity 0.3s;
-    }
-    a:hover {
-      opacity: 0.8;
-    }
-    /* Navigation */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #000;
-      padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(255,0,0,0.2);
-    }
-    nav .nav-left, nav .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    nav a {
-      color: #fff;
-      font-weight: 500;
-      font-size: 1.3rem;
-    }
-    nav a:hover {
-      color: #d32f2f;
-    }
-    nav img#brand-logo {
-      width: 10%;
-      min-width: 60px;
-      pointer-events: none;
-    }
-    /* Header */
-    header {
-      text-align: center;
-      padding: 200px 10px 100px;
-      background: url('alexanderheader.jpg') no-repeat center/cover;
-      border-bottom: 2px solid #1f1f1f;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: #ffffff;
-      text-shadow: 2px 2px black;
-      letter-spacing: 1px;
-      margin: 0;
-    }
-    #tagline {
-      margin-top: 8px;
-      font-size: 1.2rem;
-      color: #ccc;
-      text-shadow: 2px 2px black;
-    }
-    /* Main Content */
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #1a1a1a;
-      color: #e0e0e0;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.8);
-    }
-    main h2 {
-      font-size: 2rem;
-      color: #ff9a00;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ff4f00;
-      padding-bottom: 10px;
-    }
-    main h3 {
-      font-size: 1.6rem;
-      color: #ff9a00;
-      margin-top: 30px;
-      margin-bottom: 10px;
-    }
-    main p {
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      color: #bbbbbb;
-      text-align: justify;
-    }
-    /* Infobox */
-    .infobox {
-      float: right;
-      width: 280px;
-      background-color: #222222;
-      color: #333;
-      border: 1px solid white;
-      padding: 15px;
-      margin: 0 0 20px 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .infobox img {
-      width: 100%;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-    .infobox p {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      margin-bottom: 5px;
-    }
-    .infobox strong {
-      color: #d32f2f;
-    }
-    /* Clearfix */
-    .clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    /* Footer */
-    footer {
-      background: #000;
-      padding: 20px 10px;
-      text-align: center;
-      border-top: 1px solid #d32f2f;
-      margin-top: 40px;
-    }
-    footer p {
-      margin: 5px 0;
-      font-size: 1.3rem;
-      color: #aaa;
-    }
-    footer .social-icons {
-      margin-top: 10px;
-    }
-    footer .social-icons img {
-      width: 10%;
-      margin: 0 8px;
-      transition: opacity 0.3s;
-      cursor: pointer;
-    }
-    footer .social-icons img:hover {
-      opacity: 0.7;
-    }
-  </style>
+  <!-- Shared Cyrus-style CSS -->
+  <link rel="stylesheet" href="leader-shared.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navigation (shared) -->
+  <nav id="navbar">
     <div class="nav-left">
-      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
-      <a href="index.html">Home</a>
-      <a href="leaders.html">Quiz</a>
+      <a class="brand-link" href="index.html" aria-label="Zinvana Home">
+        <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+        <span class="brand-text">Zinvana</span>
+      </a>
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="leaders-list.html">Leaders</a>
+      <a class="nav-link" href="leaders-quiz.html">Quiz</a>
     </div>
+    <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">☰</button>
     <div class="nav-right">
       <a href="help.html">Help</a>
+      <a href="#overview" onclick="scrollToSection('overview')">Overview</a>
+      <a href="#legacy" onclick="scrollToSection('legacy')">Legacy</a>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header>
-    <h1>Alexander the Great</h1>
-    <div id="tagline">The Conqueror and Visionary Leader of the Ancient World</div>
+  <!-- Header (hero) -->
+  <header style="background-image:url('alexanderheader.jpg')">
+    <div class="hero-content">
+      <h1>Alexander the Great</h1>
+      <div id="tagline">The Conqueror and Visionary Leader of the Ancient World</div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#overview" onclick="scrollToSection('overview')">Start Reading</a>
+        <a class="btn btn-secondary" href="leaders-list.html">More Leaders</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">Scroll ↓</div>
   </header>
 
-  <!-- Main Content -->
-  <main class="clearfix">
+  <!-- Main content -->
+  <main>
     <!-- Infobox with Key Details -->
-    <div class="infobox">
-      <img src="alexander.jpg" alt="Alexander the Great" />
+    <aside class="infobox" aria-label="Alexander the Great facts">
+      <img src="alexander.jpg" alt="Alexander the Great portrait" />
+      <div class="freshness-badge">
+        <span>Expert Reviewed</span>
+        <small>Updated 2025</small>
+      </div>
       <p><strong>Born:</strong> July 356 BCE</p>
       <p><strong>Died:</strong> June 323 BCE</p>
       <p><strong>Nationality:</strong> Macedonian</p>
       <p><strong>Occupation:</strong> King, Conqueror</p>
       <p><strong>Known For:</strong> Creating one of the largest empires in ancient history</p>
-    </div>
+    </aside>
 
-    <!-- 1. Early Life and Family Background -->
-    <h2>Early Life and Family Background</h2>
+    <!-- Overview -->
+    <h2 id="overview">Early Life and Family Background</h2>
     <p>
       Born in Pella, the ancient capital of Macedon, Alexander was the son of King Philip II and Queen Olympias. His upbringing was marked by royal privilege and rigorous military and cultural training. Surrounded by legends of heroic ancestors and inspired by tales of Greek mythology, Alexander's early environment nurtured his ambitions of achieving greatness.
     </p>
@@ -217,7 +75,7 @@
       His parents instilled in him the ideals of honor, valor, and leadership, while the vibrant intellectual culture of Greece further deepened his appreciation for philosophy and the arts. The fusion of these influences played a crucial role in shaping his character and igniting his desire to surpass the glories of his forebears.
     </p>
 
-    <!-- 2. Education and Early Influences -->
+    <!-- Education and Early Influences -->
     <h2>Education and Early Influences</h2>
     <p>
       From a young age, Alexander was tutored by some of the era’s most renowned intellectuals, including the philosopher Aristotle. Under Aristotle’s guidance, he learned not only the classics of Greek literature and philosophy but also developed a critical understanding of science, politics, and ethics. This education provided him with a well-rounded worldview and a deep appreciation for rational thought.
@@ -226,7 +84,7 @@
       The lessons drawn from his studies played an instrumental role in forming his visionary approach to leadership. They influenced his strategies later on, helping him merge military tactics with an enlightened, cultural approach to expansion.
     </p>
 
-    <!-- 3. Accession to the Throne -->
+    <!-- Accession to the Throne -->
     <h2>Accession to the Throne</h2>
     <p>
       Alexander ascended to the throne of Macedon at the age of 20 following the assassination of his father, King Philip II. Despite his youth, he quickly proved his capability by suppressing rebellions and securing his kingdom. His unexpected rise was bolstered by his determination and the extensive military training he had received from an early age.
@@ -235,7 +93,7 @@
       The sudden transition into kingship thrust him into the spotlight and set him on a path that would redefine the ancient world. It also meant that he had to rapidly assume responsibilities that required both military acumen and a strong sense of statecraft.
     </p>
 
-    <!-- 4. Military Campaigns and Conquests -->
+    <!-- Military Campaigns and Conquests -->
     <h2>Military Campaigns and Conquests</h2>
     <p>
       Alexander’s military campaigns are legendary for their speed, audacity, and sheer scale. Leaving Macedon in 334 BCE, he led his army through Asia Minor, conquering the Persian Empire one territory at a time. His campaigns brought him face-to-face with diverse cultures and formidable military forces, yet his innovative strategies and charismatic leadership enabled him to secure decisive victories.
@@ -244,8 +102,8 @@
       Notable battles such as the Battle of Issus and the Siege of Tyre exemplify his tactical brilliance. His ability to adapt quickly to battlefield conditions and effectively utilize combined arms tactics played a central role in his success. By the time he reached the banks of the Indus, Alexander had forged an empire that spanned three continents.
     </p>
 
-    <!-- 5. Tactical Innovations and Military Strategy -->
-    <h2>Tactical Innovations and Military Strategy</h2>
+    <!-- Tactical Innovations and Military Strategy -->
+    <h2>Technical Innovations and Military Strategy</h2>
     <p>
       Alexander was not only a daring conqueror but also a strategist who introduced innovative military tactics. He restructured the Macedonian phalanx, integrating cavalry maneuvers with infantry formations in a way that maximized both mobility and strength. His use of shock tactics and swift, decisive strikes transformed traditional battlefields and set new standards for military operations.
     </p>
@@ -253,7 +111,7 @@
       His military treatises, though largely disseminated through his actions rather than writings, have influenced countless generations of military leaders. Alexander’s ability to inspire his troops and execute complex maneuvers in real time remains a benchmark in the annals of military strategy.
     </p>
 
-    <!-- 6. Administration, Governance, and Cultural Integration -->
+    <!-- Administration, Governance, and Cultural Integration -->
     <h2>Administration, Governance, and Cultural Integration</h2>
     <p>
       Beyond the battlefield, Alexander endeavored to govern the vast territories he conquered. He attempted to fuse Greek and Eastern cultures by adopting elements of local customs and encouraging cultural exchange. His policy of fusion sought to create a unified state, even as it spanned diverse peoples and traditions. 
@@ -262,7 +120,7 @@
       Alexander founded multiple cities—many named Alexandria—that became vibrant centers of learning and commerce. These urban centers played a pivotal role in the Hellenistic period, serving as melting pots for art, science, and philosophy. His governance reflected a blend of military discipline and an appreciation for cultural diversity, which helped stabilize his vast empire.
     </p>
 
-    <!-- 7. Personal Character and Leadership Style -->
+    <!-- Personal Character and Leadership Style -->
     <h2>Personal Character and Leadership Style</h2>
     <p>
       Known for his boundless ambition and intense charisma, Alexander the Great was a leader who inspired loyalty and admiration. His personal qualities—courage, determination, and intellectual curiosity—were evident both on and off the battlefield. However, his relentless drive sometimes led to impulsive decisions, a trait that has been both praised and criticized by historians.
@@ -271,8 +129,8 @@
       Alexander’s leadership style combined visionary ambition with a practical, sometimes ruthless, approach to achieving his goals. His ability to lead by example and his willingness to risk his life alongside his soldiers earned him unwavering respect from his troops.
     </p>
 
-    <!-- 8. Death, Succession, and Historical Legacy -->
-    <h2>Death, Succession, and Historical Legacy</h2>
+    <!-- Death, Succession, and Historical Legacy -->
+    <h2 id="legacy">Death, Succession, and Historical Legacy</h2>
     <p>
       Alexander the Great died unexpectedly in Babylon in 323 BCE at the age of 32 under circumstances that remain a subject of debate among historians. His premature death led to the fragmentation of his vast empire, as his generals, known as the Diadochi, fought over the territories he had conquered. Despite the disintegration of his empire, Alexander’s legacy as one of history’s greatest military geniuses endures.
     </p>
@@ -280,7 +138,7 @@
       His conquests not only reshaped the ancient world but also paved the way for the Hellenistic period—an era marked by the spread of Greek culture across Asia, Africa, and Europe. The legends surrounding his life have inspired countless stories, works of art, and scholarly debates over the centuries.
     </p>
 
-    <!-- 9. Global Influence and Cultural Impact -->
+    <!-- Global Influence and Cultural Impact -->
     <h2>Global Influence and Cultural Impact</h2>
     <p>
       Alexander’s conquests had far-reaching effects on world history. By disseminating Greek culture across a vast empire, he set in motion a process of cultural integration that transformed art, architecture, science, and philosophy. The Hellenistic era, which followed his conquests, witnessed an unprecedented blending of Eastern and Western influences that shaped the future of civilization.
@@ -289,7 +147,7 @@
       His military and cultural legacy continues to be a subject of admiration and study. Leaders, scholars, and even modern military strategists frequently reference his tactics and vision as the embodiment of innovative leadership.
     </p>
 
-    <!-- 10. Historical Debates and Interpretations -->
+    <!-- Historical Debates and Interpretations -->
     <h2>Historical Debates and Interpretations</h2>
     <p>
       Despite the enduring admiration for Alexander, historians continue to debate various aspects of his life. Key issues include the accuracy of the accounts of his conquests, the motivations behind his relentless drive for expansion, and the long-term impact of his policies on the regions he conquered. Some view him as a visionary unifier, while others criticize his methods and the subsequent turmoil that followed his death.
@@ -298,7 +156,7 @@
       These debates underscore the complexity of his legacy and highlight the challenges inherent in evaluating one of history’s most dynamic figures. The multifaceted interpretations of his life ensure that Alexander remains a subject of ongoing scholarly inquiry.
     </p>
 
-    <!-- 11. Further Reading and Resources -->
+    <!-- Further Reading and Resources -->
     <h2>Further Reading and Resources</h2>
     <p>
       For those wishing to delve deeper into the life and legacy of Alexander the Great, a wealth of scholarly literature and primary sources is available. Renowned works by historians, detailed biographies, and contemporary studies offer in-depth analysis of his conquests, political strategies, and cultural impact. Key texts and archival documents continue to enrich our understanding of his achievements and the lasting influence he has had on world history.
@@ -307,21 +165,48 @@
       Museums, academic institutions, and historical societies around the world also offer valuable resources for further exploration. The legacy of Alexander the Great remains a cornerstone of ancient history, inspiring generations of scholars and leaders alike.
     </p>
   </main>
-  
-  <!-- Footer -->
+
+  <!-- Footer (shared styling) -->
   <footer>
-    <p>&copy; 2025 Zinvana. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-        <img src="whiteinsta.png" alt="Instagram" />
-      </a>
-      <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-        <img src="whitex.png" alt="Twitter" />
-      </a>
-      <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-        <img src="youtube.png" alt="YouTube" />
-      </a>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="leaders-list.html">All Leaders</a></li>
+          <li><a href="leaders-quiz.html">Leaders Quiz</a></li>
+          <li><a href="help.html">Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Related</h4>
+        <ul>
+          <li><a href="cyrus.html">Cyrus the Great</a></li>
+          <li><a href="augustus.html">Augustus</a></li>
+          <li><a href="caesar.html">Julius Caesar</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Zinvana. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
+          <img src="whiteinsta.png" alt="Instagram" />
+        </a>
+        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
+          <img src="whitex.png" alt="X (Twitter)" />
+        </a>
+        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
+          <img src="youtube.png" alt="YouTube" />
+        </a>
+      </div>
     </div>
   </footer>
+
+  <!-- Scroll to top button -->
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" onclick="scrollToTop()">↑</button>
+
+  <!-- Shared behaviors -->
+  <script src="leader-shared.js"></script>
 </body>
 </html>
