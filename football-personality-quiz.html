@@ -1,1973 +1,1326 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- SEO META -->
-   <title>Free Football Personality Quiz – Which Football Player Are You?</title>
-<meta name="description"
-      content="Take our free Football Personality Quiz to discover your archetype—Tactical Genius, Rocket, Silent Maestro, and more. Which football persona are you?" />
-<meta name="keywords"
-      content="football personality quiz, football archetype quiz, soccer personality test, which football persona am I" />
-    <link rel="canonical" href="https://zinvana.com/football-personality-quiz.html" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Football Legends Personality Quiz" />
-    <meta property="og:description"
-      content="Find out which football star matches your style—Messi, Ronaldo, Haaland & more!" />
-    <meta property="og:image" content="zinvanafootheader.jpg" />
-    <meta property="og:url" content="https://zinvana.com/football-personality-quiz.html" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Football Legends Personality Quiz" />
-    <meta name="twitter:description"
-      content="Dive into our free quiz and discover if you're the next Messi, Ronaldo, or Haaland." />
-    <meta name="twitter:image" content="zinvanafootheader.jpg" />
-
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the Football Legends Quiz?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A fun personality quiz matching you to famous footballers based on your play style and mindset."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is the quiz free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, it’s completely free—no sign-up required."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How many questions are there?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "There are 20 multiple-choice questions."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I retake the quiz?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely—just hit 'Restart Test' at the end."
-            }
-          }
-        ]
-      }
-    </script>
-
-    <!-- Quiz Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Quiz",
-        "name": "Which Football Legend Are You?",
-        "description": "Answer 15 questions to find out which legendary football player mirrors your style.",
-        "url": "https://zinvana.com/football-personality-quiz.html",
-        "numberOfQuestions": 15,
-        "educationalUse": "Entertainment"
-      }
-    </script>
-
-    <!-- Favicon & Fonts -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- html2canvas for share -->
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script> 
-    <style>
-/* ==========================================================================
-   MODERN FOOTBALL QUIZ STYLING
-   ========================================================================== */
-
-/* Reset & Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --dark-bg: #0f1419;
-  --card-bg: #1a1f2e;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a9c0;
-  --border-color: #2d3748;
-  --shadow-light: 0 4px 25px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.15);
-  --shadow-heavy: 0 12px 60px rgba(0, 0, 0, 0.25);
-  --border-radius: 16px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--dark-bg);
-  color: var(--text-primary);
-  line-height: 1.6;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-/* Enhanced Navigation */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(15, 20, 25, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-color);
-  transition: var(--transition);
-}
-
-nav .nav-left,
-nav .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-nav a {
-  color: var(--text-secondary);
-  font-weight: 500;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: var(--transition);
-  position: relative;
-}
-
-nav a:hover {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-nav img#brand-logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  transition: var(--transition);
-}
-
-nav img#brand-logo:hover {
-  transform: scale(1.05);
-}
-
-/* Hero Section */
-.hero-header {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: 600px;
-  background: linear-gradient(135deg, rgba(15, 20, 25, 0.8), rgba(26, 31, 46, 0.9)), 
-              url('zinifoot.gif') center center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-}
-
-.header-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 0 2rem;
-  animation: fadeInUp 1s ease-out;
-}
-
-.header-content h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.header-content #tagline {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-  font-weight: 400;
-}
-
-.cta-hero-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: var(--primary-gradient);
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  box-shadow: var(--shadow-medium);
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-hero-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s;
-}
-
-.cta-hero-btn:hover::before {
-  left: 100%;
-}
-
-.cta-hero-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-heavy);
-}
-
-.down-arrow {
-  margin-top: 3rem;
-  animation: bounce 2s infinite;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-/* Table of Contents */
-.toc {
-  max-width: 1200px;
-  margin: 4rem auto;
-  padding: 2rem;
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-light);
-  border: 1px solid var(--border-color);
-}
-
-.toc h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
-}
-
-.toc-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.toc-list a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: var(--transition);
-  font-weight: 500;
-}
-
-.toc-list a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--text-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-light);
-}
-
-.toc-list a::before {
-  content: '⚽';
-  font-size: 1.2rem;
-}
-
-/* Section Styling */
-section {
-  max-width: 1200px;
-  margin: 0 auto 4rem auto;
-  padding: 0 2rem;
-}
-
-#intro {
-  background: var(--card-bg);
-  padding: 3rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-light);
-  border: 1px solid var(--border-color);
-  text-align: center;
-}
-
-#intro h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-#intro p {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-#intro strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-/* Toast Notification */
-#toast {
-  position: fixed;
-  top: 100px;
-  right: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-medium);
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  z-index: 1001;
-  backdrop-filter: blur(20px);
-}
-
-#toast.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.toast-icon img {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-}
-
-.toast-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.toast-title {
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-}
-
-.toast-subtitle {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.hidden { 
-  display: none !important;
-}
-
-/* Main Quiz Container */
-main {
-  max-width: 900px;
-  margin: 2rem auto 4rem auto;
-  padding: 0 2rem;
-}
-
-main h1 {
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Quiz Section */
-#test {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 3rem;
-  box-shadow: var(--shadow-medium);
-  border: 1px solid var(--border-color);
-  position: relative;
-  overflow: hidden;
-}
-
-#test::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--primary-gradient);
-}
-
-#progress-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  gap: 1rem;
-}
-
-#progress-text {
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 1.1rem;
-  white-space: nowrap;
-}
-
-.progress-bar-container {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  height: 8px;
-  overflow: hidden;
-}
-
-#progress-bar {
-  background: var(--primary-gradient);
-  height: 100%;
-  border-radius: 10px;
-  transition: width 0.4s ease;
-  box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
-}
-
-#question-container {
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#question-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 2rem;
-  text-align: center;
-  line-height: 1.4;
-}
-
-#answer-options {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-#answer-options li {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid transparent;
-  border-radius: 12px;
-  padding: 1.2rem;
-  cursor: pointer;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-#answer-options li::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-  transition: left 0.6s;
-}
-
-#answer-options li:hover::before {
-  left: 100%;
-}
-
-#answer-options li:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(102, 126, 234, 0.5);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-light);
-}
-
-#answer-options li.selected {
-  background: rgba(102, 126, 234, 0.1);
-  border-color: #667eea;
-  box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
-}
-
-#answer-options label {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-#answer-options input[type="radio"] {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--text-secondary);
-  border-radius: 50%;
-  background: transparent;
-  appearance: none;
-  cursor: pointer;
-  transition: var(--transition);
-  position: relative;
-  flex-shrink: 0;
-}
-
-#answer-options input[type="radio"]:checked {
-  border-color: #667eea;
-  background: var(--primary-gradient);
-}
-
-#answer-options input[type="radio"]:checked::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#next-btn {
-  width: 100%;
-  background: var(--primary-gradient);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-light);
-}
-
-#next-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s;
-}
-
-#next-btn:hover::before {
-  left: 100%;
-}
-
-#next-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-}
-
-#next-btn:active {
-  transform: translateY(0);
-}
-
-/* Results Section */
-#results {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 3rem;
-  box-shadow: var(--shadow-medium);
-  border: 1px solid var(--border-color);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-#results::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--success-gradient);
-}
-
-#results h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  background: var(--success-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.result-section {
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-.result-section h3 {
-  font-size: 1.3rem;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.result-section p {
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.character-image {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 2rem auto;
-  display: block;
-  border: 4px solid #667eea;
-  box-shadow: var(--shadow-medium);
-}
-
-/* Action Buttons */
-.button-group {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-#restart-btn,
-#screenshot-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-  text-decoration: none;
-  box-shadow: var(--shadow-light);
-}
-
-#restart-btn {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-}
-
-#restart-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-}
-
-#screenshot-btn {
-  background: var(--accent-gradient);
-  color: white;
-}
-
-#screenshot-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-}
-
-/* Archetype Breakdown */
-#archetype-breakdown {
-  background: var(--card-bg);
-  padding: 4rem 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-light);
-  border: 1px solid var(--border-color);
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-#archetype-breakdown h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-#archetype-breakdown p {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin-bottom: 3rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.leader-scroll-container {
-  overflow: hidden;
-  margin-bottom: 3rem;
-}
-
-.leader-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
-}
-
-.leader-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  padding: 2rem;
-  text-align: center;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.leader-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--primary-gradient);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.leader-card:hover::before {
-  transform: scaleX(1);
-}
-
-.leader-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-medium);
-}
-
-.leader-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1.5rem;
-  border: 3px solid #667eea;
-  transition: var(--transition);
-}
-
-.leader-card:hover img {
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-}
-
-.leader-card h3 {
-  font-size: 1.3rem;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.leader-card p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.see-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: var(--accent-gradient);
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  box-shadow: var(--shadow-light);
-  transition: var(--transition);
-}
-
-.see-more-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-}
-
-/* Quotes Section */
-#top-quotes {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 3rem;
-  box-shadow: var(--shadow-light);
-  border: 1px solid var(--border-color);
-  margin-bottom: 4rem;
-}
-
-#top-quotes h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-#gif {
-  width: 60%;
-  max-width: 400px;
-  height: auto;
-  margin: 2rem auto;
-  display: block;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-light);
-}
-
-#top-quotes ul {
-  list-style: none;
-  padding: 0;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#top-quotes li {
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 4px solid #667eea;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 0 12px 12px 0;
-  font-style: italic;
-  color: var(--text-secondary);
-  transition: var(--transition);
-}
-
-#top-quotes li:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateX(8px);
-}
-
-/* Other Sections */
-#why-zinvana,
-#faq {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 3rem;
-  box-shadow: var(--shadow-light);
-  border: 1px solid var(--border-color);
-  margin-bottom: 4rem;
-}
-
-#why-zinvana h2,
-#faq h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
-}
-
-#why-zinvana ul {
-  list-style: none;
-  padding: 0;
-}
-
-#why-zinvana li {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-left: 3px solid #667eea;
-}
-
-#why-zinvana strong {
-  color: var(--text-primary);
-}
-
-.test-text {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-left: 3px solid #667eea;
-}
-
-.test-text strong {
-  color: var(--text-primary);
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-/* Related Articles */
-#related-articles {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 3rem;
-  box-shadow: var(--shadow-light);
-  border: 1px solid var(--border-color);
-  margin-bottom: 4rem;
-}
-
-#related-articles h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.blog-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 1.5rem;
-  transition: var(--transition);
-  border-left: 4px solid #667eea;
-}
-
-.blog-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-light);
-}
-
-.blog-card h3 a {
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.blog-card h3 a:hover {
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.blog-card p {
-  color: var(--text-secondary);
-  margin-top: 0.5rem;
-}
-
-/* Footer */
-footer {
-  background: var(--dark-bg);
-  border-top: 1px solid var(--border-color);
-  padding: 3rem 2rem 2rem 2rem;
-  text-align: center;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.social-icons a {
-  display: block;
-  transition: var(--transition);
-}
-
-.social-icons img {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  transition: var(--transition);
-}
-
-.social-icons a:hover {
-  transform: translateY(-3px);
-}
-
-.social-icons a:hover img {
-  box-shadow: var(--shadow-light);
-}
-
-footer p {
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .header-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .header-content #tagline {
-    font-size: 1.2rem;
-  }
-  
-  nav {
-    padding: 1rem;
-  }
-  
-  nav .nav-left,
-  nav .nav-right {
-    gap: 1rem;
-  }
-  
-  .toc-list {
-    grid-template-columns: 1fr;
-  }
-  
-  #test,
-  #results {
-    padding: 2rem;
-  }
-  
-  #progress-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .leader-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .button-group {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #toast {
-    right: 1rem;
-    left: 1rem;
-    right: 1rem;
-  }
-}
-    </style>
-  </head>
-
-  <body>
-  <!-- Enhanced Navigation -->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Footballer Personality Quiz 2025 - Which Football Player Are You? | Free Personality Test</title>
+	<meta name="description" content="Take our Footballer Personality Quiz to discover which top player matches your mindset and playstyle. From Messi to Ronaldo, find your football archetype with deep insights and career advice." />
+	<meta name="keywords" content="football personality quiz, which footballer are you, soccer personality test, messi or ronaldo quiz, football archetype, player style quiz, football test" />
+	<meta name="author" content="Zinvana" />
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://zinvana.com/football-personality-quiz.html" />
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="Footballer Personality Quiz 2025 - Which Player Are You?" />
+	<meta property="og:description" content="Discover your football archetype in minutes. Answer 10 questions to find your inner Messi, Ronaldo, Modrić, Salah, and more." />
+	<meta property="og:image" content="https://zinvana.com/images/football-personality-quiz.jpg" />
+	<meta property="og:url" content="https://zinvana.com/football-personality-quiz.html" />
+	<meta property="og:type" content="website" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Footballer Personality Quiz 2025 - Which Player Are You?" />
+	<meta name="twitter:description" content="Free personality test to find your footballer counterpart with strengths, mindset, and growth tips." />
+	<meta name="twitter:image" content="https://zinvana.com/images/football-personality-quiz.jpg" />
+
+	<!-- Schema.org JSON-LD -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Quiz",
+		"name": "Footballer Personality Quiz",
+		"description": "A 10-question quiz that maps your traits to famous footballers' playstyles and mindsets.",
+		"author": {"@type": "Organization", "name": "Zinvana"},
+		"datePublished": "2025-10-19",
+		"dateModified": "2025-10-19",
+		"educationalLevel": "General",
+		"interactivityType": "active",
+		"learningResourceType": "Assessment",
+		"typicalAgeRange": "12-99",
+		"about": [
+			{"@type": "Thing", "name": "Football"},
+			{"@type": "Thing", "name": "Sports Psychology"},
+			{"@type": "Thing", "name": "Player Archetypes"}
+		]
+	}
+	</script>
+		<!-- Additional SEO: Breadcrumb and FAQ rich results -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{"@type":"ListItem","position":1,"name":"Home","item":"https://zinvana.com/"},
+				{"@type":"ListItem","position":2,"name":"Quizzes","item":"https://zinvana.com/all-articles.html"},
+				{"@type":"ListItem","position":3,"name":"Footballer Personality Quiz","item":"https://zinvana.com/football-personality-quiz.html"}
+			]
+		}
+		</script>
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{"@type":"Question","name":"How accurate is this quiz?","acceptedAnswer":{"@type":"Answer","text":"This is a fun, insight-driven quiz inspired by sports psychology and playing styles. It captures consistent patterns in mindset and decision-making but is not a clinical assessment."}},
+				{"@type":"Question","name":"Can my result change over time?","acceptedAnswer":{"@type":"Answer","text":"Yes. Training focus, role in your team, and confidence can shift your archetype. Many players blend styles—use this as guidance, not a box."}},
+				{"@type":"Question","name":"Do I need deep football knowledge?","acceptedAnswer":{"@type":"Answer","text":"No. The questions are practical and relatable; you don’t need to know tactics to get value from your result."}}
+			]
+		}
+		</script>
+
+	<style>
+		:root {
+			--brand1: #667eea;
+			--brand2: #764ba2;
+			--text-strong: #2d3748;
+			--text: #4a5568;
+			--muted: #718096;
+			--surface: #ffffff;
+			--surface-2: #f7fafc;
+			--border: #e2e8f0;
+		}
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			min-height: 100vh;
+			color: #333;
+			padding-top: 80px;
+			scroll-behavior: smooth !important;
+		}
+
+		 /* Navigation Styles */
+        nav {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(25px);
+            padding: 16px 32px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.6), transparent);
+        }
+        
+        nav .nav-left,
+        nav .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        nav a {
+            color: #cbd5e1;
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        nav a:hover {
+            color: #f8fafc;
+            background: rgba(99, 102, 241, 0.15);
+            transform: translateY(-1px);
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        nav a:hover::after {
+            width: 80%;
+        }
+        nav img#brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+            transition: transform 0.3s ease;
+        }
+        nav img#brand-logo:hover {
+            transform: scale(1.05);
+        }
+
+		.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+		.main-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+		.hero-section { padding: 72px 0 40px; color: #fff; text-align: center; position: relative; overflow: hidden; }
+		.hero-section::before { content: ''; position: absolute; top: 0; left: 50%; width: 1400px; height: 1400px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); transform: translateX(-50%); pointer-events: none; }
+		.hero-section > * { position: relative; z-index: 1; }
+		.hero-section h1 { font-size: 3.5rem; letter-spacing: -0.03em; margin-bottom: 14px; text-shadow: 0 4px 24px rgba(0,0,0,0.2); font-weight: 800; }
+		.hero-section .subtitle { font-size: 1.4rem; opacity: 0.98; margin-bottom: 14px; font-weight: 500; }
+		.hero-section .description { max-width: 720px; margin: 0 auto; opacity: 0.95; font-size: 1.1rem; line-height: 1.6; }
+
+		.content-section { background: white; padding: 70px 0; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 4px 32px rgba(102,126,234,0.08); }
+		.section-header { text-align: center; margin-bottom: 56px; }
+		.section-header h2 { font-size: 2.6rem; font-weight: 800; color: #2d3748; margin-bottom: 16px; letter-spacing: -0.02em; }
+		.section-header p { font-size: 1.15rem; color: #6b7280; max-width: 680px; margin: 0 auto; line-height: 1.7; }
+
+		.quiz-container { background: var(--surface); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.12); overflow: hidden; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.5); backdrop-filter: saturate(120%) blur(4px); padding: 40px 30px; }
+		.quiz-content { padding: 40px; }
+		.quiz-header { background: linear-gradient(135deg, var(--brand1), var(--brand2)); color: white; padding: 32px 24px; text-align: center; }
+		.quiz-header h2 { font-size: 2rem; font-weight: 600; margin-bottom: 10px; }
+		.quiz-header p { opacity: 0.9; font-size: 1.1rem; }
+
+		.question { display: none; animation: fadeIn 0.5s ease-in; }
+		.question.active { display: block; }
+		@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+		.question h3 { font-size: 1.5rem; margin-bottom: 20px; color: #333; text-align: center; }
+
+		.answers { display: grid; gap: 15px; margin-bottom: 30px; }
+		.answer-btn { position: relative; display: flex; align-items: center; gap: 14px; background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%); border: 2px solid #e5e9f0; padding: 20px 24px 20px 60px; border-radius: 16px; cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); font-size: 1.05rem; font-weight: 500; line-height: 1.4; text-align: left; color: var(--text-strong); box-shadow: 0 3px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04); overflow: hidden; }
+		.answer-btn::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(102,126,234,0.02) 0%, rgba(118,75,162,0.02) 100%); opacity: 0; transition: opacity 0.3s ease; z-index: 0; }
+		.answer-btn:hover { background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-color: var(--brand1); box-shadow: 0 8px 32px rgba(102,126,234,0.15), 0 3px 12px rgba(0,0,0,0.08); transform: translateY(-2px) scale(1.01); }
+		.answer-btn:hover::before { opacity: 1; }
+		.answer-btn:active { transform: translateY(-1px) scale(1.005); transition: all 0.15s ease; }
+		.answer-btn:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(102,126,234,0.3), 0 8px 32px rgba(102,126,234,0.15); border-color: var(--brand1); }
+		.answer-btn .answer-text { position: relative; z-index: 2; flex: 1; }
+	.answer-btn .wojak-badge { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 2px solid #dde4ed; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease; z-index: 3; font-size: 0; }
+		.answer-btn:hover .wojak-badge { border-color: var(--brand1); background: linear-gradient(135deg, #ffffff 0%, #f1f5ff 100%); box-shadow: 0 4px 16px rgba(102,126,234,0.2); transform: translateY(-50%) scale(1.1); }
+		.answer-btn .chevron { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 50%; background: rgba(160,174,192,0.1); display: flex; align-items: center; justify-content: center; color: #a0aec0; font-size: 14px; font-weight: 600; transition: all 0.3s ease; z-index: 3; }
+		.answer-btn:hover .chevron { background: rgba(102,126,234,0.15); color: var(--brand1); transform: translateY(-50%) translateX(3px) scale(1.1); }
+
+		.progress-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; color: var(--muted); font-size: 0.95rem; }
+		.progress { background: #e9ecef; height: 10px; border-radius: 6px; margin-bottom: 24px; overflow: hidden; }
+		.progress-bar { background: linear-gradient(135deg, var(--brand1), var(--brand2)); height: 100%; width: 0%; transition: width 0.3s ease; }
+
+		.result { display: none; text-align: center; animation: fadeIn 0.5s ease-in; }
+		.result.active { display: block; }
+		.wojak-image { width: 200px; height: 200px; margin: 0 auto 20px; background: radial-gradient(100% 100% at 50% 0%, #ffffff 0%, #f1f5ff 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 6px solid transparent; background-clip: padding-box; position: relative; overflow: hidden; }
+		.wojak-image::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; background: conic-gradient(from 180deg, var(--brand1), var(--brand2)); z-index: -1; }
+		.wojak-image img { width: 90%; height: 90%; object-fit: contain; border-radius: 50%; background: #fff; }
+		.wojak-image .emoji { font-size: 4.2rem; line-height: 1; }
+		.result h2 { font-size: 2rem; color: #333; margin-bottom: 10px; }
+		.result p { font-size: 1.1rem; color: #666; line-height: 1.6; max-width: 620px; margin: 0 auto 20px; }
+		.restart-btn { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 15px 30px; border-radius: 25px; font-size: 1.1rem; cursor: pointer; transition: transform 0.3s ease; }
+		.restart-btn:hover { transform: translateY(-2px); }
+		.question-counter { text-align: center; color: #666; margin-bottom: 20px; font-size: 0.9rem; }
+
+		/* Archetypes panels */
+		.archetypes-header { text-align: center; margin-bottom: 40px; max-width: 820px; margin-left: auto; margin-right: auto; }
+		.archetypes-header .eyebrow { display: inline-block; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6366f1; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.25); padding: 6px 10px; border-radius: 999px; margin-bottom: 12px; }
+		.archetypes-header h2 { font-size: 2.8rem; font-weight: 800; color: #1f2937; letter-spacing: -0.02em; margin-bottom: 10px; }
+		.archetypes-header p { font-size: 1.12rem; color: #5a6c7d; line-height: 1.75; margin: 0 auto; max-width: 760px; }
+		.archetypes-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: stretch; }
+		.archetypes-panel { background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 2px solid #e8ecf4; border-radius: 16px; padding: 28px; position: relative; overflow: hidden; box-shadow: 0 8px 28px rgba(102,126,234,0.10); }
+		.archetypes-panel::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--brand1), var(--brand2)); opacity: 0.9; }
+		.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+		.pillar { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid #e6ebf3; border-radius: 12px; background: #ffffff; }
+		.pillar .icon { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; background: linear-gradient(135deg, rgba(102,126,234,0.12), rgba(118,75,162,0.12)); color: #4f46e5; font-size: 1rem; }
+		.pillar span { color: #334155; font-weight: 600; font-size: 0.98rem; }
+		.legend-label { display: block; font-size: 0.85rem; color: #64748b; margin: 10px 0 8px 2px; }
+		.badges { display: flex; flex-wrap: wrap; gap: 10px 12px; }
+		.archetype-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; background: #ffffff; border: 1px solid #e8ecf4; border-radius: 999px; color: #334155; font-weight: 600; font-size: 0.95rem; box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04); }
+
+		.archetype-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+		.archetype-card { background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%); border: 2px solid #e8ecf4; border-radius: 14px; padding: 18px; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+		.archetype-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(102,126,234,0.12); border-color: var(--brand1); }
+		.archetype-card .chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border: 1px solid #e6ebf3; border-radius: 999px; background: #ffffff; font-weight: 700; color: #1f2937; margin-bottom: 10px; }
+		.archetype-card p { color: #5a6c7d; font-size: 0.98rem; line-height: 1.55; margin: 0; }
+
+		/* Guide */
+		.guide-header { text-align: center; max-width: 900px; margin: 0 auto 28px auto; }
+		.guide-header .eyebrow { display: inline-block; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6366f1; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.25); padding: 6px 10px; border-radius: 999px; margin-bottom: 10px; }
+		.guide-header h2 { font-size: 2.6rem; font-weight: 800; color: #1f2937; letter-spacing: -0.02em; margin: 6px 0 8px; }
+		.guide-header p { font-size: 1.08rem; color: #5a6c7d; line-height: 1.75; margin: 0 auto; max-width: 760px; }
+		.guide-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 18px 0 24px; }
+		.search-input { position: relative; flex: 1 1 360px; max-width: 560px; }
+		.search-input .icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #64748b; pointer-events: none; }
+		.search-input input[type="search"] { width: 100%; padding: 12px 14px 12px 38px; border-radius: 12px; border: 2px solid #e6ebf3; background: #ffffff; font-size: 0.98rem; color: #1f2937; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+		.search-input input[type="search"]:focus { border-color: var(--brand1); box-shadow: 0 0 0 3px rgba(102,126,234,0.15); }
+		.filter-chips { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+		.chip { padding: 8px 12px; border: 1px solid #e6ebf3; border-radius: 999px; background: #ffffff; color: #334155; font-weight: 600; font-size: 0.92rem; cursor: pointer; transition: all 0.2s ease; }
+		.chip:hover { border-color: var(--brand1); }
+		.chip.active { background: linear-gradient(135deg, var(--brand1), var(--brand2)); color: #ffffff; border-color: transparent; box-shadow: 0 6px 18px rgba(102,126,234,0.25); }
+		.guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+		.guide-card { background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%); border: 2px solid #e8ecf4; border-radius: 16px; padding: 18px; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+		.guide-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(102,126,234,0.12); border-color: var(--brand1); }
+		.guide-card .card-head { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; margin-bottom: 10px; }
+		.guide-card .avatar { width: 44px; height: 44px; border-radius: 12px; border: 1px solid #e6ebf3; background: #ffffff; display: grid; place-items: center; overflow: hidden; font-size: 24px; }
+		.guide-card h4 { font-size: 1.15rem; margin: 0; color: #1f2937; letter-spacing: -0.01em; }
+		.guide-card .summary { color: #5a6c7d; font-size: 0.96rem; line-height: 1.55; margin: 6px 0 12px; }
+		.traits { list-style: none; padding: 0; margin: 0 0 12px 0; display: grid; gap: 6px; }
+		.traits li { position: relative; padding-left: 18px; color: #475569; font-size: 0.93rem; }
+		.traits li::before { content: '✓'; position: absolute; left: 0; top: 0; color: #10b981; font-weight: 700; }
+		.guide-cta { display: inline-block; padding: 8px 12px; border-radius: 10px; border: 1px solid #e6ebf3; background: #ffffff; text-decoration: none; color: #334155; font-weight: 700; font-size: 0.92rem; transition: all 0.2s ease; }
+		.guide-cta:hover { border-color: var(--brand1); color: #1f2937; box-shadow: 0 6px 18px rgba(102,126,234,0.12); }
+
+		.faq-section { background: linear-gradient(135deg, #f8fafd 0%, #f3f6fb 100%); padding: 70px 0; margin-top: 64px; border-radius: 20px; box-shadow: 0 4px 32px rgba(102,126,234,0.08); }
+		.faq-item { background: white; margin-bottom: 18px; border-radius: 12px; border: 2px solid #e8ecf4; overflow: hidden; transition: all 0.3s ease; }
+		.faq-item:hover { border-color: var(--brand1); box-shadow: 0 4px 16px rgba(102,126,234,0.08); }
+		.faq-question { padding: 24px 28px; font-weight: 700; color: #2d3748; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; transition: background 0.2s ease; }
+		.faq-question:hover { background: #f8fafd; }
+		.faq-question span { font-size: 1.4rem; color: var(--brand1); font-weight: 400; }
+		.faq-answer { padding: 0 28px 24px; color: #5a6c7d; line-height: 1.7; font-size: 1.02rem; }
+
+		.cta-section { background: linear-gradient(120deg, #667eea 0%, #764ba2 100%); color: white; padding: 72px 0; text-align: center; margin-top: 64px; border-radius: 20px; box-shadow: 0 8px 40px rgba(102,126,234,0.2); position: relative; overflow: hidden; }
+		.cta-section::before { content: ''; position: absolute; top: 0; left: 50%; width: 1000px; height: 1000px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); transform: translateX(-50%); pointer-events: none; }
+		.cta-section > * { position: relative; z-index: 1; }
+
+		/* Breadcrumb, features, characters (to mirror Wojak page) */
+		.breadcrumb { padding: 20px 0 12px; color: #8a9bb0; font-size: 0.95rem; letter-spacing: 0.01em; }
+		.breadcrumb a { color: var(--brand1); text-decoration: none; font-weight: 500; transition: all 0.2s ease; }
+		.breadcrumb a:hover { color: var(--brand2); text-decoration: underline; }
+
+		.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px; }
+		.feature-card { background: linear-gradient(135deg, #f8fafd 0%, #f3f6fb 100%); padding: 28px 24px; border-radius: 16px; text-align: left; border: 2px solid #e8ecf4; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; position: relative; overflow: hidden; }
+		.feature-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--brand1), var(--brand2)); opacity: 0; transition: opacity 0.3s ease; }
+		.feature-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(102,126,234,0.12); border-color: var(--brand1); }
+		.feature-card:hover::before { opacity: 1; }
+		.feature-icon { font-size: 2rem; margin-bottom: 10px; }
+		.feature-card h3 { font-size: 1.2rem; margin: 8px 0 8px; color: #1f2937; }
+		.feature-card p { color: #5a6c7d; }
+
+		.characters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px; margin-top: 24px; }
+		.character-card { background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%); padding: 24px; border-radius: 16px; border: 2px solid #e8ecf4; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+		.character-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(102,126,234,0.12); border-color: var(--brand1); }
+		/* Character avatar chips now use images */
+		.character-emoji { width: 28px; height: 28px; border-radius: 6px; display: inline-block; margin-right: 8px; object-fit: cover; vertical-align: middle; }
+		/* Answer badge image styling */
+		.answer-btn .wojak-badge img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+		/* Guide card avatar image styling */
+		.guide-card .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+		/* Small image used inside chips/badges */
+		.chip-img { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; margin-right: 8px; vertical-align: -3px; }
+		.character-card h4 { margin: 6px 0 8px; color: #2d3748; }
+		.character-card p { color: #5a6c7d; margin: 6px 0 10px; }
+		.character-meta { font-size: 0.92rem; color: #64748b; }
+
+		/* Responsive */
+		@media (min-width: 720px) { .answers { grid-template-columns: 1fr 1fr; } }
+		@media (max-width: 992px) {
+			.container { max-width: 820px; }
+			nav .nav-left, nav .nav-right { gap: 20px; }
+			.hero-section h1 { font-size: 2.6rem; }
+			.hero-section .subtitle { font-size: 1.2rem; }
+			.guide-toolbar { flex-direction: column; align-items: stretch; gap: 12px; }
+			.search-input { flex: 1 1 100%; max-width: none; }
+			.filter-chips { justify-content: center; }
+			.guide-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+		}
+		@media (max-width: 768px) {
+			.archetypes-grid { grid-template-columns: 1fr; }
+			.archetypes-header h2 { font-size: 2.2rem; }
+			.pillars { grid-template-columns: 1fr; }
+			.archetype-card-grid { grid-template-columns: 1fr 1fr; }
+			body { padding-top: 70px; }
+			nav { padding: 10px 16px; }
+			nav .nav-left, nav .nav-right { gap: 16px; }
+			nav img#brand-logo { width: 40px; height: 40px; }
+			.hero-section h1 { font-size: 2.4rem; }
+			.hero-section .subtitle { font-size: 1.15rem; }
+			.hero-section { padding: 56px 0 32px; }
+			.quiz-container { padding: 30px 20px; }
+		}
+		@media (max-width: 600px) {
+			.container { padding: 16px; }
+			nav .nav-left, nav .nav-right { gap: 12px; }
+			nav img#brand-logo { width: 36px; height: 36px; }
+			.hero-section h1 { font-size: 2.1rem; }
+			.hero-section .subtitle { font-size: 1.05rem; }
+			.archetype-card-grid { grid-template-columns: 1fr; }
+			.guide-grid { grid-template-columns: 1fr; }
+			.wojak-image { width: 180px; height: 180px; }
+			.progress { height: 8px; }
+			.faq-section { padding: 56px 0; }
+			.cta-section { padding: 56px 0; }
+		}
+		@media (max-width: 480px) {
+			body { padding-top: 64px; }
+			nav { padding: 8px 12px; }
+			.hero-section { padding: 48px 0 28px; }
+			.hero-section h1 { font-size: 1.85rem; }
+			.hero-section .description { font-size: 1rem; padding: 0 4px; }
+			.quiz-header { padding: 24px 16px; }
+			.quiz-header h2 { font-size: 1.6rem; }
+			.quiz-header p { font-size: 1rem; }
+			.answers { gap: 12px; }
+			.answer-btn { padding: 16px 18px 16px 50px; font-size: 0.95rem; }
+			.answer-btn .wojak-badge { left: 14px; width: 26px; height: 26px; }
+			.answer-btn .chevron { right: 12px; width: 18px; height: 18px; font-size: 11px; }
+			.progress-meta { font-size: 0.9rem; }
+			.wojak-image { width: 160px; height: 160px; }
+		}
+
+		/* Tablet styles */
+		@media (min-width: 768px) and (max-width: 1024px) {
+			.hero-section h1 { font-size: 3.2rem; }
+			.hero-section .subtitle { font-size: 1.35rem; }
+			.hero-section .description { font-size: 1.1rem; }
+			.guide-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+			.characters-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+			.features-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+			.quiz-container { padding: 50px 40px; }
+			.answer-btn { font-size: 1.1rem; padding: 22px 26px 22px 64px; }
+			.answer-btn .wojak-badge { width: 34px; height: 34px; left: 20px; }
+			.answer-btn .chevron { right: 22px; width: 26px; height: 26px; font-size: 16px; }
+		}
+
+		/* Large desktop styles */
+		@media (min-width: 1200px) {
+			.container { max-width: 1000px; }
+			.main-container { max-width: 1300px; }
+			.hero-section h1 { font-size: 4rem; }
+			.hero-section .subtitle { font-size: 1.5rem; }
+			.hero-section .description { font-size: 1.2rem; max-width: 800px; }
+			.guide-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+			.characters-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+			.features-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+			.archetypes-grid { grid-template-columns: 1.2fr 1fr; }
+		}
+	</style>
+</head>
+<body>
+	<!-- Top Navigation -->
   <nav>
     <div class="nav-left">
-      <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
-      <a href="index.html"><i class="fas fa-home"></i> Home</a>
-      <a href="#test"><i class="fas fa-play-circle"></i> Quiz</a>
+      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
+      <a href="index.html">Home</a>
+      <a href="#quizSection">Test</a>
     </div>
     <div class="nav-right">
-      <a href="help.html"><i class="fas fa-question-circle"></i> Help</a>
+      <a href="help.html">Help</a>
     </div>
   </nav>
 
-<!-- Enhanced Hero Section -->
-<header class="hero-header">
-  <div class="header-content">
-    <h1>Discover Your Football Personality</h1>
-    <h2 id="tagline">Which legendary player matches your style?</h2>
-    <a href="#test" class="cta-hero-btn">
-      <i class="fas fa-rocket"></i>
-      Start Your Journey
-    </a>
-    <div class="down-arrow">
-      <i class="fas fa-chevron-down" style="font-size: 2rem; color: #667eea; animation: bounce 2s infinite;"></i>
-    </div>
-  </div>
-</header>
+	<!-- Hero -->
+	<div class="hero-section">
+		<div class="main-container">
+			<h1>Footballer Personality Quiz 2025</h1>
+			<p class="subtitle">Which Football Player Are You?</p>
+			<p class="description">Find your football archetype across mindset, playstyle, and leadership. Answer 10 questions to reveal if you're more Messi, Ronaldo, Modrić, Salah, and more—with detailed strengths and growth tips.</p>
+		</div>
+	</div>
 
-    <!-- Enhanced Table of Contents -->
-  <section class="toc">
-    <h2><i class="fas fa-list-ul"></i> Navigate the Quiz</h2>
-    <ul class="toc-list">
-      <li><a href="#intro">Quiz Introduction</a></li>
-      <li><a href="#archetype-breakdown">Player Archetypes</a></li>
-      <li><a href="#test">Take the Quiz</a></li>
-      <li><a href="#faq">Frequently Asked Questions</a></li>
-      <li><a href="#why-zinvana">Why Choose Zinvana?</a></li>
-    </ul>
-  </section>
+	<div class="main-container">
+			
+		<!-- Intro/Archetypes -->
+		<section class="content-section" aria-labelledby="archetypes-heading">
+			<div class="archetypes-header">
+				<span class="eyebrow">Overview</span>
+				<h2 id="archetypes-heading">Understanding Football Archetypes</h2>
+				<p>Great players combine talent, mentality, and role. This quiz maps your choices to a best-fit profile across decision-making, physicality, creativity, mentality, and preferred role on the pitch.</p>
+			</div>
 
-<!-- Enhanced Introduction -->
-<section id="intro">
-  <h2><i class="fas fa-futbol"></i> Discover Your Football Identity</h2>
-  <p>
-    Ready to uncover your true football persona? Our scientifically-designed <strong>Football Personality Quiz</strong> 
-    analyzes your playing style, tactical mindset, and on-field instincts across 15 carefully crafted questions.
-  </p>
-  <p>
-    Whether you're a strategic mastermind like Pep Guardiola, a relentless machine like Cristiano Ronaldo, 
-    or a silent genius like Lionel Messi, this quiz reveals the football archetype that defines your approach to the beautiful game.
-  </p>
-  <p>
-    <strong>🎯 What makes our quiz special:</strong> Deep psychological insights, detailed archetype profiles, 
-    and results you can share with fellow football enthusiasts. Get ready to see yourself in a whole new light!
-  </p>
-</section>
+			<div class="archetypes-grid">
+				<!-- Left -->
+				<div class="archetypes-panel">
+					<div class="pillars">
+						<div class="pillar"><div class="icon"><img src="accuracy.png" alt="" style="width:20px;height:20px;border-radius:4px;object-fit:cover;"></div><span>Playstyle</span></div>
+						<div class="pillar"><div class="icon"><img src="idea.png" alt="" style="width:20px;height:20px;border-radius:4px;object-fit:cover;"></div><span>Mindset</span></div>
+						<div class="pillar"><div class="icon"><img src="high-quality.png" alt="" style="width:20px;height:20px;border-radius:4px;object-fit:cover;"></div><span>Team Role</span></div>
+					</div>
+					<p class="panel-note">Player archetypes aren't rigid labels—many stars blend traits. Use this as a mirror for your tendencies, then lean into your edge.</p>
+					<span class="legend-label">Common archetype badges</span>
+					<div class="badges">
+						<span class="archetype-badge"><img class="chip-img" src="messi.jpg" alt=""> Playmaker</span>
+						<span class="archetype-badge"><img class="chip-img" src="ronaldo.jpg" alt=""> Finisher</span>
+						<span class="archetype-badge"><img class="chip-img" src="mbappe.jpg" alt=""> Speedster</span>
+						<span class="archetype-badge"><img class="chip-img" src="default.png" alt=""> Guardian</span>
+						<span class="archetype-badge"><img class="chip-img" src="messi.jpg" alt=""> Leader</span>
+						<span class="archetype-badge"><img class="chip-img" src="default.png" alt=""> Wall</span>
+					</div>
+				</div>
 
-  <!-- Enhanced Archetype Breakdown -->
-  <section id="archetype-breakdown">
-    <h2><i class="fas fa-users"></i> Football Personality Archetypes</h2>
-    <p>Our quiz analyzes your responses to match you with one of 12 distinct football personalities, each representing a unique approach to the game.</p>
+				<!-- Right -->
+				<div class="archetypes-panel">
+					<div class="archetype-card-grid">
+						<div class="archetype-card">
+							<div class="chip"><img class="chip-img" src="messi.jpg" alt=""> Playmaker</div>
+							<p>Sees passes others don't. Vision, tempo control, and high football IQ. Think Messi, De Bruyne, Modrić.</p>
+						</div>
+						<div class="archetype-card">
+							<div class="chip"><img class="chip-img" src="ronaldo.jpg" alt=""> Finisher</div>
+							<p>Cold in front of goal. Movement, timing, and clinical finishing. Think Ronaldo, Haaland, Salah, Mbappé.</p>
+						</div>
+						<div class="archetype-card">
+							<div class="chip"><img class="chip-img" src="neymar.jpg" alt=""> Winger</div>
+							<p>1v1 threat with pace and flair. Breaks lines and creates chaos. Think Neymar, Mbappé, Salah.</p>
+						</div>
+						<div class="archetype-card">
+							<div class="chip"><img class="chip-img" src="messi.jpg" alt=""> Metronome</div>
+							<p>Dictates rhythm and transitions. Press resistance and smart positioning. Think Modrić, De Bruyne.</p>
+						</div>
+						<div class="archetype-card">
+							<div class="chip"><img class="chip-img" src="default.png" alt=""> Wall Defender</div>
+							<p>Dominant aerially and on the ground; organizes the backline. Think Van Dijk.</p>
+						</div>
+						<div class="archetype-card">
+							<div class="chip"><img class="chip-img" src="default.png" alt=""> Sweeper Keeper</div>
+							<p>Commands the box, starts attacks, and thrives under pressure. Think Neuer.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <div class="leader-scroll-container">
-      <div class="leader-grid">
-        <!-- Tactical Genius -->
-        <div class="leader-card">
-          <img src="pep.jpg" alt="Tactical Genius" />
-          <h3><i class="fas fa-brain"></i> The Tactical Genius</h3>
-          <p>Master strategist who sees the game like a chess match. Every move is calculated, every pass has purpose.</p>
-        </div>
+				<!-- Value Features (mirror Wojak polish) -->
+				<section class="content-section" aria-labelledby="features-title">
+					<div class="section-header">
+						<h2 id="features-title">What You’ll Get</h2>
+						<p>Built to inform and delight: modern UX, clear scoring logic, and actionable insights grounded in sports psychology.</p>
+					</div>
+					<div class="features-grid">
+						<div class="feature-card">
+							<div class="feature-icon"><img src="idea.png" alt="" style="width:28px;height:28px;vertical-align:middle;"></div>
+							<h3>Evidence-Informed Scoring</h3>
+							<p>Questions map to playstyle, mentality, and role preferences. Results reflect consistent decision-making patterns.</p>
+						</div>
+						<div class="feature-card">
+							<div class="feature-icon"><img src="accuracy.png" alt="" style="width:28px;height:28px;vertical-align:middle;"></div>
+							<h3>10 Iconic Archetypes</h3>
+							<p>From visionary playmakers to sweeper keepers—each profile includes strengths, roles, and development cues.</p>
+						</div>
+						<div class="feature-card">
+							<div class="feature-icon"><img src="training.png" alt="" style="width:28px;height:28px;vertical-align:middle;"></div>
+							<h3>Actionable Training Ideas</h3>
+							<p>Every result suggests targeted drills and habits you can apply immediately, solo or with a team.</p>
+						</div>
+						<div class="feature-card">
+							<div class="feature-icon"><img src="downloadicon.png" alt="" style="width:28px;height:28px;vertical-align:middle;"></div>
+							<h3>Shareable Results</h3>
+							<p>Create a share link for teammates and friends. Compare archetypes to build balanced squads.</p>
+						</div>
+					</div>
+				</section>
 
-        <!-- Relentless Machine -->
-        <div class="leader-card">
-          <img src="ronaldo.jpg" alt="Relentless Machine" />
-          <h3><i class="fas fa-dumbbell"></i> The Relentless Machine</h3>
-          <p>Unstoppable work ethic meets unwavering determination. Goals and trophies are your only language.</p>
-        </div>
+		<!-- Quiz -->
+		<div class="container" id="quizSection">
+			<div class="quiz-header">
+				<h2>Take the Footballer Personality Quiz</h2>
+				<p>Answer 10 questions to reveal your football player archetype</p>
+			</div>
 
-        <!-- Silent Maestro -->
-        <div class="leader-card">
-          <img src="messi.jpg" alt="Silent Maestro" />
-          <h3><i class="fas fa-magic"></i> The Silent Maestro</h3>
-          <p>Quiet off the pitch, magical on it. Your feet weave spells that leave defenders mesmerized.</p>
-        </div>
+			<div class="quiz-container">
+				<div class="progress-meta">
+					<span><strong id="progressLabel">0%</strong></span>
+					<span>Question <strong id="questionNumberTop">1</strong> / 10</span>
+				</div>
+				<div class="progress" aria-label="Quiz progress">
+					<div class="progress-bar" id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+				</div>
+				<div class="question-counter" aria-live="polite">
+					<span id="questionNumber">1</span> / 10
+				</div>
 
-        <!-- The Warrior -->
-        <div class="leader-card">
-          <img src="gattuso.jpg" alt="The Warrior" />
-          <h3><i class="fas fa-shield-alt"></i> The Warrior</h3>
-          <p>Fierce competitor who battles for every ball. Your intensity and grit inspire teammates to greatness.</p>
-        </div>
+				<!-- Q1 -->
+				<div class="question active" data-question="1">
+					<h3>What best describes your impact in a match?</h3>
+					<div class="answers">
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="messi"><span class="wojak-badge">🇦🇷</span><span class="answer-text">I create chances out of nothing and control the tempo.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="ronaldo"><span class="wojak-badge">🇵🇹</span><span class="answer-text">I show up with decisive goals when it matters most.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="de_bruyne"><span class="wojak-badge">🇧🇪</span><span class="answer-text">Pinpoint final balls and deadly transitions are my game.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="van_dijk"><span class="wojak-badge">🇳🇱</span><span class="answer-text">I shut things down at the back and lead the line calmly.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="salah"><span class="wojak-badge">🇪🇬</span><span class="answer-text">I exploit space with smart runs and clinical left-foot finishes.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neuer"><span class="wojak-badge">🇩🇪</span><span class="answer-text">I organize from the back and launch quick counters as a GK.</span><span class="chevron">›</span></button>
+					</div>
+				</div>
 
-        <!-- The Magician -->
-        <div class="leader-card">
-          <img src="ronaldinho.jpg" alt="The Magician" />
-          <h3><i class="fas fa-hat-wizard"></i> The Magician</h3>
-          <p>Master of flair and creativity. Your unpredictable moves and skills leave crowds in awe.</p>
-        </div>
+				<!-- Q2 -->
+				<div class="question" data-question="2">
+					<h3>Pick the mentality quote that resonates most</h3>
+					<div class="answers">
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="ronaldo"><span class="wojak-badge">🇵🇹</span><span class="answer-text">Pressure makes me better—winning is a habit.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="messi"><span class="wojak-badge">🇦🇷</span><span class="answer-text">Let the football speak—consistency over theatrics.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="modric"><span class="wojak-badge">🇭🇷</span><span class="answer-text">Work quietly, think clearly, play beautifully.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neymar"><span class="wojak-badge">🇧🇷</span><span class="answer-text">Football is art—joy, flair, and expression matter.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="mbappe"><span class="wojak-badge">🇫🇷</span><span class="answer-text">Fear no one—attack the game with speed and ambition.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="van_dijk"><span class="wojak-badge">🇳🇱</span><span class="answer-text">Composure is power—defend with intelligence, not panic.</span><span class="chevron">›</span></button>
+					</div>
+				</div>
 
-        <!-- The Wall -->
-        <div class="leader-card">
-          <img src="buffon.jpg" alt="The Wall" />
-          <h3><i class="fas fa-hand-paper"></i> The Wall</h3>
-          <p>Impenetrable last line of defense. Nothing gets past your commanding presence in goal.</p>
-        </div>
-      </div>
-    </div>
+				<!-- Q3 -->
+				<div class="question" data-question="3">
+					<h3>Which training focus excites you most?</h3>
+					<div class="answers">
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="haaland"><span class="wojak-badge">🇳🇴</span><span class="answer-text">Explosive sprints and finishing drills in the box.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="de_bruyne"><span class="wojak-badge">🇧🇪</span><span class="answer-text">Through-ball timing and crossing accuracy at speed.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="messi"><span class="wojak-badge">🇦🇷</span><span class="answer-text">Dribbling in tight spaces and close control patterns.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neuer"><span class="wojak-badge">🇩🇪</span><span class="answer-text">Sweeper keeper positioning and distribution under press.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="modric"><span class="wojak-badge">🇭🇷</span><span class="answer-text">Press resistance, body orientation, and scanning habits.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="van_dijk"><span class="wojak-badge">🇳🇱</span><span class="answer-text">1v1 duels, aerial timing, and defensive leadership cues.</span><span class="chevron">›</span></button>
+					</div>
+				</div>
 
-    <div class="leader-button-container">
-      <a href="football-list.html" class="see-more-btn">
-        <i class="fas fa-eye"></i>
-        Explore All 12 Archetypes
-      </a>
-    </div>
-  </section>
+				<!-- Q4 -->
+				<div class="question" data-question="4">
+					<h3>What's your ideal role in the team?</h3>
+					<div class="answers">
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="modric"><span class="wojak-badge">🇭🇷</span><span class="answer-text">Link defense to attack and keep the team balanced.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="ronaldo"><span class="wojak-badge">🇵🇹</span><span class="answer-text">Be the clutch finisher and big-game leader.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="messi"><span class="wojak-badge">🇦🇷</span><span class="answer-text">Drop deep to create, then arrive to score.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="mbappe"><span class="wojak-badge">🇫🇷</span><span class="answer-text">Stretch defenses with pace and direct runs behind.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="van_dijk"><span class="wojak-badge">🇳🇱</span><span class="answer-text">Marshal the backline and set the defensive tone.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="de_bruyne"><span class="wojak-badge">🇧🇪</span><span class="answer-text">Arrive late, deliver deadly passes, and dictate transitions.</span><span class="chevron">›</span></button>
+					</div>
+				</div>
 
-  <!-- Enhanced Quotes Section -->
-  <section id="top-quotes">
-    <h2><i class="fas fa-quote-left"></i> Legendary Football Wisdom</h2>
-    <img src="zinifoot.gif" alt="Football Quiz Animation" id="gif">
-    <ul>
-      <li><i class="fas fa-star"></i> "Football is a simple game. Twenty-two men chase a ball for 90 minutes and at the end, the Germans win." — Gary Lineker</li>
-      <li><i class="fas fa-trophy"></i> "I'm not a perfectionist, but I like to feel that things are done well." — Cristiano Ronaldo</li>
-      <li><i class="fas fa-heart"></i> "Some people think football is a matter of life and death. I assure you, it's much more serious than that." — Bill Shankly</li>
-      <li><i class="fas fa-fire"></i> "You have to fight to reach your dream. You have to sacrifice and work hard for it." — Lionel Messi</li>
-      <li><i class="fas fa-gem"></i> "Talent without working hard is nothing." — Lionel Messi</li>
-    </ul>
-  </section>
+				<!-- Q5 -->
+				<div class="question" data-question="5">
+					<h3>Choose your signature move</h3>
+					<div class="answers">
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="salah"><span class="wojak-badge">🇪🇬</span><span class="answer-text">Left-foot curler after a diagonal run inside.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neymar"><span class="wojak-badge">🇧🇷</span><span class="answer-text">Dazzling 1v1 dribble opening a defense with flair.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="haaland"><span class="wojak-badge">🇳🇴</span><span class="answer-text">First-time finish from a cut-back with power.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="messi"><span class="wojak-badge">🇦🇷</span><span class="answer-text">Thread-the-needle assist between four defenders.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="de_bruyne"><span class="wojak-badge">🇧🇪</span><span class="answer-text">Whipped cross from half-space onto a striker's stride.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neuer"><span class="wojak-badge">🇩🇪</span><span class="answer-text">Out of the box interception to snuff a counter early.</span><span class="chevron">›</span></button>
+					</div>
+				</div>
 
-  <!-- Enhanced Toast Notification -->
-  <div id="toast" class="hidden">
-    <div class="toast-icon">
-      <img src="heart.png" alt="Football Icon" />
-    </div>
-    <div class="toast-text">
-      <div class="toast-title" id="toast-title">Great Play!</div>
-      <div class="toast-subtitle" id="toast-subtitle"></div>
-    </div>
-  </div>
+				<!-- Q6 -->
+				<div class="question" data-question="6">
+					<h3>How do you handle high-pressure moments?</h3>
+					<div class="answers">
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="ronaldo"><span class="wojak-badge">🇵🇹</span><span class="answer-text">Demand the ball—I'll decide the game.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="modric"><span class="wojak-badge">🇭🇷</span><span class="answer-text">Slow the rhythm and control emotion for the team.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="van_dijk"><span class="wojak-badge">🇳🇱</span><span class="answer-text">Stay composed—organize shape and win key duels.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="mbappe"><span class="wojak-badge">🇫🇷</span><span class="answer-text">Attack space before defenders can think.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="messi"><span class="wojak-badge">🇦🇷</span><span class="answer-text">Find the intelligent action others miss.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neuer"><span class="wojak-badge">🇩🇪</span><span class="answer-text">Command the area vocally and claim the moment.</span><span class="chevron">›</span></button>
+					</div>
+				</div>
 
-  <main>
-    <h1><i class="fas fa-futbol"></i> Football Personality Quiz</h1>
-    
-    <!-- Enhanced Quiz Section -->
-    <section id="test">
-      <!-- Enhanced Progress Bar -->
-      <div id="progress-container">
-        <span id="progress-text">Question 1 of 15</span>
-        <div class="progress-bar-container">
-          <div id="progress-bar"></div>
-        </div>
-      </div>
-      
-      <!-- Enhanced Question Container -->
-      <div id="question-container">
-        <h2 id="question-title">Your question will appear here</h2>
-        <ul id="answer-options">
-          <!-- Options injected by JS -->
-        </ul>
-      </div>
-      
-      <button id="next-btn">
-        <i class="fas fa-arrow-right"></i>
-        Next Question
-      </button>
-    </section>
-    
-    <!-- Enhanced Results Section -->
-    <section id="results" class="hidden">
-      <h2><i class="fas fa-medal"></i> Your Football Persona</h2>
-      <div id="evaluation"></div>
-      <div id="recommendations"></div>
-      <div class="button-group">
-        <button id="restart-btn">
-          <i class="fas fa-redo"></i>
-          Retake Quiz
-        </button>
-        <button id="screenshot-btn">
-          <i class="fas fa-camera"></i>
-          Share Result
-        </button>
-      </div>
-    </section>
-  </main>
+				<!-- Q7 -->
+				<div class="question" data-question="7">
+					<h3>Pick the attribute you value most</h3>
+					<div class="answers">
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="messi"><span class="wojak-badge">🇦🇷</span><span class="answer-text">Vision and decision-making.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="ronaldo"><span class="wojak-badge">🇵🇹</span><span class="answer-text">Mentality and killer instinct.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neymar"><span class="wojak-badge">🇧🇷</span><span class="answer-text">Creativity and flair.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="haaland"><span class="wojak-badge">🇳🇴</span><span class="answer-text">Power and movement.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="modric"><span class="wojak-badge">🇭🇷</span><span class="answer-text">Composure and balance.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="van_dijk"><span class="wojak-badge">🇳🇱</span><span class="answer-text">Authority and timing.</span><span class="chevron">›</span></button>
+					</div>
+				</div>
 
-  <!-- Enhanced Why Zinvana Section -->
-  <section id="why-zinvana">
-    <h2><i class="fas fa-crown"></i> Why Zinvana's Quiz Leads the Pack</h2>
-    <ul>
-      <li><strong><i class="fas fa-microscope"></i> Deep Psychological Analysis:</strong> Our quiz uses advanced personality profiling to deliver incredibly accurate results that truly reflect your football identity.</li>
-      <li><strong><i class="fas fa-palette"></i> Immersive Experience:</strong> Custom animations, interactive elements, and stunning visuals create an engaging journey from start to finish.</li>
-      <li><strong><i class="fas fa-unlock"></i> Completely Free:</strong> No hidden costs, no email required, no paywalls. Just pure football personality discovery.</li>
-      <li><strong><i class="fas fa-certificate"></i> Expert-Crafted Content:</strong> Developed by football analysts and sports psychologists for authentic, meaningful insights.</li>
-      <li><strong><i class="fas fa-mobile-alt"></i> Perfect on Any Device:</strong> Seamlessly optimized for desktop, tablet, and mobile with lightning-fast loading.</li>
-    </ul>
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="#test" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: var(--primary-gradient); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: var(--transition);">
-        <i class="fas fa-rocket"></i>
-        Discover Your Football Persona Now
-      </a>
-    </div>
-  </section>
+				<!-- Q8 -->
+				<div class="question" data-question="8">
+					<h3>How do you prefer to win games?</h3>
+					<div class="answers">
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="de_bruyne"><span class="wojak-badge">🇧🇪</span><span class="answer-text">Control transitions and create high-xG chances.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="salah"><span class="wojak-badge">🇪🇬</span><span class="answer-text">Quick counters and ruthless execution.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="messi"><span class="wojak-badge">🇦🇷</span><span class="answer-text">Suffocate with possession and surgical breakthroughs.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="ronaldo"><span class="wojak-badge">🇵🇹</span><span class="answer-text">Outlast opponents then punish mistakes late.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="van_dijk"><span class="wojak-badge">🇳🇱</span><span class="answer-text">Keep a clean sheet and capitalize on set pieces.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neuer"><span class="wojak-badge">🇩🇪</span><span class="answer-text">High line with proactive goalkeeping and buildup.</span><span class="chevron">›</span></button>
+					</div>
+				</div>
 
-<!-- Enhanced FAQ Section -->
-<section id="faq">
-  <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
-  
-  <div class="test-text">
-    <strong><i class="fas fa-info-circle"></i> What is the Football Personality Quiz?</strong>
-    Our comprehensive quiz analyzes your playing style, tactical preferences, and psychological traits to match you with one of 12 distinct football archetypes, each representing legendary players and their unique approaches to the game.
-  </div>
-  
-  <div class="test-text">
-    <strong><i class="fas fa-dollar-sign"></i> Is the quiz completely free?</strong>
-    Absolutely! 100% free with no hidden costs, email requirements, or premium upgrades. We believe everyone deserves to discover their football identity without barriers.
-  </div>
-  
-  <div class="test-text">
-    <strong><i class="fas fa-clock"></i> How long does the quiz take?</strong>
-    The quiz features 15 engaging multiple-choice questions and typically takes 3-5 minutes to complete. Each question is designed to reveal different aspects of your football personality.
-  </div>
-  
-  <div class="test-text">
-    <strong><i class="fas fa-redo-alt"></i> Can I retake the quiz for different results?</strong>
-    Definitely! Hit the "Retake Quiz" button after seeing your results to explore different outcomes or see how consistent your football identity is across multiple attempts.
-  </div>
-  
-  <div class="test-text">
-    <strong><i class="fas fa-share-alt"></i> Can I share my results?</strong>
-    Yes! Use our built-in sharing feature to create a beautiful image of your results and share your football persona with friends on social media or save it for yourself.
-  </div>
-</section>
+				<!-- Q9 -->
+				<div class="question" data-question="9">
+					<h3>Off the pitch, you're most likely to…</h3>
+					<div class="answers">
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="modric"><span class="wojak-badge">🇭🇷</span><span class="answer-text">Study the game and take care of recovery and routine.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neymar"><span class="wojak-badge">🇧🇷</span><span class="answer-text">Enjoy social life, music, and style—football is culture.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="mbappe"><span class="wojak-badge">🇫🇷</span><span class="answer-text">Hit community events and inspire the next generation.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="ronaldo"><span class="wojak-badge">🇵🇹</span><span class="answer-text">Grind the gym and obsess over marginal gains.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="salah"><span class="wojak-badge">🇪🇬</span><span class="answer-text">Keep humble, family-first, and give back.</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neuer"><span class="wojak-badge">🇩🇪</span><span class="answer-text">Analyze tactics and tech—always learning.</span><span class="chevron">›</span></button>
+					</div>
+				</div>
 
-  <!-- Enhanced Related Articles -->
-  <section id="related-articles">
-    <h2><i class="fas fa-newspaper"></i> Explore More Personality Quizzes</h2>
-    <div class="articles-container">
-      <article class="blog-card">
-        <h3><a href="leaders.html"><i class="fas fa-crown"></i> Which Historical Leader Are You?</a></h3>
-        <p>Discover your leadership style and find out which great historical figure shares your commanding presence and decision-making approach.</p>
-      </article>
-      <article class="blog-card">
-        <h3><a href="squidgame.html"><i class="fas fa-gamepad"></i> Which Squid Game Character Are You?</a></h3>
-        <p>Dive into the psychological depths of the hit series and discover which character's survival instincts and moral compass align with yours.</p>
-      </article>
-    </div>
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="all-articles.html" class="see-more-btn">
-        <i class="fas fa-th-large"></i>
-        View All Personality Quizzes
-      </a>
-    </div>
-  </section>
+				<!-- Q10 -->
+				<div class="question" data-question="10">
+					<h3>Pick a compliment you'd most love to hear</h3>
+					<div class="answers">
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="messi"><span class="wojak-badge">🇦🇷</span><span class="answer-text">“You see things no one else can.”</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="ronaldo"><span class="wojak-badge">🇵🇹</span><span class="answer-text">“You never give up—you're inevitable.”</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="de_bruyne"><span class="wojak-badge">🇧🇪</span><span class="answer-text">“Your passes break the game open.”</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neymar"><span class="wojak-badge">🇧🇷</span><span class="answer-text">“Football looks joyful when you play.”</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="van_dijk"><span class="wojak-badge">🇳🇱</span><span class="answer-text">“You make everyone around you calmer.”</span><span class="chevron">›</span></button>
+						<button class="answer-btn" onclick="selectAnswer(this)" data-wojak="neuer"><span class="wojak-badge">🇩🇪</span><span class="answer-text">“You turn defense into attack in an instant.”</span><span class="chevron">›</span></button>
+					</div>
+				</div>
 
-<!-- Enhanced Footer -->
-<footer>
-  <div class="social-icons">
-    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram">
-      <img src="whiteinsta.png" alt="Instagram" />
-    </a>
-    <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" title="Follow us on X (Twitter)">
-      <img src="whitex.png" alt="X (Twitter)" />
-    </a>
-    <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" title="Subscribe to our YouTube">
-      <img src="youtube.png" alt="YouTube" />
-    </a>
-  </div>
-  <p>
-    © 2025 <span style="background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;">Zinvana</span> — All rights reserved.
-  </p>
-  <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-    <span>Crafted with <span style="color: #f093fb;">❤️</span> for football fans worldwide</span>
-  </div>
-</footer>
- 
-<script>
-// Enhanced progress bar with smooth animations
-function updateProgressBar() {
-  const progressBar = document.getElementById("progress-bar");
-  const progressText = document.getElementById("progress-text");
-  if (!progressBar || !progressText) return;
-  
-  const match = progressText.textContent.match(/Question (\d+) of (\d+)/);
-  if (!match) return;
-  
-  const current = parseInt(match[1], 10);
-  const total = parseInt(match[2], 10);
-  const percent = Math.max(7, Math.round((current / total) * 100));
-  
-  // Smooth progress bar animation
-  progressBar.style.width = percent + "%";
-  
-  // Add glow effect when progressing
-  progressBar.style.boxShadow = `0 0 20px rgba(102, 126, 234, ${percent / 100})`;
-}
+				<!-- Results -->
+				<div class="result" id="result">
+					<div class="wojak-image" id="wojakEmoji"></div>
+					<h2 id="wojakName"></h2>
+					<p id="wojakDescription"></p>
+					<div id="deepAnalysis"></div>
+							<div id="shareRow" style="margin: 14px 0 22px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;"></div>
+					<button class="restart-btn" onclick="restartQuiz()">Take Quiz Again</button>
+				</div>
+			</div>
+		</div>
 
-// Enhanced option selection with smooth interactions
-document.addEventListener("DOMContentLoaded", function() {
-  const answerOptions = document.getElementById("answer-options");
-  if (!answerOptions) return;
-  
-  // Handle radio button changes
-  answerOptions.addEventListener("change", function(e) {
-    if (e.target && e.target.matches('input[type="radio"]')) {
-      // Remove selected class from all options
-      Array.from(answerOptions.children).forEach(li => {
-        li.classList.remove("selected");
-      });
-      
-      // Add selected class to current option
-      const parentLi = e.target.closest("li");
-      if (parentLi) {
-        parentLi.classList.add("selected");
+				<!-- Player Spotlight (like characters-grid) -->
+				<section class="content-section" aria-labelledby="spotlight-title">
+					<div class="section-header">
+						<h2 id="spotlight-title">Player Spotlight: Archetypes at a Glance</h2>
+						<p>A quick visual guide to each archetype with trademark strengths and ideal roles.</p>
+					</div>
+					<div class="characters-grid" id="spotlightGrid"></div>
+				</section>
+
+		<!-- Guide -->
+		<section class="content-section" aria-labelledby="guide-title">
+			<div class="guide-header">
+				<span class="eyebrow">Reference</span>
+				<h2 id="guide-title">Footballer Archetype Guide 2025</h2>
+				<p>Explore each player archetype with traits and quick context. Use search or filters to find a style fast.</p>
+			</div>
+
+			<div class="main-container" style="padding: 0 0 8px;">
+				<div class="guide-toolbar" role="region" aria-label="Guide tools">
+					<div class="search-input">
+						<span class="icon">🔎</span>
+						<input type="search" id="guideSearch" placeholder="Search players, roles, or traits…" aria-label="Search guide" />
+					</div>
+					<div class="filter-chips" aria-label="Filter by tags">
+						<span class="chip active" data-filter="all">All</span>
+						<span class="chip" data-filter="forward">Forward</span>
+						<span class="chip" data-filter="midfielder">Midfielder</span>
+						<span class="chip" data-filter="defender">Defender</span>
+						<span class="chip" data-filter="goalkeeper">Goalkeeper</span>
+						<span class="chip" data-filter="playmaker">Playmaker</span>
+						<span class="chip" data-filter="finisher">Finisher</span>
+						<span class="chip" data-filter="speedster">Speedster</span>
+						<span class="chip" data-filter="leader">Leader</span>
+						<span class="chip" data-filter="creator">Creator</span>
+						<span class="chip" data-filter="dribbler">Dribbler</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="guide-grid" id="guideGrid">
+				<!-- Cards injected from playerData to keep single source of truth -->
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section class="faq-section" aria-labelledby="faq-heading">
+			<div class="main-container">
+				<div class="section-header">
+					<h2 id="faq-heading">Frequently Asked Questions</h2>
+					<p>Detailed answers about how the quiz works, what results mean, and how to use them to improve your game.</p>
+				</div>
+
+				<div class="faq-item">
+					<div class="faq-question" role="button" tabindex="0" aria-expanded="false">How accurate is this quiz?<span>+</span></div>
+					<div class="faq-answer" hidden>
+						<p>This quiz is designed for insight and entertainment rather than clinical diagnosis. It combines:</p>
+						<ul>
+							<li>Simple trait mapping from answers to archetype traits (playstyle, mentality, role).</li>
+							<li>Heuristics based on common player behaviours and coaching literature.</li>
+						</ul>
+						<p>Expect useful directional feedback (strengths, growth areas). Use it alongside coach feedback and objective performance data for best results.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<div class="faq-question" role="button" tabindex="0" aria-expanded="false">What methodology is used to map answers to players?<span>+</span></div>
+					<div class="faq-answer" hidden>
+						<p>For each question, answers are mapped to archetype indicators (e.g. "vision", "finishing", "pace"). The quiz:</p>
+						<ul>
+							<li>Assigns a simple point increment to the archetype most aligned with the chosen answer.</li>
+							<li>Totals points across 10 questions and selects the top-scoring archetype (randomizing ties).</li>
+							<li>Provides qualitative guidance (strengths, drills, roles) from an expert-informed content set.</li>
+						</ul>
+						<p>This approach prioritizes clarity and fast feedback rather than deep psychometrics.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<div class="faq-question" role="button" tabindex="0" aria-expanded="false">Can my result change over time and why?<span>+</span></div>
+					<div class="faq-answer" hidden>
+						<p>Yes — results reflect preferences and tendencies, not fixed labels. Common reasons for change:</p>
+						<ul>
+							<li>Training focus (e.g., working on finishing vs. playmaking).</li>
+							<li>Role changes in your team (position, tactical system).</li>
+							<li>Physical development or injury recovery altering style.</li>
+						</ul>
+						<p>Consider retaking the quiz periodically to track how your archetype evolves.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<div class="faq-question" role="button" tabindex="0" aria-expanded="false">How should I use the result to improve as a player?<span>+</span></div>
+					<div class="faq-answer" hidden>
+						<p>Treat the result as a starting point. Recommended next steps:</p>
+						<ul>
+							<li>Review the suggested drills and incorporate them into weekly sessions.</li>
+							<li>Work on one targeted growth focus at a time (4–6 weeks).</li>
+							<li>Share the result with your coach to align skill work with team tactics.</li>
+						</ul>
+						<p>Combine drills with match analysis and conditioning to convert insights into performance gains.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<div class="faq-question" role="button" tabindex="0" aria-expanded="false">Is any personal data collected or stored?<span>+</span></div>
+					<div class="faq-answer" hidden>
+						<p>NO! We dont store personal data at all. The quiz runs entirely in your browser using JavaScript. No answers or results are sent to any server or third party. Your privacy is fully respected.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<div class="faq-question" role="button" tabindex="0" aria-expanded="false">Why do some answers show the same player across multiple questions?<span>+</span></div>
+					<div class="faq-answer" hidden>
+						<p>Top players are archetype exemplars across multiple traits (e.g., vision, finishing). The quiz maps behaviour patterns, so it's expected that a given player may align with several different questions — that reinforces consistent archetype scoring.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<div class="faq-question" role="button" tabindex="0" aria-expanded="false">How are images and player names handled and attributed?<span>+</span></div>
+					<div class="faq-answer" hidden>
+						<p>Player names and archetype examples are used for illustrative purposes to help you relate to common playing styles. Images included are either licensed assets or generated placeholders. If you have concerns about a specific image, contact the site owner for resolution.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<div class="faq-question" role="button" tabindex="0" aria-expanded="false">I disagree with my result — what can I do?<span>+</span></div>
+					<div class="faq-answer" hidden>
+						<p>Disagreement is normal. Options:</p>
+						<ul>
+							<li>Retake the quiz and answer with how you behave in matches (not how you wish to play).</li>
+							<li>Compare the "Player Spotlight" guide to see neighboring archetypes you might blend with.</li>
+							<li>Share your result with a coach or teammate for external perspective and an action plan.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<div class="faq-question" role="button" tabindex="0" aria-expanded="false">Who can I contact for feedback or bug reports?<span>+</span></div>
+					<div class="faq-answer" hidden>
+						<p>Please use Instagram to reach out to us.</p>
+						<p>We appreciate constructive feedback.</p>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+	</div>
+		
+
+
+	 <!-- Enhanced Professional Footer -->
+    <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); color: #ffffff; margin-top: 80px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>'); z-index: 1;"></div>
         
-        // Add a subtle pulse animation
-        parentLi.style.animation = "pulse 0.3s ease-in-out";
-        setTimeout(() => {
-          parentLi.style.animation = "";
-        }, 300);
-      }
-    }
-  });
-  
-  // Handle clicking on entire option
-  answerOptions.addEventListener("click", function(e) {
-    const li = e.target.closest("li");
-    if (li) {
-      const radio = li.querySelector('input[type="radio"]');
-      if (radio && !radio.checked) {
-        radio.checked = true;
-        radio.dispatchEvent(new Event('change'));
-      }
-    }
-  });
-  
-  // Initialize progress bar
-  updateProgressBar();
-});
+        <div style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 60px 40px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                <img src="zinvanalogo.png" alt="Zinvana" style="width: 50px; height: 50px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);">
+                <h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 16px; font-weight: 600;">Zinvana</h3>
+                <p style="color: #94a3b8; line-height: 1.6; margin: 0; font-size: 1rem; margin-bottom: 20px;">Discover your true self through fun, engaging personality quizzes and assessments. From internet archetypes to personality types, we help you explore different aspects of your personality in an entertaining, educational way.</p>
+                <div style="display: flex; gap: 16px; margin-bottom: 20px;">
+                    <a href="https://x.com/farazglori80528" target="_blank" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#" target="_blank" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    
+                </div>
+                <p style="color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.5;">Stay updated with our latest quizzes and personality assessments!</p>
+            </div>
 
-// Update progress when next button is clicked
-document.addEventListener("DOMContentLoaded", function() {
-  const nextBtn = document.getElementById("next-btn");
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      setTimeout(updateProgressBar, 50);
-    });
-  }
-});
-</script>
+            <div>
+                <h4 style="color: #e2e8f0; font-size: 1.125rem; margin-bottom: 20px; font-weight: 600;">Popular Quizzes</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="leaders.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Historical Leaders Personality Quiz</a></li>
+                    <li style="margin-bottom: 12px;"><a href="football-personality-quiz.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Football Personality Quiz</a></li>
+                    <li style="margin-bottom: 12px;"><a href="wojak-personality-quiz.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Wojak Personality Quiz</a></li>
+                    <li style="margin-bottom: 12px;"><a href="perfect-country.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Perfect Country Quiz</a></li>
+                    <li style="margin-bottom: 12px;"><a href="youtubers-personality-quiz.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">YouTubers Personality Quiz</a></li>
+                </ul>
+            </div>
 
-<script>
-// ─────────────────────────────────────────────────────────────
-// 1) Football–Style Toast Titles & Messages (Squid Game Theme)
-// ─────────────────────────────────────────────────────────────
-const toastTitles = [
-  "Nice Play!",
-  "Siuuuuuu!",
-  "It's MESSIIII!",
-  "Great Move!",
-  "Legendary!",
-  "What a Goal!",
-  "Epic Pass!"
-];
+            <div>
+                <h4 style="color: #e2e8f0; font-size: 1.125rem; margin-bottom: 20px; font-weight: 600;">Resources</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="/about.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
+                    <li style="margin-bottom: 12px;"><a href="/privacy.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a></li>
+                    
+                </ul>
+            </div>
 
-const toastMessages = {
-  tactician: [
-    "Mastermind on the pitch!",
-    "You control the game!",
-    "Every move is calculated."
-  ],
-  machine: [
-    "Unstoppable work ethic!",
-    "Pure determination!",
-    "Goals are your language."
-  ],
-  silent_genius: [
-    "Magic in your boots!",
-    "Silence speaks volumes.",
-    "A true wizard."
-  ],
-  warrior: [
-    "Fierce and relentless!",
-    "You fight till the whistle!",
-    "No one dares stop you."
-  ],
-  magician: [
-    "Unpredictable flair!",
-    "You dazzle the crowd!",
-    "Pure creativity unleashed."
-  ],
-  stoic: [
-    "Quiet consistency!",
-    "You're rock-solid!",
-    "Trustworthy backbone."
-  ],
-  wall: [
-    "Nothing gets past you!",
-    "Impenetrable defense!",
-    "Last line of salvation."
-  ],
-  rocket: [
-    "Explosive speed!",
-    "Blitzing past everyone!",
-    "Pure acceleration!"
-  ],
-  clutch: [
-    "Big-game performer!",
-    "You shine under pressure!",
-    "When it matters most!"
-  ],
-  controller: [
-    "Midfield metronome!",
-    "You keep the rhythm!",
-    "Passing with precision."
-  ],
-  mentor: [
-    "Wisdom on and off pitch!",
-    "You guide the youth!",
-    "Experience speaks loudest."
-  ],
-  joker: [
-    "Full of surprises!",
-    "You keep them guessing!",
-    "Fun and unpredictable."
-  ]
-};
+        </div>
 
-// ─────────────────────────────────────────────────────────────
-// 2) Quiz Data: 15 Questions & 6 Options Each
-// ─────────────────────────────────────────────────────────────
-const footballQuestions = [
-  {
-    question: "1. Under pressure, you...",
-    options: [
-      { text: "Organize and control the team", value: "tactician" },
-      { text: "Push harder and score", value: "machine" },
-      { text: "Weave magic quietly", value: "silent_genius" },
-      { text: "Fight for every ball", value: "warrior" },
-      { text: "Keep calm and recycle possession", value: "stoic" },
-      { text: "Dictate play from deep", value: "controller" }
-    ]
-  },
-  {
-    question: "2. What thrills you most?",
-    options: [
-      { text: "Outsmarting the opponent", value: "tactician" },
-      { text: "Racking up goals", value: "machine" },
-      { text: "A moment of genius", value: "magician" },
-      { text: "A crunching tackle", value: "warrior" },
-      { text: "A last-ditch save", value: "wall" },
-      { text: "A match-winning sprint", value: "rocket" }
-    ]
-  },
-  {
-    question: "3. Your midfield role is...",
-    options: [
-      { text: "Set the tempo", value: "controller" },
-      { text: "Break lines with runs", value: "rocket" },
-      { text: "Link defense to attack", value: "stoic" },
-      { text: "Provide creative spark", value: "magician" },
-      { text: "Organize teammates", value: "mentor" },
-      { text: "Surprise with tricks", value: "joker" }
-    ]
-  },
-  {
-    question: "4. Fans remember you for...",
-    options: [
-      { text: "Tactical genius", value: "tactician" },
-      { text: "Relentless hustle", value: "machine" },
-      { text: "Silent brilliance", value: "silent_genius" },
-      { text: "Fierce determination", value: "warrior" },
-      { text: "Immense composure", value: "wall" },
-      { text: "Last-minute heroics", value: "clutch" }
-    ]
-  },
-  {
-    question: "5. You value most...",
-    options: [
-      { text: "Game intelligence", value: "tactician" },
-      { text: "Physical fitness", value: "machine" },
-      { text: "Technical skill", value: "magician" },
-      { text: "Mental toughness", value: "stoic" },
-      { text: "Leadership", value: "mentor" },
-      { text: "Fun and flair", value: "joker" }
-    ]
-  },
-  {
-    question: "6. In goal, you’d be a...",
-    options: [
-      { text: "Commanding leader", value: "mentor" },
-      { text: "Impenetrable wall", value: "wall" },
-      { text: "Sweeper-keeper", value: "rocket" },
-      { text: "Calm organizer", value: "stoic" },
-      { text: "Counselor and guide", value: "controller" },
-      { text: "Emotional motivator", value: "clutch" }
-    ]
-  },
-  {
-    question: "7. Your signature move is...",
-    options: [
-      { text: "Brilliant through-ball", value: "tactician" },
-      { text: "Explosive sprint & shot", value: "rocket" },
-      { text: "Deceptive dribble", value: "magician" },
-      { text: "Nutmeg surprise", value: "joker" },
-      { text: "Powerful header", value: "machine" },
-      { text: "Last-second tackle", value: "warrior" }
-    ]
-  },
-  {
-    question: "8. You hate...",
-    options: [
-      { text: "Chaos on the pitch", value: "tactician" },
-      { text: "Slacking teammates", value: "machine" },
-      { text: "Predictability", value: "magician" },
-      { text: "Weak effort", value: "stoic" },
-      { text: "Lack of structure", value: "controller" },
-      { text: "Boring matches", value: "joker" }
-    ]
-  },
-  {
-    question: "9. Best compliment you could hear?",
-    options: [
-      { text: "You’re a football brain", value: "tactician" },
-      { text: "You never stop running", value: "machine" },
-      { text: "You’ve got magic feet", value: "magician" },
-      { text: "You’re unbreakable", value: "wall" },
-      { text: "You calm the storm", value: "stoic" },
-      { text: "You lift the team", value: "mentor" }
-    ]
-  },
-  {
-    question: "10. Your pre-game ritual is...",
-    options: [
-      { text: "Studying the opponent", value: "tactician" },
-      { text: "Intense workout", value: "machine" },
-      { text: "Quiet reflection", value: "silent_genius" },
-      { text: "Motivational pep talk", value: "mentor" },
-      { text: "Listening to music", value: "joker" },
-      { text: "Visualization drills", value: "controller" }
-    ]
-  },
-  {
-    question: "11. Your ideal celebration?",
-    options: [
-      { text: "Tactical fist-pump", value: "tactician" },
-      { text: "Explosive roar", value: "machine" },
-      { text: "Silent gaze", value: "silent_genius" },
-      { text: "Dance for the crowd", value: "joker" },
-      { text: "Hug the team", value: "stoic" },
-      { text: "Share a tactic tip", value: "controller" }
-    ]
-  },
-  {
-    question: "12. You dream of...",
-    options: [
-      { text: "Legendary tactics", value: "tactician" },
-      { text: "Goal records", value: "machine" },
-      { text: "Moments of magic", value: "magician" },
-      { text: "Trophy lifts", value: "clutch" },
-      { text: "Building great players", value: "mentor" },
-      { text: "Unpredictable matches", value: "joker" }
-    ]
-  },
-  {
-    question: "13. Your weakness is...",
-    options: [
-      { text: "Overthinking", value: "tactician" },
-      { text: "Burnout risk", value: "machine" },
-      { text: "Shy off-pitch", value: "silent_genius" },
-      { text: "Too jokey", value: "joker" },
-      { text: "Too rigid", value: "controller" },
-      { text: "Too cautious", value: "stoic" }
-    ]
-  },
-  {
-    question: "14. You win by...",
-    options: [
-      { text: "Outthinking opponents", value: "tactician" },
-      { text: "Outworking them", value: "machine" },
-      { text: "Outdancing them", value: "magician" },
-      { text: "Outlasting them", value: "stoic" },
-      { text: "Outmaneuvering them", value: "controller" },
-      { text: "Unexpected flair", value: "joker" }
-    ]
-  },
-  {
-    question: "15. Your football mantra is...",
-    options: [
-      { text: "Tactics win titles", value: "tactician" },
-      { text: "Hard work beats talent", value: "machine" },
-      { text: "Magic makes moments", value: "magician" },
-      { text: "Experience guides youth", value: "mentor" },
-      { text: "Stay unbreakable", value: "wall" },
-      { text: "Surprise everyone", value: "joker" }
-    ]
-  }
-];
+        <div style="position: relative; z-index: 2; border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 30px 40px;">
+            <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <p style="color: #94a3b8; margin: 0; font-size: 0.9rem;">&copy; 2025 Zinvana. All rights reserved.</p>
+                <p style="color: #94a3b8; margin: 0; font-size: 0.9rem;">Made with ❤️ by the Zinvana Team</p>
+            </div>
+            <div style="color: #64748b; font-size: 0.85rem; margin: 20px auto 0; text-align: center; line-height: 1.5; max-width: 600px;">
+                This Footballer Personality Quiz is for educational and entertainment purposes only. Results are based on your responses and should not be considered professional psychological diagnosis or definitive personality assessments. All footballer archetypes and player examples are used for illustrative purposes.
+            </div>
+        </div>
+    </footer>
 
-// ─────────────────────────────────────────────────────────────
-// 3) Scores & Counters Initialization
-// ─────────────────────────────────────────────────────────────
-const scores = {
-  tactician: 0,
-  machine: 0,
-  silent_genius: 0,
-  warrior: 0,
-  magician: 0,
-  stoic: 0,
-  wall: 0,
-  rocket: 0,
-  clutch: 0,
-  controller: 0,
-  mentor: 0,
-  joker: 0
-};
-const toastCounters = {};
-Object.keys(scores).forEach(k => toastCounters[k] = 0);
+	<script>
+		let currentQuestion = 1;
+		let answers = {};
+		const wojakScores = {
+			messi: 0, ronaldo: 0, neymar: 0, mbappe: 0, haaland: 0,
+			modric: 0, de_bruyne: 0, salah: 0, van_dijk: 0, neuer: 0
+		};
 
-// ─────────────────────────────────────────────────────────────
-// 4) DOM Refs & State
-// ─────────────────────────────────────────────────────────────
-let currentQ = 0;
-const progressText      = document.getElementById("progress-text");
-const questionTitle     = document.getElementById("question-title");
-const answerOptions     = document.getElementById("answer-options");
-const nextBtn           = document.getElementById("next-btn");
-const testSection       = document.getElementById("test");
-const resultsSection    = document.getElementById("results");
-const evaluationEl      = document.getElementById("evaluation");
-const recommendationsEl = document.getElementById("recommendations");
-const restartBtn        = document.getElementById("restart-btn");
-const screenshotBtn     = document.getElementById("screenshot-btn");
+		const wojakData = {
+			messi: {
+				name: 'Lionel Messi — The Visionary Playmaker',
+				emoji: '🎨',
+				img: 'messi.jpg',
+				description: 'Creative genius with unmatched decision-making. Controls the game, creates chances, and strikes when it matters.',
+				strengths: ['Vision and tempo control', 'Close control in tight areas', 'Elite chance creation'],
+				challenges: ['Prefers ball to feet', 'May conserve energy for key moments'],
+				roles: ['False 9', 'Right-sided playmaker', 'Classic 10'],
+					growthAdvice: 'Lean into leadership with your voice as well as your actions. Build off-ball movements to complement your on-ball artistry.',
+					drills: ['Rondo in tight spaces (4v2)', 'Wall passes + angle changes', 'Weak-foot receiving + body orientation'],
+					moments: ['Solo slaloms in tight areas', 'Disguised passes splitting low blocks']
+			},
+			ronaldo: {
+				name: 'Cristiano Ronaldo — The Relentless Finisher',
+				emoji: '🗡️',
+				img: 'ronaldo.jpg',
+				description: 'A mentality monster with aerial power and world-class timing. Lives for the decisive moment.',
+				strengths: ['Killer instinct', 'Aerial dominance', 'Work ethic and longevity'],
+				challenges: ['Needs service and structure', 'High usage role'],
+				roles: ['Inside forward', '9/poacher', 'Big-game talisman'],
+					growthAdvice: 'Pair your finishing with pressing triggers and link-play patterns to add modern versatility.',
+					drills: ['Header timing vs. resistance bands', 'Finishing patterns: cut-backs and near-post', 'Press triggers: jump cues from 6/8'],
+					moments: ['Late runs to back post', 'Decisive headers vs. tight marking']
+			},
+			neymar: {
+				name: 'Neymar Jr — The Entertainer',
+				emoji: '✨',
+				img: 'neymar.jpg',
+				description: 'High-skill dribbler with flair and creativity. Breaks defensive shapes and draws attention to create space.',
+				strengths: ['1v1 brilliance', 'Chance creation via chaos', 'Set-piece threat'],
+				challenges: ['Injury management', 'Can overdribble in low-value zones'],
+				roles: ['Left winger', 'Free 10', 'Inverted forward'],
+					growthAdvice: 'Balance flair with final-third ruthlessness—target high-value zones and vary tempo.',
+					drills: ['1v1 boxes with variable gates', 'Stop-start tempo changes', 'Final-third decision games (3-choice)'],
+					moments: ['Drawing 2-3 defenders to free runners', 'Nutmegs into cut-backs']
+			},
+			mbappe: {
+				name: 'Kylian Mbappé — The Electric Speedster',
+				emoji: '⚡',
+				img: 'mbappe.jpg',
+				description: 'Explosive pace and directness. Attacks space behind and punishes high lines relentlessly.',
+				strengths: ['Acceleration', 'Runs in behind', 'Transition finishing'],
+				challenges: ['Can drift when isolated', 'Prefers open-field conditions'],
+				roles: ['Right/left winger', 'Inside forward', 'Second striker'],
+					growthAdvice: 'Add layers of combination play and pressing intensity to dominate compact defenses.',
+					drills: ['Timing runs vs. back line (offside trap)', '2v1 break patterns', 'First-touch into shot under pressure'],
+					moments: ['Diagonal runs from wide to central channel', 'Early shots before keeper sets']
+			},
+			haaland: {
+				name: 'Erling Haaland — The Machine',
+				emoji: '🤖',
+				img: 'haaland.jpg',
+				description: 'Direct, powerful, devastating in the box. Elite movement and first-time finishing.',
+				strengths: ['Power and pace', 'Instinctive positioning', 'One-touch finishing'],
+				challenges: ['Limited touches outside box', 'Reliant on supply'],
+				roles: ['9', 'Target runner', 'Poacher'],
+					growthAdvice: 'Develop layoff and wall-pass patterns to involve yourself between lines.',
+					drills: ['One-touch finishing from varied angles', 'Near-post vs. far-post movement cues', 'Back-to-goal layoffs under contact'],
+					moments: ['First-time finishes from cut-backs', 'Near-post darts vs. static CBs']
+			},
+			modric: {
+				name: 'Luka Modrić — The Metronome',
+				emoji: '🧭',
+				img: 'modric.jpg',
+				description: 'Composed organizer who links phases and sets rhythm. Press resistant with elite scanning.',
+				strengths: ['Balance and control', 'Press resistance', 'Game management'],
+				challenges: ['Not a pure destroyer', 'Relies on team structure'],
+				roles: ['8/6 hybrid', 'Deep playmaker', 'Transitional hub'],
+					growthAdvice: 'Keep sharpening scanning habits and leadership cues—mentor others through composure.',
+					drills: ['Scanning cadence with constraints', 'Rondo with touch/turn limits', 'Switch-of-play under time pressure'],
+					moments: ['Third-man combinations', 'Tempo shifts to break presses']
+			},
+			de_bruyne: {
+				name: 'Kevin De Bruyne — The Quarterback',
+				emoji: '🎯',
+				img: 'debruyne.jpg',
+				description: 'Vertical passer and chance creator from half-spaces. Devastating in transition.',
+				strengths: ['Through balls', 'Early crosses', 'Late arrivals to box'],
+				challenges: ['High-risk passing can turn over', 'Peak output needs runners'],
+				roles: ['Advanced 8', 'Attacking mid', 'Right half-space creator'],
+					growthAdvice: 'Add recycling patterns versus low blocks to balance your verticality.',
+					drills: ['Half-space crossing targets', 'Transition waves (3v2/4v3)', 'Arrival timing from zone 14'],
+					moments: ['Whipped crosses behind back line', 'Laser through-balls in transition']
+			},
+			salah: {
+				name: 'Mohamed Salah — The Precision Cutter',
+				emoji: '🔪',
+				img: 'salah.jpg',
+				description: 'Elite diagonal runs and left-foot finishing. Intelligent movement to maximize value shots.',
+				strengths: ['Runs off shoulder', 'Left-foot finishing', 'Work rate and pressing'],
+				challenges: ['Prefers certain zones', 'Right-foot variety limited'],
+				roles: ['Right winger', 'Inside forward'],
+					growthAdvice: 'Keep refining weaker-foot patterns and combinations to stay unpredictable.',
+					drills: ['Weak-foot finish series', 'In-to-out diagonal runs', 'Press-and-pounce transitions'],
+					moments: ['Inside cuts to left-foot curlers', 'Back-shoulder runs vs. high line']
+			},
+			van_dijk: {
+				name: 'Virgil van Dijk — The Wall',
+				emoji: '🧱',
+				img: 'vandijk.jpg',
+				description: 'Commanding defender with elite timing and calm leadership. Neutralizes threats and organizes the line.',
+				strengths: ['Aerial and ground duels', 'Positioning', 'Leadership'],
+				challenges: ['High line exposes pace if unsupported'],
+				roles: ['CB leader', 'Set-piece weapon'],
+					growthAdvice: 'Keep communication loud and early—mentor fullbacks and 6 for compactness.',
+					drills: ['1v1 isolation duels', 'Aerial timing ladders', 'Line coordination with offside trap'],
+					moments: ['Shoulder-to-shoulder recoveries', 'Dominant clearances under pressure']
+			},
+			neuer: {
+				name: 'Manuel Neuer — The Sweeper Keeper',
+				emoji: '🧤',
+				img: 'neuer.jpg',
+				description: 'Revolutionary GK who plays as an extra defender. Starts attacks and erases counters early.',
+				strengths: ['Sweeping', 'Distribution', 'Shot-stopping in clutch moments'],
+				challenges: ['Risk in high starting positions'],
+				roles: ['GK', 'Build-up initiator'],
+					growthAdvice: 'Maintain risk calibration with defensive line and develop set-piece command routines.',
+					drills: ['High-line starting positions', 'Laser passes to fullbacks/6', '1v1 spread saves timing'],
+					moments: ['Sweeper interceptions in acres', 'Quick throws to launch counters']
+			}
+		};
 
-// ─────────────────────────────────────────────────────────────
-// 5) Display Question
-// ─────────────────────────────────────────────────────────────
-function displayQuestion() {
-  const q = footballQuestions[currentQ];
-  progressText.textContent = `Question ${currentQ+1} of ${footballQuestions.length}`;
-  questionTitle.textContent = q.question;
-  answerOptions.innerHTML = "";
-  q.options.forEach(opt => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <label>
-        <input type="radio" name="q${currentQ}" value="${opt.value}" />
-        ${opt.text}
-      </label>`;
-    answerOptions.appendChild(li);
-  });
-  
-  // Update progress bar with smooth animation
-  updateProgressBar();
-}
+		// Utilities to ensure every player has an image
+		function getInitials(name) {
+			if (!name) return '??';
+			const plain = String(name).replace(/\s+—.+$/, ''); // drop subtitle after dash
+			const parts = plain.trim().split(/\s+/);
+			const first = (parts[0]||'')[0]||'';
+			const second = (parts[1]||'')[0]||'';
+			return (first + second).toUpperCase();
+		}
+		function hueFromString(s) {
+			let h = 0;
+			for (let i=0; i<s.length; i++) h = (h*31 + s.charCodeAt(i)) % 360;
+			return h;
+		}
+		function getPlaceholderImg(name) {
+			const initials = getInitials(name||'');
+			const h = hueFromString(name||'player');
+			const bg = `hsl(${h},65%,60%)`;
+			const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='128' height='128'>
+				<defs><filter id='s' x='-50%' y='-50%' width='200%' height='200%'><feDropShadow dx='0' dy='2' stdDeviation='2' flood-color='rgba(0,0,0,0.2)'/></filter></defs>
+				<rect width='100%' height='100%' rx='64' ry='64' fill='${bg}'/>
+				<text x='50%' y='58%' text-anchor='middle' font-family='Segoe UI, Roboto, Arial' font-weight='700' font-size='54' fill='white' filter='url(#s)'>${initials}</text>
+			</svg>`;
+			return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+		}
+		function getImgSrc(data) {
+			return (data && data.img) ? data.img : getPlaceholderImg(data?.name||'');
+		}
 
-// ─────────────────────────────────────────────────────────────
-// 6) Toast Helpers
-// ─────────────────────────────────────────────────────────────
-function showToast(msg) {
-  const toastEl = document.getElementById("toast");
-  document.getElementById("toast-title").textContent = toastTitles[Math.floor(Math.random()*toastTitles.length)];
-  document.getElementById("toast-subtitle").textContent = msg;
-  toastEl.classList.remove("hidden");
-  void toastEl.offsetWidth;
-  toastEl.classList.add("show");
-  setTimeout(() => {
-    toastEl.classList.remove("show");
-    setTimeout(() => toastEl.classList.add("hidden"), 500);
-  }, 2000);
-}
-function showToastFor(val) {
-  const msgs = toastMessages[val] || ["Nice!"];
-  let idx = toastCounters[val]++;
-  if (idx >= msgs.length) idx = msgs.length - 1;
-  showToast(msgs[idx]);
-}
+		function getAvatarHTML(data) {
+			return `<img src="${getImgSrc(data)}" alt="${data.name}">`;
+		}
 
-// ─────────────────────────────────────────────────────────────
-// 7) Next Button Logic
-// ─────────────────────────────────────────────────────────────
-nextBtn.addEventListener("click", () => {
-  const choice = document.querySelector(`input[name="q${currentQ}"]:checked`);
-  if (!choice) return alert("Please select an answer.");
-  scores[choice.value]++;
-  showToastFor(choice.value);
-  currentQ++;
-  setTimeout(() => {
-    if (currentQ < footballQuestions.length) {
-      displayQuestion();
-    } else {
-      evaluateResults();
-    }
-  }, 500);
-});
+		function selectAnswer(button) {
+			const wojak = button.getAttribute('data-wojak');
+			answers[currentQuestion] = wojak;
+			if (wojak in wojakScores) {
+				wojakScores[wojak]++;
+			}
 
-// ─────────────────────────────────────────────────────────────
-// 8) Evaluate & Display Results
-// ─────────────────────────────────────────────────────────────
-function evaluateResults() {
-  testSection.classList.add("hidden");
-  resultsSection.classList.remove("hidden");
+			updateProgress();
 
-  const top = Object.entries(scores).sort((a,b) => b[1] - a[1])[0][0];
-  const data = {
-    tactician:    { title:"The Tactical Genius", player:"Pep Guardiola", image:"pep.jpg",      tagline:"Every pass has a purpose.",             description:"You see the game several moves ahead. Calm, composed, and analytical.", strengths:"Strategic, composed, precise.", improvement:"Trust spontaneity at times.", recommendations:"Coaching, midfield play.", quote:"To control the game is to control time." },
-    machine:      { title:"The Relentless Machine", player:"Cristiano Ronaldo", image:"ronaldo.jpg", tagline:"Work. Win. Repeat.",                description:"Driven by results. You push yourself beyond limits.", strengths:"Focused, determined, elite mindset.", improvement:"Connect more emotionally.", recommendations:"Striker, fitness leadership.", quote:"Your love makes me strong. Your hate makes me unstoppable." },
-    silent_genius:{ title:"The Silent Maestro",    player:"Lionel Messi",     image:"messi.jpg",    tagline:"Let the ball do the talking.",     description:"Quiet off pitch, magical on it. Actions speak louder than words.", strengths:"Humble, genius, efficient.", improvement:"Speak up sometimes.", recommendations:"Playmaker roles, quiet leadership.", quote:"You have to fight to reach your dream. You have to sacrifice and work hard for it." },
-    warrior:      { title:"The Warrior",           player:"Gennaro Gattuso",  image:"gattuso.jpg",  tagline:"Fierce, Unyielding, Passionate.", description:"You bring intensity and grit to every play, never backing down.", strengths:"Determined, fearless, motivational.", improvement:"Temper aggression with strategy.", recommendations:"Defensive midfield, team spirit roles.", quote:"Heart over talent every day." },
-    magician:     { title:"The Magician",          player:"Ronaldinho",       image:"ronaldinho.jpg",tagline:"Creativity Unleashed.",            description:"Your flair and unpredictability leave opponents spellbound.", strengths:"Creative, joyful, inspirational.", improvement:"Focus consistency.", recommendations:"Attacking midfield, entertainment roles.", quote:"Play with joy and the rest follows." },
-    stoic:        { title:"The Stoic Maestro",     player:"N'Golo Kanté",     image:"kante.jpg",     tagline:"Consistency & Humility.",           description:"Quietly dominant, you excel through unwavering consistency and selflessness.", strengths:"Reliable, humble, effective.", improvement:"Show your emotion more.", recommendations:"Defensive midfield, team foundation.", quote:"Let my work speak." },
-    wall:         { title:"The Wall",              player:"Gianluigi Buffon", image:"buffon.jpg",   tagline:"Last Line of Defense.",            description:"Nothing gets past you; you’re the ultimate guardian.", strengths:"Reliable, commanding, fearless.", improvement:"Lead the defense vocally.", recommendations:"Goalkeeping, defensive leadership.", quote:"Fearless between the posts." },
-    rocket:       { title:"The Rocket",            player:"Kylian Mbappé",    image:"mbappe.jpg",    tagline:"Speed Meets Skill.",              description:"Explosive pace and precision, you outrun all.", strengths:"Fast, clinical, dynamic.", improvement:"Balance speed with control.", recommendations:"Winger, forward roles.", quote:"Explode at the moment." },
-    clutch:       { title:"The Clutch Performer",  player:"Didier Drogba",     image:"drogba.jpg",    tagline:"Big Moments, Big Impact.",         description:"You rise to the occasion, delivering when it matters most.", strengths:"Composed, brave, decisive.", improvement:"Maintain peak in every match.", recommendations:"Striker, big-game roles.", quote:"Rise when the world needs you." },
-    controller:   { title:"The Controller",        player:"Sergio Busquets",  image:"busquets.jpg", tagline:"Midfield Metronome.",              description:"You dictate tempo and control space with effortless passing.", strengths:"Positioning, vision, composure.", improvement:"Add more forward thrust.", recommendations:"Deep-lying playmaker roles.", quote:"Control the game, control the result." },
-    mentor:       { title:"The Mentor",            player:"Philipp Lahm",      image:"lahm.jpg",      tagline:"Wisdom & Leadership.",            description:"Veteran presence guiding young talent.", strengths:"Leadership, intelligence, adaptability.", improvement:"Enjoy spontaneity more.", recommendations:"Captaincy, coaching roles.", quote:"Lead by example every day." },
-    joker:        { title:"The Joker",             player:"Jamie Vardy",      image:"vardy.jpg",     tagline:"Wildcard Entertainer.",           description:"Unpredictable, fun, always surprising.", strengths:"Versatility, flair, surprise factor.", improvement:"Focus energy strategically.", recommendations:"Super-sub, impact roles.", quote:"Expect the unexpected." }
-  };
+			if (currentQuestion < 10) {
+				nextQuestion();
+			} else {
+				showResults();
+			}
+		}
 
-  const r = data[top];
-  evaluationEl.innerHTML = `
-    <div class="result-section">
-      <h3>${r.title} — ${r.player}</h3>
-      <img src="${r.image}" alt="${r.player}" class="character-image">
-      <p><strong>${r.tagline}</strong></p>
-      <p>${r.description}</p>
-    </div>`;
-  recommendationsEl.innerHTML = `
-    <div class="result-section">
-      <h3>Strengths</h3><p>${r.strengths}</p>
-      <h3>Room for Improvement</h3><p>${r.improvement}</p>
-      <h3>Ideal Roles</h3><p>${r.recommendations}</p>
-      <h3>Quote</h3><p>"${r.quote}"</p>
-    </div>`;
-}
+		function nextQuestion() {
+			const currentEl = document.querySelector(`[data-question="${currentQuestion}"]`);
+			if (currentEl) currentEl.classList.remove('active');
+			currentQuestion++;
+			const nextEl = document.querySelector(`[data-question="${currentQuestion}"]`);
+			if (nextEl) nextEl.classList.add('active');
+			document.getElementById('questionNumber').textContent = currentQuestion;
+			const topNum = document.getElementById('questionNumberTop');
+			if (topNum) topNum.textContent = currentQuestion;
+		}
 
-// ─────────────────────────────────────────────────────────────
-// 9) Restart & Screenshot
-// ─────────────────────────────────────────────────────────────
-restartBtn.addEventListener("click", () => {
-  currentQ = 0;
-  Object.keys(scores).forEach(k => scores[k] = 0);
-  Object.keys(toastCounters).forEach(k => toastCounters[k] = 0);
-  resultsSection.classList.add("hidden");
-  testSection.classList.remove("hidden");
-  displayQuestion();
-});
-screenshotBtn.addEventListener("click", () => {
-  html2canvas(document.getElementById("results")).then(canvas => {
-    canvas.toBlob(blob => {
-      const file = new File([blob], "football-results.png", { type: "image/png" });
-      if (navigator.share && navigator.canShare({ files:[file] })) {
-        navigator.share({ title:"My Football Personality", text:"Check out my result!", files:[file] });
-      } else {
-        const link = document.createElement("a");
-        link.download = "football-results.png";
-        link.href = canvas.toDataURL();
-        link.click();
-      }
-    });
-  });
-});
+		function updateProgress() {
+			const progress = Math.min(100, Math.round((currentQuestion / 10) * 100));
+			const bar = document.getElementById('progressBar');
+			bar.style.width = progress + '%';
+			bar.setAttribute('aria-valuenow', String(progress));
+			const label = document.getElementById('progressLabel');
+			if (label) label.textContent = progress + '%';
+		}
 
+		function showResults() {
+			// Determine max
+			let maxScore = -1;
+			let resultWojak = 'messi';
+			for (const key in wojakScores) {
+				if (wojakScores[key] > maxScore) {
+					maxScore = wojakScores[key];
+					resultWojak = key;
+				}
+			}
+			// Ties
+			const tied = Object.keys(wojakScores).filter(k => wojakScores[k] === maxScore);
+			if (tied.length > 1) {
+				resultWojak = tied[Math.floor(Math.random() * tied.length)];
+			}
 
+			// Hide last question and show result
+			const currentEl = document.querySelector(`[data-question="${currentQuestion}"]`);
+			if (currentEl) currentEl.classList.remove('active');
 
+			const result = wojakData[resultWojak];
+			const avatarDiv = document.getElementById('wojakEmoji');
+			avatarDiv.innerHTML = getAvatarHTML(result);
+			document.getElementById('wojakName').textContent = result.name;
+			document.getElementById('wojakDescription').textContent = result.description;
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const scroller = document.querySelector(".leader-scroll-container");
-    const cards = scroller.querySelectorAll(".leader-card");
-    if (!scroller || cards.length === 0) return;
+			const deepHTML = `
+				<div style="text-align:left; max-width:820px; margin: 18px auto 26px; background:#ffffff; border:1px solid #e8ecf4; border-radius:14px; padding:18px 18px;">
+					<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:14px;">
+						<div>
+							<h4 style="margin:6px 0 6px; color:#1f2937;">Strengths</h4>
+							<ul style="margin:0; padding-left:18px; color:#475569;">
+								${(result.strengths||[]).map(s=>`<li>${s}</li>`).join('')}
+							</ul>
+						</div>
+						<div>
+							<h4 style="margin:6px 0 6px; color:#1f2937;">Growth Focus</h4>
+							<p style="margin:0; color:#475569;">${result.growthAdvice||''}</p>
+						</div>
+						<div>
+							<h4 style="margin:6px 0 6px; color:#1f2937;">Best Roles</h4>
+							<ul style="margin:0; padding-left:18px; color:#475569;">
+								${(result.roles||[]).map(r=>`<li>${r}</li>`).join('')}
+							</ul>
+						</div>
+								<div>
+									<h4 style="margin:6px 0 6px; color:#1f2937;">Suggested Drills</h4>
+									<ul style="margin:0; padding-left:18px; color:#475569;">
+										${(result.drills||[]).map(d=>`<li>${d}</li>`).join('')}
+									</ul>
+								</div>
+								<div>
+									<h4 style="margin:6px 0 6px; color:#1f2937;">Trademark Moments</h4>
+									<ul style="margin:0; padding-left:18px; color:#475569;">
+										${(result.moments||[]).map(m=>`<li>${m}</li>`).join('')}
+									</ul>
+								</div>
+					</div>
+				</div>`;
+			const deepNode = document.getElementById('deepAnalysis');
+			if (deepNode) deepNode.innerHTML = deepHTML;
 
-    // Compute how far to scroll each “step”:
-    // card width + gap (16px in your CSS)
-    const gap = 10;
-    let cardWidth = cards[0].getBoundingClientRect().width + gap;
+			document.getElementById('result').classList.add('active');
+			const bar = document.getElementById('progressBar');
+			bar.style.width = '100%';
+			bar.setAttribute('aria-valuenow', '100');
+			const label = document.getElementById('progressLabel');
+			if (label) label.textContent = '100%';
+			document.title = `You're like ${result.name.split(' — ')[0]}! - Footballer Quiz Results`;
+			setTimeout(()=>{ document.getElementById('result').scrollIntoView({behavior:'smooth', block:'start'}); }, 100);
+			if (typeof trackQuizComplete === 'function') trackQuizComplete(resultWojak);
 
-    // When window resizes, re-calc cardWidth
-    window.addEventListener("resize", () => {
-      cardWidth = cards[0].getBoundingClientRect().width + gap;
-    });
+					// Share links
+					renderShare(resultWojak);
+		}
 
-    let position = 0;
-    const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+		function restartQuiz() {
+			currentQuestion = 1;
+			answers = {};
+			for (const k in wojakScores) wojakScores[k] = 0;
 
-    function autoScroll() {
-      position += cardWidth;
-      // if we've reached (or passed) the end, loop back to start
-      if (position > maxScroll) {
-        position = 0;
-      }
-      scroller.scrollTo({
-        left: position,
-        behavior: "smooth"
-      });
-    }
+			document.getElementById('result').classList.remove('active');
+			const allQ = document.querySelectorAll('.question');
+			allQ.forEach(q => q.classList.remove('active'));
+			const first = document.querySelector('[data-question="1"]');
+			if (first) first.classList.add('active');
+			document.getElementById('questionNumber').textContent = '1';
+			const topNum = document.getElementById('questionNumberTop');
+			if (topNum) topNum.textContent = '1';
+			const label = document.getElementById('progressLabel');
+			if (label) label.textContent = '0%';
+			const bar = document.getElementById('progressBar');
+			if (bar) { bar.style.width = '0%'; bar.setAttribute('aria-valuenow', '0'); }
+			document.getElementById('quizSection').scrollIntoView({ behavior: 'smooth' });
+			if (typeof trackQuizStart === 'function') trackQuizStart();
+					// Clear share row
+					const sr = document.getElementById('shareRow');
+					if (sr) sr.innerHTML = '';
+		}
 
-    // Kick off the loop every 3 seconds (adjust to taste)
-    const intervalId = setInterval(autoScroll, 1500);
+		// Guide population from data
+		function populateGuide() {
+			const grid = document.getElementById('guideGrid');
+			if (!grid) return;
+			grid.innerHTML = '';
+			const tagMap = {
+				messi: 'forward playmaker creator dribbler leader',
+				ronaldo: 'forward finisher leader speedster',
+				neymar: 'forward dribbler creator speedster',
+				mbappe: 'forward speedster finisher',
+				haaland: 'forward finisher',
+				modric: 'midfielder playmaker leader',
+				de_bruyne: 'midfielder playmaker creator',
+				salah: 'forward finisher speedster',
+				van_dijk: 'defender leader',
+				neuer: 'goalkeeper leader'
+			};
+			Object.keys(wojakData).forEach(key => {
+				const d = wojakData[key];
+				const el = document.createElement('article');
+				el.className = 'guide-card';
+				el.setAttribute('data-tags', tagMap[key] || '');
+				el.innerHTML = `
+					<div class="card-head">
+						<div class="avatar"><img src="${getImgSrc(d)}" alt="${d.name}"></div>
+						<h4>${d.name}</h4>
+					</div>
+					<p class="summary">${d.description}</p>
+					<ul class="traits">
+						${(d.strengths||[]).slice(0,3).map(t => `<li>${t}</li>`).join('')}
+					</ul>
+					<a class="guide-cta" href="#quizSection">Get this result</a>
+				`;
+				grid.appendChild(el);
+			});
+		}
 
-    // Optional: pause on hover/touch
-    scroller.addEventListener("mouseenter", () => clearInterval(intervalId));
-    scroller.addEventListener("touchstart", () => clearInterval(intervalId));
-  });
+				// Spotlight population
+				function populateSpotlight() {
+					const grid = document.getElementById('spotlightGrid');
+					if (!grid) return;
+					grid.innerHTML = '';
+					Object.keys(wojakData).forEach(key => {
+						const d = wojakData[key];
+						const card = document.createElement('article');
+						card.className = 'character-card';
+						card.innerHTML = `
+							<div class="character-meta"><img class="character-emoji" src="${getImgSrc(d)}" alt="${d.name}">${d.name}</div>
+							<p>${d.description}</p>
+							<div class="character-meta">Best roles: ${(d.roles||[]).join(', ')}</div>
+						`;
+						grid.appendChild(card);
+					});
+				}
 
+		// Search and filter
+		function applyGuideFilters() {
+			const grid = document.getElementById('guideGrid');
+			const cards = grid ? Array.from(grid.querySelectorAll('.guide-card')) : [];
+			const search = document.getElementById('guideSearch');
+			const term = (search?.value || '').toLowerCase();
+			const activeChip = document.querySelector('.filter-chips .chip.active');
+			const filter = activeChip ? activeChip.getAttribute('data-filter') : 'all';
+			cards.forEach(card => {
+				const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+				const text = card.textContent.toLowerCase();
+				const matchText = !term || text.includes(term);
+				const matchTag = filter === 'all' || tags.includes(filter);
+				card.style.display = matchText && matchTag ? '' : 'none';
+			});
+		}
 
+		// FAQ toggle
+		function wireFAQ() {
+			const items = document.querySelectorAll('.faq-item');
+			items.forEach(item => {
+				const q = item.querySelector('.faq-question');
+				const a = item.querySelector('.faq-answer');
+				if (!q || !a) return;
+				const toggle = () => {
+					const expanded = q.getAttribute('aria-expanded') === 'true';
+					q.setAttribute('aria-expanded', String(!expanded));
+					if (expanded) { a.hidden = true; } else { a.hidden = false; }
+				};
+				q.addEventListener('click', toggle);
+				q.addEventListener('keypress', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }});
+			});
+		}
 
+		// Analytics placeholders
+		function trackQuizStart() {}
+		function trackQuizComplete(resultKey) { console.debug('Quiz complete:', resultKey); }
 
-// ─────────────────────────────────────────────────────────────
-// 10) Initialize Quiz
-// ─────────────────────────────────────────────────────────────
-document.addEventListener("DOMContentLoaded", displayQuestion);
+			// Share links for result
+			function renderShare(key) {
+				const box = document.getElementById('shareRow');
+				if (!box) return;
+				const url = new URL(window.location.href);
+				url.searchParams.set('start','quiz');
+				url.hash = `result=${key}`;
+				const shareUrl = url.toString();
+				const text = encodeURIComponent(`My footballer archetype: ${wojakData[key].name.split(' — ')[0]}`);
+				const tw = `https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(shareUrl)}`;
+				box.innerHTML = `
+					<a href="${tw}" target="_blank" rel="noopener" class="guide-cta">Share on X</a>
+					<button class="guide-cta" onclick="navigator.clipboard.writeText('${shareUrl.replace(/'/g, "%27")}').then(()=>{this.textContent='Link copied!'; setTimeout(()=>this.textContent='Copy result link',1500);})">Copy result link</button>
+				`;
+			}
 
+		document.addEventListener('DOMContentLoaded', () => {
+			populateGuide();
+				populateSpotlight();
+			applyGuideFilters();
+			wireFAQ();
+			// Upgrade answer badges: replace flag emojis with player images
+			Array.from(document.querySelectorAll('.answer-btn .wojak-badge')).forEach(badge => {
+				const btn = badge.closest('button');
+				const key = btn ? btn.getAttribute('data-wojak') : '';
+				const data = key ? wojakData[key] : null;
+				if (data) {
+					badge.innerHTML = `<img src="${getImgSrc(data)}" alt="${data.name}">`;
+				}
+			});
+			const search = document.getElementById('guideSearch');
+			if (search) search.addEventListener('input', applyGuideFilters);
+			const chips = document.querySelectorAll('.filter-chips .chip');
+			chips.forEach(ch => ch.addEventListener('click', () => { chips.forEach(x => x.classList.remove('active')); ch.classList.add('active'); applyGuideFilters(); }));
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    document.querySelectorAll("section, .quiz-card").forEach((el) => {
-      el.classList.add("fade-init");
-      observer.observe(el);
-    });
-  });
-</script>
+			const urlParams = new URLSearchParams(window.location.search);
+			if (urlParams.get('start') === 'quiz') {
+				setTimeout(()=>{ document.getElementById('quizSection').scrollIntoView({behavior:'smooth'}); }, 150);
+				trackQuizStart();
+			}
 
+				// If hash contains a result, show it directly
+				const hash = window.location.hash || '';
+				const match = hash.match(/result=([a-z_]+)/i);
+				if (match && wojakData[match[1]]) {
+					// Jump to result view without answering questions
+					for (const k in wojakScores) wojakScores[k] = 0;
+					wojakScores[match[1]] = 10; // force as winner
+					const allQ = document.querySelectorAll('.question');
+					allQ.forEach(q => q.classList.remove('active'));
+					currentQuestion = 10;
+					showResults();
+				}
+		});
+	</script>
 
-  </body>
+</body>
 </html>
