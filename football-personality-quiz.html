@@ -1215,14 +1215,30 @@
 					const grid = document.getElementById('spotlightGrid');
 					if (!grid) return;
 					grid.innerHTML = '';
+					const filenameMap = {
+						messi: 'lionel_messi.html',
+						ronaldo: 'cristiano_ronaldo.html',
+						neymar: 'neymarjr.html',
+						mbappe: 'mbappe.html',
+						haaland: 'erling_haaland.html',
+						modric: 'luka_modric.html',
+						de_bruyne: 'kevin_debruyne.html',
+						salah: 'mohamed_salah.html',
+						van_dijk: 'virgil_van_dijk.html',
+						neuer: 'manuel_neuer.html'
+					};
+
 					Object.keys(wojakData).forEach(key => {
 						const d = wojakData[key];
+						const link = filenameMap[key] || '#';
 						const card = document.createElement('article');
 						card.className = 'character-card';
 						card.innerHTML = `
-							<div class="character-meta"><img class="character-emoji" src="${getImgSrc(d)}" alt="${d.name}">${d.name}</div>
-							<p>${d.description}</p>
-							<div class="character-meta">Best roles: ${(d.roles||[]).join(', ')}</div>
+							<a class="character-link" href="${link}" style="text-decoration:none;color:inherit;display:block">
+								<div class="character-meta"><img class="character-emoji" src="${getImgSrc(d)}" alt="${d.name}">${d.name}</div>
+								<p>${d.description}</p>
+								<div class="character-meta">Best roles: ${(d.roles||[]).join(', ')}</div>
+							</a>
 						`;
 						grid.appendChild(card);
 					});
