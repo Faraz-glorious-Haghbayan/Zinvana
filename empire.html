@@ -1,3181 +1,1978 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
-        <title>Which Empire Would You Have Thrived In? | Zinvana</title>
-      
-        <!-- SEO Meta Tags -->
-        <meta name="description" content="Take the ultimate empire quiz and find out if you belong in Rome, Persia, the Mongol Horde, or Imperial China. Discover your ancient destiny!" />
-        <meta name="keywords" content="empire quiz, which empire are you, historical quiz, roman empire, persian empire, samurai, mongol horde, personality test" />
-        <meta name="author" content="Zinvana" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://zinvana.com/empires.html" />
-      
-        <!-- Open Graph (for Facebook, LinkedIn) -->
-        <meta property="og:title" content="Which Empire Would You Have Thrived In? | Zinvana" />
-        <meta property="og:description" content="Rome, Persia, the Mongol Horde, or Imperial China? Take this immersive personality test and find your imperial match!" />
-        <meta property="og:image" content="hero.png" />
-        <meta property="og:url" content="https://zinvana.com/empires.html" />
-        <meta property="og:type" content="website" />
-      
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Which Empire Would You Have Thrived In?" />
-        <meta name="twitter:description" content="Discover your historical destiny with our empire personality quiz!" />
-        <meta property="og:image" content="hero.png" />
-        <!-- Structured Data -->
-        <script type="application/ld+json">
-          {
-            "@context": "https://schema.org",
-            "@type": "Quiz",
-            "name": "Which Empire Would You Have Thrived In?",
-            "description": "A personality-based quiz that matches you with one of four legendary empires: Rome, Achaemenid Persia, Imperial China (Samurai), or the Mongol Horde.",
-            "about": [
-              "Roman Empire", 
-              "Achaemenid Persia", 
-              "Samurai Japan", 
-              "Mongol Empire"
-            ],
-            "publisher": {
-              "@type": "Organization",
-              "name": "Zinvana",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://zinvana.com/logo.png"
-              }
-            }
-          }
-        </script>
-      
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
-      
-        <!-- Fonts -->
-        <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-      
-        <!-- html2canvas for Share Screenshot -->
-        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-      
-        <!-- Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H7GCZY7W0"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-3H7GCZY7W0');
-        </script>
-      
-       <style>
-        /* Modern Empire Quiz Styles */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Empire Would You Have Thrived In? | Empire Personality Quiz 2025</title>
+    <meta name="description" content="Take our comprehensive Empire personality quiz to discover which historical empire matches your personality. From Rome to the Mongols, find your imperial destiny with detailed analysis.">
+    <meta name="keywords" content="empire personality quiz, historical empire quiz, roman empire quiz, mongol empire, personality test, which empire am I, imperial quiz">
+    <meta name="author" content="Zinvana">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zinvana.com/empire.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Which Empire Would You Have Thrived In? - Empire Personality Quiz 2025">
+    <meta property="og:description" content="Discover your empire personality type with our comprehensive quiz. From Rome to the Incas, find which historical empire matches your personality.">
+    <meta property="og:image" content="https://zinvana.com/images/empire-quiz.jpg">
+    <meta property="og:url" content="https://zinvana.com/empire.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Which Empire Would You Have Thrived In? - Empire Quiz 2025">
+    <meta name="twitter:description" content="Take our free personality quiz to discover which historical empire represents your ideal civilization.">
+    <meta name="twitter:image" content="https://zinvana.com/images/empire-quiz.jpg">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "Which Empire Would You Have Thrived In? - Empire Personality Quiz",
+        "description": "A comprehensive personality quiz to help you discover which historical empire matches your personality type, values, and strengths.",
+        "author": {
+            "@type": "Organization",
+            "name": "Zinvana"
+        },
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-01-15",
+        "educationalLevel": "General",
+        "interactivityType": "active",
+        "learningResourceType": "Assessment",
+        "typicalAgeRange": "13-99"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --brand1: #667eea;
+            --brand2: #764ba2;
+            --text-strong: #2d3748;
+            --text: #4a5568;
+            --muted: #718096;
+            --surface: #ffffff;
+            --surface-2: #f7fafc;
+            --border: #e2e8f0;
+        }
         * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-          font-family: 'Roboto', sans-serif;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: #333;
-          line-height: 1.6;
-          min-height: 100vh;
-          min-height: calc(var(--vh, 1vh) * 100);
-        }
-
-        /* Navigation */
-        nav {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background: rgba(0, 0, 0, 0.9);
-          backdrop-filter: blur(10px);
-          padding: 15px 30px;
-          position: fixed;
-          width: 100%;
-          top: 0;
-          z-index: 1000;
-          box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-left, .nav-right {
-          display: flex;
-          align-items: center;
-          gap: 25px;
-        }
-
-        nav a {
-          color: white;
-          font-weight: 500;
-          font-size: 1.1rem;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          padding: 8px 15px;
-          border-radius: 25px;
-        }
-
-        nav a:hover {
-          background: rgba(255, 255, 255, 0.1);
-          transform: translateY(-2px);
-        }
-
-        #brand-logo {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-        }
-
-        /* Hero Header */
-        header {
-          background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
-                      url('roman3.jpg') no-repeat center/cover;
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          color: white;
-          position: relative;
-          overflow: hidden;
-        }
-
-        header::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(45deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
-          animation: colorShift 8s ease-in-out infinite;
-        }
-
-        @keyframes colorShift {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.1; }
-        }
-
-        header h1 {
-          font-size: 4rem;
-          font-weight: 700;
-          margin-bottom: 20px;
-          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-          animation: fadeInUp 1s ease-out;
-          position: relative;
-          z-index: 2;
-        }
-
-        #tagline {
-          font-size: 1.4rem;
-          max-width: 800px;
-          margin: 0 auto 40px;
-          opacity: 0.9;
-          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-          animation: fadeInUp 1s ease-out 0.3s both;
-          position: relative;
-          z-index: 2;
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        /* Modern Sections */
-        section {
-          padding: 80px 20px;
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-
-        #intro, #deep-dive {
-          background: white;
-          border-radius: 20px;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-          margin: 40px auto;
-          padding: 60px;
-          backdrop-filter: blur(10px);
-        }
-
-        #intro h2, #deep-dive h2 {
-          color: #2c3e50;
-          font-size: 2.5rem;
-          margin-bottom: 30px;
-          text-align: center;
-          position: relative;
-        }
-
-        #intro h2::after, #deep-dive h2::after {
-          content: '';
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80px;
-          height: 4px;
-          background: linear-gradient(45deg, #667eea, #764ba2);
-          border-radius: 2px;
-        }
-
-        #intro p, #deep-dive p {
-          font-size: 1.2rem;
-          color: #555;
-          margin-bottom: 20px;
-          line-height: 1.8;
-        }
-
-        #intro a {
-          display: inline-block;
-          background: linear-gradient(45deg, #667eea, #764ba2);
-          color: white;
-          padding: 15px 30px;
-          border-radius: 50px;
-          font-weight: 600;
-          font-size: 1.1rem;
-          text-decoration: none;
-          margin-top: 20px;
-          transition: all 0.3s ease;
-          box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        #intro a:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Empire Breakdown Section */
-        #leader-breakdown {
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-          border-radius: 20px;
-          padding: 80px 40px;
-          margin: 60px auto;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        #leader-breakdown h2 {
-          color: #2c3e50;
-          font-size: 2.5rem;
-          text-align: center;
-          margin-bottom: 20px;
-        }
-
-        #leader-breakdown > p {
-          text-align: center;
-          font-size: 1.3rem;
-          color: #666;
-          margin-bottom: 60px;
-        }
-
-        .leader-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 30px;
-          margin: 50px 0;
-        }
-
-        .leader-card {
-          background: white;
-          border-radius: 20px;
-          padding: 30px;
-          text-align: center;
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .leader-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-          transition: left 0.6s ease;
-        }
-
-        .leader-card:hover::before {
-          left: 100%;
-        }
-
-        .leader-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .leader-card img {
-          width: 120px;
-          height: 120px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-bottom: 20px;
-          border: 4px solid #f8f9fa;
-          transition: all 0.3s ease;
-        }
-
-        .leader-card:hover img {
-          border-color: #667eea;
-          transform: scale(1.1);
-        }
-
-        .leader-card h3 {
-          font-size: 1.4rem;
-          color: #2c3e50;
-          margin-bottom: 15px;
-          font-weight: 600;
-        }
-
-        .leader-card p {
-          color: #666;
-          font-size: 1rem;
-          line-height: 1.6;
-        }
-
-        .leader-button-container {
-          text-align: center;
-          margin-top: 40px;
-        }
-
-        .see-more-btn {
-          display: inline-block;
-          background: linear-gradient(45deg, #667eea, #764ba2);
-          color: white;
-          padding: 15px 30px;
-          border-radius: 50px;
-          font-weight: 600;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .see-more-btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Quiz Section */
-        #test {
-          background: white;
-          border-radius: 20px;
-          padding: 0;
-          margin: 60px auto;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-          max-width: 800px;
-        }
-
-        #progress-container {
-          background: #f8f9fa;
-          height: 8px;
-          border-radius: 10px;
-          margin-bottom: 40px;
-          position: relative;
-          overflow: hidden;
-        }
-
-        #progress-text {
-          color: #667eea;
-          font-weight: 600;
-          margin-bottom: 10px;
-          display: block;
-        }
-
-        #question-title {
-          color: #2c3e50;
-          font-size: 1.8rem;
-          margin-bottom: 30px;
-          text-align: center;
-        }
-
-        #answer-options {
-          list-style: none;
-          padding: 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          height: 400px;
-          overflow-y: auto;
-          margin-bottom: 20px;
-        }
-
-        #answer-options li {
-          margin-bottom: 15px;
-        }
-
-        #answer-options label {
-          display: block;
-          background: #f8f9fa;
-          padding: 20px;
-          border-radius: 15px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          border: 2px solid transparent;
-          font-size: 1.1rem;
-        }
-
-        #answer-options label:hover {
-          background: #e9ecef;
-          transform: translateX(5px);
-        }
-
-        #answer-options input[type="radio"] {
-          margin-right: 15px;
-          transform: scale(1.3);
-        }
-
-        #answer-options input[type="radio"]:checked + label,
-        #answer-options label:has(input[type="radio"]:checked) {
-          background: linear-gradient(45deg, #667eea, #764ba2);
-          color: white;
-          border-color: #667eea;
-        }
-
-        #next-btn {
-          background: linear-gradient(45deg, #667eea, #764ba2);
-          color: white;
-          border: none;
-          padding: 15px 40px;
-          border-radius: 50px;
-          font-size: 1.2rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          display: block;
-          margin: 40px auto 0;
-          box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        #next-btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Results Section - Beautiful Modern Design */
-        #results {
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
-          backdrop-filter: blur(20px);
-          border-radius: 30px;
-          box-shadow: 0 25px 80px rgba(0, 0, 0, 0.12);
-          border: 2px solid rgba(255, 255, 255, 0.4);
-          padding: 60px 50px;
-          margin: 60px auto;
-          max-width: 900px;
-          text-align: center;
-          position: relative;
-          overflow: hidden;
-        }
-
-        #results::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: radial-gradient(circle at 50% 0%, rgba(103, 126, 234, 0.1) 0%, transparent 50%);
-          pointer-events: none;
-        }
-
-        #results h2 {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          font-size: 3rem;
-          font-weight: 700;
-          margin-bottom: 40px;
-          position: relative;
-          z-index: 2;
-          text-shadow: none;
-        }
-
-        .result-main-card {
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
-          border-radius: 25px;
-          padding: 50px 40px;
-          margin: 40px 0;
-          border: 2px solid rgba(103, 126, 234, 0.15);
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-          position: relative;
-          overflow: hidden;
-          transition: all 0.3s ease;
-        }
-
-        .result-main-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(103, 126, 234, 0.05), transparent);
-          transition: left 0.8s ease;
-        }
-
-        .result-main-card:hover::before {
-          left: 100%;
-        }
-
-        .result-main-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
-        }
-
-        .character-image {
-          width: 180px;
-          height: 180px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin: 0 auto 30px;
-          display: block;
-          border: 6px solid rgba(103, 126, 234, 0.2);
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-          transition: all 0.3s ease;
-          position: relative;
-          z-index: 2;
-        }
-
-        .character-image:hover {
-          transform: scale(1.05);
-          border-color: rgba(103, 126, 234, 0.4);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .result-title {
-          font-size: 2.2rem;
-          font-weight: 700;
-          color: #2c3e50;
-          margin-bottom: 20px;
-          position: relative;
-        }
-
-        .result-subtitle {
-          font-size: 1.3rem;
-          color: #667eea;
-          font-weight: 600;
-          margin-bottom: 30px;
-          font-style: italic;
-        }
-
-        .result-description {
-          font-size: 1.1rem;
-          line-height: 1.8;
-          color: #555;
-          margin-bottom: 30px;
-          max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .result-stats {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-          gap: 20px;
-          margin: 40px 0;
-          padding: 30px;
-          background: rgba(248, 250, 252, 0.6);
-          border-radius: 20px;
-          border: 1px solid rgba(103, 126, 234, 0.1);
-        }
-
-        .stat-item {
-          text-align: center;
-          padding: 20px;
-          background: white;
-          border-radius: 15px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-          transition: all 0.3s ease;
-        }
-
-        .stat-item:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-value {
-          font-size: 2rem;
-          font-weight: 700;
-          color: #667eea;
-          display: block;
-          margin-bottom: 5px;
-        }
-
-        .stat-label {
-          font-size: 0.9rem;
-          color: #666;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        .result-section {
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.6) 100%);
-          border-radius: 20px;
-          padding: 35px;
-          margin: 30px 0;
-          border: 2px solid rgba(103, 126, 234, 0.1);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-          transition: all 0.3s ease;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .result-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, #667eea, #764ba2);
-          border-radius: 2px 2px 0 0;
-        }
-
-        .result-section:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-          border-color: rgba(103, 126, 234, 0.2);
-        }
-
-        .result-section h3 {
-          font-size: 1.5rem;
-          color: #2c3e50;
-          margin-bottom: 15px;
-          font-weight: 600;
-        }
-
-        .result-section p {
-          font-size: 1.05rem;
-          line-height: 1.7;
-          color: #555;
-          margin: 0;
-        }
-
-        .results-actions {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 15px;
-          margin-top: 50px;
-          padding-top: 30px;
-          border-top: 2px solid rgba(103, 126, 234, 0.1);
-        }
-
-        #restart-btn, #screenshot-btn {
-          background: linear-gradient(45deg, #667eea, #764ba2);
-          color: white;
-          border: none;
-          padding: 15px 30px;
-          border-radius: 50px;
-          font-weight: 600;
-          font-size: 1.1rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          margin: 10px;
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-          text-decoration: none;
-          position: relative;
-          overflow: hidden;
-        }
-
-        #restart-btn::before, #screenshot-btn::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-          transition: left 0.6s ease;
-        }
-
-        #restart-btn:hover::before, #screenshot-btn:hover::before {
-          left: 100%;
-        }
-
-        #restart-btn:hover, #screenshot-btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-          background: linear-gradient(45deg, #5a6fd8, #6a4c96);
-        }
-
-        #restart-btn:active, #screenshot-btn:active {
-          transform: translateY(-1px);
-          box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Toast Notification */
-        #toast {
-          position: fixed;
-          top: 100px;
-          right: 20px;
-          background: white;
-          border-radius: 15px;
-          padding: 20px;
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          transform: translateX(400px);
-          transition: all 0.5s ease;
-          z-index: 1001;
-        }
-
-        #toast.show {
-          transform: translateX(0);
-        }
-
-        #toast.hidden {
-          display: none;
-        }
-
-        .toast-icon img {
-          width: 40px;
-          height: 40px;
-        }
-
-        .toast-title {
-          font-weight: 600;
-          color: #2c3e50;
-        }
-
-        .toast-subtitle {
-          color: #666;
-          font-size: 0.9rem;
-        }
-
-        /* FAQ Section */
-        #faq {
-          background: white;
-          border-radius: 20px;
-          padding: 60px;
-          margin: 60px auto;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        .test-title {
-          color: #2c3e50;
-          font-size: 2.5rem;
-          text-align: center;
-          margin-bottom: 50px;
-        }
-
-        .test-text {
-          background: #f8f9fa;
-          padding: 25px;
-          border-radius: 15px;
-          margin-bottom: 20px;
-          border-left: 4px solid #667eea;
-        }
-
-        .test-text strong {
-          color: #2c3e50;
-          font-size: 1.1rem;
-        }
-
-        .test-text ul {
-          margin: 15px 0;
-          padding-left: 20px;
-        }
-
-        .test-text li {
-          margin: 8px 0;
-          list-style: disc;
-        }
-
-        /* Resources Section */
-        #resources {
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-          border-radius: 20px;
-          padding: 60px;
-          margin: 60px auto;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        #resources h2 {
-          color: #2c3e50;
-          font-size: 2rem;
-          text-align: center;
-          margin-bottom: 30px;
-        }
-
-        #resources ul {
-          list-style: none;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 15px;
-        }
-
-        #resources li {
-          background: white;
-          padding: 20px;
-          border-radius: 10px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
-        }
-
-        #resources li:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        #resources a {
-          color: #667eea;
-          font-weight: 500;
-          text-decoration: none;
-        }
-
-        #resources a:hover {
-          color: #764ba2;
-        }
-
-        /* Empire Links Grid */
-        .empire-links-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 25px;
-          margin: 40px 0;
-        }
-
-        .empire-link-card {
-          background: white;
-          border-radius: 15px;
-          padding: 30px;
-          text-align: center;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-          transition: all 0.3s ease;
-          border: 2px solid transparent;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .empire-link-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-          transition: left 0.6s ease;
-        }
-
-        .empire-link-card:hover::before {
-          left: 100%;
-        }
-
-        .empire-link-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-          border-color: #667eea;
-        }
-
-        .empire-icon {
-          font-size: 3rem;
-          margin-bottom: 15px;
-          display: block;
-        }
-
-        .empire-link-card h3 {
-          margin: 15px 0;
-          font-size: 1.3rem;
-          color: #2c3e50;
-        }
-
-        .empire-link-card h3 a {
-          color: #667eea;
-          text-decoration: none;
-          font-weight: 600;
-          transition: color 0.3s ease;
-        }
-
-        .empire-link-card h3 a:hover {
-          color: #764ba2;
-        }
-
-        .empire-link-card p {
-          color: #666;
-          font-size: 1rem;
-          line-height: 1.6;
-          margin: 0;
-        }
-
-        /* Footer */
-        footer {
-          background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-          color: white;
-          padding: 60px 20px 40px;
-          text-align: center;
-        }
-
-        footer .container {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .social-icons {
-          display: flex;
-          justify-content: center;
-          gap: 20px;
-          margin-top: 30px;
-        }
-
-        .social-icons img {
-          width: 40px;
-          height: 40px;
-          transition: all 0.3s ease;
-          filter: brightness(0.8);
-        }
-
-        .social-icons img:hover {
-          transform: scale(1.2);
-          filter: brightness(1);
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-          header h1 {
-            font-size: 2.5rem;
-          }
-          
-          #tagline {
-            font-size: 1.1rem;
-          }
-          
-          section {
-            padding: 40px 15px;
-          }
-          
-          #intro, #deep-dive, #test, #results, #faq, #resources {
-            padding: 40px 30px;
-            margin: 30px 15px;
-          }
-          
-          .leader-grid {
-            grid-template-columns: 1fr;
-            gap: 20px;
-          }
-          
-          nav {
-            padding: 10px 20px;
-          }
-          
-          .nav-left, .nav-right {
-            gap: 15px;
-          }
-          
-          nav a {
-            font-size: 1rem;
-            padding: 6px 12px;
-          }
-        }
-
-        /* Utility Classes */
-        .hidden {
-          display: none !important;
-        }
-
-        .text-center {
-          text-align: center;
-        }
-
-        .mb-20 {
-          margin-bottom: 20px;
-        }
-
-        .mt-20 {
-          margin-top: 20px;
-        }
-
-        /* Additional Professional Enhancements */
-        
-        /* Enhanced animations and micro-interactions */
-        @keyframes pulse {
-          0% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-          100% { transform: scale(1); }
-        }
-        
-        @keyframes slideInFromBottom {
-          from {
-            opacity: 0;
-            transform: translateY(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes glow {
-          0%, 100% { box-shadow: 0 8px 25px rgba(103, 126, 234, 0.3); }
-          50% { box-shadow: 0 8px 35px rgba(103, 126, 234, 0.5); }
-        }
-
-        /* Intersection Observer animations */
-        .animate-on-scroll {
-          opacity: 0;
-          transform: translateY(30px);
-          transition: all 0.6s ease;
-        }
-        
-        .animate-on-scroll.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        
-        /* Enhanced touch interactions */
-        @media (hover: none) and (pointer: coarse) {
-          .empire-link-card, .leader-card, .resource-link {
-            transform: none;
-          }
-          
-          .empire-link-card:active, .leader-card:active, .resource-link:active {
-            transform: scale(0.98);
-            transition: transform 0.1s ease;
-          }
-          
-          #next-btn:active, .cta-button:active {
-            transform: scale(0.95);
-          }
-          
-          nav a:active {
-            background: rgba(255, 255, 255, 0.2);
-          }
-        }
-        
-        /* Better focus states for accessibility */
-        button:focus-visible, a:focus-visible, input:focus-visible {
-          outline: 3px solid rgba(103, 126, 234, 0.6);
-          outline-offset: 2px;
-        }
-        
-        /* Improved loading states */
-        .loading {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .loading::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, 
-            transparent, 
-            rgba(255, 255, 255, 0.4), 
-            transparent
-          );
-          animation: shimmer 2s infinite;
-        }
-        
-        @keyframes shimmer {
-          0% { left: -100%; }
-          100% { left: 100%; }
-        }
-        
-        /* Enhanced typography hierarchy */
-        h1, h2, h3, h4, h5, h6 {
-          line-height: 1.3;
-          font-weight: 600;
-        }
-        
-        h2 {
-          font-size: clamp(1.8rem, 4vw, 2.5rem);
-          margin-bottom: 1.5rem;
-          color: #2c3e50;
-          text-align: center;
-        }
-        
-        h3 {
-          font-size: clamp(1.2rem, 3vw, 1.6rem);
-          margin-bottom: 1rem;
-          color: #34495e;
-        }
-        
-        p {
-          line-height: 1.7;
-          margin-bottom: 1rem;
-          font-size: clamp(1rem, 2vw, 1.1rem);
-        }
-        
-        #question-title {
-          background: linear-gradient(135deg, #667eea, #764ba2);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          font-weight: 700;
-          text-align: center;
-          margin-bottom: 30px;
-          height: 80px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-        
-        /* Better visual hierarchy for sections */
-        section {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        #question-container {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          padding: 20px 40px;
-          overflow: hidden;
-        }
-        
-        /* Better visual hierarchy for sections */
-        section {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 2px;
-          background: linear-gradient(90deg, 
-            transparent, 
-            rgba(103, 126, 234, 0.3), 
-            transparent
-          );
-        }
-        
-        /* Enhanced card hover effects */
-        .empire-link-card, .leader-card {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .empire-link-card::before, .leader-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, 
-            transparent, 
-            rgba(103, 126, 234, 0.1), 
-            transparent
-          );
-          transition: left 0.5s ease;
-        }
-        
-        .empire-link-card:hover::before, .leader-card:hover::before {
-          left: 100%;
-        }
-        
-        /* Improved button states */
-        #next-btn:disabled {
-          background: #bdc3c7;
-          cursor: not-allowed;
-          transform: none;
-          box-shadow: none;
-        }
-        
-        /* Better spacing and rhythm */
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-        }
-        
-        /* Enhanced empire icons */
-        .empire-icon {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-          filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
-          transition: transform 0.3s ease;
-        }
-        
-        .empire-link-card:hover .empire-icon {
-          transform: scale(1.1) rotate(5deg);
-        }
-        
-        /* Improved toast positioning and styling */
-        #toast {
-          position: fixed;
-          top: 20px;
-          right: 20px;
-          max-width: 350px;
-          z-index: 10000;
-          border-radius: 15px;
-          padding: 20px;
-          transform: translateX(400px);
-          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        #toast.show {
-          transform: translateX(0);
-        }
-        
-        /* Better progress indicator */
-        #progress-container {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        #progress-container::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 3px;
-          background: rgba(255, 255, 255, 0.3);
-          width: var(--progress, 0%);
-          transition: width 0.3s ease;
-        }
-        
-        /* Enhanced scrollbar styling */
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, 0.1);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-          background: linear-gradient(135deg, #667eea, #764ba2);
-          border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(135deg, #764ba2, #667eea);
-        }
-        
-        /* Header improvements */
-        header {
-          background: url('roman3.jpg') no-repeat center/cover;
-          min-height: 85vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          position: relative;
-          overflow: hidden;
-        }
-
-        header::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(135deg, rgba(103, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
-        }
-
-        header h1, header #tagline {
-          position: relative;
-          z-index: 2;
-        }
-
-        header h1 {
-          font-size: clamp(2.5rem, 6vw, 4.5rem);
-          font-weight: 700;
-          color: white;
-          text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
-          margin-bottom: 20px;
-          animation: fadeInUp 1s ease-out;
-        }
-
-        #tagline {
-          font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-          color: rgba(255, 255, 255, 0.95);
-          max-width: 900px;
-          text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-          animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        /* Section styling improvements */
-        #intro, #deep-dive, #leader-breakdown, #faq, #resources {
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(10px);
-          border-radius: 20px;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Brand logo styling */
-        #brand-logo {
-          height: 35px;
-          width: auto;
-          margin-right: 15px;
-          filter: brightness(1.1);
-          transition: transform 0.3s ease;
-        }
-
-        #brand-logo:hover {
-          transform: scale(1.1);
-        }
-
-        /* Enhanced quiz section */
-        #test {
-          background: rgba(255, 255, 255, 0.98);
-          backdrop-filter: blur(15px);
-          border-radius: 25px;
-          box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-          border: 2px solid rgba(255, 255, 255, 0.3);
-          height: 650px;
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-        }
-
-        #progress-container {
-          background: linear-gradient(90deg, #667eea, #764ba2);
-          color: white;
-          padding: 15px 25px;
-          border-radius: 20px 20px 0 0;
-          margin: -40px -40px 0 -40px;
-          text-align: center;
-          font-weight: 600;
-          font-size: 1.1rem;
-          flex-shrink: 0;
-          height: 60px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        #next-btn {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: white;
-          border: none;
-          padding: 15px 40px;
-          border-radius: 50px;
-          font-size: 1.1rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 8px 25px rgba(103, 126, 234, 0.3);
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          flex-shrink: 0;
-          height: 60px;
-          margin: 0 auto 20px auto;
-        }
-
-        #next-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 12px 35px rgba(103, 126, 234, 0.4);
-        }
-
-        #next-btn:active {
-          transform: translateY(0);
-        }
-
-        /* Answer options improvements */
-        #answer-options li {
-          margin-bottom: 15px;
-          transition: all 0.3s ease;
-        }
-
-        #answer-options label {
-          display: block;
-          background: rgba(255, 255, 255, 0.8);
-          border: 2px solid rgba(103, 126, 234, 0.2);
-          border-radius: 15px;
-          padding: 20px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          font-size: 1.05rem;
-          position: relative;
-          overflow: hidden;
-        }
-
-        #answer-options label::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(103, 126, 234, 0.1), transparent);
-          transition: left 0.5s ease;
-        }
-
-        #answer-options label:hover {
-          background: rgba(103, 126, 234, 0.05);
-          border-color: rgba(103, 126, 234, 0.4);
-          transform: translateX(5px);
-        }
-
-        #answer-options label:hover::before {
-          left: 100%;
-        }
-
-        #answer-options input[type="radio"] {
-          width: 20px;
-          height: 20px;
-          margin-right: 15px;
-          accent-color: #667eea;
-        }
-
-        /* Results section improvements */
-        #results {
-          background: rgba(255, 255, 255, 0.98);
-          backdrop-filter: blur(15px);
-          border-radius: 25px;
-          box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-          border: 2px solid rgba(255, 255, 255, 0.3);
-          padding: 40px;
-          text-align: center;
-          max-width: 900px;
-          margin: 60px auto;
-        }
-        
-        #results h2 {
-          background: linear-gradient(135deg, #667eea, #764ba2);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          font-size: clamp(2rem, 5vw, 3rem);
-          margin-bottom: 40px;
-          font-weight: 700;
-        }
-
-        .result-section {
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
-          border-radius: 25px;
-          padding: 40px;
-          margin: 30px 0;
-          border: 1px solid rgba(103, 126, 234, 0.1);
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-          position: relative;
-          overflow: hidden;
-          transition: all 0.3s ease;
-        }
-        
-        .result-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, #667eea, #764ba2);
-          border-radius: 25px 25px 0 0;
-        }
-        
-        .result-section:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-        }
-        
-        .result-section h3 {
-          background: linear-gradient(135deg, #667eea, #764ba2);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          font-size: clamp(1.5rem, 4vw, 2rem);
-          margin-bottom: 20px;
-          font-weight: 700;
-        }
-        
-        .result-section h4 {
-          color: #2c3e50;
-          font-size: 1.3rem;
-          margin: 25px 0 15px 0;
-          font-weight: 600;
-          position: relative;
-        }
-        
-        .result-section h4::after {
-          content: '';
-          position: absolute;
-          bottom: -5px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 50px;
-          height: 2px;
-          background: linear-gradient(90deg, #667eea, #764ba2);
-          border-radius: 1px;
-        }
-        
-        .result-section p {
-          color: #555;
-          font-size: 1.1rem;
-          line-height: 1.7;
-          margin-bottom: 20px;
-          text-align: left;
-        }
-
-        .character-image {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin: 30px auto 25px auto;
-          display: block;
-          border: 5px solid rgba(103, 126, 234, 0.3);
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
-          position: relative;
-        }
-        
-        .character-image:hover {
-          transform: scale(1.05);
-          border-color: rgba(103, 126, 234, 0.6);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-        
-        .character-image::after {
-          content: '';
-          position: absolute;
-          top: -10px;
-          left: -10px;
-          right: -10px;
-          bottom: -10px;
-          border: 2px solid transparent;
-          border-radius: 50%;
-          background: linear-gradient(45deg, #667eea, #764ba2) border-box;
-          -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-          -webkit-mask-composite: destination-out;
-          mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-          mask-composite: exclude;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-        
-        .character-image:hover::after {
-          opacity: 1;
-        }        /* Button improvements */
-        #restart-btn, #screenshot-btn {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: white;
-          border: none;
-          padding: 15px 30px;
-          border-radius: 50px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          margin: 15px 10px;
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          box-shadow: 0 8px 25px rgba(103, 126, 234, 0.3);
-          font-size: 1.1rem;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          position: relative;
-          overflow: hidden;
-        }
-        
-        #restart-btn::before, #screenshot-btn::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-          transition: left 0.5s ease;
-        }
-        
-        #restart-btn:hover::before, #screenshot-btn:hover::before {
-          left: 100%;
-        }
-        
-        #restart-btn:hover, #screenshot-btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 15px 35px rgba(103, 126, 234, 0.4);
-        }
-        
-        .results-actions {
-          margin-top: 40px;
-          padding-top: 30px;
-          border-top: 2px solid rgba(103, 126, 234, 0.1);
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 10px;
-        }
-        
-        /* Enhanced results animations */
-        .result-section {
-          animation: slideInFromBottom 0.6s ease-out;
-        }
-        
-        .result-section:nth-child(2) {
-          animation-delay: 0.2s;
-          animation-fill-mode: both;
-        }
-        
-        .result-section:nth-child(3) {
-          animation-delay: 0.4s;
-          animation-fill-mode: both;
-        }
-        
-        /* Results stats styling */
-        .result-stats {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          gap: 20px;
-          margin: 30px 0;
-          padding: 25px;
-          background: linear-gradient(135deg, rgba(103, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-          border-radius: 15px;
-          border: 1px solid rgba(103, 126, 234, 0.1);
-        }
-        
-        .stat-item {
-          text-align: center;
-          padding: 15px;
-        }
-        
-        .stat-value {
-          font-size: 2rem;
-          font-weight: 700;
-          background: linear-gradient(135deg, #667eea, #764ba2);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          display: block;
-          margin-bottom: 5px;
-        }
-        
-        .stat-label {
-          font-size: 0.9rem;
-          color: #666;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-        
-        /* Results summary card */
-        .results-summary {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: white;
-          padding: 30px;
-          border-radius: 20px;
-          margin: 30px 0;
-          text-align: center;
-          box-shadow: 0 15px 40px rgba(103, 126, 234, 0.3);
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .results-summary::before {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-          transform: rotate(45deg);
-          animation: shimmer 3s infinite;
-        }
-        
-        .results-summary h3 {
-          color: white !important;
-          font-size: 1.5rem;
-          margin-bottom: 15px;
-          position: relative;
-          z-index: 2;
-        }
-        
-        .results-summary p {
-          color: rgba(255, 255, 255, 0.9) !important;
-          font-size: 1.1rem;
-          position: relative;
-          z-index: 2;
-          text-align: center;
-        }
-
-        /* FAQ section improvements */
-        .test-text {
-          background: rgba(255, 255, 255, 0.7);
-          border-radius: 15px;
-          padding: 25px;
-          margin: 20px 0;
-          border-left: 4px solid #667eea;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-          transition: all 0.3s ease;
-        }
-
-        .test-text:hover {
-          transform: translateX(5px);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .test-text strong {
-          color: #667eea;
-          font-size: 1.1rem;
-        }
-
-        /* Footer improvements */
-        footer {
-          background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-          color: white;
-          text-align: center;
-          padding: 50px 20px;
-          margin-top: 60px;
-          position: relative;
-          overflow: hidden;
-        }
-
-        footer::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-
-        .social-icons {
-          display: flex;
-          justify-content: center;
-          gap: 20px;
-          margin-top: 20px;
-        }
-
-        .social-icons a {
-          transition: transform 0.3s ease;
-        }
-
-        .social-icons a:hover {
-          transform: translateY(-3px) scale(1.1);
-        }
-
-        .social-icons img {
-          width: 35px;
-          height: 35px;
-          filter: brightness(1.1);
-        }
-
-        /* Toast notification improvements */
-        #toast {
-          background: linear-gradient(135deg, rgba(103, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Mobile responsiveness improvements */
-        
-        /* Extra small devices (phones, 576px and down) */
-        @media (max-width: 575px) {
-          body {
-            font-size: 14px;
-          }
-          
-          nav {
-            padding: 8px 15px;
-            flex-wrap: wrap;
-          }
-          
-          .nav-left, .nav-right {
-            gap: 10px;
-          }
-          
-          .nav-left {
-            flex-wrap: wrap;
-          }
-          
-          nav a {
-            font-size: 0.9rem;
-            padding: 5px 10px;
-          }
-          
-          #brand-logo {
-            height: 25px;
-          }
-          
-          header {
-            min-height: 60vh;
-            padding: 0 15px;
-          }
-          
-          header h1 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-          }
-          
-          #tagline {
-            font-size: 1rem;
-            padding: 0 10px;
-          }
-          
-          section {
-            margin: 20px 15px;
-            padding: 20px;
-          }
-          
-          .empire-links-grid {
-            grid-template-columns: 1fr;
-            gap: 12px;
-          }
-          
-          .empire-link-card {
-            padding: 15px;
-          }
-          
-          .empire-icon {
-            font-size: 1.8rem;
-          }
-          
-          .leader-grid {
-            grid-template-columns: 1fr;
-            gap: 15px;
-          }
-          
-          .leader-card {
-            padding: 15px;
-          }
-          
-          .leader-card img {
-            width: 60px;
-            height: 60px;
-          }
-          
-          #test {
-            padding: 0;
-            height: 550px;
-          }
-          
-          #question-container {
-            padding: 20px;
-            height: 100%;
-          }
-          
-          #answer-options {
-            height: 320px;
-          }
-          
-          #progress-container {
-            margin: 0;
-            height: 50px;
-          }
-          
-          #question-title {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-          }
-          
-          #answer-options label {
-            padding: 15px;
-            font-size: 1rem;
-          }
-          
-          #next-btn {
-            padding: 12px 25px;
-            font-size: 1rem;
-            width: 100%;
-          }
-          
-          .cta-button {
-            padding: 12px 25px;
-            font-size: 1rem;
-            width: 100%;
-            text-align: center;
-          }
-          
-          .resource-grid {
-            grid-template-columns: 1fr;
-            gap: 15px;
-          }
-          
-          .resource-link {
-            padding: 15px;
-          }
-          
-          .test-text {
-            padding: 20px;
-            margin: 15px 0;
-          }
-          
-          #restart-btn, #screenshot-btn {
-            padding: 12px 25px;
-            font-size: 1rem;
-            width: 100%;
-            margin: 8px 0;
-          }
-          
-          .character-image {
-            width: 100px;
-            height: 100px;
-          }
-          
-          .result-section {
-            padding: 25px 20px;
-            margin: 20px 0;
-          }
-          
-          .results-actions {
-            flex-direction: column;
-            align-items: center;
-          }
-          
-          .social-icons {
-            gap: 15px;
-          }
-          
-          .social-icons img {
-            width: 30px;
-            height: 30px;
-          }
-        }
-
-        /* Small devices (landscape phones, 576px and up) */
-        @media (min-width: 576px) and (max-width: 767px) {
-          nav {
-            padding: 10px 20px;
-          }
-          
-          .nav-left, .nav-right {
-            gap: 12px;
-          }
-          
-          nav a {
-            font-size: 0.95rem;
-            padding: 6px 12px;
-          }
-          
-          #brand-logo {
-            height: 28px;
-          }
-          
-          header {
-            min-height: 65vh;
-            padding: 0 20px;
-          }
-          
-          header h1 {
-            font-size: 2.5rem;
-          }
-          
-          #tagline {
-            font-size: 1.1rem;
-          }
-          
-          section {
-            margin: 25px 20px;
-            padding: 22px;
-          }
-          
-          .empire-links-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-          }
-          
-          .leader-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-          }
-          
-          .resource-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-          }
-        }
-
-        /* Medium devices (tablets, 768px and up) */
-        @media (min-width: 768px) and (max-width: 991px) {
-          nav {
-            padding: 12px 25px;
-          }
-          
-          .nav-left, .nav-right {
-            gap: 18px;
-          }
-          
-          nav a {
-            font-size: 1rem;
-            padding: 7px 14px;
-          }
-          
-          #brand-logo {
-            height: 32px;
-          }
-          
-          header {
-            min-height: 70vh;
-            padding: 0 25px;
-          }
-          
-          section {
-            margin: 30px 25px;
-            padding: 25px;
-          }
-          
-          .empire-links-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-          }
-          
-          .leader-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-          }
-          
-          .resource-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-          }
-        }
-
-        /* Large devices (desktops, 992px and up) */
-        @media (min-width: 992px) and (max-width: 1199px) {
-          .empire-links-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-          }
-          
-          .leader-grid {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-          }
-          
-          .resource-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-          }
-        }
-
-        /* Extra large devices (large desktops, 1200px and up) */
-        @media (min-width: 1200px) {
-          .empire-links-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-          }
-          
-          .leader-grid {
-            grid-template-columns: repeat(5, 1fr);
-            gap: 25px;
-          }
-          
-          .resource-grid {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-          }
-          
-          section {
-            max-width: 1200px;
-            margin: 40px auto;
-          }
-        }
-
-        /* Ultra wide screens (1400px and up) */
-        @media (min-width: 1400px) {
-          section {
-            max-width: 1400px;
-          }
-          
-          .empire-links-grid {
-            grid-template-columns: repeat(4, 1fr);
-          }
-          
-          .leader-grid {
-            grid-template-columns: repeat(5, 1fr);
-          }
-        }
-
-        /* Landscape orientation adjustments */
-        @media (orientation: landscape) and (max-height: 500px) {
-          header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-          }
-          
-          header h1 {
-            font-size: 2rem;
-          }
-          
-          #tagline {
+            color: #333;
+            padding-top: 80px;
+            scroll-behavior: smooth !important;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(25px);
+            padding: 16px 32px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.6), transparent);
+        }
+        
+        nav .nav-left,
+        nav .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        nav a {
+            color: #cbd5e1;
+            font-weight: 500;
             font-size: 1rem;
-          }
+            position: relative;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        nav a:hover {
+            color: #f8fafc;
+            background: rgba(99, 102, 241, 0.15);
+            transform: translateY(-1px);
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        nav a:hover::after {
+            width: 80%;
+        }
+        nav img#brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+            transition: transform 0.3s ease;
+        }
+        nav img#brand-logo:hover {
+            transform: scale(1.05);
         }
 
-        /* Print styles */
-        @media print {
-          nav, footer, #toast {
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-section {
+            padding: 72px 0 40px;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1400px;
+            height: 1400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+        .hero-section > * {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            letter-spacing: -0.03em;
+            margin-bottom: 14px;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            font-weight: 800;
+        }
+        .hero-section .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.98;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+        .hero-section .description {
+            max-width: 720px;
+            margin: 0 auto;
+            opacity: 0.95;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .quiz-container {
+            background: var(--surface);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            overflow: hidden;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.5);
+            backdrop-filter: saturate(120%) blur(4px);
+        }
+
+        .quiz-container {
+            padding: 40px 30px;
+        }
+
+        .question {
             display: none;
-          }
-          
-          body {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .question.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .answers {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .answer-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+            border: 2px solid #e5e9f0;
+            padding: 20px 24px 20px 60px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.05rem;
+            font-weight: 500;
+            line-height: 1.4;
+            text-align: left;
+            color: var(--text-strong);
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+
+        .answer-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102,126,234,0.02) 0%, rgba(118,75,162,0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .answer-btn:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-color: var(--brand1);
+            box-shadow: 0 8px 32px rgba(102,126,234,0.15), 0 3px 12px rgba(0,0,0,0.08);
+            transform: translateY(-2px) scale(1.01);
+        }
+
+        .answer-btn:hover::before {
+            opacity: 1;
+        }
+
+        .answer-btn:active {
+            transform: translateY(-1px) scale(1.005);
+            transition: all 0.15s ease;
+        }
+
+        .answer-btn:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.3), 0 8px 32px rgba(102,126,234,0.15);
+            border-color: var(--brand1);
+        }
+
+        .answer-btn .answer-text {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        /* Image badge on choices */
+        .answer-btn .empire-badge {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #dde4ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            z-index: 3;
+            font-size: 1.1rem;
+        }
+        .answer-btn .empire-badge img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .answer-btn:hover .empire-badge {
+            border-color: var(--brand1);
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5ff 100%);
+            box-shadow: 0 4px 16px rgba(102,126,234,0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .answer-btn:hover .empire-badge img {
+            transform: scale(1.05);
+        }
+
+        /* Chevron */
+        .answer-btn .chevron {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(160,174,192,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0aec0;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+        .answer-btn:hover .chevron {
+            background: rgba(102,126,234,0.15);
+            color: var(--brand1);
+            transform: translateY(-50%) translateX(3px) scale(1.1);
+        }
+
+        .option {
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            background: #edf2f7;
+            transform: translateY(-2px);
+        }
+
+        .option.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            animation: selectedPulse 0.8s ease-in-out;
+            position: relative;
+        }
+
+        .option.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            animation: checkmarkAppear 0.3s ease-out;
+        }
+
+        @keyframes checkmarkAppear {
+            0% { opacity: 0; transform: scale(0.5) rotate(-45deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        @keyframes selectedPulse {
+            0% { transform: translateY(-2px) scale(1.02); }
+            50% { transform: translateY(-2px) scale(1.05); }
+            100% { transform: translateY(-2px) scale(1.02); }
+        }
+
+        .content-section {
             background: white;
-            color: black;
-          }
-          
-          section {
+            padding: 70px 0;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 32px rgba(102,126,234,0.08);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-header h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: #6b7280;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .progress-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .progress {
+            background: #e9ecef;
+            height: 10px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(135deg, var(--brand1), var(--brand2));
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .result {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .result.active {
+            display: block;
+        }
+
+        .empire-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            background: radial-gradient(100% 100% at 50% 0%, #ffffff 0%, #f1f5ff 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 6px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            overflow: hidden;
+        }
+        .empire-image img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .empire-image::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: conic-gradient(from 180deg, var(--brand1), var(--brand2));
+            z-index: -1;
+        }
+
+        .result h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .result p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+
+        .restart-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .question-counter {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 36px;
+            margin-top: 44px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafd 0%, #f3f6fb 100%);
+            padding: 36px 32px;
+            border-radius: 16px;
+            text-align: center;
+            border: 2px solid #e8ecf4;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand1), var(--brand2));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(102,126,234,0.15);
+            border-color: var(--brand1);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 3.2rem;
+            margin-bottom: 22px;
+            filter: drop-shadow(0 2px 8px rgba(102,126,234,0.1));
+        }
+
+        .feature-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-card p {
+            color: #5a6c7d;
+            line-height: 1.65;
+            font-size: 1.02rem;
+        }
+
+        .quiz-header {
+            background: linear-gradient(135deg, var(--brand1), var(--brand2));
+            color: white;
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .quiz-header h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .quiz-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .faq-section {
+            background: linear-gradient(135deg, #f8fafd 0%, #f3f6fb 100%);
+            padding: 70px 0;
+            margin-top: 64px;
+            border-radius: 20px;
+            box-shadow: 0 4px 32px rgba(102,126,234,0.08);
+        }
+
+        .faq-item {
             background: white;
-            box-shadow: none;
-            border: 1px solid #ccc;
-          }
+            margin-bottom: 18px;
+            border-radius: 12px;
+            border: 2px solid #e8ecf4;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        /* High DPI displays */
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-          img {
-            image-rendering: -webkit-optimize-contrast;
-          }
+        .faq-item:hover {
+            border-color: var(--brand1);
+            box-shadow: 0 4px 16px rgba(102,126,234,0.08);
         }
 
-        /* Accessibility improvements */
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
-          
-          html {
-            scroll-behavior: auto;
-          }
+        .faq-question {
+            padding: 24px 28px;
+            font-weight: 700;
+            color: #2d3748;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            transition: background 0.2s ease;
         }
 
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-          body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-          }
-          
-          #intro, #deep-dive, #leader-breakdown, #faq, #resources {
-            background: rgba(30, 30, 30, 0.95);
-            color: #e0e0e0;
-          }
-          
-          .test-text {
-            background: rgba(40, 40, 40, 0.8);
-            color: #e0e0e0;
-          }
-          
-          #answer-options label {
-            background: rgba(40, 40, 40, 0.8);
-            color: #e0e0e0;
-            border-color: rgba(103, 126, 234, 0.3);
-          }
+        .faq-question:hover {
+            background: #f8fafd;
         }
 
-        /* Smooth scrolling for the entire page */
-        html {
-          scroll-behavior: smooth;
+        .faq-question span {
+            font-size: 1.4rem;
+            color: var(--brand1);
+            font-weight: 400;
         }
 
-        /* Improved link styling */
-        a {
-          color: #667eea;
-          text-decoration: none;
-          transition: all 0.3s ease;
+        .faq-answer {
+            padding: 0 28px 24px;
+            color: #5a6c7d;
+            line-height: 1.7;
+            font-size: 1.02rem;
         }
 
-        a:hover {
-          color: #764ba2;
+        .cta-section {
+            background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 72px 0;
+            text-align: center;
+            margin-top: 64px;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(102,126,234,0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* CTA Button styling */
-        .cta-button {
-          display: inline-block;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: white !important;
-          padding: 15px 30px;
-          border-radius: 50px;
-          font-weight: 600;
-          font-size: 1.1rem;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          box-shadow: 0 8px 25px rgba(103, 126, 234, 0.3);
-          transition: all 0.3s ease;
-          margin-top: 20px;
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: translateX(-50%);
+            pointer-events: none;
         }
 
-        .cta-button:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 12px 35px rgba(103, 126, 234, 0.4);
-          color: white !important;
+        .cta-section > * {
+            position: relative;
+            z-index: 1;
         }
 
-        /* Loading animation for images */
-        img {
-          transition: opacity 0.3s ease;
+        .cta-section h3 {
+            font-size: 2.3rem;
+            margin-bottom: 18px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
-        /* Resource grid styling */
-        .resource-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 20px;
-          margin-top: 30px;
+        .cta-section p {
+            font-size: 1.15rem;
+            opacity: 0.97;
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
 
-        .resource-link {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          background: rgba(255, 255, 255, 0.8);
-          border: 2px solid rgba(103, 126, 234, 0.2);
-          border-radius: 15px;
-          padding: 20px;
-          transition: all 0.3s ease;
-          text-decoration: none;
-          color: #333;
+        .empire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 44px;
         }
 
-        .resource-link:hover {
-          background: rgba(103, 126, 234, 0.05);
-          border-color: rgba(103, 126, 234, 0.4);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-          color: #667eea;
+        .empire-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+            border: 2px solid #e8ecf4;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
         }
 
-        .resource-icon {
-          font-size: 1.5rem;
-          min-width: 30px;
+        .empire-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(102,126,234,0.12);
+            border-color: var(--brand1);
         }
-       </style>
-      </head>
-      
-<body>
 
-    <!-- Top Navigation -->
-    <nav>
-      <div class="nav-left">
-        <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
-        <a href="index.html">Home</a>
-        <a href="#test">Test</a>
-      </div>
-      <div class="nav-right">
-        <a href="help.html">Help</a>
-      </div>
-    </nav>
-  
-    <header>
-      <h1>Which Empire Would You Have Thrived In?</h1>
-      <div id="tagline">
-        Were you destined for Rome, Persia, the Mongol Horde, the Ottoman Sublime, British Dominions, Mughal Splendor, Aztec Ceremony, or Inca Engineering?
-      </div>
-    </header>
-    
-    <!-- Introduction -->
-    <section id="intro">
-      <h2>✨ Discover Your Imperial Calling</h2>
-      <p>
-        Ever wondered where your talents and temperament would have shone brightest among the great empires of history? In our free <strong>Empire Quiz</strong>, you’ll answer a series of questions to find out whether you’d excel as a Roman Citizen, an Achaemenid Noble, a Samurai Scholar, a Mongol Raider, an Ottoman Vizier, a British Admiral, a Mughal Patron, an Aztec Warrior, or an Inca Engineer.
-      </p>
-      <p>
-        From the engineering marvels of Rome to the cultural fusion of the Ottomans, the naval innovations of Britain, the marble gardens of the Mughals, the steppe tactics of the Mongols, the ritual genius of the Aztecs, and the mountain roads of the Incas—your answers will reveal your ideal imperial home.
-      </p>
-      <a href="#test" class="cta-button">🎯 Start Your Imperial Journey</a>
-    </section>
-    
-    <!-- Deep Dive into Empires -->
-    <section id="deep-dive">
-      <h2>Deep Dive into the Great Empires</h2>
-      <p>Explore what made each civilization unique:</p>
-      <div class="empire-links-grid">
-        <a href="romanempire.html" class="empire-link-card">
-          <div class="empire-icon">🏛️</div>
-          <h3>Roman Empire</h3>
-          <p>Masters of engineering, law, and urban planning</p>
-        </a>
-        <a href="achaemenidempire.html" class="empire-link-card">
-          <div class="empire-icon">👑</div>
-          <h3>Achaemenid Persia</h3>
-          <p>Visionary administration and cultural tolerance</p>
-        </a>
-        <a href="tokugawashogunate.html" class="empire-link-card">
-          <div class="empire-icon">🎎</div>
-          <h3>Tokugawa Shogunate</h3>
-          <p>Guardians of tradition, discipline, and cultural refinement</p>
-        </a>
-        <a href="mongolempire.html" class="empire-link-card">
-          <div class="empire-icon">🏹</div>
-          <h3>Mongol Empire</h3>
-          <p>Unmatched mobility, strategy, and adaptability</p>
-        </a>
-        <a href="ottoman.html" class="empire-link-card">
-          <div class="empire-icon">🕌</div>
-          <h3>Ottoman Empire</h3>
-          <p>Architects of grand domes, courtly diplomacy, and multi-faith tolerance</p>
-        </a>
-        <a href="british.html" class="empire-link-card">
-          <div class="empire-icon">⚓</div>
-          <h3>British Empire</h3>
-          <p>Pioneers of naval power, industry, and global administration</p>
-        </a>
-        <a href="mughal.html" class="empire-link-card">
-          <div class="empire-icon">🏰</div>
-          <h3>Mughal Empire</h3>
-          <p>Patrons of art, marble marvels, and garden symmetry</p>
-        </a>
-        <a href="aztec.html" class="empire-link-card">
-          <div class="empire-icon">🌺</div>
-          <h3>Aztec Empire</h3>
-          <p>Innovators of floating gardens, monumental pyramids, and ceremonial rites</p>
-        </a>
-        <a href="inca.html" class="empire-link-card">
-          <div class="empire-icon">⛰️</div>
-          <h3>Inca Empire</h3>
-          <p>Engineers of mountain roads, terraced farms, and centralized bureaucracy</p>
-        </a>
-      </div>
-      <p>Click any link to learn more about each empire’s history, achievements, and legacy.</p>
-    </section>
-    
-    <!-- Empire Breakdown -->
-    <section id="leader-breakdown">
-      <h2>🔍 Empire Breakdown: Which One Suits You?</h2>
-      <p>Based on your answers, you’ll be matched to one of these imperial archetypes:</p>
-      <div class="leader-grid">
-        <!-- existing four -->
-        <div class="leader-card">
-          <img src="roman.jpg" alt="Roman Citizen" />
-          <h3>🏛️ Roman Citizen</h3>
-          <p>Disciplined builders and lawmakers—your strength lies in order, architecture, and governance.</p>
-        </div>
-        <div class="leader-card">
-          <img src="persia.jpg" alt="Achaemenid Noble" />
-          <h3>👑 Achaemenid Noble</h3>
-          <p>Shrewd diplomats and patrons of culture—your talent is uniting diverse peoples under one banner.</p>
-        </div>
-        <div class="leader-card">
-          <img src="samurai.jpg" alt="Samurai Scholar" />
-          <h3>🎎 Samurai Scholar</h3>
-          <p>Honorable warriors and learned bureaucrats—your balance of discipline and intellect sets you apart.</p>
-        </div>
-        <div class="leader-card">
-          <img src="mongol.jpg" alt="Mongol Raider" />
-          <h3>🏹 Mongol Raider</h3>
-          <p>Fearless on horseback and masters of strategy—your greatest asset is speed, adaptability, and bold tactics.</p>
-        </div>
-    
-        <!-- new five -->
-        <div class="leader-card">
-          <img src="ottomanvizier.jpg" alt="Ottoman Vizier" />
-          <h3>🕌 Ottoman Vizier</h3>
-          <p>Sophisticated administrators—your flair for grand architecture and cultural fusion endures through centuries.</p>
-        </div>
-        <div class="leader-card">
-          <img src="britishadmiral.jpg" alt="British Admiral" />
-          <h3>⚓ British Admiral</h3>
-          <p>Commanders of the seas and industrial innovators—your reach spans oceans and nations.</p>
-        </div>
-        <div class="leader-card">
-          <img src="mughalpatron.jpg" alt="Mughal Patron" />
-          <h3>🌺 Mughal Patron</h3>
-          <p>Connoisseurs of art and architecture—your gardens and mausoleums symbolize timeless beauty.</p>
-        </div>
-        <div class="leader-card">
-          <img src="aztecwarrior.jpg" alt="Aztec Warrior" />
-          <h3>🗡️ Aztec Warrior</h3>
-          <p>Fierce and ceremonial—your mastery of ritual and engineering inspires both awe and respect.</p>
-        </div>
-        <div class="leader-card">
-          <img src="incaengineer.jpg" alt="Inca Engineer" />
-          <h3>⛰️ Inca Engineer</h3>
-          <p>Master organizers—your roads and terraces bind mountain peoples in harmony and productivity.</p>
-        </div>
-      </div>
-      <div class="leader-button-container">
-        <a href="all-empires.html" class="see-more-btn">📜 See All Empires</a>
-      </div>
-    </section>
-
-    <!-- Toast Notification Element -->
-    <div id="toast" class="hidden">
-      <div class="toast-icon">
-        <img src="heart.png" alt="heart icon" id="heart" />
-      </div>
-      <div class="toast-text">
-        <div class="toast-title" id="toast-title">Hail!</div>
-        <div class="toast-subtitle" id="toast-subtitle"></div>
-      </div>
-    </div>
-  
-    <!-- Quiz & Results -->
-    <main>
-      <section id="test">
-        <div id="progress-container">
-          <span id="progress-text">Question 1 of 12</span>
-        </div>
-        <div id="question-container">
-          <h2 id="question-title">Your question will appear here</h2>
-          <ul id="answer-options"></ul>
-        </div>
-        <button id="next-btn">Next</button>
-      </section>
-      <section id="results" class="hidden">
-        <h2>🏆 Your Imperial Match</h2>
-        <div id="evaluation"></div>
-        <div class="results-actions">
-          <button id="restart-btn">
-            <img src="restart.png" alt="Restart icon" style="width:20px; height:20px;" />
-            Restart Quiz
-          </button>
-          <button id="screenshot-btn">
-            <img src="camera.png" alt="Camera icon" style="width:20px; height:20px;" />
-            Share Result
-          </button>
-        </div>
-      </section>
-    </main>
-    
-    <!-- FAQ -->
-    <section id="faq" class="test-explainer">
-      <h2 class="test-title">Frequently Asked Questions</h2>
-    
-      <div class="test-text">
-        <strong>What is this quiz about?</strong><br>
-        This quiz helps you discover which great empire—among nine legendary realms—best matches your personality, values, and natural strengths. By answering 12 engaging questions, you’ll uncover where in history you’d have thrived most.
-      </div>
-    
-      <div class="test-text">
-        <strong>Which empires are featured?</strong><br>
-        <ul>
-          <li><strong>Roman Empire</strong>: Masters of engineering, law, and civic order.</li>
-          <li><strong>Achaemenid Persia</strong>: Visionary administrators known for tolerance and infrastructure.</li>
-          <li><strong>Imperial China (Samurai Scholar)</strong>: Representing the disciplined, scholarly traditions of East Asia.</li>
-          <li><strong>Mongol Horde</strong>: Unrivaled cavalry strategists famed for speed, adaptability, and bold tactics.</li>
-          <li><strong>Ottoman Empire</strong>: Architects of grand domes, deft diplomacy, and religious pluralism.</li>
-          <li><strong>British Empire</strong>: Trailblazers of naval power, industrial innovation, and global governance.</li>
-          <li><strong>Mughal Empire</strong>: Patrons of art, marble marvels, and serene garden symmetry.</li>
-          <li><strong>Aztec Empire</strong>: Masters of ritual, floating gardens, and monumental pyramid-temples.</li>
-          <li><strong>Inca Empire</strong>: Engineers of mountain roads, terraced farming, and centralized communal labor.</li>
-        </ul>
-      </div>
-
-    <div class="test-text">
-      <strong>How does the quiz work?</strong><br>
-      Each question offers four choices—each tied to one empire archetype. When you select an answer, you earn “points” for that empire. At the end, the empire with the highest score becomes your primary match. If two are close, you may even get a secondary result highlighting a blended personality!
-    </div>
-  
-    <div class="test-text">
-      <strong>How many questions are there and how long will it take?</strong><br>
-      There are <strong>12 questions</strong> covering preferences in leadership style, environment, values, and more. Most people finish in under <strong>3 minutes</strong>—perfect for a quick historical detour!
-    </div>
-  
-    <div class="test-text">
-      <strong>How accurate is my result?</strong><br>
-      While this quiz is designed for entertainment and light self‑reflection, it’s built on clear, consistent archetypes drawn from each empire’s core values. Think of it as a fun way to explore your strengths through a historical lens—not a rigorous psychological assessment.
-    </div>
-  
-    <div class="test-text">
-      <strong>Is the quiz really free?</strong><br>
-      Absolutely! You can take it as many times as you like, share your results with friends, and explore deeper articles—all at no cost.
-    </div>
-  
-    <div class="test-text">
-      <strong>Can I retake or change my answers?</strong><br>
-      Yes. At the end of the quiz click “Restart Quiz” to reset all your choices. Feel free to experiment with different combinations to see how your result might shift.
-    </div>
-  
-    <div class="test-text">
-      <strong>How can I share my result?</strong><br>
-      Click the “Share Result” button to download a snapshot of your empire match or share directly to social platforms (if supported by your device). Show your friends which civilization you’d have ruled!
-    </div>
-  
-    <div class="test-text">
-      <strong>Can I use these results for educational purposes?</strong><br>
-      Of course! Teachers and history buffs can incorporate the quiz into lessons or group activities. It’s a fun conversation starter about empire‑building, cultural values, and how personality influences leadership across different civilizations.
-    </div>
-  </section>
-  
-  
-    <!-- Resources -->
-    <section id="resources">
-      <h2>📚 Learn More About the Empires</h2>
-      <div class="resource-grid">
-        <a href="https://zinvana.com/romanempire.html" target="_blank" class="resource-link">
-          <span class="resource-icon">🏛️</span>
-          <span>Roman Empire – Zinvana</span>
-        </a>
-        <a href="https://zinvana.com/achaemenidempire.html" target="_blank" class="resource-link">
-          <span class="resource-icon">👑</span>
-          <span>Achaemenid Empire – Zinvana</span>
-        </a>
-        <a href="https://zinvana.com/tokugawashoganate.html" target="_blank" class="resource-link">
-          <span class="resource-icon">🎎</span>
-          <span>Tokugawa Shogunate – Zinvana</span>
-        </a>
-        <a href="https://zinvana.com/mongolempire.html" target="_blank" class="resource-link">
-          <span class="resource-icon">🏹</span>
-          <span>Mongol Empire – Zinvana</span>
-        </a>
-      </div>
-    </section>
-  
-   <!-- Footer -->
-   <footer>
-    <div class="container">
-      <p>&copy; 2025 Zinvana. All rights reserved.</p>
-      <p>This site is for informational purposes only and does not replace professional advice. No personal data is stored or shared.</p>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-          <img src="whiteinsta.png" alt="Instagram" />
-        </a>
-        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-          <img src="whitex.png" alt="Twitter" />
-        </a>
-        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-          <img src="youtube.png" alt="YouTube" />
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Enhanced mobile and responsive features
-      
-      // Add scroll animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, observerOptions);
-      
-      // Observe all sections for scroll animations
-      document.querySelectorAll('section').forEach(section => {
-        section.classList.add('animate-on-scroll');
-        observer.observe(section);
-      });
-      
-      // Enhanced progress tracking
-      function updateProgress(current, total) {
-        const progressEl = document.getElementById("progress-container");
-        const percentage = (current / total) * 100;
-        progressEl.style.setProperty('--progress', percentage + '%');
-      }
-      
-      // Improved touch feedback for mobile
-      function addTouchFeedback() {
-        const touchElements = document.querySelectorAll('button, .empire-link-card, .leader-card, .resource-link, .cta-button');
-        
-        touchElements.forEach(element => {
-          element.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.98)';
-          });
-          
-          element.addEventListener('touchend', function() {
-            setTimeout(() => {
-              this.style.transform = '';
-            }, 150);
-          });
-        });
-      }
-      
-      // Add loading states
-      function addLoadingStates() {
-        const images = document.querySelectorAll('img');
-        images.forEach(img => {
-          img.addEventListener('load', function() {
-            this.style.opacity = '1';
-          });
-          
-          if (!img.complete) {
-            img.style.opacity = '0';
-          }
-        });
-      }
-      
-      // Viewport height fix for mobile browsers
-      function setViewportHeight() {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', vh + 'px');
-      }
-      
-      // Update on resize and orientation change
-      window.addEventListener('resize', setViewportHeight);
-      window.addEventListener('orientationchange', () => {
-        setTimeout(setViewportHeight, 100);
-      });
-      
-      // Initialize mobile enhancements
-      addTouchFeedback();
-      addLoadingStates();
-      setViewportHeight();
-      
-      // Smooth scroll polyfill for older browsers
-      const links = document.querySelectorAll('a[href^="#"]');
-      links.forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed nav
-            window.scrollTo({
-              top: offsetTop,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-      
-      // Enhanced toast system with better mobile positioning
-      function showToast(subtitleText) {
-        const toastEl = document.getElementById("toast");
-        const toastTitleEl = document.getElementById("toast-title");
-        const subtitleEl = document.getElementById("toast-subtitle");
-        
-        // Adjust position for mobile
-        if (window.innerWidth <= 768) {
-          toastEl.style.right = '10px';
-          toastEl.style.left = '10px';
-          toastEl.style.maxWidth = 'none';
-        } else {
-          toastEl.style.right = '20px';
-          toastEl.style.left = 'auto';
-          toastEl.style.maxWidth = '350px';
+        .empire-img {
+            width: 78px;
+            height: 78px;
+            margin: 0 auto 18px;
+            display: block;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid rgba(226,232,240,0.9);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+            background: #fff;
         }
-        
-        toastTitleEl.textContent = toastTitles[Math.floor(Math.random() * toastTitles.length)];
-        subtitleEl.textContent = subtitleText;
-        toastEl.classList.remove("hidden");
-        void toastEl.offsetWidth;
-        toastEl.classList.add("show");
-        setTimeout(() => {
-          toastEl.classList.remove("show");
-          setTimeout(() => toastEl.classList.add("hidden"), 500);
-        }, 3000);
-      }
 
-      // Toast titles
-      const toastTitles = [
-        "Hail!",
-        "Ave!",
-        "Strength!",
-        "Honor!",
-        "Victory!"
-      ];
-    
-      // Themed toast messages for each empire
-      const toastMessagesMultiple = {
-        roman: [
-          "Valiant legionary at heart.",
-          "Order and law guide you.",
-          "Your discipline builds empires."
-        ],
-        achaemenid: [
-          "Administer with wisdom.",
-          "Your tolerance unites nations.",
-          "Grand as a Persian court."
-        ],
-        samurai: [
-          "Honor guides your blade.",
-          "Disciplined like a true samurai.",
-          "Your resolve is unwavering."
-        ],
-        mongol: [
-          "Swift as the steppe wind.",
-          "Raid like the great Khan.",
-          "Your spirit roams free across the plains."
-        ],
-        ottoman: [
-          "Architect of grand domes and minarets.",
-          "Master of diplomacy and courtly grace.",
-          "Your legacy endures for centuries."
-        ],
-        british: [
-          "Rule the waves with your mighty navy.",
-          "Innovate like the Industrial Revolution.",
-          "Your ideas spread across the globe."
-        ],
-        mughal: [
-          "Patron of art and marble marvels.",
-          "Your gardens bloom with symmetry.",
-          "A connoisseur of culture and beauty."
-        ],
-        aztec: [
-          "Engineer of floating chinampas.",
-          "Warrior feared in ritual combat.",
-          "Your life is woven with cosmic ceremony."
-        ],
-        inca: [
-          "Builder of roads across mountains.",
-          "Organizer of communal labor.",
-          "Your state binds people in harmony."
-        ]
-      };
-    
-      function showToastForCharacteristic(characteristic) {
-        const messages = toastMessagesMultiple[characteristic] || ["Well done!"];
-        let idx = toastMessageCounters[characteristic];
-        if (idx >= messages.length) idx = messages.length - 1;
-        const subtitle = messages[idx];
-        toastMessageCounters[characteristic]++;
-        showToast(subtitle);
-      }
-    
-      // Quiz questions
-      const questions = [
-        {
-          question: "1. Your dream realm would feature:",
-          options: [
-            { text: "Robust roads, aqueducts, and forums", value: "roman" },
-            { text: "Grand palaces, gardens, and magnificent courts", value: "achaemenid" },
-            { text: "Serene temples, bamboo groves, and tea houses", value: "samurai" },
-            { text: "Endless grasslands dotted with yurts", value: "mongol" },
-            { text: "Intricate domes, minarets, and bustling bazaars", value: "ottoman" },
-            { text: "Foggy harbors dotted with clipper ships", value: "british" },
-            { text: "Marble mausoleums and garden symmetry", value: "mughal" },
-            { text: "Floating chinampas and ceremonial temples", value: "aztec" },
-            { text: "Andean terraces carving mountainsides", value: "inca" }
-          ]
-        },
-        {
-          question: "2. Your ideal weapon is:",
-          options: [
-            { text: "Gladius and shield", value: "roman" },
-            { text: "Spear and scale armor", value: "achaemenid" },
-            { text: "Katana and lacquered armor", value: "samurai" },
-            { text: "Composite bow on horseback", value: "mongol" },
-            { text: "Kilij saber and chain-mail", value: "ottoman" },
-            { text: "Brown Bess musket", value: "british" },
-            { text: "Jeweled scimitar", value: "mughal" },
-            { text: "Obsidian macuahuitl", value: "aztec" },
-            { text: "Atlatl and sling", value: "inca" }
-          ]
-        },
-        {
-          question: "3. In governance you value:",
-          options: [
-            { text: "Codified law and citizenship", value: "roman" },
-            { text: "Bureaucracy and religious tolerance", value: "achaemenid" },
-            { text: "Honor and tradition", value: "samurai" },
-            { text: "Freedom and mobility", value: "mongol" },
-            { text: "Sultanic decree and millet system", value: "ottoman" },
-            { text: "Parliamentary debate and common law", value: "british" },
-            { text: "Centralized court and mansabdari", value: "mughal" },
-            { text: "Divine kingship and ritual hierarchy", value: "aztec" },
-            { text: "Collective ayllu organization", value: "inca" }
-          ]
-        },
-        {
-          question: "4. Your leadership style is to:",
-          options: [
-            { text: "Bring order through discipline", value: "roman" },
-            { text: "Rule with empathy and tolerance", value: "achaemenid" },
-            { text: "Uphold loyalty and duty", value: "samurai" },
-            { text: "Lead swift, decisive raids", value: "mongol" },
-            { text: "Govern through grand court ceremonies", value: "ottoman" },
-            { text: "Steer policy with naval power", value: "british" },
-            { text: "Patronize art and learning", value: "mughal" },
-            { text: "Command through warrior prestige", value: "aztec" },
-            { text: "Organize communal labor projects", value: "inca" }
-          ]
-        },
-        {
-          question: "5. Your ideal landscape:",
-          options: [
-            { text: "A bustling city with a grand forum", value: "roman" },
-            { text: "Lush palace gardens at sunset", value: "achaemenid" },
-            { text: "Misty mountain temple", value: "samurai" },
-            { text: "Vast rolling steppes", value: "mongol" },
-            { text: "A majestic mosque overlooking markets", value: "ottoman" },
-            { text: "Smoky docks and industrial smokestacks", value: "british" },
-            { text: "Taj Mahal–style mausoleum and pools", value: "mughal" },
-            { text: "Canals threading through lake islands", value: "aztec" },
-            { text: "High-altitude stone cities", value: "inca" }
-          ]
-        },
-        {
-          question: "6. Your guiding principle:",
-          options: [
-            { text: "\"SPQR\"", value: "roman" },
-            { text: "\"King of Kings\"", value: "achaemenid" },
-            { text: "\"Bushido\"", value: "samurai" },
-            { text: "\"Endless Sky\"", value: "mongol" },
-            { text: "\"Devlet-i Ebed-Müddet\"", value: "ottoman" },
-            { text: "\"Rule, Britannia!\"", value: "british" },
-            { text: "\"Jahanara Philosophy\"", value: "mughal" },
-            { text: "\"Mictlan Mysteries\"", value: "aztec" },
-            { text: "\"The Golden Rule of the Sun\"", value: "inca" }
-          ]
-        },
-        {
-          question: "7. You admire most:",
-          options: [
-            { text: "Julius Caesar", value: "roman" },
-            { text: "Cyrus the Great", value: "achaemenid" },
-            { text: "Miyamoto Musashi", value: "samurai" },
-            { text: "Genghis Khan", value: "mongol" },
-            { text: "Suleiman the Magnificent", value: "ottoman" },
-            { text: "Queen Victoria", value: "british" },
-            { text: "Shah Jahan", value: "mughal" },
-            { text: "Moctezuma I", value: "aztec" },
-            { text: "Pachacuti", value: "inca" }
-          ]
-        },
-        {
-          question: "8. Your greatest strength is:",
-          options: [
-            { text: "Engineering and organization", value: "roman" },
-            { text: "Administration and diplomacy", value: "achaemenid" },
-            { text: "Discipline and skill", value: "samurai" },
-            { text: "Strategy and mobility", value: "mongol" },
-            { text: "Courtly intrigue and architecture", value: "ottoman" },
-            { text: "Naval supremacy and innovation", value: "british" },
-            { text: "Artistic patronage and wealth", value: "mughal" },
-            { text: "Ceremony and martial zeal", value: "aztec" },
-            { text: "Logistics and community", value: "inca" }
-          ]
-        },
-        {
-          question: "9. Against a rival you would:",
-          options: [
-            { text: "Outmaneuver with formations", value: "roman" },
-            { text: "Outwit with diplomacy", value: "achaemenid" },
-            { text: "Challenge in honorable combat", value: "samurai" },
-            { text: "Ambush with lightning speed", value: "mongol" },
-            { text: "Siege with heavy artillery", value: "ottoman" },
-            { text: "Blockade their ports", value: "british" },
-            { text: "Secure alliances with marriage", value: "mughal" },
-            { text: "Perform ritual sacrifice to intimidate", value: "aztec" },
-            { text: "Starve them out via mountain passes", value: "inca" }
-          ]
-        },
-        {
-          question: "10. The philosophy that appeals to you:",
-          options: [
-            { text: "Stoicism", value: "roman" },
-            { text: "Zoroastrianism", value: "achaemenid" },
-            { text: "Zen", value: "samurai" },
-            { text: "Tengriism", value: "mongol" },
-            { text: "Sufism and Janissary spirit", value: "ottoman" },
-            { text: "Empiricism and utilitarianism", value: "british" },
-            { text: "Sufi mysticism and court ethics", value: "mughal" },
-            { text: "Nahua cosmology", value: "aztec" },
-            { text: "Sun worship and reciprocity", value: "inca" }
-          ]
-        },
-        {
-          question: "11. You’d build a monument of:",
-          options: [
-            { text: "A grand Colosseum", value: "roman" },
-            { text: "The palaces of Persepolis", value: "achaemenid" },
-            { text: "A towering pagoda", value: "samurai" },
-            { text: "A portable ceremonial ger", value: "mongol" },
-            { text: "A sprawling külliye complex", value: "ottoman" },
-            { text: "A lighthouse on a rocky isle", value: "british" },
-            { text: "A marble tomb by a reflecting pool", value: "mughal" },
-            { text: "A stepped pyramid altar", value: "aztec" },
-            { text: "A mountaintop stone fortress", value: "inca" }
-          ]
-        },
-        {
-          question: "12. People admire you for your:",
-          options: [
-            { text: "Discipline and order", value: "roman" },
-            { text: "Wisdom and tolerance", value: "achaemenid" },
-            { text: "Honor and precision", value: "samurai" },
-            { text: "Fearlessness and freedom", value: "mongol" },
-            { text: "Statecraft and endurance", value: "ottoman" },
-            { text: "Innovation and global reach", value: "british" },
-            { text: "Beauty and sophistication", value: "mughal" },
-            { text: "Ceremonial power", value: "aztec" },
-            { text: "Unity and resourcefulness", value: "inca" }
-          ]
+        /* Slightly larger images on wide screens */
+        @media (min-width: 992px) {
+            .empire-img { width: 96px; height: 96px; border-radius: 14px; }
         }
-      ];
-    
-      let currentQuestionIndex = 0;
-      const personalityScores = {
-        roman: 0,
-        achaemenid: 0,
-        samurai: 0,
-        mongol: 0,
-        ottoman: 0,
-        british: 0,
-        mughal: 0,
-        aztec: 0,
-        inca: 0
-      };
-      const toastMessageCounters = { ...personalityScores };
-    
-      // DOM elements
-      const progressTextEl = document.getElementById("progress-text");
-      const questionTitleEl = document.getElementById("question-title");
-      const answerOptionsEl = document.getElementById("answer-options");
-      const nextBtn = document.getElementById("next-btn");
-      const resultsSection = document.getElementById("results");
-      const testSection = document.getElementById("test");
-      const evaluationEl = document.getElementById("evaluation");
-      const recommendationsEl = document.getElementById("recommendations");
-      const restartBtn = document.getElementById("restart-btn");
-      const screenshotBtn = document.getElementById("screenshot-btn");
-    
-      function displayQuestion() {
-        progressTextEl.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
-        updateProgress(currentQuestionIndex + 1, questions.length);
-        answerOptionsEl.innerHTML = "";
-        const q = questions[currentQuestionIndex];
-        questionTitleEl.textContent = q.question;
-        q.options.forEach((opt, i) => {
-          const li = document.createElement("li");
-          const id = `q${currentQuestionIndex}-opt${i}`;
-          li.innerHTML = `
-            <label for="${id}">
-              <input type="radio" name="question${currentQuestionIndex}" id="${id}" value="${opt.value}" />
-              ${opt.text}
-            </label>
-          `;
-          answerOptionsEl.appendChild(li);
-        });
-      }
-    
-      nextBtn.addEventListener("click", () => {
-        const checked = answerOptionsEl.querySelector('input[type="radio"]:checked');
-        if (!checked) {
-          alert("Please select an answer!");
-          return;
+
+        .empire-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+            letter-spacing: -0.01em;
         }
-        const val = checked.value;
-        personalityScores[val]++;
-        showToastForCharacteristic(val);
-        currentQuestionIndex++;
-        setTimeout(() => {
-          if (currentQuestionIndex < questions.length) {
-            displayQuestion();
-          } else {
-            evaluateResults();
-          }
-        }, 600);
-      });
-    
-      restartBtn.addEventListener("click", () => {
-        currentQuestionIndex = 0;
-        for (let k in personalityScores) personalityScores[k] = 0;
-        for (let k in toastMessageCounters) toastMessageCounters[k] = 0;
-        resultsSection.classList.add("hidden");
-        testSection.classList.remove("hidden");
-        displayQuestion();
-      });
-    
-      screenshotBtn.addEventListener("click", () => {
-        html2canvas(document.getElementById("results")).then(canvas => {
-          canvas.toBlob(blob => {
-            const file = new File([blob], "quiz-result.png", { type: "image/png" });
-            if (navigator.share && navigator.canShare({ files: [file] })) {
-              navigator.share({
-                title: "Which Empire Quiz Result",
-                text: "My empire quiz result!",
-                files: [file]
-              });
-            } else {
-              const link = document.createElement("a");
-              link.download = "quiz-result.png";
-              link.href = canvas.toDataURL();
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
+
+        .empire-card p {
+            color: #5a6c7d;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* --- Archetypes Section (Polished) --- */
+        .archetypes-header {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .archetypes-header .eyebrow {
+            display: inline-block;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #6366f1;
+            background: rgba(99,102,241,0.1);
+            border: 1px solid rgba(99,102,241,0.25);
+            padding: 6px 10px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
+        .archetypes-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1f2937;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+        .archetypes-header p {
+            font-size: 1.12rem;
+            color: #5a6c7d;
+            line-height: 1.75;
+            margin: 0 auto;
+            max-width: 760px;
+        }
+        .archetypes-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+        .archetypes-panel {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #e8ecf4;
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(102,126,234,0.10);
+        }
+        .archetypes-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand1), var(--brand2));
+            opacity: 0.9;
+        }
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .pillar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border: 1px solid #e6ebf3;
+            border-radius: 12px;
+            background: #ffffff;
+        }
+        .pillar .icon {
+            width: 28px;
+            height: 28px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(102,126,234,0.12), rgba(118,75,162,0.12));
+            color: #4f46e5;
+            font-size: 1rem;
+        }
+        .pillar span {
+            color: #334155;
+            font-weight: 600;
+            font-size: 0.98rem;
+        }
+        .legend-label {
+            display: block;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin: 10px 0 8px 2px;
+        }
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 12px;
+        }
+        .archetype-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: #ffffff;
+            border: 1px solid #e8ecf4;
+            border-radius: 999px;
+            color: #334155;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        }
+        .panel-note {
+            margin-top: 16px;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+        .archetype-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+        .archetype-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+            border: 2px solid #e8ecf4;
+            border-radius: 14px;
+            padding: 18px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .archetype-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(102,126,234,0.12);
+            border-color: var(--brand1);
+        }
+        .archetype-card .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border: 1px solid #e6ebf3;
+            border-radius: 999px;
+            background: #ffffff;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        .archetype-card p {
+            color: #5a6c7d;
+            font-size: 0.98rem;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* Tablet landscape refinements */
+        @media (max-width: 1200px) {
+            .main-container { padding: 0 16px; }
+            .hero-section h1 { font-size: 3rem; }
+            .section-header h2 { font-size: 2.3rem; }
+        }
+
+        /* Tablet portrait refinements */
+        @media (max-width: 992px) {
+            .container { max-width: 820px; }
+            nav .nav-left, nav .nav-right { gap: 20px; }
+            .hero-section h1 { font-size: 2.6rem; }
+            .hero-section .subtitle { font-size: 1.2rem; }
+            .section-header p { font-size: 1.08rem; }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
             }
-          });
-        });
-      });
-    
-      function evaluateResults() {
-        testSection.classList.add("hidden");
-        resultsSection.classList.remove("hidden");
-        const entries = Object.entries(personalityScores).sort((a,b) => b[1] - a[1]);
-        const [primary] = entries[0];
-        const [, secondScore] = entries[1] || [];
-        const secondary = secondScore > 0 ? entries[1][0] : null;
-    
-        const personalityData = {
-          roman: {
-            title: "Roman Citizen",
-            character: "Roman Citizen",
-            image: "roman.jpg",
-            description: "Disciplined and organized, you thrive in structured societies with clear laws and engineering marvels.",
-            strengths: "Orderly, methodical, and resilient.",
-            improvement: "Embrace spontaneity and creativity.",
-            recommendations: "Governance, engineering, and law enforcement roles."
-          },
-          achaemenid: {
-            title: "Achaemenid Noble",
-            character: "Achaemenid Noble",
-            image: "persia.jpg",
-            description: "Visionary and tolerant, you excel at administration and uniting diverse peoples under one banner.",
-            strengths: "Diplomatic, strategic, and cultured.",
-            improvement: "Make decisive stands when needed.",
-            recommendations: "Diplomacy, administration, and cultural leadership."
-          },
-          samurai: {
-            title: "Samurai Scholar",
-            character: "Samurai Scholar",
-            image: "samurai.jpg",
-            description: "Honorable and disciplined, you balance martial prowess with intellectual rigor and ethical conduct.",
-            strengths: "Respectful, focused, and principled.",
-            improvement: "Adapt more readily to change.",
-            recommendations: "Education, martial training, and ethical leadership."
-          },
-          mongol: {
-            title: "Mongol Raider",
-            character: "Mongol Raider",
-            image: "mongol.jpg",
-            description: "Fearless and mobile, you excel in rapid campaigns and innovative tactics across vast territories.",
-            strengths: "Resourceful, courageous, and adaptive.",
-            improvement: "Plan long-term logistics.",
-            recommendations: "Strategy, exploration, and mobile leadership."
-          },
-          ottoman: {
-            title: "Ottoman Vizier",
-            character: "Ottoman Vizier",
-            image: "ottomanvizier.jpg",
-            description: "Sophisticated administrator with a flair for grand architecture and cultural fusion.",
-            strengths: "Diplomatic, enduring, and visionary.",
-            improvement: "Balance tradition with reform.",
-            recommendations: "Diplomacy, architecture, and cultural stewardship."
-          },
-          british: {
-            title: "British Admiral",
-            character: "British Admiral",
-            image: "britishadmiral.jpg",
-            description: "Innovator of industry and naval power, you shape the world through ideas and ships.",
-            strengths: "Strategic, inventive, and influential.",
-            improvement: "Cultivate cultural empathy.",
-            recommendations: "Maritime strategy, industrial leadership, and global affairs."
-          },
-          mughal: {
-            title: "Mughal Patron",
-            character: "Mughal Patron",
-            image: "mughalpatron.jpg",
-            description: "Connoisseur of art and architecture, you blend cultures into breathtaking beauty.",
-            strengths: "Artistic, cultured, and generous.",
-            improvement: "Strengthen administrative rigor.",
-            recommendations: "Arts administration, cultural diplomacy, and heritage management."
-          },
-          aztec: {
-            title: "Aztec Warrior",
-            character: "Aztec Warrior",
-            image: "aztecwarrior.jpg",
-            description: "Fierce and ceremonial, you command respect through ritual and engineering prowess.",
-            strengths: "Brave, ritualistic, and innovative.",
-            improvement: "Broaden diplomatic ties.",
-            recommendations: "Cultural leadership, engineering, and historical scholarship."
-          },
-          inca: {
-            title: "Inca Engineer",
-            character: "Inca Engineer",
-            image: "incaengineer.jpg",
-            description: "Master organizer and builder, you connect peoples through roads and communal projects.",
-            strengths: "Collaborative, resourceful, and logistical.",
-            improvement: "Encourage individual initiative.",
-            recommendations: "Infrastructure planning, community development, and logistics."
-          },
-          default: {
-            title: "A Unique Spirit",
-            character: "Wanderer of Empires",
-            image: "default.png",
-            description: "Your attributes span many cultures, forging a leadership style uniquely your own.",
-            strengths: "Versatile, dynamic, and creative.",
-            improvement: "Refine your focus for greater impact.",
-            recommendations: "Any field you choose—forge your own path!"
-          }
-        };
-    
-        const pData = personalityData[primary] || personalityData.default;
-        const sData = secondary ? (personalityData[secondary] || personalityData.default) : null;
-    
-        let html = `
-          <div class="result-main-card">
-            <img src="${pData.image}" class="character-image" alt="${pData.character}" />
-            <h3 class="result-title">${pData.title}</h3>
-            <p class="result-subtitle">You are primarily <strong>${pData.character}</strong>!</p>
-            <p class="result-description">${pData.description}</p>
             
-            <div class="result-stats">
-              <div class="stat-item">
-                <span class="stat-value">92%</span>
-                <span class="stat-label">Match</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">1/${Object.keys(personalityData).length - 1}</span>
-                <span class="stat-label">Rarity</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">★★★★★</span>
-                <span class="stat-label">Rating</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="result-section">
-            <h3>✨ Your Strengths</h3>
-            <p>${pData.strengths}</p>
-          </div>
-          
-          <div class="result-section">
-            <h3>🎯 Areas for Growth</h3>
-            <p>${pData.improvement}</p>
-          </div>
-        `;
-    
-        if (sData) {
-          html += `
-            <div class="result-section">
-              <h3>🏅 Secondary Match: ${sData.title}</h3>
-              <div style="display: flex; align-items: center; gap: 20px; margin: 20px 0;">
-                <img src="${sData.image}" style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid rgba(103, 126, 234, 0.3); object-fit: cover;" alt="${sData.character}" />
-                <div style="text-align: left;">
-                  <p style="margin: 0; font-size: 1.1rem;"><strong>${sData.character}</strong> tendencies detected!</p>
-                  <p style="margin: 5px 0 0 0; color: #667eea; font-weight: 500;">${sData.description}</p>
-                </div>
-              </div>
-            </div>
-          `;
+            nav {
+                padding: 10px 16px;
+            }
+            nav .nav-left,
+            nav .nav-right {
+                gap: 16px;
+            }
+            nav img#brand-logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero-section .subtitle {
+                font-size: 1.15rem;
+            }
+
+            .hero-section {
+                padding: 56px 0 32px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .section-header p {
+                font-size: 1.05rem;
+            }
+            
+            .quiz-container {
+                padding: 30px 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .feature-card {
+                padding: 28px 24px;
+            }
+
+            .empire-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .cta-section h3 {
+                font-size: 1.8rem;
+            }
+
+            .cta-section p {
+                font-size: 1.05rem;
+            }
         }
-    
-        html += `
-          <div class="result-section">
-            <h3>💼 Recommended Roles & Careers</h3>
-            <p>${pData.recommendations}</p>
-          </div>
-        `;
-    
-        evaluationEl.innerHTML = html;
-      }
-    
-      displayQuestion();
-    });
+
+        /* Two-column layout for answers on wider screens */
+        @media (min-width: 720px) {
+            .answers {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .archetypes-grid {
+                grid-template-columns: 1fr;
+            }
+            .archetypes-header h2 {
+                font-size: 2.2rem;
+            }
+            .pillars {
+                grid-template-columns: 1fr;
+            }
+            .archetype-card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .answer-btn {
+                padding-left: 56px;
+                padding: 18px 20px 18px 56px;
+                font-size: 1rem;
+            }
+
+            .answer-btn .empire-badge {
+                left: 16px;
+                width: 28px;
+                height: 28px;
+            }
+
+            .answer-btn .empire-badge {
+                font-size: 1rem;
+            }
+
+            .answer-btn .chevron {
+                right: 16px;
+                width: 20px;
+                height: 20px;
+                font-size: 12px;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+            body { padding-top: 64px; }
+            nav { padding: 8px 12px; }
+            .hero-section { padding: 48px 0 28px; }
+            .hero-section h1 { font-size: 1.85rem; }
+            .hero-section .description { font-size: 1rem; padding: 0 4px; }
+            .quiz-header { padding: 24px 16px; }
+            .quiz-header h2 { font-size: 1.6rem; }
+            .quiz-header p { font-size: 1rem; }
+            .answers { gap: 12px; }
+            .answer-btn { padding: 16px 18px 16px 50px; font-size: 0.95rem; }
+            .answer-btn .empire-badge { left: 14px; width: 26px; height: 26px; font-size: 0.95rem; }
+            .answer-btn .chevron { right: 12px; width: 18px; height: 18px; font-size: 11px; }
+            .progress-meta { font-size: 0.9rem; }
+            .empire-image { width: 160px; height: 160px; }
+            .section-header h2 { font-size: 1.7rem; }
+            .archetype-card-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav>
+    <div class="nav-left">
+      <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+      <a href="index.html">Home</a>
+      <a href="#quizSection">Test</a>
+    </div>
+    <div class="nav-right">
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="main-container">
+            <h1>🏛️ Which Empire Would You Have Thrived In?</h1>
+            <p class="subtitle">Discover Your Imperial Destiny</p>
+            <p class="description">Take our comprehensive empire personality quiz to discover which historical civilization matches your values, strengths, and leadership style. From Rome to the Incas, find where you truly belong in history.</p>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Introduction Section -->
+        <section class="content-section" aria-labelledby="archetypes-heading">
+            <div class="archetypes-header">
+                <span class="eyebrow">Overview</span>
+                <h2 id="archetypes-heading">Understanding Imperial Archetypes</h2>
+                <p>Imperial archetypes map historical civilizations to recognizable leadership patterns. This assessment translates your choices into a best-fit profile across governance, military strategy, culture, and worldview.</p>
+            </div>
+
+            <div class="archetypes-grid">
+                <!-- Left: Explanatory Panel -->
+                <div class="archetypes-panel">
+                    <div class="pillars">
+                        <div class="pillar">
+                            <div class="icon">🏛️</div>
+                            <span>Governance</span>
+                        </div>
+                        <div class="pillar">
+                            <div class="icon">⚔️</div>
+                            <span>Strategy</span>
+                        </div>
+                        <div class="pillar">
+                            <div class="icon">🎨</div>
+                            <span>Culture</span>
+                        </div>
+                    </div>
+                    <span class="legend-label">Core Assessment Dimensions</span>
+                    <div class="badges">
+                        <div class="archetype-badge">
+                            <span>🏛️</span>
+                            Roman
+                        </div>
+                        <div class="archetype-badge">
+                            <span>👑</span>
+                            Persian
+                        </div>
+                        <div class="archetype-badge">
+                            <span>🎎</span>
+                            Samurai
+                        </div>
+                    </div>
+                    <p class="panel-note">Each empire represents distinct approaches to power, culture, and conquest spanning over 2,000 years of human civilization.</p>
+                </div>
+
+                <!-- Right: Archetype Cards -->
+                <div class="archetypes-panel">
+                    <div class="archetype-card-grid">
+                        <div class="archetype-card">
+                            <div class="chip">
+                                <span>🏛️</span>
+                                Order
+                            </div>
+                            <p>Structured governance, engineering excellence, and legal frameworks</p>
+                        </div>
+                        <div class="archetype-card">
+                            <div class="chip">
+                                <span>👑</span>
+                                Tolerance
+                            </div>
+                            <p>Cultural synthesis, diplomatic wisdom, and administrative innovation</p>
+                        </div>
+                        <div class="archetype-card">
+                            <div class="chip">
+                                <span>🏹</span>
+                                Mobility
+                            </div>
+                            <p>Strategic flexibility, rapid conquest, and adaptive leadership</p>
+                        </div>
+                        <div class="archetype-card">
+                            <div class="chip">
+                                <span>⚓</span>
+                                Innovation
+                            </div>
+                            <p>Technological advancement, global reach, and industrial power</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Discover Your Imperial Calling</h2>
+                <p>Ever wondered where your talents and temperament would have shone brightest among the great empires of history? Answer 12 questions to find out whether you'd excel as a Roman Citizen, Mongol Raider, Byzantine Scholar, Viking Jarl, or one of eleven other legendary archetypes.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Accurate Assessment</h3>
+                    <p>12 carefully crafted questions analyze your personality, values, and natural strengths to match you with the perfect empire.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>15 Great Empires</h3>
+                    <p>Explore Rome, Persia, Japan, Mongols, Byzantium, China, Egypt, Russia, Vikings, Macedonia, and more—each with unique characteristics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Detailed Results</h3>
+                    <p>Get comprehensive insights into your imperial match, including strengths, growth areas, and recommended career paths.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Empire Overview -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>The Great Empires</h2>
+                <p>Explore fifteen legendary civilizations that shaped world history. Each empire represents distinct values, strategies, and cultural achievements.</p>
+            </div>
+
+            <div class="empire-grid">
+                <div class="empire-card">
+                    <img class="empire-img" src="roman.jpg" alt="Roman Empire">
+                    <h4>Roman Empire</h4>
+                    <p>Masters of engineering, law, and urban planning—your strength lies in order and governance.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="persia.jpg" alt="Achaemenid Persia">
+                    <h4>Achaemenid Persia</h4>
+                    <p>Visionary administration and cultural tolerance—uniting diverse peoples under one banner.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="samurai.jpg" alt="Samurai Japan">
+                    <h4>Samurai Japan</h4>
+                    <p>Guardians of tradition, discipline, and cultural refinement—balance of honor and intellect.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="mongol.jpg" alt="Mongol Empire">
+                    <h4>Mongol Empire</h4>
+                    <p>Unmatched mobility, strategy, and adaptability—fearless masters of the steppe.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="ottomanvizier.jpg" alt="Ottoman Empire">
+                    <h4>Ottoman Empire</h4>
+                    <p>Architects of grand domes and courtly diplomacy—masters of cultural fusion.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="britishadmiral.jpg" alt="British Empire">
+                    <h4>British Empire</h4>
+                    <p>Pioneers of naval power and industrial innovation—global reach and influence.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="mughalpatron.jpg" alt="Mughal Empire">
+                    <h4>Mughal Empire</h4>
+                    <p>Patrons of art and marble marvels—connoisseurs of beauty and culture.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="aztecwarrior.jpg" alt="Aztec Empire">
+                    <h4>Aztec Empire</h4>
+                    <p>Innovators of floating gardens and monumental pyramids—masters of ceremony.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="incaengineer.jpg" alt="Inca Empire">
+                    <h4>Inca Empire</h4>
+                    <p>Engineers of mountain roads and terraced farms—builders of harmony.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="byzantine.jpg" alt="Byzantine Empire">
+                    <h4>Byzantine Empire</h4>
+                    <p>Guardians of ancient wisdom and orthodox faith—preserving civilization through dark ages.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="chinese.jpg" alt="Chinese Empire">
+                    <h4>Chinese Empire</h4>
+                    <p>Scholarly mandarins and technological innovators—masters of harmony and the Middle Kingdom.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="egyptian.jpg" alt="Egyptian Empire">
+                    <h4>Egyptian Empire</h4>
+                    <p>Divine pharaohs and monument builders—eternal rulers bridging earth and sky.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="russian.jpg" alt="Russian Empire">
+                    <h4>Russian Empire</h4>
+                    <p>Hardy survivors and territorial expanders—unbreakable will across endless horizons.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="viking.jpg" alt="Viking Kingdoms">
+                    <h4>Viking Kingdoms</h4>
+                    <p>Fearless seafaring warriors and explorers—courage that opens new worlds.</p>
+                </div>
+                <div class="empire-card">
+                    <img class="empire-img" src="macedonian.jpg" alt="Macedonian Empire">
+                    <h4>Macedonian Empire</h4>
+                    <p>Tactical geniuses and world-conquerors—unstoppable phalanxes with limitless vision.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Container -->
+        <div class="container" id="quizSection">
+            <div class="quiz-header">
+                <h2>Take the Empire Personality Quiz</h2>
+                <p>Answer 12 questions to discover your imperial archetype</p>
+            </div>
+
+        <div class="quiz-container">
+            <div class="progress-meta">
+                <span><strong id="progressLabel">0%</strong></span>
+                <span>Question <strong id="questionNumberTop">1</strong> / 12</span>
+            </div>
+            <div class="progress" aria-label="Quiz progress">
+                <div class="progress-bar" id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+            </div>
+
+            <div class="question-counter" aria-live="polite">
+                <span id="questionNumber">1</span> / 12
+            </div>
+
+            <!-- Questions will be inserted here by JavaScript -->
+            <div id="questionsContainer"></div>
+
+            <!-- Results -->
+            <div class="result" id="result">
+                <div class="empire-image" id="empireImage"></div>
+                <h2 id="empireName"></h2>
+                <p id="empireDescription"></p>
+                <button class="restart-btn" onclick="restartQuiz()">Take Quiz Again</button>
+            </div>
+        </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <div class="main-container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about the Empire Personality Quiz</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is this quiz about?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        This quiz helps you discover which great empire best matches your personality, values, and natural strengths. By answering 12 engaging questions, you'll uncover where in history you'd have thrived most among nine legendary civilizations.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How accurate are the results?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        While designed for entertainment and self-reflection, the quiz is built on clear archetypes drawn from each empire's core values and historical characteristics. Think of it as a fun way to explore your strengths through a historical lens.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I retake the quiz?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        Absolutely! Click "Take Quiz Again" at the end to reset all your choices. Feel free to experiment with different answers to see how your result might change.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Which empires are included?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        The quiz features fifteen great empires: Roman Empire, Achaemenid Persia, Tokugawa Japan (Samurai), Mongol Empire, Ottoman Empire, British Empire, Mughal Empire, Aztec Empire, Inca Empire, Byzantine Empire, Chinese Empire, Egyptian Empire, Russian Empire, Viking Kingdoms, and Macedonian Empire.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is the quiz really free?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        Yes! You can take it as many times as you like, share your results with friends, and explore deeper articles—all at no cost.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <div class="main-container">
+                <h3>Share Your Results!</h3>
+                <p>Found out which empire you belong to? Share your imperial archetype with friends and see if they agree with your results. Compare your matches and discover what your friend group's personality mix reveals!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        let answers = {};
+        let empireScores = {
+            roman: 0,
+            achaemenid: 0,
+            samurai: 0,
+            mongol: 0,
+            ottoman: 0,
+            british: 0,
+            mughal: 0,
+            aztec: 0,
+            inca: 0,
+            byzantine: 0,
+            chinese: 0,
+            egyptian: 0,
+            russian: 0,
+            viking: 0,
+            macedonian: 0
+        };
+
+        const questions = [
+            {
+                question: "Your dream realm would feature:",
+                options: [
+                    { text: "Robust roads, aqueducts, and forums", empire: "roman" },
+                    { text: "Grand palaces, gardens, and magnificent courts", empire: "achaemenid" },
+                    { text: "Serene temples, bamboo groves, and tea houses", empire: "samurai" },
+                    { text: "Endless grasslands dotted with yurts", empire: "mongol" },
+                    { text: "Intricate domes, minarets, and bustling bazaars", empire: "ottoman" },
+                    { text: "Foggy harbors dotted with clipper ships", empire: "british" },
+                    { text: "Marble mausoleums and garden symmetry", empire: "mughal" },
+                    { text: "Floating chinampas and ceremonial temples", empire: "aztec" },
+                    { text: "Andean terraces carving mountainsides", empire: "inca" },
+                    { text: "Golden domes overlooking the Bosphorus", empire: "byzantine" },
+                    { text: "Forbidden cities with courtyards and pagodas", empire: "chinese" },
+                    { text: "Massive pyramids along the sacred river", empire: "egyptian" },
+                    { text: "Wooden fortresses amid endless forests", empire: "russian" },
+                    { text: "Longships beached beside wooden halls", empire: "viking" },
+                    { text: "Marble columns surrounding training grounds", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "Your ideal weapon is:",
+                options: [
+                    { text: "Gladius and shield", empire: "roman" },
+                    { text: "Spear and scale armor", empire: "achaemenid" },
+                    { text: "Katana and lacquered armor", empire: "samurai" },
+                    { text: "Composite bow on horseback", empire: "mongol" },
+                    { text: "Kilij saber and chain-mail", empire: "ottoman" },
+                    { text: "Brown Bess musket", empire: "british" },
+                    { text: "Jeweled scimitar", empire: "mughal" },
+                    { text: "Obsidian macuahuitl", empire: "aztec" },
+                    { text: "Atlatl and sling", empire: "inca" },
+                    { text: "Greek fire and cataphract lance", empire: "byzantine" },
+                    { text: "Dao sword and crossbow", empire: "chinese" },
+                    { text: "Khopesh and war chariot", empire: "egyptian" },
+                    { text: "Boyar's mace and chainmail", empire: "russian" },
+                    { text: "Battle-axe and round shield", empire: "viking" },
+                    { text: "Sarissa spear in phalanx formation", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "In governance you value:",
+                options: [
+                    { text: "Codified law and citizenship", empire: "roman" },
+                    { text: "Bureaucracy and religious tolerance", empire: "achaemenid" },
+                    { text: "Honor and tradition", empire: "samurai" },
+                    { text: "Freedom and mobility", empire: "mongol" },
+                    { text: "Sultanic decree and millet system", empire: "ottoman" },
+                    { text: "Parliamentary debate and common law", empire: "british" },
+                    { text: "Centralized court and mansabdari", empire: "mughal" },
+                    { text: "Divine kingship and ritual hierarchy", empire: "aztec" },
+                    { text: "Collective ayllu organization", empire: "inca" },
+                    { text: "Orthodox faith and imperial ceremony", empire: "byzantine" },
+                    { text: "Mandarin examinations and Confucian order", empire: "chinese" },
+                    { text: "Divine pharaonic authority", empire: "egyptian" },
+                    { text: "Boyar councils and territorial expansion", empire: "russian" },
+                    { text: "Thing assemblies and warrior codes", empire: "viking" },
+                    { text: "Military monarchy and Hellenic culture", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "Your leadership style is to:",
+                options: [
+                    { text: "Bring order through discipline", empire: "roman" },
+                    { text: "Rule with empathy and tolerance", empire: "achaemenid" },
+                    { text: "Uphold loyalty and duty", empire: "samurai" },
+                    { text: "Lead swift, decisive raids", empire: "mongol" },
+                    { text: "Govern through grand court ceremonies", empire: "ottoman" },
+                    { text: "Steer policy with naval power", empire: "british" },
+                    { text: "Patronize art and learning", empire: "mughal" },
+                    { text: "Command through warrior prestige", empire: "aztec" },
+                    { text: "Organize communal labor projects", empire: "inca" },
+                    { text: "Preserve tradition through orthodoxy", empire: "byzantine" },
+                    { text: "Guide through scholarly wisdom", empire: "chinese" },
+                    { text: "Rule as a living god", empire: "egyptian" },
+                    { text: "Expand borders through iron will", empire: "russian" },
+                    { text: "Inspire through bold exploration", empire: "viking" },
+                    { text: "Conquer through tactical brilliance", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "Your ideal landscape:",
+                options: [
+                    { text: "A bustling city with a grand forum", empire: "roman" },
+                    { text: "Lush palace gardens at sunset", empire: "achaemenid" },
+                    { text: "Misty mountain temple", empire: "samurai" },
+                    { text: "Vast rolling steppes", empire: "mongol" },
+                    { text: "A majestic mosque overlooking markets", empire: "ottoman" },
+                    { text: "Smoky docks and industrial smokestacks", empire: "british" },
+                    { text: "Taj Mahal–style mausoleum and pools", empire: "mughal" },
+                    { text: "Canals threading through lake islands", empire: "aztec" },
+                    { text: "High-altitude stone cities", empire: "inca" },
+                    { text: "Golden cathedral with soaring spires", empire: "byzantine" },
+                    { text: "Serene bamboo gardens with koi ponds", empire: "chinese" },
+                    { text: "Desert oasis beside towering pyramids", empire: "egyptian" },
+                    { text: "Snow-covered fortress amid pine forests", empire: "russian" },
+                    { text: "Windswept fjords with dramatic cliffs", empire: "viking" },
+                    { text: "Sun-drenched agora with marble statues", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "Your guiding principle:",
+                options: [
+                    { text: "SPQR - The Senate and People", empire: "roman" },
+                    { text: "King of Kings", empire: "achaemenid" },
+                    { text: "Bushido - The Way of the Warrior", empire: "samurai" },
+                    { text: "Endless Sky", empire: "mongol" },
+                    { text: "Eternal State", empire: "ottoman" },
+                    { text: "Rule, Britannia!", empire: "british" },
+                    { text: "Garden of Paradise", empire: "mughal" },
+                    { text: "Cosmic Balance", empire: "aztec" },
+                    { text: "The Golden Rule of the Sun", empire: "inca" },
+                    { text: "One Faith, One Empire", empire: "byzantine" },
+                    { text: "Mandate of Heaven", empire: "chinese" },
+                    { text: "As Above, So Below", empire: "egyptian" },
+                    { text: "Mother Russia's Embrace", empire: "russian" },
+                    { text: "Death Before Dishonor", empire: "viking" },
+                    { text: "One World, One King", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "You admire most:",
+                options: [
+                    { text: "Julius Caesar", empire: "roman" },
+                    { text: "Cyrus the Great", empire: "achaemenid" },
+                    { text: "Miyamoto Musashi", empire: "samurai" },
+                    { text: "Genghis Khan", empire: "mongol" },
+                    { text: "Suleiman the Magnificent", empire: "ottoman" },
+                    { text: "Queen Victoria", empire: "british" },
+                    { text: "Shah Jahan", empire: "mughal" },
+                    { text: "Moctezuma I", empire: "aztec" },
+                    { text: "Pachacuti", empire: "inca" },
+                    { text: "Justinian the Great", empire: "byzantine" },
+                    { text: "Emperor Qin Shi Huang", empire: "chinese" },
+                    { text: "Ramesses II", empire: "egyptian" },
+                    { text: "Ivan the Terrible", empire: "russian" },
+                    { text: "Erik the Red", empire: "viking" },
+                    { text: "Alexander the Great", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "Your greatest strength is:",
+                options: [
+                    { text: "Engineering and organization", empire: "roman" },
+                    { text: "Administration and diplomacy", empire: "achaemenid" },
+                    { text: "Discipline and skill", empire: "samurai" },
+                    { text: "Strategy and mobility", empire: "mongol" },
+                    { text: "Courtly intrigue and architecture", empire: "ottoman" },
+                    { text: "Naval supremacy and innovation", empire: "british" },
+                    { text: "Artistic patronage and wealth", empire: "mughal" },
+                    { text: "Ceremony and martial zeal", empire: "aztec" },
+                    { text: "Logistics and community", empire: "inca" },
+                    { text: "Religious authority and cultural preservation", empire: "byzantine" },
+                    { text: "Scholarship and technological innovation", empire: "chinese" },
+                    { text: "Monumental construction and divine authority", empire: "egyptian" },
+                    { text: "Endurance and territorial expansion", empire: "russian" },
+                    { text: "Exploration and fearless courage", empire: "viking" },
+                    { text: "Military tactics and cultural synthesis", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "Against a rival you would:",
+                options: [
+                    { text: "Outmaneuver with formations", empire: "roman" },
+                    { text: "Outwit with diplomacy", empire: "achaemenid" },
+                    { text: "Challenge in honorable combat", empire: "samurai" },
+                    { text: "Ambush with lightning speed", empire: "mongol" },
+                    { text: "Siege with heavy artillery", empire: "ottoman" },
+                    { text: "Blockade their ports", empire: "british" },
+                    { text: "Secure alliances with marriage", empire: "mughal" },
+                    { text: "Perform ritual sacrifice to intimidate", empire: "aztec" },
+                    { text: "Starve them out via mountain passes", empire: "inca" },
+                    { text: "Deploy Greek fire and heavy cavalry", empire: "byzantine" },
+                    { text: "Overwhelm with superior numbers and strategy", empire: "chinese" },
+                    { text: "Invoke divine curse and chariot charge", empire: "egyptian" },
+                    { text: "Endure winter and counterattack in spring", empire: "russian" },
+                    { text: "Launch surprise raids from the sea", empire: "viking" },
+                    { text: "Crush with unstoppable phalanx", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "The philosophy that appeals to you:",
+                options: [
+                    { text: "Stoicism", empire: "roman" },
+                    { text: "Zoroastrianism", empire: "achaemenid" },
+                    { text: "Zen Buddhism", empire: "samurai" },
+                    { text: "Tengriism", empire: "mongol" },
+                    { text: "Sufism and Janissary spirit", empire: "ottoman" },
+                    { text: "Empiricism and utilitarianism", empire: "british" },
+                    { text: "Sufi mysticism and court ethics", empire: "mughal" },
+                    { text: "Nahua cosmology", empire: "aztec" },
+                    { text: "Sun worship and reciprocity", empire: "inca" },
+                    { text: "Eastern Orthodox theology", empire: "byzantine" },
+                    { text: "Confucianism and Daoist balance", empire: "chinese" },
+                    { text: "Ma'at and divine order", empire: "egyptian" },
+                    { text: "Orthodox Christianity and autocracy", empire: "russian" },
+                    { text: "Norse fatalism and warrior honor", empire: "viking" },
+                    { text: "Hellenistic synthesis", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "You'd build a monument of:",
+                options: [
+                    { text: "A grand Colosseum", empire: "roman" },
+                    { text: "The palaces of Persepolis", empire: "achaemenid" },
+                    { text: "A towering pagoda", empire: "samurai" },
+                    { text: "A portable ceremonial ger", empire: "mongol" },
+                    { text: "A sprawling külliye complex", empire: "ottoman" },
+                    { text: "A lighthouse on a rocky isle", empire: "british" },
+                    { text: "A marble tomb by a reflecting pool", empire: "mughal" },
+                    { text: "A stepped pyramid altar", empire: "aztec" },
+                    { text: "A mountaintop stone fortress", empire: "inca" },
+                    { text: "A golden-domed cathedral", empire: "byzantine" },
+                    { text: "A great wall stretching across mountains", empire: "chinese" },
+                    { text: "A colossal sphinx guardian", empire: "egyptian" },
+                    { text: "A kremlin fortress of red brick", empire: "russian" },
+                    { text: "A ship burial mound", empire: "viking" },
+                    { text: "A marble library honoring Alexander", empire: "macedonian" }
+                ]
+            },
+            {
+                question: "People admire you for your:",
+                options: [
+                    { text: "Discipline and order", empire: "roman" },
+                    { text: "Wisdom and tolerance", empire: "achaemenid" },
+                    { text: "Honor and precision", empire: "samurai" },
+                    { text: "Fearlessness and freedom", empire: "mongol" },
+                    { text: "Statecraft and endurance", empire: "ottoman" },
+                    { text: "Innovation and global reach", empire: "british" },
+                    { text: "Beauty and sophistication", empire: "mughal" },
+                    { text: "Ceremonial power", empire: "aztec" },
+                    { text: "Unity and resourcefulness", empire: "inca" },
+                    { text: "Faith and cultural preservation", empire: "byzantine" },
+                    { text: "Scholarly wisdom and harmony", empire: "chinese" },
+                    { text: "Divine authority and eternal legacy", empire: "egyptian" },
+                    { text: "Strength and territorial vastness", empire: "russian" },
+                    { text: "Courage and exploration", empire: "viking" },
+                    { text: "Tactical genius and ambition", empire: "macedonian" }
+                ]
+            }
+        ];
+
+        const empireData = {
+            roman: {
+                name: "Roman Citizen 🏛️",
+                emoji: "🏛️",
+                img: "roman.jpg",
+                description: "Disciplined and organized, you thrive in structured societies with clear laws and engineering marvels. Your strength lies in order, architecture, and governance. You are the foundation upon which empires are built."
+            },
+            achaemenid: {
+                name: "Achaemenid Noble 👑",
+                emoji: "👑",
+                img: "persia.jpg",
+                description: "Visionary and tolerant, you excel at administration and uniting diverse peoples under one banner. Your talent is diplomacy and cultural synthesis. You create harmony from diversity."
+            },
+            samurai: {
+                name: "Samurai Scholar 🎎",
+                emoji: "🎎",
+                img: "samurai.jpg",
+                description: "Honorable and disciplined, you balance martial prowess with intellectual rigor. Your code is unwavering, and your dedication to mastery sets you apart. You embody the perfect blend of strength and wisdom."
+            },
+            mongol: {
+                name: "Mongol Raider 🏹",
+                emoji: "🏹",
+                img: "mongol.jpg",
+                description: "Fearless and mobile, you excel in rapid campaigns and innovative tactics. Your greatest asset is speed, adaptability, and bold strategy. The steppe is your kingdom, and the horizon calls you forward."
+            },
+            ottoman: {
+                name: "Ottoman Vizier 🕌",
+                emoji: "🕌",
+                img: "ottomanvizier.jpg",
+                description: "Sophisticated administrator with a flair for grand architecture and cultural fusion. Your legacy endures through centuries of art, diplomacy, and statecraft. You are the master of elegant power."
+            },
+            british: {
+                name: "British Admiral ⚓",
+                emoji: "⚓",
+                img: "britishadmiral.jpg",
+                description: "Commander of the seas and industrial innovator. Your reach spans oceans and nations. Through naval power and invention, you shape the modern world. The sun never sets on your influence."
+            },
+            mughal: {
+                name: "Mughal Patron 🏰",
+                emoji: "🏰",
+                img: "mughalpatron.jpg",
+                description: "Connoisseur of art and architecture. Your gardens and mausoleums symbolize timeless beauty. You understand that true power is expressed through culture and magnificence. Beauty is your empire."
+            },
+            aztec: {
+                name: "Aztec Warrior 🌺",
+                emoji: "🌺",
+                img: "aztecwarrior.jpg",
+                description: "Fierce and ceremonial. Your mastery of ritual and engineering inspires both awe and respect. You understand the cosmic balance and your place within it. The gods smile upon your valor."
+            },
+            inca: {
+                name: "Inca Engineer ⛰️",
+                emoji: "⛰️",
+                img: "incaengineer.jpg",
+                description: "Master organizer and builder. Your roads and terraces bind mountain peoples in harmony and productivity. Through communal effort, you achieve the impossible. You are the architect of unity."
+            },
+            byzantine: {
+                name: "Byzantine Scholar 🏺",
+                emoji: "🏺",
+                img: "byzantine.jpg",
+                description: "Keeper of ancient wisdom and religious authority. You preserve knowledge through dark ages and master the art of political survival. Your legacy endures through faith and scholarship."
+            },
+            chinese: {
+                name: "Chinese Mandarin 🐉",
+                emoji: "🐉",
+                img: "chinese.jpg",
+                description: "Scholarly administrator and cultural guardian. You excel in bureaucratic excellence, technological innovation, and philosophical depth. The Middle Kingdom flows through your wisdom."
+            },
+            egyptian: {
+                name: "Egyptian Pharaoh 🔺",
+                emoji: "🔺",
+                img: "egyptian.jpg",
+                description: "Divine ruler and master builder. Your monuments stand eternal while your wisdom guides the faithful. You are the bridge between earth and sky, mortality and eternity."
+            },
+            russian: {
+                name: "Russian Boyar ❄️",
+                emoji: "❄️",
+                img: "russian.jpg",
+                description: "Hardy survivor and territorial expander. Your strength lies in endurance, vast horizons, and unbreakable will. From the steppes to the arctic, your domain knows no bounds."
+            },
+            viking: {
+                name: "Viking Jarl ⚡",
+                emoji: "⚡",
+                img: "viking.jpg",
+                description: "Seafaring warrior and explorer. Your courage opens new worlds while your raids strike fear into distant shores. You live by honor, die by glory, and sail beyond the horizon."
+            },
+            macedonian: {
+                name: "Macedonian Strategos 🛡️",
+                emoji: "🛡️",
+                img: "macedonian.jpg",
+                description: "Tactical genius and world-conqueror. Your phalanxes are unstoppable, your vision limitless. Like Alexander, you seek to unite the known world under one banner of excellence."
+            }
+        };
+
+        function displayQuestion() {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+            
+            const q = questions[currentQuestion - 1];
+            
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question active';
+            
+            questionDiv.innerHTML = `
+                <h2>${q.question}</h2>
+                <div class="answers">
+                    ${q.options.map((opt, index) => `
+                        <div class="answer-btn" onclick="selectAnswer('${opt.empire}', this)">
+                            <div class="empire-badge">${empireData[opt.empire].emoji}</div>
+                            <span class="answer-text">${opt.text}</span>
+                            <div class="chevron">→</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            container.appendChild(questionDiv);
+        }
+
+        function selectAnswer(empire, element) {
+            // Remove selection from all answer buttons
+            document.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.style.background = 'linear-gradient(135deg, #ffffff 0%, #fafbfc 100%)';
+                btn.style.borderColor = '#e5e9f0';
+                btn.style.color = '#2d3748';
+                btn.style.transform = 'none';
+            });
+            
+            // Add selection styling to clicked button
+            element.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            element.style.borderColor = '#667eea';
+            element.style.color = 'white';
+            element.style.transform = 'translateY(-2px) scale(1.02)';
+            
+            // Record answer
+            answers[currentQuestion] = empire;
+            empireScores[empire]++;
+            
+            // Update progress
+            updateProgress();
+            
+            // Move to next question or show results
+            setTimeout(() => {
+                if (currentQuestion < questions.length) {
+                    currentQuestion++;
+                    displayQuestion();
+                    document.getElementById('questionNumber').textContent = currentQuestion;
+                    const topNum = document.getElementById('questionNumberTop');
+                    if (topNum) topNum.textContent = currentQuestion;
+                } else {
+                    showResults();
+                }
+            }, 600);
+        }
+
+        function updateProgress() {
+            const progress = Math.min(100, Math.round((currentQuestion / questions.length) * 100));
+            const bar = document.getElementById('progressBar');
+            bar.style.width = progress + '%';
+            bar.setAttribute('aria-valuenow', String(progress));
+            const label = document.getElementById('progressLabel');
+            if (label) label.textContent = progress + '%';
+        }
+
+        function showResults() {
+            // Find the empire with the highest score
+            let maxScore = 0;
+            let resultEmpire = 'roman';
+            
+            for (let empire in empireScores) {
+                if (empireScores[empire] > maxScore) {
+                    maxScore = empireScores[empire];
+                    resultEmpire = empire;
+                }
+            }
+            
+            // Hide questions and show result
+            document.getElementById('questionsContainer').innerHTML = '';
+            document.querySelector('.question-counter').style.display = 'none';
+            
+            // Update result content
+            const result = empireData[resultEmpire];
+            const empireImgDiv = document.getElementById('empireImage');
+            empireImgDiv.innerHTML = `<img src="${result.img}" alt="${result.name}">`;
+            document.getElementById('empireName').textContent = result.name;
+            document.getElementById('empireDescription').textContent = result.description;
+            
+            // Show result
+            document.getElementById('result').classList.add('active');
+            const bar = document.getElementById('progressBar');
+            bar.style.width = '100%';
+            bar.setAttribute('aria-valuenow', '100');
+            const label = document.getElementById('progressLabel');
+            if (label) label.textContent = '100%';
+            
+            // Scroll to result smoothly
+            setTimeout(() => {
+                document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        function restartQuiz() {
+            currentQuestion = 1;
+            answers = {};
+            empireScores = {
+                roman: 0,
+                achaemenid: 0,
+                samurai: 0,
+                mongol: 0,
+                ottoman: 0,
+                british: 0,
+                mughal: 0,
+                aztec: 0,
+                inca: 0,
+                byzantine: 0,
+                chinese: 0,
+                egyptian: 0,
+                russian: 0,
+                viking: 0,
+                macedonian: 0
+            };
+
+            // Hide result
+            document.getElementById('result').classList.remove('active');
+            document.querySelector('.question-counter').style.display = 'block';
+            
+            // Show first question
+            displayQuestion();
+            document.getElementById('questionNumber').textContent = '1';
+            document.getElementById('progressBar').style.width = '0%';
+            const topNum = document.getElementById('questionNumberTop');
+            if (topNum) topNum.textContent = '1';
+            const label = document.getElementById('progressLabel');
+            if (label) label.textContent = '0%';
+            const bar = document.getElementById('progressBar');
+            if (bar) bar.setAttribute('aria-valuenow', '0');
+            
+            // Scroll back to quiz
+            document.getElementById('quizSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('span');
+                
+                question.addEventListener('click', () => {
+                    const isOpen = answer.style.display === 'block';
+                    
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-answer').forEach(a => {
+                        a.style.display = 'none';
+                    });
+                    document.querySelectorAll('.faq-question span').forEach(s => {
+                        s.textContent = '+';
+                    });
+                    
+                    // Toggle current FAQ
+                    if (!isOpen) {
+                        answer.style.display = 'block';
+                        icon.textContent = '−';
+                    } else {
+                        answer.style.display = 'none';
+                        icon.textContent = '+';
+                    }
+                });
+            });
+            
+            // Initialize quiz
+            displayQuestion();
+        });
     </script>
-    
-  
+
+ <!-- Enhanced Professional Footer -->
+    <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); color: #ffffff; margin-top: 80px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>'); z-index: 1;"></div>
+        
+        <div style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 60px 40px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                <img src="zinvanalogo.png" alt="Zinvana" style="width: 50px; height: 50px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);">
+                <h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 16px; font-weight: 600;">Zinvana</h3>
+                <p style="color: #94a3b8; line-height: 1.6; margin: 0; font-size: 1rem; margin-bottom: 20px;">Discover your true self through fun, engaging personality quizzes and assessments. From internet archetypes to personality types, we help you explore different aspects of your personality in an entertaining, educational way.</p>
+                <div style="display: flex; gap: 16px; margin-bottom: 20px;">
+                    <a href="https://x.com/farazglori80528" target="_blank" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#" target="_blank" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    
+                </div>
+                <p style="color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.5;">Stay updated with our latest quizzes and personality assessments!</p>
+            </div>
+
+            <div>
+                <h4 style="color: #e2e8f0; font-size: 1.125rem; margin-bottom: 20px; font-weight: 600;">Popular Quizzes</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="leaders.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Historical Leaders Personality Quiz</a></li>
+                    <li style="margin-bottom: 12px;"><a href="football-personality-quiz.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Football Personality Quiz</a></li>
+                    <li style="margin-bottom: 12px;"><a href="wojak-personality-quiz.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Wojak Personality Quiz</a></li>
+                    <li style="margin-bottom: 12px;"><a href="perfect-country.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Perfect Country Quiz</a></li>
+                    <li style="margin-bottom: 12px;"><a href="youtubers-personality-quiz.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">YouTubers Personality Quiz</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 style="color: #e2e8f0; font-size: 1.125rem; margin-bottom: 20px; font-weight: 600;">Resources</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="/about.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
+                    <li style="margin-bottom: 12px;"><a href="/privacy.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a></li>
+                    
+                </ul>
+            </div>
+
+        </div>
+
+        <div style="position: relative; z-index: 2; border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 30px 40px;">
+            <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <p style="color: #94a3b8; margin: 0; font-size: 0.9rem;">&copy; 2025 Zinvana. All rights reserved.</p>
+                <p style="color: #94a3b8; margin: 0; font-size: 0.9rem;">Made with ❤️ by the Zinvana Team</p>
+            </div>
+            <div style="color: #64748b; font-size: 0.85rem; margin: 20px auto 0; text-align: center; line-height: 1.5; max-width: 600px;">
+                This empire Personality Quiz is for educational and entertainment purposes only. Results are based on your responses and should not be considered professional psychological diagnosis or definitive personality assessments. All empire archetypes and player examples are used for illustrative purposes.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
