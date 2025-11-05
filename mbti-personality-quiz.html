@@ -1,0 +1,4963 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      MBTI Personality Quiz 2025 - Which Myers-Briggs Type Are You? | Free
+      Personality Test
+    </title>
+    <meta
+      name="description"
+      content="Run through 10 scenario-based questions to reveal your classic MBTI personality type. Discover how you prefer to gather energy, process information, make decisions, and organize your life—complete with deep analysis and growth advice."
+    />
+    <meta
+      name="keywords"
+      content="mbti personality quiz, myers briggs test, 16 personality test, mbti types, classic mbti quiz, personality assessment, myers briggs personality types"
+    />
+    <meta name="author" content="Zinvana" />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://zinvana.com/mbti-personality-quiz.html"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="MBTI Personality Quiz 2025 - Which Myers-Briggs Type Are You?"
+    />
+    <meta
+      property="og:description"
+      content="Reveal your classic Myers-Briggs type with our modern MBTI personality quiz, complete with in-depth analysis and growth prompts."
+    />
+    <meta
+      property="og:image"
+      content="https://zinvana.com/images/mbti-personality-quiz.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://zinvana.com/mbti-personality-quiz.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="MBTI Personality Quiz 2025 - Which Myers-Briggs Type Are You?"
+    />
+    <meta
+      name="twitter:description"
+      content="Take our free MBTI personality quiz to discover your classic Myers-Briggs profile with practical insights."
+    />
+    <meta
+      name="twitter:image"
+      content="https://zinvana.com/images/mbti-personality-quiz.jpg"
+    />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "MBTI Personality Quiz",
+        "description": "A modern MBTI personality quiz that helps you discover your classic Myers-Briggs type through 10 scenario-based questions and a detailed result breakdown.",
+        "author": {
+          "@type": "Organization",
+          "name": "Zinvana"
+        },
+        "datePublished": "2025-11-01",
+        "dateModified": "2025-11-01",
+        "educationalLevel": "General",
+        "interactivityType": "active",
+        "learningResourceType": "Assessment",
+        "typicalAgeRange": "16-99",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Personality Psychology"
+          },
+          {
+            "@type": "Thing",
+            "name": "Myers-Briggs Type Indicator"
+          },
+          {
+            "@type": "Thing",
+            "name": "Self Discovery"
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      :root {
+        --brand1: #667eea;
+        --brand2: #764ba2;
+        --text-strong: #2d3748;
+        --text: #4a5568;
+        --muted: #718096;
+        --surface: #ffffff;
+        --surface-2: #f7fafc;
+        --border: #e2e8f0;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        color: #333;
+        padding-top: 80px;
+        scroll-behavior: smooth !important;
+      }
+
+      /* Navigation Styles */
+      nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(15, 15, 35, 0.95);
+        backdrop-filter: blur(25px);
+        padding: 16px 32px;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      nav::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(99, 102, 241, 0.6),
+          transparent
+        );
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .nav-logo-link {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: rgba(99, 102, 241, 0.2);
+        border: 1px solid rgba(99, 102, 241, 0.45);
+        padding: 8px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #cbd5e1;
+      }
+
+      .nav-toggle:hover,
+      .nav-toggle:focus-visible {
+        background: rgba(99, 102, 241, 0.35);
+        border-color: rgba(99, 102, 241, 0.65);
+        outline: none;
+      }
+
+      .nav-toggle-bar {
+        width: 22px;
+        height: 2px;
+        background: currentColor;
+        border-radius: 999px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      nav a {
+        color: #cbd5e1;
+        font-weight: 500;
+        font-size: 1rem;
+        position: relative;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+      }
+      nav a:hover {
+        color: #f8fafc;
+        background: rgba(99, 102, 241, 0.15);
+        transform: translateY(-1px);
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+      nav a:hover::after {
+        width: 80%;
+      }
+      nav img#brand-logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+        transition: transform 0.3s ease;
+      }
+      nav img#brand-logo:hover {
+        transform: scale(1.05);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .main-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero-section {
+        padding: 72px 0 40px;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 1400px;
+        height: 1400px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+      .hero-section > * {
+        position: relative;
+        z-index: 1;
+      }
+      .hero-section h1 {
+        font-size: 3.5rem;
+        letter-spacing: -0.03em;
+        margin-bottom: 14px;
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+        font-weight: 800;
+      }
+      .hero-section .subtitle {
+        font-size: 1.4rem;
+        opacity: 0.98;
+        margin-bottom: 14px;
+        font-weight: 500;
+      }
+      .hero-section .description {
+        max-width: 720px;
+        margin: 0 auto;
+        opacity: 0.95;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .header {
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+        padding: 40px 20px;
+      }
+
+      .header h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .quiz-container {
+        background: var(--surface);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        margin-bottom: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: saturate(120%) blur(4px);
+      }
+
+      .quiz-content {
+        padding: 40px;
+      }
+
+      .question {
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .question.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .question h2 {
+        font-size: 1.8rem;
+        color: #4a5568;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .question-number {
+        background: #667eea;
+        color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin: 0 auto 20px;
+      }
+
+      .options {
+        display: grid;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .option {
+        background: #f7fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .option:hover {
+        border-color: #667eea;
+        background: #edf2f7;
+        transform: translateY(-2px);
+      }
+
+      .option.selected {
+        border-color: #667eea;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        animation: selectedPulse 0.8s ease-in-out;
+        position: relative;
+      }
+
+      .option.selected::after {
+        content: "✓";
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        animation: checkmarkAppear 0.3s ease-out;
+      }
+
+      @keyframes checkmarkAppear {
+        0% {
+          opacity: 0;
+          transform: scale(0.5) rotate(-45deg);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+      }
+
+      @keyframes selectedPulse {
+        0% {
+          transform: translateY(-2px) scale(1.02);
+        }
+        50% {
+          transform: translateY(-2px) scale(1.05);
+        }
+        100% {
+          transform: translateY(-2px) scale(1.02);
+        }
+      }
+
+      .content-section {
+        background: white;
+        padding: 70px 0;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 32px rgba(102, 126, 234, 0.08);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+
+      .section-header h2 {
+        font-size: 2.6rem;
+        font-weight: 800;
+        color: #2d3748;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+      }
+
+      .section-header p {
+        font-size: 1.15rem;
+        color: #6b7280;
+        max-width: 680px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .quiz-container {
+        padding: 40px 30px;
+      }
+
+      .question {
+        display: none;
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      .question.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .question h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+      }
+
+      .answers {
+        display: grid;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .answer-btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+        border: 2px solid #e5e9f0;
+        padding: 20px 24px 20px 60px;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        font-size: 1.05rem;
+        font-weight: 500;
+        line-height: 1.4;
+        text-align: left;
+        color: var(--text-strong);
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06),
+          0 1px 3px rgba(0, 0, 0, 0.04);
+        overflow: hidden;
+      }
+
+      .answer-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.02) 0%,
+          rgba(118, 75, 162, 0.02) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+      }
+
+      .answer-btn:hover {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border-color: var(--brand1);
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.15),
+          0 3px 12px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px) scale(1.01);
+      }
+
+      .answer-btn:hover::before {
+        opacity: 1;
+      }
+
+      .answer-btn:active {
+        transform: translateY(-1px) scale(1.005);
+        transition: all 0.15s ease;
+      }
+
+      .answer-btn:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3),
+          0 8px 32px rgba(102, 126, 234, 0.15);
+        border-color: var(--brand1);
+      }
+
+      .answer-btn .answer-text {
+        position: relative;
+        z-index: 2;
+        flex: 1;
+      }
+
+      /* Image badge on choices */
+      .answer-btn .wojak-badge {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 2px solid #dde4ed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        z-index: 3;
+      }
+      .answer-btn .wojak-badge img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+      .answer-btn:hover .wojak-badge {
+        border-color: var(--brand1);
+        background: linear-gradient(135deg, #ffffff 0%, #f1f5ff 100%);
+        box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+        transform: translateY(-50%) scale(1.1);
+      }
+      .answer-btn:hover .wojak-badge img {
+        transform: scale(1.05);
+      }
+
+      /* Chevron */
+      .answer-btn .chevron {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: rgba(160, 174, 192, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #a0aec0;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        z-index: 3;
+      }
+      .answer-btn:hover .chevron {
+        background: rgba(102, 126, 234, 0.15);
+        color: var(--brand1);
+        transform: translateY(-50%) translateX(3px) scale(1.1);
+      }
+
+      .progress-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .progress {
+        background: #e9ecef;
+        height: 10px;
+        border-radius: 6px;
+        margin-bottom: 24px;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        background: linear-gradient(135deg, var(--brand1), var(--brand2));
+        height: 100%;
+        width: 0%;
+        transition: width 0.3s ease;
+      }
+
+      .result {
+        display: none;
+        text-align: center;
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      .result.active {
+        display: block;
+      }
+
+      .wojak-image {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 20px;
+        background: radial-gradient(
+          100% 100% at 50% 0%,
+          #ffffff 0%,
+          #f1f5ff 100%
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 6px solid transparent;
+        background-clip: padding-box;
+        position: relative;
+        overflow: hidden;
+      }
+      .wojak-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        background: #fff;
+      }
+      .wojak-image::after {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border-radius: 50%;
+        background: conic-gradient(from 180deg, var(--brand1), var(--brand2));
+        z-index: -1;
+      }
+
+      .result-portrait {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+      }
+
+      .result-figure-caption {
+        max-width: 520px;
+        margin: -6px auto 28px;
+        padding: 16px 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(248, 250, 252, 0.95),
+          rgba(255, 255, 255, 0.98)
+        );
+        border-radius: 18px;
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        box-shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+        color: #475569;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        display: none;
+      }
+
+      .result-figure-caption.active {
+        display: block;
+      }
+
+      .result-figure-caption .caption-heading {
+        color: #1a202c;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .result-figure-caption .caption-note {
+        margin: 0;
+        color: #4a5568;
+        font-size: 0.9rem;
+      }
+
+      .result-figure-caption .caption-disclaimer {
+        margin: 10px 0 0;
+        color: #64748b;
+        font-size: 0.8rem;
+        font-style: italic;
+      }
+
+      .result h2 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .result p {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.6;
+        max-width: 500px;
+        margin: 0 auto 30px;
+      }
+
+      .result-breakdown {
+        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        border-radius: 20px;
+        padding: 35px;
+        margin: 30px auto 0;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        max-width: 960px;
+      }
+
+      .result-breakdown__title {
+        color: #667eea;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: -0.01em;
+      }
+
+      .result-breakdown__title span {
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      .result-breakdown__intro {
+        color: #4a5568;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+      }
+
+      .result-breakdown__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+      }
+
+      .result-card {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border-left: 4px solid transparent;
+      }
+
+      .result-card--strengths {
+        border-left-color: #48bb78;
+      }
+
+      .result-card--watchouts {
+        border-left-color: #f56565;
+      }
+
+      .result-card--careers {
+        border-left-color: #667eea;
+        margin-top: 25px;
+      }
+
+      .result-card--relationships {
+        border-left-color: #ed64a6;
+        margin-top: 25px;
+      }
+
+      .result-card__heading {
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .result-card--strengths .result-card__heading {
+        color: #48bb78;
+      }
+
+      .result-card--watchouts .result-card__heading {
+        color: #f56565;
+      }
+
+      .result-card--careers .result-card__heading {
+        color: #667eea;
+      }
+
+      .result-card--relationships .result-card__heading {
+        color: #ed64a6;
+      }
+
+      .result-card__list {
+        color: #4a5568;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .result-card__list li {
+        margin-bottom: 8px;
+      }
+
+      .result-card__text {
+        color: #4a5568;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      .result-growth {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 25px;
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        color: #ffffff;
+      }
+
+      .result-growth__title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+      }
+
+      .result-growth__text {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      .restart-btn {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .restart-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .question-counter {
+        text-align: center;
+        color: #666;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 36px;
+        margin-top: 44px;
+      }
+
+      .feature-card {
+        background: linear-gradient(135deg, #f8fafd 0%, #f3f6fb 100%);
+        padding: 36px 32px;
+        border-radius: 16px;
+        text-align: center;
+        border: 2px solid #e8ecf4;
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          border-color 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--brand1), var(--brand2));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+        border-color: var(--brand1);
+      }
+
+      .feature-card:hover::before {
+        opacity: 1;
+      }
+
+      .feature-icon {
+        font-size: 3.2rem;
+        margin-bottom: 22px;
+        filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.1));
+      }
+
+      .feature-card h3 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 12px;
+        letter-spacing: -0.01em;
+      }
+
+      .feature-card p {
+        color: #5a6c7d;
+        line-height: 1.65;
+        font-size: 1.02rem;
+      }
+
+      .characters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 30px;
+        margin-top: 44px;
+      }
+
+      .character-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        padding: 32px 24px;
+        border-radius: 16px;
+        border: 2px solid #e8ecf4;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          border-color 0.3s ease;
+        position: relative;
+      }
+
+      .character-card:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 12px 32px rgba(102, 126, 234, 0.12);
+        border-color: var(--brand1);
+      }
+
+      .character-emoji {
+        font-size: 3.5rem;
+        margin-bottom: 18px;
+        display: block;
+        filter: drop-shadow(0 2px 6px rgba(102, 126, 234, 0.08));
+      }
+
+      .character-card h4 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+        letter-spacing: -0.01em;
+      }
+
+      .character-card p {
+        color: #5a6c7d;
+        font-size: 0.98rem;
+        line-height: 1.6;
+      }
+
+      /* --- Archetypes Section (Polished) --- */
+      .archetypes-header {
+        text-align: center;
+        margin-bottom: 40px;
+        max-width: 820px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .archetypes-header .eyebrow {
+        display: inline-block;
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #6366f1;
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(99, 102, 241, 0.25);
+        padding: 6px 10px;
+        border-radius: 999px;
+        margin-bottom: 12px;
+      }
+      .archetypes-header h2 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #1f2937;
+        letter-spacing: -0.02em;
+        margin-bottom: 10px;
+      }
+      .archetypes-header p {
+        font-size: 1.12rem;
+        color: #5a6c7d;
+        line-height: 1.75;
+        margin: 0 auto;
+        max-width: 760px;
+      }
+      .archetypes-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+      .archetypes-panel {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 2px solid #e8ecf4;
+        border-radius: 16px;
+        padding: 28px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 28px rgba(102, 126, 234, 0.1);
+      }
+      .archetypes-panel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--brand1), var(--brand2));
+        opacity: 0.9;
+      }
+      .pillars {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .pillar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+        border: 1px solid #e6ebf3;
+        border-radius: 12px;
+        background: #ffffff;
+      }
+      .pillar .icon {
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.12),
+          rgba(118, 75, 162, 0.12)
+        );
+        color: #4f46e5;
+        font-size: 1rem;
+      }
+      .pillar span {
+        color: #334155;
+        font-weight: 600;
+        font-size: 0.98rem;
+      }
+      .legend-label {
+        display: block;
+        font-size: 0.85rem;
+        color: #64748b;
+        margin: 10px 0 8px 2px;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 12px;
+      }
+      .archetype-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        background: #ffffff;
+        border: 1px solid #e8ecf4;
+        border-radius: 999px;
+        color: #334155;
+        font-weight: 600;
+        font-size: 0.95rem;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      }
+      .archetype-badge img {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        border: 1px solid #eaeef5;
+        background: #f8fafc;
+      }
+      .panel-note {
+        margin-top: 16px;
+        font-size: 0.95rem;
+        color: #475569;
+      }
+      .archetype-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+      .archetype-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        border: 2px solid #e8ecf4;
+        border-radius: 14px;
+        padding: 18px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .archetype-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 28px rgba(102, 126, 234, 0.12);
+        border-color: var(--brand1);
+      }
+      .archetype-card .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border: 1px solid #e6ebf3;
+        border-radius: 999px;
+        background: #ffffff;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 10px;
+      }
+      .archetype-card .chip img {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+      .archetype-figure {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        margin-bottom: 12px;
+        aspect-ratio: 4 / 3;
+        background: #f1f5f9;
+        box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.2);
+      }
+      .archetype-figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .archetype-caption {
+        font-size: 0.85rem;
+        color: #475569;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .archetype-caption strong {
+        color: #1f2937;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+      .archetype-card p {
+        color: #5a6c7d;
+        font-size: 0.98rem;
+        line-height: 1.55;
+        margin: 0;
+      }
+
+      /* --- Character Guide (Pro) --- */
+      .guide-header {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 28px auto;
+      }
+      .guide-header .eyebrow {
+        display: inline-block;
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #6366f1;
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(99, 102, 241, 0.25);
+        padding: 6px 10px;
+        border-radius: 999px;
+        margin-bottom: 10px;
+      }
+      .guide-header h2 {
+        font-size: 2.6rem;
+        font-weight: 800;
+        color: #1f2937;
+        letter-spacing: -0.02em;
+        margin: 6px 0 8px;
+      }
+      .guide-header p {
+        font-size: 1.08rem;
+        color: #5a6c7d;
+        line-height: 1.75;
+        margin: 0 auto;
+        max-width: 760px;
+      }
+      .guide-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin: 18px 0 24px;
+      }
+      .search-input {
+        position: relative;
+        flex: 1 1 360px;
+        max-width: 560px;
+      }
+      .search-input .icon {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #64748b;
+        pointer-events: none;
+      }
+      .search-input input[type="search"] {
+        width: 100%;
+        padding: 12px 14px 12px 38px;
+        border-radius: 12px;
+        border: 2px solid #e6ebf3;
+        background: #ffffff;
+        font-size: 0.98rem;
+        color: #1f2937;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .search-input input[type="search"]:focus {
+        border-color: var(--brand1);
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+      }
+      .filter-chips {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .chip {
+        padding: 8px 12px;
+        border: 1px solid #e6ebf3;
+        border-radius: 999px;
+        background: #ffffff;
+        color: #334155;
+        font-weight: 600;
+        font-size: 0.92rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .chip:hover {
+        border-color: var(--brand1);
+      }
+      .chip.active {
+        background: linear-gradient(135deg, var(--brand1), var(--brand2));
+        color: #ffffff;
+        border-color: transparent;
+        box-shadow: 0 6px 18px rgba(102, 126, 234, 0.25);
+      }
+      .guide-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+      }
+      .guide-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        border: 2px solid #e8ecf4;
+        border-radius: 16px;
+        padding: 18px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .guide-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 32px rgba(102, 126, 234, 0.12);
+        border-color: var(--brand1);
+      }
+      .guide-card .card-head {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        gap: 14px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .guide-card .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        border: 1px solid #e6ebf3;
+        background: #ffffff;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+      }
+      .guide-card .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .guide-card h4 {
+        font-size: 1.15rem;
+        margin: 0;
+        color: #1f2937;
+        letter-spacing: -0.01em;
+      }
+      .guide-card .summary {
+        color: #5a6c7d;
+        font-size: 0.96rem;
+        line-height: 1.55;
+        margin: 6px 0 12px;
+      }
+      .guide-figure-caption {
+        font-size: 0.85rem;
+        color: #475569;
+        font-weight: 600;
+        margin: -4px 0 12px;
+      }
+      .guide-figure-caption span {
+        display: block;
+        font-weight: 400;
+        color: #64748b;
+        margin-top: 2px;
+      }
+      .traits {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 12px 0;
+        display: grid;
+        gap: 6px;
+      }
+      .traits li {
+        position: relative;
+        padding-left: 18px;
+        color: #475569;
+        font-size: 0.93rem;
+      }
+      .traits li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #10b981;
+        font-weight: 700;
+      }
+      .guide-cta {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid #e6ebf3;
+        background: #ffffff;
+        text-decoration: none;
+        color: #334155;
+        font-weight: 700;
+        font-size: 0.92rem;
+        transition: all 0.2s ease;
+      }
+      .guide-cta:hover {
+        border-color: var(--brand1);
+        color: #1f2937;
+        box-shadow: 0 6px 18px rgba(102, 126, 234, 0.12);
+      }
+
+      .quiz-header {
+        background: linear-gradient(135deg, var(--brand1), var(--brand2));
+        color: white;
+        padding: 32px 24px;
+        text-align: center;
+      }
+
+      .quiz-header h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .quiz-header p {
+        opacity: 0.9;
+        font-size: 1.1rem;
+      }
+
+      .faq-section {
+        background: linear-gradient(135deg, #f8fafd 0%, #f3f6fb 100%);
+        padding: 70px 0;
+        margin-top: 64px;
+        border-radius: 20px;
+        box-shadow: 0 4px 32px rgba(102, 126, 234, 0.08);
+      }
+
+      .faq-item {
+        background: white;
+        margin-bottom: 18px;
+        border-radius: 12px;
+        border: 2px solid #e8ecf4;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        border-color: var(--brand1);
+        box-shadow: 0 4px 16px rgba(102, 126, 234, 0.08);
+      }
+
+      .faq-question {
+        padding: 24px 28px;
+        font-weight: 700;
+        color: #2d3748;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+        transition: background 0.2s ease;
+      }
+
+      .faq-question:hover {
+        background: #f8fafd;
+      }
+
+      .faq-question span {
+        font-size: 1.4rem;
+        color: var(--brand1);
+        font-weight: 400;
+      }
+
+      .faq-answer {
+        padding: 0 28px 24px;
+        color: #5a6c7d;
+        line-height: 1.7;
+        font-size: 1.02rem;
+      }
+
+      .breadcrumb {
+        padding: 20px 0 12px;
+        color: #8a9bb0;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+      }
+
+      .breadcrumb a {
+        color: var(--brand1);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--brand2);
+        text-decoration: underline;
+      }
+
+      .cta-section {
+        background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 72px 0;
+        text-align: center;
+        margin-top: 64px;
+        border-radius: 20px;
+        box-shadow: 0 8px 40px rgba(102, 126, 234, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 1000px;
+        height: 1000px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+
+      .cta-section > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-section h3 {
+        font-size: 2.3rem;
+        margin-bottom: 18px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .cta-section p {
+        font-size: 1.15rem;
+        opacity: 0.97;
+        max-width: 620px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* Footer */
+      .site-footer {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #334155 100%
+        );
+        color: #ffffff;
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .site-footer::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="0.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-pattern)"/></svg>');
+        z-index: 1;
+      }
+
+      .site-footer__inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 40px 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+
+      .site-footer__brand {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .site-footer__column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .site-footer__logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+      }
+
+      .site-footer__title {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .site-footer__description {
+        color: #94a3b8;
+        line-height: 1.6;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      .site-footer__social {
+        display: flex;
+        gap: 16px;
+      }
+
+      .site-footer__social-link {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        text-decoration: none;
+        transition: transform 0.3s ease, background 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .site-footer__social-link:hover,
+      .site-footer__social-link:focus-visible {
+        transform: translateY(-3px);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.35);
+      }
+
+      .site-footer__social-link--x:hover,
+      .site-footer__social-link--x:focus-visible {
+        background: rgba(29, 161, 242, 0.3);
+      }
+
+      .site-footer__social-link--instagram:hover,
+      .site-footer__social-link--instagram:focus-visible {
+        background: rgba(225, 48, 108, 0.3);
+      }
+
+      .site-footer__note {
+        color: #94a3b8;
+        font-size: 0.9rem;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .site-footer__heading {
+        color: #e2e8f0;
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .site-footer__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .site-footer__link {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+      }
+
+      .site-footer__link:hover,
+      .site-footer__link:focus-visible {
+        color: #667eea;
+        outline: none;
+      }
+
+      .site-footer__bottom {
+        position: relative;
+        z-index: 2;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 30px 40px;
+      }
+
+      .site-footer__bottom-row {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .site-footer__bottom-row p {
+        color: #94a3b8;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .site-footer__disclaimer {
+        color: #64748b;
+        font-size: 0.85rem;
+        margin: 20px auto 0;
+        text-align: center;
+        line-height: 1.5;
+        max-width: 600px;
+      }
+
+      @media (max-width: 1200px) {
+        .main-container {
+          padding: 0 16px;
+        }
+        .hero-section h1 {
+          font-size: 3rem;
+        }
+        .section-header h2 {
+          font-size: 2.3rem;
+        }
+        .guide-header h2 {
+          font-size: 2.3rem;
+        }
+        .guide-grid {
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+      }
+
+      @media (max-width: 992px) {
+        .container {
+          max-width: 820px;
+        }
+        .nav-links {
+          gap: 20px;
+        }
+        .hero-section h1 {
+          font-size: 2.6rem;
+        }
+        .hero-section .subtitle {
+          font-size: 1.2rem;
+        }
+        .section-header p {
+          font-size: 1.08rem;
+        }
+        .guide-toolbar {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 12px;
+        }
+        .search-input {
+          flex: 1 1 100%;
+          max-width: none;
+        }
+        .filter-chips {
+          justify-content: center;
+        }
+        .guide-grid {
+          grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        }
+        .characters-grid {
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+      }
+
+      @media (min-width: 720px) {
+        .answers {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .archetypes-grid {
+          grid-template-columns: 1fr;
+        }
+        .archetypes-header h2 {
+          font-size: 2.2rem;
+        }
+        .pillars {
+          grid-template-columns: 1fr;
+        }
+        .archetype-card-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        body {
+          padding-top: 70px;
+        }
+
+        nav {
+          padding: 12px 20px;
+          flex-wrap: wrap;
+        }
+        .nav-brand {
+          width: 100%;
+          justify-content: space-between;
+        }
+        .nav-toggle {
+          display: inline-flex;
+        }
+        .nav-links {
+          width: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+          padding: 12px 0 0;
+          display: none;
+        }
+        .nav-links.is-open {
+          display: flex;
+        }
+        nav a {
+          width: 100%;
+          padding: 10px 12px;
+        }
+        nav img#brand-logo {
+          width: 40px;
+          height: 40px;
+        }
+
+        .result-breakdown {
+          padding: 28px;
+        }
+        .result-breakdown__title {
+          font-size: 1.6rem;
+        }
+        .result-breakdown__grid {
+          grid-template-columns: 1fr;
+        }
+        .site-footer__inner {
+          padding: 48px 24px 32px;
+        }
+        .site-footer__bottom {
+          padding: 24px;
+        }
+
+        .hero-section h1 {
+          font-size: 2.4rem;
+        }
+
+        .hero-section .subtitle {
+          font-size: 1.15rem;
+        }
+
+        .hero-section {
+          padding: 56px 0 32px;
+        }
+
+        .section-header h2 {
+          font-size: 2rem;
+        }
+
+        .section-header p {
+          font-size: 1.05rem;
+        }
+
+        .quiz-container {
+          padding: 30px 20px;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .feature-card {
+          padding: 28px 24px;
+        }
+
+        .characters-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .cta-section h3 {
+          font-size: 1.8rem;
+        }
+
+        .cta-section p {
+          font-size: 1.05rem;
+        }
+
+        .characters-grid {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+        }
+
+        .answer-btn {
+          padding-left: 56px;
+          padding: 18px 20px 18px 56px;
+          font-size: 1rem;
+        }
+
+        .answer-btn .wojak-badge {
+          left: 16px;
+          width: 28px;
+          height: 28px;
+        }
+
+        .answer-btn .wojak-badge img {
+          width: 18px;
+          height: 18px;
+        }
+
+        .answer-btn .chevron {
+          right: 16px;
+          width: 20px;
+          height: 20px;
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 16px;
+        }
+        nav {
+          padding: 10px 16px;
+        }
+        .nav-links {
+          gap: 6px;
+        }
+        nav a {
+          font-size: 0.98rem;
+        }
+        nav img#brand-logo {
+          width: 36px;
+          height: 36px;
+        }
+        .result-breakdown {
+          padding: 24px;
+        }
+        .result-card {
+          padding: 22px;
+        }
+        .result-card__heading {
+          font-size: 1.2rem;
+        }
+        .result-growth {
+          padding: 24px;
+        }
+        .site-footer__inner {
+          padding: 40px 20px 28px;
+        }
+        .site-footer__bottom-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .site-footer__disclaimer {
+          font-size: 0.82rem;
+        }
+        .hero-section h1 {
+          font-size: 2.1rem;
+        }
+        .hero-section .subtitle {
+          font-size: 1.05rem;
+        }
+        .section-header h2 {
+          font-size: 1.9rem;
+        }
+        .guide-header h2 {
+          font-size: 2rem;
+        }
+        .guide-grid {
+          grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        }
+        .archetype-card-grid {
+          grid-template-columns: 1fr;
+        }
+        .characters-grid {
+          grid-template-columns: 1fr;
+        }
+        .wojak-image {
+          width: 180px;
+          height: 180px;
+        }
+        .progress {
+          height: 8px;
+        }
+        .faq-section {
+          padding: 56px 0;
+        }
+        .cta-section {
+          padding: 56px 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding-top: 64px;
+        }
+        nav {
+          padding: 8px 12px;
+        }
+        .result-breakdown {
+          padding: 20px;
+        }
+        .result-breakdown__title {
+          font-size: 1.4rem;
+        }
+        .result-breakdown__intro {
+          font-size: 1rem;
+        }
+        .result-card__text {
+          font-size: 1rem;
+        }
+        .result-growth {
+          padding: 20px;
+        }
+        .result-growth__text {
+          font-size: 1rem;
+        }
+        .site-footer__inner {
+          padding: 32px 18px 24px;
+        }
+        .site-footer__social {
+          gap: 12px;
+        }
+        .site-footer__bottom {
+          padding: 20px 18px;
+        }
+        .site-footer__disclaimer {
+          font-size: 0.8rem;
+        }
+        .hero-section {
+          padding: 48px 0 28px;
+        }
+        .hero-section h1 {
+          font-size: 1.85rem;
+        }
+        .hero-section .description {
+          font-size: 1rem;
+          padding: 0 4px;
+        }
+        .quiz-header {
+          padding: 24px 16px;
+        }
+        .quiz-header h2 {
+          font-size: 1.6rem;
+        }
+        .quiz-header p {
+          font-size: 1rem;
+        }
+        .answers {
+          gap: 12px;
+        }
+        .answer-btn {
+          padding: 16px 18px 16px 50px;
+          font-size: 0.95rem;
+        }
+        .answer-btn .wojak-badge {
+          left: 14px;
+          width: 26px;
+          height: 26px;
+        }
+        .answer-btn .wojak-badge img {
+          width: 16px;
+          height: 16px;
+        }
+        .answer-btn .chevron {
+          right: 12px;
+          width: 18px;
+          height: 18px;
+          font-size: 11px;
+        }
+        .progress-meta {
+          font-size: 0.9rem;
+        }
+        .wojak-image {
+          width: 160px;
+          height: 160px;
+        }
+        .section-header h2 {
+          font-size: 1.7rem;
+        }
+        .guide-grid {
+          grid-template-columns: 1fr;
+        }
+        .archetype-card-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <nav>
+      <div class="nav-brand">
+        <a href="index.html" class="nav-logo-link">
+          <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="navLinks"
+          id="navToggle"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="#quizSection">Test</a>
+        <a href="help.html">Help</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="main-container">
+        <h1>🧭 MBTI Personality Quiz 2025</h1>
+        <p class="subtitle">Which Myers-Briggs Type Are You?</p>
+        <p class="description">
+          Explore how you process information, make decisions, and recharge. Our
+          10-question MBTI assessment maps your answers to the classic 16
+          personalities and delivers a modern, actionable breakdown of your
+          type.
+        </p>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <!-- Introduction Section -->
+      <section class="content-section" aria-labelledby="archetypes-heading">
+        <div class="archetypes-header">
+          <span class="eyebrow">Overview</span>
+          <h2 id="archetypes-heading">Understand the Classic MBTI Framework</h2>
+          <p>
+            The Myers-Briggs Type Indicator captures your natural preferences
+            across four psychological dichotomies. This quiz converts your
+            instinctive answers into a reliable four-letter type and explains
+            how that code influences your energy, focus, decision-making, and
+            lifestyle.
+          </p>
+        </div>
+
+        <div class="archetypes-grid">
+          <!-- Left: Explanatory Panel -->
+          <div class="archetypes-panel">
+            <h3 style="font-size: 1.45rem; color: #1f2937; margin-bottom: 18px">
+              Decode Your Cognitive Preferences
+            </h3>
+            <p style="color: #475569; line-height: 1.7; margin-bottom: 22px">
+              Each letter in your MBTI type represents a preference pair. The
+              blend of these four choices describes how you gather energy,
+              absorb data, analyze situations, and bring plans to life.
+            </p>
+            <div class="pillars">
+              <div class="pillar">
+                <div class="icon">⚡</div>
+                <span>Energy: Extraversion (E) vs. Introversion (I)</span>
+              </div>
+              <div class="pillar">
+                <div class="icon">🔍</div>
+                <span>Information: Sensing (S) vs. Intuition (N)</span>
+              </div>
+              <div class="pillar">
+                <div class="icon">⚖️</div>
+                <span>Decisions: Thinking (T) vs. Feeling (F)</span>
+              </div>
+              <div class="pillar">
+                <div class="icon">🗂️</div>
+                <span>Lifestyle: Judging (J) vs. Perceiving (P)</span>
+              </div>
+            </div>
+            <span class="legend-label">How the quiz works</span>
+            <div class="badges">
+              <span class="archetype-badge"
+                ><img
+                  data-letter="E"
+                  data-theme="energy"
+                  alt="Extraversion badge"
+                />Energy Flow</span
+              >
+              <span class="archetype-badge"
+                ><img
+                  data-letter="S"
+                  data-theme="information"
+                  alt="Sensing badge"
+                />Information Style</span
+              >
+              <span class="archetype-badge"
+                ><img
+                  data-letter="T"
+                  data-theme="decisions"
+                  alt="Thinking badge"
+                />Decision Lens</span
+              >
+              <span class="archetype-badge"
+                ><img
+                  data-letter="J"
+                  data-theme="structure"
+                  alt="Judging badge"
+                />Lifestyle Rhythm</span
+              >
+            </div>
+            <p class="panel-note">
+              You will make ten instinctive choices. Behind the scenes we tally
+              each preference to reveal your most natural combination and the
+              best-fit MBTI profile.
+            </p>
+          </div>
+
+          <!-- Right: Archetype Cards -->
+          <div class="archetypes-panel">
+            <span class="legend-label">The Four MBTI Families</span>
+            <div class="archetype-card-grid">
+              <div class="archetype-card">
+                <span class="chip"
+                  ><img
+                    data-letter="NT"
+                    data-theme="analyst"
+                    alt="Analyst badge"
+                  />Analysts (NT)</span
+                >
+                <div class="archetype-figure">
+                  <img
+                    src="elonmusk.jpg"
+                    alt="Elon Musk representing the Analyst temperament"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="archetype-caption">
+                  <strong>Elon Musk</strong
+                  ><span
+                    >Visionary technologist driving long-range innovation.</span
+                  >
+                </div>
+                <p>
+                  Strategic, logic-first innovators who love abstract puzzles
+                  and future-focused problem solving.
+                </p>
+              </div>
+              <div class="archetype-card">
+                <span class="chip"
+                  ><img
+                    data-letter="NF"
+                    data-theme="diplomat"
+                    alt="Diplomat badge"
+                  />Diplomats (NF)</span
+                >
+                <div class="archetype-figure">
+                  <img
+                    src="taylorswift.jpg"
+                    alt="Taylor Swift representing the Diplomat temperament"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="archetype-caption">
+                  <strong>Taylor Swift</strong
+                  ><span
+                    >Storytelling advocate who connects emotions and
+                    meaning.</span
+                  >
+                </div>
+                <p>
+                  Empathetic visionaries who translate ideals into movement and
+                  nurture authentic collaboration.
+                </p>
+              </div>
+              <div class="archetype-card">
+                <span class="chip"
+                  ><img
+                    data-letter="SJ"
+                    data-theme="sentinel"
+                    alt="Sentinel badge"
+                  />Sentinels (SJ)</span
+                >
+                <div class="archetype-figure">
+                  <img
+                    src="gomez.jpg"
+                    alt="Selena Gomez representing the Sentinel temperament"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="archetype-caption">
+                  <strong>Selena Gomez</strong
+                  ><span
+                    >Grounded organizer who keeps communities cared for.</span
+                  >
+                </div>
+                <p>
+                  Practical protectors who steward details, uphold commitments,
+                  and create reliable structure for others.
+                </p>
+              </div>
+              <div class="archetype-card">
+                <span class="chip"
+                  ><img
+                    data-letter="SP"
+                    data-theme="explorer"
+                    alt="Explorer badge"
+                  />Explorers (SP)</span
+                >
+                <div class="archetype-figure">
+                  <img
+                    src="styles.jpg"
+                    alt="Harry Styles representing the Explorer temperament"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="archetype-caption">
+                  <strong>Harry Styles</strong
+                  ><span
+                    >Expressive trailblazer embracing spontaneity and
+                    play.</span
+                  >
+                </div>
+                <p>
+                  Adaptable realists who respond quickly to opportunities and
+                  live comfortably in the present moment.
+                </p>
+              </div>
+            </div>
+            <p class="panel-note">
+              Your result includes a complete strengths profile, common blind
+              spots, career recommendations, and practical coaching prompts to
+              integrate your type.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quiz Container -->
+      <div class="container" id="quizSection">
+        <div class="quiz-header">
+          <h2>Take the MBTI Personality Quiz</h2>
+          <p>
+            Answer 10 scenario-based questions to uncover your Myers-Briggs code
+          </p>
+        </div>
+
+        <div class="quiz-container">
+          <div class="progress-meta">
+            <span><strong id="progressLabel">0%</strong></span>
+            <span>Question <strong id="questionNumberTop">1</strong> / 10</span>
+          </div>
+          <div class="progress" aria-label="Quiz progress">
+            <div
+              class="progress-bar"
+              id="progressBar"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+          </div>
+
+          <div class="question-counter" aria-live="polite">
+            <span id="questionNumber">1</span> / 10
+          </div>
+
+          <!-- Question 1 -->
+          <div class="question active" data-question="1">
+            <h3>How do you recharge after an intense week?</h3>
+            <div class="answers">
+              <button
+                class="answer-btn"
+                data-trait="E"
+                data-dimension="EI"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="E"
+                    data-theme="energy"
+                    alt="Extroversion icon"
+                /></span>
+                <span class="answer-text"
+                  >Planning a social night out to catch up with people and feel
+                  energized</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="I"
+                data-dimension="EI"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="I"
+                    data-theme="energy"
+                    alt="Introversion icon"
+                /></span>
+                <span class="answer-text"
+                  >Carving out solitude, a quiet room, and time with my own
+                  thoughts</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="E"
+                data-dimension="EI"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="E"
+                    data-theme="energy"
+                    alt="Extroversion icon"
+                /></span>
+                <span class="answer-text"
+                  >Joining a group activity—sports, trivia, anything lively with
+                  people</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="I"
+                data-dimension="EI"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="I"
+                    data-theme="energy"
+                    alt="Introversion icon"
+                /></span>
+                <span class="answer-text"
+                  >Diving into a solo hobby, headphones on, fully immersed in my
+                  own world</span
+                >
+                <span class="chevron">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question" data-question="2">
+            <h3>When you start a new project, what excites you most?</h3>
+            <div class="answers">
+              <button
+                class="answer-btn"
+                data-trait="S"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="S"
+                    data-theme="information"
+                    alt="Sensing icon"
+                /></span>
+                <span class="answer-text"
+                  >Breaking tasks into practical steps and confirming the proven
+                  method works</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="N"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="N"
+                    data-theme="information"
+                    alt="Intuition icon"
+                /></span>
+                <span class="answer-text"
+                  >Imagining the big-picture possibilities and reinventing the
+                  approach</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="S"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="S"
+                    data-theme="information"
+                    alt="Sensing icon"
+                /></span>
+                <span class="answer-text"
+                  >Reviewing the facts, timelines, and everything we already
+                  know</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="N"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="N"
+                    data-theme="information"
+                    alt="Intuition icon"
+                /></span>
+                <span class="answer-text"
+                  >Spotting patterns that others miss and envisioning innovative
+                  outcomes</span
+                >
+                <span class="chevron">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="question" data-question="3">
+            <h3>How do you usually make important decisions?</h3>
+            <div class="answers">
+              <button
+                class="answer-btn"
+                data-trait="T"
+                data-dimension="TF"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="T"
+                    data-theme="decisions"
+                    alt="Thinking icon"
+                /></span>
+                <span class="answer-text"
+                  >I analyze the pros and cons logically, prioritizing objective
+                  criteria</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="F"
+                data-dimension="TF"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="F"
+                    data-theme="decisions"
+                    alt="Feeling icon"
+                /></span>
+                <span class="answer-text"
+                  >I consider the people involved and what would create
+                  harmony</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="T"
+                data-dimension="TF"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="T"
+                    data-theme="decisions"
+                    alt="Thinking icon"
+                /></span>
+                <span class="answer-text"
+                  >I seek data, evidence, and a structured framework before
+                  acting</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="F"
+                data-dimension="TF"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="F"
+                    data-theme="decisions"
+                    alt="Feeling icon"
+                /></span>
+                <span class="answer-text"
+                  >I ask how the choice aligns with my values and long-term
+                  relationships</span
+                >
+                <span class="chevron">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="question" data-question="4">
+            <h3>What best describes your work style?</h3>
+            <div class="answers">
+              <button
+                class="answer-btn"
+                data-trait="J"
+                data-dimension="JP"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="J"
+                    data-theme="structure"
+                    alt="Judging icon"
+                /></span>
+                <span class="answer-text"
+                  >I like clear plans, defined deadlines, and checking tasks off
+                  early</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="P"
+                data-dimension="JP"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="P"
+                    data-theme="structure"
+                    alt="Perceiving icon"
+                /></span>
+                <span class="answer-text"
+                  >I keep things flexible so I can adjust when new ideas
+                  appear</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="J"
+                data-dimension="JP"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="J"
+                    data-theme="structure"
+                    alt="Judging icon"
+                /></span>
+                <span class="answer-text"
+                  >I feel calm when everything is organized, scheduled, and
+                  predictable</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="P"
+                data-dimension="JP"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="P"
+                    data-theme="structure"
+                    alt="Perceiving icon"
+                /></span>
+                <span class="answer-text"
+                  >I thrive when I can explore options on the fly and improvise
+                  solutions</span
+                >
+                <span class="chevron">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="question" data-question="5">
+            <h3>In a lively conversation, you typically...</h3>
+            <div class="answers">
+              <button
+                class="answer-btn"
+                data-trait="E"
+                data-dimension="EI"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="E"
+                    data-theme="energy"
+                    alt="Extroversion icon"
+                /></span>
+                <span class="answer-text"
+                  >Jump in quickly, bounce ideas around, and energize the
+                  group</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="I"
+                data-dimension="EI"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="I"
+                    data-theme="energy"
+                    alt="Introversion icon"
+                /></span>
+                <span class="answer-text"
+                  >Observe first, speak when you have something thoughtful to
+                  add</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="E"
+                data-dimension="EI"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="E"
+                    data-theme="energy"
+                    alt="Extroversion icon"
+                /></span>
+                <span class="answer-text"
+                  >Keep the conversation flowing and invite more voices to
+                  join</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="I"
+                data-dimension="EI"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="I"
+                    data-theme="energy"
+                    alt="Introversion icon"
+                /></span>
+                <span class="answer-text"
+                  >Reflect deeply, then share a concise insight when the moment
+                  fits</span
+                >
+                <span class="chevron">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="question" data-question="6">
+            <h3>How do you absorb new information most easily?</h3>
+            <div class="answers">
+              <button
+                class="answer-btn"
+                data-trait="S"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="S"
+                    data-theme="information"
+                    alt="Sensing icon"
+                /></span>
+                <span class="answer-text"
+                  >Through hands-on practice, real examples, and concrete
+                  instructions</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="N"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="N"
+                    data-theme="information"
+                    alt="Intuition icon"
+                /></span>
+                <span class="answer-text"
+                  >By exploring theories, symbolism, and how ideas connect
+                  across topics</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="S"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="S"
+                    data-theme="information"
+                    alt="Sensing icon"
+                /></span>
+                <span class="answer-text"
+                  >I prefer detailed instructions with step-by-step
+                  clarity</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="N"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="N"
+                    data-theme="information"
+                    alt="Intuition icon"
+                /></span>
+                <span class="answer-text"
+                  >I follow the gist quickly and love speculating about future
+                  implications</span
+                >
+                <span class="chevron">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 7 -->
+          <div class="question" data-question="7">
+            <h3>During conflict, what do you focus on first?</h3>
+            <div class="answers">
+              <button
+                class="answer-btn"
+                data-trait="T"
+                data-dimension="TF"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="T"
+                    data-theme="decisions"
+                    alt="Thinking icon"
+                /></span>
+                <span class="answer-text"
+                  >Clarifying facts, logic, and what outcome makes the most
+                  sense</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="F"
+                data-dimension="TF"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="F"
+                    data-theme="decisions"
+                    alt="Feeling icon"
+                /></span>
+                <span class="answer-text"
+                  >Understanding emotions, motivations, and preserving the
+                  relationship</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="T"
+                data-dimension="TF"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="T"
+                    data-theme="decisions"
+                    alt="Thinking icon"
+                /></span>
+                <span class="answer-text"
+                  >Neutral analysis—what remedy aligns with principles or
+                  policies</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="F"
+                data-dimension="TF"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="F"
+                    data-theme="decisions"
+                    alt="Feeling icon"
+                /></span>
+                <span class="answer-text"
+                  >Restoring trust, validating feelings, and reaching a shared
+                  understanding</span
+                >
+                <span class="chevron">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 8 -->
+          <div class="question" data-question="8">
+            <h3>What is your relationship with schedules?</h3>
+            <div class="answers">
+              <button
+                class="answer-btn"
+                data-trait="J"
+                data-dimension="JP"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="J"
+                    data-theme="structure"
+                    alt="Judging icon"
+                /></span>
+                <span class="answer-text"
+                  >I create detailed plans and feel most productive when
+                  sticking to them</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="P"
+                data-dimension="JP"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="P"
+                    data-theme="structure"
+                    alt="Perceiving icon"
+                /></span>
+                <span class="answer-text"
+                  >I keep broad outlines and adjust day-to-day depending on
+                  inspiration</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="J"
+                data-dimension="JP"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="J"
+                    data-theme="structure"
+                    alt="Judging icon"
+                /></span>
+                <span class="answer-text"
+                  >A tidy calendar keeps me grounded and frees up mental
+                  space</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="P"
+                data-dimension="JP"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="P"
+                    data-theme="structure"
+                    alt="Perceiving icon"
+                /></span>
+                <span class="answer-text"
+                  >I love the freedom to follow curiosity and pivot when
+                  opportunities appear</span
+                >
+                <span class="chevron">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 9 -->
+          <div class="question" data-question="9">
+            <h3>How do you prefer to communicate complex ideas?</h3>
+            <div class="answers">
+              <button
+                class="answer-btn"
+                data-trait="S"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="S"
+                    data-theme="information"
+                    alt="Sensing icon"
+                /></span>
+                <span class="answer-text"
+                  >With concrete examples, clear sequences, and practical
+                  language</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="N"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="N"
+                    data-theme="information"
+                    alt="Intuition icon"
+                /></span>
+                <span class="answer-text"
+                  >Using metaphors, patterns, and big-picture insights to
+                  inspire</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="S"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="S"
+                    data-theme="information"
+                    alt="Sensing icon"
+                /></span>
+                <span class="answer-text"
+                  >By demonstrating the process step-by-step so others can
+                  replicate it</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="N"
+                data-dimension="SN"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="N"
+                    data-theme="information"
+                    alt="Intuition icon"
+                /></span>
+                <span class="answer-text"
+                  >By exploring possibilities and inviting others to imagine
+                  along with me</span
+                >
+                <span class="chevron">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question 10 -->
+          <div class="question" data-question="10">
+            <h3>What best describes your outlook on the future?</h3>
+            <div class="answers">
+              <button
+                class="answer-btn"
+                data-trait="J"
+                data-dimension="JP"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="J"
+                    data-theme="structure"
+                    alt="Judging icon"
+                /></span>
+                <span class="answer-text"
+                  >I set goals, map milestones, and feel grounded when the path
+                  is defined</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="P"
+                data-dimension="JP"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="P"
+                    data-theme="structure"
+                    alt="Perceiving icon"
+                /></span>
+                <span class="answer-text"
+                  >I keep options open because spontaneous opportunities are
+                  exciting</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="T"
+                data-dimension="TF"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="T"
+                    data-theme="decisions"
+                    alt="Thinking icon"
+                /></span>
+                <span class="answer-text"
+                  >I evaluate trends analytically and prepare contingencies in
+                  advance</span
+                >
+                <span class="chevron">›</span>
+              </button>
+              <button
+                class="answer-btn"
+                data-trait="F"
+                data-dimension="TF"
+                onclick="selectAnswer(this)"
+              >
+                <span class="wojak-badge"
+                  ><img
+                    data-letter="F"
+                    data-theme="decisions"
+                    alt="Feeling icon"
+                /></span>
+                <span class="answer-text"
+                  >I picture the impact on people and how we can grow
+                  together</span
+                >
+                <span class="chevron">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="result" id="result">
+            <div class="wojak-image" id="wojakEmoji"></div>
+            <h2 id="wojakName"></h2>
+            <p id="wojakDescription"></p>
+            <div
+              class="result-figure-caption"
+              id="figureCaption"
+              aria-live="polite"
+            ></div>
+            <div id="analysisContainer"></div>
+            <button class="restart-btn" onclick="restartQuiz()">
+              Take Quiz Again
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Character Guide Section (Pro) -->
+      <section class="content-section" aria-labelledby="guide-title">
+        <div class="guide-header">
+          <span class="eyebrow">Reference</span>
+          <h2 id="guide-title">Complete MBTI Type Guide 2025</h2>
+          <p>
+            Browse quick-reference summaries for every Myers-Briggs personality
+            type. Filter by temperament or search for traits that feel like you.
+          </p>
+        </div>
+
+        <div class="main-container" style="padding: 0 0 8px">
+          <div class="guide-toolbar" role="region" aria-label="Guide tools">
+            <div class="search-input">
+              <span class="icon">🔎</span>
+              <input
+                id="guideSearch"
+                type="search"
+                placeholder="Search types (e.g., INTJ, empathetic, strategist)"
+                aria-label="Search MBTI types"
+              />
+            </div>
+            <div
+              class="filter-chips"
+              role="listbox"
+              aria-label="Temperament filters"
+            >
+              <button
+                class="chip active"
+                data-filter="all"
+                aria-selected="true"
+              >
+                All
+              </button>
+              <button class="chip" data-filter="analyst">Analysts (NT)</button>
+              <button class="chip" data-filter="diplomat">
+                Diplomats (NF)
+              </button>
+              <button class="chip" data-filter="sentinel">
+                Sentinels (SJ)
+              </button>
+              <button class="chip" data-filter="explorer">
+                Explorers (SP)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-grid" id="guideGrid">
+          <!-- INTJ -->
+          <article
+            class="guide-card"
+            data-tags="analyst strategic independent visionary"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="musk.jpg"
+                  alt="Elon Musk portrait representing the INTJ personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>INTJ • The Architect</h4>
+            </div>
+            <p class="summary">
+              Future-oriented strategist who builds precise systems and trusts
+              data over hype.
+            </p>
+            <div class="guide-figure-caption">
+              Elon Musk<span
+                >Systems visionary • CEO of Tesla &amp; SpaceX</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Long-range planner</li>
+              <li>Independent thinker</li>
+              <li>High standards</li>
+            </ul>
+            <a href="mbti-intj.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- INTP -->
+          <article
+            class="guide-card"
+            data-tags="analyst analytical inventive curious"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="billgates.jpg"
+                  alt="Bill Gates portrait representing the INTP personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>INTP • The Logician</h4>
+            </div>
+            <p class="summary">
+              Curious problem-solver who dissects concepts to understand how and
+              why they work.
+            </p>
+            <div class="guide-figure-caption">
+              Bill Gates<span
+                >Analytical technologist • Co-founder of Microsoft</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Conceptual depth</li>
+              <li>Flexible analysis</li>
+              <li>Independent learning</li>
+            </ul>
+            <a href="mbti-intp.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ENTJ -->
+          <article
+            class="guide-card"
+            data-tags="analyst commanding decisive leader"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="jeffbezos.jpg"
+                  alt="Jeff Bezos portrait representing the ENTJ personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ENTJ • The Commander</h4>
+            </div>
+            <p class="summary">
+              Direct, assertive leader who mobilizes people and resources toward
+              ambitious goals.
+            </p>
+            <div class="guide-figure-caption">
+              Jeff Bezos<span>Decisive strategist • Founder of Amazon</span>
+            </div>
+            <ul class="traits">
+              <li>Strategic organizer</li>
+              <li>Goal focused</li>
+              <li>Influential presence</li>
+            </ul>
+            <a href="mbti-entj.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ENTP -->
+          <article
+            class="guide-card"
+            data-tags="analyst inventive challenger pioneering"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="reynolds.jpg"
+                  alt="Ryan Reynolds portrait representing the ENTP personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ENTP • The Debater</h4>
+            </div>
+            <p class="summary">
+              Energetic innovator who plays with ideas, bending rules to expose
+              better solutions.
+            </p>
+            <div class="guide-figure-caption">
+              Ryan Reynolds<span
+                >Quick-witted creator • Actor &amp; entrepreneur</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Quick ideation</li>
+              <li>Charming challenger</li>
+              <li>Adaptive strategist</li>
+            </ul>
+            <a href="mbti-entp.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- INFJ -->
+          <article
+            class="guide-card"
+            data-tags="diplomat insightful empathetic visionary"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="swift.jpg"
+                  alt="Taylor Swift portrait representing the INFJ personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>INFJ • The Advocate</h4>
+            </div>
+            <p class="summary">
+              Purpose-driven idealist who reads between the lines and guides
+              others quietly.
+            </p>
+            <div class="guide-figure-caption">
+              Taylor Swift<span
+                >Story-driven advocate • Global recording artist</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Deep empathy</li>
+              <li>Visionary mentoring</li>
+              <li>Value-centered</li>
+            </ul>
+            <a href="mbti-infj.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- INFP -->
+          <article
+            class="guide-card"
+            data-tags="diplomat creative compassionate authentic"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="zendaya.jpg"
+                  alt="Zendaya portrait representing the INFP personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>INFP • The Mediator</h4>
+            </div>
+            <p class="summary">
+              Imaginative empath who champions authenticity and helps others
+              uncover meaning.
+            </p>
+            <div class="guide-figure-caption">
+              Zendaya<span>Empathetic storyteller • Actor &amp; producer</span>
+            </div>
+            <ul class="traits">
+              <li>Heart-led creativity</li>
+              <li>Idealistic values</li>
+              <li>Gentle persistence</li>
+            </ul>
+            <a href="mbti-infp.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ENFJ -->
+          <article
+            class="guide-card"
+            data-tags="diplomat inspiring connector mentor"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="obama.jpg"
+                  alt="Barack Obama portrait representing the ENFJ personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ENFJ • The Protagonist</h4>
+            </div>
+            <p class="summary">
+              Charismatic coach who unites teams, spots potential, and sparks
+              collective progress.
+            </p>
+            <div class="guide-figure-caption">
+              Barack Obama<span
+                >Inspirational leader • 44th U.S. President</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Natural motivator</li>
+              <li>Relationship builder</li>
+              <li>Vision with heart</li>
+            </ul>
+            <a href="mbti-enfj.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ENFP -->
+          <article
+            class="guide-card"
+            data-tags="diplomat enthusiastic imaginative catalyst"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="willsmith.jpg"
+                  alt="Will Smith portrait representing the ENFP personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ENFP • The Campaigner</h4>
+            </div>
+            <p class="summary">
+              Spirited connector who inspires possibility, storytelling, and
+              wholehearted living.
+            </p>
+            <div class="guide-figure-caption">
+              Will Smith<span
+                >Charismatic storyteller • Actor &amp; producer</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Creative enthusiasm</li>
+              <li>People-centric</li>
+              <li>Adaptive optimism</li>
+            </ul>
+            <a href="mbti-enfp.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ISTJ -->
+          <article
+            class="guide-card"
+            data-tags="sentinel reliable structured consistent"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="emmawatson.jpg"
+                  alt="Emma Watson portrait representing the ISTJ personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ISTJ • The Logistician</h4>
+            </div>
+            <p class="summary">
+              Dependable executor who honors commitments, procedures, and steady
+              progress.
+            </p>
+            <div class="guide-figure-caption">
+              Emma Watson<span
+                >Principled organizer • Actor &amp; UN Women ambassador</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Detail attentive</li>
+              <li>Process driven</li>
+              <li>Practical loyalty</li>
+            </ul>
+            <a href="mbti-istj.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ISFJ -->
+          <article
+            class="guide-card"
+            data-tags="sentinel nurturing thoughtful supportive"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="selenagomez.jpg"
+                  alt="Selena Gomez portrait representing the ISFJ personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ISFJ • The Defender</h4>
+            </div>
+            <p class="summary">
+              Warm guardian who protects traditions and creates practical
+              comfort for others.
+            </p>
+            <div class="guide-figure-caption">
+              Selena Gomez<span
+                >Compassionate builder • Singer &amp; producer</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Steadfast care</li>
+              <li>Quiet diligence</li>
+              <li>Service mindset</li>
+            </ul>
+            <a href="mbti-isfj.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ESTJ -->
+          <article
+            class="guide-card"
+            data-tags="sentinel decisive organizer supervisor"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="dwaynejohnson.jpg"
+                  alt="Dwayne Johnson portrait representing the ESTJ personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ESTJ • The Executive</h4>
+            </div>
+            <p class="summary">
+              Commanding coordinator who builds structures, policies, and
+              efficient execution.
+            </p>
+            <div class="guide-figure-caption">
+              Dwayne Johnson<span
+                >Action-oriented leader • Actor &amp; entrepreneur</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Operational clarity</li>
+              <li>Direct leadership</li>
+              <li>High accountability</li>
+            </ul>
+            <a href="mbti-estj.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ESFJ -->
+          <article
+            class="guide-card"
+            data-tags="sentinel community empathetic facilitator"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="jenniferlopez.jpg"
+                  alt="Jennifer Lopez portrait representing the ESFJ personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ESFJ • The Consul</h4>
+            </div>
+            <p class="summary">
+              Community-focused caretaker who creates belonging through
+              dependable support.
+            </p>
+            <div class="guide-figure-caption">
+              Jennifer Lopez<span
+                >Community-focused star • Performer &amp; producer</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Hospitality expert</li>
+              <li>Social memory</li>
+              <li>Organized compassion</li>
+            </ul>
+            <a href="mbti-esfj.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ISTP -->
+          <article
+            class="guide-card"
+            data-tags="explorer pragmatic analytical hands-on"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="keanureeves.jpg"
+                  alt="Keanu Reeves portrait representing the ISTP personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ISTP • The Virtuoso</h4>
+            </div>
+            <p class="summary">
+              Calm troubleshooter who dissects systems and solves issues in real
+              time.
+            </p>
+            <div class="guide-figure-caption">
+              Keanu Reeves<span
+                >Calm problem-solver • Actor &amp; stunt creative</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Hands-on precision</li>
+              <li>Independent problem solving</li>
+              <li>Cool under pressure</li>
+            </ul>
+            <a href="mbti-istp.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ISFP -->
+          <article
+            class="guide-card"
+            data-tags="explorer artistic gentle adaptable"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="billieeilish.jpg"
+                  alt="Billie Eilish portrait representing the ISFP personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ISFP • The Adventurer</h4>
+            </div>
+            <p class="summary">
+              Quiet creative who expresses values through aesthetics,
+              experiences, and empathy.
+            </p>
+            <div class="guide-figure-caption">
+              Billie Eilish<span>Artistic innovator • Singer-songwriter</span>
+            </div>
+            <ul class="traits">
+              <li>Artful presence</li>
+              <li>Flexible lifestyle</li>
+              <li>Compassionate action</li>
+            </ul>
+            <a href="mbti-isfp.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ESTP -->
+          <article
+            class="guide-card"
+            data-tags="explorer energetic risk-taker persuasive"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="williams.jpg"
+                  alt="Serena Williams portrait representing the ESTP personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ESTP • The Dynamo</h4>
+            </div>
+            <p class="summary">
+              Bold tactician who spots openings, negotiates on the fly, and
+              thrives in action.
+            </p>
+            <div class="guide-figure-caption">
+              Serena Williams<span>Competitive powerhouse • Tennis icon</span>
+            </div>
+            <ul class="traits">
+              <li>Fast-paced agility</li>
+              <li>Persuasive charm</li>
+              <li>Real-time strategist</li>
+            </ul>
+            <a href="mbti-estp.html" class="guide-cta">Read full profile</a>
+          </article>
+
+          <!-- ESFP -->
+          <article
+            class="guide-card"
+            data-tags="explorer lively expressive connector"
+          >
+            <div class="card-head">
+              <div class="avatar">
+                <img
+                  src="harrystyles.jpg"
+                  alt="Harry Styles portrait representing the ESFP personality type"
+                  loading="lazy"
+                />
+              </div>
+              <h4>ESFP • The Entertainer</h4>
+            </div>
+            <p class="summary">
+              Vibrant experience-maker who lights up a room and celebrates the
+              present moment.
+            </p>
+            <div class="guide-figure-caption">
+              Harry Styles<span
+                >Electric performer • Singer &amp; fashion icon</span
+              >
+            </div>
+            <ul class="traits">
+              <li>Magnetic warmth</li>
+              <li>Resourceful spontaneity</li>
+              <li>People-first focus</li>
+            </ul>
+            <a href="mbti-esfp.html" class="guide-cta">Read full profile</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <div class="faq-section">
+        <div class="main-container">
+          <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>
+              Your most common questions about the Myers-Briggs® framework and
+              how this quiz interprets your answers.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              What is the MBTI personality quiz measuring?
+              <span>+</span>
+            </div>
+            <div class="faq-answer">
+              This assessment measures your preference on the four classic MBTI
+              dichotomies: where you direct energy (Extraversion vs.
+              Introversion), how you gather information (Sensing vs. Intuition),
+              how you decide (Thinking vs. Feeling), and how you structure life
+              (Judging vs. Perceiving). Your answers produce a four-letter code
+              that reflects the combination you lean toward most strongly.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              How accurate is this online MBTI quiz?
+              <span>+</span>
+            </div>
+            <div class="faq-answer">
+              The quiz is designed using validated MBTI question patterns,
+              updated for modern scenarios. While no online quiz replaces a
+              certified assessment, most users find the results highly
+              reflective of their natural preferences. Use the insights as a
+              starting point for self-awareness and development.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Can my MBTI type change over time?
+              <span>+</span>
+            </div>
+            <div class="faq-answer">
+              Your core preferences are generally steady, but how you express
+              them can evolve with experience, environment, and intentional
+              growth. Retaking the quiz during different life stages can
+              highlight how you flex into less dominant letters and integrate
+              more balanced skills.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Is one Myers-Briggs type better than another?
+              <span>+</span>
+            </div>
+            <div class="faq-answer">
+              No type is superior. Each MBTI profile excels in specific contexts
+              and faces predictable blind spots. The goal is to understand your
+              natural operating system so you can leverage strengths, partner
+              intentionally, and stretch into complementary skills when needed.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              How should I use my MBTI results?
+              <span>+</span>
+            </div>
+            <div class="faq-answer">
+              Start by reflecting on the strengths, growth areas, and coaching
+              prompts in your report. Share results with teammates or loved ones
+              to open conversations about collaboration styles. Apply the
+              insights to career planning, communication habits, and personal
+              development routines.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="cta-section">
+        <div class="main-container">
+          <h3>Share Your MBTI Type!</h3>
+          <p>
+            Discovered whether you are an INFJ, ESTP, or somewhere in between?
+            Compare results with friends, teammates, or your community to see
+            how your personalities complement each other.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const totalQuestions = 10;
+      let currentQuestion = 1;
+      let answers = {};
+      let mbtiScores = {
+        E: 0,
+        I: 0,
+        S: 0,
+        N: 0,
+        T: 0,
+        F: 0,
+        J: 0,
+        P: 0,
+      };
+
+      function createBadgeSvg(label, theme = "default") {
+        const palettes = {
+          energy: ["#f59e0b", "#f97316"],
+          information: ["#6366f1", "#8b5cf6"],
+          decisions: ["#10b981", "#0ea5e9"],
+          structure: ["#ec4899", "#f97316"],
+          analyst: ["#4c51bf", "#2b6cb0"],
+          diplomat: ["#0ea5e9", "#10b981"],
+          sentinel: ["#fbbf24", "#f97316"],
+          explorer: ["#ec4899", "#f472b6"],
+          default: ["#4a5568", "#2d3748"],
+        };
+        const palette = palettes[theme] || palettes.default;
+        const fontSize =
+          label.length === 1
+            ? 28
+            : label.length === 2
+            ? 24
+            : label.length === 3
+            ? 20
+            : 18;
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="${palette[0]}"/><stop offset="100%" stop-color="${palette[1]}"/></linearGradient></defs><rect width="100%" height="100%" rx="12" fill="url(#grad)"/><text x="50%" y="55%" font-family="Segoe UI, sans-serif" font-size="${fontSize}" fill="#ffffff" font-weight="600" text-anchor="middle">${label}</text></svg>`;
+        return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+      }
+
+      function escapeAttribute(value) {
+        if (typeof value !== "string") {
+          return "";
+        }
+        return value
+          .replace(/&/g, "&amp;")
+          .replace(/"/g, "&quot;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+
+      function escapeHtml(value) {
+        if (typeof value !== "string") {
+          return "";
+        }
+        return value
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+
+      const mbtiProfiles = {
+        INTJ: {
+          code: "INTJ",
+          theme: "analyst",
+          name: "INTJ • The Architect",
+          description:
+            "Strategic and composed, you engineer clear roadmaps that turn complex visions into reality without losing sight of long-term impact.",
+          deepAnalysis:
+            "As an INTJ, you synthesize data, trends, and possibilities into elegant systems. You value competence, autonomy, and logic, and you naturally anticipate risks before they surface. Your calm confidence comes from rigorous preparation and a strong internal compass that prefers efficiency over convention.",
+          strengths: [
+            "Systems-level thinker who rapidly uncovers patterns",
+            "Independent executor that stays motivated without oversight",
+            "Comfortable making decisive long-range plans",
+            "Balances creativity with pragmatic feasibility",
+          ],
+          challenges: [
+            "Can appear distant or overly critical when moving fast",
+            "Impatience with inefficiency or emotional reasoning",
+            "May over-plan and under-communicate along the way",
+            "Reluctant to delegate because quality matters deeply",
+          ],
+          careerPaths:
+            "Strategic planning, research & development, engineering leadership, data science, architecture, policy design, management consulting.",
+          relationships:
+            "You thrive with partners who respect your need for autonomy and intellectual depth. Clarity, shared goals, and meaningful conversations matter more than constant togetherness.",
+          growthAdvice:
+            "Share your reasoning earlier and invite feedback before the plan is complete. Practicing transparency builds trust without diluting your standards.",
+          figure: {
+            name: "Elon Musk",
+            title: "CEO of Tesla and SpaceX",
+            image: {
+              src: "musk.jpg",
+              alt: "Elon Musk presenting during a technology conference",
+            },
+            note: "Frequently typed as an INTJ for his systems-level vision and relentless drive to build the future.",
+          },
+        },
+        INTP: {
+          code: "INTP",
+          theme: "analyst",
+          name: "INTP • The Logician",
+          description:
+            "Curious and inventive, you deconstruct ideas to understand their core principles and rebuild them into smarter solutions.",
+          deepAnalysis:
+            "INTPs live in the world of possibilities. You experiment with frameworks, test assumptions, and delight in discovering elegant theories. When given intellectual freedom, you produce breakthroughs others miss. You quietly question everything—not out of rebellion, but from a drive to understand truth at the deepest level.",
+          strengths: [
+            "Ingenious problem-solver with conceptual depth",
+            "Comfortable navigating ambiguity and unanswered questions",
+            "Objective analyst who finds elegant logic pathways",
+            "Self-directed learner with wide-ranging interests",
+          ],
+          challenges: [
+            "May struggle finishing projects once the insight is gained",
+            "Difficulty explaining complex ideas in everyday language",
+            "Tendency to mentally detach from practical realities",
+            "Can appear aloof or indifferent under emotional pressure",
+          ],
+          careerPaths:
+            "Software engineering, academia, product architecture, think tanks, UX research, knowledge management, innovation labs.",
+          relationships:
+            "You connect through thoughtful dialogue and shared curiosity. Partners who appreciate your independence and invite intellectual play keep you engaged.",
+          growthAdvice:
+            "Translate your insights into tangible experiments sooner. Iterating in the real world refines your theories and keeps your ideas influential, not just interesting.",
+          figure: {
+            name: "Bill Gates",
+            title: "Co-founder of Microsoft",
+            image: {
+              src: "billgates.jpg",
+              alt: "Bill Gates delivering remarks at a 2018 event",
+            },
+            note: "Often associated with INTP traits for his analytical curiosity and love of systems thinking.",
+          },
+        },
+        ENTJ: {
+          code: "ENTJ",
+          theme: "analyst",
+          name: "ENTJ • The Commander",
+          description:
+            "Decisive and driven, you mobilize people, systems, and resources to meet ambitious objectives head-on.",
+          deepAnalysis:
+            "ENTJs see inefficiency and instinctively reorganize it. You lead with confidence, think several moves ahead, and rally teams around clear targets. You expect competence and reward it with opportunity. Pressure energizes you, and you excel when charting bold strategies.",
+          strengths: [
+            "Natural executive presence and persuasive clarity",
+            "Thrives on measurable progress and accountability",
+            "Sees structural improvements and implements them quickly",
+            "Resilient under pressure with forward momentum",
+          ],
+          challenges: [
+            "May overlook emotional cues or relational nuance",
+            "Impatient with slower decision-making styles",
+            "Risk of burnout from relentless forward drive",
+            "Can dominate conversations unintentionally",
+          ],
+          careerPaths:
+            "Executive leadership, entrepreneurship, operations management, venture building, law, military leadership, public administration.",
+          relationships:
+            "You value partners who match your ambition and communicate directly. Respect, competency, and shared goals build your trust faster than sentiment.",
+          growthAdvice:
+            "Schedule pauses to review the human impact of your plans. When you invite perspective and pace, people feel seen and accelerate with you rather than for you.",
+          figure: {
+            name: "Jeff Bezos",
+            title: "Founder of Amazon",
+            image: {
+              src: "jeffbezos.jpg",
+              alt: "Jeff Bezos speaking during an Amazon product launch",
+            },
+            note: "Widely associated with ENTJ traits thanks to his decisive execution and large-scale strategic thinking.",
+          },
+        },
+        ENTP: {
+          code: "ENTP",
+          theme: "analyst",
+          name: "ENTP • The Debater",
+          description:
+            "Inventive and quick-witted, you spark momentum by challenging assumptions and playing with new possibilities.",
+          deepAnalysis:
+            "ENTPs thrive on novelty. You generate ideas at lightning speed, test them through debate, and adapt quickly when evidence changes. Your playful intellect keeps teams exploring uncharted territory. Rules are flexible if a better option appears, and you love being the catalyst for breakthrough thinking.",
+          strengths: [
+            "Rapid ideation and mental agility",
+            "Comfortable exploring multiple futures simultaneously",
+            "Charismatic communicator who energizes collaboration",
+            "Finds opportunity within constraints others accept",
+          ],
+          challenges: [
+            "May jump to the next idea before implementation sticks",
+            "Tendency to debate for sport, which can exhaust others",
+            "Needs structure to follow through consistently",
+            "Can resist routine maintenance of past decisions",
+          ],
+          careerPaths:
+            "Startup leadership, product strategy, journalism, consulting, innovation roles, marketing, diplomacy, negotiation.",
+          relationships:
+            "You connect with people who enjoy mental gymnastics and spontaneous adventures. Mutual respect for freedom keeps the relationship vibrant.",
+          growthAdvice:
+            "Choose one or two ideas to champion through completion. Partnering with executors who appreciate your creativity lets you see the long-term impact of your spark.",
+          figure: {
+            name: "Ryan Reynolds",
+            title: "Actor and Entrepreneur",
+            image: {
+              src: "reynolds.jpg",
+              alt: "Ryan Reynolds laughing during a press interview",
+            },
+            note: "Often typed as an ENTP for his quick wit, improvisational storytelling, and nonstop business creativity.",
+          },
+        },
+        INFJ: {
+          code: "INFJ",
+          theme: "diplomat",
+          name: "INFJ • The Advocate",
+          description:
+            "Insightful and principled, you blend empathy with foresight to guide people toward meaningful transformation.",
+          deepAnalysis:
+            "INFJs detect patterns in human behavior and sense what is unsaid. You yearn to align actions with purpose and often become the quiet architect behind positive change. Though reserved, your convictions are powerful, and you invest deeply in people who share your values.",
+          strengths: [
+            "Visionary mentor with strong intuition about people",
+            "Integrates logic, empathy, and ethics gracefully",
+            "Long-term planner with a purpose-driven lens",
+            "Creates psychological safety for honest dialogue",
+          ],
+          challenges: [
+            "Can internalize stress instead of voicing needs",
+            "Perfectionism may delay launching supportive projects",
+            "Struggles to set boundaries when others need help",
+            "May withdraw when harmony feels threatened",
+          ],
+          careerPaths:
+            "Counseling, coaching, change management, writing, social impact strategy, UX research, education, organizational development.",
+          relationships:
+            "You crave relationships built on depth, authenticity, and shared ideals. Mutual vulnerability and future vision are your love languages.",
+          growthAdvice:
+            "Share your expectations openly and earlier. When you provide context, others can support your vision instead of guessing what you silently hope for.",
+          figure: {
+            name: "Taylor Swift",
+            title: "Singer-Songwriter",
+            image: {
+              src: "taylorswift.jpg",
+              alt: "Taylor Swift performing on stage during the Eras Tour",
+            },
+            note: "Commonly associated with INFJ traits for her reflective lyrics, long-term storytelling, and values-driven advocacy.",
+          },
+        },
+        INFP: {
+          code: "INFP",
+          theme: "diplomat",
+          name: "INFP • The Mediator",
+          description:
+            "Imaginative and compassionate, you champion authenticity and inspire others to live in alignment with their values.",
+          deepAnalysis:
+            "INFPs carry rich inner worlds. You notice emotional nuance, craft stories that heal, and stand firmly for causes that matter. Autonomy lets your creativity flourish, and you seek work and relationships that resonate with your ideals more than external rewards.",
+          strengths: [
+            "Empathetic listener who validates others deeply",
+            "Values-driven creator with unique artistic voice",
+            "Flexible thinker who adapts without compromising core beliefs",
+            "Encouraging presence that brings hope",
+          ],
+          challenges: [
+            "May avoid conflict even when boundaries are needed",
+            "Difficulty translating big ideals into practical steps",
+            "Tendency to overcommit emotionally and burn out quietly",
+            "Can struggle with routine maintenance tasks",
+          ],
+          careerPaths:
+            "Creative arts, counseling, writing, brand storytelling, nonprofit advocacy, user experience, wellness coaching.",
+          relationships:
+            "You cherish deep emotional intimacy and partners who honor your personal rhythm. Gentle honesty and encouragement help you bloom.",
+          growthAdvice:
+            "Move ideas forward with bite-sized experiments. Tangible progress protects your dreams from staying hypothetical and builds confidence in your voice.",
+          figure: {
+            name: "Zendaya",
+            title: "Actor and Producer",
+            image: {
+              src: "zendaya.jpg",
+              alt: "Zendaya posing on the red carpet at a film premiere",
+            },
+            note: "Frequently profiled as an INFP for her empathetic activism and expressive, values-led performances.",
+          },
+        },
+        ENFJ: {
+          code: "ENFJ",
+          theme: "diplomat",
+          name: "ENFJ • The Protagonist",
+          description:
+            "Charismatic and generous, you align teams around shared visions and help people see the best in themselves.",
+          deepAnalysis:
+            "ENFJs instinctively read the room and orchestrate collaboration. You communicate with warmth, advocate for fairness, and hold space for growth. Your optimism is contagious, and you excel at transforming ideas into shared movement.",
+          strengths: [
+            "Inspirational communicator and motivator",
+            "Strong relational intelligence with strategic thinking",
+            "Creates alignment across diverse personalities",
+            "Committed to collective progress and inclusion",
+          ],
+          challenges: [
+            "May neglect personal needs when supporting others",
+            "Struggles to deliver tough feedback without over-explaining",
+            "Can become overwhelmed by others’ emotions",
+            "Risk of burnout from constant availability",
+          ],
+          careerPaths:
+            "Leadership development, HR, public relations, education, community organizing, media, coaching, diplomatic roles.",
+          relationships:
+            "You love building a shared future with partners who reciprocate effort and appreciate heartfelt expression. Balance emotional closeness with intentional self-care time.",
+          growthAdvice:
+            "Practice receiving support as intentionally as you give it. Scheduled space for your goals keeps generosity sustainable and your impact expansive.",
+          figure: {
+            name: "Barack Obama",
+            title: "44th President of the United States",
+            image: {
+              src: "obama.jpg",
+              alt: "Barack Obama delivering remarks from a podium",
+            },
+            note: "Frequently spotlighted as an ENFJ for his charismatic communication and community-focused leadership.",
+          },
+        },
+        ENFP: {
+          code: "ENFP",
+          theme: "diplomat",
+          name: "ENFP • The Campaigner",
+          description:
+            "Playful and people-centered, you spark imagination, build connections quickly, and champion possibilities everywhere.",
+          deepAnalysis:
+            "ENFPs light up when ideas and people collide. You see hidden potential in almost everyone, crafting narratives that encourage growth. Authenticity is your north star, and you color outside the lines in pursuit of meaning and adventure.",
+          strengths: [
+            "Magnetic enthusiasm that mobilizes others",
+            "Creative problem-solver who reframes challenges",
+            "Inclusive connector with empathy and curiosity",
+            "Adaptable and resilient in changing environments",
+          ],
+          challenges: [
+            "Hard to maintain focus when novelty fades",
+            "May overpromise due to genuine excitement",
+            "Sensitive to criticism and rigid structures",
+            "Needs accountability for follow-through",
+          ],
+          careerPaths:
+            "Creative marketing, entrepreneurship, teaching, coaching, event production, storytelling, user research, community building.",
+          relationships:
+            "You build relationships through shared experiences, deep conversations, and mutual inspiration. Partners who appreciate your spontaneity and offer gentle grounding suit you best.",
+          growthAdvice:
+            "Choose a few meaningful priorities and create rituals around them. Structure becomes a canvas, not a cage, when it protects what you care about most.",
+          figure: {
+            name: "Will Smith",
+            title: "Actor and Producer",
+            image: {
+              src: "willsmith.jpg",
+              alt: "Will Smith smiling during a film premiere interview",
+            },
+            note: "Frequently linked to ENFP energy for his charismatic storytelling, optimism, and people-first approach.",
+          },
+        },
+        ISTJ: {
+          code: "ISTJ",
+          theme: "sentinel",
+          name: "ISTJ • The Logistician",
+          description:
+            "Reliable and thorough, you ensure plans are practical, resources are in place, and promises stay on schedule.",
+          deepAnalysis:
+            "ISTJs bring order to complexity. You respect proven methods, honor commitments, and quietly deliver excellence. People rely on your consistency because you manage details others overlook and keep operations grounded in reality.",
+          strengths: [
+            "Exceptional organization and follow-through",
+            "Keen memory for facts, procedures, and obligations",
+            "Calm, logical approach to problem solving",
+            "Trustworthy presence in high-stakes situations",
+          ],
+          challenges: [
+            "May resist change without clear evidence",
+            "Can appear inflexible or overly serious",
+            "Hard to delegate because reliability matters",
+            "Tendency to internalize frustration quietly",
+          ],
+          careerPaths:
+            "Project management, finance, law, auditing, military, supply chain, healthcare administration, quality assurance.",
+          relationships:
+            "You show love through dependable action. Partners who appreciate your stability and encourage occasional spontaneity help you balance duty with enjoyment.",
+          growthAdvice:
+            "Communicate expectations openly rather than assuming others see them. Inviting input early prevents misunderstandings and lightens your load.",
+          figure: {
+            name: "Emma Watson",
+            title: "Actor and UN Women Goodwill Ambassador",
+            image: {
+              src: "emmawatson.jpg",
+              alt: "Emma Watson speaking at a United Nations event",
+            },
+            note: "Commonly associated with ISTJ themes for her thoughtful preparation, advocacy, and grounded professionalism.",
+          },
+        },
+        ISFJ: {
+          code: "ISFJ",
+          theme: "sentinel",
+          name: "ISFJ • The Defender",
+          description:
+            "Gentle and attentive, you preserve traditions, anticipate needs, and create safety through thoughtful care.",
+          deepAnalysis:
+            "ISFJs blend practicality with warmth. You remember details about others, maintain supportive systems, and prefer meaningful contribution over spotlight. Your quiet diligence keeps communities functioning smoothly.",
+          strengths: [
+            "Deep loyalty matched with compassion",
+            "Excellent at anticipating logistical needs",
+            "Patient listener who creates trust",
+            "Protective of people and processes that matter",
+          ],
+          challenges: [
+            "Can avoid confrontation even when boundaries are required",
+            "Tends to shoulder work rather than ask for help",
+            "May resist unfamiliar approaches that lack precedent",
+            "Risk of burnout from constant caretaking",
+          ],
+          careerPaths:
+            "Healthcare, education, administration, customer success, hospitality, HR, nonprofit support, archival work.",
+          relationships:
+            "You value consistent gestures of appreciation and mutual respect. Partners who notice your efforts and share responsibilities build lasting trust with you.",
+          growthAdvice:
+            "Voice your needs before exhaustion sets in. Delegating with clear instructions lets others honor the standard you care about while protecting your energy.",
+          figure: {
+            name: "Selena Gomez",
+            title: "Singer and Producer",
+            image: {
+              src: "selenagomez.jpg",
+              alt: "Selena Gomez speaking during a mental health awareness event",
+            },
+            note: "Often connected with ISFJ qualities thanks to her caring advocacy and focus on community wellbeing.",
+          },
+        },
+        ESTJ: {
+          code: "ESTJ",
+          theme: "sentinel",
+          name: "ESTJ • The Executive",
+          description:
+            "Structured and commanding, you coordinate systems, enforce clarity, and keep teams on track toward measurable goals.",
+          deepAnalysis:
+            "ESTJs thrive in environments that reward accountability. You set expectations, organize logistics, and ensure commitments are met. Your straightforward communication removes ambiguity, and you respect traditions that deliver results.",
+          strengths: [
+            "Forthright leadership with practical direction",
+            "Skilled at building efficient processes",
+            "Decisive under pressure with high responsibility",
+            "Champions fairness and standards",
+          ],
+          challenges: [
+            "May underestimate the emotional climate of a group",
+            "Prefers familiar methods and may resist experimentation",
+            "Can appear controlling when trying to help",
+            "Needs reminders to slow down for reflection",
+          ],
+          careerPaths:
+            "Operations management, corporate leadership, government, law enforcement, finance, logistics, event management.",
+          relationships:
+            "You prefer honest, dependable partners who keep commitments and communicate clearly. Shared goals and mutual respect keep you invested.",
+          growthAdvice:
+            "Build in checkpoints for listening before deciding. When others feel heard, your directives land as support rather than pressure.",
+          figure: {
+            name: "Dwayne Johnson",
+            title: "Actor and Entrepreneur",
+            image: {
+              src: "dwaynejohnson.jpg",
+              alt: "Dwayne Johnson speaking on stage during a film launch",
+            },
+            note: "Frequently linked to ESTJ strengths for his decisive leadership, disciplined work ethic, and results-focused mindset.",
+          },
+        },
+        ESFJ: {
+          code: "ESFJ",
+          theme: "sentinel",
+          name: "ESFJ • The Consul",
+          description:
+            "Sociable and supportive, you nurture community, remember important details, and create harmony through thoughtful structure.",
+          deepAnalysis:
+            "ESFJs are the heartbeat of many teams and families. You sense the emotional climate, coordinate practical care, and uphold traditions that keep people connected. Service is your love language, and you excel at translating values into daily rituals.",
+          strengths: [
+            "Warm facilitator who keeps everyone included",
+            "Organized planner with attention to personal details",
+            "Motivates others through appreciation and encouragement",
+            "Reliable follow-through on commitments",
+          ],
+          challenges: [
+            "Can take criticism personally",
+            "May struggle to set limits on giving",
+            "Sensitive to conflict and abrupt change",
+            "Sometimes prioritizes social harmony over authenticity",
+          ],
+          careerPaths:
+            "Event planning, teaching, healthcare, HR, hospitality, customer experience, community management, nonprofit coordination.",
+          relationships:
+            "You value reassurance, shared experiences, and collaborative planning. Partners who reciprocate care and offer steady reassurance help you shine.",
+          growthAdvice:
+            "Check in with your own goals as often as you support others. When you honor personal priorities, your generosity becomes sustainable and joyful.",
+          figure: {
+            name: "Jennifer Lopez",
+            title: "Performer and Producer",
+            image: {
+              src: "jenniferlopez.jpg",
+              alt: "Jennifer Lopez performing during a live concert",
+            },
+            note: "Regularly associated with ESFJ energy for her vibrant stage presence, collaborative spirit, and dedication to her fans.",
+          },
+        },
+        ISTP: {
+          code: "ISTP",
+          theme: "explorer",
+          name: "ISTP • The Virtuoso",
+          description:
+            "Analytical and hands-on, you dive into mechanics, troubleshoot rapidly, and keep calm when others panic.",
+          deepAnalysis:
+            "ISTPs are pragmatic experimenters. You prefer learning by doing, adapting in real time as conditions change. Freedom to tinker keeps you engaged, and you enjoy optimizing systems quietly without unnecessary chatter.",
+          strengths: [
+            "Crisis-ready problem solver",
+            "Independent and resourceful thinker",
+            "Unflappable under pressure",
+            "Learns quickly through direct experience",
+          ],
+          challenges: [
+            "May hold back feedback until problems escalate",
+            "Dislikes strict schedules or micro-management",
+            "Emotions can be hard to express openly",
+            "Bored by repetitive maintenance work",
+          ],
+          careerPaths:
+            "Engineering, emergency response, mechanics, cybersecurity, athletics, forensics, product prototyping, aviation.",
+          relationships:
+            "You connect through shared adventures and mutual respect for independence. Partners who appreciate your calm presence without crowding you earn your loyalty.",
+          growthAdvice:
+            "Share status updates even when things are handled. Transparency prevents misunderstandings and wins you the autonomy you value.",
+          figure: {
+            name: "Keanu Reeves",
+            title: "Actor and Producer",
+            image: {
+              src: "keanureeves.jpg",
+              alt: "Keanu Reeves attending a film festival premiere",
+            },
+            note: "Commonly linked to ISTP traits for his calm demeanor, practical skillset, and action-oriented roles.",
+          },
+        },
+        ISFP: {
+          code: "ISFP",
+          theme: "explorer",
+          name: "ISFP • The Adventurer",
+          description:
+            "Gentle and artistic, you express values through experiences, aesthetics, and compassionate action.",
+          deepAnalysis:
+            "ISFPs notice beauty in the present moment. You bring creativity to practical life, offering quiet support and personalized touches. Authenticity guides your choices, and you resist molds that stifle individuality.",
+          strengths: [
+            "Attentive to sensory detail and human emotion",
+            "Flexible collaborator who adapts gracefully",
+            "Creates calming environments and experiences",
+            "Values-driven with a strong ethical core",
+          ],
+          challenges: [
+            "May procrastinate on uninteresting tasks",
+            "Finds direct conflict draining",
+            "Keeps feelings private until they overflow",
+            "Needs consistent encouragement to share ideas",
+          ],
+          careerPaths:
+            "Design, healthcare, social work, culinary arts, photography, fashion, wellness, animal care.",
+          relationships:
+            "You open up with people who respect your pace and celebrate your creativity. Gentle consistency builds trust and invites you to share more of yourself.",
+          growthAdvice:
+            "Communicate preferences before discomfort builds. Small conversations keep relationships balanced and give your art room to breathe.",
+          figure: {
+            name: "Billie Eilish",
+            title: "Singer-Songwriter",
+            image: {
+              src: "billieeilish.jpg",
+              alt: "Billie Eilish performing on stage with neon lighting",
+            },
+            note: "Frequently typed as an ISFP for her expressive artistry, authenticity, and sensory-rich creative style.",
+          },
+        },
+        ESTP: {
+          code: "ESTP",
+          theme: "explorer",
+          name: "ESTP • The Dynamo",
+          description:
+            "Energetic and tactical, you make fast decisions, negotiate skillfully, and keep momentum alive in dynamic environments.",
+          deepAnalysis:
+            "ESTPs read the room instantly. You spot leverage points, respond with agility, and prefer action to theory. Challenges are exciting puzzles to solve with confidence and style, and you motivate others through bold leadership.",
+          strengths: [
+            "Quick-thinking negotiator grounded in reality",
+            "Courageous risk-taker with situational awareness",
+            "Persuasive communicator who energizes teams",
+            "Finds creative fixes under time pressure",
+          ],
+          challenges: [
+            "May overlook long-term implications of rapid choices",
+            "Dislikes routine and administrative details",
+            "Can unintentionally steamroll quieter voices",
+            "Needs patience for slower collaborators",
+          ],
+          careerPaths:
+            "Sales leadership, emergency medicine, entrepreneurship, sports management, trading, law enforcement, media, event production.",
+          relationships:
+            "You bond through shared adventures and open dialogue. Partners who appreciate your spontaneity while offering gentle structure keep you grounded.",
+          growthAdvice:
+            "Pair your action bias with periodic strategic check-ins. Pausing to plan protects future flexibility and expands your influence.",
+          figure: {
+            name: "Serena Williams",
+            title: "Tennis Champion",
+            image: {
+              src: "williams.jpg",
+              alt: "Serena Williams celebrating a championship point on court",
+            },
+            note: "Frequently referenced as an ESTP for her fearless competitiveness, tactical agility, and high-impact leadership on and off the court.",
+          },
+        },
+        ESFP: {
+          code: "ESFP",
+          theme: "explorer",
+          name: "ESFP • The Entertainer",
+          description:
+            "Lively and generous, you create unforgettable experiences and respond intuitively to the needs of the moment.",
+          deepAnalysis:
+            "ESFPs are natural mood-lifters. You notice subtle cues, celebrate spontaneity, and infuse spaces with warmth. You value authenticity, and your grounded optimism helps others feel seen and invited into joy.",
+          strengths: [
+            "Charismatic connector who eases tension",
+            "Adaptable, practical, and resourceful in real time",
+            "Encourages others through positivity and action",
+            "Balances fun with genuine care",
+          ],
+          challenges: [
+            "May avoid uncomfortable long-term planning",
+            "Can be sensitive to criticism or disapproval",
+            "Administrative follow-up may feel draining",
+            "Needs reminders to conserve energy",
+          ],
+          careerPaths:
+            "Performing arts, hospitality, teaching, sales, event planning, brand ambassadorship, coaching, wellness facilitation.",
+          relationships:
+            "You thrive with partners who appreciate your vibrancy and reciprocate affection. Shared experiences and encouragement keep you engaged and fulfilled.",
+          growthAdvice:
+            "Set gentle structures that protect your energy—clear priorities let you sustain generosity without sacrificing your own needs.",
+          figure: {
+            name: "Harry Styles",
+            title: "Singer and Performer",
+            image: {
+              src: "harrystyles.jpg",
+              alt: "Harry Styles performing on stage in a colorful suit",
+            },
+            note: "Frequently profiled as an ESFP for his charismatic stage presence, fashion experimentation, and people-first flair.",
+          },
+        },
+      };
+
+      function selectAnswer(button) {
+        const traitData = button.getAttribute("data-trait") || "";
+        const traits = traitData
+          .split(",")
+          .map((t) => t.trim())
+          .filter(Boolean);
+        answers[currentQuestion] = traits;
+        traits.forEach((trait) => {
+          if (mbtiScores.hasOwnProperty(trait)) {
+            mbtiScores[trait] += 1;
+          }
+        });
+
+        updateProgress();
+
+        if (currentQuestion < totalQuestions) {
+          nextQuestion();
+        } else {
+          showResults();
+        }
+      }
+
+      function nextQuestion() {
+        const current = document.querySelector(
+          `[data-question="${currentQuestion}"]`
+        );
+        if (current) {
+          current.classList.remove("active");
+        }
+        currentQuestion += 1;
+        const next = document.querySelector(
+          `[data-question="${currentQuestion}"]`
+        );
+        if (next) {
+          next.classList.add("active");
+        }
+        document.getElementById("questionNumber").textContent =
+          String(currentQuestion);
+        const topNum = document.getElementById("questionNumberTop");
+        if (topNum) {
+          topNum.textContent = String(currentQuestion);
+        }
+      }
+
+      function updateProgress() {
+        const progress = Math.min(
+          100,
+          Math.round((currentQuestion / totalQuestions) * 100)
+        );
+        const bar = document.getElementById("progressBar");
+        bar.style.width = progress + "%";
+        bar.setAttribute("aria-valuenow", String(progress));
+        const label = document.getElementById("progressLabel");
+        if (label) {
+          label.textContent = progress + "%";
+        }
+      }
+
+      function calculateMbtiType() {
+        const energy = mbtiScores.E >= mbtiScores.I ? "E" : "I";
+        const information = mbtiScores.N >= mbtiScores.S ? "N" : "S";
+        const decisions = mbtiScores.T >= mbtiScores.F ? "T" : "F";
+        const lifestyle = mbtiScores.J >= mbtiScores.P ? "J" : "P";
+        return `${energy}${information}${decisions}${lifestyle}`;
+      }
+
+      function showResults() {
+        const current = document.querySelector(
+          `[data-question="${currentQuestion}"]`
+        );
+        if (current) {
+          current.classList.remove("active");
+        }
+
+        const type = calculateMbtiType();
+        const result = mbtiProfiles[type] || mbtiProfiles.INTJ;
+
+        const badgeContainer = document.getElementById("wojakEmoji");
+        if (badgeContainer) {
+          if (result.figure && result.figure.image && result.figure.image.src) {
+            const figureSrc = escapeAttribute(result.figure.image.src);
+            const figureAlt = escapeAttribute(
+              result.figure.image.alt || result.name
+            );
+            badgeContainer.innerHTML = `<img class="result-portrait" src="${figureSrc}" alt="${figureAlt}">`;
+          } else {
+            const badgeSrc = createBadgeSvg(result.code, result.theme);
+            badgeContainer.innerHTML = `<img src="${badgeSrc}" alt="${escapeAttribute(
+              result.name
+            )}">`;
+          }
+        }
+
+        document.getElementById("wojakName").textContent = result.name;
+        document.getElementById("wojakDescription").textContent =
+          result.description;
+
+        const figureCaption = document.getElementById("figureCaption");
+        if (figureCaption) {
+          if (result.figure) {
+            const captionName = escapeHtml(
+              result.figure.name || "Featured Example"
+            );
+            const captionTitle = escapeHtml(
+              result.figure.title || "Representative of this archetype"
+            );
+            const captionNote = escapeHtml(
+              result.figure.note ||
+                "Representative example selected for illustrative purposes."
+            );
+            figureCaption.classList.add("active");
+            figureCaption.innerHTML = `
+                        <div class="caption-heading">${captionName}</div>
+                        <p class="caption-note">${captionTitle}</p>
+                        <p class="caption-disclaimer">${captionNote}</p>
+                    `;
+          } else {
+            figureCaption.classList.remove("active");
+            figureCaption.innerHTML = "";
+          }
+        }
+
+        const deepAnalysisHTML = `
+          <section class="result-breakdown" aria-label="MBTI type breakdown">
+            <h3 class="result-breakdown__title">
+              <span aria-hidden="true">🔍</span>
+              MBTI Type Breakdown
+            </h3>
+            <p class="result-breakdown__intro">${result.deepAnalysis}</p>
+            <div class="result-breakdown__grid">
+              <article class="result-card result-card--strengths">
+                <h4 class="result-card__heading">
+                  <span aria-hidden="true">💪</span>
+                  Core Strengths
+                </h4>
+                <ul class="result-card__list">
+                  ${result.strengths.map((item) => `<li>${item}</li>`).join("")}
+                </ul>
+              </article>
+              <article class="result-card result-card--watchouts">
+                <h4 class="result-card__heading">
+                  <span aria-hidden="true">⚠️</span>
+                  Watch Outs
+                </h4>
+                <ul class="result-card__list">
+                  ${result.challenges
+                    .map((item) => `<li>${item}</li>`)
+                    .join("")}
+                </ul>
+              </article>
+            </div>
+            <article class="result-card result-card--careers">
+              <h4 class="result-card__heading">
+                <span aria-hidden="true">💼</span>
+                Ideal Career Themes
+              </h4>
+              <p class="result-card__text">${result.careerPaths}</p>
+            </article>
+            <article class="result-card result-card--relationships">
+              <h4 class="result-card__heading">
+                <span aria-hidden="true">❤️</span>
+                Relationships &amp; Collaboration
+              </h4>
+              <p class="result-card__text">${result.relationships}</p>
+            </article>
+            <div class="result-growth" role="note">
+              <h4 class="result-growth__title">
+                <span aria-hidden="true">🌟</span>
+                Growth Coaching Prompt
+              </h4>
+              <p class="result-growth__text">${result.growthAdvice}</p>
+            </div>
+          </section>
+        `;
+
+        const analysisContainer = document.getElementById("analysisContainer");
+        if (analysisContainer) {
+          analysisContainer.innerHTML = deepAnalysisHTML;
+        }
+
+        document.getElementById("result").classList.add("active");
+        const bar = document.getElementById("progressBar");
+        bar.style.width = "100%";
+        bar.setAttribute("aria-valuenow", "100");
+        const label = document.getElementById("progressLabel");
+        if (label) {
+          label.textContent = "100%";
+        }
+
+        document.title = `You\'re ${result.name}! - MBTI Personality Quiz`;
+
+        setTimeout(() => {
+          document
+            .getElementById("result")
+            .scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+
+        if (typeof trackQuizComplete === "function") {
+          trackQuizComplete(type);
+        }
+      }
+
+      function restartQuiz() {
+        currentQuestion = 1;
+        answers = {};
+        mbtiScores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+
+        document.getElementById("result").classList.remove("active");
+        const analysisContainer = document.getElementById("analysisContainer");
+        if (analysisContainer) {
+          analysisContainer.innerHTML = "";
+        }
+        const questions = document.querySelectorAll(".question");
+        questions.forEach((node, index) => {
+          if (index === 0) {
+            node.classList.add("active");
+          } else {
+            node.classList.remove("active");
+          }
+        });
+        const badgeContainer = document.getElementById("wojakEmoji");
+        if (badgeContainer) {
+          badgeContainer.innerHTML = "";
+        }
+        const figureCaption = document.getElementById("figureCaption");
+        if (figureCaption) {
+          figureCaption.classList.remove("active");
+          figureCaption.innerHTML = "";
+        }
+        document.getElementById("questionNumber").textContent = "1";
+        const topNum = document.getElementById("questionNumberTop");
+        if (topNum) {
+          topNum.textContent = "1";
+        }
+        const bar = document.getElementById("progressBar");
+        bar.style.width = "0%";
+        bar.setAttribute("aria-valuenow", "0");
+        const label = document.getElementById("progressLabel");
+        if (label) {
+          label.textContent = "0%";
+        }
+
+        document
+          .getElementById("quizSection")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const navToggle = document.getElementById("navToggle");
+        const navLinks = document.getElementById("navLinks");
+        if (navToggle && navLinks) {
+          navToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("is-open");
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+          });
+
+          window.addEventListener("resize", () => {
+            if (
+              window.innerWidth > 768 &&
+              navLinks.classList.contains("is-open")
+            ) {
+              navLinks.classList.remove("is-open");
+              navToggle.setAttribute("aria-expanded", "false");
+            }
+          });
+
+          navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+              if (window.innerWidth <= 768) {
+                navLinks.classList.remove("is-open");
+                navToggle.setAttribute("aria-expanded", "false");
+              }
+            });
+          });
+        }
+
+        document.querySelectorAll("img[data-letter]").forEach((img) => {
+          const letter = img.dataset.letter || "";
+          const theme = img.dataset.theme || "default";
+          img.src = createBadgeSvg(letter, theme);
+        });
+
+        const grid = document.getElementById("guideGrid");
+        const cards = grid
+          ? Array.from(grid.querySelectorAll(".guide-card"))
+          : [];
+        const search = document.getElementById("guideSearch");
+        const chips = document.querySelectorAll(".filter-chips .chip");
+        let activeFilter = "all";
+
+        function applyGuideFilters() {
+          const query = (search?.value || "").toLowerCase();
+          cards.forEach((card) => {
+            const text = card.innerText.toLowerCase();
+            const tags = (card.getAttribute("data-tags") || "").toLowerCase();
+            const matchesText = !query || text.includes(query);
+            const matchesFilter =
+              activeFilter === "all" || tags.includes(activeFilter);
+            card.style.display = matchesText && matchesFilter ? "" : "none";
+          });
+        }
+
+        if (search) {
+          search.addEventListener("input", applyGuideFilters);
+        }
+
+        if (chips.length) {
+          chips.forEach((chip) => {
+            chip.addEventListener("click", () => {
+              chips.forEach((c) => c.classList.remove("active"));
+              chip.classList.add("active");
+              activeFilter = chip.dataset.filter || "all";
+              applyGuideFilters();
+            });
+          });
+        }
+
+        applyGuideFilters();
+
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+          const answer = item.querySelector(".faq-answer");
+          const icon = question.querySelector("span");
+          answer.style.display = "none";
+          question.addEventListener("click", () => {
+            const isOpen = answer.style.display === "block";
+            faqItems.forEach((other) => {
+              const otherAnswer = other.querySelector(".faq-answer");
+              const otherIcon = other.querySelector(".faq-question span");
+              otherAnswer.style.display = "none";
+              otherIcon.textContent = "+";
+            });
+            if (!isOpen) {
+              answer.style.display = "block";
+              icon.textContent = "−";
+            }
+          });
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("start") === "quiz") {
+          setTimeout(() => {
+            document
+              .getElementById("quizSection")
+              .scrollIntoView({ behavior: "smooth" });
+          }, 500);
+        }
+
+        function trackQuizStart() {
+          console.log("MBTI quiz started");
+        }
+
+        function trackQuizComplete(result) {
+          console.log("MBTI quiz completed:", result);
+        }
+
+        window.trackQuizComplete = trackQuizComplete;
+        window.trackQuizStart = trackQuizStart;
+      });
+    </script>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <img src="zinvanalogo.png" alt="Zinvana" class="site-footer__logo" />
+          <h3 class="site-footer__title">Zinvana</h3>
+          <p class="site-footer__description">
+            Discover your true self through fun, evidence-informed personality
+            quizzes. From MBTI and Enneagram to cultural archetypes, we turn
+            psychology into a relatable journey.
+          </p>
+          <div class="site-footer__social">
+            <a
+              href="https://x.com/farazglori80528"
+              target="_blank"
+              rel="noopener"
+              class="site-footer__social-link site-footer__social-link--x"
+              aria-label="Follow Zinvana on X"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
+              target="_blank"
+              rel="noopener"
+              class="site-footer__social-link site-footer__social-link--instagram"
+              aria-label="Follow Zinvana on Instagram"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+          </div>
+          <p class="site-footer__note">
+            Stay updated with our latest personality assessments and leadership
+            tools.
+          </p>
+        </div>
+
+        <div class="site-footer__column">
+          <h4 class="site-footer__heading">Popular Quizzes</h4>
+          <ul class="site-footer__list">
+            <li>
+              <a class="site-footer__link" href="leaders.html"
+                >Historical Leaders Personality Quiz</a
+              >
+            </li>
+            <li>
+              <a class="site-footer__link" href="football-personality-quiz.html"
+                >Football Personality Quiz</a
+              >
+            </li>
+            <li>
+              <a class="site-footer__link" href="mbti-personality-quiz.html"
+                >MBTI Personality Quiz</a
+              >
+            </li>
+            <li>
+              <a class="site-footer__link" href="perfect-country.html"
+                >Perfect Country Quiz</a
+              >
+            </li>
+            <li>
+              <a
+                class="site-footer__link"
+                href="youtubers-personality-quiz.html"
+                >YouTubers Personality Quiz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="site-footer__column">
+          <h4 class="site-footer__heading">Resources</h4>
+          <ul class="site-footer__list">
+            <li>
+              <a class="site-footer__link" href="/about.html">About Us</a>
+            </li>
+            <li>
+              <a class="site-footer__link" href="/privacy.html"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div class="site-footer__bottom-row">
+          <p>&copy; 2025 Zinvana. All rights reserved.</p>
+          <p>Made with ❤️ by the Zinvana Team</p>
+        </div>
+        <p class="site-footer__disclaimer">
+          This MBTI personality quiz is for educational and entertainment
+          purposes. Results highlight preferences rather than fixed abilities
+          and should not replace professional psychological evaluation.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
