@@ -308,6 +308,35 @@
         line-height: 1.6;
       }
 
+      /* Hero CTA and meta */
+      .hero-cta {
+        display: inline-block;
+        margin-top: 18px;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.18);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .hero-cta:focus,
+      .hero-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 40px rgba(102, 126, 234, 0.22);
+        outline: none;
+      }
+
+      .hero-meta {
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 600;
+        opacity: 0.95;
+        font-size: 0.95rem;
+      }
+
       .header {
         text-align: center;
         color: white;
@@ -452,6 +481,100 @@
         border-radius: 20px;
         margin-bottom: 40px;
         box-shadow: 0 4px 32px rgba(102, 126, 234, 0.08);
+      }
+
+      .insight-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+        margin-bottom: 32px;
+      }
+
+      .insight-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f5f8ff 100%);
+        border: 1px solid rgba(102, 126, 234, 0.18);
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 12px 28px rgba(37, 56, 88, 0.06);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .insight-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px rgba(99, 102, 241, 0.14);
+      }
+
+      .insight-card h3 {
+        font-size: 1.25rem;
+        color: #1f2937;
+        margin-bottom: 12px;
+      }
+
+      .insight-card p {
+        color: #4b5563;
+        line-height: 1.7;
+        margin-bottom: 14px;
+      }
+
+      .insight-card ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 8px;
+      }
+
+      .insight-card li {
+        position: relative;
+        padding-left: 22px;
+        color: #475569;
+        font-size: 0.98rem;
+        line-height: 1.55;
+      }
+
+      .insight-card li::before {
+        content: "★";
+        position: absolute;
+        left: 0;
+        top: -1px;
+        color: #f59e0b;
+        font-size: 0.85rem;
+      }
+
+      .callout-note {
+        background: rgba(103, 123, 237, 0.12);
+        border: 1px solid rgba(103, 123, 237, 0.3);
+        border-radius: 16px;
+        padding: 20px 24px;
+        color: #1e293b;
+        font-weight: 500;
+        line-height: 1.65;
+      }
+
+      /* Removed function-table CSS (section was deleted) to keep stylesheet lean */
+
+      .comparison-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .comparison-list li {
+        position: relative;
+        padding-left: 26px;
+        color: #475569;
+        line-height: 1.65;
+      }
+
+      .comparison-list li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #10b981;
+        font-weight: 700;
       }
 
       .section-header {
@@ -1324,6 +1447,11 @@
       .chip:hover {
         border-color: var(--brand1);
       }
+      .chip:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
+        border-color: var(--brand1);
+      }
       .chip.active {
         background: linear-gradient(135deg, var(--brand1), var(--brand2));
         color: #ffffff;
@@ -2143,13 +2271,23 @@
     <div class="hero-section">
       <div class="main-container">
         <h1>🧭 MBTI Personality Quiz 2025</h1>
-        <p class="subtitle">Which Myers-Briggs Type Are You?</p>
+        <p class="subtitle">Discover your MBTI type — 10 quick scenarios</p>
         <p class="description">
-          Explore how you process information, make decisions, and recharge. Our
-          10-question MBTI assessment maps your answers to the classic 16
-          personalities and delivers a modern, actionable breakdown of your
-          type.
+          Answer ten clear, scenario-based questions to reveal your Myers-Briggs
+          profile. Results include strengths, common blind spots, and practical
+          next steps you can use immediately in work and relationships.
         </p>
+        <p>
+          <a
+            href="#quizSection"
+            class="hero-cta"
+            aria-label="Start the MBTI quiz"
+            >Take the quiz — 1 minute</a
+          >
+        </p>
+        <div class="hero-meta">
+          Last updated: Nov 6, 2025 • Estimated time: 1 minute
+        </div>
       </div>
     </div>
 
@@ -2160,11 +2298,15 @@
           <span class="eyebrow">Overview</span>
           <h2 id="archetypes-heading">Understand the Classic MBTI Framework</h2>
           <p>
-            The Myers-Briggs Type Indicator captures your natural preferences
-            across four psychological dichotomies. This quiz converts your
-            instinctive answers into a reliable four-letter type and explains
-            how that code influences your energy, focus, decision-making, and
-            lifestyle.
+            The Myers-Briggs Type framework maps four core preference pairs into
+            a concise four-letter profile. This quick test turns your
+            instinctive responses into a practical type report with clear
+            takeaways for work, relationships, and personal growth.
+          </p>
+          <p style="color: #475569; margin-top: 8px">
+            Why this matters: a short, reliable assessment helps you name your
+            natural tendencies, communicate them to others, and build targeted
+            development routines that respect how you prefer to think and act.
           </p>
         </div>
 
@@ -2250,7 +2392,7 @@
                 <div class="archetype-figure">
                   <img
                     src="elonmusk.jpg"
-                    alt="Elon Musk representing the Analyst temperament"
+                    alt="Elon Musk — representative example of the Analyst (NT) temperament"
                     loading="lazy"
                   />
                 </div>
@@ -2276,7 +2418,7 @@
                 <div class="archetype-figure">
                   <img
                     src="taylorswift.jpg"
-                    alt="Taylor Swift representing the Diplomat temperament"
+                    alt="Taylor Swift — representative example of the Diplomat (NF) temperament"
                     loading="lazy"
                   />
                 </div>
@@ -2303,7 +2445,7 @@
                 <div class="archetype-figure">
                   <img
                     src="gomez.jpg"
-                    alt="Selena Gomez representing the Sentinel temperament"
+                    alt="Selena Gomez — representative example of the Sentinel (SJ) temperament"
                     loading="lazy"
                   />
                 </div>
@@ -2328,21 +2470,21 @@
                 >
                 <div class="archetype-figure">
                   <img
-                    src="styles.jpg"
-                    alt="Harry Styles representing the Explorer temperament"
+                    src="williams.jpg"
+                    alt="Serena Williams — representative example of the Explorer (SP) temperament"
                     loading="lazy"
                   />
                 </div>
                 <div class="archetype-caption">
-                  <strong>Harry Styles</strong
+                  <strong>Serena Williams</strong
                   ><span
-                    >Expressive trailblazer embracing spontaneity and
-                    play.</span
+                    >Fearless competitor who reads the moment and acts
+                    fast.</span
                   >
                 </div>
                 <p>
                   Adaptable realists who respond quickly to opportunities and
-                  live comfortably in the present moment.
+                  thrive when they can stay fully present to what is unfolding.
                 </p>
               </div>
             </div>
@@ -2352,6 +2494,126 @@
               integrate your type.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section
+        class="content-section"
+        id="mbti-strategy"
+        aria-labelledby="mbti-strategy-heading"
+      >
+        <div class="section-header">
+          <h2 id="mbti-strategy-heading">
+            How to Get Reliable Myers-Briggs Insights
+          </h2>
+          <p>
+            The most useful MBTI results come from honest, in-the-moment answers
+            and a clear plan for what you will do with the data. Use these best
+            practices to keep your score accurate, your reflection grounded, and
+            your growth roadmap actionable.
+          </p>
+        </div>
+        <div class="insight-grid">
+          <article class="insight-card">
+            <h3>📊 Research-Driven Scenarios</h3>
+            <p>
+              Each question mirrors the validated dichotomies used by certified
+              MBTI practitioners, so your instinctive choice reveals a
+              consistent preference pattern.
+            </p>
+            <ul>
+              <li>
+                Built on 2025 workplace, learning, and relationship examples.
+              </li>
+              <li>Balances cognitive, emotional, and behavioral signals.</li>
+              <li>
+                Removes trick questions so you can answer quickly and honestly.
+              </li>
+            </ul>
+          </article>
+          <article class="insight-card">
+            <h3>🧠 Instant Type Breakdown</h3>
+            <p>
+              Your result page unpacks dominant functions, collaboration style,
+              and blind spots so you can translate a four-letter code into
+              practical action.
+            </p>
+            <ul>
+              <li>Strengths and watch-outs displayed side-by-side.</li>
+              <li>Career prompts tied to modern hybrid work realities.</li>
+              <li>
+                Relationship guidance written for friends, partners, and teams.
+              </li>
+            </ul>
+          </article>
+          <article class="insight-card">
+            <h3>🚀 Built-In Development Plan</h3>
+            <p>
+              Convert insight into momentum with growth advice curated for every
+              type and direct links to deeper guides across Zinvana's MBTI
+              library.
+            </p>
+            <ul>
+              <li>
+                Micro-habits to practice over the next 7, 30, and 90 days.
+              </li>
+              <li>Ideas for pairing with complementary personalities.</li>
+              <li>Further reading customized for your dominant temperament.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="callout-note">
+          Tip: Answer the quiz in one focused sitting and choose the option you
+          would pick in a natural, low-pressure situation. This protects against
+          biased responses and keeps your Myers-Briggs profile meaningful.
+        </div>
+      </section>
+
+      <!-- MBTI Temperaments section removed per request -->
+
+      <section
+        class="content-section"
+        id="mbti-next-steps"
+        aria-labelledby="next-steps-heading"
+      >
+        <div class="section-header">
+          <h2 id="next-steps-heading">
+            What to Do After You Discover Your MBTI Type
+          </h2>
+          <p>
+            A personality assessment is only as valuable as the action that
+            follows it. Layer these steps onto your result page to weave MBTI
+            insights into career planning, leadership development, and everyday
+            relationships.
+          </p>
+        </div>
+        <ul class="comparison-list">
+          <li>
+            Pair your MBTI code with the Big Five or StrengthsFinder for a
+            multifaceted development plan. The overlap highlights stable traits
+            versus situational skills.
+          </li>
+          <li>
+            Build a team map by collecting types from colleagues and plotting
+            preferred communication channels, meeting formats, and decision
+            cadences.
+          </li>
+          <li>
+            Revisit your result quarterly, note new examples that confirm (or
+            challenge) each letter, and adjust your growth prompt into a
+            measurable habit.
+          </li>
+          <li>
+            Explore advanced guides like
+            <a href="mbti-entj.html">ENTJ strategic leadership</a> and
+            <a href="mbti-enfj.html">ENFJ collaboration playbooks</a> to keep
+            the learning curve steep.
+          </li>
+        </ul>
+        <div class="callout-note" style="margin-top: 28px">
+          Want ongoing coaching? Subscribe to the Zinvana Personality Newsletter
+          for a monthly breakdown of emerging MBTI research, live workshops, and
+          exercises tied to each of the 16 types.
         </div>
       </section>
 
@@ -3842,6 +4104,47 @@
         </div>
       </div>
     </div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the MBTI personality quiz measuring?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This assessment measures your preferences across four MBTI dichotomies: energy (E/I), information (S/N), decisions (T/F), and lifestyle (J/P)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How accurate is this online MBTI quiz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The quiz mirrors validated MBTI question patterns for a quick, directional result. It is useful for self-reflection but is not a substitute for a certified assessment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can my MBTI type change over time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Core preferences tend to be stable, but expression of those preferences can change with experience, environment, and intentional development."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is one Myers-Briggs type better than another?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No—each type has strengths and potential blind spots. The goal is increased self-awareness and better collaboration."
+            }
+          }
+        ]
+      }
+    </script>
 
     <script>
       const totalQuestions = 10;
