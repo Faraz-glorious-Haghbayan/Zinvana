@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geo-Zini Country Guesser 2025 | Zinvana</title>
+    <meta
+      name="description"
+      content="Play the Geo-Zini country guessing game. Answer yes or no like Akinator and let our genie deduce the country you are thinking of from the full world database."
+    />
+    <meta name="author" content="Zinvana" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://zinvana.com/country-guess.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brand1: #667eea;
+        --brand2: #764ba2;
+        --brand3: #f6ad55;
+        --surface: #ffffff;
+        --surface-alt: rgba(255, 255, 255, 0.85);
+        --text-strong: #1f2937;
+        --text: #4a5568;
+        --muted: #94a3b8;
+        --border: rgba(255, 255, 255, 0.35);
+        --stage: rgba(15, 17, 43, 0.9);
+        --stage-border: rgba(255, 255, 255, 0.1);
+        --card-border: rgba(99, 102, 241, 0.18);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 25%,
+          #f093fb 50%,
+          #f5576c 75%,
+          #4facfe 100%
+        );
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        color: var(--text);
+        min-height: 100vh;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(1px);
+        z-index: -1;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(30px) saturate(180%);
+        -webkit-backdrop-filter: blur(30px) saturate(180%);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08),
+          0 1px 3px rgba(0, 0, 0, 0.02);
+        padding: 0 5%;
+        min-height: 85px;
+        z-index: 1000;
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          min-height 0.3s ease;
+        will-change: transform;
+      }
+
+      nav.scrolled {
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12),
+          0 1px 3px rgba(0, 0, 0, 0.03);
+        background: rgba(255, 255, 255, 0.98);
+        min-height: 78px;
+        backdrop-filter: blur(40px) saturate(200%);
+      }
+
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1400px;
+      }
+
+      nav img#brand-logo {
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
+        transition: transform 0.2s ease;
+        object-fit: cover;
+      }
+
+      nav img#brand-logo:hover {
+        transform: scale(1.05);
+      }
+
+      nav .nav-center,
+      nav .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      nav .nav-center {
+        flex: 1;
+        justify-content: center;
+      }
+
+      nav a {
+        color: #475569;
+        font-weight: 600;
+        font-size: 0.98rem;
+        padding: 14px 24px;
+        border-radius: 16px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: transparent;
+        position: relative;
+        overflow: hidden;
+        text-transform: capitalize;
+        letter-spacing: -0.01em;
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: -1;
+        border-radius: 16px;
+      }
+
+      nav a:hover {
+        color: #ffffff;
+        background: transparent;
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+      }
+
+      nav a:hover::before {
+        width: 100%;
+      }
+
+      nav a.active {
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        color: #ffffff;
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 6px;
+        background: #f8fafc;
+        transition: background 0.2s ease;
+        border: 1px solid #e2e8f0;
+      }
+
+      .nav-toggle:hover {
+        background: #f1f5f9;
+      }
+
+      .nav-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #475569;
+        margin: 2px 0;
+        border-radius: 1px;
+        transition: all 0.2s ease;
+      }
+
+      .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .nav-mobile {
+        display: none;
+      }
+
+      .nav-mobile.show {
+        display: flex;
+      }
+
+      @media (max-width: 1200px) {
+        nav {
+          padding: 0 3%;
+        }
+
+        nav a {
+          font-size: 0.9rem;
+          padding: 8px 16px;
+        }
+
+        .nav-center {
+          gap: 6px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        nav {
+          padding: 0 2%;
+        }
+
+        nav a {
+          font-size: 0.85rem;
+          padding: 8px 14px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 0 20px;
+          min-height: 65px;
+        }
+
+        nav .nav-center,
+        nav .nav-right {
+          display: none;
+        }
+
+        .nav-toggle {
+          display: flex;
+        }
+
+        .nav-mobile {
+          position: fixed;
+          top: 65px;
+          left: 0;
+          width: 100vw;
+          height: calc(100vh - 65px);
+          background: rgba(255, 255, 255, 0.98);
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 30px 20px;
+          z-index: 999;
+          overflow-y: auto;
+        }
+
+        .nav-mobile.show {
+          display: flex;
+        }
+
+        .nav-mobile a {
+          color: #475569;
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding: 15px 25px;
+          margin: 6px 0;
+          border-radius: 8px;
+          width: 80%;
+          max-width: 320px;
+          text-align: center;
+          background: #f8fafc;
+          border: 1px solid #e2e8f0;
+          transition: all 0.2s ease;
+        }
+
+        .nav-mobile a:hover {
+          background: #667eea;
+          color: #fff;
+        }
+      }
+
+      @media (max-width: 480px) {
+        nav {
+          min-height: 60px;
+          padding: 0 16px;
+        }
+
+        nav img#brand-logo {
+          width: 38px;
+          height: 38px;
+        }
+      }
+
+      main {
+        padding-top: 120px;
+      }
+
+      .hero-section {
+        text-align: center;
+        color: #fff;
+        padding: 80px 20px 60px;
+        position: relative;
+      }
+
+      .hero-section::after {
+        content: "";
+        position: absolute;
+        width: 900px;
+        height: 900px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.08) 0%,
+          transparent 70%
+        );
+        z-index: 0;
+      }
+
+      .hero-section > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-section h1 {
+        font-size: clamp(2.4rem, 6vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 12px;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(102, 126, 234, 0.15);
+        border-radius: 50px;
+        padding: 0.75rem 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #667eea;
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-badge::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(102, 126, 234, 0.1),
+          transparent
+        );
+        animation: badge-shine 3s infinite;
+      }
+
+      .badge-sparkle {
+        font-size: 1.1rem;
+        animation: sparkle 2s infinite ease-in-out;
+      }
+
+      @keyframes badge-shine {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+
+      .hero-section .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 16px;
+      }
+
+      .hero-section .description {
+        max-width: 760px;
+        margin: 0 auto;
+        opacity: 0.92;
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        margin-top: 26px;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .primary-cta,
+      .secondary-cta {
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+        border: 2px solid transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .primary-cta {
+        background: linear-gradient(135deg, var(--brand1), var(--brand2));
+        color: #fff;
+        box-shadow: 0 15px 30px rgba(79, 70, 229, 0.35);
+      }
+
+      .secondary-cta {
+        background: rgba(15, 23, 42, 0.5);
+        color: #e2e8f0;
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .primary-cta:hover,
+      .secondary-cta:hover {
+        transform: translateY(-2px);
+      }
+
+      .main-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px 80px;
+      }
+
+      .content-section {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 28px;
+        padding: clamp(32px, 4vw, 56px);
+        margin-bottom: 40px;
+        box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+        border: 1px solid rgba(226, 232, 240, 0.6);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 36px;
+      }
+
+      .section-header .eyebrow {
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.8rem;
+        color: var(--brand1);
+        background: rgba(99, 102, 241, 0.08);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 999px;
+        padding: 6px 12px;
+        margin-bottom: 12px;
+      }
+
+      .section-header h2 {
+        font-size: 2.3rem;
+        color: var(--text-strong);
+        margin: 0 0 12px;
+      }
+
+      .section-header p {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+      }
+
+      .feature-card {
+        padding: 28px;
+        border-radius: 22px;
+        border: 2px solid rgba(99, 102, 241, 0.18);
+        background: linear-gradient(135deg, #f9f7ff 0%, #fff 100%);
+        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 45px rgba(99, 102, 241, 0.18);
+      }
+
+      .feature-card h3 {
+        margin-top: 0;
+        color: var(--text-strong);
+      }
+
+      .quiz-shell {
+        margin-bottom: 40px;
+      }
+
+      .quiz-header {
+        background: linear-gradient(135deg, var(--brand1), var(--brand2));
+        color: #fff;
+        border-radius: 24px 24px 0 0;
+        padding: 32px 28px;
+        text-align: center;
+      }
+
+      .game-stage {
+        background: var(--stage);
+        border: 1px solid var(--stage-border);
+        border-radius: 0 0 28px 28px;
+        padding: clamp(24px, 4vw, 48px);
+        box-shadow: 0 40px 80px rgba(3, 5, 20, 0.6);
+        color: #f8fafc;
+      }
+
+      .game-grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: clamp(18px, 3vw, 40px);
+        align-items: stretch;
+      }
+
+      .guide-panel {
+        background: linear-gradient(200deg, #25114d, #08071f);
+        border-radius: 24px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: center;
+        box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.45);
+      }
+
+      .guide-avatar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .guide-avatar img {
+        width: min(220px, 70%);
+        height: auto;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 12px;
+        box-shadow: 0 25px 40px rgba(0, 0, 0, 0.45);
+      }
+
+      .guide-line {
+        color: #fef3c7;
+        font-weight: 600;
+        margin: 8px 0 0;
+        min-height: 48px;
+      }
+
+      .bubble {
+        background: var(--surface-alt);
+        border-radius: 30px;
+        padding: clamp(20px, 3vw, 36px);
+        color: var(--text-strong);
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .bubble-header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .status-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: linear-gradient(120deg, #ece9ff, #fffaf0);
+        font-weight: 600;
+        color: #4c1d95;
+      }
+
+      .status-chip::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #22c55e;
+        box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+      }
+
+      .question {
+        font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+        margin: 18px 0 24px;
+        min-height: 64px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .btn {
+        flex: 1;
+        min-width: 140px;
+        padding: 15px 20px;
+        border-radius: 999px;
+        border: none;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      }
+
+      .btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+
+      .btn:focus-visible {
+        outline: 3px solid rgba(99, 102, 241, 0.4);
+        outline-offset: 3px;
+      }
+
+      .btn.yes {
+        background: linear-gradient(135deg, #4ade80, #22c55e);
+        color: #0f172a;
+        box-shadow: 0 12px 25px rgba(34, 197, 94, 0.35);
+      }
+
+      .btn.no {
+        background: linear-gradient(135deg, #fb7185, #f43f5e);
+        color: #fff;
+        box-shadow: 0 12px 25px rgba(244, 63, 94, 0.35);
+      }
+
+      .btn.restart {
+        background: linear-gradient(135deg, var(--brand3), #f97316);
+        color: #4b1500;
+        width: 100%;
+      }
+
+      .guess-panel {
+        margin-top: 24px;
+        padding: 18px 24px;
+        border-radius: 18px;
+        border: 1px solid rgba(250, 204, 21, 0.4);
+        background: radial-gradient(
+          circle at top,
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0.75)
+        );
+        color: #92400e;
+        font-weight: 600;
+        display: none;
+      }
+
+      .guess-panel.active {
+        display: block;
+      }
+
+      .lower-panels {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .history-panel {
+        background: rgba(255, 255, 255, 0.95);
+        color: #1e1b4b;
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+
+      .history-panel h3 {
+        margin-top: 0;
+      }
+
+      .history {
+        max-height: 220px;
+        overflow-y: auto;
+        padding-left: 1.25em;
+      }
+
+      .history li span {
+        color: var(--brand2);
+        font-weight: 700;
+      }
+
+      .insight-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .insight-card {
+        padding: 24px;
+        border-radius: 20px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: #f8fafc;
+      }
+
+      .faq-item {
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        border-radius: 16px;
+        padding: 20px 24px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      }
+
+      footer {
+        background: linear-gradient(135deg, #0f172a, #1e293b 60%, #334155);
+        color: #cbd5f5;
+        padding: 64px 24px 32px;
+      }
+
+      footer .footer-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+      }
+
+      footer a {
+        color: #e2e8f0;
+        text-decoration: none;
+      }
+
+      footer small {
+        display: block;
+        text-align: center;
+        margin-top: 40px;
+        color: #94a3b8;
+      }
+
+      @media (max-width: 1024px) {
+        .game-grid {
+          grid-template-columns: 1fr;
+        }
+
+        nav .nav-left,
+        nav .nav-right {
+          gap: 16px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        nav {
+          padding: 12px 18px;
+        }
+
+        nav img {
+          width: 36px;
+          height: 36px;
+        }
+
+        main {
+          padding-top: 96px;
+        }
+
+        .hero-section {
+          padding: 60px 16px 40px;
+        }
+
+        .bubble::after {
+          display: none;
+        }
+
+        .actions {
+          flex-direction: column;
+        }
+
+        .btn {
+          border-radius: 20px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav role="navigation" aria-label="Main navigation" id="navbar">
+      <div class="nav-container">
+        <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
+        <div class="nav-center">
+          <a href="index.html">Home</a>
+          <a href="leaders.html">Leaders Quiz</a>
+          <a href="wojak-personality-quiz.html">Wojak Quiz</a>
+          <a href="all-articles.html">Articles</a>
+        </div>
+        <div class="nav-right">
+          <a href="#faq">FAQ</a>
+          <a href="country-guess.html" class="active">Country Guesser</a>
+        </div>
+        <div
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Open navigation"
+          tabindex="0"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="nav-mobile" id="nav-mobile">
+        <a href="index.html">Home</a>
+        <a href="leaders.html">Leaders Quiz</a>
+        <a href="wojak-personality-quiz.html">Wojak Quiz</a>
+        <a href="all-articles.html">Articles</a>
+        <a href="country-guess.html" class="active">Country Guesser</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+    <main id="mainContent" class="main-content" role="main" aria-busy="true">
+      <section class="hero-section" id="hero">
+        <div class="hero-badge">
+          <span class="badge-sparkle">✨</span>
+          <span>Made by Zinvana, enjoy!</span>
+        </div>
+        <h1 style="color: rgb(59, 54, 54)">🧞 Geo-Zini Country Guesser</h1>
+        <p class="subtitle" style="color: darkslategray">
+          Think of any country. Answer with confidence. Watch the genie find it.
+        </p>
+        <p class="description" style="color: rgb(164, 164, 164)">
+          Made with ❤️ by Zinvana, the Geo-Zini is an interactive quiz that
+          narrows down your chosen country through strategic yes/no questions
+          and guesses the country that is in your mind.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-cta" href="#playSection">Start guessing</a>
+          <a class="secondary-cta" href="#how-it-works">Explore features</a>
+        </div>
+      </section>
+      <div class="main-container">
+        <section class="content-section" id="how-it-works">
+          <div class="section-header">
+            <span class="eyebrow">Overview</span>
+            <h2>How the Geo-Zini narrows the field</h2>
+            <p>
+              The Geo-Zini uses a dataset of 190+ countries and territories,
+              applying entropy-based questioning to efficiently zero in on your
+              selection.
+            </p>
+          </div>
+          <div class="features-grid">
+            <article class="feature-card">
+              <h3>Full world coverage</h3>
+              <p>
+                Every independent and dependent territory from the UN dataset is
+                pre-normalised so the genie recognises spelling variations and
+                aliases.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>Smart questioning</h3>
+              <p>
+                Each question is selected to maximise information gain,
+                effectively halving the pool of possibilities with each answer.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>Live transparency</h3>
+              <p>
+                Status chips, history logs, and accessible announcements keep
+                you informed about how many countries are still in play.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="quiz-shell"
+          id="playSection"
+          aria-labelledby="play-heading"
+        >
+          <div class="quiz-header">
+            <h2 id="play-heading">Play the Geo-Zini challenge</h2>
+            <p>
+              Answer yes/no (or tap restart) to guide the Geo-Zini toward your
+              country.
+            </p>
+          </div>
+          <section
+            class="game-stage"
+            id="gameStage"
+            data-role="stage"
+            aria-busy="true"
+          >
+            <div class="game-grid">
+              <aside class="guide-panel" aria-hidden="true">
+                <div class="guide-avatar">
+                  <img
+                    src="muscular-zinvana.png"
+                    alt="Muscular Zinvana mascot thinking pose"
+                  />
+                  <p class="guide-line" id="guideLine">
+                    “I already sense the continent...”
+                  </p>
+                </div>
+              </aside>
+              <section class="bubble" aria-live="polite">
+                <div class="bubble-header">
+                  <span class="status-chip" id="status"
+                    >Loading dataset...</span
+                  >
+                  <span class="status-chip" aria-hidden="true"
+                    >190+ countries</span
+                  >
+                </div>
+                <h2 class="question" id="question">Preparing the scrolls…</h2>
+                <div class="actions">
+                  <button type="button" class="btn yes" id="yesBtn">Yes</button>
+                  <button type="button" class="btn no" id="noBtn">No</button>
+                </div>
+                <button type="button" class="btn restart" id="restartBtn" style="margin-top: 5%;">
+                  Start new round
+                </button>
+              </section>
+            </div>
+            <div
+              class="guess-panel"
+              id="guessBox"
+              role="status"
+              aria-live="assertive"
+            >
+              <p id="guessText"></p>
+            </div>
+            <div class="lower-panels">
+              <article class="history-panel">
+                <h3>Question trail</h3>
+                <ol
+                  class="history"
+                  id="history"
+                  role="log"
+                  aria-live="polite"
+                  aria-label="History of questions and answers"
+                ></ol>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section class="content-section" id="insights">
+          <div class="section-header">
+            <span class="eyebrow">Strategy</span>
+            <h2>Tips for stumping the genie</h2>
+          </div>
+          <div class="insight-cards">
+            <article class="insight-card">
+              <h3>Mix hemispheres</h3>
+              <p>
+                Pick territories that straddle equators or continents to trigger
+                nuanced follow-up questions.
+              </p>
+            </article>
+            <article class="insight-card">
+              <h3>Remember dependencies</h3>
+              <p>
+                Dependent territories with limited recognition still sit in the
+                data, so the genie can chase niche choices.
+              </p>
+            </article>
+            <article class="insight-card">
+              <h3>Use languages as wildcards</h3>
+              <p>
+                Countries with five or more official languages create
+                interesting entropy splits late in the game.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" id="faq">
+          <div class="section-header">
+            <span class="eyebrow">FAQ</span>
+            <h2>Common questions</h2>
+          </div>
+          <div class="faq-item">
+            <h3>How many questions does it usually take to guess a country?</h3>
+            <p>
+              Typically, the Geo-Zini can zero in on your country within 15-20
+              questions, thanks to its entropy-based questioning strategy.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Is this page really free?</h3>
+            <p>
+              Yes! The Geo-Zini Country Guesser is completely free to use. We
+              believe in providing fun and educational experiences without any
+              cost.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Do we collect your personal data?</h3>
+            <p>
+              No, we do not collect or store any personal data from users. Your
+              privacy is important to us.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>How many countries can the Geo-Zini guess?</h3>
+            <p>
+              The Geo-Zini can guess from a dataset of over 190 countries. This
+              includes all UN-recognized nations as well as several dependent
+              territories.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- Enhanced Professional Footer -->
+    <footer
+      style="
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #334155 100%
+        );
+        color: #ffffff;
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
+          z-index: 1;
+        "
+      ></div>
+
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 60px 40px 40px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 40px;
+        "
+      >
+        <div
+          style="display: flex; flex-direction: column; align-items: flex-start"
+        >
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana"
+            style="
+              width: 50px;
+              height: 50px;
+              border-radius: 12px;
+              margin-bottom: 16px;
+              box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+            "
+          />
+          <h3
+            style="
+              color: #ffffff;
+              font-size: 1.5rem;
+              margin-bottom: 16px;
+              font-weight: 600;
+            "
+          >
+            Zinvana
+          </h3>
+          <p
+            style="
+              color: #94a3b8;
+              line-height: 1.6;
+              margin: 0;
+              font-size: 1rem;
+              margin-bottom: 20px;
+            "
+          >
+            Discover your true self through fun, engaging personality quizzes
+            and assessments. From internet archetypes to personality types, we
+            help you explore different aspects of your personality in an
+            entertaining, educational way.
+          </p>
+          <div style="display: flex; gap: 16px; margin-bottom: 20px">
+            <a
+              href="https://x.com/farazglori80528"
+              target="_blank"
+              style="
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+              "
+              onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'"
+              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                /></svg
+            ></a>
+            <a
+              href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
+              target="_blank"
+              style="
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+              "
+              onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'"
+              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                /></svg
+            ></a>
+          </div>
+          <p
+            style="
+              color: #94a3b8;
+              font-size: 0.9rem;
+              margin: 0;
+              line-height: 1.5;
+            "
+          >
+            Stay updated with our latest quizzes and personality assessments!
+          </p>
+        </div>
+
+        <div>
+          <h4
+            style="
+              color: #e2e8f0;
+              font-size: 1.125rem;
+              margin-bottom: 20px;
+              font-weight: 600;
+            "
+          >
+            Popular Quizzes
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 12px">
+              <a
+                href="leaders.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Historical Leaders Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="football-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Football Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="wojak-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Wojak Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="perfect-country.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Perfect Country Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="youtubers-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >YouTubers Personality Quiz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4
+            style="
+              color: #e2e8f0;
+              font-size: 1.125rem;
+              margin-bottom: 20px;
+              font-weight: 600;
+            "
+          >
+            Resources
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 12px">
+              <a
+                href="/about.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >About Us</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="/privacy.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 30px 40px;
+        "
+      >
+        <div
+          style="
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+          "
+        >
+          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+            &copy; 2025 Zinvana. All rights reserved.
+          </p>
+          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+            Made with ❤️ by the Zinvana Team
+          </p>
+        </div>
+        <div
+          style="
+            color: #64748b;
+            font-size: 0.85rem;
+            margin: 20px auto 0;
+            text-align: center;
+            line-height: 1.5;
+            max-width: 600px;
+          "
+        >
+          Made with care by Zinvana. All quizzes are for entertainment purposes
+          only and do not collect personal data.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navbar = document.getElementById("navbar");
+      const navToggle = document.getElementById("nav-toggle");
+      const navMobile = document.getElementById("nav-mobile");
+
+      const closeMobileNav = () => {
+        navMobile?.classList.remove("show");
+        navToggle?.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      const toggleMobileNav = () => {
+        if (!navMobile || !navToggle) {
+          return;
+        }
+        const isOpen = navMobile.classList.contains("show");
+        if (isOpen) {
+          closeMobileNav();
+        } else {
+          navMobile.classList.add("show");
+          navToggle.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+      };
+
+      window.addEventListener("scroll", () => {
+        if (!navbar) {
+          return;
+        }
+        if (window.pageYOffset > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      navToggle?.addEventListener("click", (event) => {
+        event.preventDefault();
+        toggleMobileNav();
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          navMobile?.classList.contains("show") &&
+          !navMobile.contains(event.target) &&
+          !navToggle?.contains(event.target)
+        ) {
+          closeMobileNav();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && navMobile?.classList.contains("show")) {
+          closeMobileNav();
+        }
+      });
+
+      navMobile?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMobileNav);
+      });
+    </script>
+
+    <script>
+      const DATA_URL = "data/world-countries.json";
+
+      const mainEl = document.getElementById("mainContent");
+      const stageEl = document.getElementById("gameStage");
+      const statusEl = document.getElementById("status");
+      const questionEl = document.getElementById("question");
+      const yesBtn = document.getElementById("yesBtn");
+      const noBtn = document.getElementById("noBtn");
+      const restartBtn = document.getElementById("restartBtn");
+      const historyList = document.getElementById("history");
+      const guessBox = document.getElementById("guessBox");
+      const guessText = document.getElementById("guessText");
+      const guideLineEl = document.getElementById("guideLine");
+
+      let countries = [];
+      let questions = [];
+      let remaining = [];
+      let asked = new Set();
+      let currentQuestion = null;
+      let finished = false;
+
+      const guideQuotes = {
+        loading: [
+          "Oh I am so ready...",
+          "Let me lock in for you...",
+          "I bet I can find it fast...",
+        ],
+        idle: [
+          "Center your mind on a nation...",
+          "Your thoughts echo like trade winds...",
+          "Another mystery? I'm ready.",
+        ],
+        thinking: [
+          "I already sense the continent...",
+          "I think I know where to look...",
+          "Oh yes, this is getting interesting...",
+        ],
+        guess: [
+          "I believe I've found it...",
+          "I think this is the one...",
+          "Zini's intuition says...",
+        ],
+        success: [
+          "Told you! They call me the Geo-Zini for a reason.",
+          "Of course I found it, I am the Geo-Zini!",
+          "Stay cool, stay cool...just another mystery solved by the smart Geo-Zini!",
+        ],
+        stumped: [
+          "Hmm, this is weird...maybe try again?",
+          "I didn't see that coming...",
+          "You got me this time...but it won't happen again!",
+        ],
+      };
+
+      const speakGuide = (category = "idle") => {
+        if (!guideLineEl) {
+          return;
+        }
+        const pool = guideQuotes[category] || guideQuotes.idle;
+        const line = pool[Math.floor(Math.random() * pool.length)];
+        guideLineEl.textContent = `“${line}”`;
+      };
+
+      const normalizeText = (value = "") =>
+        value
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[^\w\s-]/g, "")
+          .trim();
+
+      const hasLanguage = (languages, needle) =>
+        languages.some((lang) => lang.includes(needle));
+
+      const normalizeCountry = (entry) => {
+        if (!entry?.name) {
+          return null;
+        }
+
+        const languages = (entry.languages || []).map((lang) =>
+          normalizeText(lang)
+        );
+        const coords = Array.isArray(entry.latlng) ? entry.latlng : [];
+        const latitude = typeof coords[0] === "number" ? coords[0] : null;
+        const borders = Array.isArray(entry.borders) ? entry.borders : [];
+        const rawArea = typeof entry.area === "number" ? entry.area : null;
+        const area = rawArea && rawArea > 0 ? rawArea : null;
+        const landlocked = !!entry.landlocked;
+        const isIsland = borders.length === 0 && !landlocked;
+
+        return {
+          name: entry.name,
+          region: entry.region || "Other",
+          subregion: entry.subregion || "Other",
+          landlocked,
+          hasCoast: !landlocked,
+          isIsland,
+          bordersCount: borders.length,
+          area,
+          isTiny: area !== null && area < 1000,
+          isMassive: area !== null && area > 1_000_000,
+          latitude,
+          northernHemisphere: latitude !== null ? latitude >= 0 : null,
+          southernHemisphere: latitude !== null ? latitude < 0 : null,
+          independent: entry.independent === true,
+          unMember: entry.unMember === true,
+          speaksEnglish: hasLanguage(languages, "english"),
+          speaksSpanish: hasLanguage(languages, "spanish"),
+          speaksFrench: hasLanguage(languages, "french"),
+          speaksPortuguese: hasLanguage(languages, "portuguese"),
+          speaksArabic: hasLanguage(languages, "arabic"),
+          speaksRussian: hasLanguage(languages, "russian"),
+          speaksChinese: hasLanguage(languages, "chinese"),
+          speaksGerman: hasLanguage(languages, "german"),
+        };
+      };
+
+      const slugify = (value) =>
+        value
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+
+      const buildQuestionBank = (dataset) => {
+        const baseQuestions = [
+          {
+            id: "region-americas",
+            text: "Is the country in the Americas?",
+            predicate: (c) => c.region === "Americas",
+          },
+          {
+            id: "region-europe",
+            text: "Is it part of Europe?",
+            predicate: (c) => c.region === "Europe",
+          },
+          {
+            id: "region-asia",
+            text: "Is it in Asia?",
+            predicate: (c) => c.region === "Asia",
+          },
+          {
+            id: "region-africa",
+            text: "Is it located in Africa?",
+            predicate: (c) => c.region === "Africa",
+          },
+          {
+            id: "region-oceania",
+            text: "Is it part of Oceania?",
+            predicate: (c) => c.region === "Oceania",
+          },
+          {
+            id: "region-antarctic",
+            text: "Is it one of the Antarctic territories?",
+            predicate: (c) => c.region === "Antarctic",
+          },
+          {
+            id: "southern-hemisphere",
+            text: "Is it primarily in the Southern Hemisphere?",
+            predicate: (c) => c.southernHemisphere === true,
+          },
+          {
+            id: "northern-hemisphere",
+            text: "Is it mostly in the Northern Hemisphere?",
+            predicate: (c) => c.northernHemisphere === true,
+          },
+          {
+            id: "island",
+            text: "Is it an island nation?",
+            predicate: (c) => c.isIsland,
+          },
+          {
+            id: "landlocked",
+            text: "Is it completely landlocked?",
+            predicate: (c) => c.landlocked,
+          },
+          {
+            id: "coastline",
+            text: "Does it have a coastline?",
+            predicate: (c) => c.hasCoast,
+          },
+          {
+            id: "tiny",
+            text: "Is it a microstate under 1,000 km²?",
+            predicate: (c) => c.isTiny,
+          },
+          {
+            id: "massive",
+            text: "Does it span more than a million km²?",
+            predicate: (c) => c.isMassive,
+          },
+          {
+            id: "independent",
+            text: "Is it an independent country today?",
+            predicate: (c) => c.independent,
+          },
+          {
+            id: "un-member",
+            text: "Is it a United Nations member state?",
+            predicate: (c) => c.unMember,
+          },
+          {
+            id: "borders-5",
+            text: "Does it share borders with 5 or more countries?",
+            predicate: (c) => c.bordersCount >= 5,
+          },
+          {
+            id: "lang-english",
+            text: "Is English widely spoken there?",
+            predicate: (c) => c.speaksEnglish,
+          },
+          {
+            id: "lang-spanish",
+            text: "Is Spanish a major language?",
+            predicate: (c) => c.speaksSpanish,
+          },
+          {
+            id: "lang-french",
+            text: "Is French commonly used nationwide?",
+            predicate: (c) => c.speaksFrench,
+          },
+          {
+            id: "lang-portuguese",
+            text: "Is Portuguese widely spoken?",
+            predicate: (c) => c.speaksPortuguese,
+          },
+          {
+            id: "lang-arabic",
+            text: "Is Arabic a primary language?",
+            predicate: (c) => c.speaksArabic,
+          },
+          {
+            id: "lang-russian",
+            text: "Is Russian commonly spoken?",
+            predicate: (c) => c.speaksRussian,
+          },
+          {
+            id: "lang-chinese",
+            text: "Is Chinese the dominant language?",
+            predicate: (c) => c.speaksChinese,
+          },
+          {
+            id: "lang-german",
+            text: "Is German a national language?",
+            predicate: (c) => c.speaksGerman,
+          },
+        ];
+
+        const subregionCounts = dataset.reduce((acc, c) => {
+          if (!c.subregion || c.subregion === "Other") {
+            return acc;
+          }
+          acc.set(c.subregion, (acc.get(c.subregion) || 0) + 1);
+          return acc;
+        }, new Map());
+
+        subregionCounts.forEach((count, subregion) => {
+          if (count < 8) {
+            return;
+          }
+          baseQuestions.push({
+            id: `sub-${slugify(subregion)}`,
+            text: `Is it in ${subregion}?`,
+            predicate: (c) => c.subregion === subregion,
+          });
+        });
+
+        return baseQuestions;
+      };
+
+      const countMatches = (items, predicate) => {
+        let yesCount = 0;
+        for (const item of items) {
+          if (predicate(item)) {
+            yesCount += 1;
+          }
+        }
+        return yesCount;
+      };
+
+      const setControlsEnabled = (enabled) => {
+        [yesBtn, noBtn].forEach((btn) => {
+          btn.disabled = !enabled;
+          btn.setAttribute("aria-disabled", String(!enabled));
+        });
+        restartBtn.disabled = !countries.length;
+      };
+
+      const setBusy = (busy) => {
+        const value = busy ? "true" : "false";
+        stageEl?.setAttribute("aria-busy", value);
+        mainEl?.setAttribute("aria-busy", value);
+      };
+
+      const addHistory = (text, answer) => {
+        const item = document.createElement("li");
+        item.innerHTML = `${text} <span>${answer ? "Yes" : "No"}</span>`;
+        historyList.appendChild(item);
+        historyList.scrollTop = historyList.scrollHeight;
+      };
+
+      const updateStatus = () => {
+        if (!countries.length) {
+          statusEl.textContent = "Loading full country dataset...";
+          return;
+        }
+        statusEl.textContent = `Remaining possibilities: ${remaining.length} / ${countries.length}`;
+      };
+
+      const setQuestion = (question) => {
+        currentQuestion = question;
+        questionEl.textContent = question
+          ? question.text
+          : "I'm out of questions!";
+        if (!question) {
+          speakGuide("stumped");
+        } else if (question.isGuess) {
+          speakGuide("guess");
+        } else {
+          speakGuide("thinking");
+        }
+      };
+
+      const pickNextQuestion = () => {
+        if (!questions.length) {
+          return null;
+        }
+
+        const candidates = questions
+          .filter((q) => !asked.has(q.id))
+          .map((q) => {
+            const yesCount = countMatches(remaining, q.predicate);
+            const noCount = remaining.length - yesCount;
+            return {
+              q,
+              yesCount,
+              noCount,
+              score: Math.abs(yesCount - noCount),
+            };
+          })
+          .filter(({ yesCount, noCount }) => yesCount > 0 && noCount > 0)
+          .sort((a, b) => a.score - b.score);
+
+        if (candidates.length) {
+          return candidates[0].q;
+        }
+
+        if (remaining.length) {
+          const fallback = remaining[0];
+          return {
+            id: `guess-${fallback.name}`,
+            text: `Is it ${fallback.name}?`,
+            predicate: (c) => c.name === fallback.name,
+            isGuess: true,
+          };
+        }
+
+        return null;
+      };
+
+      const showGuess = (country) => {
+        guessText.textContent = `I guess you're thinking of ${country.name}!`;
+        guessBox.classList.add("active");
+        finished = true;
+        setControlsEnabled(false);
+        questionEl.textContent = "Want to play again? Hit restart.";
+        speakGuide("success");
+      };
+
+      const handleAnswer = (answerIsYes) => {
+        if (!currentQuestion || finished) {
+          startRound();
+          return;
+        }
+
+        remaining = remaining.filter(
+          (c) => currentQuestion.predicate(c) === answerIsYes
+        );
+        asked.add(currentQuestion.id);
+        addHistory(currentQuestion.text, answerIsYes);
+        updateStatus();
+
+        if (remaining.length === 0) {
+          guessText.textContent =
+            "I'm stumped. That combination doesn't match any country I know.";
+          guessBox.classList.add("active");
+          finished = true;
+          setControlsEnabled(false);
+          questionEl.textContent =
+            "Teach me more by refreshing my data, but for now let's restart.";
+          speakGuide("stumped");
+          return;
+        }
+
+        if (remaining.length === 1) {
+          showGuess(remaining[0]);
+          return;
+        }
+
+        currentQuestion = pickNextQuestion();
+        setQuestion(currentQuestion);
+      };
+
+      const resetGame = () => {
+        if (!countries.length || !questions.length) {
+          speakGuide("loading");
+          return;
+        }
+
+        remaining = [...countries];
+        asked = new Set();
+        finished = false;
+        historyList.innerHTML = "";
+        guessBox.classList.remove("active");
+        setControlsEnabled(true);
+        updateStatus();
+        currentQuestion = pickNextQuestion();
+        setQuestion(currentQuestion);
+      };
+
+      const startRound = () => {
+        if (!questions.length || finished) {
+          return;
+        }
+        if (!currentQuestion) {
+          currentQuestion = pickNextQuestion();
+          setQuestion(currentQuestion);
+        }
+      };
+
+      yesBtn.addEventListener("click", () => handleAnswer(true));
+      noBtn.addEventListener("click", () => handleAnswer(false));
+      restartBtn.addEventListener("click", resetGame);
+
+      setControlsEnabled(false);
+      questionEl.textContent = "Loading the complete list of countries...";
+      updateStatus();
+      speakGuide("loading");
+
+      const bootstrap = async () => {
+        try {
+          setBusy(true);
+          const response = await fetch(DATA_URL);
+          if (!response.ok) {
+            throw new Error(`Failed to load dataset (HTTP ${response.status})`);
+          }
+          const raw = await response.json();
+          countries = raw
+            .map((entry) => normalizeCountry(entry))
+            .filter(Boolean);
+          questions = buildQuestionBank(countries);
+          setControlsEnabled(true);
+          resetGame();
+        } catch (error) {
+          statusEl.textContent = "Couldn't load the dataset.";
+          questionEl.textContent = `${error.message}. Please refresh to try again.`;
+          setControlsEnabled(false);
+          speakGuide("stumped");
+        } finally {
+          setBusy(false);
+        }
+      };
+
+      bootstrap();
+    </script>
+  </body>
+</html>
