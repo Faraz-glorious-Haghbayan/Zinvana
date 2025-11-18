@@ -658,7 +658,6 @@
         height: auto;
         border-radius: 18px;
         padding: 12px;
-
       }
 
       .guide-line {
@@ -1019,7 +1018,10 @@
           >
             <div class="game-grid">
               <aside class="guide-panel" aria-hidden="true">
-                <div class="guide-avatar" style="background-color: rgb(87, 87, 182);">
+                <div
+                  class="guide-avatar"
+                  style="background-color: rgb(87, 87, 182)"
+                >
                   <img
                     src="geo-zini-no-background.png"
                     alt="Muscular Zinvana mascot thinking pose"
@@ -1530,7 +1532,10 @@
     </script>
 
     <script>
-      const DATA_URL = "data/world-countries.json";
+      const DATA_SOURCES = [
+        "data/world-countries.json",
+        "https://restcountries.com/v3.1/all?fields=name,region,subregion,landlocked,borders,area,latlng,languages,independent,unMember",
+      ];
 
       const mainEl = document.getElementById("mainContent");
       const stageEl = document.getElementById("gameStage");
@@ -1600,15 +1605,51 @@
           .replace(/[^\w\s-]/g, "")
           .trim();
 
+      const extractName = (entry) => {
+        if (!entry) {
+          return null;
+        }
+        if (typeof entry.name === "string") {
+          return entry.name;
+        }
+        if (entry.name?.common) {
+          return entry.name.common;
+        }
+        if (entry.name?.official) {
+          return entry.name.official;
+        }
+        if (entry.commonName) {
+          return entry.commonName;
+        }
+        if (entry.officialName) {
+          return entry.officialName;
+        }
+        return null;
+      };
+
+      const normalizeLanguageList = (rawLanguages) => {
+        if (!rawLanguages) {
+          return [];
+        }
+        if (Array.isArray(rawLanguages)) {
+          return rawLanguages;
+        }
+        if (typeof rawLanguages === "object") {
+          return Object.values(rawLanguages);
+        }
+        return [rawLanguages];
+      };
+
       const hasLanguage = (languages, needle) =>
         languages.some((lang) => lang.includes(needle));
 
       const normalizeCountry = (entry) => {
-        if (!entry?.name || entry.unMember !== true) {
+        const countryName = extractName(entry);
+        if (!countryName || entry.unMember !== true) {
           return null;
         }
 
-        const languages = (entry.languages || []).map((lang) =>
+        const languages = normalizeLanguageList(entry.languages).map((lang) =>
           normalizeText(lang)
         );
         const coords = Array.isArray(entry.latlng) ? entry.latlng : [];
@@ -1620,7 +1661,7 @@
         const isIsland = borders.length === 0 && !landlocked;
 
         return {
-          name: entry.name,
+          name: countryName,
           region: entry.region || "Other",
           subregion: entry.subregion || "Other",
           landlocked,
@@ -1967,17 +2008,41 @@
       updateStatus();
       speakGuide("loading");
 
+      const fetchDataset = async () => {
+        const failures = [];
+        for (const source of DATA_SOURCES) {
+          try {
+            const response = await fetch(source, { cache: "no-store" });
+            if (!response.ok) {
+              throw new Error(`HTTP ${response.status}`);
+            }
+            const payload = await response.json();
+            if (Array.isArray(payload)) {
+              return payload;
+            }
+            if (payload?.data && Array.isArray(payload.data)) {
+              return payload.data;
+            }
+            throw new Error("Unexpected dataset format");
+          } catch (err) {
+            failures.push(`${source} -> ${err.message}`);
+          }
+        }
+        throw new Error(
+          `Unable to load country data. Tried: ${failures.join(" | ")}`
+        );
+      };
+
       const bootstrap = async () => {
         try {
           setBusy(true);
-          const response = await fetch(DATA_URL);
-          if (!response.ok) {
-            throw new Error(`Failed to load dataset (HTTP ${response.status})`);
-          }
-          const raw = await response.json();
+          const raw = await fetchDataset();
           countries = raw
             .map((entry) => normalizeCountry(entry))
             .filter(Boolean);
+          if (!countries.length) {
+            throw new Error("Dataset returned zero UN members");
+          }
           questions = buildQuestionBank(countries);
           setControlsEnabled(true);
           resetGame();
