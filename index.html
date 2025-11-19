@@ -1664,288 +1664,281 @@
       }
 
       /* ========================================
-         GEO-ZINI FEATURE SECTION
+         GEO-ZINI SPOTLIGHT SECTION
        ======================================== */
 
-      .geo-feature {
+      .geo-spotlight {
         position: relative;
         z-index: 6;
-        margin: clamp(32px, 6vw, 80px) auto;
-        padding: clamp(32px, 5vw, 70px);
-        max-width: 1220px;
-        border-radius: 40px;
+        margin: clamp(36px, 7vw, 96px) auto;
+        padding: clamp(32px, 6vw, 80px);
+        width: min(1200px, 100%);
+        border-radius: clamp(26px, 4vw, 48px);
         background: radial-gradient(
-            circle at 80% 10%,
+            circle at 80% 0%,
             rgba(59, 130, 246, 0.35),
             transparent 55%
           ),
           radial-gradient(
-            circle at 10% 90%,
+            circle at 15% 80%,
             rgba(236, 72, 153, 0.25),
-            transparent 50%
+            transparent 60%
           ),
-          linear-gradient(135deg, #0f172a 0%, #1d3a8a 60%, #312e81 100%);
-        box-shadow: 0 35px 90px rgba(15, 23, 42, 0.6);
-        border: 1px solid rgba(226, 232, 240, 0.15);
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: clamp(24px, 4vw, 60px);
-        overflow: hidden;
+          linear-gradient(135deg, #0f172a 0%, #1d3a8a 55%, #312e81 100%);
+        border: 1px solid rgba(226, 232, 240, 0.18);
+        box-shadow: 0 35px 90px rgba(15, 23, 42, 0.55);
         color: #e0f2ff;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: clamp(28px, 4vw, 60px);
+        overflow: hidden;
+        isolation: isolate;
       }
 
-      .geo-feature::after {
+      .geo-spotlight::before {
         content: "";
         position: absolute;
         inset: 0;
         background: radial-gradient(
           circle,
           rgba(255, 255, 255, 0.08) 0%,
-          transparent 65%
+          transparent 70%
         );
-        opacity: 0.4;
+        opacity: 0.45;
         pointer-events: none;
       }
 
-      .geo-feature__content,
-      .geo-feature__visual {
+      .geo-spotlight__content,
+      .geo-spotlight__visual {
         position: relative;
         z-index: 1;
       }
 
-      .geo-feature__eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 18px;
-        border-radius: 999px;
-        font-size: 0.85rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        background: rgba(56, 189, 248, 0.15);
-        color: #bae6fd;
-        margin-bottom: 18px;
+      .geo-spotlight__content {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(18px, 3vw, 32px);
+        max-width: 640px;
       }
 
-      .geo-feature__eyebrow svg {
+      .geo-spotlight__eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 20px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        background: rgba(56, 189, 248, 0.18);
+        color: #bae6fd;
+        border: 1px solid rgba(186, 230, 253, 0.5);
+      }
+
+      .geo-spotlight__eyebrow svg {
         width: 18px;
         height: 18px;
       }
 
-      .geo-feature__title {
-        font-size: clamp(2rem, 5vw, 3.2rem);
+      .geo-spotlight__title {
+        font-size: clamp(2rem, 4.8vw, 3rem);
         font-weight: 800;
-        margin: 0 0 16px;
-        line-height: 1.2;
+        line-height: 1.15;
+        margin: 0;
+        color: #f8fbff;
       }
 
-      .geo-feature__description {
-        font-size: clamp(1rem, 3vw, 1.2rem);
-        color: #cbd5f5;
+      .geo-spotlight__lead {
+        margin: 0;
+        font-size: clamp(1rem, 3vw, 1.25rem);
         line-height: 1.8;
-        margin-bottom: 28px;
+        color: #dbeafe;
       }
 
-      .geo-feature__chips {
+      .geo-spotlight__chips {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 24px;
+        gap: 12px;
       }
 
-      .geo-feature__chip {
+      .geo-spotlight__chip {
         padding: 8px 16px;
         border-radius: 999px;
         font-size: 0.85rem;
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: #f8fafc;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.08);
       }
 
-      .geo-feature__stats {
+      .geo-spotlight__stats {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 16px;
-        list-style: none;
-        padding: 0;
-        margin: 0 0 32px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: clamp(12px, 2vw, 20px);
       }
 
-      .geo-feature__stat {
+      .geo-spotlight__stat {
         padding: 18px;
         border-radius: 20px;
         background: rgba(15, 23, 42, 0.55);
-        border: 1px solid rgba(148, 163, 184, 0.25);
-        text-align: left;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
       }
 
-      .geo-feature__stat-title {
-        display: block;
-        font-size: 1.5rem;
+      .geo-spotlight__stat dt {
+        font-size: 1.45rem;
         font-weight: 800;
+        margin: 0;
         color: #fbbf24;
       }
 
-      .geo-feature__stat-label {
-        font-size: 0.9rem;
+      .geo-spotlight__stat dd {
+        margin: 4px 0 0;
+        font-size: 0.92rem;
         color: #c7d2fe;
       }
 
-      .geo-feature__actions {
+      .geo-spotlight__cta {
         display: flex;
         flex-wrap: wrap;
         gap: 16px;
-        align-items: center;
       }
 
-      .geo-feature__cta,
-      .geo-feature__secondary {
+      .geo-spotlight__cta a {
+        flex: 1 1 220px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        padding: 14px 28px;
+        padding: 14px 26px;
         border-radius: 999px;
         font-weight: 700;
         text-decoration: none;
+        gap: 10px;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
-      .geo-feature__cta {
+      .geo-spotlight__cta a.geo-spotlight__primary {
         background: linear-gradient(135deg, #38bdf8, #818cf8);
         color: #0f172a;
         box-shadow: 0 15px 35px rgba(56, 189, 248, 0.35);
       }
 
-      .geo-feature__secondary {
+      .geo-spotlight__cta a.geo-spotlight__ghost {
         border: 1px solid rgba(255, 255, 255, 0.4);
         color: #e2e8f0;
+        background: transparent;
       }
 
-      .geo-feature__cta:hover,
-      .geo-feature__secondary:hover {
+      .geo-spotlight__cta a:hover {
         transform: translateY(-2px);
       }
 
-      .geo-feature__visual {
+      .geo-spotlight__visual {
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-
-      .geo-feature__card {
-        width: 100%;
-        max-width: 380px;
-        padding: 28px;
-        border-radius: 28px;
-        background: rgba(15, 23, 42, 0.85);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 25px 60px rgba(2, 6, 23, 0.7);
-        text-align: center;
         position: relative;
       }
 
-      .geo-feature__card img {
-        width: min(260px, 80%);
+      .geo-spotlight__halo {
+        position: absolute;
+        width: clamp(240px, 35vw, 420px);
+        height: clamp(240px, 35vw, 420px);
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(129, 140, 248, 0.35),
+          transparent 65%
+        );
+        filter: blur(8px);
+        opacity: 0.55;
+      }
+
+      .geo-spotlight__card {
+        width: min(380px, 100%);
+        padding: clamp(22px, 4vw, 34px);
+        border-radius: 30px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 25px 60px rgba(2, 6, 23, 0.65);
+        text-align: center;
+        backdrop-filter: blur(18px);
+      }
+
+      .geo-spotlight__card img {
+        width: min(240px, 75%);
         margin: 0 auto 18px;
         border-radius: 24px;
-        background: rgba(15, 23, 42, 0.6);
+        background: rgba(15, 23, 42, 0.55);
         padding: 16px;
-        box-shadow: inset 0 0 20px rgba(99, 102, 241, 0.35);
       }
 
-      .geo-feature__speech {
-        border-radius: 24px;
+      .geo-spotlight__quote {
+        margin: 0 0 20px;
+        padding: 16px;
+        border-radius: 22px;
         background: rgba(59, 130, 246, 0.15);
-        border: 1px solid rgba(59, 130, 246, 0.3);
-        padding: 16px 20px;
-        color: #e0f2ff;
-        text-align: left;
-        position: relative;
-      }
-
-      .geo-feature__speech::after {
-        content: "";
-        position: absolute;
-        top: -16px;
-        left: 35px;
-        width: 20px;
-        height: 16px;
-        background: inherit;
-        transform: skewY(-20deg);
-        clip-path: polygon(0 0, 100% 100%, 0 100%);
-      }
-
-      .geo-feature__speech-label {
-        display: inline-block;
-        font-size: 0.75rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: #bae6fd;
-        margin-bottom: 6px;
-      }
-
-      .geo-feature__speech-line {
-        margin: 0;
-        font-size: 1rem;
+        border: 1px solid rgba(59, 130, 246, 0.35);
         font-weight: 600;
+        line-height: 1.5;
+        color: #e0f2ff;
       }
 
-      .geo-feature__badge-stack {
+      .geo-spotlight__badges {
         display: flex;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 18px;
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
       }
 
-      .geo-feature__mini-badge {
-        padding: 8px 16px;
+      .geo-spotlight__badge {
+        padding: 6px 14px;
         border-radius: 999px;
         font-size: 0.75rem;
-        text-transform: uppercase;
         letter-spacing: 0.08em;
+        text-transform: uppercase;
         background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: #c7d2fe;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      @media (min-width: 900px) {
+        .geo-spotlight {
+          grid-template-columns: 1.05fr 0.95fr;
+          align-items: center;
+        }
       }
 
       @media (max-width: 900px) {
-        .geo-feature {
-          border-radius: 32px;
+        .geo-spotlight__visual {
+          order: -1;
         }
       }
 
-      @media (max-width: 640px) {
-        .geo-feature {
-          grid-template-columns: 1fr;
-          text-align: left;
-          padding: 32px 22px;
+      @media (max-width: 740px) {
+        .geo-spotlight {
+          text-align: center;
+          padding: 28px 20px;
         }
 
-        .geo-feature__actions {
+        .geo-spotlight__content {
+          align-items: center;
+        }
+
+        .geo-spotlight__chips,
+        .geo-spotlight__cta {
+          justify-content: center;
+        }
+
+        .geo-spotlight__cta a {
           width: 100%;
         }
-
-        .geo-feature__cta,
-        .geo-feature__secondary {
-          flex: 1;
-          min-width: 180px;
-        }
-
-        .geo-feature__card {
-          max-width: 100%;
-        }
       }
 
-      @media (max-width: 480px) {
-        .geo-feature {
+      @media (max-width: 440px) {
+        .geo-spotlight {
           border-radius: 24px;
         }
 
-        .geo-feature__speech::after {
-          left: 20px;
+        .geo-spotlight__card {
+          width: 100%;
         }
       }
 
@@ -3345,11 +3338,6 @@
           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         }
 
-        .geo-feature {
-          padding: 40px 32px;
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        }
-
         .quiz-grid {
           padding: 70px 36px;
           margin: 70px auto;
@@ -3457,20 +3445,6 @@
           margin: 24px 8px;
           padding: 36px 16px;
         }
-
-        .geo-feature {
-          padding: 32px 20px;
-          gap: 24px;
-        }
-
-        .geo-feature__stats {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .geo-feature__actions {
-          flex-direction: column;
-          align-items: stretch;
-        }
       }
 
       @media (max-width: 480px) {
@@ -3560,27 +3534,6 @@
         .intro {
           margin: 20px 6px;
           padding: 28px 14px;
-        }
-
-        .geo-feature {
-          padding: 26px 14px;
-          border-radius: 20px;
-        }
-
-        .geo-feature__chips {
-          flex-direction: column;
-        }
-
-        .geo-feature__stats {
-          grid-template-columns: 1fr;
-        }
-
-        .geo-feature__stat {
-          text-align: center;
-        }
-
-        .geo-feature__actions {
-          gap: 12px;
         }
 
         .hero-title {
@@ -4696,9 +4649,9 @@
       </section>
 
       <!-- Geo-Zini Feature Section -->
-      <section class="geo-feature" id="geo-zini-feature">
-        <div class="geo-feature__content">
-          <p class="geo-feature__eyebrow">
+      <section class="geo-spotlight" id="geo-zini-feature">
+        <div class="geo-spotlight__content">
+          <span class="geo-spotlight__eyebrow">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -4709,61 +4662,59 @@
               <path d="M5 12h14" />
             </svg>
             Geo-Zini Spotlight
-          </p>
-          <h2 class="geo-feature__title">
+          </span>
+          <h2 class="geo-spotlight__title">
             Meet Geo-Zini, the smartest country guesser online
           </h2>
-          <p class="geo-feature__description">
-            Challenge yourself with Geo-Zini, our interactive geography quiz
-            that uses adaptive questioning to guess the county in your mind.
-            With a mobile-friendly design and privacy- focused approach,
-            Geo-Zini makes learning geography fun and engaging for everyone.
+          <p class="geo-spotlight__lead">
+            Challenge yourself with Geo-Zini, our adaptive geography quiz that
+            figures out the country you have in mind with lightning-fast yes/no
+            logic. Everything is mobile-first, privacy friendly, and wildly fun
+            for all skill levels.
           </p>
-          <div class="geo-feature__chips">
-            <span class="geo-feature__chip">Adaptive questioning</span>
-            <span class="geo-feature__chip">Very fun but also informative</span>
-            <span class="geo-feature__chip">Mobile-ready UI</span>
+          <div class="geo-spotlight__chips">
+            <span class="geo-spotlight__chip">Adaptive questioning</span>
+            <span class="geo-spotlight__chip">Guide-style hints</span>
+            <span class="geo-spotlight__chip">Mobile-ready UI</span>
           </div>
-          <ul class="geo-feature__stats">
-            <li class="geo-feature__stat">
-              <span class="geo-feature__stat-title">190+</span>
-              <span class="geo-feature__stat-label">Countries covered</span>
-            </li>
-            <li class="geo-feature__stat">
-              <span class="geo-feature__stat-title">7 Qs</span>
-              <span class="geo-feature__stat-label">Average to solve</span>
-            </li>
-            <li class="geo-feature__stat">
-              <span class="geo-feature__stat-title">0 Data</span>
-              <span class="geo-feature__stat-label">Privacy friendly</span>
-            </li>
-          </ul>
-          <div class="geo-feature__actions">
-            <a href="geo-zini.html#playSection" class="geo-feature__cta"
+          <dl class="geo-spotlight__stats">
+            <div class="geo-spotlight__stat">
+              <dt>190+</dt>
+              <dd>Countries covered</dd>
+            </div>
+            <div class="geo-spotlight__stat">
+              <dt>7 Qs</dt>
+              <dd>Average to solve</dd>
+            </div>
+            <div class="geo-spotlight__stat">
+              <dt>0 Data</dt>
+              <dd>Privacy friendly</dd>
+            </div>
+          </dl>
+          <div class="geo-spotlight__cta">
+            <a href="geo-zini.html#playSection" class="geo-spotlight__primary"
               >Play Geo-Zini</a
             >
-            <a href="geo-zini.html#how-it-works" class="geo-feature__secondary"
+            <a href="geo-zini.html#how-it-works" class="geo-spotlight__ghost"
               >See how it works</a
             >
           </div>
         </div>
-        <div class="geo-feature__visual" aria-hidden="true">
-          <div class="geo-feature__card">
+        <div class="geo-spotlight__visual" aria-hidden="true">
+          <div class="geo-spotlight__halo"></div>
+          <div class="geo-spotlight__card">
             <img
               src="geo-zini-no-background.png"
               alt="Geo-Zini genie avatar"
               loading="lazy"
             />
-            <div class="geo-feature__speech">
-              <span class="geo-feature__speech-label">Geo-Zini says</span>
-              <p class="geo-feature__speech-line">
-                “Bring me your trickiest borders. I never miss.”
-              </p>
-            </div>
-            <div class="geo-feature__badge-stack">
-              <span class="geo-feature__mini-badge">Entropy logic</span>
-              <span class="geo-feature__mini-badge">Yes/No magic</span>
-              <span class="geo-feature__mini-badge">Guide quotes</span>
+            <p class="geo-spotlight__quote">
+              “Bring me your trickiest borders. I never miss.”
+            </p>
+            <div class="geo-spotlight__badges">
+              <span class="geo-spotlight__badge">Entropy logic</span>
+              <span class="geo-spotlight__badge">Yes/No magic</span>
+              <span class="geo-spotlight__badge">Guide quotes</span>
             </div>
           </div>
         </div>
