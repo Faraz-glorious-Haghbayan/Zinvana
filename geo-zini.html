@@ -39,6 +39,11 @@
         box-sizing: border-box;
       }
 
+      html {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
       body {
         margin: 0;
         font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -329,7 +334,8 @@
           position: fixed;
           top: 65px;
           left: 0;
-          width: 100vw;
+          width: 100%;
+          max-width: 100%;
           height: calc(100vh - 65px);
           background: rgba(255, 255, 255, 0.98);
           display: none;
@@ -405,6 +411,7 @@
         color: #fff;
         padding: 80px 20px 60px;
         position: relative;
+        overflow: hidden;
       }
 
       .hero-section::after {
@@ -760,22 +767,64 @@
       }
 
       .guess-panel {
-        margin-top: 24px;
-        padding: 18px 24px;
-        border-radius: 18px;
-        border: 1px solid rgba(250, 204, 21, 0.4);
-        background: radial-gradient(
-          circle at top,
-          rgba(255, 255, 255, 0.9),
-          rgba(255, 255, 255, 0.75)
+        margin-top: 26px;
+        padding: 22px 26px;
+        border-radius: 28px;
+        border: 1px solid rgba(250, 204, 21, 0.35);
+        background: linear-gradient(
+          135deg,
+          rgba(250, 204, 21, 0.12),
+          rgba(255, 255, 255, 0.85)
         );
-        color: #92400e;
-        font-weight: 600;
+        box-shadow: 0 25px 60px rgba(250, 204, 21, 0.25);
+        color: #3d1b00;
         display: none;
+        gap: 20px;
+        align-items: center;
       }
 
       .guess-panel.active {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .guess-panel-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+        background: radial-gradient(circle at 30% 30%, #fffbe6, #facc15);
+        display: grid;
+        place-items: center;
+        font-size: 1.8rem;
+        box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.7);
+      }
+
+      .guess-panel-body {
+        flex: 1 1 220px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .guess-label {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: rgba(61, 27, 0, 0.75);
+        margin: 0;
+      }
+
+      .guess-text {
+        margin: 0;
+        font-size: clamp(1.1rem, 4vw, 1.5rem);
+        font-weight: 700;
+        color: #361300;
+      }
+
+      .guess-hint {
+        margin: 0;
+        font-size: 0.95rem;
+        color: rgba(61, 27, 0, 0.7);
       }
 
       .lower-panels {
@@ -786,26 +835,123 @@
       }
 
       .history-panel {
-        background: rgba(255, 255, 255, 0.95);
+        position: relative;
+        background: linear-gradient(135deg, #ffffff 0%, #f4f4ff 100%);
         color: #1e1b4b;
-        border-radius: 20px;
-        padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 24px;
+        padding: 24px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        box-shadow: 0 20px 50px rgba(79, 70, 229, 0.12);
+        overflow: hidden;
+      }
+
+      .history-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at top right,
+          rgba(102, 126, 234, 0.15),
+          transparent 55%
+        );
+        pointer-events: none;
       }
 
       .history-panel h3 {
         margin-top: 0;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .history-panel h3::after {
+        content: "Trail";
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--brand1);
+        background: rgba(102, 126, 234, 0.12);
+        border-radius: 999px;
+        padding: 4px 10px;
       }
 
       .history {
-        max-height: 220px;
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 34px;
+        max-height: 240px;
         overflow-y: auto;
-        padding-left: 1.25em;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
       }
 
-      .history li span {
-        color: var(--brand2);
+      .history::before {
+        content: "";
+        position: absolute;
+        left: 16px;
+        top: 6px;
+        bottom: 6px;
+        width: 2px;
+        background: linear-gradient(
+          180deg,
+          rgba(102, 126, 234, 0.5),
+          rgba(118, 75, 162, 0.5)
+        );
+      }
+
+      .history-item {
+        position: relative;
+        padding: 12px 16px 12px 20px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      }
+
+      .history-item::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--brand1);
+        border: 2px solid #fff;
+        left: -27px;
+        top: 18px;
+        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.25);
+      }
+
+      .history-question {
+        margin: 0;
+        font-weight: 600;
+        color: #0f172a;
+        line-height: 1.4;
+      }
+
+      .history-answer {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         font-weight: 700;
+        font-size: 0.85rem;
+        border-radius: 999px;
+        padding: 4px 12px;
+        margin-top: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .history-answer.yes {
+        background: rgba(16, 185, 129, 0.18);
+        color: #047857;
+      }
+
+      .history-answer.no {
+        background: rgba(248, 113, 113, 0.2);
+        color: #b91c1c;
       }
 
       .insight-cards {
@@ -880,6 +1026,46 @@
 
         .btn {
           border-radius: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-container {
+          padding: 0 16px 60px;
+        }
+
+        .content-section {
+          padding: 24px 18px;
+        }
+
+        .quiz-header,
+        .game-stage {
+          padding: 24px 18px;
+        }
+
+        .feature-card,
+        .insight-card {
+          padding: 20px;
+        }
+
+        .status-chip {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .hero-section h1 {
+          font-size: 1.9rem;
+        }
+
+        .btn {
+          min-width: auto;
+          width: 100%;
+        }
+
+        .status-chip {
+          font-size: 0.85rem;
         }
       }
 
@@ -1061,7 +1247,16 @@
               role="status"
               aria-live="assertive"
             >
-              <p id="guessText"></p>
+              <div class="guess-panel-icon" aria-hidden="true">🔮</div>
+              <div class="guess-panel-body">
+                <p class="guess-label">Latest deduction</p>
+                <p id="guessText" class="guess-text">
+                  Gathering signals from your answers…
+                </p>
+                <p class="guess-hint">
+                  Tap “Yes” to lock it in or “No” to keep narrowing down.
+                </p>
+              </div>
             </div>
             <div class="lower-panels">
               <article class="history-panel">
@@ -1864,8 +2059,22 @@
       };
 
       const addHistory = (text, answer) => {
+        if (!historyList) {
+          return;
+        }
         const item = document.createElement("li");
-        item.innerHTML = `${text} <span>${answer ? "Yes" : "No"}</span>`;
+        item.className = "history-item";
+        item.setAttribute("data-answer", answer ? "yes" : "no");
+
+        const questionEl = document.createElement("p");
+        questionEl.className = "history-question";
+        questionEl.textContent = text;
+
+        const answerEl = document.createElement("span");
+        answerEl.className = `history-answer ${answer ? "yes" : "no"}`;
+        answerEl.textContent = answer ? "Yes" : "No";
+
+        item.append(questionEl, answerEl);
         historyList.appendChild(item);
         historyList.scrollTop = historyList.scrollHeight;
       };
