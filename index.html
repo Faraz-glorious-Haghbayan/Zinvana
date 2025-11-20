@@ -199,6 +199,104 @@
         height: auto;
       }
 
+      .floating-button {
+        position: fixed;
+        right: 24px;
+        z-index: 9999;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        box-shadow: 0 8px 30px rgba(59, 130, 246, 0.35);
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+        background: linear-gradient(45deg, #3b82f6, #10b981, #ef4444);
+        opacity: 0;
+        transform: translate3d(0, 16px, 0);
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .floating-button svg {
+        pointer-events: none;
+      }
+
+      .floating-button.is-visible {
+        opacity: 0.95;
+        transform: translate3d(0, 0, 0);
+        pointer-events: auto;
+      }
+
+      .floating-button:hover {
+        box-shadow: 0 12px 35px rgba(59, 130, 246, 0.5);
+      }
+
+      .floating-button--top {
+        bottom: 32px;
+      }
+
+      .floating-button--share {
+        bottom: 112px;
+        background: linear-gradient(45deg, #10b981, #3b82f6, #ef4444);
+      }
+
+      .fun-fact-bar {
+        background: #667eea;
+        color: #fff;
+        padding: 15px 12px;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      @media (max-width: 640px) {
+        .floating-button {
+          right: 16px;
+          width: 52px;
+          height: 52px;
+        }
+
+        .floating-button--share {
+          bottom: 96px;
+        }
+
+        .floating-button--top {
+          bottom: 24px;
+        }
+
+        .fun-fact-bar {
+          font-size: 0.95rem;
+          padding: 12px 10px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .floating-shapes,
+        .gradient-orb {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        body,
+        .floating-shapes .shape,
+        .gradient-orb,
+        .hero-bg-glow,
+        .animated-background,
+        .progress-accent {
+          animation: none !important;
+        }
+
+        .floating-button {
+          transition: opacity 0.2s ease;
+        }
+      }
+
       /* Container responsiveness */
       .container {
         width: 100%;
@@ -3676,8 +3774,21 @@
 
       /* Enhanced UI/UX Improvements */
 
-      /* Smooth transitions for all interactive elements */
-      * {
+      /* Smooth transitions for interactive elements only */
+      .smooth-interaction,
+      a,
+      button,
+      .btn,
+      .btn-primary,
+      .btn-hero-primary,
+      .btn-hero-secondary,
+      .quiz-card,
+      .nav-toggle,
+      .cta-primary,
+      .cta-secondary,
+      .primary-cta,
+      .secondary-cta,
+      .guide-cta {
         transition-property: transform, box-shadow, background, border-color,
           opacity;
         transition-duration: 0.3s;
@@ -7178,28 +7289,7 @@
     <button
       id="backToTop"
       aria-label="Back to top"
-      style="
-        display: none;
-        position: fixed;
-        bottom: 40px;
-        right: 40px;
-        z-index: 9999;
-        background: linear-gradient(
-          45deg,
-          #3b82f6 0%,
-          #10b981 50%,
-          #ef4444 100%
-        );
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
-        cursor: pointer;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-      "
+      class="floating-button floating-button--top"
     >
       <svg
         width="28"
@@ -7218,30 +7308,7 @@
     <button
       id="shareBtn"
       aria-label="Share this page"
-      style="
-        position: fixed;
-        bottom: 120px;
-        right: 40px;
-        z-index: 9999;
-        background: linear-gradient(
-          45deg,
-          #10b981 0%,
-          #3b82f6 50%,
-          #ef4444 100%
-        );
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: blur(10px);
-      "
+      class="floating-button floating-button--share"
     >
       <svg
         width="26"
@@ -7260,139 +7327,62 @@
       </svg>
     </button>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Simple loading screen
-        const loadingScreen = document.querySelector(".loading-screen");
-        const loadingProgress = document.querySelector(".loading-progress");
+      function initBasicInteractions() {
+        initBackToTopButton();
+        initShareButton();
+      }
 
-        let progress = 0;
-        const loadingInterval = setInterval(() => {
-          progress += 20;
-          if (loadingProgress) {
-            loadingProgress.style.width = progress + "%";
-          }
-          if (progress >= 100) {
-            clearInterval(loadingInterval);
-            setTimeout(() => {
-              if (loadingScreen) {
-                loadingScreen.classList.add("hidden");
-              }
-            }, 200);
-          }
-        }, 100);
-
-        // Back to top
+      function initBackToTopButton() {
         const btn = document.getElementById("backToTop");
-        window.addEventListener("scroll", function () {
-          btn.style.display = window.scrollY > 300 ? "block" : "none";
-        });
-        btn.addEventListener("click", function () {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+        if (!btn) return;
 
-        // Share
-        document.getElementById("shareBtn").onclick = function () {
-          if (navigator.share) {
-            navigator.share({
-              title: document.title,
-              text: "Try the best free insightful personality quiz at Zinvana!",
-              url: window.location.href,
-            });
-          } else {
-            prompt("Copy this link to share:", window.location.href);
-          }
+        const toggleVisibility = () => {
+          const shouldShow = window.scrollY > 300;
+          btn.classList.toggle("is-visible", shouldShow);
         };
 
-        // Simple navigation functionality
-        const navbar = document.getElementById("navbar");
-        const navToggle = document.getElementById("nav-toggle");
-        const navMobile = document.getElementById("nav-mobile");
+        let scrollFrame = null;
+        const onScroll = () => {
+          if (scrollFrame) return;
+          scrollFrame = window.requestAnimationFrame(() => {
+            toggleVisibility();
+            scrollFrame = null;
+          });
+        };
 
-        // Simple navbar scroll effect
-        window.addEventListener("scroll", function () {
-          if (window.pageYOffset > 50) {
-            navbar.classList.add("scrolled");
+        window.addEventListener("scroll", onScroll, { passive: true });
+        toggleVisibility();
+
+        btn.addEventListener("click", () =>
+          window.scrollTo({ top: 0, behavior: "smooth" })
+        );
+      }
+
+      function initShareButton() {
+        const shareBtn = document.getElementById("shareBtn");
+        if (!shareBtn) return;
+
+        const shareData = {
+          title: document.title,
+          text: "Try the best free insightful personality quiz at Zinvana!",
+          url: window.location.href,
+        };
+
+        shareBtn.classList.add("is-visible");
+
+        shareBtn.addEventListener("click", () => {
+          if (navigator.share) {
+            navigator.share(shareData).catch(() => {
+              /* ignore user cancellation */
+            });
           } else {
-            navbar.classList.remove("scrolled");
+            window.prompt("Copy this link to share:", window.location.href);
           }
         });
-
-        // Mobile navigation toggle
-        function toggleMobileNav() {
-          const isOpen = navMobile.classList.contains("show");
-
-          if (isOpen) {
-            navMobile.classList.remove("show");
-            navToggle.classList.remove("active");
-            document.body.style.overflow = "";
-          } else {
-            navMobile.classList.add("show");
-            navToggle.classList.add("active");
-            document.body.style.overflow = "hidden";
-          }
-        }
-
-        function closeMobileNav() {
-          navMobile.classList.remove("show");
-          navToggle.classList.remove("active");
-          document.body.style.overflow = "";
-        }
-
-        navToggle.addEventListener("click", function (e) {
-          e.preventDefault();
-          toggleMobileNav();
-        });
-
-        // Close mobile nav when clicking outside
-        document.addEventListener("click", function (e) {
-          if (
-            navMobile.classList.contains("show") &&
-            !navMobile.contains(e.target) &&
-            !navToggle.contains(e.target)
-          ) {
-            closeMobileNav();
-          }
-        });
-
-        // Close nav when clicking on mobile nav links
-        navMobile.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", closeMobileNav);
-        });
-
-        // Close mobile nav on escape key
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && navMobile.classList.contains("show")) {
-            closeMobileNav();
-          }
-        });
-      });
+      }
     </script>
-    <style>
-      #backToTop,
-      #shareBtn {
-        opacity: 0.9;
-        transition: all 0.2s ease;
-      }
-      #backToTop:hover,
-      #shareBtn:hover {
-        transform: translateY(-2px);
-        opacity: 1;
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-      }
-    </style>
-
     <!-- Simple fun fact bar -->
-    <div
-      id="funFactBar"
-      style="
-        background: #667eea;
-        color: #fff;
-        padding: 15px 0;
-        text-align: center;
-        font-size: 1rem;
-        font-weight: 500;
-      "
-    >
+    <div id="funFactBar" class="fun-fact-bar">
       💡 Zinvana offers the best free personality quizzes with instant results!
       ✨
     </div>
@@ -7542,37 +7532,47 @@
         if (!gallery) return;
       }
 
-      document.addEventListener("DOMContentLoaded", function () {
+      let quizResizeTimer;
+      let quizKeyboardBound = false;
+
+      function initQuizGalleryModule() {
         computeQuizLayout();
 
         const gallery = document.getElementById("quiz-gallery");
-        if (gallery) {
+        if (gallery && !gallery.dataset.scrollBound) {
           gallery.addEventListener("scroll", onQuizScroll, { passive: true });
+          gallery.dataset.scrollBound = "true";
         }
 
         window.addEventListener("resize", () => {
-          const currentIndex = Math.round(
-            (document.getElementById("quiz-gallery").scrollLeft || 0) /
-              (quizPageWidth || 1)
-          );
-          computeQuizLayout();
-          // keep approximately on the same page after resize
-          const g = document.getElementById("quiz-gallery");
-          if (g)
-            g.scrollTo({
-              left: currentIndex * quizPageWidth,
-              behavior: "auto",
-            });
+          clearTimeout(quizResizeTimer);
+          quizResizeTimer = setTimeout(() => {
+            const galleryEl = document.getElementById("quiz-gallery");
+            const currentIndex = galleryEl
+              ? Math.round(
+                  (galleryEl.scrollLeft || 0) / Math.max(quizPageWidth, 1)
+                )
+              : 0;
+            computeQuizLayout();
+            if (galleryEl) {
+              galleryEl.scrollTo({
+                left: currentIndex * quizPageWidth,
+                behavior: "auto",
+              });
+            }
+          }, 150);
         });
 
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "ArrowLeft") scrollQuizzes(-1);
-          if (e.key === "ArrowRight") scrollQuizzes(1);
-        });
+        if (!quizKeyboardBound) {
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowLeft") scrollQuizzes(-1);
+            if (e.key === "ArrowRight") scrollQuizzes(1);
+          });
+          quizKeyboardBound = true;
+        }
 
-        // Initialize How Works Gallery
         initHowWorksGallery();
-      });
+      }
 
       // How Works Gallery JavaScript
       let howWorksCurrentPosition = 0;
@@ -7700,9 +7700,11 @@
       }
 
       // Add How Works gallery event listeners
-      document.addEventListener("DOMContentLoaded", function () {
+      function initHowWorksTouchModule() {
         const howWorksGallery = document.getElementById("how-works-gallery");
-        if (howWorksGallery) {
+        if (!howWorksGallery) return;
+
+        if (!howWorksGallery.dataset.touchBound) {
           howWorksGallery.addEventListener(
             "touchstart",
             handleHowWorksTouchStart,
@@ -7714,62 +7716,56 @@
             { passive: true }
           );
           howWorksGallery.addEventListener("touchend", handleHowWorksTouchEnd);
-
-          // Update on window resize for How Works - DEBOUNCED
-          let resizeTimeout;
-          window.addEventListener(
-            "resize",
-            () => {
-              clearTimeout(resizeTimeout);
-              resizeTimeout = setTimeout(() => {
-                updateHowWorksVisibleCards();
-                createHowWorksDots();
-                howWorksCurrentPosition = 0;
-                scrollHowWorksToPosition(0);
-              }, 150);
-            },
-            { passive: true }
-          );
+          howWorksGallery.dataset.touchBound = "true";
         }
-      });
+
+        let resizeTimeout;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            updateHowWorksVisibleCards();
+            createHowWorksDots();
+            howWorksCurrentPosition = 0;
+            scrollHowWorksToPosition(0);
+          }, 150);
+        });
+      }
 
       // Next-Level Loading Screen & Advanced Features - OPTIMIZED
-      document.addEventListener("DOMContentLoaded", function () {
-        // Fast Loading Screen Animation
+      function initLoadingScreen() {
         const loadingScreen = document.getElementById("loadingScreen");
         const loadingProgress = document.querySelector(".loading-progress");
 
-        // Faster loading simulation
+        if (!loadingScreen || !loadingProgress) {
+          initAdvancedAnimations();
+          return;
+        }
+
         let progress = 0;
         const progressInterval = setInterval(() => {
-          progress += Math.random() * 25 + 15; // Faster progress increments
+          progress += Math.random() * 25 + 15;
           if (progress > 95) progress = 95;
 
           loadingProgress.style.width = progress + "%";
 
           if (progress >= 95) {
             clearInterval(progressInterval);
-
-            // Complete loading with minimal delay
             setTimeout(() => {
               loadingProgress.style.width = "100%";
 
               setTimeout(() => {
                 loadingScreen.classList.add("hidden");
 
-                // Remove loading screen from DOM after transition
                 setTimeout(() => {
                   loadingScreen.remove();
                 }, 300);
 
-                // Initialize optimized animations
                 initAdvancedAnimations();
               }, 150);
             }, 100);
           }
-        }, 50); // Faster interval
+        }, 50);
 
-        // Force complete loading after 1.5 seconds max (reduced from 3s)
         setTimeout(() => {
           clearInterval(progressInterval);
           loadingProgress.style.width = "100%";
@@ -7779,10 +7775,14 @@
             initAdvancedAnimations();
           }, 300);
         }, 1500);
-      });
+      }
+
+      let advancedAnimationsInitialized = false;
 
       // Advanced Animations & Effects - OPTIMIZED
       function initAdvancedAnimations() {
+        if (advancedAnimationsInitialized) return;
+        advancedAnimationsInitialized = true;
         // Sparkles disabled for performance
         // createSparklesEffect();
 
@@ -7852,25 +7852,47 @@
         const navMobile = document.querySelector(".nav-mobile");
 
         if (navToggle && navMobile) {
+          const closeMenu = () => {
+            navToggle.classList.remove("active");
+            navMobile.classList.remove("show");
+            document.body.style.overflow = "auto";
+          };
+
           navToggle.addEventListener("click", () => {
             navToggle.classList.toggle("active");
             navMobile.classList.toggle("show");
-
-            // Prevent body scroll when menu is open
             document.body.style.overflow = navMobile.classList.contains("show")
               ? "hidden"
               : "auto";
           });
 
-          // Close mobile menu when clicking on a link
           const navLinks = navMobile.querySelectorAll("a");
           navLinks.forEach((link) => {
-            link.addEventListener("click", () => {
-              navToggle.classList.remove("active");
-              navMobile.classList.remove("show");
-              document.body.style.overflow = "auto";
-            });
+            link.addEventListener("click", closeMenu);
           });
+
+          if (!navMobile.dataset.guardBound) {
+            document.addEventListener("click", (event) => {
+              if (
+                navMobile.classList.contains("show") &&
+                !navMobile.contains(event.target) &&
+                !navToggle.contains(event.target)
+              ) {
+                closeMenu();
+              }
+            });
+
+            document.addEventListener("keydown", (event) => {
+              if (
+                event.key === "Escape" &&
+                navMobile.classList.contains("show")
+              ) {
+                closeMenu();
+              }
+            });
+
+            navMobile.dataset.guardBound = "true";
+          }
         }
 
         // DISABLED: Advanced Card Hover Effects - causes layout thrashing
@@ -7913,6 +7935,14 @@
         // Disabled for performance - causes constant DOM manipulation
         return;
       }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        initBasicInteractions();
+        initQuizGalleryModule();
+        initHowWorksTouchModule();
+        initLoadingScreen();
+      });
     </script>
   </body>
 </html>
