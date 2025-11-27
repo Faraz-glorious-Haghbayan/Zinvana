@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Perfect Country Quiz 2025 - Find Your Ideal Country to Live In | Free
-      Personality Test
+      Which Country Should You Live In? Take The Perfect Country Quiz (2025)
     </title>
     <meta
       name="description"
-      content="Take our comprehensive perfect country personality quiz to discover which country matches your lifestyle, climate preferences, and values. Free assessment based on 8 key factors with detailed results for 2025."
+      content="Answer 10 quick questions to reveal the country that fits your lifestyle, climate, and values. Free, research-backed quiz with personalized tips and next steps."
     />
     <meta
       name="keywords"
@@ -18,6 +17,20 @@
     <meta name="author" content="Zinvana" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://zinvana.com/perfect-country.html" />
+
+    <!-- Performance: preload og image and preconnect to analytics / host -->
+    <link rel="preload" as="image" href="https://zinvana.com/philippines.jpg" />
+    <link rel="preconnect" href="https://zinvana.com" />
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect"
+      href="https://www.google-analytics.com"
+      crossorigin
+    />
 
     <!-- Open Graph Meta Tags -->
     <meta
@@ -28,10 +41,7 @@
       property="og:description"
       content="Discover which country matches your personality and lifestyle with our comprehensive quiz. Get personalized recommendations based on climate, culture, work-life balance, and more."
     />
-    <meta
-      property="og:image"
-      content="https://zinvana.com/images/perfect-country-quiz.gif"
-    />
+    <meta property="og:image" content="https://zinvana.com/ßphilippines.jpg" />
     <meta
       property="og:url"
       content="https://zinvana.com/perfect-country.html"
@@ -48,10 +58,21 @@
       name="twitter:description"
       content="Take our free personality quiz to discover which country is perfect for you to live in."
     />
-    <meta
-      name="twitter:image"
-      content="https://zinvana.com/images/perfect-country-quiz.gif"
-    />
+    <meta name="twitter:image" content="https://zinvana.com/philippines.jpg" />
+
+    <!-- GA4 placeholder: replace G-XXXXXXXXXX with your Measurement ID -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -82,6 +103,79 @@
           {
             "@type": "Thing",
             "name": "Country Selection"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Article JSON-LD for better indexing and rich cards -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Which Country Should You Live In? Perfect Country Quiz (2025)",
+        "description": "Answer 10 quick questions to reveal the country that fits your lifestyle, climate, and values. Free, research-backed quiz with personalized tips and next steps.",
+        "image": "https://zinvana.com/images/perfect-country-quiz.gif",
+        "author": { "@type": "Organization", "name": "Zinvana" },
+        "publisher": { "@type": "Organization", "name": "Zinvana" },
+        "datePublished": "2025-09-30",
+        "dateModified": "2025-09-30"
+      }
+    </script>
+
+    <!-- FAQ JSON-LD (mirrors on-page FAQ for rich results) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How reliable is the Perfect Country Quiz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our quiz is grounded in expat satisfaction surveys, Mercer and Economist Intelligence Unit indices, and ongoing research into climate resilience, cost-of-living, and visa policy. It is built to give thoughtful direction—not a random spin of the globe."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What factors does the quiz consider?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We analyze 10 pillars: climate preferences, work-life balance, cultural values, lifestyle environment, healthcare and education priorities, safety, cost of living, language accessibility, preferred population density, and residency or visa pathways."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which countries are included in the results?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We now cover 70+ destinations across every region—classics like Canada, Japan, Portugal, and Singapore plus 2025 additions such as Brazil, India, Peru, Turkey, Morocco, South Africa, Sri Lanka, Kenya, and Egypt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the quiz free to take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can retake it anytime, receive detailed reasoning for your match, and use the highlights as a starting point for deeper research."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does the quiz take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "About six minutes. Ten carefully crafted questions capture the lifestyle trade-offs that matter most so we can score every country consistently."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use the results for immigration planning?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the quiz as a discovery tool. For visas, taxation, or legal planning, consult official government resources or licensed immigration professionals."
+            }
           }
         ]
       }
@@ -2589,6 +2683,118 @@
           flex-direction: column;
           align-items: flex-start;
         }
+
+        /* Keep the quiz content visible in the viewport by constraining
+           the quiz panel and enabling internal scrolling when needed. */
+        .quiz-main {
+          max-height: calc(100vh - 200px);
+          overflow: auto;
+          -webkit-overflow-scrolling: touch;
+          padding-right: 6px; /* room for scrollbar */
+        }
+
+        /* Make answer buttons more compact so more options fit on screen. */
+        .answer-btn {
+          min-height: 64px;
+          padding: 12px 14px 12px 60px;
+          font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+          .quiz-main {
+            max-height: calc(100vh - 140px);
+          }
+
+          .answer-btn {
+            min-height: 56px;
+            padding: 10px 12px 10px 58px;
+            font-size: 0.98rem;
+          }
+        }
+
+        /* Extra-tight layout for small phones */
+        @media (max-width: 420px) {
+          .quiz-container {
+            padding: 18px 12px;
+          }
+
+          .quiz-layout {
+            gap: 18px;
+            grid-template-columns: 1fr;
+          }
+
+          .quiz-status-card {
+            position: static;
+            order: 2;
+            padding: 16px;
+            top: auto;
+          }
+
+          .progress-orb {
+            width: 120px;
+            height: 120px;
+          }
+
+          .quiz-main {
+            max-height: calc(100vh - 120px);
+            padding: 8px 4px 8px 4px;
+          }
+
+          .answer-btn {
+            min-height: 48px;
+            padding: 8px 10px 8px 52px;
+            font-size: 0.92rem;
+          }
+
+          .answer-title {
+            font-size: 0.98rem;
+          }
+
+          .answer-description {
+            font-size: 0.86rem;
+            line-height: 1.2;
+            color: #55606a;
+          }
+
+          .chevron {
+            width: 26px;
+            height: 26px;
+            font-size: 14px;
+          }
+
+          /* Smaller emoji/badge for phones */
+          .answer-badge {
+            width: 36px;
+            height: 36px;
+            left: 12px;
+            top: 12px;
+            font-size: 1.05rem;
+          }
+
+          /* Adjust left padding so text aligns with smaller badge */
+          .answer-btn {
+            padding-left: 56px;
+          }
+
+          /* Further tighten for very small phones: hide long descriptions to show more options */
+          .answer-description,
+          .question-description,
+          .hero-section .description,
+          .result-story {
+            display: none !important;
+          }
+
+          .answer-badge {
+            width: 34px;
+            height: 34px;
+            font-size: 0.95rem;
+          }
+
+          .answer-btn {
+            min-height: 44px;
+            padding-left: 52px;
+          }
+        }
       }
     </style>
   </head>
@@ -2773,65 +2979,6 @@
             showcase Latin America's energy.
           </p>
         </article>
-      </div>
-    </section>
-
-    <section class="content-section" id="countryGuide">
-      <div class="guide-header">
-        <span class="eyebrow">Reference</span>
-        <h2>Global Country Archetype Guide</h2>
-        <p>
-          Browse curated archetypes before or after you take the quiz. Search
-          for keywords, filter by lifestyle lens, and see how flagship
-          destinations stack up.
-        </p>
-      </div>
-
-      <div class="guide-toolbar" role="region" aria-label="Guide tools">
-        <div class="search-input">
-          <span class="icon" aria-hidden="true">🔎</span>
-          <input
-            id="countryGuideSearch"
-            type="search"
-            placeholder="Search countries (sunny visas, tech hubs, calm coasts)"
-            aria-label="Search country archetypes"
-          />
-        </div>
-
-        <div class="filter-chips" role="listbox" aria-label="Lifestyle filters">
-          <button
-            class="chip active"
-            data-filter="all"
-            aria-selected="true"
-            type="button"
-          >
-            All
-          </button>
-          <button class="chip" data-filter="balanced" type="button">
-            Balanced Living
-          </button>
-          <button class="chip" data-filter="coastal" type="button">
-            Coastal Calm
-          </button>
-          <button class="chip" data-filter="ambitious" type="button">
-            Ambitious Hubs
-          </button>
-          <button class="chip" data-filter="nature" type="button">
-            Nature Escapes
-          </button>
-          <button class="chip" data-filter="remote" type="button">
-            Remote-Work Ready
-          </button>
-          <button class="chip" data-filter="cultural" type="button">
-            Cultural Immersion
-          </button>
-        </div>
-      </div>
-
-      <div class="guide-grid" id="countryGuideGrid" aria-live="polite">
-        <div class="guide-placeholder" data-guide-placeholder>
-          <span>Loading curated destinations…</span>
-        </div>
       </div>
     </section>
 
@@ -3705,6 +3852,65 @@
         <div class="result-placeholder">
           <span>✨</span>
           <p>Complete the quiz to reveal your bespoke relocation blueprint.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="countryGuide">
+      <div class="guide-header">
+        <span class="eyebrow">Reference</span>
+        <h2>Global Country Archetype Guide</h2>
+        <p>
+          Browse curated archetypes before or after you take the quiz. Search
+          for keywords, filter by lifestyle lens, and see how flagship
+          destinations stack up.
+        </p>
+      </div>
+
+      <div class="guide-toolbar" role="region" aria-label="Guide tools">
+        <div class="search-input">
+          <span class="icon" aria-hidden="true">🔎</span>
+          <input
+            id="countryGuideSearch"
+            type="search"
+            placeholder="Search countries (sunny visas, tech hubs, calm coasts)"
+            aria-label="Search country archetypes"
+          />
+        </div>
+
+        <div class="filter-chips" role="listbox" aria-label="Lifestyle filters">
+          <button
+            class="chip active"
+            data-filter="all"
+            aria-selected="true"
+            type="button"
+          >
+            All
+          </button>
+          <button class="chip" data-filter="balanced" type="button">
+            Balanced Living
+          </button>
+          <button class="chip" data-filter="coastal" type="button">
+            Coastal Calm
+          </button>
+          <button class="chip" data-filter="ambitious" type="button">
+            Ambitious Hubs
+          </button>
+          <button class="chip" data-filter="nature" type="button">
+            Nature Escapes
+          </button>
+          <button class="chip" data-filter="remote" type="button">
+            Remote-Work Ready
+          </button>
+          <button class="chip" data-filter="cultural" type="button">
+            Cultural Immersion
+          </button>
+        </div>
+      </div>
+
+      <div class="guide-grid" id="countryGuideGrid" aria-live="polite">
+        <div class="guide-placeholder" data-guide-placeholder>
+          <span>Loading curated destinations…</span>
         </div>
       </div>
     </section>
@@ -8669,14 +8875,14 @@
 
         setTimeout(() => {
           if (currentQuestion < totalQuestions) {
-            changeQuestion(1);
+            changeQuestion(1, false);
           } else {
             calculateResult();
           }
         }, 600);
       }
 
-      function changeQuestion(direction) {
+      function changeQuestion(direction, doScroll = true) {
         const questions = document.querySelectorAll(".question");
         const currentIndex = currentQuestion - 1;
         if (questions[currentIndex]) {
@@ -8695,7 +8901,7 @@
         updateProgress();
 
         const quizSection = document.getElementById("quizSection");
-        if (quizSection) {
+        if (doScroll && quizSection) {
           quizSection.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }
@@ -8915,11 +9121,27 @@
                 <div class="share-buttons">
                   <h4>Share your match</h4>
                   <div class="share-row">
-                    <button onclick="shareToTwitter('${countryKey}')" class="share-btn twitter">Share on X</button>
-                    <button onclick="shareToLinkedIn('${countryKey}')" class="share-btn linkedin">LinkedIn</button>
-                    <button onclick="copyResultLink()" class="share-btn copy">Copy link</button>
+                      <button onclick="shareToTwitter('${countryKey}')" class="share-btn twitter">Share on X</button>
+                      <button onclick="shareToFacebook('${countryKey}')" class="share-btn facebook">Share on Facebook</button>
+                      <button onclick="shareToLinkedIn('${countryKey}')" class="share-btn linkedin">LinkedIn</button>
+                      <button onclick="shareToWhatsApp('${countryKey}')" class="share-btn whatsapp">WhatsApp</button>
+                      <button onclick="copyResultLink()" class="share-btn copy">Copy link</button>
+                    </div>
                   </div>
-                </div>
+
+                  <div class="subscribe-box">
+                    <h4>Get relocation tips & updates</h4>
+                    <form class="subscribe-form" onsubmit="event.preventDefault(); subscribeEmail('${countryKey}');">
+                      <div style="display:flex;gap:8px;align-items:center;">
+                        <input id="subscribeEmail-${countryKey}" type="email" placeholder="Your email" required style="flex:1;padding:10px 12px;border-radius:8px;border:1px solid var(--border);" />
+                        <button type="submit" class="subscribe-btn" style="padding:10px 16px;border-radius:8px;background:var(--brand1);color:#fff;border:none;">Get tips</button>
+                      </div>
+                      <div style="margin-top:8px;font-size:0.9rem;color:var(--muted);display:flex;align-items:center;gap:8px;">
+                        <label style="display:inline-flex;align-items:center;gap:6px"><input id="subscribeOptIn-${countryKey}" type="checkbox" checked /> Yes, email me optional relocation tips</label>
+                      </div>
+                      <div id="subscribeMsg-${countryKey}" class="subscribe-msg" style="margin-top:8px;font-size:0.95rem;color:var(--text);"></div>
+                    </form>
+                  </div>
               </div>
             </div>
           </div>
@@ -9145,12 +9367,18 @@
 
       // Social sharing functions
       function shareToFacebook(country) {
-        const url = encodeURIComponent(window.location.href);
+        const base = window.location.href.split("#")[0];
+        const params = new URLSearchParams({
+          utm_source: "social",
+          utm_medium: "facebook",
+          utm_campaign: "perfect_country_quiz",
+        }).toString();
+        const shareUrlEncoded = encodeURIComponent(`${base}?${params}`);
         const text = encodeURIComponent(
           `I just discovered my perfect country to live in: ${countries[country].name}! Take the quiz to find yours.`
         );
         window.open(
-          `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`,
+          `https://www.facebook.com/sharer/sharer.php?u=${shareUrlEncoded}&quote=${text}`,
           "_blank"
         );
         trackQuizEvent("result_shared", {
@@ -9160,7 +9388,14 @@
       }
 
       function shareToTwitter(country) {
-        const url = encodeURIComponent(window.location.href);
+        const base = window.location.href.split("#")[0];
+        const params = new URLSearchParams({
+          utm_source: "social",
+          utm_medium: "twitter",
+          utm_campaign: "perfect_country_quiz",
+        }).toString();
+        const shareUrl = `${base}?${params}`;
+        const url = encodeURIComponent(shareUrl);
         const text = encodeURIComponent(
           `My perfect country to live in is ${countries[country].name} ${countries[country].flag}! Find yours with this helpful quiz:`
         );
@@ -9175,9 +9410,15 @@
       }
 
       function shareToLinkedIn(country) {
-        const url = encodeURIComponent(window.location.href);
+        const base = window.location.href.split("#")[0];
+        const params = new URLSearchParams({
+          utm_source: "social",
+          utm_medium: "linkedin",
+          utm_campaign: "perfect_country_quiz",
+        }).toString();
+        const shareUrlEncoded = encodeURIComponent(`${base}?${params}`);
         window.open(
-          `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+          `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrlEncoded}`,
           "_blank"
         );
         trackQuizEvent("result_shared", {
@@ -9186,11 +9427,114 @@
         });
       }
 
+      function shareToWhatsApp(country) {
+        const base = window.location.href.split("#")[0];
+        const params = new URLSearchParams({
+          utm_source: "social",
+          utm_medium: "whatsapp",
+          utm_campaign: "perfect_country_quiz",
+        }).toString();
+        const shareUrl = `${base}?${params}`;
+        const text = encodeURIComponent(
+          `My perfect country to live in is ${countries[country].name} ${countries[country].flag}! Find yours with this helpful quiz: ${shareUrl}`
+        );
+        const waUrl = `https://api.whatsapp.com/send?text=${text}`;
+        window.open(waUrl, "_blank");
+        trackQuizEvent("result_shared", {
+          platform: "whatsapp",
+          country: country,
+        });
+      }
+
       function copyResultLink() {
-        navigator.clipboard.writeText(window.location.href).then(() => {
+        const base = window.location.href.split("#")[0];
+        const params = new URLSearchParams({
+          utm_source: "social",
+          utm_medium: "copy_link",
+          utm_campaign: "perfect_country_quiz",
+        }).toString();
+        const linkWithUtm = `${base}?${params}`;
+        navigator.clipboard.writeText(linkWithUtm).then(() => {
           alert("Link copied to clipboard!");
           trackQuizEvent("result_shared", { platform: "copy_link" });
         });
+      }
+
+      // Subscribe email handler (subtle in-quiz capture)
+      async function subscribeEmail(country) {
+        try {
+          const emailInput = document.getElementById(
+            `subscribeEmail-${country}`
+          );
+          const optInInput = document.getElementById(
+            `subscribeOptIn-${country}`
+          );
+          const msgEl = document.getElementById(`subscribeMsg-${country}`);
+          if (!emailInput || !msgEl) return;
+          const email = (emailInput.value || "").trim();
+          const optIn = !!(optInInput && optInInput.checked);
+          if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            msgEl.textContent = "Please enter a valid email.";
+            msgEl.style.color = "#c0392b";
+            return;
+          }
+
+          // Show quick feedback
+          msgEl.textContent = "Saving...";
+          msgEl.style.color = "var(--muted)";
+
+          // Try to POST to an API endpoint (placeholder). If network fails, fallback to localStorage.
+          const payload = {
+            email: email,
+            country: country,
+            optIn: optIn,
+            source: "perfect_country_quiz",
+          };
+          let method = "api";
+          try {
+            const res = await fetch("/api/subscribe", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+              credentials: "include",
+            });
+            if (!res.ok) throw new Error("Network response not ok");
+            msgEl.textContent =
+              "Thanks — we'll send occasional tips to this email.";
+            msgEl.style.color = "green";
+          } catch (err) {
+            // fallback: save to localStorage so you can export later
+            method = "local";
+            try {
+              const key = "zinvana_subscribers";
+              const existing = JSON.parse(localStorage.getItem(key) || "[]");
+              existing.push({
+                email,
+                country,
+                optIn,
+                date: new Date().toISOString(),
+              });
+              localStorage.setItem(key, JSON.stringify(existing));
+              msgEl.textContent =
+                "Saved locally (offline). We'll sync when available.";
+              msgEl.style.color = "green";
+            } catch (e2) {
+              msgEl.textContent = "Unable to save. Try again later.";
+              msgEl.style.color = "#c0392b";
+            }
+          }
+
+          // disable form inputs after capture
+          if (emailInput) emailInput.disabled = true;
+          if (optInInput) optInInput.disabled = true;
+
+          trackQuizEvent("email_collected", {
+            country: country,
+            method: method,
+          });
+        } catch (ex) {
+          console.error("subscribeEmail error", ex);
+        }
       }
     </script>
   </body>
