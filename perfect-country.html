@@ -8879,7 +8879,7 @@
           } else {
             calculateResult();
           }
-        }, 600);
+        }, 150);
       }
 
       function changeQuestion(direction, doScroll = true) {
@@ -9129,19 +9129,7 @@
                     </div>
                   </div>
 
-                  <div class="subscribe-box">
-                    <h4>Get relocation tips & updates</h4>
-                    <form class="subscribe-form" onsubmit="event.preventDefault(); subscribeEmail('${countryKey}');">
-                      <div style="display:flex;gap:8px;align-items:center;">
-                        <input id="subscribeEmail-${countryKey}" type="email" placeholder="Your email" required style="flex:1;padding:10px 12px;border-radius:8px;border:1px solid var(--border);" />
-                        <button type="submit" class="subscribe-btn" style="padding:10px 16px;border-radius:8px;background:var(--brand1);color:#fff;border:none;">Get tips</button>
-                      </div>
-                      <div style="margin-top:8px;font-size:0.9rem;color:var(--muted);display:flex;align-items:center;gap:8px;">
-                        <label style="display:inline-flex;align-items:center;gap:6px"><input id="subscribeOptIn-${countryKey}" type="checkbox" checked /> Yes, email me optional relocation tips</label>
-                      </div>
-                      <div id="subscribeMsg-${countryKey}" class="subscribe-msg" style="margin-top:8px;font-size:0.95rem;color:var(--text);"></div>
-                    </form>
-                  </div>
+                  
               </div>
             </div>
           </div>
