@@ -608,6 +608,8 @@
         display: none;
         text-align: center;
         animation: fadeIn 0.5s ease-in;
+        padding: 0 18px 12px;
+        scroll-margin-top: 96px;
       }
 
       .result.active {
@@ -615,9 +617,9 @@
       }
 
       .wojak-image {
-        width: 240px;
-        height: 240px;
-        margin: 0 auto 20px;
+        width: clamp(180px, 42vw, 240px);
+        height: clamp(180px, 42vw, 240px);
+        margin: 0 auto 18px;
         background: radial-gradient(
           100% 100% at 50% 0%,
           #ffffff 0%,
@@ -649,17 +651,142 @@
       }
 
       .result h2 {
-        font-size: 2rem;
-        color: #333;
-        margin-bottom: 15px;
+        font-size: clamp(1.6rem, 3vw, 2rem);
+        color: #1f2937;
+        margin-bottom: 10px;
       }
 
       .result p {
-        font-size: 1.1rem;
-        color: #666;
-        line-height: 1.6;
-        max-width: 500px;
-        margin: 0 auto 30px;
+        font-size: 1.05rem;
+        color: #4a5568;
+        line-height: 1.7;
+        max-width: 720px;
+        margin: 0 auto 22px;
+        padding: 0 6px;
+      }
+
+      .result-card {
+        width: 100%;
+        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        padding: clamp(16px, 4vw, 32px);
+        margin: 18px auto 0;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .result-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: clamp(1.25rem, 2.6vw, 1.65rem);
+        color: #4338ca;
+        margin: 0 0 10px;
+      }
+
+      .result-lede {
+        color: #475569;
+        line-height: 1.8;
+        font-size: 1.02rem;
+        margin: 0 0 16px;
+      }
+
+      .result-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+        margin-top: 10px;
+      }
+
+      .result-tile {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 18px 16px;
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .result-tile h4 {
+        font-size: 1.08rem;
+        color: #1f2937;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .result-tile ul {
+        margin: 0;
+        padding-left: 18px;
+        color: #475569;
+        line-height: 1.65;
+        font-size: 0.98rem;
+      }
+
+      .result-tile p {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+        color: #475569;
+        line-height: 1.65;
+      }
+
+      .result-tile.positive {
+        border-left: 4px solid #48bb78;
+      }
+
+      .result-tile.caution {
+        border-left: 4px solid #f56565;
+      }
+
+      .result-tile.info {
+        border-left: 4px solid #6366f1;
+      }
+
+      .result-tile.relationships {
+        border-left: 4px solid #ed64a6;
+      }
+
+      .result-banner {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        border-radius: 14px;
+        padding: 18px 16px;
+        margin-top: 14px;
+        box-shadow: 0 10px 24px rgba(102, 126, 234, 0.35);
+      }
+
+      .result-banner .result-banner-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.16);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      .result-banner h4 {
+        margin: 0 0 6px;
+        font-size: 1.05rem;
+      }
+
+      .result-banner p {
+        margin: 0;
+        padding: 0;
+        color: rgba(255, 255, 255, 0.95);
+        line-height: 1.7;
       }
 
       .restart-btn {
@@ -1449,6 +1576,23 @@
           height: 20px;
           font-size: 12px;
         }
+
+        .result {
+          padding: 0 14px 12px;
+        }
+
+        .result-card {
+          padding: 18px;
+        }
+
+        .result-grid {
+          gap: 14px;
+        }
+
+        .result-banner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
 
       /* Large phones / small tablets */
@@ -1555,6 +1699,19 @@
         .wojak-image {
           width: 160px;
           height: 160px;
+        }
+        .result-card {
+          padding: 16px;
+        }
+        .result-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .result-banner {
+          align-items: flex-start;
+        }
+        .restart-btn {
+          width: 100%;
         }
         .section-header h2 {
           font-size: 1.7rem;
@@ -3213,6 +3370,19 @@
           .querySelector(`[data-question="${currentQuestion}"]`)
           .classList.remove("active");
 
+        // Clear any previous result cards before injecting a new one
+        const resultContainer = document.getElementById("result");
+        if (resultContainer) {
+          resultContainer.querySelectorAll(".result-card").forEach((card) => {
+            const wrapper = card.parentElement;
+            if (wrapper) {
+              wrapper.remove();
+            } else {
+              card.remove();
+            }
+          });
+        }
+
         // Update result content with deep analysis
         const result = wojakData[resultWojak];
         const wojakImgDiv = document.getElementById("wojakEmoji");
@@ -3223,72 +3393,47 @@
 
         // Add deep analysis section
         const deepAnalysisHTML = `
-                <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 20px; padding: 35px; margin-top: 30px; border: 1px solid #e2e8f0; box-shadow: 0 8px 25px rgba(0,0,0,0.08);">
-                    <h3 style="color: #667eea; font-size: 1.8rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-                        <span style="font-size: 2rem;">🔍</span> Deep Personality Analysis
-                    </h3>
-                    <p style="color: #4a5568; font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">${
-                      result.deepAnalysis
-                    }</p>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
-                        <div style="background: white; padding: 25px; border-radius: 15px; border-left: 4px solid #48bb78; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                            <h4 style="color: #48bb78; font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-                                <span>💪</span> Your Strengths
-                            </h4>
-                            <ul style="color: #4a5568; font-size: 1rem; line-height: 1.7; margin: 0; padding-left: 20px;">
-                                ${result.strengths
-                                  .map(
-                                    (s) =>
-                                      `<li style="margin-bottom: 8px;">${s}</li>`
-                                  )
-                                  .join("")}
-                            </ul>
-                        </div>
-                        
-                        <div style="background: white; padding: 25px; border-radius: 15px; border-left: 4px solid #f56565; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                            <h4 style="color: #f56565; font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-                                <span>⚠️</span> Growth Areas
-                            </h4>
-                            <ul style="color: #4a5568; font-size: 1rem; line-height: 1.7; margin: 0; padding-left: 20px;">
-                                ${result.challenges
-                                  .map(
-                                    (c) =>
-                                      `<li style="margin-bottom: 8px;">${c}</li>`
-                                  )
-                                  .join("")}
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div style="background: white; padding: 25px; border-radius: 15px; margin-top: 25px; border-left: 4px solid #667eea; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                        <h4 style="color: #667eea; font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-                            <span>💼</span> Ideal Career Paths
-                        </h4>
-                        <p style="color: #4a5568; font-size: 1.05rem; line-height: 1.7; margin: 0;">${
-                          result.careerPaths
-                        }</p>
-                    </div>
-                    
-                    <div style="background: white; padding: 25px; border-radius: 15px; margin-top: 25px; border-left: 4px solid #ed64a6; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                        <h4 style="color: #ed64a6; font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-                            <span>❤️</span> Relationships & Compatibility
-                        </h4>
-                        <p style="color: #4a5568; font-size: 1.05rem; line-height: 1.7; margin: 0;">${
-                          result.relationships
-                        }</p>
-                    </div>
-                    
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; margin-top: 25px; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);">
-                        <h4 style="color: white; font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-                            <span>🌟</span> Personal Growth Advice
-                        </h4>
-                        <p style="color: white; font-size: 1.05rem; line-height: 1.8; margin: 0; opacity: 0.95;">${
-                          result.growthAdvice
-                        }</p>
-                    </div>
-                </div>
-            `;
+          <div class="result-card">
+            <h3 class="result-title"><span aria-hidden="true">🔍</span> Deep Personality Analysis</h3>
+            <p class="result-lede">${result.deepAnalysis}</p>
+
+            <div class="result-grid">
+              <div class="result-tile positive">
+                <h4><span aria-hidden="true">💪</span> Your Strengths</h4>
+                <ul>
+                  ${result.strengths.map((s) => `<li>${s}</li>`).join("")}
+                </ul>
+              </div>
+
+              <div class="result-tile caution">
+                <h4><span aria-hidden="true">⚠️</span> Growth Areas</h4>
+                <ul>
+                  ${result.challenges.map((c) => `<li>${c}</li>`).join("")}
+                </ul>
+              </div>
+            </div>
+
+            <div class="result-grid">
+              <div class="result-tile info">
+                <h4><span aria-hidden="true">💼</span> Ideal Career Paths</h4>
+                <p>${result.careerPaths}</p>
+              </div>
+
+              <div class="result-tile relationships">
+                <h4><span aria-hidden="true">❤️</span> Relationships & Compatibility</h4>
+                <p>${result.relationships}</p>
+              </div>
+            </div>
+
+            <div class="result-banner">
+              <span class="result-banner-icon" aria-hidden="true">🌟</span>
+              <div>
+                <h4>Personal Growth Advice</h4>
+                <p>${result.growthAdvice}</p>
+              </div>
+            </div>
+          </div>
+        `;
 
         // Insert deep analysis after description
         const descriptionElement = document.getElementById("wojakDescription");
