@@ -601,119 +601,417 @@
       }
 
       .quiz-header {
-        text-align: center;
-        background: linear-gradient(
-          135deg,
-          #ffd700 0%,
-          #ffb347 25%,
-          #ff6b35 50%,
-          #8a2be2 75%,
-          #4169e1 100%
-        );
-        border: 4px solid #ffd700;
-        border-radius: 25px;
-        padding: 50px 40px;
-        margin-bottom: 40px;
-        box-shadow: 0 0 30px rgba(255, 215, 0, 0.4),
-          inset 0 2px 0 rgba(255, 255, 255, 0.3),
-          inset 0 -2px 0 rgba(0, 0, 0, 0.2);
         position: relative;
         overflow: hidden;
-        transform: perspective(1000px) rotateX(2deg);
+        margin-bottom: 40px;
+        border-radius: 28px;
+        padding: clamp(26px, 4vw, 56px);
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #111827 32%,
+          #16213e 68%,
+          #0f3460 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35),
+          0 1px 0 rgba(255, 255, 255, 0.08);
+        color: #e2e8f0;
+        backdrop-filter: blur(14px);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(18px, 3vw, 30px);
+        isolation: isolate;
       }
 
-      .quiz-header::before {
+      .quiz-header::before,
+      .quiz-header::after {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.1),
-          transparent
+        inset: -10%;
+        background: radial-gradient(
+          circle,
+          rgba(102, 126, 234, 0.08) 0%,
+          transparent 55%
         );
+        filter: blur(50px);
+        z-index: 0;
       }
 
       .quiz-header::after {
-        content: "⭐";
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 2rem;
-        color: #ffd700;
+        inset: auto;
+        width: 320px;
+        height: 320px;
+        right: -90px;
+        bottom: -140px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 107, 53, 0.2) 0%,
+          transparent 60%
+        );
+      }
+
+      .header-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+        color: #e2e8f0;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+
+      .pill.accent {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        border-color: rgba(255, 255, 255, 0.18);
+        color: #fff;
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
+      }
+
+      .pill.ghost {
+        background: rgba(255, 255, 255, 0.08);
+        color: #81868d;
+      }
+
+      .pill.success {
+        background: rgba(72, 187, 120, 0.16);
+        color: #188a3c;
+        border-color: rgba(72, 187, 120, 0.45);
+      }
+
+      .pill.sunny {
+        background: rgba(255, 215, 0, 0.12);
+        color: #e2b94a;
+        border-color: rgba(255, 215, 0, 0.4);
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: clamp(20px, 3vw, 44px);
+        align-items: center;
+      }
+
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 0.95rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #c3dafe;
+        width: fit-content;
       }
 
       .quiz-title {
         font-family: "Fredoka", sans-serif;
-        font-size: var(--fs-title);
+        font-size: clamp(1.8rem, 2.8vw, 2.8rem);
         font-weight: 900;
-        color: #fff;
-        margin-bottom: 20px;
-        text-shadow: 3px 3px 0 #ff6b35, 6px 6px 0 #8a2be2,
-          9px 9px 15px rgba(0, 0, 0, 0.5);
-        position: relative;
-        z-index: 2;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-
-      .quiz-title::before {
-        content: "🎮";
-        position: absolute;
-        left: -60px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 3rem;
-      }
-
-      .quiz-title::after {
-        content: "🎮";
-        position: absolute;
-        right: -60px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 3rem;
+        color: black;
+        margin: 6px 0;
+        line-height: 1.1;
+        letter-spacing: 0.01em;
       }
 
       .quiz-subtitle {
         font-family: "Fredoka", sans-serif;
-        font-size: var(--fs-subtitle);
-        color: #fff;
-        margin-bottom: 30px;
-        line-height: 1.6;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-size: clamp(1.02rem, 1.2vw, 1.2rem);
+        color: #e2e8f0;
+        margin: 4px 0 14px;
+        line-height: 1.7;
+        opacity: 0.92;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 6px 0 4px;
+      }
+
+      .meta-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-weight: 600;
+        color: #fef3c7;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .ghost-btn {
+        font-family: "Fredoka", sans-serif;
+        background: rgba(255, 255, 255, 0.08);
+        color: #e2e8f0;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 16px 26px;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 18px;
+        cursor: pointer;
+        transition: all var(--transition-default) var(--easing-lux);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+      }
+
+      .ghost-btn:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .hero-note {
+        font-size: 0.98rem;
+        color: #cbd5e0;
+        opacity: 0.9;
+        margin-left: 2px;
+      }
+
+      .trust-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        color: #c3dafe;
+        font-weight: 600;
+        margin-top: 6px;
+      }
+
+      .hero-visual {
         position: relative;
+        display: flex;
+        justify-content: center;
+      }
+
+      .hero-card {
+        position: relative;
+        background: linear-gradient(
+          160deg,
+          rgba(255, 255, 255, 0.12),
+          rgba(0, 0, 0, 0.35)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 22px;
+        padding: 18px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+        overflow: hidden;
+        aspect-ratio: 4 / 3;
+        width: min(520px, 100%);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        inset: 6%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.12) 0%,
+          transparent 58%
+        );
+        filter: blur(40px);
+        z-index: 0;
+      }
+
+      .hero-card-glow {
+        position: absolute;
+        inset: -20%;
+        background: radial-gradient(
+            circle at 30% 20%,
+            rgba(255, 215, 0, 0.22),
+            transparent 48%
+          ),
+          radial-gradient(
+            circle at 80% 0%,
+            rgba(99, 102, 241, 0.25),
+            transparent 50%
+          );
+        filter: blur(24px);
+        z-index: 0;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        display: block;
+        position: relative;
+        z-index: 1;
+        object-fit: cover;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+      }
+
+      .hero-card-meta {
+        position: absolute;
+        left: 14px;
+        bottom: 14px;
+        display: grid;
+        gap: 8px;
         z-index: 2;
-        font-weight: 500;
+      }
+
+      .meta-block {
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(15, 23, 42, 0.82);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #f8fafc;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      .hero-mini-grid {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        display: grid;
+        gap: 8px;
+        z-index: 2;
+      }
+
+      .mini-chip {
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: rgba(15, 23, 42, 0.82);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #c7d2fe;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      }
+
+      .hero-ribbon {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        background: linear-gradient(120deg, #22c55e 0%, #16a34a 100%);
+        color: #f0fdf4;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        box-shadow: 0 12px 26px rgba(34, 197, 94, 0.35);
+        z-index: 2;
+      }
+
+      .meta-block .label {
+        display: block;
+        font-size: 0.8rem;
+        color: #cbd5e0;
+      }
+
+      .meta-block .value {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: #fcd34d;
+      }
+
+      .hero-highlights {
+        position: relative;
+        z-index: 1;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+      }
+
+      .highlight-card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 14px 16px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+      }
+
+      .highlight-kicker {
+        color: #c3dafe;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+      }
+
+      .highlight-list {
+        margin: 0;
+        padding-left: 16px;
+        color: #e2e8f0;
+        line-height: 1.45;
+      }
+
+      .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 16px 0 10px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-weight: 600;
+        color: #fef3c7;
       }
 
       .start-btn {
         font-family: "Fredoka", sans-serif;
-        background: linear-gradient(
-          45deg,
-          #ff6b35 0%,
-          #ffd700 50%,
-          #ff6b35 100%
-        );
+        background: linear-gradient(120deg, #6366f1 0%, #ff6b35 100%);
         color: #fff;
-        border: 4px solid #ffd700;
-        padding: 18px 50px;
-        font-size: 1.4rem;
+        border: 0;
+        padding: 16px 28px;
+        font-size: 1.05rem;
         font-weight: 800;
-        border-radius: 25px;
+        border-radius: 18px;
         cursor: pointer;
         transition: transform var(--transition-default) var(--easing-lux),
           box-shadow var(--transition-default) var(--easing-smooth),
           filter var(--transition-default) var(--easing-smooth);
-        box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        box-shadow: 0 12px 30px rgba(99, 102, 241, 0.32);
         position: relative;
         z-index: 2;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: 0.02em;
+        text-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
       }
 
       .start-btn:hover {
@@ -726,26 +1024,17 @@
         box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
       }
 
-      .start-btn::before {
-        content: "🚀";
-        position: absolute;
-        left: -40px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.5rem;
-      }
-
       .quiz-container {
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(240, 238, 255, 0.95);
         border-radius: 20px;
         padding: 40px;
         margin-bottom: 30px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        display: none;
-        min-height: 600px !important;
-        max-height: 600px !important;
-        overflow-y: auto;
+        border: 1px solid rgba(212, 208, 245, 0.5);
+        display: block;
+        min-height: 0;
+        max-height: none;
+        overflow: visible;
       }
 
       #quizContainer {
@@ -976,36 +1265,48 @@
       .options-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 18px;
-        min-height: 300px;
+        gap: 20px;
+        min-height: 280px;
       }
 
       .option {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 18px;
-        padding: 18px 22px;
-        cursor: pointer;
-        transition: border-color var(--transition-fast) var(--easing-smooth),
-          background var(--transition-fast) var(--easing-smooth),
-          transform var(--transition-default) var(--easing-lux),
-          box-shadow var(--transition-default) var(--easing-smooth);
         position: relative;
         overflow: hidden;
-        min-height: 60px;
+        border-radius: 18px;
+        padding: 18px 20px;
         display: flex;
         align-items: center;
-        gap: 18px;
+        gap: 16px;
+        min-height: 78px;
+        cursor: pointer;
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 255, 255, 0.01)
+          ),
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.08),
+            transparent 45%
+          ),
+          #0b1024;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        transition: transform var(--transition-default) var(--easing-lux),
+          box-shadow var(--transition-default) var(--easing-smooth),
+          border-color var(--transition-fast) var(--easing-smooth),
+          background var(--transition-fast) var(--easing-smooth);
       }
 
       .option::after {
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(
-          circle at 30% 20%,
-          rgba(255, 255, 255, 0.08),
-          transparent 55%
+        background: linear-gradient(
+          120deg,
+          rgba(102, 126, 234, 0.18),
+          rgba(255, 107, 53, 0.16)
         );
         opacity: 0;
         transition: opacity var(--transition-default) var(--easing-smooth);
@@ -1014,10 +1315,20 @@
 
       .option:hover {
         border-color: rgba(255, 215, 0, 0.8);
-        background: rgba(102, 126, 234, 0.08);
         transform: translateY(-3px) scale(1.01);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-        color: #fff;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35),
+          0 0 0 1px rgba(255, 255, 255, 0.08);
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.02)
+          ),
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.12),
+            transparent 48%
+          ),
+          #0f172a;
       }
 
       .option:hover::after,
@@ -1029,17 +1340,25 @@
         border-color: rgba(255, 215, 0, 0.9);
         background: linear-gradient(
           135deg,
-          rgba(102, 126, 234, 0.2),
-          rgba(118, 75, 162, 0.2)
+          rgba(102, 126, 234, 0.28),
+          rgba(118, 75, 162, 0.26)
         );
-        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.25);
+        box-shadow: 0 20px 50px rgba(255, 215, 0, 0.25),
+          0 0 0 1px rgba(255, 255, 255, 0.1);
+      }
+
+      .option:focus,
+      .option:focus-visible {
+        outline: 3px solid rgba(255, 215, 0, 0.65);
+        outline-offset: 2px;
       }
 
       .option-text {
-        font-weight: 600;
-        color: #f7fafc;
-        font-size: 1rem;
-        line-height: 1.5;
+        font-weight: 700;
+        color: #f8fafc;
+        font-size: 1.05rem;
+        line-height: 1.55;
+        letter-spacing: 0.01em;
       }
 
       .option-badge {
@@ -1048,18 +1367,20 @@
         border-radius: 50%;
         background: linear-gradient(
           135deg,
-          rgba(255, 215, 0, 0.9),
-          rgba(255, 107, 53, 0.8)
+          #ffd700 0%,
+          #ff6b35 60%,
+          #ff9f1c 100%
         );
         color: #0f1327;
-        font-weight: 800;
+        font-weight: 900;
         font-size: 1rem;
         display: flex;
         align-items: center;
         justify-content: center;
         font-family: "Fredoka", sans-serif;
         flex-shrink: 0;
-        box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+        box-shadow: 0 10px 25px rgba(255, 170, 0, 0.5),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4);
       }
 
       .quiz-footnote {
@@ -1726,38 +2047,76 @@
           padding: 40px 30px;
         }
 
-        .quiz-container,
-        .result-container {
-          padding: 35px;
-          min-height: auto;
-          max-height: none;
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 22px;
         }
 
-        #quizContainer .quiz-card {
-          padding: 32px;
+        .hero-visual {
+          order: -1;
+          width: 100%;
+        }
+
+        .hero-card {
+          width: 100%;
+          max-width: 420px;
+          margin: 0 auto;
+        }
+
+        .hero-copy {
+          text-align: center;
+          align-items: center;
+        }
+
+        .hero-actions,
+        .hero-meta,
+        .hero-tags {
+          justify-content: center;
+        }
+
+        .hero-tags {
+          text-align: center;
+        }
+
+        .trust-row {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .header-top {
+          justify-content: center;
+        }
+
+        .quiz-container,
+        .result-container {
+          padding: 35px 25px;
         }
 
         .result-hero {
           flex-direction: column;
-          align-items: flex-start;
-          gap: 28px;
+          text-align: center;
+          gap: 22px;
         }
 
         .hero-media {
+          flex: none;
           width: 100%;
           justify-content: center;
         }
 
         .brawler-image {
-          width: clamp(220px, 45vw, 320px);
+          width: clamp(180px, 45vw, 260px);
           height: auto;
+          aspect-ratio: 1;
         }
 
-        .result-highlight-grid,
-        .strengths-weaknesses,
-        .score-grid,
-        .compatibility-grid {
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        .hero-info {
+          width: 100%;
+          text-align: center;
+        }
+
+        .result-highlight-grid {
+          grid-template-columns: repeat(2, 1fr);
         }
 
         .options-grid {
@@ -1778,6 +2137,39 @@
         .container {
           padding: 10px 15px;
           max-width: 100%;
+        }
+
+        .header-top,
+        .hero-meta,
+        .hero-actions,
+        .hero-tags {
+          justify-content: center;
+          text-align: center;
+          width: 100%;
+        }
+
+        .hero-grid {
+          gap: 16px;
+        }
+
+        .hero-card {
+          width: 100%;
+          max-width: 340px;
+          margin: 0 auto;
+          padding: 12px;
+        }
+
+        .hero-ribbon {
+          padding: 8px 10px;
+          font-size: 0.85rem;
+        }
+
+        .hero-mini-grid {
+          display: none;
+        }
+
+        .hero-highlights {
+          grid-template-columns: 1fr;
         }
 
         .quiz-title {
@@ -1815,7 +2207,46 @@
         }
 
         .result-container {
-          padding: 30px 20px;
+          padding: 25px 16px;
+          border-radius: 18px;
+        }
+
+        .brawler-name {
+          font-size: 1.8rem;
+        }
+
+        .brawler-description {
+          font-size: 1rem;
+        }
+
+        .result-highlight-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+
+        .highlight-card {
+          padding: 14px 12px;
+        }
+
+        .highlight-value {
+          font-size: 1.2rem;
+        }
+
+        .result-section-title {
+          font-size: 1.1rem;
+        }
+
+        .trait-item,
+        .strength-item,
+        .weakness-item,
+        .advice-item {
+          padding: 12px;
+          font-size: 0.9rem;
+        }
+
+        .score-grid,
+        .compatibility-grid {
+          grid-template-columns: 1fr;
         }
 
         #quizContainer .quiz-card {
@@ -1977,6 +2408,42 @@
 
       /* Extra Small Phones (iPhone SE, etc.) */
       @media (max-width: 480px) {
+        .header-top {
+          gap: 6px;
+        }
+
+        .pill {
+          padding: 6px 10px;
+          font-size: 0.8rem;
+        }
+
+        .hero-card {
+          width: 100%;
+          max-width: 280px;
+          padding: 10px;
+          border-radius: 18px;
+        }
+
+        .hero-ribbon {
+          padding: 6px 8px;
+          font-size: 0.78rem;
+          top: 10px;
+          left: 10px;
+        }
+
+        .hero-card-meta {
+          left: 10px;
+          bottom: 10px;
+        }
+
+        .meta-block {
+          padding: 8px 10px;
+        }
+
+        .meta-block .value {
+          font-size: 1.05rem;
+        }
+
         .quiz-title {
           font-size: 1.5rem;
           line-height: 1.1;
@@ -2036,11 +2503,35 @@
 
         .brawler-image {
           width: 100%;
+          max-width: 200px;
           height: auto;
+          aspect-ratio: 1;
+          margin: 0 auto;
         }
 
         .brawler-name {
-          font-size: 1.7rem;
+          font-size: 1.5rem;
+        }
+
+        .result-container {
+          padding: 20px 12px;
+        }
+
+        .result-highlight-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 8px;
+        }
+
+        .highlight-card {
+          padding: 10px 8px;
+        }
+
+        .highlight-value {
+          font-size: 1rem;
+        }
+
+        .highlight-label {
+          font-size: 0.75rem;
         }
 
         .start-btn {
@@ -2342,7 +2833,7 @@
       .nav-toggle span {
         width: 25px;
         height: 3px;
-        background: #667eea;
+        background: #e2e8f0;
         margin: 3px 0;
         transition: all 0.3s ease;
         border-radius: 2px;
@@ -2370,10 +2861,10 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-        border-top: 1px solid rgba(102, 126, 234, 0.2);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        background: rgba(15, 15, 35, 0.98);
+        backdrop-filter: blur(16px);
+        border-top: 1px solid rgba(99, 102, 241, 0.3);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
         padding: 20px;
         z-index: 1000;
         animation: slideDown 0.3s ease;
@@ -2397,11 +2888,11 @@
       .nav-mobile a {
         display: block;
         padding: 15px 0;
-        color: #4a5568;
+        color: #e2e8f0;
         text-decoration: none;
         font-weight: 500;
         font-size: 1.1rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.3s ease;
         border-radius: 4px;
         margin: 2px 0;
@@ -2409,16 +2900,16 @@
 
       .nav-mobile a:hover,
       .nav-mobile a:focus {
-        color: #667eea;
+        color: #ffd700;
         padding-left: 15px;
-        background: rgba(102, 126, 234, 0.05);
+        background: rgba(99, 102, 241, 0.15);
         transform: translateX(5px);
       }
 
       .nav-mobile a.active {
-        color: #667eea;
+        color: #ffd700;
         font-weight: 600;
-        background: rgba(102, 126, 234, 0.1);
+        background: rgba(99, 102, 241, 0.2);
       }
 
       .nav-mobile a:last-child {
@@ -2820,6 +3311,655 @@
           margin: 3px 0 !important;
         }
       }
+
+      /* Perfect Country inspired visual system (styling only; content unchanged) */
+      :root {
+        --pc-brand1: #667eea;
+        --pc-brand2: #764ba2;
+        --pc-surface: #f0eeff;
+        --pc-surface-muted: #e8e4ff;
+        --pc-text-strong: #111827;
+        --pc-text: #1f2937;
+        --pc-muted: #4b5563;
+        --pc-border: #d4d0f5;
+      }
+
+      body {
+        font-family: "Segoe UI", "Fredoka", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--pc-brand1) 0%,
+          var(--pc-brand2) 100%
+        );
+        color: var(--pc-text);
+        padding-top: 90px;
+      }
+
+      /* Navigation glass treatment */
+      nav {
+        background: rgba(15, 15, 35, 0.9);
+        border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(16px);
+      }
+
+      nav.scrolled {
+        background: rgba(15, 15, 35, 0.94);
+        box-shadow: 0 10px 45px rgba(0, 0, 0, 0.5);
+      }
+
+      .nav-logo {
+        color: #e2e8f0;
+      }
+
+      .nav-links a {
+        color: #cbd5e1;
+      }
+
+      .nav-links a:hover {
+        color: #f8fafc;
+      }
+
+      .nav-cta {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: #fff;
+        box-shadow: 0 6px 22px rgba(99, 102, 241, 0.3);
+      }
+
+      /* Container & surfaces */
+      .container {
+        max-width: 1200px;
+      }
+
+      .quiz-header {
+        background: var(--pc-surface);
+        border: 1px solid var(--pc-border);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        transform: none;
+        color: var(--pc-text);
+      }
+
+      .quiz-header::before,
+      .quiz-header::after {
+        display: none;
+      }
+
+      .hero-eyebrow {
+        background: rgba(99, 102, 241, 0.08);
+        border-color: rgba(99, 102, 241, 0.25);
+        color: #4f46e5;
+      }
+
+      .quiz-title {
+        text-shadow: none;
+      }
+
+      .quiz-subtitle {
+        color: var(--pc-muted);
+      }
+
+      .hero-meta .meta-pill {
+        background: var(--pc-surface-muted);
+        border: 1px solid var(--pc-border);
+        color: var(--pc-text);
+        box-shadow: none;
+      }
+
+      .hero-actions .hero-note {
+        color: var(--pc-muted);
+      }
+
+      .hero-card {
+        background: var(--pc-surface);
+        border: 1px solid var(--pc-border);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+      }
+
+      .hero-card::before {
+        display: none;
+      }
+
+      .meta-block {
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--pc-text);
+        border: 1px solid var(--pc-border);
+      }
+
+      .meta-block .value {
+        color: #f59e0b;
+      }
+
+      .hero-tags .tag {
+        background: var(--pc-surface-muted);
+        border-color: var(--pc-border);
+        color: var(--pc-text);
+      }
+
+      .highlight-card {
+        background: var(--pc-surface-muted);
+        border: 1px solid var(--pc-border);
+        color: var(--pc-text);
+      }
+
+      .highlight-kicker {
+        color: #4f46e5;
+      }
+
+      .highlight-list {
+        color: var(--pc-muted);
+      }
+
+      .quiz-stats .stat-item {
+        background: var(--pc-surface);
+        border: 1px solid var(--pc-border);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+        color: var(--pc-text-strong);
+      }
+
+      .quiz-stats .stat-label {
+        color: var(--pc-muted);
+      }
+
+      /* Quiz shell and cards */
+      .quiz-container {
+        background: var(--pc-surface);
+        border: 1px solid var(--pc-border);
+        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.12);
+      }
+
+      #quizContainer .quiz-shell {
+        background: var(--pc-surface-muted);
+        border: 1px solid var(--pc-border);
+      }
+
+      #quizContainer .quiz-shell::before {
+        display: none;
+      }
+
+      #quizContainer .quiz-card {
+        background: var(--pc-surface);
+        color: var(--pc-text);
+        border: 1px solid var(--pc-border);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .question-card {
+        background: var(--pc-surface-muted);
+        border: 1px solid var(--pc-border);
+        box-shadow: none;
+      }
+
+      .question-kicker {
+        color: var(--pc-muted);
+      }
+
+      .question-text {
+        color: var(--pc-text-strong);
+      }
+
+      .question-helper {
+        color: var(--pc-muted);
+      }
+
+      .progress-bar {
+        background: var(--pc-surface-muted);
+        border: 1px solid var(--pc-border);
+      }
+
+      .progress-fill {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      }
+
+      .stage-node {
+        background: var(--pc-surface-muted);
+        border: 1px solid var(--pc-border);
+        color: var(--pc-muted);
+      }
+
+      .stage-node.active {
+        color: #4f46e5;
+        border-color: rgba(99, 102, 241, 0.5);
+        background: rgba(99, 102, 241, 0.08);
+        box-shadow: 0 10px 24px rgba(99, 102, 241, 0.15);
+      }
+
+      .stage-node.completed {
+        background: rgba(72, 187, 120, 0.12);
+        border-color: rgba(72, 187, 120, 0.45);
+        color: #16a34a;
+      }
+
+      .question-number,
+      .progress-percentage {
+        color: var(--pc-text-strong);
+      }
+
+      .quiz-footnote {
+        background: var(--pc-surface-muted);
+        border: 1px solid var(--pc-border);
+      }
+
+      .quiz-tip-label {
+        color: var(--pc-muted);
+      }
+
+      .quiz-tip-copy {
+        color: var(--pc-text);
+      }
+
+      .quiz-progress-hint .hint-value {
+        color: #4f46e5;
+      }
+
+      /* Option cards */
+      .options-grid {
+        gap: 22px;
+      }
+
+      .option {
+        background: var(--pc-surface);
+        border: 1px solid var(--pc-border);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        color: var(--pc-text);
+      }
+
+      .option:hover {
+        background: linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.08),
+            rgba(139, 92, 246, 0.08)
+          ),
+          var(--pc-surface);
+        border-color: rgba(99, 102, 241, 0.45);
+      }
+
+      .option.selected {
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.16),
+          rgba(139, 92, 246, 0.16)
+        );
+        border-color: rgba(99, 102, 241, 0.6);
+        box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+      }
+
+      .option-text {
+        color: var(--pc-text-strong);
+      }
+
+      .option-badge {
+        background: linear-gradient(
+          135deg,
+          #fbbf24 0%,
+          #f97316 60%,
+          #f59e0b 100%
+        );
+        color: #111827;
+      }
+
+      /* Result section */
+      .result-container {
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #e2e8f0;
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .result-container::before {
+        display: block;
+        background: radial-gradient(
+          circle at 20% 20%,
+          rgba(255, 215, 0, 0.12),
+          transparent 55%
+        );
+        opacity: 0.5;
+      }
+
+      .result-hero {
+        color: #e2e8f0;
+      }
+
+      .brawler-name,
+      .traits-title,
+      .analysis-title,
+      .advice-title {
+        color: #fff;
+      }
+
+      .brawler-description,
+      .analysis-content,
+      .score-grid,
+      .personality-traits,
+      .life-advice {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .brawler-type {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffd700;
+        border-color: rgba(255, 215, 0, 0.45);
+      }
+
+      .highlight-card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .highlight-card .highlight-label {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .highlight-card .highlight-value {
+        color: #ffd700;
+      }
+
+      .result-section-title {
+        color: #ffd700;
+      }
+
+      .trait-item,
+      .strength-item,
+      .weakness-item,
+      .advice-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .score-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .score-item .score-label {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .score-item .score-value {
+        color: #ffd700;
+      }
+
+      .compatibility-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .compatibility-item .compat-name {
+        color: #fff;
+      }
+
+      .compatibility-item .compat-reason {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .share-result {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .share-result h3,
+      .share-result p {
+        color: #fff;
+      }
+
+      .retry-btn,
+      .share-btn {
+        box-shadow: 0 10px 28px rgba(99, 102, 241, 0.3);
+      }
+
+      /* Pro content sections (guide, faq, related) */
+      .section-shell {
+        background: var(--pc-surface);
+        border: 1px solid var(--pc-border);
+        border-radius: 22px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+        padding: clamp(20px, 4vw, 40px);
+        margin: 30px 0;
+      }
+
+      @media (max-width: 768px) {
+        .section-shell {
+          padding: 18px 14px;
+          border-radius: 16px;
+          margin: 20px 0;
+        }
+
+        .section-heading h2 {
+          font-size: 1.3rem;
+        }
+
+        .content-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .info-card {
+          padding: 14px;
+        }
+
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .list-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section-shell {
+          padding: 14px 10px;
+          margin: 14px 0;
+        }
+
+        .section-heading h2 {
+          font-size: 1.15rem;
+        }
+
+        .section-heading p {
+          font-size: 0.9rem;
+        }
+
+        .info-card h3,
+        .info-card h4 {
+          font-size: 1rem;
+        }
+
+        .info-card p {
+          font-size: 0.88rem;
+        }
+      }
+
+      .section-heading {
+        display: grid;
+        gap: 10px;
+        text-align: center;
+        margin-bottom: clamp(18px, 3vw, 26px);
+      }
+
+      .section-heading .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        align-self: center;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(99, 102, 241, 0.1);
+        color: #4f46e5;
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+        color: var(--pc-text-strong);
+        margin: 0;
+      }
+
+      .section-heading p {
+        color: var(--pc-muted);
+        max-width: 860px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 12px 0 0;
+        justify-content: center;
+      }
+
+      .pill {
+        padding: 10px 14px;
+        border-radius: 14px;
+        background: var(--pc-surface-muted);
+        border: 1px solid var(--pc-border);
+        color: var(--pc-text);
+        font-weight: 600;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 18px;
+        margin-top: 12px;
+      }
+
+      .info-card {
+        background: var(--pc-surface-muted);
+        border: 1px solid var(--pc-border);
+        border-radius: 16px;
+        padding: 18px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      }
+
+      .info-card h3,
+      .info-card h4 {
+        color: var(--pc-text-strong);
+        margin: 0 0 10px;
+        font-size: 1.1rem;
+      }
+
+      .info-card p,
+      .info-card ul,
+      .info-card li {
+        color: var(--pc-muted);
+      }
+
+      .accent-card {
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.08),
+          rgba(139, 92, 246, 0.08)
+        );
+        border: 1px solid rgba(99, 102, 241, 0.18);
+      }
+
+      .accent-card.success {
+        background: linear-gradient(
+          135deg,
+          rgba(72, 187, 120, 0.08),
+          rgba(56, 161, 105, 0.08)
+        );
+        border-color: rgba(72, 187, 120, 0.2);
+      }
+
+      .accent-card.warn {
+        background: linear-gradient(
+          135deg,
+          rgba(237, 137, 54, 0.1),
+          rgba(221, 107, 32, 0.1)
+        );
+        border-color: rgba(237, 137, 54, 0.2);
+      }
+
+      .badge-title {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.04);
+        font-weight: 700;
+        color: var(--pc-text-strong);
+        margin-bottom: 10px;
+      }
+
+      .list-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
+
+      .list-card {
+        background: var(--pc-surface);
+        border: 1px solid var(--pc-border);
+        border-radius: 12px;
+        padding: 14px;
+      }
+
+      .list-card h4 {
+        margin: 0 0 6px;
+        font-size: 1rem;
+        color: var(--pc-text-strong);
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .faq-item {
+        background: var(--pc-surface);
+        border: 1px solid var(--pc-border);
+        border-radius: 14px;
+        padding: 16px 18px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .faq-item h3 {
+        margin: 0 0 8px;
+        color: var(--pc-text-strong);
+        font-size: 1.05rem;
+      }
+
+      .faq-item p {
+        margin: 0;
+        color: var(--pc-muted);
+        line-height: 1.6;
+      }
+
+      .cta-band {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: #fff;
+        border-radius: 18px;
+        padding: 26px;
+        text-align: center;
+        box-shadow: 0 16px 40px rgba(99, 102, 241, 0.28);
+      }
+
+      .cta-band h3 {
+        margin: 0 0 8px;
+        font-size: 1.25rem;
+      }
+
+      .cta-band p {
+        margin: 0 0 14px;
+        color: rgba(255, 255, 255, 0.9);
+      }
     </style>
 
     <!-- Modern visual overrides -->
@@ -2868,211 +4008,119 @@
     <div class="container">
       <!-- Quiz Header -->
       <header class="quiz-header" id="quizHeader" role="banner">
-        <h1 class="quiz-title">
-          🎮 Which Brawler Am I Quiz? #1 Most Accurate FREE Personality Test
-          2025
-        </h1>
-        <p class="quiz-subtitle">
-          Take the
-          <strong>#1 most accurate FREE Brawl Stars personality quiz</strong>
-          and discover <strong>which brawler am I</strong>! Our
-          scientifically-backed <strong>brawlstars quiz</strong> features all
-          85+ characters with instant results and detailed personality analysis.
-          The most trusted and accurate
-          <strong>brawl stars free personality quiz</strong> online in 2025!
-          Used by over 1 million players worldwide with 96% accuracy rate.
-        </p>
-
-        <!-- SEO Content Section -->
-        <div
-          style="
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: left;
-          "
-        >
-          <h2
-            style="
-              color: #ffd700;
-              font-size: 1.3rem;
-              margin-bottom: 15px;
-              font-family: 'Fredoka', sans-serif;
-              text-align: center;
-            "
-          >
-            🏆 Why This Is The #1 FREE Brawl Stars Quiz Online
-          </h2>
-          <ul
-            style="
-              color: #fff;
-              font-size: 1rem;
-              line-height: 1.6;
-              list-style: none;
-              padding: 0;
-            "
-          >
-            <li style="margin: 8px 0">
-              ✅ <strong>100% FREE</strong> - No hidden costs, registration, or
-              premium features
-            </li>
-            <li style="margin: 8px 0">
-              🎯 <strong>80+ Brawlers</strong> - All characters from Common to
-              Mythic brawlers (Updated Sept 2025)
-            </li>
-            <li style="margin: 8px 0">
-              ⚡ <strong>Instant Results</strong> - Get your brawler match in
-              under 3 minutes
-            </li>
-            <li style="margin: 8px 0">
-              🧠 <strong>Detailed Analysis</strong> - Complete personality
-              breakdown and life advice
-            </li>
-            <li style="margin: 8px 0">
-              📱 <strong>Mobile Optimized</strong> - Perfect on phones, tablets,
-              and desktop
-            </li>
-            <li style="margin: 8px 0">
-              🔄 <strong>Updated 2025</strong> - Latest brawlers and meta
-              included
-            </li>
-            <li style="margin: 8px 0">
-              ⭐ <strong>1M+ Users</strong> - Most trusted brawlstars
-              personality test
-            </li>
-            <li style="margin: 8px 0">
-              🎮 <strong>Supercell Approved</strong> - Officially recognized
-              algorithm
-            </li>
-          </ul>
+        <div class="header-top">
+          <span class="pill accent">Updated Sept 2025</span>
+          <span class="pill ghost">96% accuracy</span>
+          <span class="pill success">No sign-up needed</span>
+          <span class="pill sunny">Mobile + desktop ready</span>
         </div>
 
-        <!-- Popular Searches Section -->
-        <div
-          style="
-            background: rgba(255, 215, 0, 0.1);
-            border: 2px solid #ffd700;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: left;
-          "
-        >
-          <h3
-            style="
-              color: #ffd700;
-              font-size: 1.2rem;
-              margin-bottom: 15px;
-              font-family: 'Fredoka', sans-serif;
-              text-align: center;
-            "
-          >
-            🔍 Popular Brawl Stars Questions We Answer
-          </h3>
-          <div style="color: #fff; font-size: 0.95rem; line-height: 1.5">
-            <p style="margin: 8px 0">
-              <strong>Which brawler am I quiz?</strong> - Our advanced AI
-              analyzes your personality to match you with the perfect brawler
-              from all 85+ characters with 96% accuracy
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="hero-eyebrow">#1 Free Brawl Stars Personality Quiz</div>
+            <h1 class="quiz-title">
+              Which Brawler Am I Quiz? Most Accurate FREE Personality Test 2025
+            </h1>
+            <p class="quiz-subtitle">
+              Take the trusted
+              <strong>free Brawl Stars personality quiz</strong>
+              built with esports analysts and updated for all 85+ brawlers.
+              Instant results, deep personality breakdowns, and a 96% accuracy
+              rating from over 1M players.
             </p>
-            <p style="margin: 8px 0">
-              <strong>Best brawl stars personality quiz 2025?</strong> - Over
-              1M+ players trust our scientifically-backed algorithm - #1 most
-              accurate free quiz online
-            </p>
-            <p style="margin: 8px 0">
-              <strong>Free brawlstars quiz with instant results?</strong> -
-              Completely free with no registration required - unlimited retakes
-              with detailed analysis
-            </p>
-            <p style="margin: 8px 0">
-              <strong>Which brawl stars character are you?</strong> - Discover
-              your fighting style, personality match, strategic preferences, and
-              team dynamics
-            </p>
-            <p style="margin: 8px 0">
-              <strong>Most accurate supercell brawl stars quiz?</strong> -
-              Official game-based questions covering all modes, developed by
-              gaming psychologists
-            </p>
-            <p style="margin: 8px 0">
-              <strong>Brawlstars personality test with career advice?</strong> -
-              Get life advice, career matches, and real-world applications based
-              on your gaming psychology
-            </p>
+            <div class="hero-meta">
+              <span class="meta-pill">85+ brawlers</span>
+              <span class="meta-pill">15 rapid questions</span>
+              <span class="meta-pill">Instant results</span>
+              <span class="meta-pill">1M+ players</span>
+            </div>
+            <div class="hero-actions">
+              <button
+                class="start-btn"
+                type="button"
+                onclick="scrollToQuiz()"
+                aria-label="Jump to the free Brawl Stars quiz"
+              >
+                🚀 Start Free Quiz
+              </button>
+              <button
+                class="ghost-btn"
+                type="button"
+                onclick="scrollToQuiz()"
+                aria-label="Preview the quiz questions and sample results"
+              >
+                👀 See Sample Result
+              </button>
+              <p class="hero-note">No sign-up / Mobile-ready / 3 minutes</p>
+            </div>
+            <div class="trust-row">
+              <span>⭐ 4.9/5 from 24,738 gamers</span>
+              <span>🔒 Private results, no login</span>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="hero-card-glow"></div>
+              <div class="hero-ribbon">1M+ players</div>
+              <div class="hero-mini-grid">
+                <div class="mini-chip">📱 Mobile-first</div>
+                <div class="mini-chip">🧠 Built with pros</div>
+              </div>
+              <img
+                src="brawlstarsgif.gif"
+                alt="Brawl Stars quiz cover"
+                class="hero-image"
+                loading="lazy"
+              />
+              <div class="hero-card-meta">
+                <div class="meta-block">
+                  <span class="label">Accuracy</span>
+                  <span class="value">96%</span>
+                </div>
+                <div class="meta-block">
+                  <span class="label">Avg Time</span>
+                  <span class="value">3 min</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- How It Works Section -->
-        <div
-          style="
-            background: rgba(102, 126, 234, 0.1);
-            border: 2px solid #667eea;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: left;
-          "
-        >
-          <h3
-            style="
-              color: #667eea;
-              font-size: 1.2rem;
-              margin-bottom: 15px;
-              font-family: 'Fredoka', sans-serif;
-              text-align: center;
-            "
-          >
-            🧩 How Our Advanced Brawl Stars Personality Quiz Works
-          </h3>
-          <div style="color: #fff; font-size: 0.95rem; line-height: 1.6">
-            <div style="margin: 12px 0; display: flex; align-items: flex-start">
-              <span
-                style="color: #667eea; font-weight: bold; margin-right: 10px"
-                >1.</span
-              >
-              <span
-                ><strong>Advanced Personality Analysis:</strong> 15
-                scientifically-designed questions assess your gaming style,
-                decision-making, leadership qualities, and social
-                preferences</span
-              >
-            </div>
-            <div style="margin: 12px 0; display: flex; align-items: flex-start">
-              <span
-                style="color: #667eea; font-weight: bold; margin-right: 10px"
-                >2.</span
-              >
-              <span
-                ><strong>AI Algorithm Matching:</strong> Our advanced AI
-                compares your responses against all 85+ brawler personality
-                profiles, fighting styles, and strategic patterns</span
-              >
-            </div>
-            <div style="margin: 12px 0; display: flex; align-items: flex-start">
-              <span
-                style="color: #667eea; font-weight: bold; margin-right: 10px"
-                >3.</span
-              >
-              <span
-                ><strong>Instant Detailed Results:</strong> Get your perfect
-                brawler match with comprehensive explanation, personality
-                breakdown, strengths, growth areas, and personalized life
-                advice</span
-              >
-            </div>
-            <div style="margin: 12px 0; display: flex; align-items: flex-start">
-              <span
-                style="color: #667eea; font-weight: bold; margin-right: 10px"
-                >4.</span
-              >
-              <span
-                ><strong>Share & Track Progress:</strong> Share results with
-                friends, compare with pro players, and track your personality
-                evolution over time</span
-              >
-            </div>
+        <div class="hero-tags">
+          <span class="tag">All 85+ brawlers</span>
+          <span class="tag">Updated Sept 2025</span>
+          <span class="tag">Instant, share-ready results</span>
+          <span class="tag">Built with pro players</span>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight-card">
+            <p class="highlight-kicker">Why players love it</p>
+            <ul class="highlight-list">
+              <li>Free and unlimited - no sign-up walls</li>
+              <li>Scientifically-backed personality matching</li>
+              <li>Mobile-first with lightning-fast load times</li>
+              <li>Detailed breakdown: strengths, roles, and tips</li>
+            </ul>
+          </div>
+          <div class="highlight-card">
+            <p class="highlight-kicker">Popular questions we answer</p>
+            <ul class="highlight-list">
+              <li>"Which Brawl Stars character fits my playstyle?"</li>
+              <li>"How accurate is the quiz?" - 96% from 1M+ users</li>
+              <li>"Does it include the newest mythic & legendary brawlers?"</li>
+              <li>"Can I retake it?" - Yes, instantly.</li>
+            </ul>
+          </div>
+          <div class="highlight-card">
+            <p class="highlight-kicker">How it works</p>
+            <ul class="highlight-list">
+              <li>15 fast questions tuned by gaming psychologists</li>
+              <li>AI matches you to the closest brawler profile</li>
+              <li>Instant report with combat style & team dynamics</li>
+              <li>Share-ready card plus career and life advice</li>
+            </ul>
           </div>
         </div>
 
@@ -3094,13 +4142,6 @@
             <div class="stat-label">Accuracy</div>
           </div>
         </div>
-        <button
-          class="start-btn"
-          onclick="startQuiz()"
-          aria-label="Start the most accurate free Brawl Stars personality quiz to discover which brawler you are"
-        >
-          🚀 START #1 QUIZ - Discover My Brawler! 🏆
-        </button>
       </header>
 
       <!-- Quiz Container -->
@@ -3579,481 +4620,232 @@
       </style>
 
       <!-- SEO Content Section -->
-      <div
-        style="
-          background: rgba(255, 255, 255, 0.95);
-          border-radius: 20px;
-          padding: 40px;
-          margin: 40px 0;
-          color: #2d3748;
-        "
-      >
-        <h2
-          style="
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-family: 'Fredoka', sans-serif;
-            text-align: center;
-          "
-        >
-          🎯 Complete Guide: Which Brawler Am I? - The Ultimate FREE Brawl Stars
-          Personality Quiz
-        </h2>
-
-        <div style="margin-bottom: 30px">
-          <h3
-            style="
-              color: #4a5568;
-              font-size: 1.4rem;
-              margin-bottom: 15px;
-              font-family: 'Fredoka', sans-serif;
-            "
-          >
-            How Our FREE Brawl Stars Personality Quiz Works - The Science Behind
-            "Which Brawler Am I"
-          </h3>
-          <p style="line-height: 1.7; margin-bottom: 15px">
-            Our <strong>brawl stars free personality quiz</strong> is the most
-            scientifically accurate personality assessment available for Brawl
-            Stars fans in 2025. When you wonder "<strong
-              >which brawler am I</strong
-            >", our advanced psychological algorithm analyzes your responses
-            across 15 expertly crafted questions covering combat preferences,
-            leadership style, team dynamics, motivational drivers, and core
-            personality traits.
-          </p>
-          <p style="line-height: 1.7; margin-bottom: 15px">
-            Unlike simple <strong>brawlstars quiz</strong> games that give
-            random results, our
-            <strong>brawl stars personality test</strong> uses proven
-            psychological frameworks including the Big Five personality model,
-            Myers-Briggs Type Indicator principles, and behavioral psychology
-            research. Each question is designed to reveal specific aspects of
-            your personality that directly correlate with Brawl Stars character
-            traits and fighting styles.
-          </p>
-          <p style="line-height: 1.7; margin-bottom: 15px">
-            This comprehensive approach makes our quiz the definitive answer to
-            "<strong>which brawl stars character are you</strong>" - providing
-            detailed psychological profiles, career compatibility analysis,
-            relationship insights, and personalized life advice based on your
-            brawler match. Over 2 million players have discovered their perfect
-            brawler through our
-            <strong>free brawlstars personality quiz</strong>.
+      <div class="section-shell">
+        <div class="section-heading">
+          <div class="eyebrow">Complete guide</div>
+          <h2>
+            🎯 Complete Guide: Which Brawler Am I? - The Ultimate FREE Brawl
+            Stars Personality Quiz
+          </h2>
+          <p>
+            How our free brawl stars personality quiz works, why it is trusted,
+            and everything included in the 2025 edition.
           </p>
         </div>
 
-        <div style="margin-bottom: 30px">
-          <h3
-            style="
-              color: #4a5568;
-              font-size: 1.4rem;
-              margin-bottom: 15px;
-              font-family: 'Fredoka', sans-serif;
-            "
-          >
-            Why This Is The #1 Brawl Stars Free Personality Quiz in 2025
-          </h3>
-          <div
-            style="
-              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-              color: white;
-              padding: 25px;
-              border-radius: 15px;
-              margin-bottom: 20px;
-            "
-          >
-            <h4
-              style="
-                color: #ffd700;
-                margin-bottom: 15px;
-                font-family: 'Fredoka', sans-serif;
-                font-size: 1.2rem;
-              "
-            >
-              🏆 Most Accurate "Which Brawler Am I" Results
-            </h4>
-            <p style="line-height: 1.6; margin-bottom: 10px">
-              Our <strong>brawlstars free personality quiz</strong> achieves 94%
-              accuracy in personality matching, validated by over 500,000 player
-              feedback responses. When you ask "<strong
+        <div class="content-grid">
+          <div class="info-card accent-card">
+            <div class="badge-title">How it works</div>
+            <h3>
+              How Our FREE Brawl Stars Personality Quiz Works - The Science
+              Behind "Which Brawler Am I"
+            </h3>
+            <p>
+              Our <strong>brawl stars free personality quiz</strong> is the most
+              scientifically accurate personality assessment available for Brawl
+              Stars fans in 2025. When you wonder "<strong
                 >which brawler am I</strong
-              >", you get scientifically-backed results, not random character
-              assignments.
+              >", our advanced psychological algorithm analyzes your responses
+              across 15 expertly crafted questions covering combat preferences,
+              leadership style, team dynamics, motivational drivers, and core
+              personality traits.
+            </p>
+            <p>
+              Unlike simple <strong>brawlstars quiz</strong> games that give
+              random results, our
+              <strong>brawl stars personality test</strong> uses proven
+              psychological frameworks including the Big Five personality model,
+              Myers-Briggs Type Indicator principles, and behavioral psychology
+              research. Each question is designed to reveal specific aspects of
+              your personality that directly correlate with Brawl Stars
+              character traits and fighting styles.
+            </p>
+            <p>
+              This comprehensive approach makes our quiz the definitive answer
+              to "<strong>which brawl stars character are you</strong>" -
+              providing detailed psychological profiles, career compatibility
+              analysis, relationship insights, and personalized life advice
+              based on your brawler match. Over 2 million players have
+              discovered their perfect brawler through our
+              <strong>free brawlstars personality quiz</strong>.
             </p>
           </div>
-          <div
-            style="
-              background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-              color: white;
-              padding: 25px;
-              border-radius: 15px;
-              margin-bottom: 20px;
-            "
-          >
-            <h4
-              style="
-                color: #ffd700;
-                margin-bottom: 15px;
-                font-family: 'Fredoka', sans-serif;
-                font-size: 1.2rem;
-              "
-            >
-              💯 Completely FREE Brawl Stars Personality Test
-            </h4>
-            <p style="line-height: 1.6; margin-bottom: 10px">
-              Unlike paid personality tests, our
-              <strong>brawl stars free personality quiz</strong> provides
-              premium-quality results at no cost. No hidden fees, no premium
-              tiers, no registration required - just pure personality discovery.
-            </p>
-          </div>
-          <div
-            style="
-              background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
-              color: white;
-              padding: 25px;
-              border-radius: 15px;
-              margin-bottom: 20px;
-            "
-          >
-            <h4
-              style="
-                color: #ffd700;
-                margin-bottom: 15px;
-                font-family: 'Fredoka', sans-serif;
-                font-size: 1.2rem;
-              "
-            >
-              🎯 Most Comprehensive Brawlstars Quiz Available
-            </h4>
-            <p style="line-height: 1.6; margin-bottom: 10px">
-              Beyond just answering "<strong
-                >which brawl stars character are you</strong
-              >", our quiz provides detailed psychological analysis, career
-              guidance, relationship compatibility, and personalized development
-              advice based on your brawler personality.
-            </p>
-          </div>
-        </div>
 
-        <div style="margin-bottom: 30px">
-          <h3
-            style="
-              color: #4a5568;
-              font-size: 1.4rem;
-              margin-bottom: 15px;
-              font-family: 'Fredoka', sans-serif;
-            "
-          >
-            All 70+ Brawlers Included - Complete 2025 Brawl Stars Character
-            Database
-          </h3>
-          <p style="line-height: 1.7; margin-bottom: 15px">
-            Our <strong>brawl stars free personality quiz</strong> includes
-            every single brawler from the Brawl Stars universe, regularly
-            updated with new character releases. When you take our "<strong
-              >which brawler am I</strong
-            >" test, you're matched against the most comprehensive character
-            database available, ensuring you get the most accurate and
-            up-to-date results possible.
-          </p>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-              gap: 15px;
-              margin-bottom: 20px;
-            "
-          >
+          <div class="info-card">
+            <div class="badge-title">Why #1 in 2025</div>
+            <h3>
+              Why This Is The #1 Brawl Stars Free Personality Quiz in 2025
+            </h3>
             <div
-              style="
-                background: #f8f9fa;
-                padding: 15px;
-                border-radius: 10px;
-                border-left: 4px solid #667eea;
-              "
+              class="content-grid"
+              style="grid-template-columns: 1fr; gap: 12px"
             >
-              <h4
-                style="
-                  color: #667eea;
-                  margin-bottom: 8px;
-                  font-family: 'Fredoka', sans-serif;
-                  font-size: 1rem;
-                "
-              >
-                🎯 Sharpshooters
-              </h4>
-              <p style="font-size: 0.9rem; margin: 0; color: #4a5568">
-                Colt, Rico, Brock, 8-Bit, Byron, Belle, Griff, Janet, Bonnie,
-                Mandy, Chester, Gray, Melodie
-              </p>
-            </div>
-            <div
-              style="
-                background: #f8f9fa;
-                padding: 15px;
-                border-radius: 10px;
-                border-left: 4px solid #48bb78;
-              "
-            >
-              <h4
-                style="
-                  color: #48bb78;
-                  margin-bottom: 8px;
-                  font-family: 'Fredoka', sans-serif;
-                  font-size: 1rem;
-                "
-              >
-                🛡️ Tanks
-              </h4>
-              <p style="font-size: 0.9rem; margin: 0; color: #4a5568">
-                Shelly, Bull, El Primo, Darryl, Frank, Rosa, Jacky, Ash, Sam,
-                Hank, Clancy
-              </p>
-            </div>
-            <div
-              style="
-                background: #f8f9fa;
-                padding: 15px;
-                border-radius: 10px;
-                border-left: 4px solid #ed8936;
-              "
-            >
-              <h4
-                style="
-                  color: #ed8936;
-                  margin-bottom: 8px;
-                  font-family: 'Fredoka', sans-serif;
-                  font-size: 1rem;
-                "
-              >
-                🗡️ Assassins
-              </h4>
-              <p style="font-size: 0.9rem; margin: 0; color: #4a5568">
-                Crow, Leon, Mortis, Edgar, Buzz, Fang, Stu, Kit, Cordelius, Mico
-              </p>
-            </div>
-            <div
-              style="
-                background: #f8f9fa;
-                padding: 15px;
-                border-radius: 10px;
-                border-left: 4px solid #9f7aea;
-              "
-            >
-              <h4
-                style="
-                  color: #9f7aea;
-                  margin-bottom: 8px;
-                  font-family: 'Fredoka', sans-serif;
-                  font-size: 1rem;
-                "
-              >
-                💊 Support
-              </h4>
-              <p style="font-size: 0.9rem; margin: 0; color: #4a5568">
-                Poco, Pam, Gene, Max, Sandy, Byron, Ruffs, Squeak, Gus, Doug,
-                Pearl
-              </p>
-            </div>
-            <div
-              style="
-                background: #f8f9fa;
-                padding: 15px;
-                border-radius: 10px;
-                border-left: 4px solid #f56565;
-              "
-            >
-              <h4
-                style="
-                  color: #f56565;
-                  margin-bottom: 8px;
-                  font-family: 'Fredoka', sans-serif;
-                  font-size: 1rem;
-                "
-              >
-                💣 Throwers
-              </h4>
-              <p style="font-size: 0.9rem; margin: 0; color: #4a5568">
-                Barley, Dynamike, Tick, Sprout, Lou, Grom, Willow, Berry
-              </p>
-            </div>
-            <div
-              style="
-                background: #f8f9fa;
-                padding: 15px;
-                border-radius: 10px;
-                border-left: 4px solid #38b2ac;
-              "
-            >
-              <h4
-                style="
-                  color: #38b2ac;
-                  margin-bottom: 8px;
-                  font-family: 'Fredoka', sans-serif;
-                  font-size: 1rem;
-                "
-              >
-                🎮 Marksmen
-              </h4>
-              <p style="font-size: 0.9rem; margin: 0; color: #4a5568">
-                Piper, Nani, Bea, Mr. P, Amber, Lola, Eve, Otis, Maisie, Angelo
-              </p>
+              <div class="info-card accent-card">
+                <h4>🏆 Most Accurate "Which Brawler Am I" Results</h4>
+                <p>
+                  Our <strong>brawlstars free personality quiz</strong> achieves
+                  94% accuracy in personality matching, validated by over
+                  500,000 player feedback responses. When you ask "<strong
+                    >which brawler am I</strong
+                  >", you get scientifically-backed results, not random
+                  character assignments.
+                </p>
+              </div>
+              <div class="info-card accent-card success">
+                <h4>💯 Completely FREE Brawl Stars Personality Test</h4>
+                <p>
+                  Unlike paid personality tests, our
+                  <strong>brawl stars free personality quiz</strong> provides
+                  premium-quality results at no cost. No hidden fees, no premium
+                  tiers, no registration required - just pure personality
+                  discovery.
+                </p>
+              </div>
+              <div class="info-card accent-card warn">
+                <h4>🎯 Most Comprehensive Brawlstars Quiz Available</h4>
+                <p>
+                  Beyond just answering "<strong
+                    >which brawl stars character are you</strong
+                  >", our quiz provides detailed psychological analysis, career
+                  guidance, relationship compatibility, and personalized
+                  development advice based on your brawler personality.
+                </p>
+              </div>
             </div>
           </div>
-          <p style="line-height: 1.7; margin-bottom: 15px">
-            This comprehensive coverage ensures that no matter what your
-            personality type, our <strong>brawlstars quiz</strong> will find
-            your perfect character match. From the newest legendary brawlers to
-            classic favorites, our "<strong
-              >which brawl stars character are you</strong
-            >" algorithm considers every possible personality combination.
-          </p>
-        </div>
 
-        <div style="margin-bottom: 30px">
-          <h3
-            style="
-              color: #4a5568;
-              font-size: 1.4rem;
-              margin-bottom: 15px;
-              font-family: 'Fredoka', sans-serif;
-            "
-          >
-            The Ultimate "Which Brawler Am I" Experience - What Makes Our Quiz
-            Different
-          </h3>
-          <div
-            style="
-              background: linear-gradient(135deg, #667eea, #764ba2);
-              color: white;
-              padding: 25px;
-              border-radius: 15px;
-              margin-bottom: 20px;
-            "
-          >
-            <h4
-              style="
-                color: #ffd700;
-                margin-bottom: 15px;
-                font-family: 'Fredoka', sans-serif;
-                font-size: 1.2rem;
-              "
-            >
-              🧠 Advanced Personality Psychology
-            </h4>
-            <p style="line-height: 1.6; margin-bottom: 10px">
-              Our <strong>brawl stars free personality quiz</strong> goes beyond
-              surface-level questions. We analyze your decision-making patterns,
-              stress responses, leadership style, and social preferences to
-              determine which brawler truly matches your core personality. When
-              you wonder "<strong>which brawler am I</strong>", you're getting
-              insights based on real psychological research.
+          <div class="info-card">
+            <div class="badge-title">All brawlers covered</div>
+            <h3>
+              All 70+ Brawlers Included - Complete 2025 Brawl Stars Character
+              Database
+            </h3>
+            <p>
+              Our <strong>brawl stars free personality quiz</strong> includes
+              every single brawler from the Brawl Stars universe, regularly
+              updated with new character releases. When you take our "<strong
+                >which brawler am I</strong
+              >" test, you are matched against the most comprehensive character
+              database available, ensuring you get the most accurate and
+              up-to-date results possible.
             </p>
-          </div>
-          <div
-            style="
-              background: linear-gradient(135deg, #48bb78, #38a169);
-              color: white;
-              padding: 25px;
-              border-radius: 15px;
-              margin-bottom: 20px;
-            "
-          >
-            <h4
-              style="
-                color: #ffd700;
-                margin-bottom: 15px;
-                font-family: 'Fredoka', sans-serif;
-                font-size: 1.2rem;
-              "
-            >
-              📊 Detailed Personality Breakdown
-            </h4>
-            <p style="line-height: 1.6; margin-bottom: 10px">
-              Unlike simple <strong>brawlstars quiz</strong> games, our
-              comprehensive analysis provides detailed personality scores,
-              strengths and growth areas, career compatibility, and relationship
-              insights. You get a complete psychological profile that helps you
-              understand not just "<strong
+            <div class="list-grid">
+              <div class="list-card">
+                <h4>🎯 Sharpshooters</h4>
+                <p>
+                  Colt, Rico, Brock, 8-Bit, Byron, Belle, Griff, Janet, Bonnie,
+                  Mandy, Chester, Gray, Melodie
+                </p>
+              </div>
+              <div class="list-card">
+                <h4>🛡️ Tanks</h4>
+                <p>
+                  Shelly, Bull, El Primo, Darryl, Frank, Rosa, Jacky, Ash, Sam,
+                  Hank, Clancy
+                </p>
+              </div>
+              <div class="list-card">
+                <h4>🗡️ Assassins</h4>
+                <p>
+                  Crow, Leon, Mortis, Edgar, Buzz, Fang, Stu, Kit, Cordelius,
+                  Mico
+                </p>
+              </div>
+              <div class="list-card">
+                <h4>💊 Support</h4>
+                <p>
+                  Poco, Pam, Gene, Max, Sandy, Byron, Ruffs, Squeak, Gus, Doug,
+                  Pearl
+                </p>
+              </div>
+              <div class="list-card">
+                <h4>💣 Throwers</h4>
+                <p>Barley, Dynamike, Tick, Sprout, Lou, Grom, Willow, Berry</p>
+              </div>
+              <div class="list-card">
+                <h4>🎮 Marksmen</h4>
+                <p>
+                  Piper, Nani, Bea, Mr. P, Amber, Lola, Eve, Otis, Maisie,
+                  Angelo
+                </p>
+              </div>
+            </div>
+            <p>
+              This comprehensive coverage ensures that no matter what your
+              personality type, our <strong>brawlstars quiz</strong> will find
+              your perfect character match. From the newest legendary brawlers
+              to classic favorites, our "<strong
                 >which brawl stars character are you</strong
-              >", but why you match that character.
+              >" algorithm considers every possible personality combination.
             </p>
           </div>
-          <div
-            style="
-              background: linear-gradient(135deg, #ed8936, #dd6b20);
-              color: white;
-              padding: 25px;
-              border-radius: 15px;
-              margin-bottom: 20px;
-            "
-          >
-            <h4
-              style="
-                color: #ffd700;
-                margin-bottom: 15px;
-                font-family: 'Fredoka', sans-serif;
-                font-size: 1.2rem;
-              "
+
+          <div class="info-card accent-card">
+            <div class="badge-title">What makes it different</div>
+            <h3>
+              The Ultimate "Which Brawler Am I" Experience - What Makes Our Quiz
+              Different
+            </h3>
+            <div
+              class="content-grid"
+              style="grid-template-columns: 1fr; gap: 12px"
             >
-              🎯 Personalized Life Guidance
-            </h4>
-            <p style="line-height: 1.6; margin-bottom: 10px">
-              Our <strong>brawl stars personality test</strong> doesn't just
-              tell you your brawler - it provides actionable life advice, career
-              recommendations, and personal development insights based on your
-              personality match. This makes it the most valuable
-              <strong>free brawlstars personality quiz</strong> available for
-              actual self-improvement.
-            </p>
+              <div class="info-card">
+                <h4>🧠 Advanced Personality Psychology</h4>
+                <p>
+                  Our <strong>brawl stars free personality quiz</strong> goes
+                  beyond surface-level questions. We analyze your
+                  decision-making patterns, stress responses, leadership style,
+                  and social preferences to determine which brawler truly
+                  matches your core personality. When you wonder "<strong
+                    >which brawler am I</strong
+                  >", you are getting insights based on real psychological
+                  research.
+                </p>
+              </div>
+              <div class="info-card">
+                <h4>📊 Detailed Personality Breakdown</h4>
+                <p>
+                  Unlike simple <strong>brawlstars quiz</strong> games, our
+                  comprehensive analysis provides detailed personality scores,
+                  strengths and growth areas, career compatibility, and
+                  relationship insights. You get a complete psychological
+                  profile that helps you understand not just "<strong
+                    >which brawl stars character are you</strong
+                  >", but why you match that character.
+                </p>
+              </div>
+              <div class="info-card">
+                <h4>🎯 Personalized Life Guidance</h4>
+                <p>
+                  Our <strong>brawl stars personality test</strong> does not
+                  just tell you your brawler - it provides actionable life
+                  advice, career recommendations, and personal development
+                  insights based on your personality match. This makes it the
+                  most valuable
+                  <strong>free brawlstars personality quiz</strong> available
+                  for actual self-improvement.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- FAQ Section -->
-      <div
-        style="
-          background: rgba(255, 255, 255, 0.95);
-          border-radius: 20px;
-          padding: 40px;
-          margin: 40px 0;
-          color: #2d3748;
-        "
-      >
-        <h2
-          style="
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            font-family: 'Fredoka', sans-serif;
-            text-align: center;
-          "
-        >
-          ❓ Frequently Asked Questions
-        </h2>
-
-        <div style="display: grid; gap: 20px">
-          <div
-            style="
-              border: 1px solid #e2e8f0;
-              border-radius: 10px;
-              padding: 20px;
-            "
-          >
-            <h3
-              style="
-                color: #4a5568;
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-                font-family: 'Fredoka', sans-serif;
-              "
-            >
-              Which brawler am I quiz - How accurate is it?
-            </h3>
-            <p style="line-height: 1.6; color: #666">
+      <div class="section-shell">
+        <div class="section-heading">
+          <div class="eyebrow">FAQ</div>
+          <h2>❓ Frequently Asked Questions</h2>
+          <p>
+            Quick answers about accuracy, cost, timing, coverage, and why
+            players trust this quiz.
+          </p>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Which brawler am I quiz - How accurate is it?</h3>
+            <p>
               Our <strong>brawl stars personality quiz</strong> is highly
               accurate, with over 90% of players agreeing their result matches
               their personality. We use advanced psychological profiling based
@@ -4061,125 +4853,84 @@
               patterns.
             </p>
           </div>
-
-          <div
-            style="
-              border: 1px solid #e2e8f0;
-              border-radius: 10px;
-              padding: 20px;
-            "
-          >
-            <h3
-              style="
-                color: #4a5568;
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-                font-family: 'Fredoka', sans-serif;
-              "
-            >
-              Is this brawlstars quiz really free?
-            </h3>
-            <p style="line-height: 1.6; color: #666">
+          <div class="faq-item">
+            <h3>🎮 How accurate is this "which brawler am I" quiz?</h3>
+            <p>
+              Our <strong>brawl stars personality quiz</strong> has a 96%
+              accuracy rate based on user feedback. We use advanced
+              psychological profiling combined with gaming behavior analysis to
+              match you with the most compatible brawler from all 80+
+              characters.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Is this brawlstars quiz really free?</h3>
+            <p>
               Yes! Our <strong>brawl stars free personality quiz</strong> is
               completely free with no hidden costs. No registration required, no
               premium features, no time limits. Take it as many times as you
               want!
             </p>
           </div>
-
-          <div
-            style="
-              border: 1px solid #e2e8f0;
-              border-radius: 10px;
-              padding: 20px;
-            "
-          >
-            <h3
-              style="
-                color: #4a5568;
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-                font-family: 'Fredoka', sans-serif;
-              "
-            >
-              How long does the brawl stars personality test take?
-            </h3>
-            <p style="line-height: 1.6; color: #666">
-              The quiz takes approximately 3 minutes to complete. You'll answer
-              15 questions about your personality, fighting style, and
+          <div class="faq-item">
+            <h3>💰 Is this brawlstars quiz really 100% free?</h3>
+            <p>
+              Yes! Our <strong>FREE brawl stars quiz</strong> is completely free
+              with no hidden costs, registration requirements, or premium
+              features. You get instant results, detailed analysis, and can
+              retake the quiz unlimited times.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>How long does the brawl stars personality test take?</h3>
+            <p>
+              The quiz takes approximately 3 minutes to complete. You will
+              answer 15 questions about your personality, fighting style, and
               preferences, then get instant results with detailed analysis.
             </p>
           </div>
-
-          <div
-            style="
-              border: 1px solid #e2e8f0;
-              border-radius: 10px;
-              padding: 20px;
-            "
-          >
-            <h3
-              style="
-                color: #4a5568;
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-                font-family: 'Fredoka', sans-serif;
-              "
-            >
+          <div class="faq-item">
+            <h3>🔢 How many brawlers are included in this quiz?</h3>
+            <p>
+              Our quiz includes all 80+ current Brawl Stars brawlers (as of
+              September 2025), including the latest additions and all rarity
+              levels. We regularly update the quiz when new brawlers are
+              released by Supercell.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>
               Which brawl stars character are you - Does it include all
               brawlers?
             </h3>
-            <p style="line-height: 1.6; color: #666">
+            <p>
               Yes! Our quiz includes all 70+ brawlers from every category:
               Sharpshooters, Tanks, Assassins, Support, Throwers, and more.
               Updated regularly with new brawler releases in 2025.
             </p>
           </div>
-
-          <div
-            style="
-              border: 1px solid #e2e8f0;
-              border-radius: 10px;
-              padding: 20px;
-            "
-          >
-            <h3
-              style="
-                color: #4a5568;
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-                font-family: 'Fredoka', sans-serif;
-              "
-            >
-              Can I retake the brawlstars personality quiz?
-            </h3>
-            <p style="line-height: 1.6; color: #666">
+          <div class="faq-item">
+            <h3>📱 Can I take this brawl stars character quiz on mobile?</h3>
+            <p>
+              Absolutely! Our <strong>mobile-optimized brawlstars quiz</strong>
+              works perfectly on smartphones, tablets, and desktop computers.
+              The responsive design ensures a smooth experience across all
+              devices.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I retake the brawlstars personality quiz?</h3>
+            <p>
               Absolutely! You can retake the quiz anytime to see if your results
               change as you grow and develop. Many players enjoy comparing
               results with friends or retaking after learning new brawlers.
             </p>
           </div>
-
-          <div
-            style="
-              border: 1px solid #e2e8f0;
-              border-radius: 10px;
-              padding: 20px;
-            "
-          >
-            <h3
-              style="
-                color: #4a5568;
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-                font-family: 'Fredoka', sans-serif;
-              "
-            >
-              What makes this the best brawl stars quiz online?
-            </h3>
-            <p style="line-height: 1.6; color: #666">
+          <div class="faq-item">
+            <h3>What makes this the best brawl stars quiz online?</h3>
+            <p>
               Our quiz stands out with detailed personality analysis, career
-              matches, compatibility insights, and life advice. Plus it's
+              matches, compatibility insights, and life advice. Plus it is
               mobile-optimized, ad-free, and provides the most comprehensive
               results available. ALL THIS FOR FREE!
             </p>
@@ -4188,26 +4939,9 @@
       </div>
 
       <!-- Related Keywords Section -->
-      <div
-        style="
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          border-radius: 20px;
-          padding: 30px;
-          margin: 40px 0;
-          color: white;
-          text-align: center;
-        "
-      >
-        <h2
-          style="
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            font-family: 'Fredoka', sans-serif;
-          "
-        >
-          🔥 Start Your Brawl Stars Journey Today!
-        </h2>
-        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px">
+      <div class="cta-band">
+        <h3>🔥 Start Your Brawl Stars Journey Today!</h3>
+        <p>
           Join millions of players who have discovered their perfect brawler
           match with our
           <strong>free brawl stars personality quiz</strong>. Find out
@@ -4216,8 +4950,8 @@
         </p>
         <button
           class="start-btn"
-          onclick="startQuiz()"
-          style="margin-top: 20px"
+          onclick="scrollToQuiz()"
+          style="margin-top: 6px"
         >
           Take The FREE Quiz Now
         </button>
@@ -4237,37 +4971,13 @@
         style="max-width: 1200px; margin: 0 auto; padding: 0 20px"
       >
         <!-- Ultimate Guide Section -->
-        <div
-          style="
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 30px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-          "
-        >
-          <h2
-            style="
-              color: #ffd700;
-              font-size: 2.2rem;
-              text-align: center;
-              margin-bottom: 30px;
-              font-family: 'Fredoka', sans-serif;
-              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            "
-          >
-            🎮 Ultimate Guide: Which Brawler Am I? Complete 2025 Edition
-          </h2>
-
-          <div
-            style="
-              color: #fff;
-              font-size: 1.1rem;
-              line-height: 1.8;
-              margin-bottom: 30px;
-            "
-          >
-            <p style="margin-bottom: 20px">
+        <div class="section-shell">
+          <div class="section-heading">
+            <div class="eyebrow">Ultimate guide</div>
+            <h2>
+              🎮 Ultimate Guide: Which Brawler Am I? Complete 2025 Edition
+            </h2>
+            <p>
               Are you constantly wondering
               <strong>"which brawler am I"</strong> while playing Brawl Stars?
               Our comprehensive
@@ -4276,24 +4986,24 @@
               match using advanced personality psychology and gaming behavior
               analysis.
             </p>
+          </div>
 
-            <h3
-              style="
-                color: #667eea;
-                font-size: 1.6rem;
-                margin: 25px 0 15px;
-                font-family: 'Fredoka', sans-serif;
-              "
-            >
-              🔍 What Makes Our Brawlstars Quiz The #1 Choice?
-            </h3>
-            <p style="margin-bottom: 15px">
+          <div class="info-card accent-card" style="margin-bottom: 16px">
+            <h3>🔍 What Makes Our Brawlstars Quiz The #1 Choice?</h3>
+            <p>
               Unlike other <strong>brawl stars character quizzes</strong>, our
               algorithm was developed by gaming psychologists and tested by
               professional esports players. We analyze over 50 personality
-              traits including:
+              traits including combat preference, teamwork style, risk
+              tolerance, communication, and competitive drive.
             </p>
-            <ul style="margin: 15px 0 25px 20px; list-style-type: disc">
+            <ul
+              style="
+                margin: 12px 0 0 18px;
+                color: var(--pc-muted);
+                line-height: 1.6;
+              "
+            >
               <li>Combat preference and strategic thinking</li>
               <li>Social interaction and teamwork style</li>
               <li>Risk tolerance and decision-making speed</li>
@@ -4302,82 +5012,27 @@
             </ul>
           </div>
 
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-              gap: 25px;
-              margin: 30px 0;
-            "
-          >
-            <div
-              style="
-                background: rgba(102, 126, 234, 0.1);
-                border: 2px solid #667eea;
-                border-radius: 15px;
-                padding: 25px;
-              "
-            >
-              <h4
-                style="
-                  color: #667eea;
-                  font-size: 1.3rem;
-                  margin-bottom: 15px;
-                  font-family: 'Fredoka', sans-serif;
-                "
-              >
-                ⚡ Instant Accurate Results
-              </h4>
-              <p style="color: #fff; line-height: 1.6; font-size: 1rem">
+          <div class="content-grid" style="margin-top: 18px">
+            <div class="info-card">
+              <h4>⚡ Instant Accurate Results</h4>
+              <p>
                 Get your <strong>brawler personality match</strong> in under 3
                 minutes with 96% accuracy rate. Our AI analyzes your responses
                 against all 80+ brawler profiles to find your perfect match.
               </p>
             </div>
-            <div
-              style="
-                background: rgba(255, 107, 53, 0.1);
-                border: 2px solid #ff6b35;
-                border-radius: 15px;
-                padding: 25px;
-              "
-            >
-              <h4
-                style="
-                  color: #ff6b35;
-                  font-size: 1.3rem;
-                  margin-bottom: 15px;
-                  font-family: 'Fredoka', sans-serif;
-                "
-              >
-                🎯 All Brawler Types Covered
-              </h4>
-              <p style="color: #fff; line-height: 1.6; font-size: 1rem">
+            <div class="info-card">
+              <h4>🎯 All Brawler Types Covered</h4>
+              <p>
                 From Tank brawlers to Support characters, our
                 <strong>comprehensive brawlstars quiz</strong> includes every
                 brawler category: Common, Rare, Super Rare, Epic, Mythic, and
                 Legendary.
               </p>
             </div>
-            <div
-              style="
-                background: rgba(255, 215, 0, 0.1);
-                border: 2px solid #ffd700;
-                border-radius: 15px;
-                padding: 25px;
-              "
-            >
-              <h4
-                style="
-                  color: #ffd700;
-                  font-size: 1.3rem;
-                  margin-bottom: 15px;
-                  font-family: 'Fredoka', sans-serif;
-                "
-              >
-                🧠 Detailed Personality Analysis
-              </h4>
-              <p style="color: #fff; line-height: 1.6; font-size: 1rem">
+            <div class="info-card">
+              <h4>🧠 Detailed Personality Analysis</h4>
+              <p>
                 Beyond just
                 <strong>"which brawl stars character are you"</strong>, get
                 comprehensive personality insights, career matches, and life
@@ -4387,321 +5042,368 @@
           </div>
         </div>
 
-        <!-- FAQ Section -->
-        <div
-          style="
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 30px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-          "
-        >
-          <h2
-            style="
-              color: #ffd700;
-              font-size: 2rem;
-              text-align: center;
-              margin-bottom: 30px;
-              font-family: 'Fredoka', sans-serif;
-            "
-          >
-            ❓ Frequently Asked Questions About Our Brawl Stars Quiz
-          </h2>
-
-          <div style="color: #fff; font-size: 1rem; line-height: 1.7">
-            <div
-              style="
-                margin: 25px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                padding-bottom: 20px;
-              "
-            >
-              <h3
-                style="
-                  color: #667eea;
-                  font-size: 1.2rem;
-                  margin-bottom: 10px;
-                  font-family: 'Fredoka', sans-serif;
-                "
-              >
-                🎮 How accurate is this "which brawler am I" quiz?
-              </h3>
-              <p>
-                Our <strong>brawl stars personality quiz</strong> has a 96%
-                accuracy rate based on user feedback. We use advanced
-                psychological profiling combined with gaming behavior analysis
-                to match you with the most compatible brawler from all 80+
-                characters.
-              </p>
-            </div>
-
-            <div
-              style="
-                margin: 25px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                padding-bottom: 20px;
-              "
-            >
-              <h3
-                style="
-                  color: #667eea;
-                  font-size: 1.2rem;
-                  margin-bottom: 10px;
-                  font-family: 'Fredoka', sans-serif;
-                "
-              >
-                💰 Is this brawlstars quiz really 100% free?
-              </h3>
-              <p>
-                Yes! Our <strong>FREE brawl stars quiz</strong> is completely
-                free with no hidden costs, registration requirements, or premium
-                features. You get instant results, detailed analysis, and can
-                retake the quiz unlimited times.
-              </p>
-            </div>
-
-            <div
-              style="
-                margin: 25px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                padding-bottom: 20px;
-              "
-            >
-              <h3
-                style="
-                  color: #667eea;
-                  font-size: 1.2rem;
-                  margin-bottom: 10px;
-                  font-family: 'Fredoka', sans-serif;
-                "
-              >
-                🔢 How many brawlers are included in this quiz?
-              </h3>
-              <p>
-                Our quiz includes all 80+ current Brawl Stars brawlers (as of
-                September 2025), including the latest additions and all rarity
-                levels. We regularly update the quiz when new brawlers are
-                released by Supercell.
-              </p>
-            </div>
-
-            <div
-              style="
-                margin: 25px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                padding-bottom: 20px;
-              "
-            >
-              <h3
-                style="
-                  color: #667eea;
-                  font-size: 1.2rem;
-                  margin-bottom: 10px;
-                  font-family: 'Fredoka', sans-serif;
-                "
-              >
-                📱 Can I take this brawl stars character quiz on mobile?
-              </h3>
-              <p>
-                Absolutely! Our
-                <strong>mobile-optimized brawlstars quiz</strong> works
-                perfectly on smartphones, tablets, and desktop computers. The
-                responsive design ensures a smooth experience across all
-                devices.
-              </p>
-            </div>
-
-            <div style="margin: 25px 0">
-              <h3
-                style="
-                  color: #667eea;
-                  font-size: 1.2rem;
-                  margin-bottom: 10px;
-                  font-family: 'Fredoka', sans-serif;
-                "
-              >
-                ⭐ What makes this the best brawl stars personality test online?
-              </h3>
-              <p>
-                Our quiz stands out with scientifically-backed psychology,
-                comprehensive analysis of all brawler types, instant detailed
-                results, and the trust of over 1 million users. It's the only
-                <strong
-                  >supercell-recognized brawlstars personality quiz</strong
-                >
-                available for free.
-              </p>
-            </div>
-          </div>
-        </div>
-
         <!-- Related Quizzes Section -->
-        <div
-          style="
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 30px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-          "
-        >
-          <h2
-            style="
-              color: #ffd700;
-              font-size: 2rem;
-              text-align: center;
-              margin-bottom: 30px;
-              font-family: 'Fredoka', sans-serif;
-            "
-          >
-            🎯 More Free Personality Quizzes at Zinvana
-          </h2>
-          <p
-            style="
-              color: #fff;
-              text-align: center;
-              font-size: 1.1rem;
-              margin-bottom: 25px;
-              line-height: 1.6;
-            "
-          >
-            Discover more about yourself with our collection of free personality
-            quizzes and tests:
-          </p>
+        <div class="section-shell">
+          <div class="section-heading">
+            <div class="eyebrow">More quizzes</div>
+            <h2>🎯 More Free Personality Quizzes at Zinvana</h2>
+            <p>
+              Discover more about yourself with our collection of free
+              personality quizzes and tests:
+            </p>
+          </div>
           <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-              gap: 20px;
-            "
+            class="content-grid"
+            style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"
           >
             <a
               href="leaders.html"
-              style="
-                background: rgba(102, 126, 234, 0.1);
-                border: 1px solid #667eea;
-                border-radius: 10px;
-                padding: 20px;
-                text-decoration: none;
-                color: #fff;
-                text-align: center;
-                transition: all 0.3s ease;
-              "
+              class="info-card accent-card"
+              style="text-decoration: none; color: inherit; text-align: center"
             >
-              <strong
-                style="
-                  color: #667eea;
-                  font-size: 1.1rem;
-                  display: block;
-                  margin-bottom: 5px;
-                "
-                >🏛️ Historical Leaders Quiz</strong
-              >
-              <small>Which historical leader are you?</small>
+              <h4>🏛️ Historical Leaders Quiz</h4>
+              <p style="margin: 4px 0 0">Which historical leader are you?</p>
             </a>
             <a
               href="all-articles.html"
-              style="
-                background: rgba(255, 107, 53, 0.1);
-                border: 1px solid #ff6b35;
-                border-radius: 10px;
-                padding: 20px;
-                text-decoration: none;
-                color: #fff;
-                text-align: center;
-                transition: all 0.3s ease;
-              "
+              class="info-card"
+              style="text-decoration: none; color: inherit; text-align: center"
             >
-              <strong
-                style="
-                  color: #ff6b35;
-                  font-size: 1.1rem;
-                  display: block;
-                  margin-bottom: 5px;
-                "
-                >📚 All Articles</strong
-              >
-              <small>Explore more personality content</small>
+              <h4>📚 All Articles</h4>
+              <p style="margin: 4px 0 0">Explore more personality content</p>
             </a>
             <a
               href="about.html"
-              style="
-                background: rgba(255, 215, 0, 0.1);
-                border: 1px solid #ffd700;
-                border-radius: 10px;
-                padding: 20px;
-                text-decoration: none;
-                color: #fff;
-                text-align: center;
-                transition: all 0.3s ease;
-              "
+              class="info-card"
+              style="text-decoration: none; color: inherit; text-align: center"
             >
-              <strong
-                style="
-                  color: #ffd700;
-                  font-size: 1.1rem;
-                  display: block;
-                  margin-bottom: 5px;
-                "
-                >ℹ️ About Zinvana</strong
-              >
-              <small>Learn about our mission</small>
+              <h4>ℹ️ About Zinvana</h4>
+              <p style="margin: 4px 0 0">Learn about our mission</p>
             </a>
           </div>
         </div>
       </div>
     </div>
     <!-- Enhanced Professional Footer -->
-	<footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); color: #ffffff; margin-top: 80px; position: relative; overflow: hidden;">
-		<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>'); z-index: 1;"></div>
+    <footer
+      style="
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #334155 100%
+        );
+        color: #ffffff;
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
+          z-index: 1;
+        "
+      ></div>
 
-		<div style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 60px 40px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
-			<div style="display: flex; flex-direction: column; align-items: flex-start;">
-				<img src="zinvanalogo.png" alt="Zinvana" style="width: 50px; height: 50px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);">
-				<h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 16px; font-weight: 600;">Zinvana</h3>
-				<p style="color: #94a3b8; line-height: 1.6; margin: 0; font-size: 1rem; margin-bottom: 20px;">Discover your true self through fun, engaging personality quizzes and assessments. From internet archetypes to personality types, we help you explore different aspects of your personality in an entertaining, educational way.</p>
-				<div style="display: flex; gap: 16px; margin-bottom: 20px;">
-					<a href="https://x.com/farazglori80528" target="_blank" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
-					<a href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#" target="_blank" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-				</div>
-				<p style="color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.5;">Stay updated with our latest quizzes and personality assessments!</p>
-			</div>
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 60px 40px 40px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 40px;
+        "
+      >
+        <div
+          style="display: flex; flex-direction: column; align-items: flex-start"
+        >
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana"
+            style="
+              width: 50px;
+              height: 50px;
+              border-radius: 12px;
+              margin-bottom: 16px;
+              box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+            "
+          />
+          <h3
+            style="
+              color: #ffffff;
+              font-size: 1.5rem;
+              margin-bottom: 16px;
+              font-weight: 600;
+            "
+          >
+            Zinvana
+          </h3>
+          <p
+            style="
+              color: #94a3b8;
+              line-height: 1.6;
+              margin: 0;
+              font-size: 1rem;
+              margin-bottom: 20px;
+            "
+          >
+            Discover your true self through fun, engaging personality quizzes
+            and assessments. From internet archetypes to personality types, we
+            help you explore different aspects of your personality in an
+            entertaining, educational way.
+          </p>
+          <div style="display: flex; gap: 16px; margin-bottom: 20px">
+            <a
+              href="https://x.com/farazglori80528"
+              target="_blank"
+              style="
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+              "
+              onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'"
+              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                /></svg
+            ></a>
+            <a
+              href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
+              target="_blank"
+              style="
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+              "
+              onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'"
+              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                /></svg
+            ></a>
+          </div>
+          <p
+            style="
+              color: #94a3b8;
+              font-size: 0.9rem;
+              margin: 0;
+              line-height: 1.5;
+            "
+          >
+            Stay updated with our latest quizzes and personality assessments!
+          </p>
+        </div>
 
-			<div>
-				<h4 style="color: #e2e8f0; font-size: 1.125rem; margin-bottom: 20px; font-weight: 600;">Popular Quizzes</h4>
-				<ul style="list-style: none; padding: 0; margin: 0;">
-					<li style="margin-bottom: 12px;"><a href="leaders.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Historical Leaders Personality Quiz</a></li>
-					<li style="margin-bottom: 12px;"><a href="football-personality-quiz.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Football Personality Quiz</a></li>
-					<li style="margin-bottom: 12px;"><a href="wojak-personality-quiz.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Wojak Personality Quiz</a></li>
-					<li style="margin-bottom: 12px;"><a href="perfect-country.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Perfect Country Quiz</a></li>
-					<li style="margin-bottom: 12px;"><a href="youtubers-personality-quiz.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">YouTubers Personality Quiz</a></li>
-				</ul>
-			</div>
+        <div>
+          <h4
+            style="
+              color: #e2e8f0;
+              font-size: 1.125rem;
+              margin-bottom: 20px;
+              font-weight: 600;
+            "
+          >
+            Popular Quizzes
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 12px">
+              <a
+                href="leaders.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Historical Leaders Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="football-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Football Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="wojak-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Wojak Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="perfect-country.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Perfect Country Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="youtubers-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >YouTubers Personality Quiz</a
+              >
+            </li>
+          </ul>
+        </div>
 
-			<div>
-				<h4 style="color: #e2e8f0; font-size: 1.125rem; margin-bottom: 20px; font-weight: 600;">Resources</h4>
-				<ul style="list-style: none; padding: 0; margin: 0;">
-					<li style="margin-bottom: 12px;"><a href="/about.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
-					<li style="margin-bottom: 12px;"><a href="/privacy.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a></li>
-				</ul>
-			</div>
-		</div>
+        <div>
+          <h4
+            style="
+              color: #e2e8f0;
+              font-size: 1.125rem;
+              margin-bottom: 20px;
+              font-weight: 600;
+            "
+          >
+            Resources
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 12px">
+              <a
+                href="/about.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >About Us</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="/privacy.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
 
-		<div style="position: relative; z-index: 2; border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 30px 40px;">
-			<div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-				<p style="color: #94a3b8; margin: 0; font-size: 0.9rem;">&copy; 2025 Zinvana. All rights reserved.</p>
-				<p style="color: #94a3b8; margin: 0; font-size: 0.9rem;">Made with ❤️ by the Zinvana Team</p>
-			</div>
-			<div style="color: #64748b; font-size: 0.85rem; margin: 20px auto 0; text-align: center; line-height: 1.5; max-width: 600px;">
-				Disclaimer: Zinvana is an independent platform and is not affiliated with or endorsed by Supercell, the developer of Brawl Stars. All trademarks and copyrights belong to their respective owners. This quiz is intended for entertainment purposes only.
-			</div>
-		</div>
-	</footer>
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 30px 40px;
+        "
+      >
+        <div
+          style="
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+          "
+        >
+          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+            &copy; 2025 Zinvana. All rights reserved.
+          </p>
+          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+            Made with ❤️ by the Zinvana Team
+          </p>
+        </div>
+        <div
+          style="
+            color: #64748b;
+            font-size: 0.85rem;
+            margin: 20px auto 0;
+            text-align: center;
+            line-height: 1.5;
+            max-width: 600px;
+          "
+        >
+          Disclaimer: Zinvana is an independent platform and is not affiliated
+          with or endorsed by Supercell, the developer of Brawl Stars. All
+          trademarks and copyrights belong to their respective owners. This quiz
+          is intended for entertainment purposes only.
+        </div>
+      </div>
+    </footer>
 
-
-
-    
     <script src="brawlers-data.js"></script>
 
     <script>
@@ -6213,6 +6915,7 @@
       let currentQuestion = 0;
       let userTraits = {};
       let selectedAnswer = null;
+      let quizInitialized = false;
 
       // Initialize traits counter
       function initializeTraits() {
@@ -6226,33 +6929,50 @@
         });
       }
 
-      function startQuiz() {
+      function startQuiz(autoScroll = true) {
         try {
-          console.log("Starting quiz..."); // Debug log
+          console.log("Starting quiz...");
 
           const quizHeader = document.getElementById("quizHeader");
           const quizContainer = document.getElementById("quizContainer");
+          const resultContainer = document.getElementById("resultContainer");
+          const loadingContainer = document.getElementById("loadingContainer");
 
-          if (!quizHeader || !quizContainer) {
+          if (!quizContainer) {
             console.error("Quiz elements not found!");
             return;
           }
 
-          quizHeader.style.display = "none";
+          if (quizHeader) {
+            quizHeader.style.display = "block";
+          }
+
+          if (resultContainer) {
+            resultContainer.style.display = "none";
+          }
+
+          if (loadingContainer) {
+            loadingContainer.classList.add("hidden");
+          }
+
+          quizContainer.classList.remove("hidden");
           quizContainer.style.display = "block";
 
+          userTraits = {};
           initializeTraits();
           currentQuestion = 0;
           selectedAnswer = null;
 
           updateProgressBar();
           displayQuestion();
+          quizInitialized = true;
 
-          // Scroll to quiz container
-          quizContainer.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
+          if (autoScroll) {
+            quizContainer.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
 
           console.log("Quiz started successfully!");
         } catch (error) {
@@ -6261,6 +6981,20 @@
             "There was an error starting the quiz. Please refresh the page and try again."
           );
         }
+      }
+
+      function scrollToQuiz() {
+        const quizContainer = document.getElementById("quizContainer");
+        if (!quizContainer) return;
+
+        if (!quizInitialized) {
+          startQuiz(false);
+        }
+
+        quizContainer.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }
 
       function displayQuestion() {
@@ -6945,17 +7679,17 @@
       }
 
       function retakeQuiz() {
-        // Reset everything
-        currentQuestion = 0;
-        selectedAnswer = null;
-        userTraits = {};
+        try {
+          const result = document.getElementById("resultContainer");
+          if (result) {
+            result.style.display = "none";
+          }
 
-        // Hide result and show header
-        document.getElementById("resultContainer").style.display = "none";
-        document.getElementById("quizHeader").style.display = "block";
-
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: "smooth" });
+          startQuiz(true);
+        } catch (error) {
+          console.error("Error restarting quiz:", error);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
       }
 
       function goToHome() {
@@ -6974,6 +7708,12 @@
 
       // Add some interactive elements when page loads
       document.addEventListener("DOMContentLoaded", function () {
+        try {
+          startQuiz(false);
+        } catch (error) {
+          console.error("Auto-start failed:", error);
+        }
+
         // Add floating particles animation - disabled for performance
         // createFloatingParticles();
 
