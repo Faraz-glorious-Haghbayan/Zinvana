@@ -1,0 +1,2474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Serious, professional mental health self-check with evidence-informed screening prompts covering mood, anxiety, sleep, attention, impulse control, and safety."
+    />
+    <meta
+      name="keywords"
+      content="mental health self assessment, online mental health screening, depression anxiety questionnaire, professional mental health check, mood and anxiety self test"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Mental Health Self-Check | Professional Screening"
+    />
+    <meta
+      property="og:description"
+      content="Complete a serious, clinician-style mental health self-check with structured prompts, safety guidance, and next-step recommendations."
+    />
+    <meta
+      property="og:url"
+      content="https://zinvana.com/mental-health.html"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Mental Health Self-Check | Professional Screening</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fredoka:wght@500;600&family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brand1: #6366f1;
+        --brand2: #764ba2;
+        --brand3: #ff6b35;
+        --accent: #ffd700;
+        --accent2: #ff9f1c;
+        --bg: #1a1a2e;
+        --bg-alt: #16213e;
+        --bg-deep: #0f3460;
+        --card: rgba(255, 255, 255, 0.05);
+        --panel: rgba(255, 255, 255, 0.06);
+        --text: #f7fafc;
+        --muted: #a0aec0;
+        --danger: #ff6b6b;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        --radius: 16px;
+        --radius-lg: 22px;
+        --border: rgba(255, 255, 255, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "Fredoka", "Segoe UI", sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--bg) 0%,
+          var(--bg-alt) 40%,
+          var(--bg-deep) 100%
+        );
+        color: var(--text);
+        min-height: 100vh;
+        padding: 0 16px 64px;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 20%,
+            rgba(99, 102, 241, 0.2),
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 80% 10%,
+            rgba(255, 159, 28, 0.18),
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 50% 80%,
+            rgba(255, 215, 0, 0.14),
+            transparent 38%
+          );
+        pointer-events: none;
+        opacity: 0.9;
+        z-index: -1;
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        padding-top: 92px;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 32px;
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(16px) saturate(160%);
+        border-bottom: 1px solid var(--border);
+        z-index: 1000;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        color: var(--text);
+        text-decoration: none;
+        font-family: "Fredoka", "Inter", sans-serif;
+      }
+
+      .nav-brand span {
+        display: inline-flex;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--brand1), var(--brand2));
+        align-items: center;
+        justify-content: center;
+        color: #0b1020;
+        font-weight: 900;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1001;
+      }
+
+      .nav-toggle span {
+        width: 24px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      .header-hero {
+        display: grid;
+        gap: 16px;
+        padding: 34px 30px;
+        border-radius: var(--radius-lg);
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0.06)
+        );
+        border: 1px solid var(--border);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header-hero::after {
+        content: "";
+        position: absolute;
+        right: -90px;
+        top: -60px;
+        width: 240px;
+        height: 240px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 215, 0, 0.12),
+          transparent 60%
+        );
+        filter: blur(10px);
+      }
+
+      header h1 {
+        margin: 0;
+        font-family: "Fredoka", "Inter", sans-serif;
+        letter-spacing: -0.02em;
+        font-size: clamp(30px, 4.5vw, 44px);
+      }
+
+      header p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 900px;
+      }
+
+      .badges {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .badge {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 13px;
+        border: 1px solid var(--border);
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 22px;
+        margin-top: 26px;
+      }
+
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 22px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+      }
+
+      .panel h2 {
+        margin: 0 0 8px;
+        font-size: 20px;
+        letter-spacing: -0.01em;
+      }
+
+      .panel p {
+        margin: 0 0 12px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .disclaimer {
+        display: grid;
+        gap: 10px;
+        padding: 18px;
+        border-radius: var(--radius);
+        background: rgba(255, 107, 107, 0.08);
+        border: 1px solid rgba(255, 107, 107, 0.4);
+        color: #ffd5d5;
+        line-height: 1.5;
+      }
+
+      .disclaimer strong {
+        color: #ffecec;
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+        margin-top: 12px;
+      }
+
+      .question-group {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: var(--radius);
+        padding: 16px;
+        display: grid;
+        gap: 10px;
+        transition: border 0.2s ease, transform 0.2s ease;
+      }
+
+      .question-group:hover {
+        border-color: rgba(99, 102, 241, 0.45);
+        transform: translateY(-2px);
+      }
+
+      .question-title {
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .question-meta {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .options {
+        display: grid;
+        gap: 8px;
+      }
+
+      label.option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        cursor: pointer;
+        transition: border 0.2s ease, background 0.2s ease;
+      }
+
+      label.option:hover {
+        border-color: rgba(99, 102, 241, 0.5);
+        background: rgba(99, 102, 241, 0.08);
+      }
+
+      label.option input {
+        accent-color: var(--accent);
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 6px;
+      }
+
+      button {
+        border: none;
+        border-radius: 12px;
+        padding: 12px 18px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.2s ease;
+        color: #0c1724;
+      }
+
+      button.primary {
+        background: linear-gradient(120deg, var(--brand1), var(--brand3));
+        box-shadow: 0 12px 30px rgba(99, 102, 241, 0.25);
+        color: #0b1020;
+      }
+
+      button.secondary {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+      }
+
+      .progress {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .progress-track {
+        position: relative;
+        flex: 1;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        position: absolute;
+        inset: 0;
+        width: 0;
+        background: linear-gradient(90deg, var(--brand1), var(--brand3));
+        border-radius: 999px;
+        transition: width 0.25s ease;
+      }
+
+      .result {
+        margin-top: 12px;
+        padding: 18px;
+        border-radius: var(--radius);
+        background: rgba(38, 215, 199, 0.06);
+        border: 1px solid rgba(38, 215, 199, 0.3);
+        display: grid;
+        gap: 12px;
+      }
+
+      .result h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .result p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .concern-meter {
+        display: grid;
+        gap: 8px;
+      }
+
+      .concern-meter-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .concern-level {
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+      }
+
+      .concern-level.low {
+        background: rgba(52, 211, 153, 0.2);
+        color: #86efac;
+      }
+
+      .concern-level.mild {
+        background: rgba(251, 191, 36, 0.2);
+        color: #fbbf24;
+      }
+
+      .concern-level.moderate {
+        background: rgba(245, 158, 11, 0.2);
+        color: #fcd34d;
+      }
+
+      .concern-level.high {
+        background: rgba(239, 68, 68, 0.2);
+        color: #fca5a5;
+      }
+
+      .concern-meter-track {
+        position: relative;
+        height: 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+
+      .concern-meter-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 999px;
+        transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        box-shadow: 0 0 12px currentColor;
+      }
+
+      .concern-meter-fill.low {
+        background: linear-gradient(90deg, #34d399, #10b981);
+        color: #34d399;
+      }
+
+      .concern-meter-fill.mild {
+        background: linear-gradient(90deg, #fbbf24, #f59e0b);
+        color: #fbbf24;
+      }
+
+      .concern-meter-fill.moderate {
+        background: linear-gradient(90deg, #f97316, #ea580c);
+        color: #f97316;
+      }
+
+      .concern-meter-fill.high {
+        background: linear-gradient(90deg, #ef4444, #dc2626);
+        color: #ef4444;
+      }
+
+      .concern-meter-scale {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        color: var(--muted);
+        padding: 0 2px;
+      }
+
+      .concern-meter-scale span {
+        opacity: 0.6;
+      }
+
+      .concern-note {
+        margin-top: 4px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .tag {
+        padding: 6px 10px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text);
+        font-size: 13px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .alert {
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 107, 107, 0.5);
+        background: rgba(255, 107, 107, 0.1);
+        color: #ffe1e1;
+        line-height: 1.5;
+      }
+
+      .resources {
+        display: grid;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .resource-item {
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .resource-item span {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .resource-item a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .resource-item a:hover {
+        text-decoration: underline;
+      }
+
+      .section {
+        margin-top: 26px;
+        padding: 24px;
+      }
+
+      .section h2 {
+        margin: 0 0 10px;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+      }
+
+      .lead {
+        color: var(--muted);
+        line-height: 1.7;
+        margin: 0 0 12px;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 14px;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 14px;
+      }
+
+      .stat {
+        padding: 14px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: grid;
+        gap: 6px;
+      }
+
+      .stat strong {
+        font-size: 17px;
+        letter-spacing: -0.01em;
+      }
+
+      .list-clean {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 6px;
+        color: var(--muted);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 13px;
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .callout-urgent {
+        padding: 16px;
+        border-radius: 14px;
+        background: rgba(255, 107, 107, 0.12);
+        border: 1px solid rgba(255, 107, 107, 0.5);
+        color: #ffe1e1;
+        line-height: 1.6;
+      }
+
+      .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.08);
+        margin: 14px 0;
+      }
+
+      .faq {
+        display: grid;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .faq-item {
+        padding: 14px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .faq-item h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+      }
+
+      .faq-item p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 12px;
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      footer {
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 960px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 12px 20px;
+        }
+
+        .nav-toggle {
+          display: flex;
+        }
+
+        .nav-brand {
+          font-size: 14px;
+          gap: 8px;
+        }
+
+        .nav-brand img {
+          width: 28px !important;
+          height: 28px !important;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          width: 280px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0;
+          background: rgba(15, 23, 42, 0.98);
+          backdrop-filter: blur(20px);
+          padding: 80px 24px 24px;
+          box-shadow: -8px 0 30px rgba(0, 0, 0, 0.5);
+          transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: 999;
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links a {
+          width: 100%;
+          padding: 14px 16px;
+          font-size: 16px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .page {
+          padding-top: 76px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        body {
+          padding: 0 12px 48px;
+        }
+
+        .panel,
+        header {
+          padding: 16px;
+        }
+
+        label.option {
+          align-items: flex-start;
+        }
+
+        .header-hero {
+          padding: 24px 18px;
+        }
+
+        header h1 {
+          font-size: 26px;
+        }
+
+        .actions {
+          flex-direction: column;
+        }
+
+        .actions button,
+        .actions a {
+          width: 100%;
+          text-align: center;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        nav {
+          padding: 10px 16px;
+        }
+
+        .nav-brand {
+          font-size: 13px;
+        }
+
+        .nav-links {
+          width: 100%;
+          right: -100%;
+        }
+
+        .page {
+          padding-top: 70px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a
+        class="nav-brand"
+        href="https://zinvana.com/"
+        aria-label="Back to Zinvana home"
+        ><img
+          src="zinvanalogo.png"
+          alt="Zinvana logo"
+          style="width: 34px; height: 34px; border-radius: 50%"
+        />Zinvana | Mental Health Self-Check</a
+      >
+      <button
+        class="nav-toggle"
+        aria-label="Toggle navigation menu"
+        id="navToggle"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="https://zinvana.com/">Home</a>
+        <a href="#quiz">Assessment</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#faq">FAQ</a>
+        <a href="#action">Next steps</a>
+      </div>
+    </nav>
+    <div class="page" id="top">
+      <header class="header-hero">
+        <div class="badges">
+          <span class="badge">Confidential self-check</span>
+          <span class="badge">Evidence-informed prompts</span>
+          <span class="badge">No data stored</span>
+        </div>
+        <h1>Mental Health Self-Check</h1>
+        <p>
+          A serious, clinician-style reflection that translates your answers
+          into clear signals across mood, anxiety, sleep, attention, behavior,
+          social connection, stress, and safety. Use this to prepare for
+          licensed care—not as a diagnosis.
+        </p>
+        <div class="actions">
+          <button
+            type="button"
+            class="primary"
+            onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})"
+          >
+            Start assessment
+          </button>
+          <button
+            type="button"
+            class="secondary"
+            onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})"
+          >
+            How it works
+          </button>
+          <a
+            class="secondary"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              padding: 12px 18px;
+              text-decoration: none;
+            "
+            href="https://zinvana.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Visit main site
+          </a>
+        </div>
+      </header>
+
+      <div class="layout" id="quiz">
+        <section class="panel">
+          <div class="disclaimer">
+            <strong>Clinical safety first.</strong>
+            <div>
+              If you have thoughts of self-harm, harming others, or cannot keep
+              yourself safe, contact local emergency services or a crisis line
+              right now. This tool does not provide medical advice or emergency
+              support.
+            </div>
+          </div>
+
+          <form id="assessment">
+            <div class="progress" aria-live="polite">
+              <div class="progress-track">
+                <div class="progress-bar" id="progress-bar"></div>
+              </div>
+              <span id="progress-label" class="question-meta"
+                >0 of 24 answered</span
+              >
+            </div>
+
+            <div class="question-group" data-category="mood" data-id="q1">
+              <div class="question-title">
+                I struggle to feel enjoyment, even in activities I used to like
+              </div>
+              <div class="question-meta">Mood | Past two weeks</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q1" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q1" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q1" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q1" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="mood" data-id="q2">
+              <div class="question-title">
+                I feel low, sad, or empty most days
+              </div>
+              <div class="question-meta">Mood | Past two weeks</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q2" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q2" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q2" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q2" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="mood" data-id="q3">
+              <div class="question-title">
+                My mood swings quickly between feeling okay and feeling down
+              </div>
+              <div class="question-meta">Mood | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q3" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q3" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q3" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q3" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="mood" data-id="q4">
+              <div class="question-title">
+                I feel irritable or on edge with people around me
+              </div>
+              <div class="question-meta">Mood | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q4" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q4" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q4" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q4" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="anxiety" data-id="q5">
+              <div class="question-title">
+                I feel nervous or anxious without a clear reason
+              </div>
+              <div class="question-meta">Anxiety | Past two weeks</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q5" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q5" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q5" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q5" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="anxiety" data-id="q6">
+              <div class="question-title">
+                I get sudden surges of panic or physical symptoms like racing
+                heart
+              </div>
+              <div class="question-meta">Anxiety | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q6" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q6" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q6" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q6" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="anxiety" data-id="q7">
+              <div class="question-title">
+                I avoid situations because they make me anxious
+              </div>
+              <div class="question-meta">Anxiety | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q7" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q7" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q7" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q7" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="anxiety" data-id="q8">
+              <div class="question-title">
+                My mind races with worry at night
+              </div>
+              <div class="question-meta">Anxiety | Past two weeks</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q8" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q8" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q8" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q8" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="sleep" data-id="q9">
+              <div class="question-title">
+                I struggle to fall asleep or stay asleep
+              </div>
+              <div class="question-meta">Sleep | Past two weeks</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q9" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q9" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q9" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q9" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="sleep" data-id="q10">
+              <div class="question-title">
+                I wake up feeling unrefreshed or exhausted
+              </div>
+              <div class="question-meta">Sleep | Past two weeks</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q10" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q10" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q10" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q10" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="sleep" data-id="q11">
+              <div class="question-title">
+                I oversleep or nap to cope with stress
+              </div>
+              <div class="question-meta">Sleep | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q11" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q11" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q11" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q11" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="attention" data-id="q12">
+              <div class="question-title">
+                I lose focus quickly on tasks that require sustained attention
+              </div>
+              <div class="question-meta">Attention | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q12" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q12" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q12" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q12" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="attention" data-id="q13">
+              <div class="question-title">
+                I forget appointments, tasks, or misplace important items
+              </div>
+              <div class="question-meta">Attention | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q13" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q13" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q13" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q13" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="attention" data-id="q14">
+              <div class="question-title">
+                I feel restless or need to move when I should stay seated
+              </div>
+              <div class="question-meta">Attention | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q14" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q14" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q14" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q14" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="behavior" data-id="q15">
+              <div class="question-title">
+                I act on impulses (spending, texting, posting) and regret it
+                later
+              </div>
+              <div class="question-meta">Behavior | Past six months</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q15" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q15" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q15" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q15" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="behavior" data-id="q16">
+              <div class="question-title">
+                I use substances (alcohol, nicotine, other) to manage feelings
+              </div>
+              <div class="question-meta">Behavior | Past six months</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q16" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q16" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q16" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q16" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="behavior" data-id="q17">
+              <div class="question-title">
+                I overwork or stay constantly busy to avoid feelings
+              </div>
+              <div class="question-meta">Behavior | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q17" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q17" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q17" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q17" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="social" data-id="q18">
+              <div class="question-title">
+                I withdraw from friends or avoid social plans
+              </div>
+              <div class="question-meta">Social | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q18" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q18" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q18" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q18" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="social" data-id="q19">
+              <div class="question-title">
+                I feel easily overwhelmed by conflict or criticism
+              </div>
+              <div class="question-meta">Social | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q19" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q19" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q19" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q19" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="social" data-id="q20">
+              <div class="question-title">
+                I rely on others for reassurance to feel okay
+              </div>
+              <div class="question-meta">Social | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q20" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q20" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q20" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q20" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="stress" data-id="q21">
+              <div class="question-title">
+                Stress feels constant and hard to turn off
+              </div>
+              <div class="question-meta">Stress | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q21" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q21" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q21" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q21" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="stress" data-id="q22">
+              <div class="question-title">
+                I have trouble relaxing even in calm settings
+              </div>
+              <div class="question-meta">Stress | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q22" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q22" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q22" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q22" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="safety" data-id="q23">
+              <div class="question-title">
+                I have thoughts of self-harm or not wanting to live
+              </div>
+              <div class="question-meta">Safety | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q23" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q23" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q23" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q23" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group" data-category="safety" data-id="q24">
+              <div class="question-title">
+                My anger or impulses feel unsafe to me or others
+              </div>
+              <div class="question-meta">Safety | Past month</div>
+              <div class="options">
+                <label class="option"
+                  ><input type="radio" name="q24" value="0" />Never</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q24" value="1" />Sometimes</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q24" value="2" />Often</label
+                >
+                <label class="option"
+                  ><input type="radio" name="q24" value="3" />Always</label
+                >
+              </div>
+            </div>
+
+            <div class="actions">
+              <button type="button" class="primary" id="calculate">
+                Review my responses
+              </button>
+              <button type="reset" class="secondary" id="reset">
+                Reset form
+              </button>
+            </div>
+          </form>
+
+          <div id="output" class="result" aria-live="polite">
+            <h3>Results will appear here</h3>
+            <p>
+              Complete the questions above to see a professional-style
+              interpretation and suggested next steps.
+            </p>
+          </div>
+        </section>
+
+        <aside class="panel">
+          <h2>How to use this self-check</h2>
+          <p>
+            This screening-style tool mirrors what many clinicians ask during
+            intake. It summarizes risk indicators and gives you talking points
+            for your next appointment. It does not diagnose or replace clinical
+            judgment.
+          </p>
+
+          <div class="tags" aria-label="domains covered">
+            <span class="tag">Mood regulation</span>
+            <span class="tag">Anxiety and panic</span>
+            <span class="tag">Sleep quality</span>
+            <span class="tag">Attention and executive function</span>
+            <span class="tag">Impulse control</span>
+            <span class="tag">Safety planning</span>
+          </div>
+
+          <div class="resources">
+            <div class="resource-item">
+              <div>
+                <strong>Emergency</strong>
+                <span>Local emergency services or nearest ER</span>
+              </div>
+              <a href="tel:911">Call</a>
+            </div>
+            <div class="resource-item">
+              <div>
+                <strong>Crisis line</strong>
+                <span>Use your regional crisis hotline or text service</span>
+              </div>
+              <a
+                href="https://www.opencounseling.com/suicide-hotlines"
+                target="_blank"
+                rel="noreferrer"
+                >Find hotline</a
+              >
+            </div>
+            <div class="resource-item">
+              <div>
+                <strong>Follow-up</strong>
+                <span>Share your responses with a licensed clinician</span>
+              </div>
+              <a
+                href="mailto:?subject=Mental%20Health%20Self-Check&body=I%20completed%20a%20self-check.%20Here%20are%20my%20notes%3A"
+                >Email notes</a
+              >
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="section panel" id="coverage">
+        <div class="kicker">Professional context</div>
+        <h2>Why this self-check exists</h2>
+        <p class="lead">
+          This page is written in the tone of a clinical intake to help you
+          prepare for conversations with licensed professionals. It covers mood,
+          anxiety, sleep, attention, safety, and functioning—domains clinicians
+          routinely review before offering a formal diagnosis or treatment plan.
+        </p>
+        <div class="grid-3">
+          <div class="stat">
+            <strong>Evidence-informed prompts</strong>
+            <span class="question-meta"
+              >Mirrors intake-style questions drawn from common screening
+              frameworks.</span
+            >
+          </div>
+          <div class="stat">
+            <strong>Privacy-first design</strong>
+            <span class="question-meta"
+              >Client-side only. No responses are stored, transmitted, or
+              logged.</span
+            >
+          </div>
+          <div class="stat">
+            <strong>Actionable outputs</strong>
+            <span class="question-meta"
+              >Generates talking points you can share with a clinician or
+              support network.</span
+            >
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="grid-2">
+          <div class="stat">
+            <strong>What this tool is</strong>
+            <ul class="list-clean">
+              <li>
+                Structured reflection to surface patterns across core mental
+                health domains.
+              </li>
+              <li>
+                A preparation aid for telehealth, primary care, psychiatry, or
+                therapy visits.
+              </li>
+              <li>
+                A safety-forward reminder to seek urgent care when risk signals
+                appear.
+              </li>
+            </ul>
+          </div>
+          <div class="stat">
+            <strong>What this tool is not</strong>
+            <ul class="list-clean">
+              <li>Not a diagnosis, treatment, or medical device.</li>
+              <li>
+                Not a substitute for clinician-led assessment or crisis
+                services.
+              </li>
+              <li>
+                Not storing, scoring, or transmitting personal health
+                information.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section panel">
+        <div class="kicker">Clinical-style coverage</div>
+        <h2>What clinicians often explore</h2>
+        <div class="grid-3">
+          <div class="stat">
+            <strong>Mood and affect</strong>
+            <span class="question-meta"
+              >Patterns of low mood, anhedonia, irritability, and how long they
+              persist.</span
+            >
+          </div>
+          <div class="stat">
+            <strong>Anxiety and arousal</strong>
+            <span class="question-meta"
+              >Generalized worry, panic-like symptoms, somatic cues, and
+              triggers.</span
+            >
+          </div>
+          <div class="stat">
+            <strong>Sleep and recovery</strong>
+            <span class="question-meta"
+              >Latency, maintenance, oversleeping, and restorative quality
+              across weeks.</span
+            >
+          </div>
+          <div class="stat">
+            <strong>Attention and executive function</strong>
+            <span class="question-meta"
+              >Focus, task initiation, working memory, organization, and
+              distractibility.</span
+            >
+          </div>
+          <div class="stat">
+            <strong>Impulse and risk</strong>
+            <span class="question-meta"
+              >Spending, driving, substances, online behavior, or other
+              high-consequence actions.</span
+            >
+          </div>
+          <div class="stat">
+            <strong>Functioning and impact</strong>
+            <span class="question-meta"
+              >Effect on work, relationships, self-care, and daily
+              reliability.</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section panel" id="faq">
+        <div class="kicker">Scoring and safety</div>
+        <h2>How to interpret the results</h2>
+        <p class="lead">
+          Higher totals and higher category averages suggest a stronger signal
+          to seek professional assessment. Safety signals always override other
+          scores.
+        </p>
+        <div class="grid-2">
+          <div class="stat">
+            <strong>Score signals</strong>
+            <ul class="list-clean">
+              <li>
+                Low indicator: maintain routines, keep monitoring, and
+                prioritize sleep and activity.
+              </li>
+              <li>
+                Mild to moderate concern: schedule a licensed clinician visit;
+                bring this summary.
+              </li>
+              <li>
+                High concern: arrange professional care promptly; discuss risk
+                reduction and supports.
+              </li>
+            </ul>
+          </div>
+          <div class="stat">
+            <strong>Improve your consult</strong>
+            <ul class="list-clean">
+              <li>
+                Note recent changes: onset, frequency, and what makes symptoms
+                better or worse.
+              </li>
+              <li>
+                List medications, supplements, sleep schedule, and substance use
+                if relevant.
+              </li>
+              <li>
+                Bring concrete examples of impact at work, school, or in
+                relationships.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout-urgent">
+          <strong>Urgent safety guidance:</strong> If you feel unable to stay
+          safe, contact emergency services immediately. Consider sharing your
+          responses with a trusted person and seeking an in-person evaluation.
+        </div>
+      </section>
+
+      <section class="section panel" id="action">
+        <div class="kicker">Frequently asked</div>
+        <h2>Common questions about mental health self-checks</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <h3>Is this a diagnosis?</h3>
+            <p>
+              No. This is an informational screening-style tool. Only licensed
+              clinicians can diagnose or treat mental health conditions.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Will my answers be stored or shared?</h3>
+            <p>
+              Nothing is stored or transmitted from this page. All scoring
+              happens locally in your browser.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>What should I do with the results?</h3>
+            <p>
+              Use the insights as talking points with a licensed therapist,
+              psychiatrist, primary care clinician, or counselor. Higher scores
+              and any safety concerns merit timely professional follow-up.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>When should I seek urgent help?</h3>
+            <p>
+              If you experience thoughts of self-harm, harming others, or feel
+              unable to stay safe, contact emergency services or a crisis
+              hotline immediately.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Does this replace a clinical assessment?</h3>
+            <p>
+              No. It complements clinical care by organizing your observations
+              so you can communicate clearly with professionals.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section panel">
+        <div class="kicker">Next steps</div>
+        <h2>Turn reflection into action</h2>
+        <ul class="list-clean">
+          <li>
+            Share your responses securely with a licensed clinician and schedule
+            a consultation.
+          </li>
+          <li>
+            Plan practical changes: consistent sleep, movement, nutrition,
+            social connection, and reduction of substances that worsen mood or
+            anxiety.
+          </li>
+          <li>
+            Set a follow-up date to reassess symptoms and functioning with a
+            professional.
+          </li>
+          <li>
+            Use crisis resources immediately if safety becomes a concern between
+            appointments.
+          </li>
+        </ul>
+      </section>
+
+      <footer
+      style="
+        background: linear-gradient(
+          135deg,
+          #0f3460 0%,
+
+          #16213e 50%,
+
+          #1a1a2e 100%
+        );
+
+        color: #ffffff;
+
+        margin-top: 80px;
+
+        position: relative;
+
+        overflow: hidden;
+
+        border-top: 1px solid rgba(255, 215, 0, 0.2);
+      "
+    >
+      <div
+        style="
+          position: absolute;
+
+          top: 0;
+
+          left: 0;
+
+          right: 0;
+
+          bottom: 0;
+
+          background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
+
+          z-index: 1;
+        "
+      ></div>
+
+      <div
+        style="
+          position: relative;
+
+          z-index: 2;
+
+          max-width: 1200px;
+
+          margin: 0 auto;
+
+          padding: 60px 40px 40px;
+
+          display: grid;
+
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+          gap: 40px;
+        "
+      >
+        <div
+          style="display: flex; flex-direction: column; align-items: flex-start"
+        >
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana"
+            style="
+              width: 50px;
+
+              height: 50px;
+
+              border-radius: 12px;
+
+              margin-bottom: 16px;
+
+              box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+            "
+          />
+
+          <h3
+            style="
+              color: #ffffff;
+
+              font-size: 1.5rem;
+
+              margin-bottom: 16px;
+
+              font-weight: 600;
+            "
+          >
+            Zinvana
+          </h3>
+
+          <p
+            style="
+              color: #94a3b8;
+
+              line-height: 1.6;
+
+              margin: 0;
+
+              font-size: 1rem;
+
+              margin-bottom: 20px;
+            "
+          >
+            Empowering mental wellness through innovative digital solutions.
+          </p>
+
+          <div style="display: flex; gap: 16px; margin-bottom: 20px">
+            <a
+              href="https://x.com/farazglori80528"
+              target="_blank"
+              style="
+                width: 40px;
+
+                height: 40px;
+
+                background: rgba(255, 255, 255, 0.1);
+
+                border-radius: 50%;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+
+                color: #ffffff;
+
+                text-decoration: none;
+
+                transition: all 0.3s ease;
+
+                backdrop-filter: blur(10px);
+              "
+              onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'"
+              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
+              target="_blank"
+              style="
+                width: 40px;
+
+                height: 40px;
+
+                background: rgba(255, 255, 255, 0.1);
+
+                border-radius: 50%;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+
+                color: #ffffff;
+
+                text-decoration: none;
+
+                transition: all 0.3s ease;
+
+                backdrop-filter: blur(10px);
+              "
+              onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'"
+              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <p
+            style="
+              color: #94a3b8;
+
+              font-size: 0.9rem;
+
+              margin: 0;
+
+              line-height: 1.5;
+            "
+          >
+            Stay updated with our latest quizzes and personality assessments!
+          </p>
+        </div>
+
+        <div>
+          <h4
+            style="
+              color: #e2e8f0;
+
+              font-size: 1.125rem;
+
+              margin-bottom: 20px;
+
+              font-weight: 600;
+            "
+          >
+            Popular Quizzes
+          </h4>
+
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 12px">
+              <a
+                href="leaders.html"
+                style="
+                  color: #94a3b8;
+
+                  text-decoration: none;
+
+                  transition: color 0.3s ease;
+
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Historical Leaders Personality Quiz</a
+              >
+            </li>
+
+            <li style="margin-bottom: 12px">
+              <a
+                href="football-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+
+                  text-decoration: none;
+
+                  transition: color 0.3s ease;
+
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Football Personality Quiz</a
+              >
+            </li>
+
+            <li style="margin-bottom: 12px">
+              <a
+                href="wojak-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+
+                  text-decoration: none;
+
+                  transition: color 0.3s ease;
+
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Wojak Personality Quiz</a
+              >
+            </li>
+
+            <li style="margin-bottom: 12px">
+              <a
+                href="perfect-country.html"
+                style="
+                  color: #94a3b8;
+
+                  text-decoration: none;
+
+                  transition: color 0.3s ease;
+
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Perfect Country Quiz</a
+              >
+            </li>
+
+            <li style="margin-bottom: 12px">
+              <a
+                href="youtubers-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+
+                  text-decoration: none;
+
+                  transition: color 0.3s ease;
+
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >YouTubers Personality Quiz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4
+            style="
+              color: #e2e8f0;
+
+              font-size: 1.125rem;
+
+              margin-bottom: 20px;
+
+              font-weight: 600;
+            "
+          >
+            Resources
+          </h4>
+
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 12px">
+              <a
+                href="/about.html"
+                style="
+                  color: #94a3b8;
+
+                  text-decoration: none;
+
+                  transition: color 0.3s ease;
+
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >About Us</a
+              >
+            </li>
+
+            <li style="margin-bottom: 12px">
+              <a
+                href="/privacy.html"
+                style="
+                  color: #94a3b8;
+
+                  text-decoration: none;
+
+                  transition: color 0.3s ease;
+
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        style="
+          position: relative;
+
+          z-index: 2;
+
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+          padding: 30px 40px;
+        "
+      >
+        <div
+          style="
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 20px;
+          "
+        >
+          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+            &copy; 2025 Zinvana. All rights reserved.
+          </p>
+
+          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+            Made with ❤️ by the Zinvana Team
+          </p>
+        </div>
+
+        <div
+          style="
+            color: #64748b;
+
+            font-size: 0.85rem;
+
+            margin: 20px auto 0;
+
+            text-align: center;
+
+            line-height: 1.5;
+
+            max-width: 600px;
+          "
+        >
+          Disclaimer: This self-assessment tool is for informational purposes
+		  only and does not constitute medical advice, diagnosis, or treatment.
+		  Always seek the advice of a qualified healthcare provider with any
+		  questions regarding a medical condition or mental health concern.
+        </div>
+      </div>
+    </footer>
+    </div>
+
+    <script>
+      (function () {
+        const form = document.getElementById("assessment");
+        const output = document.getElementById("output");
+        const progressBar = document.getElementById("progress-bar");
+        const progressLabel = document.getElementById("progress-label");
+        const totalQuestions = form.querySelectorAll(".question-group").length;
+        const calculateBtn = document.getElementById("calculate");
+        const resetBtn = document.getElementById("reset");
+
+        const thresholds = [
+          { max: 18, label: "Low indicator", tone: "balanced" },
+          { max: 36, label: "Mild concern", tone: "caution" },
+          { max: 54, label: "Moderate concern", tone: "caution" },
+          { max: 72, label: "High concern", tone: "alert" },
+        ];
+
+        const toneMap = {
+          balanced: {
+            title: "Low indicator",
+            color: "rgba(38, 215, 199, 0.2)",
+            border: "rgba(38, 215, 199, 0.5)",
+          },
+          caution: {
+            title: "Monitor closely",
+            color: "rgba(240, 195, 108, 0.18)",
+            border: "rgba(240, 195, 108, 0.6)",
+          },
+          alert: {
+            title: "High concern",
+            color: "rgba(255, 107, 107, 0.18)",
+            border: "rgba(255, 107, 107, 0.6)",
+          },
+        };
+
+        function updateProgress() {
+          const answered = Array.from(
+            form.querySelectorAll("input[type='radio']:checked")
+          );
+          const uniqueQuestions = new Set(answered.map((input) => input.name));
+          const ratio = uniqueQuestions.size / totalQuestions;
+          progressBar.style.width = `${Math.round(ratio * 100)}%`;
+          progressLabel.textContent = `${uniqueQuestions.size} of ${totalQuestions} answered`;
+        }
+
+        function categorySummary(categoryScores, counts) {
+          return Object.keys(categoryScores)
+            .map((cat) => {
+              const avg = categoryScores[cat] / counts[cat];
+              if (avg >= 2.5) return `${cat}: elevated`; // high frequency or severity
+              if (avg >= 1.5) return `${cat}: monitor`;
+              return `${cat}: low`;
+            })
+            .join(" \u00b7 ");
+        }
+
+        function interpret(totalScore, categoryScores, counts, safetyFlag) {
+          const threshold =
+            thresholds.find((item) => totalScore <= item.max) ||
+            thresholds[thresholds.length - 1];
+          const tone = toneMap[threshold.tone];
+          const categoryLine = categorySummary(categoryScores, counts);
+
+          const advisory = [];
+          if (safetyFlag) {
+            advisory.push(
+              "Safety: talk to a clinician immediately; contact emergency services if you feel at risk."
+            );
+          }
+          if (categoryScores.mood && categoryScores.mood / counts.mood >= 2) {
+            advisory.push(
+              "Mood: persistent low mood or anhedonia warrants professional evaluation."
+            );
+          }
+          if (
+            categoryScores.anxiety &&
+            categoryScores.anxiety / counts.anxiety >= 2
+          ) {
+            advisory.push(
+              "Anxiety: consider discussing generalized anxiety or panic symptoms with a clinician."
+            );
+          }
+          if (
+            categoryScores.sleep &&
+            categoryScores.sleep / counts.sleep >= 2
+          ) {
+            advisory.push(
+              "Sleep: optimize sleep hygiene; chronic sleep issues often need assessment."
+            );
+          }
+          if (
+            categoryScores.attention &&
+            categoryScores.attention / counts.attention >= 2
+          ) {
+            advisory.push(
+              "Attention: concentration concerns can relate to anxiety, ADHD, or mood; seek a structured evaluation."
+            );
+          }
+          if (
+            categoryScores.behavior &&
+            categoryScores.behavior / counts.behavior >= 2
+          ) {
+            advisory.push(
+              "Behavior: impulse or emotion regulation issues benefit from targeted therapy and risk review."
+            );
+          }
+          if (
+            categoryScores.functioning &&
+            categoryScores.functioning / counts.functioning >= 2
+          ) {
+            advisory.push(
+              "Functioning: day-to-day impact suggests prioritizing clinical follow-up."
+            );
+          }
+
+          const guidance = advisory.length
+            ? advisory
+            : [
+                "Your responses show low immediate indicators. Maintain routines and monitor changes.",
+              ];
+
+          const maxScore = 72;
+          const fillPercent = Math.min((totalScore / maxScore) * 100, 100);
+          const levelClass =
+            threshold.tone === "balanced"
+              ? "low"
+              : threshold.tone === "alert"
+              ? "high"
+              : "mild";
+
+          output.innerHTML = `
+					<h3>${tone.title} | Total score: ${totalScore} / ${maxScore}</h3>
+					<div class="concern-meter">
+						<div class="concern-meter-label">
+							<span>Overall Concern Level</span>
+							<span class="concern-level ${levelClass}">${threshold.label.toUpperCase()}</span>
+						</div>
+						<div class="concern-meter-track">
+							<div class="concern-meter-fill ${levelClass}" style="width: ${fillPercent}%;"></div>
+						</div>
+						<div class="concern-meter-scale">
+							<span>Low (0)</span>
+							<span>Moderate (36)</span>
+							<span>High (72)</span>
+						</div>
+						<p class="concern-note">Your score reflects patterns across mood, anxiety, sleep, attention, behavior, and functioning.</p>
+					</div>
+					<p>${categoryLine}</p>
+					${
+            safetyFlag
+              ? `<div class="alert">Safety is the top priority. If you cannot stay safe, contact local emergency services now.</div>`
+              : ""
+          }
+					<div class="resources" aria-label="personalized guidance">
+						${guidance
+              .map(
+                (item) =>
+                  `<div class="resource-item"><span>${item}</span><a href="mailto:?subject=Mental%20Health%20Self-Check%20Notes&body=${encodeURIComponent(
+                    item
+                  )}">Share</a></div>`
+              )
+              .join("")}
+					</div>
+					<p class="question-meta">This interpretation is informational and not diagnostic. Please review with a licensed clinician.</p>
+				`;
+
+          output.style.background = tone.color;
+          output.style.border = `1px solid ${tone.border}`;
+        }
+
+        function calculate() {
+          const radios = Array.from(
+            form.querySelectorAll("input[type='radio']")
+          );
+          const answered = radios.filter((r) => r.checked);
+          const answeredQuestions = new Set(answered.map((r) => r.name));
+
+          if (answeredQuestions.size < totalQuestions) {
+            output.innerHTML = `
+						<h3>Complete all questions</h3>
+						<p>Please respond to all prompts to receive a balanced interpretation.</p>
+					`;
+            return;
+          }
+
+          let totalScore = 0;
+          const categoryScores = {};
+          const counts = {};
+          let safetyFlag = false;
+
+          answered.forEach((input) => {
+            const value = parseInt(input.value, 10) || 0;
+            const group = input.closest(".question-group");
+            const category = group?.dataset.category || "general";
+            totalScore += value;
+            categoryScores[category] = (categoryScores[category] || 0) + value;
+            counts[category] = (counts[category] || 0) + 1;
+            if (category === "safety" && value >= 1) {
+              safetyFlag = true;
+            }
+          });
+
+          interpret(totalScore, categoryScores, counts, safetyFlag);
+        }
+
+        calculateBtn.addEventListener("click", calculate);
+        resetBtn.addEventListener("click", () => {
+          output.innerHTML = `
+					<h3>Results will appear here</h3>
+					<p>Complete the questions above to see a professional-style interpretation and suggested next steps.</p>
+				`;
+          output.style.background = "rgba(38, 215, 199, 0.06)";
+          output.style.border = "1px solid rgba(38, 215, 199, 0.3)";
+          progressBar.style.width = "0%";
+          progressLabel.textContent = `0 of ${totalQuestions} answered`;
+        });
+
+        form.addEventListener("change", updateProgress);
+        updateProgress();
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is this a diagnosis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This is an informational screening-style tool. Only licensed clinicians can diagnose or treat mental health conditions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will my answers be stored or shared?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nothing is stored or transmitted from this page. All scoring happens locally in your browser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I do with the results?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the insights as talking points with a licensed therapist, psychiatrist, primary care clinician, or counselor. Higher scores and any safety concerns merit timely professional follow-up."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When should I seek urgent help?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If you experience thoughts of self-harm, harming others, or feel unable to stay safe, contact emergency services or a crisis hotline immediately."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this replace a clinical assessment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It complements clinical care by organizing your observations so you can communicate clearly with professionals."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script>
+      // Mobile navigation toggle
+      (function () {
+        const navToggle = document.getElementById("navToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        if (navToggle && navLinks) {
+          navToggle.addEventListener("click", function () {
+            navToggle.classList.toggle("active");
+            navLinks.classList.toggle("active");
+          });
+
+          // Close menu when clicking a link
+          const links = navLinks.querySelectorAll("a");
+          links.forEach((link) => {
+            link.addEventListener("click", function () {
+              navToggle.classList.remove("active");
+              navLinks.classList.remove("active");
+            });
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener("click", function (event) {
+            if (
+              !navToggle.contains(event.target) &&
+              !navLinks.contains(event.target)
+            ) {
+              navToggle.classList.remove("active");
+              navLinks.classList.remove("active");
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
