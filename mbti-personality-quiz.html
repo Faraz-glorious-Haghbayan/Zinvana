@@ -3084,6 +3084,49 @@
         color: var(--muted) !important;
         font-size: 22px !important;
       }
+
+      /* Force all quiz text to white in dark mode */
+      body.theme-dark .quiz-header h2,
+      body.theme-dark .quiz-header p,
+      body.theme-dark .quiz-container,
+      body.theme-dark .quiz-container *,
+      body.theme-dark .progress-meta,
+      body.theme-dark .question-counter,
+      body.theme-dark .question h3,
+      body.theme-dark .answer-text,
+      body.theme-dark #wojakName,
+      body.theme-dark #wojakDescription {
+        color: #ffffff !important;
+      }
+
+      /* But result area uses light cards; keep text dark there */
+      body.theme-dark .result,
+      body.theme-dark .result *,
+      body.theme-dark .result-figure-caption,
+      body.theme-dark #analysisContainer,
+      body.theme-dark .result-breakdown,
+      body.theme-dark .result-breakdown *,
+      body.theme-dark .result-card,
+      body.theme-dark .result-card * {
+        color: #0f172a !important;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      /* Make Growth Coaching Prompt paragraph white in light theme */
+      body.theme-light .result-growth__text {
+        color: #ffffff !important;
+      }
+
+      /* Footer text black in light theme, disclaimer navy */
+      body.theme-light .site-footer,
+      body.theme-light .site-footer * {
+        color: #000000 !important;
+      }
+
+      body.theme-light .site-footer__disclaimer {
+        color: navy !important;
+      }
     </style>
   </head>
   <body class="theme-dark">
