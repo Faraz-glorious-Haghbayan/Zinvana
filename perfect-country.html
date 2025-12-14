@@ -18,6 +18,13 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://zinvana.com/perfect-country.html" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Performance: preload og image and preconnect to analytics / host -->
     <link rel="preload" as="image" href="https://zinvana.com/philippines.jpg" />
     <link rel="preconnect" href="https://zinvana.com" />
@@ -134,7 +141,7 @@
             "name": "How reliable is the Perfect Country Quiz?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our quiz is grounded in expat satisfaction surveys, Mercer and Economist Intelligence Unit indices, and ongoing research into climate resilience, cost-of-living, and visa policy. It is built to give thoughtful direction—not a random spin of the globe."
+              "text": "Our model synthesizes expat satisfaction data, Mercer and EIU indices, climate resilience research, cost-of-living datasets, and visa policy signals. It’s designed to give direction and clarity, not a random spin of the globe."
             }
           },
           {
@@ -142,31 +149,55 @@
             "name": "What factors does the quiz consider?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We analyze 10 pillars: climate preferences, work-life balance, cultural values, lifestyle environment, healthcare and education priorities, safety, cost of living, language accessibility, preferred population density, and residency or visa pathways."
+              "text": "We weigh 12 key factors: climate preference, daily pace, cultural vibe, lifestyle environment (nature/urban/coastal/calm), social services (healthcare, education, safety), cost of living, language accessibility, population density preference, residency/visa pathways, core values (innovation, heritage, wellbeing, adventure), economic energy, and environmental resilience."
             }
           },
           {
             "@type": "Question",
-            "name": "Which countries are included in the results?",
+            "name": "Which countries are included?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We now cover 70+ destinations across every region—classics like Canada, Japan, Portugal, and Singapore plus 2025 additions such as Brazil, India, Peru, Turkey, Morocco, South Africa, Sri Lanka, Kenya, and Egypt."
+              "text": "70+ destinations across all regions—classics like Canada, Japan, Portugal, Singapore—plus 2025 additions such as Brazil, India, Peru, Turkey, Morocco, South Africa, Sri Lanka, Kenya, and Egypt."
             }
           },
           {
             "@type": "Question",
-            "name": "Is the quiz free to take?",
+            "name": "Is the quiz free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. You can retake it anytime, receive detailed reasoning for your match, and use the highlights as a starting point for deeper research."
+              "text": "Yes. It’s free to take and retake. You’ll receive a transparent breakdown of why your match fits you and practical next-step advice."
             }
           },
           {
             "@type": "Question",
-            "name": "How long does the quiz take?",
+            "name": "How long does it take?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "About six minutes. Ten carefully crafted questions capture the lifestyle trade-offs that matter most so we can score every country consistently."
+              "text": "About 5-7 minutes. Twelve carefully crafted questions capture the lifestyle trade-offs that matter most so we can score every country consistently."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Lifestyle Fit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It’s a percentage score showing how closely a country matches your stated preferences across climate, cost, access, community, and long-term resilience factors. Higher doesn’t always mean ‘best’—it means ‘most aligned’."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I trust the flag and visuals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We render flags using standardized assets to avoid platform inconsistencies. Photos and illustrations are representative; always verify with official sources when making decisions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you store my answers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We do not store personal identifiers. Aggregated, anonymous analytics help us improve question quality and coverage. See the site Privacy Policy for details."
             }
           },
           {
@@ -175,6 +206,38 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Use the quiz as a discovery tool. For visas, taxation, or legal planning, consult official government resources or licensed immigration professionals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if multiple countries score the same?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When multiple destinations tie for the top score, our algorithm uses your unique answer pattern to select the best single match. You can retake the quiz to explore other high-scoring options."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I retake the quiz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. If your priorities change—budget, climate, family needs—retake and compare how your results shift."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I share my result?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the share buttons on the result card to post your match to social platforms or copy a link with UTM tags for friends."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if images or flags fail to load?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Check your connection and browser extensions, then refresh. If problems persist, try a different browser or device. Report bugs via our social profiles in the footer."
             }
           }
         ]
@@ -191,6 +254,21 @@
         --surface: #ffffff;
         --surface-2: #f7fafc;
         --border: #e2e8f0;
+
+        --bg: #0c1324;
+        --panel: #0f172a;
+        --card: rgba(255, 255, 255, 0.02);
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        --radius: 18px;
+        --topbar-h: 76px;
+        --glow: 0 12px 40px rgba(45, 212, 191, 0.12);
+        --glow-2: 0 12px 40px rgba(249, 115, 22, 0.08);
+        --professional-bg: linear-gradient(
+          135deg,
+          #0a0f1c 0%,
+          #0c1324 50%,
+          #0f172a 100%
+        );
       }
 
       * {
@@ -200,19 +278,54 @@
       }
 
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
+        background: var(--professional-bg);
         min-height: 100vh;
-        color: #333;
-        padding-top: 90px;
+        color: var(--text);
+        padding-top: var(--topbar-h);
         scroll-behavior: smooth;
+      }
+
+      body.theme-dark {
+        --text-strong: #e4ecff;
+        --text: #e4ecff;
+        --muted: #7c8aa5;
+        --surface: rgba(255, 255, 255, 0.02);
+        --surface-2: rgba(255, 255, 255, 0.02);
+        --border: rgba(255, 255, 255, 0.08);
+        background: var(--professional-bg);
+        color: var(--text);
+      }
+
+      body.theme-light {
+        --bg: #f4f6fb;
+        --panel: #ffffff;
+        --text-strong: #0f172a;
+        --text: #0f172a;
+        --muted: #4b5563;
+        --border: rgba(0, 0, 0, 0.08);
+        --surface: #ffffff;
+        --surface-2: #f8fafc;
+        --card: #ffffff;
+        --shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        --professional-bg: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+        background: var(--professional-bg);
+        color: var(--text);
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid rgba(45, 212, 191, 0.7);
+        outline-offset: 3px;
       }
 
       body.nav-locked {
         overflow: hidden;
       }
 
-      nav {
+      /* Legacy nav styles (kept for reference, but disabled unless a nav has .legacy-nav)
+        This prevents the old rules from hijacking the new MBTI-style topbar nav. */
+      nav.legacy-nav {
         display: flex;
         position: fixed;
         top: 0;
@@ -230,7 +343,7 @@
         gap: 24px;
       }
 
-      nav::before {
+      nav.legacy-nav::before {
         content: "";
         position: absolute;
         top: 0;
@@ -251,7 +364,7 @@
         gap: 16px;
       }
 
-      nav .nav-menu {
+      nav.legacy-nav .nav-menu {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -259,14 +372,14 @@
         flex: 1;
       }
 
-      nav .nav-left,
-      nav .nav-right {
+      nav.legacy-nav .nav-left,
+      nav.legacy-nav .nav-right {
         display: flex;
         align-items: center;
         gap: 32px;
       }
 
-      nav a {
+      nav.legacy-nav a {
         color: #cbd5e1;
         font-weight: 500;
         font-size: 1rem;
@@ -277,13 +390,13 @@
         border-radius: 8px;
       }
 
-      nav a:hover {
+      nav.legacy-nav a:hover {
         color: #f8fafc;
         background: rgba(99, 102, 241, 0.15);
         transform: translateY(-1px);
       }
 
-      nav a::after {
+      nav.legacy-nav a::after {
         content: "";
         position: absolute;
         bottom: 2px;
@@ -295,11 +408,11 @@
         transform: translateX(-50%);
       }
 
-      nav a:hover::after {
+      nav.legacy-nav a:hover::after {
         width: 80%;
       }
 
-      nav img#brand-logo {
+      nav.legacy-nav img#brand-logo {
         width: 48px;
         height: 48px;
         border-radius: 12px;
@@ -308,7 +421,7 @@
         flex-shrink: 0;
       }
 
-      nav img#brand-logo:hover {
+      nav.legacy-nav img#brand-logo:hover {
         transform: scale(1.05);
       }
 
@@ -347,15 +460,15 @@
         transform: translateY(7px);
       }
 
-      nav.menu-open .nav-toggle span:nth-child(1) {
+      nav.legacy-nav.menu-open .nav-toggle span:nth-child(1) {
         transform: rotate(45deg);
       }
 
-      nav.menu-open .nav-toggle span:nth-child(2) {
+      nav.legacy-nav.menu-open .nav-toggle span:nth-child(2) {
         opacity: 0;
       }
 
-      nav.menu-open .nav-toggle span:nth-child(3) {
+      nav.legacy-nav.menu-open .nav-toggle span:nth-child(3) {
         transform: rotate(-45deg);
       }
 
@@ -370,7 +483,7 @@
         z-index: 999;
       }
 
-      nav.menu-open + .nav-overlay {
+      nav.legacy-nav.menu-open + .nav-overlay {
         opacity: 1;
         pointer-events: auto;
       }
@@ -386,6 +499,71 @@
         color: #fff;
         position: relative;
         overflow: hidden;
+      }
+
+      /* Light-theme hero readability: avoid white-on-light backgrounds */
+      body.theme-light .hero-section {
+        color: var(--text);
+      }
+
+      body.theme-light .hero-section::before {
+        background: radial-gradient(
+          circle,
+          rgba(102, 126, 234, 0.18) 0%,
+          transparent 70%
+        );
+      }
+
+      body.theme-light .hero-section .eyebrow {
+        color: var(--brand1);
+        background: rgba(102, 126, 234, 0.12);
+        border-color: rgba(102, 126, 234, 0.25);
+      }
+
+      body.theme-light .hero-section h1 {
+        text-shadow: none;
+      }
+
+      body.theme-light .hero-highlights li {
+        color: rgba(15, 23, 42, 0.9);
+      }
+
+      body.theme-light .ghost-btn {
+        border-color: rgba(15, 23, 42, 0.2);
+        color: var(--text);
+      }
+
+      body.theme-light .hero-panel {
+        background: rgba(255, 255, 255, 0.78);
+        border-color: var(--border);
+        box-shadow: 0 25px 70px rgba(15, 23, 42, 0.14);
+      }
+
+      body.theme-light .hero-panel p {
+        color: var(--muted);
+      }
+
+      body.theme-light .panel-eyebrow {
+        color: var(--brand1);
+        background: rgba(102, 126, 234, 0.12);
+        border-color: rgba(102, 126, 234, 0.25);
+      }
+
+      body.theme-light .hero-factor {
+        background: rgba(255, 255, 255, 0.7);
+        border-color: var(--border);
+      }
+
+      body.theme-light .hero-factor .icon {
+        background: rgba(102, 126, 234, 0.12);
+      }
+
+      body.theme-light .hero-factor h4 {
+        color: var(--text);
+      }
+
+      body.theme-light .hero-factor p {
+        color: var(--muted);
       }
 
       .hero-section::before {
@@ -980,6 +1158,38 @@
         font-size: 1.4rem;
       }
 
+      /* Flags: force consistent rendering (avoids "AD" fallback squares) */
+      .flag-img {
+        display: inline-block;
+        width: 28px;
+        height: 20px;
+        object-fit: cover;
+        border-radius: 3px;
+        vertical-align: middle;
+      }
+
+      .guide-card .flag-chip .flag-img {
+        width: 22px;
+        height: 16px;
+        border-radius: 3px;
+      }
+
+      .guide-card .avatar .flag-img {
+        width: 34px;
+        height: 24px;
+        border-radius: 8px;
+      }
+
+      .result-flag {
+        line-height: 1;
+      }
+
+      .result-flag .flag-img {
+        width: 84px;
+        height: 60px;
+        border-radius: 10px;
+      }
+
       .guide-card .card-meta {
         font-size: 0.85rem;
         color: #64748b;
@@ -996,6 +1206,16 @@
         font-size: 1.2rem;
         margin-bottom: 8px;
         color: #1f2937;
+      }
+
+      /* Dark-theme: ensure guide country names are white */
+      body.theme-dark #countryGuide .guide-card h4 {
+        color: black !important;
+      }
+
+      body.theme-dark #countryGuide .guide-card .card-meta,
+      body.theme-dark #countryGuide .guide-card .summary {
+        color: var(--muted) !important;
       }
 
       .guide-card .summary {
@@ -1601,6 +1821,12 @@
         font-size: 2.2rem;
       }
 
+      body.theme-light .result-placeholder {
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.7);
+        border-color: rgba(15, 23, 42, 0.18);
+      }
+
       .result-shell {
         background: linear-gradient(135deg, #ffffff 0%, #f6f8ff 100%);
         border-radius: 32px;
@@ -1731,6 +1957,12 @@
       .result-score-chip strong {
         font-size: 2rem;
         letter-spacing: -0.02em;
+      }
+
+      /* Dark-theme: make the score label and value clearly white for contrast */
+      body.theme-dark .result-score-chip span,
+      body.theme-dark .result-score-chip strong {
+        color: #ffffff !important;
       }
 
       .result-body {
@@ -1947,7 +2179,7 @@
 
       .stat {
         text-align: center;
-        color: white;
+        color: black;
       }
 
       .stat strong {
@@ -2092,6 +2324,12 @@
         line-height: 1.6;
       }
 
+      /* Ensure FAQ text remains dark/legible when the page uses the dark theme but FAQ cards keep a light surface */
+      body.theme-dark .faq-section .faq-question,
+      body.theme-dark .faq-section .faq-answer {
+        color: #0f172a !important;
+      }
+
       /* Related Articles */
       .related-articles {
         background: white;
@@ -2197,7 +2435,7 @@
       }
 
       @media (max-width: 1024px) {
-        nav {
+        nav.legacy-nav {
           padding: 14px 20px;
         }
 
@@ -2224,7 +2462,7 @@
           display: inline-flex;
         }
 
-        nav .nav-menu {
+        nav.legacy-nav .nav-menu {
           position: fixed;
           top: 80px;
           left: 16px;
@@ -2246,28 +2484,28 @@
           overflow-y: auto;
         }
 
-        nav.menu-open .nav-menu {
+        nav.legacy-nav.menu-open .nav-menu {
           transform: translateY(0) scale(1);
           opacity: 1;
           pointer-events: auto;
           visibility: visible;
         }
 
-        nav .nav-left,
-        nav .nav-right {
+        nav.legacy-nav .nav-left,
+        nav.legacy-nav .nav-right {
           flex-direction: column;
           align-items: flex-start;
           gap: 18px;
           width: 100%;
         }
 
-        nav .nav-right {
+        nav.legacy-nav .nav-right {
           border-top: 1px solid rgba(255, 255, 255, 0.08);
           padding-top: 12px;
           margin-top: 4px;
         }
 
-        nav a {
+        nav.legacy-nav a {
           width: 100%;
           padding: 12px 0;
         }
@@ -2843,47 +3081,480 @@
           }
         }
       }
+
+      /* ===== MBTI-style topbar + footer (ported) ===== */
+      header.topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        backdrop-filter: blur(14px);
+        background: rgba(12, 19, 36, 0.95);
+        border-bottom: 1px solid var(--border);
+      }
+
+      body.theme-light header.topbar {
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .topbar__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 14px 16px;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .topbar__inner > * {
+        min-width: 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        flex-shrink: 0;
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+      }
+
+      .brand span {
+        font-size: 20px;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      nav.primary-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-width: 0;
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+
+      .nav-link {
+        color: var(--muted);
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 14px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus-visible {
+        color: var(--text);
+        background: rgba(45, 212, 191, 0.1);
+        outline: none;
+      }
+
+      .nav-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-shrink: 0;
+        justify-self: end;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .btn--ghost {
+        border-color: var(--border);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      body.theme-light .btn--ghost {
+        background: rgba(0, 0, 0, 0.04);
+      }
+
+      body.theme-light .hamburger {
+        background: rgba(0, 0, 0, 0.04);
+      }
+
+      body.theme-light .hamburger:hover {
+        background: rgba(0, 0, 0, 0.08);
+      }
+
+      .btn--ghost:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+      }
+
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--text);
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: transform 0.18s ease, box-shadow 0.18s ease,
+          border-color 0.18s ease;
+      }
+
+      .theme-toggle:hover,
+      .theme-toggle:focus-visible {
+        transform: translateY(-1px);
+        border-color: rgba(45, 212, 191, 0.35);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        outline: none;
+      }
+
+      .theme-toggle__icon {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+      }
+
+      .hamburger {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        padding: 0;
+        flex-shrink: 0;
+      }
+
+      .hamburger:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .hamburger span {
+        width: 18px;
+        height: 2px;
+        background: var(--text);
+        position: relative;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      .hamburger span::before,
+      .hamburger span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 18px;
+        height: 2px;
+        background: var(--text);
+        transition: all 0.3s ease;
+      }
+
+      .hamburger span::before {
+        top: -6px;
+      }
+
+      .hamburger span::after {
+        top: 6px;
+      }
+
+      .hamburger.active span {
+        background: transparent;
+      }
+
+      .hamburger.active span::before {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      .hamburger.active span::after {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(12, 19, 36, 0.98);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(14px);
+        padding: 16px;
+        flex-direction: column;
+        gap: 4px;
+        animation: slideDown 0.3s ease;
+      }
+
+      body.theme-light .mobile-menu {
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu .nav-link {
+        padding: 10px 12px;
+        display: block;
+      }
+
+      @media (max-width: 980px) {
+        nav.primary-nav {
+          display: none;
+        }
+
+        .hamburger {
+          display: inline-flex;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .theme-toggle__text {
+          display: none;
+        }
+      }
+
+      /* Dark-mode readability for existing (light-authored) sections */
+      body.theme-dark .content-section,
+      body.theme-dark .quiz-container {
+        background: rgba(255, 255, 255, 0.02) !important;
+        border: 1px solid var(--border) !important;
+        box-shadow: var(--shadow) !important;
+      }
+
+      body.theme-dark .content-section h1,
+      body.theme-dark .content-section h2,
+      body.theme-dark .content-section h3,
+      body.theme-dark .stat,
+      body.theme-dark .content-section h4,
+      body.theme-dark .quiz-container h1,
+      body.theme-dark .quiz-container h2,
+      body.theme-dark .quiz-container h4 {
+        color: white !important;
+      }
+
+      body.theme-dark .content-section p,
+      body.theme-dark .content-section li,
+      body.theme-dark .quiz-container p,
+      body.theme-dark .quiz-container li {
+        color: var(--muted) !important;
+      }
+
+      /* Result cards stay light; ensure text stays dark even in dark mode */
+      body.theme-dark .result-shell,
+      body.theme-dark .faq-question,
+      body.theme-dark .faq-answer,
+      body.theme-dark .result-shell * {
+        color: #0f172a !important;
+      }
+
+      /* Footer (MBTI-style) */
+      .site-footer {
+        margin-top: 56px;
+        border-top: 1px solid var(--border);
+        background: rgba(12, 19, 36, 0.96);
+      }
+
+      body.theme-light .site-footer {
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 -14px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .site-footer__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr;
+        gap: 22px;
+      }
+
+      .site-footer__logo {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+      }
+
+      .site-footer__title,
+      .site-footer__heading {
+        margin: 10px 0 10px;
+        color: var(--text);
+        font-family: "Sora", "Space Grotesk", system-ui, sans-serif;
+        letter-spacing: -0.02em;
+      }
+
+      .site-footer__description,
+      .site-footer__note,
+      .site-footer__bottom p,
+      .site-footer__disclaimer {
+        color: var(--muted);
+      }
+
+      .site-footer__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .site-footer__link {
+        color: var(--muted);
+        transition: color 0.2s ease;
+      }
+
+      .site-footer__link:hover,
+      .site-footer__social-link:hover {
+        color: var(--text);
+      }
+
+      .site-footer__social {
+        display: flex;
+        gap: 10px;
+        margin: 12px 0;
+      }
+
+      .site-footer__social-link {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text);
+      }
+
+      body.theme-light .site-footer__social-link {
+        background: rgba(0, 0, 0, 0.04);
+        color: var(--text);
+      }
+
+      .site-footer__bottom {
+        border-top: 1px solid var(--border);
+        padding: 22px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .site-footer__bottom-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      @media (max-width: 860px) {
+        .site-footer__inner {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Footer text black in light theme, disclaimer navy */
+      body.theme-light .site-footer,
+      body.theme-light .site-footer * {
+        color: #000000 !important;
+      }
+
+      body.theme-light .site-footer__disclaimer {
+        color: navy !important;
+      }
     </style>
   </head>
-  <body>
-    <nav>
-      <div class="nav-brand">
-        <img
-          src="zinvanalogo.png"
-          alt="Zinvana Logo"
-          id="brand-logo"
-          width="48"
-          height="48"
-          decoding="async"
-          fetchpriority="high"
-        />
-      </div>
-      <div class="nav-menu" id="navMenu">
-        <div class="nav-left">
-          <a href="index.html">Home</a>
-          <a href="all-articles.html">All Quizzes</a>
-          <a href="#quizSection">Take Quiz</a>
+  <body class="theme-dark">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="index.html">
+          <img src="zinvanalogo.png" alt="Zinvana logo" />
+          <span>Zinvana</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="nav-link" href="#quizSection">Quiz</a>
+          <a class="nav-link" href="#countryGuide">Country guide</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle color theme"
+            aria-pressed="false"
+          >
+            <svg
+              class="theme-toggle__icon"
+              id="themeToggleIcon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0-5v2m0 16v2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M5.64 18.36 4.22 19.78"
+              />
+            </svg>
+            <span class="theme-toggle__text" id="themeToggleText"
+              >Light mode</span
+            >
+          </button>
+          <a class="btn btn--ghost" href="index.html#quizzes">All quizzes</a>
+          <button
+            class="hamburger"
+            id="menuToggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span></span>
+          </button>
         </div>
-        <div class="nav-right">
-          <a href="#overview">Overview</a>
-          <a href="#guideSection">Country Guide</a>
-          <a href="#faq">FAQ</a>
-        </div>
       </div>
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Toggle menu"
-        aria-controls="navMenu"
-        aria-expanded="false"
-        data-nav-toggle
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-    <div class="nav-overlay" data-nav-overlay></div>
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a class="nav-link" href="#quizSection">Quiz</a>
+        <a class="nav-link" href="#countryGuide">Country guide</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </header>
 
     <header class="hero-section" id="overview">
       <div class="main-container hero-grid">
@@ -2987,47 +3658,6 @@
         </div>
       </div>
     </header>
-
-    <section class="content-section" id="spotlight">
-      <div class="section-header">
-        <span class="eyebrow">Spotlight</span>
-        <h2>Featured Destination Families</h2>
-        <p>
-          These representative profiles show the diversity of results you can
-          receive—from premium Alpine hubs to emerging creative coasts.
-        </p>
-      </div>
-      <div class="country-spotlight">
-        <article class="country-card">
-          <h4>🇨🇦 Canada · Quality of Life Leader</h4>
-          <p>
-            Universal healthcare, stable economy, stunning nature, and
-            multicultural cities make Canada a perennial top match.
-          </p>
-        </article>
-        <article class="country-card">
-          <h4>🇵🇹 Portugal · Atlantic Calm</h4>
-          <p>
-            Sun-kissed coasts, remote-work visas, and welcoming communities
-            attract creatives and entrepreneurs alike.
-          </p>
-        </article>
-        <article class="country-card">
-          <h4>🇸🇬 Singapore · Asia's Strategic Hub</h4>
-          <p>
-            World-class infrastructure, low taxes, and a thriving innovation
-            scene reward ambitious professionals.
-          </p>
-        </article>
-        <article class="country-card">
-          <h4>🇧🇷 Brazil · New Tropical Addition</h4>
-          <p>
-            Vibrant cities, rainforest escapes, and fresh digital-nomad pathways
-            showcase Latin America's energy.
-          </p>
-        </article>
-      </div>
-    </section>
 
     <section class="quiz-shell" id="quizSection">
       <div class="quiz-container">
@@ -3146,10 +3776,10 @@
                 >
                   <span class="answer-badge">❄️</span>
                   <span class="answer-content">
-                    <span class="answer-title">Cool & Crisp</span>
+                    <span class="answer-title">Cool &amp; Crisp</span>
                     <span class="answer-description"
-                      >Refreshing temperatures, mountain air, and cozy
-                      atmospheres.</span
+                      >Fresh air, cozy winters, and an outdoorsy, brisk everyday
+                      vibe.</span
                     >
                   </span>
                   <span class="chevron">›</span>
@@ -3159,19 +3789,19 @@
 
             <!-- Question 2 -->
             <div class="question" data-question="2">
-              <h3>What's your ideal work-life balance?</h3>
+              <h3>What pace do you want day-to-day?</h3>
               <div class="answers">
                 <button
                   class="answer-btn"
                   data-value="relaxed"
                   onclick="selectOption(this)"
                 >
-                  <span class="answer-badge">🏖️</span>
+                  <span class="answer-badge">🌿</span>
                   <span class="answer-content">
-                    <span class="answer-title">Life First</span>
+                    <span class="answer-title">Relaxed</span>
                     <span class="answer-description"
-                      >Short work weeks, long vacations, and time for family and
-                      hobbies.</span
+                      >Slow mornings, nature breaks, and plenty of breathing
+                      room.</span
                     >
                   </span>
                   <span class="chevron">›</span>
@@ -3183,9 +3813,9 @@
                 >
                   <span class="answer-badge">⚖️</span>
                   <span class="answer-content">
-                    <span class="answer-title">Perfectly Balanced</span>
+                    <span class="answer-title">Balanced</span>
                     <span class="answer-description"
-                      >Meaningful work with reasonable hours and personal
+                      >A steady rhythm: productive weeks with protected personal
                       time.</span
                     >
                   </span>
@@ -3198,10 +3828,10 @@
                 >
                   <span class="answer-badge">🚀</span>
                   <span class="answer-content">
-                    <span class="answer-title">Career Driven</span>
+                    <span class="answer-title">Ambitious</span>
                     <span class="answer-description"
-                      >High-growth opportunities, entrepreneurship, and
-                      fast-paced ambition.</span
+                      >Fast-paced cities, ambitious networks, and big career
+                      momentum.</span
                     >
                   </span>
                   <span class="chevron">›</span>
@@ -3211,12 +3841,12 @@
                   data-value="flexible"
                   onclick="selectOption(this)"
                 >
-                  <span class="answer-badge">🧑‍💻</span>
+                  <span class="answer-badge">🧳</span>
                   <span class="answer-content">
-                    <span class="answer-title">Remote Freedom</span>
+                    <span class="answer-title">Flexible</span>
                     <span class="answer-description"
-                      >Flexible schedules and digital nomad-friendly
-                      environments.</span
+                      >A mix: you adapt easily and want options rather than one
+                      fixed tempo.</span
                     >
                   </span>
                   <span class="chevron">›</span>
@@ -3226,7 +3856,7 @@
 
             <!-- Question 3 -->
             <div class="question" data-question="3">
-              <h3>What type of culture appeals to you most?</h3>
+              <h3>Which culture vibe fits you best?</h3>
               <div class="answers">
                 <button
                   class="answer-btn"
@@ -3235,10 +3865,12 @@
                 >
                   <span class="answer-badge">🌈</span>
                   <span class="answer-content">
-                    <span class="answer-title">Multicultural Hub</span>
+                    <span class="answer-title"
+                      >Diverse &amp; Multicultural</span
+                    >
                     <span class="answer-description"
-                      >International communities, global cuisine, and inclusive
-                      perspectives.</span
+                      >Many communities, languages, cuisines, and perspectives
+                      side-by-side.</span
                     >
                   </span>
                   <span class="chevron">›</span>
@@ -3250,10 +3882,10 @@
                 >
                   <span class="answer-badge">🏛️</span>
                   <span class="answer-content">
-                    <span class="answer-title">Rich Heritage</span>
+                    <span class="answer-title">Traditional</span>
                     <span class="answer-description"
-                      >Deep history, preserved traditions, and cultural
-                      storytelling.</span
+                      >Deep heritage, strong rituals, and a timeless social
+                      fabric.</span
                     >
                   </span>
                   <span class="chevron">›</span>
@@ -3263,12 +3895,12 @@
                   data-value="progressive"
                   onclick="selectOption(this)"
                 >
-                  <span class="answer-badge">🔬</span>
+                  <span class="answer-badge">🧠</span>
                   <span class="answer-content">
-                    <span class="answer-title">Innovation Leader</span>
+                    <span class="answer-title">Progressive</span>
                     <span class="answer-description"
-                      >Cutting-edge tech, forward-thinking policies, and modern
-                      lifestyles.</span
+                      >Innovation, equality, and modern systems that keep
+                      evolving.</span
                     >
                   </span>
                   <span class="chevron">›</span>
@@ -3278,12 +3910,12 @@
                   data-value="artistic"
                   onclick="selectOption(this)"
                 >
-                  <span class="answer-badge">🎨</span>
+                  <span class="answer-badge">🎭</span>
                   <span class="answer-content">
-                    <span class="answer-title">Creative Scene</span>
+                    <span class="answer-title">Artistic</span>
                     <span class="answer-description"
-                      >Thriving arts, music festivals, and expressive
-                      communities.</span
+                      >Museums, music, design, and a culture that celebrates
+                      expression.</span
                     >
                   </span>
                   <span class="chevron">›</span>
@@ -3291,7 +3923,6 @@
               </div>
             </div>
 
-            <!-- Question 4 -->
             <div class="question" data-question="4">
               <h3>What's most important for your lifestyle?</h3>
               <div class="answers">
@@ -3925,357 +4556,217 @@
           />
         </div>
 
-        <div class="filter-chips" role="listbox" aria-label="Lifestyle filters">
+        <div
+          class="filter-chips"
+          role="listbox"
+          aria-label="Filter country archetypes"
+        >
           <button
             class="chip active"
+            type="button"
             data-filter="all"
             aria-selected="true"
-            type="button"
           >
             All
           </button>
-          <button class="chip" data-filter="balanced" type="button">
-            Balanced Living
-          </button>
-          <button class="chip" data-filter="coastal" type="button">
-            Coastal Calm
-          </button>
-          <button class="chip" data-filter="ambitious" type="button">
-            Ambitious Hubs
-          </button>
-          <button class="chip" data-filter="nature" type="button">
-            Nature Escapes
-          </button>
-          <button class="chip" data-filter="remote" type="button">
-            Remote-Work Ready
-          </button>
-          <button class="chip" data-filter="cultural" type="button">
-            Cultural Immersion
-          </button>
-        </div>
-      </div>
-
-      <div class="guide-grid" id="countryGuideGrid" aria-live="polite">
-        <div class="guide-placeholder" data-guide-placeholder>
-          <span>Loading curated destinations…</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="guideSection">
-      <div class="guide-header">
-        <span class="eyebrow">Reference</span>
-        <h2>Global Country Guide 2025</h2>
-        <p>
-          Browse quick profiles for some of the most popular matches—then take
-          the quiz to see which one fits your scorecard.
-        </p>
-      </div>
-      <div class="guide-grid">
-        <article class="guide-card">
-          <h4>🇨🇭 Switzerland</h4>
-          <p class="summary">
-            Precision infrastructure, alpine wellness, and premium salaries for
-            high-achieving professionals.
-          </p>
-          <ul class="traits">
-            <li>Universal healthcare with world-class hospitals.</li>
-            <li>Schengen access and effortless train travel.</li>
-            <li>Outdoor escapes in every season.</li>
-          </ul>
-          <a class="guide-cta" href="#quizSection"
-            >Ideal for stability seekers</a
+          <button
+            class="chip"
+            type="button"
+            data-filter="career"
+            aria-selected="false"
           >
-        </article>
-        <article class="guide-card">
-          <h4>🇵🇹 Portugal</h4>
-          <p class="summary">
-            Atlantic light, remote-work visas, and a thriving creative scene
-            with gorgeously slow rhythms.
-          </p>
-          <ul class="traits">
-            <li>Digital nomad and D7 routes with clear paths.</li>
-            <li>Lower living costs than much of Western Europe.</li>
-            <li>
-              Community-focused neighborhoods in Lisbon, Porto, and the Algarve.
-            </li>
-          </ul>
-          <a class="guide-cta" href="#quizSection">Great for balance lovers</a>
-        </article>
-        <article class="guide-card">
-          <h4>🇸🇬 Singapore</h4>
-          <p class="summary">
-            Southeast Asia's finance and tech hub blending hawker culture with
-            futuristic skylines.
-          </p>
-          <ul class="traits">
-            <li>Lightning-fast connectivity and transport.</li>
-            <li>Gateway to APAC business opportunities.</li>
-            <li>Safe, multilingual communities.</li>
-          </ul>
-          <a class="guide-cta" href="#quizSection">Built for momentum makers</a>
-        </article>
-        <article class="guide-card">
-          <h4>🇿🇦 South Africa</h4>
-          <p class="summary">
-            Newly added for 2025—Cape Town creativity, safari weekends, and
-            English-friendly talent hubs.
-          </p>
-          <ul class="traits">
-            <li>Tech and design ecosystems on the rise.</li>
-            <li>Mix of coastal, wine-country, and mountain living.</li>
-            <li>Critical-skills visas for in-demand careers.</li>
-          </ul>
-          <a class="guide-cta" href="#quizSection">Adventure meets ambition</a>
-        </article>
-        <article class="guide-card">
-          <h4>🇮🇳 India</h4>
-          <p class="summary">
-            Another big 2025 addition—megacity innovation, heritage-rich travel,
-            and powerful entrepreneurial energy.
-          </p>
-          <ul class="traits">
-            <li>English widely spoken plus vibrant tech scenes.</li>
-            <li>Diverse climates from Goa beaches to Himalayan towns.</li>
-            <li>Exploding startup and creative industries.</li>
-          </ul>
-          <a class="guide-cta" href="#quizSection">Perfect for builders</a>
-        </article>
-        <article class="guide-card">
-          <h4>🇱🇰 Sri Lanka</h4>
-          <p class="summary">
-            Tropical wellness hub with surf towns, tea country escapes, and a
-            friendly digital-nomad visa.
-          </p>
-          <ul class="traits">
-            <li>Year-round warmth and beach proximity.</li>
-            <li>Remote-worker visa launched with flexible stays.</li>
-            <li>Affordable living plus Ayurvedic wellness.</li>
-          </ul>
-          <a class="guide-cta" href="#quizSection">Great for slow living</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="faq-section" id="faq">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <div class="faq-question">
-          How reliable is the Perfect Country Quiz?
-        </div>
-        <div class="faq-answer">
-          Our quiz is grounded in expat satisfaction surveys, Mercer and
-          Economist Intelligence Unit indices, and ongoing research into climate
-          resilience, cost-of-living, and visa policy. It is built to give
-          thoughtful direction—not a random spin of the globe.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What factors does the quiz consider?</div>
-        <div class="faq-answer">
-          We analyze 10 pillars: climate preferences, work-life balance,
-          cultural values, lifestyle environment, healthcare and education
-          priorities, safety, cost of living, language accessibility, preferred
-          population density, and residency or visa pathways.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          Which countries are included in the results?
-        </div>
-        <div class="faq-answer">
-          We now cover 70+ destinations across every region—classics like
-          Canada, Japan, Portugal, and Singapore plus 2025 additions such as
-          Brazil, India, Peru, Turkey, Morocco, South Africa, Sri Lanka, Kenya,
-          and Egypt. The expanded list gives you meaningful options for every
-          vibe.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Is the quiz free to take?</div>
-        <div class="faq-answer">
-          Yes. You can retake it anytime, receive detailed reasoning for your
-          match, and use the highlights as a starting point for deeper research.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How long does the quiz take?</div>
-        <div class="faq-answer">
-          About six minutes. Ten carefully crafted questions capture the
-          lifestyle trade-offs that matter most so we can score every country
-          consistently.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          Can I use the results for immigration planning?
-        </div>
-        <div class="faq-answer">
-          Use the quiz as a discovery tool. For visas, taxation, or legal
-          planning, consult official government resources or licensed
-          immigration professionals.
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section related-articles">
-      <div class="section-header">
-        <span class="eyebrow">Keep Exploring</span>
-        <h2>Related Resources</h2>
-        <p>
-          Dive deeper into residency strategies, budgeting, and culture shifts
-          while you plan your move.
-        </p>
-      </div>
-      <div class="articles-grid">
-        <a href="#" class="article-card">
-          <h4>🏠 Best Countries for Digital Nomads 2025</h4>
-          <p>
-            Discover the top destinations for remote workers with excellent
-            internet, affordable living, and nomad-friendly policies.
-          </p>
-        </a>
-        <a href="#" class="article-card">
-          <h4>💰 Cost of Living Comparison Guide</h4>
-          <p>
-            Compare living costs across popular expat destinations with our
-            breakdown of housing, food, and healthcare.
-          </p>
-        </a>
-        <a href="#" class="article-card">
-          <h4>🌍 Expat Life: Cultural Adaptation Tips</h4>
-          <p>
-            Essential strategies for adapting to new cultures and making the
-            most of international living.
-          </p>
-        </a>
-        <a href="#" class="article-card">
-          <h4>📋 Immigration Requirements Guide</h4>
-          <p>
-            Understand visa requirements, work permits, and immigration
-            processes for popular destination countries.
-          </p>
-        </a>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <h3>Ready to See Where You Belong?</h3>
-      <p>
-        Join thousands of readers who matched with new home bases—whether that's
-        a sun-soaked nomad visa in Sri Lanka or a fast-paced tech hub in
-        Singapore.
-      </p>
-      <div class="hero-cta">
-        <a href="#quizSection" class="primary-btn">Start The Quiz</a>
-        <a href="mailto:hello@zinvana.com" class="ghost-btn">Talk to Zinvana</a>
-      </div>
-    </section>
-
-    <!-- Enhanced Professional Footer -->
-    <footer
-      style="
-        background: linear-gradient(
-          135deg,
-          #0f172a 0%,
-          #1e293b 50%,
-          #334155 100%
-        );
-        color: #ffffff;
-        margin-top: 80px;
-        position: relative;
-        overflow: hidden;
-      "
-    >
-      <div
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
-          z-index: 1;
-        "
-      ></div>
-
-      <div
-        style="
-          position: relative;
-          z-index: 2;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 60px 40px 40px;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 40px;
-        "
-      >
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
-          <img
-            src="zinvanalogo.png"
-            alt="Zinvana"
-            loading="lazy"
-            decoding="async"
-            width="50"
-            height="50"
-            style="
-              width: 50px;
-              height: 50px;
-              border-radius: 12px;
-              margin-bottom: 16px;
-              box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-            "
-          />
-          <h3
-            style="
-              color: #ffffff;
-              font-size: 1.5rem;
-              margin-bottom: 16px;
-              font-weight: 600;
-            "
+            Career
+          </button>
+          <button
+            class="chip"
+            type="button"
+            data-filter="calm"
+            aria-selected="false"
           >
-            Zinvana
+            Calm
+          </button>
+          <button
+            class="chip"
+            type="button"
+            data-filter="adventure"
+            aria-selected="false"
+          >
+            Adventure
+          </button>
+          <button
+            class="chip"
+            type="button"
+            data-filter="culture"
+            aria-selected="false"
+          >
+            Culture
+          </button>
+          <button
+            class="chip"
+            type="button"
+            data-filter="nature"
+            aria-selected="false"
+          >
+            Nature
+          </button>
+          <button
+            class="chip"
+            type="button"
+            data-filter="budget"
+            aria-selected="false"
+          >
+            Budget
+          </button>
+        </div>
+      </div>
+
+      <div class="guide-grid" id="countryGuideGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="content-section" id="faq" aria-labelledby="faqTitle">
+      <div class="faq-section">
+        <span class="eyebrow">Answers</span>
+        <h2 id="faqTitle">Perfect Country Quiz FAQ</h2>
+        <div class="faq-item">
+          <h3 class="faq-question">
+            How reliable is the Perfect Country Quiz?
           </h3>
-          <p
-            style="
-              color: #94a3b8;
-              line-height: 1.6;
-              margin: 0;
-              font-size: 1rem;
-              margin-bottom: 20px;
-            "
-          >
-            Discover your true self through fun, engaging personality quizzes
-            and political assessments. From Marvel heroes to political
-            ideologies, we help you explore different aspects of your
-            personality and beliefs in an entertaining, educational way.
+          <p class="faq-answer">
+            Our model synthesizes expat satisfaction data, Mercer and EIU
+            indices, climate resilience research, cost-of-living datasets, and
+            visa policy signals. It’s designed to give direction and clarity,
+            not a random spin of the globe.
           </p>
-          <div style="display: flex; gap: 16px; margin-bottom: 20px">
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">What factors does the quiz consider?</h3>
+          <p class="faq-answer">
+            We weigh 12 key factors: climate preference, daily pace, cultural
+            vibe, lifestyle environment (nature/urban/coastal/calm), social
+            services (healthcare, education, safety), cost of living, language
+            accessibility, population density preference, residency/visa
+            pathways, core values (innovation, heritage, wellbeing, adventure),
+            economic energy, and environmental resilience.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Which countries are included?</h3>
+          <p class="faq-answer">
+            70+ destinations across all regions—classics like Canada, Japan,
+            Portugal, Singapore—plus 2025 additions such as Brazil, India, Peru,
+            Turkey, Morocco, South Africa, Sri Lanka, Kenya, and Egypt.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Is the quiz free?</h3>
+          <p class="faq-answer">
+            Yes. It’s free to take and retake. You’ll receive a transparent
+            breakdown of why your match fits you and practical next-step advice.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">How long does it take?</h3>
+          <p class="faq-answer">
+            About 5-7 minutes. Twelve carefully crafted questions capture the
+            lifestyle trade-offs that matter most so we can score every country
+            consistently.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">What is “Lifestyle Fit”?</h3>
+          <p class="faq-answer">
+            It’s a percentage score showing how closely a country matches your
+            stated preferences across climate, cost, access, community, and
+            long-term resilience factors. Higher doesn’t always mean “best”—it
+            means “most aligned”.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can I trust the flag and visuals?</h3>
+          <p class="faq-answer">
+            Yes. We render flags using standardized assets to avoid platform
+            inconsistencies. Photos and illustrations are representative; always
+            verify with official sources when making decisions.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do you store my answers?</h3>
+          <p class="faq-answer">
+            We do not store personal identifiers. Aggregated, anonymous
+            analytics help us improve question quality and coverage. See
+            <a href="/privacy.html">Privacy Policy</a> for details.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">
+            Can I use the results for immigration planning?
+          </h3>
+          <p class="faq-answer">
+            Use the quiz as a discovery tool. For visas, taxation, or legal
+            planning, consult official government resources or licensed
+            immigration professionals.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">
+            What if multiple countries score the same?
+          </h3>
+          <p class="faq-answer">
+            When multiple destinations tie for the top score, our algorithm uses
+            your unique answer pattern to select the best single match. You can
+            retake the quiz to explore other high-scoring options.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Can I retake the quiz?</h3>
+          <p class="faq-answer">
+            Absolutely. If your priorities change—budget, climate, family
+            needs—retake and compare how your results shift.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">How do I share my result?</h3>
+          <p class="faq-answer">
+            Use the share buttons on the result card to post your match to
+            social platforms or copy a link with UTM tags for friends.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">
+            What if I experience issues loading images or flags?
+          </h3>
+          <p class="faq-answer">
+            Check your connection and browser extensions, then refresh. If
+            problems persist, try a different browser or device. Report bugs via
+            our social profiles in the footer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <img src="zinvanalogo.png" alt="Zinvana" class="site-footer__logo" />
+          <h3 class="site-footer__title">Zinvana</h3>
+          <p class="site-footer__description">
+            Discover your next chapter through evidence-informed quizzes and
+            practical guides. From personality frameworks to relocation
+            readiness, we turn curiosity into clear next steps.
+          </p>
+          <div class="site-footer__social">
             <a
               href="https://x.com/farazglori80528"
-              aria-label="Twitter"
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 44px;
-                height: 44px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 12px;
-                color: #cbd5e1;
-                transition: all 0.3s ease;
-                text-decoration: none;
-              "
-              onmouseover="this.style.background='#6366f1'; this.style.color='#ffffff'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(99, 102, 241, 0.4)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.color='#cbd5e1'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+              target="_blank"
+              rel="noopener"
+              class="site-footer__social-link site-footer__social-link--x"
+              aria-label="Follow Zinvana on X"
             >
               <svg
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                style="width: 20px; height: 20px"
               >
                 <path
                   d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
@@ -4284,26 +4775,16 @@
             </a>
             <a
               href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
-              aria-label="Instagram"
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 44px;
-                height: 44px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 12px;
-                color: #cbd5e1;
-                transition: all 0.3s ease;
-                text-decoration: none;
-              "
-              onmouseover="this.style.background='#6366f1'; this.style.color='#ffffff'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(99, 102, 241, 0.4)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.color='#cbd5e1'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+              target="_blank"
+              rel="noopener"
+              class="site-footer__social-link site-footer__social-link--instagram"
+              aria-label="Follow Zinvana on Instagram"
             >
               <svg
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                style="width: 20px; height: 20px"
               >
                 <path
                   d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"
@@ -4314,261 +4795,134 @@
                 <circle cx="18.406" cy="5.594" r="1.44" />
               </svg>
             </a>
-            <a
-              href="https://www.youtube.com/@zinvana"
-              aria-label="YouTube"
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 44px;
-                height: 44px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 12px;
-                color: #cbd5e1;
-                transition: all 0.3s ease;
-                text-decoration: none;
-              "
-              onmouseover="this.style.background='#6366f1'; this.style.color='#ffffff'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(99, 102, 241, 0.4)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.color='#cbd5e1'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style="width: 20px; height: 20px"
-              >
-                <path
-                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                />
-              </svg>
-            </a>
           </div>
-          <p
-            style="
-              color: #94a3b8;
-              font-size: 0.9rem;
-              margin: 0;
-              line-height: 1.5;
-            "
-          >
-            Stay updated with our latest quizzes and personality assessments!
-          </p>
+          <p class="site-footer__note">Stay updated with our newest quizzes.</p>
         </div>
 
-        <div>
-          <h4
-            style="
-              color: #e2e8f0;
-              font-size: 1.125rem;
-              margin-bottom: 20px;
-              font-weight: 600;
-            "
-          >
-            Popular Quizzes
-          </h4>
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 12px">
-              <a
-                href="political-ideology.html"
-                style="
-                  color: #cbd5e1;
-                  text-decoration: none;
-                  transition: all 0.2s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#6366f1'; this.style.transform='translateX(5px)'"
-                onmouseout="this.style.color='#cbd5e1'; this.style.transform='translateX(0)'"
-                >Political Ideology Quiz</a
+        <div class="site-footer__column">
+          <h4 class="site-footer__heading">Popular Quizzes</h4>
+          <ul class="site-footer__list">
+            <li>
+              <a class="site-footer__link" href="leaders.html"
+                >Historical Leaders Personality Quiz</a
               >
             </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="perfect-country.html"
-                style="
-                  color: #cbd5e1;
-                  text-decoration: none;
-                  transition: all 0.2s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#6366f1'; this.style.transform='translateX(5px)'"
-                onmouseout="this.style.color='#cbd5e1'; this.style.transform='translateX(0)'"
-                >Perfect Country Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="marvel-quiz.html"
-                style="
-                  color: #cbd5e1;
-                  text-decoration: none;
-                  transition: all 0.2s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#6366f1'; this.style.transform='translateX(5px)'"
-                onmouseout="this.style.color='#cbd5e1'; this.style.transform='translateX(0)'"
-                >Marvel Character Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="football-personality-quiz.html"
-                style="
-                  color: #cbd5e1;
-                  text-decoration: none;
-                  transition: all 0.2s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#6366f1'; this.style.transform='translateX(5px)'"
-                onmouseout="this.style.color='#cbd5e1'; this.style.transform='translateX(0)'"
+            <li>
+              <a class="site-footer__link" href="football-personality-quiz.html"
                 >Football Personality Quiz</a
               >
             </li>
-            <li style="margin-bottom: 12px">
+            <li>
+              <a class="site-footer__link" href="mbti-personality-quiz.html"
+                >MBTI Personality Quiz</a
+              >
+            </li>
+            <li>
+              <a class="site-footer__link" href="perfect-country.html"
+                >Perfect Country Quiz</a
+              >
+            </li>
+            <li>
               <a
-                href="brawlstars-quiz.html"
-                style="
-                  color: #cbd5e1;
-                  text-decoration: none;
-                  transition: all 0.2s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#6366f1'; this.style.transform='translateX(5px)'"
-                onmouseout="this.style.color='#cbd5e1'; this.style.transform='translateX(0)'"
-                >Brawl Stars Quiz</a
+                class="site-footer__link"
+                href="youtubers-personality-quiz.html"
+                >YouTubers Personality Quiz</a
               >
             </li>
           </ul>
         </div>
 
-        <div>
-          <h4
-            style="
-              color: #e2e8f0;
-              font-size: 1.125rem;
-              margin-bottom: 20px;
-              font-weight: 600;
-            "
-          >
-            Resources
-          </h4>
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 12px">
-              <a
-                href="all-articles.html"
-                style="
-                  color: #cbd5e1;
-                  text-decoration: none;
-                  transition: all 0.2s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#6366f1'; this.style.transform='translateX(5px)'"
-                onmouseout="this.style.color='#cbd5e1'; this.style.transform='translateX(0)'"
-                >All Articles</a
-              >
+        <div class="site-footer__column">
+          <h4 class="site-footer__heading">Resources</h4>
+          <ul class="site-footer__list">
+            <li>
+              <a class="site-footer__link" href="/about.html">About Us</a>
             </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="all-empires.html"
-                style="
-                  color: #cbd5e1;
-                  text-decoration: none;
-                  transition: all 0.2s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#6366f1'; this.style.transform='translateX(5px)'"
-                onmouseout="this.style.color='#cbd5e1'; this.style.transform='translateX(0)'"
-                >Historical Empires</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="all-brawlers.html"
-                style="
-                  color: #cbd5e1;
-                  text-decoration: none;
-                  transition: all 0.2s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#6366f1'; this.style.transform='translateX(5px)'"
-                onmouseout="this.style.color='#cbd5e1'; this.style.transform='translateX(0)'"
-                >All Brawlers</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="leaders-list.html"
-                style="
-                  color: #cbd5e1;
-                  text-decoration: none;
-                  transition: all 0.2s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#6366f1'; this.style.transform='translateX(5px)'"
-                onmouseout="this.style.color='#cbd5e1'; this.style.transform='translateX(0)'"
-                >All Leaders</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="about.html"
-                style="
-                  color: #cbd5e1;
-                  text-decoration: none;
-                  transition: all 0.2s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#6366f1'; this.style.transform='translateX(5px)'"
-                onmouseout="this.style.color='#cbd5e1'; this.style.transform='translateX(0)'"
-                >About Zinvana</a
+            <li>
+              <a class="site-footer__link" href="/privacy.html"
+                >Privacy Policy</a
               >
             </li>
           </ul>
         </div>
       </div>
 
-      <div
-        style="
-          position: relative;
-          z-index: 2;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 30px 40px;
-        "
-      >
-        <div
-          style="
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-          "
-        >
-          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
-            &copy; 2025 Zinvana. All rights reserved.
-          </p>
-          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
-            Made with ❤️ by the Zinvana Team
-          </p>
+      <div class="site-footer__bottom">
+        <div class="site-footer__bottom-row">
+          <p>&copy; 2025 Zinvana. All rights reserved.</p>
+          <p>Made with ❤️ by the Zinvana Team</p>
         </div>
-        <div
-          style="
-            color: #64748b;
-            font-size: 0.85rem;
-            margin: 20px auto 0;
-            text-align: center;
-            line-height: 1.5;
-            max-width: 600px;
-          "
-        >
+        <p class="site-footer__disclaimer">
           This perfect country quiz is for educational and entertainment
           purposes only. Results are based on your responses and should not be
-          considered professional relocation advice or definitive assessments.
-          All countries and locations referenced are for informational purposes.
-        </div>
+          considered professional relocation advice.
+        </p>
       </div>
     </footer>
+
+    <script>
+      // Theme toggle (dark/light) — shared with mbti-personality-quiz.html
+      const themeToggle = document.getElementById("themeToggle");
+      const themeToggleText = document.getElementById("themeToggleText");
+      const themeToggleIcon = document
+        .getElementById("themeToggleIcon")
+        ?.querySelector("path");
+      const sunPath =
+        "M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0-5v2m0 16v2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M5.64 18.36 4.22 19.78";
+      const moonPath = "M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z";
+
+      const setTheme = (mode) => {
+        const isLight = mode === "light";
+        document.body.classList.toggle("theme-light", isLight);
+        document.body.classList.toggle("theme-dark", !isLight);
+        localStorage.setItem("zinvana-theme", isLight ? "light" : "dark");
+        themeToggle?.setAttribute("aria-pressed", isLight ? "true" : "false");
+        if (themeToggleText) {
+          themeToggleText.textContent = isLight ? "Dark mode" : "Light mode";
+        }
+        themeToggleIcon?.setAttribute("d", isLight ? moonPath : sunPath);
+      };
+
+      const storedTheme = localStorage.getItem("zinvana-theme");
+      const prefersLight = window.matchMedia?.(
+        "(prefers-color-scheme: light)"
+      ).matches;
+      setTheme(storedTheme || (prefersLight ? "light" : "dark"));
+
+      themeToggle?.addEventListener("click", () => {
+        const isLight = document.body.classList.contains("theme-light");
+        setTheme(isLight ? "dark" : "light");
+      });
+
+      // Mobile menu toggle — shared with mbti-personality-quiz.html
+      const toggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("mobileMenu");
+      const navLinks = menu?.querySelectorAll(".nav-link");
+
+      if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+          const isOpen = menu.classList.toggle("open");
+          toggle.classList.toggle("active");
+          toggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        navLinks?.forEach((link) => {
+          link.addEventListener("click", () => {
+            menu.classList.remove("open");
+            toggle.classList.remove("active");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && menu.classList.contains("open")) {
+            menu.classList.remove("open");
+            toggle.classList.remove("active");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+    </script>
 
     <script>
       let currentQuestion = 1;
@@ -8810,6 +9164,53 @@
         }
       }
 
+      // Replace emoji flags with Twemoji SVGs for consistent rendering across devices.
+      function emojiToCodePoints(emoji) {
+        const codePoints = [];
+        for (const ch of Array.from(emoji || "")) {
+          codePoints.push(ch.codePointAt(0).toString(16));
+        }
+        return codePoints.join("-");
+      }
+
+      function twemojiifyFlags(root) {
+        const rootEl = root || document;
+        const nodes = rootEl.querySelectorAll(".flag-emoji");
+        if (!nodes.length) return;
+
+        nodes.forEach((span) => {
+          const emoji = (
+            span.getAttribute("data-emoji") ||
+            span.textContent ||
+            ""
+          ).trim();
+          if (!emoji) return;
+
+          try {
+            const cp = emojiToCodePoints(emoji);
+            if (!cp) return;
+
+            const img = document.createElement("img");
+            img.src = `https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/${cp}.svg`;
+            img.alt = emoji;
+            img.className = "flag-img";
+            img.loading = "lazy";
+
+            if (
+              span.parentElement &&
+              span.parentElement.getAttribute("aria-hidden") === "true"
+            ) {
+              img.setAttribute("aria-hidden", "true");
+            }
+
+            span.replaceWith(img);
+          } catch (e) {
+            // non-fatal; fallback remains as text emoji
+            console.warn("twemojiifyFlags failed", emoji, e);
+          }
+        });
+      }
+
       function renderCountryGuideCards(gridElement) {
         const grid = gridElement || document.getElementById("countryGuideGrid");
         if (!grid) {
@@ -8869,18 +9270,18 @@
                 `${country.name || countryKey} lifestyle photo`
               )}" loading="lazy" decoding="async" fetchpriority="low" width="640" height="360" sizes="(max-width: 600px) 100vw, 360px" />
                 </picture>
-                <span class="flag-chip" aria-hidden="true">${escapeHtml(
+                <span class="flag-chip" aria-hidden="true"><span class="flag-emoji" data-emoji="${escapeHtml(
                   country.flag || "🌍"
-                )}</span>
+                )}">${escapeHtml(country.flag || "🌍")}</span></span>
               </div>`
             : "";
 
           card.innerHTML = `
             ${imageMarkup}
             <div class="card-head">
-              <div class="avatar" aria-hidden="true">${escapeHtml(
+              <div class="avatar" aria-hidden="true"><span class="flag-emoji" data-emoji="${escapeHtml(
                 country.flag || "🌍"
-              )}</div>
+              )}">${escapeHtml(country.flag || "🌍")}</span></div>
               <div>
                 <h4>${escapeHtml(country.name || countryKey)}</h4>
                 <p class="card-meta">${escapeHtml(
@@ -8897,6 +9298,11 @@
 
         grid.innerHTML = "";
         grid.appendChild(fragment);
+        try {
+          twemojiifyFlags(grid);
+        } catch (e) {
+          console.warn("twemojiifyFlags grid error", e);
+        }
         setupGuideImageLazyLoad(grid);
         return Array.from(grid.querySelectorAll(".guide-card"));
       }
@@ -9119,9 +9525,9 @@
             <div class="result-hero">
               <div class="result-identity">
                 <span class="result-label">Top match</span>
-                <div class="result-flag">${escapeHtml(
+                <div class="result-flag"><span class="flag-emoji" data-emoji="${escapeHtml(
                   country.flag || "🌍"
-                )}</div>
+                )}">${escapeHtml(country.flag || "🌍")}</span></div>
                 <div class="result-name">${escapeHtml(country.name || "")}</div>
                 <p class="result-tagline">${escapeHtml(
                   country.tagline || ""
@@ -9181,6 +9587,12 @@
             </div>
           </div>
         `;
+
+        try {
+          twemojiifyFlags(resultContainer);
+        } catch (e) {
+          console.warn("twemojiifyFlags result error", e);
+        }
 
         const statsGrid = document.getElementById("statsGrid");
         if (statsGrid && Array.isArray(country.stats)) {
@@ -9390,6 +9802,58 @@
         }
 
         trackQuizEvent("quiz_started");
+
+        // Smooth scroll for topbar nav links with offset for the fixed header
+        (function () {
+          const topbar = document.querySelector(".topbar");
+          const links = document.querySelectorAll('.nav-link[href^="#"]');
+          const mobileMenu = document.getElementById("mobileMenu");
+          const menuToggle = document.getElementById("menuToggle");
+
+          function getOffset() {
+            if (topbar) return topbar.getBoundingClientRect().height + 8;
+            const cssVar = getComputedStyle(
+              document.documentElement
+            ).getPropertyValue("--topbar-h");
+            const parsed = parseInt(cssVar, 10);
+            return Number.isFinite(parsed) ? parsed : 76;
+          }
+
+          function scrollToTarget(hash) {
+            try {
+              const el = document.querySelector(hash);
+              if (!el) return;
+              const offset = getOffset();
+              const top =
+                el.getBoundingClientRect().top + window.pageYOffset - offset;
+              window.scrollTo({ top, behavior: "smooth" });
+              // update hash without jumping
+              history.replaceState(null, "", hash);
+              // move focus for accessibility
+              el.setAttribute("tabindex", "-1");
+              el.focus({ preventScroll: true });
+            } catch (e) {
+              console.warn("nav scroll failed", e);
+            }
+          }
+
+          links.forEach((a) => {
+            a.addEventListener("click", (ev) => {
+              const href = a.getAttribute("href");
+              if (!href || !href.startsWith("#")) return;
+              ev.preventDefault();
+              // close mobile menu if open
+              if (mobileMenu && mobileMenu.classList.contains("open")) {
+                mobileMenu.classList.remove("open");
+                if (menuToggle) {
+                  menuToggle.classList.remove("active");
+                  menuToggle.setAttribute("aria-expanded", "false");
+                }
+              }
+              scrollToTarget(href);
+            });
+          });
+        })();
       });
 
       // Enhanced result display with sharing
