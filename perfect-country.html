@@ -10819,6 +10819,67 @@
         return Array.from(tags);
       }
 
+      function ensureRenderableCountryProfile(countryKey, country) {
+        if (!country) return country;
+
+        const name = country.name || countryKey;
+        const isPlaceholder = isPlaceholderCountryProfile(country);
+        const hasHighlights = Array.isArray(country.highlights)
+          ? country.highlights.length > 0
+          : false;
+        const hasDescription = !!(country.description || "").trim();
+
+        if (!isPlaceholder && hasHighlights && hasDescription) {
+          return country;
+        }
+
+        const fallbackTagline = isPlaceholder
+          ? `Lifestyle snapshot for ${name}`
+          : country.tagline || `Lifestyle snapshot for ${name}`;
+
+        const fallbackDescription =
+          !hasDescription || isPlaceholder
+            ? `${name} has its own culture, landscapes, and daily rhythms. Use this guide as a starting point—then research practical details like language comfort, residency pathways, and cost of living for your situation.`
+            : country.description;
+
+        const fallbackHighlights = hasHighlights
+          ? country.highlights
+          : [
+              {
+                title: "Lifestyle",
+                text: "A distinct local rhythm and way of life",
+              },
+              {
+                title: "Culture",
+                text: "Traditions, food, and community norms to explore",
+              },
+              {
+                title: "Planning",
+                text: "Prioritize language, logistics, and long-term fit",
+              },
+            ];
+
+        const hasStats = Array.isArray(country.stats)
+          ? country.stats.length
+          : 0;
+        const fallbackStats = hasStats
+          ? country.stats
+          : [
+              { number: "—", label: "Lifestyle" },
+              { number: "—", label: "Climate" },
+              { number: "—", label: "Cost" },
+              { number: "—", label: "Access" },
+            ];
+
+        return {
+          ...country,
+          tagline: fallbackTagline,
+          description: fallbackDescription,
+          highlights: fallbackHighlights,
+          stats: fallbackStats,
+        };
+      }
+
       function loadGuideImage(img) {
         const provider = img.getAttribute("data-provider");
         if (provider === "openverse") {
@@ -10936,24 +10997,25 @@
         const fragment = document.createDocumentFragment();
 
         entries.forEach(([countryKey, country]) => {
+          const profile = ensureRenderableCountryProfile(countryKey, country);
           const hasCoverImage =
-            !!country.image ||
-            country.imageProvider === "openverse" ||
-            !!country.imageQuery;
-          const optimizedSources = getOptimizedImageSources(country.image);
+            !!profile.image ||
+            profile.imageProvider === "openverse" ||
+            !!profile.imageQuery;
+          const optimizedSources = getOptimizedImageSources(profile.image);
           const textForTags = [
-            country.tagline || "",
-            country.description || "",
-            ...(country.highlights || []).map(
+            profile.tagline || "",
+            profile.description || "",
+            ...(profile.highlights || []).map(
               (highlight) => `${highlight.title || ""} ${highlight.text || ""}`
             ),
           ].join(" ");
 
           const tags = deriveGuideTags(textForTags);
           const summary = summarizeDescription(
-            country.description || country.tagline || ""
+            profile.description || profile.tagline || ""
           );
-          const highlights = (country.highlights || []).slice(0, 3);
+          const highlights = (profile.highlights || []).slice(0, 3);
           const card = document.createElement("article");
           card.className = "guide-card";
           card.setAttribute("data-tags", tags.join(" ").trim());
@@ -10981,18 +11043,18 @@
                       : ""
                   }
                   <img class="guide-cover-img" src="${guideImagePlaceholder}" ${
-                country.image
+                profile.image
                   ? `data-src="${escapeHtml(optimizedSources.fallback)}"`
                   : `data-provider="openverse" data-country="${escapeHtml(
                       countryKey
                     )}"`
               } alt="${escapeHtml(
-                `${country.name || countryKey} landscape photo`
+                `${profile.name || countryKey} landscape photo`
               )}" loading="lazy" decoding="async" fetchpriority="low" width="640" height="360" sizes="(max-width: 600px) 100vw, 360px" />
                 </picture>
                 <span class="flag-chip" aria-hidden="true"><span class="flag-emoji" data-emoji="${escapeHtml(
-                  country.flag || "🌍"
-                )}">${escapeHtml(country.flag || "🌍")}</span></span>
+                  profile.flag || "🌍"
+                )}">${escapeHtml(profile.flag || "🌍")}</span></span>
                 <span class="img-credit" aria-label="Photo credit"></span>
               </div>`
             : "";
@@ -11001,12 +11063,12 @@
             ${imageMarkup}
             <div class="card-head">
               <div class="avatar" aria-hidden="true"><span class="flag-emoji" data-emoji="${escapeHtml(
-                country.flag || "🌍"
-              )}">${escapeHtml(country.flag || "🌍")}</span></div>
+                profile.flag || "🌍"
+              )}">${escapeHtml(profile.flag || "🌍")}</span></div>
               <div>
-                <h4>${escapeHtml(country.name || countryKey)}</h4>
+                <h4>${escapeHtml(profile.name || countryKey)}</h4>
                 <p class="card-meta">${escapeHtml(
-                  country.tagline || "Lifestyle snapshot"
+                  profile.tagline || "Lifestyle snapshot"
                 )}</p>
               </div>
             </div>
@@ -11187,11 +11249,12 @@
 
       function displayResult(countryKey, matchScore) {
         const country = countries[countryKey];
-        if (!country) {
+        const profile = ensureRenderableCountryProfile(countryKey, country);
+        if (!profile) {
           return;
         }
 
-        const optimizedSources = getOptimizedImageSources(country.image);
+        const optimizedSources = getOptimizedImageSources(profile.image);
         const maxPossibleScore = totalQuestions * 3;
         const safeScore =
           typeof matchScore === "number" ? matchScore : maxPossibleScore * 0.75;
@@ -11199,7 +11262,7 @@
           100,
           Math.max(55, Math.round((safeScore / maxPossibleScore) * 100))
         );
-        const pillItems = (country.highlights || [])
+        const pillItems = (profile.highlights || [])
           .slice(0, 3)
           .map(
             (highlight) =>
@@ -11210,9 +11273,9 @@
           .join("");
 
         const hasHeroImage =
-          !!country.image ||
-          country.imageProvider === "openverse" ||
-          !!country.imageQuery;
+          !!profile.image ||
+          profile.imageProvider === "openverse" ||
+          !!profile.imageQuery;
 
         const heroImageMarkup = hasHeroImage
           ? `<div class="result-media">
@@ -11225,17 +11288,17 @@
                       : ""
                   }
                   <img src="${
-                    country.image
+                    profile.image
                       ? escapeHtml(optimizedSources.fallback)
                       : guideImagePlaceholder
                   }" ${
-              country.image
+              profile.image
                 ? ""
                 : `data-provider="openverse" data-country="${escapeHtml(
                     countryKey
                   )}"`
             } alt="${escapeHtml(
-              country.name || "Country landscape"
+              profile.name || "Country landscape"
             )}" loading="lazy" decoding="async" width="640" height="360" sizes="(max-width: 768px) 100vw, 320px" />
                 </picture>
                 <div class="result-score-chip">
@@ -11262,11 +11325,11 @@
               <div class="result-identity">
                 <span class="result-label">Top match</span>
                 <div class="result-flag"><span class="flag-emoji" data-emoji="${escapeHtml(
-                  country.flag || "🌍"
-                )}">${escapeHtml(country.flag || "🌍")}</span></div>
-                <div class="result-name">${escapeHtml(country.name || "")}</div>
+                  profile.flag || "🌍"
+                )}">${escapeHtml(profile.flag || "🌍")}</span></div>
+                <div class="result-name">${escapeHtml(profile.name || "")}</div>
                 <p class="result-tagline">${escapeHtml(
-                  country.tagline || ""
+                  profile.tagline || ""
                 )}</p>
                 ${
                   pillItems
@@ -11279,7 +11342,7 @@
             <div class="result-body">
               <article class="result-story">
                 ${escapeHtml(
-                  country.description ||
+                  profile.description ||
                     "Expect a balanced blend of experience and opportunity here."
                 )}
               </article>
@@ -11288,7 +11351,7 @@
                   <div class="result-stats-head">
                     <h3>Signal Benchmarks</h3>
                     <p>Where ${escapeHtml(
-                      country.name || "this country"
+                      profile.name || "this country"
                     )} excels based on your inputs.</p>
                   </div>
                   <div class="stats-grid" id="statsGrid"></div>
@@ -11297,7 +11360,7 @@
                   <h3>Next Mini-Moves</h3>
                   <ul class="next-steps">
                     <li>Bookmark visa and residency pathways for ${escapeHtml(
-                      country.name || "this nation"
+                      profile.name || "this nation"
                     )}.</li>
                     <li>Model your monthly budget using local cost-of-living data.</li>
                     <li>Plan a scouting trip anchored around the highlights below.</li>
@@ -11331,8 +11394,8 @@
         }
 
         const statsGrid = document.getElementById("statsGrid");
-        if (statsGrid && Array.isArray(country.stats)) {
-          country.stats.forEach((stat) => {
+        if (statsGrid && Array.isArray(profile.stats)) {
+          profile.stats.forEach((stat) => {
             const statDiv = document.createElement("div");
             statDiv.className = "stat-item";
             statDiv.innerHTML = `
@@ -11345,8 +11408,8 @@
 
         const highlightsContainer =
           document.getElementById("countryHighlights");
-        if (highlightsContainer && Array.isArray(country.highlights)) {
-          country.highlights.forEach((highlight) => {
+        if (highlightsContainer && Array.isArray(profile.highlights)) {
+          profile.highlights.forEach((highlight) => {
             const highlightDiv = document.createElement("div");
             highlightDiv.className = "highlight-card";
             highlightDiv.innerHTML = `
