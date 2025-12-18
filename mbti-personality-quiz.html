@@ -75,7 +75,7 @@
           "name": "Zinvana"
         },
         "datePublished": "2025-11-01",
-        "dateModified": "2025-11-01",
+        "dateModified": "2025-12-18",
         "educationalLevel": "General",
         "interactivityType": "active",
         "learningResourceType": "Assessment",
@@ -707,6 +707,15 @@
       .wojak-badge img {
         width: 34px;
         height: 34px;
+      }
+
+      /* Remove the letter icons (E/I/S/N/T/F/J/P) from quiz answer options */
+      #quizSection .answer-btn {
+        grid-template-columns: 1fr auto;
+      }
+
+      #quizSection .answer-btn .wojak-badge {
+        display: none;
       }
 
       .answer-text {
@@ -3040,6 +3049,17 @@
         transform: none !important;
       }
 
+      /* Hide letter/icon tiles inside quiz answer options (E/I/S/N/T/F/J/P) */
+      main.page .answer-btn .wojak-badge {
+        display: none !important;
+      }
+
+      /* When the badge is hidden, tighten the answer button layout */
+      main.page .answer-btn {
+        grid-template-columns: 1fr auto !important;
+        gap: 10px !important;
+      }
+
       body.theme-light main.page .answer-btn {
         background: #ffffff !important;
       }
@@ -3188,7 +3208,7 @@
           <span class="pill">Free forever | Instant results | No sign-up</span>
           <h1>MBTI Personality Quiz 2025</h1>
           <p class="lede">
-            Answer ten scenario-based questions to reveal your Myers-Briggs
+            Answer 16 scenario-based questions to reveal your Myers-Briggs
             profile. Get strengths, blind spots, and next steps you can use in
             work and relationships.
           </p>
@@ -3205,7 +3225,7 @@
                   d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H19V9Z"
                 />
               </svg>
-              <span>10 questions • ~1 minute</span>
+              <span>16 questions • ~2 minutes</span>
             </div>
             <div class="meta-tile">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -3228,6 +3248,358 @@
       </section>
 
       <div class="main-container">
+        <!-- Quick navigation + high-value guidance content (SEO + user utility) -->
+        <section class="content-section" aria-labelledby="toc-heading">
+          <div class="section-header">
+            <h2 id="toc-heading">On this page</h2>
+            <p>
+              Use this guide to understand what your four-letter result actually
+              means, how to avoid common mistypes, and how to apply your type in
+              real life.
+            </p>
+          </div>
+          <ul class="comparison-list" style="margin-top: 14px">
+            <li><a href="#quizSection">Take the quiz (16 questions)</a></li>
+            <li><a href="#mbti-letters">What each MBTI letter means</a></li>
+            <li>
+              <a href="#reading-your-type">How to read your 4-letter type</a>
+            </li>
+            <li>
+              <a href="#mistypes">Common mistypes (and how to avoid them)</a>
+            </li>
+            <li>
+              <a href="#work-playbook"
+                >MBTI at work: meetings, feedback, collaboration</a
+              >
+            </li>
+            <li>
+              <a href="#relationship-playbook"
+                >MBTI in relationships: conflict patterns + repair scripts</a
+              >
+            </li>
+            <li><a href="#guide-title">Explore all 16 types</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+          <div class="callout-note" style="margin-top: 22px">
+            Note: This quiz is a practical, scenario-based assessment designed
+            for insight and reflection. It is not a clinical diagnosis and does
+            not replace professional psychological assessment.
+          </div>
+        </section>
+
+        <section
+          class="content-section"
+          id="mbti-letters"
+          aria-labelledby="mbti-letters-heading"
+        >
+          <div class="section-header">
+            <h2 id="mbti-letters-heading">
+              What each MBTI letter means (plain English)
+            </h2>
+            <p>
+              Your result is built from four preference pairs. Think of them as
+              defaults you lean toward under low pressure—not rigid rules.
+            </p>
+          </div>
+          <div class="insight-grid">
+            <article class="insight-card">
+              <h3>⚡ E vs I — Energy &amp; stimulation</h3>
+              <p>
+                This is about where you naturally recharge and what level of
+                stimulation feels sustainable.
+              </p>
+              <ul>
+                <li>
+                  <strong>E:</strong> momentum from interaction, variety, and
+                  external input
+                </li>
+                <li>
+                  <strong>I:</strong> momentum from focus, depth, and quiet
+                  processing time
+                </li>
+              </ul>
+            </article>
+            <article class="insight-card">
+              <h3>🔍 S vs N — Information &amp; patterning</h3>
+              <p>
+                This reflects what you trust first: concrete details or big
+                picture patterns.
+              </p>
+              <ul>
+                <li>
+                  <strong>S:</strong> facts, practicality, proven methods, what
+                  is
+                </li>
+                <li>
+                  <strong>N:</strong> themes, meaning, possibilities, what could
+                  be
+                </li>
+              </ul>
+            </article>
+            <article class="insight-card">
+              <h3>⚖️ T vs F — Decisions &amp; values</h3>
+              <p>
+                This is about the lens you use first when choosing: objective
+                criteria or human impact.
+              </p>
+              <ul>
+                <li>
+                  <strong>T:</strong> fairness through consistency, logic,
+                  trade-offs
+                </li>
+                <li>
+                  <strong>F:</strong> fairness through empathy, values, context
+                </li>
+              </ul>
+            </article>
+            <article class="insight-card">
+              <h3>🗂️ J vs P — Structure &amp; adaptability</h3>
+              <p>
+                This reflects your comfort with closure versus keeping options
+                open.
+              </p>
+              <ul>
+                <li>
+                  <strong>J:</strong> plans, decisions, clarity, finishing
+                </li>
+                <li>
+                  <strong>P:</strong> flexibility, discovery, adjusting as you
+                  go
+                </li>
+              </ul>
+            </article>
+          </div>
+          <div class="callout-note" style="margin-top: 22px">
+            If you score close to the middle on a pair (like E/I), that’s
+            normal. Many people are situational—your “default” can shift
+            depending on role, stress, and environment.
+          </div>
+        </section>
+
+        <section
+          class="content-section"
+          id="reading-your-type"
+          aria-labelledby="reading-your-type-heading"
+        >
+          <div class="section-header">
+            <h2 id="reading-your-type-heading">
+              How to read your 4-letter type (and use it)
+            </h2>
+            <p>
+              A four-letter code becomes useful when you turn it into specific
+              behaviors you can notice and improve.
+            </p>
+          </div>
+          <ul class="comparison-list">
+            <li>
+              <strong>Start with the pair you feel most strongly:</strong> many
+              people immediately recognize one dimension (often J/P or S/N).
+            </li>
+            <li>
+              <strong>Read your type as a pattern, not a label:</strong> the
+              combinations interact. For example,
+              <a href="mbti-intj.html">INTJ</a> and
+              <a href="mbti-infj.html">INFJ</a> may share intensity and
+              future-focus, but differ in decision-making and conflict style.
+            </li>
+            <li>
+              <strong>Watch behavior under stress:</strong> stress can make you
+              look like your opposite. That doesn’t mean your core preference
+              changed—it often means your coping strategy did.
+            </li>
+            <li>
+              <strong>Use your result as a playbook:</strong> apply one insight
+              at a time (communication, planning, conflict, energy management)
+              so your type turns into measurable improvement.
+            </li>
+          </ul>
+          <div class="callout-note" style="margin-top: 22px">
+            Practical tip: Screenshot your result and revisit it in 30 days. The
+            best MBTI insight is the one you actually practice.
+          </div>
+        </section>
+
+        <section
+          class="content-section"
+          id="mistypes"
+          aria-labelledby="mistypes-heading"
+        >
+          <div class="section-header">
+            <h2 id="mistypes-heading">
+              Common MBTI mistypes (and how to avoid them)
+            </h2>
+            <p>
+              Most confusion comes from answering based on your “ideal self” or
+              your current job role instead of your natural default.
+            </p>
+          </div>
+          <div class="insight-grid">
+            <article class="insight-card">
+              <h3>🎭 Role vs preference</h3>
+              <p>
+                A manager can act like an “E” at work and still be an “I” at
+                home. Answer based on what recharges you.
+              </p>
+            </article>
+            <article class="insight-card">
+              <h3>📈 Skill vs default</h3>
+              <p>
+                You can be highly empathetic and still lean “T,” or highly
+                organized and still lean “P.” Skill ≠ preference.
+              </p>
+            </article>
+            <article class="insight-card">
+              <h3>😵 Stress masking</h3>
+              <p>
+                Burnout can mimic your opposite letters. If your life is in a
+                high-stress season, take the quiz again later for comparison.
+              </p>
+            </article>
+          </div>
+          <ul class="comparison-list" style="margin-top: 18px">
+            <li>
+              If you’re stuck between S/N, ask: do you trust
+              <em>what is</em> first (S) or <em>what could be</em> first (N)?
+            </li>
+            <li>
+              If you’re stuck between T/F, ask: in tough decisions, do you
+              default to consistent criteria (T) or individual impact (F)?
+            </li>
+            <li>
+              If you’re stuck between J/P, ask: do you feel relief after closing
+              decisions (J) or after keeping options open (P)?
+            </li>
+          </ul>
+        </section>
+
+        <section
+          class="content-section"
+          id="work-playbook"
+          aria-labelledby="work-playbook-heading"
+        >
+          <div class="section-header">
+            <h2 id="work-playbook-heading">
+              MBTI at work: meetings, feedback, collaboration
+            </h2>
+            <p>
+              Use MBTI as a communication shortcut. It helps teams reduce
+              friction by clarifying what “good work” looks like to different
+              people.
+            </p>
+          </div>
+          <div class="insight-grid">
+            <article class="insight-card">
+              <h3>🧩 Meetings</h3>
+              <ul>
+                <li>
+                  <strong>I-types:</strong> send an agenda early; allow thinking
+                  time
+                </li>
+                <li>
+                  <strong>E-types:</strong> include discussion; end with clear
+                  next steps
+                </li>
+                <li>
+                  <strong>S-types:</strong> define facts, constraints, and
+                  owners
+                </li>
+                <li>
+                  <strong>N-types:</strong> clarify the “why,” outcomes, and
+                  options
+                </li>
+              </ul>
+            </article>
+            <article class="insight-card">
+              <h3>🗣️ Feedback</h3>
+              <ul>
+                <li>
+                  <strong>T-types:</strong> lead with direct specifics and
+                  criteria
+                </li>
+                <li>
+                  <strong>F-types:</strong> include impact + appreciation +
+                  intent
+                </li>
+                <li>
+                  <strong>J-types:</strong> define deadlines and decisions
+                </li>
+                <li>
+                  <strong>P-types:</strong> co-create options and leave room to
+                  adapt
+                </li>
+              </ul>
+            </article>
+            <article class="insight-card">
+              <h3>🤝 Collaboration</h3>
+              <p>
+                The fastest teams combine opposites: S keeps reality grounded; N
+                keeps strategy flexible. J drives delivery; P prevents tunnel
+                vision.
+              </p>
+              <p style="margin-top: 10px">
+                Try pairing your result with a contrasting guide like
+                <a href="mbti-estj.html">ESTJ</a> vs
+                <a href="mbti-infp.html">INFP</a> or
+                <a href="mbti-entp.html">ENTP</a> vs
+                <a href="mbti-istj.html">ISTJ</a>
+                to see how different defaults solve the same problem.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="content-section"
+          id="relationship-playbook"
+          aria-labelledby="relationship-playbook-heading"
+        >
+          <div class="section-header">
+            <h2 id="relationship-playbook-heading">
+              MBTI in relationships: conflict patterns + repair scripts
+            </h2>
+            <p>
+              Personality types don’t determine compatibility, but they can
+              explain common misunderstandings—especially around communication,
+              planning, and emotional pacing.
+            </p>
+          </div>
+          <div class="insight-grid">
+            <article class="insight-card">
+              <h3>🧯 Conflict triggers (common patterns)</h3>
+              <ul>
+                <li>
+                  <strong>S vs N:</strong> “details” vs “meaning” arguments
+                </li>
+                <li><strong>T vs F:</strong> “logic” vs “care” arguments</li>
+                <li>
+                  <strong>J vs P:</strong> “commitment” vs “freedom” arguments
+                </li>
+              </ul>
+            </article>
+            <article class="insight-card">
+              <h3>🛠️ Repair scripts (copy/paste)</h3>
+              <ul>
+                <li>“Help me understand what matters most to you here.”</li>
+                <li>
+                  “Here’s the outcome I’m aiming for—what outcome are you aiming
+                  for?”
+                </li>
+                <li>
+                  “Can we agree on one next step now, then revisit later?”
+                </li>
+              </ul>
+            </article>
+            <article class="insight-card">
+              <h3>🧭 Personal growth prompt</h3>
+              <p>
+                Pick one opposite-letter skill to practice this week. Example:
+                J-types practice leaving one decision open; P-types practice
+                closing one decision early.
+              </p>
+            </article>
+          </div>
+        </section>
+
         <!-- Introduction Section -->
         <section class="content-section" aria-labelledby="archetypes-heading">
           <div class="archetypes-header">
@@ -3322,16 +3694,9 @@
               <span class="legend-label">The Four MBTI Families</span>
               <div class="archetype-card-grid">
                 <div class="archetype-card">
-                  <span class="chip"
-                    ><img
-                      data-letter="NT"
-                      data-theme="analyst"
-                      alt="Analyst badge"
-                    />Analysts (NT)</span
-                  >
                   <div class="archetype-figure">
                     <img
-                      src="elonmusk.gif"
+                      src="musk.gif"
                       alt="Elon Musk — representative example of the Analyst (NT) temperament"
                       loading="lazy"
                     />
@@ -3349,13 +3714,6 @@
                   </p>
                 </div>
                 <div class="archetype-card">
-                  <span class="chip"
-                    ><img
-                      data-letter="NF"
-                      data-theme="diplomat"
-                      alt="Diplomat badge"
-                    />Diplomats (NF)</span
-                  >
                   <div class="archetype-figure">
                     <img
                       src="taylorswift.gif"
@@ -3376,16 +3734,9 @@
                   </p>
                 </div>
                 <div class="archetype-card">
-                  <span class="chip"
-                    ><img
-                      data-letter="SJ"
-                      data-theme="sentinel"
-                      alt="Sentinel badge"
-                    />Sentinels (SJ)</span
-                  >
                   <div class="archetype-figure">
                     <img
-                      src="gomez.gif"
+                      src="selenagomez.gif"
                       alt="Selena Gomez — representative example of the Sentinel (SJ) temperament"
                       loading="lazy"
                     />
@@ -3402,13 +3753,6 @@
                   </p>
                 </div>
                 <div class="archetype-card">
-                  <span class="chip"
-                    ><img
-                      data-letter="SP"
-                      data-theme="explorer"
-                      alt="Explorer badge"
-                    />Explorers (SP)</span
-                  >
                   <div class="archetype-figure">
                     <img
                       src="williams.gif"
@@ -3569,7 +3913,7 @@
           <div class="quiz-header">
             <h2>Take the MBTI Personality Quiz</h2>
             <p>
-              Answer 10 scenario-based questions to uncover your Myers-Briggs
+              Answer 16 scenario-based questions to uncover your Myers-Briggs
               code
             </p>
           </div>
@@ -3578,7 +3922,8 @@
             <div class="progress-meta">
               <span><strong id="progressLabel">0%</strong></span>
               <span
-                >Question <strong id="questionNumberTop">1</strong> / 10</span
+                >Question <strong id="questionNumberTop">1</strong> /
+                <strong id="questionTotalTop">16</strong></span
               >
             </div>
             <div class="progress" aria-label="Quiz progress">
@@ -3593,7 +3938,8 @@
             </div>
 
             <div class="question-counter" aria-live="polite">
-              <span id="questionNumber">1</span> / 10
+              <span id="questionNumber">1</span> /
+              <span id="questionTotal">16</span>
             </div>
 
             <!-- Question 1 -->
@@ -4349,20 +4695,167 @@
                 </button>
                 <button
                   class="answer-btn"
+                  data-trait="J"
+                  data-dimension="JP"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img
+                      data-letter="J"
+                      data-theme="structure"
+                      alt="Judging icon"
+                  /></span>
+                  <span class="answer-text"
+                    >I prefer to decide early, commit, and build momentum with a
+                    clear plan</span
+                  >
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="P"
+                  data-dimension="JP"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img
+                      data-letter="P"
+                      data-theme="structure"
+                      alt="Perceiving icon"
+                  /></span>
+                  <span class="answer-text"
+                    >I prefer to explore, adapt, and let the best direction
+                    emerge as new information arrives</span
+                  >
+                  <span class="chevron">›</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question" data-question="11">
+              <h3>At a party where you know only a few people, you tend to…</h3>
+              <div class="answers">
+                <button
+                  class="answer-btn"
+                  data-trait="E"
+                  data-dimension="EI"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="E" data-theme="energy" alt="Extroversion icon"
+                  /></span>
+                  <span class="answer-text">Start conversations and meet new people quickly</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="I"
+                  data-dimension="EI"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="I" data-theme="energy" alt="Introversion icon"
+                  /></span>
+                  <span class="answer-text">Stay near familiar faces and warm up gradually</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="E"
+                  data-dimension="EI"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="E" data-theme="energy" alt="Extroversion icon"
+                  /></span>
+                  <span class="answer-text">Join a lively group and keep the energy moving</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="I"
+                  data-dimension="EI"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="I" data-theme="energy" alt="Introversion icon"
+                  /></span>
+                  <span class="answer-text">Find a quieter corner and prefer 1:1 conversation</span>
+                  <span class="chevron">›</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question" data-question="12">
+              <h3>When learning something new, you trust…</h3>
+              <div class="answers">
+                <button
+                  class="answer-btn"
+                  data-trait="S"
+                  data-dimension="SN"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="S" data-theme="information" alt="Sensing icon"
+                  /></span>
+                  <span class="answer-text">Specific examples and what has worked before</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="N"
+                  data-dimension="SN"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="N" data-theme="information" alt="Intuition icon"
+                  /></span>
+                  <span class="answer-text">Patterns, themes, and the underlying concept</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="S"
+                  data-dimension="SN"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="S" data-theme="information" alt="Sensing icon"
+                  /></span>
+                  <span class="answer-text">Clear instructions, details, and measurable proof</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="N"
+                  data-dimension="SN"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="N" data-theme="information" alt="Intuition icon"
+                  /></span>
+                  <span class="answer-text">Insight, possibility, and how it could evolve over time</span>
+                  <span class="chevron">›</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question" data-question="13">
+              <h3>If you must choose quickly, you usually…</h3>
+              <div class="answers">
+                <button
+                  class="answer-btn"
                   data-trait="T"
                   data-dimension="TF"
                   onclick="selectAnswer(this)"
                 >
                   <span class="wojak-badge"
-                    ><img
-                      data-letter="T"
-                      data-theme="decisions"
-                      alt="Thinking icon"
+                    ><img data-letter="T" data-theme="decisions" alt="Thinking icon"
                   /></span>
-                  <span class="answer-text"
-                    >I evaluate trends analytically and prepare contingencies in
-                    advance</span
-                  >
+                  <span class="answer-text">Pick the option with the strongest logic and trade-offs</span>
                   <span class="chevron">›</span>
                 </button>
                 <button
@@ -4372,15 +4865,198 @@
                   onclick="selectAnswer(this)"
                 >
                   <span class="wojak-badge"
-                    ><img
-                      data-letter="F"
-                      data-theme="decisions"
-                      alt="Feeling icon"
+                    ><img data-letter="F" data-theme="decisions" alt="Feeling icon"
                   /></span>
-                  <span class="answer-text"
-                    >I picture the impact on people and how we can grow
-                    together</span
-                  >
+                  <span class="answer-text">Pick what best protects relationships and values</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="T"
+                  data-dimension="TF"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="T" data-theme="decisions" alt="Thinking icon"
+                  /></span>
+                  <span class="answer-text">Use clear criteria and choose the most consistent outcome</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="F"
+                  data-dimension="TF"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="F" data-theme="decisions" alt="Feeling icon"
+                  /></span>
+                  <span class="answer-text">Choose what feels most humane and personally meaningful</span>
+                  <span class="chevron">›</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question" data-question="14">
+              <h3>How do you handle a to-do list with many tasks?</h3>
+              <div class="answers">
+                <button
+                  class="answer-btn"
+                  data-trait="J"
+                  data-dimension="JP"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="J" data-theme="structure" alt="Judging icon"
+                  /></span>
+                  <span class="answer-text">Prioritize, schedule, and finish in a planned order</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="P"
+                  data-dimension="JP"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="P" data-theme="structure" alt="Perceiving icon"
+                  /></span>
+                  <span class="answer-text">Stay flexible and switch tasks as new info appears</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="J"
+                  data-dimension="JP"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="J" data-theme="structure" alt="Judging icon"
+                  /></span>
+                  <span class="answer-text">Decide early what “done” looks like and drive closure</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="P"
+                  data-dimension="JP"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="P" data-theme="structure" alt="Perceiving icon"
+                  /></span>
+                  <span class="answer-text">Keep options open and follow curiosity to the best solution</span>
+                  <span class="chevron">›</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="question" data-question="15">
+              <h3>In a group project, your default role is…</h3>
+              <div class="answers">
+                <button
+                  class="answer-btn"
+                  data-trait="E"
+                  data-dimension="EI"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="E" data-theme="energy" alt="Extroversion icon"
+                  /></span>
+                  <span class="answer-text">Facilitator: I talk it out and keep everyone aligned</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="I"
+                  data-dimension="EI"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="I" data-theme="energy" alt="Introversion icon"
+                  /></span>
+                  <span class="answer-text">Specialist: I focus quietly and deliver high-quality work</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="E"
+                  data-dimension="EI"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="E" data-theme="energy" alt="Extroversion icon"
+                  /></span>
+                  <span class="answer-text">Connector: I energize the group and keep momentum up</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="I"
+                  data-dimension="EI"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="I" data-theme="energy" alt="Introversion icon"
+                  /></span>
+                  <span class="answer-text">Strategist: I think deeply before speaking and proposing a plan</span>
+                  <span class="chevron">›</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="question" data-question="16">
+              <h3>When someone breaks a rule, your first instinct is…</h3>
+              <div class="answers">
+                <button
+                  class="answer-btn"
+                  data-trait="T"
+                  data-dimension="TF"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="T" data-theme="decisions" alt="Thinking icon"
+                  /></span>
+                  <span class="answer-text">Focus on fairness and consistency: rules should apply equally</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="F"
+                  data-dimension="TF"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="F" data-theme="decisions" alt="Feeling icon"
+                  /></span>
+                  <span class="answer-text">Focus on context: what happened and who might be hurting</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="T"
+                  data-dimension="TF"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="T" data-theme="decisions" alt="Thinking icon"
+                  /></span>
+                  <span class="answer-text">Ask for facts first and choose the most rational consequence</span>
+                  <span class="chevron">›</span>
+                </button>
+                <button
+                  class="answer-btn"
+                  data-trait="F"
+                  data-dimension="TF"
+                  onclick="selectAnswer(this)"
+                >
+                  <span class="wojak-badge"
+                    ><img data-letter="F" data-theme="decisions" alt="Feeling icon"
+                  /></span>
+                  <span class="answer-text">Aim for repair: accountability with compassion and learning</span>
                   <span class="chevron">›</span>
                 </button>
               </div>
@@ -5046,6 +5722,46 @@
                 development routines.
               </div>
             </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Is this the official Myers-Briggs® assessment?
+                <span>+</span>
+              </div>
+              <div class="faq-answer">
+                No. This is an educational, scenario-based quiz inspired by the
+                classic MBTI preference pairs. It is designed for quick insight
+                and reflection. Official MBTI certification and assessment
+                processes follow specific instruments and guidelines.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                What if I feel like I’m “in the middle” on some letters?
+                <span>+</span>
+              </div>
+              <div class="faq-answer">
+                That’s common. Many people are near the midpoint on one or more
+                pairs (for example, E/I). In that case, focus on the
+                descriptions and real-life patterns in your result rather than
+                the letter alone. Retake the quiz during a calmer week and
+                compare.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                How can I use MBTI without boxing myself in?
+                <span>+</span>
+              </div>
+              <div class="faq-answer">
+                Treat your type as a starting hypothesis: a quick summary of
+                what you prefer by default. Use it to improve communication and
+                self-awareness, then practice skills from the opposite letters
+                when your goals require it.
+              </div>
+            </div>
           </div>
         </div>
 
@@ -5098,6 +5814,38 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "No—each type has strengths and potential blind spots. The goal is increased self-awareness and better collaboration."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How should I use my MBTI results?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the report as a practical playbook: reflect on strengths and blind spots, improve communication with teammates/loved ones, and turn one insight into a small habit over the next 7–30 days."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this the official Myers-Briggs assessment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This is an educational, scenario-based quiz inspired by the classic MBTI preference pairs. Official MBTI assessments follow specific instruments and guidelines."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if I feel like I'm in the middle on some letters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "That's common. Focus on the behavior patterns described in your result and consider retaking the quiz during a calmer week to compare."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I use MBTI without boxing myself in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Treat your type as a default preference, not a limit. Use it to improve self-awareness and communication, then practice opposite-letter skills when your goals require it."
             }
           }
         ]
@@ -5169,7 +5917,7 @@
     </script>
 
     <script>
-      const totalQuestions = 10;
+      const totalQuestions = 16;
       let currentQuestion = 1;
       let answers = {};
       let mbtiScores = {
@@ -5872,11 +6620,44 @@
         }
       }
 
+      function syncQuestionTotals() {
+        const totalTop = document.getElementById("questionTotalTop");
+        if (totalTop) {
+          totalTop.textContent = String(totalQuestions);
+        }
+        const totalInline = document.getElementById("questionTotal");
+        if (totalInline) {
+          totalInline.textContent = String(totalQuestions);
+        }
+      }
+
       function calculateMbtiType() {
-        const energy = mbtiScores.E >= mbtiScores.I ? "E" : "I";
-        const information = mbtiScores.N >= mbtiScores.S ? "N" : "S";
-        const decisions = mbtiScores.T >= mbtiScores.F ? "T" : "F";
-        const lifestyle = mbtiScores.J >= mbtiScores.P ? "J" : "P";
+        const fairCoinFlip = () => {
+          try {
+            if (window.crypto && window.crypto.getRandomValues) {
+              const buf = new Uint32Array(1);
+              window.crypto.getRandomValues(buf);
+              return (buf[0] & 1) === 1;
+            }
+          } catch {
+            // fall back to Math.random
+          }
+          return Math.random() < 0.5;
+        };
+
+        const pick = (a, b) => {
+          const aScore = Number(mbtiScores[a] || 0);
+          const bScore = Number(mbtiScores[b] || 0);
+          if (aScore > bScore) return a;
+          if (bScore > aScore) return b;
+          // Tie: break randomly to avoid bias toward any letter.
+          return fairCoinFlip() ? a : b;
+        };
+
+        const energy = pick("E", "I");
+        const information = pick("N", "S");
+        const decisions = pick("T", "F");
+        const lifestyle = pick("J", "P");
         return `${energy}${information}${decisions}${lifestyle}`;
       }
 
@@ -6062,6 +6843,7 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
+        syncQuestionTotals();
         const navToggle = document.getElementById("navToggle");
         const navLinks = document.getElementById("navLinks");
         if (navToggle && navLinks) {
