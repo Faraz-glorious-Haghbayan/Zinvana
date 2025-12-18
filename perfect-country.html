@@ -10805,7 +10805,113 @@
 
       // Guide scope: keep only the top 100 biggest independent countries (by area).
       // This affects the guide list only; quiz scoring can still reference additional keys.
-      let guideTopAreaCountryKeys = null;
+      const DEFAULT_GUIDE_TOP_AREA_COUNTRY_KEYS = [
+        "afghanistan",
+        "algeria",
+        "angola",
+        "argentina",
+        "australia",
+        "bangladesh",
+        "belarus",
+        "benin",
+        "bolivia",
+        "botswana",
+        "brazil",
+        "burkinafaso",
+        "cambodia",
+        "cameroon",
+        "canada",
+        "centralafricanrepublic",
+        "chad",
+        "chile",
+        "china",
+        "colombia",
+        "congo",
+        "drcongo",
+        "ecuador",
+        "egypt",
+        "eritrea",
+        "ethiopia",
+        "finland",
+        "france",
+        "gabon",
+        "germany",
+        "ghana",
+        "greece",
+        "guinea",
+        "guyana",
+        "india",
+        "indonesia",
+        "iran",
+        "iraq",
+        "italy",
+        "ivorycoast",
+        "japan",
+        "kazakhstan",
+        "kenya",
+        "kyrgyzstan",
+        "laos",
+        "libya",
+        "madagascar",
+        "malawi",
+        "malaysia",
+        "mali",
+        "mauritania",
+        "mexico",
+        "mongolia",
+        "morocco",
+        "mozambique",
+        "myanmar",
+        "namibia",
+        "nepal",
+        "newzealand",
+        "nicaragua",
+        "niger",
+        "nigeria",
+        "northkorea",
+        "norway",
+        "oman",
+        "pakistan",
+        "papuanewguinea",
+        "paraguay",
+        "peru",
+        "philippines",
+        "poland",
+        "qatar",
+        "romania",
+        "russia",
+        "saudiarabia",
+        "senegal",
+        "somalia",
+        "southafrica",
+        "southsudan",
+        "spain",
+        "sudan",
+        "sweden",
+        "syria",
+        "tajikistan",
+        "tanzania",
+        "thailand",
+        "tunisia",
+        "turkiye",
+        "turkmenistan",
+        "uganda",
+        "ukraine",
+        "unitedkingdom",
+        "unitedstates",
+        "uruguay",
+        "uzbekistan",
+        "venezuela",
+        "vietnam",
+        "yemen",
+        "zambia",
+        "zimbabwe",
+      ];
+
+      // Default allowlist so the guide never expands unexpectedly if hydration fails.
+      let guideTopAreaCountryKeys = new Set(
+        DEFAULT_GUIDE_TOP_AREA_COUNTRY_KEYS
+      );
 
       // Maps alternate/duplicate keys to a canonical key (e.g., { turkey: "turkiye" }).
       const countryKeyAliases = Object.create(null);
@@ -11250,9 +11356,12 @@
             }
 
             // Build the guide's top-100 allowlist early (based on the same dataset).
-            // If this fails for any reason, the guide falls back to showing all.
+            // If this fails for any reason, keep the default allowlist.
             try {
-              guideTopAreaCountryKeys = computeTopCountryKeysByArea(list, 100);
+              const computedKeys = computeTopCountryKeysByArea(list, 100);
+              if (computedKeys && computedKeys.size) {
+                guideTopAreaCountryKeys = computedKeys;
+              }
 
               // Curate the guide: remove Suriname, add Qatar
               if (guideTopAreaCountryKeys) {
@@ -11260,7 +11369,9 @@
                 guideTopAreaCountryKeys.add("qatar");
               }
             } catch (e) {
-              guideTopAreaCountryKeys = null;
+              guideTopAreaCountryKeys = new Set(
+                DEFAULT_GUIDE_TOP_AREA_COUNTRY_KEYS
+              );
               console.warn("Failed to compute top-area countries", e);
             }
 
