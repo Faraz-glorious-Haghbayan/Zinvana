@@ -25,9 +25,9 @@
       rel="stylesheet"
     />
 
-    <!-- Performance: preload og image and preconnect to analytics / host -->
-    <link rel="preload" as="image" href="https://zinvana.com/philippines.jpg" />
+    <!-- Performance: preconnect to likely hosts (avoid preloading a large, unused image) -->
     <link rel="preconnect" href="https://zinvana.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link
       rel="preconnect"
       href="https://www.googletagmanager.com"
@@ -48,7 +48,7 @@
       property="og:description"
       content="Discover which country matches your personality and lifestyle with our comprehensive quiz. Get personalized recommendations based on climate, culture, work-life balance, and more."
     />
-    <meta property="og:image" content="https://zinvana.com/ßphilippines.jpg" />
+    <meta property="og:image" content="https://zinvana.com/philippines.jpg" />
     <meta
       property="og:url"
       content="https://zinvana.com/perfect-country.html"
@@ -93,7 +93,7 @@
           "name": "Zinvana"
         },
         "datePublished": "2025-09-30",
-        "dateModified": "2025-09-30",
+        "dateModified": "2025-12-18",
         "educationalLevel": "General",
         "interactivityType": "active",
         "learningResourceType": "Assessment",
@@ -126,7 +126,7 @@
         "author": { "@type": "Organization", "name": "Zinvana" },
         "publisher": { "@type": "Organization", "name": "Zinvana" },
         "datePublished": "2025-09-30",
-        "dateModified": "2025-09-30"
+        "dateModified": "2025-12-18"
       }
     </script>
 
@@ -157,7 +157,7 @@
             "name": "Which countries are included?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Around 200 destinations across all regions. The guide can also include additional territories and regions when available."
+              "text": "Top 100 biggest countries by area. The guide focuses on independent countries and may exclude small territories."
             }
           },
           {
@@ -238,6 +238,46 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Check your connection and browser extensions, then refresh. If problems persist, try a different browser or device. Report bugs via our social profiles in the footer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the quiz recommend cities or just countries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The quiz matches you to a country first. Use your result as a short-list, then validate specific cities based on your priorities (rent, safety, climate, commute style, schools, and community)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this useful for digital nomads and remote workers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The scoring emphasizes lifestyle fit, language comfort, affordability, and access. After you get a match, double-check practical remote-work details like visa type, time zone alignment, internet reliability, and tax residency rules."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if I'm moving with a partner or family?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Treat the result as a starting point. For families, verify schools, pediatric healthcare, safety patterns, housing stock, and community support in the exact city you’d choose. Retake the quiz with your shared priorities to compare outcomes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you factor salaries and taxes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We include broad affordability and economic signals, but we don’t calculate your personal after-tax income. Use official government guidance or a qualified professional for tax and legal decisions—especially if you may become a tax resident."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How often is the quiz updated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We refresh content as major indexes, visa policies, and quality-of-life signals change. The page metadata shows the latest update date, and we keep the quiz deterministic so you can compare results over time."
             }
           }
         ]
@@ -838,6 +878,144 @@
         position: relative;
         overflow: hidden;
         box-shadow: 0 12px 32px rgba(102, 126, 234, 0.12);
+      }
+
+      /* Relocation playbook polish (scoped) */
+      #relocationPlaybook .section-header {
+        margin-bottom: 40px;
+      }
+
+      #relocationPlaybook .section-header p {
+        max-width: 860px;
+      }
+
+      #relocationPlaybook .section-header strong {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: 10px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(99, 102, 241, 0.25);
+        background: rgba(99, 102, 241, 0.08);
+        color: #334155;
+        font-weight: 700;
+        font-size: 0.92rem;
+        white-space: nowrap;
+      }
+
+      #relocationPlaybook .archetypes-panel h3 {
+        margin: 0 0 10px;
+        font-size: 1.35rem;
+        letter-spacing: -0.01em;
+        color: #1f2937;
+      }
+
+      #relocationPlaybook .archetypes-panel p {
+        color: #475569;
+        line-height: 1.75;
+        margin: 0 0 14px;
+      }
+
+      #relocationPlaybook .playbook-bullets {
+        list-style: none;
+        padding: 0;
+        margin: 14px 0 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      #relocationPlaybook .playbook-bullets li {
+        position: relative;
+        padding-left: 26px;
+        color: #334155;
+        line-height: 1.6;
+      }
+
+      #relocationPlaybook .playbook-bullets li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #10b981;
+        font-weight: 800;
+      }
+
+      #relocationPlaybook .playbook-steps {
+        list-style: none;
+        padding: 0;
+        margin: 14px 0 0;
+        display: grid;
+        gap: 12px;
+        counter-reset: playbookStep;
+      }
+
+      #relocationPlaybook .playbook-steps li {
+        counter-increment: playbookStep;
+        position: relative;
+        padding: 14px 16px 14px 56px;
+        border-radius: 16px;
+        border: 1px solid #e6ebf3;
+        background: #ffffff;
+        color: #334155;
+        line-height: 1.6;
+      }
+
+      #relocationPlaybook .playbook-steps li::before {
+        content: counter(playbookStep);
+        position: absolute;
+        left: 14px;
+        top: 14px;
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.18),
+          rgba(118, 75, 162, 0.18)
+        );
+        border: 1px solid rgba(102, 126, 234, 0.22);
+        color: #4f46e5;
+        font-weight: 800;
+        font-size: 0.95rem;
+      }
+
+      #relocationPlaybook .playbook-cta {
+        margin-top: 16px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      #relocationPlaybook .playbook-cta .guide-cta {
+        padding: 10px 14px;
+        border-radius: 12px;
+      }
+
+      @media (max-width: 980px) {
+        #relocationPlaybook .archetypes-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        #relocationPlaybook {
+          padding: 48px 22px;
+        }
+        #relocationPlaybook .archetypes-panel {
+          padding: 22px;
+        }
+        #relocationPlaybook .pillars {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        #relocationPlaybook .section-header strong {
+          display: inline-block;
+          margin-left: 0;
+          margin-top: 10px;
+        }
       }
 
       .pillars {
@@ -3419,6 +3597,11 @@
         color: var(--muted) !important;
       }
 
+      /* Keep relocationPlaybook text dark (section has light background) */
+      body.theme-dark .archetypes-grid {
+        color: black !important;
+      }
+
       /* Result cards stay light; ensure text stays dark even in dark mode */
       body.theme-dark .result-shell,
       body.theme-dark .faq-question,
@@ -3546,7 +3729,14 @@
     <header class="topbar">
       <div class="topbar__inner">
         <a class="brand" href="index.html">
-          <img src="zinvanalogo.png" alt="Zinvana logo" />
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana logo"
+            width="36"
+            height="36"
+            decoding="async"
+            fetchpriority="high"
+          />
           <span>Zinvana</span>
         </a>
         <nav class="primary-nav" aria-label="Main navigation">
@@ -3612,7 +3802,9 @@
           </p>
 
           <ul class="hero-highlights">
-            <li>Around 200 destinations across the Global Country Guide</li>
+            <li>
+              Top 100 biggest countries by area in the Global Country Guide
+            </li>
             <li>Deterministic results with transparent point weighting</li>
             <li>
               Immediate guidance on visas, cost of living, and quality of life
@@ -3697,6 +3889,120 @@
         </div>
       </div>
     </header>
+
+    <section
+      class="content-section"
+      id="relocationPlaybook"
+      aria-labelledby="relocationPlaybookTitle"
+    >
+      <div class="section-header">
+        <span class="eyebrow">Guide</span>
+        <h2 id="relocationPlaybookTitle">
+          How to Choose the Best Country to Live In (Without Guessing)
+        </h2>
+        <p>
+          If you’ve ever searched “where should I move?” or “best country to
+          live in,” you already know the problem: lists are generic. This page
+          helps you convert vague preferences into a concrete short-list you can
+          actually research.
+          <strong>Last updated: Dec 2025.</strong>
+        </p>
+      </div>
+
+      <div class="archetypes-grid">
+        <div class="archetypes-panel">
+          <div class="pillars" aria-label="What this quiz gives you">
+            <div class="pillar">
+              <span class="icon" aria-hidden="true">🎯</span
+              ><strong>Clear short-list</strong>
+            </div>
+            <div class="pillar">
+              <span class="icon" aria-hidden="true">🧭</span
+              ><strong>Trade-offs explained</strong>
+            </div>
+            <div class="pillar">
+              <span class="icon" aria-hidden="true">🧾</span
+              ><strong>Next steps</strong>
+            </div>
+            <div class="pillar">
+              <span class="icon" aria-hidden="true">🔁</span
+              ><strong>Repeatable results</strong>
+            </div>
+          </div>
+
+          <h3>What the Perfect Country Quiz does</h3>
+          <p>
+            You answer 12 lifestyle questions. We score countries consistently
+            across a small set of practical signals—then show you a top match
+            with a plain-English breakdown. It’s designed for discovery and
+            planning, not for making a final legal or financial decision.
+          </p>
+          <ul class="playbook-bullets">
+            <li>
+              <strong>Aligns your vibe:</strong> climate, pace, culture, and
+              environment.
+            </li>
+            <li>
+              <strong>Checks reality:</strong> affordability, language comfort,
+              and access pathways.
+            </li>
+            <li>
+              <strong>Protects against regrets:</strong> highlights the
+              trade-offs you’re implicitly choosing.
+            </li>
+            <li>
+              <strong>Stays comparable:</strong> deterministic scoring so you
+              can re-test as priorities change.
+            </li>
+          </ul>
+        </div>
+
+        <div class="archetypes-panel">
+          <h3>A practical relocation checklist (use after your result)</h3>
+          <p>
+            Millions of people get stuck because they jump from “dream country”
+            to booking flights without validating the basics. Use this fast
+            checklist to turn your result into a real plan.
+          </p>
+          <ol class="playbook-steps">
+            <li>
+              <strong>Pick 2–3 cities</strong> inside your matched country
+              (rent, safety, climate, community).
+            </li>
+            <li>
+              <strong>Verify residency routes</strong> (work, study, family,
+              retirement, digital nomad, ancestry).
+            </li>
+            <li>
+              <strong>Model your monthly budget</strong> (housing, healthcare,
+              transport, taxes, childcare).
+            </li>
+            <li>
+              <strong>Stress-test language fit</strong> (daily life, healthcare,
+              bureaucracy, work).
+            </li>
+            <li>
+              <strong>Check healthcare + safety</strong> using official sources
+              and local reporting.
+            </li>
+            <li>
+              <strong>Run a 7–14 day “scouting trip”</strong> in the
+              neighborhood you’d actually live in.
+            </li>
+            <li>
+              <strong>Re-take the quiz</strong> with updated priorities and
+              compare your top matches.
+            </li>
+          </ol>
+          <div class="playbook-cta" aria-label="Playbook calls to action">
+            <a class="guide-cta" href="#quizSection">Take the quiz</a>
+            <a class="guide-cta" href="#countryGuide"
+              >Browse the country guide</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="quiz-shell" id="quizSection">
       <div class="quiz-container">
@@ -4691,8 +4997,8 @@
         <div class="faq-item">
           <h3 class="faq-question">Which countries are included?</h3>
           <p class="faq-answer">
-            Around 200 destinations across all regions. The guide can also
-            include additional territories and regions when available.
+            Top 100 biggest countries by area. The guide focuses on independent
+            countries and may exclude small territories.
           </p>
         </div>
         <div class="faq-item">
@@ -4779,13 +5085,77 @@
             our social profiles in the footer.
           </p>
         </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">
+            Does the quiz recommend cities or just countries?
+          </h3>
+          <p class="faq-answer">
+            The quiz matches you to a country first. Use your result as a
+            short-list, then validate specific cities based on your priorities
+            (rent, safety, climate, commute style, schools, and community).
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">
+            Is this useful for digital nomads and remote workers?
+          </h3>
+          <p class="faq-answer">
+            Yes. The scoring emphasizes lifestyle fit, language comfort,
+            affordability, and access. After you get a match, double-check
+            practical remote-work details like visa type, time zone alignment,
+            internet reliability, and tax residency rules.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">
+            What if I'm moving with a partner or family?
+          </h3>
+          <p class="faq-answer">
+            Treat the result as a starting point. For families, verify schools,
+            pediatric healthcare, safety patterns, housing stock, and community
+            support in the exact city you’d choose. Retake the quiz with your
+            shared priorities to compare outcomes.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Do you factor salaries and taxes?</h3>
+          <p class="faq-answer">
+            We include broad affordability and economic signals, but we don’t
+            calculate your personal after-tax income. Use official government
+            guidance or a qualified professional for tax and legal
+            decisions—especially if you may become a tax resident.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">How often is the quiz updated?</h3>
+          <p class="faq-answer">
+            We refresh content as major indexes, visa policies, and
+            quality-of-life signals change. The page metadata shows the latest
+            update date, and we keep the quiz deterministic so you can compare
+            results over time.
+          </p>
+        </div>
       </div>
     </section>
 
     <footer class="site-footer">
       <div class="site-footer__inner">
         <div class="site-footer__brand">
-          <img src="zinvanalogo.png" alt="Zinvana" class="site-footer__logo" />
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana"
+            class="site-footer__logo"
+            width="44"
+            height="44"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
+          />
           <h3 class="site-footer__title">Zinvana</h3>
           <p class="site-footer__description">
             Discover your next chapter through evidence-informed quizzes and
@@ -10433,6 +10803,10 @@
       let worldCountriesHydrated = false;
       let worldCountriesHydrating = null;
 
+      // Guide scope: keep only the top 100 biggest independent countries (by area).
+      // This affects the guide list only; quiz scoring can still reference additional keys.
+      let guideTopAreaCountryKeys = null;
+
       // Maps alternate/duplicate keys to a canonical key (e.g., { turkey: "turkiye" }).
       const countryKeyAliases = Object.create(null);
 
@@ -10447,6 +10821,35 @@
 
       function resolveCountryKey(key) {
         return countryKeyAliases[key] || key;
+      }
+
+      function computeTopCountryKeysByArea(list, limit = 100) {
+        if (!Array.isArray(list) || !limit) return null;
+
+        const candidates = list
+          .filter(
+            (meta) =>
+              meta &&
+              meta.independent === true &&
+              typeof meta.area === "number" &&
+              Number.isFinite(meta.area) &&
+              meta.area > 0 &&
+              typeof meta.name === "string" &&
+              meta.name.trim()
+          )
+          .slice()
+          .sort((a, b) => (b.area || 0) - (a.area || 0));
+
+        const keys = [];
+        const seen = new Set();
+        for (const meta of candidates) {
+          const key = slugifyCountryName(meta.name);
+          if (!key || seen.has(key)) continue;
+          seen.add(key);
+          keys.push(key);
+          if (keys.length >= limit) break;
+        }
+        return new Set(keys);
       }
 
       const OPENVERSE_ENDPOINT = "https://api.openverse.engineering/v1/images/";
@@ -10846,6 +11249,21 @@
               throw new Error("world-countries.json is not an array");
             }
 
+            // Build the guide's top-100 allowlist early (based on the same dataset).
+            // If this fails for any reason, the guide falls back to showing all.
+            try {
+              guideTopAreaCountryKeys = computeTopCountryKeysByArea(list, 100);
+
+              // Curate the guide: remove Suriname, add Qatar
+              if (guideTopAreaCountryKeys) {
+                guideTopAreaCountryKeys.delete("suriname");
+                guideTopAreaCountryKeys.add("qatar");
+              }
+            } catch (e) {
+              guideTopAreaCountryKeys = null;
+              console.warn("Failed to compute top-area countries", e);
+            }
+
             const metaByKey = new Map();
             list.forEach((meta) => {
               if (!meta || !meta.name) return;
@@ -11176,6 +11594,10 @@
             img.alt = emoji;
             img.className = "flag-img";
             img.loading = "lazy";
+            img.decoding = "async";
+            img.width = 28;
+            img.height = 20;
+            img.setAttribute("fetchpriority", "low");
 
             if (
               span.parentElement &&
@@ -11210,6 +11632,14 @@
           // Hide small territories/dependencies (e.g., Åland Islands) from the guide.
           // We keep them in data so scoring/aliases can still work if referenced.
           if (profile.independent === false) {
+            return;
+          }
+
+          // Limit the guide to the top 100 biggest independent countries by area.
+          if (
+            guideTopAreaCountryKeys &&
+            !guideTopAreaCountryKeys.has(countryKey)
+          ) {
             return;
           }
 
@@ -11514,7 +11944,7 @@
                   )}"`
             } alt="${escapeHtml(
               profile.name || "Country landscape"
-            )}" loading="lazy" decoding="async" width="640" height="360" sizes="(max-width: 768px) 100vw, 320px" />
+            )}" loading="eager" decoding="async" fetchpriority="high" width="640" height="360" sizes="(max-width: 768px) 100vw, 320px" />
                 </picture>
                 <div class="result-score-chip">
                   <span>Lifestyle fit</span>
