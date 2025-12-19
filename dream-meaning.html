@@ -9,16 +9,16 @@
 
     <!-- Primary SEO Meta Tags -->
     <title>
-      Free Dream Interpreter & Meaning Tool 2024 | Analyze Dreams Instantly
-      Online
+      Dream Interpreter & Meaning Tool (2025) | Private, Psychology‑Informed
+      Insights
     </title>
     <meta
       name="description"
-      content="Discover what your dreams mean with our free AI-powered dream interpreter. Get instant analysis of snake dreams, falling, flying, teeth, water, death & 1000+ symbols. Psychology-based interpretations in seconds."
+      content="Interpret your dreams with a private, browser-based dream meaning tool. Identify common symbols, emotions, and themes with clear, psychology-informed reflection prompts. No account required."
     />
     <meta
       name="keywords"
-      content="dream interpreter, dream meaning, dream analysis, what do dreams mean, dream dictionary, snake dream meaning, falling dream, flying dream, teeth falling out dream, dream symbols, interpret dreams free, online dream analyzer, dream interpretation psychology"
+      content="dream meaning, dream interpretation, dream analysis, dream symbols, dream dictionary, recurring dreams, nightmares, snake dream meaning, falling dream meaning, flying dream meaning, teeth falling out dream"
     />
     <meta name="author" content="Zinvana" />
     <meta
@@ -38,11 +38,11 @@
     <meta property="og:site_name" content="Zinvana - Dream Interpreter" />
     <meta
       property="og:title"
-      content="Free Dream Interpreter Tool - Analyze Your Dreams Instantly"
+      content="Dream Interpreter Tool - Private, Psychology‑Informed Insights"
     />
     <meta
       property="og:description"
-      content="Discover what your dreams mean! Instant analysis of 1000+ dream symbols including snake, falling, flying, teeth. Free, private, psychology-based interpretations."
+      content="Interpret your dreams privately in your browser. Explore common symbols, emotions, and themes with clear, psychology-informed reflection prompts."
     />
     <meta
       property="og:image"
@@ -64,11 +64,11 @@
     />
     <meta
       name="twitter:title"
-      content="Free Dream Interpreter - Analyze Dreams Instantly"
+      content="Dream Interpreter - Private, Psychology‑Informed Insights"
     />
     <meta
       name="twitter:description"
-      content="Discover what your dreams mean with our free dream analyzer. 1000+ symbols, instant interpretations, completely private."
+      content="Interpret your dreams privately in your browser with clear, psychology-informed reflection prompts. No account required."
     />
     <meta
       name="twitter:image"
@@ -93,11 +93,11 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link
       rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
       as="style"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -109,7 +109,7 @@
         "name": "Zinvana Dream Interpreter",
         "alternateName": "Dream Meaning Analyzer",
         "url": "https://www.zinvana.com/dream-meaning.html",
-        "description": "Free online dream interpreter that provides instant analysis of dream symbols and meanings. Analyze dreams about snakes, falling, flying, teeth, water, death and 1000+ other symbols with psychology-based interpretations.",
+        "description": "Browser-based dream interpreter that helps you reflect on common dream symbols, emotions, and themes with psychology-informed prompts.",
         "applicationCategory": "LifestyleApplication",
         "operatingSystem": "Any",
         "offers": {
@@ -118,21 +118,11 @@
           "priceCurrency": "USD"
         },
         "browserRequirements": "Requires JavaScript. Modern browser recommended.",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "12847",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
         "featureList": [
-          "Instant dream analysis",
-          "1000+ dream symbols database",
-          "Psychology-based interpretations",
-          "Completely private and secure",
-          "No registration required",
-          "Works offline",
-          "Free forever"
+          "Dream symbol matching",
+          "Psychology-informed reflection prompts",
+          "Runs locally in your browser",
+          "No account required"
         ],
         "screenshot": "https://www.zinvana.com/zinvanalogo.png",
         "author": {
@@ -232,16 +222,38 @@
     </script>
     <style>
       :root {
-        --bg: #0b0f14;
-        --panel: #111827;
-        --muted: #9ca3af;
-        --text: #e5e7eb;
-        /* Brand (match Wojak quiz) */
-        --brand1: #667eea; /* indigo */
-        --brand2: #764ba2; /* purple */
+        /* Brand + system tokens (aligned with perfect-country.html) */
+        --brand1: #667eea;
+        --brand2: #764ba2;
+
+        --text-strong: #e4ecff;
+        --text: #e4ecff;
+        --muted: #7c8aa5;
+        --surface: rgba(255, 255, 255, 0.02);
+        --surface-2: rgba(255, 255, 255, 0.02);
+        --border: rgba(255, 255, 255, 0.08);
+
+        --bg: #0c1324;
+        --panel: #0f172a;
+        --card: rgba(255, 255, 255, 0.02);
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        --radius: 18px;
+        --topbar-h: 76px;
+        --professional-bg: linear-gradient(
+          135deg,
+          #0a0f1c 0%,
+          #0c1324 50%,
+          #0f172a 100%
+        );
+
+        /* Accent + focus */
         --accent: var(--brand1);
         --accent-2: var(--brand2);
         --ring: 0 0 0 3px rgba(102, 126, 234, 0.35);
+
+        /* CTA (from perfect-country primary button) */
+        --cta1: #f6d365;
+        --cta2: #fda085;
       }
       * {
         box-sizing: border-box;
@@ -252,28 +264,20 @@
       }
       body {
         margin: 0;
-        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
-          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        font-family: "Space Grotesk", "Sora", system-ui, -apple-system, Segoe UI,
+          Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
         color: var(--text);
-        background: radial-gradient(
-            1200px 800px at 20% -10%,
-            #111827 0%,
-            #0b0f14 55%
-          ),
-          radial-gradient(
-            1000px 700px at 120% 120%,
-            rgba(118, 75, 162, 0.15) 0%,
-            rgba(11, 15, 20, 0.6) 60%
-          ),
-          linear-gradient(
-            135deg,
-            rgba(102, 126, 234, 0.1),
-            rgba(118, 75, 162, 0.08)
-          );
-        line-height: 1.55;
-        padding-top: 80px; /* space for fixed nav */
+        background: var(--professional-bg);
+        line-height: 1.6;
+        padding-top: var(--topbar-h);
         scroll-behavior: smooth;
-        overflow-x: hidden; /* prevent accidental horizontal scroll */
+        overflow-x: hidden;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid rgba(45, 212, 191, 0.7);
+        outline-offset: 3px;
       }
       /* Media should scale within containers */
       img,
@@ -298,6 +302,7 @@
         box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
         border-bottom: 1px solid rgba(99, 102, 241, 0.2);
         transition: all 0.3s ease;
+        gap: 24px;
       }
       nav::before {
         content: "";
@@ -423,13 +428,10 @@
       }
       h1 {
         margin: 0 0 8px;
-        font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+        font-size: 3.1rem;
+        letter-spacing: -0.03em;
         font-weight: 800;
-        letter-spacing: 0.2px;
-        background: linear-gradient(90deg, var(--brand1), var(--brand2));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
       }
       .subtitle {
         color: var(--muted);
@@ -437,9 +439,9 @@
       }
 
       .main-container {
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 24px;
       }
       main {
         max-width: none;
@@ -449,9 +451,9 @@
 
       /* Hero */
       .hero-section {
-        padding: 72px 0 28px;
+        padding: 96px 0 64px;
         color: #fff;
-        text-align: center;
+        text-align: left;
         position: relative;
         overflow: hidden;
       }
@@ -476,62 +478,68 @@
       }
       .hero-section .eyebrow {
         display: inline-block;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         color: #c7d2fe;
-        background: rgba(99, 102, 241, 0.15);
+        background: rgba(99, 102, 241, 0.2);
         border: 1px solid rgba(99, 102, 241, 0.35);
-        padding: 6px 10px;
+        padding: 6px 12px;
         border-radius: 999px;
-        margin-bottom: 10px;
+        margin-bottom: 16px;
       }
       .hero-section h1 {
-        font-size: clamp(2rem, 5vw, 3rem);
-        margin-bottom: 10px;
-        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+        font-size: 3.6rem;
+        margin-bottom: 16px;
       }
       .hero-section .subtitle {
-        font-size: 1.15rem;
-        opacity: 0.95;
-        margin-bottom: 8px;
+        font-size: 1.4rem;
+        opacity: 0.98;
+        margin-bottom: 14px;
+        font-weight: 500;
       }
       .hero-section .description {
-        max-width: 720px;
-        margin: 0 auto;
-        opacity: 0.92;
-        font-size: 1.05rem;
-        line-height: 1.65;
+        max-width: 780px;
+        margin: 0 0 24px;
+        opacity: 0.95;
+        font-size: 1.1rem;
+        line-height: 1.7;
       }
       .hero-cta {
-        margin-top: 14px;
+        margin-top: 0;
         display: flex;
-        gap: 10px;
-        justify-content: center;
+        gap: 16px;
+        justify-content: flex-start;
         flex-wrap: wrap;
       }
-      .btn.cta {
-        background: linear-gradient(135deg, var(--brand1), var(--brand2));
-        border-color: rgba(102, 126, 234, 0.5);
+      @media (max-width: 768px) {
+        .hero-section {
+          text-align: center;
+          padding: 78px 0 44px;
+        }
+        .hero-section .description {
+          margin: 0 auto 24px;
+        }
+        .hero-cta {
+          justify-content: center;
+        }
       }
-      .btn.secondary {
-        background: transparent;
-        border-color: rgba(255, 255, 255, 0.25);
+      @media (max-width: 480px) {
+        .hero-section h1 {
+          font-size: 2.4rem;
+        }
       }
 
       .card {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.03),
-          rgba(255, 255, 255, 0.01)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 16px;
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+        background: rgba(15, 23, 42, 0.65);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 28px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 25px 70px rgba(15, 23, 42, 0.5);
         overflow: hidden;
       }
       .card-inner {
-        padding: 18px;
+        padding: 22px;
       }
       label {
         display: block;
@@ -562,31 +570,44 @@
       }
       .btn {
         appearance: none;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: #162033;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(15, 23, 42, 0.55);
         color: var(--text);
-        padding: 10px 14px;
-        border-radius: 10px;
+        padding: 12px 18px;
+        border-radius: 999px;
         cursor: pointer;
         font-weight: 600;
-        transition: transform 0.06s ease, background 0.15s ease,
-          border-color 0.15s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background 0.2s ease, border-color 0.2s ease;
       }
       .btn:hover {
-        background: #1b2944;
+        transform: translateY(-2px);
+        background: rgba(15, 23, 42, 0.7);
       }
       .btn:active {
-        transform: translateY(1px);
+        transform: translateY(0);
       }
       .btn.primary {
         background: linear-gradient(135deg, var(--brand1), var(--brand2));
-        border-color: rgba(102, 126, 234, 0.5);
+        border-color: rgba(102, 126, 234, 0.55);
+        box-shadow: 0 12px 30px rgba(102, 126, 234, 0.18);
       }
       .btn.primary:hover {
         filter: brightness(1.05);
       }
       .btn.ghost {
         background: transparent;
+      }
+      .btn.cta {
+        background: linear-gradient(135deg, var(--cta1) 0%, var(--cta2) 100%);
+        color: #1f2937;
+        border-color: rgba(255, 255, 255, 0.35);
+        box-shadow: 0 12px 30px rgba(253, 160, 133, 0.35);
+      }
+      .btn.secondary {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #fff;
       }
       .row {
         display: grid;
@@ -600,10 +621,10 @@
       }
       .results,
       .tips {
-        background: #0f1520;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        padding: 14px;
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 16px;
         min-height: 120px;
       }
       .results h3,
@@ -1024,10 +1045,10 @@
 
       /* Symbol Catalog */
       .catalog {
-        background: #0f1520;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        padding: 14px;
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 16px;
         margin: 20px 0;
       }
       .catalog h3 {
@@ -1249,7 +1270,8 @@
         <a href="#main">Dreams</a>
       </div>
       <div class="nav-right">
-        <a href="help.html">Help</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
       </div>
     </nav>
     <header>
@@ -1402,7 +1424,7 @@
             </div>
             <div class="muted">
               Click <b>Find Meaning</b> or press <b>Ctrl+Enter</b> (Cmd+Enter on
-              macOS) — it’s fast and offline.
+              macOS) — results are generated locally in your browser.
             </div>
           </div>
         </div>
@@ -1535,14 +1557,14 @@
           <div class="card-inner">
             <label id="dream-label" for="dream-input"
               ><h2 style="font-size: 1.1rem; margin: 0">
-                Enter Your Dream for Instant Analysis
+                Enter your dream for interpretation
               </h2></label
             >
             <textarea
               id="dream-input"
               placeholder="Example: I was flying over a city at night and then my teeth started to fall out. There was a snake in the corner..."
               aria-describedby="help"
-              aria-label="Describe your dream to get instant interpretation"
+              aria-label="Describe your dream to get a private interpretation"
             ></textarea>
             <div
               id="help"
@@ -1895,7 +1917,7 @@
                   itemprop="name"
                   style="font-size: 1.1rem; margin: 0 0 8px; color: #e0e7ff"
                 >
-                  🐍 Snake Dreams
+                  Snake dreams
                 </h4>
                 <p
                   itemprop="description"
@@ -1927,7 +1949,7 @@
                   itemprop="name"
                   style="font-size: 1.1rem; margin: 0 0 8px; color: #e0e7ff"
                 >
-                  🦷 Teeth Falling Out Dreams
+                  Teeth falling out dreams
                 </h4>
                 <p
                   itemprop="description"
@@ -2023,7 +2045,7 @@
                   itemprop="name"
                   style="font-size: 1.1rem; margin: 0 0 8px; color: #e0e7ff"
                 >
-                  💧 Water Dreams
+                  Water dreams
                 </h4>
                 <p
                   itemprop="description"
@@ -2055,7 +2077,7 @@
                   itemprop="name"
                   style="font-size: 1.1rem; margin: 0 0 8px; color: #e0e7ff"
                 >
-                  💀 Death Dreams
+                  Death dreams
                 </h4>
                 <p
                   itemprop="description"
@@ -2077,7 +2099,7 @@
 
           <section style="margin-bottom: 24px">
             <h3 style="font-size: 1.3rem; margin: 0 0 12px; color: #c7d2fe">
-              Why Use Our Free Dream Interpreter?
+              Why Use This Dream Interpreter?
             </h3>
             <ul
               style="
@@ -2088,28 +2110,28 @@
               "
             >
               <li>
-                <strong>Instant Analysis:</strong> Get dream interpretations in
-                seconds, not hours
+                <strong>Clear summaries:</strong> Quick, readable results that
+                highlight symbols, emotions, and likely themes
               </li>
               <li>
-                <strong>1000+ Symbols:</strong> Comprehensive database covering
-                animals, objects, actions, emotions, and scenarios
+                <strong>Broad symbol library:</strong> Coverage across animals,
+                objects, places, actions, and common scenarios
               </li>
               <li>
-                <strong>Psychology-Based:</strong> Interpretations rooted in
-                Jungian psychology, Freudian theory, and modern dream research
+                <strong>Psychology-informed:</strong> Uses common symbolic and
+                emotional patterns as prompts for reflection (not diagnosis)
               </li>
               <li>
-                <strong>Completely Private:</strong> All processing happens in
-                your browser - your dreams never leave your device
+                <strong>Private by design:</strong> Processing happens locally
+                in your browser; your text is not sent to a server
               </li>
               <li>
-                <strong>Free Forever:</strong> No registration, no hidden fees,
-                no premium tiers
+                <strong>No account required:</strong> Start immediately—no
+                sign-up or downloads
               </li>
               <li>
-                <strong>Practical Insights:</strong> Get actionable next steps
-                based on your dream analysis
+                <strong>Practical prompts:</strong> Helpful next steps you can
+                use for journaling and self-reflection
               </li>
             </ul>
           </section>
@@ -2148,7 +2170,8 @@
               </li>
               <li>
                 <strong>Trust Your Intuition:</strong> While our tool provides
-                guidance, you know your life best - trust your gut feelings
+                guidance, your context matters most—treat interpretations as
+                starting points
               </li>
             </ol>
           </section>
@@ -2163,14 +2186,14 @@
               Whether you're curious about that recurring nightmare, want to
               understand a vivid dream you just had, or simply enjoy exploring
               your subconscious mind, our free dream interpreter tool is here to
-              help. With instant analysis of over 1,000 symbols and
-              psychology-based interpretations, you'll gain valuable insights
-              into what your dreams are trying to tell you.
+              help. Use it to organize what you saw and felt, surface patterns
+              that may relate to your waking life, and choose a concrete next
+              step for reflection.
             </p>
             <p style="line-height: 1.7; color: var(--text); margin: 0">
               <strong
-                >No account needed. No downloads. Just type your dream above and
-                discover its meaning instantly.</strong
+                >No account needed. No downloads. Type your dream above to get a
+                private interpretation.</strong
               >
             </p>
           </section>
@@ -2178,7 +2201,7 @@
 
         <meta itemprop="author" content="Zinvana" />
         <meta itemprop="datePublished" content="2024-10-23" />
-        <meta itemprop="dateModified" content="2024-10-23" />
+        <meta itemprop="dateModified" content="2025-12-19" />
       </div>
     </article>
 
