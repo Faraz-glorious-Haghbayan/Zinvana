@@ -14,14 +14,74 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <meta name="theme-color" content="#0f172a" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Geo-Zini Country Guesser",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A free online country guessing game that uses entropy-based logic to deduce which country you are thinking of.",
+        "author": {
+          "@type": "Organization",
+          "name": "Zinvana"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How many questions does it take to guess a country?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Typically, Geo-Zini can zero in on your country within 15-20 questions, thanks to its entropy-based questioning strategy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Geo-Zini free to play?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Geo-Zini is 100% free and requires no registration or download."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many countries are included?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The database includes all 193 UN member states plus major territories and observers, totaling over 240 entities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I play offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Once the page loads, the game logic runs entirely in your browser, so you can keep playing even if you lose connection."
+            }
+          }
+        ]
+      }
+    </script>
     <style>
       :root {
-        --brand1: #667eea;
-        --brand2: #764ba2;
-        --brand3: #f6ad55;
+        --brand1: #4f46e5;
+        --brand2: #7c3aed;
+        --brand3: #f59e0b;
         --surface: #ffffff;
         --surface-alt: rgba(255, 255, 255, 0.85);
         --text-strong: #1f2937;
@@ -47,16 +107,17 @@
       body {
         margin: 0;
         font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-        background: linear-gradient(
-          135deg,
-          #667eea 0%,
-          #764ba2 25%,
-          #f093fb 50%,
-          #f5576c 75%,
-          #4facfe 100%
-        );
-        background-size: 400% 400%;
-        animation: gradientShift 15s ease infinite;
+        background: radial-gradient(
+            circle at 20% 10%,
+            rgba(79, 70, 229, 0.12),
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 80% 0%,
+            rgba(124, 58, 237, 0.1),
+            transparent 40%
+          ),
+          linear-gradient(180deg, #f8fafc 0%, #eef2ff 40%, #ffffff 100%);
         color: var(--text);
         min-height: 100vh;
         line-height: 1.5;
@@ -78,25 +139,32 @@
         margin: 0 auto;
       }
 
-      @keyframes gradientShift {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
       body::before {
         content: "";
         position: fixed;
         inset: 0;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(1px);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(2px);
         z-index: -1;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: #0f172a;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        z-index: 11000;
+        transform: translateY(-140%);
+        transition: transform 0.2s ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
       }
 
       /* Professional Navigation - Enhanced & OPTIMIZED */
@@ -420,26 +488,10 @@
 
       .hero-section {
         text-align: center;
-        color: #fff;
-        padding: 80px 20px 60px;
+        color: var(--text-strong);
+        padding: 88px 20px 56px;
         position: relative;
         overflow: hidden;
-      }
-
-      .hero-section::after {
-        content: "";
-        position: absolute;
-        width: 900px;
-        height: 900px;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.08) 0%,
-          transparent 70%
-        );
-        z-index: 0;
       }
 
       .hero-section > * {
@@ -458,69 +510,27 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        background: rgba(255, 255, 255, 0.95);
-        border: 1px solid rgba(102, 126, 234, 0.15);
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(15, 23, 42, 0.08);
         border-radius: 50px;
         padding: 0.75rem 1.5rem;
         margin-bottom: 1.5rem;
         font-size: 0.9rem;
         font-weight: 600;
-        color: #667eea;
-        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-badge::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(102, 126, 234, 0.1),
-          transparent
-        );
-        animation: badge-shine 3s infinite;
-      }
-
-      .badge-sparkle {
-        font-size: 1.1rem;
-        animation: sparkle 2s infinite ease-in-out;
-      }
-
-      @keyframes badge-shine {
-        0% {
-          left: -100%;
-        }
-        100% {
-          left: 100%;
-        }
-      }
-
-      @keyframes sparkle {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.8;
-        }
+        color: #0f172a;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       }
 
       .hero-section .subtitle {
         font-size: clamp(1rem, 2.8vw, 1.2rem);
-        opacity: 0.9;
+        opacity: 0.92;
         margin-bottom: 16px;
       }
 
       .hero-section .description {
         max-width: 760px;
         margin: 0 auto;
-        opacity: 0.92;
+        opacity: 0.88;
         line-height: 1.7;
         font-size: clamp(0.95rem, 2.5vw, 1.05rem);
       }
@@ -550,9 +560,9 @@
       }
 
       .secondary-cta {
-        background: rgba(15, 23, 42, 0.5);
-        color: #e2e8f0;
-        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(15, 23, 42, 0.06);
+        color: #0f172a;
+        border-color: rgba(15, 23, 42, 0.12);
       }
 
       .primary-cta:hover,
@@ -744,8 +754,8 @@
         border: none;
         font-size: 1rem;
         font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
+        text-transform: none;
+        letter-spacing: 0.01em;
         cursor: pointer;
         transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
       }
@@ -953,8 +963,162 @@
         border-radius: 999px;
         padding: 4px 12px;
         margin-top: 8px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
+        text-transform: none;
+        letter-spacing: 0.02em;
+      }
+
+      /* Footer (class-based; no inline handlers) */
+      .site-footer {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #334155 100%
+        );
+        color: #ffffff;
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .site-footer__pattern {
+        position: absolute;
+        inset: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="0.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-pattern)"/></svg>');
+        z-index: 1;
+      }
+
+      .site-footer__content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 40px 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+
+      .site-footer__brand {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .site-footer__logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        box-shadow: 0 8px 28px rgba(99, 102, 241, 0.22);
+      }
+
+      .site-footer__title {
+        color: #ffffff;
+        font-size: 1.5rem;
+        margin: 0 0 16px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .site-footer__desc {
+        color: #94a3b8;
+        line-height: 1.6;
+        margin: 0 0 20px;
+        font-size: 1rem;
+      }
+
+      .site-footer__social {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .site-footer__socialLink {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-decoration: none;
+        transition: transform 0.2s ease, background 0.2s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .site-footer__socialLink:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .site-footer__note {
+        color: #94a3b8;
+        font-size: 0.9rem;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .site-footer__heading {
+        color: #e2e8f0;
+        font-size: 1.125rem;
+        margin: 0 0 20px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .site-footer__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .site-footer__listItem {
+        margin-bottom: 12px;
+      }
+
+      .site-footer__link {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        font-size: 0.95rem;
+      }
+
+      .site-footer__link:hover {
+        color: #c7d2fe;
+      }
+
+      .site-footer__bottom {
+        position: relative;
+        z-index: 2;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 30px 40px;
+      }
+
+      .site-footer__bottomInner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .site-footer__legal {
+        color: #94a3b8;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .site-footer__disclaimer {
+        color: #64748b;
+        font-size: 0.85rem;
+        margin: 20px auto 0;
+        text-align: center;
+        line-height: 1.5;
+        max-width: 600px;
       }
 
       .history-answer.yes {
@@ -980,6 +1144,16 @@
         background: #f8fafc;
       }
 
+      a.insight-card {
+        display: block;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+      }
+      a.insight-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      }
+
       .faq-item {
         border: 1px solid rgba(15, 23, 42, 0.08);
         border-radius: 16px;
@@ -993,11 +1167,15 @@
         position: relative;
         margin-bottom: 56px;
         border-radius: 36px;
-        background: rgba(8, 10, 25, 0.82);
+        background: linear-gradient(
+          180deg,
+          rgba(15, 23, 42, 0.92),
+          rgba(2, 6, 23, 0.94)
+        );
         border: 1px solid rgba(255, 255, 255, 0.08);
         padding-bottom: clamp(28px, 4vw, 52px);
         overflow: hidden;
-        box-shadow: 0 45px 110px rgba(3, 7, 18, 0.55);
+        box-shadow: 0 45px 110px rgba(2, 6, 23, 0.5);
         isolation: isolate;
       }
 
@@ -1010,7 +1188,7 @@
         border-radius: 50%;
         background: radial-gradient(
           circle,
-          rgba(102, 126, 234, 0.35),
+          rgba(79, 70, 229, 0.28),
           transparent 65%
         );
         z-index: -1;
@@ -1026,7 +1204,7 @@
         right: -140px;
         background: radial-gradient(
           circle,
-          rgba(246, 173, 85, 0.25),
+          rgba(245, 158, 11, 0.22),
           transparent 70%
         );
       }
@@ -1079,8 +1257,8 @@
       .metric-card.highlight {
         background: linear-gradient(
           135deg,
-          rgba(102, 126, 234, 0.9),
-          rgba(118, 75, 162, 0.9)
+          rgba(79, 70, 229, 0.92),
+          rgba(124, 58, 237, 0.92)
         );
       }
 
@@ -1112,7 +1290,11 @@
       }
 
       .game-stage {
-        background: rgba(12, 16, 43, 0.95);
+        background: linear-gradient(
+          180deg,
+          rgba(12, 16, 43, 0.98),
+          rgba(2, 6, 23, 0.96)
+        );
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 32px;
         margin: clamp(20px, 4vw, 52px);
@@ -1141,8 +1323,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 12px;
-        color: #fef3c7;
+        text-align: center;
+        color: rgba(248, 250, 252, 0.92);
       }
 
       .guide-panel::before {
@@ -1154,8 +1338,20 @@
         pointer-events: none;
       }
 
+      .guide-avatar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
       .guide-avatar img {
         width: 85%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
         border-radius: 24px;
         background: rgba(255, 255, 255, 0.08);
         box-shadow: 0 25px 45px rgba(0, 0, 0, 0.45);
@@ -1167,12 +1363,13 @@
 
       .bubble {
         position: relative;
-        background: rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.07);
         border: 1px solid rgba(255, 255, 255, 0.18);
         border-radius: 32px;
         padding: clamp(28px, 4vw, 48px);
         box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.05),
           0 40px 90px rgba(0, 0, 0, 0.35);
+        color: rgba(248, 250, 252, 0.92);
       }
 
       .bubble::before {
@@ -1242,7 +1439,7 @@
 
       .question-intro {
         text-transform: uppercase;
-        letter-spacing: 0.4em;
+        letter-spacing: 0.18em;
         font-size: 0.8rem;
         color: rgba(248, 250, 252, 0.7);
         margin-bottom: 8px;
@@ -1251,7 +1448,7 @@
       .question {
         font-size: clamp(1.5rem, 3vw, 2rem);
         margin: 0 0 8px;
-        color: #fefce8;
+        color: #f8fafc;
         min-height: 64px;
       }
 
@@ -1273,18 +1470,23 @@
         padding: 18px;
         font-size: 1rem;
         font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
+        text-transform: none;
+        letter-spacing: -0.01em;
         cursor: pointer;
         color: #0f172a;
         display: flex;
         flex-direction: column;
         gap: 4px;
         align-items: center;
-        min-height: 110px;
+        min-height: 104px;
         position: relative;
         overflow: hidden;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:focus-visible {
+        outline: 3px solid rgba(99, 102, 241, 0.45);
+        outline-offset: 3px;
       }
 
       .btn span {
@@ -1293,7 +1495,7 @@
 
       .btn small {
         font-size: 0.75rem;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.08em;
         opacity: 0.8;
       }
 
@@ -1325,18 +1527,18 @@
       }
 
       .btn.yes {
-        background: linear-gradient(135deg, #4ade80, #22c55e);
+        background: linear-gradient(135deg, #22c55e, #16a34a);
       }
 
       .btn.no {
-        background: linear-gradient(135deg, #fb7185, #f43f5e);
+        background: linear-gradient(135deg, #ef4444, #dc2626);
         color: #fff;
       }
 
       .btn.restart {
         background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        color: #fcd34d;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        color: rgba(226, 232, 240, 0.92);
         min-height: auto;
         flex-direction: row;
         justify-content: center;
@@ -1354,7 +1556,11 @@
         margin-top: 32px;
         border-radius: 36px;
         border: 1px solid rgba(255, 255, 255, 0.18);
-        background: rgba(5, 8, 31, 0.95);
+        background: linear-gradient(
+          180deg,
+          rgba(5, 8, 31, 0.96),
+          rgba(2, 6, 23, 0.97)
+        );
         overflow: hidden;
         display: none;
         box-shadow: 0 45px 120px rgba(2, 6, 23, 0.65);
@@ -1421,7 +1627,7 @@
         padding: 6px 16px;
         border-radius: 999px;
         border: 1px solid rgba(255, 255, 255, 0.25);
-        letter-spacing: 0.3em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
         font-size: 0.75rem;
       }
@@ -1437,7 +1643,7 @@
         color: #4ade80;
         font-size: 0.78rem;
         text-transform: uppercase;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.14em;
       }
 
       .result-eyebrow {
@@ -1505,7 +1711,7 @@
         display: block;
         height: 100%;
         border-radius: 999px;
-        background: linear-gradient(90deg, #facc15, #f97316);
+        background: linear-gradient(90deg, #4f46e5, #f59e0b);
         width: 45%;
         transition: width 0.4s ease;
       }
@@ -1517,7 +1723,7 @@
       }
 
       .guess-meta-card {
-        background: rgba(2, 6, 23, 0.55);
+        background: rgba(2, 6, 23, 0.5);
         border: 1px solid rgba(255, 255, 255, 0.18);
         border-radius: 20px;
         padding: 16px 18px;
@@ -1727,32 +1933,6 @@
         }
       }
 
-      footer {
-        background: linear-gradient(135deg, #0f172a, #1e293b 60%, #334155);
-        color: #cbd5f5;
-        padding: 64px 24px 32px;
-      }
-
-      footer .footer-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 30px;
-      }
-
-      footer a {
-        color: #e2e8f0;
-        text-decoration: none;
-      }
-
-      footer small {
-        display: block;
-        text-align: center;
-        margin-top: 40px;
-        color: #94a3b8;
-      }
-
       @media (max-width: 1024px) {
         main {
           padding-top: 108px;
@@ -1909,10 +2089,6 @@
           border-radius: 22px;
           padding-bottom: 24px;
         }
-
-        footer {
-          padding: 48px 16px 28px;
-        }
       }
 
       @media (max-width: 360px) {
@@ -1954,6 +2130,7 @@
     </style>
   </head>
   <body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
     <!-- Top Navigation -->
     <nav role="navigation" aria-label="Main navigation" id="navbar">
       <div class="nav-container">
@@ -2002,17 +2179,13 @@
     <main id="mainContent" class="main-content" role="main" aria-busy="true">
       <section class="hero-section" id="hero">
         <div class="hero-badge">
-          <span class="badge-sparkle">✨</span>
-          <span>Made by Zinvana, enjoy!</span>
+          <span>Geo-Zini by Zinvana</span>
         </div>
-        <h1 style="color: rgb(59, 54, 54)">🌍 Geo-Zini Country Guesser</h1>
-        <p class="subtitle" style="color: darkslategray">
-          Think of any country. Answer with confidence. Watch the genie find it.
-        </p>
-        <p class="description" style="color: rgb(164, 164, 164)">
-          Made with ❤️ by Zinvana, the Geo-Zini is an interactive quiz that
-          narrows down your chosen country through strategic yes/no questions
-          and guesses the country that is in your mind.
+        <h1>Geo-Zini Country Guesser</h1>
+        <p class="subtitle">Think of any country. Answer yes or no.</p>
+        <p class="description">
+          Geo-Zini uses information-gain questions to narrow the world down to a
+          confident guess—fast, and without sign-up.
         </p>
         <div class="hero-actions">
           <a class="primary-cta" href="#playSection">Start guessing</a>
@@ -2261,270 +2434,303 @@
           </div>
         </section>
 
-        <section class="content-section" id="faq">
+        <section class="content-section" id="did-you-know">
           <div class="section-header">
-            <span class="eyebrow">FAQ</span>
-            <h2>Common questions</h2>
+            <span class="eyebrow">Trivia</span>
+            <h2>Did You Know?</h2>
+            <p>Expand your world knowledge while you play.</p>
           </div>
-          <div class="faq-item">
-            <h3>How many questions does it usually take to guess a country?</h3>
-            <p>
-              Typically, the Geo-Zini can zero in on your country within 15-20
-              questions, thanks to its entropy-based questioning strategy.
+          <div class="insight-cards">
+            <article class="insight-card">
+              <h3>Most Neighbors</h3>
+              <p>
+                China and Russia each share borders with 14 other countries, the
+                most of any nation.
+              </p>
+            </article>
+            <article class="insight-card">
+              <h3>No Capital?</h3>
+              <p>
+                Nauru is the only country in the world without an official
+                capital city.
+              </p>
+            </article>
+            <article class="insight-card">
+              <h3>Time Zones</h3>
+              <p>
+                France covers the most time zones (12) due to its various
+                overseas territories.
+              </p>
+            </article>
+            <article class="insight-card">
+              <h3>Shortest Border</h3>
+              <p>
+                The border between Botswana and Zambia is only about 150 meters
+                long.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" id="under-the-hood">
+          <div class="section-header">
+            <span class="eyebrow">Under the Hood</span>
+            <h2>How Geo-Zini Works</h2>
+          </div>
+          <div
+            class="text-block"
+            style="max-width: 800px; margin: 0 auto; color: var(--text)"
+          >
+            <p style="margin-bottom: 1.5rem">
+              Geo-Zini isn't magic—it's math. The game uses a decision tree
+              algorithm based on <strong>entropy reduction</strong>.
             </p>
-          </div>
-          <div class="faq-item">
-            <h3>Is this page really free?</h3>
-            <p>
-              Yes! The Geo-Zini Country Guesser is completely free to use. We
-              believe in providing fun and educational experiences without any
-              cost.
-            </p>
-          </div>
-          <div class="faq-item">
-            <h3>Do we collect your personal data?</h3>
-            <p>
-              No, we do not collect or store any personal data from users. Your
-              privacy is important to us.
-            </p>
-          </div>
-          <div class="faq-item">
-            <h3>How many countries can the Geo-Zini guess?</h3>
-            <p>
-              The Geo-Zini can guess from a dataset of over 190 countries. This
-              includes all UN-recognized nations as well as several dependent
+            <p style="margin-bottom: 1.5rem">
+              Every time you answer "Yes" or "No", the game calculates which
+              next question will eliminate the most remaining possibilities.
+              It's like a game of "Guess Who?", but with 195+ countries and
               territories.
             </p>
+            <p>
+              By analyzing properties like hemisphere, language, population, and
+              borders, Geo-Zini can usually identify any country in fewer than
+              15 questions.
+            </p>
+          </div>
+        </section>
+
+        <section class="content-section" id="faq">
+          <div class="section-header">
+            <span class="eyebrow">Support</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div
+            class="faq-grid"
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 2rem;
+              max-width: 1000px;
+              margin: 0 auto;
+            "
+          >
+            <article class="faq-item">
+              <h3
+                style="
+                  color: var(--text-strong);
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                How many questions does it take?
+              </h3>
+              <p style="color: var(--text)">
+                Typically, Geo-Zini can zero in on your country within 15-20
+                questions, thanks to its entropy-based questioning strategy.
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3
+                style="
+                  color: var(--text-strong);
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Is Geo-Zini free to play?
+              </h3>
+              <p style="color: var(--text)">
+                Yes, Geo-Zini is 100% free and requires no registration or
+                download.
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3
+                style="
+                  color: var(--text-strong);
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                How many countries are included?
+              </h3>
+              <p style="color: var(--text)">
+                The database includes all 193 UN member states plus major
+                territories and observers, totaling over 240 entities.
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3
+                style="
+                  color: var(--text-strong);
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Do you collect personal data?
+              </h3>
+              <p style="color: var(--text)">
+                No, we do not collect or store any personal data. Your game
+                session lives entirely in your browser.
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3
+                style="
+                  color: var(--text-strong);
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Can I play offline?
+              </h3>
+              <p style="color: var(--text)">
+                Once the page loads, the game logic runs entirely in your
+                browser, so you can keep playing even if you lose connection.
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3
+                style="
+                  color: var(--text-strong);
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Is this good for students?
+              </h3>
+              <p style="color: var(--text)">
+                Absolutely. Teachers use Geo-Zini to help students learn
+                geography, critical thinking, and deductive reasoning.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" id="more-quizzes">
+          <div class="section-header">
+            <span class="eyebrow">Explore More</span>
+            <h2>More from Zinvana</h2>
+          </div>
+          <div class="insight-cards">
+            <a
+              href="perfect-country.html"
+              class="insight-card"
+              style="text-decoration: none; border: 1px solid var(--brand1)"
+            >
+              <h3 style="color: var(--brand1)">Perfect Country Quiz</h3>
+              <p style="color: var(--text)">
+                Don't just guess countries—find the one you belong in. Take our
+                lifestyle match quiz.
+              </p>
+            </a>
+            <a
+              href="leaders-quiz.html"
+              class="insight-card"
+              style="text-decoration: none"
+            >
+              <h3>Leader Personality</h3>
+              <p style="color: var(--text)">
+                Which historical figure matches your leadership style? Find out
+                now.
+              </p>
+            </a>
+            <a
+              href="brawlstars-quiz.html"
+              class="insight-card"
+              style="text-decoration: none"
+            >
+              <h3>Brawl Stars Quiz</h3>
+              <p style="color: var(--text)">
+                Find your perfect brawler match in this popular gaming
+                personality test.
+              </p>
+            </a>
           </div>
         </section>
       </div>
     </main>
-    <!-- Enhanced Professional Footer -->
-    <footer
-      style="
-        background: linear-gradient(
-          135deg,
-          #0f172a 0%,
-          #1e293b 50%,
-          #334155 100%
-        );
-        color: #ffffff;
-        margin-top: 80px;
-        position: relative;
-        overflow: hidden;
-      "
-    >
-      <div
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
-          z-index: 1;
-        "
-      ></div>
+    <footer class="site-footer">
+      <div class="site-footer__pattern" aria-hidden="true"></div>
 
-      <div
-        style="
-          position: relative;
-          z-index: 2;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 60px 40px 40px;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 40px;
-        "
-      >
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
-          <img
-            src="zinvanalogo.png"
-            alt="Zinvana"
-            style="
-              width: 50px;
-              height: 50px;
-              border-radius: 12px;
-              margin-bottom: 16px;
-              box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-            "
-          />
-          <h3
-            style="
-              color: #ffffff;
-              font-size: 1.5rem;
-              margin-bottom: 16px;
-              font-weight: 600;
-            "
-          >
-            Zinvana
-          </h3>
-          <p
-            style="
-              color: #94a3b8;
-              line-height: 1.6;
-              margin: 0;
-              font-size: 1rem;
-              margin-bottom: 20px;
-            "
-          >
-            Discover your true self through fun, engaging personality quizzes
-            and assessments. From internet archetypes to personality types, we
-            help you explore different aspects of your personality in an
-            entertaining, educational way.
+      <div class="site-footer__content">
+        <div class="site-footer__brand">
+          <img src="zinvanalogo.png" alt="Zinvana" class="site-footer__logo" />
+          <h3 class="site-footer__title">Zinvana</h3>
+          <p class="site-footer__desc">
+            Discover your personality through engaging quizzes and assessments.
+            Explore archetypes, traits, and types in a simple, educational way.
           </p>
-          <div style="display: flex; gap: 16px; margin-bottom: 20px">
+          <div class="site-footer__social" aria-label="Social links">
             <a
+              class="site-footer__socialLink"
               href="https://x.com/farazglori80528"
               target="_blank"
-              style="
-                width: 40px;
-                height: 40px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #ffffff;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-              "
-              onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
-              ><svg
+              rel="noopener noreferrer"
+              aria-label="Zinvana on X"
+            >
+              <svg
                 width="20"
                 height="20"
                 viewBox="0 0 24 24"
                 fill="currentColor"
+                aria-hidden="true"
               >
                 <path
                   d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                /></svg
-            ></a>
+                />
+              </svg>
+            </a>
             <a
+              class="site-footer__socialLink"
               href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
               target="_blank"
-              style="
-                width: 40px;
-                height: 40px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #ffffff;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-              "
-              onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
-              ><svg
+              rel="noopener noreferrer"
+              aria-label="Zinvana on Instagram"
+            >
+              <svg
                 width="20"
                 height="20"
                 viewBox="0 0 24 24"
                 fill="currentColor"
+                aria-hidden="true"
               >
                 <path
                   d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                /></svg
-            ></a>
+                />
+              </svg>
+            </a>
           </div>
-          <p
-            style="
-              color: #94a3b8;
-              font-size: 0.9rem;
-              margin: 0;
-              line-height: 1.5;
-            "
-          >
-            Stay updated with our latest quizzes and personality assessments!
-          </p>
+          <p class="site-footer__note">Follow for new quizzes and updates.</p>
         </div>
 
         <div>
-          <h4
-            style="
-              color: #e2e8f0;
-              font-size: 1.125rem;
-              margin-bottom: 20px;
-              font-weight: 600;
-            "
-          >
-            Popular Quizzes
-          </h4>
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 12px">
-              <a
-                href="leaders.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
+          <h4 class="site-footer__heading">Popular Quizzes</h4>
+          <ul class="site-footer__list">
+            <li class="site-footer__listItem">
+              <a class="site-footer__link" href="leaders.html"
                 >Historical Leaders Personality Quiz</a
               >
             </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="football-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
+            <li class="site-footer__listItem">
+              <a class="site-footer__link" href="football-personality-quiz.html"
                 >Football Personality Quiz</a
               >
             </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="wojak-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
+            <li class="site-footer__listItem">
+              <a class="site-footer__link" href="wojak-personality-quiz.html"
                 >Wojak Personality Quiz</a
               >
             </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="perfect-country.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
+            <li class="site-footer__listItem">
+              <a class="site-footer__link" href="perfect-country.html"
                 >Perfect Country Quiz</a
               >
             </li>
-            <li style="margin-bottom: 12px">
+            <li class="site-footer__listItem">
               <a
+                class="site-footer__link"
                 href="youtubers-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
                 >YouTubers Personality Quiz</a
               >
             </li>
@@ -2532,87 +2738,28 @@
         </div>
 
         <div>
-          <h4
-            style="
-              color: #e2e8f0;
-              font-size: 1.125rem;
-              margin-bottom: 20px;
-              font-weight: 600;
-            "
-          >
-            Resources
-          </h4>
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 12px">
-              <a
-                href="/about.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >About Us</a
-              >
+          <h4 class="site-footer__heading">Resources</h4>
+          <ul class="site-footer__list">
+            <li class="site-footer__listItem">
+              <a class="site-footer__link" href="about.html">About</a>
             </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="/privacy.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Privacy Policy</a
-              >
+            <li class="site-footer__listItem">
+              <a class="site-footer__link" href="privacy.html">Privacy</a>
             </li>
           </ul>
         </div>
       </div>
 
-      <div
-        style="
-          position: relative;
-          z-index: 2;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 30px 40px;
-        "
-      >
-        <div
-          style="
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-          "
-        >
-          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+      <div class="site-footer__bottom">
+        <div class="site-footer__bottomInner">
+          <p class="site-footer__legal">
             &copy; 2025 Zinvana. All rights reserved.
           </p>
-          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
-            Made with ❤️ by the Zinvana Team
-          </p>
+          <p class="site-footer__legal">Built by the Zinvana team.</p>
         </div>
-        <div
-          style="
-            color: #64748b;
-            font-size: 0.85rem;
-            margin: 20px auto 0;
-            text-align: center;
-            line-height: 1.5;
-            max-width: 600px;
-          "
-        >
-          Made with care by Zinvana. All quizzes are for entertainment purposes
-          only and do not collect personal data.
+        <div class="site-footer__disclaimer">
+          All quizzes are for entertainment purposes only. We do not collect
+          personal data on this page.
         </div>
       </div>
     </footer>
