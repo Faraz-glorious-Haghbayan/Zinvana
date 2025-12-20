@@ -773,6 +773,111 @@
         box-shadow: 0 6px 18px rgba(102, 126, 234, 0.12);
       }
 
+      /* See More Button */
+      .see-more-container {
+        display: flex;
+        justify-content: center;
+        margin: 32px 0 16px;
+      }
+
+      .see-more-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 32px;
+        background: linear-gradient(135deg, var(--brand1), var(--brand2));
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1rem;
+        border: none;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .see-more-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.15),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .see-more-btn:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 18px 45px rgba(102, 126, 234, 0.4);
+      }
+
+      .see-more-btn:hover::before {
+        opacity: 1;
+      }
+
+      .see-more-btn:active {
+        transform: translateY(-1px) scale(0.99);
+      }
+
+      .see-more-btn .icon {
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .see-more-btn:hover .icon {
+        transform: translateY(2px);
+      }
+
+      .see-more-btn .count-badge {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .see-more-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+      }
+
+      /* Guide card animation */
+      .guide-card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.4s ease forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .guide-card:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .guide-card:nth-child(2) {
+        animation-delay: 0.05s;
+      }
+      .guide-card:nth-child(3) {
+        animation-delay: 0.1s;
+      }
+      .guide-card:nth-child(4) {
+        animation-delay: 0.15s;
+      }
+      .guide-card:nth-child(5) {
+        animation-delay: 0.2s;
+      }
+
       .faq-section {
         background: linear-gradient(135deg, #f8fafd 0%, #f3f6fb 100%);
         padding: 70px 0;
@@ -1388,7 +1493,11 @@
       .theme-toggle__icon {
         width: 16px;
         height: 16px;
-        fill: currentColor;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
       }
 
       .hamburger {
@@ -1925,16 +2034,17 @@
         box-shadow: var(--shadow) !important;
       }
 
-      body.theme-dark .feature-card h3,
-      body.theme-dark .character-card h4 {
-        color: #f8fafc !important;
+      body.theme-dark .feature-card h3 {
+        color: #deefff !important;
       }
+
+
 
       body.theme-dark .feature-card p,
       body.theme-dark .feature-card li,
       body.theme-dark .character-card p,
       body.theme-dark .character-meta {
-        color: rgba(226, 232, 240, 0.78) !important;
+        color: #f5f5f5 !important;
       }
 
       body.theme-dark .faq-question,
@@ -1942,6 +2052,292 @@
       body.theme-dark .faq-question *,
       body.theme-dark .faq-answer * {
         color: #0f172a !important;
+      }
+
+      /* Guide section - black text in dark theme */
+      body.theme-dark .guide-card h4 {
+        color: #000000 !important;
+      }
+
+      /* Question text white in dark theme */
+      body.theme-dark .quiz-shell .question h3,
+      body.theme-dark .question h3 {
+        color: #ffffff !important;
+      }
+
+      /* ====== COMPREHENSIVE RESPONSIVE STYLES ====== */
+
+      /* Extra small devices (phones, 320px and up) */
+      @media (max-width: 375px) {
+        .hero-section h1 {
+          font-size: 1.6rem !important;
+        }
+        .hero-section .subtitle {
+          font-size: 0.95rem !important;
+        }
+        .hero-section .description {
+          font-size: 0.9rem !important;
+        }
+        .quiz-shell .quiz-container {
+          padding: 20px 14px !important;
+          border-radius: 20px !important;
+        }
+        .quiz-shell .question h3 {
+          font-size: 1.15rem !important;
+          padding-left: 28px !important;
+        }
+        .quiz-shell .question h3::before {
+          font-size: 1rem !important;
+        }
+        .quiz-shell .answer-btn {
+          padding: 16px 14px 16px 70px !important;
+          min-height: 90px !important;
+          font-size: 0.9rem !important;
+        }
+        .quiz-shell .answer-badge {
+          width: 40px !important;
+          height: 40px !important;
+          left: 16px !important;
+          top: 50% !important;
+          transform: translateY(-50%) !important;
+        }
+        .quiz-shell .answer-badge img {
+          width: 36px !important;
+          height: 36px !important;
+        }
+        .quiz-shell .chevron {
+          width: 24px !important;
+          height: 24px !important;
+          right: 12px !important;
+          font-size: 12px !important;
+        }
+        .quiz-shell .quiz-status-card {
+          padding: 16px 14px !important;
+        }
+        .quiz-shell .progress-orb {
+          width: 120px !important;
+          height: 120px !important;
+        }
+        .quiz-shell .progress-orb-value {
+          font-size: 1.4rem !important;
+        }
+        .guide-header h2 {
+          font-size: 1.8rem !important;
+        }
+        .archetypes-header h2 {
+          font-size: 1.8rem !important;
+        }
+        .archetypes-panel {
+          padding: 18px !important;
+        }
+        .faq-section {
+          padding: 40px 0 !important;
+        }
+        .section-header h2 {
+          font-size: 1.6rem !important;
+        }
+      }
+
+      /* Small devices (phones, 376px to 480px) */
+      @media (min-width: 376px) and (max-width: 480px) {
+        .hero-section h1 {
+          font-size: 1.8rem !important;
+        }
+        .quiz-shell .quiz-container {
+          padding: 22px 16px !important;
+        }
+        .quiz-shell .question h3 {
+          font-size: 1.25rem !important;
+        }
+        .quiz-shell .answer-btn {
+          padding: 18px 16px 18px 75px !important;
+          min-height: 100px !important;
+          font-size: 0.95rem !important;
+        }
+      }
+
+      /* Medium devices (tablets, 481px to 768px) */
+      @media (min-width: 481px) and (max-width: 768px) {
+        .quiz-shell .quiz-container {
+          padding: 28px 22px !important;
+        }
+        .quiz-shell .question h3 {
+          font-size: 1.4rem !important;
+        }
+        .quiz-shell .answer-btn {
+          padding: 20px 20px 20px 80px !important;
+          font-size: 1rem !important;
+        }
+        .archetypes-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .pillars {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+
+      /* Quiz layout responsive adjustments */
+      @media (max-width: 980px) {
+        .quiz-shell .quiz-layout {
+          grid-template-columns: 1fr !important;
+        }
+        .quiz-shell .quiz-status-card {
+          position: relative !important;
+          top: auto !important;
+          order: -1 !important;
+        }
+        .quiz-shell .result-hero {
+          grid-template-columns: 1fr !important;
+        }
+      }
+
+      /* Hero section responsive */
+      @media (max-width: 600px) {
+        .hero-section {
+          padding: 40px 0 28px !important;
+        }
+        .hero-factors {
+          flex-direction: column !important;
+          gap: 12px !important;
+        }
+        .hero-factor {
+          width: 100% !important;
+        }
+        .cta-row {
+          flex-direction: column !important;
+          gap: 12px !important;
+        }
+        .cta-row .btn {
+          width: 100% !important;
+        }
+      }
+
+      /* Guide grid responsive */
+      @media (max-width: 550px) {
+        .guide-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .guide-card {
+          padding: 16px !important;
+        }
+        .filter-chips {
+          gap: 8px !important;
+        }
+        .chip {
+          padding: 6px 10px !important;
+          font-size: 0.85rem !important;
+        }
+      }
+
+      /* Archetype cards responsive */
+      @media (max-width: 500px) {
+        .archetype-card-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .badges {
+          gap: 6px 8px !important;
+        }
+        .archetype-badge {
+          padding: 6px 10px !important;
+          font-size: 0.85rem !important;
+        }
+      }
+
+      /* Result section responsive */
+      @media (max-width: 600px) {
+        .quiz-shell .result {
+          margin: 24px auto !important;
+        }
+        .quiz-shell .result-shell {
+          padding: 18px !important;
+        }
+        .quiz-shell .result-identity {
+          padding: 18px !important;
+        }
+        .quiz-shell .result-name {
+          font-size: 1.6rem !important;
+        }
+        .quiz-shell .result-highlights {
+          grid-template-columns: 1fr !important;
+        }
+        .quiz-shell .result-actions {
+          flex-direction: column !important;
+          align-items: stretch !important;
+        }
+        .quiz-shell .restart-btn {
+          width: 100% !important;
+          text-align: center !important;
+        }
+        .quiz-shell .share-row {
+          justify-content: center !important;
+        }
+      }
+
+      /* FAQ responsive */
+      @media (max-width: 600px) {
+        .faq-item {
+          border-radius: 10px !important;
+        }
+        .faq-question {
+          padding: 18px 20px !important;
+          font-size: 0.95rem !important;
+        }
+        .faq-answer {
+          padding: 0 20px 18px !important;
+          font-size: 0.92rem !important;
+        }
+      }
+
+      /* CTA section responsive */
+      @media (max-width: 550px) {
+        .cta-section {
+          padding: 40px 0 !important;
+        }
+        .cta-section h2 {
+          font-size: 1.6rem !important;
+        }
+        .cta-section p {
+          font-size: 1rem !important;
+        }
+      }
+
+      /* Characters grid responsive */
+      @media (max-width: 550px) {
+        .characters-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .character-card {
+          padding: 16px !important;
+        }
+      }
+
+      /* Features grid responsive */
+      @media (max-width: 550px) {
+        .features-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .feature-card {
+          padding: 20px !important;
+        }
+      }
+
+      /* Main container responsive */
+      @media (max-width: 480px) {
+        .main-container {
+          padding: 0 16px 60px !important;
+        }
+      }
+
+      /* Footer responsive small screens */
+      @media (max-width: 480px) {
+        .site-footer__inner {
+          padding: 30px 16px !important;
+        }
+        .site-footer__bottom {
+          flex-direction: column !important;
+          text-align: center !important;
+          gap: 8px !important;
+        }
       }
 
       /* Footer text black in light theme */
@@ -2247,7 +2643,7 @@
 
       <!-- Value Features (mirror Wojak polish) -->
       <section class="content-section" aria-labelledby="features-title">
-        <div class="section-header">
+        <div class="section-header" style="text-align: center; margin-top: 5%">
           <h2 id="features-title">What You’ll Get</h2>
           <p>
             Built to inform and delight: modern UX, clear scoring logic, and
@@ -3988,17 +4384,7 @@
         </div>
       </section>
 
-      <!-- Player Spotlight (like characters-grid) -->
-      <section class="content-section" aria-labelledby="spotlight-title">
-        <div class="section-header">
-          <h2 id="spotlight-title">Player Spotlight: Archetypes at a Glance</h2>
-          <p>
-            A quick visual guide to each archetype with trademark strengths and
-            ideal roles.
-          </p>
-        </div>
-        <div class="characters-grid" id="spotlightGrid"></div>
-      </section>
+
 
       <section class="content-section" aria-labelledby="use-title">
         <div class="section-header">
@@ -4086,7 +4472,7 @@
             </ul>
           </div>
           <div class="feature-card">
-            <h3>Defensive Midfielder (6)</h3>
+            <h3>Defensive Midfielder</h3>
             <ul>
               <li>Key traits: discipline, awareness, tempo control.</li>
               <li>
@@ -4161,6 +4547,26 @@
         <div class="guide-grid" id="guideGrid">
           <!-- Cards injected from playerData to keep single source of truth -->
         </div>
+
+        <div class="see-more-container" id="seeMoreContainer">
+          <button class="see-more-btn" id="seeMoreBtn" type="button">
+            <span>See More Players</span>
+            <span class="icon">↓</span>
+            <span class="count-badge" id="remainingCount"></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Player Spotlight (like characters-grid) -->
+      <section class="content-section" aria-labelledby="spotlight-title">
+        <div class="section-header">
+          <h2 id="spotlight-title">Player Spotlight: Archetypes at a Glance</h2>
+          <p>
+            A quick visual guide to each archetype with trademark strengths and
+            ideal roles.
+          </p>
+        </div>
+        <div class="characters-grid" id="spotlightGrid"></div>
       </section>
 
       <!-- FAQ -->
@@ -6421,85 +6827,148 @@
 
       // Quiz runtime is now handled by perfect-quiz-shell.js
 
-      // Guide population from data
+      // Guide population from data with pagination
+      const PLAYERS_PER_PAGE = 5;
+      let displayedPlayers = 0;
+      let allPlayerKeys = [];
+      const tagMap = {
+        messi: "forward playmaker creator dribbler leader",
+        ronaldo: "forward finisher leader speedster",
+        neymar: "forward dribbler creator speedster",
+        mbappe: "forward speedster finisher",
+        haaland: "forward finisher",
+        modric: "midfielder playmaker leader",
+        de_bruyne: "midfielder playmaker creator",
+        salah: "forward finisher speedster",
+        van_dijk: "defender leader",
+        neuer: "goalkeeper leader",
+        rodri: "midfielder playmaker leader defender",
+        vinicius: "forward speedster dribbler creator",
+        bellingham: "midfielder leader finisher",
+        kante: "midfielder defender leader",
+        kane: "forward finisher leader playmaker",
+        courtois: "goalkeeper leader defender",
+        pedri: "midfielder playmaker creator",
+        musiala: "midfielder dribbler creator",
+        griezmann: "forward midfielder creator leader",
+        lewandowski: "forward finisher leader",
+        benzema: "forward creator finisher",
+        son: "forward speedster finisher",
+        ruben_dias: "defender leader",
+        alphonso_davies: "defender speedster creator",
+        hakimi: "defender speedster creator",
+        kimmich: "midfielder leader playmaker",
+        alisson: "goalkeeper leader",
+        ederson: "goalkeeper creator",
+        saka: "forward winger dribbler",
+        ronaldinho: "forward playmaker dribbler",
+        drogba: "forward finisher leader",
+        busquets: "midfielder leader playmaker",
+        gattuso: "midfielder defender leader",
+        lahm: "defender leader",
+        buffon: "goalkeeper leader",
+        vardy: "forward finisher speedster",
+        pep_guardiola: "midfielder leader strategist",
+        andres_iniesta: "midfielder playmaker creator",
+        xavi: "midfielder playmaker leader",
+        bernardo_silva: "midfielder creator dribbler",
+        thierry_henry: "forward finisher speedster",
+        zlatan_ibrahimovic: "forward finisher leader",
+        wayne_rooney: "forward leader creator",
+        sergio_ramos: "defender leader",
+        paolo_maldini: "defender leader",
+        casemiro: "midfielder defender leader",
+        roberto_carlos: "defender speedster creator",
+        trent_alexander_arnold: "defender playmaker creator",
+        iker_casillas: "goalkeeper leader",
+        jan_oblak: "goalkeeper leader defender",
+      };
+
+      function createPlayerCard(key, index) {
+        const d = wojakData[key];
+        const el = document.createElement("article");
+        el.className = "guide-card";
+        el.setAttribute("data-tags", tagMap[key] || "");
+        el.style.animationDelay = `${(index % PLAYERS_PER_PAGE) * 0.08}s`;
+        const profileLink = pageMap[key] || "#quizSection";
+        el.innerHTML = `
+          <div class="card-head">
+            <div class="avatar"><img src="${getImgSrc(d)}" alt="${
+          d.name
+        }"></div>
+            <h4>${d.name}</h4>
+          </div>
+          <p class="summary">${d.description}</p>
+          <ul class="traits">
+            ${(d.strengths || [])
+              .slice(0, 3)
+              .map((t) => `<li>${t}</li>`)
+              .join("")}
+          </ul>
+          <a class="guide-cta" href="${profileLink}">View full profile</a>
+        `;
+        return el;
+      }
+
+      function updateSeeMoreButton() {
+        const btn = document.getElementById("seeMoreBtn");
+        const container = document.getElementById("seeMoreContainer");
+        const remainingBadge = document.getElementById("remainingCount");
+        if (!btn || !container) return;
+
+        const remaining = allPlayerKeys.length - displayedPlayers;
+        if (remaining <= 0) {
+          container.style.display = "none";
+        } else {
+          container.style.display = "flex";
+          const nextBatch = Math.min(remaining, PLAYERS_PER_PAGE);
+          remainingBadge.textContent = `${remaining} left`;
+          btn.querySelector(
+            "span:first-child"
+          ).textContent = `Show ${nextBatch} More Player${
+            nextBatch > 1 ? "s" : ""
+          }`;
+        }
+      }
+
+      function loadMorePlayers() {
+        const grid = document.getElementById("guideGrid");
+        if (!grid) return;
+
+        const nextBatch = allPlayerKeys.slice(
+          displayedPlayers,
+          displayedPlayers + PLAYERS_PER_PAGE
+        );
+        nextBatch.forEach((key, i) => {
+          const card = createPlayerCard(key, i);
+          grid.appendChild(card);
+        });
+        displayedPlayers += nextBatch.length;
+        updateSeeMoreButton();
+        applyGuideFilters();
+      }
+
       function populateGuide() {
         const grid = document.getElementById("guideGrid");
         if (!grid) return;
         grid.innerHTML = "";
-        const tagMap = {
-          messi: "forward playmaker creator dribbler leader",
-          ronaldo: "forward finisher leader speedster",
-          neymar: "forward dribbler creator speedster",
-          mbappe: "forward speedster finisher",
-          haaland: "forward finisher",
-          modric: "midfielder playmaker leader",
-          de_bruyne: "midfielder playmaker creator",
-          salah: "forward finisher speedster",
-          van_dijk: "defender leader",
-          neuer: "goalkeeper leader",
-          rodri: "midfielder playmaker leader defender",
-          vinicius: "forward speedster dribbler creator",
-          bellingham: "midfielder leader finisher",
-          kante: "midfielder defender leader",
-          kane: "forward finisher leader playmaker",
-          courtois: "goalkeeper leader defender",
-          pedri: "midfielder playmaker creator",
-          musiala: "midfielder dribbler creator",
-          griezmann: "forward midfielder creator leader",
-          lewandowski: "forward finisher leader",
-          benzema: "forward creator finisher",
-          son: "forward speedster finisher",
-          ruben_dias: "defender leader",
-          alphonso_davies: "defender speedster creator",
-          hakimi: "defender speedster creator",
-          kimmich: "midfielder leader playmaker",
-          alisson: "goalkeeper leader",
-          ederson: "goalkeeper creator",
-          saka: "forward winger dribbler",
-          ronaldinho: "forward playmaker dribbler",
-          drogba: "forward finisher leader",
-          busquets: "midfielder leader playmaker",
-          gattuso: "midfielder defender leader",
-          lahm: "defender leader",
-          buffon: "goalkeeper leader",
-          vardy: "forward finisher speedster",
-          pep_guardiola: "midfielder leader strategist",
-          andres_iniesta: "midfielder playmaker creator",
-          xavi: "midfielder playmaker leader",
-          bernardo_silva: "midfielder creator dribbler",
-          thierry_henry: "forward finisher speedster",
-          zlatan_ibrahimovic: "forward finisher leader",
-          wayne_rooney: "forward leader creator",
-          sergio_ramos: "defender leader",
-          paolo_maldini: "defender leader",
-          casemiro: "midfielder defender leader",
-          roberto_carlos: "defender speedster creator",
-          trent_alexander_arnold: "defender playmaker creator",
-          iker_casillas: "goalkeeper leader",
-          jan_oblak: "goalkeeper leader defender",
-        };
-        Object.keys(wojakData).forEach((key) => {
-          const d = wojakData[key];
-          const el = document.createElement("article");
-          el.className = "guide-card";
-          el.setAttribute("data-tags", tagMap[key] || "");
-          const profileLink = pageMap[key] || "#quizSection";
-          el.innerHTML = `
-					<div class="card-head">
-						<div class="avatar"><img src="${getImgSrc(d)}" alt="${d.name}"></div>
-						<h4>${d.name}</h4>
-					</div>
-					<p class="summary">${d.description}</p>
-					<ul class="traits">
-						${(d.strengths || [])
-              .slice(0, 3)
-              .map((t) => `<li>${t}</li>`)
-              .join("")}
-					</ul>
-				<a class="guide-cta" href="${profileLink}">View full profile</a>
-				`;
-          grid.appendChild(el);
+        displayedPlayers = 0;
+        allPlayerKeys = Object.keys(wojakData);
+
+        // Load initial batch
+        const initialBatch = allPlayerKeys.slice(0, PLAYERS_PER_PAGE);
+        initialBatch.forEach((key, i) => {
+          const card = createPlayerCard(key, i);
+          grid.appendChild(card);
         });
+        displayedPlayers = initialBatch.length;
+        updateSeeMoreButton();
+
+        // Wire up See More button
+        const btn = document.getElementById("seeMoreBtn");
+        if (btn) {
+          btn.addEventListener("click", loadMorePlayers);
+        }
       }
 
       // Spotlight population
@@ -6528,15 +6997,35 @@
       // Search and filter
       function applyGuideFilters() {
         const grid = document.getElementById("guideGrid");
-        const cards = grid
-          ? Array.from(grid.querySelectorAll(".guide-card"))
-          : [];
         const search = document.getElementById("guideSearch");
         const term = (search?.value || "").toLowerCase();
         const activeChip = document.querySelector(".filter-chips .chip.active");
         const filter = activeChip
           ? activeChip.getAttribute("data-filter")
           : "all";
+        const container = document.getElementById("seeMoreContainer");
+
+        // If searching or filtering, show all matching players
+        if (term || filter !== "all") {
+          // Load all remaining players first
+          if (displayedPlayers < allPlayerKeys.length) {
+            const remaining = allPlayerKeys.slice(displayedPlayers);
+            remaining.forEach((key, i) => {
+              const card = createPlayerCard(key, i);
+              grid.appendChild(card);
+            });
+            displayedPlayers = allPlayerKeys.length;
+          }
+          // Hide see more button when filtering
+          if (container) container.style.display = "none";
+        } else {
+          // Restore see more button when not filtering
+          updateSeeMoreButton();
+        }
+
+        const cards = grid
+          ? Array.from(grid.querySelectorAll(".guide-card"))
+          : [];
         cards.forEach((card) => {
           const tags = (card.getAttribute("data-tags") || "").toLowerCase();
           const text = card.textContent.toLowerCase();
