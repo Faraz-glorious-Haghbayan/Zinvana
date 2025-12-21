@@ -880,8 +880,9 @@
 
       .faq-section {
         background: linear-gradient(135deg, #f8fafd 0%, #f3f6fb 100%);
-        padding: 70px 0;
+        padding: 70px 0 30px;
         margin-top: 64px;
+        margin-bottom: 0;
         border-radius: 20px;
         box-shadow: 0 4px 32px rgba(102, 126, 234, 0.08);
       }
@@ -1045,6 +1046,15 @@
         text-align: left;
         transition: transform 0.3s ease, box-shadow 0.3s ease,
           border-color 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: spotlightFadeIn 0.5s ease forwards;
+      }
+      @keyframes spotlightFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       .character-card:hover {
         transform: translateY(-6px);
@@ -1617,7 +1627,7 @@
 
       /* Footer (MBTI-style) */
       .site-footer {
-        margin-top: 56px;
+        margin-top: 24px;
         border-top: 1px solid var(--border);
         background: rgba(12, 19, 36, 0.96);
       }
@@ -2037,8 +2047,6 @@
       body.theme-dark .feature-card h3 {
         color: #deefff !important;
       }
-
-
 
       body.theme-dark .feature-card p,
       body.theme-dark .feature-card li,
@@ -4384,8 +4392,6 @@
         </div>
       </section>
 
-
-
       <section class="content-section" aria-labelledby="use-title">
         <div class="section-header">
           <h2 id="use-title">Use Your Result Like a Coach</h2>
@@ -4435,6 +4441,26 @@
               <li>Share results to align expectations and communication.</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <!-- Player Spotlight (like characters-grid) -->
+      <section class="content-section" aria-labelledby="spotlight-title">
+        <div class="section-header">
+          <h2 id="spotlight-title">Player Spotlight: Archetypes at a Glance</h2>
+          <p>
+            A quick visual guide to each archetype with trademark strengths and
+            ideal roles.
+          </p>
+        </div>
+        <div class="characters-grid" id="spotlightGrid"></div>
+
+        <div class="see-more-container" id="spotlightSeeMoreContainer">
+          <button class="see-more-btn" id="spotlightSeeMoreBtn" type="button">
+            <span>See More Players</span>
+            <span class="icon">↓</span>
+            <span class="count-badge" id="spotlightRemainingCount"></span>
+          </button>
         </div>
       </section>
 
@@ -4557,20 +4583,10 @@
         </div>
       </section>
 
-      <!-- Player Spotlight (like characters-grid) -->
-      <section class="content-section" aria-labelledby="spotlight-title">
-        <div class="section-header">
-          <h2 id="spotlight-title">Player Spotlight: Archetypes at a Glance</h2>
-          <p>
-            A quick visual guide to each archetype with trademark strengths and
-            ideal roles.
-          </p>
-        </div>
-        <div class="characters-grid" id="spotlightGrid"></div>
-      </section>
+      
 
       <!-- FAQ -->
-      <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <section class="faq-section" id="faq" aria-labelledby="faq-heading" style="margin-bottom: 0% !important;">
         <div class="main-container">
           <div class="section-header">
             <h2 id="faq-heading">Frequently Asked Questions</h2>
@@ -6971,27 +6987,103 @@
         }
       }
 
-      // Spotlight population
+      // Spotlight population with progressive loading
+      let spotlightPlayerKeys = [];
+      let displayedSpotlightPlayers = 0;
+      const SPOTLIGHT_BATCH_SIZE = 5;
+
+      function createSpotlightCard(key, index) {
+        const d = wojakData[key];
+        const link = pageMap[key] || "#quizSection";
+        const card = document.createElement("article");
+        card.className = "character-card";
+        card.style.animationDelay = `${index * 0.08}s`;
+        card.innerHTML = `
+          <a class="character-link" href="${link}" style="text-decoration:none;color:inherit;display:block">
+            <div class="character-meta"><img class="character-emoji" src="${getImgSrc(
+              d
+            )}" alt="${d.name}">${d.name}</div>
+            <p>${d.description}</p>
+            <div class="character-meta">Best roles: ${(d.roles || []).join(
+              ", "
+            )}</div>
+          </a>
+        `;
+        return card;
+      }
+
+      function updateSpotlightSeeMoreButton() {
+        const container = document.getElementById("spotlightSeeMoreContainer");
+        const btn = document.getElementById("spotlightSeeMoreBtn");
+        const countBadge = document.getElementById("spotlightRemainingCount");
+        const remaining =
+          spotlightPlayerKeys.length - displayedSpotlightPlayers;
+
+        if (!container || !btn) return;
+
+        if (remaining <= 0) {
+          container.style.display = "none";
+        } else {
+          container.style.display = "flex";
+          if (countBadge) {
+            countBadge.textContent = `${remaining} more`;
+          }
+        }
+      }
+
+      function loadMoreSpotlightPlayers() {
+        const grid = document.getElementById("spotlightGrid");
+        if (!grid) return;
+
+        const nextBatch = spotlightPlayerKeys.slice(
+          displayedSpotlightPlayers,
+          displayedSpotlightPlayers + SPOTLIGHT_BATCH_SIZE
+        );
+
+        nextBatch.forEach((key, i) => {
+          const card = createSpotlightCard(key, i);
+          grid.appendChild(card);
+        });
+
+        displayedSpotlightPlayers += nextBatch.length;
+        updateSpotlightSeeMoreButton();
+
+        // Smooth scroll to show new content
+        if (nextBatch.length > 0) {
+          const newCards = grid.querySelectorAll(".character-card");
+          const firstNewCard =
+            newCards[displayedSpotlightPlayers - nextBatch.length];
+          if (firstNewCard) {
+            firstNewCard.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+            });
+          }
+        }
+      }
+
       function populateSpotlight() {
         const grid = document.getElementById("spotlightGrid");
         if (!grid) return;
         grid.innerHTML = "";
-        Object.keys(wojakData).forEach((key) => {
-          const d = wojakData[key];
-          const link = pageMap[key] || "#quizSection";
-          const card = document.createElement("article");
-          card.className = "character-card";
-          card.innerHTML = `
-							<a class="character-link" href="${link}" style="text-decoration:none;color:inherit;display:block">
-								<div class="character-meta"><img class="character-emoji" src="${getImgSrc(
-                  d
-                )}" alt="${d.name}">${d.name}</div>
-								<p>${d.description}</p>
-								<div class="character-meta">Best roles: ${(d.roles || []).join(", ")}</div>
-							</a>
-						`;
+
+        spotlightPlayerKeys = Object.keys(wojakData);
+        displayedSpotlightPlayers = 0;
+
+        // Load initial batch
+        const initialBatch = spotlightPlayerKeys.slice(0, SPOTLIGHT_BATCH_SIZE);
+        initialBatch.forEach((key, i) => {
+          const card = createSpotlightCard(key, i);
           grid.appendChild(card);
         });
+        displayedSpotlightPlayers = initialBatch.length;
+        updateSpotlightSeeMoreButton();
+
+        // Wire up See More button
+        const btn = document.getElementById("spotlightSeeMoreBtn");
+        if (btn) {
+          btn.addEventListener("click", loadMoreSpotlightPlayers);
+        }
       }
 
       // Search and filter
