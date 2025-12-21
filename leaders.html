@@ -205,46 +205,43 @@
       }
     </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fredoka:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <style>
       :root {
-        --brand1: #6366f1;
+        --brand1: #667eea;
         --brand2: #764ba2;
         --brand3: #ff6b35;
         --accent: #ffd700;
         --accent2: #ff9f1c;
         --gold: #ffd700;
         --orange: #ff6b35;
-        --bg-dark: #1a1a2e;
-        --bg-darker: #16213e;
-        --bg-deepest: #0f3460;
-        --text-strong: #f7fafc;
-        --text: #e2e8f0;
-        --muted: #94a3b8;
-        --surface: rgba(255, 255, 255, 0.04);
-        --surface-2: rgba(255, 255, 255, 0.06);
-        --surface-3: rgba(255, 255, 255, 0.08);
-        --border: rgba(255, 255, 255, 0.08);
-        --border-light: rgba(255, 255, 255, 0.12);
-        --glow: rgba(255, 215, 0, 0.4);
-        --glow-orange: rgba(255, 107, 53, 0.3);
-        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
-          0 2px 4px -2px rgba(0, 0, 0, 0.2);
-        --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.35),
-          0 4px 6px -4px rgba(0, 0, 0, 0.25);
-        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4),
-          0 8px 10px -6px rgba(0, 0, 0, 0.3);
-        --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        --text-strong: #2d3748;
+        --text: #4a5568;
+        --muted: #718096;
+        --surface: #ffffff;
+        --surface-2: #f7fafc;
+        --border: #e2e8f0;
+        --bg: #0c1324;
+        --panel: #0f172a;
+        --card: rgba(255, 255, 255, 0.02);
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        --radius: 18px;
+        --topbar-h: 76px;
+        --glow: 0 12px 40px rgba(45, 212, 191, 0.12);
+        --glow-2: 0 12px 40px rgba(249, 115, 22, 0.08);
+        --professional-bg: linear-gradient(
+          135deg,
+          #0a0f1c 0%,
+          #0c1324 50%,
+          #0f172a 100%
+        );
         --radius-sm: 8px;
-        --radius: 12px;
         --radius-lg: 16px;
         --radius-xl: 24px;
         --radius-2xl: 32px;
@@ -266,17 +263,14 @@
       }
 
       body {
-        font-family: "Fredoka", "Inter", -apple-system, BlinkMacSystemFont,
-          "Segoe UI", Roboto, sans-serif;
-        background: linear-gradient(
-          135deg,
-          #1a1a2e 0%,
-          #16213e 50%,
-          #0f3460 100%
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
+        background: var(
+          --professional-bg,
+          linear-gradient(135deg, #0a0f1c 0%, #0c1324 50%, #0f172a 100%)
         );
         min-height: 100vh;
         color: var(--text);
-        padding-top: 80px;
+        padding-top: var(--topbar-h, 76px);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -484,20 +478,61 @@
         box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
       }
 
+      /* Mobile Menu Toggle */
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 10px;
+        background: rgba(255, 215, 0, 0.1);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-toggle span {
+        width: 24px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--orange));
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-toggle:hover {
+        background: rgba(255, 215, 0, 0.2);
+        transform: scale(1.05);
+      }
+
+      .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+      }
+
+      .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+      }
+
       .container {
         max-width: 900px;
         margin: 0 auto;
-        padding: 20px;
+        padding: clamp(16px, 4vw, 32px);
+        width: 100%;
       }
 
       .main-container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 24px;
+        padding: 0 clamp(16px, 3vw, 24px);
+        width: 100%;
       }
 
       .hero-section {
-        padding: 100px 0 60px;
+        padding: clamp(60px, 12vw, 100px) clamp(16px, 3vw, 24px)
+          clamp(40px, 8vw, 60px);
         color: #fff;
         text-align: center;
         position: relative;
@@ -567,8 +602,8 @@
       }
 
       .hero-section h1 {
-        font-family: "Fredoka", sans-serif;
-        font-size: 4rem;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
+        font-size: clamp(2rem, 6vw, 4rem);
         letter-spacing: -0.02em;
         margin-bottom: 20px;
         text-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
@@ -586,7 +621,7 @@
       }
 
       .hero-section .subtitle {
-        font-size: 1.5rem;
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
         opacity: 0.95;
         margin-bottom: 20px;
         font-weight: 500;
@@ -598,7 +633,7 @@
         max-width: 700px;
         margin: 0 auto;
         opacity: 0.9;
-        font-size: 1.15rem;
+        font-size: clamp(1rem, 2.5vw, 1.15rem);
         line-height: 1.75;
         color: #e2e8f0;
       }
@@ -632,7 +667,7 @@
       }
 
       .header h1 {
-        font-family: "Fredoka", sans-serif;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
         font-size: 3rem;
         margin-bottom: 10px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -677,7 +712,7 @@
         position: relative;
         z-index: 1;
         border-radius: 28px;
-        padding: 40px;
+        padding: clamp(20px, 5vw, 40px);
         background: rgba(7, 13, 32, 0.95);
         border: 1px solid rgba(255, 255, 255, 0.05);
         box-shadow: 0 25px 55px rgba(7, 8, 20, 0.6);
@@ -704,7 +739,7 @@
       }
 
       .question h2 {
-        font-family: "Fredoka", sans-serif;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
         font-size: 1.9rem;
         color: var(--text-strong);
         margin-bottom: 24px;
@@ -726,7 +761,7 @@
         margin: 0 auto 24px;
         box-shadow: 0 10px 25px rgba(255, 170, 0, 0.5);
         font-size: 1.1rem;
-        font-family: "Fredoka", sans-serif;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
       }
 
       .options {
@@ -852,9 +887,9 @@
           rgba(8, 12, 27, 0.95),
           rgba(15, 19, 39, 0.98)
         );
-        padding: 80px 40px;
+        padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px);
         border-radius: var(--radius-2xl);
-        margin-bottom: 40px;
+        margin-bottom: clamp(24px, 4vw, 40px);
         box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
         position: relative;
         overflow: hidden;
@@ -897,7 +932,7 @@
       }
 
       .section-header h2 {
-        font-family: "Fredoka", sans-serif;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
         font-size: 2.8rem;
         font-weight: 700;
         color: #ffd700;
@@ -930,7 +965,7 @@
       }
 
       .question h3 {
-        font-family: "Fredoka", sans-serif;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
         font-size: 1.7rem;
         margin-bottom: 28px;
         color: var(--text-strong);
@@ -1151,7 +1186,7 @@
 
       .result {
         display: none;
-        animation: resultReveal 1s cubic-bezier(0.4, 0, 0.2, 1);
+        animation: resultReveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         margin-top: 40px;
       }
 
@@ -1173,6 +1208,9 @@
 
       .result.active {
         display: block;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
       }
 
       /* Celebration Badge */
@@ -1397,7 +1435,7 @@
       }
 
       .result h2 {
-        font-family: "Fredoka", sans-serif;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
         font-size: 3rem;
         color: var(--text-strong);
         margin: 0 0 18px;
@@ -1577,8 +1615,8 @@
 
       .result-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        gap: clamp(16px, 3vw, 20px);
         margin: 24px 0 36px;
       }
 
@@ -1624,7 +1662,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        font-family: "Fredoka", sans-serif;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
       }
 
       .result-panel p,
@@ -1945,8 +1983,8 @@
 
       .features-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 28px;
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        gap: clamp(20px, 4vw, 28px);
         margin-top: 48px;
       }
 
@@ -2037,8 +2075,8 @@
 
       .insights-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        gap: clamp(20px, 3vw, 24px);
         margin-top: 40px;
       }
 
@@ -2138,8 +2176,8 @@
 
       .timeline {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+        gap: clamp(20px, 3vw, 24px);
         margin: 40px 0 24px;
       }
 
@@ -2197,8 +2235,8 @@
 
       .use-cases-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+        gap: clamp(20px, 3vw, 24px);
         margin-top: 40px;
       }
 
@@ -2271,8 +2309,8 @@
 
       .characters-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 28px;
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+        gap: clamp(20px, 4vw, 28px);
         margin-top: 48px;
       }
 
@@ -2464,7 +2502,7 @@
       }
 
       .archetypes-header h2 {
-        font-family: "Fredoka", "Playfair Display", Georgia, serif;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
         font-size: 2.8rem;
         font-weight: 700;
         color: #ffd700;
@@ -2499,6 +2537,7 @@
         padding: 32px;
         position: relative;
         overflow: hidden;
+        min-width: 0;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
         backdrop-filter: blur(10px);
       }
@@ -2702,7 +2741,7 @@
       }
 
       .guide-header h2 {
-        font-family: "Fredoka", "Playfair Display", Georgia, serif;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
         font-size: 2.6rem;
         font-weight: 700;
         color: #ffd700;
@@ -2726,6 +2765,7 @@
         gap: 20px;
         flex-wrap: wrap;
         margin: 24px 0 32px;
+        position: relative;
       }
 
       .search-input {
@@ -2793,6 +2833,136 @@
         box-shadow: 0 8px 25px rgba(255, 215, 0, 0.35);
       }
 
+      /* Filter Toggle Button (Hamburger Menu) */
+      .filter-toggle-btn {
+        display: none; /* Hidden by default on desktop */
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.95) 0%,
+          rgba(15, 23, 42, 0.98) 100%
+        );
+        border: 1px solid rgba(255, 215, 0, 0.25);
+        border-radius: var(--radius-lg);
+        padding: 14px 20px;
+        color: #e2e8f0;
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+        cursor: pointer;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .filter-toggle-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.08) 0%,
+          rgba(255, 237, 78, 0.05) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
+
+      .filter-toggle-btn:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 1) 0%,
+          rgba(15, 23, 42, 1) 100%
+        );
+        border-color: rgba(255, 215, 0, 0.45);
+        box-shadow: 0 4px 16px rgba(255, 215, 0, 0.12),
+          0 2px 8px rgba(0, 0, 0, 0.2);
+        transform: translateY(-1px);
+      }
+
+      .filter-toggle-btn:hover::before {
+        opacity: 1;
+      }
+
+      .filter-toggle-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .filter-toggle-btn.active {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.15) 0%,
+          rgba(255, 237, 78, 0.12) 100%
+        );
+        border-color: rgba(255, 215, 0, 0.5);
+        box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2),
+          inset 0 1px 3px rgba(255, 215, 0, 0.1);
+      }
+
+      .filter-toggle-btn:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.22),
+          0 4px 16px rgba(255, 215, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.2);
+        border-color: rgba(255, 215, 0, 0.55);
+      }
+
+      .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 22px;
+        height: 18px;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hamburger-icon span {
+        display: block;
+        width: 100%;
+        height: 2.5px;
+        background: #ffd700;
+        border-radius: 3px;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .filter-toggle-btn:hover .hamburger-icon span {
+        background: #ffd700;
+        box-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+      }
+
+      .filter-toggle-btn.active .hamburger-icon span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+
+      .filter-toggle-btn.active .hamburger-icon span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      .filter-toggle-btn.active .hamburger-icon span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+
+      .filter-label {
+        position: relative;
+        z-index: 1;
+      }
+
+      .chip:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.22);
+        border-color: rgba(255, 215, 0, 0.55);
+      }
+
       .guide-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2811,6 +2981,7 @@
         transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
+        min-width: 0;
         backdrop-filter: blur(10px);
       }
 
@@ -3146,7 +3317,7 @@
       }
 
       .cta-section h3 {
-        font-family: "Fredoka", "Playfair Display", Georgia, serif;
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
         font-size: 2.5rem;
         margin-bottom: 20px;
         font-weight: 700;
@@ -3292,8 +3463,73 @@
           max-width: none;
         }
 
-        .filter-chips {
+        /* Show hamburger button on mobile */
+        .filter-toggle-btn {
+          display: flex;
+          width: 100%;
           justify-content: center;
+        }
+
+        /* Hide filters by default on mobile */
+        .filter-chips {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: calc(100% + 4px);
+          left: 0;
+          right: 0;
+          background: linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.98) 0%,
+            rgba(30, 41, 59, 0.95) 100%
+          );
+          border: 1px solid rgba(255, 215, 0, 0.3);
+          border-radius: var(--radius-lg);
+          padding: 12px;
+          margin-top: 4px;
+          z-index: 100;
+          backdrop-filter: blur(20px);
+          box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6),
+            0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 215, 0, 0.1);
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transform: translateY(-10px);
+          transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+          max-height: 70vh;
+          overflow-y: auto;
+        }
+
+        /* Show filters when active */
+        .filter-chips.active {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          transform: translateY(0);
+        }
+
+        .chip {
+          width: 100%;
+          justify-content: center;
+          padding: 14px 20px;
+          font-size: 1rem;
+          margin-bottom: 8px;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .chip:last-child {
+          margin-bottom: 0;
+        }
+
+        .chip:hover {
+          transform: translateX(4px);
+          box-shadow: 0 4px 12px rgba(255, 215, 0, 0.15);
+        }
+
+        .chip.active {
+          transform: translateX(4px) scale(1.02);
+          box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
         }
 
         .guide-grid {
@@ -3455,14 +3691,64 @@
         }
       }
 
+      /* Tablet improvements (600px - 900px) */
+      @media (max-width: 900px) {
+        .quiz-content {
+          padding: 32px 24px;
+        }
+
+        .section-header {
+          margin-bottom: 48px;
+        }
+
+        .features-grid,
+        .insights-grid,
+        .use-cases-grid {
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+      }
+
       /* Large phones / small tablets */
       @media (max-width: 600px) {
         .container {
           padding: 16px;
         }
 
-        nav .nav-left,
+        .mobile-menu-toggle {
+          display: flex;
+        }
+
         nav .nav-right {
+          position: fixed;
+          top: var(--topbar-h, 76px);
+          right: -100%;
+          width: 280px;
+          height: calc(100vh - var(--topbar-h, 76px));
+          background: rgba(15, 23, 42, 0.98);
+          backdrop-filter: blur(20px);
+          flex-direction: column;
+          padding: 24px;
+          gap: 16px;
+          border-left: 1px solid rgba(255, 215, 0, 0.2);
+          box-shadow: -4px 0 30px rgba(0, 0, 0, 0.5);
+          transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: 9998;
+        }
+
+        nav .nav-right.active {
+          right: 0;
+        }
+
+        nav .nav-right a {
+          width: 100%;
+          padding: 14px 20px;
+          border-radius: 12px;
+          text-align: left;
+          font-size: 1.05rem;
+        }
+
+        nav .nav-left,
+        nav .nav-right:not(.active) {
           gap: 10px;
         }
 
@@ -3490,6 +3776,124 @@
 
         .guide-header h2 {
           font-size: 2rem;
+        }
+
+        .archetypes-header {
+          margin-bottom: 18px;
+          text-align: left;
+          max-width: none;
+        }
+
+        .archetypes-header h2 {
+          font-size: 1.95rem;
+          line-height: 1.15;
+          margin-bottom: 10px;
+          overflow-wrap: anywhere;
+          hyphens: auto;
+        }
+
+        .archetypes-header p {
+          font-size: 1.05rem;
+          max-width: none;
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        section[aria-labelledby="archetypes-heading"].content-section {
+          padding-top: 28px;
+          padding-bottom: 32px;
+        }
+
+        .archetypes-grid {
+          gap: 16px;
+        }
+
+        .archetypes-panel {
+          padding: 20px;
+        }
+
+        .pillar {
+          padding: 12px 14px;
+        }
+
+        .pillars {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .badges {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .archetype-badge {
+          padding: 8px 12px;
+          font-size: 0.9rem;
+          gap: 8px;
+          max-width: 100%;
+          width: 100%;
+          justify-content: flex-start;
+          flex-wrap: nowrap;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 1.2;
+        }
+
+        .archetype-badge img {
+          width: 22px;
+          height: 22px;
+          flex: 0 0 auto;
+        }
+
+        .archetype-card {
+          padding: 18px;
+        }
+
+        .archetype-card .chip {
+          padding: 7px 12px;
+          max-width: 100%;
+          white-space: normal;
+          line-height: 1.2;
+        }
+
+        #countryGuide .guide-toolbar {
+          margin: 18px 0 24px;
+          gap: 12px;
+        }
+
+        #countryGuide .filter-chips {
+          gap: 8px;
+        }
+
+        #countryGuide .filter-chips .chip {
+          padding: 8px 12px;
+          font-size: 0.9rem;
+        }
+
+        #countryGuide .guide-card {
+          padding: 18px;
+        }
+
+        #countryGuide .guide-card .card-head {
+          grid-template-columns: 44px 1fr;
+          gap: 12px;
+        }
+
+        #countryGuide .guide-card .avatar {
+          width: 44px;
+          height: 44px;
+        }
+
+        #countryGuide .guide-card .avatar img {
+          width: 32px;
+          height: 32px;
+        }
+
+        #countryGuide .guide-card h4 {
+          font-size: 1.08rem;
+          overflow-wrap: anywhere;
         }
 
         .guide-grid {
@@ -3532,6 +3936,31 @@
         }
       }
 
+      @media (max-width: 420px) {
+        .pillars {
+          grid-template-columns: 1fr;
+        }
+
+        .badges {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Medium phones (380px - 480px) */
+      @media (max-width: 480px) and (min-width: 380px) {
+        .answer-btn {
+          min-height: 64px;
+        }
+
+        .quiz-header h2 {
+          font-size: 1.6rem;
+        }
+
+        .result h2 {
+          font-size: 1.8rem;
+        }
+      }
+
       /* Small phones */
       @media (max-width: 480px) {
         body {
@@ -3549,6 +3978,16 @@
 
         .hero-section {
           padding: 50px 0 32px;
+        }
+
+        /* Improve readability */
+        body {
+          font-size: 15px;
+        }
+
+        /* Better button spacing */
+        .answers {
+          gap: 14px;
         }
 
         .hero-section h1 {
@@ -3578,21 +4017,29 @@
         }
 
         .answer-btn {
-          padding: 18px 20px 18px 54px;
+          padding: 20px 22px 20px 56px;
           font-size: 0.95rem;
+          min-height: 60px;
+          touch-action: manipulation;
         }
 
         .answer-btn .wojak-badge {
           left: 14px;
-          width: 30px;
-          height: 30px;
+          width: 32px;
+          height: 32px;
         }
 
         .answer-btn .chevron {
           right: 14px;
-          width: 22px;
-          height: 22px;
+          width: 24px;
+          height: 24px;
           font-size: 12px;
+        }
+
+        /* Improve touch targets */
+        .answer-btn:active {
+          transform: scale(0.98);
+          transition: transform 0.1s ease;
         }
 
         .progress-meta {
@@ -3611,6 +4058,44 @@
 
         .guide-grid {
           grid-template-columns: 1fr;
+        }
+
+        .archetypes-header h2 {
+          font-size: 1.85rem;
+        }
+
+        section[aria-labelledby="archetypes-heading"].content-section {
+          padding-top: 22px;
+          padding-bottom: 28px;
+        }
+
+        .archetypes-panel {
+          padding: 16px;
+        }
+
+        .pillars {
+          gap: 10px;
+        }
+
+        .pillar .icon {
+          width: 28px;
+          height: 28px;
+        }
+
+        #countryGuide .guide-header h2 {
+          font-size: 1.85rem;
+        }
+
+        #countryGuide .filter-chips {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 4px;
+        }
+
+        #countryGuide .filter-chips .chip {
+          white-space: nowrap;
+          flex: 0 0 auto;
         }
 
         .archetype-card-grid {
@@ -3695,6 +4180,7 @@
       @media (max-width: 360px) {
         body {
           padding-top: 58px;
+          font-size: 14px;
         }
 
         nav {
@@ -3709,6 +4195,15 @@
         nav img#brand-logo {
           width: 32px;
           height: 32px;
+        }
+
+        /* Better spacing for very small screens */
+        .container {
+          padding: 12px;
+        }
+
+        .main-container {
+          padding: 0 12px;
         }
 
         .hero-section h1 {
@@ -3917,6 +4412,14 @@
 
       /* Touch device optimizations */
       @media (hover: none) and (pointer: coarse) {
+        .pillar:hover,
+        .archetype-badge:hover,
+        .archetype-card:hover {
+          transform: none;
+          box-shadow: none;
+          border-color: rgba(255, 215, 0, 0.15);
+        }
+
         .answer-btn:hover {
           transform: none;
           box-shadow: 0 8px 30px rgba(255, 215, 0, 0.15);
@@ -4118,6 +4621,61 @@
       .restart-btn {
         user-select: none;
         -webkit-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      /* Improved touch targets for all interactive elements */
+      button,
+      .answer-btn,
+      .option,
+      a.guide-cta,
+      .restart-btn {
+        min-height: 44px;
+        min-width: 44px;
+      }
+
+      /* Smooth scrolling for anchor links */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: calc(var(--topbar-h, 76px) + 20px);
+      }
+
+      /* Prevent horizontal overflow */
+      body,
+      html {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+
+      /* Better text sizing on mobile */
+      @media (max-width: 768px) {
+        html {
+          -webkit-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+        }
+      }
+
+      /* Responsive images and media */
+      img,
+      video,
+      iframe {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Better word wrapping */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      li {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
       }
 
       /* Focus styles for accessibility */
@@ -4126,56 +4684,2296 @@
         outline: 2px solid var(--brand1);
         outline-offset: 2px;
       }
+
+      /* ===== DARK THEME OVERRIDES ===== */
+      body.theme-dark {
+        --text-strong: #f7fafc;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        background: linear-gradient(
+          135deg,
+          #0a0f1c 0%,
+          #0c1324 50%,
+          #0f172a 100%
+        );
+        color: var(--text);
+      }
+
+      body.theme-dark .content-section,
+      body.theme-dark .quiz-container {
+        background: linear-gradient(
+          135deg,
+          rgba(8, 12, 27, 0.95),
+          rgba(15, 19, 39, 0.98)
+        );
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+
+      /* Dark theme - quiz content area */
+      body.theme-dark .quiz-content {
+        background: rgba(7, 13, 32, 0.95);
+        border-color: rgba(255, 255, 255, 0.05);
+      }
+
+      body.theme-dark .quiz-header h2 {
+        color: #ffffff;
+      }
+
+      body.theme-dark .quiz-header p {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      body.theme-dark .question h2 {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .answer-btn {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 255, 255, 0.01)
+          ),
+          #0b1024;
+        border-color: rgba(255, 255, 255, 0.08);
+        color: #f8fafc;
+      }
+
+      body.theme-dark .answer-btn:hover {
+        border-color: rgba(255, 215, 0, 0.8);
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.02)
+          ),
+          #0f172a;
+      }
+
+      body.theme-dark .answer-btn .chevron {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.2),
+          rgba(255, 107, 53, 0.2)
+        );
+        color: #ffd700;
+      }
+
+      body.theme-dark .wojak-badge {
+        border-color: rgba(255, 215, 0, 0.5);
+        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.25);
+      }
+
+      body.theme-dark .progress-bar-container {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      body.theme-dark .progress-text {
+        color: #ffd700;
+      }
+
+      body.theme-dark .result-card {
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.95),
+          rgba(30, 41, 59, 0.9)
+        );
+        border-color: rgba(255, 215, 0, 0.15);
+      }
+
+      body.theme-dark .result-celebration-badge {
+        color: #ffd700;
+      }
+
+      body.theme-dark .result-panel {
+        background: rgba(15, 23, 42, 0.8);
+        border-color: rgba(255, 215, 0, 0.15);
+      }
+
+      body.theme-dark .result-panel h4 {
+        color: #ffd700;
+      }
+
+      body.theme-dark .result-panel li {
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .result-link {
+        color: #ffd700;
+      }
+
+      body.theme-dark .guide-cta {
+        background: linear-gradient(135deg, #ffd700 0%, #ff6b35 100%);
+        color: #0f172a;
+      }
+
+      body.theme-dark .content-section h1,
+      body.theme-dark .content-section h2,
+      body.theme-dark .content-section h3,
+      body.theme-dark .content-section h4,
+      body.theme-dark .section-header h2,
+      body.theme-dark .archetypes-header h2,
+      body.theme-dark .guide-header h2 {
+        color: #f7fafc !important;
+      }
+
+      body.theme-dark .content-section p,
+      body.theme-dark .content-section li,
+      body.theme-dark .section-header p,
+      body.theme-dark .archetypes-header p,
+      body.theme-dark .guide-header p {
+        color: #cbd5e1 !important;
+      }
+
+      body.theme-dark .eyebrow {
+        color: #c7d2fe;
+        background: rgba(99, 102, 241, 0.2);
+        border-color: rgba(99, 102, 241, 0.35);
+      }
+
+      body.theme-dark .faq-section {
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.98),
+          rgba(30, 41, 59, 0.95)
+        ) !important;
+        border: 1px solid rgba(255, 215, 0, 0.15);
+      }
+
+      body.theme-dark .faq-section .section-header h2 {
+        color: #f7fafc !important;
+      }
+
+      body.theme-dark .faq-section .section-header p {
+        color: #cbd5e1 !important;
+      }
+
+      body.theme-dark .faq-item {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.8),
+          rgba(15, 23, 42, 0.9)
+        );
+        border-color: rgba(255, 215, 0, 0.15);
+      }
+
+      body.theme-dark .faq-question {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .faq-answer {
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .archetypes-grid,
+      body.theme-dark .archetypes-panel {
+        background: rgba(15, 23, 42, 0.6);
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+
+      body.theme-dark .pillar {
+        background: rgba(30, 41, 59, 0.6);
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+
+      body.theme-dark .pillar h4 {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .pillar p {
+        color: #94a3b8;
+      }
+
+      body.theme-dark .guide-card {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.85),
+          rgba(15, 23, 42, 0.95)
+        );
+        border-color: rgba(255, 215, 0, 0.12);
+      }
+
+      body.theme-dark .guide-card h4 {
+        color: #f7fafc !important;
+      }
+
+      body.theme-dark .guide-card .summary,
+      body.theme-dark .guide-card .card-meta {
+        color: #cbd5e1 !important;
+      }
+
+      body.theme-dark .guide-card .traits li {
+        color: #94a3b8;
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      body.theme-dark .cta-section {
+        background: linear-gradient(135deg, #0f3460, #16213e, #1a1a2e);
+      }
+
+      body.theme-dark .cta-section h3,
+      body.theme-dark .cta-section p {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .chip {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.12);
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .chip:hover,
+      body.theme-dark .chip.active {
+        background: rgba(255, 215, 0, 0.15);
+        border-color: rgba(255, 215, 0, 0.5);
+        color: #ffd700;
+      }
+
+      body.theme-dark .character-card {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.9),
+          rgba(15, 23, 42, 0.95)
+        );
+        border-color: rgba(255, 215, 0, 0.15);
+      }
+
+      body.theme-dark .character-card h4 {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .character-card p {
+        color: #cbd5e1;
+      }
+
+      /* Additional dark theme text fixes */
+      body.theme-dark .feature-card h3 {
+        color: #f7fafc !important;
+      }
+
+      body.theme-dark .feature-card p {
+        color: #cbd5e1 !important;
+      }
+
+      body.theme-dark .insight-card h3 {
+        color: #f7fafc !important;
+      }
+
+      body.theme-dark .insight-card p {
+        color: #cbd5e1 !important;
+      }
+
+      body.theme-dark .timeline-step strong {
+        color: #f7fafc !important;
+      }
+
+      body.theme-dark .timeline + p {
+        color: #cbd5e1 !important;
+      }
+
+      body.theme-dark .use-case-card h3,
+      body.theme-dark .use-case-card h4 {
+        color: #f7fafc !important;
+      }
+
+      body.theme-dark .use-case-card p,
+      body.theme-dark .use-case-card ul {
+        color: #cbd5e1 !important;
+      }
+
+      body.theme-dark .answer-btn .answer-text {
+        color: #f8fafc;
+      }
+
+      body.theme-dark .question h3 {
+        color: #f7fafc !important;
+      }
+
+      body.theme-dark .progress-meta {
+        color: #ffd700;
+      }
+
+      body.theme-dark .archetype-badge {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .archetype-card .chip {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .archetype-card p {
+        color: #94a3b8;
+      }
+
+      body.theme-dark .panel-note {
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .legend-label {
+        color: #94a3b8;
+      }
+
+      body.theme-dark .search-input input[type="search"] {
+        color: #f7fafc;
+        background: rgba(15, 23, 42, 0.8);
+      }
+
+      body.theme-dark .search-input input[type="search"]::placeholder {
+        color: #64748b;
+      }
+
+      body.theme-dark .hero-section h1 {
+        color: #ffffff;
+      }
+
+      body.theme-dark .hero-section .subtitle {
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .hero-section .description {
+        color: #cbd5e1;
+      }
+
+      body.theme-dark .hero-highlights li {
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      body.theme-dark .hero-panel h3 {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .hero-panel p {
+        color: #94a3b8;
+      }
+
+      body.theme-dark .hero-factor h4 {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .hero-factor p {
+        color: #94a3b8;
+      }
+
+      body.theme-dark .stats .stat strong {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .stats .stat span {
+        color: #94a3b8;
+      }
+
+      body.theme-dark .result-hero h2,
+      body.theme-dark .result-hero h3 {
+        color: #f7fafc !important;
+      }
+
+      body.theme-dark .result-hero p,
+      body.theme-dark .result-description {
+        color: #cbd5e1 !important;
+      }
+
+      body.theme-dark .result-eyebrow {
+        color: #ffd700;
+      }
+
+      body.theme-dark .score-label {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .score-value {
+        color: #ffd700;
+      }
+
+      body.theme-dark .question-counter {
+        color: #94a3b8;
+      }
+
+      body.theme-dark .traits li {
+        color: #e2e8f0;
+      }
+
+      /* ===== LIGHT THEME OVERRIDES ===== */
+      body.theme-light {
+        --text-strong: #0f172a;
+        --text: #1e293b;
+        --muted: #64748b;
+        background: linear-gradient(
+          135deg,
+          #f8fafc 0%,
+          #eef2ff 50%,
+          #f1f5f9 100%
+        );
+        color: var(--text);
+      }
+
+      body.theme-light .content-section,
+      body.theme-light .quiz-container {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .content-section::before,
+      body.theme-light .content-section::after {
+        opacity: 0.3;
+      }
+
+      body.theme-light .content-section h1,
+      body.theme-light .content-section h2,
+      body.theme-light .content-section h3,
+      body.theme-light .content-section h4,
+      body.theme-light .section-header h2,
+      body.theme-light .archetypes-header h2,
+      body.theme-light .guide-header h2 {
+        color: #0f172a !important;
+      }
+
+      body.theme-light .content-section p,
+      body.theme-light .content-section li,
+      body.theme-light .section-header p,
+      body.theme-light .archetypes-header p,
+      body.theme-light .guide-header p {
+        color: #475569 !important;
+      }
+
+      body.theme-light .eyebrow {
+        color: #4f46e5;
+        background: rgba(99, 102, 241, 0.1);
+        border-color: rgba(99, 102, 241, 0.25);
+      }
+
+      body.theme-light .faq-section {
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f8fafc 100%
+        ) !important;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .faq-section .section-header h2 {
+        color: #0f172a !important;
+      }
+
+      body.theme-light .faq-section .section-header p {
+        color: #475569 !important;
+      }
+
+      body.theme-light .faq-item {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      body.theme-light .faq-item:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 8px 30px rgba(99, 102, 241, 0.1);
+      }
+
+      body.theme-light .faq-question {
+        color: #0f172a;
+      }
+
+      body.theme-light .faq-question span {
+        color: #4f46e5;
+      }
+
+      body.theme-light .faq-answer {
+        color: #475569;
+      }
+
+      body.theme-light .archetypes-grid,
+      body.theme-light .archetypes-panel {
+        background: rgba(255, 255, 255, 0.8);
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .pillar {
+        background: #ffffff;
+        border-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      body.theme-light .pillar h4 {
+        color: #0f172a;
+      }
+
+      body.theme-light .pillar p {
+        color: #64748b;
+      }
+
+      body.theme-light .guide-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .guide-card:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 12px 40px rgba(99, 102, 241, 0.12);
+      }
+
+      body.theme-light .guide-card h4 {
+        color: #0f172a !important;
+      }
+
+      body.theme-light .guide-card .summary,
+      body.theme-light .guide-card .card-meta {
+        color: #475569 !important;
+      }
+
+      body.theme-light .guide-card .traits li {
+        color: #64748b;
+        background: rgba(99, 102, 241, 0.08);
+        border-color: rgba(99, 102, 241, 0.2);
+      }
+
+      body.theme-light .cta-section {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed, #6366f1);
+      }
+
+      body.theme-light .cta-section h3,
+      body.theme-light .cta-section p {
+        color: #ffffff;
+      }
+
+      body.theme-light .chip {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        color: #1e293b;
+      }
+
+      body.theme-light .chip:hover,
+      body.theme-light .chip.active {
+        background: rgba(99, 102, 241, 0.1);
+        border-color: rgba(99, 102, 241, 0.5);
+        color: #4f46e5;
+      }
+
+      body.theme-light .character-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .character-card h4 {
+        color: #0f172a;
+      }
+
+      body.theme-light .character-card p {
+        color: #475569;
+      }
+
+      body.theme-light .option {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #1e293b;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      body.theme-light .option:hover {
+        border-color: rgba(99, 102, 241, 0.5);
+        background: #f8fafc;
+      }
+
+      body.theme-light .option.selected {
+        border-color: #4f46e5;
+        background: rgba(99, 102, 241, 0.08);
+      }
+
+      body.theme-light .option.selected::after {
+        color: #4f46e5;
+      }
+
+      body.theme-light .question h2 {
+        color: #0f172a;
+      }
+
+      body.theme-light .question-number {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: #ffffff;
+        box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+      }
+
+      body.theme-light .quiz-header {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      }
+
+      body.theme-light .result-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      body.theme-light .result-card h3,
+      body.theme-light .result-name {
+        color: #0f172a !important;
+      }
+
+      body.theme-light .result-card p,
+      body.theme-light .result-description {
+        color: #475569 !important;
+      }
+
+      body.theme-light .guide-cta {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: #ffffff;
+      }
+
+      body.theme-light .guide-cta:hover {
+        box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+      }
+
+      body.theme-light .hero-section {
+        color: var(--text);
+      }
+
+      body.theme-light .main-container {
+        color: var(--text);
+      }
+
+      /* Light theme - hero panel */
+      body.theme-light .hero-panel {
+        background: rgba(255, 255, 255, 0.85);
+        border-color: rgba(0, 0, 0, 0.1);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.1);
+      }
+
+      body.theme-light .hero-panel h3 {
+        color: #0f172a;
+      }
+
+      body.theme-light .hero-panel p {
+        color: #64748b;
+      }
+
+      body.theme-light .panel-eyebrow {
+        color: #4f46e5;
+        background: rgba(99, 102, 241, 0.1);
+        border-color: rgba(99, 102, 241, 0.25);
+      }
+
+      body.theme-light .hero-factor {
+        background: rgba(255, 255, 255, 0.7);
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .hero-factor h4 {
+        color: #0f172a;
+      }
+
+      body.theme-light .hero-factor p {
+        color: #64748b;
+      }
+
+      body.theme-light .stats .stat strong {
+        color: #0f172a;
+      }
+
+      body.theme-light .stats .stat span {
+        color: #64748b;
+      }
+
+      body.theme-light .ghost-btn {
+        border-color: rgba(0, 0, 0, 0.2);
+        color: #1e293b;
+      }
+
+      body.theme-light .ghost-btn:hover {
+        border-color: rgba(99, 102, 241, 0.5);
+        color: #4f46e5;
+      }
+
+      body.theme-light .hero-highlights li {
+        color: #475569;
+      }
+
+      body.theme-light .hero-highlights li::before {
+        color: #4f46e5;
+      }
+
+      /* Light theme footer */
+      body.theme-light footer.site-footer {
+        background: linear-gradient(
+          135deg,
+          #f8fafc,
+          #eef2ff,
+          #f1f5f9
+        ) !important;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      body.theme-light .site-footer,
+      body.theme-light .site-footer * {
+        color: #0f172a !important;
+      }
+
+      body.theme-light .site-footer__description,
+      body.theme-light .site-footer__note,
+      body.theme-light .site-footer__link,
+      body.theme-light .site-footer__bottom p {
+        color: #475569 !important;
+      }
+
+      body.theme-light .site-footer__disclaimer {
+        color: #1e40af !important;
+      }
+
+      /* ===== ADDITIONAL LIGHT THEME TEXT FIXES ===== */
+      body.theme-light .answer-btn {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        color: #1e293b;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .answer-btn .answer-text {
+        color: #1e293b;
+      }
+
+      body.theme-light .answer-btn:hover {
+        border-color: rgba(99, 102, 241, 0.5);
+        background: #f8fafc;
+      }
+
+      body.theme-light .answer-btn .chevron {
+        background: rgba(99, 102, 241, 0.1);
+        color: #64748b;
+      }
+
+      body.theme-light .answer-btn:hover .chevron {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: #ffffff;
+      }
+
+      body.theme-light .answer-btn .wojak-badge {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+      }
+
+      body.theme-light .question h3 {
+        color: #0f172a !important;
+      }
+
+      body.theme-light .progress-meta {
+        color: #4f46e5;
+      }
+
+      body.theme-light .progress {
+        background: rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+
+      body.theme-light .progress-bar {
+        background: linear-gradient(90deg, #4f46e5, #7c3aed);
+      }
+
+      body.theme-light .feature-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .feature-card h3 {
+        color: #0f172a;
+      }
+
+      body.theme-light .feature-card p {
+        color: #475569;
+      }
+
+      body.theme-light .insight-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      body.theme-light .insight-card:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 12px 40px rgba(99, 102, 241, 0.12);
+      }
+
+      body.theme-light .insight-card h3 {
+        color: #0f172a;
+      }
+
+      body.theme-light .insight-card p {
+        color: #475569;
+      }
+
+      body.theme-light .insight-meta {
+        background: rgba(99, 102, 241, 0.1);
+        color: #4f46e5;
+        border-color: rgba(99, 102, 241, 0.25);
+      }
+
+      body.theme-light .timeline-step {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      }
+
+      body.theme-light .timeline-step:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 10px 35px rgba(99, 102, 241, 0.12);
+      }
+
+      body.theme-light .timeline-step strong {
+        color: #0f172a;
+      }
+
+      body.theme-light .timeline-step span {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: #ffffff;
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+      }
+
+      body.theme-light .timeline + p {
+        color: #475569;
+      }
+
+      body.theme-light .use-case-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      }
+
+      body.theme-light .use-case-card:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 12px 40px rgba(99, 102, 241, 0.12);
+      }
+
+      body.theme-light .use-case-card h4 {
+        color: #0f172a;
+      }
+
+      body.theme-light .use-case-card p {
+        color: #475569;
+      }
+
+      body.theme-light .archetype-badge {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        color: #1e293b;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
+
+      body.theme-light .archetype-badge:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.15);
+      }
+
+      body.theme-light .archetype-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      body.theme-light .archetype-card:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 12px 40px rgba(99, 102, 241, 0.12);
+      }
+
+      body.theme-light .archetype-card .chip {
+        background: rgba(99, 102, 241, 0.08);
+        border-color: rgba(99, 102, 241, 0.2);
+        color: #1e293b;
+      }
+
+      body.theme-light .archetype-card p {
+        color: #475569;
+      }
+
+      body.theme-light .search-input input[type="search"] {
+        background: #ffffff;
+        border: 2px solid rgba(0, 0, 0, 0.12);
+        color: #1e293b;
+      }
+
+      body.theme-light .search-input input[type="search"]:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+      }
+
+      body.theme-light .search-input input[type="search"]::placeholder {
+        color: #94a3b8;
+      }
+
+      body.theme-light .traits li {
+        color: #475569;
+      }
+
+      body.theme-light .traits li::before {
+        color: #10b981;
+      }
+
+      body.theme-light .legend-label {
+        color: #64748b;
+      }
+
+      body.theme-light .panel-note {
+        color: #475569;
+      }
+
+      body.theme-light .guide-header h2 {
+        color: #4f46e5 !important;
+      }
+
+      body.theme-light .guide-header .eyebrow {
+        background: rgba(99, 102, 241, 0.1);
+        color: #4f46e5;
+        border-color: rgba(99, 102, 241, 0.25);
+      }
+
+      body.theme-light .result-hero {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      body.theme-light .result-hero h2,
+      body.theme-light .result-hero h3 {
+        color: #0f172a;
+      }
+
+      body.theme-light .result-hero p {
+        color: #475569;
+      }
+
+      body.theme-light .result-eyebrow {
+        color: #4f46e5;
+        background: rgba(99, 102, 241, 0.1);
+      }
+
+      body.theme-light .result-avatar {
+        border-color: rgba(99, 102, 241, 0.3);
+        box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+      }
+
+      body.theme-light .result-panel {
+        background: #ffffff;
+        border-color: rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .result-panel:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 15px 40px rgba(99, 102, 241, 0.12);
+      }
+
+      body.theme-light .result-panel::before {
+        background: linear-gradient(90deg, #4f46e5, #7c3aed);
+      }
+
+      body.theme-light .result-panel h3,
+      body.theme-light .result-panel h4 {
+        color: #4f46e5;
+      }
+
+      body.theme-light .result-panel p,
+      body.theme-light .result-panel li {
+        color: #475569;
+      }
+
+      body.theme-light .result-panel .panel-icon {
+        background: rgba(99, 102, 241, 0.1);
+        color: #4f46e5;
+        border-color: rgba(99, 102, 241, 0.2);
+      }
+
+      body.theme-light .result-panel.span-2 {
+        background: linear-gradient(145deg, #f8fafc, #ffffff);
+      }
+
+      body.theme-light .restart-btn {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: #ffffff;
+      }
+
+      body.theme-light .restart-btn:hover {
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
+      }
+
+      body.theme-light .share-btn {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        color: #1e293b;
+      }
+
+      body.theme-light .share-btn:hover {
+        border-color: rgba(99, 102, 241, 0.5);
+        color: #4f46e5;
+      }
+
+      body.theme-light .score-breakdown {
+        background: rgba(99, 102, 241, 0.05);
+        border: 1px solid rgba(99, 102, 241, 0.15);
+      }
+
+      body.theme-light .score-bar-fill {
+        background: linear-gradient(90deg, #4f46e5, #7c3aed);
+      }
+
+      body.theme-light .score-label {
+        color: #1e293b;
+      }
+
+      body.theme-light .score-value {
+        color: #4f46e5;
+      }
+
+      body.theme-light .question-counter {
+        color: #64748b;
+      }
+
+      body.theme-light .spotlight-toggle-btn {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        color: #1e293b;
+      }
+
+      body.theme-light .spotlight-toggle-btn:hover {
+        border-color: rgba(99, 102, 241, 0.5);
+        color: #4f46e5;
+      }
+
+      body.theme-light .spotlight-toggle-btn.show-less {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: #ffffff;
+        border: none;
+      }
+
+      /* Light theme - spotlight section elements */
+      body.theme-light .spotlight-details {
+        background: rgba(99, 102, 241, 0.08);
+        border-color: rgba(99, 102, 241, 0.2);
+      }
+
+      body.theme-light .spotlight-label {
+        color: #4f46e5;
+      }
+
+      body.theme-light .spotlight-list {
+        color: #475569;
+      }
+
+      body.theme-light .spotlight-meta {
+        color: #475569;
+      }
+
+      body.theme-light .spotlight-cta {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: #ffffff;
+      }
+
+      body.theme-light .pillar .icon {
+        background: rgba(99, 102, 241, 0.15);
+        color: #4f46e5;
+      }
+
+      body.theme-light .pillar span {
+        color: #0f172a;
+      }
+
+      body.theme-light .nav-overlay {
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Light theme - hero text and description */
+      body.theme-light .hero-section h1 {
+        color: #0f172a;
+        text-shadow: none;
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #4f46e5 50%,
+          #7c3aed 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      body.theme-light .hero-section .subtitle {
+        color: #1e293b;
+      }
+
+      body.theme-light .hero-section .description {
+        color: #475569;
+      }
+
+      body.theme-light .hero-badge,
+      body.theme-light .hero-section .eyebrow {
+        color: #4f46e5;
+        background: rgba(99, 102, 241, 0.1);
+        border-color: rgba(99, 102, 241, 0.25);
+      }
+
+      body.theme-light .primary-btn {
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        color: #ffffff;
+        box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
+      }
+
+      /* Ensure stat numbers and labels are readable in light theme */
+      body.theme-light .hero-stats .stat strong,
+      body.theme-light .stats .stat strong,
+      body.theme-light .stat strong {
+        color: #0f172a !important;
+      }
+
+      body.theme-light .hero-stats .stat span,
+      body.theme-light .stats .stat span,
+      body.theme-light .stat span {
+        color: #64748b !important;
+      }
+
+      /* Light theme - old header class */
+      body.theme-light .header {
+        color: #0f172a;
+      }
+
+      body.theme-light .header h1 {
+        color: #0f172a;
+        text-shadow: none;
+      }
+
+      body.theme-light .header p {
+        color: #475569;
+      }
+
+      /* Light theme - character card hover states */
+      body.theme-light .character-card:hover {
+        border-color: rgba(99, 102, 241, 0.5);
+        box-shadow: 0 25px 50px rgba(99, 102, 241, 0.15);
+      }
+
+      body.theme-light .character-portrait-wrap {
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.1),
+          rgba(124, 58, 237, 0.1)
+        );
+        border-color: rgba(99, 102, 241, 0.35);
+        box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+      }
+
+      /* Light theme - FAQ section */
+      body.theme-light .faq-section {
+        background: #ffffff;
+      }
+
+      body.theme-light .faq-section h2 {
+        color: #0f172a;
+      }
+
+      body.theme-light .faq-item summary {
+        color: #1e293b;
+      }
+
+      body.theme-light .faq-item p {
+        color: #475569;
+      }
+
+      body.theme-light .faq-item {
+        background: #f8fafc;
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+
+      /* Light theme - Quiz container */
+      body.theme-light .quiz-container {
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.2),
+          rgba(124, 58, 237, 0.2)
+        );
+        border-color: rgba(99, 102, 241, 0.25);
+      }
+
+      body.theme-light .quiz-content {
+        background: #ffffff;
+      }
+
+      /* Light theme - Section headings */
+      body.theme-light section h2 {
+        color: #0f172a;
+      }
+
+      body.theme-light section p {
+        color: #475569;
+      }
+
+      /* Light theme - archetypes section */
+      body.theme-light .archetypes-header h2 {
+        color: #4f46e5;
+      }
+
+      body.theme-light .archetypes-header .eyebrow {
+        color: #4f46e5;
+        background: rgba(99, 102, 241, 0.1);
+        border-color: rgba(99, 102, 241, 0.3);
+      }
+
+      body.theme-light .archetypes-panel {
+        background: #ffffff;
+        border-color: rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .archetypes-panel::before {
+        background: linear-gradient(90deg, #4f46e5, #7c3aed, #4f46e5);
+      }
+
+      body.theme-light .pillar {
+        background: #f8fafc;
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+
+      body.theme-light .pillar:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+      }
+
+      /* Light theme - all generic card backgrounds */
+      body.theme-light .card,
+      body.theme-light [class*="-card"] {
+        background: #ffffff;
+        border-color: rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      }
+
+      body.theme-light .card h3,
+      body.theme-light .card h4,
+      body.theme-light [class*="-card"] h3,
+      body.theme-light [class*="-card"] h4 {
+        color: #0f172a;
+      }
+
+      body.theme-light .card p,
+      body.theme-light [class*="-card"] p {
+        color: #475569;
+      }
+
+      /* ===== COMPREHENSIVE THEME READABILITY FIXES ===== */
+
+      /* Light theme - celebration badge */
+      body.theme-light .result-celebration-badge {
+        background: rgba(99, 102, 241, 0.1);
+        border-color: rgba(99, 102, 241, 0.25);
+      }
+
+      body.theme-light .celebration-text {
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Light theme - brand in header */
+      body.theme-light .brand {
+        color: #0f172a;
+      }
+
+      body.theme-light .brand span {
+        color: #0f172a;
+      }
+
+      /* Light theme - theme toggle button */
+      body.theme-light .theme-toggle {
+        color: #1e293b;
+        background: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+
+      body.theme-light .theme-toggle:hover {
+        background: rgba(99, 102, 241, 0.1);
+        color: #4f46e5;
+      }
+
+      body.theme-light .theme-toggle__text {
+        color: inherit;
+      }
+
+      /* Light theme - btn--ghost */
+      body.theme-light .btn--ghost {
+        color: #1e293b;
+        border-color: rgba(0, 0, 0, 0.15);
+      }
+
+      body.theme-light .btn--ghost:hover {
+        color: #4f46e5;
+        border-color: rgba(99, 102, 241, 0.5);
+        background: rgba(99, 102, 241, 0.05);
+      }
+
+      /* Light theme - mobile menu */
+      body.theme-light .mobile-menu {
+        background: #ffffff;
+        border-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      body.theme-light .mobile-menu .nav-link {
+        color: #1e293b;
+      }
+
+      body.theme-light .mobile-menu .nav-link:hover {
+        color: #4f46e5;
+        background: rgba(99, 102, 241, 0.08);
+      }
+
+      /* Light theme - hero section text with gradient */
+      body.theme-light .hero-section {
+        background: transparent;
+      }
+
+      body.theme-light .hero-badge {
+        color: #4f46e5;
+        background: rgba(99, 102, 241, 0.1);
+        border-color: rgba(99, 102, 241, 0.25);
+        box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+      }
+
+      body.theme-light .hero-badge::before {
+        content: "🎯";
+      }
+
+      /* Light theme - progress bar and container */
+      body.theme-light .progress-bar-container,
+      body.theme-light .progress-container {
+        background: rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .progress-text {
+        color: #4f46e5;
+      }
+
+      /* Light theme - score elements */
+      body.theme-light .score-row {
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .score-bar {
+        background: rgba(0, 0, 0, 0.06);
+      }
+
+      body.theme-light .score-value {
+        color: #4f46e5;
+      }
+
+      /* Light theme - quiz section ID link */
+      body.theme-light .result-link {
+        color: #4f46e5 !important;
+      }
+
+      body.theme-light .result-link:hover {
+        color: #7c3aed !important;
+      }
+
+      /* Light theme - character portrait wrap */
+      body.theme-light .character-portrait-wrap {
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.15),
+          rgba(124, 58, 237, 0.15)
+        );
+        border-color: rgba(99, 102, 241, 0.35);
+        box-shadow: 0 12px 30px rgba(99, 102, 241, 0.2);
+      }
+
+      /* Light theme - section header */
+      body.theme-light .section-header {
+        color: #0f172a;
+      }
+
+      body.theme-light .section-header h2 {
+        color: #0f172a !important;
+      }
+
+      body.theme-light .section-header p {
+        color: #475569 !important;
+      }
+
+      /* Light theme - all h1-h4 global overrides */
+      body.theme-light h1,
+      body.theme-light h2,
+      body.theme-light h3,
+      body.theme-light h4 {
+        color: #0f172a;
+      }
+
+      /* Light theme - all paragraph and list items */
+      body.theme-light p,
+      body.theme-light li {
+        color: #475569;
+      }
+
+      /* Light theme - links */
+      body.theme-light a {
+        color: #4f46e5;
+      }
+
+      body.theme-light a:hover {
+        color: #7c3aed;
+      }
+
+      /* Light theme - quiz content area */
+      body.theme-light .quiz-content {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Dark theme - ensure proper link colors */
+      body.theme-dark a {
+        color: #ffd700;
+      }
+
+      body.theme-dark a:hover {
+        color: #ffeb3b;
+      }
+
+      /* Dark theme - brand */
+      body.theme-dark .brand {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .brand span {
+        color: #f7fafc;
+      }
+
+      /* Dark theme - theme toggle */
+      body.theme-dark .theme-toggle {
+        color: #f7fafc;
+      }
+
+      body.theme-dark .theme-toggle:hover {
+        background: rgba(255, 215, 0, 0.1);
+        color: #ffd700;
+      }
+
+      /* Dark theme - btn--ghost */
+      body.theme-dark .btn--ghost {
+        color: #f7fafc;
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      body.theme-dark .btn--ghost:hover {
+        color: #ffd700;
+        border-color: rgba(255, 215, 0, 0.5);
+        background: rgba(255, 215, 0, 0.1);
+      }
+
+      /* Dark theme - mobile menu */
+      body.theme-dark .mobile-menu {
+        background: rgba(15, 23, 42, 0.98);
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      body.theme-dark .mobile-menu .nav-link {
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .mobile-menu .nav-link:hover {
+        color: #ffd700;
+        background: rgba(255, 215, 0, 0.08);
+      }
+
+      /* Dark theme - ensure all headers are visible */
+      body.theme-dark h1,
+      body.theme-dark h2,
+      body.theme-dark h3,
+      body.theme-dark h4 {
+        color: #f7fafc;
+      }
+
+      /* Dark theme - ensure all paragraphs and list items are visible */
+      body.theme-dark p,
+      body.theme-dark li {
+        color: #cbd5e1;
+      }
+    </style>
+    <link rel="stylesheet" href="perfect-country.css" />
+    <style>
+      /*
+        Mobile layout fixes for leaders.html.
+        NOTE: This block must stay AFTER perfect-country.css to override it.
+      */
+
+      /*
+        Topbar sanity:
+        leaders.html still contains older global `nav { position: fixed; ... }` rules.
+        perfect-country.css provides the new .topbar + nav.primary-nav layout.
+        These overrides prevent the legacy nav styles from breaking mobile/desktop layout.
+      */
+      header.topbar nav.primary-nav {
+        position: static;
+        top: auto;
+        left: auto;
+        right: auto;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        border: 0;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        justify-content: center;
+      }
+
+      header.topbar nav.primary-nav::before,
+      header.topbar nav.primary-nav::after {
+        display: none;
+        content: none;
+      }
+
+      header.topbar nav.primary-nav .nav-link {
+        text-decoration: none;
+        transform: none;
+      }
+
+      header.topbar nav.primary-nav .nav-link:hover {
+        transform: none;
+      }
+
+      header.topbar nav.mobile-menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+      }
+
+      header.topbar nav.mobile-menu::before,
+      header.topbar nav.mobile-menu::after {
+        display: none;
+        content: none;
+      }
+
+      /* === Remade Archetypes section (scoped, mobile-first) === */
+      .leaders-archetypes {
+        position: relative;
+      }
+
+      .leaders-archetypes__header {
+        max-width: 78ch;
+        margin: 0 auto clamp(14px, 2.5vw, 28px);
+        text-align: left;
+        position: relative;
+        z-index: 1;
+      }
+
+      .leaders-archetypes__title {
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
+        font-size: clamp(1.85rem, 5.2vw, 2.75rem);
+        font-weight: 750;
+        color: var(--gold);
+        letter-spacing: -0.02em;
+        line-height: 1.08;
+        margin: 10px 0 12px;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+      }
+
+      .leaders-archetypes__lede {
+        font-size: clamp(1rem, 2.4vw, 1.15rem);
+        color: var(--muted);
+        line-height: 1.75;
+        margin: 0;
+      }
+
+      .leaders-archetypes__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(14px, 2.8vw, 22px);
+        align-items: start;
+      }
+
+      .leaders-archetypes__panel {
+        min-width: 0;
+        border-radius: var(--radius-xl);
+        border: 1px solid rgba(255, 215, 0, 0.15);
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.78) 0%,
+          rgba(15, 23, 42, 0.92) 100%
+        );
+        box-shadow: 0 10px 36px rgba(0, 0, 0, 0.35);
+        padding: clamp(16px, 3vw, 28px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .leaders-archetypes__panel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--gold),
+          var(--orange),
+          var(--gold)
+        );
+        opacity: 0.9;
+      }
+
+      .leaders-archetypes__panel-title {
+        margin: 0 0 12px;
+        font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+        letter-spacing: -0.01em;
+        color: #f7fafc;
+      }
+
+      .leaders-archetypes__note {
+        margin: 12px 0 0;
+        font-size: 1rem;
+        color: #e2e8f0;
+        line-height: 1.65;
+      }
+
+      .leaders-archetypes__label {
+        display: block;
+        font-size: 0.8rem;
+        color: #94a3b8;
+        margin: 16px 0 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+      }
+
+      .leaders-archetypes__pillars {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 10px;
+        margin: 0;
+      }
+
+      .leaders-archetypes__pillar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 215, 0, 0.14);
+        background: rgba(15, 23, 42, 0.55);
+        min-width: 0;
+      }
+
+      .leaders-archetypes__pillar-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.18),
+          rgba(255, 107, 53, 0.16)
+        );
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        flex: 0 0 auto;
+      }
+
+      .leaders-archetypes__pillar-icon img {
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .leaders-archetypes__pillar-text {
+        color: #f7fafc;
+        font-weight: 700;
+        font-size: 0.98rem;
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .leaders-archetypes__badges {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+      }
+
+      .leaders-archetypes__badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 215, 0, 0.14);
+        background: rgba(15, 23, 42, 0.48);
+        color: #f7fafc;
+        font-weight: 700;
+        min-width: 0;
+      }
+
+      .leaders-archetypes__badge img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255, 215, 0, 0.25);
+        flex: 0 0 auto;
+      }
+
+      .leaders-archetypes__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 12px;
+      }
+
+      .leaders-archetypes__card {
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 215, 0, 0.14);
+        background: rgba(15, 23, 42, 0.45);
+        padding: 16px;
+        min-width: 0;
+      }
+
+      .leaders-archetypes__chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 215, 0, 0.18);
+        background: rgba(15, 23, 42, 0.6);
+        color: #f7fafc;
+        font-weight: 800;
+        margin-bottom: 10px;
+        line-height: 1.2;
+        min-width: 0;
+        flex-wrap: wrap;
+      }
+
+      .leaders-archetypes__chip img {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: 0 0 auto;
+      }
+
+      .leaders-archetypes__card p {
+        margin: 0;
+        color: #cbd5e1;
+        line-height: 1.6;
+      }
+
+      /* Light theme: use light surfaces + dark text for contrast */
+      body.theme-light .leaders-archetypes__title {
+        color: #0f172a;
+      }
+
+      body.theme-light .leaders-archetypes__lede {
+        color: #475569;
+      }
+
+      body.theme-light .leaders-archetypes__panel {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .leaders-archetypes__panel-title {
+        color: #0f172a;
+      }
+
+      body.theme-light .leaders-archetypes__note {
+        color: #475569;
+      }
+
+      body.theme-light .leaders-archetypes__label {
+        color: #64748b;
+      }
+
+      body.theme-light .leaders-archetypes__pillar {
+        background: rgba(255, 255, 255, 0.8);
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .leaders-archetypes__pillar-text {
+        color: #0f172a;
+      }
+
+      body.theme-light .leaders-archetypes__badge {
+        background: rgba(255, 255, 255, 0.8);
+        border-color: rgba(0, 0, 0, 0.08);
+        color: #0f172a;
+      }
+
+      body.theme-light .leaders-archetypes__badge img {
+        border-color: rgba(99, 102, 241, 0.25);
+      }
+
+      body.theme-light .leaders-archetypes__card {
+        background: rgba(255, 255, 255, 0.85);
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+
+      body.theme-light .leaders-archetypes__chip {
+        background: rgba(99, 102, 241, 0.08);
+        border-color: rgba(99, 102, 241, 0.25);
+        color: #0f172a;
+      }
+
+      body.theme-light .leaders-archetypes__card p {
+        color: #475569;
+      }
+
+      @media (min-width: 980px) {
+        .leaders-archetypes__header {
+          text-align: center;
+        }
+
+        .leaders-archetypes__grid {
+          grid-template-columns: 1.05fr 0.95fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --topbar-h: 68px;
+        }
+
+        body {
+          padding-top: var(--topbar-h, 68px);
+        }
+
+        .topbar__inner {
+          padding: 10px 12px;
+          gap: 10px;
+        }
+
+        .brand img {
+          width: 38px;
+          height: 38px;
+        }
+
+        .brand span {
+          font-size: 18px;
+        }
+
+        .nav-actions {
+          gap: 8px;
+        }
+
+        /* Reduce global section padding so mobile doesn't feel vertically stretched */
+        .content-section {
+          padding: 44px 18px;
+          margin-bottom: 24px;
+        }
+
+        /* Keep hero from feeling over-tall on mobile */
+        .hero-section {
+          padding: 44px 0 28px;
+        }
+
+        .hero-grid {
+          gap: 22px;
+        }
+
+        .hero-section .description {
+          max-width: none;
+        }
+
+        .hero-highlights {
+          margin-bottom: 18px;
+        }
+
+        .hero-cta {
+          margin-bottom: 20px;
+        }
+
+        .hero-stats {
+          gap: 14px;
+        }
+
+        /* Remade archetypes section: keep it tight + full-width on mobile */
+        .leaders-archetypes {
+          padding-top: 22px;
+          padding-bottom: 28px;
+        }
+
+        .leaders-archetypes__header {
+          max-width: none;
+          text-align: left;
+          margin-bottom: 16px;
+        }
+
+        /* Hero panel/cards: keep spacing tidy on phones */
+        .hero-panel {
+          padding: 22px;
+        }
+
+        .hero-factor-grid {
+          gap: 12px;
+        }
+
+        .hero-factor {
+          align-items: flex-start;
+          min-width: 0;
+        }
+
+        /* Quiz: keep it comfortable on phones */
+        #quizSection .quiz-container {
+          padding: 20px;
+          border-radius: 22px;
+        }
+
+        #quizSection .progress-meta {
+          font-size: 0.92rem;
+        }
+
+        #quizSection .question h3 {
+          padding-left: 0;
+          font-size: 1.28rem;
+          margin-bottom: 18px;
+          overflow-wrap: anywhere;
+        }
+
+        #quizSection .answers {
+          gap: 12px;
+          margin-bottom: 22px;
+        }
+
+        #quizSection .answer-btn {
+          padding: 18px 18px 18px 64px;
+          font-size: 1rem;
+          border-radius: 14px;
+        }
+
+        #quizSection .answer-btn .wojak-badge {
+          left: 16px;
+          width: 40px;
+          height: 40px;
+        }
+
+        #quizSection .answer-btn .chevron {
+          right: 14px;
+          width: 26px;
+          height: 26px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        /* Give content more usable width */
+        .main-container {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .content-section {
+          padding: 38px 16px;
+        }
+
+        .section-header {
+          margin-bottom: 36px;
+        }
+
+        .leaders-archetypes {
+          padding: 18px 16px;
+        }
+
+        .leaders-archetypes__pillars {
+          grid-template-columns: 1fr;
+        }
+
+        /* Tighten cards/grids that feel oversized on mobile */
+        .characters-grid {
+          margin-top: 28px;
+          gap: 14px;
+        }
+
+        .character-card {
+          padding: 22px 18px;
+        }
+
+        .use-cases-grid {
+          margin-top: 26px;
+          gap: 14px;
+        }
+
+        .use-case-card {
+          padding: 20px 18px;
+        }
+      }
+
+      /* === Mobile fixes: Historical Leadership Archetype Guide === */
+      @media (max-width: 768px) {
+        #countryGuide .guide-header {
+          text-align: left;
+          margin-bottom: 18px;
+          max-width: none;
+        }
+
+        #countryGuide .guide-header p {
+          max-width: none;
+        }
+
+        /* Remove the nested main-container padding wrapper effect on mobile */
+        #countryGuide > .main-container {
+          padding: 0 !important;
+        }
+
+        #countryGuide .guide-toolbar {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 12px;
+          margin: 18px 0 18px;
+        }
+
+        #countryGuide .search-input {
+          flex: 1 1 auto;
+          max-width: none;
+        }
+
+        /* Chips: single-row horizontal scroll instead of wrapping into chaos */
+        #countryGuide .filter-chips {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 6px;
+          gap: 10px;
+        }
+
+        #countryGuide .filter-chips .chip {
+          flex: 0 0 auto;
+          white-space: nowrap;
+        }
+
+        /* Cards: one per row, tighter spacing */
+        #countryGuide .guide-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        #countryGuide .guide-card {
+          padding: 18px;
+        }
+
+        #countryGuide .guide-card .card-head {
+          grid-template-columns: 44px 1fr;
+          gap: 12px;
+        }
+
+        #countryGuide .guide-card .avatar {
+          width: 44px;
+          height: 44px;
+        }
+
+        #countryGuide .guide-card .avatar img {
+          width: 32px;
+          height: 32px;
+        }
+
+        #countryGuide .guide-card h4 {
+          font-size: 1.08rem;
+          overflow-wrap: anywhere;
+        }
+
+        #countryGuide .guide-card .summary {
+          font-size: 0.98rem;
+          margin-bottom: 12px;
+        }
+
+        #countryGuide .traits {
+          gap: 6px;
+          margin-bottom: 14px;
+        }
+
+        #countryGuide .traits li {
+          font-size: 0.92rem;
+        }
+
+        #countryGuide .guide-cta {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 360px) {
+        #countryGuide .guide-card {
+          padding: 16px;
+        }
+
+        #countryGuide .search-input input[type="search"] {
+          padding-left: 42px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        /* Avoid cramped progress header on very small screens */
+        #quizSection .progress-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 6px;
+        }
+
+        /* Secondary action in topbar can cause wrapping on tiny widths */
+        .topbar .btn.btn--ghost {
+          display: none;
+        }
+
+        .content-section {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+
+        .leaders-archetypes__badges {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
 
-  <body>
-    <!-- Top Navigation -->
-
-    <nav>
-      <div class="nav-left">
-        <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
-
-        <a href="index.html">Home</a>
-
-        <a href="#quizSection">Take the Quiz</a>
+  <body class="theme-light">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="index.html">
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana logo"
+            width="36"
+            height="36"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <span>Zinvana</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="nav-link" href="#quizSection">Quiz</a>
+          <a class="nav-link" href="#countryGuide">Leader guide</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn--ghost" href="index.html#quizzes">All quizzes</a>
+          <button
+            class="hamburger"
+            id="menuToggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span></span>
+          </button>
+        </div>
       </div>
-
-      <div class="nav-right">
-        <a href="all-articles.html">Explore More</a>
-      </div>
-    </nav>
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a class="nav-link" href="#quizSection">Quiz</a>
+        <a class="nav-link" href="#countryGuide">Leader guide</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </header>
 
     <!-- Hero Section -->
 
-    <div class="hero-section">
-      <div class="main-container">
-        <span class="hero-badge">2025 Edition • 32 Questions</span>
-        <h1>Historical Leaders<br />Personality Quiz</h1>
+    <header class="hero-section" id="overview">
+      <div class="main-container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Leadership Archetype Assessment</span>
+          <h1>🏛️ Historical Leaders Quiz 2025</h1>
+          <p class="subtitle">
+            Which iconic strategist mirrors your leadership style?
+          </p>
+          <p class="description">
+            Uncover the legendary figure your leadership instincts resemble.
+            This 32-question experience blends historical insight with modern
+            strategy—drawing from commanders, diplomats, and reformers across
+            the ancient and modern world.
+          </p>
 
-        <p class="subtitle">
-          Discover Which Iconic Strategist Mirrors Your Leadership Style
-        </p>
+          <ul class="hero-highlights">
+            <li>Deterministic results with transparent archetypes</li>
+            <li>32 scenario questions that map your instincts</li>
+            <li>Practical next-step guidance for your leadership edge</li>
+          </ul>
 
-        <p class="description">
-          Uncover the legendary figure your leadership instincts resemble. This
-          immersive 32-question experience blends historical insight with modern
-          strategy, drawing from Alexander the Great, Cleopatra, Mandela,
-          Churchill, and more iconic leaders throughout history.
-        </p>
+          <div class="hero-cta">
+            <a href="#quizSection" class="primary-btn">Start The Quiz</a>
+            <a href="#countryGuide" class="ghost-btn">Browse Leader Guide</a>
+          </div>
+
+          <div class="stats hero-stats">
+            <div class="stat">
+              <strong>32</strong>
+              <span>Questions</span>
+            </div>
+            <div class="stat">
+              <strong>~7 min</strong>
+              <span>To get matched</span>
+            </div>
+            <div class="stat">
+              <strong>Free</strong>
+              <span>Retake anytime</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <span class="panel-eyebrow">Leadership pillars</span>
+          <h3>Signals we benchmark to match your archetype</h3>
+          <p>
+            Each question weighs real-world leadership tradeoffs across vision,
+            diplomacy, discipline, and reform energy.
+          </p>
+
+          <div class="hero-factor-grid">
+            <div class="hero-factor">
+              <div class="icon">🧭</div>
+              <div>
+                <h4>Vision</h4>
+                <p>How you set direction under uncertainty.</p>
+              </div>
+            </div>
+            <div class="hero-factor">
+              <div class="icon">🤝</div>
+              <div>
+                <h4>Diplomacy</h4>
+                <p>Influence, alliances, and coalition building.</p>
+              </div>
+            </div>
+            <div class="hero-factor">
+              <div class="icon">🛡️</div>
+              <div>
+                <h4>Discipline</h4>
+                <p>Execution, consistency, and operational control.</p>
+              </div>
+            </div>
+            <div class="hero-factor">
+              <div class="icon">⚡</div>
+              <div>
+                <h4>Reform</h4>
+                <p>How you modernize systems and teams.</p>
+              </div>
+            </div>
+            <div class="hero-factor">
+              <div class="icon">🔥</div>
+              <div>
+                <h4>Resilience</h4>
+                <p>Composure, recovery, and adaptive strategy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
 
     <div class="main-container">
       <!-- Introduction Section -->
 
-      <section class="content-section" aria-labelledby="archetypes-heading">
-        <div class="archetypes-header">
+      <section
+        class="content-section leaders-archetypes"
+        aria-labelledby="archetypes-heading"
+      >
+        <div class="leaders-archetypes__header">
           <span class="eyebrow">Overview</span>
 
-          <h2 id="archetypes-heading">Understanding Leadership Archetypes</h2>
+          <h2 id="archetypes-heading" class="leaders-archetypes__title">
+            Understanding Leadership Archetypes
+          </h2>
 
-          <p>
+          <p class="leaders-archetypes__lede">
             Great commanders, reformers, and diplomats balanced vision,
             execution, and resilience in different ways. This quiz translates
             your instincts across those same pillars to surface the historical
@@ -4183,154 +6981,105 @@
           </p>
         </div>
 
-        <div class="archetypes-grid">
-          <!-- Left: Explanatory Panel -->
+        <div class="leaders-archetypes__grid">
+          <div class="leaders-archetypes__panel">
+            <h3 class="leaders-archetypes__panel-title">Signals we score</h3>
 
-          <div class="archetypes-panel">
-            <div class="pillars" role="list">
-              <div class="pillar" role="listitem">
-                <div class="icon">
-                  <img
-                    src="idea.png"
-                    alt=""
-                    style="
-                      width: 20px;
-
-                      height: 20px;
-
-                      border-radius: 4px;
-
-                      object-fit: cover;
-                    "
-                  />
-                </div>
-
-                <span>Vision</span>
+            <div class="leaders-archetypes__pillars" role="list">
+              <div class="leaders-archetypes__pillar" role="listitem">
+                <span class="leaders-archetypes__pillar-icon">
+                  <img src="idea.png" alt="" />
+                </span>
+                <span class="leaders-archetypes__pillar-text">Vision</span>
               </div>
 
-              <div class="pillar" role="listitem">
-                <div class="icon">
-                  <img
-                    src="trust.png"
-                    alt=""
-                    style="
-                      width: 20px;
-
-                      height: 20px;
-
-                      border-radius: 4px;
-
-                      object-fit: cover;
-                    "
-                  />
-                </div>
-
-                <span>Influence</span>
+              <div class="leaders-archetypes__pillar" role="listitem">
+                <span class="leaders-archetypes__pillar-icon">
+                  <img src="trust.png" alt="" />
+                </span>
+                <span class="leaders-archetypes__pillar-text">Influence</span>
               </div>
 
-              <div class="pillar" role="listitem">
-                <div class="icon">
-                  <img
-                    src="secure.png"
-                    alt=""
-                    style="
-                      width: 20px;
-
-                      height: 20px;
-
-                      border-radius: 4px;
-
-                      object-fit: cover;
-                    "
-                  />
-                </div>
-
-                <span>Resilience</span>
+              <div class="leaders-archetypes__pillar" role="listitem">
+                <span class="leaders-archetypes__pillar-icon">
+                  <img src="secure.png" alt="" />
+                </span>
+                <span class="leaders-archetypes__pillar-text">Resilience</span>
               </div>
             </div>
 
-            <p class="panel-note">
+            <p class="leaders-archetypes__note">
               Your match blends these pillars with historical context to create
               a modern leadership narrative you can act on today.
             </p>
 
-            <span class="legend-label">Featured Archetypes</span>
+            <span class="leaders-archetypes__label">Featured leaders</span>
 
-            <div class="badges">
-              <span class="archetype-badge"
-                ><img
-                  src="alexander.jpg"
-                  alt="Alexander the Great"
-                />Alexander</span
-              >
-
-              <span class="archetype-badge"
-                ><img src="cleopatra.png" alt="Cleopatra" />Cleopatra</span
-              >
-
-              <span class="archetype-badge"
-                ><img src="napoleon.jpg" alt="Napoleon" />Napoleon</span
-              >
-
-              <span class="archetype-badge"
-                ><img src="mandela.jpg" alt="Nelson Mandela" />Mandela</span
-              >
-
-              <span class="archetype-badge"
-                ><img src="gandhi.jpg" alt="Mahatma Gandhi" />Gandhi</span
-              >
-
-              <span class="archetype-badge"
-                ><img src="elizabeth1.jpg" alt="Queen Elizabeth I" />Elizabeth
-                I</span
-              >
+            <div
+              class="leaders-archetypes__badges"
+              aria-label="Featured leaders"
+            >
+              <span class="leaders-archetypes__badge">
+                <img src="alexander.jpg" alt="Alexander the Great" />Alexander
+              </span>
+              <span class="leaders-archetypes__badge">
+                <img src="cleopatra.png" alt="Cleopatra" />Cleopatra
+              </span>
+              <span class="leaders-archetypes__badge">
+                <img src="napoleon.jpg" alt="Napoleon" />Napoleon
+              </span>
+              <span class="leaders-archetypes__badge">
+                <img src="mandela.jpg" alt="Nelson Mandela" />Mandela
+              </span>
+              <span class="leaders-archetypes__badge">
+                <img src="gandhi.jpg" alt="Mahatma Gandhi" />Gandhi
+              </span>
+              <span class="leaders-archetypes__badge">
+                <img src="elizabeth1.jpg" alt="Queen Elizabeth I" />Elizabeth I
+              </span>
             </div>
           </div>
 
-          <!-- Right: Archetype Cards -->
+          <div class="leaders-archetypes__panel">
+            <h3 class="leaders-archetypes__panel-title">Example archetypes</h3>
 
-          <div class="archetypes-panel">
-            <div class="archetype-card-grid">
-              <div class="archetype-card">
-                <div class="chip">
+            <div class="leaders-archetypes__cards">
+              <div class="leaders-archetypes__card">
+                <div class="leaders-archetypes__chip">
                   <img src="alexander.jpg" alt="Alexander the Great" />Visionary
                   Commander
                 </div>
-
                 <p>
                   Sets audacious horizons, keeps momentum high, and inspires
                   teams by leading from the front.
                 </p>
               </div>
 
-              <div class="archetype-card">
-                <div class="chip">
+              <div class="leaders-archetypes__card">
+                <div class="leaders-archetypes__chip">
                   <img src="cleopatra.png" alt="Cleopatra" />Diplomatic Weaver
                 </div>
-
                 <p>
                   Reads power shifts quickly, forges alliances, and turns
                   relationships into leverage.
                 </p>
               </div>
 
-              <div class="archetype-card">
-                <div class="chip">
+              <div class="leaders-archetypes__card">
+                <div class="leaders-archetypes__chip">
                   <img src="lincoln.jpg" alt="Abraham Lincoln" />Bridge Builder
                 </div>
-
                 <p>
                   Listens deeply, reframes conflict, and holds coalitions
                   together through empathy and principle.
                 </p>
               </div>
 
-              <div class="archetype-card">
-                <div class="chip">
+              <div class="leaders-archetypes__card">
+                <div class="leaders-archetypes__chip">
                   <img src="genghiskhanheader.jpg" alt="Genghis Khan" />Network
                   Commander
                 </div>
-
                 <p>
                   Combines discipline with speed, rewarding merit while adapting
                   tactics in real time.
@@ -4363,7 +7112,7 @@
               />
             </div>
 
-            <h3>Leadership Pillar Scores</h3>
+            <h3 style="color: black !important">Leadership Pillar Scores</h3>
 
             <p>
               Every answer maps to vision, influence, resilience, and reform
@@ -4380,7 +7129,7 @@
               />
             </div>
 
-            <h3>Historical Playbooks</h3>
+            <h3 style="color: black !important">Historical Playbooks</h3>
 
             <p>
               Profiles draw from commanders, diplomats, and reformers—giving you
@@ -4397,7 +7146,7 @@
               />
             </div>
 
-            <h3>Actionable Growth Moves</h3>
+            <h3 style="color: black !important">Actionable Growth Moves</h3>
 
             <p>
               Each result pairs strengths and blind spots with modern
@@ -4415,7 +7164,7 @@
               />
             </div>
 
-            <h3>Shareable Insights</h3>
+            <h3 style="color: black !important">Shareable Insights</h3>
 
             <p>
               Generate a link to compare leadership archetypes with friends or
@@ -4574,7 +7323,7 @@
 
         <div class="use-cases-grid">
           <article class="use-case-card">
-            <h3>Quarterly Business Reviews</h3>
+            <h3>Quartendy Business Reviews</h3>
 
             <p>
               Anchor your QBR storytelling around the archetype to highlight
@@ -4694,6 +7443,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="alexander"
                 onclick="selectAnswer(this)"
               >
@@ -4710,6 +7460,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="gandhi"
                 onclick="selectAnswer(this)"
               >
@@ -4727,6 +7478,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="napoleon"
                 onclick="selectAnswer(this)"
               >
@@ -4744,6 +7496,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="ataturk"
                 onclick="selectAnswer(this)"
               >
@@ -4769,6 +7522,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mandela"
                 onclick="selectAnswer(this)"
               >
@@ -4786,6 +7540,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="churchill"
                 onclick="selectAnswer(this)"
               >
@@ -4803,6 +7558,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cleopatra"
                 onclick="selectAnswer(this)"
               >
@@ -4820,6 +7576,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="genghis"
                 onclick="selectAnswer(this)"
               >
@@ -4845,6 +7602,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="lincoln"
                 onclick="selectAnswer(this)"
               >
@@ -4862,6 +7620,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="catherine"
                 onclick="selectAnswer(this)"
               >
@@ -4879,6 +7638,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="augustus"
                 onclick="selectAnswer(this)"
               >
@@ -4896,6 +7656,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="alexander"
                 onclick="selectAnswer(this)"
               >
@@ -4920,6 +7681,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="ataturk"
                 onclick="selectAnswer(this)"
               >
@@ -4937,6 +7699,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="churchill"
                 onclick="selectAnswer(this)"
               >
@@ -4954,6 +7717,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="gandhi"
                 onclick="selectAnswer(this)"
               >
@@ -4971,6 +7735,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="genghis"
                 onclick="selectAnswer(this)"
               >
@@ -4996,6 +7761,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cleopatra"
                 onclick="selectAnswer(this)"
               >
@@ -5013,6 +7779,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="napoleon"
                 onclick="selectAnswer(this)"
               >
@@ -5030,6 +7797,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mandela"
                 onclick="selectAnswer(this)"
               >
@@ -5046,6 +7814,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="augustus"
                 onclick="selectAnswer(this)"
               >
@@ -5071,6 +7840,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="lincoln"
                 onclick="selectAnswer(this)"
               >
@@ -5088,6 +7858,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="catherine"
                 onclick="selectAnswer(this)"
               >
@@ -5105,6 +7876,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="genghis"
                 onclick="selectAnswer(this)"
               >
@@ -5121,6 +7893,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="gandhi"
                 onclick="selectAnswer(this)"
               >
@@ -5145,6 +7918,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="alexander"
                 onclick="selectAnswer(this)"
               >
@@ -5162,6 +7936,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="augustus"
                 onclick="selectAnswer(this)"
               >
@@ -5179,6 +7954,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mandela"
                 onclick="selectAnswer(this)"
               >
@@ -5196,6 +7972,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="elizabeth"
                 onclick="selectAnswer(this)"
               >
@@ -5221,6 +7998,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="elizabeth"
                 onclick="selectAnswer(this)"
               >
@@ -5238,6 +8016,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="churchill"
                 onclick="selectAnswer(this)"
               >
@@ -5255,6 +8034,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cleopatra"
                 onclick="selectAnswer(this)"
               >
@@ -5272,6 +8052,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="lincoln"
                 onclick="selectAnswer(this)"
               >
@@ -5297,6 +8078,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="napoleon"
                 onclick="selectAnswer(this)"
               >
@@ -5314,6 +8096,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mandela"
                 onclick="selectAnswer(this)"
               >
@@ -5330,6 +8113,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="genghis"
                 onclick="selectAnswer(this)"
               >
@@ -5346,6 +8130,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="gandhi"
                 onclick="selectAnswer(this)"
               >
@@ -5371,6 +8156,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="lincoln"
                 onclick="selectAnswer(this)"
               >
@@ -5387,6 +8173,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="alexander"
                 onclick="selectAnswer(this)"
               >
@@ -5404,6 +8191,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="churchill"
                 onclick="selectAnswer(this)"
               >
@@ -5420,6 +8208,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mandela"
                 onclick="selectAnswer(this)"
               >
@@ -5446,6 +8235,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="augustus"
                 onclick="selectAnswer(this)"
               >
@@ -5463,6 +8253,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="ashoka"
                 onclick="selectAnswer(this)"
               >
@@ -5480,6 +8271,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="tokugawa"
                 onclick="selectAnswer(this)"
               >
@@ -5497,6 +8289,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="ardashir"
                 onclick="selectAnswer(this)"
               >
@@ -5522,6 +8315,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="aurelius"
                 onclick="selectAnswer(this)"
               >
@@ -5539,6 +8333,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cyrus"
                 onclick="selectAnswer(this)"
               >
@@ -5556,6 +8351,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="gandhi"
                 onclick="selectAnswer(this)"
               >
@@ -5573,6 +8369,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="napoleon"
                 onclick="selectAnswer(this)"
               >
@@ -5598,6 +8395,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cleopatra"
                 onclick="selectAnswer(this)"
               >
@@ -5615,6 +8413,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mandela"
                 onclick="selectAnswer(this)"
               >
@@ -5631,6 +8430,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="ashoka"
                 onclick="selectAnswer(this)"
               >
@@ -5648,6 +8448,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="artaxerxes"
                 onclick="selectAnswer(this)"
               >
@@ -5675,6 +8476,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="augustus"
                 onclick="selectAnswer(this)"
               >
@@ -5691,6 +8493,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cyrus"
                 onclick="selectAnswer(this)"
               >
@@ -5708,6 +8511,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="tokugawa"
                 onclick="selectAnswer(this)"
               >
@@ -5725,6 +8529,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="artaxerxes"
                 onclick="selectAnswer(this)"
               >
@@ -5750,6 +8555,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="churchill"
                 onclick="selectAnswer(this)"
               >
@@ -5766,6 +8572,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="aurelius"
                 onclick="selectAnswer(this)"
               >
@@ -5782,6 +8589,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="lincoln"
                 onclick="selectAnswer(this)"
               >
@@ -5798,6 +8606,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="ardashir"
                 onclick="selectAnswer(this)"
               >
@@ -5822,6 +8631,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="genghis"
                 onclick="selectAnswer(this)"
               >
@@ -5838,6 +8648,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="ashoka"
                 onclick="selectAnswer(this)"
               >
@@ -5854,6 +8665,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="tokugawa"
                 onclick="selectAnswer(this)"
               >
@@ -5870,6 +8682,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="catherine"
                 onclick="selectAnswer(this)"
               >
@@ -5895,6 +8708,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mansa"
                 onclick="selectAnswer(this)"
               >
@@ -5912,6 +8726,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="suleiman"
                 onclick="selectAnswer(this)"
               >
@@ -5929,6 +8744,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="hatshepsut"
                 onclick="selectAnswer(this)"
               >
@@ -5946,6 +8762,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="shaka"
                 onclick="selectAnswer(this)"
               >
@@ -5973,6 +8790,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="joan"
                 onclick="selectAnswer(this)"
               >
@@ -5990,6 +8808,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="tubman"
                 onclick="selectAnswer(this)"
               >
@@ -6007,6 +8826,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="bolivar"
                 onclick="selectAnswer(this)"
               >
@@ -6024,6 +8844,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="nzinga"
                 onclick="selectAnswer(this)"
               >
@@ -6051,6 +8872,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="zenobia"
                 onclick="selectAnswer(this)"
               >
@@ -6068,6 +8890,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="saladin"
                 onclick="selectAnswer(this)"
               >
@@ -6085,6 +8908,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="suleiman"
                 onclick="selectAnswer(this)"
               >
@@ -6102,6 +8926,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cyrus"
                 onclick="selectAnswer(this)"
               >
@@ -6130,6 +8955,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="hatshepsut"
                 onclick="selectAnswer(this)"
               >
@@ -6147,6 +8973,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mansa"
                 onclick="selectAnswer(this)"
               >
@@ -6164,6 +8991,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="saladin"
                 onclick="selectAnswer(this)"
               >
@@ -6181,6 +9009,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="augustus"
                 onclick="selectAnswer(this)"
               >
@@ -6209,6 +9038,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="tubman"
                 onclick="selectAnswer(this)"
               >
@@ -6226,6 +9056,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="nzinga"
                 onclick="selectAnswer(this)"
               >
@@ -6243,6 +9074,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mandela"
                 onclick="selectAnswer(this)"
               >
@@ -6260,6 +9092,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="zenobia"
                 onclick="selectAnswer(this)"
               >
@@ -6288,6 +9121,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="bolivar"
                 onclick="selectAnswer(this)"
               >
@@ -6305,6 +9139,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="joan"
                 onclick="selectAnswer(this)"
               >
@@ -6322,6 +9157,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="shaka"
                 onclick="selectAnswer(this)"
               >
@@ -6339,6 +9175,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="lincoln"
                 onclick="selectAnswer(this)"
               >
@@ -6366,6 +9203,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="shaka"
                 onclick="selectAnswer(this)"
               >
@@ -6383,6 +9221,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="tubman"
                 onclick="selectAnswer(this)"
               >
@@ -6400,6 +9239,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="zenobia"
                 onclick="selectAnswer(this)"
               >
@@ -6417,6 +9257,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="genghis"
                 onclick="selectAnswer(this)"
               >
@@ -6442,6 +9283,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="saladin"
                 onclick="selectAnswer(this)"
               >
@@ -6459,6 +9301,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="suleiman"
                 onclick="selectAnswer(this)"
               >
@@ -6476,6 +9319,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="elizabeth"
                 onclick="selectAnswer(this)"
               >
@@ -6493,6 +9337,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="artaxerxes"
                 onclick="selectAnswer(this)"
               >
@@ -6521,6 +9366,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="hatshepsut"
                 onclick="selectAnswer(this)"
               >
@@ -6538,6 +9384,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="joan"
                 onclick="selectAnswer(this)"
               >
@@ -6555,6 +9402,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="nzinga"
                 onclick="selectAnswer(this)"
               >
@@ -6572,6 +9420,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="catherine"
                 onclick="selectAnswer(this)"
               >
@@ -6599,6 +9448,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mansa"
                 onclick="selectAnswer(this)"
               >
@@ -6616,6 +9466,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="bolivar"
                 onclick="selectAnswer(this)"
               >
@@ -6633,6 +9484,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="nzinga"
                 onclick="selectAnswer(this)"
               >
@@ -6650,6 +9502,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="augustus"
                 onclick="selectAnswer(this)"
               >
@@ -6678,6 +9531,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="darius"
                 onclick="selectAnswer(this)"
               >
@@ -6695,6 +9549,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="xerxes"
                 onclick="selectAnswer(this)"
               >
@@ -6712,6 +9567,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="shapur"
                 onclick="selectAnswer(this)"
               >
@@ -6729,6 +9585,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="khosrow"
                 onclick="selectAnswer(this)"
               >
@@ -6757,6 +9614,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cambyses"
                 onclick="selectAnswer(this)"
               >
@@ -6774,6 +9632,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="darius"
                 onclick="selectAnswer(this)"
               >
@@ -6791,6 +9650,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="xerxes"
                 onclick="selectAnswer(this)"
               >
@@ -6808,6 +9668,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cyrus"
                 onclick="selectAnswer(this)"
               >
@@ -6836,6 +9697,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="khosrow"
                 onclick="selectAnswer(this)"
               >
@@ -6853,6 +9715,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="shapur"
                 onclick="selectAnswer(this)"
               >
@@ -6870,6 +9733,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="mandela"
                 onclick="selectAnswer(this)"
               >
@@ -6887,6 +9751,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="suleiman"
                 onclick="selectAnswer(this)"
               >
@@ -6915,6 +9780,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="xerxes"
                 onclick="selectAnswer(this)"
               >
@@ -6932,6 +9798,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cleopatra"
                 onclick="selectAnswer(this)"
               >
@@ -6949,6 +9816,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="catherine"
                 onclick="selectAnswer(this)"
               >
@@ -6966,6 +9834,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="zenobia"
                 onclick="selectAnswer(this)"
               >
@@ -6994,6 +9863,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="shapur"
                 onclick="selectAnswer(this)"
               >
@@ -7011,6 +9881,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cambyses"
                 onclick="selectAnswer(this)"
               >
@@ -7028,6 +9899,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="tokugawa"
                 onclick="selectAnswer(this)"
               >
@@ -7045,6 +9917,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="ataturk"
                 onclick="selectAnswer(this)"
               >
@@ -7073,6 +9946,7 @@
             <div class="answers">
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="darius"
                 onclick="selectAnswer(this)"
               >
@@ -7090,6 +9964,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="xerxes"
                 onclick="selectAnswer(this)"
               >
@@ -7107,6 +9982,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="khosrow"
                 onclick="selectAnswer(this)"
               >
@@ -7124,6 +10000,7 @@
 
               <button
                 class="answer-btn"
+                type="button"
                 data-leader="cambyses"
                 onclick="selectAnswer(this)"
               >
@@ -7241,7 +10118,11 @@
 
       <!-- Character Guide Section (Pro) -->
 
-      <section class="content-section" aria-labelledby="guide-title">
+      <section
+        class="content-section"
+        id="countryGuide"
+        aria-labelledby="guide-title"
+      >
         <div class="guide-header">
           <span class="eyebrow">Reference</span>
 
@@ -7266,24 +10147,57 @@
               />
             </div>
 
-            <div class="filter-chips" role="listbox" aria-label="Filters">
+            <button
+              class="filter-toggle-btn"
+              id="filterToggleBtn"
+              type="button"
+              aria-label="Toggle filters"
+              aria-controls="guideFilterChips"
+              aria-expanded="false"
+            >
+              <span class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="filter-label">Filters</span>
+            </button>
+
+            <div
+              class="filter-chips"
+              id="guideFilterChips"
+              role="listbox"
+              aria-label="Filters"
+              aria-hidden="true"
+            >
               <button
                 class="chip active"
                 data-filter="all"
                 aria-selected="true"
+                type="button"
               >
                 All
               </button>
 
-              <button class="chip" data-filter="visionary">Visionary</button>
+              <button class="chip" data-filter="visionary" type="button">
+                Visionary
+              </button>
 
-              <button class="chip" data-filter="diplomatic">Diplomatic</button>
+              <button class="chip" data-filter="diplomatic" type="button">
+                Diplomatic
+              </button>
 
-              <button class="chip" data-filter="resilient">Resilient</button>
+              <button class="chip" data-filter="resilient" type="button">
+                Resilient
+              </button>
 
-              <button class="chip" data-filter="reformer">Reformer</button>
+              <button class="chip" data-filter="reformer" type="button">
+                Reformer
+              </button>
 
-              <button class="chip" data-filter="strategist">Strategist</button>
+              <button class="chip" data-filter="strategist" type="button">
+                Strategist
+              </button>
             </div>
           </div>
         </div>
@@ -8232,12 +11146,12 @@
 
       <!-- FAQ Section -->
 
-      <div class="faq-section">
+      <div class="faq-section" id="faq">
         <div class="main-container">
           <div class="section-header">
             <h2>Frequently Asked Questions</h2>
 
-            <p style="color: black;">
+            <p>
               Your guide to how the Historical Leaders Personality Quiz works
               and how to interpret the archetypes.
             </p>
@@ -10857,6 +13771,71 @@
           });
         }
 
+        // Filter toggle button for mobile
+        const filterToggleBtn = document.getElementById("filterToggleBtn");
+        const filterChips = document.getElementById("guideFilterChips");
+
+        function setFilterMenuOpen(isOpen) {
+          if (!filterToggleBtn || !filterChips) return;
+
+          filterToggleBtn.classList.toggle("active", isOpen);
+          filterChips.classList.toggle("active", isOpen);
+
+          filterToggleBtn.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+          );
+          filterChips.setAttribute("aria-hidden", isOpen ? "false" : "true");
+
+          if (isOpen) {
+            const activeChip =
+              filterChips.querySelector(".chip.active") ||
+              filterChips.querySelector(".chip");
+            if (activeChip && typeof activeChip.focus === "function") {
+              activeChip.focus({ preventScroll: true });
+            }
+          }
+        }
+
+        if (filterToggleBtn && filterChips) {
+          // Ensure initial ARIA state is consistent
+          setFilterMenuOpen(false);
+
+          filterToggleBtn.addEventListener("click", () => {
+            const isOpen = filterChips.classList.contains("active");
+            setFilterMenuOpen(!isOpen);
+          });
+
+          // Close filter menu when clicking outside
+          document.addEventListener("click", (e) => {
+            if (!filterChips.classList.contains("active")) return;
+            const target = e.target;
+            if (!target) return;
+
+            if (
+              !filterToggleBtn.contains(target) &&
+              !filterChips.contains(target)
+            ) {
+              setFilterMenuOpen(false);
+            }
+          });
+
+          // Close filter menu on Escape
+          document.addEventListener("keydown", (e) => {
+            if (e.key !== "Escape") return;
+            if (!filterChips.classList.contains("active")) return;
+            setFilterMenuOpen(false);
+            filterToggleBtn.focus({ preventScroll: true });
+          });
+
+          // Close filter menu when a filter is selected
+          chips.forEach((chip) => {
+            chip.addEventListener("click", () => {
+              setFilterMenuOpen(false);
+            });
+          });
+        }
+
         applyGuideFilters();
 
         const faqItems = document.querySelectorAll(".faq-item");
@@ -10953,148 +13932,64 @@
       });
     </script>
 
-    <!-- Enhanced Professional Footer -->
+    <script>
+      // Mobile menu toggle — shared with mbti-personality-quiz.html
+      const toggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("mobileMenu");
+      const navLinks = menu?.querySelectorAll(".nav-link");
 
-    <footer
-      style="
-        background: linear-gradient(
-          135deg,
-          #0f3460 0%,
+      if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+          const isOpen = menu.classList.toggle("open");
+          toggle.classList.toggle("active");
+          toggle.setAttribute("aria-expanded", isOpen);
+        });
 
-          #16213e 50%,
+        navLinks?.forEach((link) => {
+          link.addEventListener("click", () => {
+            menu.classList.remove("open");
+            toggle.classList.remove("active");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
 
-          #1a1a2e 100%
-        );
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && menu.classList.contains("open")) {
+            menu.classList.remove("open");
+            toggle.classList.remove("active");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+    </script>
 
-        color: #ffffff;
-
-        margin-top: 80px;
-
-        position: relative;
-
-        overflow: hidden;
-
-        border-top: 1px solid rgba(255, 215, 0, 0.2);
-      "
-    >
-      <div
-        style="
-          position: absolute;
-
-          top: 0;
-
-          left: 0;
-
-          right: 0;
-
-          bottom: 0;
-
-          background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
-
-          z-index: 1;
-        "
-      ></div>
-
-      <div
-        style="
-          position: relative;
-
-          z-index: 2;
-
-          max-width: 1200px;
-
-          margin: 0 auto;
-
-          padding: 60px 40px 40px;
-
-          display: grid;
-
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-          gap: 40px;
-        "
-      >
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
           <img
             src="zinvanalogo.png"
             alt="Zinvana"
-            style="
-              width: 50px;
-
-              height: 50px;
-
-              border-radius: 12px;
-
-              margin-bottom: 16px;
-
-              box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
-            "
+            class="site-footer__logo"
+            width="44"
+            height="44"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
-
-          <h3
-            style="
-              color: #ffffff;
-
-              font-size: 1.5rem;
-
-              margin-bottom: 16px;
-
-              font-weight: 600;
-            "
-          >
-            Zinvana
-          </h3>
-
-          <p
-            style="
-              color: #94a3b8;
-
-              line-height: 1.6;
-
-              margin: 0;
-
-              font-size: 1rem;
-
-              margin-bottom: 20px;
-            "
-          >
+          <h3 class="site-footer__title">Zinvana</h3>
+          <p class="site-footer__description">
             Discover your true self through fun, engaging personality quizzes
-            and assessments. From internet archetypes to personality types, we
+            and assessments. From historical leaders to personality types, we
             help you explore different aspects of your personality in an
             entertaining, educational way.
           </p>
-
-          <div style="display: flex; gap: 16px; margin-bottom: 20px">
+          <div class="site-footer__social">
             <a
               href="https://x.com/farazglori80528"
               target="_blank"
-              style="
-                width: 40px;
-
-                height: 40px;
-
-                background: rgba(255, 255, 255, 0.1);
-
-                border-radius: 50%;
-
-                display: flex;
-
-                align-items: center;
-
-                justify-content: center;
-
-                color: #ffffff;
-
-                text-decoration: none;
-
-                transition: all 0.3s ease;
-
-                backdrop-filter: blur(10px);
-              "
-              onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+              rel="noopener"
+              class="site-footer__social-link site-footer__social-link--x"
+              aria-label="Follow Zinvana on X"
             >
               <svg
                 width="20"
@@ -11107,35 +14002,12 @@
                 />
               </svg>
             </a>
-
             <a
               href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
               target="_blank"
-              style="
-                width: 40px;
-
-                height: 40px;
-
-                background: rgba(255, 255, 255, 0.1);
-
-                border-radius: 50%;
-
-                display: flex;
-
-                align-items: center;
-
-                justify-content: center;
-
-                color: #ffffff;
-
-                text-decoration: none;
-
-                transition: all 0.3s ease;
-
-                backdrop-filter: blur(10px);
-              "
-              onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+              rel="noopener"
+              class="site-footer__social-link site-footer__social-link--instagram"
+              aria-label="Follow Zinvana on Instagram"
             >
               <svg
                 width="20"
@@ -11144,183 +14016,59 @@
                 fill="currentColor"
               >
                 <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"
                 />
+                <path
+                  d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162S8.597 18.163 12 18.163s6.162-2.759 6.162-6.163S15.403 5.838 12 5.838zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"
+                />
+                <circle cx="18.406" cy="5.594" r="1.44" />
               </svg>
             </a>
           </div>
-
-          <p
-            style="
-              color: #94a3b8;
-
-              font-size: 0.9rem;
-
-              margin: 0;
-
-              line-height: 1.5;
-            "
-          >
-            Stay updated with our latest quizzes and personality assessments!
-          </p>
+          <p class="site-footer__note">Stay updated with our newest quizzes.</p>
         </div>
 
-        <div>
-          <h4
-            style="
-              color: #e2e8f0;
-
-              font-size: 1.125rem;
-
-              margin-bottom: 20px;
-
-              font-weight: 600;
-            "
-          >
-            Popular Quizzes
-          </h4>
-
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 12px">
-              <a
-                href="leaders.html"
-                style="
-                  color: #94a3b8;
-
-                  text-decoration: none;
-
-                  transition: color 0.3s ease;
-
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
+        <div class="site-footer__column">
+          <h4 class="site-footer__heading">Popular Quizzes</h4>
+          <ul class="site-footer__list">
+            <li>
+              <a class="site-footer__link" href="leaders.html"
                 >Historical Leaders Personality Quiz</a
               >
             </li>
-
-            <li style="margin-bottom: 12px">
-              <a
-                href="football-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-
-                  text-decoration: none;
-
-                  transition: color 0.3s ease;
-
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
+            <li>
+              <a class="site-footer__link" href="football-personality-quiz.html"
                 >Football Personality Quiz</a
               >
             </li>
-
-            <li style="margin-bottom: 12px">
-              <a
-                href="wojak-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-
-                  text-decoration: none;
-
-                  transition: color 0.3s ease;
-
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Wojak Personality Quiz</a
+            <li>
+              <a class="site-footer__link" href="mbti-personality-quiz.html"
+                >MBTI Personality Quiz</a
               >
             </li>
-
-            <li style="margin-bottom: 12px">
-              <a
-                href="perfect-country.html"
-                style="
-                  color: #94a3b8;
-
-                  text-decoration: none;
-
-                  transition: color 0.3s ease;
-
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
+            <li>
+              <a class="site-footer__link" href="perfect-country.html"
                 >Perfect Country Quiz</a
               >
             </li>
-
-            <li style="margin-bottom: 12px">
+            <li>
               <a
+                class="site-footer__link"
                 href="youtubers-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-
-                  text-decoration: none;
-
-                  transition: color 0.3s ease;
-
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
                 >YouTubers Personality Quiz</a
               >
             </li>
           </ul>
         </div>
 
-        <div>
-          <h4
-            style="
-              color: #e2e8f0;
-
-              font-size: 1.125rem;
-
-              margin-bottom: 20px;
-
-              font-weight: 600;
-            "
-          >
-            Resources
-          </h4>
-
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 12px">
-              <a
-                href="/about.html"
-                style="
-                  color: #94a3b8;
-
-                  text-decoration: none;
-
-                  transition: color 0.3s ease;
-
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >About Us</a
-              >
+        <div class="site-footer__column">
+          <h4 class="site-footer__heading">Resources</h4>
+          <ul class="site-footer__list">
+            <li>
+              <a class="site-footer__link" href="/about.html">About Us</a>
             </li>
-
-            <li style="margin-bottom: 12px">
-              <a
-                href="/privacy.html"
-                style="
-                  color: #94a3b8;
-
-                  text-decoration: none;
-
-                  transition: color 0.3s ease;
-
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
+            <li>
+              <a class="site-footer__link" href="/privacy.html"
                 >Privacy Policy</a
               >
             </li>
@@ -11328,64 +14076,16 @@
         </div>
       </div>
 
-      <div
-        style="
-          position: relative;
-
-          z-index: 2;
-
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-          padding: 30px 40px;
-        "
-      >
-        <div
-          style="
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            flex-wrap: wrap;
-
-            gap: 20px;
-          "
-        >
-          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
-            &copy; 2025 Zinvana. All rights reserved.
-          </p>
-
-          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
-            Made with ❤️ by the Zinvana Team
-          </p>
+      <div class="site-footer__bottom">
+        <div class="site-footer__bottom-row">
+          <p>&copy; 2025 Zinvana. All rights reserved.</p>
+          <p>Made with ❤️ by the Zinvana Team</p>
         </div>
-
-        <div
-          style="
-            color: #64748b;
-
-            font-size: 0.85rem;
-
-            margin: 20px auto 0;
-
-            text-align: center;
-
-            line-height: 1.5;
-
-            max-width: 600px;
-          "
-        >
+        <p class="site-footer__disclaimer">
           This Historical Leaders Personality Quiz is for educational and
           entertainment purposes only. Results are based on your responses and
-          should not be considered professional psychological advice or
-          definitive leadership assessments. Historical figures are used as
-          inspirational reference points to explore modern leadership styles.
-        </div>
+          should not be considered professional psychological advice.
+        </p>
       </div>
     </footer>
   </body>
