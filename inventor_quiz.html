@@ -71,6 +71,55 @@
       }
     </script>
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How accurate is this quiz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We combine personality research, creativity frameworks, and the documented habits of each scientist. You’ll get a best-fit profile with actionable takeaways, plus insight into secondary matches."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I be more than one scientist?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. Many respondents show hybrid scores (e.g., 60% Curie, 40% Lovelace). The result screen lists superpowers so you can mix and match workflows."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need STEM experience?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nope. Questions are written in everyday language and focus on creativity style, leadership, and curiosity—useful whether you code, paint, or manage products."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the quiz mobile friendly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The layout mirrors our Wojak quiz with fluid grids, large tap targets, and smooth scrolling on every screen size."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "May I share my result?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Please do. Tag @ZinvanaHQ with your archetype card or link friends directly using the “start=quiz” parameter to jump right into the assessment."
+            }
+          }
+        ]
+      }
+    </script>
+
     <style>
       :root {
         --brand1: #667eea;
@@ -81,6 +130,7 @@
         --surface: #ffffff;
         --surface-2: #f7fafc;
         --border: #e2e8f0;
+        --topbar-h: 76px;
       }
       * {
         margin: 0;
@@ -92,83 +142,251 @@
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         min-height: 100vh;
         color: #333;
-        padding-top: 80px;
+        padding-top: var(--topbar-h);
         scroll-behavior: smooth !important;
       }
-      nav {
-        display: flex;
+      /* ===== Topbar nav (matched to perfect-country.html) ===== */
+      header.topbar {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        z-index: 9999;
-        justify-content: space-between;
+        z-index: 100;
+        backdrop-filter: blur(14px);
+        background: rgba(12, 19, 36, 0.95);
+        border-bottom: 1px solid var(--border);
+      }
+
+      body.theme-light header.topbar {
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .topbar__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 14px 16px;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
         align-items: center;
-        background: rgba(15, 15, 35, 0.95);
-        backdrop-filter: blur(25px);
-        padding: 16px 32px;
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-        border-bottom: 1px solid rgba(99, 102, 241, 0.2);
-        transition: all 0.3s ease;
+        gap: 12px;
+        width: 100%;
       }
-      nav::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(99, 102, 241, 0.6),
-          transparent
-        );
+
+      .topbar__inner > * {
+        min-width: 0;
       }
-      nav .nav-left,
-      nav .nav-right {
+
+      .brand {
         display: flex;
         align-items: center;
-        gap: 32px;
-      }
-      nav a {
-        color: #cbd5e1;
-        font-weight: 500;
-        font-size: 1rem;
-        position: relative;
-        transition: all 0.3s ease;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        flex-shrink: 0;
+        color: var(--text);
         text-decoration: none;
-        padding: 8px 16px;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+      }
+
+      .brand span {
+        font-size: 20px;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      nav.primary-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-width: 0;
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+
+      .nav-link {
+        color: var(--muted);
+        font-weight: 500;
+        padding: 8px 12px;
         border-radius: 8px;
+        font-size: 14px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+        text-decoration: none;
       }
-      nav a:hover {
-        color: #f8fafc;
-        background: rgba(99, 102, 241, 0.15);
-        transform: translateY(-1px);
+
+      .nav-link:hover,
+      .nav-link:focus-visible {
+        color: var(--text);
+        background: rgba(45, 212, 191, 0.1);
+        outline: none;
       }
-      nav a::after {
+
+      .nav-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-shrink: 0;
+        justify-self: end;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        white-space: nowrap;
+        text-decoration: none;
+      }
+
+      .btn--ghost {
+        border-color: var(--border);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      body.theme-light .btn--ghost {
+        background: rgba(0, 0, 0, 0.04);
+      }
+
+      body.theme-light .hamburger {
+        background: rgba(0, 0, 0, 0.04);
+      }
+
+      body.theme-light .hamburger:hover {
+        background: rgba(0, 0, 0, 0.08);
+      }
+
+      .btn--ghost:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+      }
+
+      .hamburger {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        padding: 0;
+        flex-shrink: 0;
+      }
+
+      .hamburger:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .hamburger span {
+        width: 18px;
+        height: 2px;
+        background: var(--text);
+        position: relative;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      .hamburger span::before,
+      .hamburger span::after {
         content: "";
         position: absolute;
-        bottom: 2px;
-        left: 50%;
-        width: 0;
+        left: 0;
+        width: 18px;
         height: 2px;
-        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        background: var(--text);
         transition: all 0.3s ease;
-        transform: translateX(-50%);
       }
-      nav a:hover::after {
-        width: 80%;
+
+      .hamburger span::before {
+        top: -6px;
       }
-      nav img#brand-logo {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
-        transition: transform 0.3s ease;
+
+      .hamburger span::after {
+        top: 6px;
       }
-      nav img#brand-logo:hover {
-        transform: scale(1.05);
+
+      .hamburger.active span {
+        background: transparent;
+      }
+
+      .hamburger.active span::before {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      .hamburger.active span::after {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(12, 19, 36, 0.98);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(14px);
+        padding: 16px;
+        flex-direction: column;
+        gap: 4px;
+        animation: slideDown 0.3s ease;
+      }
+
+      body.theme-light .mobile-menu {
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu .nav-link {
+        padding: 10px 12px;
+        display: block;
+      }
+
+      @media (max-width: 980px) {
+        nav.primary-nav {
+          display: none;
+        }
+
+        .hamburger {
+          display: inline-flex;
+        }
+      }
+
+      #quizSection,
+      #countryGuide,
+      #faq {
+        scroll-margin-top: calc(var(--topbar-h) + 12px);
       }
       .container {
         max-width: 900px;
@@ -343,6 +561,99 @@
         color: #334155;
         font-weight: 600;
         font-size: 0.98rem;
+      }
+
+      .value-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        padding: 0 20px;
+      }
+
+      .value-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid #e8ecf4;
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+      }
+
+      .value-card h3 {
+        font-size: 1.25rem;
+        color: #1f2937;
+        margin: 10px 0 10px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+
+      .value-card p {
+        color: #5a6c7d;
+        line-height: 1.7;
+        margin: 0 0 12px;
+        font-size: 1rem;
+      }
+
+      .value-list {
+        margin: 0;
+        padding-left: 18px;
+        color: #475569;
+        line-height: 1.75;
+      }
+
+      .value-list li {
+        margin: 6px 0;
+      }
+
+      .habits-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding: 0 20px;
+        counter-reset: habit;
+        list-style: none;
+      }
+
+      .habits-grid li {
+        counter-increment: habit;
+        background: #ffffff;
+        border: 1px solid #e8ecf4;
+        border-radius: 14px;
+        padding: 16px 16px 16px 52px;
+        position: relative;
+        color: #334155;
+        line-height: 1.65;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+      }
+
+      .habits-grid li::before {
+        content: counter(habit);
+        position: absolute;
+        left: 16px;
+        top: 16px;
+        width: 28px;
+        height: 28px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        color: #4f46e5;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.14),
+          rgba(118, 75, 162, 0.14)
+        );
+      }
+
+      .inline-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 14px;
+      }
+
+      .inline-cta a {
+        text-decoration: none;
       }
       .legend-label {
         display: block;
@@ -1072,19 +1383,11 @@
         }
       }
       @media (max-width: 768px) {
-        body {
-          padding-top: 70px;
+        .pillars {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-        nav {
-          padding: 10px 16px;
-        }
-        nav .nav-left,
-        nav .nav-right {
-          gap: 16px;
-        }
-        nav img#brand-logo {
-          width: 40px;
-          height: 40px;
+        .pillar {
+          padding: 12px 12px;
         }
         .hero-section h1 {
           font-size: 2.4rem;
@@ -1116,14 +1419,6 @@
         .container {
           padding: 16px;
         }
-        nav .nav-left,
-        nav .nav-right {
-          gap: 12px;
-        }
-        nav img#brand-logo {
-          width: 36px;
-          height: 36px;
-        }
         .hero-section h1 {
           font-size: 2.1rem;
         }
@@ -1154,11 +1449,20 @@
         }
       }
       @media (max-width: 480px) {
-        body {
-          padding-top: 64px;
+        .pillars {
+          grid-template-columns: 1fr;
+          gap: 10px;
         }
-        nav {
-          padding: 8px 12px;
+        .pillar {
+          align-items: flex-start;
+        }
+        .pillar .icon {
+          flex: 0 0 auto;
+          margin-top: 2px;
+        }
+        .pillar span {
+          font-size: 0.95rem;
+          line-height: 1.25;
         }
         .hero-section {
           padding: 48px 0 28px;
@@ -1214,20 +1518,66 @@
         .archetype-card-grid {
           grid-template-columns: 1fr;
         }
+
+        .value-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 14px;
+        }
+
+        .habits-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .value-grid {
+          grid-template-columns: 1fr;
+          padding: 0 16px;
+        }
+
+        .habits-grid {
+          padding: 0 16px;
+        }
       }
     </style>
+    <link rel="stylesheet" href="perfect-quiz-shell.css" />
   </head>
-  <body>
-    <nav>
-      <div class="nav-left">
-        <img src="zinvanalogo.png" alt="Zinvana Logo" id="brand-logo" />
-        <a href="index.html">Home</a>
-        <a href="#quizSection">Quiz</a>
+  <body class="theme-light">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="index.html">
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana logo"
+            width="36"
+            height="36"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <span>Zinvana</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="nav-link" href="#quizSection">Quiz</a>
+          <a class="nav-link" href="#countryGuide">Country guide</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn--ghost" href="index.html#quizzes">All quizzes</a>
+          <button
+            class="hamburger"
+            id="menuToggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span></span>
+          </button>
+        </div>
       </div>
-      <div class="nav-right">
-        <a href="help.html">Help</a>
-      </div>
-    </nav>
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a class="nav-link" href="#quizSection">Quiz</a>
+        <a class="nav-link" href="#countryGuide">Country guide</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </header>
 
     <div class="hero-section">
       <div class="main-container">
@@ -1337,668 +1687,853 @@
         </div>
       </section>
 
-      <div class="container" id="quizSection">
-        <div class="quiz-header">
-          <h2>Take the Genius Personality Quiz</h2>
+      <section class="quiz-shell" id="quizSection">
+        <div class="quiz-container" id="quizContainer">
+          <div class="quiz-header">
+            <h2>Take the Genius Personality Quiz</h2>
+            <p>
+              Answer <strong id="questionTotalInline">10</strong> questions to
+              discover which scientist archetype you embody.
+            </p>
+          </div>
+
+          <div class="quiz-layout">
+            <aside class="quiz-status-card" aria-label="Quiz status">
+              <span class="status-eyebrow">Live Quiz</span>
+              <h3>Progress tracker</h3>
+              <p>
+                Pick the answer that feels most like you. Your match updates as
+                you go.
+              </p>
+
+              <div class="progress-orb" id="progressOrb" aria-hidden="true">
+                <div class="progress-orb-inner">
+                  <div class="progress-orb-value" id="progressDialValue">
+                    0%
+                  </div>
+                  <small>Complete</small>
+                </div>
+              </div>
+
+              <ul class="status-pill-list">
+                <li class="status-pill">
+                  Question <span id="questionNumberTop">1</span> /
+                  <span id="questionTotalTop">10</span>
+                </li>
+                <li class="status-pill">
+                  <span id="progressLabel">Progress: 0%</span>
+                </li>
+              </ul>
+              <p class="status-footnote">Tip: Trust your first instinct.</p>
+            </aside>
+
+            <div class="quiz-main">
+              <div class="progress-meta">
+                <span><strong>Progress</strong></span>
+                <span aria-hidden="true">Follow along in the tracker</span>
+              </div>
+              <div class="progress" aria-label="Quiz progress">
+                <div
+                  class="progress-bar"
+                  id="progressBar"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="0"
+                ></div>
+              </div>
+              <div class="question-counter" aria-live="polite">
+                Question <span id="questionNumber">1</span> /
+                <span id="questionTotal">10</span>
+              </div>
+
+              <div class="question active" data-question="1">
+                <h3>How do you attack a completely new problem?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="einstein"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="einstein.jpg" alt="Einstein badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Run layered thought experiments until a pattern collapses
+                      into view.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="tesla"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="tesla.jpg" alt="Tesla badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Whip up a prototype immediately—ideas need voltage before
+                      doubt creeps in.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="curie"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="curie.jpg" alt="Curie badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Design a controlled experiment, log every detail, and
+                      repeat until it glows.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="newton"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="newton.jpg" alt="Newton badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Reduce the chaos to first principles, then derive the
+                      math from scratch.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="question" data-question="2">
+                <h3>Where do your best ideas surface?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="davinci"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="davinci.jpg" alt="Da Vinci badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Sketching wildly in a notebook packed with machines,
+                      anatomy, and poetry.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="goodall"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="goodall.png" alt="Goodall badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Immersed outdoors, patiently observing real life play out
+                      without scripts.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="hawking"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="hawking.jpg" alt="Hawking badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Watching the cosmos, letting abstract equations narrate
+                      the universe.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="lovelace"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="lovelace.jpg" alt="Lovelace badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Translating messy ideas into logical flows and poetic
+                      computation.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="question" data-question="3">
+                <h3>How do you verify that your theory holds?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="franklin"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="franklin.jpg" alt="Franklin badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Capture pristine data—if the photo isn’t crystal clear,
+                      it doesn’t ship.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="galileo"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="galileo.jpg" alt="Galileo badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Build better instruments and let observation overthrow
+                      assumptions.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="johnson"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="johnson.jpg" alt="Johnson badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Audit every calculation twice, then teach it so the team
+                      trusts the math.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="turing"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="turing.jpg" alt="Turing badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Model it logically, test edge cases, and let algorithms
+                      expose the truth.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="question" data-question="4">
+                <h3>What role do you naturally play inside a project team?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="johnson"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="johnson.jpg" alt="Johnson badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Mission control—turn big dreams into precise trajectories
+                      and deadlines.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="tesla"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="tesla.jpg" alt="Tesla badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Mad inventor—energize the room with audacious solutions
+                      nobody asked for yet.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="goodall"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="goodall.png" alt="Goodall badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Connector—make sure human stories and ethics steer every
+                      milestone.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="hawking"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="hawking.jpg" alt="Hawking badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Cosmic narrator—keep everyone aligned with the grander
+                      theory of change.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="question" data-question="5">
+                <h3>
+                  What motivates you to keep going when the lab lights stay on
+                  late?
+                </h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="curie"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="curie.jpg" alt="Curie badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Knowing the discovery can heal people who currently have
+                      no options.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="davinci"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="davinci.jpg" alt="Da Vinci badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Endless curiosity—connecting unrelated disciplines feels
+                      like breathing.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="einstein"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="einstein.jpg" alt="Einstein badge"
+                    /></span>
+                    <span class="answer-text"
+                      >The thrill of rewriting how humanity understands time,
+                      space, or reality.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="turing"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="turing.jpg" alt="Turing badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Elegant logic—proving that a system works under pressure
+                      is pure art.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="question" data-question="6">
+                <h3>
+                  How do you bounce back from an experiment that fails publicly?
+                </h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="franklin"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="franklin.jpg" alt="Franklin badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Quietly re-run the data, upgrade the instruments, and let
+                      the facts speak later.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="galileo"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="galileo.jpg" alt="Galileo badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Publish anyway—evidence matters more than institutions
+                      being comfortable.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="tesla"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="tesla.jpg" alt="Tesla badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Start a wilder project the next day. Momentum beats
+                      reputation rehab.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="hawking"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="hawking.jpg" alt="Hawking badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Update the math, crack a joke, and turn the setback into
+                      a new lecture.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="question" data-question="7">
+                <h3>Which toolkit sits closest to your heart?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="lovelace"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="lovelace.jpg" alt="Lovelace badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Algorithms, annotated diagrams, and poetic
+                      marginalia.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="tesla"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="tesla.jpg" alt="Tesla badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Coils, circuits, and enough voltage to wake the
+                      neighbors.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="newton"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="newton.jpg" alt="Newton badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Calculus notes, prisms, and precise measurements of
+                      motion.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="goodall"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="goodall.png" alt="Goodall badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Field journals, cameras, and the patience to wait for
+                      truth.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="question" data-question="8">
+                <h3>How do you share your findings with the world?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="einstein"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="einstein.jpg" alt="Einstein badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Publish a concise theory paper then hit the lecture
+                      circuit.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="davinci"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="davinci.jpg" alt="Da Vinci badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Storyboard it visually so anyone can feel the
+                      discovery.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="johnson"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="johnson.jpg" alt="Johnson badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Host a review meeting where the math and mission align
+                      perfectly.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="franklin"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="franklin.jpg" alt="Franklin badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Let impeccable imagery or datasets speak louder than
+                      hype.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="question" data-question="9">
+                <h3>What impact would delight you most?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="hawking"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="hawking.jpg" alt="Hawking badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Helping humans grasp their place in the universe with
+                      awe.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="curie"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="curie.jpg" alt="Curie badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Building treatments or tools that immediately save
+                      lives.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="goodall"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="goodall.png" alt="Goodall badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Protecting ecosystems by making people care about them
+                      deeply.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="tesla"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="tesla.jpg" alt="Tesla badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Electrifying cities with technology decades ahead of
+                      schedule.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="question" data-question="10">
+                <h3>How do you picture the future you’re building?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="hawking"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="hawking.jpg" alt="Hawking badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Interstellar, empathetic, and fluent in the language of
+                      physics.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="davinci"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="davinci.jpg" alt="Da Vinci badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Art, engineering, and biology woven into harmonious
+                      cities.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="lovelace"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="lovelace.jpg" alt="Lovelace badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Humanity collaborating with intelligent machines for
+                      creativity.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    onclick="selectAnswer(this)"
+                    data-scientist="galileo"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="galileo.jpg" alt="Galileo badge"
+                    /></span>
+                    <span class="answer-text"
+                      >Societies guided by evidence, open inquiry, and
+                      telescopes everywhere.</span
+                    >
+                    <span class="chevron">→</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result" id="result">
+          <div class="result-placeholder">
+            <h3>Your result is loading...</h3>
+            <p>Finish the quiz to reveal your perfect scientist archetype.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="method-title">
+        <div class="section-header">
+          <h2 id="method-title">How This Genius Quiz Works</h2>
           <p>
-            Answer 10 questions to discover which scientist archetype you
-            embody.
+            A good personality quiz feels fun—and still gives you something you
+            can use. Here’s the simple method behind the result you’ll get.
           </p>
         </div>
-        <div class="quiz-container">
-          <div class="progress-meta">
-            <span><strong id="progressLabel">0%</strong></span>
-            <span>Question <strong id="questionNumberTop">1</strong> / 10</span>
-          </div>
-          <div class="progress" aria-label="Quiz progress">
-            <div
-              class="progress-bar"
-              id="progressBar"
-              role="progressbar"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              aria-valuenow="0"
-            ></div>
-          </div>
-          <div class="question-counter" aria-live="polite">
-            <span id="questionNumber">1</span> / 10
+
+        <div class="value-grid" role="list">
+          <div class="value-card" role="listitem">
+            <span class="chip">Step 1</span>
+            <h3>Answer for your defaults</h3>
+            <p>
+              Choose the option that describes your typical behavior under real
+              constraints (time, stress, team dynamics)—not your “best day.”
+            </p>
+            <ul class="value-list">
+              <li>Think: what you do first, not what you wish you did.</li>
+              <li>Use your last 2–3 projects as reference points.</li>
+              <li>If two answers fit, pick the one you repeat most.</li>
+            </ul>
           </div>
 
-          <div class="question active" data-question="1">
-            <h3>How do you attack a completely new problem?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="einstein"
-              >
-                <span class="wojak-badge"
-                  ><img src="einstein.jpg" alt="Einstein badge"
-                /></span>
-                <span class="answer-text"
-                  >Run layered thought experiments until a pattern collapses
-                  into view.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="tesla"
-              >
-                <span class="wojak-badge"
-                  ><img src="tesla.jpg" alt="Tesla badge"
-                /></span>
-                <span class="answer-text"
-                  >Whip up a prototype immediately—ideas need voltage before
-                  doubt creeps in.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="curie"
-              >
-                <span class="wojak-badge"
-                  ><img src="curie.jpg" alt="Curie badge"
-                /></span>
-                <span class="answer-text"
-                  >Design a controlled experiment, log every detail, and repeat
-                  until it glows.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="newton"
-              >
-                <span class="wojak-badge"
-                  ><img src="newton.jpg" alt="Newton badge"
-                /></span>
-                <span class="answer-text"
-                  >Reduce the chaos to first principles, then derive the math
-                  from scratch.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-            </div>
+          <div class="value-card" role="listitem">
+            <span class="chip">Step 2</span>
+            <h3>We score three core pillars</h3>
+            <p>
+              Each question is designed to express your tendency along three
+              “pillars” that show up in almost every creative field.
+            </p>
+            <ul class="value-list">
+              <li>
+                <strong>Curiosity Depth</strong>: how you explore the unknown.
+              </li>
+              <li>
+                <strong>Experimental Rigor</strong>: how you test and refine.
+              </li>
+              <li>
+                <strong>Collaboration Energy</strong>: how you work with people.
+              </li>
+            </ul>
           </div>
 
-          <div class="question" data-question="2">
-            <h3>Where do your best ideas surface?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="davinci"
-              >
-                <span class="wojak-badge"
-                  ><img src="davinci.jpg" alt="Da Vinci badge"
-                /></span>
-                <span class="answer-text"
-                  >Sketching wildly in a notebook packed with machines, anatomy,
-                  and poetry.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="goodall"
-              >
-                <span class="wojak-badge"
-                  ><img src="goodall.png" alt="Goodall badge"
-                /></span>
-                <span class="answer-text"
-                  >Immersed outdoors, patiently observing real life play out
-                  without scripts.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="hawking"
-              >
-                <span class="wojak-badge"
-                  ><img src="hawking.jpg" alt="Hawking badge"
-                /></span>
-                <span class="answer-text"
-                  >Watching the cosmos, letting abstract equations narrate the
-                  universe.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="lovelace"
-              >
-                <span class="wojak-badge"
-                  ><img src="lovelace.jpg" alt="Lovelace badge"
-                /></span>
-                <span class="answer-text"
-                  >Translating messy ideas into logical flows and poetic
-                  computation.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="question" data-question="3">
-            <h3>How do you verify that your theory holds?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="franklin"
-              >
-                <span class="wojak-badge"
-                  ><img src="franklin.jpg" alt="Franklin badge"
-                /></span>
-                <span class="answer-text"
-                  >Capture pristine data—if the photo isn’t crystal clear, it
-                  doesn’t ship.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="galileo"
-              >
-                <span class="wojak-badge"
-                  ><img src="galileo.jpg" alt="Galileo badge"
-                /></span>
-                <span class="answer-text"
-                  >Build better instruments and let observation overthrow
-                  assumptions.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="johnson"
-              >
-                <span class="wojak-badge"
-                  ><img src="johnson.jpg" alt="Johnson badge"
-                /></span>
-                <span class="answer-text"
-                  >Audit every calculation twice, then teach it so the team
-                  trusts the math.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="turing"
-              >
-                <span class="wojak-badge"
-                  ><img src="turing.jpg" alt="Turing badge"
-                /></span>
-                <span class="answer-text"
-                  >Model it logically, test edge cases, and let algorithms
-                  expose the truth.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="question" data-question="4">
-            <h3>What role do you naturally play inside a project team?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="johnson"
-              >
-                <span class="wojak-badge"
-                  ><img src="johnson.jpg" alt="Johnson badge"
-                /></span>
-                <span class="answer-text"
-                  >Mission control—turn big dreams into precise trajectories and
-                  deadlines.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="tesla"
-              >
-                <span class="wojak-badge"
-                  ><img src="tesla.jpg" alt="Tesla badge"
-                /></span>
-                <span class="answer-text"
-                  >Mad inventor—energize the room with audacious solutions
-                  nobody asked for yet.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="goodall"
-              >
-                <span class="wojak-badge"
-                  ><img src="goodall.png" alt="Goodall badge"
-                /></span>
-                <span class="answer-text"
-                  >Connector—make sure human stories and ethics steer every
-                  milestone.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="hawking"
-              >
-                <span class="wojak-badge"
-                  ><img src="hawking.jpg" alt="Hawking badge"
-                /></span>
-                <span class="answer-text"
-                  >Cosmic narrator—keep everyone aligned with the grander theory
-                  of change.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="question" data-question="5">
-            <h3>
-              What motivates you to keep going when the lab lights stay on late?
-            </h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="curie"
-              >
-                <span class="wojak-badge"
-                  ><img src="curie.jpg" alt="Curie badge"
-                /></span>
-                <span class="answer-text"
-                  >Knowing the discovery can heal people who currently have no
-                  options.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="davinci"
-              >
-                <span class="wojak-badge"
-                  ><img src="davinci.jpg" alt="Da Vinci badge"
-                /></span>
-                <span class="answer-text"
-                  >Endless curiosity—connecting unrelated disciplines feels like
-                  breathing.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="einstein"
-              >
-                <span class="wojak-badge"
-                  ><img src="einstein.jpg" alt="Einstein badge"
-                /></span>
-                <span class="answer-text"
-                  >The thrill of rewriting how humanity understands time, space,
-                  or reality.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="turing"
-              >
-                <span class="wojak-badge"
-                  ><img src="turing.jpg" alt="Turing badge"
-                /></span>
-                <span class="answer-text"
-                  >Elegant logic—proving that a system works under pressure is
-                  pure art.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="question" data-question="6">
-            <h3>
-              How do you bounce back from an experiment that fails publicly?
-            </h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="franklin"
-              >
-                <span class="wojak-badge"
-                  ><img src="franklin.jpg" alt="Franklin badge"
-                /></span>
-                <span class="answer-text"
-                  >Quietly re-run the data, upgrade the instruments, and let the
-                  facts speak later.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="galileo"
-              >
-                <span class="wojak-badge"
-                  ><img src="galileo.jpg" alt="Galileo badge"
-                /></span>
-                <span class="answer-text"
-                  >Publish anyway—evidence matters more than institutions being
-                  comfortable.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="tesla"
-              >
-                <span class="wojak-badge"
-                  ><img src="tesla.jpg" alt="Tesla badge"
-                /></span>
-                <span class="answer-text"
-                  >Start a wilder project the next day. Momentum beats
-                  reputation rehab.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="hawking"
-              >
-                <span class="wojak-badge"
-                  ><img src="hawking.jpg" alt="Hawking badge"
-                /></span>
-                <span class="answer-text"
-                  >Update the math, crack a joke, and turn the setback into a
-                  new lecture.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="question" data-question="7">
-            <h3>Which toolkit sits closest to your heart?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="lovelace"
-              >
-                <span class="wojak-badge"
-                  ><img src="lovelace.jpg" alt="Lovelace badge"
-                /></span>
-                <span class="answer-text"
-                  >Algorithms, annotated diagrams, and poetic marginalia.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="tesla"
-              >
-                <span class="wojak-badge"
-                  ><img src="tesla.jpg" alt="Tesla badge"
-                /></span>
-                <span class="answer-text"
-                  >Coils, circuits, and enough voltage to wake the
-                  neighbors.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="newton"
-              >
-                <span class="wojak-badge"
-                  ><img src="newton.jpg" alt="Newton badge"
-                /></span>
-                <span class="answer-text"
-                  >Calculus notes, prisms, and precise measurements of
-                  motion.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="goodall"
-              >
-                <span class="wojak-badge"
-                  ><img src="goodall.png" alt="Goodall badge"
-                /></span>
-                <span class="answer-text"
-                  >Field journals, cameras, and the patience to wait for
-                  truth.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="question" data-question="8">
-            <h3>How do you share your findings with the world?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="einstein"
-              >
-                <span class="wojak-badge"
-                  ><img src="einstein.jpg" alt="Einstein badge"
-                /></span>
-                <span class="answer-text"
-                  >Publish a concise theory paper then hit the lecture
-                  circuit.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="davinci"
-              >
-                <span class="wojak-badge"
-                  ><img src="davinci.jpg" alt="Da Vinci badge"
-                /></span>
-                <span class="answer-text"
-                  >Storyboard it visually so anyone can feel the
-                  discovery.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="johnson"
-              >
-                <span class="wojak-badge"
-                  ><img src="johnson.jpg" alt="Johnson badge"
-                /></span>
-                <span class="answer-text"
-                  >Host a review meeting where the math and mission align
-                  perfectly.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="franklin"
-              >
-                <span class="wojak-badge"
-                  ><img src="franklin.jpg" alt="Franklin badge"
-                /></span>
-                <span class="answer-text"
-                  >Let impeccable imagery or datasets speak louder than
-                  hype.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="question" data-question="9">
-            <h3>What impact would delight you most?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="hawking"
-              >
-                <span class="wojak-badge"
-                  ><img src="hawking.jpg" alt="Hawking badge"
-                /></span>
-                <span class="answer-text"
-                  >Helping humans grasp their place in the universe with
-                  awe.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="curie"
-              >
-                <span class="wojak-badge"
-                  ><img src="curie.jpg" alt="Curie badge"
-                /></span>
-                <span class="answer-text"
-                  >Building treatments or tools that immediately save
-                  lives.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="goodall"
-              >
-                <span class="wojak-badge"
-                  ><img src="goodall.png" alt="Goodall badge"
-                /></span>
-                <span class="answer-text"
-                  >Protecting ecosystems by making people care about them
-                  deeply.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="tesla"
-              >
-                <span class="wojak-badge"
-                  ><img src="tesla.jpg" alt="Tesla badge"
-                /></span>
-                <span class="answer-text"
-                  >Electrifying cities with technology decades ahead of
-                  schedule.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="question" data-question="10">
-            <h3>How do you picture the future you’re building?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="hawking"
-              >
-                <span class="wojak-badge"
-                  ><img src="hawking.jpg" alt="Hawking badge"
-                /></span>
-                <span class="answer-text"
-                  >Interstellar, empathetic, and fluent in the language of
-                  physics.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="davinci"
-              >
-                <span class="wojak-badge"
-                  ><img src="davinci.jpg" alt="Da Vinci badge"
-                /></span>
-                <span class="answer-text"
-                  >Art, engineering, and biology woven into harmonious
-                  cities.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="lovelace"
-              >
-                <span class="wojak-badge"
-                  ><img src="lovelace.jpg" alt="Lovelace badge"
-                /></span>
-                <span class="answer-text"
-                  >Humanity collaborating with intelligent machines for
-                  creativity.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-              <button
-                class="answer-btn"
-                onclick="selectAnswer(this)"
-                data-scientist="galileo"
-              >
-                <span class="wojak-badge"
-                  ><img src="galileo.jpg" alt="Galileo badge"
-                /></span>
-                <span class="answer-text"
-                  >Societies guided by evidence, open inquiry, and telescopes
-                  everywhere.</span
-                >
-                <span class="chevron">→</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="result" id="result">
-            <div class="wojak-image" id="wojakEmoji"></div>
-            <h2 id="wojakName"></h2>
-            <p id="wojakDescription"></p>
-            <button class="restart-btn" onclick="restartQuiz()">
-              Take Quiz Again
-            </button>
+          <div class="value-card" role="listitem">
+            <span class="chip">Step 3</span>
+            <h3>You get a match + a playbook</h3>
+            <p>
+              Your top scientist is your strongest “center of gravity.” The
+              result section also highlights strengths and friction points so
+              you can improve your workflow immediately.
+            </p>
+            <ul class="value-list">
+              <li>Expect hybrids (e.g., Einstein × Turing).</li>
+              <li>Use “growth advice” as your next-week experiment.</li>
+              <li>Share your archetype to compare with friends.</li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      <section class="content-section" aria-labelledby="guide-title">
+        <div class="inline-cta">
+          <a class="btn btn--ghost" href="inventor_quiz.html?start=quiz">
+            Start the quiz instantly
+          </a>
+          <a class="btn btn--ghost" href="#countryGuide">Browse the guide</a>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="playbook-title">
+        <div class="section-header">
+          <h2 id="playbook-title">Your Scientist Playbook (Use It Today)</h2>
+          <p>
+            The fastest way to get value from a personality result is to turn it
+            into small experiments. Use the playbook below whether you’re a
+            student, creator, engineer, founder, or researcher.
+          </p>
+        </div>
+
+        <div class="value-grid" role="list">
+          <div class="value-card" role="listitem">
+            <span class="chip">Curiosity Depth</span>
+            <h3>Make exploration measurable</h3>
+            <p>
+              Curiosity is powerful when it produces questions you can test.
+              Capture your best questions, then rank them.
+            </p>
+            <ul class="value-list">
+              <li>Write 10 questions in 5 minutes (no editing).</li>
+              <li>Pick 2 that feel “scary but specific.”</li>
+              <li>Turn them into a one-page experiment plan.</li>
+            </ul>
+          </div>
+
+          <div class="value-card" role="listitem">
+            <span class="chip">Experimental Rigor</span>
+            <h3>Reduce uncertainty, not vibes</h3>
+            <p>
+              Rigor is about removing ambiguity. Define what “better” means
+              before you test.
+            </p>
+            <ul class="value-list">
+              <li>Choose 1 success metric and 1 failure metric.</li>
+              <li>Log results in a simple “what changed?” notebook.</li>
+              <li>Re-run the test once before making conclusions.</li>
+            </ul>
+          </div>
+
+          <div class="value-card" role="listitem">
+            <span class="chip">Collaboration Energy</span>
+            <h3>Build the right team interface</h3>
+            <p>
+              Collaboration isn’t “more meetings.” It’s choosing the right
+              rhythm so your ideas and your team both stay sharp.
+            </p>
+            <ul class="value-list">
+              <li>Do weekly demos instead of long status updates.</li>
+              <li>Share a short “decision log” after major choices.</li>
+              <li>Pair with a complementary archetype for balance.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="habits-title">
+        <div class="section-header">
+          <h2 id="habits-title">10 High-Impact Habits From Great Scientists</h2>
+          <p>
+            These habits are intentionally simple: they work across disciplines
+            and don’t require special equipment. Try 2 this week.
+          </p>
+        </div>
+
+        <ol class="habits-grid">
+          <li>Keep a “question backlog” and review it weekly.</li>
+          <li>Start projects with a one-paragraph hypothesis.</li>
+          <li>Track assumptions explicitly (what must be true?).</li>
+          <li>Prototype early—then iterate with real feedback.</li>
+          <li>Write one page of notes after every deep work session.</li>
+          <li>Separate ideation time from evaluation time.</li>
+          <li>Use a “minimum viable experiment” before big commitments.</li>
+          <li>Explain your idea to a beginner to find weak points.</li>
+          <li>Celebrate negative results—they narrow the search space.</li>
+          <li>Share drafts sooner: momentum beats perfection.</li>
+        </ol>
+      </section>
+
+      <section
+        class="content-section"
+        id="countryGuide"
+        aria-labelledby="guide-title"
+      >
         <div class="guide-header">
           <span class="eyebrow">Reference</span>
           <h2 id="guide-title">Complete Scientist Archetype Guide 2025</h2>
@@ -2316,7 +2851,7 @@
         </div>
       </section>
 
-      <div class="faq-section">
+      <div class="faq-section" id="faq">
         <div class="main-container">
           <div class="section-header">
             <h2>Genius Quiz FAQ</h2>
@@ -2387,15 +2922,141 @@
       </div>
     </div>
 
-    <footer>
-      <div class="footer-pattern"></div>
-      <div class="footer-content">
-        <div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 12px">Zinvana Labs</h4>
-          <p style="color: #cbd5f5; margin-bottom: 12px">
-            Weekly quizzes blending internet culture with science-backed
-            insights.
+    <!-- Enhanced Professional Footer -->
+    <footer
+      style="
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #334155 100%
+        );
+        color: #ffffff;
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
+          z-index: 1;
+        "
+      ></div>
+
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 60px 40px 40px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 40px;
+        "
+      >
+        <div
+          style="display: flex; flex-direction: column; align-items: flex-start"
+        >
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana"
+            style="
+              width: 50px;
+              height: 50px;
+              border-radius: 12px;
+              margin-bottom: 16px;
+              box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+            "
+          />
+          <h3
+            style="
+              color: #ffffff;
+              font-size: 1.5rem;
+              margin-bottom: 16px;
+              font-weight: 600;
+            "
+          >
+            Zinvana
+          </h3>
+          <p
+            style="
+              color: #94a3b8;
+              line-height: 1.6;
+              margin: 0;
+              font-size: 1rem;
+              margin-bottom: 20px;
+            "
+          >
+            Discover your true self through fun, engaging personality quizzes
+            and assessments. From internet archetypes to personality types, we
+            help you explore different aspects of your personality in an
+            entertaining, educational way.
           </p>
+          <div style="display: flex; gap: 16px; margin-bottom: 20px">
+            <a
+              href="https://x.com/farazglori80528"
+              target="_blank"
+              style="
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+              "
+              onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'"
+              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                /></svg
+            ></a>
+            <a
+              href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
+              target="_blank"
+              style="
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+              "
+              onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'"
+              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                /></svg
+            ></a>
+          </div>
           <p
             style="
               color: #94a3b8;
@@ -2404,35 +3065,147 @@
               line-height: 1.5;
             "
           >
-            Stay updated with launch-ready experiments, beta invites, and nerdy
-            fun.
+            Stay updated with our latest quizzes and personality assessments!
           </p>
         </div>
+
         <div>
-          <h4 style="font-size: 1rem; margin-bottom: 10px">Quick Links</h4>
-          <ul
+          <h4
             style="
-              list-style: none;
-              padding: 0;
-              margin: 0;
-              color: #a5b4fc;
-              line-height: 1.8;
+              color: #e2e8f0;
+              font-size: 1.125rem;
+              margin-bottom: 20px;
+              font-weight: 600;
             "
           >
-            <li><a href="all-articles.html">All Articles</a></li>
-            <li><a href="ai-personality.html">AI Personality Quiz</a></li>
-            <li><a href="all-brawlers.html">Game Quizzes</a></li>
+            Popular Quizzes
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 12px">
+              <a
+                href="leaders.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Historical Leaders Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="football-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Football Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="wojak-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Wojak Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="perfect-country.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Perfect Country Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="youtubers-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >YouTubers Personality Quiz</a
+              >
+            </li>
           </ul>
         </div>
+
         <div>
-          <h4 style="font-size: 1rem; margin-bottom: 10px">Contact</h4>
-          <p style="color: #cbd5f5; margin: 0 0 6px">hello@zinvana.com</p>
-          <p style="color: #94a3b8; font-size: 0.9rem; margin: 0">
-            Built from curiosity, shipped worldwide.
-          </p>
+          <h4
+            style="
+              color: #e2e8f0;
+              font-size: 1.125rem;
+              margin-bottom: 20px;
+              font-weight: 600;
+            "
+          >
+            Resources
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 12px">
+              <a
+                href="/about.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >About Us</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="/privacy.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="footer-bottom">
+
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 30px 40px;
+        "
+      >
         <div
           style="
             max-width: 1200px;
@@ -2444,36 +3217,32 @@
             gap: 20px;
           "
         >
-          <span style="color: #94a3b8; font-size: 0.9rem"
-            >© 2025 Zinvana. All rights reserved.</span
-          >
-          <div style="display: flex; gap: 18px">
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-          </div>
+          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+            &copy; 2025 Zinvana. All rights reserved.
+          </p>
+          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+            Made with ❤️ by the Zinvana Team
+          </p>
+        </div>
+        <div
+          style="
+            color: #64748b;
+            font-size: 0.85rem;
+            margin: 20px auto 0;
+            text-align: center;
+            line-height: 1.5;
+            max-width: 600px;
+          "
+        >
+          Disclaimer: The scientist archetype quiz is intended for entertainment
+          and educational purposes only. While we strive for accuracy based on
+          historical research, individual results may vary and should not be
+          taken as definitive psychological assessments.
         </div>
       </div>
     </footer>
 
     <script>
-      const totalQuestions = 10;
-      let currentQuestion = 1;
-      let answers = {};
-      let scientistScores = {
-        einstein: 0,
-        tesla: 0,
-        curie: 0,
-        newton: 0,
-        davinci: 0,
-        franklin: 0,
-        johnson: 0,
-        galileo: 0,
-        lovelace: 0,
-        hawking: 0,
-        goodall: 0,
-        turing: 0,
-      };
-
       const scientistData = {
         einstein: {
           name: "Albert Einstein",
@@ -2797,156 +3566,36 @@
         },
       };
 
-      const originalTitle = document.title;
-
-      function selectAnswer(button) {
-        const scientist = button.getAttribute("data-scientist");
-        if (!scientist) return;
-        answers[currentQuestion] = scientist;
-        scientistScores[scientist] = (scientistScores[scientist] || 0) + 1;
-        updateProgress();
-        if (currentQuestion < totalQuestions) {
-          nextQuestion();
-        } else {
-          showResults();
-        }
-      }
-
-      function nextQuestion() {
-        const currentEl = document.querySelector(
-          `[data-question="${currentQuestion}"]`
-        );
-        if (currentEl) currentEl.classList.remove("active");
-        currentQuestion++;
-        const nextEl = document.querySelector(
-          `[data-question="${currentQuestion}"]`
-        );
-        if (nextEl) nextEl.classList.add("active");
-        document.getElementById("questionNumber").textContent =
-          String(currentQuestion);
-        const topNum = document.getElementById("questionNumberTop");
-        if (topNum) topNum.textContent = String(currentQuestion);
-      }
-
-      function updateProgress() {
-        const progress = Math.min(
-          100,
-          Math.round((currentQuestion / totalQuestions) * 100)
-        );
-        const bar = document.getElementById("progressBar");
-        if (bar) {
-          bar.style.width = progress + "%";
-          bar.setAttribute("aria-valuenow", String(progress));
-        }
-        const label = document.getElementById("progressLabel");
-        if (label) label.textContent = progress + "%";
-      }
-
-      function showResults() {
-        let maxScore = 0;
-        let resultScientist = "einstein";
-        for (const key in scientistScores) {
-          if (scientistScores[key] > maxScore) {
-            maxScore = scientistScores[key];
-            resultScientist = key;
-          }
-        }
-        const tied = Object.keys(scientistScores).filter(
-          (key) => scientistScores[key] === maxScore
-        );
-        if (tied.length > 1) {
-          resultScientist = tied[Math.floor(Math.random() * tied.length)];
-        }
-        const currentEl = document.querySelector(
-          `[data-question="${currentQuestion}"]`
-        );
-        if (currentEl) currentEl.classList.remove("active");
-        const result = scientistData[resultScientist];
-        const imageDiv = document.getElementById("wojakEmoji");
-        if (imageDiv)
-          imageDiv.innerHTML = `<img src="${result.img}" alt="${result.name}">`;
-        document.getElementById("wojakName").textContent = result.name;
-        document.getElementById("wojakDescription").textContent =
-          result.description;
-        const resultContainer = document.getElementById("result");
-        if (resultContainer) {
-          resultContainer
-            .querySelectorAll(".analysis-grid, .growth-advice")
-            .forEach((node) => node.remove());
-          const deepAnalysisHTML = `
-					<div class="analysis-grid">
-						<div class="analysis-card">
-							<h4>Superpowers</h4>
-							<ul>${result.strengths.map((item) => `<li>${item}</li>`).join("")}</ul>
-						</div>
-						<div class="analysis-card">
-							<h4>Watch Outs</h4>
-							<ul>${result.challenges.map((item) => `<li>${item}</li>`).join("")}</ul>
-						</div>
-						<div class="analysis-card">
-							<h4>Best Projects</h4>
-							<ul>${result.idealProjects.map((item) => `<li>${item}</li>`).join("")}</ul>
-						</div>
-						<div class="analysis-card">
-							<h4>Signature Moves</h4>
-							<ul>${result.signatureMoves.map((item) => `<li>${item}</li>`).join("")}</ul>
-						</div>
-					</div>
-					<p class="growth-advice"><strong>Growth advice:</strong> ${
-            result.growthAdvice
-          }</p>
-				`;
-          document
-            .getElementById("wojakDescription")
-            .insertAdjacentHTML("afterend", deepAnalysisHTML);
-          resultContainer.classList.add("active");
-        }
-        const bar = document.getElementById("progressBar");
-        if (bar) {
-          bar.style.width = "100%";
-          bar.setAttribute("aria-valuenow", "100");
-        }
-        const label = document.getElementById("progressLabel");
-        if (label) label.textContent = "100%";
-        updateTitleWithResult(result.name);
-        setTimeout(() => {
-          document
-            .getElementById("result")
-            .scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 100);
-        if (typeof trackQuizComplete === "function") {
-          trackQuizComplete(result.name);
-        }
-      }
-
-      function restartQuiz() {
-        currentQuestion = 1;
-        answers = {};
-        scientistScores = Object.keys(scientistScores).reduce((acc, key) => {
-          acc[key] = 0;
-          return acc;
-        }, {});
-        document.getElementById("result").classList.remove("active");
-        document.querySelectorAll(".question").forEach((q, index) => {
-          q.classList.toggle("active", index === 0);
-        });
-        document.getElementById("questionNumber").textContent = "1";
-        const topNum = document.getElementById("questionNumberTop");
-        if (topNum) topNum.textContent = "1";
-        const bar = document.getElementById("progressBar");
-        if (bar) {
-          bar.style.width = "0%";
-          bar.setAttribute("aria-valuenow", "0");
-        }
-        const label = document.getElementById("progressLabel");
-        if (label) label.textContent = "0%";
-        document.title = originalTitle;
-        document
-          .getElementById("quizSection")
-          .scrollIntoView({ behavior: "smooth" });
-      }
-
       document.addEventListener("DOMContentLoaded", () => {
+        // Mobile menu toggle (matches perfect-country.html)
+        const toggle = document.getElementById("menuToggle");
+        const menu = document.getElementById("mobileMenu");
+        const navLinks = menu?.querySelectorAll(".nav-link");
+
+        if (toggle && menu) {
+          toggle.addEventListener("click", () => {
+            const isOpen = menu.classList.toggle("open");
+            toggle.classList.toggle("active");
+            toggle.setAttribute("aria-expanded", isOpen);
+          });
+
+          navLinks?.forEach((link) => {
+            link.addEventListener("click", () => {
+              menu.classList.remove("open");
+              toggle.classList.remove("active");
+              toggle.setAttribute("aria-expanded", "false");
+            });
+          });
+
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && menu.classList.contains("open")) {
+              menu.classList.remove("open");
+              toggle.classList.remove("active");
+              toggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+
         const grid = document.getElementById("guideGrid");
         const cards = grid
           ? Array.from(grid.querySelectorAll(".guide-card"))
@@ -3000,14 +3649,7 @@
             .scrollIntoView({ behavior: "smooth" });
         }
       });
-
-      function trackQuizComplete(result) {
-        console.debug("Quiz completed as", result);
-      }
-
-      function updateTitleWithResult(scientistName) {
-        document.title = `You're ${scientistName}! - Genius Personality Quiz Results`;
-      }
     </script>
+    <script src="perfect-quiz-shell.js"></script>
   </body>
 </html>
