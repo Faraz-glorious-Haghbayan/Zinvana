@@ -364,7 +364,7 @@
       }
 
       /* Navigation Styles */
-      nav {
+      nav.legacy-nav {
         display: flex;
         position: fixed;
         top: 0;
@@ -383,7 +383,7 @@
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      nav::before {
+      nav.legacy-nav::before {
         content: "";
         position: absolute;
         top: 0;
@@ -399,7 +399,7 @@
         );
       }
 
-      nav::after {
+      nav.legacy-nav::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -415,14 +415,14 @@
         );
       }
 
-      nav .nav-left,
-      nav .nav-right {
+      nav.legacy-nav .nav-left,
+      nav.legacy-nav .nav-right {
         display: flex;
         align-items: center;
         gap: 32px;
       }
 
-      nav a {
+      nav.legacy-nav a {
         color: #e2e8f0;
         font-weight: 500;
         font-size: 0.95rem;
@@ -435,7 +435,7 @@
         background: transparent;
       }
 
-      nav a:hover {
+      nav.legacy-nav a:hover {
         color: #ffffff;
         background: linear-gradient(
           135deg,
@@ -446,7 +446,7 @@
         box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
       }
 
-      nav a::after {
+      nav.legacy-nav a::after {
         content: "";
         position: absolute;
         bottom: 4px;
@@ -459,11 +459,11 @@
         border-radius: 2px;
       }
 
-      nav a:hover::after {
+      nav.legacy-nav a:hover::after {
         width: 60%;
       }
 
-      nav img#brand-logo {
+      nav.legacy-nav img#brand-logo {
         width: 46px;
         height: 46px;
         border-radius: 14px;
@@ -473,7 +473,7 @@
         border: 2px solid rgba(255, 255, 255, 0.1);
       }
 
-      nav img#brand-logo:hover {
+      nav.legacy-nav img#brand-logo:hover {
         transform: scale(1.08) rotate(3deg);
         box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
       }
@@ -6570,7 +6570,12 @@
         }
 
         .hero-grid {
+          grid-template-columns: 1fr;
           gap: 22px;
+        }
+
+        .hero-grid > * {
+          min-width: 0;
         }
 
         .hero-section .description {
