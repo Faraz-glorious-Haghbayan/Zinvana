@@ -2863,7 +2863,7 @@
     <script>
       const DATA_SOURCES = [
         "data/world-countries.json",
-        "https://restcountries.com/v3.1/all?fields=name,cca3,region,subregion,landlocked,borders,area,latlng,languages,independent,unMember,flags",
+        "https://restcountries.com/v3.1/all?fields=name,cca3,region,subregion,landlocked,borders,area,latlng,unMember,flags",
       ];
 
       const mainEl = document.getElementById("mainContent");
@@ -2991,6 +2991,9 @@
           return null;
         }
 
+        const independent =
+          typeof entry.independent === "boolean" ? entry.independent : true;
+
         const languages = normalizeLanguageList(entry.languages).map((lang) =>
           normalizeText(lang)
         );
@@ -3025,7 +3028,7 @@
           latitude,
           northernHemisphere: latitude !== null ? latitude >= 0 : null,
           southernHemisphere: latitude !== null ? latitude < 0 : null,
-          independent: entry.independent === true,
+          independent,
           unMember: entry.unMember === true,
           speaksEnglish: hasLanguage(languages, "english"),
           speaksSpanish: hasLanguage(languages, "spanish"),
