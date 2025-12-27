@@ -348,6 +348,10 @@
   color: #0f172a;
 }
 
+.quiz-shell[data-hide-option-titles="true"] .answer-title {
+  display: none;
+}
+
 .quiz-shell .answer-description {
   font-size: 0.98rem;
   color: #475569;
