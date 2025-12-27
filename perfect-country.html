@@ -1407,6 +1407,13 @@
         border-radius: 10px;
       }
 
+      .result-flag .real-flag {
+        width: 84px;
+        height: auto;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
       .guide-card .card-meta {
         font-size: 0.85rem;
         color: #64748b;
@@ -3725,7 +3732,7 @@
       }
     </style>
   </head>
-  <body class="theme-dark">
+  <body class="theme-light">
     <header class="topbar">
       <div class="topbar__inner">
         <a class="brand" href="index.html">
@@ -3745,27 +3752,6 @@
           <a class="nav-link" href="#faq">FAQ</a>
         </nav>
         <div class="nav-actions">
-          <button
-            class="theme-toggle"
-            id="themeToggle"
-            type="button"
-            aria-label="Toggle color theme"
-            aria-pressed="false"
-          >
-            <svg
-              class="theme-toggle__icon"
-              id="themeToggleIcon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0-5v2m0 16v2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M5.64 18.36 4.22 19.78"
-              />
-            </svg>
-            <span class="theme-toggle__text" id="themeToggleText"
-              >Light mode</span
-            >
-          </button>
           <a class="btn btn--ghost" href="index.html#quizzes">All quizzes</a>
           <button
             class="hamburger"
@@ -5269,39 +5255,6 @@
     </footer>
 
     <script>
-      // Theme toggle (dark/light) — shared with mbti-personality-quiz.html
-      const themeToggle = document.getElementById("themeToggle");
-      const themeToggleText = document.getElementById("themeToggleText");
-      const themeToggleIcon = document
-        .getElementById("themeToggleIcon")
-        ?.querySelector("path");
-      const sunPath =
-        "M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0-5v2m0 16v2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M5.64 18.36 4.22 19.78";
-      const moonPath = "M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z";
-
-      const setTheme = (mode) => {
-        const isLight = mode === "light";
-        document.body.classList.toggle("theme-light", isLight);
-        document.body.classList.toggle("theme-dark", !isLight);
-        localStorage.setItem("zinvana-theme", isLight ? "light" : "dark");
-        themeToggle?.setAttribute("aria-pressed", isLight ? "true" : "false");
-        if (themeToggleText) {
-          themeToggleText.textContent = isLight ? "Dark mode" : "Light mode";
-        }
-        themeToggleIcon?.setAttribute("d", isLight ? moonPath : sunPath);
-      };
-
-      const storedTheme = localStorage.getItem("zinvana-theme");
-      const prefersLight = window.matchMedia?.(
-        "(prefers-color-scheme: light)"
-      ).matches;
-      setTheme(storedTheme || (prefersLight ? "light" : "dark"));
-
-      themeToggle?.addEventListener("click", () => {
-        const isLight = document.body.classList.contains("theme-light");
-        setTheme(isLight ? "dark" : "light");
-      });
-
       // Mobile menu toggle — shared with mbti-personality-quiz.html
       const toggle = document.getElementById("menuToggle");
       const menu = document.getElementById("mobileMenu");
@@ -12003,12 +11956,41 @@
         return orderedOptions[index];
       }
 
+      function getCountryCodeFromEmoji(emoji) {
+        if (!emoji) return null;
+        const codePoints = Array.from(emoji).map((c) => c.codePointAt(0));
+        // Check if we have exactly two regional indicator symbols (flags are 2 chars)
+        if (codePoints.length !== 2) return null;
+
+        // Regional Indicator Symbol Letter A is 0x1F1E6
+        const start = 0x1f1e6;
+        // Check range
+        if (
+          codePoints[0] < start ||
+          codePoints[0] > start + 25 ||
+          codePoints[1] < start ||
+          codePoints[1] > start + 25
+        ) {
+          return null;
+        }
+
+        const a = 97; // 'a'
+        const char1 = String.fromCharCode(codePoints[0] - start + a);
+        const char2 = String.fromCharCode(codePoints[1] - start + a);
+        return char1 + char2;
+      }
+
       function displayResult(countryKey, matchScore) {
         const country = countries[countryKey];
         const profile = ensureRenderableCountryProfile(countryKey, country);
         if (!profile) {
           return;
         }
+
+        const countryCode = getCountryCodeFromEmoji(profile.flag);
+        const flagUrl = countryCode
+          ? `https://flagcdn.com/h80/${countryCode}.png`
+          : null;
 
         const optimizedSources = getOptimizedImageSources(profile.image);
         const maxPossibleScore = totalQuestions * 3;
@@ -12080,9 +12062,17 @@
             <div class="result-hero">
               <div class="result-identity">
                 <span class="result-label">Top match</span>
-                <div class="result-flag"><span class="flag-emoji" data-emoji="${escapeHtml(
-                  profile.flag || "🌍"
-                )}">${escapeHtml(profile.flag || "🌍")}</span></div>
+                <div class="result-flag">
+                  ${
+                    flagUrl
+                      ? `<img src="${flagUrl}" alt="${escapeHtml(
+                          profile.name
+                        )} flag" class="real-flag" width="48" height="auto" />`
+                      : `<span class="flag-emoji" data-emoji="${escapeHtml(
+                          profile.flag || "🌍"
+                        )}">${escapeHtml(profile.flag || "🌍")}</span>`
+                  }
+                </div>
                 <div class="result-name">${escapeHtml(profile.name || "")}</div>
                 <p class="result-tagline">${escapeHtml(
                   profile.tagline || ""
