@@ -1576,6 +1576,25 @@
         transform: scale(1.05);
       }
 
+      .guess-panel:not(.has-flag) .result-flag-hero {
+        display: none;
+      }
+
+      .result-flag-hero {
+        width: 100%;
+        border-radius: 22px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .result-flag-img {
+        display: block;
+        width: 100%;
+        height: clamp(160px, 22vw, 260px);
+        object-fit: cover;
+      }
+
       .result-flag {
         position: absolute;
         inset: 0;
@@ -2328,6 +2347,16 @@
             >
               <div class="result-flag" id="resultFlag" aria-hidden="true"></div>
               <div class="guess-panel-body">
+                <div class="result-flag-hero">
+                  <img
+                    class="result-flag-img"
+                    id="resultFlagImg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
                 <div class="result-header">
                   <span class="result-pill">Geo-Zini result</span>
                   <span class="guess-live-pill" id="resultLivePill">Live</span>
@@ -2834,7 +2863,7 @@
     <script>
       const DATA_SOURCES = [
         "data/world-countries.json",
-        "https://restcountries.com/v3.1/all?fields=name,region,subregion,landlocked,borders,area,latlng,languages,independent,unMember",
+        "https://restcountries.com/v3.1/all?fields=name,cca3,region,subregion,landlocked,borders,area,latlng,languages,independent,unMember,flags",
       ];
 
       const mainEl = document.getElementById("mainContent");
@@ -2859,6 +2888,7 @@
         "resultConfidenceFill"
       );
       const resultFlagEl = document.getElementById("resultFlag");
+      const resultFlagImgEl = document.getElementById("resultFlagImg");
       const guideLineEl = document.getElementById("guideLine");
 
       let countries = [];
@@ -2981,6 +3011,7 @@
 
         return {
           name: countryName,
+          cca3: entry.cca3 || entry.cca3Code || null,
           region: entry.region || "Other",
           subregion: entry.subregion || "Other",
           flagUrl: flagSource,
@@ -3175,7 +3206,7 @@
         trait: "Each reply sharpens the silhouette of your secret nation.",
       };
 
-      const applyFlagBackdrop = (url) => {
+      const applyFlagBackdrop = (url, countryName = "") => {
         if (!resultFlagEl || !guessBox) {
           return;
         }
@@ -3183,9 +3214,126 @@
           const safeUrl = encodeURI(url);
           resultFlagEl.style.backgroundImage = `url("${safeUrl}")`;
           guessBox.classList.add("has-flag");
+
+          if (resultFlagImgEl) {
+            resultFlagImgEl.src = safeUrl;
+            resultFlagImgEl.alt = countryName
+              ? `Flag of ${countryName}`
+              : "Country flag";
+          }
         } else {
           resultFlagEl.style.backgroundImage = "";
           guessBox.classList.remove("has-flag");
+
+          if (resultFlagImgEl) {
+            resultFlagImgEl.removeAttribute("src");
+            resultFlagImgEl.alt = "";
+          }
+        }
+      };
+
+      const FLAG_CACHE_KEY = "geoZiniFlagMapV1";
+
+      const getCachedFlagMap = () => {
+        try {
+          const raw = localStorage.getItem(FLAG_CACHE_KEY);
+          if (!raw) {
+            return {};
+          }
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === "object") {
+            return parsed;
+          }
+        } catch {
+          // ignore cache failures
+        }
+        return {};
+      };
+
+      const setCachedFlagMap = (map) => {
+        try {
+          localStorage.setItem(FLAG_CACHE_KEY, JSON.stringify(map));
+        } catch {
+          // ignore cache failures
+        }
+      };
+
+      const hydrateFlags = async (normalizedCountries) => {
+        if (
+          !Array.isArray(normalizedCountries) ||
+          !normalizedCountries.length
+        ) {
+          return;
+        }
+
+        const cached = getCachedFlagMap();
+        let didApplyCache = false;
+
+        for (const country of normalizedCountries) {
+          if (!country || country.flagUrl) {
+            continue;
+          }
+          const code = (country.cca3 || "").toUpperCase();
+          const cachedUrl = code ? cached[code] : null;
+          if (cachedUrl) {
+            country.flagUrl = cachedUrl;
+            didApplyCache = true;
+          }
+        }
+
+        const stillMissing = normalizedCountries.some(
+          (c) => c && !c.flagUrl && c.cca3
+        );
+        if (!stillMissing) {
+          if (didApplyCache) {
+            // keep cache as-is
+          }
+          return;
+        }
+
+        try {
+          const response = await fetch(
+            "https://restcountries.com/v3.1/all?fields=cca3,flags,unMember",
+            { cache: "no-store" }
+          );
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+          const payload = await response.json();
+          if (!Array.isArray(payload)) {
+            return;
+          }
+
+          const nextMap = { ...cached };
+          for (const entry of payload) {
+            if (!entry || entry.unMember !== true) {
+              continue;
+            }
+            const code = (entry.cca3 || "").toUpperCase();
+            const url =
+              entry.flags?.svg ||
+              entry.flags?.png ||
+              entry.flagSvg ||
+              entry.flagPng ||
+              null;
+            if (code && url) {
+              nextMap[code] = url;
+            }
+          }
+
+          for (const country of normalizedCountries) {
+            if (!country || country.flagUrl) {
+              continue;
+            }
+            const code = (country.cca3 || "").toUpperCase();
+            if (code && nextMap[code]) {
+              country.flagUrl = nextMap[code];
+            }
+          }
+
+          setCachedFlagMap(nextMap);
+        } catch {
+          // If flags can't be fetched (offline), we keep whatever we have.
         }
       };
 
@@ -3285,7 +3433,7 @@
         resultSignatureEl.textContent = traitDetails.signature;
         resultRegionEl.textContent = country.region || "—";
         resultRealmEl.textContent = country.subregion || "—";
-        applyFlagBackdrop(country.flagUrl);
+        applyFlagBackdrop(country.flagUrl, country.name);
         updateConfidence(remaining.length || 1);
         guessBox.classList.add("active");
       };
@@ -3513,6 +3661,9 @@
           if (!countries.length) {
             throw new Error("Dataset returned zero UN members");
           }
+
+          await hydrateFlags(countries);
+
           questions = buildQuestionBank(countries);
           setControlsEnabled(true);
           resetGame();
