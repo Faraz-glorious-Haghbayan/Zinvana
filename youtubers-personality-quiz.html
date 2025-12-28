@@ -1724,6 +1724,8 @@
         }
       }
     </style>
+
+    <link rel="stylesheet" href="perfect-quiz-shell.css" />
   </head>
   <body>
     <!-- Top Navigation -->
@@ -1857,673 +1859,714 @@
         </div>
       </section>
 
-      <!-- Quiz Container -->
-      <div class="container" id="quizSection">
-        <div class="quiz-header">
-          <h2>Take the YouTubers Personality Quiz</h2>
-          <p>
-            Answer 10 scenario-based questions to discover which famous creator
-            blueprint fits your workflow.
-          </p>
+      <section class="quiz-shell" id="quizSection">
+        <div class="quiz-container" id="quizContainer">
+          <div class="quiz-header">
+            <h2>Take the YouTubers Personality Quiz</h2>
+            <p>
+              Answer <strong id="questionTotalInline">10</strong> scenario-based
+              questions to discover which famous creator blueprint fits your
+              workflow.
+            </p>
+          </div>
+
+          <div class="quiz-layout">
+            <aside class="quiz-status-card" aria-label="Quiz status">
+              <span class="status-eyebrow">Live Quiz</span>
+              <h3>Progress tracker</h3>
+              <p>
+                Pick the answer that feels most like you. Your match updates as
+                you go.
+              </p>
+
+              <div class="progress-orb" id="progressOrb" aria-hidden="true">
+                <div class="progress-orb-inner">
+                  <div class="progress-orb-value" id="progressDialValue">
+                    0%
+                  </div>
+                  <small>Complete</small>
+                </div>
+              </div>
+
+              <ul class="status-pill-list">
+                <li class="status-pill">
+                  Question <span id="questionNumberTop">1</span> /
+                  <span id="questionTotalTop">10</span>
+                </li>
+                <li class="status-pill">
+                  <span id="progressLabel">Progress: 0%</span>
+                </li>
+              </ul>
+              <p class="status-footnote">Tip: Trust your first instinct.</p>
+            </aside>
+
+            <div class="quiz-main">
+              <div class="progress-meta">
+                <span><strong>Progress</strong></span>
+                <span aria-hidden="true">Follow along in the tracker</span>
+              </div>
+              <div class="progress" aria-label="Quiz progress">
+                <div
+                  class="progress-bar"
+                  id="progressBar"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="0"
+                ></div>
+              </div>
+
+              <div class="question-counter" aria-live="polite">
+                Question <span id="questionNumber">1</span> /
+                <span id="questionTotal">10</span>
+              </div>
+
+              <!-- Question 1 -->
+              <div class="question active" data-question="1">
+                <h3>
+                  What kind of flagship upload would you publish if time and
+                  money were unlimited?
+                </h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    data-wojak="mrbeast"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="mrbeast.gif" alt="MrBeast"
+                    /></span>
+                    <span class="answer-text"
+                      >Rent an entire city, run a wild challenge, then give the
+                      spoils to strangers.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="dream"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="dream.gif" alt="Dream"
+                    /></span>
+                    <span class="answer-text"
+                      >Craft a multi-part storyline packed with puzzles, lore,
+                      and narration.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="veritasium"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="veritasium.gif" alt="Veritasium"
+                    /></span>
+                    <span class="answer-text"
+                      >Film a mind-bending science experiment with researchers
+                      around the globe.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="emmachamberlain"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="emmachamberlain.gif" alt="Emma Chamberlain"
+                    /></span>
+                    <span class="answer-text"
+                      >Document a soulful travel diary shot on film with cozy
+                      narration.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="question" data-question="2">
+                <h3>How would you describe your production day rhythm?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    data-wojak="markiplier"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="markiplier.gif" alt="Markiplier"
+                    /></span>
+                    <span class="answer-text"
+                      >Storyboard emotional beats, rehearse with friends, and
+                      chase cinematic horror vibes.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="ninja"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="ninja.gif" alt="Ninja"
+                    /></span>
+                    <span class="answer-text"
+                      >Warm up with scrims, dial in overlays, then stream
+                      marathon ranked matches.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="linustechtips"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="linustechtips.gif" alt="Linus Tech Tips"
+                    /></span>
+                    <span class="answer-text"
+                      >Follow a lab-style checklist, capture macro B-roll, and
+                      iterate on scripts.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="ishowspeed"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="ishowspeed.gif" alt="IShowSpeed"
+                    /></span>
+                    <span class="answer-text"
+                      >Go live with zero plan, feed off chaotic chat energy, and
+                      ride whatever happens.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 3 -->
+              <div class="question" data-question="3">
+                <h3>What's your go-to way of bonding with viewers?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    data-wojak="pewdiepie"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="pewdiepie.gif" alt="PewDiePie"
+                    /></span>
+                    <span class="answer-text"
+                      >Share life updates, bring back classic memes, and chat
+                      like it's 2013 again.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="moistcritical"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="moistcritical.gif" alt="MoistCr1TiKaL"
+                    /></span>
+                    <span class="answer-text"
+                      >Deliver brutally honest commentary with dry humor and
+                      zero fluff.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="jamescharles"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="jamescharles.gif" alt="James Charles"
+                    /></span>
+                    <span class="answer-text"
+                      >Teach a glam look step-by-step and hype up every
+                      recreation.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="ksi"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="ksi.gif" alt="KSI"
+                    /></span>
+                    <span class="answer-text"
+                      >Rally the Sidemen-style squad for music drops, boxing
+                      news, and jokes.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 4 -->
+              <div class="question" data-question="4">
+                <h3>How do you reinvest creator profits?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    data-wojak="mrbeast"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="mrbeast.gif" alt="MrBeast"
+                    /></span>
+                    <span class="answer-text"
+                      >Hire more people, open new warehouses, and plan
+                      philanthropic spectacles.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="linustechtips"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="linustechtips.gif" alt="Linus Tech Tips"
+                    /></span>
+                    <span class="answer-text"
+                      >Upgrade labs, buy niche gear, and build internal
+                      tooling.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="emmachamberlain"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="emmachamberlain.gif" alt="Emma Chamberlain"
+                    /></span>
+                    <span class="answer-text"
+                      >Expand lifestyle brands like coffee, merch, and
+                      collaborative collections.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="veritasium"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="veritasium.gif" alt="Veritasium"
+                    /></span>
+                    <span class="answer-text"
+                      >Fund research trips, hire subject-matter experts, and
+                      license footage.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 5 -->
+              <div class="question" data-question="5">
+                <h3>
+                  Which metric makes you obsess over analytics dashboards?
+                </h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    data-wojak="dream"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="dream.gif" alt="Dream"
+                    /></span>
+                    <span class="answer-text"
+                      >Watch time curves and whether every twist kept people
+                      glued.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="ninja"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="ninja.gif" alt="Ninja"
+                    /></span>
+                    <span class="answer-text"
+                      >Concurrent viewers, peak chat spam, and clip-worthy
+                      plays.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="jamescharles"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="jamescharles.gif" alt="James Charles"
+                    /></span>
+                    <span class="answer-text"
+                      >How many people saved the look or recreated it on
+                      Instagram.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="moistcritical"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="moistcritical.gif" alt="MoistCr1TiKaL"
+                    /></span>
+                    <span class="answer-text"
+                      >Whether the commentary shifted the conversation or
+                      exposed a scam.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 6 -->
+              <div class="question" data-question="6">
+                <h3>What collaboration scenario sounds most fun?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    data-wojak="mrbeast"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="mrbeast.gif" alt="MrBeast"
+                    /></span>
+                    <span class="answer-text"
+                      >Assemble 20 creators for a stunt the internet can't
+                      ignore.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="markiplier"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="markiplier.gif" alt="Markiplier"
+                    /></span>
+                    <span class="answer-text"
+                      >Film an emotional mini-series with the same tight-knit
+                      crew.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="ksi"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="ksi.gif" alt="KSI"
+                    /></span>
+                    <span class="answer-text"
+                      >Do a crossover that mixes music drops, boxing talk, and
+                      celebrity banter.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="pewdiepie"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="pewdiepie.gif" alt="PewDiePie"
+                    /></span>
+                    <span class="answer-text"
+                      >Record a chill cameo from home with a long-time YouTube
+                      buddy.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 7 -->
+              <div class="question" data-question="7">
+                <h3>What makes you feel most creatively unstoppable?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    data-wojak="veritasium"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="veritasium.gif" alt="Veritasium"
+                    /></span>
+                    <span class="answer-text"
+                      >Explaining a mind-blowing concept so clearly anyone can
+                      grasp it.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="linustechtips"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="linustechtips.gif" alt="Linus Tech Tips"
+                    /></span>
+                    <span class="answer-text"
+                      >Engineering a custom rig or PC that benchmarks better
+                      than anyone's.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="dream"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="dream.gif" alt="Dream"
+                    /></span>
+                    <span class="answer-text"
+                      >Solving puzzles mid-recording and revealing twists
+                      live.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="ishowspeed"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="ishowspeed.gif" alt="IShowSpeed"
+                    /></span>
+                    <span class="answer-text"
+                      >Causing a viral live moment no one could script.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 8 -->
+              <div class="question" data-question="8">
+                <h3>What's the impact you want viewers to feel?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    data-wojak="emmachamberlain"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="emmachamberlain.gif" alt="Emma Chamberlain"
+                    /></span>
+                    <span class="answer-text"
+                      >Comfort, calm, and the reminder that imperfect days still
+                      count.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="jamescharles"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="jamescharles.gif" alt="James Charles"
+                    /></span>
+                    <span class="answer-text"
+                      >Confidence from mastering a glam technique they thought
+                      was impossible.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="moistcritical"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="moistcritical.gif" alt="MoistCr1TiKaL"
+                    /></span>
+                    <span class="answer-text"
+                      >Relief that someone is calling out scams and nonsense
+                      online.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="ninja"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="ninja.gif" alt="Ninja"
+                    /></span>
+                    <span class="answer-text"
+                      >Hype to grind harder, queue up with friends, and chase
+                      esports dreams.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 9 -->
+              <div class="question" data-question="9">
+                <h3>
+                  If YouTube disappeared tomorrow, what would you pivot to
+                  first?
+                </h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    data-wojak="ksi"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="ksi.gif" alt="KSI"
+                    /></span>
+                    <span class="answer-text"
+                      >Music tours, boxing pay-per-views, and expanding beverage
+                      deals.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="mrbeast"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="mrbeast.gif" alt="MrBeast"
+                    /></span>
+                    <span class="answer-text"
+                      >Build a tech platform or nonprofit empire
+                      overnight.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="veritasium"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="veritasium.gif" alt="Veritasium"
+                    /></span>
+                    <span class="answer-text"
+                      >Host a science docu-series or lead a public research
+                      lab.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="markiplier"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="markiplier.gif" alt="Markiplier"
+                    /></span>
+                    <span class="answer-text"
+                      >Produce indie films, podcasts, and narrative audio
+                      dramas.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Question 10 -->
+              <div class="question" data-question="10">
+                <h3>How do you like to end an upload?</h3>
+                <div class="answers">
+                  <button
+                    class="answer-btn"
+                    data-wojak="pewdiepie"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="pewdiepie.gif" alt="PewDiePie"
+                    /></span>
+                    <span class="answer-text"
+                      >Wholesome thank-you, subtle brofist, and a reminder to
+                      stay cozy.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="dream"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="dream.gif" alt="Dream"
+                    /></span>
+                    <span class="answer-text"
+                      >Tease a mysterious clue about the next episode.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="ishowspeed"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="ishowspeed.gif" alt="IShowSpeed"
+                    /></span>
+                    <span class="answer-text"
+                      >Scream a catchphrase, launch confetti, and let the stream
+                      auto-cut.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                  <button
+                    class="answer-btn"
+                    data-wojak="emmachamberlain"
+                    onclick="selectAnswer(this)"
+                  >
+                    <span class="wojak-badge"
+                      ><img src="emmachamberlain.gif" alt="Emma Chamberlain"
+                    /></span>
+                    <span class="answer-text"
+                      >Reflect on feelings over coffee and remind viewers to
+                      take care.</span
+                    >
+                    <span class="chevron">›</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="quiz-container">
-          <div class="progress-meta">
-            <span><strong id="progressLabel">0%</strong></span>
-            <span>Question <strong id="questionNumberTop">1</strong> / 10</span>
-          </div>
-          <div class="progress" aria-label="Quiz progress">
-            <div
-              class="progress-bar"
-              id="progressBar"
-              role="progressbar"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              aria-valuenow="0"
-            ></div>
-          </div>
-
-          <div class="question-counter" aria-live="polite">
-            <span id="questionNumber">1</span> / 10
-          </div>
-
-          <!-- Question 1 -->
-          <div class="question active" data-question="1">
-            <h3>
-              What kind of flagship upload would you publish if time and money
-              were unlimited?
-            </h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                data-wojak="mrbeast"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="mrbeast.gif" alt="MrBeast"
-                /></span>
-                <span class="answer-text"
-                  >Rent an entire city, run a wild challenge, then give the
-                  spoils to strangers.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="dream"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="dream.gif" alt="Dream"
-                /></span>
-                <span class="answer-text"
-                  >Craft a multi-part storyline packed with puzzles, lore, and
-                  narration.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="veritasium"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="veritasium.gif" alt="Veritasium"
-                /></span>
-                <span class="answer-text"
-                  >Film a mind-bending science experiment with researchers
-                  around the globe.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="emmachamberlain"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="emmachamberlain.gif" alt="Emma Chamberlain"
-                /></span>
-                <span class="answer-text"
-                  >Document a soulful travel diary shot on film with cozy
-                  narration.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 2 -->
-          <div class="question" data-question="2">
-            <h3>How would you describe your production day rhythm?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                data-wojak="markiplier"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="markiplier.gif" alt="Markiplier"
-                /></span>
-                <span class="answer-text"
-                  >Storyboard emotional beats, rehearse with friends, and chase
-                  cinematic horror vibes.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="ninja"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="ninja.gif" alt="Ninja"
-                /></span>
-                <span class="answer-text"
-                  >Warm up with scrims, dial in overlays, then stream marathon
-                  ranked matches.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="linustechtips"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="linustechtips.gif" alt="Linus Tech Tips"
-                /></span>
-                <span class="answer-text"
-                  >Follow a lab-style checklist, capture macro B-roll, and
-                  iterate on scripts.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="ishowspeed"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="ishowspeed.gif" alt="IShowSpeed"
-                /></span>
-                <span class="answer-text"
-                  >Go live with zero plan, feed off chaotic chat energy, and
-                  ride whatever happens.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 3 -->
-          <div class="question" data-question="3">
-            <h3>What's your go-to way of bonding with viewers?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                data-wojak="pewdiepie"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="pewdiepie.gif" alt="PewDiePie"
-                /></span>
-                <span class="answer-text"
-                  >Share life updates, bring back classic memes, and chat like
-                  it's 2013 again.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="moistcritical"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="moistcritical.gif" alt="MoistCr1TiKaL"
-                /></span>
-                <span class="answer-text"
-                  >Deliver brutally honest commentary with dry humor and zero
-                  fluff.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="jamescharles"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="jamescharles.gif" alt="James Charles"
-                /></span>
-                <span class="answer-text"
-                  >Teach a glam look step-by-step and hype up every
-                  recreation.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="ksi"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"><img src="ksi.gif" alt="KSI" /></span>
-                <span class="answer-text"
-                  >Rally the Sidemen-style squad for music drops, boxing news,
-                  and jokes.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 4 -->
-          <div class="question" data-question="4">
-            <h3>How do you reinvest creator profits?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                data-wojak="mrbeast"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="mrbeast.gif" alt="MrBeast"
-                /></span>
-                <span class="answer-text"
-                  >Hire more people, open new warehouses, and plan philanthropic
-                  spectacles.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="linustechtips"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="linustechtips.gif" alt="Linus Tech Tips"
-                /></span>
-                <span class="answer-text"
-                  >Upgrade labs, buy niche gear, and build internal
-                  tooling.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="emmachamberlain"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="emmachamberlain.gif" alt="Emma Chamberlain"
-                /></span>
-                <span class="answer-text"
-                  >Expand lifestyle brands like coffee, merch, and collaborative
-                  collections.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="veritasium"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="veritasium.gif" alt="Veritasium"
-                /></span>
-                <span class="answer-text"
-                  >Fund research trips, hire subject-matter experts, and license
-                  footage.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 5 -->
-          <div class="question" data-question="5">
-            <h3>Which metric makes you obsess over analytics dashboards?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                data-wojak="dream"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="dream.gif" alt="Dream"
-                /></span>
-                <span class="answer-text"
-                  >Watch time curves and whether every twist kept people
-                  glued.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="ninja"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="ninja.gif" alt="Ninja"
-                /></span>
-                <span class="answer-text"
-                  >Concurrent viewers, peak chat spam, and clip-worthy
-                  plays.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="jamescharles"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="jamescharles.gif" alt="James Charles"
-                /></span>
-                <span class="answer-text"
-                  >How many people saved the look or recreated it on
-                  Instagram.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="moistcritical"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="moistcritical.gif" alt="MoistCr1TiKaL"
-                /></span>
-                <span class="answer-text"
-                  >Whether the commentary shifted the conversation or exposed a
-                  scam.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 6 -->
-          <div class="question" data-question="6">
-            <h3>What collaboration scenario sounds most fun?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                data-wojak="mrbeast"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="mrbeast.gif" alt="MrBeast"
-                /></span>
-                <span class="answer-text"
-                  >Assemble 20 creators for a stunt the internet can't
-                  ignore.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="markiplier"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="markiplier.gif" alt="Markiplier"
-                /></span>
-                <span class="answer-text"
-                  >Film an emotional mini-series with the same tight-knit
-                  crew.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="ksi"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"><img src="ksi.gif" alt="KSI" /></span>
-                <span class="answer-text"
-                  >Do a crossover that mixes music drops, boxing talk, and
-                  celebrity banter.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="pewdiepie"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="pewdiepie.gif" alt="PewDiePie"
-                /></span>
-                <span class="answer-text"
-                  >Record a chill cameo from home with a long-time YouTube
-                  buddy.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 7 -->
-          <div class="question" data-question="7">
-            <h3>What makes you feel most creatively unstoppable?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                data-wojak="veritasium"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="veritasium.gif" alt="Veritasium"
-                /></span>
-                <span class="answer-text"
-                  >Explaining a mind-blowing concept so clearly anyone can grasp
-                  it.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="linustechtips"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="linustechtips.gif" alt="Linus Tech Tips"
-                /></span>
-                <span class="answer-text"
-                  >Engineering a custom rig or PC that benchmarks better than
-                  anyone's.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="dream"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="dream.gif" alt="Dream"
-                /></span>
-                <span class="answer-text"
-                  >Solving puzzles mid-recording and revealing twists
-                  live.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="ishowspeed"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="ishowspeed.gif" alt="IShowSpeed"
-                /></span>
-                <span class="answer-text"
-                  >Causing a viral live moment no one could script.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 8 -->
-          <div class="question" data-question="8">
-            <h3>What's the impact you want viewers to feel?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                data-wojak="emmachamberlain"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="emmachamberlain.gif" alt="Emma Chamberlain"
-                /></span>
-                <span class="answer-text"
-                  >Comfort, calm, and the reminder that imperfect days still
-                  count.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="jamescharles"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="jamescharles.gif" alt="James Charles"
-                /></span>
-                <span class="answer-text"
-                  >Confidence from mastering a glam technique they thought was
-                  impossible.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="moistcritical"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="moistcritical.gif" alt="MoistCr1TiKaL"
-                /></span>
-                <span class="answer-text"
-                  >Relief that someone is calling out scams and nonsense
-                  online.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="ninja"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="ninja.gif" alt="Ninja"
-                /></span>
-                <span class="answer-text"
-                  >Hype to grind harder, queue up with friends, and chase
-                  esports dreams.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 9 -->
-          <div class="question" data-question="9">
-            <h3>
-              If YouTube disappeared tomorrow, what would you pivot to first?
-            </h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                data-wojak="ksi"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"><img src="ksi.gif" alt="KSI" /></span>
-                <span class="answer-text"
-                  >Music tours, boxing pay-per-views, and expanding beverage
-                  deals.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="mrbeast"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="mrbeast.gif" alt="MrBeast"
-                /></span>
-                <span class="answer-text"
-                  >Build a tech platform or nonprofit empire overnight.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="veritasium"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="veritasium.gif" alt="Veritasium"
-                /></span>
-                <span class="answer-text"
-                  >Host a science docu-series or lead a public research
-                  lab.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="markiplier"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="markiplier.gif" alt="Markiplier"
-                /></span>
-                <span class="answer-text"
-                  >Produce indie films, podcasts, and narrative audio
-                  dramas.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 10 -->
-          <div class="question" data-question="10">
-            <h3>How do you like to end an upload?</h3>
-            <div class="answers">
-              <button
-                class="answer-btn"
-                data-wojak="pewdiepie"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="pewdiepie.gif" alt="PewDiePie"
-                /></span>
-                <span class="answer-text"
-                  >Wholesome thank-you, subtle brofist, and a reminder to stay
-                  cozy.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="dream"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="dream.gif" alt="Dream"
-                /></span>
-                <span class="answer-text"
-                  >Tease a mysterious clue about the next episode.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="ishowspeed"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="ishowspeed.gif" alt="IShowSpeed"
-                /></span>
-                <span class="answer-text"
-                  >Scream a catchphrase, launch confetti, and let the stream
-                  auto-cut.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-              <button
-                class="answer-btn"
-                data-wojak="emmachamberlain"
-                onclick="selectAnswer(this)"
-              >
-                <span class="wojak-badge"
-                  ><img src="emmachamberlain.gif" alt="Emma Chamberlain"
-                /></span>
-                <span class="answer-text"
-                  >Reflect on feelings over coffee and remind viewers to take
-                  care.</span
-                >
-                <span class="chevron">›</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Results -->
-          <div class="result" id="result">
-            <div class="wojak-image" id="wojakEmoji"></div>
-            <h2 id="wojakName"></h2>
-            <p id="wojakDescription"></p>
-            <button class="restart-btn" onclick="restartQuiz()">
-              Take Quiz Again
-            </button>
+        <div class="result" id="result">
+          <div class="result-placeholder">
+            <h3>Your result is loading...</h3>
+            <p>Finish the quiz to reveal your perfect creator archetype.</p>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Character Guide Section (Pro) -->
       <section class="content-section" aria-labelledby="guide-title">
@@ -2915,27 +2958,6 @@
     </div>
 
     <script>
-      let currentQuestion = 1;
-      let answers = {};
-      function getInitialWojakScores() {
-        return {
-          mrbeast: 0,
-          pewdiepie: 0,
-          markiplier: 0,
-          dream: 0,
-          ninja: 0,
-          ishowspeed: 0,
-          ksi: 0,
-          linustechtips: 0,
-          veritasium: 0,
-          emmachamberlain: 0,
-          jamescharles: 0,
-          moistcritical: 0,
-        };
-      }
-
-      let wojakScores = getInitialWojakScores();
-
       const wojakData = {
         mrbeast: {
           name: "MrBeast",
@@ -3299,198 +3321,7 @@
         },
       };
 
-      function selectAnswer(button) {
-        const wojak = button.getAttribute("data-wojak");
-        answers[currentQuestion] = wojak;
-        wojakScores[wojak]++;
-
-        // Update progress
-        updateProgress();
-
-        // Move to next question or show results
-        if (currentQuestion < 10) {
-          nextQuestion();
-        } else {
-          showResults();
-        }
-      }
-
-      function nextQuestion() {
-        document
-          .querySelector(`[data-question="${currentQuestion}"]`)
-          .classList.remove("active");
-        currentQuestion++;
-        document
-          .querySelector(`[data-question="${currentQuestion}"]`)
-          .classList.add("active");
-        document.getElementById("questionNumber").textContent = currentQuestion;
-        const topNum = document.getElementById("questionNumberTop");
-        if (topNum) topNum.textContent = currentQuestion;
-      }
-
-      function updateProgress() {
-        const progress = Math.min(
-          100,
-          Math.round((currentQuestion / 10) * 100)
-        );
-        const bar = document.getElementById("progressBar");
-        bar.style.width = progress + "%";
-        bar.setAttribute("aria-valuenow", String(progress));
-        const label = document.getElementById("progressLabel");
-        if (label) label.textContent = progress + "%";
-      }
-
-      function showResults() {
-        // Find the wojak with the highest score
-        let maxScore = 0;
-        let resultWojak = "mrbeast";
-
-        for (let wojak in wojakScores) {
-          if (wojakScores[wojak] > maxScore) {
-            maxScore = wojakScores[wojak];
-            resultWojak = wojak;
-          }
-        }
-
-        // Handle ties by random selection
-        const tiedWojaks = [];
-        for (let wojak in wojakScores) {
-          if (wojakScores[wojak] === maxScore) {
-            tiedWojaks.push(wojak);
-          }
-        }
-
-        if (tiedWojaks.length > 1) {
-          resultWojak =
-            tiedWojaks[Math.floor(Math.random() * tiedWojaks.length)];
-        }
-
-        // Hide current question and show result
-        document
-          .querySelector(`[data-question="${currentQuestion}"]`)
-          .classList.remove("active");
-
-        // Clear any previous result cards before injecting a new one
-        const resultContainer = document.getElementById("result");
-        if (resultContainer) {
-          resultContainer.querySelectorAll(".result-card").forEach((card) => {
-            const wrapper = card.parentElement;
-            if (wrapper) {
-              wrapper.remove();
-            } else {
-              card.remove();
-            }
-          });
-        }
-
-        // Update result content with deep analysis
-        const result = wojakData[resultWojak];
-        const wojakImgDiv = document.getElementById("wojakEmoji");
-        wojakImgDiv.innerHTML = `<img src="${result.img}" alt="${result.name}">`;
-        document.getElementById("wojakName").textContent = result.name;
-        document.getElementById("wojakDescription").textContent =
-          result.description;
-
-        // Add deep analysis section
-        const deepAnalysisHTML = `
-          <div class="result-card">
-            <h3 class="result-title"><span aria-hidden="true">🔍</span> Deep Personality Analysis</h3>
-            <p class="result-lede">${result.deepAnalysis}</p>
-
-            <div class="result-grid">
-              <div class="result-tile positive">
-                <h4><span aria-hidden="true">💪</span> Your Strengths</h4>
-                <ul>
-                  ${result.strengths.map((s) => `<li>${s}</li>`).join("")}
-                </ul>
-              </div>
-
-              <div class="result-tile caution">
-                <h4><span aria-hidden="true">⚠️</span> Growth Areas</h4>
-                <ul>
-                  ${result.challenges.map((c) => `<li>${c}</li>`).join("")}
-                </ul>
-              </div>
-            </div>
-
-            <div class="result-grid">
-              <div class="result-tile info">
-                <h4><span aria-hidden="true">💼</span> Ideal Career Paths</h4>
-                <p>${result.careerPaths}</p>
-              </div>
-
-              <div class="result-tile relationships">
-                <h4><span aria-hidden="true">❤️</span> Relationships & Compatibility</h4>
-                <p>${result.relationships}</p>
-              </div>
-            </div>
-
-            <div class="result-banner">
-              <span class="result-banner-icon" aria-hidden="true">🌟</span>
-              <div>
-                <h4>Personal Growth Advice</h4>
-                <p>${result.growthAdvice}</p>
-              </div>
-            </div>
-          </div>
-        `;
-
-        // Insert deep analysis after description
-        const descriptionElement = document.getElementById("wojakDescription");
-        if (descriptionElement && descriptionElement.parentElement) {
-          const deepAnalysisContainer = document.createElement("div");
-          deepAnalysisContainer.innerHTML = deepAnalysisHTML;
-          descriptionElement.parentElement.appendChild(deepAnalysisContainer);
-        }
-
-        // Show result
-        document.getElementById("result").classList.add("active");
-        const bar = document.getElementById("progressBar");
-        bar.style.width = "100%";
-        bar.setAttribute("aria-valuenow", "100");
-        const label = document.getElementById("progressLabel");
-        if (label) label.textContent = "100%";
-
-        // Update page title for SEO
-        document.title = `You're a ${result.name}! - Wojak Personality Quiz Results`;
-
-        // Scroll to result smoothly
-        setTimeout(() => {
-          document
-            .getElementById("result")
-            .scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 100);
-
-        // Track completion (placeholder for analytics)
-        if (typeof trackQuizComplete === "function") {
-          trackQuizComplete(resultWojak);
-        }
-      }
-
-      function restartQuiz() {
-        currentQuestion = 1;
-        answers = {};
-        wojakScores = getInitialWojakScores();
-
-        // Hide result
-        document.getElementById("result").classList.remove("active");
-
-        // Show first question
-        document.querySelector(`[data-question="1"]`).classList.add("active");
-        document.getElementById("questionNumber").textContent = "1";
-        document.getElementById("progressBar").style.width = "0%";
-        const topNum = document.getElementById("questionNumberTop");
-        if (topNum) topNum.textContent = "1";
-        const label = document.getElementById("progressLabel");
-        if (label) label.textContent = "0%";
-        const bar = document.getElementById("progressBar");
-        if (bar) bar.setAttribute("aria-valuenow", "0");
-
-        // Scroll back to quiz
-        document
-          .getElementById("quizSection")
-          .scrollIntoView({ behavior: "smooth" });
-      }
+      // Quiz runtime is handled by perfect-quiz-shell.js
 
       // FAQ functionality
       document.addEventListener("DOMContentLoaded", function () {
@@ -3584,6 +3415,8 @@
         }
       });
     </script>
+
+    <script src="perfect-quiz-shell.js"></script>
 
     <!-- Enhanced Professional Footer -->
     <footer
