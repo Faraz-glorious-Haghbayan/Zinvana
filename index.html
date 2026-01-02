@@ -68,6 +68,77 @@
         line-height: 1.6;
         min-height: 100vh;
         overflow-x: hidden;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: -220px;
+        background: radial-gradient(
+            circle at 20% 18%,
+            rgba(45, 212, 191, 0.22),
+            rgba(0, 0, 0, 0) 48%
+          ),
+          radial-gradient(
+            circle at 82% 22%,
+            rgba(34, 211, 238, 0.14),
+            rgba(0, 0, 0, 0) 52%
+          ),
+          radial-gradient(
+            circle at 72% 78%,
+            rgba(249, 115, 22, 0.12),
+            rgba(0, 0, 0, 0) 54%
+          );
+        filter: blur(60px);
+        opacity: 0.55;
+        pointer-events: none;
+        z-index: -2;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 0,
+            rgba(255, 255, 255, 0.035) 1px,
+            rgba(255, 255, 255, 0) 1px,
+            rgba(255, 255, 255, 0) 22px
+          ),
+          repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.03) 0,
+            rgba(255, 255, 255, 0.03) 1px,
+            rgba(255, 255, 255, 0) 1px,
+            rgba(255, 255, 255, 0) 22px
+          );
+        opacity: 0.18;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      body.theme-light::before {
+        opacity: 0.35;
+      }
+
+      body.theme-light::after {
+        opacity: 0.08;
+        background: repeating-linear-gradient(
+            90deg,
+            rgba(15, 23, 42, 0.06) 0,
+            rgba(15, 23, 42, 0.06) 1px,
+            rgba(0, 0, 0, 0) 1px,
+            rgba(0, 0, 0, 0) 24px
+          ),
+          repeating-linear-gradient(
+            0deg,
+            rgba(15, 23, 42, 0.05) 0,
+            rgba(15, 23, 42, 0.05) 1px,
+            rgba(0, 0, 0, 0) 1px,
+            rgba(0, 0, 0, 0) 24px
+          );
       }
 
       body.theme-dark {
@@ -234,6 +305,7 @@
         background: linear-gradient(120deg, var(--accent), #22d3ee);
         color: #041019;
         box-shadow: 0 10px 25px rgba(45, 212, 191, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.12);
       }
 
       .btn--ghost {
@@ -404,10 +476,32 @@
         gap: 8px;
         padding: 8px 12px;
         border-radius: 999px;
-        border: 1px solid var(--border);
+        border: 1px solid rgba(45, 212, 191, 0.22);
         background: rgba(255, 255, 255, 0.06);
         font-size: 13px;
         color: var(--muted);
+        width: fit-content;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .h1-accent {
+        background: linear-gradient(
+          120deg,
+          var(--accent),
+          #22d3ee,
+          var(--accent-2)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      @supports not (
+        (-webkit-background-clip: text) or (background-clip: text)
+      ) {
+        .h1-accent {
+          color: var(--text);
+        }
       }
 
       h1 {
@@ -430,6 +524,11 @@
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
+      }
+
+      .hero__actions .btn {
+        padding: 12px 18px;
+        font-size: 15px;
       }
 
       .hero__meta {
@@ -642,6 +741,15 @@
         );
       }
 
+      .spotlight-card--articles {
+        background: linear-gradient(
+          135deg,
+          rgba(45, 212, 191, 0.1),
+          rgba(249, 115, 22, 0.1),
+          rgba(15, 23, 42, 0.9)
+        );
+      }
+
       body.theme-light .spotlight-card {
         background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), #ffffff);
         border-color: rgba(0, 0, 0, 0.08);
@@ -650,6 +758,15 @@
 
       body.theme-light .spotlight-card:nth-child(2) {
         background: linear-gradient(135deg, rgba(234, 88, 12, 0.08), #ffffff);
+      }
+
+      body.theme-light .spotlight-card--articles {
+        background: linear-gradient(
+          135deg,
+          rgba(37, 99, 235, 0.08),
+          rgba(234, 88, 12, 0.08),
+          #ffffff
+        );
       }
 
       body.theme-light .spotlight-card:hover {
@@ -889,14 +1006,45 @@
         display: grid;
         gap: 10px;
         height: 100%;
+        position: relative;
+        overflow: hidden;
         transition: transform 0.18s ease, border-color 0.18s ease,
           box-shadow 0.18s ease;
+      }
+
+      .quiz-card::after {
+        content: "";
+        position: absolute;
+        inset: -40px;
+        background: radial-gradient(
+            circle at 25% 20%,
+            rgba(45, 212, 191, 0.18),
+            rgba(0, 0, 0, 0) 55%
+          ),
+          radial-gradient(
+            circle at 85% 35%,
+            rgba(34, 211, 238, 0.12),
+            rgba(0, 0, 0, 0) 60%
+          ),
+          radial-gradient(
+            circle at 55% 95%,
+            rgba(249, 115, 22, 0.12),
+            rgba(0, 0, 0, 0) 62%
+          );
+        filter: blur(22px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.18s ease;
       }
 
       .quiz-card:hover {
         transform: translateY(-1px);
         border-color: rgba(45, 212, 191, 0.15);
         box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .quiz-card:hover::after {
+        opacity: 1;
       }
 
       body.theme-light .quiz-card {
@@ -1023,7 +1171,8 @@
       .search-bar input:focus {
         outline: none;
         border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.1);
+        box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.12),
+          0 14px 30px rgba(0, 0, 0, 0.18);
       }
 
       .search-bar input::placeholder {
@@ -1448,7 +1597,7 @@
       }
     </style>
   </head>
-  <body class="theme-dark">
+  <body class="theme-light">
     <header class="topbar">
       <div class="topbar__inner">
         <a class="brand" href="#top">
@@ -1458,31 +1607,11 @@
         <nav class="primary-nav" aria-label="Main navigation">
           <a class="nav-link" href="#quizzes">Quizzes</a>
           <a class="nav-link" href="#spotlights">Spotlights</a>
+          <a class="nav-link" href="all-articles.html">All Articles</a>
           <a class="nav-link" href="#trust">Why us</a>
           <a class="nav-link" href="#faq">FAQ</a>
         </nav>
         <div class="nav-actions">
-          <button
-            class="theme-toggle"
-            id="themeToggle"
-            type="button"
-            aria-label="Toggle color theme"
-            aria-pressed="false"
-          >
-            <svg
-              class="theme-toggle__icon"
-              id="themeToggleIcon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0-5v2m0 16v2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M5.64 18.36 4.22 19.78"
-              />
-            </svg>
-            <span class="theme-toggle__text" id="themeToggleText"
-              >Light mode</span
-            >
-          </button>
           <a class="btn btn--ghost" href="mbti-personality-quiz.html"
             >MBTI Quiz</a
           >
@@ -1499,6 +1628,7 @@
       <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
         <a class="nav-link" href="#quizzes">Quizzes</a>
         <a class="nav-link" href="#spotlights">Spotlights</a>
+        <a class="nav-link" href="all-articles.html">All Articles</a>
         <a class="nav-link" href="#trust">Why us</a>
         <a class="nav-link" href="#faq">FAQ</a>
         <a class="nav-link" href="about.html">About</a>
@@ -1508,20 +1638,20 @@
     <main class="page" id="top">
       <section class="hero">
         <div class="hero__copy">
-          <span class="pill">Free forever | Instant results | No sign-up</span>
-          <h1>Zinvana | Free Personality Quizzes That Reveal Your True Self</h1>
+          <span class="pill">Free forever · No sign-up · Instant results</span>
+          <h1>
+            <span class="h1-accent">Zinvana | Free Personality Quizzes</span>
+            that feel like a game
+          </h1>
           <p class="lede">
-            Discover your personality type with Zinvana's free personality
-            quizzes. From MBTI assessments to leadership styles, football
-            archetypes, meme culture, and wellbeing screens. Every free
-            personality quiz is crafted by people who care about clarity and
-            delight.
+            Fast, satisfying quizzes across MBTI, leadership, football, internet
+            culture, and wellbeing — with clear results you'll want to share.
           </p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#quizzes">Browse all quizzes</a>
-            <a class="btn btn--ghost" href="leaders.html"
-              >Try the Leaders quiz</a
+            <a class="btn btn--primary" href="mbti-personality-quiz.html"
+              >Start the MBTI quiz</a
             >
+            <a class="btn btn--ghost" href="#quizzes">Browse all quizzes</a>
           </div>
           <div class="hero__meta">
             <div class="meta-tile">
@@ -1641,6 +1771,24 @@
               >Start self-check</a
             >
           </div>
+          <div class="spotlight-card spotlight-card--articles">
+            <span class="spotlight-chip">Zinvana Hub</span>
+            <h3 class="spotlight-title">
+              All Articles (Leaders, Brawlers & More)
+            </h3>
+            <p class="quiz-copy">
+              Browse everything we’ve published in one clean place — quizzes,
+              leader profiles, brawler pages, and site collections.
+            </p>
+            <div class="spotlight-meta">
+              <span>Fast search</span>
+              <span>New + updated</span>
+              <span>One-page hub</span>
+            </div>
+            <a class="btn btn--primary" href="all-articles.html"
+              >Open All Articles</a
+            >
+          </div>
         </div>
       </section>
 
@@ -1754,6 +1902,29 @@
                 </div>
                 <a class="btn btn--primary" href="perfect-country.html"
                   >Find your country</a
+                >
+              </div>
+
+              <div class="quiz-card">
+                <div class="quiz-thumb">
+                  <img
+                    loading="lazy"
+                    src="universe.gif"
+                    alt="Cosmic nebula for universe quiz"
+                  />
+                  <span class="quiz-thumb__badge">12 questions</span>
+                </div>
+                <span class="quiz-tag">Cosmic · 3 min</span>
+                <h3 class="quiz-title">Personal Universe Quiz</h3>
+                <p class="quiz-copy">
+                  Discover your cosmic identity and explore the universe within
+                  you. Find if you're a Creative Nebula or Love Supernova.
+                </p>
+                <div class="quiz-meta">
+                  <span>Instant results</span><span>Highly shareable</span>
+                </div>
+                <a class="btn btn--primary" href="universe_quiz.html"
+                  >Discover your universe</a
                 >
               </div>
             </div>
@@ -1911,6 +2082,31 @@
                 </div>
                 <a class="btn btn--ghost" href="leaders.html"
                   >Discover your match</a
+                >
+              </div>
+
+              <div class="quiz-card">
+                <div class="quiz-thumb">
+                  <img
+                    loading="lazy"
+                    src="muhammadheader.jpg"
+                    alt="Religion personality quiz"
+                  />
+                  <span class="quiz-thumb__badge">12 questions</span>
+                </div>
+                <span class="quiz-tag">Culture · 3 min</span>
+                <h3 class="quiz-title">Religion & Belief Match</h3>
+                <p class="quiz-copy">
+                  Find which spiritual or philosophical tradition aligns with
+                  your values.
+                </p>
+                <div class="quiz-meta">
+                  <span>Thoughtful</span><span>Private</span>
+                </div>
+                <a
+                  class="btn btn--primary"
+                  href="religion-personality-quiz.html"
+                  >Explore beliefs</a
                 >
               </div>
 
@@ -2161,6 +2357,29 @@
                   class="btn btn--primary"
                   href="wojak-personality-quiz.html#quizSection"
                   >Take the quiz</a
+                >
+              </div>
+
+              <div class="quiz-card">
+                <div class="quiz-thumb">
+                  <img
+                    loading="lazy"
+                    src="disney-princess.gif"
+                    alt="Disney Princess personality quiz"
+                  />
+                  <span class="quiz-thumb__badge">10 questions</span>
+                </div>
+                <span class="quiz-tag">Pop Culture · 2 min</span>
+                <h3 class="quiz-title">Disney Princess Match</h3>
+                <p class="quiz-copy">
+                  Discover which Disney Princess matches your personality—from
+                  Elsa to Moana.
+                </p>
+                <div class="quiz-meta">
+                  <span>Instant results</span><span>Shareable</span>
+                </div>
+                <a class="btn btn--ghost" href="disney-princess-quiz.html"
+                  >Find your princess</a
                 >
               </div>
             </div>
@@ -2550,6 +2769,20 @@
                 >YouTubers Personality Quiz</a
               >
             </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="universe_quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Personal Universe Quiz</a
+              >
+            </li>
           </ul>
         </div>
 
@@ -2640,44 +2873,6 @@
     </footer>
 
     <script>
-      // Theme toggle (dark/light)
-      const themeToggle = document.getElementById("themeToggle");
-      const themeToggleText = document.getElementById("themeToggleText");
-      const themeToggleIcon = document
-        .getElementById("themeToggleIcon")
-        ?.querySelector("path");
-      const sunPath =
-        "M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0-5v2m0 16v2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M5.64 18.36 4.22 19.78";
-      const moonPath = "M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z";
-
-      const setTheme = (mode) => {
-        const isLight = mode === "light";
-        document.body.classList.toggle("theme-light", isLight);
-        document.body.classList.toggle("theme-dark", !isLight);
-        localStorage.setItem("zinvana-theme", isLight ? "light" : "dark");
-        if (themeToggle) {
-          themeToggle.setAttribute("aria-pressed", isLight ? "true" : "false");
-        }
-        if (themeToggleText) {
-          themeToggleText.textContent = isLight ? "Dark mode" : "Light mode";
-        }
-        if (themeToggleIcon) {
-          themeToggleIcon.setAttribute("d", isLight ? moonPath : sunPath);
-        }
-      };
-
-      const storedTheme = localStorage.getItem("zinvana-theme");
-      const prefersLight = window.matchMedia?.(
-        "(prefers-color-scheme: light)"
-      ).matches;
-      const initialTheme = storedTheme || (prefersLight ? "light" : "dark");
-      setTheme(initialTheme);
-
-      themeToggle?.addEventListener("click", () => {
-        const isLight = document.body.classList.contains("theme-light");
-        setTheme(isLight ? "dark" : "light");
-      });
-
       // Enhanced responsive nav toggle with animated hamburger
       const toggle = document.getElementById("menuToggle");
       const menu = document.getElementById("mobileMenu");
