@@ -1,1402 +1,1064 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ultimate Leaders Quiz – Which Historical Leader Are You?</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Primary Meta Tags -->
-  <meta name="description" content="Take the Ultimate Free Leaders Quiz to discover which renowned historical leader you mirror most—Napoleon, Gandhi, Churchill, Mandela, and more. Deep insights, leader profiles, case studies, and actionable tips." />
-  <meta name="keywords" content="leaders quiz, historical leader quiz, leadership personality test, famous leaders, history quiz, leadership style test, which leader are you" />
-  <link rel="canonical" href="https://zinvana.com/leaders-quiz.html" />
+    <title>
+      Ultimate Leaders Quiz: Find Your Leadership Archetype | Zinvana
+    </title>
+    <meta
+      name="description"
+      content="Explore the Ultimate Leaders Quiz guide: leadership archetypes, sample questions, how results work, and how to use your result in real life."
+    />
+    <meta
+      name="keywords"
+      content="ultimate leaders quiz, leaders quiz, historical leaders quiz, leadership personality quiz, leadership style test, which leader are you, leadership archetypes"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Zinvana" />
+    <link rel="canonical" href="https://zinvana.com/leaders-quiz.html" />
+    <link rel="icon" href="/favicon.ico" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ultimate Leaders Quiz – Discover Your Historical Counterpart" />
-  <meta property="og:description" content="Match your leadership style with icons like Churchill, Mandela, or Atatürk in this free online quiz. Get in-depth analysis, leader case studies, and shareable results." />
-  <meta property="og:url" content="https://zinvana.com/leaders-quiz.html" />
-  <meta property="og:image" content="https://zinvana.com/assets/images/og-leaders-quiz.jpg" />
-  <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zinvana" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zinvana.com/leaders-quiz.html" />
+    <meta
+      property="og:title"
+      content="Ultimate Leaders Quiz: Find Your Leadership Archetype"
+    />
+    <meta
+      property="og:description"
+      content="A clear, spoiler-light guide to the Ultimate Leaders Quiz: archetypes, sample questions, and how to use your result."
+    />
+    <meta
+      property="og:image"
+      content="https://zinvana.com/images/historical-leaders-personality-quiz.gif"
+    />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Which Historical Leader Are You? – Free Leaders Quiz" />
-  <meta name="twitter:description" content="Find out if you’re more like Napoleon, Gandhi, or Lincoln. Take the in-depth leaders quiz with profiles, testimonials, and history insights." />
-  <meta name="twitter:image" content="https://zinvana.com/assets/images/og-leaders-quiz.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Ultimate Leaders Quiz: Find Your Leadership Archetype"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore leadership archetypes, sample questions, and how leaders-quiz results work."
+    />
+    <meta
+      name="twitter:image"
+      content="https://zinvana.com/images/historical-leaders-personality-quiz.gif"
+    />
 
-
-  <!-- Google Fonts & Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    /* Global Styles */
-    body { margin:0;font-family:'Roboto',sans-serif; background:#f5f6fa; color:#333; line-height:1.7; }
-    section { padding:60px 20px; max-width:1200px; margin:auto; }
-    h1 { font-size:2.5rem; margin-bottom:20px; }
-    h2 { color:#c62828; margin-bottom:20px; font-size:2.2rem; text-align:center; }
-    h3 { color:#444; margin-top:30px; font-size:1.5rem; }
-    p { margin-bottom:16px; font-size:1.1rem; }
-    
-    /* Navigation */
-    /* Navigation */
-    nav {
-      display: flex;
-      position: relative;
-      z-index: 9999;
-      justify-content: space-between;
-      align-items: center;
-      background: #000;
-      padding: 15px 20px;
-      box-shadow: 0 2px 4px rgba(255, 0, 0, 0.2);
-    }
-    nav .nav-left, nav .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    nav a {
-      color: #fff;
-      font-weight: 500;
-      font-size: 1.3rem;
-      text-decoration: none;
-    }
-    nav a:hover { color: #d32f2f; }
-    nav img#brand-logo {
-      width: 60px;
-      min-width: 60px;
-      pointer-events: none;
-    }
-    
-    /* Buttons and CTAs */
-    .cta-button { 
-      display:inline-block;
-      background:#d32f2f;
-      color:#fff;
-      padding:12px 24px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:background .3s;
-      font-size:1.1rem;
-    }
-    .cta-button:hover { background:#b71c1c; }
-    #test-start { text-align:center; margin:60px 0; }
-
-
-    /* Leader Profiles Grid */
-#leader-profiles {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-#leader-profiles h2 {
-  color: #c62828;
-  margin-bottom: 32px;
-  font-size: 2.4rem;
-  text-align: center;
-}
-
-/* Grid container */
-.profile-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-/* Card styling */
-.profile-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  overflow: hidden;
-  transition: transform .3s, box-shadow .3s;
-  display: flex;
-  flex-direction: column;
-}
-.profile-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* Image */
-.profile-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Content */
-.profile-content {
-  padding: 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.profile-content h3 {
-  margin: 0 0 8px;
-  font-size: 1.4rem;
-  color: #333;
-}
-.profile-content .meta {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 12px;
-}
-.profile-content p {
-  flex: 1;
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 16px;
-}
-
-/* “Learn More” button */
-.profile-content .btn {
-  align-self: flex-start;
-  padding: 8px 16px;
-  background: #c62828;
-  color: #fff;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: background .3s;
-}
-.profile-content .btn:hover {
-  background: #a71e1e;
-}
-
-
-
-/* Scrollable Leader Gallery */
-.leader-scroll-container {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 10px;
-  box-sizing: border-box;
-  scroll-snap-type: x mandatory;
-  margin: 40px 0;
-  border: 2px solid black;
-  border-radius: 18px;
-}
-
-.leader-grid {
-  display: inline-flex;
-  gap: 20px;
-}
-
-.leader-card {
-  flex: 0 0 auto;
-  width: 10%;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  padding: 15px;
-  scroll-snap-align: start;
-  transition: transform .3s, box-shadow .3s;
-}
-.leader-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-.leader-card img {
-  width: 100%;
-  height: 50%;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
-.leader-card h3 {
-  font-size: 1rem;
-  margin: 8px 0 4px;
-  color: #c62828;
-}
-
-.leader-card p {
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.2;
-}
-
-.leader-card p.bio {
-  font-size: 0.85rem;
-  color: #444;
-  margin: 8px 0 12px;
-  line-height: 1.3;
-}
-
-.leader-button {
-  display: inline-block;
-  padding: 8px 14px;
-  background: #c62828;
-  color: #fff;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: background .3s;
-}
-
-.leader-button:hover {
-  background: #a71e1e;
-}
-
-    footer {
-      background: #000;
-      padding: 20px 10px;
-      text-align: center;
-      border-top: 1px solid #d32f2f;
-      margin-top: 40px;
-    }
-    footer p {
-      margin: 5px 0;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-    footer .social-icons {
-      margin-top: 10px;
-    }
-    footer .social-icons img {
-      width: 10%;
-      margin: 0 8px;
-      transition: opacity 0.3s;
-      cursor: pointer;
-    }
-    footer .social-icons img:hover {
-      opacity: 0.7;
-    }
-
-    /* Leadership Psychology Section */
-    #leadership-psychology {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 80px 20px;
-      margin: 60px 0;
-      border-radius: 20px;
-    }
-    #leadership-psychology h2 { color: white; margin-bottom: 30px; }
-    #leadership-psychology p { font-size: 1.2rem; text-align: center; margin-bottom: 40px; }
-
-    .psychology-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .psych-card {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 30px;
-      transition: all 0.3s ease;
-      text-align: center;
-    }
-    .psych-card:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.25);
-    }
-    .psych-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      color: #ffd700;
-    }
-    .psych-card p { font-size: 1rem; line-height: 1.6; }
-
-    /* Historical Styles Timeline */
-    #historical-styles {
-      padding: 80px 20px;
-      background: #f8f9fa;
-      margin: 60px 0;
-      border-radius: 20px;
-    }
-    #historical-styles h2 { margin-bottom: 30px; }
-    #historical-styles > p { text-align: center; font-size: 1.2rem; margin-bottom: 50px; }
-
-    .timeline-container {
-      position: relative;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: linear-gradient(to bottom, #667eea, #764ba2);
-      transform: translateX(-50%);
-    }
-
-    .timeline-item {
-      display: flex;
-      margin: 50px 0;
-      position: relative;
-    }
-    .timeline-item:nth-child(odd) { flex-direction: row; }
-    .timeline-item:nth-child(even) { flex-direction: row-reverse; }
-
-    .timeline-date {
-      flex: 0 0 150px;
-      text-align: center;
-      font-weight: bold;
-      color: #667eea;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-    }
-
-    .timeline-content {
-      flex: 1;
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      margin: 0 30px;
-      position: relative;
-    }
-    .timeline-content::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      width: 20px;
-      height: 20px;
-      background: #667eea;
-      border-radius: 50%;
-      transform: translateY(-50%);
-    }
-    .timeline-item:nth-child(odd) .timeline-content::before { right: -40px; }
-    .timeline-item:nth-child(even) .timeline-content::before { left: -40px; }
-
-    .leader-tag {
-      display: inline-block;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 25px;
-      font-size: 0.9rem;
-      margin-top: 15px;
-      font-weight: 500;
-    }
-
-    /* Leadership Competencies */
-    #leadership-competencies {
-      padding: 80px 20px;
-      background: white;
-      margin: 60px 0;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-    }
-    #leadership-competencies h2 { margin-bottom: 30px; }
-    #leadership-competencies > p { text-align: center; font-size: 1.2rem; margin-bottom: 50px; }
-
-    .competencies-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .competency-card {
-      background: #f8f9fa;
-      border: 3px solid transparent;
-      border-radius: 20px;
-      padding: 40px;
-      text-align: center;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .competency-card:hover {
-      border-color: #667eea;
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
-      background: white;
-    }
-
-    .competency-icon {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      display: block;
-    }
-    .competency-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
-
-    .competency-leaders {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      margin: 20px 0;
-    }
-    .leader-example {
-      background: #667eea;
-      color: white;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .competency-modern {
-      background: #e3f2fd;
-      padding: 20px;
-      border-radius: 15px;
-      margin-top: 20px;
-      font-style: italic;
-      text-align: left;
-      border-left: 4px solid #667eea;
-    }
-
-    /* Cross-Cultural Leadership */
-    #cultural-leadership {
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-      color: white;
-      margin: 60px 0;
-      border-radius: 20px;
-    }
-    #cultural-leadership h2 { color: white; margin-bottom: 30px; }
-    #cultural-leadership > p { text-align: center; font-size: 1.2rem; margin-bottom: 50px; }
-
-    .cultural-wisdom-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin: 40px 0;
-    }
-
-    .culture-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    .culture-card:hover {
-      transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .culture-header {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 25px;
-      text-align: center;
-    }
-    .culture-header h3 { margin: 0 0 15px 0; font-size: 1.3rem; }
-
-    .culture-principle {
-      display: inline-block;
-      background: #ffd700;
-      color: #2c3e50;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-
-    .culture-content { padding: 25px; }
-    .culture-lesson {
-      background: rgba(255, 215, 0, 0.2);
-      padding: 20px;
-      border-radius: 15px;
-      margin-top: 20px;
-      border-left: 4px solid #ffd700;
-    }
-
-    .universal-principles {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 15px;
-      margin-top: 40px;
-      list-style: none;
-    }
-    .universal-principles li {
-      margin: 15px 0;
-      padding-left: 30px;
-      position: relative;
-    }
-    .universal-principles li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #ffd700;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    /* Scientific Methodology */
-    #methodology {
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      margin: 60px 0;
-      border-radius: 20px;
-    }
-    #methodology h2 { margin-bottom: 30px; }
-    #methodology > p { text-align: center; font-size: 1.2rem; margin-bottom: 50px; }
-
-    .methodology-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .method-step {
-      display: flex;
-      align-items: center;
-      margin: 40px 0;
-      padding: 30px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-    }
-    .method-step:hover {
-      transform: translateX(15px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    }
-
-    .step-number {
-      flex: 0 0 70px;
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      font-weight: bold;
-      margin-right: 30px;
-    }
-    .step-content h3 {
-      color: #2c3e50;
-      margin: 0 0 15px 0;
-      font-size: 1.4rem;
-    }
-    .step-content p { margin: 0; font-size: 1.1rem; color: #555; }
-
-    .research-sources {
-      margin-top: 80px;
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    }
-    .research-sources h3 {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 40px;
-      font-size: 1.8rem;
-    }
-
-    .sources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .source-card {
-      background: #f8f9fa;
-      padding: 30px;
-      border-radius: 15px;
-      border-top: 4px solid #667eea;
-      transition: all 0.3s ease;
-    }
-    .source-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
-    }
-    .source-card h4 {
-      color: #2c3e50;
-      margin-bottom: 20px;
-      font-size: 1.3rem;
-    }
-    .source-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .source-card li {
-      padding: 10px 0;
-      border-bottom: 1px solid #e9ecef;
-      position: relative;
-      padding-left: 25px;
-      font-size: 1rem;
-    }
-    .source-card li:last-child { border-bottom: none; }
-    .source-card li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      color: #667eea;
-      font-weight: bold;
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      section { padding: 40px 15px; }
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.8rem; }
-      
-      .timeline-container::before { left: 30px; }
-      .timeline-item {
-        flex-direction: column !important;
-        padding-left: 60px;
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://zinvana.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Quizzes",
+            "item": "https://zinvana.com/index.html#quizzes"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Ultimate Leaders Quiz",
+            "item": "https://zinvana.com/leaders-quiz.html"
+          }
+        ]
       }
-      .timeline-date {
-        position: absolute;
-        left: 0;
-        top: 0;
-        flex: none;
-        width: 50px;
-        height: 50px;
-        background: #667eea;
-        color: white;
-        border-radius: 50%;
-        font-size: 0.8rem;
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Ultimate Leaders Quiz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Ultimate Leaders Quiz is a leadership-style assessment theme: you answer scenario-based questions and get matched to leadership archetypes inspired by famous historical leaders."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this a history test?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It is primarily a leadership personality-style quiz. It uses history as a lens, but you do not need to memorize dates or facts to get a useful result."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do leaders quiz results work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each answer tends to reflect a strategic preference (for example: reform vs stability, diplomacy vs decisive action). Your pattern across questions maps to an archetype and close runners-up."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can my result be more than one leadership style?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Many people combine strengths from multiple archetypes. A good leaders quiz highlights close matches so you can see blended leadership patterns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I take Zinvana's Historical Leaders quiz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can take the interactive Historical Leaders Personality Quiz here: https://zinvana.com/leaders.html."
+            }
+          }
+        ]
       }
-      .timeline-content {
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #0c1324;
+        --panel: #0f172a;
+        --muted: #7c8aa5;
+        --text: #e4ecff;
+        --accent: #2dd4bf;
+        --accent-2: #f97316;
+        --border: rgba(255, 255, 255, 0.08);
+        --card: rgba(255, 255, 255, 0.02);
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        --radius: 18px;
+        --topbar-h: 76px;
+        --glow: 0 12px 40px rgba(45, 212, 191, 0.12);
+        --glow-2: 0 12px 40px rgba(249, 115, 22, 0.08);
+        --professional-bg: linear-gradient(
+          135deg,
+          #0a0f1c 0%,
+          #0c1324 50%,
+          #0f172a 100%
+        );
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
         margin: 0;
-        padding: 20px;
+        background: var(--professional-bg);
+        color: var(--text);
+        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
+        line-height: 1.6;
+        min-height: 100vh;
+        overflow-x: hidden;
       }
-      .timeline-content::before { display: none; }
-      
-      .psychology-grid,
-      .competencies-grid,
-      .cultural-wisdom-grid,
-      .sources-grid {
-        grid-template-columns: 1fr;
+
+      body.theme-light {
+        --bg: #f4f6fb;
+        --panel: #ffffff;
+        --muted: #4b5563;
+        --text: #0f172a;
+        --accent: #2563eb;
+        --accent-2: #ea580c;
+        --border: rgba(0, 0, 0, 0.08);
+        --card: #ffffff;
+        --shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        --professional-bg: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+        background: var(--professional-bg);
+        color: var(--text);
       }
-      
-      .method-step {
-        flex-direction: column;
+
+      html {
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid rgba(45, 212, 191, 0.7);
+        outline-offset: 3px;
+      }
+
+      ::selection {
+        background: rgba(45, 212, 191, 0.25);
+      }
+
+      header.topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        backdrop-filter: blur(14px);
+        background: rgba(12, 19, 36, 0.95);
+        border-bottom: 1px solid var(--border);
+      }
+
+      body.theme-light header.topbar {
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .topbar__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 14px 16px;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        flex-shrink: 0;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+      }
+
+      .brand span {
+        font-size: 20px;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      nav.primary-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-width: 0;
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+
+      .nav-link {
+        padding: 10px 12px;
+        border-radius: 999px;
+        color: rgba(228, 236, 255, 0.9);
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.01em;
+        transition: background 200ms ease, transform 200ms ease;
+      }
+
+      body.theme-light .nav-link {
+        color: rgba(15, 23, 42, 0.86);
+      }
+
+      .nav-link:hover {
+        background: rgba(45, 212, 191, 0.12);
+        transform: translateY(-1px);
+      }
+
+      body.theme-light .nav-link:hover {
+        background: rgba(37, 99, 235, 0.1);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 11px 16px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        transition: transform 220ms ease, box-shadow 220ms ease,
+          background 220ms ease, border-color 220ms ease;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .btn--primary {
+        background: linear-gradient(
+          90deg,
+          rgba(45, 212, 191, 0.95),
+          rgba(249, 115, 22, 0.88)
+        );
+        color: #0a0f1c;
+        box-shadow: var(--glow);
+      }
+
+      body.theme-light .btn--primary {
+        background: linear-gradient(90deg, #2563eb, #ea580c);
+        color: #ffffff;
+      }
+
+      .btn--ghost {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: var(--border);
+        color: rgba(228, 236, 255, 0.9);
+      }
+
+      body.theme-light .btn--ghost {
+        background: rgba(15, 23, 42, 0.03);
+        color: rgba(15, 23, 42, 0.88);
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow);
+      }
+
+      .hamburger {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+      }
+
+      body.theme-light .hamburger {
+        background: rgba(15, 23, 42, 0.03);
+      }
+
+      .hamburger span,
+      .hamburger span::before,
+      .hamburger span::after {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: rgba(228, 236, 255, 0.9);
+        border-radius: 99px;
+        transition: transform 220ms ease, opacity 220ms ease;
+      }
+
+      body.theme-light .hamburger span,
+      body.theme-light .hamburger span::before,
+      body.theme-light .hamburger span::after {
+        background: rgba(15, 23, 42, 0.88);
+      }
+
+      .hamburger span::before {
+        transform: translateY(-6px);
+      }
+
+      .hamburger span::after {
+        transform: translateY(6px);
+      }
+
+      .hamburger.active span {
+        opacity: 0;
+      }
+
+      .hamburger.active span::before {
+        opacity: 1;
+        transform: rotate(45deg);
+      }
+
+      .hamburger.active span::after {
+        opacity: 1;
+        transform: rotate(-45deg);
+      }
+
+      .mobile-menu {
+        display: none;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px 14px;
+      }
+
+      .mobile-menu.open {
+        display: grid;
+        gap: 6px;
+      }
+
+      .mobile-menu .nav-link {
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      body.theme-light .mobile-menu .nav-link {
+        background: rgba(15, 23, 42, 0.03);
+      }
+
+      .page {
+        padding-top: calc(var(--topbar-h) + 24px);
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 18px;
+        padding: 24px;
+        border-radius: calc(var(--radius) + 10px);
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      body.theme-light .hero {
+        background: rgba(255, 255, 255, 0.85);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 12px;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.02);
+        color: rgba(228, 236, 255, 0.92);
+      }
+
+      body.theme-light .pill {
+        color: rgba(15, 23, 42, 0.9);
+        background: rgba(15, 23, 42, 0.03);
+      }
+
+      .hero h1 {
+        margin: 14px 0 10px;
+        font-size: clamp(30px, 3.6vw, 52px);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+      }
+
+      .lede {
+        color: rgba(228, 236, 255, 0.88);
+        font-size: 17px;
+        margin: 0;
+      }
+
+      body.theme-light .lede {
+        color: rgba(15, 23, 42, 0.8);
+      }
+
+      .hero__actions {
+        margin-top: 16px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .hero__panel {
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: rgba(15, 23, 42, 0.35);
+        padding: 18px;
+      }
+
+      body.theme-light .hero__panel {
+        background: rgba(15, 23, 42, 0.03);
+      }
+
+      .hero__panel h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+
+      .hero__panel p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .block {
+        margin-top: 18px;
+        padding: 22px;
+        border-radius: calc(var(--radius) + 8px);
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      body.theme-light .block {
+        background: rgba(255, 255, 255, 0.85);
+      }
+
+      .block__head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+
+      .block__title {
+        margin: 0;
+        font-size: 26px;
+        letter-spacing: -0.03em;
+      }
+
+      .block__subtitle {
+        margin: 0;
+        color: var(--muted);
+        max-width: 60ch;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .card {
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: rgba(15, 23, 42, 0.25);
+        padding: 16px;
+        box-shadow: var(--glow);
+      }
+
+      body.theme-light .card {
+        background: rgba(15, 23, 42, 0.03);
+        box-shadow: none;
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        letter-spacing: -0.02em;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .prose {
+        color: rgba(228, 236, 255, 0.9);
+        max-width: 78ch;
+      }
+
+      body.theme-light .prose {
+        color: rgba(15, 23, 42, 0.86);
+      }
+
+      .prose p {
+        margin: 0 0 14px;
+      }
+
+      .prose ul {
+        margin: 0 0 14px;
+        padding-left: 18px;
+      }
+
+      .prose li {
+        margin: 8px 0;
+      }
+
+      .inline-link {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      details {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 14px 16px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      body.theme-light details {
+        background: rgba(15, 23, 42, 0.02);
+      }
+
+      details + details {
+        margin-top: 10px;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        list-style: none;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary::after {
+        content: "+";
+        float: right;
+        color: var(--muted);
+      }
+
+      details[open] summary::after {
+        content: "–";
+      }
+
+      details p {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+
+      footer {
+        max-width: 1100px;
+        margin: 20px auto 40px;
+        padding: 16px;
+        color: var(--muted);
         text-align: center;
-        padding: 25px 20px;
       }
-      .step-number {
-        margin: 0 0 15px 0;
+
+      @media (max-width: 900px) {
+        nav.primary-nav {
+          display: none;
+        }
+
+        .hamburger {
+          display: inline-flex;
+        }
+
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-actions .btn--ghost {
+          display: none;
+        }
       }
-      
-      .leader-scroll-container {
-        padding: 0 5px;
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          scroll-behavior: auto;
+        }
       }
-      .leader-card {
-        width: 200px;
-        min-width: 200px;
-      }
-    }
+    </style>
+  </head>
 
-    /* Footer */
-  </style>
-</head>
-<body>
-
-  <nav>
-    <div class="nav-left">
-      <img src="zinvanalogo.png" alt="Zinava Logo" id="brand-logo" />
-      <a href="index.html">Home</a>
-      <a href="#test">Test</a>
-    </div>
-    <div class="nav-right">
-      <a href="help.html">Help</a>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section id="hero" style="background:#121212;color:#fff;text-align:center;padding:100px 20px;">
-    <h1 style="font-size:3rem;margin-bottom:20px;">Ultimate Leaders Quiz</h1>
-    <p style="font-size:1.3rem;max-width:700px;margin:auto;">Which historical titan are you? Dive deep into leadership styles, discover your match—Napoleon, Gandhi, Churchill, Mandela & more.</p>
-    <div id="test-start">
-      <a href="leaders.html" class="cta-button">▶ Start the Leaders Quiz</a>
-    </div>
-  </section>
-
-  <section id="intro">
-  <h1>Leaders Quiz: Which Historical Leader Are You?</h1>
-  <p>This in-depth <strong>FREE leaders quiz</strong> matches your personality to icons like Napoleon, Gandhi, or Churchill...</p>
-  <a href="#test" class="cta-button">▶ Take the Leaders Quiz Now</a>
-</section>
-
-  <!-- About the Quiz -->
-  <section id="about">
-    <h2>What Is the Leaders Quiz?</h2>
-    <p>The <strong>Leaders Quiz</strong> is a <em>20-question</em> interactive assessment designed to map your personality and values to legendary figures in world history. From strategic geniuses like <strong>Napoleon Bonaparte</strong> to moral visionaries like <strong>Mahatma Gandhi</strong>, uncover who you truly resemble.</p>
-    <ul>
-      <li>📝 <strong>20 in-depth questions</strong> across strategy, empathy, vision, and resolve</li>
-      <li>🔗 <strong>Personality insights</strong> & historical context</li>
-      <li>📊 <strong>Shareable infographic</strong> to showcase your match on social media</li>
-      <li>🎓 <strong>Actionable tips</strong> to develop your leadership style</li>
-    </ul>
-  </section>
-
-  <section id="leader-profiles">
-  <h2>Leader Profiles & Case Studies</h2>
-  <div class="profile-container">
-
-    <div class="profile-card">
-      <img src="napoleonwall.jpg" alt="Portrait of Napoleon Bonaparte">
-      <div class="profile-content">
-        <h3>Napoleon Bonaparte</h3>
-        <div class="meta">Late 18th – Early 19th Century</div>
-        <p>Revolutionized military tactics and governance. His bold strategies reshaped Europe and modern armies still study his campaigns today.</p>
-        <a href="napoleon.html" class="btn">Learn More</a>
-      </div>
-    </div>
-
-    <div class="profile-card">
-      <img src="gandhi.jpg" alt="Portrait of Mahatma Gandhi">
-      <div class="profile-content">
-        <h3>Mahatma Gandhi</h3>
-        <div class="meta">Early 20th Century</div>
-        <p>Pioneered non-violent resistance to lead India to independence. His philosophy of Satyagraha influenced civil rights movements worldwide.</p>
-        <a href="gandhi.html" class="btn">Learn More</a>
-      </div>
-    </div>
-
-    <div class="profile-card">
-      <img src="churchill.jpg" alt="Portrait of Winston Churchill">
-      <div class="profile-content">
-        <h3>Winston Churchill</h3>
-        <div class="meta">World War II Era</div>
-        <p>Inspired Britain with stirring oratory and unbreakable resolve. His leadership through adversity remains a masterclass in crisis management.</p>
-        <a href="churchill.html" class="btn">Learn More</a>
-      </div>
-    </div>
-
-    <div class="profile-card">
-      <img src="mandela.jpg" alt="Portrait of Nelson Mandela">
-      <div class="profile-content">
-        <h3>Nelson Mandela</h3>
-        <div class="meta">Late 20th Century</div>
-        <p>Ended apartheid through reconciliation and vision. His moral authority and determination fostered national healing in South Africa.</p>
-        <a href="nelsonmandela.html" class="btn">Learn More</a>
-      </div>
-    </div>
-
-    <!-- Add additional .profile-card blocks here for each leader -->
-
-  </div>
-</section>
-
-
-<section id="leader-gallery">
-  <h2 style="text-align:center; color:#c62828;">All available Leaders</h2>
-  <h3 style="color: red; text-align: center;">Scroll to the right =></h3>
-  <div class="leader-scroll-container">
-    <div class="leader-grid">
-
-      <div class="leader-card">
-        <img src="ataturckheader.jpg" alt="Mustafa Kemal Atatürk">
-        <h3>Mustafa Kemal Atatürk</h3>
-        <p class="bio">Atatürk led Turkey to independence in 1923, then modernized its laws, language and education to build a secular republic.</p>
-        <a href="ataturk.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="lincolnheader1.jpg" alt="Abraham Lincoln">
-        <h3>Abraham Lincoln</h3>
-        <p class="bio">16th President of the United States who guided the nation through Civil War and abolished slavery with the Emancipation Proclamation.</p>
-        <a href="lincoln.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="cleopatraheader.jpg" alt="Cleopatra VII">
-        <h3>Cleopatra VII</h3>
-        <p class="bio">The last Ptolemaic ruler of Egypt, famed for her intelligence, political savvy and alliances with Rome’s top generals.</p>
-        <a href="cleopatra.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="cyrus1.jpg" alt="Cyrus the Great">
-        <h3>Cyrus the Great</h3>
-        <p class="bio">Founder of the Achaemenid Empire ca. 550 BCE, noted for his respectful governance of conquered peoples and codified laws.</p>
-        <a href="cyrus.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="muhammadheader.jpg" alt="Prophet Muhammad">
-        <h3>Prophet Muhammad</h3>
-        <p class="bio">Founder of Islam in the 7th century, unified Arabian tribes under a new religious and political order based on the Quran.</p>
-        <a href="muhammad.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="jesusheader.jpg" alt="Jesus of Nazareth">
-        <h3>Jesus of Nazareth</h3>
-        <p class="bio">Central figure of Christianity whose teachings on love, forgiveness, and compassion shaped Western moral thought.</p>
-        <a href="jesus.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="churchillheader.jpg" alt="Winston Churchill">
-        <h3>Winston Churchill</h3>
-        <p class="bio">Prime Minister of the UK during WWII, inspired Britain with his speeches and steadfast resistance to Nazism.</p>
-        <a href="churchill.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="elizabethheader.jpg" alt="Queen Elizabeth I">
-        <h3>Elizabeth I</h3>
-        <p class="bio">Reigned 1558–1603, oversaw England’s Golden Age in literature, exploration and Protestant consolidation.</p>
-        <a href="elizabethI.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="saladinheader.jpg" alt="Saladin">
-        <h3>Saladin</h3>
-        <p class="bio">First Sultan of Egypt & Syria, reclaimed Jerusalem in 1187 and won respect for his chivalry and mercy.</p>
-        <a href="salahudin.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="leninheader.jpg" alt="Vladimir Lenin">
-        <h3>Vladimir Lenin</h3>
-        <p class="bio">Led the 1917 Bolshevik Revolution, founded the Russian Soviet Federative Socialist Republic.</p>
-        <a href="lenin.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="fdrheader.jpg" alt="Franklin D. Roosevelt">
-        <h3>F. D. Roosevelt</h3>
-        <p class="bio">U.S. President (1933–45), guided America through the Great Depression with the New Deal and WWII leadership.</p>
-        <a href="fdr.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="hitlerheader.jpg" alt="Austrian Painter Leader">
-        <h3>Austrian Painter</h3>
-        <p class="bio">Visionary artist-ruler who bridged culture and power.</p>
-        <a href="hitler.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="ashokaheader.jpg" alt="Ashoka the Great">
-        <h3>Ashoka the Great</h3>
-        <p class="bio">Mauryan emperor turned Buddhist patron after Kalinga War; erected pillars spreading Dharma across India.</p>
-        <a href="ashoka.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="gandhiheader.jpg" alt="Mahatma Gandhi">
-        <h3>Mahatma Gandhi</h3>
-        <p class="bio">Led India’s non-violent independence movement, pioneered civil disobedience and peaceful protest.</p>
-        <a href="gandhi.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="gorbachevheader.jpg" alt="Mikhail Gorbachev">
-        <h3>Mikhail Gorbachev</h3>
-        <p class="bio">USSR leader who introduced Perestroika & Glasnost, helping end the Cold War and dissolve the Soviet Union.</p>
-        <a href="gorbachev.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="genghiskhanheader.jpg" alt="Genghis Khan">
-        <h3>Genghis Khan</h3>
-        <p class="bio">Unified the Mongol tribes, created the largest contiguous land empire in history through military genius.</p>
-        <a href="ghengiskhan.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="augustusheader.jpg" alt="Emperor Augustus">
-        <h3>Augustus</h3>
-        <p class="bio">Rome’s first emperor (27 BCE), established the principate and ushered in the Pax Romana.</p>
-        <a href="augustus.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="caesarheader.jpg" alt="Julius Caesar">
-        <h3>Julius Caesar</h3>
-        <p class="bio">Expanded Rome’s territory as general, then crossed the Rubicon to reshape the Republic into an Empire.</p>
-        <a href="caesar.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="mandelaheader.jpg" alt="Nelson Mandela">
-        <h3>Nelson Mandela</h3>
-        <p class="bio">Led the struggle against apartheid, became South Africa’s first Black president and championed reconciliation.</p>
-        <a href="nelsonmandela.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="mlkheader.jpg" alt="Martin Luther King Jr.">
-        <h3>Martin Luther King Jr.</h3>
-        <p class="bio">Key figure in U.S. Civil Rights Movement, advocated non-violent protest and delivered the “I Have a Dream” speech.</p>
-        <a href="mlkj.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="alexanderheader.jpg" alt="Alexander the Great">
-        <h3>Alexander the Great</h3>
-        <p class="bio">King of Macedonia by age 20, conquered Persia and beyond to create one of history’s largest empires.</p>
-        <a href="alexander.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="stalinheader.jpg" alt="Joseph Stalin">
-        <h3>Joseph Stalin</h3>
-        <p class="bio">Transformed the USSR into a superpower via Five-Year Plans but ruled with brutal repression.</p>
-        <a href="stalin.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="aureliusheader.jpg" alt="Marcus Aurelius">
-        <h3>Marcus Aurelius</h3>
-        <p class="bio">Philosopher-emperor of Rome, authored “Meditations” and exemplified Stoic virtue.</p>
-        <a href="aurelius.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="suntzuheader.jpg" alt="Sun Tzu">
-        <h3>Sun Tzu</h3>
-        <p class="bio">Ancient Chinese general and strategist, wrote “The Art of War” on warfare and leadership.</p>
-        <a href="suntzu.html" class="leader-button">Learn More</a>
-      </div>
-
-      <div class="leader-card">
-        <img src="cheguevaraheader.jpg" alt="Che Guevara">
-        <h3>Che Guevara</h3>
-        <p class="bio">Argentine-born revolutionary, key figure in Cuba’s 1959 revolution and global icon of rebellion.</p>
-        <a href="cheguevara.html" class="leader-button">Learn More</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- Leadership Psychology Deep Dive -->
-  <section id="leadership-psychology">
-    <h2>Leadership Psychology Deep Dive</h2>
-    <p>Understanding the psychological foundations of great leadership helps us decode what made historical figures truly exceptional. Our quiz incorporates cutting-edge research from psychology, neuroscience, and behavioral economics.</p>
-    
-    <div class="psychology-grid">
-      <div class="psych-card">
-        <h3>🧠 Cognitive Patterns</h3>
-        <p>Great leaders like <strong>Lincoln</strong> and <strong>Churchill</strong> demonstrated exceptional cognitive flexibility - the ability to adapt thinking patterns under pressure. Research shows this correlates with higher emotional intelligence and better decision-making in crisis situations.</p>
-      </div>
-      
-      <div class="psych-card">
-        <h3>🎯 Vision Architecture</h3>
-        <p><strong>Gandhi</strong> and <strong>Mandela</strong> shared a unique psychological trait: the ability to construct compelling future narratives that transcended immediate circumstances. This "temporal leadership" is now recognized as a key predictor of transformational success.</p>
-      </div>
-      
-      <div class="psych-card">
-        <h3>⚡ Stress Response Systems</h3>
-        <p>Historical analysis reveals that leaders like <strong>Napoleon</strong> and <strong>Alexander</strong> had extraordinary stress tolerance. Modern neuroscience shows this correlates with specific prefrontal cortex patterns that we can identify through behavioral assessments.</p>
-      </div>
-      
-      <div class="psych-card">
-        <h3>🤝 Social Cognition</h3>
-        <p>Leaders such as <strong>Augustus</strong> and <strong>Elizabeth I</strong> excelled at reading social dynamics and building coalitions. This "political intelligence" involves theory of mind, empathy calibration, and strategic relationship mapping.</p>
-      </div>
-    </div>
-    
-    <h3>The Science Behind Our Assessment</h3>
-    <p>Our historical leadership quiz incorporates validated psychological frameworks including the Big Five personality model, Goleman's emotional intelligence research, and Bass & Avolio's transformational leadership theory. Each question maps to specific psychological constructs that distinguished history's greatest leaders.</p>
-  </section>
-
-  <!-- Leadership Styles Through History -->
-  <section id="historical-styles">
-    <h2>Leadership Styles Through History</h2>
-    <p>Different eras demanded different leadership approaches. Our quiz evaluates your natural style against these proven historical models, helping you understand your leadership DNA.</p>
-    
-    <div class="timeline-container">
-      <div class="timeline-item">
-        <div class="timeline-date">Ancient Era</div>
-        <div class="timeline-content">
-          <h4>The Philosopher Kings</h4>
-          <p><strong>Marcus Aurelius</strong> exemplified the intellectual leader - combining wisdom, self-reflection, and moral authority. This style emphasizes long-term thinking and ethical decision-making.</p>
-          <span class="leader-tag">Wisdom-Based Authority</span>
+  <body class="theme-light">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="index.html#top" aria-label="Zinvana home">
+          <img src="zinvanalogo.png" alt="Zinvana logo" />
+          <span>Zinvana</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="nav-link" href="index.html#quizzes">Quizzes</a>
+          <a class="nav-link" href="index.html#spotlights">Spotlights</a>
+          <a class="nav-link" href="index.html#trust">Why us</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn--ghost" href="mbti-personality-quiz.html"
+            >MBTI Quiz</a
+          >
+          <button
+            class="hamburger"
+            id="menuToggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span></span>
+          </button>
         </div>
       </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-date">Classical Period</div>
-        <div class="timeline-content">
-          <h4>The Strategic Commanders</h4>
-          <p><strong>Julius Caesar</strong> perfected the art of rapid decision-making and calculated risk-taking. This leadership style balances boldness with strategic planning.</p>
-          <span class="leader-tag">Strategic Boldness</span>
-        </div>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-date">Medieval Era</div>
-        <div class="timeline-content">
-          <h4>The Unifying Visionaries</h4>
-          <p><strong>Charlemagne</strong> demonstrated how to merge diverse cultures under a common vision. This style focuses on cultural integration and institutional building.</p>
-          <span class="leader-tag">Cultural Integration</span>
-        </div>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-date">Renaissance</div>
-        <div class="timeline-content">
-          <h4>The Pragmatic Innovators</h4>
-          <p><strong>Elizabeth I</strong> showed how to balance competing interests while driving innovation. This style combines political acumen with progressive thinking.</p>
-          <span class="leader-tag">Balanced Innovation</span>
-        </div>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-date">Modern Era</div>
-        <div class="timeline-content">
-          <h4>The Transformational Communicators</h4>
-          <p><strong>Churchill</strong> mastered the art of inspirational communication during crisis. This style leverages emotional intelligence and rhetorical power.</p>
-          <span class="leader-tag">Inspirational Communication</span>
-        </div>
-      </div>
-    </div>
-  </section>
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a class="nav-link" href="index.html#quizzes">Quizzes</a>
+        <a class="nav-link" href="index.html#spotlights">Spotlights</a>
+        <a class="nav-link" href="index.html#trust">Why us</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </header>
 
-  <!-- Core Leadership Competencies -->
-  <section id="leadership-competencies">
-    <h2>Core Leadership Competencies Analysis</h2>
-    <p>Our comprehensive assessment evaluates you across the same competencies that made historical leaders legendary. Discover your strengths and areas for development through this evidence-based framework.</p>
-    
-    <div class="competencies-grid">
-      <div class="competency-card">
-        <div class="competency-icon">🎯</div>
-        <h3>Strategic Vision</h3>
-        <div class="competency-leaders">
-          <span class="leader-example">Napoleon</span>
-          <span class="leader-example">Alexander</span>
-          <span class="leader-example">Cyrus</span>
-        </div>
-        <p>The ability to see the big picture and chart long-term courses. Historical masters could envision outcomes decades ahead.</p>
-        <div class="competency-modern">
-          <strong>Modern Application:</strong> CEO strategic planning, startup vision creation, policy development
-        </div>
-      </div>
-      
-      <div class="competency-card">
-        <div class="competency-icon">🗣️</div>
-        <h3>Inspirational Communication</h3>
-        <div class="competency-leaders">
-          <span class="leader-example">Churchill</span>
-          <span class="leader-example">Lincoln</span>
-          <span class="leader-example">JFK</span>
-        </div>
-        <p>The power to move people through words and presence. Great leaders could rally nations with their rhetoric.</p>
-        <div class="competency-modern">
-          <strong>Modern Application:</strong> Public speaking, team motivation, crisis communication
-        </div>
-      </div>
-      
-      <div class="competency-card">
-        <div class="competency-icon">⚖️</div>
-        <h3>Moral Authority</h3>
-        <div class="competency-leaders">
-          <span class="leader-example">Gandhi</span>
-          <span class="leader-example">Mandela</span>
-          <span class="leader-example">Aurelius</span>
-        </div>
-        <p>Leading through ethical example and moral consistency. These leaders gained power through trust and integrity.</p>
-        <div class="competency-modern">
-          <strong>Modern Application:</strong> Corporate ethics, social entrepreneurship, community leadership
-        </div>
-      </div>
-      
-      <div class="competency-card">
-        <div class="competency-icon">🏗️</div>
-        <h3>Institution Building</h3>
-        <div class="competency-leaders">
-          <span class="leader-example">Augustus</span>
-          <span class="leader-example">Charlemagne</span>
-          <span class="leader-example">Akbar</span>
-        </div>
-        <p>Creating lasting systems and structures. These leaders built empires that outlasted their lifetimes.</p>
-        <div class="competency-modern">
-          <strong>Modern Application:</strong> Organizational development, system design, legacy planning
-        </div>
-      </div>
-      
-      <div class="competency-card">
-        <div class="competency-icon">🤝</div>
-        <h3>Coalition Building</h3>
-        <div class="competency-leaders">
-          <span class="leader-example">Elizabeth I</span>
-          <span class="leader-example">Bismarck</span>
-          <span class="leader-example">FDR</span>
-        </div>
-        <p>Forging alliances and managing complex relationships. Master diplomats who turned enemies into allies.</p>
-        <div class="competency-modern">
-          <strong>Modern Application:</strong> Stakeholder management, negotiation, partnership development
-        </div>
-      </div>
-      
-      <div class="competency-card">
-        <div class="competency-icon">🔥</div>
-        <h3>Crisis Leadership</h3>
-        <div class="competency-leaders">
-          <span class="leader-example">Churchill</span>
-          <span class="leader-example">Lincoln</span>
-          <span class="leader-example">Catherine</span>
-        </div>
-        <p>Thriving under extreme pressure and uncertainty. These leaders emerged stronger from their greatest challenges.</p>
-        <div class="competency-modern">
-          <strong>Modern Application:</strong> Crisis management, change leadership, emergency response
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cross-Cultural Leadership Analysis -->
-  <section id="cultural-leadership">
-    <h2>Cross-Cultural Leadership Wisdom</h2>
-    <p>True leadership transcends cultural boundaries. Our quiz incorporates insights from leaders across all civilizations, helping you understand universal vs. culture-specific leadership principles.</p>
-    
-    <div class="cultural-wisdom-grid">
-      <div class="culture-card">
-        <div class="culture-header">
-          <h3>🏛️ Western Classical</h3>
-          <span class="culture-principle">Rational Authority</span>
-        </div>
-        <div class="culture-content">
-          <p><strong>Key Insight:</strong> Leaders like <em>Marcus Aurelius</em> and <em>Pericles</em> demonstrated that logical reasoning and philosophical wisdom could inspire deep loyalty.</p>
-          <div class="culture-lesson">
-            <strong>Modern Relevance:</strong> Data-driven decision making, transparent communication, evidence-based leadership
+    <main class="page" id="top">
+      <section class="hero">
+        <div class="hero__copy">
+          <span class="pill">Leadership • History • Strategy</span>
+          <h1>Ultimate Leaders Quiz</h1>
+          <p class="lede">
+            Looking for a leaders quiz that feels more like real leadership than
+            a trivia test? This page breaks down what a great leadership quiz
+            should measure, the archetypes you’ll likely see, and how to use
+            your result in everyday decisions.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="https://zinvana.com/leaders.html">Start here</a>
+            <a class="btn btn--ghost" href="#sample-questions"
+              >Sample questions</a
+            >
           </div>
         </div>
-      </div>
-      
-      <div class="culture-card">
-        <div class="culture-header">
-          <h3>🐉 East Asian</h3>
-          <span class="culture-principle">Harmonious Balance</span>
-        </div>
-        <div class="culture-content">
-          <p><strong>Key Insight:</strong> Leaders like <em>Emperor Kangxi</em> and <em>Tokugawa Ieyasu</em> showed how maintaining equilibrium between competing forces creates lasting stability.</p>
-          <div class="culture-lesson">
-            <strong>Modern Relevance:</strong> Stakeholder balance, long-term thinking, sustainable growth strategies
-          </div>
-        </div>
-      </div>
-      
-      <div class="culture-card">
-        <div class="culture-header">
-          <h3>🕌 Islamic Golden Age</h3>
-          <span class="culture-principle">Scholarly Leadership</span>
-        </div>
-        <div class="culture-content">
-          <p><strong>Key Insight:</strong> Leaders like <em>Harun al-Rashid</em> and <em>Saladin</em> combined military prowess with intellectual curiosity and religious tolerance.</p>
-          <div class="culture-lesson">
-            <strong>Modern Relevance:</strong> Knowledge-based leadership, inclusive practices, continuous learning
-          </div>
-        </div>
-      </div>
-      
-      <div class="culture-card">
-        <div class="culture-header">
-          <h3>🌍 African Ubuntu</h3>
-          <span class="culture-principle">Collective Wisdom</span>
-        </div>
-        <div class="culture-content">
-          <p><strong>Key Insight:</strong> Leaders like <em>Nelson Mandela</em> and <em>Queen Nzinga</em> emphasized community consensus and collective responsibility in decision-making.</p>
-          <div class="culture-lesson">
-            <strong>Modern Relevance:</strong> Team-based leadership, collaborative decision making, community building
-          </div>
-        </div>
-      </div>
-      
-      <div class="culture-card">
-        <div class="culture-header">
-          <h3>🏔️ Indigenous Wisdom</h3>
-          <span class="culture-principle">Seven Generation Thinking</span>
-        </div>
-        <div class="culture-content">
-          <p><strong>Key Insight:</strong> Leaders like <em>Chief Seattle</em> and <em>Sitting Bull</em> made decisions considering impact seven generations into the future.</p>
-          <div class="culture-lesson">
-            <strong>Modern Relevance:</strong> Sustainability focus, environmental leadership, legacy consciousness
-          </div>
-        </div>
-      </div>
-      
-      <div class="culture-card">
-        <div class="culture-header">
-          <h3>🗡️ Warrior Cultures</h3>
-          <span class="culture-principle">Honor-Based Authority</span>
-        </div>
-        <div class="culture-content">
-          <p><strong>Key Insight:</strong> Leaders like <em>Saladin</em> and <em>Miyamoto Musashi</em> showed how personal honor and warrior ethics could inspire fierce loyalty.</p>
-          <div class="culture-lesson">
-            <strong>Modern Relevance:</strong> Integrity-based leadership, courage in adversity, leading by example
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <h3>Universal Leadership Principles</h3>
-    <p>Despite cultural differences, our analysis reveals five universal principles that transcend time and geography:</p>
-    <ul class="universal-principles">
-      <li><strong>Adaptive Intelligence:</strong> Great leaders from all cultures could read and respond to changing circumstances</li>
-      <li><strong>Emotional Resonance:</strong> The ability to connect with followers' deepest values and aspirations</li>
-      <li><strong>Moral Consistency:</strong> Alignment between stated values and actual behavior</li>
-      <li><strong>Strategic Patience:</strong> Balancing immediate needs with long-term objectives</li>
-      <li><strong>Courageous Vulnerability:</strong> Strength to admit mistakes and learn from failure</li>
-    </ul>
-  </section>
 
-  <!-- Our Scientific Methodology -->
-  <section id="methodology">
-    <h2>Our Scientific Methodology</h2>
-    <p>This isn't just another personality quiz. Our historical leadership assessment is built on rigorous academic research and validated psychological frameworks used by top business schools and leadership institutes worldwide.</p>
-    
-    <div class="methodology-container">
-      <div class="method-step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3>Historical Analysis</h3>
-          <p>We analyzed decision patterns of over 100 historical leaders across 3,000 years of documented history, identifying recurring behavioral traits and decision-making frameworks.</p>
+        <aside class="hero__panel" aria-label="Quick overview">
+          <h2>Quick overview</h2>
+          <p>
+            A solid leaders quiz should reveal how you handle tradeoffs: speed
+            vs consensus, reform vs stability, vision vs execution.
+          </p>
+        </aside>
+      </section>
+
+      <section class="block" id="what-is-it">
+        <div class="block__head">
+          <h2 class="block__title">What is the “Ultimate Leaders Quiz”?</h2>
+          <p class="block__subtitle">
+            In practice, “ultimate” doesn’t mean longer—it means sharper
+            questions and clearer takeaways.
+          </p>
         </div>
-      </div>
-      
-      <div class="method-step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3>Psychological Mapping</h3>
-          <p>Each historical leader was mapped against established psychological constructs including the Big Five personality traits, emotional intelligence markers, and cognitive behavioral patterns.</p>
+
+        <div class="prose">
+          <p>
+            A leaders quiz is most useful when it focuses on your decision style
+            (what you prioritize under pressure) rather than your knowledge of
+            history. The best versions are built around scenarios that force you
+            to choose between two good options—and then explain what your
+            pattern says about your leadership instincts.
+          </p>
+          <p>
+            On Zinvana, we treat leadership as a set of repeatable choices: how
+            you persuade, how you execute, how you negotiate, and how you
+            respond when outcomes aren’t guaranteed.
+          </p>
         </div>
-      </div>
-      
-      <div class="method-step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <h3>Modern Validation</h3>
-          <p>Our framework was tested against contemporary leadership assessment tools used by Fortune 500 companies, ensuring relevance for today's leadership challenges.</p>
+      </section>
+
+      <section class="block" id="what-you-get">
+        <div class="block__head">
+          <h2 class="block__title">
+            What you should get from a great leaders quiz
+          </h2>
+          <p class="block__subtitle">
+            If your result is just a name, it’s not very useful. A good result
+            is a playbook.
+          </p>
         </div>
-      </div>
-      
-      <div class="method-step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <h3>Cultural Adjustment</h3>
-          <p>We incorporated cross-cultural psychology research to ensure our assessments account for diverse cultural contexts and leadership traditions.</p>
+        <div class="card-grid" aria-label="Leaders quiz takeaways">
+          <div class="card">
+            <h3>One clear archetype</h3>
+            <p>
+              A simple label for your default approach—how you lead when you’re
+              at your best.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Close runner-ups</h3>
+            <p>
+              Most people aren’t one style. Seeing near-matches makes the result
+              feel honest.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Strengths + blind spots</h3>
+            <p>
+              Practical pros/cons: what your style does well, and what it tends
+              to miss.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Actionable next steps</h3>
+            <p>
+              A few “try this” behaviors you can apply in teams, school, work,
+              or sports.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Share-ready summary</h3>
+            <p>
+              A short result you can share without needing to post a long
+              report.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Respectful framing</h3>
+            <p>
+              Leadership isn’t “good vs bad.” It’s tradeoffs, timing, and
+              context.
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
-    
-    <div class="research-sources">
-      <h3>Research Foundation</h3>
-      <div class="sources-grid">
-        <div class="source-card">
-          <h4>Academic Partners</h4>
+      </section>
+
+      <section class="block" id="sample-questions">
+        <div class="block__head">
+          <h2 class="block__title">
+            Sample leaders quiz questions (spoiler-light)
+          </h2>
+          <p class="block__subtitle">
+            These examples show the kinds of dilemmas that reveal leadership
+            style without turning into trivia.
+          </p>
+        </div>
+
+        <div class="prose">
           <ul>
-            <li>Harvard Business School Leadership Studies</li>
-            <li>Wharton Center for Leadership</li>
-            <li>Oxford Historical Institute</li>
-            <li>Stanford Graduate School of Business</li>
+            <li>
+              A crisis hits. Do you stabilize quickly, or pause to gather more
+              information before acting?
+            </li>
+            <li>
+              Your team disagrees. Do you push for one direction, or design a
+              process to build consensus?
+            </li>
+            <li>
+              You inherit a broken system. Do you reform it step-by-step, or
+              redesign it from the ground up?
+            </li>
+            <li>
+              You need a win. Do you negotiate for a durable deal, or go for a
+              fast decisive move?
+            </li>
+            <li>
+              You’re leading people with different values. Do you unify around a
+              vision, or unify around rules and predictability?
+            </li>
+          </ul>
+
+          <p>
+            The point isn’t which option sounds nicer—it’s what you choose
+            <em>consistently</em> across different situations.
+          </p>
+        </div>
+      </section>
+
+      <section class="block" id="archetypes">
+        <div class="block__head">
+          <h2 class="block__title">Common leadership archetypes</h2>
+          <p class="block__subtitle">
+            Different quizzes use different labels, but these show up again and
+            again.
+          </p>
+        </div>
+
+        <div class="card-grid" aria-label="Leadership archetypes">
+          <div class="card">
+            <h3>The Strategist</h3>
+            <p>
+              Optimizes for positioning, timing, and long-term advantage—even if
+              the short-term is messy.
+            </p>
+          </div>
+          <div class="card">
+            <h3>The Reformer</h3>
+            <p>
+              Pushes systems forward, modernizes rules, and challenges defaults.
+            </p>
+          </div>
+          <div class="card">
+            <h3>The Diplomat</h3>
+            <p>
+              Builds alliances, reduces friction, and turns disagreement into
+              workable deals.
+            </p>
+          </div>
+          <div class="card">
+            <h3>The Builder</h3>
+            <p>
+              Focuses on execution: consistency, logistics, and turning plans
+              into repeatable wins.
+            </p>
+          </div>
+          <div class="card">
+            <h3>The Guardian</h3>
+            <p>
+              Leads with protection and stability: risk management, clear
+              boundaries, and team safety.
+            </p>
+          </div>
+          <div class="card">
+            <h3>The Visionary</h3>
+            <p>
+              Inspires direction and meaning: narrative, motivation, and
+              ambitious horizons.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="how-results-work">
+        <div class="block__head">
+          <h2 class="block__title">
+            How leaders quiz results should be interpreted
+          </h2>
+          <p class="block__subtitle">
+            A result is a lens, not a label you’re stuck with.
+          </p>
+        </div>
+
+        <div class="prose">
+          <p>
+            Most leadership-style quizzes work by tracking consistent
+            preferences. For example: whether you default to consensus-building
+            or decisive action, whether you value stability or rapid change, and
+            whether you lead through systems, relationships, or inspiration.
+          </p>
+          <p>
+            If you want the fully interactive version of this concept,
+            <a class="inline-link" href="leaders.html"
+              >Zinvana’s Historical Leaders Personality Quiz</a
+            >
+            is built around those same leadership tradeoffs—then translates your
+            pattern into a clear archetype with context.
+          </p>
+        </div>
+      </section>
+
+      <section class="block" id="use-your-result">
+        <div class="block__head">
+          <h2 class="block__title">How to use your result (in real life)</h2>
+          <p class="block__subtitle">
+            The easiest way to make a quiz “worth it” is to turn it into a small
+            experiment.
+          </p>
+        </div>
+
+        <div class="prose">
+          <ul>
+            <li>
+              Pick one blind spot from your archetype and test a new behavior
+              for one week.
+            </li>
+            <li>
+              Ask a teammate which leadership style they prefer during
+              stress—yours or theirs.
+            </li>
+            <li>
+              In meetings, notice if you lead with vision, structure, or
+              persuasion—and try rotating styles.
+            </li>
+            <li>
+              If you’re a “fast decider,” practice writing down assumptions. If
+              you’re a “careful consensus builder,” practice making one small
+              irreversible call.
+            </li>
           </ul>
         </div>
-        
-        <div class="source-card">
-          <h4>Psychological Frameworks</h4>
-          <ul>
-            <li>Transformational Leadership Theory (Bass & Avolio)</li>
-            <li>Emotional Intelligence Model (Goleman)</li>
-            <li>Big Five Personality Assessment</li>
-            <li>Social Cognitive Theory (Bandura)</li>
-          </ul>
+      </section>
+
+      <section class="block" id="faq">
+        <div class="block__head">
+          <h2 class="block__title">FAQ</h2>
+          <p class="block__subtitle">
+            Short answers to common “leaders quiz” questions.
+          </p>
         </div>
-        
-        <div class="source-card">
-          <h4>Historical Databases</h4>
-          <ul>
-            <li>Biographical Dictionary of Leadership</li>
-            <li>World History Encyclopedia</li>
-            <li>Cambridge History Collections</li>
-            <li>Primary Source Documents Archive</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Blog-Style Insights -->
-  <section id="blog-insights">
-    <h2>Leadership Insights & Historical Lessons</h2>
-    <p>Great leaders across history share common traits: clarity of vision, resilience under pressure, and the ability to inspire collective action. In this mini-blog, we dive into three timeless lessons:</p>
-    <h3>1. The Power of Narrative</h3>
-    <p>Churchill’s speeches galvanized a nation by weaving a story of hope. In modern organizations, leaders who craft and communicate a clear narrative foster alignment and purpose.</p>
-    <h3>2. Moral Authority Matters</h3>
-    <p>Gandhi’s nonviolent movement succeeded because it aligned with universal ethics. Authenticity and integrity are crucial in gaining trust.</p>
-    <h3>3. Adaptability in Chaos</h3>
-    <p>Napoleon’s rapid maneuvers showcase the need for agility. Today’s volatile markets demand leaders who pivot quickly and decisively.</p>
-  </section>
+        <details>
+          <summary>Is the Ultimate Leaders Quiz a history exam?</summary>
+          <p>
+            No. It’s designed as a leadership personality-style quiz: it uses
+            history as inspiration, but it doesn’t require memorizing facts.
+          </p>
+        </details>
 
+        <details>
+          <summary>How long should a leaders quiz take?</summary>
+          <p>
+            Ideally a few minutes. The quality comes from the clarity of the
+            questions, not the number of questions.
+          </p>
+        </details>
 
-  <!-- Why Take It -->
-  <section id="why-take" style="background:#222;color:#eee;">
-    <h2>Why Take the Leaders Quiz?</h2>
-    <ol>
-      <li>🔹 <strong>Boost Self-Awareness:</strong> Pinpoint your innate leadership approach.</li>
-      <li>🔹 <strong>Unlock Strengths & Blind Spots:</strong> Tailor your development path.</li>
-      <li>🔹 <strong>Learn from the Best:</strong> Apply historical strategies today.</li>
-      <li>🔹 <strong>Share & Compare:</strong> Engage colleagues with your results.</li>
-    </ol>
-  </section>
+        <details>
+          <summary>Can I be two leadership archetypes?</summary>
+          <p>
+            Yes. Most people blend styles. Good results show close matches so
+            you can see what changes across context.
+          </p>
+        </details>
 
-  <!-- How It Works -->
-  <section id="how-it-works">
-    <h2>How the Quiz Works</h2>
-    <ol>
-      <li><strong>Answer 20 Drilled-Down Questions:</strong> Strategy, empathy, vision, and resilience.</li>
-      <li><strong>Receive Your Match:</strong> Detailed leader profile + personality breakdown.</li>
-      <li><strong>Get Custom Advice:</strong> Tips and resources to level up your style.</li>
-      <li><strong>Share Your Badge:</strong> LinkedIn-ready graphic with #ZinvanaLeaders.</li>
-    </ol>
-  </section>
+        <details>
+          <summary>Where do I take Zinvana’s leaders quiz?</summary>
+          <p>
+            You can take our interactive
+            <a class="inline-link" href="leaders.html"
+              >Historical Leaders Personality Quiz</a
+            >
+            anytime.
+          </p>
+        </details>
+      </section>
+    </main>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <dl>
-      <dt>Is the quiz really free?</dt>
-      <dd>Yes—completely free, no sign-up required.</dd>
-      <dt>How long does it take?</dt>
-      <dd>A brief 3–5 minutes for full insights.</dd>
-      <dt>Can I retake it?</dt>
-      <dd>Yes! Retake anytime and compare results.</dd>
-      <dt>Who designed these questions?</dt>
-      <dd>Our team of historians and psychologists crafted each question for accuracy and depth.</dd>
-      <dt>How do you protect my data?</dt>
-      <dd>We never store personal details—your answers are 100% anonymous.</dd>
-    </dl>
-  </section>
+    <footer>
+      <p>© 2026 Zinvana. All rights reserved.</p>
+      <p>
+        Made with care. Quizzes are for entertainment and self-reflection, not
+        clinical diagnosis.
+      </p>
+    </footer>
 
-  <!-- Call to Action -->
-  <section id="cta" style="text-align:center;padding:80px 20px;">
-    <h2>Ready to Discover Your Inner Leader?</h2>
-    <p>Join over 50,000+ professionals who’ve unlocked their leadership style.</p>
-    <a href="/leaders.html" class="cta-button">▶ Take the Quiz Now</a>
-  </section>
+    <script>
+      const toggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("mobileMenu");
+      const navLinks = menu?.querySelectorAll(".nav-link");
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Zinvana. All rights reserved.</p>
- 
-  <div class="social-icons">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer">
-      <img src="whiteinsta.png" alt="instagram" />
-    </a>
-    <!-- X (Twitter) -->
-    <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer">
-        <img src="whitex.png" alt="x" />
-      </a>
-    <!-- YouTube -->
-    <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer">
-      <img src="youtube.png" alt="youtube" />
-    </a>
-  </div>
-</footer>
+      if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+          const isOpen = menu.classList.toggle("open");
+          toggle.classList.toggle("active");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
 
-</body>
+        navLinks?.forEach((link) => {
+          link.addEventListener("click", () => {
+            menu.classList.remove("open");
+            toggle.classList.remove("active");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && menu.classList.contains("open")) {
+            menu.classList.remove("open");
+            toggle.classList.remove("active");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
