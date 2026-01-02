@@ -1,0 +1,2387 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Religion Personality Quiz 2026 - Which Religion/Worldview Fits You? | Free
+      Personality Test
+    </title>
+    <meta
+      name="description"
+      content="Take our religion & worldview personality quiz to explore which spiritual path (or secular worldview) best matches your values, habits, and how you make meaning."
+    />
+    <meta
+      name="keywords"
+      content="religion personality quiz, which religion fits me, worldview quiz, spiritual path quiz, buddhism quiz, christianity quiz, islam quiz, hinduism quiz, judaism quiz, sikhism quiz, taoism quiz, secular humanism quiz"
+    />
+    <meta name="author" content="Zinvana" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://zinvana.com/religion-personality-quiz.html" />
+
+    <style>
+      section[id] {
+        scroll-margin-top: calc(var(--topbar-h) + 14px);
+      }
+
+      /* Professional Quick Facts Cards */
+      .hero-kpis-pro {
+        display: flex;
+        gap: 18px;
+        margin: 18px 0 10px 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+      .kpi-card {
+        background: var(--surface-2, #f7fafc);
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        display: flex;
+        align-items: center;
+        padding: 12px 18px;
+        min-width: 140px;
+        font-weight: 600;
+        font-size: 1.08rem;
+        color: var(--text-strong, #0f172a);
+        transition: box-shadow 0.2s;
+      }
+      .kpi-card:hover {
+        box-shadow: 0 4px 18px rgba(45, 62, 80, 0.13);
+      }
+      .kpi-icon {
+        font-size: 1.35em;
+        margin-right: 10px;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
+      }
+      .kpi-label {
+        letter-spacing: 0.01em;
+      }
+      @media (max-width: 600px) {
+        .hero-kpis-pro {
+          gap: 10px;
+        }
+        .kpi-card {
+          min-width: 110px;
+          font-size: 0.98rem;
+          padding: 10px 12px;
+        }
+        .kpi-icon {
+          font-size: 1.1em;
+          margin-right: 7px;
+        }
+      }
+
+      /* Religion-specific responsive fixes */
+      @media (max-width: 900px) {
+        .archetypes-grid {
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+        }
+        .archetypes-panel {
+          padding: 20px !important;
+        }
+        .pillars {
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 10px !important;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .archetypes-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        .archetypes-panel {
+          padding: 16px !important;
+        }
+        .pillars {
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 8px !important;
+        }
+        .pillar {
+          flex-direction: column !important;
+          padding: 10px 8px !important;
+          gap: 6px !important;
+        }
+        .pillar span {
+          font-size: 0.85rem !important;
+          text-align: center !important;
+        }
+        .archetypes-panel h3 {
+          margin-top: 16px !important;
+          font-size: 1.2rem !important;
+        }
+        .archetypes-panel p {
+          font-size: 0.9rem !important;
+        }
+        .archetypes-panel ul {
+          font-size: 0.9rem !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .archetypes-panel {
+          padding: 12px !important;
+        }
+        .pillars {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .pillar {
+          flex-direction: column !important;
+          padding: 8px 6px !important;
+          gap: 4px !important;
+        }
+        .pillar span {
+          font-size: 0.75rem !important;
+        }
+      }
+
+      /* Enhanced archetype section styling */
+      .archetypes-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .archetypes-header .eyebrow {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #667eea;
+        margin-bottom: 10px;
+        background: rgba(102, 126, 234, 0.1);
+        padding: 6px 14px;
+        border-radius: 20px;
+      }
+
+      .archetypes-header h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin: 12px 0 20px 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.02em;
+      }
+
+      .archetypes-header > p {
+        font-size: 1.1rem;
+        color: #64748b;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .archetypes-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 32px;
+        align-items: stretch;
+      }
+
+      .archetypes-panel {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid #e8ecf4;
+        border-radius: 20px;
+        padding: 36px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(102, 126, 234, 0.12);
+        transition: all 0.3s ease;
+      }
+
+      .archetypes-panel:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 50px rgba(102, 126, 234, 0.18);
+        border-color: #ddd6f3;
+      }
+
+      .archetypes-panel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        opacity: 0.9;
+      }
+
+      .archetypes-panel h3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 16px 0;
+        line-height: 1.3;
+      }
+
+      .archetypes-panel p {
+        font-size: 1rem;
+        color: #475569;
+        line-height: 1.6;
+        margin: 0 0 20px 0;
+      }
+
+      .archetypes-panel ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .archetypes-panel li {
+        padding: 12px 0;
+        padding-left: 28px;
+        position: relative;
+        color: #475569;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      .archetypes-panel li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 11px;
+        color: #667eea;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .pillars {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
+        padding-bottom: 28px;
+        border-bottom: 2px solid #e8ecf4;
+      }
+
+      .pillar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 16px;
+        border: 2px solid #e8ecf4;
+        border-radius: 14px;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.05) 0%,
+          rgba(118, 75, 162, 0.05) 100%
+        );
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .pillar:hover {
+        border-color: #667eea;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.12) 0%,
+          rgba(118, 75, 162, 0.12) 100%
+        );
+        transform: translateY(-2px);
+      }
+
+      .pillar .icon {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 10px;
+        color: white;
+      }
+
+      .pillar img {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 10px;
+        object-fit: cover !important;
+      }
+
+      .pillar span {
+        font-weight: 700;
+        color: #0f172a;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+      }
+
+      @media (max-width: 900px) {
+        .archetypes-grid {
+          grid-template-columns: 1fr !important;
+          gap: 24px !important;
+        }
+        .archetypes-panel {
+          padding: 28px !important;
+        }
+        .archetypes-header h2 {
+          font-size: 2.2rem;
+        }
+        .pillars {
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 12px !important;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .archetypes-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        .archetypes-panel {
+          padding: 20px !important;
+        }
+        .archetypes-header h2 {
+          font-size: 1.8rem;
+        }
+        .archetypes-panel h3 {
+          font-size: 1.3rem;
+        }
+        .pillars {
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 10px !important;
+          margin-bottom: 20px !important;
+          padding-bottom: 16px !important;
+        }
+        .pillar {
+          padding: 12px 10px !important;
+          gap: 8px !important;
+        }
+        .pillar .icon {
+          width: 36px !important;
+          height: 36px !important;
+          font-size: 1.4rem !important;
+        }
+        .pillar span {
+          font-size: 0.8rem !important;
+        }
+        .archetypes-panel p {
+          font-size: 0.95rem;
+        }
+        .archetypes-panel li {
+          padding: 10px 0;
+          padding-left: 24px;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .archetypes-panel {
+          padding: 16px !important;
+        }
+        .archetypes-header h2 {
+          font-size: 1.5rem;
+        }
+        .archetypes-panel h3 {
+          font-size: 1.1rem;
+        }
+        .pillars {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .pillar {
+          padding: 10px 8px !important;
+        }
+        .pillar .icon {
+          width: 32px !important;
+          height: 32px !important;
+          font-size: 1.2rem !important;
+        }
+      }
+
+      /* FAQ Section Styling */
+      .faq-section {
+        background: linear-gradient(135deg, #f8fafd 0%, #f3f6fb 100%);
+        padding: 70px 0 30px;
+        margin-top: 64px;
+        margin-bottom: 0 !important;
+        border-radius: 20px;
+        box-shadow: 0 4px 32px rgba(102, 126, 234, 0.08);
+      }
+
+      .faq-section .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .faq-section .section-header h2 {
+        font-size: 2.6rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.02em;
+      }
+
+      .faq-section .section-header p {
+        font-size: 1.1rem;
+        color: #64748b;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: white;
+        margin-bottom: 16px;
+        border-radius: 16px;
+        border: 2px solid #e8ecf4;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .faq-item:hover {
+        border-color: #667eea;
+        box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .faq-question {
+        padding: 28px 32px;
+        font-weight: 700;
+        color: #0f172a;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+        transition: all 0.2s ease;
+        background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+        letter-spacing: -0.01em;
+      }
+
+      .faq-question:hover {
+        background: linear-gradient(135deg, #f8fafc 0%, #f3f6fb 100%);
+      }
+
+      .faq-question span {
+        font-size: 1.6rem;
+        color: #667eea;
+        font-weight: 400;
+        transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+      }
+
+      .faq-item[aria-expanded="true"] .faq-question span {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 32px 28px;
+        color: #475569;
+        line-height: 1.8;
+        font-size: 1rem;
+        border-top: 1px solid #e8ecf4;
+        animation: slideDown 0.3s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .faq-answer p {
+        margin: 0;
+        color: #64748b;
+      }
+
+      /* Answer button styling with religion images */
+      .answer-btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background: white;
+        border: 2px solid #e8ecf4;
+        padding: 18px 24px 18px 80px;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: left;
+        color: #1e293b;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.08);
+      }
+
+      .answer-btn:hover {
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(102, 126, 234, 0.16);
+        background: linear-gradient(135deg, #fafbfc 0%, #f8fafc 100%);
+      }
+
+      .answer-btn:active {
+        transform: translateY(-1px);
+        transition: all 0.1s ease;
+      }
+
+      .answer-btn:focus-visible {
+        outline: 3px solid rgba(102, 126, 234, 0.5);
+        outline-offset: 2px;
+      }
+
+      .answer-btn .answer-text {
+        position: relative;
+        z-index: 2;
+        flex: 1;
+        color: #475569;
+      }
+
+      /* Religion image badge on answer options */
+      .answer-btn .option-badge {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border: 3px solid rgba(102, 126, 234, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 3;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+
+      .answer-btn .option-badge img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+        transition: transform 0.35s ease;
+      }
+
+      .answer-btn:hover .option-badge {
+        border-color: rgba(102, 126, 234, 0.6);
+        box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .answer-btn:hover .option-badge img {
+        transform: scale(1.08);
+      }
+
+      /* Chevron */
+      .answer-btn .chevron {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.8rem;
+        color: #667eea;
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+
+      .answer-btn:hover .chevron {
+        color: #764ba2;
+        transform: translateY(-50%) translateX(4px);
+      }
+
+      @media (max-width: 900px) {
+        .answer-btn {
+          padding: 16px 20px 16px 72px;
+          font-size: 0.95rem;
+        }
+
+        .answer-btn .option-badge {
+          width: 48px;
+          height: 48px;
+          left: 12px;
+          font-size: 1.4rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .answer-btn {
+          padding: 14px 18px 14px 68px;
+          font-size: 0.9rem;
+          gap: 12px;
+        }
+
+        .answer-btn .option-badge {
+          width: 44px;
+          height: 44px;
+          left: 10px;
+          font-size: 1.2rem;
+        }
+
+        .answer-btn .chevron {
+          font-size: 1.4rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .answer-btn {
+          padding: 12px 16px 12px 64px;
+          font-size: 0.85rem;
+        }
+
+        .answer-btn .option-badge {
+          width: 40px;
+          height: 40px;
+          left: 8px;
+          font-size: 1rem;
+        }
+
+        .answer-btn .chevron {
+          font-size: 1.2rem;
+          right: 16px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .faq-section {
+          padding: 60px 0 20px;
+        }
+
+        .faq-section .section-header h2 {
+          font-size: 2.2rem;
+        }
+
+        .faq-question {
+          padding: 24px 28px;
+          font-size: 1rem;
+        }
+
+        .faq-answer {
+          padding: 0 28px 24px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .faq-section {
+          padding: 50px 0 20px;
+        }
+
+        .faq-section .section-header h2 {
+          font-size: 1.8rem;
+        }
+
+        .faq-section .section-header p {
+          font-size: 1rem;
+        }
+
+        .faq-question {
+          padding: 20px 24px;
+          font-size: 0.95rem;
+        }
+
+        .faq-question span {
+          width: 28px;
+          height: 28px;
+          font-size: 1.4rem;
+        }
+
+        .faq-answer {
+          padding: 0 24px 20px;
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .faq-section .section-header h2 {
+          font-size: 1.5rem;
+        }
+
+        .faq-question {
+          padding: 16px 20px;
+          font-size: 0.9rem;
+        }
+
+        .faq-answer {
+          padding: 0 20px 16px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="football-quiz-template.css" />
+    <link rel="stylesheet" href="perfect-quiz-shell.css" />
+  </head>
+  <body class="theme-light page-religion">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="index.html">
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana logo"
+            width="36"
+            height="36"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <span>Zinvana</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="nav-link" href="#quizSection">Quiz</a>
+          <a class="nav-link" href="#characters">Guide</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn--ghost" href="index.html#quizzes">All quizzes</a>
+          <button
+            class="hamburger"
+            id="menuToggle"
+            aria-label="Toggle menu"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+          >
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <div class="menu-backdrop" id="menuBackdrop" hidden></div>
+      <nav
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Mobile navigation"
+        hidden
+      >
+        <a class="nav-link" href="#quizSection">Quiz</a>
+        <a class="nav-link" href="#characters">Guide</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="index.html#quizzes">All quizzes</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </header>
+
+    <header class="hero-section" id="overview">
+      <div class="main-container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Religion Fit Finder</span>
+          <h1>Religion & Worldview Personality Quiz 2026</h1>
+          <p class="subtitle">Which religion (or worldview) fits you?</p>
+          <p class="description">
+            Explore what kind of meaning-maker you are—values, routines,
+            community, and how you handle uncertainty. This quiz is designed for
+            reflection and curiosity (not conversion).
+          </p>
+
+          <ul class="hero-kpis" aria-label="Quick facts">
+            <div class="hero-kpis-pro">
+              <div class="kpi-card">
+                <span class="kpi-icon" aria-hidden="true">📝</span>
+                <span class="kpi-label">Quick Quiz</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-icon" aria-hidden="true">⚡</span>
+                <span class="kpi-label">Instant Results</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-icon" aria-hidden="true">🧭</span>
+                <span class="kpi-label">Values & Practices</span>
+              </div>
+            </div>
+          </ul>
+
+          <ul class="hero-highlights">
+            <li>Questions mapped to belief + practice styles</li>
+            <li>Includes spiritual and secular paths</li>
+            <li>Clear strengths + watch-outs for your match</li>
+          </ul>
+
+          <div class="hero-cta">
+            <a href="#quizSection" class="primary-btn">Start The Quiz</a>
+            <a href="#characters" class="ghost-btn">Browse The Guide</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <span class="panel-eyebrow">How we match you</span>
+          <h3 style="color: black">Signals we use to score your fit</h3>
+          <p>
+            Your answers map to repeatable patterns: tradition vs. exploration,
+            inner practice vs. outward action, community vs. solitude, and how
+            you handle doubt.
+          </p>
+
+          <div class="hero-factor-grid">
+            <div class="hero-factor">
+              <div class="icon">🧠</div>
+              <div>
+                <h4>Meaning-making</h4>
+                <p>How you explain life and suffering</p>
+              </div>
+            </div>
+            <div class="hero-factor">
+              <div class="icon">🧘</div>
+              <div>
+                <h4>Practice style</h4>
+                <p>Reflection, ritual, service, or study</p>
+              </div>
+            </div>
+            <div class="hero-factor">
+              <div class="icon">🤝</div>
+              <div>
+                <h4>Community</h4>
+                <p>Belonging, guidance, and shared identity</p>
+              </div>
+            </div>
+            <div class="hero-factor">
+              <div class="icon">🌙</div>
+              <div>
+                <h4>Uncertainty</h4>
+                <p>How you approach doubt and mystery</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Intro/Archetypes -->
+      <section
+        class="content-section"
+        id="archetypesOverview"
+        aria-labelledby="archetypes-heading"
+      >
+        <div class="archetypes-header">
+          <span class="eyebrow">Overview</span>
+          <h2 id="archetypes-heading">
+            Understanding Religion & Worldview Styles
+          </h2>
+          <p>
+            People look for meaning in different ways. This quiz is a
+            light-weight map of what you might resonate with: tradition, inner
+            practice, ethical service, philosophy, or community.
+          </p>
+        </div>
+
+        <div class="archetypes-grid">
+          <!-- Left -->
+          <div class="archetypes-panel">
+            <div class="pillars">
+              <div class="pillar">
+                <div class="icon">⭐</div>
+                <span>Values</span>
+              </div>
+              <div class="pillar">
+                <div class="icon">💡</div>
+                <span>Beliefs</span>
+              </div>
+              <div class="pillar">
+                <div class="icon">🎯</div>
+                <span>Practices</span>
+              </div>
+            </div>
+
+            <h3>What this quiz is (and isn’t)</h3>
+            <p>
+              It’s a reflective “fit” quiz, not a label-maker. Your result is a
+              starting point for reading, learning, and exploring communities.
+            </p>
+            <ul>
+              <li>It includes religious and secular worldviews.</li>
+              <li>It avoids judging “better” or “worse.”</li>
+              <li>
+                If you already have a faith, treat the result as a mirror—not a
+                verdict.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right -->
+          <div class="archetypes-panel">
+            <h3>How to interpret your match</h3>
+            <p>
+              A “fit” means you may resonate with certain themes and habits.
+              Many people connect with more than one tradition.
+            </p>
+            <ul>
+              <li><strong>High match</strong>: core themes align strongly.</li>
+              <li>
+                <strong>Medium match</strong>: you share practices or ethics.
+              </li>
+              <li>
+                <strong>Try a second read</strong>: explore the guide and
+                compare.
+              </li>
+            </ul>
+            <p style="margin-top: 10px">
+              Reminder: if you’re making big life decisions, this quiz is not a
+              substitute for trusted guidance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Value Features -->
+      <section class="content-section" aria-labelledby="features-title">
+        <div class="section-header" style="text-align: center; margin-top: 5%">
+          <h2 id="features-title">What You’ll Get</h2>
+          <p>
+            A fast result with a practical breakdown: strengths, watch-outs, and
+            how your worldview style shows up day-to-day.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img
+                src="idea.png"
+                alt=""
+                style="width: 28px; height: 28px; vertical-align: middle"
+              />
+            </div>
+            <h3>Clear Fit Summary</h3>
+            <p>
+              A simple explanation of what you likely value and how you seek
+              meaning.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img
+                src="training.png"
+                alt=""
+                style="width: 28px; height: 28px; vertical-align: middle"
+              />
+            </div>
+            <h3>Practices You’ll Like</h3>
+            <p>
+              Reflection, ritual, study, service—what fits your temperament.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img
+                src="accuracy.png"
+                alt=""
+                style="width: 28px; height: 28px; vertical-align: middle"
+              />
+            </div>
+            <h3>Strengths & Watch-outs</h3>
+            <p>
+              What you do well—and where you might get rigid, anxious, or
+              avoidant.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img
+                src="downloadicon.png"
+                alt=""
+                style="width: 28px; height: 28px; vertical-align: middle"
+              />
+            </div>
+            <h3>Shareable Results</h3>
+            <p>
+              Get a share link so friends can compare their worldview styles.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section
+        class="quiz-shell"
+        id="quizSection"
+        data-hide-option-titles="false"
+      >
+        <div class="quiz-container" id="quizContainer">
+          <div class="quiz-header">
+            <h2>Take the Religion & Worldview Personality Quiz</h2>
+            <p>Answer the questions to reveal your best-fit path</p>
+          </div>
+
+          <div class="quiz-layout">
+            <aside class="quiz-status-card" aria-label="Quiz status">
+              <span class="status-eyebrow">Live Quiz</span>
+              <h3>Progress tracker</h3>
+              <p>
+                Pick the option that fits you best. Your match builds over time.
+              </p>
+
+              <div class="progress-orb" id="progressOrb" aria-hidden="true">
+                <div class="progress-orb-inner">
+                  <div class="progress-orb-value" id="progressDialValue">
+                    0%
+                  </div>
+                  <small>Complete</small>
+                </div>
+              </div>
+
+              <ul class="status-pill-list">
+                <li class="status-pill">
+                  Question <span id="questionNumberTop">1</span> /
+                  <span id="questionTotalTop">0</span>
+                </li>
+                <li class="status-pill">
+                  <span id="progressLabel">Progress: 0%</span>
+                </li>
+              </ul>
+              <p class="status-footnote">Tip: answer honestly, not ideally.</p>
+            </aside>
+
+            <div class="quiz-main">
+              <div class="progress-meta">
+                <span><strong>Progress</strong></span>
+                <span aria-hidden="true">Tracked on the left</span>
+              </div>
+              <div class="progress" aria-label="Quiz progress">
+                <div
+                  class="progress-bar"
+                  id="progressBar"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="0"
+                ></div>
+              </div>
+              <div class="question-counter" aria-live="polite">
+                Question <span id="questionNumber">1</span> /
+                <span id="questionTotal">0</span>
+              </div>
+
+              <!-- Questions are injected by the religion question script below. -->
+            </div>
+          </div>
+        </div>
+
+        <div class="result" id="result">
+          <div class="result-placeholder">
+            <h3>Your result is loading...</h3>
+            <p>Finish the quiz to reveal your best-fit path.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="use-title">
+        <div class="section-header">
+          <h2 id="use-title">Use Your Result (Respectfully)</h2>
+          <p>
+            Turn your result into something practical: reading suggestions,
+            habits to try, and better conversations with people who believe
+            differently.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>1) Identify your core values</h3>
+            <p>What do you protect under pressure?</p>
+            <ul>
+              <li>Compassion, justice, truth, freedom, devotion, service</li>
+              <li>Personal growth vs. tradition vs. community</li>
+              <li>Certainty vs. open-ended exploration</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>2) Try one small practice</h3>
+            <p>Don’t overcommit. Experiment for a week.</p>
+            <ul>
+              <li>Quiet reflection / journaling</li>
+              <li>Community service</li>
+              <li>Reading a short foundational text</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>3) Learn from real people</h3>
+            <p>Online summaries help, but humans teach nuance.</p>
+            <ul>
+              <li>Attend an open event respectfully</li>
+              <li>Ask questions—don’t debate to “win”</li>
+              <li>Compare your result with the guide</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>4) Build better interfaith conversations</h3>
+            <p>Use your result to understand your own bias.</p>
+            <ul>
+              <li>Clarify what “truth” means to you</li>
+              <li>Notice when you want certainty vs. meaning</li>
+              <li>Practice respect even when you disagree</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Spotlight -->
+      <section class="content-section" aria-labelledby="spotlight-title">
+        <div class="section-header">
+          <h2 id="spotlight-title">Path Spotlight: Profiles at a Glance</h2>
+          <p>A quick visual guide to each path and its typical themes.</p>
+        </div>
+        <div class="characters-grid" id="spotlightGrid"></div>
+
+        <div class="see-more-container" id="spotlightSeeMoreContainer">
+          <button class="see-more-btn" id="spotlightSeeMoreBtn" type="button">
+            <span>See More Paths</span>
+            <span class="icon">↓</span>
+            <span class="count-badge" id="spotlightRemainingCount"></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="positions-title">
+        <div class="section-header">
+          <h2 id="positions-title">Practice Style Cheatsheet</h2>
+          <p>
+            A fast guide to what you’ll likely enjoy (and what to watch out for)
+            based on how you approach meaning.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>Devotional</h3>
+            <ul>
+              <li>Enjoys: prayer, gratitude, commitment.</li>
+              <li>Practice: consistency, humility, service.</li>
+              <li>Watch for: guilt spirals or rigidity.</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Contemplative</h3>
+            <ul>
+              <li>Enjoys: meditation, silence, inner clarity.</li>
+              <li>Practice: patience, attention training.</li>
+              <li>Watch for: avoidance of real-life conflict.</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Ethical / Service</h3>
+            <ul>
+              <li>Enjoys: compassion, justice, helping others.</li>
+              <li>Practice: volunteer habits, integrity.</li>
+              <li>Watch for: burnout or moral superiority.</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Philosophical</h3>
+            <ul>
+              <li>Enjoys: questions, frameworks, reason.</li>
+              <li>Practice: reading, dialogue, reflection.</li>
+              <li>Watch for: analysis paralysis.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Guide -->
+      <section
+        class="content-section"
+        id="countryGuide"
+        aria-labelledby="guide-title"
+      >
+        <div id="characters" aria-hidden="true"></div>
+        <div class="guide-header">
+          <span class="eyebrow">Reference</span>
+          <h2 id="guide-title">Religion & Worldview Guide</h2>
+          <p>
+            Explore each profile with themes and quick context. Search by name,
+            practice, or values—or tap a tag to filter.
+          </p>
+        </div>
+
+        <div class="main-container" style="padding-bottom: 8px">
+          <div class="guide-toolbar" role="region" aria-label="Guide tools">
+            <div class="search-input">
+              <span class="icon">&#128269;</span>
+              <input
+                type="search"
+                id="guideSearch"
+                placeholder="Search paths, practices, or traits..."
+                aria-label="Search guide"
+              />
+            </div>
+            <div class="filter-chips" role="group" aria-label="Filter by tags">
+              <button
+                class="chip active"
+                type="button"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                All
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="devotion"
+                aria-pressed="false"
+              >
+                Devotion
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="meditation"
+                aria-pressed="false"
+              >
+                Meditation
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="service"
+                aria-pressed="false"
+              >
+                Service
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="tradition"
+                aria-pressed="false"
+              >
+                Tradition
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="scripture"
+                aria-pressed="false"
+              >
+                Scripture
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="mysticism"
+                aria-pressed="false"
+              >
+                Mysticism
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="philosophy"
+                aria-pressed="false"
+              >
+                Philosophy
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="community"
+                aria-pressed="false"
+              >
+                Community
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="non_theistic"
+                aria-pressed="false"
+              >
+                Non-theistic
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-grid" id="guideGrid">
+          <!-- Cards injected via JS -->
+        </div>
+
+        <div class="see-more-container" id="seeMoreContainer">
+          <button class="see-more-btn" id="seeMoreBtn" type="button">
+            <span>See More Paths</span>
+            <span class="icon">↓</span>
+            <span class="count-badge" id="remainingCount"></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section
+        class="faq-section"
+        id="faq"
+        aria-labelledby="faq-heading"
+        style="margin-bottom: 0% !important"
+      >
+        <div class="main-container">
+          <div class="section-header">
+            <h2 id="faq-heading">Frequently Asked Questions</h2>
+            <p>
+              How the quiz works, what results mean, and how to explore without
+              disrespect.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Is this quiz “telling me what religion I should be”?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                No. It’s a reflection tool. It suggests a best-fit tradition or
+                worldview based on your preferences for practices, community,
+                and meaning-making.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              How do you calculate the result?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                Each answer increments one path’s score. We total the scores and
+                pick the highest (ties are randomized). Your “Match %” is how
+                often you chose options aligned with that path.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              What if I relate to multiple results?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                That’s normal. Many people resonate with more than one
+                tradition. Use the guide to compare themes and try one small
+                practice from each.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Is this respectful to religions?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                The goal is respectful curiosity. We avoid ranking religions and
+                focus on broad themes. For deeper accuracy, learn from official
+                sources and real communities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <div class="site-footer__logo">
+            <img
+              src="zinvanalogo.png"
+              alt="Zinvana"
+              width="40"
+              height="40"
+              decoding="async"
+            />
+            <span>Zinvana</span>
+          </div>
+          <p>Quizzes built for curiosity. Fast, clean, and easy to share.</p>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Explore</h4>
+          <a href="index.html#quizzes">All quizzes</a>
+          <a href="all-articles.html">Articles</a>
+          <a href="about.html">About</a>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Popular</h4>
+          <a href="marvel-quiz.html">Marvel quiz</a>
+          <a href="behold-the-dreamers-quiz.html">Dreamers quiz</a>
+          <a href="all-pages.json">Site map (json)</a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div class="site-footer__bottom-row">
+          <small>© <span id="year"></span> Zinvana</small>
+        </div>
+        <p class="site-footer__disclaimer">
+          This quiz is for entertainment and reflection only.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Footer year
+      (function () {
+        const y = document.getElementById("year");
+        if (y) y.textContent = String(new Date().getFullYear());
+      })();
+    </script>
+
+    <script>
+      // Mobile menu toggle
+      (function () {
+        const toggle = document.getElementById("menuToggle");
+        const menu = document.getElementById("mobileMenu");
+        const backdrop = document.getElementById("menuBackdrop");
+        const navLinks = menu ? menu.querySelectorAll(".nav-link") : [];
+
+        const closeMenu = () => {
+          if (!toggle || !menu) return;
+          menu.classList.remove("open");
+          toggle.classList.remove("active");
+          toggle.setAttribute("aria-expanded", "false");
+          menu.setAttribute("hidden", "");
+          backdrop && backdrop.setAttribute("hidden", "");
+          document.body.classList.remove("nav-open");
+          document.body.classList.remove("nav-locked");
+        };
+
+        const openMenu = () => {
+          if (!toggle || !menu) return;
+          menu.removeAttribute("hidden");
+          backdrop && backdrop.removeAttribute("hidden");
+          menu.classList.add("open");
+          toggle.classList.add("active");
+          toggle.setAttribute("aria-expanded", "true");
+          document.body.classList.add("nav-open");
+          document.body.classList.add("nav-locked");
+        };
+
+        if (toggle && menu) {
+          toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            if (expanded) closeMenu();
+            else openMenu();
+          });
+
+          navLinks.forEach((link) =>
+            link.addEventListener("click", () => closeMenu())
+          );
+          backdrop && backdrop.addEventListener("click", () => closeMenu());
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeMenu();
+          });
+
+          window.addEventListener("resize", () => {
+            if (window.innerWidth >= 900) closeMenu();
+          });
+        }
+      })();
+    </script>
+
+    <script>
+      // Profile data used by perfect-quiz-shell.js
+      const profileData = {
+        christianity: {
+          name: "Christianity — The Devoted Builder",
+          img: "christianity.png",
+          tagline: "Faith, forgiveness, community, and service.",
+          story:
+            "You’re drawn to commitment, hope, and a grounded moral center. You tend to value community, forgiveness, and building a life around love-in-action—especially when things get messy.",
+          emoji: "✝️",
+          traits: ["Faith", "Community", "Forgiveness", "Service"],
+          strengths: ["Hope under stress", "Care for others", "Consistency"],
+          challenges: [
+            "Guilt spirals",
+            "Over-sacrificing",
+            "All-or-nothing thinking",
+          ],
+          roles: ["Community", "Service", "Prayer"],
+        },
+        islam: {
+          name: "Islam — The Disciplined Devotee",
+          img: "islam.png",
+          tagline: "Devotion, structure, accountability, and charity.",
+          story:
+            "You value clarity, discipline, and a daily rhythm that keeps life aligned. You tend to respect tradition, responsibility, and care for community through consistent practice.",
+          emoji: "☪️",
+          traits: ["Discipline", "Tradition", "Charity", "Clarity"],
+          strengths: ["Steady routines", "Commitment", "Community care"],
+          challenges: [
+            "Harsh self-judgment",
+            "Rigid expectations",
+            "Fear of mistakes",
+          ],
+          roles: ["Community", "Prayer", "Service"],
+        },
+        hinduism: {
+          name: "Hinduism — The Path Integrator",
+          img: "hinduism.png",
+          tagline: "Multiple paths, devotion + philosophy + practice.",
+          story:
+            "You’re comfortable with depth and complexity. You may resonate with a worldview that allows different paths—devotion, knowledge, meditation, and duty—to coexist.",
+          emoji: "🕉️",
+          traits: ["Integration", "Tradition", "Practice", "Philosophy"],
+          strengths: [
+            "Big-picture thinking",
+            "Adaptability",
+            "Respect for depth",
+          ],
+          challenges: [
+            "Overwhelm by options",
+            "Drifting without structure",
+            "Over-intellectualizing",
+          ],
+          roles: ["Ritual", "Study", "Meditation"],
+        },
+        buddhism: {
+          name: "Buddhism — The Mindful Realist",
+          img: "buddhism.png",
+          tagline: "Awareness, compassion, and inner freedom.",
+          story:
+            "You’re drawn to practices that reduce suffering and train attention. You tend to value calm observation, compassion, and practical steps toward clarity.",
+          emoji: "☸️",
+          traits: ["Mindfulness", "Compassion", "Meditation", "Simplicity"],
+          strengths: ["Emotional regulation", "Calm focus", "Non-reactivity"],
+          challenges: [
+            "Avoiding hard conversations",
+            "Detachment",
+            "Perfectionism in practice",
+          ],
+          roles: ["Meditation", "Ethics", "Study"],
+        },
+        judaism: {
+          name: "Judaism — The Tradition Keeper",
+          img: "judaism.png",
+          tagline: "Identity, learning, ethics, and community.",
+          story:
+            "You value continuity, belonging, and learning. You may be drawn to a tradition where questions are welcome, ethics matter, and community is central.",
+          emoji: "✡️",
+          traits: ["Community", "Tradition", "Learning", "Ethics"],
+          strengths: [
+            "Resilience",
+            "Commitment to learning",
+            "Strong identity",
+          ],
+          challenges: [
+            "Feeling pressured by expectations",
+            "Overthinking",
+            "Tension with uncertainty",
+          ],
+          roles: ["Community", "Scripture", "Practice"],
+        },
+        sikhism: {
+          name: "Sikhism — The Service Warrior",
+          img: "sikhism.png",
+          tagline: "Equality, courage, devotion, and service.",
+          story:
+            "You’re motivated by integrity and action. You tend to value equality, courage, and showing your beliefs through service and real-world responsibility.",
+          emoji: "☬",
+          traits: ["Service", "Equality", "Courage", "Devotion"],
+          strengths: ["Actionable compassion", "Bravery", "Reliability"],
+          challenges: ["Carrying too much", "Anger at injustice", "Burnout"],
+          roles: ["Service", "Community", "Devotion"],
+        },
+        taoism: {
+          name: "Taoism — The Flow Seeker",
+          img: "taoism.png",
+          tagline: "Balance, simplicity, and harmony with life.",
+          story:
+            "You prefer a lighter grip. You may resonate with learning to move with reality instead of forcing it—seeking balance, humility, and natural simplicity.",
+          emoji: "☯️",
+          traits: ["Balance", "Simplicity", "Mysticism", "Nature"],
+          strengths: ["Calm adaptability", "Perspective", "Low ego"],
+          challenges: [
+            "Avoiding commitment",
+            "Passivity",
+            "Vagueness under pressure",
+          ],
+          roles: ["Contemplation", "Balance", "Practice"],
+        },
+        secular_humanism: {
+          name: "Secular Humanism — The Grounded Human",
+          img: "secular-humanism.png",
+          tagline: "Meaning through people, ethics, and evidence.",
+          story:
+            "You’re drawn to building meaning through relationships, responsibility, and reason. You tend to value ethics, curiosity, and making life better in practical ways.",
+          emoji: "🌍",
+          traits: ["Reason", "Ethics", "Curiosity", "Service"],
+          strengths: [
+            "Clear thinking",
+            "Compassion without pressure",
+            "Intellectual honesty",
+          ],
+          challenges: ["Cynicism", "Overconfidence", "Feeling isolated"],
+          roles: ["Philosophy", "Service", "Community"],
+        },
+      };
+
+      const pageMap = {
+        christianity: "#quizSection",
+        islam: "#quizSection",
+        hinduism: "#quizSection",
+        buddhism: "#quizSection",
+        judaism: "#quizSection",
+        sikhism: "#quizSection",
+        taoism: "#quizSection",
+        secular_humanism: "#quizSection",
+      };
+
+      function normalizeText(value) {
+        return String(value ?? "")
+          .replace(/[\u2018\u2019]/g, "'")
+          .replace(/[\u201C\u201D]/g, '"')
+          .replace(/[\u2013\u2014]/g, "-")
+          .trim();
+      }
+
+      function getInitials(name) {
+        if (!name) return "??";
+        const plain = normalizeText(name).replace(/\s+-\s+.+$/, "");
+        const parts = plain.trim().split(/\s+/);
+        const first = (parts[0] || "")[0] || "";
+        const second = (parts[1] || "")[0] || "";
+        return (first + second).toUpperCase();
+      }
+
+      function getDisplayName(data) {
+        const raw = normalizeText(data?.name || "");
+        return raw.split(/\s-\s/)[0] || raw;
+      }
+
+      function hueFromString(s) {
+        let h = 0;
+        for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
+        return h;
+      }
+
+      function getPlaceholderImg(name) {
+        const initials = getInitials(name || "");
+        const h = hueFromString(name || "path");
+        const bg = `hsl(${h},65%,60%)`;
+        const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='128' height='128'>
+					<rect width='128' height='128' rx='24' fill='${bg}'/>
+					<text x='64' y='76' text-anchor='middle' font-family='system-ui, -apple-system, Segoe UI, Roboto, Arial' font-size='46' font-weight='800' fill='white'>${initials}</text>
+				</svg>`;
+        return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+      }
+
+      function getImgSrc(data) {
+        const name = getDisplayName(data);
+        return data && data.img ? data.img : getPlaceholderImg(name || "Path");
+      }
+
+      // Ensure every profile has an image for guide/spotlight cards
+      Object.keys(profileData).forEach((k) => {
+        const d = profileData[k];
+        if (!d.img) d.img = getPlaceholderImg(getDisplayName(d));
+      });
+
+      // Guide population from data with pagination
+      const PLAYERS_PER_PAGE = 5;
+      let displayedPlayers = 0;
+      let allPlayerKeys = [];
+
+      const tagMap = {
+        christianity: "devotion community scripture service tradition",
+        islam: "devotion community scripture service tradition",
+        hinduism: "tradition philosophy meditation mysticism",
+        buddhism: "meditation non_theistic philosophy",
+        judaism: "tradition community scripture philosophy",
+        sikhism: "service devotion community tradition",
+        taoism: "mysticism philosophy meditation non_theistic",
+        secular_humanism: "philosophy non_theistic service community",
+      };
+
+      function createPlayerCard(key, index) {
+        const d = profileData[key];
+        const card = document.createElement("article");
+        card.className = "guide-card";
+        card.setAttribute("data-tags", tagMap[key] || "");
+        card.style.animationDelay = `${(index % PLAYERS_PER_PAGE) * 0.08}s`;
+
+        const profileLink = pageMap[key] || "#quizSection";
+        const displayName = getDisplayName(d);
+        const safeAlt = normalizeText(d?.name || displayName);
+        const safeDescription = normalizeText(
+          d?.tagline || d?.description || ""
+        );
+
+        const head = document.createElement("div");
+        head.className = "card-head";
+
+        const avatar = document.createElement("div");
+        avatar.className = "avatar";
+        const img = document.createElement("img");
+        img.src = getImgSrc(d);
+        img.alt = safeAlt;
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.setAttribute("fetchpriority", "low");
+        img.onerror = () => {
+          img.onerror = null;
+          img.src = getPlaceholderImg(displayName);
+        };
+        avatar.appendChild(img);
+
+        const title = document.createElement("h4");
+        title.textContent = displayName;
+
+        head.appendChild(avatar);
+        head.appendChild(title);
+
+        const summary = document.createElement("p");
+        summary.className = "summary";
+        summary.textContent = safeDescription;
+
+        const traits = document.createElement("ul");
+        traits.className = "traits";
+        (d?.traits || d?.strengths || []).slice(0, 4).forEach((t) => {
+          const li = document.createElement("li");
+          li.textContent = normalizeText(t);
+          traits.appendChild(li);
+        });
+
+        const cta = document.createElement("a");
+        cta.className = "guide-cta";
+        cta.href = profileLink;
+        cta.textContent = "View full profile";
+
+        card.appendChild(head);
+        card.appendChild(summary);
+        card.appendChild(traits);
+        card.appendChild(cta);
+
+        return card;
+      }
+
+      function updateSeeMoreButton() {
+        const btn = document.getElementById("seeMoreBtn");
+        const container = document.getElementById("seeMoreContainer");
+        const remainingBadge = document.getElementById("remainingCount");
+        if (!btn || !container) return;
+
+        const remaining = allPlayerKeys.length - displayedPlayers;
+        if (remaining <= 0) {
+          container.style.display = "none";
+        } else {
+          container.style.display = "flex";
+          if (remainingBadge) remainingBadge.textContent = `${remaining} more`;
+        }
+      }
+
+      function loadMorePlayers() {
+        const grid = document.getElementById("guideGrid");
+        if (!grid) return;
+
+        const nextBatch = allPlayerKeys.slice(
+          displayedPlayers,
+          displayedPlayers + PLAYERS_PER_PAGE
+        );
+        nextBatch.forEach((key, i) => {
+          const card = createPlayerCard(key, i);
+          grid.appendChild(card);
+        });
+        displayedPlayers += nextBatch.length;
+        updateSeeMoreButton();
+        applyGuideFilters();
+      }
+
+      function populateGuide() {
+        const grid = document.getElementById("guideGrid");
+        if (!grid) return;
+        grid.innerHTML = "";
+        displayedPlayers = 0;
+        allPlayerKeys = Object.keys(profileData);
+
+        const initialBatch = allPlayerKeys.slice(0, PLAYERS_PER_PAGE);
+        initialBatch.forEach((key, i) => {
+          const card = createPlayerCard(key, i);
+          grid.appendChild(card);
+        });
+        displayedPlayers = initialBatch.length;
+        updateSeeMoreButton();
+
+        const btn = document.getElementById("seeMoreBtn");
+        if (btn) btn.addEventListener("click", loadMorePlayers);
+      }
+
+      // Spotlight
+      let spotlightKeys = [];
+      let displayedSpotlight = 0;
+      const SPOTLIGHT_BATCH_SIZE = 5;
+
+      function createSpotlightCard(key, index) {
+        const d = profileData[key];
+        const link = pageMap[key] || "#quizSection";
+        const card = document.createElement("article");
+        card.className = "character-card";
+        card.style.animationDelay = `${index * 0.08}s`;
+
+        const safeName = normalizeText(getDisplayName(d));
+        const safeDescription = normalizeText(d?.tagline || "");
+        const safeRoles = (d?.roles || [])
+          .map((r) => normalizeText(r))
+          .join(", ");
+        const emoji = d?.emoji ? normalizeText(d.emoji) : "";
+
+        const imgSrc = getImgSrc(d);
+        const fallback = getPlaceholderImg(safeName);
+
+        card.innerHTML = `
+          <a class="character-link" href="${link}" style="text-decoration:none;color:inherit;display:block">
+            <div class="character-meta"><img class="character-emoji" src="${imgSrc}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low" onerror="this.onerror=null;this.src='${fallback}'">${
+          emoji ? `${emoji} ` : ""
+        }${safeName}</div>
+            <p>${safeDescription}</p>
+            <div class="character-meta">Themes: ${safeRoles}</div>
+          </a>
+        `;
+        return card;
+      }
+
+      function runWhenIdle(fn, timeoutMs = 1500) {
+        if (typeof fn !== "function") return;
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(() => fn(), { timeout: timeoutMs });
+        } else {
+          setTimeout(fn, 0);
+        }
+      }
+
+      function observeOnce(target, cb, rootMargin = "800px") {
+        if (!target || typeof cb !== "function") return;
+        if (!("IntersectionObserver" in window)) {
+          cb();
+          return;
+        }
+        const obs = new IntersectionObserver(
+          (entries) => {
+            const hit = entries.some((e) => e.isIntersecting);
+            if (!hit) return;
+            obs.disconnect();
+            cb();
+          },
+          { root: null, rootMargin, threshold: 0.01 }
+        );
+        obs.observe(target);
+      }
+
+      let guideInitialized = false;
+      function initGuide() {
+        if (guideInitialized) return;
+        guideInitialized = true;
+        populateGuide();
+        applyGuideFilters();
+
+        const search = document.getElementById("guideSearch");
+        if (search) search.addEventListener("input", applyGuideFilters);
+
+        const chips = document.querySelectorAll(".filter-chips .chip");
+        chips.forEach((ch) =>
+          ch.addEventListener("click", () => {
+            chips.forEach((x) => {
+              x.classList.remove("active");
+              x.setAttribute("aria-pressed", "false");
+            });
+            ch.classList.add("active");
+            ch.setAttribute("aria-pressed", "true");
+            applyGuideFilters();
+          })
+        );
+      }
+
+      let spotlightInitialized = false;
+      function initSpotlight() {
+        if (spotlightInitialized) return;
+        spotlightInitialized = true;
+        populateSpotlight();
+      }
+
+      function updateSpotlightSeeMoreButton() {
+        const container = document.getElementById("spotlightSeeMoreContainer");
+        const btn = document.getElementById("spotlightSeeMoreBtn");
+        const countBadge = document.getElementById("spotlightRemainingCount");
+        const remaining = spotlightKeys.length - displayedSpotlight;
+        if (!container || !btn) return;
+        if (remaining <= 0) {
+          container.style.display = "none";
+        } else {
+          container.style.display = "flex";
+          if (countBadge) countBadge.textContent = `${remaining} more`;
+        }
+      }
+
+      function loadMoreSpotlight() {
+        const grid = document.getElementById("spotlightGrid");
+        if (!grid) return;
+        const nextBatch = spotlightKeys.slice(
+          displayedSpotlight,
+          displayedSpotlight + SPOTLIGHT_BATCH_SIZE
+        );
+        nextBatch.forEach((key, i) => {
+          const card = createSpotlightCard(key, i);
+          grid.appendChild(card);
+        });
+        displayedSpotlight += nextBatch.length;
+        updateSpotlightSeeMoreButton();
+      }
+
+      function populateSpotlight() {
+        const grid = document.getElementById("spotlightGrid");
+        if (!grid) return;
+        grid.innerHTML = "";
+        spotlightKeys = Object.keys(profileData);
+        displayedSpotlight = 0;
+        const initialBatch = spotlightKeys.slice(0, SPOTLIGHT_BATCH_SIZE);
+        initialBatch.forEach((key, i) => {
+          const card = createSpotlightCard(key, i);
+          grid.appendChild(card);
+        });
+        displayedSpotlight = initialBatch.length;
+        updateSpotlightSeeMoreButton();
+
+        const btn = document.getElementById("spotlightSeeMoreBtn");
+        if (btn) btn.addEventListener("click", loadMoreSpotlight);
+      }
+
+      // Search and filter
+      function applyGuideFilters() {
+        const grid = document.getElementById("guideGrid");
+        const search = document.getElementById("guideSearch");
+        const term = (search?.value || "").toLowerCase();
+        const activeChip = document.querySelector(".filter-chips .chip.active");
+        const filter = activeChip
+          ? activeChip.getAttribute("data-filter")
+          : "all";
+        const container = document.getElementById("seeMoreContainer");
+
+        if (term || filter !== "all") {
+          if (displayedPlayers < allPlayerKeys.length) {
+            const remaining = allPlayerKeys.slice(displayedPlayers);
+            remaining.forEach((key, i) => {
+              const card = createPlayerCard(key, i);
+              grid.appendChild(card);
+            });
+            displayedPlayers = allPlayerKeys.length;
+          }
+          if (container) container.style.display = "none";
+        } else {
+          updateSeeMoreButton();
+        }
+
+        const cards = grid
+          ? Array.from(grid.querySelectorAll(".guide-card"))
+          : [];
+        cards.forEach((card) => {
+          const tags = (card.getAttribute("data-tags") || "").toLowerCase();
+          const text = card.textContent.toLowerCase();
+          const matchText = !term || text.includes(term);
+          const matchTag = filter === "all" || tags.includes(filter);
+          card.style.display = matchText && matchTag ? "" : "none";
+        });
+      }
+
+      // FAQ toggle
+      function wireFAQ() {
+        const items = document.querySelectorAll(".faq-item");
+        items.forEach((item) => {
+          const q = item.querySelector(".faq-question");
+          const a = item.querySelector(".faq-answer");
+          if (!q || !a) return;
+          const toggle = () => {
+            const expanded = q.getAttribute("aria-expanded") === "true";
+            q.setAttribute("aria-expanded", String(!expanded));
+            a.hidden = expanded;
+          };
+          q.addEventListener("click", toggle);
+          q.addEventListener("keypress", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              toggle();
+            }
+          });
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const allQ = document.querySelectorAll(".question[data-question]");
+        const totalQuestions = allQ.length;
+        const totalBottom = document.getElementById("questionTotal");
+        if (totalBottom) totalBottom.textContent = totalQuestions;
+        const totalTop = document.getElementById("questionTotalTop");
+        if (totalTop) totalTop.textContent = totalQuestions;
+
+        runWhenIdle(wireFAQ);
+
+        const guideSection = document.getElementById("countryGuide");
+        observeOnce(guideSection, () => runWhenIdle(initGuide), "900px");
+
+        const spotlightGrid = document.getElementById("spotlightGrid");
+        observeOnce(spotlightGrid, () => runWhenIdle(initSpotlight), "900px");
+
+        const guideSearch = document.getElementById("guideSearch");
+        guideSearch?.addEventListener("focus", () => initGuide(), {
+          once: true,
+        });
+        guideSearch?.addEventListener("keydown", () => initGuide(), {
+          once: true,
+        });
+      });
+    </script>
+
+    <script>
+      // Religion quiz injection: generate question blocks for the same quiz shell.
+      (function injectReligionQuestions() {
+        const quizMain = document.querySelector("#quizSection .quiz-main");
+        if (!quizMain) return;
+
+        const LABELS = {
+          christianity: { name: "Christianity", badge: "🕊️" },
+          islam: { name: "Islam", badge: "🌙" },
+          hinduism: { name: "Hinduism", badge: "🕉️" },
+          buddhism: { name: "Buddhism", badge: "🧘" },
+          judaism: { name: "Judaism", badge: "📖" },
+          sikhism: { name: "Sikhism", badge: "🤝" },
+          taoism: { name: "Taoism", badge: "☯️" },
+          secular_humanism: { name: "Secular humanism", badge: "🧠" },
+        };
+
+        const QUESTIONS = [
+          {
+            q: "When life gets chaotic, you feel pulled toward…",
+            a: [
+              {
+                k: "buddhism",
+                t: "Quieting the mind and noticing what’s happening.",
+              },
+              {
+                k: "christianity",
+                t: "Prayer, hope, and remembering love and forgiveness.",
+              },
+              {
+                k: "islam",
+                t: "A steady routine and discipline that keeps you aligned.",
+              },
+              {
+                k: "secular_humanism",
+                t: "Practical action: evidence, planning, and support.",
+              },
+            ],
+          },
+          {
+            q: "What feels most meaningful to you?",
+            a: [
+              { k: "sikhism", t: "Serving others and fighting for fairness." },
+              {
+                k: "judaism",
+                t: "Belonging, identity, and living an ethical life.",
+              },
+              { k: "taoism", t: "Balance, simplicity, and harmony with life." },
+              {
+                k: "hinduism",
+                t: "A deep path with many ways to grow (devotion, knowledge, practice).",
+              },
+            ],
+          },
+          {
+            q: "You prefer guidance that is…",
+            a: [
+              { k: "islam", t: "Clear and structured—daily practices help." },
+              {
+                k: "buddhism",
+                t: "Experiential—try it, observe it, learn from it.",
+              },
+              {
+                k: "judaism",
+                t: "Question-friendly—learning and discussion matter.",
+              },
+              { k: "taoism", t: "Subtle—more like wisdom than rules." },
+            ],
+          },
+          {
+            q: "Your ideal “spiritual practice” looks like…",
+            a: [
+              {
+                k: "christianity",
+                t: "Prayer, gratitude, and community support.",
+              },
+              { k: "buddhism", t: "Meditation, mindfulness, and compassion." },
+              {
+                k: "sikhism",
+                t: "Service and integrity—faith shown through action.",
+              },
+              {
+                k: "secular_humanism",
+                t: "Reflection + ethics without supernatural claims.",
+              },
+            ],
+          },
+          {
+            q: "How do you feel about tradition?",
+            a: [
+              {
+                k: "judaism",
+                t: "Tradition is identity—rooted practices matter.",
+              },
+              { k: "islam", t: "Tradition provides structure and stability." },
+              {
+                k: "hinduism",
+                t: "Tradition is deep, diverse, and adaptable.",
+              },
+              { k: "taoism", t: "Keep what’s useful; don’t force what isn’t." },
+            ],
+          },
+          {
+            q: "When you think about “truth,” you lean toward…",
+            a: [
+              {
+                k: "secular_humanism",
+                t: "Evidence, reason, and changing your mind when needed.",
+              },
+              {
+                k: "christianity",
+                t: "A moral and spiritual truth centered on love.",
+              },
+              {
+                k: "islam",
+                t: "A clear truth that calls for discipline and sincerity.",
+              },
+              {
+                k: "buddhism",
+                t: "Truth as direct experience and reducing suffering.",
+              },
+            ],
+          },
+          {
+            q: "Your relationship with community is…",
+            a: [
+              {
+                k: "christianity",
+                t: "Community matters a lot—it helps you stay grounded.",
+              },
+              { k: "judaism", t: "Belonging and shared life are central." },
+              {
+                k: "sikhism",
+                t: "Community is where service and equality become real.",
+              },
+              {
+                k: "buddhism",
+                t: "Helpful, but you also need private inner work.",
+              },
+            ],
+          },
+          {
+            q: "If you had to choose one focus for the next year, it’s…",
+            a: [
+              { k: "buddhism", t: "Train attention and reduce reactivity." },
+              { k: "sikhism", t: "Serve consistently and build courage." },
+              { k: "taoism", t: "Simplify and find balance." },
+              {
+                k: "secular_humanism",
+                t: "Become more ethical, informed, and useful.",
+              },
+            ],
+          },
+          {
+            q: "What kind of stories move you most?",
+            a: [
+              {
+                k: "christianity",
+                t: "Redemption, forgiveness, and love that changes people.",
+              },
+              {
+                k: "hinduism",
+                t: "Epic stories with moral depth and multiple layers.",
+              },
+              {
+                k: "judaism",
+                t: "History, identity, and resilience through generations.",
+              },
+              {
+                k: "taoism",
+                t: "Simple wisdom stories that flip your perspective.",
+              },
+            ],
+          },
+          {
+            q: "You respect a belief system most when it…",
+            a: [
+              {
+                k: "islam",
+                t: "Shapes daily life with discipline and sincerity.",
+              },
+              {
+                k: "sikhism",
+                t: "Produces real service, equality, and courage.",
+              },
+              {
+                k: "buddhism",
+                t: "Helps people suffer less and become kinder.",
+              },
+              {
+                k: "secular_humanism",
+                t: "Encourages critical thinking and human wellbeing.",
+              },
+            ],
+          },
+          {
+            q: "When you feel guilt or regret, you tend to…",
+            a: [
+              {
+                k: "christianity",
+                t: "Seek forgiveness, repair, and a new start.",
+              },
+              {
+                k: "buddhism",
+                t: "Notice it, learn from it, and return to compassion.",
+              },
+              {
+                k: "islam",
+                t: "Reset with sincerity, discipline, and accountability.",
+              },
+              {
+                k: "taoism",
+                t: "Loosen the grip—correct course without self-attack.",
+              },
+            ],
+          },
+          {
+            q: "Which sentence sounds most like you?",
+            a: [
+              { k: "judaism", t: "“Questions help me get closer to truth.”" },
+              {
+                k: "islam",
+                t: "“I thrive with structure and consistent practice.”",
+              },
+              {
+                k: "hinduism",
+                t: "“There are many valid paths—depth matters.”",
+              },
+              {
+                k: "secular_humanism",
+                t: "“Meaning is what we build, together.”",
+              },
+            ],
+          },
+          {
+            q: "What’s your biggest watch-out?",
+            a: [
+              {
+                k: "buddhism",
+                t: "Avoiding conflict by staying “too detached.”",
+              },
+              { k: "christianity", t: "Over-sacrificing and carrying guilt." },
+              { k: "islam", t: "Being too hard on yourself when you slip." },
+              {
+                k: "secular_humanism",
+                t: "Getting cynical or dismissive of mystery.",
+              },
+            ],
+          },
+        ];
+
+        quizMain
+          .querySelectorAll(".question[data-question]")
+          .forEach((q) => q.remove());
+
+        const counter = quizMain.querySelector(".question-counter");
+        if (!counter) return;
+
+        const fragment = document.createDocumentFragment();
+        QUESTIONS.forEach((item, idx) => {
+          const q = document.createElement("div");
+          q.className = `question${idx === 0 ? " active" : ""}`;
+          q.setAttribute("data-question", String(idx + 1));
+
+          const h = document.createElement("h3");
+          h.textContent = item.q;
+
+          const answers = document.createElement("div");
+          answers.className = "answers";
+
+          item.a.forEach((opt, optIdx) => {
+            const meta = LABELS[opt.k] || { name: opt.k, badge: "✦" };
+            const profile = profileData[opt.k];
+            const btn = document.createElement("button");
+            btn.className = "answer-btn";
+            btn.setAttribute("onclick", "selectAnswer(this)");
+            btn.setAttribute("data-result", opt.k);
+            btn.setAttribute("data-option", String(optIdx + 1));
+            btn.setAttribute("data-label", meta.name);
+
+            const badge = document.createElement("span");
+            badge.className = "option-badge";
+
+            if (profile && profile.img) {
+              const img = document.createElement("img");
+              img.src = profile.img;
+              img.alt = meta.name;
+              img.onerror = () => {
+                const svg = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23667eea' width='100' height='100'/%3E%3Ctext x='50' y='50' font-size='40' fill='white' text-anchor='middle' dy='.3em'%3E${meta.badge}%3C/text%3E%3C/svg%3E`;
+                img.src = svg;
+              };
+              badge.appendChild(img);
+            } else {
+              badge.textContent = meta.badge;
+            }
+
+            const text = document.createElement("span");
+            text.className = "answer-text";
+            text.textContent = opt.t;
+
+            const chev = document.createElement("span");
+            chev.className = "chevron";
+            chev.textContent = "›";
+
+            btn.appendChild(badge);
+            btn.appendChild(text);
+            btn.appendChild(chev);
+
+            answers.appendChild(btn);
+          });
+
+          q.appendChild(h);
+          q.appendChild(answers);
+          fragment.appendChild(q);
+        });
+
+        counter.insertAdjacentElement(
+          "afterend",
+          document.createElement("div")
+        );
+        const temp = counter.nextElementSibling;
+        temp.replaceWith(fragment);
+      })();
+    </script>
+    <script src="perfect-quiz-shell.js"></script>
+  </body>
+</html>
