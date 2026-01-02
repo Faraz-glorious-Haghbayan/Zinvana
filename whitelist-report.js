@@ -29,16 +29,27 @@ const VARIANT_SUFFIXES = [
   "en",
 ];
 
-const htmlContent = fs.readFileSync(ALL_ARTICLES_PATH, "utf8");
-// If new arrays get added to all-articles.html, include their names here so they are scanned.
-const arrayNames = ["brawlerFiles", "leaderFiles", "featuredQuizFiles"];
-
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+const htmlContent = fs.readFileSync(ALL_ARTICLES_PATH, "utf8");
+// If new arrays get added to all-articles.html, include their names here so they are scanned.
+const arrayNames = ["brawlerFiles", "leaderFiles", "featuredQuizFiles"];
+const anchorTagRegex = /<a[^>]*>/gi;
+const hrefPatterns = [
+  /href\s*=\s*"([^"]+?\.html(?:#[^"]*)?)"/gi,
+  /href\s*=\s*'([^']+?\.html(?:#[^']*)?)'/gi,
+  /href\s*=\s*([^\s>]+?\.html(?:#[^\s>"']*)?)/gi,
+];
+
 function normalizeFilename(value) {
-  return path.basename(value.split("#")[0].split("?")[0]);
+  const cleaned = value.trim().replace(/^['"]+|['"]+$/g, "");
+  return path.basename(cleaned.split("#")[0].split("?")[0]);
+}
+
+function splitTokens(value) {
+  return normalizeFilename(value).replace(/\.html$/i, "").toLowerCase().split(/[-_]/);
 }
 
 function baseKey(filename) {
@@ -54,12 +65,13 @@ function baseKey(filename) {
 }
 
 function extractArray(content, name) {
-  const regex = new RegExp(`(?:const|let|var)\\s+${name}\\s*=\\s*\\[([^\\]]*?)\\]\\s*;?`, "i");
+  const safeName = escapeRegExp(name);
+  const regex = new RegExp(`(?:const|let|var)\\s+${safeName}\\s*=\\s*\\[([^\\]]*?)\\]\\s*;?`, "i");
   const match = content.match(regex);
   if (!match) return [];
 
   const values = [];
-  const stringRegex = /(['"`])([^'"`]+?\.html)\1/gi;
+  const stringRegex = /(['"`])([^'"`]*?\.html)\1/gi;
   let item;
   while ((item = stringRegex.exec(match[1])) !== null) {
     values.push(normalizeFilename(item[2]));
@@ -69,13 +81,16 @@ function extractArray(content, name) {
 
 function extractAnchors(content) {
   const anchors = new Set();
-  const anchorRegex =
-    /<a[^>]+href\s*=\s*(?:"([^"]+?\.html(?:#[^"]*)?)"|'([^']+?\.html(?:#[^']*)?)'|([^\s>]+?\.html(?:#[^\s>"']*)?))/gi;
-  let match;
-  while ((match = anchorRegex.exec(content)) !== null) {
-    const href = match[1] || match[2] || match[3];
-    if (href) {
-      anchors.add(normalizeFilename(href));
+  let tagMatch;
+  while ((tagMatch = anchorTagRegex.exec(content)) !== null) {
+    const tag = tagMatch[0];
+    for (const pattern of hrefPatterns) {
+      pattern.lastIndex = 0;
+      let hrefMatch;
+      while ((hrefMatch = pattern.exec(tag)) !== null) {
+        const href = hrefMatch[1];
+        if (href) anchors.add(normalizeFilename(href));
+      }
     }
   }
   return [...anchors];
@@ -109,10 +124,6 @@ const allHtmlFiles = collectHtmlFiles(ROOT);
 const whitelist = [...whitelistSet].sort();
 const uncertain = [];
 const safeToDelete = [];
-
-function splitTokens(value) {
-  return normalizeFilename(value).replace(/\.html$/i, "").toLowerCase().split(/[-_]/);
-}
 
 function looksRelated(filename) {
   const base = baseKey(filename);
