@@ -1005,19 +1005,324 @@
           </button>
         </div>
       </section>
-
-      <footer class="footer">
-        <div>
-          <a
-            class="chip"
-            href="#top"
-            onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;"
-            >Back to top</a
-          >
-        </div>
-        <p style="margin: 12px 0 0">© 2026 Zinvana</p>
-      </footer>
     </main>
+
+    <footer
+      style="
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #334155 100%
+        );
+        color: #ffffff;
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
+          z-index: 1;
+        "
+      ></div>
+
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 60px 40px 40px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 40px;
+        "
+      >
+        <div
+          style="display: flex; flex-direction: column; align-items: flex-start"
+        >
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana"
+            style="
+              width: 50px;
+              height: 50px;
+              border-radius: 12px;
+              margin-bottom: 16px;
+              box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+            "
+          />
+          <h3
+            style="
+              color: #ffffff;
+              font-size: 1.5rem;
+              margin-bottom: 16px;
+              font-weight: 600;
+            "
+          >
+            Zinvana
+          </h3>
+          <p
+            style="
+              color: #94a3b8;
+              line-height: 1.6;
+              margin: 0;
+              font-size: 1rem;
+              margin-bottom: 20px;
+            "
+          >
+            Discover your true self through fun, engaging personality quizzes
+            and assessments. From internet archetypes to personality types, we
+            help you explore different aspects of your personality in an
+            entertaining, educational way.
+          </p>
+          <div style="display: flex; gap: 16px; margin-bottom: 20px">
+            <a
+              href="https://x.com/farazglori80528"
+              target="_blank"
+              style="
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+              "
+              onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'"
+              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                /></svg
+            ></a>
+            <a
+              href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
+              target="_blank"
+              style="
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+              "
+              onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'"
+              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                /></svg
+            ></a>
+          </div>
+          <p
+            style="
+              color: #94a3b8;
+              font-size: 0.9rem;
+              margin: 0;
+              line-height: 1.5;
+            "
+          >
+            Stay updated with our latest quizzes and personality assessments!
+          </p>
+        </div>
+
+        <div>
+          <h4
+            style="
+              color: #e2e8f0;
+              font-size: 1.125rem;
+              margin-bottom: 20px;
+              font-weight: 600;
+            "
+          >
+            Popular Quizzes
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 12px">
+              <a
+                href="leaders.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Historical Leaders Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="football-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Football Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="wojak-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Wojak Personality Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="perfect-country.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Perfect Country Quiz</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="youtubers-personality-quiz.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >YouTubers Personality Quiz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4
+            style="
+              color: #e2e8f0;
+              font-size: 1.125rem;
+              margin-bottom: 20px;
+              font-weight: 600;
+            "
+          >
+            Resources
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 12px">
+              <a
+                href="/about.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >About Us</a
+              >
+            </li>
+            <li style="margin-bottom: 12px">
+              <a
+                href="/privacy.html"
+                style="
+                  color: #94a3b8;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+                  font-size: 0.95rem;
+                "
+                onmouseover="this.style.color='#667eea'"
+                onmouseout="this.style.color='#94a3b8'"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 30px 40px;
+        "
+      >
+        <div
+          style="
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+          "
+        >
+          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+            &copy; 2025 Zinvana. All rights reserved.
+          </p>
+          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+            Made with ❤️ by the Zinvana Team
+          </p>
+        </div>
+        <div
+          style="
+            color: #64748b;
+            font-size: 0.85rem;
+            margin: 20px auto 0;
+            text-align: center;
+            line-height: 1.5;
+            max-width: 600px;
+          "
+        >
+          Made with care by Zinvana. All quizzes are for entertainment purposes
+          only and do not collect personal data.
+        </div>
+      </div>
+    </footer>
 
     <script>
       // Enhanced responsive nav toggle with animated hamburger
@@ -1419,6 +1724,14 @@
           saebyeok: ["067.gif", "67.gif"],
           ilnam: ["1.gif", "001.gif"],
           frontman: ["frontman.gif"],
+          "brawlstars-quiz": ["brawlstarsgif.gif"],
+          "disney-princess-quiz": ["elsa.png"],
+          "dream-meaning": ["dream-dreaming.gif"],
+          quiz: ["cyrus.gif"],
+          "political-ideologie": ["revolution.gif"],
+          religion: ["muhammadheader.jpg"],
+          "superhero-marvel-personality-quiz": ["marvel.gif"],
+          "youtubers-personality-quiz": ["mrbeast.gif"],
           neymarjr: ["neymar.gif", "neymar.webp", "neymar.jpg"],
           "wojak-chad": ["chad.png"],
           chad: ["chad.png"],
@@ -1566,11 +1879,41 @@
         );
         if (linkImg) return linkImg;
 
-        const scope =
-          doc.querySelector("main") || doc.querySelector("article") || doc.body;
-        const img = scope?.querySelector("img[src]");
-        const src = normalizeUrlLike(img?.getAttribute("src"));
-        return src || "";
+        const mainOrArticle =
+          doc.querySelector("main") || doc.querySelector("article");
+        if (mainOrArticle) {
+          const img = mainOrArticle.querySelector("img[src]");
+          const src = normalizeUrlLike(img?.getAttribute("src"));
+          return src || "";
+        }
+
+        // Some pages don't use <main>/<article>. If they have a global footer/header,
+        // ignore those so the footer logo doesn't become the preview image.
+        const imgs = Array.from(doc.querySelectorAll("img[src]"));
+        for (const img of imgs) {
+          if (img.closest("header, nav, footer")) continue;
+          const src = normalizeUrlLike(img.getAttribute("src"));
+          if (src) return src;
+        }
+        return "";
+      }
+
+      function extractReadableTextFromDoc(doc) {
+        if (!doc) return "";
+        const mainOrArticle =
+          doc.querySelector("main") || doc.querySelector("article");
+        if (mainOrArticle) return mainOrArticle.innerText || "";
+
+        // Fall back to body text, but strip common chrome so a shared footer
+        // doesn't blow up reading-time estimates.
+        const body = doc.body;
+        if (!body) return "";
+
+        const clone = body.cloneNode(true);
+        clone
+          .querySelectorAll("header, nav, footer, script, style, noscript")
+          .forEach((el) => el.remove());
+        return clone.innerText || "";
       }
 
       function looksSpammyDescription(raw) {
@@ -1816,9 +2159,7 @@
             }
           }
 
-          const main =
-            doc.querySelector("main") || doc.querySelector("article");
-          const text = (main || doc.body)?.innerText || "";
+          const text = extractReadableTextFromDoc(doc);
           const mins = computeReadingTimeMinutes(text);
           if (readingEl) readingEl.textContent = `${mins} min read`;
         } catch {
