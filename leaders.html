@@ -534,7 +534,7 @@
         padding: clamp(60px, 12vw, 100px) clamp(16px, 3vw, 24px)
           clamp(40px, 8vw, 60px);
         color: #fff;
-        text-align: center;
+        text-align: left;
         position: relative;
         overflow: hidden;
       }
@@ -636,6 +636,187 @@
         font-size: clamp(1rem, 2.5vw, 1.15rem);
         line-height: 1.75;
         color: #e2e8f0;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: 22px;
+        align-items: start;
+      }
+
+      .hero-copy {
+        min-width: 0;
+      }
+
+      .hero-section .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 215, 0, 0.25);
+        background: rgba(255, 215, 0, 0.12);
+        color: #ffeaa7;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        font-size: 0.9rem;
+        width: fit-content;
+      }
+
+      .hero-highlights {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 22px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .hero-highlights li {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 10px;
+        align-items: start;
+        color: rgba(255, 255, 255, 0.92);
+      }
+
+      .hero-highlights li::before {
+        content: "✓";
+        width: 26px;
+        height: 26px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 215, 0, 0.18);
+        border: 1px solid rgba(255, 215, 0, 0.35);
+        color: #ffd700;
+        font-weight: 900;
+        line-height: 1;
+        box-shadow: 0 12px 30px rgba(255, 215, 0, 0.12);
+      }
+
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-start;
+        margin-top: 18px;
+      }
+
+      .hero-panel {
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(15, 23, 42, 0.35);
+        padding: 22px;
+        box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+        min-width: 0;
+      }
+
+      .hero-factor-grid {
+        margin-top: 16px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .hero-factor {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        padding: 12px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .hero-factor .icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.18),
+          rgba(255, 107, 53, 0.16)
+        );
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        flex: 0 0 auto;
+      }
+
+      .hero-factor h4 {
+        margin: 0;
+        font-size: 1.02rem;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.95);
+        letter-spacing: -0.01em;
+      }
+
+      .hero-factor p {
+        margin: 4px 0 0;
+        color: rgba(226, 232, 240, 0.9);
+        line-height: 1.55;
+      }
+
+      .hero-links {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .hero-link-card {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: start;
+        padding: 14px 16px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(15, 23, 42, 0.35);
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.92);
+        transition: transform 200ms ease, box-shadow 200ms ease,
+          border-color 200ms ease, background 200ms ease;
+      }
+
+      .hero-link-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 215, 0, 0.55);
+        box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+        background: rgba(15, 23, 42, 0.45);
+      }
+
+      .hero-link-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 215, 0, 0.14);
+        border: 1px solid rgba(255, 215, 0, 0.25);
+      }
+
+      .hero-link-text h4 {
+        margin: 0;
+        font-size: 1.02rem;
+        font-weight: 900;
+        letter-spacing: -0.01em;
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .hero-link-text p {
+        margin: 6px 0 0;
+        color: rgba(226, 232, 240, 0.9);
+        line-height: 1.55;
+      }
+
+      .hero-link-arrow {
+        color: rgba(255, 215, 0, 0.9);
+        font-weight: 900;
+        font-size: 1.1rem;
+        line-height: 1;
+        padding-top: 4px;
       }
 
       /* Badge/Tag Style */
@@ -1117,10 +1298,16 @@
         align-items: center;
         justify-content: center;
         color: var(--muted);
-        font-size: 16px;
+        font-size: 0;
         font-weight: 700;
         transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 3;
+      }
+
+      .answer-btn .chevron::before {
+        content: "\203A";
+        font-size: 18px;
+        line-height: 1;
       }
 
       .answer-btn:hover .chevron {
@@ -1408,7 +1595,7 @@
 
       .result-copy {
         flex: 1;
-        min-width: 300px;
+        min-width: min(300px, 100%);
       }
 
       .result-eyebrow {
@@ -6567,6 +6754,7 @@
         /* Keep hero from feeling over-tall on mobile */
         .hero-section {
           padding: 44px 0 28px;
+          text-align: center;
         }
 
         .hero-grid {
@@ -6588,6 +6776,15 @@
 
         .hero-cta {
           margin-bottom: 20px;
+          justify-content: center;
+        }
+
+        .hero-links {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-link-card {
+          text-align: left;
         }
 
         .hero-stats {
@@ -6705,7 +6902,7 @@
       }
 
       /* === Mobile fixes: Historical Leadership Archetype Guide === */
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         #countryGuide .guide-header {
           text-align: left;
           margin-bottom: 18px;
@@ -6829,6 +7026,73 @@
           grid-template-columns: 1fr;
         }
       }
+
+      /* ===== Responsive hardening (all devices) ===== */
+
+      img,
+      svg,
+      video,
+      canvas {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* iOS safe-area support so the fixed topbar never feels cramped */
+      .topbar__inner {
+        padding-left: calc(16px + env(safe-area-inset-left));
+        padding-right: calc(16px + env(safe-area-inset-right));
+      }
+
+      .hero-grid,
+      .result-hero,
+      .guide-toolbar,
+      .guide-grid,
+      .result-grid {
+        min-width: 0;
+      }
+
+      /* Prevent chevron overlap on narrow screens */
+      #quizSection .answer-btn {
+        padding-right: 86px;
+      }
+
+      #quizSection .answer-btn .answer-text {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+      }
+
+      @media (max-width: 768px) {
+        #quizSection .answer-btn {
+          padding-right: 72px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .result-card-inner {
+          padding: 28px 18px;
+        }
+
+        #quizSection .answer-btn {
+          padding-right: 60px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .result-card-inner {
+          padding: 20px 14px;
+        }
+
+        #quizSection .answer-btn {
+          padding-right: 42px;
+        }
+      }
+
+      @media (max-height: 500px) and (orientation: landscape) {
+        #quizSection .answer-btn {
+          padding-right: 54px;
+        }
+      }
     </style>
   </head>
 
@@ -6849,6 +7113,8 @@
         <nav class="primary-nav" aria-label="Main navigation">
           <a class="nav-link" href="#quizSection">Quiz</a>
           <a class="nav-link" href="#countryGuide">Leader guide</a>
+          <a class="nav-link" href="leaders-quiz.html">Ultimate Leaders Quiz</a>
+          <a class="nav-link" href="leaders-list.html">Leaders list</a>
           <a class="nav-link" href="#faq">FAQ</a>
         </nav>
         <div class="nav-actions">
@@ -6866,6 +7132,8 @@
       <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
         <a class="nav-link" href="#quizSection">Quiz</a>
         <a class="nav-link" href="#countryGuide">Leader guide</a>
+        <a class="nav-link" href="leaders-quiz.html">Ultimate Leaders Quiz</a>
+        <a class="nav-link" href="leaders-list.html">Leaders list</a>
         <a class="nav-link" href="#faq">FAQ</a>
         <a class="nav-link" href="about.html">About</a>
       </nav>
@@ -6896,7 +7164,28 @@
 
           <div class="hero-cta">
             <a href="#quizSection" class="primary-btn">Start The Quiz</a>
-            <a href="#countryGuide" class="ghost-btn">Browse Leader Guide</a>
+            <a href="leaders-list.html" class="ghost-btn"
+              >Browse leaders list</a
+            >
+          </div>
+
+          <div class="hero-links" aria-label="More leaders resources">
+            <a class="hero-link-card" href="leaders-quiz.html">
+              <div class="hero-link-icon">📘</div>
+              <div class="hero-link-text">
+                <h4>Ultimate Leaders Quiz guide</h4>
+                <p>Archetypes, sample questions, and how results work.</p>
+              </div>
+              <span class="hero-link-arrow">→</span>
+            </a>
+            <a class="hero-link-card" href="leaders-list.html">
+              <div class="hero-link-icon">🧾</div>
+              <div class="hero-link-text">
+                <h4>Browse every leader</h4>
+                <p>Explore the full directory of historical leader profiles.</p>
+              </div>
+              <span class="hero-link-arrow">→</span>
+            </a>
           </div>
 
           <div class="stats hero-stats">
@@ -7460,7 +7749,7 @@
                   >Launch a bold strike before competitors can respond.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7478,7 +7767,7 @@
                   values.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7496,7 +7785,7 @@
                   flawlessly.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7514,7 +7803,7 @@
                   decisively.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -7540,7 +7829,7 @@
                   purpose.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7558,7 +7847,7 @@
                   grit.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7576,7 +7865,7 @@
                   timed gestures.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7594,7 +7883,7 @@
                   speed.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -7620,7 +7909,7 @@
                   principle.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7638,7 +7927,7 @@
                   narrative.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7656,7 +7945,7 @@
                   gone.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7673,7 +7962,7 @@
                   >Uniting diverse cultures under one ambitious story.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -7699,7 +7988,7 @@
                   again.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7717,7 +8006,7 @@
                   resolve.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7735,7 +8024,7 @@
                   commitment.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7753,7 +8042,7 @@
                   expected.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -7779,7 +8068,7 @@
                   stakeholders.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7797,7 +8086,7 @@
                   cue.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7814,7 +8103,7 @@
                   >Deep community trust that legitimizes every move.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7832,7 +8121,7 @@
                   time.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -7858,7 +8147,7 @@
                   empathy.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7876,7 +8165,7 @@
                   leverage.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7893,7 +8182,7 @@
                   >Offer firm terms backed by undeniable capability.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7910,7 +8199,7 @@
                   >Apply nonviolent pressure with unwavering discipline.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -7936,7 +8225,7 @@
                   forward.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7954,7 +8243,7 @@
                   room.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7972,7 +8261,7 @@
                   advancing.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -7990,7 +8279,7 @@
                   people.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -8016,7 +8305,7 @@
                   time.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8034,7 +8323,7 @@
                   hour.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8052,7 +8341,7 @@
                   perceptions.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8070,7 +8359,7 @@
                   debate.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -8096,7 +8385,7 @@
                   fast.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8113,7 +8402,7 @@
                   >Trust a former adversary in pursuit of lasting peace.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8130,7 +8419,7 @@
                   >Split forces to move faster than anyone expects.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8148,7 +8437,7 @@
                   ground.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -8173,7 +8462,7 @@
                   >Lead with empathy; unity is built one story at a time.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8191,7 +8480,7 @@
                   teams.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8208,7 +8497,7 @@
                   >Courage is contagious; never surrender the narrative.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8225,7 +8514,7 @@
                   >Justice and reconciliation must advance together.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -8253,7 +8542,7 @@
                   inevitable.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8271,7 +8560,7 @@
                   quickly.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8289,7 +8578,7 @@
                   structure.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8307,7 +8596,7 @@
                   factions.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -8333,7 +8622,7 @@
                   lead.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8351,7 +8640,7 @@
                   loyalty.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8369,7 +8658,7 @@
                   action.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8387,7 +8676,7 @@
                   front.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -8413,7 +8702,7 @@
                   ambitions.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8430,7 +8719,7 @@
                   >Center shared pain and future healing to earn trust.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8448,7 +8737,7 @@
                   example.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8466,7 +8755,7 @@
                   concessions.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -8493,7 +8782,7 @@
                   >Incremental reforms that make change feel familiar.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8511,7 +8800,7 @@
                   framework.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8529,7 +8818,7 @@
                   destabilization.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8547,7 +8836,7 @@
                   authority.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -8572,7 +8861,7 @@
                   >In the spotlight, turning resolve into rallying cries.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8589,7 +8878,7 @@
                   >In private journals, distilling chaos into principle.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8606,7 +8895,7 @@
                   >In late-night dialogues seeking a unifying path.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -8623,7 +8912,7 @@
                   >In sacred traditions that legitimize bold action.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
             </div>
           </div>
@@ -8648,7 +8937,7 @@
                   >Rotate trusted envoys and reward merit across tribes.</span
                 >
 
-                <span class="chevron">›</span>
+                <span class="chevron">&rsaquo;</span>
               </button>
 
               <button
@@ -10235,7 +10524,9 @@
               <li>Culture blender</li>
             </ul>
 
-            <a href="alexander.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-alexander.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Cleopatra -->
@@ -10265,7 +10556,9 @@
               <li>Alliance architect</li>
             </ul>
 
-            <a href="cleopatra.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-cleopatra.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Napoleon -->
@@ -10295,7 +10588,9 @@
               <li>Pressure proof</li>
             </ul>
 
-            <a href="napoleon.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-napoleon.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Nelson Mandela -->
@@ -10322,7 +10617,9 @@
               <li>Calm center</li>
             </ul>
 
-            <a href="nelsonmandela.html" class="guide-cta">Explore biography</a>
+            <a href="nelsonleaders-mandela.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Mahatma Gandhi -->
@@ -10349,7 +10646,9 @@
               <li>Habit architect</li>
             </ul>
 
-            <a href="gandhi.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-gandhi.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Queen Elizabeth I -->
@@ -10379,7 +10678,9 @@
               <li>Alliance broker</li>
             </ul>
 
-            <a href="elizabethI.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-elizabethI.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Abraham Lincoln -->
@@ -10406,7 +10707,9 @@
               <li>Coalition maker</li>
             </ul>
 
-            <a href="lincoln.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-lincoln.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Winston Churchill -->
@@ -10436,7 +10739,9 @@
               <li>Strategic improv</li>
             </ul>
 
-            <a href="churchill.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-churchill.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Genghis Khan -->
@@ -10463,7 +10768,9 @@
               <li>Logistics master</li>
             </ul>
 
-            <a href="mongolempire.html" class="guide-cta">Explore biography</a>
+            <a href="mongolall-empires.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Mustafa Kemal Ataturk -->
@@ -10490,7 +10797,9 @@
               <li>Execution drive</li>
             </ul>
 
-            <a href="ataturk.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-ataturk.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Catherine the Great -->
@@ -10517,7 +10826,9 @@
               <li>Institution builder</li>
             </ul>
 
-            <a href="catherine.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-catherine.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Augustus -->
@@ -10547,7 +10858,9 @@
               <li>Legacy mindset</li>
             </ul>
 
-            <a href="augustus.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-augustus.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Ashoka -->
@@ -10577,7 +10890,9 @@
               <li>Cross-faith alliances</li>
             </ul>
 
-            <a href="ashoka.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-ashoka.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Marcus Aurelius -->
@@ -10607,7 +10922,9 @@
               <li>Service mindset</li>
             </ul>
 
-            <a href="aurelius.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-aurelius.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Cyrus the Great -->
@@ -10637,7 +10954,7 @@
               <li>Delegation expert</li>
             </ul>
 
-            <a href="cyrus.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-cyrus.html" class="guide-cta">Explore biography</a>
           </article>
 
           <!-- Cambyses II -->
@@ -10664,7 +10981,9 @@
               <li>Momentum obsessed</li>
             </ul>
 
-            <a href="cambyses.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-cambyses.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Darius the Great -->
@@ -10691,7 +11010,9 @@
               <li>Talent deployer</li>
             </ul>
 
-            <a href="darius.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-darius.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Xerxes I -->
@@ -10721,7 +11042,9 @@
               <li>Coalition loyalty</li>
             </ul>
 
-            <a href="xerxes.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-xerxes.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Shapur I -->
@@ -10751,7 +11074,9 @@
               <li>Cultural fusion</li>
             </ul>
 
-            <a href="shapur.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-shapur.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Khosrow I -->
@@ -10778,7 +11103,9 @@
               <li>Calm operator</li>
             </ul>
 
-            <a href="khosrow.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-khosrow.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Ardashir I -->
@@ -10805,7 +11132,9 @@
               <li>Strategic centralization</li>
             </ul>
 
-            <a href="ardashir.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-ardashir.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Artaxerxes I -->
@@ -10835,7 +11164,9 @@
               <li>Crisis containment</li>
             </ul>
 
-            <a href="artaxerxes.html" class="guide-cta">Explore biography</a>
+            <a href="artaleaders-xerxes.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Tokugawa Ieyasu -->
@@ -10865,7 +11196,9 @@
               <li>Stability first</li>
             </ul>
 
-            <a href="tokugawa.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-tokugawa.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Mansa Musa -->
@@ -10895,7 +11228,7 @@
               <li>Balances faith and finance</li>
             </ul>
 
-            <a href="mansa.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-mansa.html" class="guide-cta">Explore biography</a>
           </article>
 
           <!-- Suleiman the Magnificent -->
@@ -10925,7 +11258,9 @@
               <li>Patron of talent</li>
             </ul>
 
-            <a href="suleiman.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-suleiman.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Hatshepsut -->
@@ -10952,7 +11287,9 @@
               <li>Trust architect</li>
             </ul>
 
-            <a href="hatshepsut.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-hatshepsut.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Shaka Zulu -->
@@ -10979,7 +11316,7 @@
               <li>Owns tempo</li>
             </ul>
 
-            <a href="shaka.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-shaka.html" class="guide-cta">Explore biography</a>
           </article>
 
           <!-- Joan of Arc -->
@@ -11006,7 +11343,7 @@
               <li>Storyteller</li>
             </ul>
 
-            <a href="joan.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-joan.html" class="guide-cta">Explore biography</a>
           </article>
 
           <!-- Harriet Tubman -->
@@ -11033,7 +11370,9 @@
               <li>Community-first</li>
             </ul>
 
-            <a href="tubman.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-tubman.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Simon Bolivar -->
@@ -11060,7 +11399,9 @@
               <li>Battle-tested</li>
             </ul>
 
-            <a href="bolivar.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-bolivar.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Queen Nzinga -->
@@ -11087,7 +11428,9 @@
               <li>Network builder</li>
             </ul>
 
-            <a href="nzinga.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-nzinga.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Saladin -->
@@ -11117,7 +11460,9 @@
               <li>Steady commander</li>
             </ul>
 
-            <a href="saladin.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-saladin.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
 
           <!-- Queen Zenobia -->
@@ -11144,7 +11489,9 @@
               <li>Adaptive ruler</li>
             </ul>
 
-            <a href="zenobia.html" class="guide-cta">Explore biography</a>
+            <a href="leaders-zenobia.html" class="guide-cta"
+              >Explore biography</a
+            >
           </article>
         </div>
       </section>
@@ -11333,71 +11680,71 @@
       };
 
       const pageMap = {
-        alexander: "alexander.html",
+        alexander: "leaders-alexander.html",
 
-        cleopatra: "cleopatra.html",
+        cleopatra: "leaders-cleopatra.html",
 
-        napoleon: "napoleon.html",
+        napoleon: "leaders-napoleon.html",
 
-        mandela: "nelsonmandela.html",
+        mandela: "nelsonleaders-mandela.html",
 
-        gandhi: "gandhi.html",
+        gandhi: "leaders-gandhi.html",
 
-        elizabeth: "elizabethI.html",
+        elizabeth: "leaders-elizabethI.html",
 
-        lincoln: "lincoln.html",
+        lincoln: "leaders-lincoln.html",
 
-        churchill: "churchill.html",
+        churchill: "leaders-churchill.html",
 
-        genghis: "mongolempire.html",
+        genghis: "mongolall-empires.html",
 
-        ataturk: "ataturk.html",
+        ataturk: "leaders-ataturk.html",
 
-        catherine: "catherine.html",
+        catherine: "leaders-catherine.html",
 
-        augustus: "augustus.html",
+        augustus: "leaders-augustus.html",
 
-        ashoka: "ashoka.html",
+        ashoka: "leaders-ashoka.html",
 
-        aurelius: "aurelius.html",
+        aurelius: "leaders-aurelius.html",
 
-        cyrus: "cyrus.html",
+        cyrus: "leaders-cyrus.html",
 
-        darius: "darius.html",
+        darius: "leaders-darius.html",
 
-        xerxes: "xerxes.html",
+        xerxes: "leaders-xerxes.html",
 
-        shapur: "shapur.html",
+        shapur: "leaders-shapur.html",
 
-        khosrow: "khosrow.html",
+        khosrow: "leaders-khosrow.html",
 
-        cambyses: "cambyses.html",
+        cambyses: "leaders-cambyses.html",
 
-        ardashir: "ardashir.html",
+        ardashir: "leaders-ardashir.html",
 
-        artaxerxes: "artaxerxes.html",
+        artaxerxes: "artaleaders-xerxes.html",
 
         tokugawa: "tokugawashogunate.html",
 
-        mansa: "mansa.html",
+        mansa: "leaders-mansa.html",
 
-        suleiman: "suleiman.html",
+        suleiman: "leaders-suleiman.html",
 
-        hatshepsut: "hatshepsut.html",
+        hatshepsut: "leaders-hatshepsut.html",
 
-        shaka: "shaka.html",
+        shaka: "leaders-shaka.html",
 
-        joan: "joan.html",
+        joan: "leaders-joan.html",
 
-        tubman: "tubman.html",
+        tubman: "leaders-tubman.html",
 
-        bolivar: "bolivar.html",
+        bolivar: "leaders-bolivar.html",
 
-        nzinga: "nzinga.html",
+        nzinga: "leaders-nzinga.html",
 
-        saladin: "saladin.html",
+        saladin: "leaders-saladin.html",
 
-        zenobia: "zenobia.html",
+        zenobia: "leaders-zenobia.html",
       };
 
       function getInitials(name) {
@@ -13724,6 +14071,15 @@
             }">`;
           }
         });
+
+        // Normalize chevrons (avoid encoding issues like "›")
+
+        Array.from(document.querySelectorAll(".answer-btn .chevron")).forEach(
+          (chevron) => {
+            chevron.setAttribute("aria-hidden", "true");
+            chevron.textContent = "";
+          }
+        );
 
         populateSpotlight();
 
