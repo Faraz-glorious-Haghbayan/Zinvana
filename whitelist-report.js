@@ -5,6 +5,20 @@ const ROOT = __dirname;
 const ALL_ARTICLES_PATH = path.join(ROOT, "all-articles.html");
 const MIN_TOKEN_MATCH_LENGTH = 3;
 const EXCLUDED_DIRS = new Set(["node_modules", ".git"]);
+const FORCE_DELETE_SUFFIXES = ["-ru.html", "-fa.html", "-hi.html"];
+const FORCE_DELETE_CONTAINS = ["-q&a", "-q-and-a", "-qa"];
+const FORCE_DELETE_NAMES = [
+  "aztec.html",
+  "inca.html",
+  "mongolempire.html",
+  "mughal.html",
+  "ottoman.html",
+  "romanempire.html",
+  "british.html",
+  "empire.html",
+  "all-empires.html",
+  "persian_kings-quiz.html",
+];
 const VARIANT_SUFFIXES = [
   "q&a",
   "q&a-version",
@@ -46,6 +60,14 @@ const hrefPatterns = [
 function normalizeFilename(value) {
   const cleaned = value.trim().replace(/^['"]+|['"]+$/g, "");
   return path.basename(cleaned.split("#")[0].split("?")[0]);
+}
+
+function isForcedDelete(filename) {
+  const lower = normalizeFilename(filename).toLowerCase();
+  if (FORCE_DELETE_NAMES.includes(lower)) return true;
+  if (FORCE_DELETE_SUFFIXES.some((s) => lower.endsWith(s))) return true;
+  if (FORCE_DELETE_CONTAINS.some((c) => lower.includes(c))) return true;
+  return false;
 }
 
 function splitTokens(value) {
@@ -117,6 +139,9 @@ function collectHtmlFiles(root) {
 const whitelistFromArrays = arrayNames.flatMap((name) => extractArray(htmlContent, name));
 const whitelistFromLinks = extractAnchors(htmlContent);
 const whitelistSet = new Set([...whitelistFromArrays, ...whitelistFromLinks].map(normalizeFilename));
+for (const item of [...whitelistSet]) {
+  if (isForcedDelete(item)) whitelistSet.delete(item);
+}
 const whitelistBases = new Set([...whitelistSet].map(baseKey));
 const whitelistTokens = new Map([...whitelistSet].map((item) => [item, splitTokens(item)]));
 
@@ -153,6 +178,10 @@ function looksRelated(filename) {
 
 for (const file of allHtmlFiles) {
   const normalized = normalizeFilename(file);
+  if (isForcedDelete(normalized)) {
+    safeToDelete.push(file);
+    continue;
+  }
   if (whitelistSet.has(normalized)) continue;
 
   if (looksRelated(normalized)) {
