@@ -54,25 +54,29 @@ function baseKey(filename) {
 }
 
 function extractArray(content, name) {
-  const regex = new RegExp(`(?:const|let|var)\\s+${name}\\s*=\\s*\\[(.*?)\\]\\s*;?`, "is");
+  const regex = new RegExp(`(?:const|let|var)\\s+${name}\\s*=\\s*\\[([^\\]]*?)\\]\\s*;?`, "i");
   const match = content.match(regex);
   if (!match) return [];
 
   const values = [];
-  const stringRegex = /"([^"]+?\.html)"/gi;
+  const stringRegex = /(['"`])([^'"`]+?\.html)\1/gi;
   let item;
   while ((item = stringRegex.exec(match[1])) !== null) {
-    values.push(normalizeFilename(item[1]));
+    values.push(normalizeFilename(item[2]));
   }
   return values;
 }
 
 function extractAnchors(content) {
   const anchors = new Set();
-  const anchorRegex = /<a[^>]+href=["']([^"']+?\.html(?:#[^"']*)?)["']/gi;
+  const anchorRegex =
+    /<a[^>]+href\s*=\s*(?:"([^"]+?\.html(?:#[^"]*)?)"|'([^']+?\.html(?:#[^']*)?)'|([^\s>]+?\.html(?:#[^\s>"']*)?))/gi;
   let match;
   while ((match = anchorRegex.exec(content)) !== null) {
-    anchors.add(normalizeFilename(match[1]));
+    const href = match[1] || match[2] || match[3];
+    if (href) {
+      anchors.add(normalizeFilename(href));
+    }
   }
   return [...anchors];
 }
@@ -99,11 +103,16 @@ const whitelistFromArrays = arrayNames.flatMap((name) => extractArray(htmlConten
 const whitelistFromLinks = extractAnchors(htmlContent);
 const whitelistSet = new Set([...whitelistFromArrays, ...whitelistFromLinks].map(normalizeFilename));
 const whitelistBases = new Set([...whitelistSet].map(baseKey));
+const whitelistTokens = new Map([...whitelistSet].map((item) => [item, splitTokens(item)]));
 
 const allHtmlFiles = collectHtmlFiles(ROOT);
 const whitelist = [...whitelistSet].sort();
 const uncertain = [];
 const safeToDelete = [];
+
+function splitTokens(value) {
+  return normalizeFilename(value).replace(/\.html$/i, "").toLowerCase().split(/[-_]/);
+}
 
 function looksRelated(filename) {
   const base = baseKey(filename);
@@ -113,13 +122,12 @@ function looksRelated(filename) {
   for (const item of whitelistSet) {
     const itemBase = baseKey(item);
     if (!itemBase) continue;
-    if (base.startsWith(itemBase) || itemBase.startsWith(base)) return true;
+    const longEnoughBases =
+      base.length >= MIN_TOKEN_MATCH_LENGTH && itemBase.length >= MIN_TOKEN_MATCH_LENGTH;
+    if (longEnoughBases && (base.startsWith(itemBase) || itemBase.startsWith(base))) return true;
 
-    const candidateTokens = normalizeFilename(filename).replace(/\.html$/i, "").toLowerCase().split(/[-_]/);
-    const itemTokens = normalizeFilename(item)
-      .replace(/\.html$/i, "")
-      .toLowerCase()
-      .split(/[-_]/);
+    const candidateTokens = splitTokens(filename);
+    const itemTokens = whitelistTokens.get(item) ?? splitTokens(item);
     // Treat matching first tokens as a conservative fallback to avoid deleting potential variants.
     if (
       candidateTokens[0] &&
