@@ -4,16 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Footballer Personality Quiz 2025 - Which Football Player Are You? | Free
-      Personality Test
+      Which Football Player Are You? Footballer Personality Quiz (2025) |
+      Zinvana
     </title>
     <meta
       name="description"
-      content="Take our Footballer Personality Quiz to discover which top player matches your mindset and playstyle. From Messi to Ronaldo, Pedri to Son, find your football archetype with deep insights and career advice."
-    />
-    <meta
-      name="keywords"
-      content="football personality quiz, which footballer are you, soccer personality test, messi or ronaldo quiz, football archetype, player style quiz, football test"
+      content="Which football player are you? Take this footballer personality quiz to match your mindset and playstyle to a top player archetype—then get strengths, weaknesses, and training tips."
     />
     <meta name="author" content="Zinvana" />
     <meta name="robots" content="index, follow" />
@@ -32,11 +28,11 @@
     <!-- Open Graph -->
     <meta
       property="og:title"
-      content="Footballer Personality Quiz 2025 - Which Player Are You?"
+      content="Which Football Player Are You? Footballer Personality Quiz (2025)"
     />
     <meta
       property="og:description"
-      content="Discover your football archetype in minutes. Answer 32 questions to find your inner Messi, Ronaldo, Mbappe, Pedri, Son, Davies, and more."
+      content="A free ‘which footballer are you’ quiz. Answer 32 questions to match your playstyle and mentality to a top player archetype—with strengths and training tips."
     />
     <meta
       property="og:image"
@@ -52,24 +48,34 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Footballer Personality Quiz 2025 - Which Player Are You?"
+      content="Which Football Player Are You? Footballer Personality Quiz (2025)"
     />
     <meta
       name="twitter:description"
-      content="Free personality test to find your footballer counterpart with strengths, mindset, and growth tips."
+      content="Which footballer are you? A free quiz with strengths, mindset, and growth tips."
     />
     <meta
       name="twitter:image"
       content="https://zinvana.com/images/football-personality-quiz.gif"
     />
 
+    <meta name="theme-color" content="#0c1324" />
+
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Quiz",
-        "name": "Footballer Personality Quiz",
-        "description": "A 32-question quiz that maps your traits to famous footballers' playstyles and mindsets.",
+        "name": "Which Football Player Are You? Footballer Personality Quiz (2025)",
+        "description": "A 32-question footballer personality quiz that maps your traits to famous football players' playstyles and mindsets.",
+        "url": "https://zinvana.com/football-personality-quiz.html",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "publisher": {
+          "@type": "Organization",
+          "name": "Zinvana",
+          "url": "https://zinvana.com"
+        },
         "author": { "@type": "Organization", "name": "Zinvana" },
         "datePublished": "2025-10-19",
         "dateModified": "2025-11-11",
@@ -117,6 +123,14 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which football player (or footballer) are you?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Finish the quiz and you’ll get your closest football player archetype match based on mentality, decision-making, intensity, and creativity. The result includes strengths, weaknesses, and practical training tips to improve your game."
+            }
+          },
           {
             "@type": "Question",
             "name": "How accurate is this quiz?",
@@ -2357,10 +2371,125 @@
       body.theme-light .site-footer__disclaimer {
         color: navy !important;
       }
+
+      /* ===== Addictive quiz enhancements (uses perfect-quiz-shell.js) ===== */
+      .quiz-shell .addictive-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 14px 0 12px;
+      }
+
+      .quiz-shell .addictive-pill {
+        border-radius: 999px;
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        background: rgba(99, 102, 241, 0.06);
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        color: var(--text-strong);
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .quiz-shell .addictive-pill .label {
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .quiz-shell .addictive-pill .value {
+        font-weight: 900;
+        letter-spacing: -0.01em;
+      }
+
+      .quiz-shell .micro-feedback {
+        border-radius: 18px;
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.96),
+          rgba(248, 250, 252, 0.92)
+        );
+        padding: 12px 14px;
+        color: var(--text-strong);
+        font-weight: 600;
+        line-height: 1.45;
+      }
+
+      body.theme-dark .quiz-shell .micro-feedback {
+        background: rgba(15, 23, 42, 0.55);
+        border-color: rgba(255, 255, 255, 0.08);
+        color: #deefff;
+      }
+
+      body.theme-dark .quiz-shell .addictive-pill {
+        background: rgba(99, 102, 241, 0.14);
+        border-color: rgba(255, 255, 255, 0.08);
+        color: #deefff;
+      }
+
+      body.theme-dark .quiz-shell .addictive-pill .label {
+        color: rgba(226, 232, 240, 0.78);
+      }
+
+      /* Brand-gradient progress (more premium + consistent with page) */
+      body.theme-light .quiz-shell .progress-bar,
+      body.theme-dark .quiz-shell .progress-bar {
+        background: linear-gradient(90deg, var(--brand1), var(--brand2));
+      }
+
+      body.theme-light .quiz-shell .progress-orb,
+      body.theme-dark .quiz-shell .progress-orb {
+        background: conic-gradient(
+          var(--brand1) var(--progress),
+          rgba(226, 232, 240, 0.9) 0
+        );
+      }
+
+      body.theme-dark .quiz-shell .progress-orb {
+        background: conic-gradient(
+          var(--brand1) var(--progress),
+          rgba(255, 255, 255, 0.1) 0
+        );
+      }
+
+      body.theme-dark .quiz-shell .progress-orb::before {
+        background: rgba(12, 19, 36, 0.92);
+      }
+
+      body.theme-dark .quiz-shell .progress-orb-value {
+        color: #e4ecff;
+      }
+
+      body.theme-dark .quiz-shell .progress-orb small {
+        color: rgba(226, 232, 240, 0.72);
+      }
+
+      /* Result text should respect theme variables */
+      .result h2 {
+        color: var(--text-strong);
+      }
+      .result p {
+        color: var(--muted);
+      }
+
+      /* Accessibility: respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+        }
+        .guide-card,
+        .character-card,
+        .result {
+          animation: none !important;
+        }
+      }
     </style>
     <link rel="stylesheet" href="perfect-quiz-shell.css" />
   </head>
-  <body class="theme-dark">
+  <body class="theme-light">
     <header class="topbar">
       <div class="topbar__inner">
         <a class="brand" href="index.html">
@@ -2380,27 +2509,6 @@
           <a class="nav-link" href="#faq">FAQ</a>
         </nav>
         <div class="nav-actions">
-          <button
-            class="theme-toggle"
-            id="themeToggle"
-            type="button"
-            aria-label="Toggle color theme"
-            aria-pressed="false"
-          >
-            <svg
-              class="theme-toggle__icon"
-              id="themeToggleIcon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0-5v2m0 16v2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M5.64 18.36 4.22 19.78"
-              />
-            </svg>
-            <span class="theme-toggle__text" id="themeToggleText"
-              >Light mode</span
-            >
-          </button>
           <a class="btn btn--ghost" href="index.html#quizzes">All quizzes</a>
           <button
             class="hamburger"
@@ -2424,13 +2532,18 @@
       <div class="main-container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Football Archetype Finder</span>
-          <h1>Footballer Personality Quiz 2025</h1>
-          <p class="subtitle">Which Football Player Are You?</p>
+          <h1>Which Football Player Are You?</h1>
+          <p class="subtitle">Footballer Personality Quiz 2025</p>
           <p class="description">
             Find your football archetype across mindset, playstyle, and
             leadership. Answer 32 questions to reveal if you're more Messi,
             Ronaldo, Mbappe, Pedri, Son, Davies, and more—with detailed
             strengths and growth tips.
+          </p>
+          <p class="description">
+            This “which footballer are you” quiz focuses on how you actually
+            play: your decisions under pressure, your intensity, and your role
+            preferences.
           </p>
 
           <ul class="hero-highlights">
@@ -2447,7 +2560,7 @@
 
         <div class="hero-panel">
           <span class="panel-eyebrow">How we match you</span>
-          <h3>Signals we use to score your archetype</h3>
+          <h3 style="color: red">Signals we use to score your archetype</h3>
           <p>
             Your answers map to repeatable patterns: decision-making, intensity,
             creativity, risk appetite, and role preference.
@@ -2719,7 +2832,12 @@
       </section>
 
       <!-- Quiz -->
-      <section class="quiz-shell" id="quizSection">
+      <section
+        class="quiz-shell"
+        id="quizSection"
+        data-addictive="true"
+        data-hide-option-titles="true"
+      >
         <div class="quiz-container" id="quizContainer">
           <div class="quiz-header">
             <h2>Take the Footballer Personality Quiz</h2>
@@ -2752,6 +2870,23 @@
                   <span id="progressLabel">Progress: 0%</span>
                 </li>
               </ul>
+
+              <div class="addictive-stats" aria-label="Momentum stats">
+                <div class="addictive-pill">
+                  <span class="label">Streak</span>
+                  <span class="value" id="streakValue">0</span>
+                </div>
+                <div class="addictive-pill">
+                  <span class="label">XP</span>
+                  <span class="value" id="xpValue">0</span>
+                </div>
+              </div>
+
+              <div
+                class="micro-feedback"
+                id="microFeedback"
+                aria-live="polite"
+              ></div>
               <p class="status-footnote">
                 Tip: Think about how you play, not who you admire.
               </p>
@@ -4583,10 +4718,13 @@
         </div>
       </section>
 
-      
-
       <!-- FAQ -->
-      <section class="faq-section" id="faq" aria-labelledby="faq-heading" style="margin-bottom: 0% !important;">
+      <section
+        class="faq-section"
+        id="faq"
+        aria-labelledby="faq-heading"
+        style="margin-bottom: 0% !important"
+      >
         <div class="main-container">
           <div class="section-header">
             <h2 id="faq-heading">Frequently Asked Questions</h2>
@@ -4594,6 +4732,25 @@
               Detailed answers about how the quiz works, what results mean, and
               how to use them to improve your game.
             </p>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Which football player (or footballer) are you?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                Finish the quiz and you’ll get your closest football player
+                archetype match based on mentality, decision-making, intensity,
+                and creativity. Your result includes strengths, weaknesses, and
+                practical training tips.
+              </p>
+            </div>
           </div>
 
           <div class="faq-item">
@@ -4777,10 +4934,9 @@
             <div class="faq-answer" hidden>
               <p>
                 Player names and archetype examples are used for illustrative
-                purposes to help you relate to common playing styles. Images
-                included are either licensed assets or generated placeholders.
-                If you have concerns about a specific image, contact the site
-                owner for resolution.
+                purposes to help you relate to common playing styles. If you
+                have concerns about a specific image, contact the site owner for
+                resolution.
               </p>
             </div>
           </div>
@@ -4958,39 +5114,6 @@
     </footer>
 
     <script>
-      // Theme toggle (dark/light) — shared with perfect-country.html
-      const themeToggle = document.getElementById("themeToggle");
-      const themeToggleText = document.getElementById("themeToggleText");
-      const themeToggleIcon = document
-        .getElementById("themeToggleIcon")
-        ?.querySelector("path");
-      const sunPath =
-        "M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0-5v2m0 16v2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M5.64 18.36 4.22 19.78";
-      const moonPath = "M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z";
-
-      const setTheme = (mode) => {
-        const isLight = mode === "light";
-        document.body.classList.toggle("theme-light", isLight);
-        document.body.classList.toggle("theme-dark", !isLight);
-        localStorage.setItem("zinvana-theme", isLight ? "light" : "dark");
-        themeToggle?.setAttribute("aria-pressed", isLight ? "true" : "false");
-        if (themeToggleText) {
-          themeToggleText.textContent = isLight ? "Dark mode" : "Light mode";
-        }
-        themeToggleIcon?.setAttribute("d", isLight ? moonPath : sunPath);
-      };
-
-      const storedTheme = localStorage.getItem("zinvana-theme");
-      const prefersLight = window.matchMedia?.(
-        "(prefers-color-scheme: light)"
-      ).matches;
-      setTheme(storedTheme || (prefersLight ? "light" : "dark"));
-
-      themeToggle?.addEventListener("click", () => {
-        const isLight = document.body.classList.contains("theme-light");
-        setTheme(isLight ? "dark" : "light");
-      });
-
       // Mobile menu toggle
       const toggle = document.getElementById("menuToggle");
       const menu = document.getElementById("mobileMenu");
