@@ -4,24 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Marvel Superhero Personality Quiz 2025 - Which Marvel Hero Are You? | Free
-      Personality Test
+      Which Marvel Character Are You? Marvel Personality Test Quiz (2025) |
+      Zinvana
     </title>
     <meta
       name="description"
-      content="Take our Marvel superhero personality quiz to discover which hero matches your values, instincts, and decision-making under pressure. Answer the questions and get a detailed breakdown."
-    />
-    <meta
-      name="keywords"
-      content="marvel superhero personality quiz, which marvel hero are you, marvel character quiz, avengers quiz, iron man quiz, captain america quiz, spider man quiz, thor quiz, hulk quiz, black widow quiz, doctor strange quiz, black panther quiz"
+      content="Take this Marvel personality test to find out which Marvel character you are. Answer quick questions about values, risk, leadership, and teamwork for an instant hero match plus strengths and watch-outs."
     />
     <meta name="author" content="Zinvana" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://zinvana.com/marvel-quiz.html" />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zinvana" />
+    <meta
+      property="og:title"
+      content="Which Marvel Character Are You? Marvel Personality Test Quiz (2025)"
+    />
+    <meta
+      property="og:description"
+      content="Answer quick questions about values, risk, leadership, and teamwork to reveal your Marvel character match, plus strengths and watch-outs."
+    />
+    <meta property="og:url" content="https://zinvana.com/marvel-quiz.html" />
+    <meta property="og:image" content="https://zinvana.com/zinvanalogo.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Which Marvel Character Are You? Marvel Personality Test Quiz (2025)"
+    />
+    <meta
+      name="twitter:description"
+      content="A fast Marvel personality test: answer questions and get an instant Marvel character match with a detailed breakdown."
+    />
+    <meta name="twitter:image" content="https://zinvana.com/zinvanalogo.png" />
+
     <style>
       section[id] {
         scroll-margin-top: calc(var(--topbar-h) + 14px);
+      }
+
+      /* Marvel page accents (scoped, no global side effects) */
+      body.page-marvel {
+        --brand1: #ef4444;
+        --brand2: #f59e0b;
+      }
+
+      body.page-marvel .quiz-shell .progress-bar {
+        background: linear-gradient(90deg, var(--brand1), var(--brand2));
+      }
+
+      body.page-marvel .quiz-shell .question h3::before {
+        color: var(--brand1);
+      }
+
+      body.page-marvel .quiz-shell .status-eyebrow {
+        color: rgba(239, 68, 68, 0.92);
+      }
+
+      body.page-marvel .quiz-shell .micro-feedback {
+        margin: 10px 0 18px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        background: rgba(255, 255, 255, 0.86);
+        color: var(--text-strong, #0f172a);
+        font-weight: 650;
+        line-height: 1.35;
+      }
+
+      body.page-marvel .quiz-shell .micro-feedback strong {
+        color: var(--brand1);
       }
 
       /* Professional Quick Facts Cards */
@@ -81,6 +134,79 @@
 
     <link rel="stylesheet" href="football-quiz-template.css" />
     <link rel="stylesheet" href="perfect-quiz-shell.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is this a Marvel personality test?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes—this is a personality-style Marvel quiz designed for insight and entertainment. Your answers map to patterns like risk tolerance, leadership, loyalty, and decision-making under pressure to produce a best-fit Marvel character match."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which Marvel character am I (or are you)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Finish the quiz and you’ll get the Marvel character you match most based on your choices, plus a breakdown of strengths and watch-outs. If you feel like you blend multiple characters, that’s normal—many people share traits across several hero styles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What methodology is used to map answers to characters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each answer contributes points to hero-aligned traits (innovation, resilience, strategy, responsibility, etc.). The quiz totals points across questions and returns the top-scoring character profile (randomizing ties) with a qualitative explanation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is any personal data collected or stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The quiz runs in your browser using JavaScript. Answers and results are not stored or sent to a server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I disagree with my result — what can I do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Retake the quiz and answer based on how you actually act under pressure, then compare the Character Spotlight and Guide for nearby profiles you may blend with. Sharing your result with friends can also help you sanity-check the match."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are you affiliated with Marvel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This is a fan-made quiz for entertainment and self-reflection and is not affiliated with or endorsed by Marvel or Disney."
+            }
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "Which Marvel Character Are You? Marvel Personality Test Quiz (2025)",
+        "description": "A Marvel personality test that matches you to a Marvel character based on values, risk, leadership, and teamwork.",
+        "url": "https://zinvana.com/marvel-quiz.html",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "publisher": {
+          "@type": "Organization",
+          "name": "Zinvana",
+          "url": "https://zinvana.com"
+        }
+      }
+    </script>
   </head>
   <body class="theme-light page-marvel">
     <header class="topbar">
@@ -133,12 +259,20 @@
       <div class="main-container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Marvel Hero Finder</span>
-          <h1>Marvel Superhero Personality Quiz 2025</h1>
-          <p class="subtitle">Which Marvel Hero Are You?</p>
+          <h1>Which Marvel Character Are You?</h1>
+          <p class="subtitle">
+            Marvel Superhero Personality Quiz 2025 (Free Marvel Personality
+            Test)
+          </p>
           <p class="description">
             Find your best-fit Marvel hero across values, instincts, and
             decision-making under pressure. Answer the questions to reveal which
             character you align with—plus strengths and watch-outs.
+          </p>
+          <p class="description">
+            If you’re searching “what Marvel character am I” or “what Marvel
+            character are you”, this quiz is built to give a clear, explainable
+            match—not random vibes.
           </p>
 
           <ul class="hero-kpis" aria-label="Quick facts">
@@ -172,7 +306,7 @@
 
         <div class="hero-panel">
           <span class="panel-eyebrow">How we match you</span>
-          <h3>Signals we use to score your match</h3>
+          <h3 style="color: #ef4444">Signals we use to score your match</h3>
           <p>
             Your answers map to repeatable patterns: risk tolerance, loyalty,
             moral boundaries, and how you navigate alliances.
@@ -552,11 +686,14 @@
         class="quiz-shell"
         id="quizSection"
         data-hide-option-titles="true"
+        data-addictive="true"
       >
         <div class="quiz-container" id="quizContainer">
           <div class="quiz-header">
-            <h2>Take the Marvel Hero Personality Quiz</h2>
-            <p>Answer questions to reveal your Marvel hero match</p>
+            <h2>
+              Take the Marvel Personality Test: Which Marvel Character Are You?
+            </h2>
+            <p>Answer quick questions to reveal your Marvel character match</p>
           </div>
 
           <div class="quiz-layout">
@@ -608,6 +745,10 @@
               <div class="question-counter" aria-live="polite">
                 Question <span id="questionNumber">1</span> /
                 <span id="questionTotal">0</span>
+              </div>
+
+              <div class="micro-feedback" id="microFeedback" aria-live="polite">
+                <span><strong>Tip:</strong> Trust your first instinct.</span>
               </div>
 
               <!-- Questions are injected by the Marvel question script below. -->
@@ -693,67 +834,149 @@
 
       <section class="content-section" aria-labelledby="positions-title">
         <div class="section-header">
-          <h2 id="positions-title">Hero Role Cheatsheet</h2>
+          <h2 id="positions-title">Marvel Team Role Map</h2>
           <p>
-            Use this as a quick guide for how your result usually thrives—and
-            what to work on next.
+            These aren’t random labels—they’re the same role tags used in the
+            Marvel Hero Guide below. Use this to understand why you matched a
+            character and what your “best move” looks like under pressure.
           </p>
         </div>
         <div class="features-grid">
           <div class="feature-card">
             <h3>Leader</h3>
             <ul>
-              <li>Key traits: values, courage, accountability.</li>
               <li>
-                Practice: clear decisions, calm communication, consistency.
+                <strong>What it is:</strong> sets direction when it’s messy.
               </li>
-              <li>Watch for: carrying everything alone.</li>
+              <li>
+                <strong>Looks like:</strong> Captain America-style clarity and
+                responsibility.
+              </li>
+              <li>
+                <strong>Examples:</strong> Captain America, Black Panther,
+                Falcon.
+              </li>
+              <li>
+                <strong>Best move:</strong> name the goal, set one rule, keep
+                the team steady.
+              </li>
+              <li>
+                <strong>Watch for:</strong> taking every burden personally.
+              </li>
             </ul>
           </div>
           <div class="feature-card">
-            <h3>Genius</h3>
-            <ul>
-              <li>Key traits: innovation, problem-solving, fast iteration.</li>
-              <li>
-                Practice: test assumptions, simplify plans, share context.
-              </li>
-              <li>Watch for: overengineering and control spirals.</li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h3>Spy</h3>
-            <ul>
-              <li>Key traits: awareness, timing, precision.</li>
-              <li>
-                Practice: intel discipline, exit plans, asking one question.
-              </li>
-              <li>Watch for: going solo too long.</li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h3>Mystic</h3>
+            <h3>Protector</h3>
             <ul>
               <li>
-                Key traits: pattern-seeing, composure, long-game thinking.
+                <strong>What it is:</strong> shields others and holds the line.
               </li>
-              <li>Practice: explain your reasoning, confirm assumptions.</li>
-              <li>Watch for: sounding detached or overly cryptic.</li>
+              <li>
+                <strong>Looks like:</strong> Black Panther-style duty,
+                boundaries, and defense.
+              </li>
+              <li>
+                <strong>Examples:</strong> Black Panther, Winter Soldier,
+                Captain America.
+              </li>
+              <li>
+                <strong>Best move:</strong> protect the vulnerable first, then
+                reduce risk.
+              </li>
+              <li>
+                <strong>Watch for:</strong> becoming rigid or over-controlling
+                “for safety.”
+              </li>
             </ul>
           </div>
           <div class="feature-card">
             <h3>Powerhouse</h3>
             <ul>
-              <li>Key traits: resilience, decisive action, protection.</li>
-              <li>Practice: cooldown routines, smallest effective response.</li>
-              <li>Watch for: emotional spikes and collateral damage.</li>
+              <li>
+                <strong>What it is:</strong> wins with force, endurance, and
+                decisive action.
+              </li>
+              <li>
+                <strong>Looks like:</strong> Hulk/Thor energy—direct, fearless,
+                hard to stop.
+              </li>
+              <li><strong>Examples:</strong> Hulk, Thor.</li>
+              <li>
+                <strong>Best move:</strong> act fast, but choose the smallest
+                effective response.
+              </li>
+              <li>
+                <strong>Watch for:</strong> heat-of-the-moment escalation and
+                collateral damage.
+              </li>
             </ul>
           </div>
           <div class="feature-card">
             <h3>Wildcard</h3>
             <ul>
-              <li>Key traits: improvisation, creativity, persuasion.</li>
-              <li>Practice: pick one goal, don’t burn bridges early.</li>
-              <li>Watch for: drama and trust volatility.</li>
+              <li>
+                <strong>What it is:</strong> improvises, adapts, and finds weird
+                solutions.
+              </li>
+              <li>
+                <strong>Looks like:</strong> Spider-Man/Loki creativity under
+                pressure.
+              </li>
+              <li><strong>Examples:</strong> Spider-Man, Loki.</li>
+              <li>
+                <strong>Best move:</strong> pick one objective, keep it light,
+                stay flexible.
+              </li>
+              <li>
+                <strong>Watch for:</strong> inconsistency that makes people
+                doubt you.
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Specialist</h3>
+            <ul>
+              <li>
+                <strong>What it is:</strong> solves the “impossible” part others
+                can’t.
+              </li>
+              <li>
+                <strong>Looks like:</strong> Doctor Strange (mystic) or Iron Man
+                (tech) problem-solving.
+              </li>
+              <li>
+                <strong>Examples:</strong> Iron Man, Doctor Strange, Hawkeye.
+              </li>
+              <li>
+                <strong>Best move:</strong> diagnose first, then execute a clean
+                plan.
+              </li>
+              <li>
+                <strong>Watch for:</strong> tunnel vision and assuming others
+                “should get it.”
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Support</h3>
+            <ul>
+              <li>
+                <strong>What it is:</strong> makes everyone else better
+                (coordination, intel, timing).
+              </li>
+              <li>
+                <strong>Looks like:</strong> Black Widow-style tactics and
+                teamwork glue.
+              </li>
+              <li><strong>Examples:</strong> Black Widow, Falcon.</li>
+              <li>
+                <strong>Best move:</strong> set up the win: clarify roles, share
+                key info, steady the team.
+              </li>
+              <li>
+                <strong>Watch for:</strong> neglecting your own needs and
+                burning out.
+              </li>
             </ul>
           </div>
         </div>
@@ -876,7 +1099,6 @@
                 Support
               </button>
             </div>
-           
           </div>
         </div>
 
@@ -916,6 +1138,45 @@
               tabindex="0"
               aria-expanded="false"
             >
+              Is this a Marvel personality test?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                Yes—this is a personality-style Marvel quiz designed for insight
+                and entertainment. Your answers map to patterns like risk
+                tolerance, leadership, loyalty, and decision-making under
+                pressure to produce a best-fit Marvel character match.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Which Marvel character am I (or are you)?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                Finish the quiz and you’ll get the Marvel character you match
+                most based on your choices, plus a breakdown of strengths and
+                watch-outs. If you feel like you blend multiple characters,
+                that’s normal—many people share traits across several hero
+                styles.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
               How accurate is this quiz?<span>+</span>
             </div>
             <div class="faq-answer" hidden>
@@ -925,18 +1186,18 @@
               </p>
               <ul>
                 <li>
-                  Simple trait mapping from answers to archetype traits
-                  (playstyle, mentality, role).
+                  Simple trait mapping from answers to hero archetype traits
+                  (mindset, teamwork, leadership, and boundaries).
                 </li>
                 <li>
-                  Heuristics based on common player behaviours and coaching
-                  literature.
+                  Heuristics based on common story archetypes and recognizable
+                  hero decision patterns.
                 </li>
               </ul>
               <p>
                 Expect useful directional feedback (strengths, growth areas).
-                Use it alongside coach feedback and objective performance data
-                for best results.
+                Use it alongside real-life reflection and conversations with
+                people who know you well.
               </p>
             </div>
           </div>
@@ -1092,7 +1353,7 @@
               tabindex="0"
               aria-expanded="false"
             >
-              How are images and player names handled and attributed?<span
+              How are images and character names handled and attributed?<span
                 >+</span
               >
             </div>
@@ -1102,6 +1363,24 @@
                 included are either site assets or generated placeholders. If
                 you have concerns about a specific image, contact the site owner
                 for resolution.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Are you affiliated with Marvel or Disney?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                No. This is a fan-made quiz for entertainment and
+                self-reflection and is not affiliated with or endorsed by Marvel
+                or Disney.
               </p>
             </div>
           </div>
@@ -1127,8 +1406,8 @@
                   profiles you might blend with.
                 </li>
                 <li>
-                  Share your result with a coach or teammate for external
-                  perspective and an action plan.
+                  Share your result with friends for external perspective and a
+                  reality-check.
                 </li>
               </ul>
             </div>
