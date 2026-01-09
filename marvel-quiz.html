@@ -123,6 +123,133 @@
           margin-right: 7px;
         }
       }
+
+      /* ===== Marvel polish layer (scoped to this page) ===== */
+      body.page-marvel a:focus-visible,
+      body.page-marvel button:focus-visible {
+        outline-color: rgba(239, 68, 68, 0.7);
+      }
+
+      body.page-marvel header.topbar::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--brand1), var(--brand2));
+        opacity: 0.85;
+        pointer-events: none;
+      }
+
+      body.page-marvel .nav-link:hover,
+      body.page-marvel .nav-link:focus-visible {
+        background: rgba(239, 68, 68, 0.1);
+      }
+
+      body.page-marvel.theme-light .hero-section::before {
+        background: radial-gradient(
+          circle,
+          rgba(239, 68, 68, 0.16) 0%,
+          rgba(245, 158, 11, 0.08) 35%,
+          transparent 70%
+        );
+      }
+
+      body.page-marvel.theme-light .hero-section h1 {
+        color: var(--text-strong, #0f172a);
+      }
+
+      @supports (-webkit-background-clip: text) {
+        body.page-marvel.theme-light .hero-section h1 {
+          background: linear-gradient(90deg, var(--brand1), var(--brand2));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+      }
+
+      body.page-marvel .hero-highlights li::before {
+        color: var(--brand2);
+      }
+
+      body.page-marvel.theme-light .hero-panel {
+        background: rgba(255, 255, 255, 0.86);
+        border-color: rgba(0, 0, 0, 0.08);
+      }
+
+      body.page-marvel.theme-light .hero-panel h3 {
+        color: var(--brand1);
+      }
+
+      body.page-marvel .primary-btn:hover,
+      body.page-marvel .ghost-btn:hover {
+        box-shadow: 0 20px 60px rgba(239, 68, 68, 0.25);
+      }
+
+      body.page-marvel .chip.active {
+        box-shadow: 0 6px 18px rgba(239, 68, 68, 0.22);
+      }
+
+      body.page-marvel .see-more-btn {
+        box-shadow: 0 12px 35px rgba(239, 68, 68, 0.28);
+      }
+
+      body.page-marvel .see-more-btn:hover {
+        box-shadow: 0 18px 45px rgba(239, 68, 68, 0.38);
+      }
+
+      body.page-marvel .search-input input[type="search"]:focus {
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14);
+      }
+
+      body.page-marvel .quiz-shell .progress-orb {
+        background: conic-gradient(
+          rgba(239, 68, 68, 0.75) var(--progress),
+          rgba(226, 232, 240, 0.9) 0
+        );
+      }
+
+      body.page-marvel .quiz-shell .answer-btn:hover {
+        border-color: rgba(239, 68, 68, 0.45);
+        box-shadow: 0 25px 50px rgba(239, 68, 68, 0.16);
+      }
+
+      body.page-marvel .quiz-shell .answer-btn.selected {
+        border-color: rgba(239, 68, 68, 0.8);
+        box-shadow: 0 30px 60px rgba(239, 68, 68, 0.22);
+      }
+
+      body.page-marvel .quiz-shell .result {
+        background: linear-gradient(
+          135deg,
+          rgba(239, 68, 68, 0.55),
+          rgba(245, 158, 11, 0.45)
+        );
+      }
+
+      body.page-marvel .pillars .icon img {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+
+      body.page-marvel .feature-icon img {
+        width: 28px;
+        height: 28px;
+        vertical-align: middle;
+      }
+
+      body.page-marvel #countryGuide .main-container {
+        padding-bottom: 8px;
+      }
+
+      body.page-marvel .character-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
     </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
@@ -275,21 +402,19 @@
             match—not random vibes.
           </p>
 
-          <ul class="hero-kpis" aria-label="Quick facts">
-            <div class="hero-kpis-pro">
-              <div class="kpi-card">
-                <span class="kpi-icon" aria-hidden="true">📝</span>
-                <span class="kpi-label">Quick Quiz</span>
-              </div>
-              <div class="kpi-card">
-                <span class="kpi-icon" aria-hidden="true">⚡</span>
-                <span class="kpi-label">Instant Results</span>
-              </div>
-              <div class="kpi-card">
-                <span class="kpi-icon" aria-hidden="true">💡</span>
-                <span class="kpi-label">Strengths & Watch-outs</span>
-              </div>
-            </div>
+          <ul class="hero-kpis-pro" aria-label="Quick facts">
+            <li class="kpi-card">
+              <span class="kpi-icon" aria-hidden="true">📝</span>
+              <span class="kpi-label">Quick Quiz</span>
+            </li>
+            <li class="kpi-card">
+              <span class="kpi-icon" aria-hidden="true">⚡</span>
+              <span class="kpi-label">Instant Results</span>
+            </li>
+            <li class="kpi-card">
+              <span class="kpi-icon" aria-hidden="true">💡</span>
+              <span class="kpi-label">Strengths & Watch-outs</span>
+            </li>
           </ul>
 
           <ul class="hero-highlights">
@@ -306,7 +431,7 @@
 
         <div class="hero-panel">
           <span class="panel-eyebrow">How we match you</span>
-          <h3 style="color: #ef4444">Signals we use to score your match</h3>
+          <h3>Signals we use to score your match</h3>
           <p>
             Your answers map to repeatable patterns: risk tolerance, loyalty,
             moral boundaries, and how you navigate alliances.
@@ -369,46 +494,19 @@
             <div class="pillars">
               <div class="pillar">
                 <div class="icon">
-                  <img
-                    src="accuracy.png"
-                    alt=""
-                    style="
-                      width: 20px;
-                      height: 20px;
-                      border-radius: 4px;
-                      object-fit: cover;
-                    "
-                  />
+                  <img src="accuracy.png" alt="" />
                 </div>
                 <span>Playstyle</span>
               </div>
               <div class="pillar">
                 <div class="icon">
-                  <img
-                    src="idea.png"
-                    alt=""
-                    style="
-                      width: 20px;
-                      height: 20px;
-                      border-radius: 4px;
-                      object-fit: cover;
-                    "
-                  />
+                  <img src="idea.png" alt="" />
                 </div>
                 <span>Mindset</span>
               </div>
               <div class="pillar">
                 <div class="icon">
-                  <img
-                    src="high-quality.png"
-                    alt=""
-                    style="
-                      width: 20px;
-                      height: 20px;
-                      border-radius: 4px;
-                      object-fit: cover;
-                    "
-                  />
+                  <img src="high-quality.png" alt="" />
                 </div>
                 <span>Team Role</span>
               </div>
@@ -613,7 +711,7 @@
 
       <!-- Value Features (mirror Wojak polish) -->
       <section class="content-section" aria-labelledby="features-title">
-        <div class="section-header" style="text-align: center; margin-top: 5%">
+        <div class="section-header">
           <h2 id="features-title">What You’ll Get</h2>
           <p>
             Built to inform and delight: modern UX, clear scoring logic, and a
@@ -623,11 +721,7 @@
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">
-              <img
-                src="idea.png"
-                alt=""
-                style="width: 28px; height: 28px; vertical-align: middle"
-              />
+              <img src="idea.png" alt="" />
             </div>
             <h3>Clear, Trait-Based Scoring</h3>
             <p>
@@ -638,11 +732,7 @@
           </div>
           <div class="feature-card">
             <div class="feature-icon">
-              <img
-                src="accuracy.png"
-                alt=""
-                style="width: 28px; height: 28px; vertical-align: middle"
-              />
+              <img src="accuracy.png" alt="" />
             </div>
             <h3>Iconic Character Profiles</h3>
             <p>
@@ -652,11 +742,7 @@
           </div>
           <div class="feature-card">
             <div class="feature-icon">
-              <img
-                src="training.png"
-                alt=""
-                style="width: 28px; height: 28px; vertical-align: middle"
-              />
+              <img src="training.png" alt="" />
             </div>
             <h3>Actionable Growth Prompts</h3>
             <p>
@@ -666,11 +752,7 @@
           </div>
           <div class="feature-card">
             <div class="feature-icon">
-              <img
-                src="downloadicon.png"
-                alt=""
-                style="width: 28px; height: 28px; vertical-align: middle"
-              />
+              <img src="downloadicon.png" alt="" />
             </div>
             <h3>Shareable Results</h3>
             <p>
@@ -998,7 +1080,7 @@
           </p>
         </div>
 
-        <div class="main-container" style="padding-bottom: 8px">
+        <div class="main-container">
           <div class="guide-toolbar" role="region" aria-label="Guide tools">
             <div class="search-input">
               <span class="icon">&#128269;</span>
@@ -1116,12 +1198,7 @@
       </section>
 
       <!-- FAQ -->
-      <section
-        class="faq-section"
-        id="faq"
-        aria-labelledby="faq-heading"
-        style="margin-bottom: 0% !important"
-      >
+      <section class="faq-section" id="faq" aria-labelledby="faq-heading">
         <div class="main-container">
           <div class="section-header">
             <h2 id="faq-heading">Frequently Asked Questions</h2>
@@ -2087,7 +2164,7 @@
           .map((r) => normalizeText(r))
           .join(", ");
         card.innerHTML = `
-          <a class="character-link" href="${link}" style="text-decoration:none;color:inherit;display:block">
+          <a class="character-link" href="${link}">
             <div class="character-meta"><img class="character-emoji" src="${getImgSrc(
               d
             )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">${safeName}</div>
