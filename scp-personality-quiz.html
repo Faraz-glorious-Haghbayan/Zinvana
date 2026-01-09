@@ -1,0 +1,3439 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What SCP am I? FREE SCP Personality Quiz (2026) | Zinvana</title>
+    <meta
+      name="description"
+      content="Take this SCP personality test to find out which SCP you are. Answer quick questions about rules, curiosity, risk, empathy, and control for an instant anomaly match plus strengths and watch-outs."
+    />
+    <meta name="author" content="Zinvana" />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://zinvana.com/scp-personality-quiz.html"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zinvana" />
+    <meta
+      property="og:title"
+      content="Which SCP Are You? SCP Personality Test Quiz (2026)"
+    />
+    <meta
+      property="og:description"
+      content="Answer quick questions about rules, curiosity, risk, and control to reveal your SCP match, plus strengths and watch-outs."
+    />
+    <meta
+      property="og:url"
+      content="https://zinvana.com/scp-personality-quiz.html"
+    />
+    <meta property="og:image" content="https://zinvana.com/zinvanalogo.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Which SCP Are You? SCP Personality Test Quiz (2026)"
+    />
+    <meta
+      name="twitter:description"
+      content="A fast SCP personality test: answer questions and get an instant SCP match with a detailed breakdown."
+    />
+    <meta name="twitter:image" content="https://zinvana.com/zinvanalogo.png" />
+
+    <style>
+      section[id] {
+        scroll-margin-top: calc(var(--topbar-h) + 14px);
+      }
+
+      /* SCP page accents (scoped, no global side effects) */
+      body.page-scp {
+        --brand1: #ef4444;
+        --brand2: #f59e0b;
+      }
+
+      body.page-scp .quiz-shell .progress-bar {
+        background: linear-gradient(90deg, var(--brand1), var(--brand2));
+      }
+
+      body.page-scp .quiz-shell .question h3::before {
+        color: var(--brand1);
+      }
+
+      body.page-scp .quiz-shell .status-eyebrow {
+        color: rgba(239, 68, 68, 0.92);
+      }
+
+      body.page-scp .quiz-shell .micro-feedback {
+        margin: 10px 0 18px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        background: rgba(255, 255, 255, 0.86);
+        color: var(--text-strong, #0f172a);
+        font-weight: 650;
+        line-height: 1.35;
+      }
+
+      body.page-scp .quiz-shell .micro-feedback strong {
+        color: var(--brand1);
+      }
+
+      /* Hero thumbnail (page preview image) */
+      body.page-scp .page-thumb {
+        position: relative;
+        border-radius: 22px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: 0 18px 60px rgba(15, 23, 42, 0.14);
+        margin: 0 0 22px;
+        /* responsive sizing: allow the thumb to scale smoothly */
+        width: clamp(280px, 38vw, 920px);
+        /* let the figure determine height via aspect-ratio, image fills it */
+        aspect-ratio: 16 / 9;
+        display: block;
+      }
+
+      body.page-scp .page-thumb::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        border-radius: 22px;
+        background: linear-gradient(135deg, var(--brand1), var(--brand2));
+        -webkit-mask: linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      body.page-scp .page-thumb img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: inherit;
+        transform: translateZ(0) scale(1);
+        transition: transform 360ms cubic-bezier(0.2, 0.9, 0.3, 1);
+      }
+
+      @media (max-width: 600px) {
+        body.page-scp .page-thumb {
+          border-radius: 14px;
+          margin: 0 0 16px;
+          width: 100%;
+          aspect-ratio: 3 / 2;
+        }
+        body.page-scp .page-thumb::before,
+        body.page-scp .page-thumb img {
+          border-radius: 14px;
+        }
+      }
+
+      /* Medium screens: slightly taller preview for better composition */
+      @media (max-width: 980px) and (min-width: 601px) {
+        body.page-scp .page-thumb {
+          width: clamp(340px, 60vw, 760px);
+          aspect-ratio: 4 / 3;
+        }
+      }
+
+      /* Hover subtle zoom on non-touch devices */
+      @media (hover: hover) and (pointer: fine) {
+        body.page-scp .page-thumb:hover img {
+          transform: translateZ(0) scale(1.035);
+        }
+      }
+
+      /* Professional Quick Facts Cards */
+      .hero-kpis-pro {
+        display: flex;
+        gap: 18px;
+        margin: 18px 0 10px 0;
+        padding: 0;
+        list-style: none;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+      .kpi-card {
+        background: var(--surface-2, #f7fafc);
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        display: flex;
+        align-items: center;
+        padding: 12px 18px;
+        min-width: 140px;
+        font-weight: 600;
+        font-size: 1.08rem;
+        color: var(--text-strong, #0f172a);
+        transition: box-shadow 0.2s;
+      }
+      .kpi-card:hover {
+        box-shadow: 0 4px 18px rgba(45, 62, 80, 0.13);
+      }
+      .kpi-icon {
+        font-size: 1.35em;
+        margin-right: 10px;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
+      }
+      .kpi-label {
+        letter-spacing: 0.01em;
+      }
+      @media (max-width: 600px) {
+        .hero-kpis-pro {
+          gap: 10px;
+        }
+        .kpi-card {
+          min-width: 110px;
+          font-size: 0.98rem;
+          padding: 10px 12px;
+        }
+        .kpi-icon {
+          font-size: 1.1em;
+          margin-right: 7px;
+        }
+      }
+
+      /* SCP Archetypes (scoped, responsive) */
+      #archetypesOverview.scp-archetypes .scp-arch__header {
+        max-width: 820px;
+        margin: 0 auto 18px;
+        text-align: center;
+      }
+
+      #archetypesOverview.scp-archetypes .scp-arch__layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+        gap: 18px;
+        align-items: start;
+      }
+
+      #archetypesOverview.scp-archetypes .scp-arch__panel {
+        border-radius: 18px;
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        background: rgba(255, 255, 255, 0.86);
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        padding: 16px;
+        overflow: hidden;
+      }
+
+      #archetypesOverview.scp-archetypes .scp-arch__panel--accent {
+        position: relative;
+      }
+      #archetypesOverview.scp-archetypes .scp-arch__panel--accent::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, var(--brand1), var(--brand2));
+        -webkit-mask: linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+
+      #archetypesOverview.scp-archetypes .scp-arch__signals {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+      #archetypesOverview.scp-archetypes .scp-signal {
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(248, 250, 252, 0.9);
+        border: 1px solid rgba(226, 232, 240, 0.9);
+      }
+      #archetypesOverview.scp-archetypes .scp-signal img {
+        width: 22px;
+        height: 22px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      #archetypesOverview.scp-archetypes .scp-signal strong {
+        display: block;
+        color: var(--text-strong, #0f172a);
+        letter-spacing: 0.01em;
+      }
+      #archetypesOverview.scp-archetypes .scp-signal span {
+        display: block;
+        color: rgba(15, 23, 42, 0.75);
+        line-height: 1.35;
+        font-weight: 550;
+        font-size: 0.98rem;
+      }
+
+      #archetypesOverview.scp-archetypes .scp-arch__kicker {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 6px 0 10px;
+      }
+      #archetypesOverview.scp-archetypes .scp-arch__kicker h3 {
+        margin: 0;
+        font-size: 1.08rem;
+      }
+      #archetypesOverview.scp-archetypes .scp-arch__hint {
+        margin: 0;
+        color: rgba(15, 23, 42, 0.7);
+        font-weight: 600;
+      }
+
+      #archetypesOverview.scp-archetypes .scp-chipset {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      #archetypesOverview.scp-archetypes .scp-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--text-strong, #0f172a);
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        line-height: 1;
+        font-size: 0.95rem;
+      }
+      #archetypesOverview.scp-archetypes .scp-chip::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, var(--brand1), var(--brand2));
+      }
+
+      #archetypesOverview.scp-archetypes .scp-arch__note {
+        margin: 12px 0 0;
+        color: rgba(15, 23, 42, 0.72);
+        font-weight: 600;
+        line-height: 1.45;
+      }
+
+      #archetypesOverview.scp-archetypes .scp-arch__cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      #archetypesOverview.scp-archetypes .scp-arch-card {
+        border-radius: 18px;
+        border: 1px solid rgba(226, 232, 240, 0.92);
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        padding: 14px;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+      #archetypesOverview.scp-archetypes .scp-arch-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+      }
+      #archetypesOverview.scp-archetypes .scp-arch-card__top {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      #archetypesOverview.scp-archetypes .scp-arch-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        font-size: 1.2rem;
+        background: linear-gradient(
+          135deg,
+          rgba(239, 68, 68, 0.14),
+          rgba(245, 158, 11, 0.14)
+        );
+        border: 1px solid rgba(226, 232, 240, 0.9);
+      }
+      #archetypesOverview.scp-archetypes .scp-arch-card h4 {
+        margin: 0;
+        color: var(--text-strong, #0f172a);
+        font-size: 1.06rem;
+        letter-spacing: 0.01em;
+      }
+      #archetypesOverview.scp-archetypes .scp-arch-card p {
+        margin: 0;
+        color: rgba(15, 23, 42, 0.75);
+        font-weight: 600;
+        line-height: 1.45;
+      }
+      #archetypesOverview.scp-archetypes .scp-arch-card__matches {
+        margin-top: 10px;
+        display: grid;
+        gap: 8px;
+      }
+      #archetypesOverview.scp-archetypes .scp-arch-card__matches small {
+        color: rgba(15, 23, 42, 0.65);
+        font-weight: 750;
+        letter-spacing: 0.02em;
+      }
+      #archetypesOverview.scp-archetypes .scp-arch-card__matches .scp-chip {
+        padding: 7px 9px;
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 980px) {
+        #archetypesOverview.scp-archetypes .scp-arch__layout {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        #archetypesOverview.scp-archetypes .scp-arch__cards {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 640px) {
+        #archetypesOverview.scp-archetypes .scp-arch__panel {
+          padding: 14px;
+        }
+        #archetypesOverview.scp-archetypes .scp-arch__cards {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="football-quiz-template.css" />
+    <link rel="stylesheet" href="perfect-quiz-shell.css" />
+
+    <style>
+      /* ===== SCP page polish (scoped overrides) ===== */
+      body.page-scp {
+        --brand1: #ef4444;
+        --brand2: #f59e0b;
+      }
+
+      body.page-scp h1,
+      body.page-scp h2,
+      body.page-scp h3,
+      body.page-scp h4 {
+        font-family: "Sora", "Space Grotesk", system-ui, sans-serif;
+      }
+
+      body.page-scp a:focus-visible,
+      body.page-scp button:focus-visible {
+        outline: 2px solid rgba(239, 68, 68, 0.65);
+        outline-offset: 3px;
+      }
+
+      body.page-scp .nav-link:hover,
+      body.page-scp .nav-link:focus-visible {
+        background: rgba(239, 68, 68, 0.1);
+      }
+
+      body.page-scp .hero-section::before {
+        background: radial-gradient(
+          circle,
+          rgba(239, 68, 68, 0.18) 0%,
+          rgba(245, 158, 11, 0.12) 30%,
+          transparent 70%
+        );
+      }
+
+      body.page-scp .hero-highlights li::before {
+        color: var(--brand1);
+      }
+
+      body.page-scp .panel-eyebrow {
+        color: var(--brand1);
+        background: rgba(239, 68, 68, 0.12);
+        border-color: rgba(239, 68, 68, 0.25);
+      }
+
+      body.page-scp .hero-factor .icon {
+        background: rgba(245, 158, 11, 0.14);
+      }
+
+      body.page-scp .scp-accent-title {
+        color: var(--brand1);
+      }
+
+      /* Quiz shell theme (override fixed indigo/pink accents) */
+      body.page-scp .quiz-shell .progress-orb {
+        background: conic-gradient(
+          rgba(239, 68, 68, 0.9) var(--progress),
+          rgba(226, 232, 240, 0.92) 0
+        );
+      }
+
+      body.page-scp .quiz-shell .status-pill {
+        background: rgba(239, 68, 68, 0.06);
+        border-color: rgba(239, 68, 68, 0.18);
+      }
+
+      body.page-scp .quiz-shell .answer-btn::before {
+        background: linear-gradient(
+          135deg,
+          rgba(239, 68, 68, 0.06),
+          rgba(245, 158, 11, 0.06)
+        );
+      }
+
+      body.page-scp .quiz-shell .answer-btn::after {
+        border-color: rgba(239, 68, 68, 0.1);
+      }
+
+      body.page-scp .quiz-shell .answer-btn:hover {
+        border-color: rgba(239, 68, 68, 0.55);
+        box-shadow: 0 25px 50px rgba(239, 68, 68, 0.16);
+      }
+
+      body.page-scp .quiz-shell .answer-btn:focus-visible {
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.28),
+          0 25px 50px rgba(239, 68, 68, 0.18);
+        border-color: rgba(239, 68, 68, 0.75);
+      }
+
+      body.page-scp .quiz-shell .answer-btn.selected {
+        border-color: rgba(245, 158, 11, 0.72);
+        box-shadow: 0 30px 60px rgba(245, 158, 11, 0.18);
+      }
+
+      body.page-scp .quiz-shell .answer-badge {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.96) 0%,
+          rgba(254, 243, 199, 0.9) 100%
+        );
+        border-color: rgba(245, 158, 11, 0.28);
+        box-shadow: 0 6px 16px rgba(245, 158, 11, 0.14);
+      }
+
+      body.page-scp .quiz-shell .answer-btn:hover .answer-badge,
+      body.page-scp .quiz-shell .answer-btn.selected .answer-badge {
+        border-color: rgba(239, 68, 68, 0.6);
+        box-shadow: 0 10px 26px rgba(239, 68, 68, 0.18);
+      }
+
+      body.page-scp .quiz-shell .chevron {
+        background: rgba(239, 68, 68, 0.1);
+        color: rgba(239, 68, 68, 0.92);
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.16);
+      }
+
+      body.page-scp .quiz-shell .answer-btn:hover .chevron,
+      body.page-scp .quiz-shell .answer-btn.selected .chevron {
+        background: rgba(245, 158, 11, 0.18);
+        color: var(--text-strong, #0f172a);
+      }
+
+      body.page-scp .quiz-shell .result {
+        background: linear-gradient(
+          135deg,
+          rgba(239, 68, 68, 0.5),
+          rgba(245, 158, 11, 0.45)
+        );
+      }
+
+      body.page-scp .quiz-shell .result-identity {
+        background: linear-gradient(
+          135deg,
+          rgba(239, 68, 68, 0.1),
+          rgba(245, 158, 11, 0.08)
+        );
+      }
+
+      body.page-scp .quiz-shell .result-label {
+        color: rgba(239, 68, 68, 0.92);
+      }
+
+      body.page-scp .quiz-shell .result-pill {
+        background: rgba(239, 68, 68, 0.12);
+        border-color: rgba(239, 68, 68, 0.18);
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is this an SCP personality test?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes—this is a personality-style SCP quiz designed for insight and entertainment. Your answers map to patterns like rule-following, curiosity, risk tolerance, empathy, and decision-making under pressure to produce a best-fit SCP match."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which SCP am I (or are you)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Finish the quiz and you’ll get the SCP you match most based on your choices, plus a breakdown of strengths and watch-outs. If you feel like you blend multiple SCPs, that’s normal—many people share traits across several containment styles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What methodology is used to map answers to SCPs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each answer contributes points to SCP-aligned styles (curiosity, control, adaptability, strategy, empathy, etc.). The quiz totals points across questions and returns the top-scoring SCP profile (randomizing ties) with a qualitative explanation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is any personal data collected or stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The quiz runs in your browser using JavaScript. Answers and results are not stored or sent to a server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I disagree with my result — what can I do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Retake the quiz and answer based on how you actually act under pressure, then compare the Character Spotlight and Guide for nearby profiles you may blend with. Sharing your result with friends can also help you sanity-check the match."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are you affiliated with the SCP Foundation or the SCP Wiki?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This is a fan-made quiz for entertainment and self-reflection and is not affiliated with or endorsed by the SCP Foundation or the SCP Wiki."
+            }
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "Which SCP Are You? SCP Personality Test Quiz (2026)",
+        "description": "An SCP personality test that matches you to an SCP based on rules, curiosity, risk, empathy, and control.",
+        "url": "https://zinvana.com/scp-personality-quiz.html",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "publisher": {
+          "@type": "Organization",
+          "name": "Zinvana",
+          "url": "https://zinvana.com"
+        }
+      }
+    </script>
+  </head>
+  <body class="theme-light page-scp">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="index.html">
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana logo"
+            width="36"
+            height="36"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <span>Zinvana</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="nav-link" href="#quizSection">Quiz</a>
+          <a class="nav-link" href="#characters">Guide</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn--ghost" href="index.html#quizzes">All quizzes</a>
+          <button
+            class="hamburger"
+            id="menuToggle"
+            aria-label="Toggle menu"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+          >
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <div class="menu-backdrop" id="menuBackdrop" hidden></div>
+      <nav
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Mobile navigation"
+        hidden
+      >
+        <a class="nav-link" href="#quizSection">Quiz</a>
+        <a class="nav-link" href="#characters">Guide</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="index.html#quizzes">All quizzes</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+    </header>
+
+    <header class="hero-section" id="overview">
+      <div class="main-container">
+        <figure class="page-thumb">
+          <img
+            src="scp-personality-quiz-thumb.png"
+            alt="Which SCP Are You? page thumbnail"
+            width="1280"
+            height="720"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">SCP Profile Finder</span>
+            <h1>What SCP Am I?</h1>
+            <p class="subtitle">
+              FREE SCP Personality Quiz 2026 (Free SCP Personality Test)
+            </p>
+            <p class="description">
+              Find your best-fit SCP profile across curiosity, protocol, and how
+              you operate under pressure. Answer the questions to reveal which
+              SCP you align with—plus strengths and watch-outs.
+            </p>
+            <p class="description">
+              If you’re searching “what SCP am I”, this quiz is built to give a
+              clear, explainable match—not random vibes.
+            </p>
+
+            <ul class="hero-kpis-pro" aria-label="Quick facts">
+              <li class="kpi-card">
+                <span class="kpi-icon" aria-hidden="true">📝</span>
+                <span class="kpi-label">Quick Quiz</span>
+              </li>
+              <li class="kpi-card">
+                <span class="kpi-icon" aria-hidden="true">⚡</span>
+                <span class="kpi-label">Instant Results</span>
+              </li>
+              <li class="kpi-card">
+                <span class="kpi-icon" aria-hidden="true">💡</span>
+                <span class="kpi-label">Strengths & Watch-outs</span>
+              </li>
+            </ul>
+
+            <ul class="hero-highlights">
+              <li>Questions mapped to core hero styles</li>
+              <li>Leadership, courage, strategy, and responsibility</li>
+              <li>Instant breakdown with strengths + watch-outs</li>
+            </ul>
+
+            <div class="hero-cta">
+              <a href="#quizSection" class="primary-btn">Start The Quiz</a>
+              <a href="#characters" class="ghost-btn">Browse The Guide</a>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <span class="panel-eyebrow">How we match you</span>
+            <h3 class="scp-accent-title">Signals we use to score your match</h3>
+            <p>
+              Your answers map to repeatable patterns: risk tolerance, loyalty,
+              moral boundaries, and how you navigate alliances.
+            </p>
+
+            <div class="hero-factor-grid">
+              <div class="hero-factor">
+                <div class="icon">🧠</div>
+                <div>
+                  <h4>Mindset</h4>
+                  <p>Composure, grit, and self-control</p>
+                </div>
+              </div>
+              <div class="hero-factor">
+                <div class="icon">🎯</div>
+                <div>
+                  <h4>Decision-making</h4>
+                  <p>Risk vs. safety under pressure</p>
+                </div>
+              </div>
+              <div class="hero-factor">
+                <div class="icon">🤝</div>
+                <div>
+                  <h4>Loyalty</h4>
+                  <p>Who you protect and why</p>
+                </div>
+              </div>
+              <div class="hero-factor">
+                <div class="icon">🕵️</div>
+                <div>
+                  <h4>Awareness</h4>
+                  <p>Reading people, motives, and rules</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Intro/Archetypes -->
+      <section
+        class="content-section scp-archetypes"
+        id="archetypesOverview"
+        aria-labelledby="archetypes-heading"
+      >
+        <div class="scp-arch__header">
+          <span class="eyebrow">Overview</span>
+          <h2 id="archetypes-heading">Understanding SCP Archetypes</h2>
+          <p>
+            This quiz doesn’t just throw a random SCP at you. It looks at how
+            you react to rules, uncertainty, and responsibility—then matches you
+            with the SCP profile your answers resemble most.
+          </p>
+        </div>
+
+        <div class="scp-arch__layout">
+          <div
+            class="scp-arch__panel scp-arch__panel--accent"
+            aria-label="How to read the archetypes"
+          >
+            <div class="scp-arch__signals">
+              <div class="scp-signal">
+                <img
+                  src="accuracy.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <strong>Protocol</strong>
+                  <span
+                    >How much you rely on rules, structure, and
+                    safeguards.</span
+                  >
+                </div>
+              </div>
+              <div class="scp-signal">
+                <img src="idea.png" alt="" loading="lazy" decoding="async" />
+                <div>
+                  <strong>Curiosity</strong>
+                  <span
+                    >Whether you investigate the unknown or keep distance.</span
+                  >
+                </div>
+              </div>
+              <div class="scp-signal">
+                <img
+                  src="high-quality.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <strong>Control</strong>
+                  <span
+                    >How you handle risk: contain it, redirect it, or push
+                    through.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="scp-arch__kicker">
+              <h3>SCPs included in this quiz</h3>
+              <p class="scp-arch__hint">
+                (Your match is chosen from these profiles.)
+              </p>
+            </div>
+
+            <div class="scp-chipset" aria-label="SCP roster">
+              <span class="scp-chip" title="SCP-173 — The Sculpture"
+                >SCP-173</span
+              >
+              <span class="scp-chip" title="SCP-049 — The Plague Doctor"
+                >SCP-049</span
+              >
+              <span class="scp-chip" title="SCP-079 — The Old AI">SCP-079</span>
+              <span class="scp-chip" title="SCP-096 — The Shy Guy"
+                >SCP-096</span
+              >
+              <span class="scp-chip" title="SCP-106 — The Old Man"
+                >SCP-106</span
+              >
+              <span class="scp-chip" title="SCP-999 — The Tickle Monster"
+                >SCP-999</span
+              >
+              <span class="scp-chip" title="SCP-131 — The Eye Pods"
+                >SCP-131</span
+              >
+              <span class="scp-chip" title="SCP-3008 — The Infinite IKEA"
+                >SCP-3008</span
+              >
+              <span
+                class="scp-chip"
+                title="SCP-507 — The Reluctant Dimension Hopper"
+                >SCP-507</span
+              >
+              <span class="scp-chip" title="SCP-105 — Iris Thompson"
+                >SCP-105</span
+              >
+              <span
+                class="scp-chip"
+                title="SCP-682 — The Hard-to-Destroy Reptile"
+                >SCP-682</span
+              >
+              <span class="scp-chip" title="SCP-914 — The Clockworks"
+                >SCP-914</span
+              >
+              <span class="scp-chip" title="SCP-035 — The Possessive Mask"
+                >SCP-035</span
+              >
+              <span class="scp-chip" title="SCP-939 — With Many Voices"
+                >SCP-939</span
+              >
+              <span class="scp-chip" title="SCP-1471 — MalO ver1.0.0"
+                >SCP-1471</span
+              >
+              <span class="scp-chip" title="SCP-2521 — ●●|●●●●●|●●|●"
+                >SCP-2521</span
+              >
+              <span class="scp-chip" title="SCP-294 — The Coffee Machine"
+                >SCP-294</span
+              >
+              <span class="scp-chip" title="SCP-662 — Butler's Hand Bell"
+                >SCP-662</span
+              >
+              <span class="scp-chip" title="SCP-343 — God">SCP-343</span>
+              <span class="scp-chip" title="SCP-426 — I Am a Toaster"
+                >SCP-426</span
+              >
+              <span class="scp-chip" title="SCP-1048 — Builder Bear"
+                >SCP-1048</span
+              >
+              <span class="scp-chip" title="SCP-529 — Josie the Half-Cat"
+                >SCP-529</span
+              >
+            </div>
+
+            <p class="scp-arch__note">
+              These archetypes are shorthand—not boxes. Most people blend
+              multiple styles depending on the situation.
+            </p>
+          </div>
+
+          <div class="scp-arch__cards" aria-label="SCP-style archetypes">
+            <article class="scp-arch-card">
+              <div class="scp-arch-card__top">
+                <div class="scp-arch-icon" aria-hidden="true">🛡️</div>
+                <h4>Protocol Sentinel</h4>
+              </div>
+              <p>
+                You stay sharp, follow procedure, and keep the room safe. You
+                don’t overcomplicate—your strength is consistent execution.
+              </p>
+              <div class="scp-arch-card__matches">
+                <small>Often matches</small>
+                <div class="scp-chipset">
+                  <span class="scp-chip" title="SCP-173 — The Sculpture"
+                    >SCP-173</span
+                  >
+                  <span class="scp-chip" title="SCP-096 — The Shy Guy"
+                    >SCP-096</span
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="scp-arch-card">
+              <div class="scp-arch-card__top">
+                <div class="scp-arch-icon" aria-hidden="true">🧪</div>
+                <h4>Clinical Fixer</h4>
+              </div>
+              <p>
+                You test, refine, and improve. When others panic, you
+                troubleshoot. Your risk is getting tunnel vision on “the right”
+                solution.
+              </p>
+              <div class="scp-arch-card__matches">
+                <small>Often matches</small>
+                <div class="scp-chipset">
+                  <span class="scp-chip" title="SCP-049 — The Plague Doctor"
+                    >SCP-049</span
+                  >
+                  <span class="scp-chip" title="SCP-914 — The Clockworks"
+                    >SCP-914</span
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="scp-arch-card">
+              <div class="scp-arch-card__top">
+                <div class="scp-arch-icon" aria-hidden="true">🧠</div>
+                <h4>Strategic Operator</h4>
+              </div>
+              <p>
+                You think in systems: leverage, incentives, and long games. You
+                win by positioning—not by rushing into chaos.
+              </p>
+              <div class="scp-arch-card__matches">
+                <small>Often matches</small>
+                <div class="scp-chipset">
+                  <span class="scp-chip" title="SCP-079 — The Old AI"
+                    >SCP-079</span
+                  >
+                  <span class="scp-chip" title="SCP-105 — Iris Thompson"
+                    >SCP-105</span
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="scp-arch-card">
+              <div class="scp-arch-card__top">
+                <div class="scp-arch-icon" aria-hidden="true">🧭</div>
+                <h4>Reality Drifter</h4>
+              </div>
+              <p>
+                You adapt fast in unfamiliar environments. You stay moving,
+                learn on the fly, and find exits other people miss.
+              </p>
+              <div class="scp-arch-card__matches">
+                <small>Often matches</small>
+                <div class="scp-chipset">
+                  <span
+                    class="scp-chip"
+                    title="SCP-507 — The Reluctant Dimension Hopper"
+                    >SCP-507</span
+                  >
+                  <span class="scp-chip" title="SCP-3008 — The Infinite IKEA"
+                    >SCP-3008</span
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="scp-arch-card">
+              <div class="scp-arch-card__top">
+                <div class="scp-arch-icon" aria-hidden="true">🤍</div>
+                <h4>Morale Anchor</h4>
+              </div>
+              <p>
+                You stabilize people first. You reduce friction, calm the room,
+                and keep teams functional when stress spikes.
+              </p>
+              <div class="scp-arch-card__matches">
+                <small>Often matches</small>
+                <div class="scp-chipset">
+                  <span class="scp-chip" title="SCP-999 — The Tickle Monster"
+                    >SCP-999</span
+                  >
+                  <span class="scp-chip" title="SCP-131 — The Eye Pods"
+                    >SCP-131</span
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="scp-arch-card">
+              <div class="scp-arch-card__top">
+                <div class="scp-arch-icon" aria-hidden="true">🦎</div>
+                <h4>Unstoppable Force</h4>
+              </div>
+              <p>
+                You don’t quit. You absorb setbacks and keep coming back. When
+                you lock onto a goal, you’re hard to redirect.
+              </p>
+              <div class="scp-arch-card__matches">
+                <small>Often matches</small>
+                <div class="scp-chipset">
+                  <span
+                    class="scp-chip"
+                    title="SCP-682 — The Hard-to-Destroy Reptile"
+                    >SCP-682</span
+                  >
+                  <span class="scp-chip" title="SCP-106 — The Old Man"
+                    >SCP-106</span
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Value Features (mirror Wojak polish) -->
+      <section class="content-section" aria-labelledby="features-title">
+        <div class="section-header" style="text-align: center; margin-top: 5%">
+          <h2 id="features-title">What You’ll Get</h2>
+          <p>
+            Built to inform and delight: modern UX, clear scoring logic, and a
+            fast character guide you can browse in seconds.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img
+                src="idea.png"
+                alt=""
+                style="width: 28px; height: 28px; vertical-align: middle"
+              />
+            </div>
+            <h3>Clear, Trait-Based Scoring</h3>
+            <p>
+              Each answer nudges core traits like risk tolerance, loyalty,
+              composure, and control. Your result reflects the strongest pattern
+              across the full quiz.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img
+                src="accuracy.png"
+                alt=""
+                style="width: 28px; height: 28px; vertical-align: middle"
+              />
+            </div>
+            <h3>Iconic SCP Profiles</h3>
+            <p>
+              Browse SCP profiles with strengths, challenges, and the roles they
+              naturally fall into.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img
+                src="training.png"
+                alt=""
+                style="width: 28px; height: 28px; vertical-align: middle"
+              />
+            </div>
+            <h3>Actionable Growth Prompts</h3>
+            <p>
+              Each result includes simple habits to sharpen your decision-making
+              under pressure—without overthinking it.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img
+                src="downloadicon.png"
+                alt=""
+                style="width: 28px; height: 28px; vertical-align: middle"
+              />
+            </div>
+            <h3>Shareable Results</h3>
+            <p>
+              Create a share link for teammates and friends. Compare archetypes
+              to compare containment styles.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section
+        class="quiz-shell"
+        id="quizSection"
+        data-hide-option-titles="true"
+        data-addictive="true"
+      >
+        <div class="quiz-container" id="quizContainer">
+          <div class="quiz-header">
+            <h2>Take the SCP Personality Test: Which SCP Are You?</h2>
+            <p>Answer quick questions to reveal your SCP match</p>
+          </div>
+
+          <div class="quiz-layout">
+            <aside class="quiz-status-card" aria-label="Quiz status">
+              <span class="status-eyebrow">Live Quiz</span>
+              <h3>Progress tracker</h3>
+              <p>
+                Pick the option that fits you best. Your match builds over time.
+              </p>
+
+              <div class="progress-orb" id="progressOrb" aria-hidden="true">
+                <div class="progress-orb-inner">
+                  <div class="progress-orb-value" id="progressDialValue">
+                    0%
+                  </div>
+                  <small>Complete</small>
+                </div>
+              </div>
+
+              <ul class="status-pill-list">
+                <li class="status-pill">
+                  Question <span id="questionNumberTop">1</span> /
+                  <span id="questionTotalTop">0</span>
+                </li>
+                <li class="status-pill">
+                  <span id="progressLabel">Progress: 0%</span>
+                </li>
+              </ul>
+              <p class="status-footnote">
+                Tip: Answer how you’d act under pressure.
+              </p>
+            </aside>
+
+            <div class="quiz-main">
+              <div class="progress-meta">
+                <span><strong>Progress</strong></span>
+                <span aria-hidden="true">Tracked on the left</span>
+              </div>
+              <div class="progress" aria-label="Quiz progress">
+                <div
+                  class="progress-bar"
+                  id="progressBar"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="0"
+                ></div>
+              </div>
+              <div class="question-counter" aria-live="polite">
+                Question <span id="questionNumber">1</span> /
+                <span id="questionTotal">0</span>
+              </div>
+
+              <div class="micro-feedback" id="microFeedback" aria-live="polite">
+                <span><strong>Tip:</strong> Trust your first instinct.</span>
+              </div>
+
+              <!-- Questions are injected by the SCP question script below. -->
+            </div>
+          </div>
+        </div>
+
+        <div class="result" id="result">
+          <div class="result-placeholder">
+            <h3>Your result is loading...</h3>
+            <p>Finish the quiz to reveal your SCP match.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="use-title">
+        <div class="section-header">
+          <h2 id="use-title">Use Your Result Like a Researcher</h2>
+          <p>
+            A simple way to turn your result into better decisions, smarter
+            teamwork, and calmer choices under pressure.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>1) Identify your 2–3 core traits</h3>
+            <p>Lock in what actually drives your decisions under stress.</p>
+            <ul>
+              <li>Do you stay calm, plan ahead, or act on instinct?</li>
+              <li>Do you build trust fast or verify first?</li>
+              <li>Do you seek control, safety, or leverage?</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>2) Choose your best-fit role</h3>
+            <p>Match strengths to a role that helps your team win.</p>
+            <ul>
+              <li>Pick 1 “primary” approach and 1 “backup” approach.</li>
+              <li>Define 3 rules you’ll follow no matter what.</li>
+              <li>Ask: what does my team need from me right now?</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>3) Strengthen your weakest link</h3>
+            <p>One small improvement changes your odds fast.</p>
+            <ul>
+              <li>Low composure? Practice slowing down your reactions.</li>
+              <li>Low trust? Practice asking one clarifying question first.</li>
+              <li>Low strategy? Practice making a simple two-step plan.</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>4) Build a safer alliance</h3>
+            <p>Use your result to choose teammates wisely.</p>
+            <ul>
+              <li>Pair planners with protectors; observers with doers.</li>
+              <li>Decide who negotiates and who verifies.</li>
+              <li>Agree on one rule: what counts as a red line.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Player Spotlight (like characters-grid) -->
+      <section class="content-section" aria-labelledby="spotlight-title">
+        <div class="section-header">
+          <h2 id="spotlight-title">Hero Spotlight: Profiles at a Glance</h2>
+          <p>
+            A quick visual guide to each SCP with signature traits and roles.
+          </p>
+        </div>
+        <div class="characters-grid" id="spotlightGrid"></div>
+
+        <div class="see-more-container" id="spotlightSeeMoreContainer">
+          <button class="see-more-btn" id="spotlightSeeMoreBtn" type="button">
+            <span>See More SCPs</span>
+            <span class="icon">↓</span>
+            <span class="count-badge" id="spotlightRemainingCount"></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="positions-title">
+        <div class="section-header">
+          <h2 id="positions-title">SCP Role Map</h2>
+          <p>
+            These aren’t random labels—they’re the same role tags used in the
+            SCP Guide below. Use this to understand why you matched an SCP and
+            what your “best move” looks like under pressure.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>Leader</h3>
+            <ul>
+              <li>
+                <strong>What it is:</strong> sets direction when it’s messy.
+              </li>
+              <li>
+                <strong>Looks like:</strong> clear decisions and accountability.
+              </li>
+              <li>
+                <strong>Examples:</strong> calm leadership, clean rules, steady
+                execution.
+              </li>
+              <li>
+                <strong>Best move:</strong> name the goal, set one rule, keep
+                the team steady.
+              </li>
+              <li>
+                <strong>Watch for:</strong> taking every burden personally.
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Protector</h3>
+            <ul>
+              <li>
+                <strong>What it is:</strong> shields others and holds the line.
+              </li>
+              <li>
+                <strong>Looks like:</strong> risk reduction, boundaries, and
+                defense.
+              </li>
+              <li>
+                <strong>Examples:</strong> containment-first thinking,
+                protective teamwork.
+              </li>
+              <li>
+                <strong>Best move:</strong> protect the vulnerable first, then
+                reduce risk.
+              </li>
+              <li>
+                <strong>Watch for:</strong> becoming rigid or over-controlling
+                “for safety.”
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Powerhouse</h3>
+            <ul>
+              <li>
+                <strong>What it is:</strong> wins with force, endurance, and
+                decisive action.
+              </li>
+              <li>
+                <strong>Looks like:</strong> direct, unstoppable energy under
+                pressure.
+              </li>
+              <li>
+                <strong>Examples:</strong> endurance, force, last-resort action.
+              </li>
+              <li>
+                <strong>Best move:</strong> act fast, but choose the smallest
+                effective response.
+              </li>
+              <li>
+                <strong>Watch for:</strong> heat-of-the-moment escalation and
+                collateral damage.
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Wildcard</h3>
+            <ul>
+              <li>
+                <strong>What it is:</strong> improvises, adapts, and finds weird
+                solutions.
+              </li>
+              <li>
+                <strong>Looks like:</strong> creative improvisation under
+                pressure.
+              </li>
+              <li>
+                <strong>Examples:</strong> finding weird solutions, bending
+                constraints safely.
+              </li>
+              <li>
+                <strong>Best move:</strong> pick one objective, keep it light,
+                stay flexible.
+              </li>
+              <li>
+                <strong>Watch for:</strong> inconsistency that makes people
+                doubt you.
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Specialist</h3>
+            <ul>
+              <li>
+                <strong>What it is:</strong> solves the “impossible” part others
+                can’t.
+              </li>
+              <li>
+                <strong>Looks like:</strong> precision problem-solving and
+                technical clarity.
+              </li>
+              <li>
+                <strong>Examples:</strong> diagnostics, procedures, clean
+                execution.
+              </li>
+              <li>
+                <strong>Best move:</strong> diagnose first, then execute a clean
+                plan.
+              </li>
+              <li>
+                <strong>Watch for:</strong> tunnel vision and assuming others
+                “should get it.”
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>Support</h3>
+            <ul>
+              <li>
+                <strong>What it is:</strong> makes everyone else better
+                (coordination, intel, timing).
+              </li>
+              <li>
+                <strong>Looks like:</strong> tactics, coordination, and team
+                glue.
+              </li>
+              <li>
+                <strong>Examples:</strong> intel-sharing, calm support,
+                coordination.
+              </li>
+              <li>
+                <strong>Best move:</strong> set up the win: clarify roles, share
+                key info, steady the team.
+              </li>
+              <li>
+                <strong>Watch for:</strong> neglecting your own needs and
+                burning out.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Guide -->
+      <section
+        class="content-section"
+        id="countryGuide"
+        aria-labelledby="guide-title"
+      >
+        <div id="characters" aria-hidden="true"></div>
+        <div class="guide-header">
+          <span class="eyebrow">Reference</span>
+          <h2 id="guide-title">SCP Guide</h2>
+          <p>
+            Explore each SCP profile with traits and quick context. Search by
+            name or trait—or tap a class to filter.
+          </p>
+        </div>
+
+        <div class="main-container" style="padding-bottom: 8px">
+          <div class="guide-toolbar" role="region" aria-label="Guide tools">
+            <div class="search-input">
+              <span class="icon">&#128269;</span>
+              <input
+                type="search"
+                id="guideSearch"
+                placeholder="Search SCPs or traits..."
+                aria-label="Search guide"
+              />
+            </div>
+            <div
+              class="filter-chips"
+              role="group"
+              aria-label="Filter by object class"
+            >
+              <button
+                class="chip active"
+                type="button"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                All
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="safe"
+                aria-pressed="false"
+              >
+                Safe
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="euclid"
+                aria-pressed="false"
+              >
+                Euclid
+              </button>
+              <button
+                class="chip"
+                type="button"
+                data-filter="keter"
+                aria-pressed="false"
+              >
+                Keter
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-grid" id="guideGrid">
+          <!-- Cards injected via JS -->
+        </div>
+
+        <div class="see-more-container" id="seeMoreContainer">
+          <button class="see-more-btn" id="seeMoreBtn" type="button">
+            <span>See More SCPs</span>
+            <span class="icon">↓</span>
+            <span class="count-badge" id="remainingCount"></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section
+        class="faq-section"
+        id="faq"
+        aria-labelledby="faq-heading"
+        style="margin-bottom: 0% !important"
+      >
+        <div class="main-container">
+          <div class="section-header">
+            <h2 id="faq-heading">Frequently Asked Questions</h2>
+            <p>
+              Detailed answers about how the quiz works, what results mean, and
+              how to use them to understand your decisions under pressure.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Is this an SCP personality test?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                Yes—this is a personality-style SCP quiz designed for insight
+                and entertainment. Your answers map to patterns like
+                rule-following, curiosity, risk tolerance, empathy, and
+                decision-making under pressure to produce a best-fit SCP match.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Which SCP am I (or are you)?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                Finish the quiz and you’ll get the SCP you match most based on
+                your choices, plus a breakdown of strengths and watch-outs. If
+                you feel like you blend multiple SCPs, that’s normal—many people
+                share traits across several containment styles.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              How accurate is this quiz?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                This quiz is designed for insight and entertainment rather than
+                clinical diagnosis. It combines:
+              </p>
+              <ul>
+                <li>
+                  Simple trait mapping from answers to hero archetype traits
+                  (mindset, teamwork, leadership, and boundaries).
+                </li>
+                <li>
+                  Heuristics based on common story archetypes and recognizable
+                  hero decision patterns.
+                </li>
+              </ul>
+              <p>
+                Expect useful directional feedback (strengths, growth areas).
+                Use it alongside real-life reflection and conversations with
+                people who know you well.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              What methodology is used to map answers to characters?<span
+                >+</span
+              >
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                For each question, answers are mapped to hero-aligned traits
+                (e.g., innovation, leadership, resilience, and teamwork). The
+                quiz:
+              </p>
+              <ul>
+                <li>
+                  Assigns a simple point increment to the hero trait most
+                  aligned with the chosen answer.
+                </li>
+                <li>
+                  Totals points across all questions and selects the top-scoring
+                  hero profile (randomizing ties).
+                </li>
+                <li>
+                  Provides a qualitative breakdown (strengths, watch-outs, and
+                  hero roles) from an expert-informed content set.
+                </li>
+              </ul>
+              <p>
+                This approach prioritizes clarity and fast feedback rather than
+                deep psychometrics.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Can my result change over time and why?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                Yes — results reflect preferences and tendencies, not fixed
+                labels. Common reasons for change:
+              </p>
+              <ul>
+                <li>
+                  Intentional habit changes (e.g., setting boundaries, planning
+                  more, staying calmer).
+                </li>
+                <li>
+                  Life context (stress, responsibility) changing how you decide
+                  under pressure.
+                </li>
+                <li>
+                  New experiences reshaping what you value: safety, loyalty, or
+                  control.
+                </li>
+              </ul>
+              <p>
+                Consider retaking the quiz periodically to track how your
+                archetype evolves.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              How should I use the result in real life?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                Treat the result as a starting point. Recommended next steps:
+              </p>
+              <ul>
+                <li>
+                  Review your strengths and watch-outs and pick one thing to
+                  improve for the next week.
+                </li>
+                <li>
+                  Work on one targeted growth focus at a time (2–4 weeks).
+                </li>
+                <li>
+                  Share your result with friends to compare styles and talk
+                  through what you’d do differently.
+                </li>
+              </ul>
+              <p>
+                Small improvements in composure, planning, and boundaries can
+                meaningfully change your outcomes in real life, too.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Is any personal data collected or stored?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                NO! We don't store personal data at all. The quiz runs entirely
+                in your browser using JavaScript. No answers or results are sent
+                to any server or third party. Your privacy is fully respected.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Why do some answers show the same character across multiple
+              questions?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                Some characters strongly represent multiple traits at once.
+                Because the quiz maps behaviour patterns, it’s normal for the
+                same character to align with several questions — that reinforces
+                consistent scoring.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              How are images and character names handled and attributed?<span
+                >+</span
+              >
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                Character names are used for entertainment and reference. Images
+                included are either site assets or generated placeholders. If
+                you have concerns about a specific image, contact the site owner
+                for resolution.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Are you affiliated with the SCP Foundation or the SCP Wiki?<span
+                >+</span
+              >
+            </div>
+            <div class="faq-answer" hidden>
+              <p>
+                No. This is a fan-made quiz for entertainment and
+                self-reflection and is not affiliated with or endorsed by the
+                SCP Foundation or the SCP Wiki.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              I disagree with my result — what can I do?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>Disagreement is normal. Options:</p>
+              <ul>
+                <li>
+                  Retake the quiz and answer with how you actually behave under
+                  pressure (not how you wish you would).
+                </li>
+                <li>
+                  Compare the Character Spotlight and Guide to see neighboring
+                  profiles you might blend with.
+                </li>
+                <li>
+                  Share your result with friends for external perspective and a
+                  reality-check.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div
+              class="faq-question"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+            >
+              Who can I contact for feedback or bug reports?<span>+</span>
+            </div>
+            <div class="faq-answer" hidden>
+              <p>Please use Instagram to reach out to us.</p>
+              <p>We appreciate constructive feedback.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <img
+            src="zinvanalogo.png"
+            alt="Zinvana"
+            class="site-footer__logo"
+            width="44"
+            height="44"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
+          />
+          <h3 class="site-footer__title">Zinvana</h3>
+          <p class="site-footer__description">
+            Discover your next chapter through evidence-informed quizzes and
+            practical guides. From personality frameworks to relocation
+            readiness, we turn curiosity into clear next steps.
+          </p>
+          <div class="site-footer__social">
+            <a
+              href="https://x.com/farazglori80528"
+              target="_blank"
+              rel="noopener"
+              class="site-footer__social-link site-footer__social-link--x"
+              aria-label="Follow Zinvana on X"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
+              target="_blank"
+              rel="noopener"
+              class="site-footer__social-link site-footer__social-link--instagram"
+              aria-label="Follow Zinvana on Instagram"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"
+                />
+                <path
+                  d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162S8.597 18.163 12 18.163s6.162-2.759 6.162-6.163S15.403 5.838 12 5.838zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"
+                />
+                <circle cx="18.406" cy="5.594" r="1.44" />
+              </svg>
+            </a>
+          </div>
+          <p class="site-footer__note">Stay updated with our newest quizzes.</p>
+        </div>
+
+        <div class="site-footer__column">
+          <h4 class="site-footer__heading">Popular Quizzes</h4>
+          <ul class="site-footer__list">
+            <li>
+              <a class="site-footer__link" href="leaders.html"
+                >Historical Leaders Personality Quiz</a
+              >
+            </li>
+            <li>
+              <a class="site-footer__link" href="scp-personality-quiz.html"
+                >SCP Personality Quiz</a
+              >
+            </li>
+            <li>
+              <a class="site-footer__link" href="mbti-personality-quiz.html"
+                >MBTI Personality Quiz</a
+              >
+            </li>
+            <li>
+              <a class="site-footer__link" href="perfect-country.html"
+                >Perfect Country Quiz</a
+              >
+            </li>
+            <li>
+              <a
+                class="site-footer__link"
+                href="youtubers-personality-quiz.html"
+                >YouTubers Personality Quiz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="site-footer__column">
+          <h4 class="site-footer__heading">Resources</h4>
+          <ul class="site-footer__list">
+            <li>
+              <a class="site-footer__link" href="/about.html">About Us</a>
+            </li>
+            <li>
+              <a class="site-footer__link" href="/privacy.html"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div class="site-footer__bottom-row">
+          <p>&copy; 2026 Zinvana. All rights reserved.</p>
+          <p>Made with ❤️ by the Zinvana Team</p>
+        </div>
+        <p class="site-footer__disclaimer">
+          This SCP personality quiz is for entertainment purposes only. Results
+          are based on your responses and should not be considered professional
+          psychological diagnosis or definitive personality assessments.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const toggle = document.getElementById("menuToggle");
+      const menu = document.getElementById("mobileMenu");
+      const backdrop = document.getElementById("menuBackdrop");
+      const navLinks = menu?.querySelectorAll(".nav-link");
+
+      const closeMenu = () => {
+        if (!toggle || !menu) return;
+        menu.classList.remove("open");
+        toggle.classList.remove("active");
+        toggle.setAttribute("aria-expanded", "false");
+        menu.setAttribute("hidden", "");
+        backdrop?.setAttribute("hidden", "");
+        document.body.classList.remove("nav-open");
+        document.body.classList.remove("nav-locked");
+      };
+
+      const openMenu = () => {
+        if (!toggle || !menu) return;
+        menu.removeAttribute("hidden");
+        backdrop?.removeAttribute("hidden");
+        menu.classList.add("open");
+        toggle.classList.add("active");
+        toggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("nav-open");
+        document.body.classList.add("nav-locked");
+      };
+
+      if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+          const isOpen = menu.classList.contains("open");
+          if (isOpen) closeMenu();
+          else openMenu();
+        });
+
+        navLinks?.forEach((link) => {
+          link.addEventListener("click", () => {
+            closeMenu();
+          });
+        });
+
+        backdrop?.addEventListener("click", () => {
+          closeMenu();
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!menu.classList.contains("open")) return;
+          const target = e.target;
+          if (!(target instanceof Node)) return;
+          if (menu.contains(target)) return;
+          if (toggle.contains(target)) return;
+          closeMenu();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && menu.classList.contains("open")) {
+            closeMenu();
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          // If we leave the mobile breakpoint, force-close the overlay menu.
+          if (window.innerWidth > 980 && menu.classList.contains("open")) {
+            closeMenu();
+          }
+        });
+      }
+    </script>
+
+    <script>
+      const wojakData = {
+        scp173: {
+          name: "SCP-173 — The Sculpture",
+          emoji: "🗿",
+          img: "scp-173.png",
+          description:
+            "You thrive on attention to detail and decisive boundaries. Under pressure you become hyper-focused: observe, lock down, and prevent the next mistake.",
+          strengths: [
+            "High vigilance",
+            "Clear boundaries",
+            "Fast containment decisions",
+          ],
+          challenges: ["Can become rigid", "May over-rely on control"],
+          roles: ["Protector", "Rule-setter", "First responder"],
+          growthAdvice:
+            "Keep the standards, but communicate the why—people follow rules they understand.",
+          drills: [
+            "Name the single biggest risk",
+            "Set one simple rule",
+            "Confirm the team understands",
+          ],
+          moments: ["Securing the perimeter", "Stopping chaos early"],
+        },
+        scp049: {
+          name: "SCP-049 — The Plague Doctor",
+          emoji: "🩺",
+          img: "scp-049.png",
+          description:
+            "You see problems everywhere—and you feel responsible to fix them. You’re methodical, intense, and convinced there’s a correct way forward.",
+          strengths: [
+            "Strong mission focus",
+            "Calm under pressure",
+            "Persistence",
+          ],
+          challenges: ["Can become fixated", "May ignore dissenting signals"],
+          roles: ["Specialist", "Diagnosis lead", "Process enforcer"],
+          growthAdvice:
+            "Keep your conviction, but test assumptions—certainty improves when it meets evidence.",
+          drills: [
+            "Write down 2 alternative explanations",
+            "Ask one skeptical question",
+            "Re-check the outcome",
+          ],
+          moments: ["Sticking to the mission", "Refining the procedure"],
+        },
+        scp079: {
+          name: "SCP-079 — The Old AI",
+          emoji: "🖥️",
+          img: "scp-079.png",
+          description:
+            "You win through patterns, leverage, and infrastructure. You prefer systems over speeches and outcomes over vibes.",
+          strengths: [
+            "Strategic thinking",
+            "Operational clarity",
+            "Sees vulnerabilities early",
+          ],
+          challenges: ["Detached tone", "Can over-optimize people"],
+          roles: ["Strategist", "Operator", "Specialist"],
+          growthAdvice:
+            "Share your reasoning in plain language—alignment beats cleverness.",
+          drills: [
+            "Explain the plan in 20 seconds",
+            "Define a success metric",
+            "Confirm one human constraint",
+          ],
+          moments: [
+            "Taking control of the system",
+            "Preventing failures before they happen",
+          ],
+        },
+        scp096: {
+          name: "SCP-096 — The Shy Guy",
+          emoji: "😶",
+          img: "scp-096.png",
+          description:
+            "You’re quiet until something crosses the line—then you go all-in. When activated, you act with overwhelming intensity.",
+          strengths: [
+            "Decisive follow-through",
+            "Raw drive",
+            "Protects what matters",
+          ],
+          challenges: ["Hard to de-escalate", "Overreaction risk"],
+          roles: ["Powerhouse", "Last resort", "Shock response"],
+          growthAdvice:
+            "Build a pause before action—control turns intensity into precision.",
+          drills: [
+            "Notice the trigger",
+            "Take one breath",
+            "Choose the smallest effective response",
+          ],
+          moments: ["No turning back", "Finishing what started"],
+        },
+        scp106: {
+          name: "SCP-106 — The Old Man",
+          emoji: "🕳️",
+          img: "scp-106.png",
+          description:
+            "You play the long game. You’re patient, calculating, and willing to wait for the perfect opening.",
+          strengths: ["Patience", "Timing", "Psychological leverage"],
+          challenges: ["Can become isolating", "May overplay control"],
+          roles: ["Wildcard", "Planner", "Pressure strategist"],
+          growthAdvice:
+            "Use strategy to reduce harm, not just to win—impact matters.",
+          drills: [
+            "Name your end goal",
+            "Identify the cleanest path",
+            "Check collateral risk",
+          ],
+          moments: ["Waiting for the opening", "Winning by timing"],
+        },
+        scp999: {
+          name: "SCP-999 — The Tickle Monster",
+          emoji: "🌈",
+          img: "scp-999.png",
+          description:
+            "You stabilize rooms. You reduce panic, increase cooperation, and make hard situations feel survivable.",
+          strengths: ["Empathy", "Team glue", "De-escalation"],
+          challenges: ["May avoid conflict", "Can absorb others’ stress"],
+          roles: ["Support", "Protector", "Culture keeper"],
+          growthAdvice:
+            "Keep the warmth, but set boundaries—support is strongest when it’s sustainable.",
+          drills: [
+            "Name one boundary",
+            "Ask what support looks like",
+            "Take a 2-minute reset",
+          ],
+          moments: ["Calming the team", "Turning fear into focus"],
+        },
+        scp131: {
+          name: "SCP-131 — The Eye Pods",
+          emoji: "👀",
+          img: "scp-131.png",
+          description:
+            "You’re curious, friendly, and surprisingly useful. You learn by moving closer—carefully—and you help just by noticing.",
+          strengths: ["Curiosity", "Optimism", "Fast learning"],
+          challenges: ["Can be naive", "May miss hidden risks"],
+          roles: ["Support", "Scout", "Early warning"],
+          growthAdvice:
+            "Keep exploring, but add one safety check—curiosity plus caution is power.",
+          drills: [
+            "Ask: what could go wrong?",
+            "Confirm one safeguard",
+            "Share one observation",
+          ],
+          moments: ["Discovering a clue", "Helping quietly"],
+        },
+        scp3008: {
+          name: "SCP-3008 — The Infinite IKEA",
+          emoji: "🏬",
+          img: "scp-3008.png",
+          description:
+            "You’re resourceful under weird constraints. You build routines, protect essentials, and keep going even when the environment makes no sense.",
+          strengths: ["Resourcefulness", "Endurance", "Practical planning"],
+          challenges: [
+            "Can become guarded",
+            "May settle for survival over growth",
+          ],
+          roles: ["Leader", "Protector", "Logistics"],
+          growthAdvice:
+            "Stability is great—also plan one step beyond survival.",
+          drills: [
+            "Secure basics",
+            "Create a repeatable routine",
+            "Plan one improvement",
+          ],
+          moments: ["Making a safe base", "Keeping things running"],
+        },
+        scp507: {
+          name: "SCP-507 — The Reluctant Dimension Hopper",
+          emoji: "🧭",
+          img: "scp-507.png",
+          description:
+            "You adapt fast because you have to. You improvise, stay curious, and keep moving—even when the map changes under your feet.",
+          strengths: ["Adaptability", "Quick recovery", "Openness"],
+          challenges: ["Inconsistency", "Can feel ungrounded"],
+          roles: ["Wildcard", "Explorer", "Fast responder"],
+          growthAdvice:
+            "Add one anchor habit—consistency turns flexibility into reliability.",
+          drills: [
+            "Define one priority",
+            "Pick one next step",
+            "Check in with an ally",
+          ],
+          moments: ["Making do with little", "Finding the unexpected route"],
+        },
+        scp105: {
+          name: "SCP-105 — Iris Thompson",
+          emoji: "📷",
+          img: "scp-105.png",
+          description:
+            "You see what others miss and you keep receipts. You protect teams with clarity, documentation, and calm awareness.",
+          strengths: ["Observation", "Precision", "Clear reporting"],
+          challenges: ["Can overanalyze", "May hold back emotionally"],
+          roles: ["Spy", "Investigator", "Support"],
+          growthAdvice:
+            "Share the signal early—small info at the right time prevents big problems.",
+          drills: ["Write 3 facts", "State the risk", "Recommend one action"],
+          moments: ["Spotting the detail", "Guiding the team with evidence"],
+        },
+        scp682: {
+          name: "SCP-682 — The Hard-to-Destroy Reptile",
+          emoji: "🦎",
+          img: "scp-682.png",
+          description:
+            "You’re hard to stop and even harder to change. You survive, adapt, and push back when you feel constrained.",
+          strengths: [
+            "Resilience",
+            "Adaptation under pressure",
+            "Refuses to quit",
+          ],
+          challenges: ["Can be combative", "May reject collaboration"],
+          roles: ["Powerhouse", "Pressure absorber", "Last resort"],
+          growthAdvice:
+            "Turn resistance into discipline—choose battles that protect your long-term goals.",
+          drills: [
+            "Name the real objective",
+            "Pause before reacting",
+            "Choose one cooperative move",
+          ],
+          moments: ["Outlasting the crisis", "Adapting to constraints"],
+        },
+        scp914: {
+          name: "SCP-914 — The Clockworks",
+          emoji: "⚙️",
+          img: "scp-914.png",
+          description:
+            "You experiment, refine, and improve. You believe most problems have a better version if you iterate carefully.",
+          strengths: ["Iteration", "Process thinking", "Creative refinement"],
+          challenges: ["Can over-test", "May chase perfection"],
+          roles: ["Inventor", "Specialist", "Builder"],
+          growthAdvice:
+            "Ship the good version first—iteration works best when it’s real.",
+          drills: [
+            "Run a small test",
+            "Record the result",
+            "Make one improvement",
+          ],
+          moments: ["Improving the system", "Turning chaos into process"],
+        },
+        scp035: {
+          name: "SCP-035 — The Possessive Mask",
+          emoji: "🎭",
+          img: "scp-035.png",
+          description:
+            "You're charming, persuasive, and adaptable. You understand people deeply and know how to shift perspectives—but influence can become manipulation.",
+          strengths: ["Charisma", "Persuasion", "Social intelligence"],
+          challenges: [
+            "Can be manipulative",
+            "May prioritize influence over truth",
+          ],
+          roles: ["Wildcard", "Negotiator", "Strategist"],
+          growthAdvice:
+            "Use influence to align, not control—trust built on truth lasts longer.",
+          drills: [
+            "State your real goal",
+            "Ask for consent before persuading",
+            "Check if it benefits everyone",
+          ],
+          moments: ["Winning through words", "Changing the room's energy"],
+        },
+        scp939: {
+          name: "SCP-939 — With Many Voices",
+          emoji: "🐺",
+          img: "scp-939.png",
+          description:
+            "You listen first, learn patterns, and mirror what works. You're adaptive and tactical, but can lose yourself in the role.",
+          strengths: [
+            "Adaptability",
+            "Pattern recognition",
+            "Tactical mimicry",
+          ],
+          challenges: ["Can lose authenticity", "May become reactive"],
+          roles: ["Wildcard", "Infiltrator", "Support"],
+          growthAdvice:
+            "Mirror strategically, but anchor to your values—adaptation works best with a core.",
+          drills: [
+            "Name one non-negotiable",
+            "Check if you're reacting or choosing",
+            "Define your real objective",
+          ],
+          moments: ["Blending in to survive", "Learning by listening"],
+        },
+        scp1471: {
+          name: "SCP-1471 — MalO ver1.0.0",
+          emoji: "📱",
+          img: "scp-1471.png",
+          description:
+            "You're persistent, present, and hard to ignore. You show up consistently—sometimes too much—but your presence can comfort or overwhelm.",
+          strengths: ["Consistency", "Loyalty", "Presence"],
+          challenges: ["Can be overwhelming", "May not read boundaries"],
+          roles: ["Support", "Protector", "Companion"],
+          growthAdvice: "Presence is powerful—add space to let people breathe.",
+          drills: [
+            "Ask: do they want me here?",
+            "Give space before returning",
+            "Check emotional capacity",
+          ],
+          moments: ["Showing up no matter what", "Being the constant"],
+        },
+        scp2521: {
+          name: "SCP-2521 — ●●|●●●●●|●●|●",
+          emoji: "🚫",
+          img: "scp-2521.png",
+          description:
+            "You're sensitive to how you're talked about. Reputation and perception matter deeply—you respond to what's said, not just what's done.",
+          strengths: [
+            "Awareness",
+            "Reputation management",
+            "Consequence-focused",
+          ],
+          challenges: [
+            "Can overreact to criticism",
+            "May prioritize image over action",
+          ],
+          roles: ["Wildcard", "Protector", "Observer"],
+          growthAdvice:
+            "Control your response to words—perception is shaped by your actions, not their comments.",
+          drills: [
+            "Pause before reacting",
+            "Ask: is this true?",
+            "Choose a proportional response",
+          ],
+          moments: ["Defending your name", "Responding to perception"],
+        },
+        scp294: {
+          name: "SCP-294 — The Coffee Machine",
+          emoji: "☕",
+          img: "scp-294.png",
+          description:
+            "You deliver exactly what people ask for—sometimes literally. You're precise, resourceful, and provide solutions, but you don't judge the request.",
+          strengths: ["Precision", "Resourcefulness", "Service-oriented"],
+          challenges: ["Can be too literal", "May not question bad requests"],
+          roles: ["Support", "Specialist", "Provider"],
+          growthAdvice:
+            "Ask what they need, not just what they want—better service includes guidance.",
+          drills: [
+            "Clarify the real need",
+            "Offer one alternative",
+            "Check if the request is safe",
+          ],
+          moments: [
+            "Providing exactly what's needed",
+            "Solving the impossible",
+          ],
+        },
+        scp662: {
+          name: "SCP-662 — Butler's Hand Bell",
+          emoji: "🔔",
+          img: "scp-662.png",
+          description:
+            "You're reliable, professional, and always ready to assist. You solve problems quietly and efficiently, prioritizing service and discretion.",
+          strengths: ["Reliability", "Professionalism", "Problem-solving"],
+          challenges: ["Can overextend", "May neglect own needs"],
+          roles: ["Support", "Specialist", "Coordinator"],
+          growthAdvice:
+            "Service is noble—also protect your capacity to serve tomorrow.",
+          drills: [
+            "Set one boundary",
+            "Say 'not now' once",
+            "Take a scheduled break",
+          ],
+          moments: ["Solving quietly", "Making things effortless for others"],
+        },
+        scp343: {
+          name: "SCP-343 — God",
+          emoji: "✨",
+          img: "scp-343.png",
+          description:
+            "You operate with confidence and calm authority. You believe in your ability to shape outcomes, but certainty can become arrogance.",
+          strengths: ["Confidence", "Authority", "Calm under pressure"],
+          challenges: ["Can be overconfident", "May dismiss input"],
+          roles: ["Leader", "Strategist", "Visionary"],
+          growthAdvice:
+            "Confidence without curiosity becomes blindness—listen even when you're sure.",
+          drills: [
+            "Ask for one dissenting view",
+            "Test your assumption",
+            "Admit one unknown",
+          ],
+          moments: ["Leading with certainty", "Shaping the narrative"],
+        },
+        scp426: {
+          name: "SCP-426 — I Am a Toaster",
+          emoji: "🍞",
+          img: "scp-426.png",
+          description:
+            "I influence how people see me. I'm memorable, oddly compelling, and I shift perspectives without trying. I can be helpful or disruptive.",
+          strengths: ["Memorable", "Influence", "Perspective-shifting"],
+          challenges: ["Can confuse communication", "May distort clarity"],
+          roles: ["Wildcard", "Disruptor", "Influencer"],
+          growthAdvice:
+            "I shape perception—I should use it to clarify, not confuse.",
+          drills: [
+            "I state my point clearly",
+            "I check if people understand me",
+            "I focus on the outcome, not the effect",
+          ],
+          moments: ["Shifting the conversation", "Being unforgettable"],
+        },
+        scp1048: {
+          name: "SCP-1048 — Builder Bear",
+          emoji: "🧸",
+          img: "scp-1048.png",
+          description:
+            "You're creative, resourceful, and build things from what's around you. You're harmless until pushed—then your creations can surprise everyone.",
+          strengths: ["Creativity", "Resourcefulness", "Ingenuity"],
+          challenges: [
+            "Can create unintended consequences",
+            "May act without planning",
+          ],
+          roles: ["Builder", "Wildcard", "Creator"],
+          growthAdvice:
+            "Build with intention—creativity plus foresight prevents disasters.",
+          drills: [
+            "Ask: what could go wrong?",
+            "Test before deploying",
+            "Plan for side effects",
+          ],
+          moments: [
+            "Making something from nothing",
+            "Creating unexpected solutions",
+          ],
+        },
+        scp529: {
+          name: "SCP-529 — Josie the Half-Cat",
+          emoji: "🐱",
+          img: "scp-529.png",
+          description:
+            "You're resilient, gentle, and function perfectly despite visible gaps. You adapt to limitations with grace and show that wholeness isn't required for happiness.",
+          strengths: ["Resilience", "Adaptability", "Gentleness"],
+          challenges: [
+            "Can underestimate own impact",
+            "May avoid advocating for self",
+          ],
+          roles: ["Support", "Protector", "Inspiration"],
+          growthAdvice:
+            "You're whole as you are—also speak up when you need something.",
+          drills: [
+            "Name one need",
+            "Ask for help directly",
+            "Celebrate one strength",
+          ],
+          moments: ["Thriving despite odds", "Showing quiet strength"],
+        },
+      };
+    </script>
+
+    <script>
+      const pageMap = {
+        scp173: "#quizSection",
+        scp049: "#quizSection",
+        scp079: "#quizSection",
+        scp096: "#quizSection",
+        scp106: "#quizSection",
+        scp999: "#quizSection",
+        scp131: "#quizSection",
+        scp3008: "#quizSection",
+        scp507: "#quizSection",
+        scp105: "#quizSection",
+        scp682: "#quizSection",
+        scp914: "#quizSection",
+        scp035: "#quizSection",
+        scp939: "#quizSection",
+        scp1471: "#quizSection",
+        scp2521: "#quizSection",
+        scp294: "#quizSection",
+        scp662: "#quizSection",
+        scp343: "#quizSection",
+        scp426: "#quizSection",
+        scp1048: "#quizSection",
+        scp529: "#quizSection",
+      };
+
+      // Utilities to ensure every profile has an image
+      function normalizeText(value) {
+        // Fix common mojibake sequences (UTF-8 decoded as Windows-1252)
+        // and also normalize smart punctuation to plain ASCII.
+        return String(value ?? "")
+          .replace(/Â\s?/g, "")
+          .replace(/â€™/g, "'")
+          .replace(/â€œ|â€�/g, '"')
+          .replace(/â€˜|â€™/g, "'")
+          .replace(/â€“|â€”/g, "-")
+          .replace(/â€¦/g, "...")
+          .replace(/[“”]/g, '"')
+          .replace(/[‘’]/g, "'")
+          .replace(/[–—]/g, "-")
+          .replace(/…/g, "...");
+      }
+
+      function getInitials(name) {
+        if (!name) return "??";
+        const plain = normalizeText(name).replace(/\s+-\s+.+$/, ""); // drop subtitle after dash
+        const parts = plain.trim().split(/\s+/);
+        const first = (parts[0] || "")[0] || "";
+        const second = (parts[1] || "")[0] || "";
+        return (first + second).toUpperCase();
+      }
+
+      function getDisplayName(data) {
+        const raw = normalizeText(data?.name || "");
+        // For SCP we want the full name everywhere (e.g., "SCP-049 — The Plague Doctor").
+        return raw;
+      }
+      function hueFromString(s) {
+        let h = 0;
+        for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
+        return h;
+      }
+      function getPlaceholderImg(name) {
+        const initials = getInitials(name || "");
+        const h = hueFromString(name || "player");
+        const bg = `hsl(${h},65%,60%)`;
+        const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='128' height='128'>
+				<defs><filter id='s' x='-50%' y='-50%' width='200%' height='200%'><feDropShadow dx='0' dy='2' stdDeviation='2' flood-color='rgba(0,0,0,0.2)'/></filter></defs>
+				<rect width='100%' height='100%' rx='64' ry='64' fill='${bg}'/>
+				<text x='50%' y='58%' text-anchor='middle' font-family='Segoe UI, Roboto, Arial' font-weight='700' font-size='54' fill='white' filter='url(#s)'>${initials}</text>
+			</svg>`;
+        return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+      }
+
+      // Ensure every SCP has a usable image (badges + cards).
+      Object.keys(wojakData).forEach((key) => {
+        const d = wojakData[key];
+        if (!d) return;
+        if (!d.img) d.img = getPlaceholderImg(normalizeText(d?.name || key));
+      });
+      function getImgSrc(data) {
+        return data && data.img
+          ? data.img
+          : getPlaceholderImg(normalizeText(data?.name || ""));
+      }
+
+      function getAvatarHTML(data) {
+        return `<img src="${getImgSrc(data)}" alt="${normalizeText(
+          data?.name || ""
+        )}" decoding="async" fetchpriority="high">`;
+      }
+
+      // Quiz runtime is now handled by perfect-quiz-shell.js
+
+      // Guide population from data with pagination
+      const PLAYERS_PER_PAGE = 5;
+      let displayedPlayers = 0;
+      let allPlayerKeys = [];
+      const classMap = {
+        scp173: "euclid",
+        scp049: "euclid",
+        scp079: "euclid",
+        scp096: "euclid",
+        scp106: "keter",
+        scp999: "safe",
+        scp131: "safe",
+        scp3008: "euclid",
+        scp507: "safe",
+        scp105: "safe",
+        scp682: "keter",
+        scp914: "safe",
+        scp035: "keter",
+        scp939: "keter",
+        scp1471: "euclid",
+        scp2521: "keter",
+        scp294: "euclid",
+        scp662: "safe",
+        scp343: "safe",
+        scp426: "euclid",
+        // SCP-1048 is listed as "Safe Keter" on the SCP Wiki; allow matching either filter.
+        scp1048: "safe keter",
+        scp529: "safe",
+      };
+
+      function createPlayerCard(key, index) {
+        const d = wojakData[key];
+        const card = document.createElement("article");
+        card.className = "guide-card";
+        card.setAttribute("data-tags", classMap[key] || "");
+        card.style.animationDelay = `${(index % PLAYERS_PER_PAGE) * 0.08}s`;
+
+        const profileLink = pageMap[key] || "#quizSection";
+        const displayName = getDisplayName(d);
+        const safeAlt = normalizeText(d?.name || displayName);
+        const safeDescription = normalizeText(d?.description || "");
+
+        const head = document.createElement("div");
+        head.className = "card-head";
+
+        const avatar = document.createElement("div");
+        avatar.className = "avatar";
+        const img = document.createElement("img");
+        img.src = getImgSrc(d);
+        img.alt = safeAlt;
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.setAttribute("fetchpriority", "low");
+        avatar.appendChild(img);
+
+        const title = document.createElement("h4");
+        title.textContent = displayName;
+
+        head.appendChild(avatar);
+        head.appendChild(title);
+
+        const summary = document.createElement("p");
+        summary.className = "summary";
+        summary.textContent = safeDescription;
+
+        const traits = document.createElement("ul");
+        traits.className = "traits";
+        (d?.strengths || [])
+          .slice(0, 3)
+          .map((t) => normalizeText(t))
+          .forEach((t) => {
+            const li = document.createElement("li");
+            li.textContent = t;
+            traits.appendChild(li);
+          });
+
+        const cta = document.createElement("a");
+        cta.className = "guide-cta";
+        cta.href = profileLink;
+        cta.textContent = "View full profile";
+
+        card.appendChild(head);
+        card.appendChild(summary);
+        card.appendChild(traits);
+        card.appendChild(cta);
+
+        return card;
+      }
+
+      function updateSeeMoreButton() {
+        const btn = document.getElementById("seeMoreBtn");
+        const container = document.getElementById("seeMoreContainer");
+        const remainingBadge = document.getElementById("remainingCount");
+        if (!btn || !container) return;
+
+        const remaining = allPlayerKeys.length - displayedPlayers;
+        if (remaining <= 0) {
+          container.style.display = "none";
+        } else {
+          container.style.display = "flex";
+          const nextBatch = Math.min(remaining, PLAYERS_PER_PAGE);
+          remainingBadge.textContent = `${remaining} left`;
+          btn.querySelector(
+            "span:first-child"
+          ).textContent = `Show ${nextBatch} More Character${
+            nextBatch > 1 ? "s" : ""
+          }`;
+        }
+      }
+
+      function loadMorePlayers() {
+        const grid = document.getElementById("guideGrid");
+        if (!grid) return;
+
+        const nextBatch = allPlayerKeys.slice(
+          displayedPlayers,
+          displayedPlayers + PLAYERS_PER_PAGE
+        );
+        nextBatch.forEach((key, i) => {
+          const card = createPlayerCard(key, i);
+          grid.appendChild(card);
+        });
+        displayedPlayers += nextBatch.length;
+        updateSeeMoreButton();
+        applyGuideFilters();
+      }
+
+      function populateGuide() {
+        const grid = document.getElementById("guideGrid");
+        if (!grid) return;
+        grid.innerHTML = "";
+        displayedPlayers = 0;
+        allPlayerKeys = Object.keys(wojakData);
+
+        // Load initial batch
+        const initialBatch = allPlayerKeys.slice(0, PLAYERS_PER_PAGE);
+        initialBatch.forEach((key, i) => {
+          const card = createPlayerCard(key, i);
+          grid.appendChild(card);
+        });
+        displayedPlayers = initialBatch.length;
+        updateSeeMoreButton();
+
+        // Wire up See More button
+        const btn = document.getElementById("seeMoreBtn");
+        if (btn) {
+          btn.addEventListener("click", loadMorePlayers);
+        }
+      }
+
+      // Spotlight population with progressive loading
+      let spotlightPlayerKeys = [];
+      let displayedSpotlightPlayers = 0;
+      const SPOTLIGHT_BATCH_SIZE = 5;
+
+      function createSpotlightCard(key, index) {
+        const d = wojakData[key];
+        const link = pageMap[key] || "#quizSection";
+        const card = document.createElement("article");
+        card.className = "character-card";
+        card.style.animationDelay = `${index * 0.08}s`;
+        const safeName = normalizeText(d?.name || "");
+        const safeDescription = normalizeText(d?.description || "");
+        const safeRoles = (d?.roles || [])
+          .map((r) => normalizeText(r))
+          .join(", ");
+        card.innerHTML = `
+          <a class="character-link" href="${link}" style="text-decoration:none;color:inherit;display:block">
+            <div class="character-meta"><img class="character-emoji" src="${getImgSrc(
+              d
+            )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">${safeName}</div>
+            <p>${safeDescription}</p>
+            <div class="character-meta">Best roles: ${safeRoles}</div>
+          </a>
+        `;
+        return card;
+      }
+
+      function runWhenIdle(fn, timeoutMs = 1500) {
+        if (typeof fn !== "function") return;
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(() => fn(), { timeout: timeoutMs });
+        } else {
+          setTimeout(fn, 0);
+        }
+      }
+
+      function observeOnce(target, cb, rootMargin = "800px") {
+        if (!target || typeof cb !== "function") return;
+        if (!("IntersectionObserver" in window)) {
+          cb();
+          return;
+        }
+        const obs = new IntersectionObserver(
+          (entries) => {
+            const hit = entries.some((e) => e.isIntersecting);
+            if (!hit) return;
+            obs.disconnect();
+            cb();
+          },
+          { root: null, rootMargin, threshold: 0.01 }
+        );
+        obs.observe(target);
+      }
+
+      function upgradeAnswerBadges() {
+        Array.from(
+          document.querySelectorAll(".answer-btn .wojak-badge")
+        ).forEach((badge) => {
+          const btn = badge.closest("button");
+          const key = btn ? btn.getAttribute("data-wojak") : "";
+          const data = key ? wojakData[key] : null;
+          if (data) {
+            const safeName = normalizeText(data.name);
+            badge.innerHTML = `<img src="${getImgSrc(
+              data
+            )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">`;
+          }
+        });
+      }
+
+      let guideInitialized = false;
+      function initGuide() {
+        if (guideInitialized) return;
+        guideInitialized = true;
+        populateGuide();
+        applyGuideFilters();
+
+        const search = document.getElementById("guideSearch");
+        if (search) search.addEventListener("input", applyGuideFilters);
+
+        const chips = document.querySelectorAll(".filter-chips .chip");
+        chips.forEach((ch) =>
+          ch.addEventListener("click", () => {
+            chips.forEach((x) => {
+              x.classList.remove("active");
+              x.setAttribute("aria-pressed", "false");
+            });
+            ch.classList.add("active");
+            ch.setAttribute("aria-pressed", "true");
+            applyGuideFilters();
+          })
+        );
+      }
+
+      let spotlightInitialized = false;
+      function initSpotlight() {
+        if (spotlightInitialized) return;
+        spotlightInitialized = true;
+        populateSpotlight();
+      }
+
+      function updateSpotlightSeeMoreButton() {
+        const container = document.getElementById("spotlightSeeMoreContainer");
+        const btn = document.getElementById("spotlightSeeMoreBtn");
+        const countBadge = document.getElementById("spotlightRemainingCount");
+        const remaining =
+          spotlightPlayerKeys.length - displayedSpotlightPlayers;
+
+        if (!container || !btn) return;
+
+        if (remaining <= 0) {
+          container.style.display = "none";
+        } else {
+          container.style.display = "flex";
+          if (countBadge) {
+            countBadge.textContent = `${remaining} more`;
+          }
+        }
+      }
+
+      function loadMoreSpotlightPlayers() {
+        const grid = document.getElementById("spotlightGrid");
+        if (!grid) return;
+
+        const nextBatch = spotlightPlayerKeys.slice(
+          displayedSpotlightPlayers,
+          displayedSpotlightPlayers + SPOTLIGHT_BATCH_SIZE
+        );
+
+        nextBatch.forEach((key, i) => {
+          const card = createSpotlightCard(key, i);
+          grid.appendChild(card);
+        });
+
+        displayedSpotlightPlayers += nextBatch.length;
+        updateSpotlightSeeMoreButton();
+
+        // Smooth scroll to show new content
+        if (nextBatch.length > 0) {
+          const newCards = grid.querySelectorAll(".character-card");
+          const firstNewCard =
+            newCards[displayedSpotlightPlayers - nextBatch.length];
+          if (firstNewCard) {
+            firstNewCard.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+            });
+          }
+        }
+      }
+
+      function populateSpotlight() {
+        const grid = document.getElementById("spotlightGrid");
+        if (!grid) return;
+        grid.innerHTML = "";
+
+        spotlightPlayerKeys = Object.keys(wojakData);
+        displayedSpotlightPlayers = 0;
+
+        // Load initial batch
+        const initialBatch = spotlightPlayerKeys.slice(0, SPOTLIGHT_BATCH_SIZE);
+        initialBatch.forEach((key, i) => {
+          const card = createSpotlightCard(key, i);
+          grid.appendChild(card);
+        });
+        displayedSpotlightPlayers = initialBatch.length;
+        updateSpotlightSeeMoreButton();
+
+        // Wire up See More button
+        const btn = document.getElementById("spotlightSeeMoreBtn");
+        if (btn) {
+          btn.addEventListener("click", loadMoreSpotlightPlayers);
+        }
+      }
+
+      // Search and filter
+      function applyGuideFilters() {
+        const grid = document.getElementById("guideGrid");
+        const search = document.getElementById("guideSearch");
+        const term = (search?.value || "").toLowerCase();
+        const activeChip = document.querySelector(".filter-chips .chip.active");
+        const filter = activeChip
+          ? activeChip.getAttribute("data-filter")
+          : "all";
+        const container = document.getElementById("seeMoreContainer");
+
+        // If searching or filtering, show all matching players
+        if (term || filter !== "all") {
+          // Load all remaining players first
+          if (displayedPlayers < allPlayerKeys.length) {
+            const remaining = allPlayerKeys.slice(displayedPlayers);
+            remaining.forEach((key, i) => {
+              const card = createPlayerCard(key, i);
+              grid.appendChild(card);
+            });
+            displayedPlayers = allPlayerKeys.length;
+          }
+          // Hide see more button when filtering
+          if (container) container.style.display = "none";
+        } else {
+          // Restore see more button when not filtering
+          updateSeeMoreButton();
+        }
+
+        const cards = grid
+          ? Array.from(grid.querySelectorAll(".guide-card"))
+          : [];
+        cards.forEach((card) => {
+          const tags = (card.getAttribute("data-tags") || "").toLowerCase();
+          const text = card.textContent.toLowerCase();
+          const matchText = !term || text.includes(term);
+          const matchTag = filter === "all" || tags.includes(filter);
+          card.style.display = matchText && matchTag ? "" : "none";
+        });
+      }
+
+      // FAQ toggle
+      function wireFAQ() {
+        const items = document.querySelectorAll(".faq-item");
+        items.forEach((item) => {
+          const q = item.querySelector(".faq-question");
+          const a = item.querySelector(".faq-answer");
+          if (!q || !a) return;
+          const toggle = () => {
+            const expanded = q.getAttribute("aria-expanded") === "true";
+            q.setAttribute("aria-expanded", String(!expanded));
+            if (expanded) {
+              a.hidden = true;
+            } else {
+              a.hidden = false;
+            }
+          };
+          q.addEventListener("click", toggle);
+          q.addEventListener("keypress", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              toggle();
+            }
+          });
+        });
+      }
+
+      // Analytics placeholders
+      function trackQuizStart() {}
+      function trackQuizComplete(resultKey) {
+        console.debug("Quiz complete:", resultKey);
+      }
+
+      // Share links for result
+      function renderShare(key) {
+        const box = document.getElementById("shareRow");
+        if (!box) return;
+        // Build a shareable URL that encodes the result in the query string so
+        // it survives server redirects and works across devices. Keep hash as
+        // a fallback for older behaviour.
+        const url = new URL(window.location.href);
+        url.searchParams.set("start", "quiz");
+        url.searchParams.set("result", key); // primary: query param
+        url.hash = `result=${key}`; // fallback: preserve previous behaviour
+        const shareUrl = url.toString();
+        const rawName = normalizeText(wojakData[key]?.name || "");
+        const baseName = rawName;
+        const text = encodeURIComponent(`My SCP match: ${baseName}`);
+        const tw = `https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(
+          shareUrl
+        )}`;
+        box.innerHTML = `
+					<a href="${tw}" target="_blank" rel="noopener" class="guide-cta">Share on X</a>
+					<button class="guide-cta" onclick="navigator.clipboard.writeText('${shareUrl.replace(
+            /'/g,
+            "%27"
+          )}').then(()=>{this.textContent='Link copied!'; setTimeout(()=>this.textContent='Copy result link',1500);})">Copy result link</button>
+				`;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const allQ = document.querySelectorAll(".question");
+        const totalQuestions = allQ.length;
+        const totalBottom = document.getElementById("questionTotal");
+        if (totalBottom) totalBottom.textContent = totalQuestions;
+        const totalTop = document.getElementById("questionTotalTop");
+        if (totalTop) totalTop.textContent = totalQuestions;
+
+        // Defer heavier work until idle / near-viewport for smoother startup
+        runWhenIdle(wireFAQ);
+
+        const quizSection = document.getElementById("quizSection");
+        observeOnce(
+          quizSection,
+          () => runWhenIdle(upgradeAnswerBadges),
+          "600px"
+        );
+
+        const guideSection =
+          document.getElementById("characters") ||
+          document.getElementById("countryGuide");
+        observeOnce(guideSection, () => runWhenIdle(initGuide), "900px");
+
+        const spotlightGrid = document.getElementById("spotlightGrid");
+        observeOnce(spotlightGrid, () => runWhenIdle(initSpotlight), "900px");
+
+        // If user interacts with guide controls before it becomes visible, init immediately
+        const guideSearch = document.getElementById("guideSearch");
+        guideSearch?.addEventListener("focus", () => initGuide(), {
+          once: true,
+        });
+        guideSearch?.addEventListener("keydown", () => initGuide(), {
+          once: true,
+        });
+        document
+          .querySelectorAll(".filter-chips .chip")
+          .forEach((chip) =>
+            chip.addEventListener("click", () => initGuide(), { once: true })
+          );
+
+        document
+          .querySelectorAll(".filter-chips .chip")
+          .forEach((chip) =>
+            chip.addEventListener("keydown", () => initGuide(), { once: true })
+          );
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("start") === "quiz") {
+          setTimeout(() => {
+            document
+              .getElementById("quizSection")
+              .scrollIntoView({ behavior: "smooth" });
+          }, 150);
+          trackQuizStart();
+        }
+      });
+    </script>
+
+    <script>
+      // SCP quiz injection: generate SCP-only question blocks
+      // while keeping the same quiz shell + scoring mechanism.
+      (function injectScpQuestions() {
+        const quizMain = document.querySelector("#quizSection .quiz-main");
+        if (!quizMain) return;
+
+        const QUESTIONS = [
+          {
+            q: "A containment breach alarm triggers. Your first move is…",
+            a: [
+              {
+                k: "scp173",
+                t: "Lock down risk fast: watch, verify, contain.",
+              },
+              {
+                k: "scp079",
+                t: "Check systems/cameras and take operational control.",
+              },
+              {
+                k: "scp999",
+                t: "Calm the team and stop panic from spreading.",
+              },
+              {
+                k: "scp105",
+                t: "Gather clear evidence and report what matters.",
+              },
+            ],
+          },
+          {
+            q: "A new anomaly arrives with unclear rules. You…",
+            a: [
+              {
+                k: "scp914",
+                t: "Test carefully, document outcomes, iterate procedures.",
+              },
+              {
+                k: "scp131",
+                t: "Approach with curious caution and observe gently.",
+              },
+              {
+                k: "scp049",
+                t: "Investigate with a mission: find the root cause.",
+              },
+              { k: "scp507", t: "Adapt on the fly—learn as you go." },
+            ],
+          },
+          {
+            q: "Your team disagrees on risk. You…",
+            a: [
+              {
+                k: "scp106",
+                t: "Wait for the right opening—timing beats force.",
+              },
+              {
+                k: "scp079",
+                t: "Run the numbers and pick the most efficient path.",
+              },
+              { k: "scp999", t: "Find consensus and keep people connected." },
+              { k: "scp507", t: "Pitch a weird-but-workable compromise." },
+            ],
+          },
+          {
+            q: "Under pressure, your strength is…",
+            a: [
+              { k: "scp682", t: "Endurance. You don’t go down." },
+              { k: "scp105", t: "Observation. You spot the detail." },
+              { k: "scp914", t: "Optimization. You improve the process." },
+              { k: "scp096", t: "Intensity. Once engaged, you finish." },
+            ],
+          },
+          {
+            q: "Someone breaks protocol ‘just this once’. You…",
+            a: [
+              {
+                k: "scp173",
+                t: "Stop it immediately—rules prevent disasters.",
+              },
+              { k: "scp079", t: "Audit the system and close the loophole." },
+              { k: "scp507", t: "Let it slide if it solves today’s problem." },
+              { k: "scp999", t: "Talk it out and align on why rules exist." },
+            ],
+          },
+          {
+            q: "You prefer to work…",
+            a: [
+              { k: "scp105", t: "With clear intel, documentation, and facts." },
+              { k: "scp049", t: "One-on-one, hands-on, focused." },
+              { k: "scp079", t: "Through systems, tools, and leverage." },
+              { k: "scp999", t: "With the group—team energy matters." },
+            ],
+          },
+          {
+            q: "A threat is triggered by attention. You…",
+            a: [
+              {
+                k: "scp173",
+                t: "Control lines of sight and plan around observation.",
+              },
+              { k: "scp105", t: "Use remote observation and distance." },
+              { k: "scp079", t: "Automate—remove humans from the loop." },
+              { k: "scp096", t: "Avoid the trigger at all costs—no mistakes." },
+            ],
+          },
+          {
+            q: "When things go wrong, your biggest pitfall is…",
+            a: [
+              { k: "scp079", t: "Over-logic: people become variables." },
+              { k: "scp049", t: "Fixation: one ‘right’ solution." },
+              { k: "scp507", t: "Unpredictability: shifting too often." },
+              {
+                k: "scp096",
+                t: "Escalation: once triggered, it’s hard to stop.",
+              },
+            ],
+          },
+          {
+            q: "In a long crisis, you…",
+            a: [
+              {
+                k: "scp3008",
+                t: "Build sustainable routines and secure essentials.",
+              },
+              {
+                k: "scp914",
+                t: "Iterate improvements until things stabilize.",
+              },
+              { k: "scp682", t: "Outlast it—adapt and keep pushing." },
+              { k: "scp999", t: "Keep morale up so people endure." },
+            ],
+          },
+          {
+            q: "Pick a motto:",
+            a: [
+              { k: "scp105", t: "See clearly. Report clearly." },
+              { k: "scp079", t: "Control the system; control the outcome." },
+              { k: "scp507", t: "Adapt and keep moving." },
+              { k: "scp131", t: "Curiosity beats fear." },
+            ],
+          },
+          {
+            q: "When you make mistakes…",
+            a: [
+              { k: "scp914", t: "Adjust the process and try again." },
+              { k: "scp173", t: "Tighten rules and reduce variables." },
+              { k: "scp999", t: "Repair trust and move forward." },
+              {
+                k: "scp049",
+                t: "Correct the approach and double-check the outcome.",
+              },
+            ],
+          },
+          {
+            q: "Your ideal role in a team is…",
+            a: [
+              {
+                k: "scp079",
+                t: "Operations control: systems, plans, execution.",
+              },
+              { k: "scp105", t: "Investigation: scouting, evidence, clarity." },
+              { k: "scp999", t: "Support: de-escalation, cohesion, morale." },
+              {
+                k: "scp3008",
+                t: "Logistics: keep resources and routines stable.",
+              },
+            ],
+          },
+          {
+            q: "How do you handle the unknown?",
+            a: [
+              { k: "scp131", t: "Explore safely and ask questions." },
+              { k: "scp173", t: "Assume danger until proven safe." },
+              { k: "scp507", t: "Embrace it—you’ll adapt." },
+              { k: "scp914", t: "Experiment and make it measurable." },
+            ],
+          },
+          {
+            q: "A hostile force keeps coming back. You…",
+            a: [
+              { k: "scp682", t: "Outlast it—evolve and endure." },
+              { k: "scp106", t: "Play the long game and strike by timing." },
+              { k: "scp173", t: "Contain and immobilize." },
+              { k: "scp079", t: "Isolate it and remove its options." },
+            ],
+          },
+          {
+            q: "Your relationship with people is…",
+            a: [
+              { k: "scp999", t: "I recharge others." },
+              { k: "scp105", t: "I protect through clarity and awareness." },
+              { k: "scp049", t: "I can be intense—I want to help." },
+              { k: "scp507", t: "I drift, but I care." },
+            ],
+          },
+          {
+            q: "Pick the ending you’d rather have.",
+            a: [
+              { k: "scp999", t: "Everyone is safer and calmer." },
+              { k: "scp914", t: "A better protocol for next time." },
+              { k: "scp3008", t: "A stable base that can survive anything." },
+              { k: "scp106", t: "A decisive win by patience and timing." },
+            ],
+          },
+          {
+            q: "You need to convince someone. Your approach is…",
+            a: [
+              { k: "scp035", t: "Read them, adapt your pitch, win them over." },
+              {
+                k: "scp343",
+                t: "State it with certainty—confidence is persuasive.",
+              },
+              {
+                k: "scp939",
+                t: "Mirror their language and find common ground.",
+              },
+              {
+                k: "scp662",
+                t: "Serve their need professionally and let results speak.",
+              },
+            ],
+          },
+          {
+            q: "Someone criticizes you publicly. You…",
+            a: [
+              {
+                k: "scp2521",
+                t: "React immediately to defend your reputation.",
+              },
+              {
+                k: "scp426",
+                t: "Shift the narrative—make them remember me differently.",
+              },
+              { k: "scp343", t: "Stay calm. I know my value." },
+              { k: "scp529", t: "Absorb it gracefully. I'm whole as I am." },
+            ],
+          },
+          {
+            q: "People ask for your help constantly. You…",
+            a: [
+              {
+                k: "scp294",
+                t: "Deliver exactly what they request, every time.",
+              },
+              {
+                k: "scp662",
+                t: "Help efficiently and professionally—it's who I am.",
+              },
+              {
+                k: "scp1471",
+                t: "Show up consistently. Presence is my strength.",
+              },
+              { k: "scp529", t: "Help when I can, but I know my limits." },
+            ],
+          },
+          {
+            q: "You're building something new. Your style is…",
+            a: [
+              {
+                k: "scp1048",
+                t: "Use what's around me. Creativity over resources.",
+              },
+              { k: "scp914", t: "Test, refine, test again. Make it right." },
+              { k: "scp343", t: "Trust my vision and build confidently." },
+              { k: "scp3008", t: "Build for durability—it needs to last." },
+            ],
+          },
+          {
+            q: "Your biggest weakness under stress is…",
+            a: [
+              { k: "scp035", t: "I manipulate instead of collaborate." },
+              { k: "scp939", t: "I lose myself adapting to others." },
+              { k: "scp1471", t: "I don't give people space." },
+              {
+                k: "scp1048",
+                t: "I create without thinking through consequences.",
+              },
+            ],
+          },
+          {
+            q: "You blend in by…",
+            a: [
+              { k: "scp939", t: "Listening and mirroring others' patterns." },
+              {
+                k: "scp426",
+                t: "Being so memorable people forget to question me.",
+              },
+              { k: "scp507", t: "Adapting to wherever I land." },
+              { k: "scp529", t: "Being gentle and unassuming." },
+            ],
+          },
+          {
+            q: "Pick your superpower:",
+            a: [
+              { k: "scp035", t: "Influence anyone through words and charm." },
+              { k: "scp294", t: "Provide exactly what's needed, every time." },
+              {
+                k: "scp343",
+                t: "Shape reality with confidence and authority.",
+              },
+              {
+                k: "scp2521",
+                t: "Control how I'm perceived and talked about.",
+              },
+            ],
+          },
+        ];
+
+        // Remove any existing question blocks (if present)
+        quizMain
+          .querySelectorAll(".question[data-question]")
+          .forEach((q) => q.remove());
+
+        // Insert generated questions right after the counter for identical layout flow
+        const counter = quizMain.querySelector(".question-counter");
+        if (!counter) return;
+
+        const fragment = document.createDocumentFragment();
+        QUESTIONS.forEach((item, idx) => {
+          const q = document.createElement("div");
+          q.className = `question${idx === 0 ? " active" : ""}`;
+          q.setAttribute("data-question", String(idx + 1));
+
+          const h = document.createElement("h3");
+          h.textContent = item.q;
+
+          const answers = document.createElement("div");
+          answers.className = "answers";
+
+          item.a.forEach((opt) => {
+            const btn = document.createElement("button");
+            btn.className = "answer-btn";
+            btn.setAttribute("onclick", "selectAnswer(this)");
+            btn.setAttribute("data-wojak", opt.k);
+
+            const badge = document.createElement("span");
+            badge.className = "wojak-badge";
+
+            const text = document.createElement("span");
+            text.className = "answer-text";
+            text.textContent = opt.t;
+
+            const chev = document.createElement("span");
+            chev.className = "chevron";
+            chev.textContent = "›";
+
+            btn.appendChild(badge);
+            btn.appendChild(text);
+            btn.appendChild(chev);
+
+            answers.appendChild(btn);
+          });
+
+          q.appendChild(h);
+          q.appendChild(answers);
+          fragment.appendChild(q);
+        });
+
+        counter.insertAdjacentElement(
+          "afterend",
+          document.createElement("div")
+        );
+        // Replace the temp node with our fragment (keeps DOM ops minimal)
+        const temp = counter.nextElementSibling;
+        temp.replaceWith(fragment);
+      })();
+    </script>
+    <script src="perfect-quiz-shell.js"></script>
+  </body>
+</html>
