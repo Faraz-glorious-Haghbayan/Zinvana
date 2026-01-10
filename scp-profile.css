@@ -1,0 +1,597 @@
+/* Shared styling for SCP profile pages (used by scp-*.html) */
+
+:root {
+  --bg: #0b1220;
+  --card: rgba(255, 255, 255, 0.06);
+  --card-strong: rgba(255, 255, 255, 0.085);
+  --text: rgba(255, 255, 255, 0.88);
+  --text-strong: rgba(255, 255, 255, 0.96);
+  --muted: rgba(255, 255, 255, 0.7);
+  --border: rgba(255, 255, 255, 0.12);
+  --accent: rgba(239, 68, 68, 0.92);
+  --accent-2: rgba(245, 158, 11, 0.9);
+  --radius: 18px;
+}
+
+/* ===== Remade responsive topbar nav (same markup as scp-personality-quiz.html) ===== */
+header.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(14px);
+  background: rgba(11, 18, 32, 0.88);
+  border-bottom: 1px solid var(--border);
+  padding-top: env(safe-area-inset-top);
+}
+
+body.nav-locked {
+  overflow: hidden;
+}
+
+.topbar__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header.topbar .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 850;
+  letter-spacing: 0.2px;
+  color: rgba(255, 255, 255, 0.96);
+  flex: 0 0 auto;
+}
+
+header.topbar .brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+header.topbar .brand span {
+  font-size: 18px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+nav.primary-nav {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+header.topbar .nav-link {
+  color: var(--muted);
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+header.topbar .nav-link:hover,
+header.topbar .nav-link:focus-visible {
+  color: rgba(255, 255, 255, 0.96);
+  background: rgba(239, 68, 68, 0.14);
+  outline: none;
+}
+
+header.topbar .nav-link[aria-current="page"] {
+  color: rgba(255, 255, 255, 0.98);
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.18),
+    rgba(245, 158, 11, 0.14)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+header.topbar .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 800;
+  font-size: 14px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  white-space: nowrap;
+}
+
+header.topbar .btn:hover,
+header.topbar .btn:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+header.topbar .btn.btn--ghost {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hamburger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hamburger:hover,
+.hamburger:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.hamburger span {
+  width: 18px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.94);
+  position: relative;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.hamburger span::before,
+.hamburger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.94);
+  transition: all 0.3s ease;
+}
+
+.hamburger span::before {
+  top: -6px;
+}
+
+.hamburger span::after {
+  top: 6px;
+}
+
+.hamburger.active span {
+  background: transparent;
+}
+
+.hamburger.active span::before {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span::after {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(2px);
+  z-index: 90;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(11, 18, 32, 0.98);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+  padding: 12px 12px 14px;
+  flex-direction: column;
+  gap: 4px;
+  max-height: min(72vh, 540px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu .nav-link {
+  padding: 12px 12px;
+  display: block;
+  border-radius: 14px;
+}
+
+/* Tablet: keep links visible, make them horizontally scrollable */
+@media (max-width: 900px) {
+  nav.primary-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  nav.primary-nav::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Phone: collapse into hamburger menu */
+@media (max-width: 720px) {
+  nav.primary-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 560px) {
+  header.topbar .btn.btn--ghost {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .topbar__inner {
+    padding: 10px 12px;
+  }
+
+  header.topbar .brand span {
+    display: none;
+  }
+
+  .hamburger {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header.topbar .nav-link,
+  header.topbar .btn,
+  .hamburger,
+  .hamburger span,
+  .hamburger span::before,
+  .hamburger span::after {
+    transition: none !important;
+  }
+}
+
+.scp-profile {
+  color: var(--text);
+}
+
+.scp-profile .profile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 14px;
+}
+
+.scp-profile .profile-hero {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.scp-profile .profile-hero img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.scp-profile .profile-title {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--text-strong);
+}
+
+.scp-profile .profile-sub {
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.scp-profile .profile-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.scp-profile .kpi {
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.scp-profile .kpi strong {
+  display: block;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.9rem;
+}
+
+.scp-profile .kpi span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+}
+
+.scp-profile .profile-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.scp-profile .aside-sticky {
+  position: sticky;
+  top: 86px;
+  align-self: start;
+}
+
+.scp-profile .profile-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  padding: 16px;
+}
+
+.scp-profile .profile-card h3 {
+  color: var(--text-strong);
+  letter-spacing: 0.2px;
+}
+
+.scp-profile .divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 12px 0;
+}
+
+.scp-profile .grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.scp-profile .mini-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.045);
+  padding: 12px;
+}
+
+.scp-profile .mini-card .note {
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.scp-profile .pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.scp-profile .pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 750;
+  font-size: 0.92rem;
+}
+
+.scp-profile .bars {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.scp-profile .bar {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.scp-profile .bar .label {
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 750;
+  font-size: 0.95rem;
+}
+
+.scp-profile .bar .track {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.scp-profile .bar .fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(239, 68, 68, 0.92),
+    rgba(245, 158, 11, 0.9)
+  );
+  width: 50%;
+}
+
+.scp-profile .scripts {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.scp-profile .script {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 12px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.scp-profile .script strong {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.scp-profile .section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.scp-profile .lead {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.scp-profile .note {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.scp-profile .hint {
+  margin-top: 12px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.13),
+    rgba(245, 158, 11, 0.11)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.scp-profile .split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.scp-profile ul.list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.scp-profile ul.list li {
+  margin: 6px 0;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.scp-profile .callout {
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.scp-profile .faq {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.scp-profile .faq li {
+  margin: 10px 0;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.scp-profile .toc {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.scp-profile .toc li {
+  margin: 8px 0;
+}
+
+.scp-profile .toc a {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.scp-profile .toc a:hover {
+  color: rgba(255, 255, 255, 0.98);
+}
+
+@media (max-width: 980px) {
+  .scp-profile .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .scp-profile .aside-sticky {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .scp-profile .profile-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .scp-profile .profile-hero img {
+    height: 210px;
+  }
+
+  .scp-profile .profile-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .scp-profile .split {
+    grid-template-columns: 1fr;
+  }
+
+  .scp-profile .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .scp-profile .bar {
+    grid-template-columns: 1fr;
+  }
+}
