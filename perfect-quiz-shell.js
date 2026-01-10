@@ -15,6 +15,9 @@
     totalQuestions: 0,
     resultTemplate: "",
     optionTitles: {},
+    answeredCount: 0,
+    streak: 0,
+    xp: 0,
   };
 
   function byId(id) {
@@ -64,6 +67,22 @@
   function setText(id, text) {
     const node = byId(id);
     if (node) node.textContent = text;
+  }
+
+  function isAddictiveShellForButton(button) {
+    const shell = button?.closest?.(".quiz-shell");
+    return shell?.getAttribute("data-addictive") === "true";
+  }
+
+  function updateAddictiveUI() {
+    setText("streakValue", `${STATE.streak}`);
+    setText("xpValue", `${STATE.xp}`);
+  }
+
+  function setMicroFeedback(text) {
+    const node = byId("microFeedback");
+    if (!node) return;
+    node.innerHTML = text;
   }
 
   function setProgress(percent) {
@@ -384,6 +403,15 @@
     }
   }
 
+  function inferProfileUrl(resultKey) {
+    if (!resultKey) return "";
+    const slug = String(resultKey).trim().toLowerCase();
+    if (!slug.startsWith("scp")) return "";
+    const rest = slug.slice(3);
+    if (!rest) return "";
+    return `/scp-${rest}.html`;
+  }
+
   function resultHtml(profile, scorePercent, resultKey) {
     const name = escapeHtml(profile?.name || profile?.title || resultKey);
     const tagline = escapeHtml(profile?.tagline || profile?.description || "");
@@ -403,6 +431,13 @@
       profile?.figure?.image ||
       "";
     const flagEmoji = profile?.flag || profile?.emoji || "";
+
+    const profileUrl =
+      profile?.page ||
+      profile?.url ||
+      profile?.href ||
+      profile?.link ||
+      inferProfileUrl(resultKey);
 
     const pillsSource =
       (Array.isArray(profile?.traits) && profile.traits) ||
@@ -444,11 +479,20 @@
       });
     }
 
+    const fallbackSvg =
+      "data:image/svg+xml;utf8," +
+      encodeURIComponent(
+        `<svg xmlns='http://www.w3.org/2000/svg' width='640' height='640'>
+          <rect width='640' height='640' rx='40' fill='#e2e8f0'/>
+          <text x='50%' y='52%' text-anchor='middle' font-family='system-ui, -apple-system, Segoe UI, Roboto, Arial' font-size='42' font-weight='800' fill='#475569'>No image</text>
+        </svg>`
+      );
+
     const imageHtml = imageUrl
       ? `<img src=\"${escapeHtml(
           imageUrl
-        )}\" alt=\"${name}\" loading=\"lazy\" />`
-      : `<div style=\"width:100%;height:100%;display:grid;place-items:center;color:#475569;font-weight:800\">No image</div>`;
+        )}\" alt=\"${name}\" loading=\"lazy\" decoding=\"async\" onerror=\"this.onerror=null;this.src='${fallbackSvg}'\" />`
+      : `<img src=\"${fallbackSvg}\" alt=\"${name}\" loading=\"lazy\" decoding=\"async\" />`;
 
     return `
       <div class="result-shell">
@@ -487,6 +531,13 @@
           }
 
           <div class="result-actions">
+            ${
+              profileUrl
+                ? `<a class="result-profile-link" href="${escapeHtml(
+                    profileUrl
+                  )}">Open full SCP profile <span class="arrow">→</span></a>`
+                : ""
+            }
             <button class="restart-btn" onclick="restartQuiz()">Retake quiz</button>
             <div class="share-buttons">
               <h4>Share your result</h4>
@@ -601,8 +652,34 @@
     );
     button.classList.add("selected");
 
+    const prevValue = STATE.answers[questionNum];
     const dataValue = button.getAttribute("data-value") || "";
     STATE.answers[questionNum] = dataValue;
+
+    if (isAddictiveShellForButton(button)) {
+      const isNewAnswer = !prevValue;
+      if (isNewAnswer) {
+        STATE.answeredCount += 1;
+        STATE.streak += 1;
+        STATE.xp += 10;
+      }
+
+      updateAddictiveUI();
+
+      const lines = [
+        "<span><strong>Locked in.</strong> Keep going.</span>",
+        "<span><strong>Nice.</strong> Momentum builds results.</span>",
+        "<span><strong>Good pick.</strong> Trust the instinct.</span>",
+        "<span><strong>Clean choice.</strong> One step closer.</span>",
+      ];
+      const idx = Math.max(0, (STATE.answeredCount - 1) % lines.length);
+      const isLast = questionNum >= (STATE.totalQuestions || 1);
+      setMicroFeedback(
+        isLast
+          ? "<span><strong>Final answer.</strong> Calculating your hero…</span>"
+          : lines[idx]
+      );
+    }
 
     trackQuizEvent("quiz_answer", {
       question: questionNum,
@@ -696,6 +773,13 @@
     if (resultContainer) resultContainer.classList.remove("show");
 
     STATE.answers = {};
+    STATE.answeredCount = 0;
+    STATE.streak = 0;
+    STATE.xp = 0;
+    updateAddictiveUI();
+    setMicroFeedback(
+      "<span><strong>Tip:</strong> Trust your first instinct.</span>"
+    );
     setActiveQuestion(1);
   }
 
@@ -708,6 +792,13 @@
     const resultContainer = byId(RESULT_CONTAINER_ID);
 
     STATE.answers = {};
+    STATE.answeredCount = 0;
+    STATE.streak = 0;
+    STATE.xp = 0;
+    updateAddictiveUI();
+    setMicroFeedback(
+      "<span><strong>Tip:</strong> Trust your first instinct.</span>"
+    );
 
     if (quizContainer) quizContainer.style.display = "block";
     if (resultContainer) {
