@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -563,6 +563,37 @@
       body.page-scp .quiz-shell .result-pill {
         background: rgba(239, 68, 68, 0.12);
         border-color: rgba(239, 68, 68, 0.18);
+      }
+
+      .result-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .result-profile-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: #0f172a;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.22);
+        transition: transform 0.15s ease, box-shadow 0.2s ease;
+      }
+
+      .result-profile-link:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.28);
+      }
+
+      .result-profile-link .arrow {
+        font-size: 1.05em;
       }
     </style>
 
@@ -2492,28 +2523,28 @@
 
     <script>
       const pageMap = {
-        scp173: "#quizSection",
-        scp049: "#quizSection",
-        scp079: "#quizSection",
-        scp096: "#quizSection",
-        scp106: "#quizSection",
-        scp999: "#quizSection",
-        scp131: "#quizSection",
-        scp3008: "#quizSection",
-        scp507: "#quizSection",
-        scp105: "#quizSection",
-        scp682: "#quizSection",
-        scp914: "#quizSection",
-        scp035: "#quizSection",
-        scp939: "#quizSection",
-        scp1471: "#quizSection",
-        scp2521: "#quizSection",
-        scp294: "#quizSection",
-        scp662: "#quizSection",
-        scp343: "#quizSection",
-        scp426: "#quizSection",
-        scp1048: "#quizSection",
-        scp529: "#quizSection",
+        scp173: "/scp-173.html",
+        scp049: "/scp-049.html",
+        scp079: "/scp-079.html",
+        scp096: "/scp-096.html",
+        scp106: "/scp-106.html",
+        scp999: "/scp-999.html",
+        scp131: "/scp-131.html",
+        scp3008: "/scp-3008.html",
+        scp507: "/scp-507.html",
+        scp105: "/scp-105.html",
+        scp682: "/scp-682.html",
+        scp914: "/scp-914.html",
+        scp035: "/scp-035.html",
+        scp939: "/scp-939.html",
+        scp1471: "/scp-1471.html",
+        scp2521: "/scp-2521.html",
+        scp294: "/scp-294.html",
+        scp662: "/scp-662.html",
+        scp343: "/scp-343.html",
+        scp426: "/scp-426.html",
+        scp1048: "/scp-1048.html",
+        scp529: "/scp-529.html",
       };
 
       // Utilities to ensure every profile has an image
