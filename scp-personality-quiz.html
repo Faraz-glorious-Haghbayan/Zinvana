@@ -1,6 +1,11 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
   <head>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1023172873076347"
+      crossorigin="anonymous"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>What SCP am I? FREE SCP Personality Quiz (2026) | Zinvana</title>
@@ -102,9 +107,12 @@
         padding: 1px;
         border-radius: 22px;
         background: linear-gradient(135deg, var(--brand1), var(--brand2));
-        -webkit-mask: linear-gradient(#000 0 0) content-box,
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
           linear-gradient(#000 0 0);
-        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
@@ -232,9 +240,12 @@
         padding: 1px;
         border-radius: 18px;
         background: linear-gradient(135deg, var(--brand1), var(--brand2));
-        -webkit-mask: linear-gradient(#000 0 0) content-box,
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
           linear-gradient(#000 0 0);
-        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
@@ -337,7 +348,9 @@
         background: rgba(255, 255, 255, 0.9);
         box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
         padding: 14px;
-        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease;
       }
       #archetypesOverview.scp-archetypes .scp-arch-card:hover {
         transform: translateY(-2px);
@@ -502,7 +515,8 @@
       }
 
       body.page-scp .quiz-shell .answer-btn:focus-visible {
-        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.28),
+        box-shadow:
+          0 0 0 3px rgba(239, 68, 68, 0.28),
           0 25px 50px rgba(239, 68, 68, 0.18);
         border-color: rgba(239, 68, 68, 0.75);
       }
@@ -584,7 +598,9 @@
         font-weight: 700;
         letter-spacing: 0.01em;
         box-shadow: 0 10px 24px rgba(15, 23, 42, 0.22);
-        transition: transform 0.15s ease, box-shadow 0.2s ease;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.2s ease;
       }
 
       .result-profile-link:hover {
@@ -2609,7 +2625,7 @@
 
       function getAvatarHTML(data) {
         return `<img src="${getImgSrc(data)}" alt="${normalizeText(
-          data?.name || ""
+          data?.name || "",
         )}" decoding="async" fetchpriority="high">`;
       }
 
@@ -2717,11 +2733,8 @@
           container.style.display = "flex";
           const nextBatch = Math.min(remaining, PLAYERS_PER_PAGE);
           remainingBadge.textContent = `${remaining} left`;
-          btn.querySelector(
-            "span:first-child"
-          ).textContent = `Show ${nextBatch} More Character${
-            nextBatch > 1 ? "s" : ""
-          }`;
+          btn.querySelector("span:first-child").textContent =
+            `Show ${nextBatch} More Character${nextBatch > 1 ? "s" : ""}`;
         }
       }
 
@@ -2731,7 +2744,7 @@
 
         const nextBatch = allPlayerKeys.slice(
           displayedPlayers,
-          displayedPlayers + PLAYERS_PER_PAGE
+          displayedPlayers + PLAYERS_PER_PAGE,
         );
         nextBatch.forEach((key, i) => {
           const card = createPlayerCard(key, i);
@@ -2784,7 +2797,7 @@
         card.innerHTML = `
           <a class="character-link" href="${link}" style="text-decoration:none;color:inherit;display:block">
             <div class="character-meta"><img class="character-emoji" src="${getImgSrc(
-              d
+              d,
             )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">${safeName}</div>
             <p>${safeDescription}</p>
             <div class="character-meta">Best roles: ${safeRoles}</div>
@@ -2815,14 +2828,14 @@
             obs.disconnect();
             cb();
           },
-          { root: null, rootMargin, threshold: 0.01 }
+          { root: null, rootMargin, threshold: 0.01 },
         );
         obs.observe(target);
       }
 
       function upgradeAnswerBadges() {
         Array.from(
-          document.querySelectorAll(".answer-btn .wojak-badge")
+          document.querySelectorAll(".answer-btn .wojak-badge"),
         ).forEach((badge) => {
           const btn = badge.closest("button");
           const key = btn ? btn.getAttribute("data-wojak") : "";
@@ -2830,7 +2843,7 @@
           if (data) {
             const safeName = normalizeText(data.name);
             badge.innerHTML = `<img src="${getImgSrc(
-              data
+              data,
             )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">`;
           }
         });
@@ -2856,7 +2869,7 @@
             ch.classList.add("active");
             ch.setAttribute("aria-pressed", "true");
             applyGuideFilters();
-          })
+          }),
         );
       }
 
@@ -2892,7 +2905,7 @@
 
         const nextBatch = spotlightPlayerKeys.slice(
           displayedSpotlightPlayers,
-          displayedSpotlightPlayers + SPOTLIGHT_BATCH_SIZE
+          displayedSpotlightPlayers + SPOTLIGHT_BATCH_SIZE,
         );
 
         nextBatch.forEach((key, i) => {
@@ -3030,13 +3043,13 @@
         const baseName = rawName;
         const text = encodeURIComponent(`My SCP match: ${baseName}`);
         const tw = `https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(
-          shareUrl
+          shareUrl,
         )}`;
         box.innerHTML = `
 					<a href="${tw}" target="_blank" rel="noopener" class="guide-cta">Share on X</a>
 					<button class="guide-cta" onclick="navigator.clipboard.writeText('${shareUrl.replace(
             /'/g,
-            "%27"
+            "%27",
           )}').then(()=>{this.textContent='Link copied!'; setTimeout(()=>this.textContent='Copy result link',1500);})">Copy result link</button>
 				`;
       }
@@ -3056,7 +3069,7 @@
         observeOnce(
           quizSection,
           () => runWhenIdle(upgradeAnswerBadges),
-          "600px"
+          "600px",
         );
 
         const guideSection =
@@ -3078,13 +3091,13 @@
         document
           .querySelectorAll(".filter-chips .chip")
           .forEach((chip) =>
-            chip.addEventListener("click", () => initGuide(), { once: true })
+            chip.addEventListener("click", () => initGuide(), { once: true }),
           );
 
         document
           .querySelectorAll(".filter-chips .chip")
           .forEach((chip) =>
-            chip.addEventListener("keydown", () => initGuide(), { once: true })
+            chip.addEventListener("keydown", () => initGuide(), { once: true }),
           );
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -3458,7 +3471,7 @@
 
         counter.insertAdjacentElement(
           "afterend",
-          document.createElement("div")
+          document.createElement("div"),
         );
         // Replace the temp node with our fragment (keeps DOM ops minimal)
         const temp = counter.nextElementSibling;

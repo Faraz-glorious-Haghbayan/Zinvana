@@ -1,6 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1023172873076347"
+      crossorigin="anonymous"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -2002,7 +2007,7 @@
 
       function getAvatarHTML(data) {
         return `<img src="${getImgSrc(data)}" alt="${normalizeText(
-          data?.name || ""
+          data?.name || "",
         )}" decoding="async" fetchpriority="high">`;
       }
 
@@ -2099,11 +2104,8 @@
           container.style.display = "flex";
           const nextBatch = Math.min(remaining, PLAYERS_PER_PAGE);
           remainingBadge.textContent = `${remaining} left`;
-          btn.querySelector(
-            "span:first-child"
-          ).textContent = `Show ${nextBatch} More Character${
-            nextBatch > 1 ? "s" : ""
-          }`;
+          btn.querySelector("span:first-child").textContent =
+            `Show ${nextBatch} More Character${nextBatch > 1 ? "s" : ""}`;
         }
       }
 
@@ -2113,7 +2115,7 @@
 
         const nextBatch = allPlayerKeys.slice(
           displayedPlayers,
-          displayedPlayers + PLAYERS_PER_PAGE
+          displayedPlayers + PLAYERS_PER_PAGE,
         );
         nextBatch.forEach((key, i) => {
           const card = createPlayerCard(key, i);
@@ -2166,7 +2168,7 @@
         card.innerHTML = `
           <a class="character-link" href="${link}">
             <div class="character-meta"><img class="character-emoji" src="${getImgSrc(
-              d
+              d,
             )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">${safeName}</div>
             <p>${safeDescription}</p>
             <div class="character-meta">Best roles: ${safeRoles}</div>
@@ -2197,14 +2199,14 @@
             obs.disconnect();
             cb();
           },
-          { root: null, rootMargin, threshold: 0.01 }
+          { root: null, rootMargin, threshold: 0.01 },
         );
         obs.observe(target);
       }
 
       function upgradeAnswerBadges() {
         Array.from(
-          document.querySelectorAll(".answer-btn .wojak-badge")
+          document.querySelectorAll(".answer-btn .wojak-badge"),
         ).forEach((badge) => {
           const btn = badge.closest("button");
           const key = btn ? btn.getAttribute("data-wojak") : "";
@@ -2212,7 +2214,7 @@
           if (data) {
             const safeName = normalizeText(data.name);
             badge.innerHTML = `<img src="${getImgSrc(
-              data
+              data,
             )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">`;
           }
         });
@@ -2238,7 +2240,7 @@
             ch.classList.add("active");
             ch.setAttribute("aria-pressed", "true");
             applyGuideFilters();
-          })
+          }),
         );
       }
 
@@ -2274,7 +2276,7 @@
 
         const nextBatch = spotlightPlayerKeys.slice(
           displayedSpotlightPlayers,
-          displayedSpotlightPlayers + SPOTLIGHT_BATCH_SIZE
+          displayedSpotlightPlayers + SPOTLIGHT_BATCH_SIZE,
         );
 
         nextBatch.forEach((key, i) => {
@@ -2412,13 +2414,13 @@
         const baseName = rawName.split(/\s-\s/)[0] || rawName;
         const text = encodeURIComponent(`My Marvel hero: ${baseName}`);
         const tw = `https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(
-          shareUrl
+          shareUrl,
         )}`;
         box.innerHTML = `
 					<a href="${tw}" target="_blank" rel="noopener" class="guide-cta">Share on X</a>
 					<button class="guide-cta" onclick="navigator.clipboard.writeText('${shareUrl.replace(
             /'/g,
-            "%27"
+            "%27",
           )}').then(()=>{this.textContent='Link copied!'; setTimeout(()=>this.textContent='Copy result link',1500);})">Copy result link</button>
 				`;
       }
@@ -2438,7 +2440,7 @@
         observeOnce(
           quizSection,
           () => runWhenIdle(upgradeAnswerBadges),
-          "600px"
+          "600px",
         );
 
         const guideSection =
@@ -2460,13 +2462,13 @@
         document
           .querySelectorAll(".filter-chips .chip")
           .forEach((chip) =>
-            chip.addEventListener("click", () => initGuide(), { once: true })
+            chip.addEventListener("click", () => initGuide(), { once: true }),
           );
 
         document
           .querySelectorAll(".filter-chips .chip")
           .forEach((chip) =>
-            chip.addEventListener("keydown", () => initGuide(), { once: true })
+            chip.addEventListener("keydown", () => initGuide(), { once: true }),
           );
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -2804,7 +2806,7 @@
 
         counter.insertAdjacentElement(
           "afterend",
-          document.createElement("div")
+          document.createElement("div"),
         );
         // Replace the temp node with our fragment (keeps DOM ops minimal)
         const temp = counter.nextElementSibling;
