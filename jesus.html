@@ -1,1001 +1,873 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jesus Christ: Biography, Teachings, Miracles & Historical Impact | Zinvana</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Discover the life, teachings, miracles, crucifixion, and resurrection of Jesus Christ. Explore his historical impact, legacy, and influence on art, culture, and philosophy. Comprehensive, accessible, and insightful." />
-  <meta name="keywords" content="Jesus Christ, Jesus biography, life of Jesus, teachings of Jesus, miracles of Jesus, crucifixion, resurrection, Christian faith, historical Jesus, spiritual leader, Christianity, Jesus Christ history, Jesus Christ facts, Jesus Christ legacy" />
-  <meta name="author" content="Zinvana" />
-  <link rel="canonical" href="https://zinvana.com/jesus.html" />
-
-  <!-- Open Graph & Twitter Card -->
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Zinvana" />
-  <meta property="og:url" content="https://zinvana.com/jesus.html" />
-  <meta property="og:title" content="Jesus Christ: Biography, Teachings, Miracles & Historical Impact | Zinvana" />
-  <meta property="og:description" content="Discover the life, teachings, miracles, crucifixion, and resurrection of Jesus Christ. Explore his historical impact, legacy, and influence on art, culture, and philosophy." />
-  <meta property="og:image" content="https://zinvana.com/jesus.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="en_US" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@Zinvana" />
-  <meta name="twitter:title" content="Jesus Christ: Biography, Teachings, Miracles & Historical Impact | Zinvana" />
-  <meta name="twitter:description" content="Explore the life, teachings, and legacy of Jesus Christ. Comprehensive, accessible, and insightful." />
-  <meta name="twitter:image" content="https://zinvana.com/jesus.jpg" />
-
-  <!-- Structured Data: Article & Breadcrumbs -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://zinvana.com/jesus.html"
-    },
-    "headline": "Jesus Christ: Biography, Teachings, Miracles & Historical Impact",
-    "description": "Discover the life, teachings, miracles, crucifixion, and resurrection of Jesus Christ. Explore his historical impact, legacy, and influence on art, culture, and philosophy.",
-    "image": "https://zinvana.com/jesus.jpg",
-    "author": {
-      "@type": "Organization",
-      "name": "Zinvana"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Zinvana",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://zinvana.com/logo.png"
-      }
-    },
-    "datePublished": "2024-06-01",
-    "dateModified": "2024-06-01"
-  }
-  </script>
-
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  
-  <!-- CSS Styles -->
-  <style>
-    /* CSS Custom Properties */
-    :root {
-      --primary-gold: #d4af37;
-      --primary-navy: #1a2238;
-      --secondary-gold: #f4e5a3;
-      --text-light: #f8f9fa;
-      --text-dark: #333333;
-      --background-light: #ffffff;
-      --accent-color: #8b4513;
-      --shadow-light: rgba(212, 175, 55, 0.1);
-      --shadow-dark: rgba(26, 34, 56, 0.3);
-      --gradient-primary: linear-gradient(135deg, var(--primary-gold) 0%, var(--accent-color) 100%);
-      --gradient-secondary: linear-gradient(135deg, var(--primary-navy) 0%, #2c3e50 100%);
-    }
-
-    /* Reset and Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.7;
-      color: var(--text-dark);
-      background: var(--background-light);
-      overflow-x: hidden;
-    }
-
-    /* Loading Animation */
-    .loading-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--primary-navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-
-    .loading-overlay.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loading-content {
-      text-align: center;
-      color: var(--primary-gold);
-    }
-
-    .loading-spinner {
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(212, 175, 55, 0.3);
-      border-top: 3px solid var(--primary-gold);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 20px;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Navigation Bar */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 1rem 2rem;
-      background: rgba(26, 34, 56, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      transition: all 0.3s ease;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-    }
-
-    nav.scrolled {
-      padding: 0.5rem 2rem;
-      background: rgba(26, 34, 56, 0.98);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .nav-logo {
-      height: 40px;
-      transition: all 0.3s ease;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      position: relative;
-      transition: all 0.3s ease;
-      padding: 0.5rem 0;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gradient-primary);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary-gold);
-      transform: translateY(-2px);
-    }
-
-    .mobile-menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-light);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(26, 34, 56, 0.7), rgba(26, 34, 56, 0.7)), url('jesusheader.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      padding: 2rem;
-      animation: fadeInUp 1s ease 0.5s both;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 700;
-      color: var(--text-light);
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      line-height: 1.1;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1.2rem, 4vw, 1.8rem);
-      color: var(--secondary-gold);
-      margin-bottom: 2rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-    }
-
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--primary-gold);
-      animation: bounce 2s infinite;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .scroll-indicator:hover {
-      transform: translateX(-50%) translateY(-5px);
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-      40% { transform: translateX(-50%) translateY(-10px); }
-      60% { transform: translateX(-50%) translateY(-5px); }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Main Content Container */
-    .main-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-      position: relative;
-    }
-
-    .content-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    /* Infobox */
-    .infobox {
-      background: var(--background-light);
-      border-radius: 15px;
-      padding: 2rem;
-      box-shadow: 0 10px 30px var(--shadow-dark);
-      position: sticky;
-      top: 120px;
-      border: 1px solid rgba(212, 175, 55, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .infobox:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px var(--shadow-dark);
-    }
-
-    .infobox img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .infobox img:hover {
-      transform: scale(1.05);
-    }
-
-    .infobox h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary-navy);
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-      text-align: center;
-    }
-
-    .info-item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.8rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-    }
-
-    .info-label {
-      font-weight: 600;
-      color: var(--primary-navy);
-    }
-
-    .info-value {
-      color: var(--text-dark);
-      text-align: right;
-    }
-
-    /* Main Content */
-    .main-content {
-      background: var(--background-light);
-      border-radius: 15px;
-      padding: 3rem;
-      box-shadow: 0 10px 30px var(--shadow-light);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-
-    .main-content.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .content-section {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    }
-
-    .content-section:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-
-    .content-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: var(--primary-navy);
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    .content-section h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--gradient-primary);
-      border-radius: 2px;
-    }
-
-    .content-section h2::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: rgba(212, 175, 55, 0.2);
-    }
-
-    .content-section p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      color: var(--text-dark);
-      text-align: justify;
-    }
-
-    .content-section p:first-of-type::first-letter {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      line-height: 1;
-      float: left;
-      margin: 0.1rem 0.5rem 0 0;
-      color: var(--primary-gold);
-      font-weight: 700;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--gradient-secondary);
-      color: var(--text-light);
-      padding: 3rem 2rem 2rem;
-      text-align: center;
-      margin-top: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--gradient-primary);
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: rgba(212, 175, 55, 0.1);
-      border-radius: 50%;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
-
-    .social-links a:hover {
-      background: var(--primary-gold);
-      transform: translateY(-3px);
-      border-color: var(--primary-gold);
-      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-    }
-
-    .social-links img {
-      width: 24px;
-      height: 24px;
-      filter: brightness(0) invert(1);
-      transition: all 0.3s ease;
-    }
-
-    .social-links a:hover img {
-      filter: brightness(0);
-    }
-
-    .footer-text {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      margin-bottom: 0;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-      .content-wrapper {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .infobox {
-        position: static;
-        order: -1;
-        margin-bottom: 2rem;
-      }
-
-      .main-container {
-        padding: 2rem 1rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .mobile-menu-toggle {
-        display: block;
-      }
-
-      nav {
-        padding: 1rem;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-      }
-
-      .hero-subtitle {
-        font-size: 1.2rem;
-      }
-
-      .main-content {
-        padding: 2rem 1.5rem;
-      }
-
-      .content-section h2 {
-        font-size: 1.8rem;
-      }
-
-      .content-section p {
-        font-size: 1rem;
-      }
-
-      .infobox {
-        padding: 1.5rem;
-      }
-
-      .social-links {
-        gap: 1rem;
-      }
-
-      .social-links a {
-        width: 45px;
-        height: 45px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero {
-        background-attachment: scroll;
-      }
-
-      .hero-content {
-        padding: 1rem;
-      }
-
-      .main-content {
-        padding: 1.5rem 1rem;
-      }
-
-      .content-section p:first-of-type::first-letter {
-        font-size: 3rem;
-        margin: 0.05rem 0.3rem 0 0;
-      }
-
-      footer {
-        padding: 2rem 1rem 1.5rem;
-      }
-    }
-
-    /* Touch Device Optimizations */
-    @media (hover: none) and (pointer: coarse) {
-      .nav-links a:hover::after {
-        width: 0;
-      }
-
-      .nav-links a:active::after {
-        width: 100%;
-      }
-
-      .infobox:hover {
-        transform: none;
-      }
-
-      .social-links a:hover {
-        transform: none;
-      }
-    }
-
-    /* High DPI Display Optimizations */
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .hero {
-        background-image: linear-gradient(rgba(26, 34, 56, 0.7), rgba(26, 34, 56, 0.7)), url('jesusheader.jpg');
-      }
-    }
-
-    /* Print Styles */
-    @media print {
-      nav, footer, .scroll-indicator {
-        display: none;
-      }
-
-      .hero {
-        height: auto;
-        background: none;
-        color: black;
-        padding: 2rem 0;
-      }
-
-      .main-content {
-        box-shadow: none;
-        border: 1px solid #ccc;
-      }
-    }
-  </style>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Jesus Christ: Biography, Teachings, Miracles & Historical Impact | Zinvana</title>
+ 
+ <!-- SEO Meta Tags -->
+ <meta name="description" content="Discover the life, teachings, miracles, crucifixion, and resurrection of Jesus Christ. Explore his historical impact, legacy, and influence on art, culture, and philosophy. complete, accessible, and insightful." />
+ <meta name="keywords" content="Jesus Christ, Jesus biography, life of Jesus, teachings of Jesus, miracles of Jesus, crucifixion, resurrection, Christian faith, historical Jesus, spiritual leader, Christianity, Jesus Christ history, Jesus Christ facts, Jesus Christ legacy" />
+ <meta name="author" content="Zinvana" />
+ <link rel="canonical" href="https://zinvana.com/jesus.html" />
+
+ <!-- Open Graph & Twitter Card -->
+ <meta property="og:type" content="article" />
+ <meta property="og:site_name" content="Zinvana" />
+ <meta property="og:url" content="https://zinvana.com/jesus.html" />
+ <meta property="og:title" content="Jesus Christ: Biography, Teachings, Miracles & Historical Impact | Zinvana" />
+ <meta property="og:description" content="Discover the life, teachings, miracles, crucifixion, and resurrection of Jesus Christ. Explore his historical impact, legacy, and influence on art, culture, and philosophy." />
+ <meta property="og:image" content="https://zinvana.com/jesus.jpg" />
+ <meta property="og:image:width" content="1200" />
+ <meta property="og:image:height" content="630" />
+ <meta property="og:locale" content="en_US" />
+
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:site" content="@Zinvana" />
+ <meta name="twitter:title" content="Jesus Christ: Biography, Teachings, Miracles & Historical Impact | Zinvana" />
+ <meta name="twitter:description" content="Explore the life, teachings, and legacy of Jesus Christ. complete, accessible, and insightful." />
+ <meta name="twitter:image" content="https://zinvana.com/jesus.jpg" />
+
+ <!-- Structured Data: Article & Breadcrumbs -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "mainEntityOfPage": {
+ "@type": "WebPage",
+ "@id": "https://zinvana.com/jesus.html"
+ },
+ "headline": "Jesus Christ: Biography, Teachings, Miracles & Historical Impact",
+ "description": "Discover the life, teachings, miracles, crucifixion, and resurrection of Jesus Christ. Explore his historical impact, legacy, and influence on art, culture, and philosophy.",
+ "image": "https://zinvana.com/jesus.jpg",
+ "author": {
+ "@type": "Organization",
+ "name": "Zinvana"
+ },
+ "publisher": {
+ "@type": "Organization",
+ "name": "Zinvana",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://zinvana.com/logo.png"
+ }
+ },
+ "datePublished": "2024-06-01",
+ "dateModified": "2024-06-01"
+ }
+ </script>
+
+
+ <!-- Fonts -->
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+ 
+ <!-- CSS Styles -->
+ <style>
+ /* CSS Custom Properties */:root {
+ --primary-gold: #d4af37;
+ --primary-navy: #1a2238;
+ --secondary-gold: #f4e5a3;
+ --text-light: #f8f9fa;
+ --text-dark: #333333;
+ --background-light: #ffffff;
+ --accent-color: #8b4513;
+ --shadow-light: rgba(212, 175, 55, 0.1);
+ --shadow-dark: rgba(26, 34, 56, 0.3);
+ --gradient-primary: linear-gradient(135deg, var(--primary-gold) 0%, var(--accent-color) 100%);
+ --gradient-secondary: linear-gradient(135deg, var(--primary-navy) 0%, #2c3e50 100%);
+ }
+
+ /* Reset and Base Styles */
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ html {
+ scroll-behavior: smooth;
+ font-size: 16px;
+ }
+
+ body {
+ font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+ line-height: 1.7;
+ color: var(--text-dark);
+ background: var(--background-light);
+ overflow-x: hidden;
+ }
+
+ /* Loading Animation */.loading-overlay {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: var(--primary-navy);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 10000;
+ transition: opacity 0.5s ease, visibility 0.5s ease;
+ }.loading-overlay.hidden {
+ opacity: 0;
+ visibility: hidden;
+ }.loading-content {
+ text-align: center;
+ color: var(--primary-gold);
+ }.loading-spinner {
+ width: 50px;
+ height: 50px;
+ border: 3px solid rgba(212, 175, 55, 0.3);
+ border-top: 3px solid var(--primary-gold);
+ border-radius: 50%;
+ animation: spin 1s linear infinite;
+ margin: 0 auto 20px;
+ }
+
+ @keyframes spin {
+ 0% { transform: rotate(0deg); }
+ 100% { transform: rotate(360deg); }
+ }
+
+ /* Navigation Bar */
+ nav {
+ position: fixed;
+ top: 0;
+ width: 100%;
+ padding: 1rem 2rem;
+ background: rgba(26, 34, 56, 0.95);
+ backdrop-filter: blur(10px);
+ z-index: 1000;
+ transition: all 0.3s ease;
+ border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+ }
+
+ nav.scrolled {
+ padding: 0.5rem 2rem;
+ background: rgba(26, 34, 56, 0.98);
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+ }.nav-container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ max-width: 1400px;
+ margin: 0 auto;
+ }.nav-left {
+ display: flex;
+ align-items: center;
+ gap: 2rem;
+ }.nav-logo {
+ height: 40px;
+ transition: all 0.3s ease;
+ }.nav-links {
+ display: flex;
+ gap: 2rem;
+ list-style: none;
+ }.nav-links a {
+ color: var(--text-light);
+ text-decoration: none;
+ font-weight: 500;
+ font-size: 1rem;
+ position: relative;
+ transition: all 0.3s ease;
+ padding: 0.5rem 0;
+ }.nav-links a::after {
+ content: '';
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 0;
+ height: 2px;
+ background: var(--gradient-primary);
+ transition: width 0.3s ease;
+ }.nav-links a:hover::after {
+ width: 100%;
+ }.nav-links a:hover {
+ color: var(--primary-gold);
+ transform: translateY(-2px);
+ }.mobile-menu-toggle {
+ display: none;
+ background: none;
+ border: none;
+ color: var(--text-light);
+ font-size: 1.5rem;
+ cursor: pointer;
+ }
+
+ /* Hero Section */.hero {
+ height: 100vh;
+ background: linear-gradient(rgba(26, 34, 56, 0.7), rgba(26, 34, 56, 0.7)), url('jesusheader.jpg');
+ background-size: cover;
+ background-position: center;
+ background-attachment: fixed;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ position: relative;
+ overflow: hidden;
+ }.hero-content {
+ max-width: 800px;
+ padding: 2rem;
+ animation: fadeInUp 1s ease 0.5s both;
+ }.hero h1 {
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(3rem, 8vw, 6rem);
+ font-weight: 700;
+ color: var(--text-light);
+ margin-bottom: 1rem;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ line-height: 1.1;
+ }.hero-subtitle {
+ font-size: clamp(1.2rem, 4vw, 1.8rem);
+ color: var(--secondary-gold);
+ margin-bottom: 2rem;
+ font-weight: 300;
+ letter-spacing: 1px;
+ }.scroll-indicator {
+ position: absolute;
+ bottom: 2rem;
+ left: 50%;
+ transform: translateX(-50%);
+ color: var(--primary-gold);
+ animation: bounce 2s infinite;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ }.scroll-indicator:hover {
+ transform: translateX(-50%) translateY(-5px);
+ }
+
+ @keyframes bounce {
+ 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+ 40% { transform: translateX(-50%) translateY(-10px); }
+ 60% { transform: translateX(-50%) translateY(-5px); }
+ }
+
+ @keyframes fadeInUp {
+ from {
+ opacity: 0;
+ transform: translateY(50px);
+ }
+ to {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ }
+
+ /* Main Content Container */.main-container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 4rem 2rem;
+ position: relative;
+ }.content-wrapper {
+ display: grid;
+ grid-template-columns: 1fr 300px;
+ gap: 3rem;
+ align-items: start;
+ }
+
+ /* Infobox */.infobox {
+ background: var(--background-light);
+ border-radius: 15px;
+ padding: 2rem;
+ box-shadow: 0 10px 30px var(--shadow-dark);
+ position: sticky;
+ top: 120px;
+ border: 1px solid rgba(212, 175, 55, 0.2);
+ transition: all 0.3s ease;
+ }.infobox:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 20px 40px var(--shadow-dark);
+ }.infobox img {
+ width: 100%;
+ height: 250px;
+ object-fit: cover;
+ border-radius: 10px;
+ margin-bottom: 1.5rem;
+ transition: all 0.3s ease;
+ }.infobox img:hover {
+ transform: scale(1.05);
+ }.infobox h3 {
+ font-family: 'Playfair Display', serif;
+ color: var(--primary-navy);
+ margin-bottom: 1rem;
+ font-size: 1.3rem;
+ text-align: center;
+ }.info-item {
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 0.8rem;
+ padding: 0.5rem 0;
+ border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+ }.info-label {
+ font-weight: 600;
+ color: var(--primary-navy);
+ }.info-value {
+ color: var(--text-dark);
+ text-align: right;
+ }
+
+ /* Main Content */.main-content {
+ background: var(--background-light);
+ border-radius: 15px;
+ padding: 3rem;
+ box-shadow: 0 10px 30px var(--shadow-light);
+ opacity: 0;
+ transform: translateY(30px);
+ transition: all 0.6s ease;
+ }.main-content.visible {
+ opacity: 1;
+ transform: translateY(0);
+ }.content-section {
+ margin-bottom: 3rem;
+ padding-bottom: 2rem;
+ border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+ }.content-section:last-child {
+ border-bottom: none;
+ margin-bottom: 0;
+ }.content-section h2 {
+ font-family: 'Playfair Display', serif;
+ font-size: 2.2rem;
+ color: var(--primary-navy);
+ margin-bottom: 1.5rem;
+ position: relative;
+ padding-bottom: 0.5rem;
+ }.content-section h2::after {
+ content: '';
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 60px;
+ height: 3px;
+ background: var(--gradient-primary);
+ border-radius: 2px;
+ }.content-section h2::before {
+ content: '';
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ height: 1px;
+ background: rgba(212, 175, 55, 0.2);
+ }.content-section p {
+ font-size: 1.1rem;
+ line-height: 1.8;
+ margin-bottom: 1.5rem;
+ color: var(--text-dark);
+ text-align: justify;
+ }.content-section p:first-of-type::first-letter {
+ font-family: 'Playfair Display', serif;
+ font-size: 4rem;
+ line-height: 1;
+ float: left;
+ margin: 0.1rem 0.5rem 0 0;
+ color: var(--primary-gold);
+ font-weight: 700;
+ }
+
+ /* Footer */
+ footer {
+ background: var(--gradient-secondary);
+ color: var(--text-light);
+ padding: 3rem 2rem 2rem;
+ text-align: center;
+ margin-top: 4rem;
+ position: relative;
+ overflow: hidden;
+ }
+
+ footer::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ height: 1px;
+ background: var(--gradient-primary);
+ }.footer-content {
+ max-width: 1200px;
+ margin: 0 auto;
+ }.social-links {
+ display: flex;
+ justify-content: center;
+ gap: 1.5rem;
+ margin-bottom: 2rem;
+ }.social-links a {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 50px;
+ height: 50px;
+ background: rgba(212, 175, 55, 0.1);
+ border-radius: 50%;
+ transition: all 0.3s ease;
+ border: 2px solid transparent;
+ }.social-links a:hover {
+ background: var(--primary-gold);
+ transform: translateY(-3px);
+ border-color: var(--primary-gold);
+ box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+ }.social-links img {
+ width: 24px;
+ height: 24px;
+ filter: brightness(0) invert(1);
+ transition: all 0.3s ease;
+ }.social-links a:hover img {
+ filter: brightness(0);
+ }.footer-text {
+ font-size: 0.9rem;
+ opacity: 0.8;
+ margin-bottom: 0;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 1024px) {.content-wrapper {
+ grid-template-columns: 1fr;
+ gap: 2rem;
+ }.infobox {
+ position: static;
+ order: -1;
+ margin-bottom: 2rem;
+ }.main-container {
+ padding: 2rem 1rem;
+ }
+ }
+
+ @media (max-width: 768px) {.nav-links {
+ display: none;
+ }.mobile-menu-toggle {
+ display: block;
+ }
+
+ nav {
+ padding: 1rem;
+ }.hero h1 {
+ font-size: 3rem;
+ }.hero-subtitle {
+ font-size: 1.2rem;
+ }.main-content {
+ padding: 2rem 1.5rem;
+ }.content-section h2 {
+ font-size: 1.8rem;
+ }.content-section p {
+ font-size: 1rem;
+ }.infobox {
+ padding: 1.5rem;
+ }.social-links {
+ gap: 1rem;
+ }.social-links a {
+ width: 45px;
+ height: 45px;
+ }
+ }
+
+ @media (max-width: 480px) {.hero {
+ background-attachment: scroll;
+ }.hero-content {
+ padding: 1rem;
+ }.main-content {
+ padding: 1.5rem 1rem;
+ }.content-section p:first-of-type::first-letter {
+ font-size: 3rem;
+ margin: 0.05rem 0.3rem 0 0;
+ }
+
+ footer {
+ padding: 2rem 1rem 1.5rem;
+ }
+ }
+
+ /* Touch Device Optimizations */
+ @media (hover: none) and (pointer: coarse) {.nav-links a:hover::after {
+ width: 0;
+ }.nav-links a:active::after {
+ width: 100%;
+ }.infobox:hover {
+ transform: none;
+ }.social-links a:hover {
+ transform: none;
+ }
+ }
+
+ /* High DPI Display Optimizations */
+ @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {.hero {
+ background-image: linear-gradient(rgba(26, 34, 56, 0.7), rgba(26, 34, 56, 0.7)), url('jesusheader.jpg');
+ }
+ }
+
+ /* Print Styles */
+ @media print {
+ nav, footer,.scroll-indicator {
+ display: none;
+ }.hero {
+ height: auto;
+ background: none;
+ color: black;
+ padding: 2rem 0;
+ }.main-content {
+ box-shadow: none;
+ border: 1px solid #ccc;
+ }
+ }
+ </style>
+ <link rel="stylesheet" href="magazine.css" />
 </head>
 <body>
-  <!-- Loading Overlay -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="loading-content">
-      <div class="loading-spinner"></div>
-      <p>Loading...</p>
-    </div>
-  </div>
+ <!-- Loading Overlay -->
+ <div class="loading-overlay" id="loadingOverlay">
+ <div class="loading-content">
+ <div class="loading-spinner"></div>
+ <p>Loading.</p>
+ </div>
+ </div>
 
-  <!-- Navigation -->
-  <nav id="mainNav">
-    <div class="nav-container">
-      <div class="nav-left">
-        <img src="zinvanalogo.png" alt="Zinvana Logo" class="nav-logo" />
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="leaders.html">Quiz</a></li>
-          <li><a href="help.html">Help</a></li>
-        </ul>
-      </div>
-      <button class="mobile-menu-toggle" id="mobileMenuToggle">
-        ☰
-      </button>
-    </div>
-  </nav>
-  
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <h1>Jesus Christ</h1>
-      <p class="hero-subtitle">The Son of God, Teacher, and Savior</p>
-    </div>
-    <div class="scroll-indicator" onclick="document.querySelector('.main-container').scrollIntoView({behavior: 'smooth'})">
-      <div style="font-size: 2rem;">↓</div>
-      <div style="font-size: 0.8rem; margin-top: 0.5rem;">Scroll Down</div>
-    </div>
-  </section>
-  
-  <!-- Main Content -->
-  <div class="main-container">
-    <div class="content-wrapper">
-      <!-- Main Content -->
-      <main class="main-content" id="mainContent">
-        <!-- Infobox with Key Details -->
-        <div class="content-section">
-          <h2>Early Life and Background</h2>
-          <p>Jesus of Nazareth, also known as Jesus Christ, was born in Bethlehem, a small town in Judea, around the beginning of the first century CE. According to the Gospels, his mother Mary was a young woman visited by the angel Gabriel, who announced that she would give birth to a child conceived by the Holy Spirit. Jesus' birth is celebrated by Christians worldwide as Christmas, and his early years were marked by humility and simplicity, growing up in the town of Nazareth in Galilee.</p>
-          <p>The circumstances surrounding Jesus' birth are recounted in the Gospels of Matthew and Luke, which describe the fulfillment of Old Testament prophecies regarding the Messiah. Born during the reign of Caesar Augustus, Jesus entered the world at a time of political upheaval and religious expectation in Palestine. The star of Bethlehem, the visit of the Magi, and the angelic announcement to shepherds all contribute to the narrative of divine intervention in human history.</p>
-          <p>Little is known about Jesus' childhood, but the Gospel of Luke recounts an episode where, at the age of twelve, he was found discussing scripture with teachers in the Temple of Jerusalem, astonishing them with his understanding. This event foreshadowed his future as a profound teacher and spiritual leader. Jesus was raised in a Jewish family, observing the traditions and customs of his people, and learning the Hebrew scriptures that would later inform his teachings.</p>
-          <p>Growing up in Nazareth, a small Galilean town, Jesus likely learned the trade of carpentry from his earthly father Joseph. This humble background in a working-class family would later inform his ministry's emphasis on serving the poor and marginalized. The region of Galilee, with its diverse population and crossroads location, provided Jesus with exposure to various cultures and ideas that would influence his universal message of love and salvation.</p>
-          <p>Jesus' early life set the stage for his later ministry, emphasizing themes of humility, obedience, and a deep connection to God. His upbringing in a modest environment and his early displays of wisdom and compassion would become hallmarks of his public life and message. The silence of the Gospels regarding most of his early years, often called the "hidden years," has led to much speculation and numerous apocryphal writings attempting to fill in the gaps.</p>
-        </div>
+ <!-- Navigation -->
+ <nav id="mainNav">
+ <div class="nav-container">
+ <div class="nav-left">
+ <img src="zinvanalogo.png" alt="Zinvana Logo" class="nav-logo" />
+ <ul class="nav-links">
+ <li><a href="index.html">Home</a></li>
+ <li><a href="leaders.html">Quiz</a></li>
+ <li><a href="help.html">Help</a></li>
+ </ul>
+ </div>
+ <button class="mobile-menu-toggle" id="mobileMenuToggle">
+ ☰
+ </button>
+ </div>
+ </nav>
+ 
+ <!-- Hero Section -->
+ <section class="hero" id="hero">
+ <div class="hero-content">
+ <h1>Jesus Christ</h1>
+ <p class="hero-subtitle">The Son of God, Teacher, and Savior</p>
+ </div>
+ <div class="scroll-indicator" onclick="document.querySelector('.main-container').scrollIntoView({behavior: 'smooth'})">
+ <div style="font-size: 2rem;">↓</div>
+ <div style="font-size: 0.8rem; margin-top: 0.5rem;">Scroll Down</div>
+ </div>
+ </section>
+ 
+ <!-- Main Content -->
+ <div class="main-container">
+ <div class="content-wrapper">
+ <!-- Main Content -->
+ <main class="main-content" id="mainContent">
+ <!-- Infobox with Key Details -->
+ <div class="content-section">
+ <h2>Early Life and Background</h2>
+ <p>Jesus of Nazareth, also known as Jesus Christ, was born in Bethlehem, a small town in Judea, around the beginning of the first century CE. According to the Gospels, his mother Mary was a young woman visited by the angel Gabriel, who announced that she would give birth to a child conceived by the Holy Spirit. Jesus' birth is celebrated by Christians worldwide as Christmas, and his early years were marked by humility and simplicity, growing up in the town of Nazareth in Galilee.</p>
+ <p>The circumstances surrounding Jesus' birth are recounted in the Gospels of Matthew and Luke, which describe the fulfillment of Old Testament prophecies regarding the Messiah. Born during the reign of Caesar Augustus, Jesus entered the world at a time of political upheaval and religious expectation in Palestine. The star of Bethlehem, the visit of the Magi, and the angelic announcement to shepherds all contribute to the narrative of divine intervention in human history.</p>
+ <p>Little is known about Jesus' childhood, but the Gospel of Luke recounts an episode where, at the age of twelve, he was found discussing scripture with teachers in the Temple of Jerusalem, astonishing them with his understanding. This event foreshadowed his future as a profound teacher and spiritual leader. Jesus was raised in a Jewish family, observing the traditions and customs of his people, and learning the Hebrew scriptures that would later inform his teachings.</p>
+ <p>Growing up in Nazareth, a small Galilean town, Jesus likely learned the trade of carpentry from his earthly father Joseph. This humble background in a working-class family would later inform his ministry's emphasis on serving the poor and marginalized. The region of Galilee, with its diverse population and crossroads location, provided Jesus with exposure to various cultures and ideas that would influence his universal message of love and salvation.</p>
+ <p>Jesus' early life set the stage for his later ministry, emphasizing themes of humility, obedience, and a deep connection to God. His upbringing in a modest environment and his early displays of wisdom and compassion would become hallmarks of his public life and message. The silence of the Gospels regarding most of his early years, often called the "hidden years," has led to much speculation and numerous apocryphal writings attempting to fill in the gaps.</p>
+ </div>
 
-        <div class="content-section">
-          <h2>Ministry and Public Life</h2>
-          <p>Jesus began his public ministry around the age of thirty, following his baptism by John the Baptist in the Jordan River. This event marked the beginning of his mission to proclaim the Kingdom of God, calling people to repentance, faith, and a renewed relationship with God. Jesus traveled throughout Galilee, Judea, and surrounding regions, teaching in synagogues, open fields, and homes, attracting large crowds wherever he went.</p>
-          <p>The baptism of Jesus by John the Baptist represents a pivotal moment in Christian theology, with the Trinity manifesting as the Father's voice from heaven, the Son being baptized, and the Holy Spirit descending like a dove. This event inaugurated Jesus' public ministry and marked him as the chosen one of God. Following his baptism, Jesus retreated to the wilderness for forty days of fasting and prayer, where he was tempted by Satan but remained steadfast in his mission.</p>
-          <p>Central to Jesus' ministry were his acts of compassion and healing. He reached out to the marginalized, including lepers, tax collectors, and sinners, offering forgiveness and hope. His message emphasized love for God and neighbor, the importance of mercy over ritual, and the coming of God's reign. Jesus also gathered a group of twelve disciples, who accompanied him and learned from his example, later becoming the foundation of the early Christian movement.</p>
-          <p>The twelve apostles—Peter, Andrew, James, John, Philip, Bartholomew, Matthew, Thomas, James the Less, Simon the Zealot, Judas Thaddeus, and Judas Iscariot—were chosen from various backgrounds, including fishermen, a tax collector, and a political zealot. This diverse group reflected Jesus' inclusive approach to ministry and his intention to reach all segments of society. Beyond the twelve, Jesus also had many other followers, including women who supported his ministry financially and emotionally.</p>
-          <p>Jesus' ministry challenged the religious and social norms of his time, often bringing him into conflict with religious authorities. His growing popularity and radical message eventually led to increased scrutiny and opposition, setting the stage for the dramatic events of his final days in Jerusalem. The religious establishment viewed Jesus as a threat to their authority and traditional interpretations of Jewish law, leading to mounting tension that would ultimately culminate in his arrest and crucifixion.</p>
-          <p>Throughout his ministry, Jesus demonstrated unprecedented authority in teaching, healing, and forgiving sins. He spoke with divine authority, often prefacing his statements with "Verily, I say unto you," and claimed unique relationship with God as his Father. This authority extended to his miraculous works, which served not merely as displays of power but as signs pointing to his divine identity and the coming Kingdom of God.</p>
-        </div>
+ <div class="content-section">
+ <h2>Ministry and Public Life</h2>
+ <p>Jesus began his public ministry around the age of thirty, following his baptism by John the Baptist in the Jordan River. This event marked the beginning of his mission to proclaim the Kingdom of God, calling people to repentance, faith, and a renewed relationship with God. Jesus traveled throughout Galilee, Judea, and surrounding regions, teaching in synagogues, open fields, and homes, attracting large crowds wherever he went.</p>
+ <p>The baptism of Jesus by John the Baptist represents a key moment in Christian theology, with the Trinity manifesting as the Father's voice from heaven, the Son being baptized, and the Holy Spirit descending like a dove. This event inaugurated Jesus' public ministry and marked him as the chosen one of God. Following his baptism, Jesus retreated to the wilderness for forty days of fasting and prayer, where he was tempted by Satan but remained steadfast in his mission.</p>
+ <p>Central to Jesus' ministry were his acts of compassion and healing. He reached out to the marginalized, including lepers, tax collectors, and sinners, offering forgiveness and hope. His message emphasized love for God and neighbor, the importance of mercy over ritual, and the coming of God's reign. Jesus also gathered a group of twelve disciples, who accompanied him and learned from his example, later becoming the foundation of the early Christian movement.</p>
+ <p>The twelve apostles—Peter, Andrew, James, John, Philip, Bartholomew, Matthew, Thomas, James the Less, Simon the Zealot, Judas Thaddeus, and Judas Iscariot—were chosen from various backgrounds, including fishermen, a tax collector, and a political zealot. This diverse group reflected Jesus' inclusive approach to ministry and his intention to reach all segments of society. Beyond the twelve, Jesus also had many other followers, including women who supported his ministry financially and emotionally.</p>
+ <p>Jesus' ministry challenged the religious and social norms of his time, often bringing him into conflict with religious authorities. His growing popularity and radical message eventually led to increased scrutiny and opposition, setting the stage for the dramatic events of his final days in Jerusalem. The religious establishment viewed Jesus as a threat to their authority and traditional interpretations of Jewish law, leading to mounting tension that would ultimately culminate in his arrest and crucifixion.</p>
+ <p>Throughout his ministry, Jesus demonstrated rare authority in teaching, healing, and forgiving sins. He spoke with divine authority, often prefacing his statements with "Verily, I say unto you," and claimed unique relationship with God as his Father. This authority extended to his miraculous works, which served not merely as displays of power but as signs pointing to his divine identity and the coming Kingdom of God.</p>
+ </div>
 
-        <div class="content-section">
-          <h2>Teachings and Parables</h2>
-          <p>Jesus is renowned for his profound teachings, many of which were delivered in the form of parables—simple stories with deep spiritual meaning. These parables, such as the Good Samaritan, the Prodigal Son, and the Sower, conveyed lessons about compassion, forgiveness, faith, and the nature of God's kingdom. Jesus' teachings often upended conventional wisdom, urging listeners to love their enemies, turn the other cheek, and seek first the kingdom of God.</p>
-          <p>The parables of Jesus are masterpieces of storytelling that use everyday situations to convey eternal truths. The Parable of the Good Samaritan challenges prejudice and defines true neighborliness, while the Prodigal Son illustrates God's boundless forgiveness and love. The Parable of the Sower explains how different hearts receive the word of God, and the Mustard Seed demonstrates how small beginnings can yield great results in God's kingdom.</p>
-          <p>At the heart of Jesus' message was the commandment to love: "Love the Lord your God with all your heart, soul, and mind," and "Love your neighbor as yourself." He emphasized humility, generosity, and the value of every individual, regardless of social status. The Sermon on the Mount, one of his most famous discourses, outlined the Beatitudes and set forth a vision of righteousness rooted in mercy, purity, and peacemaking.</p>
-          <p>The Beatitudes, found in Matthew 5:3-12, represent the core ethical teachings of Jesus: "Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are those who mourn, for they will be comforted. Blessed are the meek, for they will inherit the earth." These teachings present a radical reversal of worldly values, emphasizing spiritual poverty over material wealth, mercy over justice, and peacemaking over conflict.</p>
-          <p>Jesus' teachings on prayer, fasting, and giving (Matthew 6) provide practical guidance for spiritual life. The Lord's Prayer, which Jesus taught his disciples, remains the most widely recited prayer in Christianity. His instructions on forgiveness, including the directive to forgive "seventy times seven," challenge conventional notions of justice and revenge.</p>
-          <p>The Golden Rule—"Do unto others as you would have them do unto you"—encapsulates much of Jesus' ethical teaching in a simple, memorable phrase. This principle has influenced moral philosophy, legal systems, and interpersonal relationships across cultures and centuries, demonstrating the universal applicability of Jesus' wisdom.</p>
-          <p>Jesus' teachings have had a lasting impact on moral and ethical thought, inspiring countless individuals and shaping the values of societies around the world. His words continue to be studied, interpreted, and applied in diverse cultural and religious contexts, from academic institutions to personal devotional practices.</p>
-        </div>
+ <div class="content-section">
+ <h2>Teachings and Parables</h2>
+ <p>Jesus is renowned for his profound teachings, many of which were delivered in the form of parables—simple stories with deep spiritual meaning. These parables, such as the Good Samaritan, the Prodigal Son, and the Sower, conveyed lessons about compassion, forgiveness, faith, and the nature of God's kingdom. Jesus' teachings often upended conventional wisdom, urging listeners to love their enemies, turn the other cheek, and seek first the kingdom of God.</p>
+ <p>The parables of Jesus are masterpieces of storytelling that use everyday situations to convey eternal truths. The Parable of the Good Samaritan challenges prejudice and defines true neighborliness, while the Prodigal Son illustrates God's boundless forgiveness and love. The Parable of the Sower explains how different hearts receive the word of God, and the Mustard Seed demonstrates how small beginnings can yield great results in God's kingdom.</p>
+ <p>At the heart of Jesus' message was the commandment to love: "Love the Lord your God with all your heart, soul, and mind," and "Love your neighbor as yourself." He emphasized humility, generosity, and the value of every individual, regardless of social status. The Sermon on the Mount, one of his most famous discourses, outlined the Beatitudes and set forth a vision of righteousness rooted in mercy, purity, and peacemaking.</p>
+ <p>The Beatitudes, found in Matthew 5:3-12, represent the core ethical teachings of Jesus: "Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are those who mourn, for they will be comforted. Blessed are the meek, for they will inherit the earth." These teachings present a radical reversal of worldly values, emphasizing spiritual poverty over material wealth, mercy over justice, and peacemaking over conflict.</p>
+ <p>Jesus' teachings on prayer, fasting, and giving (Matthew 6) provide practical guidance for spiritual life. The Lord's Prayer, which Jesus taught his disciples, remains the most widely recited prayer in Christianity. His instructions on forgiveness, including the directive to forgive "seventy times seven," challenge conventional notions of justice and revenge.</p>
+ <p>The Golden Rule—"Do unto others as you would have them do unto you"—encapsulates much of Jesus' ethical teaching in a simple, memorable phrase. This principle has influenced moral philosophy, legal systems, and interpersonal relationships across cultures and centuries, demonstrating the universal applicability of Jesus' wisdom.</p>
+ <p>Jesus' teachings have had a lasting impact on moral and ethical thought, inspiring countless individuals and shaping the values of societies around the world. His words continue to be studied, interpreted, and applied in diverse cultural and religious contexts, from academic institutions to personal devotional practices.</p>
+ </div>
 
-        <div class="content-section">
-          <h2>Miracles and Signs</h2>
-          <p>Throughout his ministry, Jesus performed numerous miracles, which the Gospels describe as signs of his divine authority and compassion. These miracles included healing the sick, restoring sight to the blind, casting out demons, calming storms, and even raising the dead. Notable examples include the healing of the paralytic, the feeding of the five thousand, and the raising of Lazarus from the dead.</p>
-          <p>The miracles of Jesus can be categorized into several types: healing miracles, nature miracles, exorcisms, and resurrections. Healing miracles demonstrate Jesus' compassion for human suffering and include the healing of lepers, the blind, the deaf, the lame, and those with various diseases. These acts of healing often involved both physical restoration and spiritual forgiveness, emphasizing the connection between body and soul.</p>
-          <p>Nature miracles, such as walking on water, calming the storm, and multiplying loaves and fishes, demonstrate Jesus' authority over the natural world. The feeding of the five thousand, recorded in all four Gospels, shows Jesus' ability to provide for physical needs while teaching spiritual truths. This miracle also foreshadows the Eucharist and Jesus' role as the bread of life.</p>
-          <p>Jesus' exorcisms—the casting out of demons—were particularly significant in demonstrating his authority over evil forces. These acts liberated individuals from spiritual bondage and showed that the Kingdom of God was breaking into the world. The dramatic exorcism of Legion from the Gerasene demoniac illustrates the power of Jesus to overcome even the most severe spiritual oppression.</p>
-          <p>The three recorded resurrections performed by Jesus—Jairus' daughter, the widow's son at Nain, and Lazarus of Bethany—represent the ultimate demonstration of his power over death. The raising of Lazarus, in particular, served as a catalyst for the final confrontation with religious authorities and foreshadowed Jesus' own resurrection.</p>
-          <p>Jesus' miracles served multiple purposes: they alleviated suffering, demonstrated God's power, and affirmed his identity as the Messiah. Crowds flocked to witness these extraordinary acts, and many came to believe in him as a result. However, the miracles also provoked skepticism and controversy among religious leaders, who questioned the source of his power and accused him of blasphemy.</p>
-          <p>The accounts of Jesus' miracles have inspired faith and devotion for centuries, and they remain central to Christian belief and worship. They are seen as signs of God's love and a foretaste of the ultimate restoration promised in the kingdom of God. Modern believers continue to pray for miracles and report experiences of divine healing, maintaining the tradition of faith in Jesus' miraculous power.</p>
-        </div>
+ <div class="content-section">
+ <h2>Miracles and Signs</h2>
+ <p>Throughout his ministry, Jesus performed numerous miracles, which the Gospels describe as signs of his divine authority and compassion. These miracles included healing the sick, restoring sight to the blind, casting out demons, calming storms, and even raising the dead. Notable examples include the healing of the paralytic, the feeding of the five thousand, and the raising of Lazarus from the dead.</p>
+ <p>The miracles of Jesus can be categorized into several types: healing miracles, nature miracles, exorcisms, and resurrections. Healing miracles demonstrate Jesus' compassion for human suffering and include the healing of lepers, the blind, the deaf, the lame, and those with various diseases. These acts of healing often involved both physical restoration and spiritual forgiveness, emphasizing the connection between body and soul.</p>
+ <p>Nature miracles, such as walking on water, calming the storm, and multiplying loaves and fishes, demonstrate Jesus' authority over the natural world. The feeding of the five thousand, recorded in all four Gospels, shows Jesus' ability to provide for physical needs while teaching spiritual truths. This miracle also foreshadows the Eucharist and Jesus' role as the bread of life.</p>
+ <p>Jesus' exorcisms—the casting out of demons—were particularly significant in demonstrating his authority over evil forces. These acts liberated individuals from spiritual bondage and showed that the Kingdom of God was breaking into the world. The dramatic exorcism of Legion from the Gerasene demoniac illustrates the power of Jesus to overcome even the most severe spiritual oppression.</p>
+ <p>The three recorded resurrections performed by Jesus—Jairus' daughter, the widow's son at Nain, and Lazarus of Bethany—represent the ultimate demonstration of his power over death. The raising of Lazarus, in particular, served as a trigger for the final confrontation with religious authorities and foreshadowed Jesus' own resurrection.</p>
+ <p>Jesus' miracles served multiple purposes: they alleviated suffering, demonstrated God's power, and affirmed his identity as the Messiah. Crowds flocked to witness these extraordinary acts, and many came to believe in him as a result. However, the miracles also provoked skepticism and controversy among religious leaders, who questioned the source of his power and accused him of blasphemy.</p>
+ <p>The accounts of Jesus' miracles have inspired faith and devotion for centuries, and they remain central to Christian belief and worship. They are seen as signs of God's love and a foretaste of the ultimate restoration promised in the kingdom of God. Modern believers continue to pray for miracles and report experiences of divine healing, maintaining the tradition of faith in Jesus' miraculous power.</p>
+ </div>
 
-        <div class="content-section">
-          <h2>The Passion, Crucifixion, and Death</h2>
-          <p>The final days of Jesus' life, known as the Passion, are among the most significant events in Christian tradition. After entering Jerusalem to great acclaim, Jesus celebrated the Last Supper with his disciples, instituting the practice of communion. He was soon betrayed by Judas Iscariot, arrested, and subjected to a series of trials before Jewish and Roman authorities.</p>
-          <p>Jesus' triumphal entry into Jerusalem, celebrated as Palm Sunday, fulfilled the prophecy of Zechariah 9:9: "Rejoice greatly, O daughter of Zion! Shout, daughter of Jerusalem! See, your king comes to you, righteous and having salvation, gentle and riding on a donkey." The crowds' enthusiastic welcome, waving palm branches and shouting "Hosanna," demonstrated their recognition of Jesus as the Messiah, though their understanding of his mission remained incomplete.</p>
-          <p>The Last Supper, held on the night before his crucifixion, was a Passover meal that Jesus transformed into a new covenant ceremony. By breaking bread and sharing wine, Jesus instituted the Eucharist, saying "This is my body" and "This is my blood of the covenant, which is poured out for many for the forgiveness of sins." This meal continues to be commemorated by Christians worldwide as Holy Communion or the Lord's Supper.</p>
-          <p>Following the Last Supper, Jesus went to the Garden of Gethsemane to pray, where he experienced profound anguish as he contemplated his approaching death. His prayer "Father, if you are willing, take this cup from me; yet not my will, but yours be done" demonstrates his human struggle with suffering while maintaining complete obedience to God's will. It was here that Judas betrayed him with a kiss, leading to his arrest by temple guards.</p>
-          <p>Jesus faced multiple trials: before the Jewish Sanhedrin under high priest Caiaphas, before Pontius Pilate the Roman governor, before Herod Antipas, and again before Pilate. These trials were marked by false accusations, mockery, and the manipulation of political tensions. Despite finding no fault in Jesus, Pilate yielded to pressure from religious leaders and the crowd, sentencing Jesus to crucifixion.</p>
-          <p>Despite being found innocent by the Roman governor Pontius Pilate, Jesus was condemned to death by crucifixion—a brutal form of execution reserved for criminals. He was mocked, beaten, and forced to carry his cross to Golgotha, where he was crucified between two thieves. Jesus' final words from the cross expressed forgiveness, compassion, and trust in God, and his death is seen by Christians as the ultimate sacrifice for the sins of humanity.</p>
-          <p>The seven last words of Jesus from the cross—including "Father, forgive them, for they do not know what they are doing" and "It is finished"—reveal his character of forgiveness, love, and completion of his mission. The crucifixion was accompanied by supernatural signs: darkness over the land, the tearing of the temple veil, and an earthquake, signifying the cosmic significance of this event.</p>
-          <p>The crucifixion of Jesus is commemorated on Good Friday and stands at the heart of Christian faith, symbolizing both the depth of human suffering and the power of divine love. This event represents God's ultimate expression of love for humanity and provides the basis for forgiveness, reconciliation, and eternal life for all who believe.</p>
-        </div>
-        
-        <!-- Resurrection and the Promise of Eternal Life -->
-        <div class="content-section">
-          <h2>Resurrection and the Promise of Eternal Life</h2>
-          <p>According to the New Testament, Jesus rose from the dead on the third day after his crucifixion, an event celebrated as Easter. The resurrection is the cornerstone of Christian belief, affirming Jesus’ victory over sin and death and offering the promise of eternal life to all who believe in him. The Gospels recount multiple appearances of the risen Jesus to his disciples, who were transformed from fearful followers into bold witnesses.</p>
-          <p>The resurrection of Jesus is seen as the fulfillment of prophecy and the foundation of Christian hope. It assures believers of God’s power to bring new life and the ultimate restoration of creation. The message of the resurrection continues to inspire faith, courage, and a sense of purpose among Christians worldwide.</p>
-          <p>Through the resurrection, Jesus is proclaimed as the living Lord, present with his followers and active in the world today.</p>
-        </div>
-        
-        <!-- Formation of the Early Church -->
-        <div class="content-section">
-          <h2>Formation of the Early Church</h2>
-          <p>After the resurrection, Jesus appeared to his disciples and commissioned them to spread his teachings to all nations. The coming of the Holy Spirit at Pentecost empowered the apostles to preach boldly, and the early Christian community grew rapidly in Jerusalem and beyond. The Book of Acts describes the formation of the first churches, the sharing of resources, and the development of new forms of worship and leadership.</p>
-          <p>The early church faced persecution from both Jewish and Roman authorities, but its members remained steadfast in their faith. The message of Jesus spread throughout the Roman Empire, attracting people from diverse backgrounds and cultures. The writings of the apostles, including letters from Paul, Peter, and others, provided guidance and encouragement to these fledgling communities.</p>
-          <p>The formation of the early church laid the foundation for the global Christian movement, establishing patterns of belief, practice, and organization that continue to shape Christianity today.</p>
-        </div>
-        
-        <!-- Impact on Art, Culture, and Philosophy -->
-        <div class="content-section">
-          <h2>Impact on Art, Culture, and Philosophy</h2>
-          <p>The life and teachings of Jesus have profoundly influenced art, literature, music, and philosophy for over two millennia. From the earliest Christian symbols in the catacombs to the masterpieces of the Renaissance, artists have sought to depict the story of Jesus and express the spiritual truths he embodied. Iconic works such as Leonardo da Vinci’s “The Last Supper” and Michelangelo’s “Pietà” reflect the enduring power of his image and message.</p>
-          <p>Jesus’ influence extends beyond religious art to the broader realms of culture and thought. His teachings on love, forgiveness, and justice have inspired social reformers, philosophers, and writers across the ages. The figure of Jesus appears in countless literary works, films, and popular culture, often serving as a symbol of hope, compassion, and transformation.</p>
-          <p>The impact of Jesus on art and culture is a testament to the universal appeal of his message and the ongoing search for meaning and transcendence in human life.</p>
-        </div>
-        
-        <!-- Social and Political Influence -->
-        <div class="content-section">
-          <h2>Social and Political Influence</h2>
-          <p>Jesus’ teachings have had a profound impact on social and political movements throughout history. His emphasis on the dignity of every person, care for the poor, and the pursuit of justice has inspired leaders such as Martin Luther King Jr., Mahatma Gandhi, and Desmond Tutu. The principles of nonviolence, equality, and compassion rooted in Jesus’ message have shaped movements for civil rights, social justice, and peace.</p>
-          <p>Christianity, as a global faith, has played a significant role in the development of laws, institutions, and ethical norms in many societies. The legacy of Jesus continues to inform debates on human rights, social responsibility, and the common good. While the relationship between religion and politics is complex, the example of Jesus remains a powerful force for positive change and reconciliation.</p>
-          <p>Through his life and teachings, Jesus has challenged individuals and societies to pursue a higher standard of justice, mercy, and love.</p>
-        </div>
-        
-        <!-- Theological Significance and Doctrinal Developments -->
-        <div class="content-section">
-          <h2>Theological Significance and Doctrinal Developments</h2>
-          <p>Jesus is regarded by Christians as the Son of God, the second person of the Trinity, and the Savior of the world. His life, death, and resurrection are seen as the fulfillment of God’s plan for salvation, offering forgiveness and reconciliation to all who believe. The early church wrestled with questions about the nature of Jesus, leading to the development of key doctrines such as the Incarnation, the Atonement, and the Trinity.</p>
-          <p>Ecumenical councils, such as those at Nicaea and Chalcedon, articulated the orthodox understanding of Jesus as fully divine and fully human. These theological developments shaped the creeds and confessions of the Christian faith, providing a foundation for worship, teaching, and spiritual life. The person and work of Jesus remain central to Christian theology, inspiring ongoing reflection and dialogue among believers and scholars.</p>
-          <p>The significance of Jesus extends beyond Christianity, as he is also recognized as a prophet and teacher in Islam and respected in other religious traditions.</p>
-        </div>
-        
-        <!-- Global Spread and the Growth of Christianity -->
-        <div class="content-section">
-          <h2>Global Spread and the Growth of Christianity</h2>
-          <p>From its origins in the Middle East, the message of Jesus has spread to every continent, making Christianity the world’s largest religion. Missionaries, explorers, and traders carried the Gospel to new lands, translating the Bible into hundreds of languages and establishing churches in diverse cultures. The growth of Christianity has been marked by periods of expansion, adaptation, and renewal, as well as challenges and controversies.</p>
-          <p>Today, followers of Jesus can be found in every nation, worshiping in a wide variety of styles and traditions. The global Christian community is united by a common faith in Jesus Christ, while also reflecting the rich diversity of human experience. The ongoing spread of Christianity testifies to the enduring appeal of Jesus’ message and the transformative power of his life and teachings.</p>
-          <p>As Christianity continues to grow and evolve, the figure of Jesus remains at the center of its identity and mission.</p>
-        </div>
-        
-        <!-- Contemporary Relevance and Ethical Legacy -->
-        <div class="content-section">
-          <h2>Contemporary Relevance and Ethical Legacy</h2>
-          <p>In the modern world, the teachings of Jesus continue to offer guidance and inspiration for individuals and communities facing complex moral and ethical challenges. His emphasis on love, forgiveness, and service to others provides a framework for addressing issues such as poverty, injustice, and conflict. Many people, regardless of religious affiliation, find in Jesus a model of integrity, compassion, and courage.</p>
-          <p>Churches, charities, and humanitarian organizations around the world draw on the example of Jesus to serve the needy, promote peace, and advocate for social change. The ethical legacy of Jesus is evident in movements for reconciliation, environmental stewardship, and the defense of human dignity. His call to “love your neighbor as yourself” remains as relevant today as it was two thousand years ago.</p>
-          <p>Through his life and message, Jesus continues to inspire hope, healing, and a vision of a better world.</p>
-        </div>
-        
-        <!-- Educational and Scholarly Contributions -->
-        <div class="content-section">
-          <h2>Educational and Scholarly Contributions</h2>
-          <p>The study of Jesus and his teachings has been a central focus of scholarship for centuries. The fields of theology, biblical studies, history, and philosophy have all been enriched by the exploration of Jesus’ life and legacy. Universities, seminaries, and research institutes around the world are dedicated to the academic study of Jesus, fostering dialogue and discovery across disciplines.</p>
-          <p>Scholars have examined the historical context of Jesus, the development of early Christian texts, and the interpretation of his message in different cultures. The quest for the “historical Jesus” has generated lively debate and new insights, contributing to a deeper understanding of his significance. The academic study of Jesus continues to evolve, engaging new questions and perspectives in a rapidly changing world.</p>
-          <p>Through education and scholarship, the figure of Jesus remains a source of fascination, inquiry, and inspiration for people of all backgrounds.</p>
-        </div>
-        
-        <!-- Interfaith Dialogue and Global Understanding -->
-        <div class="content-section">
-          <h2>Interfaith Dialogue and Global Understanding</h2>
-          <p>Jesus is a figure of great importance not only in Christianity but also in other world religions, including Islam, where he is honored as a prophet. Interfaith dialogue has sought to build bridges of understanding and respect among followers of different faiths, exploring common values and shared hopes for peace and justice. The example of Jesus as a teacher of love and reconciliation provides a foundation for meaningful engagement across religious boundaries.</p>
-          <p>Efforts to promote global understanding often draw on the teachings of Jesus, emphasizing the importance of compassion, forgiveness, and the pursuit of the common good. Through dialogue and cooperation, people of diverse faiths can work together to address the challenges facing humanity and build a more just and peaceful world.</p>
-          <p>The legacy of Jesus as a bridge-builder and peacemaker continues to inspire efforts toward interfaith harmony and global solidarity.</p>
-        </div>
-        
-        <!-- Modern Cultural and Artistic Impact -->
-        <div class="content-section">
-          <h2>Modern Cultural and Artistic Impact</h2>
-          <p>In contemporary culture, the figure of Jesus remains a powerful symbol, appearing in literature, film, music, and the visual arts. Modern artists and writers reinterpret the story of Jesus in new and creative ways, exploring its relevance for today’s world. From blockbuster movies to popular songs, the life and message of Jesus continue to capture the imagination of people everywhere.</p>
-          <p>Jesus’ influence can be seen in movements for social justice, humanitarian work, and the ongoing quest for meaning and purpose. His image and teachings are invoked in debates about ethics, identity, and the future of society. The enduring presence of Jesus in modern culture reflects the timeless appeal of his message and the ongoing search for truth and transformation.</p>
-          <p>As a source of inspiration and challenge, Jesus continues to shape the cultural landscape and invite new generations to explore the meaning of his life and legacy.</p>
-        </div>
-        
-        <!-- Final Reflections and Continuing Inspiration -->
-        <div class="content-section">
-          <h2>Final Reflections and Continuing Inspiration</h2>
-          <p>The story of Jesus is one of hope, transformation, and enduring significance. Across centuries and cultures, his life and teachings have inspired faith, compassion, and a vision of a better world. Whether viewed as the Son of God, a great teacher, or a moral exemplar, Jesus remains a central figure in the spiritual and ethical imagination of humanity.</p>
-          <p>As new generations encounter the story of Jesus, they are invited to reflect on its meaning for their own lives and for the world at large. The continuing inspiration of Jesus challenges individuals and communities to pursue justice, mercy, and love, and to seek a deeper understanding of themselves and others.</p>
-          <p>Through his example and message, Jesus continues to offer hope, guidance, and a call to transformation for all who seek truth and meaning.</p>
-        </div>
-      </main>
+ <div class="content-section">
+ <h2>The Passion, Crucifixion, and Death</h2>
+ <p>The final days of Jesus' life, known as the Passion, are among the most significant events in Christian tradition. After entering Jerusalem to great acclaim, Jesus celebrated the Last Supper with his disciples, instituting the practice of communion. He was soon betrayed by Judas Iscariot, arrested, and subjected to a series of trials before Jewish and Roman authorities.</p>
+ <p>Jesus' triumphal entry into Jerusalem, celebrated as Palm Sunday, fulfilled the prophecy of Zechariah 9:9: "Rejoice greatly, O daughter of Zion! Shout, daughter of Jerusalem! See, your king comes to you, righteous and having salvation, gentle and riding on a donkey." The crowds' enthusiastic welcome, waving palm branches and shouting "Hosanna," demonstrated their recognition of Jesus as the Messiah, though their understanding of his mission remained incomplete.</p>
+ <p>The Last Supper, held on the night before his crucifixion, was a Passover meal that Jesus transformed into a new covenant ceremony. By breaking bread and sharing wine, Jesus instituted the Eucharist, saying "This is my body" and "This is my blood of the covenant, which is poured out for many for the forgiveness of sins." This meal continues to be commemorated by Christians worldwide as Holy Communion or the Lord's Supper.</p>
+ <p>Following the Last Supper, Jesus went to the Garden of Gethsemane to pray, where he experienced profound anguish as he contemplated his approaching death. His prayer "Father, if you are willing, take this cup from me; yet not my will, but yours be done" demonstrates his human struggle with suffering while maintaining complete obedience to God's will. It was here that Judas betrayed him with a kiss, leading to his arrest by temple guards.</p>
+ <p>Jesus faced multiple trials: before the Jewish Sanhedrin under high priest Caiaphas, before Pontius Pilate the Roman governor, before Herod Antipas, and again before Pilate. These trials were marked by false accusations, mockery, and the manipulation of political tensions. Despite finding no fault in Jesus, Pilate yielded to pressure from religious leaders and the crowd, sentencing Jesus to crucifixion.</p>
+ <p>Despite being found innocent by the Roman governor Pontius Pilate, Jesus was condemned to death by crucifixion—a brutal form of execution reserved for criminals. He was mocked, beaten, and forced to carry his cross to Golgotha, where he was crucified between two thieves. Jesus' final words from the cross expressed forgiveness, compassion, and trust in God, and his death is seen by Christians as the ultimate sacrifice for the sins of humanity.</p>
+ <p>The seven last words of Jesus from the cross—including "Father, forgive them, for they do not know what they are doing" and "It is finished"—reveal his character of forgiveness, love, and completion of his mission. The crucifixion was accompanied by supernatural signs: darkness over the land, the tearing of the temple veil, and an earthquake, signifying the cosmic significance of this event.</p>
+ <p>The crucifixion of Jesus is commemorated on Good Friday and stands at the heart of Christian faith, symbolizing both the depth of human suffering and the power of divine love. This event represents God's ultimate expression of love for humanity and provides the basis for forgiveness, reconciliation, and eternal life for all who believe.</p>
+ </div>
+ 
+ <!-- Resurrection and the Promise of Eternal Life -->
+ <div class="content-section">
+ <h2>Resurrection and the Promise of Eternal Life</h2>
+ <p>According to the New Testament, Jesus rose from the dead on the third day after his crucifixion, an event celebrated as Easter. The resurrection is the core of Christian belief, affirming Jesus’ victory over sin and death and offering the promise of eternal life to all who believe in him. The Gospels recount multiple appearances of the risen Jesus to his disciples, who were transformed from fearful followers into bold witnesses.</p>
+ <p>The resurrection of Jesus is seen as the fulfillment of prophecy and the foundation of Christian hope. It assures believers of God’s power to bring new life and the ultimate restoration of creation. The message of the resurrection still inspires faith, courage, and a sense of purpose among Christians worldwide.</p>
+ <p>Through the resurrection, Jesus is proclaimed as the living Lord, present with his followers and active in the world today.</p>
+ </div>
+ 
+ <!-- Formation of the Early Church -->
+ <div class="content-section">
+ <h2>Formation of the Early Church</h2>
+ <p>After the resurrection, Jesus appeared to his disciples and commissioned them to spread his teachings to all nations. The coming of the Holy Spirit at Pentecost empowered the apostles to preach boldly, and the early Christian community grew rapidly in Jerusalem and beyond. The Book of Acts describes the formation of the first churches, the sharing of resources, and the development of new forms of worship and leadership.</p>
+ <p>The early church faced persecution from both Jewish and Roman authorities, but its members remained steadfast in their faith. The message of Jesus spread throughout the Roman Empire, attracting people from diverse backgrounds and cultures. The writings of the apostles, including letters from Paul, Peter, and others, provided guidance and encouragement to these fledgling communities.</p>
+ <p>The formation of the early church laid the foundation for the global Christian movement, establishing patterns of belief, practice, and organization that continue to shape Christianity today.</p>
+ </div>
+ 
+ <!-- Impact on Art, Culture, and Philosophy -->
+ <div class="content-section">
+ <h2>Impact on Art, Culture, and Philosophy</h2>
+ <p>The life and teachings of Jesus have profoundly influenced art, literature, music, and philosophy for over two millennia. From the earliest Christian symbols in the catacombs to the masterpieces of the Renaissance, artists have tried to depict the story of Jesus and express the spiritual truths he embodied. Iconic works such as Leonardo da Vinci’s “The Last Supper” and Michelangelo’s “Pietà” reflect the enduring power of his image and message.</p>
+ <p>Jesus’ influence extends beyond religious art to the broader realms of culture and thought. His teachings on love, forgiveness, and justice have inspired social reformers, philosophers, and writers across the ages. The figure of Jesus appears in countless literary works, films, and popular culture, often serving as a symbol of hope, compassion, and transformation.</p>
+ <p>The impact of Jesus on art and culture is a shows the universal appeal of his message and the ongoing search for meaning and transcendence in human life.</p>
+ </div>
+ 
+ <!-- Social and Political Influence -->
+ <div class="content-section">
+ <h2>Social and Political Influence</h2>
+ <p>Jesus’ teachings have had a profound impact on social and political movements throughout history. His emphasis on the dignity of every person, care for the poor, and the pursuit of justice has inspired leaders such as Martin Luther King Jr., Mahatma Gandhi, and Desmond Tutu. The principles of nonviolence, equality, and compassion rooted in Jesus’ message have shaped movements for civil rights, social justice, and peace.</p>
+ <p>Christianity, as a global faith, has played a important role in the development of laws, institutions, and ethical norms in many societies. The legacy of Jesus continues to inform debates on human rights, social responsibility, and the common good. While the relationship between religion and politics is complex, the example of Jesus remains a powerful force for positive change and reconciliation.</p>
+ <p>Through his life and teachings, Jesus has challenged individuals and societies to pursue a higher standard of justice, mercy, and love.</p>
+ </div>
+ 
+ <!-- Theological Significance and Doctrinal Developments -->
+ <div class="content-section">
+ <h2>Theological Significance and Doctrinal Developments</h2>
+ <p>Jesus is regarded by Christians as the Son of God, the second person of the Trinity, and the Savior of the world. His life, death, and resurrection are seen as the fulfillment of God’s plan for salvation, offering forgiveness and reconciliation to all who believe. The early church wrestled with questions about the nature of Jesus, leading to the development of key doctrines such as the Incarnation, the Atonement, and the Trinity.</p>
+ <p>Ecumenical councils, such as those at Nicaea and Chalcedon, articulated the orthodox understanding of Jesus as fully divine and fully human. These theological developments shaped the creeds and confessions of the Christian faith, providing a foundation for worship, teaching, and spiritual life. The person and work of Jesus remain central to Christian theology, inspiring ongoing reflection and dialogue among believers and scholars.</p>
+ <p>The significance of Jesus extends beyond Christianity, as he is also recognized as a prophet and teacher in Islam and respected in other religious traditions.</p>
+ </div>
+ 
+ <!-- Global Spread and the Growth of Christianity -->
+ <div class="content-section">
+ <h2>Global Spread and the Growth of Christianity</h2>
+ <p>From its origins in the Middle East, the message of Jesus has spread to every continent, making Christianity the world’s largest religion. Missionaries, explorers, and traders carried the Gospel to new lands, translating the Bible into hundreds of languages and establishing churches in diverse cultures. The growth of Christianity has been marked by periods of expansion, adaptation, and renewal, as well as challenges and controversies.</p>
+ <p>Today, followers of Jesus can be found in every nation, worshiping in a many styles and traditions. The global Christian community is united by a common faith in Jesus Christ, while also reflecting the rich diversity of human experience. The ongoing spread of Christianity testifies to the enduring appeal of Jesus’ message and the lasting power of his life and teachings.</p>
+ <p>As Christianity continues to grow and evolve, the figure of Jesus remains at the center of its identity and mission.</p>
+ </div>
+ 
+ <!-- Contemporary Relevance and Ethical Legacy -->
+ <div class="content-section">
+ <h2>Contemporary Relevance and Ethical Legacy</h2>
+ <p>today, the teachings of Jesus continue to offer guidance and inspiration for individuals and communities facing complex moral and ethical challenges. His emphasis on love, forgiveness, and service to others provides a framework for addressing issues such as poverty, injustice, and conflict. Many people, regardless of religious affiliation, find in Jesus a model of integrity, compassion, and courage.</p>
+ <p>Churches, charities, and humanitarian organizations around the world draw on the example of Jesus to serve the needy, promote peace, and advocate for social change. The ethical legacy of Jesus is evident in movements for reconciliation, environmental stewardship, and the defense of human dignity. His call to “love your neighbor as yourself” remains as relevant today as it was two thousand years ago.</p>
+ <p>Through his life and message, Jesus still inspires hope, healing, and a vision of a better world.</p>
+ </div>
+ 
+ <!-- Educational and Scholarly Contributions -->
+ <div class="content-section">
+ <h2>Educational and Scholarly Contributions</h2>
+ <p>The study of Jesus and his teachings has been a central focus of scholarship for centuries. The fields of theology, biblical studies, history, and philosophy have all been enriched by the exploration of Jesus’ life and legacy. Universities, seminaries, and research institutes around the world are dedicated to the academic study of Jesus, fostering dialogue and discovery across disciplines.</p>
+ <p>Scholars have examined the historical context of Jesus, the development of early Christian texts, and the interpretation of his message in different cultures. The quest for the “historical Jesus” has generated lively debate and new insights, contributing to a deeper understanding of his significance. The academic study of Jesus is changing, engaging new questions and perspectives in a rapidly changing world.</p>
+ <p>Through education and scholarship, the figure of Jesus remains a source of fascination, inquiry, and inspiration for people of all backgrounds.</p>
+ </div>
+ 
+ <!-- Interfaith Dialogue and Global Understanding -->
+ <div class="content-section">
+ <h2>Interfaith Dialogue and Global Understanding</h2>
+ <p>Jesus is a figure of great importance not only in Christianity but also in other world religions, including Islam, where he is honored as a prophet. Interfaith dialogue has tried to build bridges of understanding and respect among followers of different faiths, exploring common values and shared hopes for peace and justice. The example of Jesus as a teacher of love and reconciliation provides a foundation for meaningful engagement across religious boundaries.</p>
+ <p>Efforts to promote global understanding often draw on the teachings of Jesus, emphasizing the importance of compassion, forgiveness, and the pursuit of the common good. Through dialogue and cooperation, people of diverse faiths can work together to address the challenges facing humanity and build a more just and peaceful world.</p>
+ <p>The legacy of Jesus as a bridge-builder and peacemaker still inspires efforts toward interfaith harmony and global solidarity.</p>
+ </div>
+ 
+ <!-- Modern Cultural and Artistic Impact -->
+ <div class="content-section">
+ <h2>Modern Cultural and Artistic Impact</h2>
+ <p>In contemporary culture, the figure of Jesus remains a powerful symbol, appearing in literature, film, music, and the visual arts. Modern artists and writers reinterpret the story of Jesus in new and creative ways, exploring its relevance for today’s world. From blockbuster movies to popular songs, the life and message of Jesus continue to capture the imagination of people everywhere.</p>
+ <p>Jesus’ influence can be seen in movements for social justice, humanitarian work, and the ongoing quest for meaning and purpose. His image and teachings are invoked in debates about ethics, identity, and the future of society. The enduring presence of Jesus in modern culture reflects the timeless appeal of his message and the ongoing search for truth and transformation.</p>
+ <p>As a inspiration and challenge, Jesus continues to shape the cultural landscape and invite new generations to explore the meaning of his life and legacy.</p>
+ </div>
+ 
+ <!-- Final Reflections and Continuing Inspiration -->
+ <div class="content-section">
+ <h2>Final Reflections and Continuing Inspiration</h2>
+ <p>The story of Jesus is one of hope, transformation, and enduring significance. Across centuries and cultures, his life and teachings have inspired faith, compassion, and a vision of a better world. Whether viewed as the Son of God, a great teacher, or a moral exemplar, Jesus remains a central figure in the spiritual and ethical imagination of humanity.</p>
+ <p>As new generations encounter the story of Jesus, they are invited to reflect on its meaning for their own lives and for the world at large. The continuing inspiration of Jesus challenges individuals and communities to pursue justice, mercy, and love, and to seek a deeper understanding of themselves and others.</p>
+ <p>Through his example and message, Jesus continues to offer hope, guidance, and a call to transformation for all who seek truth and meaning.</p>
+ </div>
+ </main>
 
-      <!-- Infobox with Key Details -->
-      <aside class="infobox">
-        <img src="jesus.jpg" alt="Jesus Christ" />
-        <h3>Jesus Christ</h3>
-        <div class="info-item">
-          <span class="info-label">Born:</span>
-          <span class="info-value">c. 4–6 BCE, Bethlehem</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Died:</span>
-          <span class="info-value">c. 30–33 CE, Jerusalem</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Nationality:</span>
-          <span class="info-value">Jewish</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Occupation:</span>
-          <span class="info-value">Religious Leader, Teacher, Prophet</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Known For:</span>
-          <span class="info-value">Founding Christianity, Miracles, Teachings of Love and Redemption</span>
-        </div>
-      </aside>
-    </div>
-  </div>
-  
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="social-links">
-        <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
-          <img src="whiteinsta.png" alt="Instagram" />
-        </a>
-        <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
-          <img src="whitex.png" alt="Twitter" />
-        </a>
-        <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel">
-          <img src="youtube.png" alt="YouTube" />
-        </a>
-      </div>
-      <p class="footer-text">&copy; 2025 Zinvana. All rights reserved. | Exploring the lives of history's greatest leaders and their enduring legacies.</p>
-    </div>
-  </footer>
+ <!-- Infobox with Key Details -->
+ <aside class="infobox">
+ <img src="jesus.jpg" alt="Jesus Christ" />
+ <h3>Jesus Christ</h3>
+ <div class="info-item">
+ <span class="info-label">Born:</span>
+ <span class="info-value">c. 4–6 BCE, Bethlehem</span>
+ </div>
+ <div class="info-item">
+ <span class="info-label">Died:</span>
+ <span class="info-value">c. 30–33 CE, Jerusalem</span>
+ </div>
+ <div class="info-item">
+ <span class="info-label">Nationality:</span>
+ <span class="info-value">Jewish</span>
+ </div>
+ <div class="info-item">
+ <span class="info-label">Occupation:</span>
+ <span class="info-value">Religious Leader, Teacher, Prophet</span>
+ </div>
+ <div class="info-item">
+ <span class="info-label">Known For:</span>
+ <span class="info-value">Founding Christianity, Miracles, Teachings of Love and Redemption</span>
+ </div>
+ </aside>
+ </div>
+ </div>
+ 
+ <!-- Footer -->
+ <footer>
+ <div class="footer-content">
+ <div class="social-links">
+ <a href="https://www.instagram.com/zinvana_official?igsh=ZGRpaTR0ZW90bnho" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+ <img src="whiteinsta.png" alt="Instagram" />
+ </a>
+ <a href="https://x.com/farazglori80528" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+ <img src="whitex.png" alt="Twitter" />
+ </a>
+ <a href="https://youtube.com/@zinvana?si=YYRX0i26iZ0uz5dZ" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel">
+ <img src="youtube.png" alt="YouTube" />
+ </a>
+ </div>
+ <p class="footer-text">&copy; 2025 Zinvana. All rights reserved. | Exploring the lives of history's greatest leaders and their enduring legacies.</p>
+ </div>
+ </footer>
 
-  <!-- JavaScript -->
-  <script>
-    // Loading Animation
-    window.addEventListener('load', function() {
-      const loadingOverlay = document.getElementById('loadingOverlay');
-      setTimeout(() => {
-        loadingOverlay.classList.add('hidden');
-        // Start fade-in animations after loading
-        setTimeout(() => {
-          observeElements();
-        }, 500);
-      }, 1000);
-    });
+ <!-- JavaScript -->
+ <script>
+ // Loading Animation
+ window.addEventListener('load', function() {
+ const loadingOverlay = document.getElementById('loadingOverlay');
+ setTimeout(() => {
+ loadingOverlay.classList.add('hidden');
+ // Start fade-in animations after loading
+ setTimeout(() => {
+ observeElements();
+ }, 500);
+ }, 1000);
+ });
 
-    // Navigation Scroll Effect
-    window.addEventListener('scroll', function() {
-      const nav = document.getElementById('mainNav');
-      if (window.scrollY > 100) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
+ // Navigation Scroll Effect
+ window.addEventListener('scroll', function() {
+ const nav = document.getElementById('mainNav');
+ if (window.scrollY > 100) {
+ nav.classList.add('scrolled');
+ } else {
+ nav.classList.remove('scrolled');
+ }
+ });
 
-    // Intersection Observer for Fade-in Animations
-    function observeElements() {
-      const mainContent = document.getElementById('mainContent');
-      const sections = document.querySelectorAll('.content-section');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
+ // Intersection Observer for Fade-in Animations
+ function observeElements() {
+ const mainContent = document.getElementById('mainContent');
+ const sections = document.querySelectorAll('.content-section');
+ 
+ const observer = new IntersectionObserver((entries) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ entry.target.style.opacity = '1';
+ entry.target.style.transform = 'translateY(0)';
+ }
+ });
+ }, {
+ threshold: 0.1,
+ rootMargin: '0px 0px -50px 0px'
+ });
 
-      // Observe main content
-      if (mainContent) {
-        mainContent.classList.add('visible');
-      }
+ // Observe main content
+ if (mainContent) {
+ mainContent.classList.add('visible');
+ }
 
-      // Observe each section for staggered animation
-      sections.forEach((section, index) => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = `all 0.6s ease ${index * 0.1}s`;
-        observer.observe(section);
-      });
-    }
+ // Observe each section for staggered animation
+ sections.forEach((section, index) => {
+ section.style.opacity = '0';
+ section.style.transform = 'translateY(30px)';
+ section.style.transition = `all 0.6s ease ${index * 0.1}s`;
+ observer.observe(section);
+ });
+ }
 
-    // Mobile Menu Toggle (for future mobile menu implementation)
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    if (mobileMenuToggle) {
-      mobileMenuToggle.addEventListener('click', function() {
-        // Mobile menu functionality can be added here
-        console.log('Mobile menu toggle clicked');
-      });
-    }
+ // Mobile Menu Toggle (for future mobile menu implementation)
+ const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+ if (mobileMenuToggle) {
+ mobileMenuToggle.addEventListener('click', function() {
+ // Mobile menu functionality can be added here
+ console.log('Mobile menu toggle clicked');
+ });
+ }
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
+ // Smooth scrolling for navigation links
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+ anchor.addEventListener('click', function (e) {
+ e.preventDefault();
+ const target = document.querySelector(this.getAttribute('href'));
+ if (target) {
+ target.scrollIntoView({
+ behavior: 'smooth',
+ block: 'start'
+ });
+ }
+ });
+ });
 
-    // Add parallax effect to hero section
-    window.addEventListener('scroll', function() {
-      const hero = document.getElementById('hero');
-      const scrolled = window.pageYOffset;
-      const rate = scrolled * -0.5;
-      hero.style.transform = `translateY(${rate}px)`;
-    });
+ // Add parallax effect to hero section
+ window.addEventListener('scroll', function() {
+ const hero = document.getElementById('hero');
+ const scrolled = window.pageYOffset;
+ const rate = scrolled * -0.5;
+ hero.style.transform = `translateY(${rate}px)`;
+ });
 
-    // Enhanced hover effects for infobox
-    const infobox = document.querySelector('.infobox');
-    if (infobox) {
-      infobox.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px) scale(1.02)';
-      });
-      
-      infobox.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    }
+ // Enhanced hover effects for infobox
+ const infobox = document.querySelector('.infobox');
+ if (infobox) {
+ infobox.addEventListener('mouseenter', function() {
+ this.style.transform = 'translateY(-5px) scale(1.02)';
+ });
+ 
+ infobox.addEventListener('mouseleave', function() {
+ this.style.transform = 'translateY(0) scale(1)';
+ });
+ }
 
-    // Add keyboard navigation support
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        // Close any open modals or menus
-      }
-    });
+ // Add keyboard navigation support
+ document.addEventListener('keydown', function(e) {
+ if (e.key === 'Escape') {
+ // Close any open modals or menus
+ }
+ });
 
-    // Performance optimization: Throttle scroll events
-    let ticking = false;
-    function updateOnScroll() {
-      // Update scroll-dependent animations here
-      ticking = false;
-    }
+ // Performance optimization: Throttle scroll events
+ let ticking = false;
+ function updateOnScroll() {
+ // Update scroll-dependent animations here
+ ticking = false;
+ }
 
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        requestAnimationFrame(updateOnScroll);
-        ticking = true;
-      }
-    });
+ window.addEventListener('scroll', function() {
+ if (!ticking) {
+ requestAnimationFrame(updateOnScroll);
+ ticking = true;
+ }
+ });
 
-    // SEO and Analytics ready
-    // Google Analytics or other tracking code can be added here
-    
-    console.log('Jesus Christ biography page loaded successfully - Zinvana Historical Biographies');
-  </script>
+ // SEO and Analytics ready
+ // Google Analytics or other tracking code can be added here
+ 
+ console.log('Jesus Christ biography page loaded successfully - Zinvana Historical Biographies');
+ </script>
 </body>
 </html>

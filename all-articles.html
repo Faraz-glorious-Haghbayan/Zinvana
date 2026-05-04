@@ -1,2774 +1,2556 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>All Articles | Zinvana</title>
-    <meta
-      name="description"
-      content="Browse all Zinvana articles in one place — including Historical Leaders and Brawl Stars Brawler pages."
-    />
-    <meta name="author" content="Zinvana" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://zinvana.com/all-articles.html" />
-
-    <meta property="og:site_name" content="Zinvana" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://zinvana.com/all-articles.html" />
-    <meta property="og:title" content="All Articles | Zinvana" />
-    <meta
-      property="og:description"
-      content="Browse all Zinvana articles — Leaders and Brawlers — from one clean hub."
-    />
-
-    <link rel="icon" href="/favicon.ico" />
-
-    <style>
-      :root {
-        --bg: #0c1324;
-        --panel: #0f172a;
-        --muted: #7c8aa5;
-        --text: #e4ecff;
-        --accent: #2dd4bf;
-        --accent-2: #f97316;
-        --border: rgba(255, 255, 255, 0.08);
-        --card: rgba(255, 255, 255, 0.02);
-        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-        --radius: 18px;
-        --topbar-h: 76px;
-        --glow: 0 12px 40px rgba(45, 212, 191, 0.12);
-        --glow-2: 0 12px 40px rgba(249, 115, 22, 0.08);
-        --professional-bg: linear-gradient(
-          135deg,
-          #0a0f1c 0%,
-          #0c1324 50%,
-          #0f172a 100%
-        );
-      }
-
-      * {
-        box-sizing: border-box;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      body {
-        margin: 0;
-        background: var(--professional-bg);
-        color: var(--text);
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-          "Noto Color Emoji";
-        line-height: 1.6;
-        min-height: 100vh;
-        overflow-x: hidden;
-      }
-
-      body.theme-light {
-        --bg: #f4f6fb;
-        --panel: #ffffff;
-        --muted: #4b5563;
-        --text: #0f172a;
-        --accent: #2563eb;
-        --accent-2: #ea580c;
-        --border: rgba(0, 0, 0, 0.08);
-        --card: #ffffff;
-        --shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-        --glow: 0 12px 40px rgba(37, 99, 235, 0.14);
-        --glow-2: 0 12px 40px rgba(234, 88, 12, 0.1);
-        --professional-bg: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
-        background: var(--professional-bg);
-        color: var(--text);
-      }
-
-      html {
-        overflow-x: hidden;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      a:focus-visible,
-      button:focus-visible {
-        outline: 2px solid rgba(45, 212, 191, 0.7);
-        outline-offset: 3px;
-      }
-
-      header.topbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        backdrop-filter: blur(14px);
-        background: rgba(12, 19, 36, 0.95);
-        border-bottom: 1px solid var(--border);
-      }
-
-      body.theme-light header.topbar {
-        background: rgba(255, 255, 255, 0.92);
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      .topbar__inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 14px 16px;
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr) auto;
-        align-items: center;
-        gap: 12px;
-        width: 100%;
-      }
-
-      .topbar__inner > * {
-        min-width: 0;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        flex-shrink: 0;
-      }
-
-      .brand img {
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-      }
-
-      .brand span {
-        font-size: 20px;
-        line-height: 1;
-        white-space: nowrap;
-      }
-
-      nav.primary-nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        min-width: 0;
-        flex-wrap: wrap;
-        row-gap: 6px;
-      }
-
-      .nav-link {
-        color: var(--muted);
-        font-weight: 500;
-        padding: 8px 12px;
-        border-radius: 8px;
-        font-size: 14px;
-        white-space: nowrap;
-        transition: all 0.2s ease;
-      }
-
-      .nav-link:hover,
-      .nav-link:focus-visible {
-        color: var(--text);
-        background: rgba(45, 212, 191, 0.1);
-        outline: none;
-      }
-
-      body.theme-light .nav-link:hover,
-      body.theme-light .nav-link:focus-visible {
-        background: rgba(37, 99, 235, 0.08);
-      }
-
-      .nav-actions {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        flex-shrink: 0;
-        justify-self: end;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 10px 16px;
-        border-radius: 999px;
-        border: 1px solid transparent;
-        font-weight: 600;
-        font-size: 14px;
-        transition: all 0.2s ease;
-        cursor: pointer;
-        white-space: nowrap;
-      }
-
-      .btn--primary {
-        background: linear-gradient(120deg, var(--accent), #22d3ee);
-        color: #041019;
-        box-shadow: 0 10px 25px rgba(45, 212, 191, 0.35);
-      }
-
-      body.theme-light .btn--primary {
-        background: linear-gradient(120deg, var(--accent), #60a5fa);
-        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.22);
-      }
-
-      .btn--ghost {
-        border-color: var(--border);
-        color: var(--text);
-        background: rgba(255, 255, 255, 0.04);
-      }
-
-      body.theme-light .btn--ghost {
-        background: rgba(0, 0, 0, 0.04);
-      }
-
-      .btn--primary:hover,
-      .btn--ghost:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
-      }
-
-      .btn:active {
-        transform: translateY(0);
-      }
-
-      .hamburger {
-        display: none;
-        width: 44px;
-        height: 44px;
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        padding: 0;
-        flex-shrink: 0;
-      }
-
-      .hamburger:hover {
-        background: rgba(255, 255, 255, 0.08);
-      }
-
-      body.theme-light .hamburger {
-        background: rgba(0, 0, 0, 0.04);
-      }
-
-      .hamburger span {
-        width: 18px;
-        height: 2px;
-        background: var(--text);
-        position: relative;
-        display: block;
-        transition: all 0.3s ease;
-      }
-
-      .hamburger span::before,
-      .hamburger span::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 18px;
-        height: 2px;
-        background: var(--text);
-        transition: all 0.3s ease;
-      }
-
-      .hamburger span::before {
-        top: -6px;
-      }
-
-      .hamburger span::after {
-        top: 6px;
-      }
-
-      .hamburger.active span {
-        background: transparent;
-      }
-
-      .hamburger.active span::before {
-        transform: rotate(45deg) translate(8px, 8px);
-      }
-
-      .hamburger.active span::after {
-        transform: rotate(-45deg) translate(7px, -7px);
-      }
-
-      .mobile-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(12, 19, 36, 0.98);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(14px);
-        padding: 16px;
-        flex-direction: column;
-        gap: 4px;
-        animation: slideDown 0.3s ease;
-      }
-
-      body.theme-light .mobile-menu {
-        background: rgba(255, 255, 255, 0.96);
-        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
-      }
-
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .mobile-menu.open {
-        display: flex;
-      }
-
-      .mobile-menu .nav-link {
-        padding: 10px 12px;
-        display: block;
-      }
-
-      .page {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 32px 20px 72px;
-      }
-
-      main.page {
-        padding-top: calc(32px + var(--topbar-h));
-      }
-
-      section.block,
-      .hero {
-        scroll-margin-top: calc(var(--topbar-h) + 14px);
-      }
-
-      .hero {
-        margin-top: 8px;
-        padding: 28px;
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        background: rgba(255, 255, 255, 0.03);
-        box-shadow: var(--shadow);
-      }
-
-      .hero h1 {
-        font-size: clamp(2rem, 3vw, 2.6rem);
-        margin: 0 0 10px;
-        letter-spacing: -0.4px;
-        font-family: Arial, Helvetica, system-ui, sans-serif;
-      }
-
-      .hero p {
-        margin: 0;
-        color: var(--muted);
-        max-width: 70ch;
-      }
-
-      .collections {
-        margin-top: 18px;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 14px;
-      }
-
-      .collection-card {
-        grid-column: span 4;
-        padding: 18px;
-        border-radius: var(--radius);
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
-        box-shadow: 0 14px 38px rgba(0, 0, 0, 0.35);
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        min-height: 138px;
-      }
-
-      body.theme-light .collection-card {
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      .collection-card .kicker {
-        font-size: 0.85rem;
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      .collection-card strong {
-        font-size: 1.15rem;
-        letter-spacing: -0.2px;
-      }
-
-      .collection-card .meta {
-        margin-top: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      .chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.06);
-        color: var(--text);
-        font-weight: 700;
-        font-size: 0.9rem;
-      }
-
-      .section {
-        margin-top: 26px;
-        padding: 20px;
-        border-radius: var(--radius);
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.03);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
-      }
-
-      body.theme-light .section {
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      .section-head {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 14px;
-      }
-
-      .section h2 {
-        margin: 0;
-        font-size: 1.35rem;
-        letter-spacing: -0.2px;
-      }
-
-      .section .sub {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 12px;
-      }
-
-      .searchbar {
-        margin-top: 16px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .searchbar input {
-        width: 100%;
-        padding: 12px 14px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--text);
-        font-weight: 600;
-        outline: none;
-      }
-
-      body.theme-light .searchbar input {
-        background: rgba(0, 0, 0, 0.04);
-      }
-
-      .searchbar input::placeholder {
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      .searchbar input:focus-visible {
-        outline: 2px solid rgba(45, 212, 191, 0.7);
-        outline-offset: 3px;
-      }
-
-      body.theme-light .searchbar input:focus-visible {
-        outline: 2px solid rgba(37, 99, 235, 0.55);
-      }
-
-      .item {
-        grid-column: span 3;
-        padding: 14px;
-        border-radius: 16px;
-        border: 1px solid var(--border);
-        background: var(--card);
-        transition: transform 150ms ease, background 150ms ease,
-          box-shadow 150ms ease;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        min-height: 92px;
-      }
-
-      .avatar {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        border: 1px solid var(--border);
-        overflow: hidden;
-        background: rgba(255, 255, 255, 0.06);
-        display: grid;
-        place-items: center;
-        flex: 0 0 auto;
-      }
-
-      body.theme-light .avatar {
-        background: rgba(0, 0, 0, 0.04);
-      }
-
-      .avatar__img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .avatar__fallback {
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        color: var(--text);
-        opacity: 0.9;
-        font-size: 0.95rem;
-        line-height: 1;
-      }
-
-      .item:hover {
-        transform: translateY(-2px);
-        background: rgba(255, 255, 255, 0.05);
-        box-shadow: var(--glow);
-      }
-
-      .item strong {
-        font-size: 1rem;
-        letter-spacing: -0.15px;
-      }
-
-      .item .hint {
-        margin-top: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: var(--muted);
-        font-weight: 600;
-        font-size: 0.92rem;
-      }
-
-      .item .excerpt {
-        margin: 0;
-        color: var(--muted);
-        font-weight: 500;
-        font-size: 0.95rem;
-        line-height: 1.45;
-      }
-
-      .item .metaRow {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 2px;
-      }
-
-      .item .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 10px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--muted);
-        font-weight: 700;
-        font-size: 0.82rem;
-        white-space: nowrap;
-      }
-
-      body.theme-light .item .pill {
-        background: rgba(0, 0, 0, 0.04);
-      }
-
-      .hidden-by-limit {
-        display: none !important;
-      }
-
-      .load-more-row {
-        margin-top: 12px;
-        display: flex;
-        justify-content: center;
-      }
-
-      .load-more-btn {
-        padding: 11px 16px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: linear-gradient(
-          120deg,
-          rgba(45, 212, 191, 0.12),
-          rgba(249, 115, 22, 0.12)
-        );
-        color: var(--text);
-        font-weight: 700;
-        letter-spacing: -0.01em;
-        cursor: pointer;
-        transition: transform 140ms ease, box-shadow 140ms ease,
-          border-color 140ms ease;
-        box-shadow: var(--glow);
-      }
-
-      .load-more-btn:hover {
-        transform: translateY(-1px);
-        box-shadow: var(--glow-2);
-        border-color: rgba(255, 255, 255, 0.16);
-      }
-
-      body.theme-light .load-more-btn {
-        background: linear-gradient(
-          120deg,
-          rgba(37, 99, 235, 0.12),
-          rgba(234, 88, 12, 0.1)
-        );
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-      }
-
-      .footer {
-        margin-top: 26px;
-        padding: 18px;
-        text-align: center;
-        color: var(--muted);
-      }
-
-      @media (max-width: 980px) {
-        .collection-card {
-          grid-column: span 6;
-        }
-
-        .item {
-          grid-column: span 4;
-        }
-      }
-
-      @media (max-width: 740px) {
-        nav.primary-nav {
-          display: none;
-        }
-
-        .hamburger {
-          display: inline-flex;
-        }
-
-        .collections {
-          grid-template-columns: 1fr;
-        }
-
-        .collection-card {
-          grid-column: auto;
-        }
-
-        .item {
-          grid-column: span 6;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .hero {
-          padding: 20px;
-        }
-
-        .section {
-          padding: 16px;
-        }
-
-        .item {
-          grid-column: span 12;
-        }
-      }
-    </style>
-  </head>
-
-  <body class="theme-light">
-    <header class="topbar">
-      <div class="topbar__inner">
-        <a class="brand" href="index.html" aria-label="Zinvana home">
-          <img src="zinvanalogo.png" alt="Zinvana logo" />
-          <span>Zinvana</span>
-        </a>
-
-        <nav class="primary-nav" aria-label="Main navigation">
-          <a class="nav-link" href="#quizzes">Quizzes</a>
-          <a class="nav-link" href="#leaders">Leaders</a>
-          <a class="nav-link" href="#brawlers">Brawlers</a>
-          <a class="nav-link" href="#pages">Pages</a>
-          <a class="nav-link" href="about.html">About</a>
-        </nav>
-
-        <div class="nav-actions">
-          <a class="btn btn--ghost" href="mbti-personality-quiz.html"
-            >MBTI Quiz</a
-          >
-          <button
-            class="hamburger"
-            id="menuToggle"
-            aria-label="Toggle menu"
-            aria-expanded="false"
-          >
-            <span></span>
-          </button>
-        </div>
-      </div>
-      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="#quizzes">Quizzes</a>
-        <a class="nav-link" href="#leaders">Leaders</a>
-        <a class="nav-link" href="#brawlers">Brawlers</a>
-        <a class="nav-link" href="#pages">Pages</a>
-        <a class="nav-link" href="all-brawlers.html">All Brawlers</a>
-        <a class="nav-link" href="about.html">About</a>
-      </nav>
-    </header>
-
-    <main class="page" id="top">
-      <section class="hero">
-        <h1>All Articles</h1>
-        <p>
-          A clean hub for everything we’ve published so far — jump into leader
-          profiles, brawler guides, and the main collection pages.
-        </p>
-
-        <div class="searchbar" role="search" aria-label="Search all articles">
-          <input
-            id="searchInput"
-            type="search"
-            placeholder="Search leaders, brawlers, or pages…"
-            autocomplete="off"
-            spellcheck="false"
-            aria-label="Search articles and pages"
-          />
-        </div>
-
-        <p
-          class="sub"
-          id="searchStatus"
-          aria-live="polite"
-          style="margin: 10px 0 0"
-        ></p>
-
-        <div class="collections" aria-label="Collections">
-          <a class="collection-card" href="#quizzes">
-            <span class="kicker">Section</span>
-            <strong>Quizzes</strong>
-            <p class="sub" style="margin: 0; color: var(--muted)">
-              Personality, history, and more.
-            </p>
-            <div class="meta">
-              <span class="chip" id="quizzesCount">0</span>
-              <span>Open →</span>
-            </div>
-          </a>
-
-          <a class="collection-card" href="#leaders">
-            <span class="kicker">Collection</span>
-            <strong>Historical Leaders</strong>
-            <p class="sub" style="margin: 0; color: var(--muted)">
-              Profiles and the main Leaders quiz.
-            </p>
-            <div class="meta">
-              <span class="chip" id="leadersCount">0</span>
-              <span>Open →</span>
-            </div>
-          </a>
-
-          <a class="collection-card" href="#brawlers">
-            <span class="kicker">Collection</span>
-            <strong>Brawl Stars Brawlers</strong>
-            <p class="sub" style="margin: 0; color: var(--muted)">
-              Every brawler page, in one place.
-            </p>
-            <div class="meta">
-              <span class="chip" id="brawlersCount">0</span>
-              <span>Open →</span>
-            </div>
-          </a>
-
-          <a class="collection-card" href="#pages">
-            <span class="kicker">Section</span>
-            <strong>All Pages</strong>
-            <p class="sub" style="margin: 0; color: var(--muted)">
-              Core pages + extras.
-            </p>
-            <div class="meta">
-              <span class="chip" id="pagesTotalCount">0</span>
-              <span>Open →</span>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <section class="section" id="quizzes">
-        <div class="section-head">
-          <div>
-            <h2>Quizzes</h2>
-            <p class="sub">All quiz pages we have right now.</p>
-          </div>
-          <span class="chip" id="quizzesCountChip">0 quizzes</span>
-        </div>
-        <div class="grid" id="quizzesGrid" aria-label="Quiz pages"></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="quizzesMore" type="button">
-            Show more
-          </button>
-        </div>
-      </section>
-
-      <section class="section" id="leaders">
-        <div class="section-head">
-          <div>
-            <h2>Leaders</h2>
-            <p class="sub">Profiles + the main leadership quiz.</p>
-          </div>
-          <a class="chip" href="leaders.html">Take the quiz →</a>
-        </div>
-        <div class="grid" id="leadersGrid" aria-label="Leader pages"></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="leadersMore" type="button">
-            Show more
-          </button>
-        </div>
-      </section>
-
-      <section class="section" id="brawlers">
-        <div class="section-head">
-          <div>
-            <h2>Brawlers</h2>
-            <p class="sub">Open any brawler page directly.</p>
-          </div>
-          <a class="chip" href="all-brawlers.html">Browse all brawlers →</a>
-        </div>
-        <div class="grid" id="brawlersGrid" aria-label="Brawler pages"></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="brawlersMore" type="button">
-            Show more
-          </button>
-        </div>
-      </section>
-
-      <section class="section" id="pages">
-        <div class="section-head">
-          <div>
-            <h2>All Pages</h2>
-            <p class="sub">Everything else in the site folder (grouped).</p>
-          </div>
-          <span class="chip" id="pagesCount">0 pages</span>
-        </div>
-
-        <div class="section-head" style="margin-top: 14px">
-          <div>
-            <h2 style="font-size: 1.1rem; margin: 0">Core</h2>
-            <p class="sub">Main site pages (home, about, community, etc.).</p>
-          </div>
-          <span class="chip" id="coreCount">0</span>
-        </div>
-        <div class="grid" id="coreGrid" aria-label="Core site pages"></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="coreMore" type="button">
-            Show more
-          </button>
-        </div>
-
-        <div class="section-head" style="margin-top: 18px">
-          <div>
-            <h2 style="font-size: 1.1rem; margin: 0">Footballers</h2>
-            <p class="sub">Football (soccer) player pages.</p>
-          </div>
-          <span class="chip" id="footballersCount">0</span>
-        </div>
-        <div
-          class="grid"
-          id="footballersGrid"
-          aria-label="Footballer pages"
-        ></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="footballersMore" type="button">
-            Show more
-          </button>
-        </div>
-
-        <div class="section-head" style="margin-top: 18px">
-          <div>
-            <h2 style="font-size: 1.1rem; margin: 0">Scientists</h2>
-            <p class="sub">Scientist profiles and related pages.</p>
-          </div>
-          <span class="chip" id="scientistsCount">0</span>
-        </div>
-        <div
-          class="grid"
-          id="scientistsGrid"
-          aria-label="Scientist pages"
-        ></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="scientistsMore" type="button">
-            Show more
-          </button>
-        </div>
-
-        <div class="section-head" style="margin-top: 18px">
-          <div>
-            <h2 style="font-size: 1.1rem; margin: 0">Marvel</h2>
-            <p class="sub">Marvel character pages.</p>
-          </div>
-          <span class="chip" id="marvelCount">0</span>
-        </div>
-        <div class="grid" id="marvelGrid" aria-label="Marvel pages"></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="marvelMore" type="button">
-            Show more
-          </button>
-        </div>
-
-        <div class="section-head" style="margin-top: 18px">
-          <div>
-            <h2 style="font-size: 1.1rem; margin: 0">Squid Game</h2>
-            <p class="sub">Squid Game characters and related pages.</p>
-          </div>
-          <span class="chip" id="squidgameCount">0</span>
-        </div>
-        <div
-          class="grid"
-          id="squidgameGrid"
-          aria-label="Squid Game pages"
-        ></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="squidgameMore" type="button">
-            Show more
-          </button>
-        </div>
-
-        <div class="section-head" style="margin-top: 18px">
-          <div>
-            <h2 style="font-size: 1.1rem; margin: 0">Wojak</h2>
-            <p class="sub">Wojak and meme-related pages.</p>
-          </div>
-          <span class="chip" id="wojakCount">0</span>
-        </div>
-        <div class="grid" id="wojakGrid" aria-label="Wojak pages"></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="wojakMore" type="button">
-            Show more
-          </button>
-        </div>
-
-        <div class="section-head" style="margin-top: 18px">
-          <div>
-            <h2 style="font-size: 1.1rem; margin: 0">YouTubers</h2>
-            <p class="sub">YouTuber/creator profiles and related pages.</p>
-          </div>
-          <span class="chip" id="youtubersCount">0</span>
-        </div>
-        <div class="grid" id="youtubersGrid" aria-label="YouTuber pages"></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="youtubersMore" type="button">
-            Show more
-          </button>
-        </div>
-
-        <div class="section-head" style="margin-top: 18px">
-          <div>
-            <h2 style="font-size: 1.1rem; margin: 0">MBTI</h2>
-            <p class="sub">Type pages (quiz is shown in Quizzes).</p>
-          </div>
-          <span class="chip" id="mbtiCount">0</span>
-        </div>
-        <div class="grid" id="mbtiGrid" aria-label="MBTI pages"></div>
-        <div class="load-more-row">
-          <button class="load-more-btn" id="mbtiMore" type="button">
-            Show more
-          </button>
-        </div>
-      </section>
-    </main>
-
-    <footer
-      style="
-        background: linear-gradient(
-          135deg,
-          #0f172a 0%,
-          #1e293b 50%,
-          #334155 100%
-        );
-        color: #ffffff;
-        margin-top: 80px;
-        position: relative;
-        overflow: hidden;
-      "
-    >
-      <div
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
-          z-index: 1;
-        "
-      ></div>
-
-      <div
-        style="
-          position: relative;
-          z-index: 2;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 60px 40px 40px;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 40px;
-        "
-      >
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
-          <img
-            src="zinvanalogo.png"
-            alt="Zinvana"
-            style="
-              width: 50px;
-              height: 50px;
-              border-radius: 12px;
-              margin-bottom: 16px;
-              box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-            "
-          />
-          <h3
-            style="
-              color: #ffffff;
-              font-size: 1.5rem;
-              margin-bottom: 16px;
-              font-weight: 600;
-            "
-          >
-            Zinvana
-          </h3>
-          <p
-            style="
-              color: #94a3b8;
-              line-height: 1.6;
-              margin: 0;
-              font-size: 1rem;
-              margin-bottom: 20px;
-            "
-          >
-            Discover your true self through fun, engaging personality quizzes
-            and assessments. From internet archetypes to personality types, we
-            help you explore different aspects of your personality in an
-            entertaining, educational way.
-          </p>
-          <div style="display: flex; gap: 16px; margin-bottom: 20px">
-            <a
-              href="https://x.com/farazglori80528"
-              target="_blank"
-              style="
-                width: 40px;
-                height: 40px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #ffffff;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-              "
-              onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
-              ><svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                /></svg
-            ></a>
-            <a
-              href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
-              target="_blank"
-              style="
-                width: 40px;
-                height: 40px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #ffffff;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-              "
-              onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
-              ><svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                /></svg
-            ></a>
-          </div>
-          <p
-            style="
-              color: #94a3b8;
-              font-size: 0.9rem;
-              margin: 0;
-              line-height: 1.5;
-            "
-          >
-            Stay updated with our latest quizzes and personality assessments!
-          </p>
-        </div>
-
-        <div>
-          <h4
-            style="
-              color: #e2e8f0;
-              font-size: 1.125rem;
-              margin-bottom: 20px;
-              font-weight: 600;
-            "
-          >
-            Popular Quizzes
-          </h4>
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 12px">
-              <a
-                href="leaders.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Historical Leaders Personality Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="football-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Football Personality Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="wojak-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Wojak Personality Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="perfect-country.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Perfect Country Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="youtubers-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >YouTubers Personality Quiz</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h4
-            style="
-              color: #e2e8f0;
-              font-size: 1.125rem;
-              margin-bottom: 20px;
-              font-weight: 600;
-            "
-          >
-            Resources
-          </h4>
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 12px">
-              <a
-                href="/about.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >About Us</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="/privacy.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Privacy Policy</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div
-        style="
-          position: relative;
-          z-index: 2;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 30px 40px;
-        "
-      >
-        <div
-          style="
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-          "
-        >
-          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
-            &copy; 2025 Zinvana. All rights reserved.
-          </p>
-          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
-            Made with ❤️ by the Zinvana Team
-          </p>
-        </div>
-        <div
-          style="
-            color: #64748b;
-            font-size: 0.85rem;
-            margin: 20px auto 0;
-            text-align: center;
-            line-height: 1.5;
-            max-width: 600px;
-          "
-        >
-          Made with care by Zinvana. All quizzes are for entertainment purposes
-          only and do not collect personal data.
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      // Enhanced responsive nav toggle with animated hamburger
-      const toggle = document.getElementById("menuToggle");
-      const menu = document.getElementById("mobileMenu");
-      const navLinks = menu?.querySelectorAll(".nav-link");
-
-      if (toggle && menu) {
-        toggle.addEventListener("click", () => {
-          const isOpen = menu.classList.toggle("open");
-          toggle.classList.toggle("active");
-          toggle.setAttribute("aria-expanded", String(isOpen));
-        });
-
-        // Close menu when a link is clicked
-        navLinks?.forEach((link) => {
-          link.addEventListener("click", () => {
-            menu.classList.remove("open");
-            toggle.classList.remove("active");
-            toggle.setAttribute("aria-expanded", "false");
-          });
-        });
-
-        // Close menu on escape key
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && menu.classList.contains("open")) {
-            menu.classList.remove("open");
-            toggle.classList.remove("active");
-            toggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      }
-
-      const brawlerFiles = [
-        "all-brawlers.html",
-        "brawler-8bit.html",
-        "brawler-amber.html",
-        "brawler-angelo.html",
-        "brawler-ash.html",
-        "brawler-barley.html",
-        "brawler-bea.html",
-        "brawler-belle.html",
-        "brawler-berry.html",
-        "brawler-bibi.html",
-        "brawler-bo.html",
-        "brawler-bonnie.html",
-        "brawler-brock.html",
-        "brawler-bull.html",
-        "brawler-buster.html",
-        "brawler-buzz.html",
-        "brawler-byron.html",
-        "brawler-carl.html",
-        "brawler-chester.html",
-        "brawler-chuck.html",
-        "brawler-clancy.html",
-        "brawler-colette.html",
-        "brawler-colt.html",
-        "brawler-cordelius.html",
-        "brawler-crow.html",
-        "brawler-darryl.html",
-        "brawler-doug.html",
-        "brawler-draco.html",
-        "brawler-dynamike.html",
-        "brawler-edgar.html",
-        "brawler-elprimo.html",
-        "brawler-emz.html",
-        "brawler-eve.html",
-        "brawler-fang.html",
-        "brawler-frank.html",
-        "brawler-gale.html",
-        "brawler-gene.html",
-        "brawler-gray.html",
-        "brawler-griff.html",
-        "brawler-grom.html",
-        "brawler-gus.html",
-        "brawler-hank.html",
-        "brawler-jacky.html",
-        "brawler-janet.html",
-        "brawler-jessie.html",
-        "brawler-juju.html",
-        "brawler-kenji.html",
-        "brawler-kit.html",
-        "brawler-larry.html",
-        "brawler-lawrie.html",
-        "brawler-leon.html",
-        "brawler-lily.html",
-        "brawler-lola.html",
-        "brawler-lou.html",
-        "brawler-lumi.html",
-        "brawler-maisie.html",
-        "brawler-mandy.html",
-        "brawler-max.html",
-        "brawler-meeple.html",
-        "brawler-meg.html",
-        "brawler-melodie.html",
-        "brawler-mico.html",
-        "brawler-moe.html",
-        "brawler-mortis.html",
-        "brawler-mrp.html",
-        "brawler-nani.html",
-        "brawler-nita.html",
-        "brawler-ollie.html",
-        "brawler-otis.html",
-        "brawler-pam.html",
-        "brawler-pearl.html",
-        "brawler-penny.html",
-        "brawler-piper.html",
-        "brawler-poco.html",
-        "brawler-rico.html",
-        "brawler-rosa.html",
-        "brawler-rt.html",
-        "brawler-ruffs.html",
-        "brawler-sam.html",
-        "brawler-sandy.html",
-        "brawler-shade.html",
-        "brawler-shelly.html",
-        "brawler-spike.html",
-        "brawler-sprout.html",
-        "brawler-squeak.html",
-        "brawler-stu.html",
-        "brawler-surge.html",
-        "brawler-tara.html",
-        "brawler-tick.html",
-        "brawler-willow.html",
-      ];
-
-      const leaderFiles = [
-        "leaders-list.html",
-        "leaders-alexander.html",
-        "leaders-ardashir.html",
-        "leaders-artaxerxes.html",
-        "leaders-ashoka.html",
-        "leaders-ataturk.html",
-        "leaders-augustus.html",
-        "leaders-aurelius.html",
-        "leaders-bolivar.html",
-        "leaders-cambyses.html",
-        "leaders-catherine.html",
-        "leaders-churchill.html",
-        "leaders-cleopatra.html",
-        "leaders-cyrus.html",
-        "leaders-darius.html",
-        "leaders-elizabeth.html",
-        "leaders-elizabethI.html",
-        "leaders-gandhi.html",
-        "leaders-genghis.html",
-        "leaders-hatshepsut.html",
-        "leaders-jesus.html",
-        "leaders-joan.html",
-        "leaders-khosrow.html",
-        "leaders-lenin.html",
-        "leaders-lincoln.html",
-        "leaders-mandela.html",
-        "leaders-mansa.html",
-        "leaders-muhammad.html",
-        "leaders-napoleon.html",
-        "leaders-nzinga.html",
-        "leaders-saladin.html",
-        "leaders-shaka.html",
-        "leaders-shapur.html",
-        "leaders-suleiman.html",
-        "leaders-tokugawa.html",
-        "leaders-tubman.html",
-        "leaders-xerxes.html",
-        "leaders-zenobia.html",
-        "famous-leaders.html",
-        "history.html",
-      ];
-
-      // Put the most important quizzes at the very top of the Quizzes section.
-      const featuredQuizFiles = [
-        "leaders.html",
-        "mbti-personality-quiz.html",
-        "quiz.html",
-        "quiz-directory.html",
-        "quiz-gallery.html",
-        "quiz-builder.html",
-        "behold-the-dreamers-quiz.html",
-      ];
-
-      async function loadAllPagesList() {
-        try {
-          const res = await fetch("all-pages.json", { cache: "no-store" });
-          if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
-          const json = await res.json();
-          if (!Array.isArray(json)) return [];
-          return json
-            .filter((v) => typeof v === "string")
-            .filter((v) => v.toLowerCase().endsWith(".html"));
-        } catch {
-          return [];
-        }
-      }
-
-      function toTitleCase(text) {
-        return text
-          .split(/\s+/)
-          .filter(Boolean)
-          .map((word) => {
-            const lower = word.toLowerCase();
-            if (
-              lower === "i" ||
-              lower === "ii" ||
-              lower === "iii" ||
-              lower === "iv"
-            ) {
-              return lower.toUpperCase();
-            }
-            return lower.charAt(0).toUpperCase() + lower.slice(1);
-          })
-          .join(" ");
-      }
-
-      function humanizeFileName(filename) {
-        const base = filename.replace(/\.html$/i, "");
-        const withoutPrefix = base
-          .replace(/^brawler-/i, "")
-          .replace(/^leaders-/i, "");
-
-        const special = {
-          "8bit": "8-Bit",
-          elprimo: "El Primo",
-          mrp: "Mr. P",
-          rt: "R-T",
-          neymarjr: "Neymar Jr",
-        };
-        if (special[withoutPrefix]) return special[withoutPrefix];
-
-        const withSpaces = withoutPrefix
-          .replace(/[_-]+/g, " ")
-          .replace(/([a-z])([A-Z])/g, "$1 $2")
-          .trim();
-
-        return toTitleCase(withSpaces);
-      }
-
-      function getInitials(text) {
-        const cleaned = String(text || "")
-          .replace(/[^a-z0-9\s]/gi, " ")
-          .trim();
-        if (!cleaned) return "?";
-        const parts = cleaned.split(/\s+/).filter(Boolean);
-        const first = parts[0]?.charAt(0) || "?";
-        const second = parts[1]?.charAt(0) || "";
-        return (first + second).toUpperCase();
-      }
-
-      function getSlugFromFile(filename) {
-        const base = String(filename || "").replace(/\.html$/i, "");
-        if (/^brawler-/i.test(base)) return base.replace(/^brawler-/i, "");
-        if (/^leaders-/i.test(base)) return base.replace(/^leaders-/i, "");
-        return base;
-      }
-
-      function buildImageCandidates(slug, title, label, href) {
-        if (!slug && !title && !href) return [];
-
-        const safeNormalize = (v) => {
-          const raw = String(v || "").trim();
-          if (!raw) return "";
-          try {
-            // Remove diacritics so filenames like "daviddobrik" can be matched from "David D\u00F6brik".
-            return raw.normalize("NFD").replace(/\p{Diacritic}+/gu, "");
-          } catch {
-            return raw;
-          }
-        };
-
-        const rawSlug = String(slug || "").trim();
-        const slugLower = safeNormalize(rawSlug).toLowerCase();
-
-        // Common filename patterns across the site:
-        // - hyphens vs underscores
-        // - removed separators (e.g. albert-einstein -> alberteinstein)
-        // - prefixed slugs (e.g. creator-emmachamberlain -> emmachamberlain)
-        const slugDashed = slugLower.replace(/_/g, "-");
-        const slugUnderscored = slugLower.replace(/-/g, "_");
-        const slugCompact = slugLower.replace(/[^a-z0-9]/g, "");
-        const slugNoPrefix = slugLower.replace(
-          /^(creator|footballer|scientist|marvel|wojak|youtuber|mbti)[-_]+/,
-          ""
-        );
-        const slugNoPrefixCompact = slugNoPrefix.replace(/[^a-z0-9]/g, "");
-
-        // Many pages have suffixes like "-standard" / "-legacy" that don't exist in image filenames.
-        const stripSuffix = (s) =>
-          String(s || "")
-            .replace(
-              /([_-])(standard|legacy|hi|profile|page|overview|bio|story)$/i,
-              ""
-            )
-            .trim();
-
-        const slugCore = stripSuffix(slugLower);
-        const slugCoreDashed = stripSuffix(slugDashed);
-        const slugCoreUnderscored = stripSuffix(slugUnderscored);
-        const slugCoreCompact = stripSuffix(slugCompact);
-        const slugNoPrefixCore = stripSuffix(slugNoPrefix);
-        const slugNoPrefixCoreCompact = stripSuffix(slugNoPrefixCompact);
-
-        const tokenGuessesFrom = (s) => {
-          const parts = String(s || "")
-            .toLowerCase()
-            .replace(/[^a-z0-9\s_-]/g, " ")
-            .replace(/[_-]+/g, " ")
-            .trim()
-            .split(/\s+/)
-            .filter(Boolean);
-          if (!parts.length) return [];
-          const last = parts[parts.length - 1];
-          const last2 =
-            parts.length >= 2 ? `${parts[parts.length - 2]}_${last}` : "";
-          const first = parts[0];
-          const compactAll = parts.join("");
-          const dashedAll = parts.join("-");
-          const underscoredAll = parts.join("_");
-          return [
-            first,
-            last,
-            last2,
-            dashedAll,
-            underscoredAll,
-            compactAll,
-          ].filter(Boolean);
-        };
-
-        // Title-based guesses help when the slug differs from the actual filename.
-        const titleNorm = safeNormalize(title)
-          .replace(/\.(html?)$/i, "")
-          .replace(/[^a-z0-9\s_-]/gi, " ")
-          .replace(/[_-]+/g, " ")
-          .replace(/\s+/g, " ")
-          .trim();
-
-        // Href can carry useful base info too.
-        const hrefBase = String(href || "")
-          .split("/")
-          .pop()
-          ?.replace(/\.html$/i, "")
-          ?.trim();
-
-        const hrefSlug = hrefBase
-          ? safeNormalize(getSlugFromFile(hrefBase)).toLowerCase()
-          : "";
-        const hrefSlugCore = stripSuffix(hrefSlug);
-
-        // If we know the label, sometimes the image matches the label's default page assets.
-        const labelNorm = String(label || "").trim();
-
-        // Some leader pages use legacy image filenames that don't match the slug.
-        // Reuse existing files by mapping those slugs to their actual images.
-        const avatarOverrides = {
-          ardashir: ["ardashir1.webp", "ardashir1.jpg"],
-          artaxerxes: [
-            "artaxerxesheader.webp",
-            "artaxerxesheader.jpg",
-            "artaxerxes1.webp",
-            "artaxerxes1.jpg",
-          ],
-          bolivar: ["simon_bolivar.webp", "simon_bolivar.jpg", "bolivar.jpg"],
-          cambyses: ["cambyses2.webp", "cambyses2.jpg"],
-          darius: ["darius1.webp", "darius1.jpg"],
-          elizabethi: ["elizabethI2.webp", "elizabethI2.jpg"],
-          joan: ["joan_of_arc.webp", "joan_of_arc.jpg", "joan_of_arc.jpg"],
-          khosrow: [
-            "khosrow1.webp",
-            "khosrow1.jpg",
-            "khosrow2.webp",
-            "khosrow2.jpg",
-          ],
-          mansa: ["mansa_musa.webp", "mansa_musa.jpg"],
-          nzinga: ["queen_nzinga.webp", "queen_nzinga.jpg"],
-          shapur: [
-            "shapur1.webp",
-            "shapur1.jpg",
-            "shapurheader.webp",
-            "shapurheader.jpg",
-          ],
-          tokugawa: [
-            "tokugawa_ieyasu.webp",
-            "tokugawa_ieyasu.jpg",
-            "tokugawa_legacy.webp",
-            "tokugawa_legacy.jpg",
-          ],
-          xerxes: [
-            "xerxes1.webp",
-            "xerxes1.jpg",
-            "xerxesheader.webp",
-            "xerxesheader.jpg",
-          ],
-          zenobia: ["queen_zenobia.webp", "queen_zenobia.jpg"],
-          "gi-hun": ["456.gif"],
-          gihun: ["456.gif"],
-          "sang-woo": ["218.gif"],
-          sangwoo: ["218.gif"],
-          ali: ["199.gif"],
-          deoksu: ["101.gif"],
-          "sae-byeok": ["067.gif", "67.gif"],
-          saebyeok: ["067.gif", "67.gif"],
-          ilnam: ["1.gif", "001.gif"],
-          frontman: ["frontman.gif"],
-          "brawlstars-quiz": ["brawlstarsgif.gif"],
-          "disney-princess-quiz": ["elsa.png"],
-          "dream-meaning": ["dream-dreaming.gif"],
-          quiz: ["cyrus.gif"],
-          "political-ideologie": ["revolution.gif"],
-          religion: ["muhammadheader.jpg"],
-          "superhero-marvel-personality-quiz": ["marvel.gif"],
-          "youtubers-personality-quiz": ["mrbeast.gif"],
-          neymarjr: ["neymar.gif", "neymar.webp", "neymar.jpg"],
-          "wojak-chad": ["chad.png"],
-          chad: ["chad.png"],
-        };
-
-        const bases = [
-          rawSlug,
-          slugLower,
-          slugDashed,
-          slugUnderscored,
-          slugCompact,
-          slugNoPrefix,
-          slugNoPrefixCompact,
-          slugCore,
-          slugCoreDashed,
-          slugCoreUnderscored,
-          slugCoreCompact,
-          slugNoPrefixCore,
-          slugNoPrefixCoreCompact,
-          hrefSlug,
-          hrefSlugCore,
-          ...tokenGuessesFrom(slugCore),
-          ...tokenGuessesFrom(slugNoPrefixCore),
-          ...tokenGuessesFrom(hrefSlugCore),
-          ...tokenGuessesFrom(titleNorm),
-        ].filter(Boolean);
-
-        const derived = [];
-        bases.forEach((b) => {
-          const clean = String(b).toLowerCase();
-          const dashed = clean.replace(/_/g, "-");
-          const underscored = clean.replace(/-/g, "_");
-          const compact = clean.replace(/[^a-z0-9]/g, "");
-          derived.push(clean, dashed, underscored, compact);
-          derived.push(
-            `${clean}header`,
-            `${dashed}header`,
-            `${underscored}header`,
-            `${compact}header`
-          );
-          ["1", "2", "3"].forEach((n) => {
-            derived.push(
-              `${clean}${n}`,
-              `${dashed}${n}`,
-              `${underscored}${n}`,
-              `${compact}${n}`
-            );
-          });
-          derived.push(
-            `${clean}_legacy`,
-            `${underscored}_legacy`,
-            `${dashed}-legacy`,
-            `${clean}-legacy`
-          );
-        });
-        const exts = ["webp", "jpg", "png", "jpeg", "gif"];
-
-        const candidates = [];
-        const overrides = avatarOverrides[slugLower] || [];
-        overrides.forEach((v) => candidates.push(v));
-
-        // Prefer guessed local filenames; if none exist, later code will fall back to the label default.
-        derived.forEach((b) => {
-          exts.forEach((ext) => candidates.push(`${b}.${ext}`));
-        });
-
-        // As a last resort, try the default label avatar too (it will usually exist).
-        const def = getDefaultAvatarForLabel(labelNorm);
-        if (def) candidates.push(def);
-
-        // Dedupe while preserving order.
-        const seen = new Set();
-        return candidates.filter((c) => {
-          const key = String(c).toLowerCase();
-          if (seen.has(key)) return false;
-          seen.add(key);
-          return true;
-        });
-      }
-
-      function truncateText(text, maxChars) {
-        const max = Math.max(30, Number(maxChars) || 120);
-        const s = String(text || "")
-          .replace(/\s+/g, " ")
-          .trim();
-        if (!s) return "";
-        if (s.length <= max) return s;
-        const slice = s.slice(0, max - 1);
-        const lastSpace = slice.lastIndexOf(" ");
-        const trimmed = (lastSpace > 45 ? slice.slice(0, lastSpace) : slice)
-          .trim()
-          .replace(/[\s,;:.!-]+$/g, "");
-        return `${trimmed}…`;
-      }
-
-      function sanitizeDescription(raw) {
-        let s = String(raw || "");
-        // Fix common mojibake sequences (mis-decoded UTF-8) + normalize smart quotes.
-        s = s
-          .replace(/[â€œâ€]/g, '"')
-          .replace(/[â€˜â€™]/g, "'")
-          .replace(/[“”]/g, '"')
-          .replace(/[‘’]/g, "'");
-        // Remove emojis/pictographs where supported.
-        try {
-          s = s.replace(/\p{Extended_Pictographic}/gu, "");
-        } catch {
-          // Ignore if not supported.
-        }
-        s = s.replace(/\s+/g, " ").trim();
-        s = s.replace(/!{2,}/g, "!").replace(/\?{2,}/g, "?");
-        s = s
-          .replace(/^["'\-–—: â€“â€”: ]+/, "")
-          .replace(/["'\-–—: â€“â€”: ]+$/, "");
-        return s.trim();
-      }
-
-      function normalizeUrlLike(raw) {
-        const s = String(raw || "").trim();
-        if (!s) return "";
-        // Keep absolute URLs.
-        if (/^https?:\/\//i.test(s)) return s;
-        // Keep root-relative URLs.
-        if (s.startsWith("/")) return s;
-        // Treat as relative.
-        return s.replace(/^\.\//, "");
-      }
-
-      function extractBestImageFromDoc(doc) {
-        if (!doc) return "";
-
-        const fromMeta = (selector) =>
-          normalizeUrlLike(
-            doc.querySelector(selector)?.getAttribute("content")
-          );
-
-        const og = fromMeta('meta[property="og:image"]');
-        if (og) return og;
-
-        const tw = fromMeta('meta[name="twitter:image"]');
-        if (tw) return tw;
-
-        const linkImg = normalizeUrlLike(
-          doc.querySelector('link[rel="image_src"]')?.getAttribute("href")
-        );
-        if (linkImg) return linkImg;
-
-        const mainOrArticle =
-          doc.querySelector("main") || doc.querySelector("article");
-        if (mainOrArticle) {
-          const img = mainOrArticle.querySelector("img[src]");
-          const src = normalizeUrlLike(img?.getAttribute("src"));
-          return src || "";
-        }
-
-        // Some pages don't use <main>/<article>. If they have a global footer/header,
-        // ignore those so the footer logo doesn't become the preview image.
-        const imgs = Array.from(doc.querySelectorAll("img[src]"));
-        for (const img of imgs) {
-          if (img.closest("header, nav, footer")) continue;
-          const src = normalizeUrlLike(img.getAttribute("src"));
-          if (src) return src;
-        }
-        return "";
-      }
-
-      function extractReadableTextFromDoc(doc) {
-        if (!doc) return "";
-        const mainOrArticle =
-          doc.querySelector("main") || doc.querySelector("article");
-        if (mainOrArticle) return mainOrArticle.innerText || "";
-
-        // Fall back to body text, but strip common chrome so a shared footer
-        // doesn't blow up reading-time estimates.
-        const body = doc.body;
-        if (!body) return "";
-
-        const clone = body.cloneNode(true);
-        clone
-          .querySelectorAll("header, nav, footer, script, style, noscript")
-          .forEach((el) => el.remove());
-        return clone.innerText || "";
-      }
-
-      function looksSpammyDescription(raw) {
-        const s = String(raw || "");
-        const lower = s.toLowerCase();
-        const tooManyExclaims = (s.match(/!/g) || []).length >= 3;
-        const hasEmoji = /[\u{1F300}-\u{1FAFF}]/u.test(s);
-        const hasHype =
-          lower.includes("ultimate") ||
-          lower.includes("must-read") ||
-          lower.includes("beats wikipedia") ||
-          lower.includes("complete guide") ||
-          lower.includes("rare facts") ||
-          lower.includes("untold") ||
-          lower.includes("stunning visuals") ||
-          lower.includes("ðŸ”¥") ||
-          lower.includes("ðŸ†");
-        const hasAllCapsChunk = /\b[A-Z]{5,}\b/.test(s);
-        return hasEmoji || tooManyExclaims || hasAllCapsChunk || hasHype;
-      }
-
-      function defaultExcerptFor(href, title, label) {
-        const file = String(href || "").toLowerCase();
-        const t = String(title || "").trim();
-
-        if (label === "Leader") {
-          return "Leader profile: story, impact, and legacy.";
-        }
-        if (label === "Brawler") {
-          return "Brawler page: role, strengths, and quick tips.";
-        }
-        if (label === "MBTI") {
-          return "MBTI: overview, traits, and what it means.";
-        }
-        if (label === "Creator") {
-          return "Creator profile: bio, highlights, and links.";
-        }
-        if (label === "Quiz") {
-          return "Quiz: take it and see your result.";
-        }
-        if (label === "Footballer") {
-          return "Footballer profile: career, clubs, and highlights.";
-        }
-        if (label === "Scientist") {
-          return "Scientist profile: discoveries, impact, and legacy.";
-        }
-        if (label === "Marvel") {
-          return "Marvel character page: overview, story, and key facts.";
-        }
-        if (label === "Squid Game") {
-          return "Squid Game page: characters, moments, and details.";
-        }
-        if (label === "Wojak") {
-          return "Wojak page: meme lore, variants, and context.";
-        }
-        if (label === "YouTuber") {
-          return "Creator profile: bio, highlights, and links.";
-        }
-        if (label === "Draft") {
-          return "Draft/test page (internal).";
-        }
-
-        if (file.includes("privacy")) return "Privacy policy and data info.";
-        if (file.includes("about")) return "About Zinvana and what we do.";
-        if (file.includes("help")) return "Help and common questions.";
-        if (file.includes("community")) return "Community and participation.";
-        if (file.includes("feed")) return "Latest updates and posts.";
-        if (file.includes("trending")) return "What’s popular right now.";
-
-        return t ? `Open: ${t}.` : "Open this page.";
-      }
-
-      function makeCard(href, title, label) {
-        const a = document.createElement("a");
-        a.className = "item";
-        a.href = href;
-        a.setAttribute("aria-label", `${label}: ${title}`);
-        a.dataset.title = title;
-        a.dataset.label = label;
-        a.dataset.file = href;
-
-        const slug = getSlugFromFile(href);
-        a.dataset.slug = slug;
-        a.dataset.hiddenBySearch = "0";
-
-        const defaultExcerpt = defaultExcerptFor(href, title, label);
-
-        const typeText =
-          label === "Leader"
-            ? "Leader profile"
-            : label === "Brawler"
-            ? "Brawler page"
-            : label === "Footballer"
-            ? "Footballer"
-            : label === "Scientist"
-            ? "Scientist"
-            : label;
-
-        a.dataset.search = `${title} ${label} ${slug}`.trim();
-
-        const initials = getInitials(title);
-        a.innerHTML = `
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+ <title>All Articles | Zinvana</title>
+ <meta
+ name="description"
+ content="Browse all Zinvana articles in one place — including Historical Leaders and Brawl Stars Brawler pages."
+ />
+ <meta name="author" content="Zinvana" />
+ <meta name="robots" content="index, follow" />
+ <link rel="canonical" href="https://zinvana.com/all-articles.html" />
+
+ <meta property="og:site_name" content="Zinvana" />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://zinvana.com/all-articles.html" />
+ <meta property="og:title" content="All Articles | Zinvana" />
+ <meta
+ property="og:description"
+ content="Browse all Zinvana articles — Leaders and Brawlers — from one clean hub."
+ />
+
+ <link rel="icon" href="/favicon.ico" />
+
+ <style>:root {
+ --bg: #0c1324;
+ --panel: #0f172a;
+ --muted: #7c8aa5;
+ --text: #e4ecff;
+ --accent: #2dd4bf;
+ --accent-2: #f97316;
+ --border: rgba(255, 255, 255, 0.08);
+ --card: rgba(255, 255, 255, 0.02);
+ --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+ --radius: 18px;
+ --topbar-h: 76px;
+ --glow: 0 12px 40px rgba(45, 212, 191, 0.12);
+ --glow-2: 0 12px 40px rgba(249, 115, 22, 0.08);
+ --professional-bg: linear-gradient(
+ 135deg,
+ #0a0f1c 0%,
+ #0c1324 50%,
+ #0f172a 100%
+ );
+ }
+
+ * {
+ box-sizing: border-box;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ }
+
+ body {
+ margin: 0;
+ background: var(--professional-bg);
+ color: var(--text);
+ font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+ "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+ "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+ "Noto Color Emoji";
+ line-height: 1.6;
+ min-height: 100vh;
+ overflow-x: hidden;
+ }
+
+ body.theme-light {
+ --bg: #f4f6fb;
+ --panel: #ffffff;
+ --muted: #4b5563;
+ --text: #0f172a;
+ --accent: #2563eb;
+ --accent-2: #ea580c;
+ --border: rgba(0, 0, 0, 0.08);
+ --card: #ffffff;
+ --shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+ --glow: 0 12px 40px rgba(37, 99, 235, 0.14);
+ --glow-2: 0 12px 40px rgba(234, 88, 12, 0.1);
+ --professional-bg: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+ background: var(--professional-bg);
+ color: var(--text);
+ }
+
+ html {
+ overflow-x: hidden;
+ }
+
+ a {
+ color: inherit;
+ text-decoration: none;
+ }
+
+ a:focus-visible,
+ button:focus-visible {
+ outline: 2px solid rgba(45, 212, 191, 0.7);
+ outline-offset: 3px;
+ }
+
+ header.topbar {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ z-index: 100;
+ backdrop-filter: blur(14px);
+ background: rgba(12, 19, 36, 0.95);
+ border-bottom: 1px solid var(--border);
+ }
+
+ body.theme-light header.topbar {
+ background: rgba(255, 255, 255, 0.92);
+ box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+ }.topbar__inner {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 14px 16px;
+ display: grid;
+ grid-template-columns: auto minmax(0, 1fr) auto;
+ align-items: center;
+ gap: 12px;
+ width: 100%;
+ }.topbar__inner > * {
+ min-width: 0;
+ }.brand {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ flex-shrink: 0;
+ }.brand img {
+ width: 46px;
+ height: 46px;
+ border-radius: 50%;
+ }.brand span {
+ font-size: 20px;
+ line-height: 1;
+ white-space: nowrap;
+ }
+
+ nav.primary-nav {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 6px;
+ min-width: 0;
+ flex-wrap: wrap;
+ row-gap: 6px;
+ }.nav-link {
+ color: var(--muted);
+ font-weight: 500;
+ padding: 8px 12px;
+ border-radius: 8px;
+ font-size: 14px;
+ white-space: nowrap;
+ transition: all 0.2s ease;
+ }.nav-link:hover,.nav-link:focus-visible {
+ color: var(--text);
+ background: rgba(45, 212, 191, 0.1);
+ outline: none;
+ }
+
+ body.theme-light.nav-link:hover,
+ body.theme-light.nav-link:focus-visible {
+ background: rgba(37, 99, 235, 0.08);
+ }.nav-actions {
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ flex-shrink: 0;
+ justify-self: end;
+ }.btn {
+ display: inline-flex;
+ align-items: center;
+ gap: 6px;
+ padding: 10px 16px;
+ border-radius: 999px;
+ border: 1px solid transparent;
+ font-weight: 600;
+ font-size: 14px;
+ transition: all 0.2s ease;
+ cursor: pointer;
+ white-space: nowrap;
+ }.btn--primary {
+ background: linear-gradient(120deg, var(--accent), #22d3ee);
+ color: #041019;
+ box-shadow: 0 10px 25px rgba(45, 212, 191, 0.35);
+ }
+
+ body.theme-light.btn--primary {
+ background: linear-gradient(120deg, var(--accent), #60a5fa);
+ box-shadow: 0 10px 25px rgba(37, 99, 235, 0.22);
+ }.btn--ghost {
+ border-color: var(--border);
+ color: var(--text);
+ background: rgba(255, 255, 255, 0.04);
+ }
+
+ body.theme-light.btn--ghost {
+ background: rgba(0, 0, 0, 0.04);
+ }.btn--primary:hover,.btn--ghost:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+ }.btn:active {
+ transform: translateY(0);
+ }.hamburger {
+ display: none;
+ width: 44px;
+ height: 44px;
+ border-radius: 10px;
+ border: 1px solid var(--border);
+ background: rgba(255, 255, 255, 0.04);
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ transition: all 0.2s ease;
+ padding: 0;
+ flex-shrink: 0;
+ }.hamburger:hover {
+ background: rgba(255, 255, 255, 0.08);
+ }
+
+ body.theme-light.hamburger {
+ background: rgba(0, 0, 0, 0.04);
+ }.hamburger span {
+ width: 18px;
+ height: 2px;
+ background: var(--text);
+ position: relative;
+ display: block;
+ transition: all 0.3s ease;
+ }.hamburger span::before,.hamburger span::after {
+ content: "";
+ position: absolute;
+ left: 0;
+ width: 18px;
+ height: 2px;
+ background: var(--text);
+ transition: all 0.3s ease;
+ }.hamburger span::before {
+ top: -6px;
+ }.hamburger span::after {
+ top: 6px;
+ }.hamburger.active span {
+ background: transparent;
+ }.hamburger.active span::before {
+ transform: rotate(45deg) translate(8px, 8px);
+ }.hamburger.active span::after {
+ transform: rotate(-45deg) translate(7px, -7px);
+ }.mobile-menu {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ right: 0;
+ background: rgba(12, 19, 36, 0.98);
+ border-bottom: 1px solid var(--border);
+ backdrop-filter: blur(14px);
+ padding: 16px;
+ flex-direction: column;
+ gap: 4px;
+ animation: slideDown 0.3s ease;
+ }
+
+ body.theme-light.mobile-menu {
+ background: rgba(255, 255, 255, 0.96);
+ box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+ }
+
+ @keyframes slideDown {
+ from {
+ opacity: 0;
+ transform: translateY(-10px);
+ }
+ to {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ }.mobile-menu.open {
+ display: flex;
+ }.mobile-menu.nav-link {
+ padding: 10px 12px;
+ display: block;
+ }.page {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 32px 20px 72px;
+ }
+
+ main.page {
+ padding-top: calc(32px + var(--topbar-h));
+ }
+
+ section.block,.hero {
+ scroll-margin-top: calc(var(--topbar-h) + 14px);
+ }.hero {
+ margin-top: 8px;
+ padding: 28px;
+ border: 1px solid var(--border);
+ border-radius: var(--radius);
+ background: rgba(255, 255, 255, 0.03);
+ box-shadow: var(--shadow);
+ }.hero h1 {
+ font-size: clamp(2rem, 3vw, 2.6rem);
+ margin: 0 0 10px;
+ letter-spacing: -0.4px;
+ font-family: Arial, Helvetica, system-ui, sans-serif;
+ }.hero p {
+ margin: 0;
+ color: var(--muted);
+ max-width: 70ch;
+ }.collections {
+ margin-top: 18px;
+ display: grid;
+ grid-template-columns: repeat(12, 1fr);
+ gap: 14px;
+ }.collection-card {
+ grid-column: span 4;
+ padding: 18px;
+ border-radius: var(--radius);
+ border: 1px solid var(--border);
+ background: rgba(255, 255, 255, 0.03);
+ box-shadow: 0 14px 38px rgba(0, 0, 0, 0.35);
+ display: flex;
+ flex-direction: column;
+ gap: 8px;
+ min-height: 138px;
+ }
+
+ body.theme-light.collection-card {
+ box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+ }.collection-card.kicker {
+ font-size: 0.85rem;
+ color: var(--muted);
+ font-weight: 600;
+ }.collection-card strong {
+ font-size: 1.15rem;
+ letter-spacing: -0.2px;
+ }.collection-card.meta {
+ margin-top: auto;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 10px;
+ color: var(--muted);
+ font-weight: 600;
+ }.chip {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 8px 12px;
+ border-radius: 999px;
+ border: 1px solid var(--border);
+ background: rgba(255, 255, 255, 0.06);
+ color: var(--text);
+ font-weight: 700;
+ font-size: 0.9rem;
+ }.section {
+ margin-top: 26px;
+ padding: 20px;
+ border-radius: var(--radius);
+ border: 1px solid var(--border);
+ background: rgba(255, 255, 255, 0.03);
+ box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+ }
+
+ body.theme-light.section {
+ box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+ }.section-head {
+ display: flex;
+ align-items: baseline;
+ justify-content: space-between;
+ gap: 12px;
+ flex-wrap: wrap;
+ margin-bottom: 14px;
+ }.section h2 {
+ margin: 0;
+ font-size: 1.35rem;
+ letter-spacing: -0.2px;
+ }.section.sub {
+ margin: 0;
+ color: var(--muted);
+ }.grid {
+ display: grid;
+ grid-template-columns: repeat(12, 1fr);
+ gap: 12px;
+ }.searchbar {
+ margin-top: 16px;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ }.searchbar input {
+ width: 100%;
+ padding: 12px 14px;
+ border-radius: 999px;
+ border: 1px solid var(--border);
+ background: rgba(255, 255, 255, 0.04);
+ color: var(--text);
+ font-weight: 600;
+ outline: none;
+ }
+
+ body.theme-light.searchbar input {
+ background: rgba(0, 0, 0, 0.04);
+ }.searchbar input::placeholder {
+ color: var(--muted);
+ font-weight: 600;
+ }.searchbar input:focus-visible {
+ outline: 2px solid rgba(45, 212, 191, 0.7);
+ outline-offset: 3px;
+ }
+
+ body.theme-light.searchbar input:focus-visible {
+ outline: 2px solid rgba(37, 99, 235, 0.55);
+ }.item {
+ grid-column: span 3;
+ padding: 14px;
+ border-radius: 16px;
+ border: 1px solid var(--border);
+ background: var(--card);
+ transition: transform 150ms ease, background 150ms ease,
+ box-shadow 150ms ease;
+ display: flex;
+ flex-direction: column;
+ gap: 8px;
+ min-height: 92px;
+ }.avatar {
+ width: 44px;
+ height: 44px;
+ border-radius: 50%;
+ border: 1px solid var(--border);
+ overflow: hidden;
+ background: rgba(255, 255, 255, 0.06);
+ display: grid;
+ place-items: center;
+ flex: 0 0 auto;
+ }
+
+ body.theme-light.avatar {
+ background: rgba(0, 0, 0, 0.04);
+ }.avatar__img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+ }.avatar__fallback {
+ font-weight: 800;
+ letter-spacing: -0.02em;
+ color: var(--text);
+ opacity: 0.9;
+ font-size: 0.95rem;
+ line-height: 1;
+ }.item:hover {
+ transform: translateY(-2px);
+ background: rgba(255, 255, 255, 0.05);
+ box-shadow: var(--glow);
+ }.item strong {
+ font-size: 1rem;
+ letter-spacing: -0.15px;
+ }.item.hint {
+ margin-top: auto;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ color: var(--muted);
+ font-weight: 600;
+ font-size: 0.92rem;
+ }.item.excerpt {
+ margin: 0;
+ color: var(--muted);
+ font-weight: 500;
+ font-size: 0.95rem;
+ line-height: 1.45;
+ }.item.metaRow {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 8px;
+ margin-top: 2px;
+ }.item.pill {
+ display: inline-flex;
+ align-items: center;
+ gap: 6px;
+ padding: 6px 10px;
+ border-radius: 999px;
+ border: 1px solid var(--border);
+ background: rgba(255, 255, 255, 0.04);
+ color: var(--muted);
+ font-weight: 700;
+ font-size: 0.82rem;
+ white-space: nowrap;
+ }
+
+ body.theme-light.item.pill {
+ background: rgba(0, 0, 0, 0.04);
+ }.hidden-by-limit {
+ display: none!important;
+ }.load-more-row {
+ margin-top: 12px;
+ display: flex;
+ justify-content: center;
+ }.load-more-btn {
+ padding: 11px 16px;
+ border-radius: 12px;
+ border: 1px solid var(--border);
+ background: linear-gradient(
+ 120deg,
+ rgba(45, 212, 191, 0.12),
+ rgba(249, 115, 22, 0.12)
+ );
+ color: var(--text);
+ font-weight: 700;
+ letter-spacing: -0.01em;
+ cursor: pointer;
+ transition: transform 140ms ease, box-shadow 140ms ease,
+ border-color 140ms ease;
+ box-shadow: var(--glow);
+ }.load-more-btn:hover {
+ transform: translateY(-1px);
+ box-shadow: var(--glow-2);
+ border-color: rgba(255, 255, 255, 0.16);
+ }
+
+ body.theme-light.load-more-btn {
+ background: linear-gradient(
+ 120deg,
+ rgba(37, 99, 235, 0.12),
+ rgba(234, 88, 12, 0.1)
+ );
+ box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+ }.footer {
+ margin-top: 26px;
+ padding: 18px;
+ text-align: center;
+ color: var(--muted);
+ }
+
+ @media (max-width: 980px) {.collection-card {
+ grid-column: span 6;
+ }.item {
+ grid-column: span 4;
+ }
+ }
+
+ @media (max-width: 740px) {
+ nav.primary-nav {
+ display: none;
+ }.hamburger {
+ display: inline-flex;
+ }.collections {
+ grid-template-columns: 1fr;
+ }.collection-card {
+ grid-column: auto;
+ }.item {
+ grid-column: span 6;
+ }
+ }
+
+ @media (max-width: 520px) {.hero {
+ padding: 20px;
+ }.section {
+ padding: 16px;
+ }.item {
+ grid-column: span 12;
+ }
+ }
+ </style>
+ <link rel="stylesheet" href="magazine.css" />
+</head>
+
+ <body class="theme-light">
+ <header class="topbar">
+ <div class="topbar__inner">
+ <a class="brand" href="index.html" aria-label="Zinvana home">
+ <img src="zinvanalogo.png" alt="Zinvana logo" />
+ <span>Zinvana</span>
+ </a>
+
+ <nav class="primary-nav" aria-label="Main navigation">
+ <a class="nav-link" href="#quizzes">Quizzes</a>
+ <a class="nav-link" href="#leaders">Leaders</a>
+ <a class="nav-link" href="#brawlers">Brawlers</a>
+ <a class="nav-link" href="#pages">Pages</a>
+ <a class="nav-link" href="about.html">About</a>
+ </nav>
+
+ <div class="nav-actions">
+ <a class="btn btn--ghost" href="mbti-personality-quiz.html"
+ >MBTI Quiz</a
+ >
+ <button
+ class="hamburger"
+ id="menuToggle"
+ aria-label="Toggle menu"
+ aria-expanded="false"
+ >
+ <span></span>
+ </button>
+ </div>
+ </div>
+ <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+ <a class="nav-link" href="index.html">Home</a>
+ <a class="nav-link" href="#quizzes">Quizzes</a>
+ <a class="nav-link" href="#leaders">Leaders</a>
+ <a class="nav-link" href="#brawlers">Brawlers</a>
+ <a class="nav-link" href="#pages">Pages</a>
+ <a class="nav-link" href="all-brawlers.html">All Brawlers</a>
+ <a class="nav-link" href="about.html">About</a>
+ </nav>
+ </header>
+
+ <main class="page" id="top">
+ <section class="hero">
+ <h1>All Articles</h1>
+ <p>
+ A clean hub for everything we’ve published so far — jump into leader
+ profiles, brawler guides, and the main collection pages.
+ </p>
+
+ <div class="searchbar" role="search" aria-label="Search all articles">
+ <input
+ id="searchInput"
+ type="search"
+ placeholder="Search leaders, brawlers, or pages…"
+ autocomplete="off"
+ spellcheck="false"
+ aria-label="Search articles and pages"
+ />
+ </div>
+
+ <p
+ class="sub"
+ id="searchStatus"
+ aria-live="polite"
+ style="margin: 10px 0 0"
+ ></p>
+
+ <div class="collections" aria-label="Collections">
+ <a class="collection-card" href="#quizzes">
+ <span class="kicker">Section</span>
+ <strong>Quizzes</strong>
+ <p class="sub" style="margin: 0; color: var(--muted)">
+ Personality, history, and more.
+ </p>
+ <div class="meta">
+ <span class="chip" id="quizzesCount">0</span>
+ <span>Open →</span>
+ </div>
+ </a>
+
+ <a class="collection-card" href="#leaders">
+ <span class="kicker">Collection</span>
+ <strong>Historical Leaders</strong>
+ <p class="sub" style="margin: 0; color: var(--muted)">
+ Profiles and the main Leaders quiz.
+ </p>
+ <div class="meta">
+ <span class="chip" id="leadersCount">0</span>
+ <span>Open →</span>
+ </div>
+ </a>
+
+ <a class="collection-card" href="#brawlers">
+ <span class="kicker">Collection</span>
+ <strong>Brawl Stars Brawlers</strong>
+ <p class="sub" style="margin: 0; color: var(--muted)">
+ Every brawler page, in one place.
+ </p>
+ <div class="meta">
+ <span class="chip" id="brawlersCount">0</span>
+ <span>Open →</span>
+ </div>
+ </a>
+
+ <a class="collection-card" href="#pages">
+ <span class="kicker">Section</span>
+ <strong>All Pages</strong>
+ <p class="sub" style="margin: 0; color: var(--muted)">
+ Core pages + extras.
+ </p>
+ <div class="meta">
+ <span class="chip" id="pagesTotalCount">0</span>
+ <span>Open →</span>
+ </div>
+ </a>
+ </div>
+ </section>
+
+ <section class="section" id="quizzes">
+ <div class="section-head">
+ <div>
+ <h2>Quizzes</h2>
+ <p class="sub">All quiz pages we have right now.</p>
+ </div>
+ <span class="chip" id="quizzesCountChip">0 quizzes</span>
+ </div>
+ <div class="grid" id="quizzesGrid" aria-label="Quiz pages"></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="quizzesMore" type="button">
+ Show more
+ </button>
+ </div>
+ </section>
+
+ <section class="section" id="leaders">
+ <div class="section-head">
+ <div>
+ <h2>Leaders</h2>
+ <p class="sub">Profiles + the main leadership quiz.</p>
+ </div>
+ <a class="chip" href="leaders.html">Take the quiz →</a>
+ </div>
+ <div class="grid" id="leadersGrid" aria-label="Leader pages"></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="leadersMore" type="button">
+ Show more
+ </button>
+ </div>
+ </section>
+
+ <section class="section" id="brawlers">
+ <div class="section-head">
+ <div>
+ <h2>Brawlers</h2>
+ <p class="sub">Open any brawler page directly.</p>
+ </div>
+ <a class="chip" href="all-brawlers.html">Browse all brawlers →</a>
+ </div>
+ <div class="grid" id="brawlersGrid" aria-label="Brawler pages"></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="brawlersMore" type="button">
+ Show more
+ </button>
+ </div>
+ </section>
+
+ <section class="section" id="pages">
+ <div class="section-head">
+ <div>
+ <h2>All Pages</h2>
+ <p class="sub">Everything else in the site folder (grouped).</p>
+ </div>
+ <span class="chip" id="pagesCount">0 pages</span>
+ </div>
+
+ <div class="section-head" style="margin-top: 14px">
+ <div>
+ <h2 style="font-size: 1.1rem; margin: 0">Core</h2>
+ <p class="sub">Main site pages (home, about, community, etc.).</p>
+ </div>
+ <span class="chip" id="coreCount">0</span>
+ </div>
+ <div class="grid" id="coreGrid" aria-label="Core site pages"></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="coreMore" type="button">
+ Show more
+ </button>
+ </div>
+
+ <div class="section-head" style="margin-top: 18px">
+ <div>
+ <h2 style="font-size: 1.1rem; margin: 0">Footballers</h2>
+ <p class="sub">Football (soccer) player pages.</p>
+ </div>
+ <span class="chip" id="footballersCount">0</span>
+ </div>
+ <div
+ class="grid"
+ id="footballersGrid"
+ aria-label="Footballer pages"
+ ></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="footballersMore" type="button">
+ Show more
+ </button>
+ </div>
+
+ <div class="section-head" style="margin-top: 18px">
+ <div>
+ <h2 style="font-size: 1.1rem; margin: 0">Scientists</h2>
+ <p class="sub">Scientist profiles and related pages.</p>
+ </div>
+ <span class="chip" id="scientistsCount">0</span>
+ </div>
+ <div
+ class="grid"
+ id="scientistsGrid"
+ aria-label="Scientist pages"
+ ></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="scientistsMore" type="button">
+ Show more
+ </button>
+ </div>
+
+ <div class="section-head" style="margin-top: 18px">
+ <div>
+ <h2 style="font-size: 1.1rem; margin: 0">Marvel</h2>
+ <p class="sub">Marvel character pages.</p>
+ </div>
+ <span class="chip" id="marvelCount">0</span>
+ </div>
+ <div class="grid" id="marvelGrid" aria-label="Marvel pages"></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="marvelMore" type="button">
+ Show more
+ </button>
+ </div>
+
+ <div class="section-head" style="margin-top: 18px">
+ <div>
+ <h2 style="font-size: 1.1rem; margin: 0">Squid Game</h2>
+ <p class="sub">Squid Game characters and related pages.</p>
+ </div>
+ <span class="chip" id="squidgameCount">0</span>
+ </div>
+ <div
+ class="grid"
+ id="squidgameGrid"
+ aria-label="Squid Game pages"
+ ></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="squidgameMore" type="button">
+ Show more
+ </button>
+ </div>
+
+ <div class="section-head" style="margin-top: 18px">
+ <div>
+ <h2 style="font-size: 1.1rem; margin: 0">Wojak</h2>
+ <p class="sub">Wojak and meme-related pages.</p>
+ </div>
+ <span class="chip" id="wojakCount">0</span>
+ </div>
+ <div class="grid" id="wojakGrid" aria-label="Wojak pages"></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="wojakMore" type="button">
+ Show more
+ </button>
+ </div>
+
+ <div class="section-head" style="margin-top: 18px">
+ <div>
+ <h2 style="font-size: 1.1rem; margin: 0">YouTubers</h2>
+ <p class="sub">YouTuber/creator profiles and related pages.</p>
+ </div>
+ <span class="chip" id="youtubersCount">0</span>
+ </div>
+ <div class="grid" id="youtubersGrid" aria-label="YouTuber pages"></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="youtubersMore" type="button">
+ Show more
+ </button>
+ </div>
+
+ <div class="section-head" style="margin-top: 18px">
+ <div>
+ <h2 style="font-size: 1.1rem; margin: 0">MBTI</h2>
+ <p class="sub">Type pages (quiz is shown in Quizzes).</p>
+ </div>
+ <span class="chip" id="mbtiCount">0</span>
+ </div>
+ <div class="grid" id="mbtiGrid" aria-label="MBTI pages"></div>
+ <div class="load-more-row">
+ <button class="load-more-btn" id="mbtiMore" type="button">
+ Show more
+ </button>
+ </div>
+ </section>
+ </main>
+
+ <footer
+ style="
+ background: linear-gradient(
+ 135deg,
+ #0f172a 0%,
+ #1e293b 50%,
+ #334155 100%
+ );
+ color: #ffffff;
+ margin-top: 80px;
+ position: relative;
+ overflow: hidden;
+ "
+ >
+ <div
+ style="
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
+ z-index: 1;
+ "
+ ></div>
+
+ <div
+ style="
+ position: relative;
+ z-index: 2;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 60px 40px 40px;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 40px;
+ "
+ >
+ <div
+ style="display: flex; flex-direction: column; align-items: flex-start"
+ >
+ <img
+ src="zinvanalogo.png"
+ alt="Zinvana"
+ style="
+ width: 50px;
+ height: 50px;
+ border-radius: 12px;
+ margin-bottom: 16px;
+ box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+ "
+ />
+ <h3
+ style="
+ color: #ffffff;
+ font-size: 1.5rem;
+ margin-bottom: 16px;
+ font-weight: 600;
+ "
+ >
+ Zinvana
+ </h3>
+ <p
+ style="
+ color: #94a3b8;
+ line-height: 1.6;
+ margin: 0;
+ font-size: 1rem;
+ margin-bottom: 20px;
+ "
+ >
+ Discover your true self through fun, engaging personality quizzes
+ and assessments. From internet archetypes to personality types, we
+ help you explore different aspects of your personality in an
+ entertaining, educational way.
+ </p>
+ <div style="display: flex; gap: 16px; margin-bottom: 20px">
+ <a
+ href="https://x.com/farazglori80528"
+ target="_blank"
+ style="
+ width: 40px;
+ height: 40px;
+ background: rgba(255, 255, 255, 0.1);
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #ffffff;
+ text-decoration: none;
+ transition: all 0.3s ease;
+ backdrop-filter: blur(10px);
+ "
+ onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'"
+ onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+ ><svg
+ width="20"
+ height="20"
+ viewBox="0 0 24 24"
+ fill="currentColor"
+ >
+ <path
+ d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+ /></svg
+ ></a>
+ <a
+ href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
+ target="_blank"
+ style="
+ width: 40px;
+ height: 40px;
+ background: rgba(255, 255, 255, 0.1);
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #ffffff;
+ text-decoration: none;
+ transition: all 0.3s ease;
+ backdrop-filter: blur(10px);
+ "
+ onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'"
+ onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
+ ><svg
+ width="20"
+ height="20"
+ viewBox="0 0 24 24"
+ fill="currentColor"
+ >
+ <path
+ d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+ /></svg
+ ></a>
+ </div>
+ <p
+ style="
+ color: #94a3b8;
+ font-size: 0.9rem;
+ margin: 0;
+ line-height: 1.5;
+ "
+ >
+ Stay updated with our latest quizzes and personality assessments!
+ </p>
+ </div>
+
+ <div>
+ <h4
+ style="
+ color: #e2e8f0;
+ font-size: 1.125rem;
+ margin-bottom: 20px;
+ font-weight: 600;
+ "
+ >
+ Popular Quizzes
+ </h4>
+ <ul style="list-style: none; padding: 0; margin: 0">
+ <li style="margin-bottom: 12px">
+ <a
+ href="leaders.html"
+ style="
+ color: #94a3b8;
+ text-decoration: none;
+ transition: color 0.3s ease;
+ font-size: 0.95rem;
+ "
+ onmouseover="this.style.color='#667eea'"
+ onmouseout="this.style.color='#94a3b8'"
+ >Historical Leaders Personality Quiz</a
+ >
+ </li>
+ <li style="margin-bottom: 12px">
+ <a
+ href="football-personality-quiz.html"
+ style="
+ color: #94a3b8;
+ text-decoration: none;
+ transition: color 0.3s ease;
+ font-size: 0.95rem;
+ "
+ onmouseover="this.style.color='#667eea'"
+ onmouseout="this.style.color='#94a3b8'"
+ >Football Personality Quiz</a
+ >
+ </li>
+ <li style="margin-bottom: 12px">
+ <a
+ href="wojak-personality-quiz.html"
+ style="
+ color: #94a3b8;
+ text-decoration: none;
+ transition: color 0.3s ease;
+ font-size: 0.95rem;
+ "
+ onmouseover="this.style.color='#667eea'"
+ onmouseout="this.style.color='#94a3b8'"
+ >Wojak Personality Quiz</a
+ >
+ </li>
+ <li style="margin-bottom: 12px">
+ <a
+ href="perfect-country.html"
+ style="
+ color: #94a3b8;
+ text-decoration: none;
+ transition: color 0.3s ease;
+ font-size: 0.95rem;
+ "
+ onmouseover="this.style.color='#667eea'"
+ onmouseout="this.style.color='#94a3b8'"
+ >Perfect Country Quiz</a
+ >
+ </li>
+ <li style="margin-bottom: 12px">
+ <a
+ href="youtubers-personality-quiz.html"
+ style="
+ color: #94a3b8;
+ text-decoration: none;
+ transition: color 0.3s ease;
+ font-size: 0.95rem;
+ "
+ onmouseover="this.style.color='#667eea'"
+ onmouseout="this.style.color='#94a3b8'"
+ >YouTubers Personality Quiz</a
+ >
+ </li>
+ </ul>
+ </div>
+
+ <div>
+ <h4
+ style="
+ color: #e2e8f0;
+ font-size: 1.125rem;
+ margin-bottom: 20px;
+ font-weight: 600;
+ "
+ >
+ Resources
+ </h4>
+ <ul style="list-style: none; padding: 0; margin: 0">
+ <li style="margin-bottom: 12px">
+ <a
+ href="/about.html"
+ style="
+ color: #94a3b8;
+ text-decoration: none;
+ transition: color 0.3s ease;
+ font-size: 0.95rem;
+ "
+ onmouseover="this.style.color='#667eea'"
+ onmouseout="this.style.color='#94a3b8'"
+ >About Us</a
+ >
+ </li>
+ <li style="margin-bottom: 12px">
+ <a
+ href="/privacy.html"
+ style="
+ color: #94a3b8;
+ text-decoration: none;
+ transition: color 0.3s ease;
+ font-size: 0.95rem;
+ "
+ onmouseover="this.style.color='#667eea'"
+ onmouseout="this.style.color='#94a3b8'"
+ >Privacy Policy</a
+ >
+ </li>
+ </ul>
+ </div>
+ </div>
+
+ <div
+ style="
+ position: relative;
+ z-index: 2;
+ border-top: 1px solid rgba(255, 255, 255, 0.1);
+ padding: 30px 40px;
+ "
+ >
+ <div
+ style="
+ max-width: 1200px;
+ margin: 0 auto;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: 20px;
+ "
+ >
+ <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+ &copy; 2025 Zinvana. All rights reserved.
+ </p>
+ <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
+ Made with ❤️ by the Zinvana Team
+ </p>
+ </div>
+ <div
+ style="
+ color: #64748b;
+ font-size: 0.85rem;
+ margin: 20px auto 0;
+ text-align: center;
+ line-height: 1.5;
+ max-width: 600px;
+ "
+ >
+ Made with care by Zinvana. All quizzes are for entertainment purposes
+ only and do not collect personal data.
+ </div>
+ </div>
+ </footer>
+
+ <script>
+ // Enhanced responsive nav toggle with animated hamburger
+ const toggle = document.getElementById("menuToggle");
+ const menu = document.getElementById("mobileMenu");
+ const navLinks = menu?.querySelectorAll(".nav-link");
+
+ if (toggle && menu) {
+ toggle.addEventListener("click", () => {
+ const isOpen = menu.classList.toggle("open");
+ toggle.classList.toggle("active");
+ toggle.setAttribute("aria-expanded", String(isOpen));
+ });
+
+ // Close menu when a link is clicked
+ navLinks?.forEach((link) => {
+ link.addEventListener("click", () => {
+ menu.classList.remove("open");
+ toggle.classList.remove("active");
+ toggle.setAttribute("aria-expanded", "false");
+ });
+ });
+
+ // Close menu on escape key
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape" && menu.classList.contains("open")) {
+ menu.classList.remove("open");
+ toggle.classList.remove("active");
+ toggle.setAttribute("aria-expanded", "false");
+ }
+ });
+ }
+
+ const brawlerFiles = [
+ "all-brawlers.html",
+ "brawler-8bit.html",
+ "brawler-amber.html",
+ "brawler-angelo.html",
+ "brawler-ash.html",
+ "brawler-barley.html",
+ "brawler-bea.html",
+ "brawler-belle.html",
+ "brawler-berry.html",
+ "brawler-bibi.html",
+ "brawler-bo.html",
+ "brawler-bonnie.html",
+ "brawler-brock.html",
+ "brawler-bull.html",
+ "brawler-buster.html",
+ "brawler-buzz.html",
+ "brawler-byron.html",
+ "brawler-carl.html",
+ "brawler-chester.html",
+ "brawler-chuck.html",
+ "brawler-clancy.html",
+ "brawler-colette.html",
+ "brawler-colt.html",
+ "brawler-cordelius.html",
+ "brawler-crow.html",
+ "brawler-darryl.html",
+ "brawler-doug.html",
+ "brawler-draco.html",
+ "brawler-dynamike.html",
+ "brawler-edgar.html",
+ "brawler-elprimo.html",
+ "brawler-emz.html",
+ "brawler-eve.html",
+ "brawler-fang.html",
+ "brawler-frank.html",
+ "brawler-gale.html",
+ "brawler-gene.html",
+ "brawler-gray.html",
+ "brawler-griff.html",
+ "brawler-grom.html",
+ "brawler-gus.html",
+ "brawler-hank.html",
+ "brawler-jacky.html",
+ "brawler-janet.html",
+ "brawler-jessie.html",
+ "brawler-juju.html",
+ "brawler-kenji.html",
+ "brawler-kit.html",
+ "brawler-larry.html",
+ "brawler-lawrie.html",
+ "brawler-leon.html",
+ "brawler-lily.html",
+ "brawler-lola.html",
+ "brawler-lou.html",
+ "brawler-lumi.html",
+ "brawler-maisie.html",
+ "brawler-mandy.html",
+ "brawler-max.html",
+ "brawler-meeple.html",
+ "brawler-meg.html",
+ "brawler-melodie.html",
+ "brawler-mico.html",
+ "brawler-moe.html",
+ "brawler-mortis.html",
+ "brawler-mrp.html",
+ "brawler-nani.html",
+ "brawler-nita.html",
+ "brawler-ollie.html",
+ "brawler-otis.html",
+ "brawler-pam.html",
+ "brawler-pearl.html",
+ "brawler-penny.html",
+ "brawler-piper.html",
+ "brawler-poco.html",
+ "brawler-rico.html",
+ "brawler-rosa.html",
+ "brawler-rt.html",
+ "brawler-ruffs.html",
+ "brawler-sam.html",
+ "brawler-sandy.html",
+ "brawler-shade.html",
+ "brawler-shelly.html",
+ "brawler-spike.html",
+ "brawler-sprout.html",
+ "brawler-squeak.html",
+ "brawler-stu.html",
+ "brawler-surge.html",
+ "brawler-tara.html",
+ "brawler-tick.html",
+ "brawler-willow.html",
+ ];
+
+ const leaderFiles = [
+ "leaders-list.html",
+ "leaders-alexander.html",
+ "leaders-ardashir.html",
+ "leaders-artaxerxes.html",
+ "leaders-ashoka.html",
+ "leaders-ataturk.html",
+ "leaders-augustus.html",
+ "leaders-aurelius.html",
+ "leaders-bolivar.html",
+ "leaders-cambyses.html",
+ "leaders-catherine.html",
+ "leaders-churchill.html",
+ "leaders-cleopatra.html",
+ "leaders-cyrus.html",
+ "leaders-darius.html",
+ "leaders-elizabeth.html",
+ "leaders-elizabethI.html",
+ "leaders-gandhi.html",
+ "leaders-genghis.html",
+ "leaders-hatshepsut.html",
+ "leaders-jesus.html",
+ "leaders-joan.html",
+ "leaders-khosrow.html",
+ "leaders-lenin.html",
+ "leaders-lincoln.html",
+ "leaders-mandela.html",
+ "leaders-mansa.html",
+ "leaders-muhammad.html",
+ "leaders-napoleon.html",
+ "leaders-nzinga.html",
+ "leaders-saladin.html",
+ "leaders-shaka.html",
+ "leaders-shapur.html",
+ "leaders-suleiman.html",
+ "leaders-tokugawa.html",
+ "leaders-tubman.html",
+ "leaders-xerxes.html",
+ "leaders-zenobia.html",
+ "famous-leaders.html",
+ "history.html",
+ ];
+
+ // Put the most important quizzes at the very top of the Quizzes section.
+ const featuredQuizFiles = [
+ "leaders.html",
+ "mbti-personality-quiz.html",
+ "quiz.html",
+ "quiz-directory.html",
+ "quiz-gallery.html",
+ "quiz-builder.html",
+ "behold-the-dreamers-quiz.html",
+ ];
+
+ async function loadAllPagesList() {
+ try {
+ const res = await fetch("all-pages.json", { cache: "no-store" });
+ if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+ const json = await res.json();
+ if (!Array.isArray(json)) return [];
+ return json.filter((v) => typeof v === "string").filter((v) => v.toLowerCase().endsWith(".html"));
+ } catch {
+ return [];
+ }
+ }
+
+ function toTitleCase(text) {
+ return text.split(/\s+/).filter(Boolean).map((word) => {
+ const lower = word.toLowerCase();
+ if (
+ lower === "i" ||
+ lower === "ii" ||
+ lower === "iii" ||
+ lower === "iv"
+ ) {
+ return lower.toUpperCase();
+ }
+ return lower.charAt(0).toUpperCase() + lower.slice(1);
+ }).join(" ");
+ }
+
+ function humanizeFileName(filename) {
+ const base = filename.replace(/\.html$/i, "");
+ const withoutPrefix = base.replace(/^brawler-/i, "").replace(/^leaders-/i, "");
+
+ const special = {
+ "8bit": "8-Bit",
+ elprimo: "El Primo",
+ mrp: "Mr. P",
+ rt: "R-T",
+ neymarjr: "Neymar Jr",
+ };
+ if (special[withoutPrefix]) return special[withoutPrefix];
+
+ const withSpaces = withoutPrefix.replace(/[_-]+/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2").trim();
+
+ return toTitleCase(withSpaces);
+ }
+
+ function getInitials(text) {
+ const cleaned = String(text || "").replace(/[^a-z0-9\s]/gi, " ").trim();
+ if (!cleaned) return "?";
+ const parts = cleaned.split(/\s+/).filter(Boolean);
+ const first = parts[0]?.charAt(0) || "?";
+ const second = parts[1]?.charAt(0) || "";
+ return (first + second).toUpperCase();
+ }
+
+ function getSlugFromFile(filename) {
+ const base = String(filename || "").replace(/\.html$/i, "");
+ if (/^brawler-/i.test(base)) return base.replace(/^brawler-/i, "");
+ if (/^leaders-/i.test(base)) return base.replace(/^leaders-/i, "");
+ return base;
+ }
+
+ function buildImageCandidates(slug, title, label, href) {
+ if (!slug &&!title &&!href) return [];
+
+ const safeNormalize = (v) => {
+ const raw = String(v || "").trim();
+ if (!raw) return "";
+ try {
+ // Remove diacritics so filenames like "daviddobrik" can be matched from "David D\u00F6brik".
+ return raw.normalize("NFD").replace(/\p{Diacritic}+/gu, "");
+ } catch {
+ return raw;
+ }
+ };
+
+ const rawSlug = String(slug || "").trim();
+ const slugLower = safeNormalize(rawSlug).toLowerCase();
+
+ // Common filename patterns across the site:
+ // - hyphens vs highlights
+ // - removed separators (e.g. albert-einstein -> alberteinstein)
+ // - prefixed slugs (e.g. creator-emmachamberlain -> emmachamberlain)
+ const slugDashed = slugLower.replace(/_/g, "-");
+ const slugUnderscored = slugLower.replace(/-/g, "_");
+ const slugCompact = slugLower.replace(/[^a-z0-9]/g, "");
+ const slugNoPrefix = slugLower.replace(
+ /^(creator|footballer|scientist|marvel|wojak|youtuber|mbti)[-_]+/,
+ ""
+ );
+ const slugNoPrefixCompact = slugNoPrefix.replace(/[^a-z0-9]/g, "");
+
+ // Many pages have suffixes like "-standard" / "-legacy" that don't exist in image filenames.
+ const stripSuffix = (s) =>
+ String(s || "").replace(
+ /([_-])(standard|legacy|hi|profile|page|overview|bio|story)$/i,
+ ""
+ ).trim();
+
+ const slugCore = stripSuffix(slugLower);
+ const slugCoreDashed = stripSuffix(slugDashed);
+ const slugCoreUnderscored = stripSuffix(slugUnderscored);
+ const slugCoreCompact = stripSuffix(slugCompact);
+ const slugNoPrefixCore = stripSuffix(slugNoPrefix);
+ const slugNoPrefixCoreCompact = stripSuffix(slugNoPrefixCompact);
+
+ const tokenGuessesFrom = (s) => {
+ const parts = String(s || "").toLowerCase().replace(/[^a-z0-9\s_-]/g, " ").replace(/[_-]+/g, " ").trim().split(/\s+/).filter(Boolean);
+ if (!parts.length) return [];
+ const last = parts[parts.length - 1];
+ const last2 =
+ parts.length >= 2? `${parts[parts.length - 2]}_${last}`: "";
+ const first = parts[0];
+ const compactAll = parts.join("");
+ const dashedAll = parts.join("-");
+ const underscoredAll = parts.join("_");
+ return [
+ first,
+ last,
+ last2,
+ dashedAll,
+ underscoredAll,
+ compactAll,
+ ].filter(Boolean);
+ };
+
+ // Title-based guesses help when the slug differs from the actual filename.
+ const titleNorm = safeNormalize(title).replace(/\.(html?)$/i, "").replace(/[^a-z0-9\s_-]/gi, " ").replace(/[_-]+/g, " ").replace(/\s+/g, " ").trim();
+
+ // Href can carry useful base info too.
+ const hrefBase = String(href || "").split("/").pop()?.replace(/\.html$/i, "")?.trim();
+
+ const hrefSlug = hrefBase? safeNormalize(getSlugFromFile(hrefBase)).toLowerCase(): "";
+ const hrefSlugCore = stripSuffix(hrefSlug);
+
+ // If we know the label, sometimes the image matches the label's default page assets.
+ const labelNorm = String(label || "").trim();
+
+ // Some leader pages use legacy image filenames that don't match the slug.
+ // Reuse existing files by mapping those slugs to their actual images.
+ const avatarOverrides = {
+ ardashir: ["ardashir1.webp", "ardashir1.jpg"],
+ artaxerxes: [
+ "artaxerxesheader.webp",
+ "artaxerxesheader.jpg",
+ "artaxerxes1.webp",
+ "artaxerxes1.jpg",
+ ],
+ bolivar: ["simon_bolivar.webp", "simon_bolivar.jpg", "bolivar.jpg"],
+ cambyses: ["cambyses2.webp", "cambyses2.jpg"],
+ darius: ["darius1.webp", "darius1.jpg"],
+ elizabethi: ["elizabethI2.webp", "elizabethI2.jpg"],
+ joan: ["joan_of_arc.webp", "joan_of_arc.jpg", "joan_of_arc.jpg"],
+ khosrow: [
+ "khosrow1.webp",
+ "khosrow1.jpg",
+ "khosrow2.webp",
+ "khosrow2.jpg",
+ ],
+ mansa: ["mansa_musa.webp", "mansa_musa.jpg"],
+ nzinga: ["queen_nzinga.webp", "queen_nzinga.jpg"],
+ shapur: [
+ "shapur1.webp",
+ "shapur1.jpg",
+ "shapurheader.webp",
+ "shapurheader.jpg",
+ ],
+ tokugawa: [
+ "tokugawa_ieyasu.webp",
+ "tokugawa_ieyasu.jpg",
+ "tokugawa_legacy.webp",
+ "tokugawa_legacy.jpg",
+ ],
+ xerxes: [
+ "xerxes1.webp",
+ "xerxes1.jpg",
+ "xerxesheader.webp",
+ "xerxesheader.jpg",
+ ],
+ zenobia: ["queen_zenobia.webp", "queen_zenobia.jpg"],
+ "gi-hun": ["456.gif"],
+ gihun: ["456.gif"],
+ "sang-woo": ["218.gif"],
+ sangwoo: ["218.gif"],
+ ali: ["199.gif"],
+ deoksu: ["101.gif"],
+ "sae-byeok": ["067.gif", "67.gif"],
+ saebyeok: ["067.gif", "67.gif"],
+ ilnam: ["1.gif", "001.gif"],
+ frontman: ["frontman.gif"],
+ "brawlstars-quiz": ["brawlstarsgif.gif"],
+ "disney-princess-quiz": ["elsa.png"],
+ "dream-meaning": ["dream-dreaming.gif"],
+ quiz: ["cyrus.gif"],
+ "political-ideologie": ["revolution.gif"],
+ religion: ["muhammadheader.jpg"],
+ "superhero-marvel-personality-quiz": ["marvel.gif"],
+ "youtubers-personality-quiz": ["mrbeast.gif"],
+ neymarjr: ["neymar.gif", "neymar.webp", "neymar.jpg"],
+ "wojak-chad": ["chad.png"],
+ chad: ["chad.png"],
+ };
+
+ const bases = [
+ rawSlug,
+ slugLower,
+ slugDashed,
+ slugUnderscored,
+ slugCompact,
+ slugNoPrefix,
+ slugNoPrefixCompact,
+ slugCore,
+ slugCoreDashed,
+ slugCoreUnderscored,
+ slugCoreCompact,
+ slugNoPrefixCore,
+ slugNoPrefixCoreCompact,
+ hrefSlug,
+ hrefSlugCore,.tokenGuessesFrom(slugCore),.tokenGuessesFrom(slugNoPrefixCore),.tokenGuessesFrom(hrefSlugCore),.tokenGuessesFrom(titleNorm),
+ ].filter(Boolean);
+
+ const derived = [];
+ bases.forEach((b) => {
+ const clean = String(b).toLowerCase();
+ const dashed = clean.replace(/_/g, "-");
+ const highlighted = clean.replace(/-/g, "_");
+ const compact = clean.replace(/[^a-z0-9]/g, "");
+ derived.push(clean, dashed, highlighted, compact);
+ derived.push(
+ `${clean}header`,
+ `${dashed}header`,
+ `${highlighted}header`,
+ `${compact}header`
+ );
+ ["1", "2", "3"].forEach((n) => {
+ derived.push(
+ `${clean}${n}`,
+ `${dashed}${n}`,
+ `${highlighted}${n}`,
+ `${compact}${n}`
+ );
+ });
+ derived.push(
+ `${clean}_legacy`,
+ `${highlighted}_legacy`,
+ `${dashed}-legacy`,
+ `${clean}-legacy`
+ );
+ });
+ const exts = ["webp", "jpg", "png", "jpeg", "gif"];
+
+ const candidates = [];
+ const overrides = avatarOverrides[slugLower] || [];
+ overrides.forEach((v) => candidates.push(v));
+
+ // Prefer guessed local filenames; if none exist, later code will fall back to the label default.
+ derived.forEach((b) => {
+ exts.forEach((ext) => candidates.push(`${b}.${ext}`));
+ });
+
+ // As a last resort, try the default label avatar too (it will usually exist).
+ const def = getDefaultAvatarForLabel(labelNorm);
+ if (def) candidates.push(def);
+
+ // Dedupe while preserving order.
+ const seen = new Set();
+ return candidates.filter((c) => {
+ const key = String(c).toLowerCase();
+ if (seen.has(key)) return false;
+ seen.add(key);
+ return true;
+ });
+ }
+
+ function truncateText(text, maxChars) {
+ const max = Math.max(30, Number(maxChars) || 120);
+ const s = String(text || "").replace(/\s+/g, " ").trim();
+ if (!s) return "";
+ if (s.length <= max) return s;
+ const slice = s.slice(0, max - 1);
+ const lastSpace = slice.lastIndexOf(" ");
+ const trimmed = (lastSpace > 45? slice.slice(0, lastSpace): slice).trim().replace(/[\s,;:.!-]+$/g, "");
+ return `${trimmed}…`;
+ }
+
+ function sanitizeDescription(raw) {
+ let s = String(raw || "");
+ // Fix common mojibake sequences (mis-decoded UTF-8) + normalize smart quotes.
+ s = s.replace(/[â€œâ€]/g, '"').replace(/[â€˜â€™]/g, "'").replace(/[“”]/g, '"').replace(/[‘’]/g, "'");
+ // Remove emojis/pictographs where supported.
+ try {
+ s = s.replace(/\p{Extended_Pictographic}/gu, "");
+ } catch {
+ // Ignore if not supported.
+ }
+ s = s.replace(/\s+/g, " ").trim();
+ s = s.replace(/!{2,}/g, "!").replace(/\?{2,}/g, "?");
+ s = s.replace(/^["'\-–—: â€“â€”: ]+/, "").replace(/["'\-–—: â€“â€”: ]+$/, "");
+ return s.trim();
+ }
+
+ function normalizeUrlLike(raw) {
+ const s = String(raw || "").trim();
+ if (!s) return "";
+ // Keep absolute URLs.
+ if (/^https?:\/\//i.test(s)) return s;
+ // Keep root-relative URLs.
+ if (s.startsWith("/")) return s;
+ // Treat as relative.
+ return s.replace(/^\.\//, "");
+ }
+
+ function extractBestImageFromDoc(doc) {
+ if (!doc) return "";
+
+ const fromMeta = (selector) =>
+ normalizeUrlLike(
+ doc.querySelector(selector)?.getAttribute("content")
+ );
+
+ const og = fromMeta('meta[property="og:image"]');
+ if (og) return og;
+
+ const tw = fromMeta('meta[name="twitter:image"]');
+ if (tw) return tw;
+
+ const linkImg = normalizeUrlLike(
+ doc.querySelector('link[rel="image_src"]')?.getAttribute("href")
+ );
+ if (linkImg) return linkImg;
+
+ const mainOrArticle =
+ doc.querySelector("main") || doc.querySelector("article");
+ if (mainOrArticle) {
+ const img = mainOrArticle.querySelector("img[src]");
+ const src = normalizeUrlLike(img?.getAttribute("src"));
+ return src || "";
+ }
+
+ // Some pages don't use <main>/<article>. If they have a global footer/header,
+ // ignore those so the footer logo doesn't become the preview image.
+ const imgs = Array.from(doc.querySelectorAll("img[src]"));
+ for (const img of imgs) {
+ if (img.closest("header, nav, footer")) continue;
+ const src = normalizeUrlLike(img.getAttribute("src"));
+ if (src) return src;
+ }
+ return "";
+ }
+
+ function extractReadableTextFromDoc(doc) {
+ if (!doc) return "";
+ const mainOrArticle =
+ doc.querySelector("main") || doc.querySelector("article");
+ if (mainOrArticle) return mainOrArticle.innerText || "";
+
+ // Fall back to body text, but strip common chrome so a shared footer
+ // doesn't blow up reading-time estimates.
+ const body = doc.body;
+ if (!body) return "";
+
+ const clone = body.cloneNode(true);
+ clone.querySelectorAll("header, nav, footer, script, style, noscript").forEach((el) => el.remove());
+ return clone.innerText || "";
+ }
+
+ function looksSpammyDescription(raw) {
+ const s = String(raw || "");
+ const lower = s.toLowerCase();
+ const tooManyExclaims = (s.match(/!/g) || []).length >= 3;
+ const hasEmoji = /[\u{1F300}-\u{1FAFF}]/u.test(s);
+ const hasHype =
+ lower.includes("ultimate") ||
+ lower.includes("must-read") ||
+ lower.includes("beats wikipedia") ||
+ lower.includes("complete guide") ||
+ lower.includes("rare facts") ||
+ lower.includes("untold") ||
+ lower.includes("stunning visuals") ||
+ lower.includes("ðŸ”¥") ||
+ lower.includes("ðŸ†");
+ const hasAllCapsChunk = /\b[A-Z]{5,}\b/.test(s);
+ return hasEmoji || tooManyExclaims || hasAllCapsChunk || hasHype;
+ }
+
+ function defaultExcerptFor(href, title, label) {
+ const file = String(href || "").toLowerCase();
+ const t = String(title || "").trim();
+
+ if (label === "Leader") {
+ return "Leader profile: story, impact, and legacy.";
+ }
+ if (label === "Brawler") {
+ return "Brawler page: role, strengths, and quick tips.";
+ }
+ if (label === "MBTI") {
+ return "MBTI: overview, traits, and what it means.";
+ }
+ if (label === "Creator") {
+ return "Creator profile: bio, highlights, and links.";
+ }
+ if (label === "Quiz") {
+ return "Quiz: take it and see your result.";
+ }
+ if (label === "Footballer") {
+ return "Footballer profile: career, clubs, and highlights.";
+ }
+ if (label === "Scientist") {
+ return "Scientist profile: discoveries, impact, and legacy.";
+ }
+ if (label === "Marvel") {
+ return "Marvel character page: overview, story, and key facts.";
+ }
+ if (label === "Squid Game") {
+ return "Squid Game page: characters, moments, and details.";
+ }
+ if (label === "Wojak") {
+ return "Wojak page: meme lore, variants, and context.";
+ }
+ if (label === "YouTuber") {
+ return "Creator profile: bio, highlights, and links.";
+ }
+ if (label === "Draft") {
+ return "Draft/test page (internal).";
+ }
+
+ if (file.includes("privacy")) return "Privacy policy and data info.";
+ if (file.includes("about")) return "About Zinvana and what we do.";
+ if (file.includes("help")) return "Help and common questions.";
+ if (file.includes("community")) return "Community and participation.";
+ if (file.includes("feed")) return "Latest updates and posts.";
+ if (file.includes("trending")) return "What’s popular right now.";
+
+ return t? `Open: ${t}.`: "Open this page.";
+ }
+
+ function makeCard(href, title, label) {
+ const a = document.createElement("a");
+ a.className = "item";
+ a.href = href;
+ a.setAttribute("aria-label", `${label}: ${title}`);
+ a.dataset.title = title;
+ a.dataset.label = label;
+ a.dataset.file = href;
+
+ const slug = getSlugFromFile(href);
+ a.dataset.slug = slug;
+ a.dataset.hiddenBySearch = "0";
+
+ const defaultExcerpt = defaultExcerptFor(href, title, label);
+
+ const typeText =
+ label === "Leader"? "Leader profile": label === "Brawler"? "Brawler page": label === "Footballer"? "Footballer": label === "Scientist"? "Scientist": label;
+
+ a.dataset.search = `${title} ${label} ${slug}`.trim();
+
+ const initials = getInitials(title);
+ a.innerHTML = `
 					<div class="avatar" aria-hidden="true">
 						<img class="avatar__img" alt="" loading="lazy" decoding="async" />
 						<span class="avatar__fallback">${initials}</span>
 					</div>
 					<strong>${title}</strong>
-          <p class="excerpt" data-role="excerpt">${truncateText(
-            defaultExcerpt,
-            120
-          )}</p>
+ <p class="excerpt" data-role="excerpt">${truncateText(
+ defaultExcerpt,
+ 120
+ )}</p>
 					<div class="metaRow" aria-label="Summary">
 						<span class="pill" data-role="type">${typeText}</span>
-            <span class="pill" data-role="reading">Estimating…</span>
+ <span class="pill" data-role="reading">Estimating…</span>
 					</div>
 					<div class="hint">
 						<span>${label}</span>
-            <span>Open →</span>
+ <span>Open →</span>
 					</div>
 				`;
-        return a;
-      }
-
-      function getDefaultAvatarForLabel(label) {
-        const t = String(label || "").toLowerCase();
-        if (t === "leader") return "leader.webp";
-        if (t === "brawler") return "brawl.webp";
-        if (t === "quiz") return "leadership-quizbanner.webp";
-        if (t === "footballer") return "football.gif";
-        if (t === "scientist") return "alberteinstein.webp";
-        if (t === "marvel") return "marvel.gif";
-        if (t === "squid game") return "squidgame.webp";
-        if (t === "wojak") return "wojak.png";
-        if (t === "mbti") return "mbti.png";
-        if (t === "creator" || t === "youtuber") return "youtube.png";
-        return "zinvanalogo.png";
-      }
-
-      function computeReadingTimeMinutes(text) {
-        const words = String(text || "")
-          .replace(/\s+/g, " ")
-          .trim()
-          .split(" ")
-          .filter(Boolean).length;
-        const minutes = Math.ceil(words / 200);
-        return Math.min(15, Math.max(1, minutes));
-      }
-
-      async function enrichCard(card) {
-        if (!card || card.dataset.enriched === "1") return;
-        card.dataset.enriched = "1";
-
-        const href = card.getAttribute("href");
-        if (!href) return;
-
-        const excerptEl = card.querySelector('[data-role="excerpt"]');
-        const readingEl = card.querySelector('[data-role="reading"]');
-        const avatarImgEl = card.querySelector(".avatar__img");
-        const avatarFallbackEl = card.querySelector(".avatar__fallback");
-
-        try {
-          const res = await fetch(href, { cache: "force-cache" });
-          if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
-          const html = await res.text();
-          const doc = new DOMParser().parseFromString(html, "text/html");
-
-          // Try to use a real image from the page (og:image / twitter:image / first <img>)
-          // so cards across categories show a relevant thumbnail when available.
-          const bestImg = extractBestImageFromDoc(doc);
-          const currentSrc = normalizeUrlLike(
-            avatarImgEl?.getAttribute("src") || ""
-          );
-          const def = getDefaultAvatarForLabel(card.dataset.label || "");
-          const isDefaultish =
-            !currentSrc ||
-            currentSrc === def ||
-            currentSrc === "zinvanalogo.png";
-
-          if (avatarImgEl && isDefaultish) {
-            const slug = card.dataset.slug || "";
-            const title = card.dataset.title || "";
-            const label = card.dataset.label || "";
-
-            // Build a robust candidate chain: local guesses first, then the page-derived best image,
-            // and finally the label default.
-            const chain = buildImageCandidates(slug, title, label, href);
-            if (bestImg) chain.push(bestImg);
-            chain.push(def);
-
-            // Dedupe while preserving order.
-            const seen = new Set();
-            const candidates = chain
-              .map((v) => normalizeUrlLike(v))
-              .filter(Boolean)
-              .filter((v) => {
-                const k = String(v).toLowerCase();
-                if (seen.has(k)) return false;
-                seen.add(k);
-                return true;
-              });
-
-            let idx = 0;
-            const tryNext = () => {
-              if (idx >= candidates.length) {
-                avatarImgEl.style.display = "none";
-                if (avatarFallbackEl) avatarFallbackEl.style.display = "block";
-                return;
-              }
-              avatarImgEl.src = candidates[idx++];
-            };
-
-            avatarImgEl.onload = () => {
-              avatarImgEl.style.display = "block";
-              if (avatarFallbackEl) avatarFallbackEl.style.display = "none";
-            };
-            avatarImgEl.onerror = tryNext;
-
-            tryNext();
-          }
-
-          const metaDesc = doc.querySelector(
-            'meta[name="description"]'
-          )?.content;
-          if (excerptEl) {
-            const raw = String(metaDesc || "").trim();
-            const cleaned = sanitizeDescription(raw);
-            const isSpammy = raw ? looksSpammyDescription(raw) : false;
-
-            const fallback = defaultExcerptFor(
-              href,
-              card.dataset.title || "",
-              card.dataset.label || "Page"
-            );
-
-            const chosen = cleaned && !isSpammy ? cleaned : fallback;
-            const short = truncateText(chosen, 120);
-
-            if (short) {
-              excerptEl.textContent = short;
-              card.dataset.search = `${card.dataset.search || ""} ${short}`
-                .trim()
-                .toLowerCase();
-            }
-          }
-
-          const text = extractReadableTextFromDoc(doc);
-          const mins = computeReadingTimeMinutes(text);
-          if (readingEl) readingEl.textContent = `${mins} min read`;
-        } catch {
-          if (readingEl) readingEl.textContent = "Quick read";
-        }
-      }
-
-      function wireCardEnrichment() {
-        const cards = Array.from(document.querySelectorAll("a.item"));
-        if (!cards.length) return;
-
-        if (!("IntersectionObserver" in window)) {
-          cards.slice(0, 18).forEach((c) => enrichCard(c));
-          return;
-        }
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) return;
-              enrichCard(entry.target);
-              observer.unobserve(entry.target);
-            });
-          },
-          { rootMargin: "450px 0px" }
-        );
-
-        cards.forEach((card) => observer.observe(card));
-      }
-
-      function hydrateAvatars(root) {
-        const cards = (root || document).querySelectorAll("a.item");
-        cards.forEach((card) => {
-          const slug = card.dataset.slug || "";
-          const label = card.dataset.label || "";
-          const img = card.querySelector(".avatar__img");
-          const fallback = card.querySelector(".avatar__fallback");
-
-          if (!img || !fallback) return;
-
-          const candidates = buildImageCandidates(
-            slug,
-            card.dataset.title || "",
-            label,
-            card.dataset.file || ""
-          );
-          if (!candidates.length) {
-            const def = getDefaultAvatarForLabel(label);
-            img.onerror = () => {
-              img.style.display = "none";
-              fallback.style.display = "block";
-            };
-            img.onload = () => {
-              img.style.display = "block";
-              fallback.style.display = "none";
-            };
-            img.src = def;
-            return;
-          }
-
-          let idx = 0;
-          fallback.style.display = "none";
-
-          const tryNext = () => {
-            if (idx >= candidates.length) {
-              const def = getDefaultAvatarForLabel(label);
-              img.onerror = () => {
-                img.style.display = "none";
-                fallback.style.display = "block";
-              };
-              img.onload = () => {
-                img.style.display = "block";
-                fallback.style.display = "none";
-              };
-              img.src = def;
-              return;
-            }
-            img.src = candidates[idx++];
-          };
-
-          img.onerror = tryNext;
-          img.onload = () => {
-            img.style.display = "block";
-            fallback.style.display = "none";
-          };
-
-          tryNext();
-        });
-      }
-
-      function wireSearch() {
-        const input = document.getElementById("searchInput");
-        if (!input) return;
-
-        const status = document.getElementById("searchStatus");
-
-        const getFirstVisibleCard = () => {
-          const cards = Array.from(document.querySelectorAll("a.item"));
-          return cards.find((c) => !c.hidden) || null;
-        };
-
-        const apply = () => {
-          const q = input.value.trim().toLowerCase();
-          const cards = Array.from(document.querySelectorAll("a.item"));
-
-          let visibleCount = 0;
-          const byType = {
-            Leader: 0,
-            Brawler: 0,
-            Quiz: 0,
-            Footballer: 0,
-            Scientist: 0,
-            Marvel: 0,
-            "Squid Game": 0,
-            Wojak: 0,
-            YouTuber: 0,
-            MBTI: 0,
-            Page: 0,
-            Draft: 0,
-          };
-          cards.forEach((card) => {
-            const baseHay = `${card.dataset.title || ""} ${
-              card.dataset.label || ""
-            } ${(card.dataset.slug || "").replace(/[_-]+/g, " ")}`
-              .trim()
-              .toLowerCase();
-            const extraHay = String(card.dataset.search || "").toLowerCase();
-            const hay = `${baseHay} ${extraHay}`.trim();
-
-            const isVisible = q ? hay.includes(q) : true;
-            card.dataset.hiddenBySearch = isVisible ? "0" : "1";
-            card.hidden = !isVisible;
-            if (isVisible) {
-              visibleCount++;
-              const t = String(card.dataset.label || "Page");
-              if (Object.prototype.hasOwnProperty.call(byType, t)) byType[t]++;
-              // If the user is searching, prioritize enriching visible results.
-              if (q) enrichCard(card);
-            }
-          });
-
-          if (status) {
-            const raw = input.value.trim();
-            if (!q) {
-              status.textContent =
-                "Tip: Search by name, type (Quiz/Leader/Brawler/etc.), or keywords.";
-              return;
-            }
-
-            if (visibleCount === 0) {
-              status.textContent = `No results for “${raw}”. (Esc clears)`;
-              return;
-            }
-
-            const otherPages =
-              visibleCount - (byType.Leader + byType.Brawler + byType.Quiz);
-
-            status.textContent = `Showing ${visibleCount} result${
-              visibleCount === 1 ? "" : "s"
-            } (Quizzes: ${byType.Quiz}, Leaders: ${byType.Leader}, Brawlers: ${
-              byType.Brawler
-            }, Other: ${otherPages}) for “${raw}”. Press Enter to jump. (Esc clears)`;
-          }
-
-          refreshLoadMoreButtons(Boolean(q));
-        };
-
-        input.addEventListener("input", apply);
-        input.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") {
-            input.value = "";
-            apply();
-          }
-
-          if (e.key === "Enter") {
-            const q = input.value.trim();
-            if (!q) return;
-            apply();
-            const first = getFirstVisibleCard();
-            if (!first) return;
-            first.scrollIntoView({ behavior: "smooth", block: "start" });
-            // Move focus for accessibility + clarity.
-            requestAnimationFrame(() => first.focus());
-          }
-        });
-
-        apply();
-      }
-
-      const loadMoreState = {};
-
-      function setupLoadMore(gridId, buttonId, chunk = 3) {
-        const grid = document.getElementById(gridId);
-        const button = document.getElementById(buttonId);
-        if (!grid || !button) return;
-
-        const state = { grid, button, chunk, shown: chunk };
-        loadMoreState[gridId] = state;
-
-        const apply = (isSearching = false) => {
-          const items = Array.from(grid.querySelectorAll("a.item"));
-          if (!items.length) {
-            button.hidden = true;
-            return;
-          }
-
-          if (isSearching) {
-            items.forEach((item) => item.classList.remove("hidden-by-limit"));
-            button.hidden = true;
-            return;
-          }
-
-          let shown = 0;
-          items.forEach((item) => {
-            const hiddenBySearch = item.dataset.hiddenBySearch === "1";
-            if (hiddenBySearch) {
-              item.classList.add("hidden-by-limit");
-              return;
-            }
-            const canShow = shown < state.shown;
-            item.classList.toggle("hidden-by-limit", !canShow);
-            if (canShow) shown++;
-          });
-
-          const remaining =
-            items.filter((i) => i.dataset.hiddenBySearch !== "1").length -
-            state.shown;
-
-          if (remaining > 0) {
-            button.hidden = false;
-            const next = Math.min(state.chunk, remaining);
-            button.textContent = `Show ${next} more`;
-          } else {
-            button.hidden = true;
-          }
-        };
-
-        state.apply = apply;
-
-        button.addEventListener("click", () => {
-          state.shown += state.chunk;
-          apply(false);
-        });
-
-        const searchingNow = Boolean(
-          document.getElementById("searchInput")?.value.trim()
-        );
-        apply(searchingNow);
-      }
-
-      function refreshLoadMoreButtons(isSearching = false) {
-        Object.values(loadMoreState).forEach((state) => {
-          if (typeof state.apply === "function") state.apply(isSearching);
-        });
-      }
-
-      function renderGrid(gridId, files, label, options = {}) {
-        const grid = document.getElementById(gridId);
-        if (!grid) return;
-
-        const { collectionFirstTitle } = options;
-        const fragment = document.createDocumentFragment();
-
-        files.forEach((file) => {
-          if (!file || typeof file !== "string") return;
-          const title =
-            file === "index.html"
-              ? "Main page"
-              : file === "all-brawlers.html"
-              ? collectionFirstTitle || "All Brawlers"
-              : file === "leaders.html"
-              ? "Historical Leaders Quiz"
-              : file === "leaders-list.html"
-              ? "All Leaders"
-              : humanizeFileName(file);
-          fragment.appendChild(makeCard(file, title, label));
-        });
-
-        grid.appendChild(fragment);
-      }
-
-      const leaderProfilesCount = leaderFiles.filter((f) => {
-        if (!f.startsWith("leaders-")) return false;
-        if (f === "leaders-list.html") return false;
-        if (f.startsWith("leaders-quiz")) return false;
-        return true;
-      }).length;
-      const brawlerProfilesCount = brawlerFiles.filter((f) =>
-        f.startsWith("brawler-")
-      ).length;
-
-      document.getElementById(
-        "leadersCount"
-      ).textContent = `${leaderProfilesCount} profiles`;
-      document.getElementById(
-        "brawlersCount"
-      ).textContent = `${brawlerProfilesCount} pages`;
-
-      renderGrid("leadersGrid", leaderFiles, "Leader", {
-        collectionFirstTitle: "All Leaders",
-      });
-      renderGrid("brawlersGrid", brawlerFiles, "Brawler", {
-        collectionFirstTitle: "All Brawlers",
-      });
-
-      setupLoadMore("leadersGrid", "leadersMore");
-      setupLoadMore("brawlersGrid", "brawlersMore");
-
-      (async () => {
-        const allFiles = await loadAllPagesList();
-        if (!allFiles.length) return;
-
-        const eligible = allFiles.filter((f) => {
-          if (!f || typeof f !== "string") return false;
-          if (f === "all-articles.html") return false;
-          if (leaderFiles.includes(f)) return false;
-          if (brawlerFiles.includes(f)) return false;
-          return true;
-        });
-
-        const used = new Set();
-        const take = (predicate) => {
-          const picked = [];
-          eligible.forEach((f) => {
-            const key = String(f).toLowerCase();
-            if (used.has(key)) return;
-            if (!predicate(f)) return;
-            used.add(key);
-            picked.push(f);
-          });
-          return picked;
-        };
-
-        const isDraftLike = (f) => {
-          const s = String(f).toLowerCase();
-          return (
-            s.startsWith("_tmp_") ||
-            s.includes("backup") ||
-            s.includes("broken") ||
-            s.includes("old") ||
-            s.includes("fixed") ||
-            s.startsWith("test") ||
-            s.includes("test_")
-          );
-        };
-
-        const forcedQuizFileSet = new Set(
-          [
-            "dream-meaning.html",
-            "mental-health.html",
-            "perfect-country.html",
-            "political-ideology.html",
-            "religion.html",
-          ].map((v) => v.toLowerCase())
-        );
-
-        const forcedFootballerSet = new Set(
-          [
-            "casemiro.html",
-            "ronaldinho.html",
-            "neymarjr.html",
-            "rodri.html",
-            "pedri.html",
-            "xavi.html",
-            "trent_alexander_arnold.html",
-          ].map((v) => v.toLowerCase())
-        );
-
-        // Some non-footballer pages happen to use underscores too; keep them out.
-        const excludedFootballerSet = new Set(
-          [
-            "history.html",
-            "influencial_leaders.html",
-            "gorbachev_reforms.html",
-            "sun_tzu.html",
-          ].map((v) => v.toLowerCase())
-        );
-
-        // Hide drafts/tests from the public list.
-        take(isDraftLike);
-        const isQuizLike = (f) => {
-          const s = String(f).toLowerCase();
-          return (
-            forcedQuizFileSet.has(s) ||
-            s.includes("quiz") ||
-            s.startsWith("quizzes/") ||
-            s === "geo-zini.html" ||
-            s === "geo-zini" ||
-            s === "geozini.html"
-          );
-        };
-
-        const markUsed = (files) => {
-          (files || []).forEach((f) => {
-            const key = String(f || "").toLowerCase();
-            if (!key) return;
-            used.add(key);
-          });
-        };
-
-        // Quizzes should be visible first, including key quizzes that might be "core".
-        const featuredQuizzes = featuredQuizFiles
-          .filter((f) =>
-            eligible.some(
-              (e) => String(e).toLowerCase() === String(f).toLowerCase()
-            )
-          )
-          .filter(Boolean);
-        markUsed(featuredQuizzes);
-        const otherQuizzes = take(
-          (f) => isQuizLike(f) && !featuredQuizzes.includes(f)
-        );
-        const quizzes = [...featuredQuizzes, ...otherQuizzes];
-
-        // MBTI section should show type pages (quiz belongs in Quizzes).
-        const mbti = take((f) => String(f).toLowerCase().startsWith("mbti-"));
-
-        // YouTubers = creators.
-        const youtubers = take(
-          (f) =>
-            String(f).toLowerCase().startsWith("creator-") ||
-            String(f).toLowerCase() === "creator-profile.html" ||
-            String(f).toLowerCase().includes("youtuber")
-        );
-
-        const scientists = take((f) => {
-          const s = String(f).toLowerCase();
-          return s.includes("einstein") || s.includes("scientist");
-        });
-
-        const footballers = take((f) => {
-          const s = String(f);
-          const lower = s.toLowerCase();
-          // Many footballer pages use underscores (e.g., first_last.html).
-          return (
-            !excludedFootballerSet.has(lower) &&
-            (forcedFootballerSet.has(lower) ||
-              (lower.endsWith(".html") &&
-                s.includes("_") &&
-                !lower.startsWith("_")))
-          );
-        });
-
-        const marvelSet = new Set(
-          [
-            "ant-man.html",
-            "black-panther.html",
-            "black-widow.html",
-            "iron-man.html",
-            "thor.html",
-            "hawkeye.html",
-            "hulk.html",
-            "falcon.html",
-            "spider-man.html",
-          ].map((v) => v.toLowerCase())
-        );
-        const marvel = take((f) => marvelSet.has(String(f).toLowerCase()));
-
-        const squidGameFileSet = new Set(
-          [
-            "squidgame.html",
-            "squidgame-about.html",
-            "squidgame-about-new.html",
-            "squidgame_new.html",
-            "squidgame_backup.html",
-            "ali.html",
-            "thanos.html",
-            "gi-hun.html",
-            "sae-byeok.html",
-            "sang-woo.html",
-            "se-mi.html",
-            "deoksu.html",
-            "ilnam.html",
-            "frontman.html",
-            "lee-myung-gi.html",
-            "park-jung-bae.html",
-          ].map((v) => v.toLowerCase())
-        );
-
-        const squidgame = take((f) => {
-          const s = String(f).toLowerCase();
-          return (
-            squidGameFileSet.has(s) ||
-            s.includes("squidgame") ||
-            s.includes("squid-game")
-          );
-        });
-
-        const wojak = take((f) => String(f).toLowerCase().includes("wojak"));
-
-        const coreNames = new Set(
-          [
-            "index.html",
-            "about.html",
-            "help.html",
-            "privacy.html",
-            "categories.html",
-            "community.html",
-            "feed.html",
-            "seo-analysis.html",
-            "admin.html",
-            "vote.html",
-            "vote-professional.html",
-            "all-empires.html",
-          ].map((v) => v.toLowerCase())
-        );
-        const core = take((f) => coreNames.has(String(f).toLowerCase()));
-
-        const setText = (id, text) => {
-          const el = document.getElementById(id);
-          if (el) el.textContent = text;
-        };
-
-        const visiblePagesCount =
-          core.length +
-          footballers.length +
-          scientists.length +
-          marvel.length +
-          squidgame.length +
-          wojak.length +
-          youtubers.length +
-          mbti.length;
-
-        setText(
-          "pagesTotalCount",
-          `${visiblePagesCount} page${visiblePagesCount === 1 ? "" : "s"}`
-        );
-        setText(
-          "pagesCount",
-          `${visiblePagesCount} page${visiblePagesCount === 1 ? "" : "s"}`
-        );
-        setText(
-          "coreCount",
-          `${core.length} page${core.length === 1 ? "" : "s"}`
-        );
-        setText(
-          "footballersCount",
-          `${footballers.length} page${footballers.length === 1 ? "" : "s"}`
-        );
-        setText(
-          "scientistsCount",
-          `${scientists.length} page${scientists.length === 1 ? "" : "s"}`
-        );
-        setText(
-          "marvelCount",
-          `${marvel.length} page${marvel.length === 1 ? "" : "s"}`
-        );
-        setText(
-          "squidgameCount",
-          `${squidgame.length} page${squidgame.length === 1 ? "" : "s"}`
-        );
-        setText(
-          "wojakCount",
-          `${wojak.length} page${wojak.length === 1 ? "" : "s"}`
-        );
-        setText(
-          "youtubersCount",
-          `${youtubers.length} page${youtubers.length === 1 ? "" : "s"}`
-        );
-        setText(
-          "mbtiCount",
-          `${mbti.length} page${mbti.length === 1 ? "" : "s"}`
-        );
-        setText(
-          "quizzesCount",
-          `${quizzes.length} quiz${quizzes.length === 1 ? "" : "zes"}`
-        );
-        setText(
-          "quizzesCountChip",
-          `${quizzes.length} quiz${quizzes.length === 1 ? "" : "zes"}`
-        );
-
-        renderGrid("quizzesGrid", quizzes, "Quiz");
-        renderGrid("coreGrid", core, "Page");
-        renderGrid("footballersGrid", footballers, "Footballer");
-        renderGrid("scientistsGrid", scientists, "Scientist");
-        renderGrid("marvelGrid", marvel, "Marvel");
-        renderGrid("squidgameGrid", squidgame, "Squid Game");
-        renderGrid("wojakGrid", wojak, "Wojak");
-        renderGrid("youtubersGrid", youtubers, "YouTuber");
-        renderGrid("mbtiGrid", mbti, "MBTI");
-
-        setupLoadMore("quizzesGrid", "quizzesMore");
-        setupLoadMore("coreGrid", "coreMore");
-        setupLoadMore("footballersGrid", "footballersMore");
-        setupLoadMore("scientistsGrid", "scientistsMore");
-        setupLoadMore("marvelGrid", "marvelMore");
-        setupLoadMore("squidgameGrid", "squidgameMore");
-        setupLoadMore("wojakGrid", "wojakMore");
-        setupLoadMore("youtubersGrid", "youtubersMore");
-        setupLoadMore("mbtiGrid", "mbtiMore");
-
-        hydrateAvatars(document.getElementById("quizzesGrid"));
-        hydrateAvatars(document.getElementById("coreGrid"));
-        hydrateAvatars(document.getElementById("footballersGrid"));
-        hydrateAvatars(document.getElementById("scientistsGrid"));
-        hydrateAvatars(document.getElementById("marvelGrid"));
-        hydrateAvatars(document.getElementById("squidgameGrid"));
-        hydrateAvatars(document.getElementById("wojakGrid"));
-        hydrateAvatars(document.getElementById("youtubersGrid"));
-        hydrateAvatars(document.getElementById("mbtiGrid"));
-
-        wireCardEnrichment();
-      })();
-
-      hydrateAvatars(document.getElementById("leadersGrid"));
-      hydrateAvatars(document.getElementById("brawlersGrid"));
-      wireCardEnrichment();
-      wireSearch();
-    </script>
-  </body>
+ return a;
+ }
+
+ function getDefaultAvatarForLabel(label) {
+ const t = String(label || "").toLowerCase();
+ if (t === "leader") return "leader.webp";
+ if (t === "brawler") return "brawl.webp";
+ if (t === "quiz") return "leadership-quizbanner.webp";
+ if (t === "footballer") return "football.gif";
+ if (t === "scientist") return "alberteinstein.webp";
+ if (t === "marvel") return "marvel.gif";
+ if (t === "squid game") return "squidgame.webp";
+ if (t === "wojak") return "wojak.png";
+ if (t === "mbti") return "mbti.png";
+ if (t === "creator" || t === "youtuber") return "youtube.png";
+ return "zinvanalogo.png";
+ }
+
+ function computeReadingTimeMinutes(text) {
+ const words = String(text || "").replace(/\s+/g, " ").trim().split(" ").filter(Boolean).length;
+ const minutes = Math.ceil(words / 200);
+ return Math.min(15, Math.max(1, minutes));
+ }
+
+ async function enrichCard(card) {
+ if (!card || card.dataset.enriched === "1") return;
+ card.dataset.enriched = "1";
+
+ const href = card.getAttribute("href");
+ if (!href) return;
+
+ const excerptEl = card.querySelector('[data-role="excerpt"]');
+ const readingEl = card.querySelector('[data-role="reading"]');
+ const avatarImgEl = card.querySelector(".avatar__img");
+ const avatarFallbackEl = card.querySelector(".avatar__fallback");
+
+ try {
+ const res = await fetch(href, { cache: "force-cache" });
+ if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+ const html = await res.text();
+ const doc = new DOMParser().parseFromString(html, "text/html");
+
+ // Try to use a real image from the page (og:image / twitter:image / first <img>)
+ // so cards across categories show a relevant thumbnail when available.
+ const bestImg = extractBestImageFromDoc(doc);
+ const currentSrc = normalizeUrlLike(
+ avatarImgEl?.getAttribute("src") || ""
+ );
+ const def = getDefaultAvatarForLabel(card.dataset.label || "");
+ const isDefaultish =!currentSrc ||
+ currentSrc === def ||
+ currentSrc === "zinvanalogo.png";
+
+ if (avatarImgEl && isDefaultish) {
+ const slug = card.dataset.slug || "";
+ const title = card.dataset.title || "";
+ const label = card.dataset.label || "";
+
+ // Build a robust candidate chain: local guesses first, then the page-derived best image,
+ // and finally the label default.
+ const chain = buildImageCandidates(slug, title, label, href);
+ if (bestImg) chain.push(bestImg);
+ chain.push(def);
+
+ // Dedupe while preserving order.
+ const seen = new Set();
+ const candidates = chain.map((v) => normalizeUrlLike(v)).filter(Boolean).filter((v) => {
+ const k = String(v).toLowerCase();
+ if (seen.has(k)) return false;
+ seen.add(k);
+ return true;
+ });
+
+ let idx = 0;
+ const tryNext = () => {
+ if (idx >= candidates.length) {
+ avatarImgEl.style.display = "none";
+ if (avatarFallbackEl) avatarFallbackEl.style.display = "block";
+ return;
+ }
+ avatarImgEl.src = candidates[idx++];
+ };
+
+ avatarImgEl.onload = () => {
+ avatarImgEl.style.display = "block";
+ if (avatarFallbackEl) avatarFallbackEl.style.display = "none";
+ };
+ avatarImgEl.onerror = tryNext;
+
+ tryNext();
+ }
+
+ const metaDesc = doc.querySelector(
+ 'meta[name="description"]'
+ )?.content;
+ if (excerptEl) {
+ const raw = String(metaDesc || "").trim();
+ const cleaned = sanitizeDescription(raw);
+ const isSpammy = raw? looksSpammyDescription(raw): false;
+
+ const fallback = defaultExcerptFor(
+ href,
+ card.dataset.title || "",
+ card.dataset.label || "Page"
+ );
+
+ const chosen = cleaned &&!isSpammy? cleaned: fallback;
+ const short = truncateText(chosen, 120);
+
+ if (short) {
+ excerptEl.textContent = short;
+ card.dataset.search = `${card.dataset.search || ""} ${short}`.trim().toLowerCase();
+ }
+ }
+
+ const text = extractReadableTextFromDoc(doc);
+ const mins = computeReadingTimeMinutes(text);
+ if (readingEl) readingEl.textContent = `${mins} min read`;
+ } catch {
+ if (readingEl) readingEl.textContent = "Quick read";
+ }
+ }
+
+ function wireCardEnrichment() {
+ const cards = Array.from(document.querySelectorAll("a.item"));
+ if (!cards.length) return;
+
+ if (!("IntersectionObserver" in window)) {
+ cards.slice(0, 18).forEach((c) => enrichCard(c));
+ return;
+ }
+
+ const observer = new IntersectionObserver(
+ (entries) => {
+ entries.forEach((entry) => {
+ if (!entry.isIntersecting) return;
+ enrichCard(entry.target);
+ observer.unobserve(entry.target);
+ });
+ },
+ { rootMargin: "450px 0px" }
+ );
+
+ cards.forEach((card) => observer.observe(card));
+ }
+
+ function hydrateAvatars(root) {
+ const cards = (root || document).querySelectorAll("a.item");
+ cards.forEach((card) => {
+ const slug = card.dataset.slug || "";
+ const label = card.dataset.label || "";
+ const img = card.querySelector(".avatar__img");
+ const fallback = card.querySelector(".avatar__fallback");
+
+ if (!img ||!fallback) return;
+
+ const candidates = buildImageCandidates(
+ slug,
+ card.dataset.title || "",
+ label,
+ card.dataset.file || ""
+ );
+ if (!candidates.length) {
+ const def = getDefaultAvatarForLabel(label);
+ img.onerror = () => {
+ img.style.display = "none";
+ fallback.style.display = "block";
+ };
+ img.onload = () => {
+ img.style.display = "block";
+ fallback.style.display = "none";
+ };
+ img.src = def;
+ return;
+ }
+
+ let idx = 0;
+ fallback.style.display = "none";
+
+ const tryNext = () => {
+ if (idx >= candidates.length) {
+ const def = getDefaultAvatarForLabel(label);
+ img.onerror = () => {
+ img.style.display = "none";
+ fallback.style.display = "block";
+ };
+ img.onload = () => {
+ img.style.display = "block";
+ fallback.style.display = "none";
+ };
+ img.src = def;
+ return;
+ }
+ img.src = candidates[idx++];
+ };
+
+ img.onerror = tryNext;
+ img.onload = () => {
+ img.style.display = "block";
+ fallback.style.display = "none";
+ };
+
+ tryNext();
+ });
+ }
+
+ function wireSearch() {
+ const input = document.getElementById("searchInput");
+ if (!input) return;
+
+ const status = document.getElementById("searchStatus");
+
+ const getFirstVisibleCard = () => {
+ const cards = Array.from(document.querySelectorAll("a.item"));
+ return cards.find((c) =>!c.hidden) || null;
+ };
+
+ const apply = () => {
+ const q = input.value.trim().toLowerCase();
+ const cards = Array.from(document.querySelectorAll("a.item"));
+
+ let visibleCount = 0;
+ const byType = {
+ Leader: 0,
+ Brawler: 0,
+ Quiz: 0,
+ Footballer: 0,
+ Scientist: 0,
+ Marvel: 0,
+ "Squid Game": 0,
+ Wojak: 0,
+ YouTuber: 0,
+ MBTI: 0,
+ Page: 0,
+ Draft: 0,
+ };
+ cards.forEach((card) => {
+ const baseHay = `${card.dataset.title || ""} ${
+ card.dataset.label || ""
+ } ${(card.dataset.slug || "").replace(/[_-]+/g, " ")}`.trim().toLowerCase();
+ const extraHay = String(card.dataset.search || "").toLowerCase();
+ const hay = `${baseHay} ${extraHay}`.trim();
+
+ const isVisible = q? hay.includes(q): true;
+ card.dataset.hiddenBySearch = isVisible? "0": "1";
+ card.hidden =!isVisible;
+ if (isVisible) {
+ visibleCount++;
+ const t = String(card.dataset.label || "Page");
+ if (Object.prototype.hasOwnProperty.call(byType, t)) byType[t]++;
+ // If the user is searching, prioritize enriching visible results.
+ if (q) enrichCard(card);
+ }
+ });
+
+ if (status) {
+ const raw = input.value.trim();
+ if (!q) {
+ status.textContent =
+ "Tip: Search by name, type (Quiz/Leader/Brawler/etc.), or keywords.";
+ return;
+ }
+
+ if (visibleCount === 0) {
+ status.textContent = `No results for “${raw}”. (Esc clears)`;
+ return;
+ }
+
+ const otherPages =
+ visibleCount - (byType.Leader + byType.Brawler + byType.Quiz);
+
+ status.textContent = `Showing ${visibleCount} result${
+ visibleCount === 1? "": "s"
+ } (Quizzes: ${byType.Quiz}, Leaders: ${byType.Leader}, Brawlers: ${
+ byType.Brawler
+ }, Other: ${otherPages}) for “${raw}”. Press Enter to jump. (Esc clears)`;
+ }
+
+ refreshLoadMoreButtons(Boolean(q));
+ };
+
+ input.addEventListener("input", apply);
+ input.addEventListener("keydown", (e) => {
+ if (e.key === "Escape") {
+ input.value = "";
+ apply();
+ }
+
+ if (e.key === "Enter") {
+ const q = input.value.trim();
+ if (!q) return;
+ apply();
+ const first = getFirstVisibleCard();
+ if (!first) return;
+ first.scrollIntoView({ behavior: "smooth", block: "start" });
+ // Move focus for accessibility + clarity.
+ requestAnimationFrame(() => first.focus());
+ }
+ });
+
+ apply();
+ }
+
+ const loadMoreState = {};
+
+ function setupLoadMore(gridId, buttonId, chunk = 3) {
+ const grid = document.getElementById(gridId);
+ const button = document.getElementById(buttonId);
+ if (!grid ||!button) return;
+
+ const state = { grid, button, chunk, shown: chunk };
+ loadMoreState[gridId] = state;
+
+ const apply = (isSearching = false) => {
+ const items = Array.from(grid.querySelectorAll("a.item"));
+ if (!items.length) {
+ button.hidden = true;
+ return;
+ }
+
+ if (isSearching) {
+ items.forEach((item) => item.classList.remove("hidden-by-limit"));
+ button.hidden = true;
+ return;
+ }
+
+ let shown = 0;
+ items.forEach((item) => {
+ const hiddenBySearch = item.dataset.hiddenBySearch === "1";
+ if (hiddenBySearch) {
+ item.classList.add("hidden-by-limit");
+ return;
+ }
+ const canShow = shown < state.shown;
+ item.classList.toggle("hidden-by-limit",!canShow);
+ if (canShow) shown++;
+ });
+
+ const remaining =
+ items.filter((i) => i.dataset.hiddenBySearch!== "1").length -
+ state.shown;
+
+ if (remaining > 0) {
+ button.hidden = false;
+ const next = Math.min(state.chunk, remaining);
+ button.textContent = `Show ${next} more`;
+ } else {
+ button.hidden = true;
+ }
+ };
+
+ state.apply = apply;
+
+ button.addEventListener("click", () => {
+ state.shown += state.chunk;
+ apply(false);
+ });
+
+ const searchingNow = Boolean(
+ document.getElementById("searchInput")?.value.trim()
+ );
+ apply(searchingNow);
+ }
+
+ function refreshLoadMoreButtons(isSearching = false) {
+ Object.values(loadMoreState).forEach((state) => {
+ if (typeof state.apply === "function") state.apply(isSearching);
+ });
+ }
+
+ function renderGrid(gridId, files, label, options = {}) {
+ const grid = document.getElementById(gridId);
+ if (!grid) return;
+
+ const { collectionFirstTitle } = options;
+ const fragment = document.createDocumentFragment();
+
+ files.forEach((file) => {
+ if (!file || typeof file!== "string") return;
+ const title =
+ file === "index.html"? "Main page": file === "all-brawlers.html"? collectionFirstTitle || "All Brawlers": file === "leaders.html"? "Historical Leaders Quiz": file === "leaders-list.html"? "All Leaders": humanizeFileName(file);
+ fragment.appendChild(makeCard(file, title, label));
+ });
+
+ grid.appendChild(fragment);
+ }
+
+ const leaderProfilesCount = leaderFiles.filter((f) => {
+ if (!f.startsWith("leaders-")) return false;
+ if (f === "leaders-list.html") return false;
+ if (f.startsWith("leaders-quiz")) return false;
+ return true;
+ }).length;
+ const brawlerProfilesCount = brawlerFiles.filter((f) =>
+ f.startsWith("brawler-")
+ ).length;
+
+ document.getElementById(
+ "leadersCount"
+ ).textContent = `${leaderProfilesCount} profiles`;
+ document.getElementById(
+ "brawlersCount"
+ ).textContent = `${brawlerProfilesCount} pages`;
+
+ renderGrid("leadersGrid", leaderFiles, "Leader", {
+ collectionFirstTitle: "All Leaders",
+ });
+ renderGrid("brawlersGrid", brawlerFiles, "Brawler", {
+ collectionFirstTitle: "All Brawlers",
+ });
+
+ setupLoadMore("leadersGrid", "leadersMore");
+ setupLoadMore("brawlersGrid", "brawlersMore");
+
+ (async () => {
+ const allFiles = await loadAllPagesList();
+ if (!allFiles.length) return;
+
+ const eligible = allFiles.filter((f) => {
+ if (!f || typeof f!== "string") return false;
+ if (f === "all-articles.html") return false;
+ if (leaderFiles.includes(f)) return false;
+ if (brawlerFiles.includes(f)) return false;
+ return true;
+ });
+
+ const used = new Set();
+ const take = (predicate) => {
+ const picked = [];
+ eligible.forEach((f) => {
+ const key = String(f).toLowerCase();
+ if (used.has(key)) return;
+ if (!predicate(f)) return;
+ used.add(key);
+ picked.push(f);
+ });
+ return picked;
+ };
+
+ const isDraftLike = (f) => {
+ const s = String(f).toLowerCase();
+ return (
+ s.startsWith("_tmp_") ||
+ s.includes("backup") ||
+ s.includes("broken") ||
+ s.includes("old") ||
+ s.includes("fixed") ||
+ s.startsWith("test") ||
+ s.includes("test_")
+ );
+ };
+
+ const forcedQuizFileSet = new Set(
+ [
+ "dream-meaning.html",
+ "mental-health.html",
+ "perfect-country.html",
+ "political-ideology.html",
+ "religion.html",
+ ].map((v) => v.toLowerCase())
+ );
+
+ const forcedFootballerSet = new Set(
+ [
+ "casemiro.html",
+ "ronaldinho.html",
+ "neymarjr.html",
+ "rodri.html",
+ "pedri.html",
+ "xavi.html",
+ "trent_alexander_arnold.html",
+ ].map((v) => v.toLowerCase())
+ );
+
+ // Some non-footballer pages happen to use highlights too; keep them out.
+ const excludedFootballerSet = new Set(
+ [
+ "history.html",
+ "influencial_leaders.html",
+ "gorbachev_reforms.html",
+ "sun_tzu.html",
+ ].map((v) => v.toLowerCase())
+ );
+
+ // Hide drafts/tests from the public list.
+ take(isDraftLike);
+ const isQuizLike = (f) => {
+ const s = String(f).toLowerCase();
+ return (
+ forcedQuizFileSet.has(s) ||
+ s.includes("quiz") ||
+ s.startsWith("quizzes/") ||
+ s === "geo-zini.html" ||
+ s === "geo-zini" ||
+ s === "geozini.html"
+ );
+ };
+
+ const markUsed = (files) => {
+ (files || []).forEach((f) => {
+ const key = String(f || "").toLowerCase();
+ if (!key) return;
+ used.add(key);
+ });
+ };
+
+ // Quizzes should be visible first, including key quizzes that might be "core".
+ const featuredQuizzes = featuredQuizFiles.filter((f) =>
+ eligible.some(
+ (e) => String(e).toLowerCase() === String(f).toLowerCase()
+ )
+ ).filter(Boolean);
+ markUsed(featuredQuizzes);
+ const otherQuizzes = take(
+ (f) => isQuizLike(f) &&!featuredQuizzes.includes(f)
+ );
+ const quizzes = [.featuredQuizzes,.otherQuizzes];
+
+ // MBTI section should show type pages (quiz belongs in Quizzes).
+ const mbti = take((f) => String(f).toLowerCase().startsWith("mbti-"));
+
+ // YouTubers = creators.
+ const youtubers = take(
+ (f) =>
+ String(f).toLowerCase().startsWith("creator-") ||
+ String(f).toLowerCase() === "creator-profile.html" ||
+ String(f).toLowerCase().includes("youtuber")
+ );
+
+ const scientists = take((f) => {
+ const s = String(f).toLowerCase();
+ return s.includes("einstein") || s.includes("scientist");
+ });
+
+ const footballers = take((f) => {
+ const s = String(f);
+ const lower = s.toLowerCase();
+ // Many footballer pages use highlights (e.g., first_last.html).
+ return (!excludedFootballerSet.has(lower) &&
+ (forcedFootballerSet.has(lower) ||
+ (lower.endsWith(".html") &&
+ s.includes("_") &&!lower.startsWith("_")))
+ );
+ });
+
+ const marvelSet = new Set(
+ [
+ "ant-man.html",
+ "black-panther.html",
+ "black-widow.html",
+ "iron-man.html",
+ "thor.html",
+ "hawkeye.html",
+ "hulk.html",
+ "falcon.html",
+ "spider-man.html",
+ ].map((v) => v.toLowerCase())
+ );
+ const marvel = take((f) => marvelSet.has(String(f).toLowerCase()));
+
+ const squidGameFileSet = new Set(
+ [
+ "squidgame.html",
+ "squidgame-about.html",
+ "squidgame-about-new.html",
+ "squidgame_new.html",
+ "squidgame_backup.html",
+ "ali.html",
+ "thanos.html",
+ "gi-hun.html",
+ "sae-byeok.html",
+ "sang-woo.html",
+ "se-mi.html",
+ "deoksu.html",
+ "ilnam.html",
+ "frontman.html",
+ "lee-myung-gi.html",
+ "park-jung-bae.html",
+ ].map((v) => v.toLowerCase())
+ );
+
+ const squidgame = take((f) => {
+ const s = String(f).toLowerCase();
+ return (
+ squidGameFileSet.has(s) ||
+ s.includes("squidgame") ||
+ s.includes("squid-game")
+ );
+ });
+
+ const wojak = take((f) => String(f).toLowerCase().includes("wojak"));
+
+ const coreNames = new Set(
+ [
+ "index.html",
+ "about.html",
+ "help.html",
+ "privacy.html",
+ "categories.html",
+ "community.html",
+ "feed.html",
+ "seo-analysis.html",
+ "admin.html",
+ "vote.html",
+ "vote-professional.html",
+ "all-empires.html",
+ ].map((v) => v.toLowerCase())
+ );
+ const core = take((f) => coreNames.has(String(f).toLowerCase()));
+
+ const setText = (id, text) => {
+ const el = document.getElementById(id);
+ if (el) el.textContent = text;
+ };
+
+ const visiblePagesCount =
+ core.length +
+ footballers.length +
+ scientists.length +
+ marvel.length +
+ squidgame.length +
+ wojak.length +
+ youtubers.length +
+ mbti.length;
+
+ setText(
+ "pagesTotalCount",
+ `${visiblePagesCount} page${visiblePagesCount === 1? "": "s"}`
+ );
+ setText(
+ "pagesCount",
+ `${visiblePagesCount} page${visiblePagesCount === 1? "": "s"}`
+ );
+ setText(
+ "coreCount",
+ `${core.length} page${core.length === 1? "": "s"}`
+ );
+ setText(
+ "footballersCount",
+ `${footballers.length} page${footballers.length === 1? "": "s"}`
+ );
+ setText(
+ "scientistsCount",
+ `${scientists.length} page${scientists.length === 1? "": "s"}`
+ );
+ setText(
+ "marvelCount",
+ `${marvel.length} page${marvel.length === 1? "": "s"}`
+ );
+ setText(
+ "squidgameCount",
+ `${squidgame.length} page${squidgame.length === 1? "": "s"}`
+ );
+ setText(
+ "wojakCount",
+ `${wojak.length} page${wojak.length === 1? "": "s"}`
+ );
+ setText(
+ "youtubersCount",
+ `${youtubers.length} page${youtubers.length === 1? "": "s"}`
+ );
+ setText(
+ "mbtiCount",
+ `${mbti.length} page${mbti.length === 1? "": "s"}`
+ );
+ setText(
+ "quizzesCount",
+ `${quizzes.length} quiz${quizzes.length === 1? "": "zes"}`
+ );
+ setText(
+ "quizzesCountChip",
+ `${quizzes.length} quiz${quizzes.length === 1? "": "zes"}`
+ );
+
+ renderGrid("quizzesGrid", quizzes, "Quiz");
+ renderGrid("coreGrid", core, "Page");
+ renderGrid("footballersGrid", footballers, "Footballer");
+ renderGrid("scientistsGrid", scientists, "Scientist");
+ renderGrid("marvelGrid", marvel, "Marvel");
+ renderGrid("squidgameGrid", squidgame, "Squid Game");
+ renderGrid("wojakGrid", wojak, "Wojak");
+ renderGrid("youtubersGrid", youtubers, "YouTuber");
+ renderGrid("mbtiGrid", mbti, "MBTI");
+
+ setupLoadMore("quizzesGrid", "quizzesMore");
+ setupLoadMore("coreGrid", "coreMore");
+ setupLoadMore("footballersGrid", "footballersMore");
+ setupLoadMore("scientistsGrid", "scientistsMore");
+ setupLoadMore("marvelGrid", "marvelMore");
+ setupLoadMore("squidgameGrid", "squidgameMore");
+ setupLoadMore("wojakGrid", "wojakMore");
+ setupLoadMore("youtubersGrid", "youtubersMore");
+ setupLoadMore("mbtiGrid", "mbtiMore");
+
+ hydrateAvatars(document.getElementById("quizzesGrid"));
+ hydrateAvatars(document.getElementById("coreGrid"));
+ hydrateAvatars(document.getElementById("footballersGrid"));
+ hydrateAvatars(document.getElementById("scientistsGrid"));
+ hydrateAvatars(document.getElementById("marvelGrid"));
+ hydrateAvatars(document.getElementById("squidgameGrid"));
+ hydrateAvatars(document.getElementById("wojakGrid"));
+ hydrateAvatars(document.getElementById("youtubersGrid"));
+ hydrateAvatars(document.getElementById("mbtiGrid"));
+
+ wireCardEnrichment();
+ })();
+
+ hydrateAvatars(document.getElementById("leadersGrid"));
+ hydrateAvatars(document.getElementById("brawlersGrid"));
+ wireCardEnrichment();
+ wireSearch();
+ </script>
+ </body>
 </html>
