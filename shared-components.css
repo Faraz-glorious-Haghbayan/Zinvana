@@ -1,0 +1,406 @@
+/* ═══════════════════════════════════════════════════════
+   Zinvana Shared Components
+   Import this in any page to get consistent header,
+   footer, buttons, and dark mode support.
+   Usage:  @import url('design-tokens.css');
+           @import url('shared-components.css');
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Reset (safe subset) ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--z-font-body, "Sora", system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color var(--z-duration, 250ms) var(--z-ease, ease),
+    color var(--z-duration, 250ms) var(--z-ease, ease);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Focus States ── */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--z-focus-ring, 0 0 0 3px rgba(99, 102, 241, 0.3));
+  border-radius: var(--z-radius-sm, 0.5rem);
+}
+
+/* ═══════════════════════════════════════
+   Shared Topbar / Header
+   ═══════════════════════════════════════ */
+header.topbar,
+.zinvana-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--z-header-height, 72px);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--z-border, #e2e8f0);
+  z-index: var(--z-z-header, 1000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 250ms ease,
+    box-shadow 250ms ease;
+}
+
+[data-theme="dark"] header.topbar,
+[data-theme="dark"] .zinvana-topbar {
+  background: rgba(12, 19, 36, 0.85);
+}
+
+header.topbar.scrolled,
+.zinvana-topbar.scrolled {
+  box-shadow: var(--z-shadow-md, 0 4px 6px rgba(0, 0, 0, 0.08));
+}
+
+.topbar__inner {
+  width: 100%;
+  max-width: var(--z-container, 1200px);
+  padding: 0 var(--z-space-6, 1.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--z-font-display, "Space Grotesk", sans-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--z-text, #0f172a);
+  text-decoration: none;
+}
+
+.brand img {
+  height: 36px;
+  width: 36px;
+  border-radius: 0.5rem;
+}
+
+.primary-nav {
+  display: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--z-text-mid, #475569);
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 250ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--z-text, #0f172a);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--z-primary, hsl(250, 80%, 60%));
+  border-radius: 1px;
+  transition: width 250ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--z-border, #e2e8f0);
+  border-radius: 0.75rem;
+  background: var(--z-bg-soft, #f8fafc);
+  cursor: pointer;
+  transition: all 250ms ease;
+  color: var(--z-text-mid, #475569);
+}
+
+.theme-toggle:hover {
+  border-color: var(--z-border-hover, #cbd5e1);
+  color: var(--z-text, #0f172a);
+}
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+.theme-toggle .icon-moon {
+  display: none;
+}
+[data-theme="dark"] .theme-toggle .icon-sun {
+  display: none;
+}
+[data-theme="dark"] .theme-toggle .icon-moon {
+  display: block;
+}
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid var(--z-border, #e2e8f0);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: var(--z-text, #0f172a);
+  position: relative;
+  transition: all 250ms ease;
+}
+
+.hamburger span::before,
+.hamburger span::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background-color: var(--z-text, #0f172a);
+  left: 0;
+  transition: all 250ms ease;
+}
+
+.hamburger span::before {
+  top: -6px;
+}
+.hamburger span::after {
+  top: 6px;
+}
+
+.hamburger.active span {
+  background-color: transparent;
+}
+.hamburger.active span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.hamburger.active span::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--z-header-height, 72px);
+  left: 0;
+  right: 0;
+  background: var(--z-bg, #fff);
+  padding: 1.5rem 2rem;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 1px solid var(--z-border, #e2e8f0);
+  box-shadow: var(--z-shadow-lg, 0 10px 25px rgba(0, 0, 0, 0.1));
+  z-index: 999;
+}
+
+.mobile-menu.is-active,
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu .nav-link {
+  font-size: 1.125rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--z-border, #e2e8f0);
+}
+
+/* ═══════════════════════════════════════
+   Shared Buttons
+   ═══════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: var(--z-font-body, "Sora", sans-serif);
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 250ms ease;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: linear-gradient(
+    135deg,
+    var(--z-primary, hsl(250, 80%, 60%)),
+    var(--z-primary-hover, hsl(250, 80%, 52%))
+  );
+  color: #fff;
+  box-shadow: 0 2px 8px var(--z-primary-glow, rgba(99, 102, 241, 0.35));
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--z-primary-glow, rgba(99, 102, 241, 0.35));
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--z-text, #0f172a);
+  border: 1px solid var(--z-border, #e2e8f0);
+}
+
+.btn--ghost:hover {
+  border-color: var(--z-border-hover, #cbd5e1);
+  background: var(--z-bg-soft, #f8fafc);
+}
+
+.btn--sm {
+  padding: 0.45rem 1rem;
+  font-size: 0.75rem;
+}
+
+/* ═══════════════════════════════════════
+   Shared Footer
+   ═══════════════════════════════════════ */
+.site-footer {
+  background: #0a0f1e;
+  color: #94a3b8;
+  padding: 4rem 1.5rem 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-content {
+  max-width: var(--z-container, 1200px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+  color: #fff;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-col li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-link {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  transition: color 250ms ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.footer-desc {
+  color: #64748b;
+  font-size: 0.875rem;
+  max-width: 280px;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.5rem;
+  max-width: var(--z-container, 1200px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-disclaimer {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+
+/* ═══════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════ */
+@media (min-width: 768px) {
+  .primary-nav {
+    display: flex;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

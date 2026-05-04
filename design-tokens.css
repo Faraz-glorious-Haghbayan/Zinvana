@@ -1,0 +1,139 @@
+/* ═══════════════════════════════════════════════════════
+   Zinvana Design Tokens — Single Source of Truth
+   All CSS files import or reference these variables.
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Brand Colors ── */
+  --z-hue: 250;
+  --z-primary: hsl(var(--z-hue), 80%, 60%);
+  --z-primary-hover: hsl(var(--z-hue), 80%, 52%);
+  --z-primary-light: hsl(var(--z-hue), 90%, 95%);
+  --z-primary-glow: hsla(var(--z-hue), 80%, 60%, 0.35);
+  --z-accent: #f43f5e;
+  --z-accent-light: #ffe4e6;
+  --z-accent-glow: rgba(244, 63, 94, 0.3);
+  --z-teal: #2dd4bf;
+
+  /* ── Surfaces (Light) ── */
+  --z-bg: #ffffff;
+  --z-bg-soft: #f8fafc;
+  --z-bg-elevated: #ffffff;
+  --z-bg-hero: linear-gradient(
+    135deg,
+    #0f0b2e 0%,
+    #1a1145 40%,
+    #2a1a5e 70%,
+    #0f172a 100%
+  );
+
+  /* ── Text (Light) ── */
+  --z-text: #0f172a;
+  --z-text-mid: #475569;
+  --z-text-muted: #94a3b8;
+  --z-text-on-dark: #f1f5f9;
+
+  /* ── Borders ── */
+  --z-border: #e2e8f0;
+  --z-border-hover: #cbd5e1;
+  --z-border-focus: var(--z-primary);
+
+  /* ── Shadows ── */
+  --z-shadow-xs: 0 1px 2px rgb(0 0 0 / 0.04);
+  --z-shadow-sm: 0 1px 3px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04);
+  --z-shadow-md:
+    0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --z-shadow-lg:
+    0 10px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.06);
+  --z-shadow-xl: 0 20px 50px -12px rgb(0 0 0 / 0.15);
+  --z-shadow-glow: 0 0 20px -5px var(--z-primary-glow);
+  --z-shadow-accent-glow: 0 0 20px -5px var(--z-accent-glow);
+
+  /* ── Typography ── */
+  --z-font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --z-font-body: "Sora", system-ui, -apple-system, sans-serif;
+
+  --z-text-xs: 0.75rem; /* 12px */
+  --z-text-sm: 0.875rem; /* 14px */
+  --z-text-base: 1rem; /* 16px */
+  --z-text-lg: 1.125rem; /* 18px */
+  --z-text-xl: 1.25rem; /* 20px */
+  --z-text-2xl: 1.5rem; /* 24px */
+  --z-text-3xl: 1.875rem; /* 30px */
+  --z-text-4xl: 2.25rem; /* 36px */
+  --z-text-5xl: 3rem; /* 48px */
+  --z-text-6xl: 3.75rem; /* 60px */
+
+  /* ── Spacing Scale ── */
+  --z-space-1: 0.25rem;
+  --z-space-2: 0.5rem;
+  --z-space-3: 0.75rem;
+  --z-space-4: 1rem;
+  --z-space-5: 1.25rem;
+  --z-space-6: 1.5rem;
+  --z-space-8: 2rem;
+  --z-space-10: 2.5rem;
+  --z-space-12: 3rem;
+  --z-space-16: 4rem;
+  --z-space-20: 5rem;
+  --z-space-24: 6rem;
+
+  /* ── Radii ── */
+  --z-radius-sm: 0.5rem;
+  --z-radius-md: 0.75rem;
+  --z-radius-lg: 1rem;
+  --z-radius-xl: 1.5rem;
+  --z-radius-full: 9999px;
+
+  /* ── Z-Index Scale ── */
+  --z-z-base: 0;
+  --z-z-dropdown: 100;
+  --z-z-sticky: 500;
+  --z-z-header: 1000;
+  --z-z-overlay: 1500;
+  --z-z-modal: 2000;
+
+  /* ── Layout ── */
+  --z-container: 1200px;
+  --z-header-height: 72px;
+
+  /* ── Transitions ── */
+  --z-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --z-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --z-duration-fast: 150ms;
+  --z-duration: 250ms;
+  --z-duration-slow: 400ms;
+
+  /* ── Focus Ring ── */
+  --z-focus-ring: 0 0 0 3px var(--z-primary-light);
+}
+
+/* ═══════════════════════════════════════
+   Dark Mode Overrides
+   ═══════════════════════════════════════ */
+[data-theme="dark"] {
+  --z-bg: #0c1324;
+  --z-bg-soft: #111827;
+  --z-bg-elevated: #1e293b;
+
+  --z-text: #f1f5f9;
+  --z-text-mid: #94a3b8;
+  --z-text-muted: #64748b;
+
+  --z-border: #1e293b;
+  --z-border-hover: #334155;
+
+  --z-primary-light: hsla(var(--z-hue), 80%, 60%, 0.15);
+
+  --z-shadow-xs: 0 1px 2px rgb(0 0 0 / 0.2);
+  --z-shadow-sm: 0 1px 3px rgb(0 0 0 / 0.3), 0 1px 2px rgb(0 0 0 / 0.2);
+  --z-shadow-md:
+    0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+  --z-shadow-lg:
+    0 10px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+  --z-shadow-xl: 0 20px 50px -12px rgb(0 0 0 / 0.5);
+
+  --z-accent-light: rgba(244, 63, 94, 0.15);
+
+  --z-focus-ring: 0 0 0 3px hsla(var(--z-hue), 80%, 60%, 0.3);
+}
