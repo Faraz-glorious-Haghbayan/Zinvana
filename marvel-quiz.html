@@ -1,2818 +1,2777 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1023172873076347"
-      crossorigin="anonymous"
-    ></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Which Marvel Character Are You? Marvel Personality Test Quiz (2025) |
-      Zinvana
-    </title>
-    <meta
-      name="description"
-      content="Take this Marvel personality test to find out which Marvel character you are. Answer quick questions about values, risk, leadership, and teamwork for an instant hero match plus strengths and watch-outs."
-    />
-    <meta name="author" content="Zinvana" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://zinvana.com/marvel-quiz.html" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Zinvana" />
-    <meta
-      property="og:title"
-      content="Which Marvel Character Are You? Marvel Personality Test Quiz (2025)"
-    />
-    <meta
-      property="og:description"
-      content="Answer quick questions about values, risk, leadership, and teamwork to reveal your Marvel character match, plus strengths and watch-outs."
-    />
-    <meta property="og:url" content="https://zinvana.com/marvel-quiz.html" />
-    <meta property="og:image" content="https://zinvana.com/zinvanalogo.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Which Marvel Character Are You? Marvel Personality Test Quiz (2025)"
-    />
-    <meta
-      name="twitter:description"
-      content="A fast Marvel personality test: answer questions and get an instant Marvel character match with a detailed breakdown."
-    />
-    <meta name="twitter:image" content="https://zinvana.com/zinvanalogo.png" />
-
-    <style>
-      section[id] {
-        scroll-margin-top: calc(var(--topbar-h) + 14px);
-      }
-
-      /* Marvel page accents (scoped, no global side effects) */
-      body.page-marvel {
-        --brand1: #ef4444;
-        --brand2: #f59e0b;
-      }
-
-      body.page-marvel .quiz-shell .progress-bar {
-        background: linear-gradient(90deg, var(--brand1), var(--brand2));
-      }
-
-      body.page-marvel .quiz-shell .question h3::before {
-        color: var(--brand1);
-      }
-
-      body.page-marvel .quiz-shell .status-eyebrow {
-        color: rgba(239, 68, 68, 0.92);
-      }
-
-      body.page-marvel .quiz-shell .micro-feedback {
-        margin: 10px 0 18px;
-        padding: 12px 14px;
-        border-radius: 14px;
-        border: 1px solid rgba(226, 232, 240, 0.9);
-        background: rgba(255, 255, 255, 0.86);
-        color: var(--text-strong, #0f172a);
-        font-weight: 650;
-        line-height: 1.35;
-      }
-
-      body.page-marvel .quiz-shell .micro-feedback strong {
-        color: var(--brand1);
-      }
-
-      /* Professional Quick Facts Cards */
-      .hero-kpis-pro {
-        display: flex;
-        gap: 18px;
-        margin: 18px 0 10px 0;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-      .kpi-card {
-        background: var(--surface-2, #f7fafc);
-        border-radius: 14px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        display: flex;
-        align-items: center;
-        padding: 12px 18px;
-        min-width: 140px;
-        font-weight: 600;
-        font-size: 1.08rem;
-        color: var(--text-strong, #0f172a);
-        transition: box-shadow 0.2s;
-      }
-      .kpi-card:hover {
-        box-shadow: 0 4px 18px rgba(45, 62, 80, 0.13);
-      }
-      .kpi-icon {
-        font-size: 1.35em;
-        margin-right: 10px;
-        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
-      }
-      .kpi-label {
-        letter-spacing: 0.01em;
-      }
-      @media (max-width: 600px) {
-        .hero-kpis-pro {
-          gap: 10px;
-        }
-        .kpi-card {
-          min-width: 110px;
-          font-size: 0.98rem;
-          padding: 10px 12px;
-        }
-        .kpi-icon {
-          font-size: 1.1em;
-          margin-right: 7px;
-        }
-      }
-
-      /* ===== Marvel polish layer (scoped to this page) ===== */
-      body.page-marvel a:focus-visible,
-      body.page-marvel button:focus-visible {
-        outline-color: rgba(239, 68, 68, 0.7);
-      }
-
-      body.page-marvel header.topbar::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -1px;
-        height: 3px;
-        background: linear-gradient(90deg, var(--brand1), var(--brand2));
-        opacity: 0.85;
-        pointer-events: none;
-      }
-
-      body.page-marvel .nav-link:hover,
-      body.page-marvel .nav-link:focus-visible {
-        background: rgba(239, 68, 68, 0.1);
-      }
-
-      body.page-marvel.theme-light .hero-section::before {
-        background: radial-gradient(
-          circle,
-          rgba(239, 68, 68, 0.16) 0%,
-          rgba(245, 158, 11, 0.08) 35%,
-          transparent 70%
-        );
-      }
-
-      body.page-marvel.theme-light .hero-section h1 {
-        color: var(--text-strong, #0f172a);
-      }
-
-      @supports (-webkit-background-clip: text) {
-        body.page-marvel.theme-light .hero-section h1 {
-          background: linear-gradient(90deg, var(--brand1), var(--brand2));
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-        }
-      }
-
-      body.page-marvel .hero-highlights li::before {
-        color: var(--brand2);
-      }
-
-      body.page-marvel.theme-light .hero-panel {
-        background: rgba(255, 255, 255, 0.86);
-        border-color: rgba(0, 0, 0, 0.08);
-      }
-
-      body.page-marvel.theme-light .hero-panel h3 {
-        color: var(--brand1);
-      }
-
-      body.page-marvel .primary-btn:hover,
-      body.page-marvel .ghost-btn:hover {
-        box-shadow: 0 20px 60px rgba(239, 68, 68, 0.25);
-      }
-
-      body.page-marvel .chip.active {
-        box-shadow: 0 6px 18px rgba(239, 68, 68, 0.22);
-      }
-
-      body.page-marvel .see-more-btn {
-        box-shadow: 0 12px 35px rgba(239, 68, 68, 0.28);
-      }
-
-      body.page-marvel .see-more-btn:hover {
-        box-shadow: 0 18px 45px rgba(239, 68, 68, 0.38);
-      }
-
-      body.page-marvel .search-input input[type="search"]:focus {
-        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14);
-      }
-
-      body.page-marvel .quiz-shell .progress-orb {
-        background: conic-gradient(
-          rgba(239, 68, 68, 0.75) var(--progress),
-          rgba(226, 232, 240, 0.9) 0
-        );
-      }
-
-      body.page-marvel .quiz-shell .answer-btn:hover {
-        border-color: rgba(239, 68, 68, 0.45);
-        box-shadow: 0 25px 50px rgba(239, 68, 68, 0.16);
-      }
-
-      body.page-marvel .quiz-shell .answer-btn.selected {
-        border-color: rgba(239, 68, 68, 0.8);
-        box-shadow: 0 30px 60px rgba(239, 68, 68, 0.22);
-      }
-
-      body.page-marvel .quiz-shell .result {
-        background: linear-gradient(
-          135deg,
-          rgba(239, 68, 68, 0.55),
-          rgba(245, 158, 11, 0.45)
-        );
-      }
-
-      body.page-marvel .pillars .icon img {
-        width: 20px;
-        height: 20px;
-        border-radius: 4px;
-        object-fit: cover;
-      }
-
-      body.page-marvel .feature-icon img {
-        width: 28px;
-        height: 28px;
-        vertical-align: middle;
-      }
-
-      body.page-marvel #countryGuide .main-container {
-        padding-bottom: 8px;
-      }
-
-      body.page-marvel .character-link {
-        text-decoration: none;
-        color: inherit;
-        display: block;
-      }
-    </style>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="football-quiz-template.css" />
-    <link rel="stylesheet" href="perfect-quiz-shell.css" />
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is this a Marvel personality test?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes—this is a personality-style Marvel quiz designed for insight and entertainment. Your answers map to patterns like risk tolerance, leadership, loyalty, and decision-making under pressure to produce a best-fit Marvel character match."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Which Marvel character am I (or are you)?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Finish the quiz and you’ll get the Marvel character you match most based on your choices, plus a breakdown of strengths and watch-outs. If you feel like you blend multiple characters, that’s normal—many people share traits across several hero styles."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What methodology is used to map answers to characters?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Each answer contributes points to hero-aligned traits (innovation, resilience, strategy, responsibility, etc.). The quiz totals points across questions and returns the top-scoring character profile (randomizing ties) with a qualitative explanation."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is any personal data collected or stored?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. The quiz runs in your browser using JavaScript. Answers and results are not stored or sent to a server."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "I disagree with my result — what can I do?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Retake the quiz and answer based on how you actually act under pressure, then compare the Character Spotlight and Guide for nearby profiles you may blend with. Sharing your result with friends can also help you sanity-check the match."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are you affiliated with Marvel?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. This is a fan-made quiz for entertainment and self-reflection and is not affiliated with or endorsed by Marvel or Disney."
-            }
-          }
-        ]
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Quiz",
-        "name": "Which Marvel Character Are You? Marvel Personality Test Quiz (2025)",
-        "description": "A Marvel personality test that matches you to a Marvel character based on values, risk, leadership, and teamwork.",
-        "url": "https://zinvana.com/marvel-quiz.html",
-        "inLanguage": "en",
-        "isAccessibleForFree": true,
-        "publisher": {
-          "@type": "Organization",
-          "name": "Zinvana",
-          "url": "https://zinvana.com"
-        }
-      }
-    </script>
-  </head>
-  <body class="theme-light page-marvel">
-    <header class="topbar">
-      <div class="topbar__inner">
-        <a class="brand" href="index.html">
-          <img
-            src="zinvanalogo.png"
-            alt="Zinvana logo"
-            width="36"
-            height="36"
-            decoding="async"
-            fetchpriority="high"
-          />
-          <span>Zinvana</span>
-        </a>
-        <nav class="primary-nav" aria-label="Main navigation">
-          <a class="nav-link" href="#quizSection">Quiz</a>
-          <a class="nav-link" href="#characters">Guide</a>
-          <a class="nav-link" href="#faq">FAQ</a>
-        </nav>
-        <div class="nav-actions">
-          <a class="btn btn--ghost" href="index.html#quizzes">All quizzes</a>
-          <button
-            class="hamburger"
-            id="menuToggle"
-            aria-label="Toggle menu"
-            aria-controls="mobileMenu"
-            aria-expanded="false"
-          >
-            <span></span>
-          </button>
-        </div>
-      </div>
-      <div class="menu-backdrop" id="menuBackdrop" hidden></div>
-      <nav
-        class="mobile-menu"
-        id="mobileMenu"
-        aria-label="Mobile navigation"
-        hidden
-      >
-        <a class="nav-link" href="#quizSection">Quiz</a>
-        <a class="nav-link" href="#characters">Guide</a>
-        <a class="nav-link" href="#faq">FAQ</a>
-        <a class="nav-link" href="index.html#quizzes">All quizzes</a>
-        <a class="nav-link" href="about.html">About</a>
-      </nav>
-    </header>
-
-    <header class="hero-section" id="overview">
-      <div class="main-container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Marvel Hero Finder</span>
-          <h1>Which Marvel Character Are You?</h1>
-          <p class="subtitle">
-            Marvel Superhero Personality Quiz 2025 (Free Marvel Personality
-            Test)
-          </p>
-          <p class="description">
-            Find your best-fit Marvel hero across values, instincts, and
-            decision-making under pressure. Answer the questions to reveal which
-            character you align with—plus strengths and watch-outs.
-          </p>
-          <p class="description">
-            If you’re searching “what Marvel character am I” or “what Marvel
-            character are you”, this quiz is built to give a clear, explainable
-            match—not random vibes.
-          </p>
-
-          <ul class="hero-kpis-pro" aria-label="Quick facts">
-            <li class="kpi-card">
-              <span class="kpi-icon" aria-hidden="true">📝</span>
-              <span class="kpi-label">Quick Quiz</span>
-            </li>
-            <li class="kpi-card">
-              <span class="kpi-icon" aria-hidden="true">⚡</span>
-              <span class="kpi-label">Instant Results</span>
-            </li>
-            <li class="kpi-card">
-              <span class="kpi-icon" aria-hidden="true">💡</span>
-              <span class="kpi-label">Strengths & Watch-outs</span>
-            </li>
-          </ul>
-
-          <ul class="hero-highlights">
-            <li>Questions mapped to core hero styles</li>
-            <li>Leadership, courage, strategy, and responsibility</li>
-            <li>Instant breakdown with strengths + watch-outs</li>
-          </ul>
-
-          <div class="hero-cta">
-            <a href="#quizSection" class="primary-btn">Start The Quiz</a>
-            <a href="#characters" class="ghost-btn">Browse The Guide</a>
-          </div>
-        </div>
-
-        <div class="hero-panel">
-          <span class="panel-eyebrow">How we match you</span>
-          <h3>Signals we use to score your match</h3>
-          <p>
-            Your answers map to repeatable patterns: risk tolerance, loyalty,
-            moral boundaries, and how you navigate alliances.
-          </p>
-
-          <div class="hero-factor-grid">
-            <div class="hero-factor">
-              <div class="icon">🧠</div>
-              <div>
-                <h4>Mindset</h4>
-                <p>Composure, grit, and self-control</p>
-              </div>
-            </div>
-            <div class="hero-factor">
-              <div class="icon">🎯</div>
-              <div>
-                <h4>Decision-making</h4>
-                <p>Risk vs. safety under pressure</p>
-              </div>
-            </div>
-            <div class="hero-factor">
-              <div class="icon">🤝</div>
-              <div>
-                <h4>Loyalty</h4>
-                <p>Who you protect and why</p>
-              </div>
-            </div>
-            <div class="hero-factor">
-              <div class="icon">🕵️</div>
-              <div>
-                <h4>Awareness</h4>
-                <p>Reading people, motives, and rules</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="main-container">
-      <!-- Intro/Archetypes -->
-      <section
-        class="content-section"
-        id="archetypesOverview"
-        aria-labelledby="archetypes-heading"
-      >
-        <div class="archetypes-header">
-          <span class="eyebrow">Overview</span>
-          <h2 id="archetypes-heading">Understanding Marvel Hero Archetypes</h2>
-          <p>
-            Big threats reveal who you are under pressure. This quiz maps your
-            choices to a best-fit Marvel hero profile across mindset, teamwork,
-            values, and how you act when everything is on the line.
-          </p>
-        </div>
-
-        <div class="archetypes-grid">
-          <!-- Left -->
-          <div class="archetypes-panel">
-            <div class="pillars">
-              <div class="pillar">
-                <div class="icon">
-                  <img src="accuracy.png" alt="" />
-                </div>
-                <span>Playstyle</span>
-              </div>
-              <div class="pillar">
-                <div class="icon">
-                  <img src="idea.png" alt="" />
-                </div>
-                <span>Mindset</span>
-              </div>
-              <div class="pillar">
-                <div class="icon">
-                  <img src="high-quality.png" alt="" />
-                </div>
-                <span>Team Role</span>
-              </div>
-            </div>
-            <p class="panel-note">
-              These archetypes aren’t rigid labels—most heroes blend traits. Use
-              this as a quick mirror for your tendencies, then choose how you’ll
-              show up in your next mission.
-            </p>
-            <span class="legend-label">Common archetype badges</span>
-            <div class="badges">
-              <span class="archetype-badge"
-                ><img
-                  class="chip-img"
-                  src="ironman.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  width="20"
-                  height="20"
-                />
-                Genius</span
-              >
-              <span class="archetype-badge"
-                ><img
-                  class="chip-img"
-                  src="captainamerica.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  width="20"
-                  height="20"
-                />
-                Leader</span
-              >
-              <span class="archetype-badge"
-                ><img
-                  class="chip-img"
-                  src="hulk.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  width="20"
-                  height="20"
-                />
-                Powerhouse</span
-              >
-              <span class="archetype-badge"
-                ><img
-                  class="chip-img"
-                  src="widow.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  width="20"
-                  height="20"
-                />
-                Spy</span
-              >
-              <span class="archetype-badge"
-                ><img
-                  class="chip-img"
-                  src="default.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  width="20"
-                  height="20"
-                />
-                Mystic</span
-              >
-              <span class="archetype-badge"
-                ><img
-                  class="chip-img"
-                  src="loki.png"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  width="20"
-                  height="20"
-                />
-                Wildcard</span
-              >
-            </div>
-          </div>
-
-          <!-- Right -->
-          <div class="archetypes-panel">
-            <div class="archetype-card-grid">
-              <div class="archetype-card">
-                <div class="chip">
-                  <img
-                    class="chip-img"
-                    src="ironman.png"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="20"
-                    height="20"
-                  />
-                  Genius
-                </div>
-                <p>
-                  Builds solutions under pressure. Adapts fast, invents faster,
-                  and turns impossible problems into workable plans.
-                </p>
-              </div>
-              <div class="archetype-card">
-                <div class="chip">
-                  <img
-                    class="chip-img"
-                    src="captainamerica.png"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="20"
-                    height="20"
-                  />
-                  Leader
-                </div>
-                <p>
-                  Keeps the team aligned and grounded. Makes value-driven calls
-                  and holds the line when things get messy.
-                </p>
-              </div>
-              <div class="archetype-card">
-                <div class="chip">
-                  <img
-                    class="chip-img"
-                    src="hulk.png"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="20"
-                    height="20"
-                  />
-                  Powerhouse
-                </div>
-                <p>
-                  Handles the immediate threat. When it’s time to act, you act
-                  decisively and protect the team through sheer force.
-                </p>
-              </div>
-              <div class="archetype-card">
-                <div class="chip">
-                  <img
-                    class="chip-img"
-                    src="widow.png"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="20"
-                    height="20"
-                  />
-                  Spy
-                </div>
-                <p>
-                  Wins with information and precision. Reads motives, spots
-                  openings, and moves at exactly the right moment.
-                </p>
-              </div>
-              <div class="archetype-card">
-                <div class="chip">
-                  <img
-                    class="chip-img"
-                    src="default.png"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="20"
-                    height="20"
-                  />
-                  Mystic
-                </div>
-                <p>
-                  Sees patterns others miss. Stays calm, studies the bigger
-                  picture, and chooses the long-term win.
-                </p>
-              </div>
-              <div class="archetype-card">
-                <div class="chip">
-                  <img
-                    class="chip-img"
-                    src="loki.png"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="20"
-                    height="20"
-                  />
-                  Wildcard
-                </div>
-                <p>
-                  Improvises and outmaneuvers. Finds angles, flips situations,
-                  and thrives when the plan falls apart.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Value Features (mirror Wojak polish) -->
-      <section class="content-section" aria-labelledby="features-title">
-        <div class="section-header">
-          <h2 id="features-title">What You’ll Get</h2>
-          <p>
-            Built to inform and delight: modern UX, clear scoring logic, and a
-            fast character guide you can browse in seconds.
-          </p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img src="idea.png" alt="" />
-            </div>
-            <h3>Clear, Trait-Based Scoring</h3>
-            <p>
-              Each answer nudges core traits like risk tolerance, loyalty,
-              composure, and control. Your result reflects the strongest pattern
-              across the full quiz.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img src="accuracy.png" alt="" />
-            </div>
-            <h3>Iconic Character Profiles</h3>
-            <p>
-              Browse Marvel hero profiles with strengths, challenges, and the
-              roles they naturally fall into.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img src="training.png" alt="" />
-            </div>
-            <h3>Actionable Growth Prompts</h3>
-            <p>
-              Each result includes simple habits to sharpen your decision-making
-              under pressure—without overthinking it.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img src="downloadicon.png" alt="" />
-            </div>
-            <h3>Shareable Results</h3>
-            <p>
-              Create a share link for teammates and friends. Compare archetypes
-              to compare hero styles.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Quiz -->
-      <section
-        class="quiz-shell"
-        id="quizSection"
-        data-hide-option-titles="true"
-        data-addictive="true"
-      >
-        <div class="quiz-container" id="quizContainer">
-          <div class="quiz-header">
-            <h2>
-              Take the Marvel Personality Test: Which Marvel Character Are You?
-            </h2>
-            <p>Answer quick questions to reveal your Marvel character match</p>
-          </div>
-
-          <div class="quiz-layout">
-            <aside class="quiz-status-card" aria-label="Quiz status">
-              <span class="status-eyebrow">Live Quiz</span>
-              <h3>Progress tracker</h3>
-              <p>
-                Pick the option that fits you best. Your match builds over time.
-              </p>
-
-              <div class="progress-orb" id="progressOrb" aria-hidden="true">
-                <div class="progress-orb-inner">
-                  <div class="progress-orb-value" id="progressDialValue">
-                    0%
-                  </div>
-                  <small>Complete</small>
-                </div>
-              </div>
-
-              <ul class="status-pill-list">
-                <li class="status-pill">
-                  Question <span id="questionNumberTop">1</span> /
-                  <span id="questionTotalTop">0</span>
-                </li>
-                <li class="status-pill">
-                  <span id="progressLabel">Progress: 0%</span>
-                </li>
-              </ul>
-              <p class="status-footnote">
-                Tip: Answer how you’d act under pressure.
-              </p>
-            </aside>
-
-            <div class="quiz-main">
-              <div class="progress-meta">
-                <span><strong>Progress</strong></span>
-                <span aria-hidden="true">Tracked on the left</span>
-              </div>
-              <div class="progress" aria-label="Quiz progress">
-                <div
-                  class="progress-bar"
-                  id="progressBar"
-                  role="progressbar"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  aria-valuenow="0"
-                ></div>
-              </div>
-              <div class="question-counter" aria-live="polite">
-                Question <span id="questionNumber">1</span> /
-                <span id="questionTotal">0</span>
-              </div>
-
-              <div class="micro-feedback" id="microFeedback" aria-live="polite">
-                <span><strong>Tip:</strong> Trust your first instinct.</span>
-              </div>
-
-              <!-- Questions are injected by the Marvel question script below. -->
-            </div>
-          </div>
-        </div>
-
-        <div class="result" id="result">
-          <div class="result-placeholder">
-            <h3>Your result is loading...</h3>
-            <p>Finish the quiz to reveal your Marvel hero.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section" aria-labelledby="use-title">
-        <div class="section-header">
-          <h2 id="use-title">Use Your Result Like a Hero</h2>
-          <p>
-            A simple way to turn your result into better decisions, smarter
-            teamwork, and calmer choices under pressure.
-          </p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <h3>1) Identify your 2–3 core traits</h3>
-            <p>Lock in what actually drives your decisions under stress.</p>
-            <ul>
-              <li>Do you stay calm, plan ahead, or act on instinct?</li>
-              <li>Do you build trust fast or verify first?</li>
-              <li>Do you seek control, safety, or leverage?</li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h3>2) Choose your best-fit role</h3>
-            <p>Match strengths to a role that helps your team win.</p>
-            <ul>
-              <li>Pick 1 “primary” approach and 1 “backup” approach.</li>
-              <li>Define 3 rules you’ll follow no matter what.</li>
-              <li>Ask: what does my team need from me right now?</li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h3>3) Strengthen your weakest link</h3>
-            <p>One small improvement changes your odds fast.</p>
-            <ul>
-              <li>Low composure? Practice slowing down your reactions.</li>
-              <li>Low trust? Practice asking one clarifying question first.</li>
-              <li>Low strategy? Practice making a simple two-step plan.</li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h3>4) Build a safer alliance</h3>
-            <p>Use your result to choose teammates wisely.</p>
-            <ul>
-              <li>Pair planners with protectors; observers with doers.</li>
-              <li>Decide who negotiates and who verifies.</li>
-              <li>Agree on one rule: what counts as a red line.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Player Spotlight (like characters-grid) -->
-      <section class="content-section" aria-labelledby="spotlight-title">
-        <div class="section-header">
-          <h2 id="spotlight-title">Hero Spotlight: Profiles at a Glance</h2>
-          <p>
-            A quick visual guide to each hero with trademark traits and team
-            roles.
-          </p>
-        </div>
-        <div class="characters-grid" id="spotlightGrid"></div>
-
-        <div class="see-more-container" id="spotlightSeeMoreContainer">
-          <button class="see-more-btn" id="spotlightSeeMoreBtn" type="button">
-            <span>See More Heroes</span>
-            <span class="icon">↓</span>
-            <span class="count-badge" id="spotlightRemainingCount"></span>
-          </button>
-        </div>
-      </section>
-
-      <section class="content-section" aria-labelledby="positions-title">
-        <div class="section-header">
-          <h2 id="positions-title">Marvel Team Role Map</h2>
-          <p>
-            These aren’t random labels—they’re the same role tags used in the
-            Marvel Hero Guide below. Use this to understand why you matched a
-            character and what your “best move” looks like under pressure.
-          </p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <h3>Leader</h3>
-            <ul>
-              <li>
-                <strong>What it is:</strong> sets direction when it’s messy.
-              </li>
-              <li>
-                <strong>Looks like:</strong> Captain America-style clarity and
-                responsibility.
-              </li>
-              <li>
-                <strong>Examples:</strong> Captain America, Black Panther,
-                Falcon.
-              </li>
-              <li>
-                <strong>Best move:</strong> name the goal, set one rule, keep
-                the team steady.
-              </li>
-              <li>
-                <strong>Watch for:</strong> taking every burden personally.
-              </li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h3>Protector</h3>
-            <ul>
-              <li>
-                <strong>What it is:</strong> shields others and holds the line.
-              </li>
-              <li>
-                <strong>Looks like:</strong> Black Panther-style duty,
-                boundaries, and defense.
-              </li>
-              <li>
-                <strong>Examples:</strong> Black Panther, Winter Soldier,
-                Captain America.
-              </li>
-              <li>
-                <strong>Best move:</strong> protect the vulnerable first, then
-                reduce risk.
-              </li>
-              <li>
-                <strong>Watch for:</strong> becoming rigid or over-controlling
-                “for safety.”
-              </li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h3>Powerhouse</h3>
-            <ul>
-              <li>
-                <strong>What it is:</strong> wins with force, endurance, and
-                decisive action.
-              </li>
-              <li>
-                <strong>Looks like:</strong> Hulk/Thor energy—direct, fearless,
-                hard to stop.
-              </li>
-              <li><strong>Examples:</strong> Hulk, Thor.</li>
-              <li>
-                <strong>Best move:</strong> act fast, but choose the smallest
-                effective response.
-              </li>
-              <li>
-                <strong>Watch for:</strong> heat-of-the-moment escalation and
-                collateral damage.
-              </li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h3>Wildcard</h3>
-            <ul>
-              <li>
-                <strong>What it is:</strong> improvises, adapts, and finds weird
-                solutions.
-              </li>
-              <li>
-                <strong>Looks like:</strong> Spider-Man/Loki creativity under
-                pressure.
-              </li>
-              <li><strong>Examples:</strong> Spider-Man, Loki.</li>
-              <li>
-                <strong>Best move:</strong> pick one objective, keep it light,
-                stay flexible.
-              </li>
-              <li>
-                <strong>Watch for:</strong> inconsistency that makes people
-                doubt you.
-              </li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h3>Specialist</h3>
-            <ul>
-              <li>
-                <strong>What it is:</strong> solves the “impossible” part others
-                can’t.
-              </li>
-              <li>
-                <strong>Looks like:</strong> Doctor Strange (mystic) or Iron Man
-                (tech) problem-solving.
-              </li>
-              <li>
-                <strong>Examples:</strong> Iron Man, Doctor Strange, Hawkeye.
-              </li>
-              <li>
-                <strong>Best move:</strong> diagnose first, then execute a clean
-                plan.
-              </li>
-              <li>
-                <strong>Watch for:</strong> tunnel vision and assuming others
-                “should get it.”
-              </li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <h3>Support</h3>
-            <ul>
-              <li>
-                <strong>What it is:</strong> makes everyone else better
-                (coordination, intel, timing).
-              </li>
-              <li>
-                <strong>Looks like:</strong> Black Widow-style tactics and
-                teamwork glue.
-              </li>
-              <li><strong>Examples:</strong> Black Widow, Falcon.</li>
-              <li>
-                <strong>Best move:</strong> set up the win: clarify roles, share
-                key info, steady the team.
-              </li>
-              <li>
-                <strong>Watch for:</strong> neglecting your own needs and
-                burning out.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Guide -->
-      <section
-        class="content-section"
-        id="countryGuide"
-        aria-labelledby="guide-title"
-      >
-        <div id="characters" aria-hidden="true"></div>
-        <div class="guide-header">
-          <span class="eyebrow">Reference</span>
-          <h2 id="guide-title">Marvel Hero Guide</h2>
-          <p>
-            Explore each hero profile with traits and quick context. Search by
-            name, role, or trait—or tap a tag to filter.
-          </p>
-        </div>
-
-        <div class="main-container">
-          <div class="guide-toolbar" role="region" aria-label="Guide tools">
-            <div class="search-input">
-              <span class="icon">&#128269;</span>
-              <input
-                type="search"
-                id="guideSearch"
-                placeholder="Search heroes, roles, or traits..."
-                aria-label="Search guide"
-              />
-            </div>
-            <div class="filter-chips" role="group" aria-label="Filter by tags">
-              <button
-                class="chip active"
-                type="button"
-                data-filter="all"
-                aria-pressed="true"
-              >
-                All
-              </button>
-              <button
-                class="chip"
-                type="button"
-                data-filter="leader"
-                aria-pressed="false"
-              >
-                Leader
-              </button>
-              <button
-                class="chip"
-                type="button"
-                data-filter="inventor"
-                aria-pressed="false"
-              >
-                Inventor
-              </button>
-              <button
-                class="chip"
-                type="button"
-                data-filter="warrior"
-                aria-pressed="false"
-              >
-                Warrior
-              </button>
-              <button
-                class="chip"
-                type="button"
-                data-filter="spy"
-                aria-pressed="false"
-              >
-                Spy
-              </button>
-              <button
-                class="chip"
-                type="button"
-                data-filter="mystic"
-                aria-pressed="false"
-              >
-                Mystic
-              </button>
-              <button
-                class="chip"
-                type="button"
-                data-filter="protector"
-                aria-pressed="false"
-              >
-                Protector
-              </button>
-              <button
-                class="chip"
-                type="button"
-                data-filter="powerhouse"
-                aria-pressed="false"
-              >
-                Powerhouse
-              </button>
-              <button
-                class="chip"
-                type="button"
-                data-filter="wildcard"
-                aria-pressed="false"
-              >
-                Wildcard
-              </button>
-              <button
-                class="chip"
-                type="button"
-                data-filter="specialist"
-                aria-pressed="false"
-              >
-                Specialist
-              </button>
-              <button
-                class="chip"
-                type="button"
-                data-filter="support"
-                aria-pressed="false"
-              >
-                Support
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="guide-grid" id="guideGrid">
-          <!-- Cards injected via JS -->
-        </div>
-
-        <div class="see-more-container" id="seeMoreContainer">
-          <button class="see-more-btn" id="seeMoreBtn" type="button">
-            <span>See More Heroes</span>
-            <span class="icon">↓</span>
-            <span class="count-badge" id="remainingCount"></span>
-          </button>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="faq-section" id="faq" aria-labelledby="faq-heading">
-        <div class="main-container">
-          <div class="section-header">
-            <h2 id="faq-heading">Frequently Asked Questions</h2>
-            <p>
-              Detailed answers about how the quiz works, what results mean, and
-              how to use them to understand your decisions under pressure.
-            </p>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              Is this a Marvel personality test?<span>+</span>
-            </div>
-            <div class="faq-answer" hidden>
-              <p>
-                Yes—this is a personality-style Marvel quiz designed for insight
-                and entertainment. Your answers map to patterns like risk
-                tolerance, leadership, loyalty, and decision-making under
-                pressure to produce a best-fit Marvel character match.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              Which Marvel character am I (or are you)?<span>+</span>
-            </div>
-            <div class="faq-answer" hidden>
-              <p>
-                Finish the quiz and you’ll get the Marvel character you match
-                most based on your choices, plus a breakdown of strengths and
-                watch-outs. If you feel like you blend multiple characters,
-                that’s normal—many people share traits across several hero
-                styles.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              How accurate is this quiz?<span>+</span>
-            </div>
-            <div class="faq-answer" hidden>
-              <p>
-                This quiz is designed for insight and entertainment rather than
-                clinical diagnosis. It combines:
-              </p>
-              <ul>
-                <li>
-                  Simple trait mapping from answers to hero archetype traits
-                  (mindset, teamwork, leadership, and boundaries).
-                </li>
-                <li>
-                  Heuristics based on common story archetypes and recognizable
-                  hero decision patterns.
-                </li>
-              </ul>
-              <p>
-                Expect useful directional feedback (strengths, growth areas).
-                Use it alongside real-life reflection and conversations with
-                people who know you well.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              What methodology is used to map answers to characters?<span
-                >+</span
-              >
-            </div>
-            <div class="faq-answer" hidden>
-              <p>
-                For each question, answers are mapped to hero-aligned traits
-                (e.g., innovation, leadership, resilience, and teamwork). The
-                quiz:
-              </p>
-              <ul>
-                <li>
-                  Assigns a simple point increment to the hero trait most
-                  aligned with the chosen answer.
-                </li>
-                <li>
-                  Totals points across all questions and selects the top-scoring
-                  hero profile (randomizing ties).
-                </li>
-                <li>
-                  Provides a qualitative breakdown (strengths, watch-outs, and
-                  hero roles) from an expert-informed content set.
-                </li>
-              </ul>
-              <p>
-                This approach prioritizes clarity and fast feedback rather than
-                deep psychometrics.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              Can my result change over time and why?<span>+</span>
-            </div>
-            <div class="faq-answer" hidden>
-              <p>
-                Yes — results reflect preferences and tendencies, not fixed
-                labels. Common reasons for change:
-              </p>
-              <ul>
-                <li>
-                  Intentional habit changes (e.g., setting boundaries, planning
-                  more, staying calmer).
-                </li>
-                <li>
-                  Life context (stress, responsibility) changing how you decide
-                  under pressure.
-                </li>
-                <li>
-                  New experiences reshaping what you value: safety, loyalty, or
-                  control.
-                </li>
-              </ul>
-              <p>
-                Consider retaking the quiz periodically to track how your
-                archetype evolves.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              How should I use the result in real life?<span>+</span>
-            </div>
-            <div class="faq-answer" hidden>
-              <p>
-                Treat the result as a starting point. Recommended next steps:
-              </p>
-              <ul>
-                <li>
-                  Review your strengths and watch-outs and pick one thing to
-                  improve for the next week.
-                </li>
-                <li>
-                  Work on one targeted growth focus at a time (2–4 weeks).
-                </li>
-                <li>
-                  Share your result with friends to compare styles and talk
-                  through what you’d do differently.
-                </li>
-              </ul>
-              <p>
-                Small improvements in composure, planning, and boundaries can
-                meaningfully change your outcomes in real life, too.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              Is any personal data collected or stored?<span>+</span>
-            </div>
-            <div class="faq-answer" hidden>
-              <p>
-                NO! We don't store personal data at all. The quiz runs entirely
-                in your browser using JavaScript. No answers or results are sent
-                to any server or third party. Your privacy is fully respected.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              Why do some answers show the same character across multiple
-              questions?<span>+</span>
-            </div>
-            <div class="faq-answer" hidden>
-              <p>
-                Some characters strongly represent multiple traits at once.
-                Because the quiz maps behaviour patterns, it’s normal for the
-                same character to align with several questions — that reinforces
-                consistent scoring.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              How are images and character names handled and attributed?<span
-                >+</span
-              >
-            </div>
-            <div class="faq-answer" hidden>
-              <p>
-                Character names are used for entertainment and reference. Images
-                included are either site assets or generated placeholders. If
-                you have concerns about a specific image, contact the site owner
-                for resolution.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              Are you affiliated with Marvel or Disney?<span>+</span>
-            </div>
-            <div class="faq-answer" hidden>
-              <p>
-                No. This is a fan-made quiz for entertainment and
-                self-reflection and is not affiliated with or endorsed by Marvel
-                or Disney.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              I disagree with my result — what can I do?<span>+</span>
-            </div>
-            <div class="faq-answer" hidden>
-              <p>Disagreement is normal. Options:</p>
-              <ul>
-                <li>
-                  Retake the quiz and answer with how you actually behave under
-                  pressure (not how you wish you would).
-                </li>
-                <li>
-                  Compare the Character Spotlight and Guide to see neighboring
-                  profiles you might blend with.
-                </li>
-                <li>
-                  Share your result with friends for external perspective and a
-                  reality-check.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              Who can I contact for feedback or bug reports?<span>+</span>
-            </div>
-            <div class="faq-answer" hidden>
-              <p>Please use Instagram to reach out to us.</p>
-              <p>We appreciate constructive feedback.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <footer class="site-footer">
-      <div class="site-footer__inner">
-        <div class="site-footer__brand">
-          <img
-            src="zinvanalogo.png"
-            alt="Zinvana"
-            class="site-footer__logo"
-            width="44"
-            height="44"
-            loading="lazy"
-            decoding="async"
-            fetchpriority="low"
-          />
-          <h3 class="site-footer__title">Zinvana</h3>
-          <p class="site-footer__description">
-            Discover your next chapter through evidence-informed quizzes and
-            practical guides. From personality frameworks to relocation
-            readiness, we turn curiosity into clear next steps.
-          </p>
-          <div class="site-footer__social">
-            <a
-              href="https://x.com/farazglori80528"
-              target="_blank"
-              rel="noopener"
-              class="site-footer__social-link site-footer__social-link--x"
-              aria-label="Follow Zinvana on X"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
-              target="_blank"
-              rel="noopener"
-              class="site-footer__social-link site-footer__social-link--instagram"
-              aria-label="Follow Zinvana on Instagram"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"
-                />
-                <path
-                  d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162S8.597 18.163 12 18.163s6.162-2.759 6.162-6.163S15.403 5.838 12 5.838zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"
-                />
-                <circle cx="18.406" cy="5.594" r="1.44" />
-              </svg>
-            </a>
-          </div>
-          <p class="site-footer__note">Stay updated with our newest quizzes.</p>
-        </div>
-
-        <div class="site-footer__column">
-          <h4 class="site-footer__heading">Popular Quizzes</h4>
-          <ul class="site-footer__list">
-            <li>
-              <a class="site-footer__link" href="leaders.html"
-                >Historical Leaders Personality Quiz</a
-              >
-            </li>
-            <li>
-              <a class="site-footer__link" href="marvel-quiz.html"
-                >Marvel Superhero Quiz</a
-              >
-            </li>
-            <li>
-              <a class="site-footer__link" href="mbti-personality-quiz.html"
-                >MBTI Personality Quiz</a
-              >
-            </li>
-            <li>
-              <a class="site-footer__link" href="perfect-country.html"
-                >Perfect Country Quiz</a
-              >
-            </li>
-            <li>
-              <a
-                class="site-footer__link"
-                href="youtubers-personality-quiz.html"
-                >YouTubers Personality Quiz</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="site-footer__column">
-          <h4 class="site-footer__heading">Resources</h4>
-          <ul class="site-footer__list">
-            <li>
-              <a class="site-footer__link" href="/about.html">About Us</a>
-            </li>
-            <li>
-              <a class="site-footer__link" href="/privacy.html"
-                >Privacy Policy</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="site-footer__bottom">
-        <div class="site-footer__bottom-row">
-          <p>&copy; 2025 Zinvana. All rights reserved.</p>
-          <p>Made with ❤️ by the Zinvana Team</p>
-        </div>
-        <p class="site-footer__disclaimer">
-          This Marvel superhero quiz is for entertainment purposes only. Results
-          are based on your responses and should not be considered professional
-          psychological diagnosis or definitive personality assessments.
-        </p>
-      </div>
-    </footer>
-
-    <script>
-      // Mobile menu toggle
-      const toggle = document.getElementById("menuToggle");
-      const menu = document.getElementById("mobileMenu");
-      const backdrop = document.getElementById("menuBackdrop");
-      const navLinks = menu?.querySelectorAll(".nav-link");
-
-      const closeMenu = () => {
-        if (!toggle || !menu) return;
-        menu.classList.remove("open");
-        toggle.classList.remove("active");
-        toggle.setAttribute("aria-expanded", "false");
-        menu.setAttribute("hidden", "");
-        backdrop?.setAttribute("hidden", "");
-        document.body.classList.remove("nav-open");
-        document.body.classList.remove("nav-locked");
-      };
-
-      const openMenu = () => {
-        if (!toggle || !menu) return;
-        menu.removeAttribute("hidden");
-        backdrop?.removeAttribute("hidden");
-        menu.classList.add("open");
-        toggle.classList.add("active");
-        toggle.setAttribute("aria-expanded", "true");
-        document.body.classList.add("nav-open");
-        document.body.classList.add("nav-locked");
-      };
-
-      if (toggle && menu) {
-        toggle.addEventListener("click", () => {
-          const isOpen = menu.classList.contains("open");
-          if (isOpen) closeMenu();
-          else openMenu();
-        });
-
-        navLinks?.forEach((link) => {
-          link.addEventListener("click", () => {
-            closeMenu();
-          });
-        });
-
-        backdrop?.addEventListener("click", () => {
-          closeMenu();
-        });
-
-        document.addEventListener("click", (e) => {
-          if (!menu.classList.contains("open")) return;
-          const target = e.target;
-          if (!(target instanceof Node)) return;
-          if (menu.contains(target)) return;
-          if (toggle.contains(target)) return;
-          closeMenu();
-        });
-
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && menu.classList.contains("open")) {
-            closeMenu();
-          }
-        });
-
-        window.addEventListener("resize", () => {
-          // If we leave the mobile breakpoint, force-close the overlay menu.
-          if (window.innerWidth > 980 && menu.classList.contains("open")) {
-            closeMenu();
-          }
-        });
-      }
-    </script>
-
-    <script>
-      const wojakData = {
-        gi_hun: {
-          name: "Iron Man — The Visionary",
-          emoji: "🦾",
-          img: "ironman.png",
-          description:
-            "You solve problems with brains, bold bets, and relentless iteration. You build the future—even when it’s messy.",
-          strengths: [
-            "Inventive under pressure",
-            "Fast decision-maker",
-            "Turns chaos into plans",
-          ],
-          challenges: ["Can overcontrol outcomes", "Pride can cloud judgment"],
-          roles: ["Builder", "Strategist", "High-stakes leader"],
-          growthAdvice:
-            "Keep the ambition, but share context early—teams move faster when they trust the why.",
-          drills: [
-            "State your goal in one sentence",
-            "Ask for one dissenting opinion",
-            "Ship a small improvement first",
-          ],
-          moments: ["Improvising a solution", "Owning responsibility"],
-        },
-        sang_woo: {
-          name: "Captain America — The Leader",
-          emoji: "🛡️",
-          img: "captainamerica.png",
-          description:
-            "You lead with values, courage, and consistency. People follow you because you show up—every time.",
-          strengths: ["Moral clarity", "Steady leadership", "Protects others"],
-          challenges: ["Can be stubborn", "Takes too much on alone"],
-          roles: ["Team captain", "Moral anchor", "Tactical leader"],
-          growthAdvice:
-            "Stand for something, but stay flexible—new information doesn’t betray your principles.",
-          drills: [
-            "Delegate one responsibility",
-            "Ask what changed before deciding",
-            "Name the tradeoff out loud",
-          ],
-          moments: ["Choosing integrity", "Holding the line"],
-        },
-        sae_byeok: {
-          name: "Spider-Man — The Heart",
-          emoji: "🕸️",
-          img: "spiderman.png",
-          description:
-            "You do the right thing even when it costs you. You’re adaptable, quick, and surprisingly resilient.",
-          strengths: ["Empathy", "Agility", "Creative problem-solving"],
-          challenges: ["Over-responsibility", "Second-guesses choices"],
-          roles: ["Friendly helper", "Fast responder", "Underdog hero"],
-          growthAdvice:
-            "Care deeply, but don’t carry everything alone—support systems are part of responsibility.",
-          drills: [
-            "Ask for help once per challenge",
-            "Focus on what you can control",
-            "Act, then reflect",
-          ],
-          moments: ["Saving someone first", "Finding humor under stress"],
-        },
-        ali: {
-          name: "Thor — The Warrior",
-          emoji: "⚡",
-          img: "thor.png",
-          description:
-            "You’re bold, protective, and direct. When the stakes rise, you rise with them—and you inspire others to do the same.",
-          strengths: ["Courage", "Loyalty", "Big-move confidence"],
-          challenges: ["Impulsiveness", "Pride in strength"],
-          roles: ["Frontline", "Protector", "Morale booster"],
-          growthAdvice:
-            "Pair power with patience—timing can be stronger than force.",
-          drills: [
-            "Pause before escalating",
-            "Ask: what’s plan B?",
-            "Listen once before acting",
-          ],
-          moments: ["Charging into danger", "Protecting the team"],
-        },
-        front_man: {
-          name: "Doctor Strange — The Mastermind",
-          emoji: "🌀",
-          img: "drstrange.png",
-          description:
-            "You stay calm, see patterns others miss, and make hard calls for the long game.",
-          strengths: ["Strategic foresight", "Composure", "Systems thinking"],
-          challenges: ["Detached tone", "Can seem overly calculated"],
-          roles: ["Planner", "Advisor", "Reality-checker"],
-          growthAdvice:
-            "Share your reasoning—clarity builds trust and makes execution smoother.",
-          drills: [
-            "Explain the why in 20 seconds",
-            "Run a quick pre-mortem",
-            "Confirm assumptions twice",
-          ],
-          moments: ["Choosing the long-term win", "Staying calm in chaos"],
-        },
-        jun_ho: {
-          name: "Black Widow — The Investigator",
-          emoji: "🕵️",
-          img: "widow.png",
-          description:
-            "You read rooms, spot motives, and move with precision. You win by information—and timing.",
-          strengths: ["Observation", "Discipline", "Adaptability"],
-          challenges: ["Trust issues", "Overextends solo"],
-          roles: ["Scout", "Strategic operator", "Truth seeker"],
-          growthAdvice:
-            "Keep your edge, but build one reliable ally—two sets of eyes beat one.",
-          drills: [
-            "Write down 3 facts before acting",
-            "Create an exit plan",
-            "Ask one clarifying question",
-          ],
-          moments: ["Finding the clue", "Turning a disadvantage into leverage"],
-        },
-        il_nam: {
-          name: "Hulk — The Powerhouse",
-          emoji: "💪",
-          img: "hulk.png",
-          description:
-            "You’re a force when it matters. Under stress you can go all-in—your job is aiming that power wisely.",
-          strengths: ["Raw resilience", "Protective instincts", "Endurance"],
-          challenges: ["Emotional spikes", "Collateral damage risk"],
-          roles: ["Tank", "Last resort", "Pressure absorber"],
-          growthAdvice:
-            "Build a cooldown routine—control turns strength into reliability.",
-          drills: [
-            "Name the emotion",
-            "Count 10 before reacting",
-            "Choose the smallest effective response",
-          ],
-          moments: ["Breaking through a wall", "Protecting allies"],
-        },
-        deok_su: {
-          name: "Black Panther — The Protector",
-          emoji: "🐾",
-          img: "black-panther.png",
-          description:
-            "You lead with calm authority, responsibility, and sharp judgment. You protect your people—and your standards.",
-          strengths: ["Leadership", "Composure", "Strategic restraint"],
-          challenges: ["High expectations", "Can seem distant"],
-          roles: ["Guardian", "Leader", "Tactical thinker"],
-          growthAdvice:
-            "Balance strength with openness—inviting input doesn’t weaken authority.",
-          drills: [
-            "Ask for feedback",
-            "Share credit publicly",
-            "Decide with principle + context",
-          ],
-          moments: [
-            "Protecting the mission",
-            "Choosing diplomacy before force",
-          ],
-        },
-        mi_nyeo: {
-          name: "Loki — The Wildcard",
-          emoji: "🃏",
-          img: "loki.png",
-          description:
-            "You’re clever, unpredictable, and socially sharp. You bend situations—sometimes too far.",
-          strengths: ["Adaptability", "Persuasion", "Creative angles"],
-          challenges: ["Impulsiveness", "Trust volatility"],
-          roles: ["Trickster", "Negotiator", "Wildcard"],
-          growthAdvice:
-            "Use your cleverness to build alliances, not just win moments.",
-          drills: [
-            "Pick one goal per round",
-            "Don’t burn bridges early",
-            "Say the quiet part later",
-          ],
-          moments: ["Flipping a scenario", "Winning with wit"],
-        },
-        lee_myung_gi: {
-          name: "Hawkeye — The Specialist",
-          emoji: "🎯",
-          img: "hawkeye.png",
-          description:
-            "You rely on precision, discipline, and knowing your lane. You win by being dependable under fire.",
-          strengths: ["Focus", "Consistency", "Calm execution"],
-          challenges: ["Underestimates self", "Carries quiet stress"],
-          roles: ["Sharpshooter", "Support", "Clutch finisher"],
-          growthAdvice:
-            "Own your strengths—quiet competence is leadership too.",
-          drills: [
-            "Define success metrics",
-            "Practice one skill daily",
-            "Communicate status early",
-          ],
-          moments: ["Landing the decisive shot", "Staying steady"],
-        },
-        park_jung_bae: {
-          name: "Winter Soldier — The Operative",
-          emoji: "❄️",
-          img: "bucky.png",
-          description:
-            "You endure, adapt, and keep going. You’re resilient—and learning to trust again is your superpower.",
-          strengths: ["Grit", "Adaptability", "Protective loyalty"],
-          challenges: ["Isolation", "Hard time asking for help"],
-          roles: ["Operative", "Protector", "Reliable ally"],
-          growthAdvice:
-            "Build one steady routine—stability makes you harder to shake.",
-          drills: [
-            "Share one honest detail",
-            "Choose one ally",
-            "Don’t fight every battle",
-          ],
-          moments: ["Getting back up", "Choosing a better path"],
-        },
-        se_mi: {
-          name: "Falcon — The Wingman",
-          emoji: "🪽",
-          img: "falcon.png",
-          description:
-            "You’re practical, loyal, and ready to move. You stabilize teams by being the one who shows up.",
-          strengths: ["Teamwork", "Speed", "Clear-headed support"],
-          challenges: ["Can be underestimated", "May avoid spotlight"],
-          roles: ["Support lead", "Coordinator", "Fast responder"],
-          growthAdvice:
-            "Step forward when it matters—your consistency is influence.",
-          drills: [
-            "Speak first once",
-            "Set one boundary",
-            "Call the next step",
-          ],
-          moments: ["Backing up a teammate", "Keeping the team moving"],
-        },
-      };
-    </script>
-
-    <script>
-      const pageMap = {
-        gi_hun: "iron-man.html",
-        sang_woo: "captain-america.html",
-        sae_byeok: "spider-man.html",
-        ali: "thor.html",
-        front_man: "doctor-strange.html",
-        jun_ho: "black-widow.html",
-        il_nam: "hulk.html",
-        deok_su: "black-panther.html",
-        mi_nyeo: "#quizSection",
-        lee_myung_gi: "hawkeye.html",
-        park_jung_bae: "#quizSection",
-        se_mi: "falcon.html",
-      };
-
-      // Utilities to ensure every player has an image
-      function normalizeText(value) {
-        // Fix common mojibake sequences (UTF-8 decoded as Windows-1252)
-        // and also normalize smart punctuation to plain ASCII.
-        return String(value ?? "")
-          .replace(/Â\s?/g, "")
-          .replace(/â€™/g, "'")
-          .replace(/â€œ|â€�/g, '"')
-          .replace(/â€˜|â€™/g, "'")
-          .replace(/â€“|â€”/g, "-")
-          .replace(/â€¦/g, "...")
-          .replace(/[“”]/g, '"')
-          .replace(/[‘’]/g, "'")
-          .replace(/[–—]/g, "-")
-          .replace(/…/g, "...");
-      }
-
-      function getInitials(name) {
-        if (!name) return "??";
-        const plain = normalizeText(name).replace(/\s+-\s+.+$/, ""); // drop subtitle after dash
-        const parts = plain.trim().split(/\s+/);
-        const first = (parts[0] || "")[0] || "";
-        const second = (parts[1] || "")[0] || "";
-        return (first + second).toUpperCase();
-      }
-
-      function getDisplayName(data) {
-        const raw = normalizeText(data?.name || "");
-        // Names are formatted like "Seong Gi-hun — The Heart" (normalized to " - ")
-        return raw.split(/\s-\s/)[0] || raw;
-      }
-      function hueFromString(s) {
-        let h = 0;
-        for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
-        return h;
-      }
-      function getPlaceholderImg(name) {
-        const initials = getInitials(name || "");
-        const h = hueFromString(name || "player");
-        const bg = `hsl(${h},65%,60%)`;
-        const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='128' height='128'>
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>
+ Which Marvel Character Are You? Marvel Personality Test Quiz (2025) |
+ Zinvana
+ </title>
+ <meta
+ name="description"
+ content="Take this Marvel personality test to find out which Marvel character you are. Answer quick questions about values, risk, leadership, and teamwork for an instant hero match plus strengths and watch-outs."
+ />
+ <meta name="author" content="Zinvana" />
+ <meta name="robots" content="index, follow" />
+ <link rel="canonical" href="https://zinvana.com/marvel-quiz.html" />
+
+ <meta property="og:type" content="website" />
+ <meta property="og:site_name" content="Zinvana" />
+ <meta
+ property="og:title"
+ content="Which Marvel Character Are You? Marvel Personality Test Quiz (2025)"
+ />
+ <meta
+ property="og:description"
+ content="Answer quick questions about values, risk, leadership, and teamwork to reveal your Marvel character match, plus strengths and watch-outs."
+ />
+ <meta property="og:url" content="https://zinvana.com/marvel-quiz.html" />
+ <meta property="og:image" content="https://zinvana.com/zinvanalogo.png" />
+
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta
+ name="twitter:title"
+ content="Which Marvel Character Are You? Marvel Personality Test Quiz (2025)"
+ />
+ <meta
+ name="twitter:description"
+ content="A fast Marvel personality test: answer questions and get an instant Marvel character match with a detailed breakdown."
+ />
+ <meta name="twitter:image" content="https://zinvana.com/zinvanalogo.png" />
+
+ <style>
+ section[id] {
+ scroll-margin-top: calc(var(--topbar-h) + 14px);
+ }
+
+ /* Marvel page accents (scoped, no global side effects) */
+ body.page-marvel {
+ --brand1: #ef4444;
+ --brand2: #f59e0b;
+ }
+
+ body.page-marvel.quiz-shell.progress-bar {
+ background: linear-gradient(90deg, var(--brand1), var(--brand2));
+ }
+
+ body.page-marvel.quiz-shell.question h3::before {
+ color: var(--brand1);
+ }
+
+ body.page-marvel.quiz-shell.status-eyebrow {
+ color: rgba(239, 68, 68, 0.92);
+ }
+
+ body.page-marvel.quiz-shell.micro-feedback {
+ margin: 10px 0 18px;
+ padding: 12px 14px;
+ border-radius: 14px;
+ border: 1px solid rgba(226, 232, 240, 0.9);
+ background: rgba(255, 255, 255, 0.86);
+ color: var(--text-strong, #0f172a);
+ font-weight: 650;
+ line-height: 1.35;
+ }
+
+ body.page-marvel.quiz-shell.micro-feedback strong {
+ color: var(--brand1);
+ }
+
+ /* Professional Quick Facts Cards */.hero-kpis-pro {
+ display: flex;
+ gap: 18px;
+ margin: 18px 0 10px 0;
+ flex-wrap: wrap;
+ justify-content: flex-start;
+ }.kpi-card {
+ background: var(--surface-2, #f7fafc);
+ border-radius: 14px;
+ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+ display: flex;
+ align-items: center;
+ padding: 12px 18px;
+ min-width: 140px;
+ font-weight: 600;
+ font-size: 1.08rem;
+ color: var(--text-strong, #0f172a);
+ transition: box-shadow 0.2s;
+ }.kpi-card:hover {
+ box-shadow: 0 4px 18px rgba(45, 62, 80, 0.13);
+ }.kpi-icon {
+ font-size: 1.35em;
+ margin-right: 10px;
+ filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
+ }.kpi-label {
+ letter-spacing: 0.01em;
+ }
+ @media (max-width: 600px) {.hero-kpis-pro {
+ gap: 10px;
+ }.kpi-card {
+ min-width: 110px;
+ font-size: 0.98rem;
+ padding: 10px 12px;
+ }.kpi-icon {
+ font-size: 1.1em;
+ margin-right: 7px;
+ }
+ }
+
+ /* ===== Marvel polish layer (scoped to this page) ===== */
+ body.page-marvel a:focus-visible,
+ body.page-marvel button:focus-visible {
+ outline-color: rgba(239, 68, 68, 0.7);
+ }
+
+ body.page-marvel header.topbar::after {
+ content: "";
+ position: absolute;
+ left: 0;
+ right: 0;
+ bottom: -1px;
+ height: 3px;
+ background: linear-gradient(90deg, var(--brand1), var(--brand2));
+ opacity: 0.85;
+ pointer-events: none;
+ }
+
+ body.page-marvel.nav-link:hover,
+ body.page-marvel.nav-link:focus-visible {
+ background: rgba(239, 68, 68, 0.1);
+ }
+
+ body.page-marvel.theme-light.hero-section::before {
+ background: radial-gradient(
+ circle,
+ rgba(239, 68, 68, 0.16) 0%,
+ rgba(245, 158, 11, 0.08) 35%,
+ transparent 70%
+ );
+ }
+
+ body.page-marvel.theme-light.hero-section h1 {
+ color: var(--text-strong, #0f172a);
+ }
+
+ @supports (-webkit-background-clip: text) {
+ body.page-marvel.theme-light.hero-section h1 {
+ background: linear-gradient(90deg, var(--brand1), var(--brand2));
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+ }
+ }
+
+ body.page-marvel.hero-highlights li::before {
+ color: var(--brand2);
+ }
+
+ body.page-marvel.theme-light.hero-panel {
+ background: rgba(255, 255, 255, 0.86);
+ border-color: rgba(0, 0, 0, 0.08);
+ }
+
+ body.page-marvel.theme-light.hero-panel h3 {
+ color: var(--brand1);
+ }
+
+ body.page-marvel.primary-btn:hover,
+ body.page-marvel.ghost-btn:hover {
+ box-shadow: 0 20px 60px rgba(239, 68, 68, 0.25);
+ }
+
+ body.page-marvel.chip.active {
+ box-shadow: 0 6px 18px rgba(239, 68, 68, 0.22);
+ }
+
+ body.page-marvel.see-more-btn {
+ box-shadow: 0 12px 35px rgba(239, 68, 68, 0.28);
+ }
+
+ body.page-marvel.see-more-btn:hover {
+ box-shadow: 0 18px 45px rgba(239, 68, 68, 0.38);
+ }
+
+ body.page-marvel.search-input input[type="search"]:focus {
+ box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14);
+ }
+
+ body.page-marvel.quiz-shell.progress-orb {
+ background: conic-gradient(
+ rgba(239, 68, 68, 0.75) var(--progress),
+ rgba(226, 232, 240, 0.9) 0
+ );
+ }
+
+ body.page-marvel.quiz-shell.answer-btn:hover {
+ border-color: rgba(239, 68, 68, 0.45);
+ box-shadow: 0 25px 50px rgba(239, 68, 68, 0.16);
+ }
+
+ body.page-marvel.quiz-shell.answer-btn.selected {
+ border-color: rgba(239, 68, 68, 0.8);
+ box-shadow: 0 30px 60px rgba(239, 68, 68, 0.22);
+ }
+
+ body.page-marvel.quiz-shell.result {
+ background: linear-gradient(
+ 135deg,
+ rgba(239, 68, 68, 0.55),
+ rgba(245, 158, 11, 0.45)
+ );
+ }
+
+ body.page-marvel.pillars.icon img {
+ width: 20px;
+ height: 20px;
+ border-radius: 4px;
+ object-fit: cover;
+ }
+
+ body.page-marvel.feature-icon img {
+ width: 28px;
+ height: 28px;
+ vertical-align: middle;
+ }
+
+ body.page-marvel #countryGuide.main-container {
+ padding-bottom: 8px;
+ }
+
+ body.page-marvel.character-link {
+ text-decoration: none;
+ color: inherit;
+ display: block;
+ }
+ </style>
+
+ <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link
+ href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+ rel="stylesheet"
+ />
+
+ <link rel="stylesheet" href="football-quiz-template.css" />
+ <link rel="stylesheet" href="perfect-quiz-shell.css" />
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "Is this a Marvel personality test?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Yes—this is a personality-style Marvel quiz designed for insight and entertainment. Your answers map to patterns like risk tolerance, leadership, loyalty, and decision-making under pressure to produce a best-fit Marvel character match."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Which Marvel character am I (or are you)?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Finish the quiz and you’ll get the Marvel character you match most based on your choices, plus a breakdown of strengths and watch-outs. If you feel like you blend multiple characters, that’s normal—many people share traits across several hero styles."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "What methodology is used to map answers to characters?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Each answer contributes points to hero-aligned traits (innovation, resilience, strategy, responsibility, etc.). The quiz totals points across questions and returns the top-scoring character profile (randomizing ties) with a qualitative explanation."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Is any personal data collected or stored?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "No. The quiz runs in your browser using JavaScript. Answers and results are not stored or sent to a server."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "I disagree with my result — what can I do?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Retake the quiz and answer based on how you actually act under pressure, then compare the Character Spotlight and Guide for nearby profiles you may blend with. Sharing your result with friends can also help you sanity-check the match."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Are you affiliated with Marvel?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "No. This is a fan-made quiz for entertainment and self-reflection and is not affiliated with or endorsed by Marvel or Disney."
+ }
+ }
+ ]
+ }
+ </script>
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Quiz",
+ "name": "Which Marvel Character Are You? Marvel Personality Test Quiz (2025)",
+ "description": "A Marvel personality test that matches you to a Marvel character based on values, risk, leadership, and teamwork.",
+ "url": "https://zinvana.com/marvel-quiz.html",
+ "inLanguage": "en",
+ "isAccessibleForFree": true,
+ "publisher": {
+ "@type": "Organization",
+ "name": "Zinvana",
+ "url": "https://zinvana.com"
+ }
+ }
+ </script>
+ <link rel="stylesheet" href="magazine.css" />
+</head>
+ <body class="theme-light page-marvel">
+ <header class="topbar">
+ <div class="topbar__inner">
+ <a class="brand" href="index.html">
+ <img
+ src="zinvanalogo.png"
+ alt="Zinvana logo"
+ width="36"
+ height="36"
+ decoding="async"
+ fetchpriority="high"
+ />
+ <span>Zinvana</span>
+ </a>
+ <nav class="primary-nav" aria-label="Main navigation">
+ <a class="nav-link" href="#quizSection">Quiz</a>
+ <a class="nav-link" href="#characters">Guide</a>
+ <a class="nav-link" href="#faq">FAQ</a>
+ </nav>
+ <div class="nav-actions">
+ <a class="btn btn--ghost" href="index.html#quizzes">All quizzes</a>
+ <button
+ class="hamburger"
+ id="menuToggle"
+ aria-label="Toggle menu"
+ aria-controls="mobileMenu"
+ aria-expanded="false"
+ >
+ <span></span>
+ </button>
+ </div>
+ </div>
+ <div class="menu-backdrop" id="menuBackdrop" hidden></div>
+ <nav
+ class="mobile-menu"
+ id="mobileMenu"
+ aria-label="Mobile navigation"
+ hidden
+ >
+ <a class="nav-link" href="#quizSection">Quiz</a>
+ <a class="nav-link" href="#characters">Guide</a>
+ <a class="nav-link" href="#faq">FAQ</a>
+ <a class="nav-link" href="index.html#quizzes">All quizzes</a>
+ <a class="nav-link" href="about.html">About</a>
+ </nav>
+ </header>
+
+ <header class="hero-section" id="overview">
+ <div class="main-container hero-grid">
+ <div class="hero-copy">
+ <span class="eyebrow">Marvel Hero Finder</span>
+ <h1>Which Marvel Character Are You?</h1>
+ <p class="subtitle">
+ Marvel Superhero Personality Quiz 2025 (Free Marvel Personality
+ Test)
+ </p>
+ <p class="description">
+ Find your best-fit Marvel hero across values, instincts, and
+ decision-making under pressure. Answer the questions to reveal which
+ character you align with—plus strengths and watch-outs.
+ </p>
+ <p class="description">
+ If you’re searching “what Marvel character am I” or “what Marvel
+ character are you”, this quiz is built to give a clear, explainable
+ match—not random vibes.
+ </p>
+
+ <ul class="hero-kpis-pro" aria-label="Quick facts">
+ <li class="kpi-card">
+ <span class="kpi-icon" aria-hidden="true">📝</span>
+ <span class="kpi-label">Quick Quiz</span>
+ </li>
+ <li class="kpi-card">
+ <span class="kpi-icon" aria-hidden="true">⚡</span>
+ <span class="kpi-label">Instant Results</span>
+ </li>
+ <li class="kpi-card">
+ <span class="kpi-icon" aria-hidden="true">💡</span>
+ <span class="kpi-label">Strengths & Watch-outs</span>
+ </li>
+ </ul>
+
+ <ul class="hero-highlights">
+ <li>Questions mapped to core hero styles</li>
+ <li>Leadership, courage, strategy, and responsibility</li>
+ <li>Instant breakdown with strengths + watch-outs</li>
+ </ul>
+
+ <div class="hero-cta">
+ <a href="#quizSection" class="primary-btn">Start The Quiz</a>
+ <a href="#characters" class="ghost-btn">Browse The Guide</a>
+ </div>
+ </div>
+
+ <div class="hero-panel">
+ <span class="panel-eyebrow">How we match you</span>
+ <h3>Signals we use to score your match</h3>
+ <p>
+ Your answers map to repeatable patterns: risk tolerance, loyalty,
+ moral boundaries, and how you navigate alliances.
+ </p>
+
+ <div class="hero-factor-grid">
+ <div class="hero-factor">
+ <div class="icon">🧠</div>
+ <div>
+ <h4>Mindset</h4>
+ <p>Composure, grit, and self-control</p>
+ </div>
+ </div>
+ <div class="hero-factor">
+ <div class="icon">🎯</div>
+ <div>
+ <h4>Decision-making</h4>
+ <p>Risk vs. safety under pressure</p>
+ </div>
+ </div>
+ <div class="hero-factor">
+ <div class="icon">🤝</div>
+ <div>
+ <h4>Loyalty</h4>
+ <p>Who you protect and why</p>
+ </div>
+ </div>
+ <div class="hero-factor">
+ <div class="icon">🕵️</div>
+ <div>
+ <h4>Awareness</h4>
+ <p>Reading people, motives, and rules</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </header>
+
+ <div class="main-container">
+ <!-- Intro/Archetypes -->
+ <section
+ class="content-section"
+ id="archetypesOverview"
+ aria-labelledby="archetypes-heading"
+ >
+ <div class="archetypes-header">
+ <span class="eyebrow">Overview</span>
+ <h2 id="archetypes-heading">Understanding Marvel Hero Archetypes</h2>
+ <p>
+ Big threats reveal who you are under pressure. This quiz maps your
+ choices to a best-fit Marvel hero profile across mindset, teamwork,
+ values, and how you act when everything is on the line.
+ </p>
+ </div>
+
+ <div class="archetypes-grid">
+ <!-- Left -->
+ <div class="archetypes-panel">
+ <div class="pillars">
+ <div class="pillar">
+ <div class="icon">
+ <img src="accuracy.png" alt="" />
+ </div>
+ <span>Playstyle</span>
+ </div>
+ <div class="pillar">
+ <div class="icon">
+ <img src="idea.png" alt="" />
+ </div>
+ <span>Mindset</span>
+ </div>
+ <div class="pillar">
+ <div class="icon">
+ <img src="high-quality.png" alt="" />
+ </div>
+ <span>Team Role</span>
+ </div>
+ </div>
+ <p class="panel-note">
+ These archetypes aren’t rigid labels—most heroes blend traits. Use
+ this as a quick mirror for your tendencies, then choose how you’ll
+ show up in your next mission.
+ </p>
+ <span class="legend-label">Common archetype badges</span>
+ <div class="badges">
+ <span class="archetype-badge"
+ ><img
+ class="chip-img"
+ src="ironman.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Genius</span
+ >
+ <span class="archetype-badge"
+ ><img
+ class="chip-img"
+ src="captainamerica.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Leader</span
+ >
+ <span class="archetype-badge"
+ ><img
+ class="chip-img"
+ src="hulk.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Powerhouse</span
+ >
+ <span class="archetype-badge"
+ ><img
+ class="chip-img"
+ src="widow.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Spy</span
+ >
+ <span class="archetype-badge"
+ ><img
+ class="chip-img"
+ src="default.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Mystic</span
+ >
+ <span class="archetype-badge"
+ ><img
+ class="chip-img"
+ src="loki.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Wildcard</span
+ >
+ </div>
+ </div>
+
+ <!-- Right -->
+ <div class="archetypes-panel">
+ <div class="archetype-card-grid">
+ <div class="archetype-card">
+ <div class="chip">
+ <img
+ class="chip-img"
+ src="ironman.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Genius
+ </div>
+ <p>
+ Builds solutions under pressure. Adapts fast, invents faster,
+ and turns impossible problems into workable plans.
+ </p>
+ </div>
+ <div class="archetype-card">
+ <div class="chip">
+ <img
+ class="chip-img"
+ src="captainamerica.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Leader
+ </div>
+ <p>
+ Keeps the team aligned and grounded. Makes value-driven calls
+ and holds the line when things get messy.
+ </p>
+ </div>
+ <div class="archetype-card">
+ <div class="chip">
+ <img
+ class="chip-img"
+ src="hulk.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Powerhouse
+ </div>
+ <p>
+ Handles the immediate threat. When it’s time to act, you act
+ decisively and protect the team through sheer force.
+ </p>
+ </div>
+ <div class="archetype-card">
+ <div class="chip">
+ <img
+ class="chip-img"
+ src="widow.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Spy
+ </div>
+ <p>
+ Wins with information and precision. Reads motives, spots
+ openings, and moves at exactly the right moment.
+ </p>
+ </div>
+ <div class="archetype-card">
+ <div class="chip">
+ <img
+ class="chip-img"
+ src="default.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Mystic
+ </div>
+ <p>
+ Sees patterns others miss. Stays calm, studies the bigger
+ picture, and chooses the long-term win.
+ </p>
+ </div>
+ <div class="archetype-card">
+ <div class="chip">
+ <img
+ class="chip-img"
+ src="loki.png"
+ alt=""
+ loading="lazy"
+ decoding="async"
+ width="20"
+ height="20"
+ />
+ Wildcard
+ </div>
+ <p>
+ Improvises and outmaneuvers. Finds angles, flips situations,
+ and thrives when the plan falls apart.
+ </p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Value Features (mirror Wojak polish) -->
+ <section class="content-section" aria-labelledby="features-title">
+ <div class="section-header">
+ <h2 id="features-title">What You’ll Get</h2>
+ <p>
+ Built to inform and delight: modern UX, clear scoring logic, and a
+ fast character guide you can browse in seconds.
+ </p>
+ </div>
+ <div class="features-grid">
+ <div class="feature-card">
+ <div class="feature-icon">
+ <img src="idea.png" alt="" />
+ </div>
+ <h3>Clear, Trait-Based Scoring</h3>
+ <p>
+ Each answer nudges core traits like risk tolerance, loyalty,
+ composure, and control. Your result reflects the strongest pattern
+ across the full quiz.
+ </p>
+ </div>
+ <div class="feature-card">
+ <div class="feature-icon">
+ <img src="accuracy.png" alt="" />
+ </div>
+ <h3>Iconic Character Profiles</h3>
+ <p>
+ Browse Marvel hero profiles with strengths, challenges, and the
+ roles they naturally fall into.
+ </p>
+ </div>
+ <div class="feature-card">
+ <div class="feature-icon">
+ <img src="training.png" alt="" />
+ </div>
+ <h3>Actionable Growth Prompts</h3>
+ <p>
+ Each result includes simple habits to sharpen your decision-making
+ under pressure—without overthinking it.
+ </p>
+ </div>
+ <div class="feature-card">
+ <div class="feature-icon">
+ <img src="downloadicon.png" alt="" />
+ </div>
+ <h3>Shareable Results</h3>
+ <p>
+ Create a share link for teammates and friends. Compare archetypes
+ to compare hero styles.
+ </p>
+ </div>
+ </div>
+ </section>
+
+ <!-- Quiz -->
+ <section
+ class="quiz-shell"
+ id="quizSection"
+ data-hide-option-titles="true"
+ data-addictive="true"
+ >
+ <div class="quiz-container" id="quizContainer">
+ <div class="quiz-header">
+ <h2>
+ Take the Marvel Personality Test: Which Marvel Character Are You?
+ </h2>
+ <p>Answer quick questions to reveal your Marvel character match</p>
+ </div>
+
+ <div class="quiz-layout">
+ <aside class="quiz-status-card" aria-label="Quiz status">
+ <span class="status-eyebrow">Live Quiz</span>
+ <h3>Progress tracker</h3>
+ <p>
+ Pick the option that fits you best. Your match builds over time.
+ </p>
+
+ <div class="progress-orb" id="progressOrb" aria-hidden="true">
+ <div class="progress-orb-inner">
+ <div class="progress-orb-value" id="progressDialValue">
+ 0%
+ </div>
+ <small>Complete</small>
+ </div>
+ </div>
+
+ <ul class="status-pill-list">
+ <li class="status-pill">
+ Question <span id="questionNumberTop">1</span> /
+ <span id="questionTotalTop">0</span>
+ </li>
+ <li class="status-pill">
+ <span id="progressLabel">Progress: 0%</span>
+ </li>
+ </ul>
+ <p class="status-footnote">
+ Tip: Answer how you’d act under pressure.
+ </p>
+ </aside>
+
+ <div class="quiz-main">
+ <div class="progress-meta">
+ <span><strong>Progress</strong></span>
+ <span aria-hidden="true">Tracked on the left</span>
+ </div>
+ <div class="progress" aria-label="Quiz progress">
+ <div
+ class="progress-bar"
+ id="progressBar"
+ role="progressbar"
+ aria-valuemin="0"
+ aria-valuemax="100"
+ aria-valuenow="0"
+ ></div>
+ </div>
+ <div class="question-counter" aria-live="polite">
+ Question <span id="questionNumber">1</span> /
+ <span id="questionTotal">0</span>
+ </div>
+
+ <div class="micro-feedback" id="microFeedback" aria-live="polite">
+ <span><strong>Tip:</strong> Trust your first instinct.</span>
+ </div>
+
+ <!-- Questions are injected by the Marvel question script below. -->
+ </div>
+ </div>
+ </div>
+
+ <div class="result" id="result">
+ <div class="result-placeholder">
+ <h3>Your result is loading.</h3>
+ <p>Finish the quiz to reveal your Marvel hero.</p>
+ </div>
+ </div>
+ </section>
+
+ <section class="content-section" aria-labelledby="use-title">
+ <div class="section-header">
+ <h2 id="use-title">Use Your Result Like a Hero</h2>
+ <p>
+ A simple way to turn your result into better decisions, smarter
+ teamwork, and calmer choices under pressure.
+ </p>
+ </div>
+ <div class="features-grid">
+ <div class="feature-card">
+ <h3>1) Identify your 2–3 core traits</h3>
+ <p>Lock in what actually drives your decisions under stress.</p>
+ <ul>
+ <li>Do you stay calm, plan ahead, or act on instinct?</li>
+ <li>Do you build trust fast or verify first?</li>
+ <li>Do you seek control, safety, or use?</li>
+ </ul>
+ </div>
+ <div class="feature-card">
+ <h3>2) Choose your best-fit role</h3>
+ <p>Match strengths to a role that helps your team win.</p>
+ <ul>
+ <li>Pick 1 “primary” approach and 1 “backup” approach.</li>
+ <li>Define 3 rules you’ll follow no matter what.</li>
+ <li>Ask: what does my team need from me right now?</li>
+ </ul>
+ </div>
+ <div class="feature-card">
+ <h3>3) Strengthen your weakest link</h3>
+ <p>One small improvement changes your odds fast.</p>
+ <ul>
+ <li>Low composure? Practice slowing down your reactions.</li>
+ <li>Low trust? Practice asking one clarifying question first.</li>
+ <li>Low strategy? Practice making a simple two-step plan.</li>
+ </ul>
+ </div>
+ <div class="feature-card">
+ <h3>4) Build a safer alliance</h3>
+ <p>Use your result to choose teammates wisely.</p>
+ <ul>
+ <li>Pair planners with protectors; observers with doers.</li>
+ <li>Decide who negotiates and who verifies.</li>
+ <li>Agree on one rule: what counts as a red line.</li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- Player Spotlight (like characters-grid) -->
+ <section class="content-section" aria-labelledby="spotlight-title">
+ <div class="section-header">
+ <h2 id="spotlight-title">Hero Spotlight: Profiles at a Glance</h2>
+ <p>
+ A quick visual guide to each hero with trademark traits and team
+ roles.
+ </p>
+ </div>
+ <div class="characters-grid" id="spotlightGrid"></div>
+
+ <div class="see-more-container" id="spotlightSeeMoreContainer">
+ <button class="see-more-btn" id="spotlightSeeMoreBtn" type="button">
+ <span>See More Heroes</span>
+ <span class="icon">↓</span>
+ <span class="count-badge" id="spotlightRemainingCount"></span>
+ </button>
+ </div>
+ </section>
+
+ <section class="content-section" aria-labelledby="positions-title">
+ <div class="section-header">
+ <h2 id="positions-title">Marvel Team Role Map</h2>
+ <p>
+ These aren’t random labels—they’re the same role tags used in the
+ Marvel Hero Guide below. Use this to understand why you matched a
+ character and what your “best move” looks like under pressure.
+ </p>
+ </div>
+ <div class="features-grid">
+ <div class="feature-card">
+ <h3>Leader</h3>
+ <ul>
+ <li>
+ <strong>What it is:</strong> sets direction when it’s messy.
+ </li>
+ <li>
+ <strong>Looks like:</strong> Captain America-style clarity and
+ responsibility.
+ </li>
+ <li>
+ <strong>Examples:</strong> Captain America, Black Panther,
+ Falcon.
+ </li>
+ <li>
+ <strong>Best move:</strong> name the goal, set one rule, keep
+ the team steady.
+ </li>
+ <li>
+ <strong>Watch for:</strong> taking every burden personally.
+ </li>
+ </ul>
+ </div>
+ <div class="feature-card">
+ <h3>Protector</h3>
+ <ul>
+ <li>
+ <strong>What it is:</strong> shields others and holds the line.
+ </li>
+ <li>
+ <strong>Looks like:</strong> Black Panther-style duty,
+ boundaries, and defense.
+ </li>
+ <li>
+ <strong>Examples:</strong> Black Panther, Winter Soldier,
+ Captain America.
+ </li>
+ <li>
+ <strong>Best move:</strong> protect the vulnerable first, then
+ reduce risk.
+ </li>
+ <li>
+ <strong>Watch for:</strong> becoming rigid or over-controlling
+ “for safety.”
+ </li>
+ </ul>
+ </div>
+ <div class="feature-card">
+ <h3>Powerhouse</h3>
+ <ul>
+ <li>
+ <strong>What it is:</strong> wins with force, endurance, and
+ decisive action.
+ </li>
+ <li>
+ <strong>Looks like:</strong> Hulk/Thor energy—direct, fearless,
+ hard to stop.
+ </li>
+ <li><strong>Examples:</strong> Hulk, Thor.</li>
+ <li>
+ <strong>Best move:</strong> act fast, but choose the smallest
+ effective response.
+ </li>
+ <li>
+ <strong>Watch for:</strong> heat-of-the-moment escalation and
+ collateral damage.
+ </li>
+ </ul>
+ </div>
+ <div class="feature-card">
+ <h3>Wildcard</h3>
+ <ul>
+ <li>
+ <strong>What it is:</strong> improvises, adapts, and finds weird
+ solutions.
+ </li>
+ <li>
+ <strong>Looks like:</strong> Spider-Man/Loki creativity under
+ pressure.
+ </li>
+ <li><strong>Examples:</strong> Spider-Man, Loki.</li>
+ <li>
+ <strong>Best move:</strong> pick one objective, keep it light,
+ stay flexible.
+ </li>
+ <li>
+ <strong>Watch for:</strong> inconsistency that makes people
+ doubt you.
+ </li>
+ </ul>
+ </div>
+ <div class="feature-card">
+ <h3>Specialist</h3>
+ <ul>
+ <li>
+ <strong>What it is:</strong> solves the “impossible” part others
+ can’t.
+ </li>
+ <li>
+ <strong>Looks like:</strong> Doctor Strange (mystic) or Iron Man
+ (tech) problem-solving.
+ </li>
+ <li>
+ <strong>Examples:</strong> Iron Man, Doctor Strange, Hawkeye.
+ </li>
+ <li>
+ <strong>Best move:</strong> diagnose first, then execute a clean
+ plan.
+ </li>
+ <li>
+ <strong>Watch for:</strong> tunnel vision and assuming others
+ “should get it.”
+ </li>
+ </ul>
+ </div>
+ <div class="feature-card">
+ <h3>Support</h3>
+ <ul>
+ <li>
+ <strong>What it is:</strong> makes everyone else better
+ (coordination, intel, timing).
+ </li>
+ <li>
+ <strong>Looks like:</strong> Black Widow-style tactics and
+ teamwork glue.
+ </li>
+ <li><strong>Examples:</strong> Black Widow, Falcon.</li>
+ <li>
+ <strong>Best move:</strong> set up the win: clarify roles, share
+ key info, steady the team.
+ </li>
+ <li>
+ <strong>Watch for:</strong> neglecting your own needs and
+ burning out.
+ </li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- Guide -->
+ <section
+ class="content-section"
+ id="countryGuide"
+ aria-labelledby="guide-title"
+ >
+ <div id="characters" aria-hidden="true"></div>
+ <div class="guide-header">
+ <span class="eyebrow">Reference</span>
+ <h2 id="guide-title">Marvel Hero Guide</h2>
+ <p>
+ Explore each hero profile with traits and quick context. Search by
+ name, role, or trait—or tap a tag to filter.
+ </p>
+ </div>
+
+ <div class="main-container">
+ <div class="guide-toolbar" role="region" aria-label="Guide tools">
+ <div class="search-input">
+ <span class="icon">&#128269;</span>
+ <input
+ type="search"
+ id="guideSearch"
+ placeholder="Search heroes, roles, or traits."
+ aria-label="Search guide"
+ />
+ </div>
+ <div class="filter-chips" role="group" aria-label="Filter by tags">
+ <button
+ class="chip active"
+ type="button"
+ data-filter="all"
+ aria-pressed="true"
+ >
+ All
+ </button>
+ <button
+ class="chip"
+ type="button"
+ data-filter="leader"
+ aria-pressed="false"
+ >
+ Leader
+ </button>
+ <button
+ class="chip"
+ type="button"
+ data-filter="inventor"
+ aria-pressed="false"
+ >
+ Inventor
+ </button>
+ <button
+ class="chip"
+ type="button"
+ data-filter="warrior"
+ aria-pressed="false"
+ >
+ Warrior
+ </button>
+ <button
+ class="chip"
+ type="button"
+ data-filter="spy"
+ aria-pressed="false"
+ >
+ Spy
+ </button>
+ <button
+ class="chip"
+ type="button"
+ data-filter="mystic"
+ aria-pressed="false"
+ >
+ Mystic
+ </button>
+ <button
+ class="chip"
+ type="button"
+ data-filter="protector"
+ aria-pressed="false"
+ >
+ Protector
+ </button>
+ <button
+ class="chip"
+ type="button"
+ data-filter="powerhouse"
+ aria-pressed="false"
+ >
+ Powerhouse
+ </button>
+ <button
+ class="chip"
+ type="button"
+ data-filter="wildcard"
+ aria-pressed="false"
+ >
+ Wildcard
+ </button>
+ <button
+ class="chip"
+ type="button"
+ data-filter="specialist"
+ aria-pressed="false"
+ >
+ Specialist
+ </button>
+ <button
+ class="chip"
+ type="button"
+ data-filter="support"
+ aria-pressed="false"
+ >
+ Support
+ </button>
+ </div>
+ </div>
+ </div>
+
+ <div class="guide-grid" id="guideGrid">
+ <!-- Cards injected via JS -->
+ </div>
+
+ <div class="see-more-container" id="seeMoreContainer">
+ <button class="see-more-btn" id="seeMoreBtn" type="button">
+ <span>See More Heroes</span>
+ <span class="icon">↓</span>
+ <span class="count-badge" id="remainingCount"></span>
+ </button>
+ </div>
+ </section>
+
+ <!-- FAQ -->
+ <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+ <div class="main-container">
+ <div class="section-header">
+ <h2 id="faq-heading">Frequently Asked Questions</h2>
+ <p>
+ Detailed answers about how the quiz works, what results mean, and
+ how to use them to understand your decisions under pressure.
+ </p>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ Is this a Marvel personality test?<span>+</span>
+ </div>
+ <div class="faq-answer" hidden>
+ <p>
+ Yes—this is a personality-style Marvel quiz designed for insight
+ and entertainment. Your answers map to patterns like risk
+ tolerance, leadership, loyalty, and decision-making under
+ pressure to produce a best-fit Marvel character match.
+ </p>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ Which Marvel character am I (or are you)?<span>+</span>
+ </div>
+ <div class="faq-answer" hidden>
+ <p>
+ Finish the quiz and you’ll get the Marvel character you match
+ most based on your choices, plus a breakdown of strengths and
+ watch-outs. If you feel like you blend multiple characters,
+ that’s normal—many people share traits across several hero
+ styles.
+ </p>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ How accurate is this quiz?<span>+</span>
+ </div>
+ <div class="faq-answer" hidden>
+ <p>
+ This quiz is designed for insight and entertainment rather than
+ clinical diagnosis. It combines:
+ </p>
+ <ul>
+ <li>
+ Simple trait mapping from answers to hero archetype traits
+ (mindset, teamwork, leadership, and boundaries).
+ </li>
+ <li>
+ Heuristics based on common story archetypes and recognizable
+ hero decision patterns.
+ </li>
+ </ul>
+ <p>
+ Expect useful directional feedback (strengths, growth areas).
+ Use it alongside real-life reflection and conversations with
+ people who know you well.
+ </p>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ What methodology is used to map answers to characters?<span
+ >+</span
+ >
+ </div>
+ <div class="faq-answer" hidden>
+ <p>
+ For each question, answers are mapped to hero-aligned traits
+ (e.g., innovation, leadership, resilience, and teamwork). The
+ quiz:
+ </p>
+ <ul>
+ <li>
+ Assigns a simple point increment to the hero trait most
+ aligned with the chosen answer.
+ </li>
+ <li>
+ Totals points across all questions and selects the top-scoring
+ hero profile (randomizing ties).
+ </li>
+ <li>
+ Provides a qualitative breakdown (strengths, watch-outs, and
+ hero roles) from an expert-informed content set.
+ </li>
+ </ul>
+ <p>
+ This approach prioritizes clarity and fast feedback rather than
+ deep psychometrics.
+ </p>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ Can my result change over time and why?<span>+</span>
+ </div>
+ <div class="faq-answer" hidden>
+ <p>
+ Yes — results reflect preferences and tendencies, not fixed
+ labels. Common reasons for change:
+ </p>
+ <ul>
+ <li>
+ Intentional habit changes (e.g., setting boundaries, planning
+ more, staying calmer).
+ </li>
+ <li>
+ Life context (stress, responsibility) changing how you decide
+ under pressure.
+ </li>
+ <li>
+ New experiences reshaping what you value: safety, loyalty, or
+ control.
+ </li>
+ </ul>
+ <p>
+ Consider retaking the quiz periodically to track how your
+ archetype evolves.
+ </p>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ How should I use the result in real life?<span>+</span>
+ </div>
+ <div class="faq-answer" hidden>
+ <p>
+ Treat the result as a starting point. Recommended next steps:
+ </p>
+ <ul>
+ <li>
+ Review your strengths and watch-outs and pick one thing to
+ improve for the next week.
+ </li>
+ <li>
+ Work on one targeted growth focus at a time (2–4 weeks).
+ </li>
+ <li>
+ Share your result with friends to compare styles and talk
+ through what you’d do differently.
+ </li>
+ </ul>
+ <p>
+ Small improvements in composure, planning, and boundaries can
+ meaningfully change your outcomes in real life, too.
+ </p>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ Is any personal data collected or stored?<span>+</span>
+ </div>
+ <div class="faq-answer" hidden>
+ <p>
+ NO! We don't store personal data at all. The quiz runs entirely
+ in your browser using JavaScript. No answers or results are sent
+ to any server or third party. Your privacy is fully respected.
+ </p>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ Why do some answers show the same character across multiple
+ questions?<span>+</span>
+ </div>
+ <div class="faq-answer" hidden>
+ <p>
+ Some characters strongly represent multiple traits at once.
+ Because the quiz maps behaviour patterns, it’s normal for the
+ same character to align with several questions — that reinforces
+ consistent scoring.
+ </p>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ How are images and character names handled and attributed?<span
+ >+</span
+ >
+ </div>
+ <div class="faq-answer" hidden>
+ <p>
+ Character names are used for entertainment and reference. Images
+ included are either site assets or generated placeholders. If
+ you have concerns about a specific image, contact the site owner
+ for resolution.
+ </p>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ Are you affiliated with Marvel or Disney?<span>+</span>
+ </div>
+ <div class="faq-answer" hidden>
+ <p>
+ No. This is a fan-made quiz for entertainment and
+ self-reflection and is not affiliated with or endorsed by Marvel
+ or Disney.
+ </p>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ I disagree with my result — what can I do?<span>+</span>
+ </div>
+ <div class="faq-answer" hidden>
+ <p>Disagreement is normal. Options:</p>
+ <ul>
+ <li>
+ Retake the quiz and answer with how you actually behave under
+ pressure (not how you wish you would).
+ </li>
+ <li>
+ Compare the Character Spotlight and Guide to see neighboring
+ profiles you might blend with.
+ </li>
+ <li>
+ Share your result with friends for external perspective and a
+ reality-check.
+ </li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div
+ class="faq-question"
+ role="button"
+ tabindex="0"
+ aria-expanded="false"
+ >
+ Who can I contact for feedback or bug reports?<span>+</span>
+ </div>
+ <div class="faq-answer" hidden>
+ <p>Please use Instagram to reach out to us.</p>
+ <p>We appreciate constructive feedback.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+ </div>
+
+ <footer class="site-footer">
+ <div class="site-footer__inner">
+ <div class="site-footer__brand">
+ <img
+ src="zinvanalogo.png"
+ alt="Zinvana"
+ class="site-footer__logo"
+ width="44"
+ height="44"
+ loading="lazy"
+ decoding="async"
+ fetchpriority="low"
+ />
+ <h3 class="site-footer__title">Zinvana</h3>
+ <p class="site-footer__description">
+ Discover your next chapter through evidence-informed quizzes and
+ practical guides. From personality frameworks to relocation
+ readiness, we turn curiosity into clear next steps.
+ </p>
+ <div class="site-footer__social">
+ <a
+ href="https://x.com/farazglori80528"
+ target="_blank"
+ rel="noopener"
+ class="site-footer__social-link site-footer__social-link--x"
+ aria-label="Follow Zinvana on X"
+ >
+ <svg
+ width="20"
+ height="20"
+ viewBox="0 0 24 24"
+ fill="currentColor"
+ >
+ <path
+ d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+ />
+ </svg>
+ </a>
+ <a
+ href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
+ target="_blank"
+ rel="noopener"
+ class="site-footer__social-link site-footer__social-link--instagram"
+ aria-label="Follow Zinvana on Instagram"
+ >
+ <svg
+ width="20"
+ height="20"
+ viewBox="0 0 24 24"
+ fill="currentColor"
+ >
+ <path
+ d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"
+ />
+ <path
+ d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162S8.597 18.163 12 18.163s6.162-2.759 6.162-6.163S15.403 5.838 12 5.838zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"
+ />
+ <circle cx="18.406" cy="5.594" r="1.44" />
+ </svg>
+ </a>
+ </div>
+ <p class="site-footer__note">Stay updated with our newest quizzes.</p>
+ </div>
+
+ <div class="site-footer__column">
+ <h4 class="site-footer__heading">Popular Quizzes</h4>
+ <ul class="site-footer__list">
+ <li>
+ <a class="site-footer__link" href="leaders.html"
+ >Historical Leaders Personality Quiz</a
+ >
+ </li>
+ <li>
+ <a class="site-footer__link" href="marvel-quiz.html"
+ >Marvel Superhero Quiz</a
+ >
+ </li>
+ <li>
+ <a class="site-footer__link" href="mbti-personality-quiz.html"
+ >MBTI Personality Quiz</a
+ >
+ </li>
+ <li>
+ <a class="site-footer__link" href="perfect-country.html"
+ >Perfect Country Quiz</a
+ >
+ </li>
+ <li>
+ <a
+ class="site-footer__link"
+ href="youtubers-personality-quiz.html"
+ >YouTubers Personality Quiz</a
+ >
+ </li>
+ </ul>
+ </div>
+
+ <div class="site-footer__column">
+ <h4 class="site-footer__heading">Resources</h4>
+ <ul class="site-footer__list">
+ <li>
+ <a class="site-footer__link" href="/about.html">About Us</a>
+ </li>
+ <li>
+ <a class="site-footer__link" href="/privacy.html"
+ >Privacy Policy</a
+ >
+ </li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="site-footer__bottom">
+ <div class="site-footer__bottom-row">
+ <p>&copy; 2025 Zinvana. All rights reserved.</p>
+ <p>Made with ❤️ by the Zinvana Team</p>
+ </div>
+ <p class="site-footer__disclaimer">
+ This Marvel superhero quiz is for entertainment purposes only. Results
+ are based on your responses and should not be considered professional
+ psychological diagnosis or definitive personality assessments.
+ </p>
+ </div>
+ </footer>
+
+ <script>
+ // Mobile menu toggle
+ const toggle = document.getElementById("menuToggle");
+ const menu = document.getElementById("mobileMenu");
+ const backdrop = document.getElementById("menuBackdrop");
+ const navLinks = menu?.querySelectorAll(".nav-link");
+
+ const closeMenu = () => {
+ if (!toggle ||!menu) return;
+ menu.classList.remove("open");
+ toggle.classList.remove("active");
+ toggle.setAttribute("aria-expanded", "false");
+ menu.setAttribute("hidden", "");
+ backdrop?.setAttribute("hidden", "");
+ document.body.classList.remove("nav-open");
+ document.body.classList.remove("nav-locked");
+ };
+
+ const openMenu = () => {
+ if (!toggle ||!menu) return;
+ menu.removeAttribute("hidden");
+ backdrop?.removeAttribute("hidden");
+ menu.classList.add("open");
+ toggle.classList.add("active");
+ toggle.setAttribute("aria-expanded", "true");
+ document.body.classList.add("nav-open");
+ document.body.classList.add("nav-locked");
+ };
+
+ if (toggle && menu) {
+ toggle.addEventListener("click", () => {
+ const isOpen = menu.classList.contains("open");
+ if (isOpen) closeMenu();
+ else openMenu();
+ });
+
+ navLinks?.forEach((link) => {
+ link.addEventListener("click", () => {
+ closeMenu();
+ });
+ });
+
+ backdrop?.addEventListener("click", () => {
+ closeMenu();
+ });
+
+ document.addEventListener("click", (e) => {
+ if (!menu.classList.contains("open")) return;
+ const target = e.target;
+ if (!(target instanceof Node)) return;
+ if (menu.contains(target)) return;
+ if (toggle.contains(target)) return;
+ closeMenu();
+ });
+
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape" && menu.classList.contains("open")) {
+ closeMenu();
+ }
+ });
+
+ window.addEventListener("resize", () => {
+ // If we leave the mobile breakpoint, force-close the overlay menu.
+ if (window.innerWidth > 980 && menu.classList.contains("open")) {
+ closeMenu();
+ }
+ });
+ }
+ </script>
+
+ <script>
+ const wojakData = {
+ gi_hun: {
+ name: "Iron Man — The Visionary",
+ emoji: "🦾",
+ img: "ironman.png",
+ description:
+ "You solve problems with brains, bold bets, and relentless iteration. You build the future—even when it’s messy.",
+ strengths: [
+ "Inventive under pressure",
+ "Fast decision-maker",
+ "Turns chaos into plans",
+ ],
+ challenges: ["Can overcontrol outcomes", "Pride can cloud judgment"],
+ roles: ["Builder", "Strategist", "High-stakes leader"],
+ growthAdvice:
+ "Keep the ambition, but share context early—teams move faster when they trust the why.",
+ drills: [
+ "State your goal in one sentence",
+ "Ask for one dissenting opinion",
+ "Ship a small improvement first",
+ ],
+ moments: ["Improvising a solution", "Owning responsibility"],
+ },
+ sang_woo: {
+ name: "Captain America — The Leader",
+ emoji: "🛡️",
+ img: "captainamerica.png",
+ description:
+ "You lead with values, courage, and consistency. People follow you because you show up—every time.",
+ strengths: ["Moral clarity", "Steady leadership", "Protects others"],
+ challenges: ["Can be stubborn", "Takes too much on alone"],
+ roles: ["Team captain", "Moral anchor", "Tactical leader"],
+ growthAdvice:
+ "Stand for something, but stay flexible—new information doesn’t betray your principles.",
+ drills: [
+ "Delegate one responsibility",
+ "Ask what changed before deciding",
+ "Name the tradeoff out loud",
+ ],
+ moments: ["Choosing integrity", "Holding the line"],
+ },
+ sae_byeok: {
+ name: "Spider-Man — The Heart",
+ emoji: "🕸️",
+ img: "spiderman.png",
+ description:
+ "You do the right thing even when it costs you. You’re adaptable, quick, and surprisingly resilient.",
+ strengths: ["Empathy", "Agility", "Creative problem-solving"],
+ challenges: ["Over-responsibility", "Second-guesses choices"],
+ roles: ["Friendly helper", "Fast responder", "Underdog hero"],
+ growthAdvice:
+ "Care deeply, but don’t carry everything alone—support systems are part of responsibility.",
+ drills: [
+ "Ask for help once per challenge",
+ "Focus on what you can control",
+ "Act, then reflect",
+ ],
+ moments: ["Saving someone first", "Finding humor under stress"],
+ },
+ ali: {
+ name: "Thor — The Warrior",
+ emoji: "⚡",
+ img: "thor.png",
+ description:
+ "You’re bold, protective, and direct. When the stakes rise, you rise with them—and you inspire others to do the same.",
+ strengths: ["Courage", "Loyalty", "Big-move confidence"],
+ challenges: ["Impulsiveness", "Pride in strength"],
+ roles: ["Frontline", "Protector", "Morale booster"],
+ growthAdvice:
+ "Pair power with patience—timing can be stronger than force.",
+ drills: [
+ "Pause before escalating",
+ "Ask: what’s plan B?",
+ "Listen once before acting",
+ ],
+ moments: ["Charging into danger", "Protecting the team"],
+ },
+ front_man: {
+ name: "Doctor Strange — The Mastermind",
+ emoji: "🌀",
+ img: "drstrange.png",
+ description:
+ "You stay calm, see patterns others miss, and make hard calls for the long game.",
+ strengths: ["Strategic foresight", "Composure", "Systems thinking"],
+ challenges: ["Detached tone", "Can seem overly calculated"],
+ roles: ["Planner", "Advisor", "Reality-checker"],
+ growthAdvice:
+ "Share your reasoning—clarity builds trust and makes execution smoother.",
+ drills: [
+ "Explain the why in 20 seconds",
+ "Run a quick pre-mortem",
+ "Confirm assumptions twice",
+ ],
+ moments: ["Choosing the long-term win", "Staying calm in chaos"],
+ },
+ jun_ho: {
+ name: "Black Widow — The Investigator",
+ emoji: "🕵️",
+ img: "widow.png",
+ description:
+ "You read rooms, spot motives, and move with precision. You win by information—and timing.",
+ strengths: ["Observation", "Discipline", "Adaptability"],
+ challenges: ["Trust issues", "Overextends solo"],
+ roles: ["Scout", "Strategic operator", "Truth seeker"],
+ growthAdvice:
+ "Keep your edge, but build one reliable ally—two sets of eyes beat one.",
+ drills: [
+ "Write down 3 facts before acting",
+ "Create an exit plan",
+ "Ask one clarifying question",
+ ],
+ moments: ["Finding the clue", "Turning a disadvantage into use"],
+ },
+ il_nam: {
+ name: "Hulk — The Powerhouse",
+ emoji: "💪",
+ img: "hulk.png",
+ description:
+ "You’re a force when it matters. Under stress you can go all-in—your job is aiming that power wisely.",
+ strengths: ["Raw resilience", "Protective instincts", "Endurance"],
+ challenges: ["Emotional spikes", "Collateral damage risk"],
+ roles: ["Tank", "Last resort", "Pressure absorber"],
+ growthAdvice:
+ "Build a cooldown routine—control turns strength into reliability.",
+ drills: [
+ "Name the emotion",
+ "Count 10 before reacting",
+ "Choose the smallest effective response",
+ ],
+ moments: ["Breaking through a wall", "Protecting allies"],
+ },
+ deok_su: {
+ name: "Black Panther — The Protector",
+ emoji: "🐾",
+ img: "black-panther.png",
+ description:
+ "You lead with calm authority, responsibility, and sharp judgment. You protect your people—and your standards.",
+ strengths: ["Leadership", "Composure", "Strategic restraint"],
+ challenges: ["High expectations", "Can seem distant"],
+ roles: ["Guardian", "Leader", "Tactical thinker"],
+ growthAdvice:
+ "Balance strength with openness—inviting input doesn’t weaken authority.",
+ drills: [
+ "Ask for feedback",
+ "Share credit publicly",
+ "Decide with principle + context",
+ ],
+ moments: [
+ "Protecting the mission",
+ "Choosing diplomacy before force",
+ ],
+ },
+ mi_nyeo: {
+ name: "Loki — The Wildcard",
+ emoji: "🃏",
+ img: "loki.png",
+ description:
+ "You’re clever, unpredictable, and socially sharp. You bend situations—sometimes too far.",
+ strengths: ["Adaptability", "Persuasion", "Creative angles"],
+ challenges: ["Impulsiveness", "Trust volatility"],
+ roles: ["Trickster", "Negotiator", "Wildcard"],
+ growthAdvice:
+ "Use your cleverness to build alliances, not just win moments.",
+ drills: [
+ "Pick one goal per round",
+ "Don’t burn bridges early",
+ "Say the quiet part later",
+ ],
+ moments: ["Flipping a scenario", "Winning with wit"],
+ },
+ lee_myung_gi: {
+ name: "Hawkeye — The Specialist",
+ emoji: "🎯",
+ img: "hawkeye.png",
+ description:
+ "You rely on precision, discipline, and knowing your lane. You win by being dependable under fire.",
+ strengths: ["Focus", "Consistency", "Calm execution"],
+ challenges: ["Underestimates self", "Carries quiet stress"],
+ roles: ["Sharpshooter", "Support", "Clutch finisher"],
+ growthAdvice:
+ "Own your strengths—quiet competence is leadership too.",
+ drills: [
+ "Define success metrics",
+ "Practice one skill daily",
+ "Communicate status early",
+ ],
+ moments: ["Landing the decisive shot", "Staying steady"],
+ },
+ park_jung_bae: {
+ name: "Winter Soldier — The Operative",
+ emoji: "❄️",
+ img: "bucky.png",
+ description:
+ "You endure, adapt, and keep going. You’re resilient—and learning to trust again is your superpower.",
+ strengths: ["Grit", "Adaptability", "Protective loyalty"],
+ challenges: ["Isolation", "Hard time asking for help"],
+ roles: ["Operative", "Protector", "Reliable ally"],
+ growthAdvice:
+ "Build one steady routine—stability makes you harder to shake.",
+ drills: [
+ "Share one honest detail",
+ "Choose one ally",
+ "Don’t fight every battle",
+ ],
+ moments: ["Getting back up", "Choosing a better path"],
+ },
+ se_mi: {
+ name: "Falcon — The Wingman",
+ emoji: "🪽",
+ img: "falcon.png",
+ description:
+ "You’re practical, loyal, and ready to move. You stabilize teams by being the one who shows up.",
+ strengths: ["Teamwork", "Speed", "Clear-headed support"],
+ challenges: ["Can be underestimated", "May avoid spotlight"],
+ roles: ["Support lead", "Coordinator", "Fast responder"],
+ growthAdvice:
+ "Step forward when it matters—your consistency is influence.",
+ drills: [
+ "Speak first once",
+ "Set one boundary",
+ "Call the next step",
+ ],
+ moments: ["Backing up a teammate", "Keeping the team moving"],
+ },
+ };
+ </script>
+
+ <script>
+ const pageMap = {
+ gi_hun: "iron-man.html",
+ sang_woo: "captain-america.html",
+ sae_byeok: "spider-man.html",
+ ali: "thor.html",
+ front_man: "doctor-strange.html",
+ jun_ho: "black-widow.html",
+ il_nam: "hulk.html",
+ deok_su: "black-panther.html",
+ mi_nyeo: "#quizSection",
+ lee_myung_gi: "hawkeye.html",
+ park_jung_bae: "#quizSection",
+ se_mi: "falcon.html",
+ };
+
+ // Utilities to ensure every player has an image
+ function normalizeText(value) {
+ // Fix common mojibake sequences (UTF-8 decoded as Windows-1252)
+ // and also normalize smart punctuation to plain ASCII.
+ return String(value?? "").replace(/Â\s?/g, "").replace(/â€™/g, "'").replace(/â€œ|â€�/g, '"').replace(/â€˜|â€™/g, "'").replace(/â€“|â€”/g, "-").replace(/â€¦/g, ".").replace(/[“”]/g, '"').replace(/[‘’]/g, "'").replace(/[–—]/g, "-").replace(/…/g, ".");
+ }
+
+ function getInitials(name) {
+ if (!name) return "??";
+ const plain = normalizeText(name).replace(/\s+-\s+.+$/, ""); // drop subtitle after dash
+ const parts = plain.trim().split(/\s+/);
+ const first = (parts[0] || "")[0] || "";
+ const second = (parts[1] || "")[0] || "";
+ return (first + second).toUpperCase();
+ }
+
+ function getDisplayName(data) {
+ const raw = normalizeText(data?.name || "");
+ // Names are formatted like "Seong Gi-hun — The Heart" (normalized to " - ")
+ return raw.split(/\s-\s/)[0] || raw;
+ }
+ function hueFromString(s) {
+ let h = 0;
+ for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
+ return h;
+ }
+ function getPlaceholderImg(name) {
+ const initials = getInitials(name || "");
+ const h = hueFromString(name || "player");
+ const bg = `hsl(${h},65%,60%)`;
+ const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='128' height='128'>
 				<defs><filter id='s' x='-50%' y='-50%' width='200%' height='200%'><feDropShadow dx='0' dy='2' stdDeviation='2' flood-color='rgba(0,0,0,0.2)'/></filter></defs>
 				<rect width='100%' height='100%' rx='64' ry='64' fill='${bg}'/>
 				<text x='50%' y='58%' text-anchor='middle' font-family='Segoe UI, Roboto, Arial' font-weight='700' font-size='54' fill='white' filter='url(#s)'>${initials}</text>
 			</svg>`;
-        return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
-      }
-      function getImgSrc(data) {
-        return data && data.img
-          ? data.img
-          : getPlaceholderImg(normalizeText(data?.name || ""));
-      }
+ return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+ }
+ function getImgSrc(data) {
+ return data && data.img? data.img: getPlaceholderImg(normalizeText(data?.name || ""));
+ }
 
-      function getAvatarHTML(data) {
-        return `<img src="${getImgSrc(data)}" alt="${normalizeText(
-          data?.name || "",
-        )}" decoding="async" fetchpriority="high">`;
-      }
+ function getAvatarHTML(data) {
+ return `<img src="${getImgSrc(data)}" alt="${normalizeText(
+ data?.name || "",
+ )}" decoding="async" fetchpriority="high">`;
+ }
 
-      // Quiz runtime is now handled by perfect-quiz-shell.js
+ // Quiz runtime is now handled by perfect-quiz-shell.js
 
-      // Guide population from data with pagination
-      const PLAYERS_PER_PAGE = 5;
-      let displayedPlayers = 0;
-      let allPlayerKeys = [];
-      const tagMap = {
-        gi_hun: "inventor leader strategist",
-        sang_woo: "leader disciplined moral",
-        sae_byeok: "agile witty helper",
-        ali: "warrior bold protector",
-        front_man: "mystic strategist calm",
-        jun_ho: "spy investigator stealth",
-        il_nam: "powerhouse resilient protector",
-        deok_su: "protector leader calm",
-        mi_nyeo: "wildcard trickster social",
-        lee_myung_gi: "specialist disciplined focus",
-        park_jung_bae: "operative resilient loyal",
-        se_mi: "support leader fast",
-      };
+ // Guide population from data with pagination
+ const PLAYERS_PER_PAGE = 5;
+ let displayedPlayers = 0;
+ let allPlayerKeys = [];
+ const tagMap = {
+ gi_hun: "inventor leader strategist",
+ sang_woo: "leader disciplined moral",
+ sae_byeok: "agile witty helper",
+ ali: "warrior bold protector",
+ front_man: "mystic strategist calm",
+ jun_ho: "spy investigator stealth",
+ il_nam: "powerhouse resilient protector",
+ deok_su: "protector leader calm",
+ mi_nyeo: "wildcard trickster social",
+ lee_myung_gi: "specialist disciplined focus",
+ park_jung_bae: "operative resilient loyal",
+ se_mi: "support leader fast",
+ };
 
-      function createPlayerCard(key, index) {
-        const d = wojakData[key];
-        const card = document.createElement("article");
-        card.className = "guide-card";
-        card.setAttribute("data-tags", tagMap[key] || "");
-        card.style.animationDelay = `${(index % PLAYERS_PER_PAGE) * 0.08}s`;
+ function createPlayerCard(key, index) {
+ const d = wojakData[key];
+ const card = document.createElement("article");
+ card.className = "guide-card";
+ card.setAttribute("data-tags", tagMap[key] || "");
+ card.style.animationDelay = `${(index % PLAYERS_PER_PAGE) * 0.08}s`;
 
-        const profileLink = pageMap[key] || "#quizSection";
-        const displayName = getDisplayName(d);
-        const safeAlt = normalizeText(d?.name || displayName);
-        const safeDescription = normalizeText(d?.description || "");
+ const profileLink = pageMap[key] || "#quizSection";
+ const displayName = getDisplayName(d);
+ const safeAlt = normalizeText(d?.name || displayName);
+ const safeDescription = normalizeText(d?.description || "");
 
-        const head = document.createElement("div");
-        head.className = "card-head";
+ const head = document.createElement("div");
+ head.className = "card-head";
 
-        const avatar = document.createElement("div");
-        avatar.className = "avatar";
-        const img = document.createElement("img");
-        img.src = getImgSrc(d);
-        img.alt = safeAlt;
-        img.loading = "lazy";
-        img.decoding = "async";
-        img.setAttribute("fetchpriority", "low");
-        avatar.appendChild(img);
+ const avatar = document.createElement("div");
+ avatar.className = "avatar";
+ const img = document.createElement("img");
+ img.src = getImgSrc(d);
+ img.alt = safeAlt;
+ img.loading = "lazy";
+ img.decoding = "async";
+ img.setAttribute("fetchpriority", "low");
+ avatar.appendChild(img);
 
-        const title = document.createElement("h4");
-        title.textContent = displayName;
+ const title = document.createElement("h4");
+ title.textContent = displayName;
 
-        head.appendChild(avatar);
-        head.appendChild(title);
+ head.appendChild(avatar);
+ head.appendChild(title);
 
-        const summary = document.createElement("p");
-        summary.className = "summary";
-        summary.textContent = safeDescription;
+ const summary = document.createElement("p");
+ summary.className = "summary";
+ summary.textContent = safeDescription;
 
-        const traits = document.createElement("ul");
-        traits.className = "traits";
-        (d?.strengths || [])
-          .slice(0, 3)
-          .map((t) => normalizeText(t))
-          .forEach((t) => {
-            const li = document.createElement("li");
-            li.textContent = t;
-            traits.appendChild(li);
-          });
+ const traits = document.createElement("ul");
+ traits.className = "traits";
+ (d?.strengths || []).slice(0, 3).map((t) => normalizeText(t)).forEach((t) => {
+ const li = document.createElement("li");
+ li.textContent = t;
+ traits.appendChild(li);
+ });
 
-        const cta = document.createElement("a");
-        cta.className = "guide-cta";
-        cta.href = profileLink;
-        cta.textContent = "View full profile";
+ const cta = document.createElement("a");
+ cta.className = "guide-cta";
+ cta.href = profileLink;
+ cta.textContent = "View full profile";
 
-        card.appendChild(head);
-        card.appendChild(summary);
-        card.appendChild(traits);
-        card.appendChild(cta);
+ card.appendChild(head);
+ card.appendChild(summary);
+ card.appendChild(traits);
+ card.appendChild(cta);
 
-        return card;
-      }
+ return card;
+ }
 
-      function updateSeeMoreButton() {
-        const btn = document.getElementById("seeMoreBtn");
-        const container = document.getElementById("seeMoreContainer");
-        const remainingBadge = document.getElementById("remainingCount");
-        if (!btn || !container) return;
+ function updateSeeMoreButton() {
+ const btn = document.getElementById("seeMoreBtn");
+ const container = document.getElementById("seeMoreContainer");
+ const remainingBadge = document.getElementById("remainingCount");
+ if (!btn ||!container) return;
 
-        const remaining = allPlayerKeys.length - displayedPlayers;
-        if (remaining <= 0) {
-          container.style.display = "none";
-        } else {
-          container.style.display = "flex";
-          const nextBatch = Math.min(remaining, PLAYERS_PER_PAGE);
-          remainingBadge.textContent = `${remaining} left`;
-          btn.querySelector("span:first-child").textContent =
-            `Show ${nextBatch} More Character${nextBatch > 1 ? "s" : ""}`;
-        }
-      }
+ const remaining = allPlayerKeys.length - displayedPlayers;
+ if (remaining <= 0) {
+ container.style.display = "none";
+ } else {
+ container.style.display = "flex";
+ const nextBatch = Math.min(remaining, PLAYERS_PER_PAGE);
+ remainingBadge.textContent = `${remaining} left`;
+ btn.querySelector("span:first-child").textContent =
+ `Show ${nextBatch} More Character${nextBatch > 1? "s": ""}`;
+ }
+ }
 
-      function loadMorePlayers() {
-        const grid = document.getElementById("guideGrid");
-        if (!grid) return;
+ function loadMorePlayers() {
+ const grid = document.getElementById("guideGrid");
+ if (!grid) return;
 
-        const nextBatch = allPlayerKeys.slice(
-          displayedPlayers,
-          displayedPlayers + PLAYERS_PER_PAGE,
-        );
-        nextBatch.forEach((key, i) => {
-          const card = createPlayerCard(key, i);
-          grid.appendChild(card);
-        });
-        displayedPlayers += nextBatch.length;
-        updateSeeMoreButton();
-        applyGuideFilters();
-      }
+ const nextBatch = allPlayerKeys.slice(
+ displayedPlayers,
+ displayedPlayers + PLAYERS_PER_PAGE,
+ );
+ nextBatch.forEach((key, i) => {
+ const card = createPlayerCard(key, i);
+ grid.appendChild(card);
+ });
+ displayedPlayers += nextBatch.length;
+ updateSeeMoreButton();
+ applyGuideFilters();
+ }
 
-      function populateGuide() {
-        const grid = document.getElementById("guideGrid");
-        if (!grid) return;
-        grid.innerHTML = "";
-        displayedPlayers = 0;
-        allPlayerKeys = Object.keys(wojakData);
+ function populateGuide() {
+ const grid = document.getElementById("guideGrid");
+ if (!grid) return;
+ grid.innerHTML = "";
+ displayedPlayers = 0;
+ allPlayerKeys = Object.keys(wojakData);
 
-        // Load initial batch
-        const initialBatch = allPlayerKeys.slice(0, PLAYERS_PER_PAGE);
-        initialBatch.forEach((key, i) => {
-          const card = createPlayerCard(key, i);
-          grid.appendChild(card);
-        });
-        displayedPlayers = initialBatch.length;
-        updateSeeMoreButton();
+ // Load initial batch
+ const initialBatch = allPlayerKeys.slice(0, PLAYERS_PER_PAGE);
+ initialBatch.forEach((key, i) => {
+ const card = createPlayerCard(key, i);
+ grid.appendChild(card);
+ });
+ displayedPlayers = initialBatch.length;
+ updateSeeMoreButton();
 
-        // Wire up See More button
-        const btn = document.getElementById("seeMoreBtn");
-        if (btn) {
-          btn.addEventListener("click", loadMorePlayers);
-        }
-      }
+ // Wire up See More button
+ const btn = document.getElementById("seeMoreBtn");
+ if (btn) {
+ btn.addEventListener("click", loadMorePlayers);
+ }
+ }
 
-      // Spotlight population with progressive loading
-      let spotlightPlayerKeys = [];
-      let displayedSpotlightPlayers = 0;
-      const SPOTLIGHT_BATCH_SIZE = 5;
+ // Spotlight population with progressive loading
+ let spotlightPlayerKeys = [];
+ let displayedSpotlightPlayers = 0;
+ const SPOTLIGHT_BATCH_SIZE = 5;
 
-      function createSpotlightCard(key, index) {
-        const d = wojakData[key];
-        const link = pageMap[key] || "#quizSection";
-        const card = document.createElement("article");
-        card.className = "character-card";
-        card.style.animationDelay = `${index * 0.08}s`;
-        const safeName = normalizeText(d?.name || "");
-        const safeDescription = normalizeText(d?.description || "");
-        const safeRoles = (d?.roles || [])
-          .map((r) => normalizeText(r))
-          .join(", ");
-        card.innerHTML = `
-          <a class="character-link" href="${link}">
-            <div class="character-meta"><img class="character-emoji" src="${getImgSrc(
-              d,
-            )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">${safeName}</div>
-            <p>${safeDescription}</p>
-            <div class="character-meta">Best roles: ${safeRoles}</div>
-          </a>
-        `;
-        return card;
-      }
+ function createSpotlightCard(key, index) {
+ const d = wojakData[key];
+ const link = pageMap[key] || "#quizSection";
+ const card = document.createElement("article");
+ card.className = "character-card";
+ card.style.animationDelay = `${index * 0.08}s`;
+ const safeName = normalizeText(d?.name || "");
+ const safeDescription = normalizeText(d?.description || "");
+ const safeRoles = (d?.roles || []).map((r) => normalizeText(r)).join(", ");
+ card.innerHTML = `
+ <a class="character-link" href="${link}">
+ <div class="character-meta"><img class="character-emoji" src="${getImgSrc(
+ d,
+ )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">${safeName}</div>
+ <p>${safeDescription}</p>
+ <div class="character-meta">Best roles: ${safeRoles}</div>
+ </a>
+ `;
+ return card;
+ }
 
-      function runWhenIdle(fn, timeoutMs = 1500) {
-        if (typeof fn !== "function") return;
-        if ("requestIdleCallback" in window) {
-          window.requestIdleCallback(() => fn(), { timeout: timeoutMs });
-        } else {
-          setTimeout(fn, 0);
-        }
-      }
+ function runWhenIdle(fn, timeoutMs = 1500) {
+ if (typeof fn!== "function") return;
+ if ("requestIdleCallback" in window) {
+ window.requestIdleCallback(() => fn(), { timeout: timeoutMs });
+ } else {
+ setTimeout(fn, 0);
+ }
+ }
 
-      function observeOnce(target, cb, rootMargin = "800px") {
-        if (!target || typeof cb !== "function") return;
-        if (!("IntersectionObserver" in window)) {
-          cb();
-          return;
-        }
-        const obs = new IntersectionObserver(
-          (entries) => {
-            const hit = entries.some((e) => e.isIntersecting);
-            if (!hit) return;
-            obs.disconnect();
-            cb();
-          },
-          { root: null, rootMargin, threshold: 0.01 },
-        );
-        obs.observe(target);
-      }
+ function observeOnce(target, cb, rootMargin = "800px") {
+ if (!target || typeof cb!== "function") return;
+ if (!("IntersectionObserver" in window)) {
+ cb();
+ return;
+ }
+ const obs = new IntersectionObserver(
+ (entries) => {
+ const hit = entries.some((e) => e.isIntersecting);
+ if (!hit) return;
+ obs.disconnect();
+ cb();
+ },
+ { root: null, rootMargin, threshold: 0.01 },
+ );
+ obs.observe(target);
+ }
 
-      function upgradeAnswerBadges() {
-        Array.from(
-          document.querySelectorAll(".answer-btn .wojak-badge"),
-        ).forEach((badge) => {
-          const btn = badge.closest("button");
-          const key = btn ? btn.getAttribute("data-wojak") : "";
-          const data = key ? wojakData[key] : null;
-          if (data) {
-            const safeName = normalizeText(data.name);
-            badge.innerHTML = `<img src="${getImgSrc(
-              data,
-            )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">`;
-          }
-        });
-      }
+ function upgradeAnswerBadges() {
+ Array.from(
+ document.querySelectorAll(".answer-btn.wojak-badge"),
+ ).forEach((badge) => {
+ const btn = badge.closest("button");
+ const key = btn? btn.getAttribute("data-wojak"): "";
+ const data = key? wojakData[key]: null;
+ if (data) {
+ const safeName = normalizeText(data.name);
+ badge.innerHTML = `<img src="${getImgSrc(
+ data,
+ )}" alt="${safeName}" loading="lazy" decoding="async" fetchpriority="low">`;
+ }
+ });
+ }
 
-      let guideInitialized = false;
-      function initGuide() {
-        if (guideInitialized) return;
-        guideInitialized = true;
-        populateGuide();
-        applyGuideFilters();
+ let guideInitialized = false;
+ function initGuide() {
+ if (guideInitialized) return;
+ guideInitialized = true;
+ populateGuide();
+ applyGuideFilters();
 
-        const search = document.getElementById("guideSearch");
-        if (search) search.addEventListener("input", applyGuideFilters);
+ const search = document.getElementById("guideSearch");
+ if (search) search.addEventListener("input", applyGuideFilters);
 
-        const chips = document.querySelectorAll(".filter-chips .chip");
-        chips.forEach((ch) =>
-          ch.addEventListener("click", () => {
-            chips.forEach((x) => {
-              x.classList.remove("active");
-              x.setAttribute("aria-pressed", "false");
-            });
-            ch.classList.add("active");
-            ch.setAttribute("aria-pressed", "true");
-            applyGuideFilters();
-          }),
-        );
-      }
+ const chips = document.querySelectorAll(".filter-chips.chip");
+ chips.forEach((ch) =>
+ ch.addEventListener("click", () => {
+ chips.forEach((x) => {
+ x.classList.remove("active");
+ x.setAttribute("aria-pressed", "false");
+ });
+ ch.classList.add("active");
+ ch.setAttribute("aria-pressed", "true");
+ applyGuideFilters();
+ }),
+ );
+ }
 
-      let spotlightInitialized = false;
-      function initSpotlight() {
-        if (spotlightInitialized) return;
-        spotlightInitialized = true;
-        populateSpotlight();
-      }
+ let spotlightInitialized = false;
+ function initSpotlight() {
+ if (spotlightInitialized) return;
+ spotlightInitialized = true;
+ populateSpotlight();
+ }
 
-      function updateSpotlightSeeMoreButton() {
-        const container = document.getElementById("spotlightSeeMoreContainer");
-        const btn = document.getElementById("spotlightSeeMoreBtn");
-        const countBadge = document.getElementById("spotlightRemainingCount");
-        const remaining =
-          spotlightPlayerKeys.length - displayedSpotlightPlayers;
+ function updateSpotlightSeeMoreButton() {
+ const container = document.getElementById("spotlightSeeMoreContainer");
+ const btn = document.getElementById("spotlightSeeMoreBtn");
+ const countBadge = document.getElementById("spotlightRemainingCount");
+ const remaining =
+ spotlightPlayerKeys.length - displayedSpotlightPlayers;
 
-        if (!container || !btn) return;
+ if (!container ||!btn) return;
 
-        if (remaining <= 0) {
-          container.style.display = "none";
-        } else {
-          container.style.display = "flex";
-          if (countBadge) {
-            countBadge.textContent = `${remaining} more`;
-          }
-        }
-      }
+ if (remaining <= 0) {
+ container.style.display = "none";
+ } else {
+ container.style.display = "flex";
+ if (countBadge) {
+ countBadge.textContent = `${remaining} more`;
+ }
+ }
+ }
 
-      function loadMoreSpotlightPlayers() {
-        const grid = document.getElementById("spotlightGrid");
-        if (!grid) return;
+ function loadMoreSpotlightPlayers() {
+ const grid = document.getElementById("spotlightGrid");
+ if (!grid) return;
 
-        const nextBatch = spotlightPlayerKeys.slice(
-          displayedSpotlightPlayers,
-          displayedSpotlightPlayers + SPOTLIGHT_BATCH_SIZE,
-        );
+ const nextBatch = spotlightPlayerKeys.slice(
+ displayedSpotlightPlayers,
+ displayedSpotlightPlayers + SPOTLIGHT_BATCH_SIZE,
+ );
 
-        nextBatch.forEach((key, i) => {
-          const card = createSpotlightCard(key, i);
-          grid.appendChild(card);
-        });
+ nextBatch.forEach((key, i) => {
+ const card = createSpotlightCard(key, i);
+ grid.appendChild(card);
+ });
 
-        displayedSpotlightPlayers += nextBatch.length;
-        updateSpotlightSeeMoreButton();
+ displayedSpotlightPlayers += nextBatch.length;
+ updateSpotlightSeeMoreButton();
 
-        // Smooth scroll to show new content
-        if (nextBatch.length > 0) {
-          const newCards = grid.querySelectorAll(".character-card");
-          const firstNewCard =
-            newCards[displayedSpotlightPlayers - nextBatch.length];
-          if (firstNewCard) {
-            firstNewCard.scrollIntoView({
-              behavior: "smooth",
-              block: "nearest",
-            });
-          }
-        }
-      }
+ // Smooth scroll to show new content
+ if (nextBatch.length > 0) {
+ const newCards = grid.querySelectorAll(".character-card");
+ const firstNewCard =
+ newCards[displayedSpotlightPlayers - nextBatch.length];
+ if (firstNewCard) {
+ firstNewCard.scrollIntoView({
+ behavior: "smooth",
+ block: "nearest",
+ });
+ }
+ }
+ }
 
-      function populateSpotlight() {
-        const grid = document.getElementById("spotlightGrid");
-        if (!grid) return;
-        grid.innerHTML = "";
+ function populateSpotlight() {
+ const grid = document.getElementById("spotlightGrid");
+ if (!grid) return;
+ grid.innerHTML = "";
 
-        spotlightPlayerKeys = Object.keys(wojakData);
-        displayedSpotlightPlayers = 0;
+ spotlightPlayerKeys = Object.keys(wojakData);
+ displayedSpotlightPlayers = 0;
 
-        // Load initial batch
-        const initialBatch = spotlightPlayerKeys.slice(0, SPOTLIGHT_BATCH_SIZE);
-        initialBatch.forEach((key, i) => {
-          const card = createSpotlightCard(key, i);
-          grid.appendChild(card);
-        });
-        displayedSpotlightPlayers = initialBatch.length;
-        updateSpotlightSeeMoreButton();
+ // Load initial batch
+ const initialBatch = spotlightPlayerKeys.slice(0, SPOTLIGHT_BATCH_SIZE);
+ initialBatch.forEach((key, i) => {
+ const card = createSpotlightCard(key, i);
+ grid.appendChild(card);
+ });
+ displayedSpotlightPlayers = initialBatch.length;
+ updateSpotlightSeeMoreButton();
 
-        // Wire up See More button
-        const btn = document.getElementById("spotlightSeeMoreBtn");
-        if (btn) {
-          btn.addEventListener("click", loadMoreSpotlightPlayers);
-        }
-      }
+ // Wire up See More button
+ const btn = document.getElementById("spotlightSeeMoreBtn");
+ if (btn) {
+ btn.addEventListener("click", loadMoreSpotlightPlayers);
+ }
+ }
 
-      // Search and filter
-      function applyGuideFilters() {
-        const grid = document.getElementById("guideGrid");
-        const search = document.getElementById("guideSearch");
-        const term = (search?.value || "").toLowerCase();
-        const activeChip = document.querySelector(".filter-chips .chip.active");
-        const filter = activeChip
-          ? activeChip.getAttribute("data-filter")
-          : "all";
-        const container = document.getElementById("seeMoreContainer");
+ // Search and filter
+ function applyGuideFilters() {
+ const grid = document.getElementById("guideGrid");
+ const search = document.getElementById("guideSearch");
+ const term = (search?.value || "").toLowerCase();
+ const activeChip = document.querySelector(".filter-chips.chip.active");
+ const filter = activeChip? activeChip.getAttribute("data-filter"): "all";
+ const container = document.getElementById("seeMoreContainer");
 
-        // If searching or filtering, show all matching players
-        if (term || filter !== "all") {
-          // Load all remaining players first
-          if (displayedPlayers < allPlayerKeys.length) {
-            const remaining = allPlayerKeys.slice(displayedPlayers);
-            remaining.forEach((key, i) => {
-              const card = createPlayerCard(key, i);
-              grid.appendChild(card);
-            });
-            displayedPlayers = allPlayerKeys.length;
-          }
-          // Hide see more button when filtering
-          if (container) container.style.display = "none";
-        } else {
-          // Restore see more button when not filtering
-          updateSeeMoreButton();
-        }
+ // If searching or filtering, show all matching players
+ if (term || filter!== "all") {
+ // Load all remaining players first
+ if (displayedPlayers < allPlayerKeys.length) {
+ const remaining = allPlayerKeys.slice(displayedPlayers);
+ remaining.forEach((key, i) => {
+ const card = createPlayerCard(key, i);
+ grid.appendChild(card);
+ });
+ displayedPlayers = allPlayerKeys.length;
+ }
+ // Hide see more button when filtering
+ if (container) container.style.display = "none";
+ } else {
+ // Restore see more button when not filtering
+ updateSeeMoreButton();
+ }
 
-        const cards = grid
-          ? Array.from(grid.querySelectorAll(".guide-card"))
-          : [];
-        cards.forEach((card) => {
-          const tags = (card.getAttribute("data-tags") || "").toLowerCase();
-          const text = card.textContent.toLowerCase();
-          const matchText = !term || text.includes(term);
-          const matchTag = filter === "all" || tags.includes(filter);
-          card.style.display = matchText && matchTag ? "" : "none";
-        });
-      }
+ const cards = grid? Array.from(grid.querySelectorAll(".guide-card")): [];
+ cards.forEach((card) => {
+ const tags = (card.getAttribute("data-tags") || "").toLowerCase();
+ const text = card.textContent.toLowerCase();
+ const matchText =!term || text.includes(term);
+ const matchTag = filter === "all" || tags.includes(filter);
+ card.style.display = matchText && matchTag? "": "none";
+ });
+ }
 
-      // FAQ toggle
-      function wireFAQ() {
-        const items = document.querySelectorAll(".faq-item");
-        items.forEach((item) => {
-          const q = item.querySelector(".faq-question");
-          const a = item.querySelector(".faq-answer");
-          if (!q || !a) return;
-          const toggle = () => {
-            const expanded = q.getAttribute("aria-expanded") === "true";
-            q.setAttribute("aria-expanded", String(!expanded));
-            if (expanded) {
-              a.hidden = true;
-            } else {
-              a.hidden = false;
-            }
-          };
-          q.addEventListener("click", toggle);
-          q.addEventListener("keypress", (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              toggle();
-            }
-          });
-        });
-      }
+ // FAQ toggle
+ function wireFAQ() {
+ const items = document.querySelectorAll(".faq-item");
+ items.forEach((item) => {
+ const q = item.querySelector(".faq-question");
+ const a = item.querySelector(".faq-answer");
+ if (!q ||!a) return;
+ const toggle = () => {
+ const expanded = q.getAttribute("aria-expanded") === "true";
+ q.setAttribute("aria-expanded", String(!expanded));
+ if (expanded) {
+ a.hidden = true;
+ } else {
+ a.hidden = false;
+ }
+ };
+ q.addEventListener("click", toggle);
+ q.addEventListener("keypress", (e) => {
+ if (e.key === "Enter" || e.key === " ") {
+ e.preventDefault();
+ toggle();
+ }
+ });
+ });
+ }
 
-      // Analytics placeholders
-      function trackQuizStart() {}
-      function trackQuizComplete(resultKey) {
-        console.debug("Quiz complete:", resultKey);
-      }
+ // Analytics placeholders
+ function trackQuizStart() {}
+ function trackQuizComplete(resultKey) {
+ console.debug("Quiz complete:", resultKey);
+ }
 
-      // Share links for result
-      function renderShare(key) {
-        const box = document.getElementById("shareRow");
-        if (!box) return;
-        // Build a shareable URL that encodes the result in the query string so
-        // it survives server redirects and works across devices. Keep hash as
-        // a fallback for older behaviour.
-        const url = new URL(window.location.href);
-        url.searchParams.set("start", "quiz");
-        url.searchParams.set("result", key); // primary: query param
-        url.hash = `result=${key}`; // fallback: preserve previous behaviour
-        const shareUrl = url.toString();
-        const rawName = normalizeText(wojakData[key]?.name || "");
-        const baseName = rawName.split(/\s-\s/)[0] || rawName;
-        const text = encodeURIComponent(`My Marvel hero: ${baseName}`);
-        const tw = `https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(
-          shareUrl,
-        )}`;
-        box.innerHTML = `
+ // Share links for result
+ function renderShare(key) {
+ const box = document.getElementById("shareRow");
+ if (!box) return;
+ // Build a shareable URL that encodes the result in the query string so
+ // it survives server redirects and works across devices. Keep hash as
+ // a fallback for older behaviour.
+ const url = new URL(window.location.href);
+ url.searchParams.set("start", "quiz");
+ url.searchParams.set("result", key); // primary: query param
+ url.hash = `result=${key}`; // fallback: preserve previous behaviour
+ const shareUrl = url.toString();
+ const rawName = normalizeText(wojakData[key]?.name || "");
+ const baseName = rawName.split(/\s-\s/)[0] || rawName;
+ const text = encodeURIComponent(`My Marvel hero: ${baseName}`);
+ const tw = `https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(
+ shareUrl,
+ )}`;
+ box.innerHTML = `
 					<a href="${tw}" target="_blank" rel="noopener" class="guide-cta">Share on X</a>
 					<button class="guide-cta" onclick="navigator.clipboard.writeText('${shareUrl.replace(
-            /'/g,
-            "%27",
-          )}').then(()=>{this.textContent='Link copied!'; setTimeout(()=>this.textContent='Copy result link',1500);})">Copy result link</button>
+ /'/g,
+ "%27",
+ )}').then(()=>{this.textContent='Link copied!'; setTimeout(()=>this.textContent='Copy result link',1500);})">Copy result link</button>
 				`;
-      }
+ }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const allQ = document.querySelectorAll(".question");
-        const totalQuestions = allQ.length;
-        const totalBottom = document.getElementById("questionTotal");
-        if (totalBottom) totalBottom.textContent = totalQuestions;
-        const totalTop = document.getElementById("questionTotalTop");
-        if (totalTop) totalTop.textContent = totalQuestions;
+ document.addEventListener("DOMContentLoaded", () => {
+ const allQ = document.querySelectorAll(".question");
+ const totalQuestions = allQ.length;
+ const totalBottom = document.getElementById("questionTotal");
+ if (totalBottom) totalBottom.textContent = totalQuestions;
+ const totalTop = document.getElementById("questionTotalTop");
+ if (totalTop) totalTop.textContent = totalQuestions;
 
-        // Defer heavier work until idle / near-viewport for smoother startup
-        runWhenIdle(wireFAQ);
+ // Defer heavier work until idle / near-viewport for smoother startup
+ runWhenIdle(wireFAQ);
 
-        const quizSection = document.getElementById("quizSection");
-        observeOnce(
-          quizSection,
-          () => runWhenIdle(upgradeAnswerBadges),
-          "600px",
-        );
+ const quizSection = document.getElementById("quizSection");
+ observeOnce(
+ quizSection,
+ () => runWhenIdle(upgradeAnswerBadges),
+ "600px",
+ );
 
-        const guideSection =
-          document.getElementById("characters") ||
-          document.getElementById("countryGuide");
-        observeOnce(guideSection, () => runWhenIdle(initGuide), "900px");
+ const guideSection =
+ document.getElementById("characters") ||
+ document.getElementById("countryGuide");
+ observeOnce(guideSection, () => runWhenIdle(initGuide), "900px");
 
-        const spotlightGrid = document.getElementById("spotlightGrid");
-        observeOnce(spotlightGrid, () => runWhenIdle(initSpotlight), "900px");
+ const spotlightGrid = document.getElementById("spotlightGrid");
+ observeOnce(spotlightGrid, () => runWhenIdle(initSpotlight), "900px");
 
-        // If user interacts with guide controls before it becomes visible, init immediately
-        const guideSearch = document.getElementById("guideSearch");
-        guideSearch?.addEventListener("focus", () => initGuide(), {
-          once: true,
-        });
-        guideSearch?.addEventListener("keydown", () => initGuide(), {
-          once: true,
-        });
-        document
-          .querySelectorAll(".filter-chips .chip")
-          .forEach((chip) =>
-            chip.addEventListener("click", () => initGuide(), { once: true }),
-          );
+ // If user interacts with guide controls before it becomes visible, init immediately
+ const guideSearch = document.getElementById("guideSearch");
+ guideSearch?.addEventListener("focus", () => initGuide(), {
+ once: true,
+ });
+ guideSearch?.addEventListener("keydown", () => initGuide(), {
+ once: true,
+ });
+ document.querySelectorAll(".filter-chips.chip").forEach((chip) =>
+ chip.addEventListener("click", () => initGuide(), { once: true }),
+ );
 
-        document
-          .querySelectorAll(".filter-chips .chip")
-          .forEach((chip) =>
-            chip.addEventListener("keydown", () => initGuide(), { once: true }),
-          );
+ document.querySelectorAll(".filter-chips.chip").forEach((chip) =>
+ chip.addEventListener("keydown", () => initGuide(), { once: true }),
+ );
 
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get("start") === "quiz") {
-          setTimeout(() => {
-            document
-              .getElementById("quizSection")
-              .scrollIntoView({ behavior: "smooth" });
-          }, 150);
-          trackQuizStart();
-        }
-      });
-    </script>
+ const urlParams = new URLSearchParams(window.location.search);
+ if (urlParams.get("start") === "quiz") {
+ setTimeout(() => {
+ document.getElementById("quizSection").scrollIntoView({ behavior: "smooth" });
+ }, 150);
+ trackQuizStart();
+ }
+ });
+ </script>
 
-    <script>
-      // Marvel quiz injection: generate Marvel-only question blocks
-      // while keeping the same quiz shell + scoring mechanism.
-      (function injectMarvelQuestions() {
-        const quizMain = document.querySelector("#quizSection .quiz-main");
-        if (!quizMain) return;
+ <script>
+ // Marvel quiz injection: generate Marvel-only question blocks
+ // while keeping the same quiz shell + scoring mechanism.
+ (function injectMarvelQuestions() {
+ const quizMain = document.querySelector("#quizSection.quiz-main");
+ if (!quizMain) return;
 
-        const QUESTIONS = [
-          {
-            q: "A city-wide emergency hits. Your first move is…",
-            a: [
-              {
-                k: "gi_hun",
-                t: "Build a quick prototype solution and iterate fast.",
-              },
-              { k: "sang_woo", t: "Coordinate the team and set a clear plan." },
-              { k: "jun_ho", t: "Gather intel quietly before making a move." },
-              {
-                k: "il_nam",
-                t: "Handle the immediate threat with raw strength.",
-              },
-            ],
-          },
-          {
-            q: "Your team is divided on what to do next. You…",
-            a: [
-              {
-                k: "sang_woo",
-                t: "Pull everyone to a shared principle and decide.",
-              },
-              {
-                k: "front_man",
-                t: "Lay out the long-term consequences and pick the best path.",
-              },
-              {
-                k: "mi_nyeo",
-                t: "Reframe the argument and negotiate a surprising compromise.",
-              },
-              {
-                k: "lee_myung_gi",
-                t: "Focus on the practical next step and keep momentum.",
-              },
-            ],
-          },
-          {
-            q: "A powerful new tool falls into your hands. Your instinct is…",
-            a: [
-              {
-                k: "gi_hun",
-                t: "Improve it, test it, and use it responsibly.",
-              },
-              {
-                k: "front_man",
-                t: "Study it first—power without understanding is danger.",
-              },
-              {
-                k: "lee_myung_gi",
-                t: "Master it quickly and use it with precision.",
-              },
-              { k: "mi_nyeo", t: "Exploit it creatively; rules are optional." },
-            ],
-          },
-          {
-            q: "In a fight, you win best by…",
-            a: [
-              {
-                k: "ali",
-                t: "Charging in with courage and protecting the team.",
-              },
-              {
-                k: "jun_ho",
-                t: "Precision, timing, and reading the opponent.",
-              },
-              {
-                k: "se_mi",
-                t: "Supporting from the side and covering teammates.",
-              },
-              { k: "il_nam", t: "Overwhelming force when it truly matters." },
-            ],
-          },
-          {
-            q: "You’re offered a shortcut that saves time but feels wrong. You…",
-            a: [
-              { k: "sang_woo", t: "Refuse. If it’s wrong, it’s wrong." },
-              { k: "sae_byeok", t: "Take the hit. You’ll find a better way." },
-              { k: "gi_hun", t: "Look for a clever third option." },
-              {
-                k: "lee_myung_gi",
-                t: "Evaluate risks and choose the least harmful path.",
-              },
-            ],
-          },
-          {
-            q: "What kind of teammate are you under stress?",
-            a: [
-              {
-                k: "park_jung_bae",
-                t: "Resilient and loyal—still standing no matter what.",
-              },
-              {
-                k: "se_mi",
-                t: "Reliable support—the person who keeps things moving.",
-              },
-              {
-                k: "deok_su",
-                t: "A calm protector who sets standards and holds the line.",
-              },
-              {
-                k: "front_man",
-                t: "The calm planner—pick a path and execute cleanly.",
-              },
-            ],
-          },
-          {
-            q: "Someone you care about is in danger. You…",
-            a: [
-              { k: "sae_byeok", t: "Jump in—even if it costs you." },
-              { k: "ali", t: "Take the front line and absorb the risk." },
-              { k: "jun_ho", t: "Create an opening and get them out safely." },
-              { k: "gi_hun", t: "Engineer a solution that saves everyone." },
-            ],
-          },
-          {
-            q: "Your leadership style is closest to…",
-            a: [
-              {
-                k: "sang_woo",
-                t: "Values-first leadership with clear accountability.",
-              },
-              {
-                k: "deok_su",
-                t: "Calm authority, strategic restraint, strong standards.",
-              },
-              {
-                k: "front_man",
-                t: "Long-game planning with measured, logical calls.",
-              },
-              {
-                k: "lee_myung_gi",
-                t: "Lead by competence: do the job, hit the target.",
-              },
-            ],
-          },
-          {
-            q: "When things go wrong, your biggest pitfall is…",
-            a: [
-              {
-                k: "gi_hun",
-                t: "Overcontrolling or trying to out-think everything.",
-              },
-              { k: "sang_woo", t: "Carrying too much responsibility alone." },
-              {
-                k: "il_nam",
-                t: "Letting emotion spike into collateral damage.",
-              },
-              {
-                k: "mi_nyeo",
-                t: "Turning unpredictability into unnecessary drama.",
-              },
-            ],
-          },
-          {
-            q: "Which approach feels most natural?",
-            a: [
-              {
-                k: "front_man",
-                t: "Study patterns, anticipate outcomes, act at the right time.",
-              },
-              {
-                k: "jun_ho",
-                t: "Collect evidence, read motives, move precisely.",
-              },
-              { k: "park_jung_bae", t: "Endure, adapt, and keep going." },
-              { k: "sae_byeok", t: "Do what’s right, even when it’s hard." },
-            ],
-          },
-          {
-            q: "A rival challenges you publicly. You…",
-            a: [
-              {
-                k: "lee_myung_gi",
-                t: "Stay calm and respond with clean execution.",
-              },
-              {
-                k: "mi_nyeo",
-                t: "Outmaneuver them socially and flip the narrative.",
-              },
-              { k: "il_nam", t: "End it fast—remove the threat immediately." },
-              {
-                k: "sang_woo",
-                t: "Hold your ground without losing your values.",
-              },
-            ],
-          },
-          {
-            q: "Your ‘superpower’ in a team is…",
-            a: [
-              {
-                k: "gi_hun",
-                t: "Innovation—turning impossible into possible.",
-              },
-              { k: "jun_ho", t: "Awareness—spotting what others miss." },
-              {
-                k: "se_mi",
-                t: "Support—making teammates better in the moment.",
-              },
-              { k: "ali", t: "Courage—stepping forward when others hesitate." },
-            ],
-          },
-          {
-            q: "How do you treat rules?",
-            a: [
-              { k: "sang_woo", t: "Rules matter when they protect people." },
-              {
-                k: "gi_hun",
-                t: "Rules can be improved when they’re outdated.",
-              },
-              { k: "mi_nyeo", t: "Rules are flexible—results matter." },
-              {
-                k: "front_man",
-                t: "Rules should reflect reality and consequences.",
-              },
-            ],
-          },
-          {
-            q: "Pick the ending you’d rather have.",
-            a: [
-              { k: "sae_byeok", t: "Save as many people as possible." },
-              { k: "sang_woo", t: "Win cleanly and leave a better example." },
-              {
-                k: "gi_hun",
-                t: "Build something that prevents the next crisis.",
-              },
-              {
-                k: "front_man",
-                t: "Choose the long-term future over short-term comfort.",
-              },
-            ],
-          },
-          {
-            q: "A plan needs someone to take the hardest role. You…",
-            a: [
-              { k: "park_jung_bae", t: "Take it. You can handle it." },
-              {
-                k: "deok_su",
-                t: "Take it, but set boundaries and expectations.",
-              },
-              { k: "jun_ho", t: "Take it if it’s the most strategic move." },
-              {
-                k: "lee_myung_gi",
-                t: "Take it if it matches your best skill.",
-              },
-            ],
-          },
-          {
-            q: "Your relationship with chaos is…",
-            a: [
-              {
-                k: "gi_hun",
-                t: "A problem to solve with creativity and tools.",
-              },
-              { k: "sang_woo", t: "A test—stay steady and lead through it." },
-              { k: "mi_nyeo", t: "An opportunity—chaos makes angles." },
-              {
-                k: "front_man",
-                t: "A signal—find the pattern, then act at the right time.",
-              },
-            ],
-          },
-        ];
+ const QUESTIONS = [
+ {
+ q: "A city-wide emergency hits. Your first move is…",
+ a: [
+ {
+ k: "gi_hun",
+ t: "Build a quick prototype solution and iterate fast.",
+ },
+ { k: "sang_woo", t: "Coordinate the team and set a clear plan." },
+ { k: "jun_ho", t: "Gather intel quietly before making a move." },
+ {
+ k: "il_nam",
+ t: "Handle the immediate threat with raw strength.",
+ },
+ ],
+ },
+ {
+ q: "Your team is divided on what to do next. You…",
+ a: [
+ {
+ k: "sang_woo",
+ t: "Pull everyone to a shared principle and decide.",
+ },
+ {
+ k: "front_man",
+ t: "Lay out the long-term consequences and pick the best path.",
+ },
+ {
+ k: "mi_nyeo",
+ t: "Reframe the argument and negotiate a surprising compromise.",
+ },
+ {
+ k: "lee_myung_gi",
+ t: "Focus on the practical next step and keep momentum.",
+ },
+ ],
+ },
+ {
+ q: "A powerful new tool falls into your hands. Your instinct is…",
+ a: [
+ {
+ k: "gi_hun",
+ t: "Improve it, test it, and use it responsibly.",
+ },
+ {
+ k: "front_man",
+ t: "Study it first—power without understanding is danger.",
+ },
+ {
+ k: "lee_myung_gi",
+ t: "Master it quickly and use it with precision.",
+ },
+ { k: "mi_nyeo", t: "Exploit it creatively; rules are optional." },
+ ],
+ },
+ {
+ q: "In a fight, you win best by…",
+ a: [
+ {
+ k: "ali",
+ t: "Charging in with courage and protecting the team.",
+ },
+ {
+ k: "jun_ho",
+ t: "Precision, timing, and reading the opponent.",
+ },
+ {
+ k: "se_mi",
+ t: "Supporting from the side and covering teammates.",
+ },
+ { k: "il_nam", t: "Overwhelming force when it truly matters." },
+ ],
+ },
+ {
+ q: "You’re offered a shortcut that saves time but feels wrong. You…",
+ a: [
+ { k: "sang_woo", t: "Refuse. If it’s wrong, it’s wrong." },
+ { k: "sae_byeok", t: "Take the hit. You’ll find a better way." },
+ { k: "gi_hun", t: "Look for a clever third option." },
+ {
+ k: "lee_myung_gi",
+ t: "Evaluate risks and choose the least harmful path.",
+ },
+ ],
+ },
+ {
+ q: "What kind of teammate are you under stress?",
+ a: [
+ {
+ k: "park_jung_bae",
+ t: "Resilient and loyal—still standing no matter what.",
+ },
+ {
+ k: "se_mi",
+ t: "Reliable support—the person who keeps things moving.",
+ },
+ {
+ k: "deok_su",
+ t: "A calm protector who sets standards and holds the line.",
+ },
+ {
+ k: "front_man",
+ t: "The calm planner—pick a path and execute cleanly.",
+ },
+ ],
+ },
+ {
+ q: "Someone you care about is in danger. You…",
+ a: [
+ { k: "sae_byeok", t: "Jump in—even if it costs you." },
+ { k: "ali", t: "Take the front line and absorb the risk." },
+ { k: "jun_ho", t: "Create an opening and get them out safely." },
+ { k: "gi_hun", t: "Engineer a solution that saves everyone." },
+ ],
+ },
+ {
+ q: "Your leadership style is closest to…",
+ a: [
+ {
+ k: "sang_woo",
+ t: "Values-first leadership with clear accountability.",
+ },
+ {
+ k: "deok_su",
+ t: "Calm authority, strategic restraint, strong standards.",
+ },
+ {
+ k: "front_man",
+ t: "Long-game planning with measured, logical calls.",
+ },
+ {
+ k: "lee_myung_gi",
+ t: "Lead by competence: do the job, hit the target.",
+ },
+ ],
+ },
+ {
+ q: "When things go wrong, your biggest pitfall is…",
+ a: [
+ {
+ k: "gi_hun",
+ t: "Overcontrolling or trying to out-think everything.",
+ },
+ { k: "sang_woo", t: "Carrying too much responsibility alone." },
+ {
+ k: "il_nam",
+ t: "Letting emotion spike into collateral damage.",
+ },
+ {
+ k: "mi_nyeo",
+ t: "Turning unpredictability into unnecessary drama.",
+ },
+ ],
+ },
+ {
+ q: "Which approach feels most natural?",
+ a: [
+ {
+ k: "front_man",
+ t: "Study patterns, anticipate outcomes, act at the right time.",
+ },
+ {
+ k: "jun_ho",
+ t: "Collect evidence, read motives, move precisely.",
+ },
+ { k: "park_jung_bae", t: "Endure, adapt, and keep going." },
+ { k: "sae_byeok", t: "Do what’s right, even when it’s hard." },
+ ],
+ },
+ {
+ q: "A rival challenges you publicly. You…",
+ a: [
+ {
+ k: "lee_myung_gi",
+ t: "Stay calm and respond with clean execution.",
+ },
+ {
+ k: "mi_nyeo",
+ t: "Outmaneuver them socially and flip the narrative.",
+ },
+ { k: "il_nam", t: "End it fast—remove the threat immediately." },
+ {
+ k: "sang_woo",
+ t: "Hold your ground without losing your values.",
+ },
+ ],
+ },
+ {
+ q: "Your ‘superpower’ in a team is…",
+ a: [
+ {
+ k: "gi_hun",
+ t: "Innovation—turning impossible into possible.",
+ },
+ { k: "jun_ho", t: "Awareness—spotting what others miss." },
+ {
+ k: "se_mi",
+ t: "Support—making teammates better in the moment.",
+ },
+ { k: "ali", t: "Courage—stepping forward when others hesitate." },
+ ],
+ },
+ {
+ q: "How do you treat rules?",
+ a: [
+ { k: "sang_woo", t: "Rules matter when they protect people." },
+ {
+ k: "gi_hun",
+ t: "Rules can be improved when they’re outdated.",
+ },
+ { k: "mi_nyeo", t: "Rules are flexible—results matter." },
+ {
+ k: "front_man",
+ t: "Rules should reflect reality and consequences.",
+ },
+ ],
+ },
+ {
+ q: "Pick the ending you’d rather have.",
+ a: [
+ { k: "sae_byeok", t: "Save as many people as possible." },
+ { k: "sang_woo", t: "Win cleanly and leave a better example." },
+ {
+ k: "gi_hun",
+ t: "Build something that prevents the next crisis.",
+ },
+ {
+ k: "front_man",
+ t: "Choose the long-term future over short-term comfort.",
+ },
+ ],
+ },
+ {
+ q: "A plan needs someone to take the hardest role. You…",
+ a: [
+ { k: "park_jung_bae", t: "Take it. You can handle it." },
+ {
+ k: "deok_su",
+ t: "Take it, but set boundaries and expectations.",
+ },
+ { k: "jun_ho", t: "Take it if it’s the most strategic move." },
+ {
+ k: "lee_myung_gi",
+ t: "Take it if it matches your best skill.",
+ },
+ ],
+ },
+ {
+ q: "Your relationship with chaos is…",
+ a: [
+ {
+ k: "gi_hun",
+ t: "A problem to solve with creativity and tools.",
+ },
+ { k: "sang_woo", t: "A test—stay steady and lead through it." },
+ { k: "mi_nyeo", t: "An opportunity—chaos makes angles." },
+ {
+ k: "front_man",
+ t: "A signal—find the pattern, then act at the right time.",
+ },
+ ],
+ },
+ ];
 
-        // Remove any existing question blocks (if present)
-        quizMain
-          .querySelectorAll(".question[data-question]")
-          .forEach((q) => q.remove());
+ // Remove any existing question blocks (if present)
+ quizMain.querySelectorAll(".question[data-question]").forEach((q) => q.remove());
 
-        // Insert generated questions right after the counter for identical layout flow
-        const counter = quizMain.querySelector(".question-counter");
-        if (!counter) return;
+ // Insert generated questions right after the counter for identical layout flow
+ const counter = quizMain.querySelector(".question-counter");
+ if (!counter) return;
 
-        const fragment = document.createDocumentFragment();
-        QUESTIONS.forEach((item, idx) => {
-          const q = document.createElement("div");
-          q.className = `question${idx === 0 ? " active" : ""}`;
-          q.setAttribute("data-question", String(idx + 1));
+ const fragment = document.createDocumentFragment();
+ QUESTIONS.forEach((item, idx) => {
+ const q = document.createElement("div");
+ q.className = `question${idx === 0? " active": ""}`;
+ q.setAttribute("data-question", String(idx + 1));
 
-          const h = document.createElement("h3");
-          h.textContent = item.q;
+ const h = document.createElement("h3");
+ h.textContent = item.q;
 
-          const answers = document.createElement("div");
-          answers.className = "answers";
+ const answers = document.createElement("div");
+ answers.className = "answers";
 
-          item.a.forEach((opt) => {
-            const btn = document.createElement("button");
-            btn.className = "answer-btn";
-            btn.setAttribute("onclick", "selectAnswer(this)");
-            btn.setAttribute("data-wojak", opt.k);
+ item.a.forEach((opt) => {
+ const btn = document.createElement("button");
+ btn.className = "answer-btn";
+ btn.setAttribute("onclick", "selectAnswer(this)");
+ btn.setAttribute("data-wojak", opt.k);
 
-            const badge = document.createElement("span");
-            badge.className = "wojak-badge";
+ const badge = document.createElement("span");
+ badge.className = "wojak-badge";
 
-            const text = document.createElement("span");
-            text.className = "answer-text";
-            text.textContent = opt.t;
+ const text = document.createElement("span");
+ text.className = "answer-text";
+ text.textContent = opt.t;
 
-            const chev = document.createElement("span");
-            chev.className = "chevron";
-            chev.textContent = "›";
+ const chev = document.createElement("span");
+ chev.className = "chevron";
+ chev.textContent = "›";
 
-            btn.appendChild(badge);
-            btn.appendChild(text);
-            btn.appendChild(chev);
+ btn.appendChild(badge);
+ btn.appendChild(text);
+ btn.appendChild(chev);
 
-            answers.appendChild(btn);
-          });
+ answers.appendChild(btn);
+ });
 
-          q.appendChild(h);
-          q.appendChild(answers);
-          fragment.appendChild(q);
-        });
+ q.appendChild(h);
+ q.appendChild(answers);
+ fragment.appendChild(q);
+ });
 
-        counter.insertAdjacentElement(
-          "afterend",
-          document.createElement("div"),
-        );
-        // Replace the temp node with our fragment (keeps DOM ops minimal)
-        const temp = counter.nextElementSibling;
-        temp.replaceWith(fragment);
-      })();
-    </script>
-    <script src="perfect-quiz-shell.js"></script>
-  </body>
+ counter.insertAdjacentElement(
+ "afterend",
+ document.createElement("div"),
+ );
+ // Replace the temp node with our fragment (keeps DOM ops minimal)
+ const temp = counter.nextElementSibling;
+ temp.replaceWith(fragment);
+ })();
+ </script>
+ <script src="perfect-quiz-shell.js"></script>
+ </body>
 </html>
