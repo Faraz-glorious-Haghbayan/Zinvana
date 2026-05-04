@@ -1,3091 +1,1353 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1023172873076347"
-     crossorigin="anonymous"></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Free Personality Quizzes | Zinvana</title>
-    <meta
-      name="description"
-      content="Take free personality quizzes online: MBTI, leadership, football, pop culture, and wellness assessments. Instant results, no sign-up, always free."
-    />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Zinvana" />
-    <link rel="canonical" href="https://zinvana.com" />
-    <link rel="icon" href="/favicon.ico" />
-
-    <meta property="og:site_name" content="Zinvana" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://zinvana.com" />
-    <meta property="og:title" content="Free Personality Quizzes | Zinvana" />
-    <meta
-      property="og:description"
-      content="Take MBTI, historical leader, football, pop culture, and wellbeing quizzes. Instant insights, no sign-up."
-    />
-    <meta property="og:image" content="https://zinvana.com/Zinvana2.jpg" />
-    <meta property="twitter:card" content="summary_large_image" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      :root {
-        --bg: #0c1324;
-        --panel: #0f172a;
-        --muted: #7c8aa5;
-        --text: #e4ecff;
-        --accent: #2dd4bf;
-        --accent-2: #f97316;
-        --border: rgba(255, 255, 255, 0.08);
-        --card: rgba(255, 255, 255, 0.02);
-        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-        --radius: 18px;
-        --topbar-h: 76px;
-        --glow: 0 12px 40px rgba(45, 212, 191, 0.12);
-        --glow-2: 0 12px 40px rgba(249, 115, 22, 0.08);
-        --professional-bg: linear-gradient(
-          135deg,
-          #0a0f1c 0%,
-          #0c1324 50%,
-          #0f172a 100%
-        );
-      }
-
-      * {
-        box-sizing: border-box;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      body {
-        margin: 0;
-        background: var(--professional-bg);
-        color: var(--text);
-        font-family: "Space Grotesk", "Sora", system-ui, sans-serif;
-        line-height: 1.6;
-        min-height: 100vh;
-        overflow-x: hidden;
-        position: relative;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        inset: -220px;
-        background: radial-gradient(
-            circle at 20% 18%,
-            rgba(45, 212, 191, 0.22),
-            rgba(0, 0, 0, 0) 48%
-          ),
-          radial-gradient(
-            circle at 82% 22%,
-            rgba(34, 211, 238, 0.14),
-            rgba(0, 0, 0, 0) 52%
-          ),
-          radial-gradient(
-            circle at 72% 78%,
-            rgba(249, 115, 22, 0.12),
-            rgba(0, 0, 0, 0) 54%
-          );
-        filter: blur(60px);
-        opacity: 0.55;
-        pointer-events: none;
-        z-index: -2;
-      }
-
-      body::after {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: repeating-linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.035) 0,
-            rgba(255, 255, 255, 0.035) 1px,
-            rgba(255, 255, 255, 0) 1px,
-            rgba(255, 255, 255, 0) 22px
-          ),
-          repeating-linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.03) 0,
-            rgba(255, 255, 255, 0.03) 1px,
-            rgba(255, 255, 255, 0) 1px,
-            rgba(255, 255, 255, 0) 22px
-          );
-        opacity: 0.18;
-        pointer-events: none;
-        z-index: -1;
-      }
-
-      body.theme-light::before {
-        opacity: 0.35;
-      }
-
-      body.theme-light::after {
-        opacity: 0.08;
-        background: repeating-linear-gradient(
-            90deg,
-            rgba(15, 23, 42, 0.06) 0,
-            rgba(15, 23, 42, 0.06) 1px,
-            rgba(0, 0, 0, 0) 1px,
-            rgba(0, 0, 0, 0) 24px
-          ),
-          repeating-linear-gradient(
-            0deg,
-            rgba(15, 23, 42, 0.05) 0,
-            rgba(15, 23, 42, 0.05) 1px,
-            rgba(0, 0, 0, 0) 1px,
-            rgba(0, 0, 0, 0) 24px
-          );
-      }
-
-      body.theme-dark {
-        background: var(--professional-bg);
-        color: var(--text);
-      }
-
-      body.theme-light {
-        --bg: #f4f6fb;
-        --panel: #ffffff;
-        --muted: #4b5563;
-        --text: #0f172a;
-        --accent: #2563eb;
-        --accent-2: #ea580c;
-        --border: rgba(0, 0, 0, 0.08);
-        --card: #ffffff;
-        --shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-        --professional-bg: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
-        background: var(--professional-bg);
-        color: var(--text);
-      }
-
-      html {
-        overflow-x: hidden;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      a:focus-visible,
-      button:focus-visible {
-        outline: 2px solid rgba(45, 212, 191, 0.7);
-        outline-offset: 3px;
-      }
-
-      ::selection {
-        background: rgba(45, 212, 191, 0.25);
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      .page {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 32px 20px 72px;
-      }
-
-      header.topbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        backdrop-filter: blur(14px);
-        background: rgba(12, 19, 36, 0.95);
-        border-bottom: 1px solid var(--border);
-      }
-
-      body.theme-light header.topbar {
-        background: rgba(255, 255, 255, 0.92);
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      main.page {
-        padding-top: calc(32px + var(--topbar-h));
-      }
-
-      section.block,
-      .hero {
-        scroll-margin-top: calc(var(--topbar-h) + 14px);
-      }
-
-      .topbar__inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 14px 16px;
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr) auto;
-        align-items: center;
-        gap: 12px;
-        width: 100%;
-      }
-
-      .topbar__inner > * {
-        min-width: 0;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        flex-shrink: 0;
-      }
-
-      .brand img {
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-      }
-
-      .brand span {
-        font-size: 20px;
-        line-height: 1;
-        white-space: nowrap;
-      }
-
-      nav.primary-nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        min-width: 0;
-        flex-wrap: wrap;
-        row-gap: 6px;
-      }
-
-      .nav-link {
-        color: var(--muted);
-        font-weight: 500;
-        padding: 8px 12px;
-        border-radius: 8px;
-        font-size: 14px;
-        white-space: nowrap;
-        transition: all 0.2s ease;
-      }
-
-      .nav-link:hover,
-      .nav-link:focus-visible {
-        color: var(--text);
-        background: rgba(45, 212, 191, 0.1);
-        outline: none;
-      }
-
-      .nav-actions {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        flex-shrink: 0;
-        justify-self: end;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 10px 16px;
-        border-radius: 999px;
-        border: 1px solid transparent;
-        font-weight: 600;
-        font-size: 14px;
-        transition: all 0.2s ease;
-        cursor: pointer;
-        white-space: nowrap;
-      }
-
-      .btn--primary {
-        background: linear-gradient(120deg, var(--accent), #22d3ee);
-        color: #041019;
-        box-shadow: 0 10px 25px rgba(45, 212, 191, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-      }
-
-      .btn--ghost {
-        border-color: var(--border);
-        color: var(--text);
-        background: rgba(255, 255, 255, 0.04);
-      }
-
-      body.theme-light .btn--ghost {
-        background: rgba(0, 0, 0, 0.04);
-      }
-
-      .btn--primary:hover,
-      .btn--ghost:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
-      }
-
-      .btn:active {
-        transform: translateY(0);
-      }
-
-      .theme-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 14px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: var(--card);
-        color: var(--text);
-        font-weight: 600;
-        font-size: 14px;
-        cursor: pointer;
-        transition: transform 0.18s ease, box-shadow 0.18s ease,
-          border-color 0.18s ease;
-      }
-
-      .theme-toggle:hover,
-      .theme-toggle:focus-visible {
-        transform: translateY(-1px);
-        border-color: rgba(45, 212, 191, 0.35);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-        outline: none;
-      }
-
-      .theme-toggle__icon {
-        width: 16px;
-        height: 16px;
-        fill: currentColor;
-      }
-
-      .hamburger {
-        display: none;
-        width: 44px;
-        height: 44px;
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        padding: 0;
-        flex-shrink: 0;
-      }
-
-      .hamburger:hover {
-        background: rgba(255, 255, 255, 0.08);
-      }
-
-      .hamburger span {
-        width: 18px;
-        height: 2px;
-        background: var(--text);
-        position: relative;
-        display: block;
-        transition: all 0.3s ease;
-      }
-
-      .hamburger span::before,
-      .hamburger span::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 18px;
-        height: 2px;
-        background: var(--text);
-        transition: all 0.3s ease;
-      }
-
-      .hamburger span::before {
-        top: -6px;
-      }
-
-      .hamburger span::after {
-        top: 6px;
-      }
-
-      .hamburger.active span {
-        background: transparent;
-      }
-
-      .hamburger.active span::before {
-        transform: rotate(45deg) translate(8px, 8px);
-      }
-
-      .hamburger.active span::after {
-        transform: rotate(-45deg) translate(7px, -7px);
-      }
-
-      .mobile-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(12, 19, 36, 0.98);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(14px);
-        padding: 16px;
-        flex-direction: column;
-        gap: 4px;
-        animation: slideDown 0.3s ease;
-      }
-
-      body.theme-light .mobile-menu {
-        background: rgba(255, 255, 255, 0.96);
-        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
-      }
-
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .mobile-menu.open {
-        display: flex;
-      }
-
-      .mobile-menu .nav-link {
-        padding: 10px 12px;
-        display: block;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 28px;
-        padding: 48px 0 16px;
-      }
-
-      .hero__copy {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(45, 212, 191, 0.22);
-        background: rgba(255, 255, 255, 0.06);
-        font-size: 13px;
-        color: var(--muted);
-        width: fit-content;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-      }
-
-      .h1-accent {
-        background: linear-gradient(
-          120deg,
-          var(--accent),
-          #22d3ee,
-          var(--accent-2)
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-
-      @supports not (
-        (-webkit-background-clip: text) or (background-clip: text)
-      ) {
-        .h1-accent {
-          color: var(--text);
-        }
-      }
-
-      h1 {
-        margin: 0;
-        font-size: clamp(32px, 5vw, 52px);
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        font-family: "Sora", "Space Grotesk", system-ui, sans-serif;
-        color: var(--text);
-        font-weight: 700;
-      }
-
-      .lede {
-        color: var(--muted);
-        font-size: 18px;
-        max-width: 620px;
-      }
-
-      .hero__actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .hero__actions .btn {
-        padding: 12px 18px;
-        font-size: 15px;
-      }
-
-      .hero__meta {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 12px;
-      }
-
-      .meta-tile {
-        padding: 12px 14px;
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.03);
-        color: var(--muted);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-      }
-
-      .meta-tile svg {
-        width: 16px;
-        height: 16px;
-        fill: var(--accent);
-        flex-shrink: 0;
-      }
-
-      .hero__panel {
-        background: linear-gradient(
-          145deg,
-          rgba(45, 212, 191, 0.08),
-          rgba(249, 115, 22, 0.08)
-        );
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 18px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-
-      body.theme-light .hero__panel {
-        background: linear-gradient(
-          145deg,
-          rgba(37, 99, 235, 0.06),
-          rgba(234, 88, 12, 0.06)
-        );
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      .hero__panel::before {
-        content: "";
-        position: absolute;
-        inset: -30px;
-        background: radial-gradient(
-            circle at 20% 20%,
-            rgba(45, 212, 191, 0.12),
-            rgba(0, 0, 0, 0) 55%
-          ),
-          radial-gradient(
-            circle at 80% 30%,
-            rgba(249, 115, 22, 0.08),
-            rgba(0, 0, 0, 0) 58%
-          );
-        filter: blur(18px);
-        opacity: 0.3;
-        pointer-events: none;
-      }
-
-      .hero__panel > * {
-        position: relative;
-      }
-
-      .panel-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 14px;
-      }
-
-      .panel-card {
-        padding: 16px;
-        background: rgba(12, 19, 36, 0.7);
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        min-height: 150px;
-      }
-
-      .panel-card:hover {
-        border-color: rgba(45, 212, 191, 0.22);
-        box-shadow: var(--glow);
-      }
-
-      body.theme-light .panel-card {
-        background: #ffffff;
-        border-color: rgba(0, 0, 0, 0.08);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-      }
-
-      body.theme-light .panel-card:hover {
-        border-color: rgba(37, 99, 235, 0.2);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-      }
-
-      .panel-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 12px;
-        color: var(--muted);
-      }
-
-      .panel-title {
-        margin: 0;
-        font-size: 18px;
-      }
-
-      .signal-row {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 12px;
-        margin: 28px 0 12px;
-      }
-
-      .signal {
-        padding: 14px;
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.03);
-      }
-
-      .signal strong {
-        display: block;
-        font-size: 20px;
-      }
-
-      section.block {
-        margin: 56px 0 24px;
-      }
-
-      .block__head {
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-        align-items: flex-end;
-        flex-wrap: wrap;
-      }
-
-      .block__title {
-        margin: 0;
-        font-size: 30px;
-        letter-spacing: -0.02em;
-        font-family: "Sora", "Space Grotesk", system-ui, sans-serif;
-      }
-
-      .block__title::after {
-        content: "";
-        display: block;
-        width: 54px;
-        height: 3px;
-        margin-top: 10px;
-        border-radius: 999px;
-        background: linear-gradient(
-          90deg,
-          rgba(45, 212, 191, 0.9),
-          rgba(34, 211, 238, 0.5)
-        );
-      }
-
-      .block__subtitle {
-        color: var(--muted);
-        margin: 4px 0 0;
-        max-width: 720px;
-      }
-
-      .spotlights {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 16px;
-        margin-top: 20px;
-      }
-
-      .spotlight-card {
-        padding: 20px;
-        border-radius: var(--radius);
-        border: 1px solid var(--border);
-        background: linear-gradient(
-          135deg,
-          rgba(45, 212, 191, 0.08),
-          rgba(15, 23, 42, 0.9)
-        );
-        display: grid;
-        gap: 12px;
-        box-shadow: var(--shadow);
-      }
-
-      .spotlight-card:hover {
-        transform: translateY(-2px);
-        border-color: rgba(45, 212, 191, 0.18);
-        box-shadow: var(--shadow), var(--glow);
-      }
-
-      .spotlight-card:nth-child(2) {
-        background: linear-gradient(
-          135deg,
-          rgba(249, 115, 22, 0.1),
-          rgba(15, 23, 42, 0.9)
-        );
-      }
-
-      .spotlight-card--articles {
-        background: linear-gradient(
-          135deg,
-          rgba(45, 212, 191, 0.1),
-          rgba(249, 115, 22, 0.1),
-          rgba(15, 23, 42, 0.9)
-        );
-      }
-
-      body.theme-light .spotlight-card {
-        background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), #ffffff);
-        border-color: rgba(0, 0, 0, 0.08);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-      }
-
-      body.theme-light .spotlight-card:nth-child(2) {
-        background: linear-gradient(135deg, rgba(234, 88, 12, 0.08), #ffffff);
-      }
-
-      body.theme-light .spotlight-card--articles {
-        background: linear-gradient(
-          135deg,
-          rgba(37, 99, 235, 0.08),
-          rgba(234, 88, 12, 0.08),
-          #ffffff
-        );
-      }
-
-      body.theme-light .spotlight-card:hover {
-        border-color: rgba(37, 99, 235, 0.18);
-        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
-      }
-
-      body.theme-light .spotlight-chip {
-        color: #475569;
-        background: rgba(0, 0, 0, 0.03);
-      }
-
-      body.theme-light .spotlight-meta {
-        color: #475569;
-      }
-
-      .spotlight-chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 10px;
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        color: var(--muted);
-        width: fit-content;
-      }
-
-      .spotlight-title {
-        margin: 0;
-        font-size: 22px;
-      }
-
-      .spotlight-meta {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 16px;
-        margin-top: 16px;
-      }
-
-      .quiz-carousel {
-        position: relative;
-        margin-top: 16px;
-        border-radius: var(--radius);
-      }
-
-      .quiz-carousel::before,
-      .quiz-carousel::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 54px;
-        pointer-events: none;
-        z-index: 2;
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      .quiz-carousel::before {
-        left: 0;
-        background: linear-gradient(
-          90deg,
-          rgba(10, 15, 28, 0.95),
-          rgba(10, 15, 28, 0)
-        );
-      }
-
-      .quiz-carousel::after {
-        right: 0;
-        background: linear-gradient(
-          270deg,
-          rgba(10, 15, 28, 0.95),
-          rgba(10, 15, 28, 0)
-        );
-      }
-
-      body.theme-light .quiz-carousel::before {
-        background: linear-gradient(
-          90deg,
-          rgba(248, 250, 252, 0.98),
-          rgba(248, 250, 252, 0)
-        );
-      }
-
-      body.theme-light .quiz-carousel::after {
-        background: linear-gradient(
-          270deg,
-          rgba(248, 250, 252, 0.98),
-          rgba(248, 250, 252, 0)
-        );
-      }
-
-      .quiz-carousel[data-can-scroll-left="true"]::before {
-        opacity: 1;
-      }
-
-      .quiz-carousel[data-can-scroll-right="true"]::after {
-        opacity: 1;
-      }
-
-      .quiz-track {
-        display: flex;
-        gap: 16px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding: 6px 54px 14px;
-        scroll-snap-type: x mandatory;
-        scroll-padding-left: 54px;
-        scroll-padding-right: 54px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
-      }
-
-      body.theme-light .quiz-track {
-        scrollbar-color: rgba(15, 23, 42, 0.25) transparent;
-      }
-
-      .quiz-track::-webkit-scrollbar {
-        height: 10px;
-      }
-
-      .quiz-track::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      .quiz-track::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.14);
-        border-radius: 999px;
-        border: 2px solid transparent;
-        background-clip: padding-box;
-      }
-
-      body.theme-light .quiz-track::-webkit-scrollbar-thumb {
-        background: rgba(15, 23, 42, 0.2);
-        border: 2px solid transparent;
-        background-clip: padding-box;
-      }
-
-      .quiz-track > .quiz-card {
-        flex: 0 0 300px;
-        scroll-snap-align: start;
-      }
-
-      .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: rgba(12, 19, 36, 0.75);
-        backdrop-filter: blur(10px);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 3;
-        transition: transform 0.18s ease, opacity 0.18s ease,
-          border-color 0.18s ease, box-shadow 0.18s ease;
-      }
-
-      .carousel-btn:hover {
-        transform: translateY(-50%) translateY(-1px);
-        border-color: rgba(45, 212, 191, 0.25);
-        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
-      }
-
-      .carousel-btn:disabled {
-        opacity: 0.35;
-        cursor: default;
-      }
-
-      body.theme-light .carousel-btn {
-        background: rgba(255, 255, 255, 0.78);
-      }
-
-      body.theme-light .carousel-btn:hover {
-        border-color: rgba(37, 99, 235, 0.25);
-      }
-
-      .carousel-btn svg {
-        width: 18px;
-        height: 18px;
-        fill: currentColor;
-      }
-
-      .carousel-btn--prev {
-        left: 10px;
-      }
-
-      .carousel-btn--next {
-        right: 10px;
-      }
-
-      @media (max-width: 640px) {
-        .quiz-track {
-          padding-left: 14px;
-          padding-right: 14px;
-          scroll-padding-left: 14px;
-          scroll-padding-right: 14px;
-        }
-
-        .quiz-track {
-          gap: 12px;
-        }
-
-        .quiz-track > .quiz-card {
-          flex: 0 0 86vw;
-        }
-
-        .carousel-btn {
-          display: none;
-        }
-
-        .quiz-carousel::before,
-        .quiz-carousel::after {
-          width: 22px;
-        }
-      }
-
-      .quiz-card {
-        padding: 14px;
-        border-radius: var(--radius);
-        border: 1px solid var(--border);
-        background: var(--card);
-        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
-        display: grid;
-        gap: 10px;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-        transition: transform 0.18s ease, border-color 0.18s ease,
-          box-shadow 0.18s ease;
-      }
-
-      .quiz-card::after {
-        content: "";
-        position: absolute;
-        inset: -40px;
-        background: radial-gradient(
-            circle at 25% 20%,
-            rgba(45, 212, 191, 0.18),
-            rgba(0, 0, 0, 0) 55%
-          ),
-          radial-gradient(
-            circle at 85% 35%,
-            rgba(34, 211, 238, 0.12),
-            rgba(0, 0, 0, 0) 60%
-          ),
-          radial-gradient(
-            circle at 55% 95%,
-            rgba(249, 115, 22, 0.12),
-            rgba(0, 0, 0, 0) 62%
-          );
-        filter: blur(22px);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.18s ease;
-      }
-
-      .quiz-card:hover {
-        transform: translateY(-1px);
-        border-color: rgba(45, 212, 191, 0.15);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-      }
-
-      .quiz-card:hover::after {
-        opacity: 1;
-      }
-
-      body.theme-light .quiz-card {
-        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
-      }
-
-      body.theme-light .quiz-card:hover {
-        border-color: rgba(37, 99, 235, 0.16);
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
-      }
-
-      .quiz-thumb {
-        position: relative;
-        aspect-ratio: 16 / 9;
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
-        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
-      }
-
-      body.theme-light .quiz-thumb {
-        background: #f8fafc;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-      }
-
-      .quiz-thumb::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 0%,
-          rgba(0, 0, 0, 0.25) 55%,
-          rgba(0, 0, 0, 0.45) 100%
-        );
-        pointer-events: none;
-      }
-
-      body.theme-light .quiz-thumb::after {
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 0%,
-          rgba(0, 0, 0, 0.18) 55%,
-          rgba(0, 0, 0, 0.28) 100%
-        );
-      }
-
-      .quiz-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transform: scale(1.02);
-        transition: transform 0.25s ease;
-      }
-
-      .quiz-card:hover .quiz-thumb img {
-        transform: scale(1.06);
-      }
-
-      .quiz-thumb__badge {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: rgba(0, 0, 0, 0.55);
-        color: #e5ecff;
-        font-size: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        z-index: 1;
-      }
-
-      body.theme-light .quiz-thumb__badge {
-        background: rgba(15, 23, 42, 0.65);
-        color: #eef2ff;
-        border-color: rgba(255, 255, 255, 0.18);
-      }
-
-      .pill-nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 12px;
-      }
-
-      .pill-nav a {
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--muted);
-        font-weight: 600;
-        transition: background 0.18s ease, transform 0.18s ease,
-          border-color 0.18s ease;
-      }
-
-      .pill-nav a:hover,
-      .pill-nav a:focus-visible {
-        background: rgba(255, 255, 255, 0.08);
-        color: var(--text);
-        outline: none;
-        transform: translateY(-1px);
-        border-color: rgba(45, 212, 191, 0.18);
-      }
-
-      .search-bar {
-        margin-top: 20px;
-        max-width: 400px;
-      }
-
-      .search-bar input {
-        width: 100%;
-        padding: 12px 16px;
-        border-radius: var(--radius);
-        border: 1px solid var(--border);
-        background: var(--card);
-        color: var(--text);
-        font-size: 16px;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .search-bar input:focus {
-        outline: none;
-        border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.12),
-          0 14px 30px rgba(0, 0, 0, 0.18);
-      }
-
-      .search-bar input::placeholder {
-        color: var(--muted);
-      }
-
-      .quiz-group {
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 18px;
-        background: rgba(255, 255, 255, 0.02);
-        margin-top: 18px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-      }
-
-      .quiz-group:hover {
-        border-color: rgba(255, 255, 255, 0.12);
-        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
-      }
-
-      .quiz-group__head {
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-        align-items: baseline;
-        flex-wrap: wrap;
-      }
-
-      .quiz-group__title {
-        margin: 0;
-        font-size: 22px;
-      }
-
-      .quiz-group__subtitle {
-        margin: 0;
-        color: var(--muted);
-        font-size: 15px;
-        max-width: 540px;
-      }
-
-      .quiz-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 10px;
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        color: var(--muted);
-        width: fit-content;
-        font-size: 13px;
-      }
-
-      .quiz-title {
-        margin: 0;
-        font-size: 20px;
-      }
-
-      .quiz-copy {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .quiz-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .quiz-meta span {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 10px;
-        border-radius: 10px;
-        border: 1px solid var(--border);
-      }
-
-      .quiz-card .btn {
-        width: fit-content;
-        padding-inline: 14px;
-      }
-
-      .values {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 14px;
-        margin-top: 16px;
-      }
-
-      .value-card {
-        padding: 16px;
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.03);
-      }
-
-      details {
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.02);
-        padding: 12px 14px;
-      }
-
-      details summary {
-        cursor: pointer;
-        font-weight: 600;
-        outline: none;
-      }
-
-      details p {
-        margin: 10px 0 0;
-        color: var(--muted);
-      }
-
-      .faq-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 12px;
-        margin-top: 18px;
-      }
-
-      footer {
-        background: linear-gradient(
-            180deg,
-            rgba(12, 19, 36, 0.95) 0%,
-            rgba(10, 15, 28, 1) 100%
-          ),
-          url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="white" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-dots)"/></svg>');
-        color: var(--muted);
-        padding: 40px 20px;
-        border-top: 1px solid var(--border);
-        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      body.theme-light footer {
-        background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%),
-          url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="black" opacity="0.04"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-dots)"/></svg>');
-        box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.08);
-      }
-
-      footer a {
-        color: var(--accent);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      footer a:hover {
-        color: var(--accent-2);
-      }
-
-      footer p,
-      footer a,
-      footer h4 {
-        color: #ffffff !important;
-      }
-
-      footer a:hover {
-        color: var(--accent) !important;
-      }
-
-      footer p {
-        margin: 0;
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      footer .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-      }
-
-      footer .footer-note {
-        text-align: center;
-        font-size: 0.85rem;
-        color: var(--muted);
-        margin-top: 20px;
-      }
-
-      @media (max-width: 1024px) {
-        nav.primary-nav {
-          gap: 4px;
-        }
-
-        .nav-link {
-          padding: 8px 10px;
-          font-size: 13px;
-        }
-
-        .btn {
-          padding: 9px 14px;
-          font-size: 13px;
-        }
-      }
-
-      @media (max-width: 1100px) {
-        nav.primary-nav {
-          display: none;
-        }
-
-        .hamburger {
-          display: inline-flex;
-        }
-      }
-
-      @media (max-width: 768px) {
-        :root {
-          --topbar-h: 72px;
-        }
-
-        .topbar__inner {
-          padding: 12px 14px;
-          gap: 12px;
-        }
-
-        .brand {
-          gap: 8px;
-        }
-
-        .brand img {
-          width: 42px;
-          height: 42px;
-        }
-
-        .brand span {
-          font-size: 19px;
-        }
-
-        .nav-actions {
-          gap: 8px;
-        }
-
-        .nav-actions .btn {
-          padding: 9px 13px;
-          font-size: 13px;
-        }
-
-        .mobile-menu {
-          max-height: 300px;
-          overflow-y: auto;
-        }
-      }
-
-      @media (max-width: 480px) {
-        :root {
-          --topbar-h: 66px;
-        }
-
-        .page {
-          padding: 20px 12px 56px;
-        }
-
-        .topbar__inner {
-          padding: 10px 12px;
-          gap: 8px;
-        }
-
-        .brand {
-          gap: 6px;
-        }
-
-        .brand img {
-          width: 38px;
-          height: 38px;
-        }
-
-        .brand span {
-          font-size: 18px;
-        }
-
-        .nav-actions {
-          gap: 6px;
-        }
-
-        .theme-toggle {
-          width: 40px;
-          height: 40px;
-          padding: 0;
-          justify-content: center;
-          gap: 0;
-          border-radius: 12px;
-        }
-
-        .theme-toggle__text {
-          display: none;
-        }
-
-        .nav-actions .btn.btn--ghost {
-          display: none;
-        }
-
-        .nav-actions .btn {
-          padding: 8px 11px;
-          font-size: 12px;
-          gap: 4px;
-        }
-
-        .nav-actions .btn::before {
-          content: none;
-        }
-
-        .hamburger {
-          width: 40px;
-          height: 40px;
-        }
-
-        .hamburger span {
-          width: 16px;
-          height: 2px;
-        }
-
-        .hamburger span::before,
-        .hamburger span::after {
-          width: 16px;
-        }
-
-        .hamburger span::before {
-          top: -5px;
-        }
-
-        .hamburger span::after {
-          top: 5px;
-        }
-
-        .mobile-menu {
-          padding: 12px;
-          gap: 2px;
-        }
-
-        .mobile-menu .nav-link {
-          padding: 9px 10px;
-          font-size: 14px;
-        }
-
-        .hero {
-          padding: 24px 0 10px;
-          gap: 18px;
-        }
-
-        .hero__copy {
-          gap: 14px;
-        }
-
-        .pill {
-          font-size: 12px;
-          padding: 7px 10px;
-        }
-
-        h1 {
-          font-size: clamp(28px, 7vw, 40px);
-          line-height: 1.12;
-        }
-
-        .lede {
-          font-size: 16px;
-        }
-
-        .hero__actions {
-          gap: 10px;
-        }
-
-        .hero__actions .btn {
-          width: 100%;
-          justify-content: center;
-        }
-
-        .hero__meta {
-          grid-template-columns: 1fr;
-          gap: 10px;
-        }
-
-        .meta-tile {
-          padding: 10px 12px;
-          font-size: 13px;
-        }
-
-        footer {
-          margin-top: 56px !important;
-        }
-
-        footer > div[style*="padding: 60px"] {
-          padding: 32px 16px 24px !important;
-          gap: 22px !important;
-        }
-
-        footer > div[style*="padding: 30px 40px"] {
-          padding: 18px 16px !important;
-        }
-
-        footer img[alt="Zinvana"] {
-          width: 44px !important;
-          height: 44px !important;
-        }
-
-        footer h3 {
-          font-size: 1.25rem !important;
-          margin-bottom: 10px !important;
-        }
-
-        footer p {
-          font-size: 0.95rem !important;
-        }
-
-        footer div[style*="justify-content: space-between"] {
-          flex-direction: column !important;
-          align-items: flex-start !important;
-          gap: 10px !important;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          transition: none !important;
-          scroll-behavior: auto;
-        }
-      }
-    </style>
-  </head>
-  <body class="theme-light">
-    <header class="topbar">
-      <div class="topbar__inner">
-        <a class="brand" href="#top">
-          <img src="zinvanalogo.png" alt="Zinvana logo" />
-          <span>Zinvana</span>
-        </a>
-        <nav class="primary-nav" aria-label="Main navigation">
-          <a class="nav-link" href="#quizzes">Quizzes</a>
-          <a class="nav-link" href="#spotlights">Spotlights</a>
-          <a class="nav-link" href="all-articles.html">All Articles</a>
-          <a class="nav-link" href="#trust">Why us</a>
-          <a class="nav-link" href="#faq">FAQ</a>
-        </nav>
-        <div class="nav-actions">
-          <a class="btn btn--ghost" href="mbti-personality-quiz.html"
-            >MBTI Quiz</a
-          >
-          <button
-            class="hamburger"
-            id="menuToggle"
-            aria-label="Toggle menu"
-            aria-expanded="false"
-          >
-            <span></span>
-          </button>
-        </div>
-      </div>
-      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-        <a class="nav-link" href="#quizzes">Quizzes</a>
-        <a class="nav-link" href="#spotlights">Spotlights</a>
-        <a class="nav-link" href="all-articles.html">All Articles</a>
-        <a class="nav-link" href="#trust">Why us</a>
-        <a class="nav-link" href="#faq">FAQ</a>
-        <a class="nav-link" href="about.html">About</a>
-      </nav>
-    </header>
-
-    <main class="page" id="top">
-      <section class="hero">
-        <div class="hero__copy">
-          <span class="pill">Free forever · No sign-up · Instant results</span>
-          <h1>
-            <span class="h1-accent">Zinvana | Free Personality Quizzes</span>
-            that feel like a game
-          </h1>
-          <p class="lede">
-            Fast, satisfying quizzes across MBTI, leadership, football, internet
-            culture, and wellbeing — with clear results you'll want to share.
-          </p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="mbti-personality-quiz.html"
-              >Start the MBTI quiz</a
-            >
-            <a class="btn btn--ghost" href="#quizzes">Browse all quizzes</a>
-          </div>
-          <div class="hero__meta">
-            <div class="meta-tile">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H19V9Z"
-                />
-              </svg>
-              <span>No data collection or tracking.</span>
-            </div>
-            <div class="meta-tile">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21C5,22.11 5.89,23 7,23H17C18.11,23 19,22.11 19,21V3C19,1.89 18.11,1 17,1Z"
-                />
-              </svg>
-              <span>Optimized for mobile and desktop.</span>
-            </div>
-            <div class="meta-tile">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8C19.66,8 21,6.66 21,5C21,3.34 19.66,2 18,2C16.34,2 15,3.34 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9C4.34,9 3,10.34 3,12C3,13.66 4.34,15 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19C20.92,17.39 19.61,16.08 18,16.08Z"
-                />
-              </svg>
-              <span>Shareable, actionable summaries.</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero__panel">
-          <div class="panel-grid">
-            <div class="panel-card">
-              <span class="panel-tag">Psychology 10 Qs</span>
-              <h3 class="panel-title">MBTI Personality Quiz</h3>
-              <p class="quiz-copy">
-                A concise, research-aware take on the 16-type model with clear
-                next steps.
-              </p>
-              <a class="btn btn--primary" href="mbti-personality-quiz.html"
-                >Start now</a
-              >
-            </div>
-            <div class="panel-card">
-              <span class="panel-tag">Geography Adaptive</span>
-              <h3 class="panel-title">Geo-Zini Country Guesser</h3>
-              <p class="quiz-copy">
-                A genie that narrows any country with fast yes/no logic and
-                guide-style hints.
-              </p>
-              <a class="btn btn--ghost" href="geo-zini.html"
-                >Challenge Geo-Zini</a
-              >
-            </div>
-            <div class="panel-card">
-              <span class="panel-tag">Wellbeing 5 min</span>
-              <h3 class="panel-title">Mental Health Self-Check</h3>
-              <p class="quiz-copy">
-                Private, balanced screening across mood, focus, and sleep, ready
-                for follow-up.
-              </p>
-              <a class="btn btn--ghost" href="mental-health.html"
-                >Take the self-check</a
-              >
-            </div>
-          </div>
-          <div class="signal-row">
-            <div class="signal">
-              <strong>5K+</strong><span>completed in the last 30 days</span>
-            </div>
-            <div class="signal">
-              <strong>0 sign-ups</strong><span>ever required</span>
-            </div>
-            <div class="signal">
-              <strong>14</strong><span>distinct quiz formats</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="block" id="spotlights">
-        <div class="block__head">
-          <div>
-            <h2 class="block__title">Spotlight experiences</h2>
-            <p class="block__subtitle">
-              The highest-signal, most-loved flows on Zinvana right now.
-            </p>
-          </div>
-          <a class="btn btn--ghost" href="#quizzes">See all quizzes</a>
-        </div>
-        <div class="spotlights">
-          <div class="spotlight-card">
-            <span class="spotlight-chip">Adaptive Geography</span>
-            <h3 class="spotlight-title">Geo-Zini, the country guesser</h3>
-            <p class="quiz-copy">
-              Think of any country. Geo-Zini converges in ~7 yes/no questions
-              with playful guide commentary.
-            </p>
-            <div class="spotlight-meta">
-              <span>190+ countries</span>
-              <span>Mobile-first</span>
-              <span>Guide quotes</span>
-            </div>
-            <a class="btn btn--primary" href="geo-zini.html">Play Geo-Zini</a>
-          </div>
-          <div class="spotlight-card">
-            <span class="spotlight-chip">Wellbeing Private</span>
-            <h3 class="spotlight-title">Mental Health Self-Check</h3>
-            <p class="quiz-copy">
-              Evidence-informed, 24-question check-in across mood, anxiety,
-              sleep, and focus. Nothing stored.
-            </p>
-            <div class="spotlight-meta">
-              <span>5 min</span>
-              <span>No account</span>
-              <span>Actionable next steps</span>
-            </div>
-            <a class="btn btn--ghost" href="mental-health.html"
-              >Start self-check</a
-            >
-          </div>
-          <div class="spotlight-card spotlight-card--articles">
-            <span class="spotlight-chip">Zinvana Hub</span>
-            <h3 class="spotlight-title">
-              All Articles (Leaders, Brawlers & More)
-            </h3>
-            <p class="quiz-copy">
-              Browse everything we’ve published in one clean place — quizzes,
-              leader profiles, brawler pages, and site collections.
-            </p>
-            <div class="spotlight-meta">
-              <span>Fast search</span>
-              <span>New + updated</span>
-              <span>One-page hub</span>
-            </div>
-            <a class="btn btn--primary" href="all-articles.html"
-              >Open All Articles</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <section class="block" id="quizzes">
-        <div class="block__head">
-          <div>
-            <h2 class="block__title">Featured quizzes</h2>
-            <p class="block__subtitle">
-              Pick a lane: psychology, history, sport, meme culture, or fiction.
-              Each quiz is quick, clean, and ready to share.
-            </p>
-          </div>
-        </div>
-        <div class="search-bar">
-          <input type="text" id="quiz-search" placeholder="Search quizzes..." />
-        </div>
-        <div class="pill-nav" aria-label="Jump to quiz categories">
-          <a href="#cat-psych">Psychology & wellbeing</a>
-          <a href="#cat-explore">Exploration & science</a>
-          <a href="#cat-lead">Leadership & world</a>
-          <a href="#cat-sport">Sport & games</a>
-          <a href="#cat-pop">Pop & internet</a>
-        </div>
-
-        <div class="quiz-group" id="cat-psych">
-          <div class="quiz-group__head">
-            <h3 class="quiz-group__title">Psychology & wellbeing</h3>
-            <p class="quiz-group__subtitle">
-              Concise, research-aware flows that keep things private and
-              actionable.
-            </p>
-          </div>
-          <div
-            class="quiz-carousel"
-            aria-label="Psychology and wellbeing quizzes"
-          >
-            <button
-              class="carousel-btn carousel-btn--prev"
-              type="button"
-              aria-label="Scroll left"
-              disabled
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-              </svg>
-            </button>
-            <div class="quiz-track" data-carousel-track>
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="mbti.png"
-                    alt="Colorful gradient thumbnail"
-                  />
-                  <span class="quiz-thumb__badge">10 questions</span>
-                </div>
-                <span class="quiz-tag">Psychology · 10 Qs</span>
-                <h3 class="quiz-title">MBTI Personality Quiz</h3>
-                <p class="quiz-copy">
-                  A clear, modern MBTI experience with crisp summaries across 16
-                  profiles.
-                </p>
-                <div class="quiz-meta">
-                  <span>Instant results</span><span>Mobile friendly</span>
-                </div>
-                <a class="btn btn--primary" href="mbti-personality-quiz.html"
-                  >Start MBTI</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="mental-health.jpg"
-                    alt="Gradient thumbnail for wellbeing"
-                  />
-                  <span class="quiz-thumb__badge">5 minutes</span>
-                </div>
-                <span class="quiz-tag">Wellbeing · 5 min</span>
-                <h3 class="quiz-title">Mental Health Self-Check</h3>
-                <p class="quiz-copy">
-                  Private, balanced screening across mood, focus, and sleep.
-                  Nothing stored.
-                </p>
-                <div class="quiz-meta">
-                  <span>Private</span><span>Actionable steps</span>
-                </div>
-                <a class="btn btn--ghost" href="mental-health.html"
-                  >Start self-check</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="country.gif"
-                    alt="Gradient thumbnail for lifestyle quiz"
-                  />
-                  <span class="quiz-thumb__badge">8 factors</span>
-                </div>
-                <span class="quiz-tag">Lifestyle · 5 min</span>
-                <h3 class="quiz-title">Perfect Country Quiz</h3>
-                <p class="quiz-copy">
-                  Match your values, climate, and pace of life to the country
-                  that fits you best.
-                </p>
-                <div class="quiz-meta">
-                  <span>Guided choice</span><span>Mobile ready</span>
-                </div>
-                <a class="btn btn--primary" href="perfect-country.html"
-                  >Find your country</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="universe.gif"
-                    alt="Cosmic nebula for universe quiz"
-                  />
-                  <span class="quiz-thumb__badge">12 questions</span>
-                </div>
-                <span class="quiz-tag">Cosmic · 3 min</span>
-                <h3 class="quiz-title">Personal Universe Quiz</h3>
-                <p class="quiz-copy">
-                  Discover your cosmic identity and explore the universe within
-                  you. Find if you're a Creative Nebula or Love Supernova.
-                </p>
-                <div class="quiz-meta">
-                  <span>Instant results</span><span>Highly shareable</span>
-                </div>
-                <a class="btn btn--primary" href="universe_quiz.html"
-                  >Discover your universe</a
-                >
-              </div>
-            </div>
-            <button
-              class="carousel-btn carousel-btn--next"
-              type="button"
-              aria-label="Scroll right"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="quiz-group" id="cat-explore">
-          <div class="quiz-group__head">
-            <h3 class="quiz-group__title">Exploration & science</h3>
-            <p class="quiz-group__subtitle">
-              For the curious: geography challenges, dream lookups, and
-              inventive minds.
-            </p>
-          </div>
-          <div
-            class="quiz-carousel"
-            aria-label="Exploration and science quizzes"
-          >
-            <button
-              class="carousel-btn carousel-btn--prev"
-              type="button"
-              aria-label="Scroll left"
-              disabled
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-              </svg>
-            </button>
-            <div class="quiz-track" data-carousel-track>
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="geo-zini.png"
-                    alt="Gradient thumbnail for geography quiz"
-                  />
-                  <span class="quiz-thumb__badge">Adaptive</span>
-                </div>
-                <span class="quiz-tag">Geography · Adaptive</span>
-                <h3 class="quiz-title">Geo-Zini Country Guesser</h3>
-                <p class="quiz-copy">
-                  Think of any country. Geo-Zini converges in ~7 yes/no
-                  questions with playful guide commentary.
-                </p>
-                <div class="quiz-meta">
-                  <span>190+ countries</span><span>Mobile-first</span>
-                </div>
-                <a class="btn btn--ghost" href="geo-zini.html">Play Geo-Zini</a>
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="dream-dreaming.gif"
-                    alt="Gradient thumbnail for dream interpreter"
-                  />
-                  <span class="quiz-thumb__badge">Instant lookup</span>
-                </div>
-                <span class="quiz-tag">Dreams · Instant</span>
-                <h3 class="quiz-title">Dream Interpreter</h3>
-                <p class="quiz-copy">
-                  Look up 1,400+ symbols and unpack the themes behind your
-                  latest dream.
-                </p>
-                <div class="quiz-meta">
-                  <span>Private lookup</span><span>Fast search</span>
-                </div>
-                <a class="btn btn--primary" href="dream-meaning.html"
-                  >Interpret now</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="einstein.gif"
-                    alt="Gradient thumbnail for inventors quiz"
-                  />
-                  <span class="quiz-thumb__badge">2 minutes</span>
-                </div>
-                <span class="quiz-tag">Science · 2 min</span>
-                <h3 class="quiz-title">Famous Inventors</h3>
-                <p class="quiz-copy">
-                  Do you think like Einstein, Tesla, or da Vinci? Trace your
-                  innovation DNA.
-                </p>
-                <div class="quiz-meta">
-                  <span>Science angle</span><span>Concise</span>
-                </div>
-                <a class="btn btn--ghost" href="inventor_quiz.html"
-                  >Take the quiz</a
-                >
-              </div>
-            </div>
-            <button
-              class="carousel-btn carousel-btn--next"
-              type="button"
-              aria-label="Scroll right"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="quiz-group" id="cat-lead">
-          <div class="quiz-group__head">
-            <h3 class="quiz-group__title">Leadership & world</h3>
-            <p class="quiz-group__subtitle">
-              Understand how you decide, influence, and align with global
-              viewpoints.
-            </p>
-          </div>
-          <div class="quiz-carousel" aria-label="Leadership and world quizzes">
-            <button
-              class="carousel-btn carousel-btn--prev"
-              type="button"
-              aria-label="Scroll left"
-              disabled
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-              </svg>
-            </button>
-            <div class="quiz-track" data-carousel-track>
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="lenin.gif"
-                    alt="Gradient thumbnail for leaders quiz"
-                  />
-                  <span class="quiz-thumb__badge">2 minutes</span>
-                </div>
-                <span class="quiz-tag">History · 2 min</span>
-                <h3 class="quiz-title">Historical Leaders</h3>
-                <p class="quiz-copy">
-                  Find your leadership archetype among strategists like Napoleon
-                  and Churchill.
-                </p>
-                <div class="quiz-meta">
-                  <span>Research-aware</span><span>Shareable card</span>
-                </div>
-                <a class="btn btn--ghost" href="leaders.html"
-                  >Discover your match</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="muhammadheader.jpg"
-                    alt="Religion personality quiz"
-                  />
-                  <span class="quiz-thumb__badge">12 questions</span>
-                </div>
-                <span class="quiz-tag">Culture · 3 min</span>
-                <h3 class="quiz-title">Religion & Belief Match</h3>
-                <p class="quiz-copy">
-                  Find which spiritual or philosophical tradition aligns with
-                  your values.
-                </p>
-                <div class="quiz-meta">
-                  <span>Thoughtful</span><span>Private</span>
-                </div>
-                <a
-                  class="btn btn--primary"
-                  href="religion-personality-quiz.html"
-                  >Explore beliefs</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="revolution.gif"
-                    alt="Gradient thumbnail for political ideology quiz"
-                  />
-                  <span class="quiz-thumb__badge">8 ideologies</span>
-                </div>
-                <span class="quiz-tag">Politics · 2 min</span>
-                <h3 class="quiz-title">Political Ideology</h3>
-                <p class="quiz-copy">
-                  Map where you land across conservative, liberal, socialist,
-                  libertarian, and more.
-                </p>
-                <div class="quiz-meta">
-                  <span>8 ideologies</span><span>Share ready</span>
-                </div>
-                <a class="btn btn--primary" href="political-ideology.html"
-                  >Find your stance</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="behold.png"
-                    alt="Gradient thumbnail for Behold the Dreamers quiz"
-                  />
-                  <span class="quiz-thumb__badge">3 minutes</span>
-                </div>
-                <span class="quiz-tag">Literature · 3 min</span>
-                <h3 class="quiz-title">Behold the Dreamers</h3>
-                <p class="quiz-copy">
-                  Map your mindset to characters from Imbolo Mbue's novel with
-                  deep archetypes.
-                </p>
-                <div class="quiz-meta">
-                  <span>Character lens</span><span>10 questions</span>
-                </div>
-                <a class="btn btn--ghost" href="behold-the-dreamers-quiz.html"
-                  >Take the quiz</a
-                >
-              </div>
-            </div>
-            <button
-              class="carousel-btn carousel-btn--next"
-              type="button"
-              aria-label="Scroll right"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="quiz-group" id="cat-sport">
-          <div class="quiz-group__head">
-            <h3 class="quiz-group__title">Sport & games</h3>
-            <p class="quiz-group__subtitle">
-              Fast, playful matches tailored for fans and gamers.
-            </p>
-          </div>
-          <div class="quiz-carousel" aria-label="Sport and games quizzes">
-            <button
-              class="carousel-btn carousel-btn--prev"
-              type="button"
-              aria-label="Scroll left"
-              disabled
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-              </svg>
-            </button>
-            <div class="quiz-track" data-carousel-track>
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="footy.gif"
-                    alt="Gradient thumbnail for football quiz"
-                  />
-                  <span class="quiz-thumb__badge">11 styles</span>
-                </div>
-                <span class="quiz-tag">Sport · 2 min</span>
-                <h3 class="quiz-title">Football Personality</h3>
-                <p class="quiz-copy">
-                  Are you a playmaker, finisher, or engine? Get your on-pitch
-                  archetype.
-                </p>
-                <div class="quiz-meta">
-                  <span>Fast results</span><span>11 styles</span>
-                </div>
-                <a class="btn btn--ghost" href="football-personality-quiz.html"
-                  >Play now</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="brawlstarsgif.gif"
-                    alt="Gradient thumbnail for Brawl Stars quiz"
-                  />
-                  <span class="quiz-thumb__badge">85+ brawlers</span>
-                </div>
-                <span class="quiz-tag">Gaming · 3 min</span>
-                <h3 class="quiz-title">Brawl Stars Match</h3>
-                <p class="quiz-copy">
-                  Which of 85+ brawlers mirrors how you play? Built for quick,
-                  fun reads.
-                </p>
-                <div class="quiz-meta">
-                  <span>All brawlers</span><span>Shareable</span>
-                </div>
-                <a class="btn btn--primary" href="brawlstars-quiz.html"
-                  >Find your brawler</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="squidzinvana.gif"
-                    alt="Gradient thumbnail for Squid Game quiz"
-                  />
-                  <span class="quiz-thumb__badge">Fan favorite</span>
-                </div>
-                <span class="quiz-tag">K-Drama · 2 min</span>
-                <h3 class="quiz-title">Squid Game Character</h3>
-                <p class="quiz-copy">
-                  Which survival strategy matches yours? Find your Squid Game
-                  archetype.
-                </p>
-                <div class="quiz-meta">
-                  <span>Fast match</span><span>Fan favorite</span>
-                </div>
-                <a class="btn btn--ghost" href="squidgame.html"
-                  >Enter the game</a
-                >
-              </div>
-            </div>
-            <button
-              class="carousel-btn carousel-btn--next"
-              type="button"
-              aria-label="Scroll right"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="quiz-group" id="cat-pop">
-          <div class="quiz-group__head">
-            <h3 class="quiz-group__title">Pop & internet</h3>
-            <p class="quiz-group__subtitle">
-              For the culture lovers: heroes, creators, and internet archetypes.
-            </p>
-          </div>
-          <div class="quiz-carousel" aria-label="Pop and internet quizzes">
-            <button
-              class="carousel-btn carousel-btn--prev"
-              type="button"
-              aria-label="Scroll left"
-              disabled
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-              </svg>
-            </button>
-            <div class="quiz-track" data-carousel-track>
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="marvel.gif"
-                    alt="Gradient thumbnail for Marvel quiz"
-                  />
-                  <span class="quiz-thumb__badge">Quick read</span>
-                </div>
-                <span class="quiz-tag">Fiction · 2 min</span>
-                <h3 class="quiz-title">Marvel Hero Lens</h3>
-                <p class="quiz-copy">
-                  See which Marvel hero captures your instincts and decision
-                  style.
-                </p>
-                <div class="quiz-meta">
-                  <span>Hero spectrum</span><span>Quick read</span>
-                </div>
-                <a class="btn btn--ghost" href="marvel-quiz.html"
-                  >Find your hero</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="mrbeast.gif"
-                    alt="Gradient thumbnail for YouTuber quiz"
-                  />
-                  <span class="quiz-thumb__badge">Trending</span>
-                </div>
-                <span class="quiz-tag">Creators · 2 min</span>
-                <h3 class="quiz-title">YouTuber Personality</h3>
-                <p class="quiz-copy">
-                  Which creator energy do you carry? From MrBeast pace to
-                  Emma-style vibe.
-                </p>
-                <div class="quiz-meta">
-                  <span>Trending</span><span>Quick read</span>
-                </div>
-                <a
-                  class="btn btn--primary"
-                  href="youtubers-personality-quiz.html"
-                  >Find your match</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="wojak.gif"
-                    alt="Gradient thumbnail for Wojak quiz"
-                  />
-                  <span class="quiz-thumb__badge">13 archetypes</span>
-                </div>
-                <span class="quiz-tag">Culture · 3 min</span>
-                <h3 class="quiz-title">Wojak Personality</h3>
-                <p class="quiz-copy">
-                  A meme-native 13-archetype quiz to see which Wojak fits your
-                  internet mood.
-                </p>
-                <div class="quiz-meta">
-                  <span>Meme psychology</span><span>Shareable</span>
-                </div>
-                <a
-                  class="btn btn--primary"
-                  href="wojak-personality-quiz.html#quizSection"
-                  >Take the quiz</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="scp-personality-quiz-thumb.png"
-                    alt="SCP personality quiz"
-                  />
-                  <span class="quiz-thumb__badge">22 SCPs</span>
-                </div>
-                <span class="quiz-tag">Fiction · 3 min</span>
-                <h3 class="quiz-title">SCP Personality Test</h3>
-                <p class="quiz-copy">
-                  Which anomaly matches your personality? From the Sculpture to
-                  the Shy Guy, find your SCP archetype.
-                </p>
-                <div class="quiz-meta">
-                  <span>SCP lore</span><span>Shareable</span>
-                </div>
-                <a
-                  class="btn btn--primary"
-                  href="scp-personality-quiz.html"
-                  >Take the quiz</a
-                >
-              </div>
-
-              <div class="quiz-card">
-                <div class="quiz-thumb">
-                  <img
-                    loading="lazy"
-                    src="disney-princess.gif"
-                    alt="Disney Princess personality quiz"
-                  />
-                  <span class="quiz-thumb__badge">10 questions</span>
-                </div>
-                <span class="quiz-tag">Pop Culture · 2 min</span>
-                <h3 class="quiz-title">Disney Princess Match</h3>
-                <p class="quiz-copy">
-                  Discover which Disney Princess matches your personality—from
-                  Elsa to Moana.
-                </p>
-                <div class="quiz-meta">
-                  <span>Instant results</span><span>Shareable</span>
-                </div>
-                <a class="btn btn--ghost" href="disney-princess-quiz.html"
-                  >Find your princess</a
-                >
-              </div>
-            </div>
-            <button
-              class="carousel-btn carousel-btn--next"
-              type="button"
-              aria-label="Scroll right"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section class="block" id="why-free">
-        <div class="block__head">
-          <div>
-            <h2 class="block__title">
-              Why Choose Our Free Personality Quizzes
-            </h2>
-            <p class="block__subtitle">
-              Discover the best free personality quizzes online, designed for
-              accuracy and fun.
-            </p>
-          </div>
-        </div>
-        <div class="card-grid">
-          <div class="panel-card">
-            <span class="panel-tag">Free & Accessible</span>
-            <h3 class="panel-title">No Cost, No Barriers</h3>
-            <p>
-              Our free personality quizzes are completely free to take, with no
-              hidden fees or premium unlocks. Enjoy unlimited access to
-              comprehensive personality assessments that rival paid
-              alternatives.
-            </p>
-          </div>
-          <div class="panel-card">
-            <span class="panel-tag">Research-Backed</span>
-            <h3 class="panel-title">Scientifically Grounded</h3>
-            <p>
-              Each free personality quiz is based on established psychological
-              frameworks like MBTI, Big Five, and more. Get insights that are
-              both entertaining and meaningful.
-            </p>
-          </div>
-          <div class="panel-card">
-            <span class="panel-tag">Instant Results</span>
-            <h3 class="panel-title">Quick & Shareable</h3>
-            <p>
-              Complete any free personality quiz in under 5 minutes and receive
-              detailed, shareable results. Perfect for self-discovery or sharing
-              with friends.
-            </p>
-          </div>
-          <div class="panel-card">
-            <span class="panel-tag">Privacy First</span>
-            <h3 class="panel-title">Secure & Anonymous</h3>
-            <p>
-              Take free personality quizzes without worrying about data
-              collection. Your responses are processed instantly and never
-              stored, ensuring complete privacy.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="block" id="trust">
-        <div class="block__head">
-          <div>
-            <h2 class="block__title">What sets Zinvana apart</h2>
-            <p class="block__subtitle">
-              Designed for clarity, privacy, and speed.
-            </p>
-          </div>
-        </div>
-        <div class="values">
-          <div class="value-card">
-            <strong>Clarity-first UX</strong>
-            <p class="quiz-copy">
-              Short flows, legible typography, and results that read like
-              guidance, not walls of text.
-            </p>
-          </div>
-          <div class="value-card">
-            <strong>Privacy by default</strong>
-            <p class="quiz-copy">
-              No accounts, no tracking, no data retention. You get insights
-              without giving anything up.
-            </p>
-          </div>
-          <div class="value-card">
-            <strong>Built for sharing</strong>
-            <p class="quiz-copy">
-              Every quiz ends with a tidy summary you can copy or share
-              instantly.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="block" id="faq">
-        <div class="block__head">
-          <div>
-            <h2 class="block__title">Quick answers</h2>
-            <p class="block__subtitle">
-              If you have more questions, reach out via the help page.
-            </p>
-          </div>
-        </div>
-        <div class="faq-grid">
-          <details open>
-            <summary>Are the quizzes really free?</summary>
-            <p>
-              Yes. No paywalls, no trials, no sign-up ever. All our personality
-              quizzes are completely free.
-            </p>
-          </details>
-          <details>
-            <summary>Do you store my answers?</summary>
-            <p>
-              No. Results are generated on the fly and never saved to a server.
-            </p>
-          </details>
-          <details>
-            <summary>How long do quizzes take?</summary>
-            <p>
-              Most take 2-5 minutes. The wellbeing check is about 5 minutes;
-              MBTI is about 10 questions.
-            </p>
-          </details>
-          <details>
-            <summary>Can I share my results?</summary>
-            <p>Yes. Every quiz ends with a concise, share-ready summary.</p>
-          </details>
-          <details>
-            <summary>
-              What makes your free personality quizzes different?
-            </summary>
-            <p>
-              Our free personality quizzes combine research-backed questions
-              with modern design, ensuring accurate and engaging results without
-              any cost.
-            </p>
-          </details>
-          <details>
-            <summary>
-              Are there free personality quizzes without sign-up?
-            </summary>
-            <p>
-              Absolutely. All our free personality quizzes are accessible
-              instantly without requiring any registration or personal
-              information.
-            </p>
-          </details>
-        </div>
-      </section>
-    </main>
-
-    <footer
-      style="
-        background: linear-gradient(
-          135deg,
-          #0f172a 0%,
-          #1e293b 50%,
-          #334155 100%
-        );
-        color: #ffffff;
-        margin-top: 80px;
-        position: relative;
-        overflow: hidden;
-      "
-    >
-      <div
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><pattern id=&quot;footer-pattern&quot; width=&quot;30&quot; height=&quot;30&quot; patternUnits=&quot;userSpaceOnUse&quot;><circle cx=&quot;15&quot; cy=&quot;15&quot; r=&quot;0.5&quot; fill=&quot;white&quot; opacity=&quot;0.05&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;url(%23footer-pattern)&quot;/></svg>');
-          z-index: 1;
-        "
-      ></div>
-
-      <div
-        style="
-          position: relative;
-          z-index: 2;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 60px 40px 40px;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 40px;
-        "
-      >
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
-          <img
-            src="zinvanalogo.png"
-            alt="Zinvana"
-            style="
-              width: 50px;
-              height: 50px;
-              border-radius: 12px;
-              margin-bottom: 16px;
-              box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-            "
-          />
-          <h3
-            style="
-              color: #ffffff;
-              font-size: 1.5rem;
-              margin-bottom: 16px;
-              font-weight: 600;
-            "
-          >
-            Zinvana
-          </h3>
-          <p
-            style="
-              color: #94a3b8;
-              line-height: 1.6;
-              margin: 0;
-              font-size: 1rem;
-              margin-bottom: 20px;
-            "
-          >
-            Discover your true self through fun, engaging personality quizzes
-            and assessments. From internet archetypes to personality types, we
-            help you explore different aspects of your personality in an
-            entertaining, educational way.
-          </p>
-          <div style="display: flex; gap: 16px; margin-bottom: 20px">
-            <a
-              href="https://x.com/farazglori80528"
-              target="_blank"
-              style="
-                width: 40px;
-                height: 40px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #ffffff;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-              "
-              onmouseover="this.style.background='rgba(29, 161, 242, 0.3)'; this.style.transform='translateY(-3px)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
-              ><svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                /></svg
-            ></a>
-            <a
-              href="https://www.instagram.com/zinvana_official/?igsh=ZGRpaTR0ZW90bnho#"
-              target="_blank"
-              style="
-                width: 40px;
-                height: 40px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #ffffff;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-              "
-              onmouseover="this.style.background='rgba(225, 48, 108, 0.3)'; this.style.transform='translateY(-3px)'"
-              onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)'"
-              ><svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                /></svg
-            ></a>
-          </div>
-          <p
-            style="
-              color: #94a3b8;
-              font-size: 0.9rem;
-              margin: 0;
-              line-height: 1.5;
-            "
-          >
-            Stay updated with our latest quizzes and personality assessments!
-          </p>
-        </div>
-
-        <div>
-          <h4
-            style="
-              color: #e2e8f0;
-              font-size: 1.125rem;
-              margin-bottom: 20px;
-              font-weight: 600;
-            "
-          >
-            Popular Quizzes
-          </h4>
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 12px">
-              <a
-                href="leaders.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Historical Leaders Personality Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="football-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Football Personality Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="wojak-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Wojak Personality Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="perfect-country.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Perfect Country Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="youtubers-personality-quiz.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >YouTubers Personality Quiz</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="universe_quiz.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Personal Universe Quiz</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h4
-            style="
-              color: #e2e8f0;
-              font-size: 1.125rem;
-              margin-bottom: 20px;
-              font-weight: 600;
-            "
-          >
-            Resources
-          </h4>
-          <ul style="list-style: none; padding: 0; margin: 0">
-            <li style="margin-bottom: 12px; color: #fff !important">
-              <a
-                href="/about.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#fff'"
-                >About Us</a
-              >
-            </li>
-            <li style="margin-bottom: 12px">
-              <a
-                href="/privacy.html"
-                style="
-                  color: #94a3b8;
-                  text-decoration: none;
-                  transition: color 0.3s ease;
-                  font-size: 0.95rem;
-                "
-                onmouseover="this.style.color='#667eea'"
-                onmouseout="this.style.color='#94a3b8'"
-                >Privacy Policy</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div
-        style="
-          position: relative;
-          z-index: 2;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 30px 40px;
-        "
-      >
-        <div
-          style="
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-          "
-        >
-          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
-            &copy; 2025 Zinvana. All rights reserved.
-          </p>
-          <p style="color: #94a3b8; margin: 0; font-size: 0.9rem">
-            Made with ❤️ by the Zinvana Team
-          </p>
-        </div>
-        <div
-          style="
-            color: #6aa4f6;
-            font-size: 0.85rem;
-            margin: 20px auto 0;
-            text-align: center;
-            line-height: 1.5;
-            max-width: 600px;
-          "
-        >
-          Made with care by Zinvana. All quizzes are for entertainment purposes
-          only and do not collect personal data.
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      // Enhanced responsive nav toggle with animated hamburger
-      const toggle = document.getElementById("menuToggle");
-      const menu = document.getElementById("mobileMenu");
-      const navLinks = menu?.querySelectorAll(".nav-link");
-
-      if (toggle && menu) {
-        toggle.addEventListener("click", () => {
-          const isOpen = menu.classList.toggle("open");
-          toggle.classList.toggle("active");
-          toggle.setAttribute("aria-expanded", isOpen);
-        });
-
-        // Close menu when a link is clicked
-        navLinks?.forEach((link) => {
-          link.addEventListener("click", () => {
-            menu.classList.remove("open");
-            toggle.classList.remove("active");
-            toggle.setAttribute("aria-expanded", "false");
-          });
-        });
-
-        // Close menu on escape key
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && menu.classList.contains("open")) {
-            menu.classList.remove("open");
-            toggle.classList.remove("active");
-            toggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      }
-    </script>
-
-    <script>
-      // Quiz search functionality
-      const searchInput = document.getElementById("quiz-search");
-      const quizCards = document.querySelectorAll(".quiz-card");
-      const quizGroups = document.querySelectorAll(".quiz-group");
-
-      // Quiz carousels
-      const carousels = Array.from(document.querySelectorAll(".quiz-carousel"));
-
-      const updateCarousel = (carousel) => {
-        const track = carousel.querySelector(".quiz-track");
-        const prev = carousel.querySelector(".carousel-btn--prev");
-        const next = carousel.querySelector(".carousel-btn--next");
-        if (!track || !prev || !next) return;
-
-        const maxScrollLeft = Math.max(
-          0,
-          track.scrollWidth - track.clientWidth
-        );
-        const canLeft = track.scrollLeft > 2;
-        const canRight = track.scrollLeft < maxScrollLeft - 2;
-
-        prev.disabled = !canLeft;
-        next.disabled = !canRight;
-
-        carousel.dataset.canScrollLeft = canLeft ? "true" : "false";
-        carousel.dataset.canScrollRight = canRight ? "true" : "false";
-      };
-
-      const scrollCarouselBy = (carousel, direction) => {
-        const track = carousel.querySelector(".quiz-track");
-        if (!track) return;
-        const delta = Math.max(240, Math.floor(track.clientWidth * 0.85));
-        track.scrollBy({ left: direction * delta, behavior: "smooth" });
-      };
-
-      const initCarousels = () => {
-        carousels.forEach((carousel) => {
-          const track = carousel.querySelector(".quiz-track");
-          const prev = carousel.querySelector(".carousel-btn--prev");
-          const next = carousel.querySelector(".carousel-btn--next");
-          if (!track || !prev || !next) return;
-
-          prev.addEventListener("click", () => scrollCarouselBy(carousel, -1));
-          next.addEventListener("click", () => scrollCarouselBy(carousel, 1));
-          track.addEventListener("scroll", () => updateCarousel(carousel), {
-            passive: true,
-          });
-
-          updateCarousel(carousel);
-        });
-
-        window.addEventListener("resize", () => {
-          carousels.forEach(updateCarousel);
-        });
-      };
-
-      initCarousels();
-
-      if (searchInput) {
-        searchInput.addEventListener("input", function () {
-          const query = this.value.toLowerCase().trim();
-          quizCards.forEach((card) => {
-            const title = card
-              .querySelector(".quiz-title")
-              .textContent.toLowerCase();
-            const copy = card
-              .querySelector(".quiz-copy")
-              .textContent.toLowerCase();
-            const visible = title.includes(query) || copy.includes(query);
-            card.style.display = visible ? "" : "none";
-          });
-          // Hide groups with no visible cards
-          quizGroups.forEach((group) => {
-            const visibleCards = Array.from(
-              group.querySelectorAll(".quiz-card")
-            ).filter((card) => card.style.display !== "none");
-            group.style.display = visibleCards.length > 0 ? "" : "none";
-          });
-
-          // Recompute carousel controls after filtering
-          carousels.forEach(updateCarousel);
-        });
-      }
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://zinvana.com/",
-        "name": "Zinvana",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://zinvana.com/search?q={query}",
-          "query-input": "required name=query"
-        }
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Are the quizzes free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. No paywalls, trials, or sign-up required."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you store my answers?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Results are generated instantly and not saved on a server."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long do quizzes take?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most quizzes take between two and five minutes to finish."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I share my results?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Every quiz ends with a concise, share-ready summary."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What makes your free personality quizzes different?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Our free personality quizzes combine research-backed questions with modern design, ensuring accurate and engaging results without any cost."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are there free personality quizzes without sign-up?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely. All our free personality quizzes are accessible instantly without requiring any registration or personal information."
-            }
-          }
-        ]
-      }
-    </script>
-  </body>
+ <head>
+ <script
+ async
+ src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1023172873076347"
+ crossorigin="anonymous"
+ ></script>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Free Personality Quizzes | Zinvana</title>
+ <meta
+ name="description"
+ content="Take free personality quizzes online: MBTI, leadership, football, pop culture, and wellness assessments. Instant results, no sign-up, always free."
+ />
+ <meta name="robots" content="index, follow" />
+ <meta name="author" content="Zinvana" />
+ <link rel="canonical" href="https://zinvana.com" />
+ <link rel="icon" href="/favicon.ico" />
+
+ <meta property="og:site_name" content="Zinvana" />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://zinvana.com" />
+ <meta property="og:title" content="Free Personality Quizzes | Zinvana" />
+ <meta
+ property="og:description"
+ content="Take MBTI, historical leader, football, pop culture, and wellbeing quizzes. Instant insights, no sign-up."
+ />
+ <meta property="og:image" content="https://zinvana.com/Zinvana2.jpg" />
+ <meta property="twitter:card" content="summary_large_image" />
+
+ <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link
+ href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+ rel="stylesheet"
+ />
+
+ <link rel="stylesheet" href="modern-ui-v2.css" />
+ <script>
+ /* Prevent flash of wrong theme */
+ (function () {
+ var t = localStorage.getItem("zinvana-theme");
+ if (t) document.documentElement.setAttribute("data-theme", t);
+ else if (window.matchMedia("(prefers-color-scheme:dark)").matches)
+ document.documentElement.setAttribute("data-theme", "dark");
+ })();
+ </script>
+ <link rel="stylesheet" href="magazine.css" />
+</head>
+ <body>
+ <header class="topbar" id="topbar">
+ <div class="topbar__inner">
+ <a class="brand" href="#top">
+ <img
+ src="zinvanalogo.png"
+ alt="Zinvana logo"
+ width="36"
+ height="36"
+ />
+ <span>Zinvana</span>
+ </a>
+ <nav class="primary-nav" aria-label="Main navigation">
+ <a class="nav-link" href="#quizzes">Quizzes</a>
+ <a class="nav-link" href="#spotlights">Spotlights</a>
+ <a class="nav-link" href="all-articles.html">All Articles</a>
+ <a class="nav-link" href="#trust">Why us</a>
+ <a class="nav-link" href="#faq">FAQ</a>
+ </nav>
+ <div class="nav-actions">
+ <button
+ class="theme-toggle"
+ id="themeToggle"
+ aria-label="Toggle dark mode"
+ >
+ <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+ <path
+ d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-4a1 1 0 011 1v1a1 1 0 01-2 0V4a1 1 0 011-1zm0 16a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zm9-9a1 1 0 010 2h-1a1 1 0 010-2h1zM5 11a1 1 0 010 2H4a1 1 0 010-2h1zm13.36-5.64a1 1 0 010 1.41l-.7.71a1 1 0 01-1.42-1.42l.71-.7a1 1 0 011.41 0zM7.05 16.95a1 1 0 010 1.41l-.7.71a1 1 0 01-1.42-1.42l.71-.7a1 1 0 011.41 0zm10.6.7a1 1 0 01-1.41 0l-.71-.7a1 1 0 011.42-1.42l.7.71a1 1 0 010 1.41zM7.76 6.34a1 1 0 01-1.41 0l-.71-.7a1 1 0 011.42-1.42l.7.71a1 1 0 010 1.41z"
+ />
+ </svg>
+ <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+ <path
+ d="M21.75 15.5A9.24 9.24 0 018.5 2.25 9.25 9.25 0 1021.75 15.5z"
+ />
+ </svg>
+ </button>
+ <a class="btn btn--primary btn--sm" href="mbti-personality-quiz.html"
+ >MBTI Quiz</a
+ >
+ <button
+ class="hamburger"
+ id="menuToggle"
+ aria-label="Toggle menu"
+ aria-expanded="false"
+ >
+ <span></span>
+ </button>
+ </div>
+ </div>
+ <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+ <a class="nav-link" href="#quizzes">Quizzes</a>
+ <a class="nav-link" href="#spotlights">Spotlights</a>
+ <a class="nav-link" href="all-articles.html">All Articles</a>
+ <a class="nav-link" href="#trust">Why us</a>
+ <a class="nav-link" href="#faq">FAQ</a>
+ <a class="nav-link" href="about.html">About</a>
+ </nav>
+ </header>
+
+ <main class="page" id="top">
+ <section class="hero">
+ <div class="hero__inner">
+ <div class="hero__copy">
+ <span class="pill"
+ >✦ Free forever · No sign-up · Instant results</span
+ >
+ <h1>
+ <span class="h1-accent">Personality quizzes</span><br />
+ that feel like a game
+ </h1>
+ <p class="lede">
+ MBTI, leadership, football, pop culture, and wellbeing — fast
+ quizzes with clear results you'll actually want to share.
+ </p>
+ <div class="hero__actions">
+ <a class="btn btn--primary" href="mbti-personality-quiz.html"
+ >Start the MBTI Quiz</a
+ >
+ <a class="btn btn--ghost" href="#quizzes">Browse all quizzes ↓</a>
+ </div>
+ <div class="hero__meta">
+ <div class="meta-tile">
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path
+ d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H19V9Z"
+ />
+ </svg>
+ <span>No data collection or tracking.</span>
+ </div>
+ <div class="meta-tile">
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path
+ d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21C5,22.11 5.89,23 7,23H17C18.11,23 19,22.11 19,21V3C19,1.89 18.11,1 17,1Z"
+ />
+ </svg>
+ <span>Optimized for mobile and desktop.</span>
+ </div>
+ <div class="meta-tile">
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path
+ d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8C19.66,8 21,6.66 21,5C21,3.34 19.66,2 18,2C16.34,2 15,3.34 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9C4.34,9 3,10.34 3,12C3,13.66 4.34,15 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19C20.92,17.39 19.61,16.08 18,16.08Z"
+ />
+ </svg>
+ <span>Shareable, actionable summaries.</span>
+ </div>
+ </div>
+ </div>
+ <div class="hero__panel">
+ <div class="panel-grid">
+ <div class="panel-card">
+ <span class="panel-tag">Psychology 10 Qs</span>
+ <h3 class="panel-title">MBTI Personality Quiz</h3>
+ <p class="quiz-copy">
+ A concise, research-aware take on the 16-type model with clear
+ next steps.
+ </p>
+ <a class="btn btn--primary" href="mbti-personality-quiz.html"
+ >Start now</a
+ >
+ </div>
+ <div class="panel-card">
+ <span class="panel-tag">Geography Adaptive</span>
+ <h3 class="panel-title">Geo-Zini Country Guesser</h3>
+ <p class="quiz-copy">
+ A genie that narrows any country with fast yes/no logic and
+ guide-style hints.
+ </p>
+ <a class="btn btn--ghost" href="geo-zini.html"
+ >Challenge Geo-Zini</a
+ >
+ </div>
+ <div class="panel-card">
+ <span class="panel-tag">Wellbeing 5 min</span>
+ <h3 class="panel-title">Mental Health Self-Check</h3>
+ <p class="quiz-copy">
+ Private, balanced screening across mood, focus, and sleep,
+ ready for follow-up.
+ </p>
+ <a class="btn btn--ghost" href="mental-health.html"
+ >Take the self-check</a
+ >
+ </div>
+ </div>
+ <div class="signal-row">
+ <div class="signal">
+ <strong>5K+</strong><span>completed in the last 30 days</span>
+ </div>
+ <div class="signal">
+ <strong>0 sign-ups</strong><span>ever required</span>
+ </div>
+ <div class="signal">
+ <strong>14</strong><span>distinct quiz formats</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <!-- /.hero__inner -->
+ </section>
+
+ <section class="block" id="spotlights">
+ <div class="block__head">
+ <div>
+ <h2 class="block__title">Spotlight experiences</h2>
+ <p class="block__subtitle">
+ The highest-signal, most-loved flows on Zinvana right now.
+ </p>
+ </div>
+ <a class="btn btn--ghost" href="#quizzes">See all quizzes</a>
+ </div>
+ <div class="spotlights">
+ <div class="spotlight-card">
+ <span class="spotlight-chip">Adaptive Geography</span>
+ <h3 class="spotlight-title">Geo-Zini, the country guesser</h3>
+ <p class="quiz-copy">
+ Think of any country. Geo-Zini converges in ~7 yes/no questions
+ with playful guide commentary.
+ </p>
+ <div class="spotlight-meta">
+ <span>190+ countries</span>
+ <span>Mobile-first</span>
+ <span>Guide quotes</span>
+ </div>
+ <a class="btn btn--primary" href="geo-zini.html">Play Geo-Zini</a>
+ </div>
+ <div class="spotlight-card">
+ <span class="spotlight-chip">Wellbeing Private</span>
+ <h3 class="spotlight-title">Mental Health Self-Check</h3>
+ <p class="quiz-copy">
+ Evidence-informed, 24-question check-in across mood, anxiety,
+ sleep, and focus. Nothing stored.
+ </p>
+ <div class="spotlight-meta">
+ <span>5 min</span>
+ <span>No account</span>
+ <span>Actionable next steps</span>
+ </div>
+ <a class="btn btn--ghost" href="mental-health.html"
+ >Start self-check</a
+ >
+ </div>
+ <div class="spotlight-card spotlight-card--articles">
+ <span class="spotlight-chip">Zinvana Hub</span>
+ <h3 class="spotlight-title">
+ All Articles (Leaders, Brawlers & More)
+ </h3>
+ <p class="quiz-copy">
+ Browse everything we’ve published in one clean place — quizzes,
+ leader profiles, brawler pages, and site collections.
+ </p>
+ <div class="spotlight-meta">
+ <span>Fast search</span>
+ <span>New + updated</span>
+ <span>One-page hub</span>
+ </div>
+ <a class="btn btn--primary" href="all-articles.html"
+ >Open All Articles</a
+ >
+ </div>
+ </div>
+ </section>
+
+ <section class="block" id="quizzes">
+ <div class="block__head">
+ <div>
+ <h2 class="block__title">Featured quizzes</h2>
+ <p class="block__subtitle">
+ Pick a lane: psychology, history, sport, meme culture, or fiction.
+ Each quiz is quick, clean, and ready to share.
+ </p>
+ </div>
+ </div>
+ <div class="search-bar">
+ <input type="text" id="quiz-search" placeholder="Search quizzes." />
+ </div>
+ <div class="pill-nav" aria-label="Jump to quiz categories">
+ <a href="#cat-psych">Psychology & wellbeing</a>
+ <a href="#cat-explore">Exploration & science</a>
+ <a href="#cat-lead">Leadership & world</a>
+ <a href="#cat-sport">Sport & games</a>
+ <a href="#cat-pop">Pop & internet</a>
+ </div>
+
+ <div class="quiz-group" id="cat-psych">
+ <div class="quiz-group__head">
+ <h3 class="quiz-group__title">Psychology & wellbeing</h3>
+ <p class="quiz-group__subtitle">
+ Concise, research-aware flows that keep things private and
+ actionable.
+ </p>
+ </div>
+ <div
+ class="quiz-carousel"
+ aria-label="Psychology and wellbeing quizzes"
+ >
+ <button
+ class="carousel-btn carousel-btn--prev"
+ type="button"
+ aria-label="Scroll left"
+ disabled
+ >
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+ </svg>
+ </button>
+ <div class="quiz-track" data-carousel-track>
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="mbti.png"
+ alt="Colorful gradient thumbnail"
+ />
+ <span class="quiz-thumb__badge">10 questions</span>
+ </div>
+ <span class="quiz-tag">Psychology · 10 Qs</span>
+ <h3 class="quiz-title">MBTI Personality Quiz</h3>
+ <p class="quiz-copy">
+ A clear, modern MBTI experience with crisp summaries across 16
+ profiles.
+ </p>
+ <div class="quiz-meta">
+ <span>Instant results</span><span>Mobile friendly</span>
+ </div>
+ <a class="btn btn--primary" href="mbti-personality-quiz.html"
+ >Start MBTI</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="mental-health.jpg"
+ alt="Gradient thumbnail for wellbeing"
+ />
+ <span class="quiz-thumb__badge">5 minutes</span>
+ </div>
+ <span class="quiz-tag">Wellbeing · 5 min</span>
+ <h3 class="quiz-title">Mental Health Self-Check</h3>
+ <p class="quiz-copy">
+ Private, balanced screening across mood, focus, and sleep.
+ Nothing stored.
+ </p>
+ <div class="quiz-meta">
+ <span>Private</span><span>Actionable steps</span>
+ </div>
+ <a class="btn btn--ghost" href="mental-health.html"
+ >Start self-check</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="country.gif"
+ alt="Gradient thumbnail for lifestyle quiz"
+ />
+ <span class="quiz-thumb__badge">8 factors</span>
+ </div>
+ <span class="quiz-tag">Lifestyle · 5 min</span>
+ <h3 class="quiz-title">Perfect Country Quiz</h3>
+ <p class="quiz-copy">
+ Match your values, climate, and pace of life to the country
+ that fits you best.
+ </p>
+ <div class="quiz-meta">
+ <span>Guided choice</span><span>Mobile ready</span>
+ </div>
+ <a class="btn btn--primary" href="perfect-country.html"
+ >Find your country</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="universe.gif"
+ alt="Cosmic nebula for universe quiz"
+ />
+ <span class="quiz-thumb__badge">12 questions</span>
+ </div>
+ <span class="quiz-tag">Cosmic · 3 min</span>
+ <h3 class="quiz-title">Personal Universe Quiz</h3>
+ <p class="quiz-copy">
+ Discover your cosmic identity and explore the universe within
+ you. Find if you're a Creative Nebula or Love Supernova.
+ </p>
+ <div class="quiz-meta">
+ <span>Instant results</span><span>Highly shareable</span>
+ </div>
+ <a class="btn btn--primary" href="universe_quiz.html"
+ >Discover your universe</a
+ >
+ </div>
+ </div>
+ <button
+ class="carousel-btn carousel-btn--next"
+ type="button"
+ aria-label="Scroll right"
+ >
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+ </svg>
+ </button>
+ </div>
+ </div>
+
+ <div class="quiz-group" id="cat-explore">
+ <div class="quiz-group__head">
+ <h3 class="quiz-group__title">Exploration & science</h3>
+ <p class="quiz-group__subtitle">
+ For the curious: geography challenges, dream lookups, and
+ inventive minds.
+ </p>
+ </div>
+ <div
+ class="quiz-carousel"
+ aria-label="Exploration and science quizzes"
+ >
+ <button
+ class="carousel-btn carousel-btn--prev"
+ type="button"
+ aria-label="Scroll left"
+ disabled
+ >
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+ </svg>
+ </button>
+ <div class="quiz-track" data-carousel-track>
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="geo-zini.png"
+ alt="Gradient thumbnail for geography quiz"
+ />
+ <span class="quiz-thumb__badge">Adaptive</span>
+ </div>
+ <span class="quiz-tag">Geography · Adaptive</span>
+ <h3 class="quiz-title">Geo-Zini Country Guesser</h3>
+ <p class="quiz-copy">
+ Think of any country. Geo-Zini converges in ~7 yes/no
+ questions with playful guide commentary.
+ </p>
+ <div class="quiz-meta">
+ <span>190+ countries</span><span>Mobile-first</span>
+ </div>
+ <a class="btn btn--ghost" href="geo-zini.html">Play Geo-Zini</a>
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="dream-dreaming.gif"
+ alt="Gradient thumbnail for dream interpreter"
+ />
+ <span class="quiz-thumb__badge">Instant lookup</span>
+ </div>
+ <span class="quiz-tag">Dreams · Instant</span>
+ <h3 class="quiz-title">Dream Interpreter</h3>
+ <p class="quiz-copy">
+ Look up 1,400+ symbols and unpack the themes behind your
+ latest dream.
+ </p>
+ <div class="quiz-meta">
+ <span>Private lookup</span><span>Fast search</span>
+ </div>
+ <a class="btn btn--primary" href="dream-meaning.html"
+ >Interpret now</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="einstein.gif"
+ alt="Gradient thumbnail for inventors quiz"
+ />
+ <span class="quiz-thumb__badge">2 minutes</span>
+ </div>
+ <span class="quiz-tag">Science · 2 min</span>
+ <h3 class="quiz-title">Famous Inventors</h3>
+ <p class="quiz-copy">
+ Do you think like Einstein, Tesla, or da Vinci? Trace your
+ innovation DNA.
+ </p>
+ <div class="quiz-meta">
+ <span>Science angle</span><span>Concise</span>
+ </div>
+ <a class="btn btn--ghost" href="inventor_quiz.html"
+ >Take the quiz</a
+ >
+ </div>
+ </div>
+ <button
+ class="carousel-btn carousel-btn--next"
+ type="button"
+ aria-label="Scroll right"
+ >
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+ </svg>
+ </button>
+ </div>
+ </div>
+
+ <div class="quiz-group" id="cat-lead">
+ <div class="quiz-group__head">
+ <h3 class="quiz-group__title">Leadership & world</h3>
+ <p class="quiz-group__subtitle">
+ Understand how you decide, influence, and align with global
+ viewpoints.
+ </p>
+ </div>
+ <div class="quiz-carousel" aria-label="Leadership and world quizzes">
+ <button
+ class="carousel-btn carousel-btn--prev"
+ type="button"
+ aria-label="Scroll left"
+ disabled
+ >
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+ </svg>
+ </button>
+ <div class="quiz-track" data-carousel-track>
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="lenin.gif"
+ alt="Gradient thumbnail for leaders quiz"
+ />
+ <span class="quiz-thumb__badge">2 minutes</span>
+ </div>
+ <span class="quiz-tag">History · 2 min</span>
+ <h3 class="quiz-title">Historical Leaders</h3>
+ <p class="quiz-copy">
+ Find your leadership archetype among strategists like Napoleon
+ and Churchill.
+ </p>
+ <div class="quiz-meta">
+ <span>Research-aware</span><span>Shareable card</span>
+ </div>
+ <a class="btn btn--ghost" href="leaders.html"
+ >Discover your match</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="muhammadheader.jpg"
+ alt="Religion personality quiz"
+ />
+ <span class="quiz-thumb__badge">12 questions</span>
+ </div>
+ <span class="quiz-tag">Culture · 3 min</span>
+ <h3 class="quiz-title">Religion & Belief Match</h3>
+ <p class="quiz-copy">
+ Find which spiritual or philosophical tradition aligns with
+ your values.
+ </p>
+ <div class="quiz-meta">
+ <span>Thoughtful</span><span>Private</span>
+ </div>
+ <a
+ class="btn btn--primary"
+ href="religion-personality-quiz.html"
+ >Explore beliefs</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="revolution.gif"
+ alt="Gradient thumbnail for political ideology quiz"
+ />
+ <span class="quiz-thumb__badge">8 ideologies</span>
+ </div>
+ <span class="quiz-tag">Politics · 2 min</span>
+ <h3 class="quiz-title">Political Ideology</h3>
+ <p class="quiz-copy">
+ Map where you land across conservative, liberal, socialist,
+ libertarian, and more.
+ </p>
+ <div class="quiz-meta">
+ <span>8 ideologies</span><span>Share ready</span>
+ </div>
+ <a class="btn btn--primary" href="political-ideology.html"
+ >Find your stance</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="behold.png"
+ alt="Gradient thumbnail for Behold the Dreamers quiz"
+ />
+ <span class="quiz-thumb__badge">3 minutes</span>
+ </div>
+ <span class="quiz-tag">Literature · 3 min</span>
+ <h3 class="quiz-title">Behold the Dreamers</h3>
+ <p class="quiz-copy">
+ Map your mindset to characters from Imbolo Mbue's novel with
+ deep archetypes.
+ </p>
+ <div class="quiz-meta">
+ <span>Character lens</span><span>10 questions</span>
+ </div>
+ <a class="btn btn--ghost" href="behold-the-dreamers-quiz.html"
+ >Take the quiz</a
+ >
+ </div>
+ </div>
+ <button
+ class="carousel-btn carousel-btn--next"
+ type="button"
+ aria-label="Scroll right"
+ >
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+ </svg>
+ </button>
+ </div>
+ </div>
+
+ <div class="quiz-group" id="cat-sport">
+ <div class="quiz-group__head">
+ <h3 class="quiz-group__title">Sport & games</h3>
+ <p class="quiz-group__subtitle">
+ Fast, playful matches tailored for fans and gamers.
+ </p>
+ </div>
+ <div class="quiz-carousel" aria-label="Sport and games quizzes">
+ <button
+ class="carousel-btn carousel-btn--prev"
+ type="button"
+ aria-label="Scroll left"
+ disabled
+ >
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+ </svg>
+ </button>
+ <div class="quiz-track" data-carousel-track>
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="footy.gif"
+ alt="Gradient thumbnail for football quiz"
+ />
+ <span class="quiz-thumb__badge">11 styles</span>
+ </div>
+ <span class="quiz-tag">Sport · 2 min</span>
+ <h3 class="quiz-title">Football Personality</h3>
+ <p class="quiz-copy">
+ Are you a playmaker, finisher, or engine? Get your on-pitch
+ archetype.
+ </p>
+ <div class="quiz-meta">
+ <span>Fast results</span><span>11 styles</span>
+ </div>
+ <a class="btn btn--ghost" href="football-personality-quiz.html"
+ >Play now</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="brawlstarsgif.gif"
+ alt="Gradient thumbnail for Brawl Stars quiz"
+ />
+ <span class="quiz-thumb__badge">85+ brawlers</span>
+ </div>
+ <span class="quiz-tag">Gaming · 3 min</span>
+ <h3 class="quiz-title">Brawl Stars Match</h3>
+ <p class="quiz-copy">
+ Which of 85+ brawlers mirrors how you play? Built for quick,
+ fun reads.
+ </p>
+ <div class="quiz-meta">
+ <span>All brawlers</span><span>Shareable</span>
+ </div>
+ <a class="btn btn--primary" href="brawlstars-quiz.html"
+ >Find your brawler</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="squidzinvana.gif"
+ alt="Gradient thumbnail for Squid Game quiz"
+ />
+ <span class="quiz-thumb__badge">Fan favorite</span>
+ </div>
+ <span class="quiz-tag">K-Drama · 2 min</span>
+ <h3 class="quiz-title">Squid Game Character</h3>
+ <p class="quiz-copy">
+ Which survival strategy matches yours? Find your Squid Game
+ archetype.
+ </p>
+ <div class="quiz-meta">
+ <span>Fast match</span><span>Fan favorite</span>
+ </div>
+ <a class="btn btn--ghost" href="squidgame.html"
+ >Enter the game</a
+ >
+ </div>
+ </div>
+ <button
+ class="carousel-btn carousel-btn--next"
+ type="button"
+ aria-label="Scroll right"
+ >
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+ </svg>
+ </button>
+ </div>
+ </div>
+
+ <div class="quiz-group" id="cat-pop">
+ <div class="quiz-group__head">
+ <h3 class="quiz-group__title">Pop & internet</h3>
+ <p class="quiz-group__subtitle">
+ For the culture lovers: heroes, creators, and internet archetypes.
+ </p>
+ </div>
+ <div class="quiz-carousel" aria-label="Pop and internet quizzes">
+ <button
+ class="carousel-btn carousel-btn--prev"
+ type="button"
+ aria-label="Scroll left"
+ disabled
+ >
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+ </svg>
+ </button>
+ <div class="quiz-track" data-carousel-track>
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="marvel.gif"
+ alt="Gradient thumbnail for Marvel quiz"
+ />
+ <span class="quiz-thumb__badge">Quick read</span>
+ </div>
+ <span class="quiz-tag">Fiction · 2 min</span>
+ <h3 class="quiz-title">Marvel Hero Lens</h3>
+ <p class="quiz-copy">
+ See which Marvel hero captures your instincts and decision
+ style.
+ </p>
+ <div class="quiz-meta">
+ <span>Hero spectrum</span><span>Quick read</span>
+ </div>
+ <a class="btn btn--ghost" href="marvel-quiz.html"
+ >Find your hero</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="mrbeast.gif"
+ alt="Gradient thumbnail for YouTuber quiz"
+ />
+ <span class="quiz-thumb__badge">Trending</span>
+ </div>
+ <span class="quiz-tag">Creators · 2 min</span>
+ <h3 class="quiz-title">YouTuber Personality</h3>
+ <p class="quiz-copy">
+ Which creator energy do you carry? From MrBeast pace to
+ Emma-style vibe.
+ </p>
+ <div class="quiz-meta">
+ <span>Trending</span><span>Quick read</span>
+ </div>
+ <a
+ class="btn btn--primary"
+ href="youtubers-personality-quiz.html"
+ >Find your match</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="wojak.gif"
+ alt="Gradient thumbnail for Wojak quiz"
+ />
+ <span class="quiz-thumb__badge">13 archetypes</span>
+ </div>
+ <span class="quiz-tag">Culture · 3 min</span>
+ <h3 class="quiz-title">Wojak Personality</h3>
+ <p class="quiz-copy">
+ A meme-native 13-archetype quiz to see which Wojak fits your
+ internet mood.
+ </p>
+ <div class="quiz-meta">
+ <span>Meme psychology</span><span>Shareable</span>
+ </div>
+ <a
+ class="btn btn--primary"
+ href="wojak-personality-quiz.html#quizSection"
+ >Take the quiz</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="scp-personality-quiz-thumb.png"
+ alt="SCP personality quiz"
+ />
+ <span class="quiz-thumb__badge">22 SCPs</span>
+ </div>
+ <span class="quiz-tag">Fiction · 3 min</span>
+ <h3 class="quiz-title">SCP Personality Test</h3>
+ <p class="quiz-copy">
+ Which anomaly matches your personality? From the Sculpture to
+ the Shy Guy, find your SCP archetype.
+ </p>
+ <div class="quiz-meta">
+ <span>SCP lore</span><span>Shareable</span>
+ </div>
+ <a class="btn btn--primary" href="scp-personality-quiz.html"
+ >Take the quiz</a
+ >
+ </div>
+
+ <div class="quiz-card">
+ <div class="quiz-thumb">
+ <img
+ loading="lazy"
+ src="disney-princess.gif"
+ alt="Disney Princess personality quiz"
+ />
+ <span class="quiz-thumb__badge">10 questions</span>
+ </div>
+ <span class="quiz-tag">Pop Culture · 2 min</span>
+ <h3 class="quiz-title">Disney Princess Match</h3>
+ <p class="quiz-copy">
+ Discover which Disney Princess matches your personality—from
+ Elsa to Moana.
+ </p>
+ <div class="quiz-meta">
+ <span>Instant results</span><span>Shareable</span>
+ </div>
+ <a class="btn btn--ghost" href="disney-princess-quiz.html"
+ >Find your princess</a
+ >
+ </div>
+ </div>
+ <button
+ class="carousel-btn carousel-btn--next"
+ type="button"
+ aria-label="Scroll right"
+ >
+ <svg viewBox="0 0 24 24" aria-hidden="true">
+ <path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+ </svg>
+ </button>
+ </div>
+ </div>
+ </section>
+
+ <section class="block" id="why-free">
+ <div class="block__head">
+ <div>
+ <h2 class="block__title">
+ Why Choose Our Free Personality Quizzes
+ </h2>
+ <p class="block__subtitle">
+ Discover the best free personality quizzes online, designed for
+ accuracy and fun.
+ </p>
+ </div>
+ </div>
+ <div class="card-grid">
+ <div class="panel-card">
+ <span class="panel-tag">Free & Accessible</span>
+ <h3 class="panel-title">No Cost, No Barriers</h3>
+ <p>
+ Our free personality quizzes are completely free to take, with no
+ hidden fees or premium unlocks. Enjoy unlimited access to
+ complete personality assessments that rival paid
+ alternatives.
+ </p>
+ </div>
+ <div class="panel-card">
+ <span class="panel-tag">Research-Backed</span>
+ <h3 class="panel-title">Scientifically Grounded</h3>
+ <p>
+ Each free personality quiz is based on established psychological
+ frameworks like MBTI, Big Five, and more. Get insights that are
+ both entertaining and meaningful.
+ </p>
+ </div>
+ <div class="panel-card">
+ <span class="panel-tag">Instant Results</span>
+ <h3 class="panel-title">Quick & Shareable</h3>
+ <p>
+ Complete any free personality quiz in under 5 minutes and receive
+ detailed, shareable results. Perfect for self-discovery or sharing
+ with friends.
+ </p>
+ </div>
+ <div class="panel-card">
+ <span class="panel-tag">Privacy First</span>
+ <h3 class="panel-title">Secure & Anonymous</h3>
+ <p>
+ Take free personality quizzes without worrying about data
+ collection. Your responses are processed instantly and never
+ stored, ensuring complete privacy.
+ </p>
+ </div>
+ </div>
+ </section>
+
+ <section class="block" id="trust">
+ <div class="block__head">
+ <div>
+ <h2 class="block__title">What sets Zinvana apart</h2>
+ <p class="block__subtitle">
+ Designed for clarity, privacy, and speed.
+ </p>
+ </div>
+ </div>
+ <div class="values">
+ <div class="value-card">
+ <strong>Clarity-first UX</strong>
+ <p class="quiz-copy">
+ Short flows, legible typography, and results that read like
+ guidance, not walls of text.
+ </p>
+ </div>
+ <div class="value-card">
+ <strong>Privacy by default</strong>
+ <p class="quiz-copy">
+ No accounts, no tracking, no data retention. You get insights
+ without giving anything up.
+ </p>
+ </div>
+ <div class="value-card">
+ <strong>Built for sharing</strong>
+ <p class="quiz-copy">
+ Every quiz ends with a tidy summary you can copy or share
+ instantly.
+ </p>
+ </div>
+ </div>
+ </section>
+
+ <section class="block" id="faq">
+ <div class="block__head">
+ <div>
+ <h2 class="block__title">Quick answers</h2>
+ <p class="block__subtitle">
+ If you have more questions, reach out via the help page.
+ </p>
+ </div>
+ </div>
+ <div class="faq-grid">
+ <details open>
+ <summary>Are the quizzes really free?</summary>
+ <p>
+ Yes. No paywalls, no trials, no sign-up ever. All our personality
+ quizzes are completely free.
+ </p>
+ </details>
+ <details>
+ <summary>Do you store my answers?</summary>
+ <p>
+ No. Results are generated on the fly and never saved to a server.
+ </p>
+ </details>
+ <details>
+ <summary>How long do quizzes take?</summary>
+ <p>
+ Most take 2-5 minutes. The wellbeing check is about 5 minutes;
+ MBTI is about 10 questions.
+ </p>
+ </details>
+ <details>
+ <summary>Can I share my results?</summary>
+ <p>Yes. Every quiz ends with a concise, share-ready summary.</p>
+ </details>
+ <details>
+ <summary>
+ What makes your free personality quizzes different?
+ </summary>
+ <p>
+ Our free personality quizzes combine research-backed questions
+ with modern design, ensuring accurate and engaging results without
+ any cost.
+ </p>
+ </details>
+ <details>
+ <summary>
+ Are there free personality quizzes without sign-up?
+ </summary>
+ <p>
+ Absolutely. All our free personality quizzes are accessible
+ instantly without requiring any registration or personal
+ information.
+ </p>
+ </details>
+ </div>
+ </section>
+ </main>
+
+ <footer class="site-footer">
+ <div class="footer-content">
+ <div class="footer-col">
+ <a class="brand" href="#top" style="color: #fff; margin-bottom: 1rem">
+ <img
+ src="zinvanalogo.png"
+ alt="Zinvana logo"
+ width="36"
+ height="36"
+ />
+ <span>Zinvana</span>
+ </a>
+ <p class="footer-desc">
+ Free, research-aware personality quizzes for self-discovery and
+ entertainment. No sign-up required.
+ </p>
+ </div>
+
+ <div class="footer-col">
+ <h4>Quizzes</h4>
+ <ul>
+ <li>
+ <a class="footer-link" href="mbti-personality-quiz.html"
+ >MBTI Personality</a
+ >
+ </li>
+ <li>
+ <a class="footer-link" href="leaders.html">Historical Leaders</a>
+ </li>
+ <li>
+ <a class="footer-link" href="geo-zini.html">Geo-Zini Game</a>
+ </li>
+ <li>
+ <a class="footer-link" href="mental-health.html"
+ >Mental Health Check</a
+ >
+ </li>
+ <li>
+ <a class="footer-link" href="all-articles.html">Browse All</a>
+ </li>
+ </ul>
+ </div>
+
+ <div class="footer-col">
+ <h4>Popular</h4>
+ <ul>
+ <li>
+ <a class="footer-link" href="wojak-personality-quiz.html"
+ >Wojak Personality</a
+ >
+ </li>
+ <li>
+ <a class="footer-link" href="perfect-country.html"
+ >Perfect Country</a
+ >
+ </li>
+ <li>
+ <a class="footer-link" href="youtubers-personality-quiz.html"
+ >YouTubers Quiz</a
+ >
+ </li>
+ <li>
+ <a class="footer-link" href="universe_quiz.html"
+ >Personal Universe</a
+ >
+ </li>
+ </ul>
+ </div>
+
+ <div class="footer-col">
+ <h4>Resources</h4>
+ <ul>
+ <li><a class="footer-link" href="about.html">About Us</a></li>
+ <li>
+ <a class="footer-link" href="privacy.html">Privacy Policy</a>
+ </li>
+ <li><a class="footer-link" href="#trust">Trust & Safety</a></li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="footer-bottom">
+ <p>&copy; 2025 Zinvana. All rights reserved.</p>
+ <p>Made with ❤️ by the Zinvana Team</p>
+ <p class="footer-disclaimer">
+ All quizzes are for entertainment purposes only.
+ </p>
+ </div>
+ </footer>
+
+ <script>
+ /* ── Dark Mode Toggle ── */
+ (function () {
+ const root = document.documentElement;
+ const toggle = document.getElementById("themeToggle");
+ const stored = localStorage.getItem("zinvana-theme");
+ if (stored) {
+ root.setAttribute("data-theme", stored);
+ } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+ root.setAttribute("data-theme", "dark");
+ }
+ if (toggle) {
+ toggle.addEventListener("click", () => {
+ const next =
+ root.getAttribute("data-theme") === "dark"? "light": "dark";
+ root.setAttribute("data-theme", next);
+ localStorage.setItem("zinvana-theme", next);
+ });
+ }
+ })();
+
+ /* ── Header scroll shadow ── */
+ (function () {
+ const topbar = document.getElementById("topbar");
+ if (topbar) {
+ window.addEventListener(
+ "scroll",
+ () => {
+ topbar.classList.toggle("scrolled", window.scrollY > 10);
+ },
+ { passive: true },
+ );
+ }
+ })();
+
+ /* ── Mobile menu toggle ── */
+ const toggle = document.getElementById("menuToggle");
+ const menu = document.getElementById("mobileMenu");
+ const navLinks = menu?.querySelectorAll(".nav-link");
+
+ if (toggle && menu) {
+ toggle.addEventListener("click", () => {
+ const isOpen = menu.classList.toggle("open");
+ toggle.classList.toggle("active");
+ toggle.setAttribute("aria-expanded", isOpen);
+ });
+
+ // Close menu when a link is clicked
+ navLinks?.forEach((link) => {
+ link.addEventListener("click", () => {
+ menu.classList.remove("open");
+ toggle.classList.remove("active");
+ toggle.setAttribute("aria-expanded", "false");
+ });
+ });
+
+ // Close menu on escape key
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape" && menu.classList.contains("open")) {
+ menu.classList.remove("open");
+ toggle.classList.remove("active");
+ toggle.setAttribute("aria-expanded", "false");
+ }
+ });
+ }
+ </script>
+
+ <script>
+ // Quiz search functionality
+ const searchInput = document.getElementById("quiz-search");
+ const quizCards = document.querySelectorAll(".quiz-card");
+ const quizGroups = document.querySelectorAll(".quiz-group");
+
+ // Quiz carousels
+ const carousels = Array.from(document.querySelectorAll(".quiz-carousel"));
+
+ const updateCarousel = (carousel) => {
+ const track = carousel.querySelector(".quiz-track");
+ const prev = carousel.querySelector(".carousel-btn--prev");
+ const next = carousel.querySelector(".carousel-btn--next");
+ if (!track ||!prev ||!next) return;
+
+ const maxScrollLeft = Math.max(
+ 0,
+ track.scrollWidth - track.clientWidth,
+ );
+ const canLeft = track.scrollLeft > 2;
+ const canRight = track.scrollLeft < maxScrollLeft - 2;
+
+ prev.disabled =!canLeft;
+ next.disabled =!canRight;
+
+ carousel.dataset.canScrollLeft = canLeft? "true": "false";
+ carousel.dataset.canScrollRight = canRight? "true": "false";
+ };
+
+ const scrollCarouselBy = (carousel, direction) => {
+ const track = carousel.querySelector(".quiz-track");
+ if (!track) return;
+ const delta = Math.max(240, Math.floor(track.clientWidth * 0.85));
+ track.scrollBy({ left: direction * delta, behavior: "smooth" });
+ };
+
+ const initCarousels = () => {
+ carousels.forEach((carousel) => {
+ const track = carousel.querySelector(".quiz-track");
+ const prev = carousel.querySelector(".carousel-btn--prev");
+ const next = carousel.querySelector(".carousel-btn--next");
+ if (!track ||!prev ||!next) return;
+
+ prev.addEventListener("click", () => scrollCarouselBy(carousel, -1));
+ next.addEventListener("click", () => scrollCarouselBy(carousel, 1));
+ track.addEventListener("scroll", () => updateCarousel(carousel), {
+ passive: true,
+ });
+
+ updateCarousel(carousel);
+ });
+
+ window.addEventListener("resize", () => {
+ carousels.forEach(updateCarousel);
+ });
+ };
+
+ initCarousels();
+
+ if (searchInput) {
+ searchInput.addEventListener("input", function () {
+ const query = this.value.toLowerCase().trim();
+ quizCards.forEach((card) => {
+ const title = card.querySelector(".quiz-title").textContent.toLowerCase();
+ const copy = card.querySelector(".quiz-copy").textContent.toLowerCase();
+ const visible = title.includes(query) || copy.includes(query);
+ card.style.display = visible? "": "none";
+ });
+ // Hide groups with no visible cards
+ quizGroups.forEach((group) => {
+ const visibleCards = Array.from(
+ group.querySelectorAll(".quiz-card"),
+ ).filter((card) => card.style.display!== "none");
+ group.style.display = visibleCards.length > 0? "": "none";
+ });
+
+ // Recompute carousel controls after filtering
+ carousels.forEach(updateCarousel);
+ });
+ }
+ </script>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "url": "https://zinvana.com/",
+ "name": "Zinvana",
+ "potentialAction": {
+ "@type": "SearchAction",
+ "target": "https://zinvana.com/search?q={query}",
+ "query-input": "required name=query"
+ }
+ }
+ </script>
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "Are the quizzes free?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Yes. No paywalls, trials, or sign-up required."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Do you store my answers?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "No. Results are generated instantly and not saved on a server."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "How long do quizzes take?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Most quizzes take between two and five minutes to finish."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Can I share my results?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Yes. Every quiz ends with a concise, share-ready summary."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "What makes your free personality quizzes different?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Our free personality quizzes combine research-backed questions with modern design, ensuring accurate and engaging results without any cost."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Are there free personality quizzes without sign-up?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Absolutely. All our free personality quizzes are accessible instantly without requiring any registration or personal information."
+ }
+ }
+ ]
+ }
+ </script>
+ </body>
 </html>
